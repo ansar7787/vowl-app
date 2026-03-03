@@ -84,21 +84,37 @@ Podfile.lock
 app.*.symbols
 app.*.map.json
 
-# Sensitive Files & API Keys
-# [IMPORTANT] Do not commit these files if they contain secrets!
+# Security & Secrets
 .env*
 *-key.json
 credentials.json
 service-account-key.json
-google-services.json.backup
-GoogleService-Info.plist.backup
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
 
-# Firebase & Plugins
-# Usually google-services.json and GoogleService-Info.plist are kept in the repo
-# so Firebase works out of the box, but if you want maximum security, 
-# you could ignore them and manage via CI/CD variables.
+# Firebase (Highly recommended to ignore for public repos)
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
 
-# Payment & Ads Cache
+# Project Metadata
+brain/
+diagnostic_notes.md
+Thumbs.db
+.DS_Store
+
+# Standard Flutter/Dart/IDE
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.idea/
+.vscode/
+node_modules/
 **/razorpay_plugin/
 **/google_mobile_ads/
 
