@@ -20,6 +20,12 @@ class RoleplayQuestModel extends RoleplayQuest {
     super.situation,
     super.keywords,
     super.scenario,
+    super.lastLine,
+    super.dispatcherQuestion,
+    super.interviewerQuestion,
+    super.persona,
+    super.prompt,
+    super.sampleAnswer,
   });
 
   factory RoleplayQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -52,6 +58,12 @@ class RoleplayQuestModel extends RoleplayQuest {
           ? List<String>.from(map['keywords'])
           : null,
       scenario: map['scenario'],
+      lastLine: map['lastLine'],
+      dispatcherQuestion: map['dispatcherQuestion'],
+      interviewerQuestion: map['interviewerQuestion'],
+      persona: map['persona'],
+      prompt: map['prompt'],
+      sampleAnswer: map['sampleAnswer'],
     );
   }
 
@@ -72,6 +84,12 @@ class RoleplayQuestModel extends RoleplayQuest {
       'situation': situation,
       'keywords': keywords,
       'scenario': scenario,
+      'lastLine': lastLine,
+      'dispatcherQuestion': dispatcherQuestion,
+      'interviewerQuestion': interviewerQuestion,
+      'persona': persona,
+      'prompt': prompt,
+      'sampleAnswer': sampleAnswer,
     };
   }
 }

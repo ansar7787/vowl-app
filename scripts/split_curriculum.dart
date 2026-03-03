@@ -4,7 +4,7 @@ import 'dart:io';
 void main() async {
   final Directory curriculumDir = Directory('assets/curriculum');
   if (!await curriculumDir.exists()) {
-    print('Curriculum directory not found!');
+    stdout.writeln('Curriculum directory not found!');
     return;
   }
 
@@ -40,7 +40,7 @@ Future<void> splitFile(File file, String category) async {
 
   if (gameType.isEmpty || quests.isEmpty) return;
 
-  print('Splitting $gameType...');
+  stdout.writeln('Splitting $gameType...');
 
   // Group quests by batch (10 levels per batch)
   final Map<int, List<dynamic>> batches = {};

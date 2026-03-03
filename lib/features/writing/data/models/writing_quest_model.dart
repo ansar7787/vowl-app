@@ -22,11 +22,24 @@ class WritingQuestModel extends WritingQuest {
     super.minWords,
     super.story,
     super.requiredPoints,
+    super.passage,
+    super.question,
+    super.missingWord,
+    super.prompt,
+    super.sampleAnswer,
+    super.explanation,
+    super.shuffledWords,
+    super.correctOrder,
+    super.dayDescription,
+    super.context,
+    super.partialSentence,
+    super.completion,
   });
 
   factory WritingQuestModel.fromJson(Map<String, dynamic> map, String id) {
+    final subtypeStr = map['subtype'] ?? map['gameType'] ?? '';
     final subtype = GameSubtype.values.firstWhere(
-      (s) => s.name == map['subtype'],
+      (s) => s.name == subtypeStr,
       orElse: () => GameSubtype.sentenceBuilder,
     );
     return WritingQuestModel(
@@ -56,6 +69,24 @@ class WritingQuestModel extends WritingQuest {
       requiredPoints: map['requiredPoints'] != null
           ? List<String>.from(map['requiredPoints'])
           : null,
+      passage: map['passage'],
+      question: map['question'],
+      missingWord: map['missingWord'],
+      prompt: map['prompt'] ?? map['journalPrompt'],
+      sampleAnswer: map['sampleAnswer'],
+      explanation: map['explanation'],
+      shuffledWords: map['shuffledWords'] != null
+          ? List<String>.from(map['shuffledWords'])
+          : (map['shuffledSentences'] != null
+                ? List<String>.from(map['shuffledSentences'])
+                : null),
+      correctOrder: map['correctOrder'] != null
+          ? List<int>.from(map['correctOrder'])
+          : null,
+      dayDescription: map['dayDescription'],
+      context: map['context'],
+      partialSentence: map['partialSentence'],
+      completion: map['completion'],
     );
   }
 
@@ -78,6 +109,18 @@ class WritingQuestModel extends WritingQuest {
       'minWords': minWords,
       'story': story,
       'requiredPoints': requiredPoints,
+      'passage': passage,
+      'question': question,
+      'missingWord': missingWord,
+      'prompt': prompt,
+      'sampleAnswer': sampleAnswer,
+      'explanation': explanation,
+      'shuffledWords': shuffledWords,
+      'correctOrder': correctOrder,
+      'dayDescription': dayDescription,
+      'context': context,
+      'partialSentence': partialSentence,
+      'completion': completion,
     };
   }
 }

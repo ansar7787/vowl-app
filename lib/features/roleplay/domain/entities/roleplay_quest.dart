@@ -10,6 +10,11 @@ class RoleplayQuest extends GameQuest {
   final List<String>? keywords;
   final List<Map<String, String>>? conversationHistory;
 
+  // Extra fields from various Roleplay games
+  final String? lastLine;
+  final String? dispatcherQuestion;
+  final String? interviewerQuestion;
+
   const RoleplayQuest({
     required super.id,
     super.type,
@@ -33,6 +38,9 @@ class RoleplayQuest extends GameQuest {
     this.situation,
     this.keywords,
     this.conversationHistory,
+    this.lastLine,
+    this.dispatcherQuestion,
+    this.interviewerQuestion,
   });
 
   String? get roleName => persona;

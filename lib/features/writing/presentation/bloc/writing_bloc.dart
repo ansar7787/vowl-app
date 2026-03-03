@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:voxai_quest/core/domain/entities/game_quest.dart';
 import 'package:voxai_quest/core/utils/haptic_service.dart';
 import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/core/network/network_info.dart';
 import 'package:voxai_quest/features/writing/domain/usecases/use_writing_hint.dart';
 import '../../domain/entities/writing_quest.dart';
 
@@ -98,7 +97,6 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   final SoundService soundService;
   final HapticService hapticService;
   final UseWritingHint useHint;
-  final NetworkInfo networkInfo;
 
   String? currentGameType;
   int? currentLevel;
@@ -107,7 +105,6 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     required this.soundService,
     required this.hapticService,
     required this.useHint,
-    required this.networkInfo,
     this.getQuest,
     this.updateUserCoins,
     this.updateUserRewards,

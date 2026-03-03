@@ -27,8 +27,7 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
       final localData = await assetQuestService.getQuests(gameType.name, level);
       if (localData.isNotEmpty) {
         return localData.map((q) {
-          final questMap = q as Map<String, dynamic>;
-          return SpeakingQuestModel.fromJson(questMap, questMap['id'] ?? '');
+          return SpeakingQuestModel.fromJson(q, q['id'] ?? '');
         }).toList();
       }
 

@@ -110,7 +110,6 @@ class _DailyMysterySpinOverlayState extends State<DailyMysterySpinOverlay>
     // Calculate rotation to stop at target index
     // Note: wheel spins clockwise, pointer is at top (0 radians)
     // We want the section's center to align with the pointer.
-    final sectionAngle = 2 * pi / _rewards.length;
     // Add offset for the top pointer position (1.5 pi is conceptually top, but here 0 is top if properly drawn)
 
     // Animate to a target value. We'll set the controller's upper bound dynamically

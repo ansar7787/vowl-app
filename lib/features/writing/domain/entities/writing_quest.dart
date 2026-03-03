@@ -7,7 +7,7 @@ class WritingQuest extends GameQuest {
   final String? prompt;
   final String? sampleAnswer;
   final String? explanation;
-  final List<String>? shuffledSentences;
+  final List<String>? shuffledWords;
   final List<int>? correctOrder;
   final String? story;
   final String? situation;
@@ -15,6 +15,10 @@ class WritingQuest extends GameQuest {
   final String? suffix;
   final int? minWords;
   final List<String>? requiredPoints;
+  final String? dayDescription;
+  final String? context;
+  final String? partialSentence;
+  final String? completion;
 
   const WritingQuest({
     required super.id,
@@ -37,7 +41,7 @@ class WritingQuest extends GameQuest {
     this.prompt,
     this.sampleAnswer,
     this.explanation,
-    this.shuffledSentences,
+    this.shuffledWords,
     this.correctOrder,
     this.story,
     this.situation,
@@ -45,9 +49,12 @@ class WritingQuest extends GameQuest {
     this.suffix,
     this.minWords,
     this.requiredPoints,
+    this.dayDescription,
+    this.context,
+    this.partialSentence,
+    this.completion,
   });
 
   String? get incorrectSentence => passage;
   String? get correctSentence => correctAnswer;
-  List<String>? get shuffledWords => shuffledSentences;
 }

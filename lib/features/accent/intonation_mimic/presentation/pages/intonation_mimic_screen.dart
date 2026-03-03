@@ -180,11 +180,12 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen> {
                 _isTracing = false;
               });
             } else if (state.lastAnswerCorrect == false) {
+              final accentBloc = context.read<AccentBloc>();
               Future.delayed(const Duration(milliseconds: 1000), () {
                 if (mounted && state.livesRemaining > 0) {
                   // Auto-dismiss the error loop safely without resetting the trace progress manually before restore
                   if (mounted) {
-                    context.read<AccentBloc>().add(RestoreLife());
+                    accentBloc.add(RestoreLife());
                   }
                 }
               });

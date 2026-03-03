@@ -21,6 +21,15 @@ class GrammarQuestModel extends GrammarQuest {
     super.word,
     super.targetTense,
     super.secondarySentence,
+    super.firstClause,
+    super.secondClause,
+    super.connectorToUse,
+    super.sentenceWithBlank,
+    super.articleToInsert,
+    super.targetWord,
+    super.passage,
+    super.passiveSentence,
+    super.activeSentence,
   });
 
   factory GrammarQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -44,15 +53,23 @@ class GrammarQuestModel extends GrammarQuest {
       options: map['options'] != null
           ? List<String>.from(map['options'])
           : null,
-      correctAnswerIndex:
-          map['correctAnswerIndex'] ?? map['correctAnswerIndex'],
+      correctAnswerIndex: map['correctAnswerIndex'],
       correctAnswer: map['correctAnswer'],
       hint: map['hint'],
-      sentence: map['sentence'],
+      sentence: map['sentence'] ?? map['question'],
       verb: map['verb'],
       word: map['word'],
       targetTense: map['targetTense'],
       secondarySentence: map['secondarySentence'],
+      firstClause: map['firstClause'],
+      secondClause: map['secondClause'],
+      connectorToUse: map['connectorToUse'],
+      sentenceWithBlank: map['sentenceWithBlank'],
+      articleToInsert: map['articleToInsert'],
+      targetWord: map['targetWord'],
+      passage: map['passage'],
+      passiveSentence: map['passiveSentence'],
+      activeSentence: map['activeSentence'],
     );
   }
 
@@ -74,6 +91,15 @@ class GrammarQuestModel extends GrammarQuest {
       'word': word,
       'targetTense': targetTense,
       'secondarySentence': secondarySentence,
+      'firstClause': firstClause,
+      'secondClause': secondClause,
+      'connectorToUse': connectorToUse,
+      'sentenceWithBlank': sentenceWithBlank,
+      'articleToInsert': articleToInsert,
+      'targetWord': targetWord,
+      'passage': passage,
+      'passiveSentence': passiveSentence,
+      'activeSentence': activeSentence,
     };
   }
 }

@@ -41,7 +41,10 @@ class ListeningQuest extends GameQuest {
     this.audioOptions,
     this.transcript,
     this.targetEmotion,
+    this.missingWord,
   });
+
+  final String? missingWord;
 
   String? get audioTranscript => transcript ?? transcription ?? textToSpeak;
 }

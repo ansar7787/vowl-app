@@ -73,8 +73,9 @@ class _MinimalPairsScreenState extends State<MinimalPairsScreen> {
   }
 
   void _onWordSelected(int index, String targetWord) {
-    if (_selectedWordIndex != null || _eliminatedIndices.contains(index))
+    if (_selectedWordIndex != null || _eliminatedIndices.contains(index)) {
       return;
+    }
 
     final state = context.read<AccentBloc>().state;
     if (state is AccentLoaded) {

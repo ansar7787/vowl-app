@@ -39,7 +39,8 @@ class VocabularyQuestModel extends VocabularyQuest {
       id: id,
       type: subtype.category,
       subtype: subtype,
-      instruction: map['instruction'] ?? 'Choose the correct answer.',
+      instruction:
+          map['instruction'] ?? map['question'] ?? 'Choose the correct answer.',
       difficulty: map['difficulty'] ?? 1,
       interactionType: InteractionType.values.firstWhere(
         (i) => i.name == (map['interactionType'] ?? 'choice'),
@@ -55,11 +56,12 @@ class VocabularyQuestModel extends VocabularyQuest {
           map['correctAnswerIndex'] ?? map['correctAnswerIndex'],
       correctAnswer: map['correctAnswer'],
       hint: map['hint'],
-      word: map['word'] ?? map['targetWord'],
+      word: map['word'] ?? map['targetWord'] ?? map['topic'],
       definition: map['definition'] ?? map['meaning'],
       synonym: map['synonym'],
       antonym: map['antonym'],
-      contextSentence: map['contextSentence'] ?? map['example'],
+      contextSentence:
+          map['contextSentence'] ?? map['example'] ?? map['sentence'],
       explanation: map['explanation'],
       audioUrl: map['audioUrl'],
       passage: map['passage'],

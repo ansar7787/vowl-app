@@ -508,38 +508,19 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
+      builder: (context) => ModernGameDialog(
         title: 'Audio Cut Off',
         description: 'Your listening streak was interrupted. Try again!',
         isSuccess: false,
         isRescueLife: true,
         buttonText: 'GIVE UP',
         onButtonPressed: () {
-          Navigator.pop(c);
+          Navigator.pop(context);
           context.pop();
         },
-        onAdAction: () {
-          void restoreLife() {
-            context.read<ListeningBloc>().add(RestoreLife());
-            Navigator.pop(c);
-          }
-
-          final isPremium =
-              context.read<AuthBloc>().state.user?.isPremium ?? false;
-          if (isPremium) {
-            restoreLife();
-          } else {
-            di.sl<AdService>().showRewardedAd(
-              isPremium: false,
-              onUserEarnedReward: (_) => restoreLife(),
-              onDismissed: () {},
-            );
-          }
-        },
-        adButtonText: 'WATCH AD TO CONTINUE',
         adButtonText: "RESCUE LIFE (AD)",
         onAdAction: () {
-          Navigator.pop(c);
+          Navigator.pop(context);
           final isPremium =
               context.read<AuthBloc>().state.user?.isPremium ?? false;
           final adService = di.sl<AdService>();

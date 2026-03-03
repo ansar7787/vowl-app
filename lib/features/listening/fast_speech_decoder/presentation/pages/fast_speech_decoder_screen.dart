@@ -457,13 +457,13 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
         isRescueLife: true,
         buttonText: 'GIVE UP',
         onButtonPressed: () {
-          Navigator.pop(c);
+          Navigator.pop(context);
           context.pop();
         },
         onAdAction: () {
           void restoreLife() {
             context.read<ListeningBloc>().add(RestoreLife());
-            Navigator.pop(c);
+            Navigator.pop(context);
           }
 
           final isPremium =

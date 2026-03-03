@@ -13,7 +13,6 @@ import 'package:voxai_quest/core/utils/injection_container.dart' as di;
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/utils/voxin_assets.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
 
 class ModernCategoryMap extends StatefulWidget {
   final String gameType;

@@ -414,9 +414,8 @@ Future<void> init() async {
       updateUnlockedLevel: sl<UpdateUnlockedLevel>(),
       awardBadge: sl<AwardBadge>(),
       soundService: sl<SoundService>(),
-      hapticService: sl<HapticService>(),
+      hapticService: sl(),
       useHint: sl<UseWritingHint>(),
-      networkInfo: sl<NetworkInfo>(),
     ),
   );
   sl.registerFactory<SpeakingBloc>(

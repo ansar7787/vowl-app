@@ -124,41 +124,26 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
           return;
         }
 
-        final List<ListeningQuest> quests = [];
-        try {
-          final result = await getQuest!(event.gameType, event.level);
-          if (result != null && result is List<ListeningQuest>) {
-            quests.addAll(result);
+        final result = await getQuest!(event.gameType, event.level);
+
+        result.fold((failure) => emit(ListeningError(failure.message)), (
+          quests,
+        ) {
+          if (quests.isEmpty) {
+            emit(ListeningError("Check back later for new quests!"));
+          } else {
+            // ENSURE STICKY 3 QUESTIONS PER LEVEL
+            final limitedQuests =
+                quests.take(3).toList() as List<ListeningQuest>;
+            emit(
+              ListeningLoaded(
+                quests: limitedQuests,
+                currentIndex: 0,
+                livesRemaining: 3, // Standard 3 lives
+              ),
+            );
           }
-        } catch (e) {
-          try {
-            final result = await getQuest!(event.gameType);
-            if (result != null && result is List<ListeningQuest>) {
-              quests.addAll(result);
-            }
-          } catch (_) {}
-        }
-
-        if (quests.isEmpty) {
-          emit(
-            ListeningError("We couldn't find any quests for this level yet."),
-          );
-          return;
-        }
-
-        if (quests.isEmpty) {
-          emit(ListeningError("Check back later for new quests!"));
-        } else {
-          // ENSURE STICKY 3 QUESTIONS PER LEVEL
-          final limitedQuests = quests.take(3).toList();
-          emit(
-            ListeningLoaded(
-              quests: limitedQuests,
-              currentIndex: 0,
-              livesRemaining: 3, // Standard 3 lives
-            ),
-          );
-        }
+        });
       } catch (e) {
         emit(ListeningError("Failed to fetch quests: $e"));
       }

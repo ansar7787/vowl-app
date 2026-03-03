@@ -24,6 +24,7 @@ class ListeningQuestModel extends ListeningQuest {
     super.transcript,
     super.targetEmotion,
     super.textToSpeak,
+    super.missingWord,
   });
 
   factory ListeningQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -36,22 +37,21 @@ class ListeningQuestModel extends ListeningQuest {
       type: subtype.category,
       subtype: subtype,
       instruction: map['instruction'] ?? 'Listen and answer.',
-      difficulty: map['difficulty'] ?? 1,
+      difficulty: (map['difficulty'] as num?)?.toInt() ?? 1,
       interactionType: InteractionType.values.firstWhere(
         (i) => i.name == (map['interactionType'] ?? 'choice'),
         orElse: () => InteractionType.choice,
       ),
-      xpReward: map['xpReward'] ?? 10,
-      coinReward: map['coinReward'] ?? 5,
-      livesAllowed: map['livesAllowed'],
+      xpReward: (map['xpReward'] as num?)?.toInt() ?? 10,
+      coinReward: (map['coinReward'] as num?)?.toInt() ?? 5,
+      livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
       options: map['options'] != null
           ? List<String>.from(map['options'])
-          : null,
-      correctAnswerIndex:
-          map['correctAnswerIndex'] ?? map['correctAnswerIndex'],
+          : (map['choices'] != null ? List<String>.from(map['choices']) : null),
+      correctAnswerIndex: (map['correctAnswerIndex'] as num?)?.toInt(),
       correctAnswer: map['correctAnswer'],
       hint: map['hint'],
-      audioUrl: map['audioUrl'],
+      audioUrl: map['audioUrl'] ?? map['ambientAudioUrl'],
       question: map['question'],
       statement: map['statement'],
       textWithBlanks: map['textWithBlanks'],
@@ -61,6 +61,7 @@ class ListeningQuestModel extends ListeningQuest {
       transcript: map['transcript'] as String?,
       targetEmotion: map['targetEmotion'],
       textToSpeak: map['textToSpeak'] as String?,
+      missingWord: map['missingWord'] as String?,
     );
   }
 

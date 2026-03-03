@@ -1,14 +1,21 @@
-class GetListeningQuests {
-  final dynamic arg1;
-  final dynamic arg2;
-  final dynamic arg3;
-  GetListeningQuests([this.arg1, this.arg2, this.arg3]);
-  Future<dynamic> call(dynamic params) async {
-    return null;
-  }
-}
+import 'package:dartz/dartz.dart';
+import '../../../../core/domain/entities/game_quest.dart';
+import '../../../../core/error/failures.dart';
+import '../entities/listening_quest.dart';
+import '../repositories/listening_repository.dart';
 
-class GetListeningQuestsParams {
-  final dynamic user;
-  const GetListeningQuestsParams({this.user});
+class GetListeningQuests {
+  final ListeningRepository repository;
+
+  GetListeningQuests(this.repository);
+
+  Future<Either<Failure, List<ListeningQuest>>> call(
+    GameSubtype gameType,
+    int level,
+  ) async {
+    return await repository.getListeningQuests(
+      gameType: gameType,
+      level: level,
+    );
+  }
 }

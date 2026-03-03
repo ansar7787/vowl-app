@@ -156,13 +156,14 @@ class _SyllableStressScreenState extends State<SyllableStressScreen> {
                 _eliminatedIndices.clear();
               });
             } else if (state.lastAnswerCorrect == false) {
+              final accentBloc = context.read<AccentBloc>();
               Future.delayed(const Duration(milliseconds: 1000), () {
                 if (mounted && state.livesRemaining > 0) {
                   setState(() {
                     _selectedSyllableIndex = null;
                   });
                   if (mounted) {
-                    context.read<AccentBloc>().add(RestoreLife());
+                    accentBloc.add(RestoreLife());
                   }
                 }
               });

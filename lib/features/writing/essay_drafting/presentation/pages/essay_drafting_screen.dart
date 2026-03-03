@@ -19,10 +19,8 @@ import 'package:voxai_quest/core/utils/haptic_service.dart';
 import 'package:voxai_quest/core/utils/injection_container.dart' as di;
 import 'package:voxai_quest/core/utils/sound_service.dart';
 import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/writing/essay_drafting/presentation/bloc/essay_drafting_bloc.dart';
-import 'package:voxai_quest/features/writing/essay_drafting/presentation/bloc/essay_drafting_event.dart';
-import 'package:voxai_quest/features/writing/essay_drafting/presentation/bloc/essay_drafting_state.dart';
-import 'package:voxai_quest/features/writing/essay_drafting/domain/entities/essay_drafting_quest.dart';
+import 'package:voxai_quest/features/writing/domain/entities/writing_quest.dart';
+import 'package:voxai_quest/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:voxai_quest/core/presentation/widgets/games/premium_game_widgets.dart';
 
 class EssayDraftingScreen extends StatefulWidget {
@@ -50,8 +48,11 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<EssayDraftingBloc>().add(
-      FetchEssayDraftingQuests(widget.level),
+    context.read<WritingBloc>().add(
+      FetchWritingQuests(
+        gameType: GameSubtype.essayDrafting,
+        level: widget.level,
+      ),
     );
     // Pre-load ads
     di.sl<AdService>().loadRewardedAd();
@@ -82,9 +83,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
 
     Future.delayed(const Duration(milliseconds: 300), () {
       if (mounted) {
-        context.read<EssayDraftingBloc>().add(
-          SubmitEssayDraftingAnswer(isCorrect),
-        );
+        context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
       }
     });
   }
@@ -100,14 +99,14 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
 
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: BlocConsumer<EssayDraftingBloc, EssayDraftingState>(
+      body: BlocConsumer<WritingBloc, WritingState>(
         listener: (context, state) {
-          if (state is EssayDraftingGameComplete) {
+          if (state is WritingGameComplete) {
             setState(() => _showConfetti = true);
             _showCompletionDialog(context, state.xpEarned, state.coinsEarned);
-          } else if (state is EssayDraftingGameOver) {
+          } else if (state is WritingGameOver) {
             _showGameOverDialog(context);
-          } else if (state is EssayDraftingLoaded &&
+          } else if (state is WritingLoaded &&
               state.lastAnswerCorrect == null) {
             setState(() {
               _hasSubmitted = false;
@@ -116,21 +115,24 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
           }
         },
         builder: (context, state) {
-          if (state is EssayDraftingLoading || state is EssayDraftingInitial) {
+          if (state is WritingLoading || state is WritingInitial) {
             return const GameShimmerLoading();
           }
 
-          if (state is EssayDraftingError) {
+          if (state is WritingError) {
             return QuestUnavailableScreen(
               message: state.message,
-              onRetry: () => context.read<EssayDraftingBloc>().add(
-                FetchEssayDraftingQuests(widget.level),
+              onRetry: () => context.read<WritingBloc>().add(
+                FetchWritingQuests(
+                  gameType: GameSubtype.essayDrafting,
+                  level: widget.level,
+                ),
               ),
             );
           }
 
-          if (state is EssayDraftingLoaded) {
-            final EssayDraftingQuest quest = state.currentQuest;
+          if (state is WritingLoaded) {
+            final WritingQuest quest = state.currentQuest;
             final progress = (state.currentIndex + 1) / state.quests.length;
 
             return Stack(
@@ -143,11 +145,9 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                       progress: progress,
                       lives: state.livesRemaining,
                       onHint: () {
-                        context.read<EssayDraftingBloc>().add(
-                          EssayDraftingHintUsed(),
-                        );
+                        context.read<WritingBloc>().add(WritingHintUsed());
                         _controller.text =
-                            "Regarding ${quest.topic ?? 'this topic'}, it is evident that ${quest.mainPoints?.first ?? 'several factors play a key role'}...";
+                            "Regarding ${quest.prompt ?? 'this topic'}, it is evident that ${quest.requiredPoints?.first ?? 'several factors play a key role'}...";
                       },
                       onClose: () => context.pop(),
                       isDark: isDark,
@@ -187,8 +187,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                             SizedBox(height: 32.h),
 
                             _buildPromptCard(
-                              quest.topic ?? 'Construct your essay.',
-                              quest.mainPoints,
+                              quest.prompt ?? 'Construct your essay.',
+                              quest.requiredPoints,
                               theme,
                               isDark,
                             ),
@@ -254,10 +254,9 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                         ? "DRAFT APPROVED!"
                         : "CONTENT INSUFFICIENT!",
                     subtitle:
-                        "Sample: ${quest.correctAnswer ?? 'Your essay structure is solid.'}",
-                    onContinue: () => context.read<EssayDraftingBloc>().add(
-                      NextEssayDraftingQuestion(),
-                    ),
+                        "Sample: ${quest.sampleAnswer ?? 'Your essay structure is solid.'}",
+                    onContinue: () =>
+                        context.read<WritingBloc>().add(NextQuestion()),
                     primaryColor: theme.primaryColor,
                   ),
                 if (_showConfetti) const GameConfetti(),
@@ -478,7 +477,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
         isSuccess: false,
         onButtonPressed: () {
           Navigator.pop(context);
-          context.read<EssayDraftingBloc>().add(RestoreEssayDraftingLife());
+          context.read<WritingBloc>().add(RestartLevel());
         },
         secondaryButtonText: "EXIT",
         onSecondaryPressed: () {

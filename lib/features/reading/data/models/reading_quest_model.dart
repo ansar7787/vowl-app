@@ -51,8 +51,7 @@ class ReadingQuestModel extends ReadingQuest {
       options: map['options'] != null
           ? List<String>.from(map['options'])
           : null,
-      correctAnswerIndex:
-          map['correctAnswerIndex'] ?? map['correctAnswerIndex'],
+      correctAnswerIndex: map['correctAnswerIndex'],
       correctAnswer: map['correctAnswer'],
       hint: map['hint'],
       passage: map['passage'],

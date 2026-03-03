@@ -1,4 +1,7 @@
+import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:voxai_quest/core/data/services/asset_quest_service.dart';
 import 'package:voxai_quest/core/error/exceptions.dart';
 import 'package:voxai_quest/core/domain/entities/game_quest.dart';
@@ -23,71 +26,51 @@ class WritingRemoteDataSourceImpl implements WritingRemoteDataSource {
     required int level,
   }) async {
     try {
-      // 1. Try to load from Local Assets (Free & Fast)
-      final localData = await assetQuestService.getQuests(gameType.name, level);
-      if (localData.isNotEmpty) {
-        return localData.map((q) {
-          final questMap = q;
-          return WritingQuestModel.fromJson(questMap, questMap['id'] ?? '');
-        }).toList();
+      final String typeString = gameType.name;
+
+      // 1. Try Local Assets first
+      final String assetPath =
+          'assets/curriculum/writing/${typeString}_1_10.json';
+      try {
+        final String jsonString = await rootBundle.loadString(assetPath);
+        final List<dynamic> jsonList = json.decode(jsonString);
+
+        // Filter by level (day)
+        final levelData = jsonList.firstWhere(
+          (item) => item['day'] == level,
+          orElse: () => null,
+        );
+
+        if (levelData != null && levelData['quests'] != null) {
+          return (levelData['quests'] as List)
+              .map((q) => WritingQuestModel.fromJson(q, q['id'] ?? ''))
+              .toList();
+        }
+      } catch (e) {
+        debugPrint(
+          'Local asset not found or error for $typeString level $level: $e',
+        );
       }
 
-      // 2. Fallback to Firestore (Cloud)
-      var doc = await firestore
-          .collection('quests')
-          .doc(gameType.name)
-          .collection('levels')
-          .doc(level.toString())
+      // 2. Fallback to Firestore
+      final snapshot = await firestore
+          .collection('curriculum')
+          .doc('writing')
+          .collection(typeString)
+          .where('level', isEqualTo: level)
           .get();
 
-      // Fallback to old structure for backward compatibility
-      if (!doc.exists) {
-        final docId = 'writing_$level';
-        doc = await firestore.collection('writing_quests').doc(docId).get();
+      if (snapshot.docs.isNotEmpty) {
+        final questsData = snapshot.docs.first.data()['quests'] as List;
+        return questsData
+            .map((q) => WritingQuestModel.fromJson(q, q['id'] ?? ''))
+            .toList();
       }
 
-      // Final fallback: get any quest from the collection
-      if (!doc.exists) {
-        final snapshot = await firestore
-            .collection('quests')
-            .doc(gameType.name)
-            .collection('levels')
-            .limit(1)
-            .get();
-
-        if (snapshot.docs.isNotEmpty) {
-          doc = snapshot.docs.first;
-        }
-      }
-
-      if (doc.exists && doc.data() != null) {
-        final data = doc.data()!;
-
-        // Multi-question support
-        if (data.containsKey('quests') && data['quests'] is List) {
-          final questsList = data['quests'] as List;
-          return questsList.map((q) {
-            final questMap = q as Map<String, dynamic>;
-            questMap['id'] ??= doc.id;
-            questMap['subtype'] = gameType.name;
-            questMap['difficulty'] ??= level;
-            return WritingQuestModel.fromJson(
-              questMap,
-              questMap['id'] ?? doc.id,
-            );
-          }).toList();
-        }
-
-        // Single quest fallback
-        data['id'] = doc.id;
-        data['difficulty'] = level;
-        data['subtype'] = gameType.name;
-        return [WritingQuestModel.fromJson(data, data['id'] ?? doc.id)];
-      } else {
-        throw ServerException();
-      }
+      throw ServerException('No quests found for $typeString level $level');
     } catch (e) {
-      throw ServerException();
+      debugPrint('Error in getWritingQuest: $e');
+      throw ServerException(e.toString());
     }
   }
 }
