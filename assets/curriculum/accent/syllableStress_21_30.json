@@ -5,33 +5,78 @@
   "quests": [
     {
       "id": "syllableStress_l21_q1",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "ECONOMY",
+      "word": "HOTEL",
       "options": [
-        "E-",
-        "-CON-",
-        "-O-",
-        "-MY"
+        "ho-TEL",
+        "HO-tel"
       ],
-      "correctAnswerIndex": 1,
-      "hint": "Second syllable.",
+      "correctAnswerIndex": 0,
+      "hint": "Stress on second syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l21_q2",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "PHOTOGRAPH",
+      "word": "BANANA",
       "options": [
-        "PHO-",
-        "-TO-",
-        "-GRAPH"
+        "ba-NA-na",
+        "BA-na-na"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Middle syllable.",
+      "xpReward": 5,
+      "coinReward": 10
+    },
+    {
+      "id": "syllableStress_l21_q3",
+      "instruction": "Where is the stress?",
+      "difficulty": 1,
+      "subtype": "syllableStress",
+      "interactionType": "choice",
+      "word": "COMPUTER",
+      "options": [
+        "com-PU-ter",
+        "COM-pu-ter"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Second syllable.",
+      "xpReward": 5,
+      "coinReward": 10
+    },
+    {
+      "id": "syllableStress_l22_q1",
+      "instruction": "Where is the stress?",
+      "difficulty": 1,
+      "subtype": "syllableStress",
+      "interactionType": "choice",
+      "word": "IMPORTANT",
+      "options": [
+        "im-POR-tant",
+        "IM-por-tant"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Second syllable.",
+      "xpReward": 5,
+      "coinReward": 10
+    },
+    {
+      "id": "syllableStress_l22_q2",
+      "instruction": "Where is the stress?",
+      "difficulty": 1,
+      "subtype": "syllableStress",
+      "interactionType": "choice",
+      "word": "BEAUTIFUL",
+      "options": [
+        "BEAU-ti-ful",
+        "beau-TI-ful"
       ],
       "correctAnswerIndex": 0,
       "hint": "First syllable.",
@@ -39,104 +84,47 @@
       "coinReward": 10
     },
     {
-      "id": "syllableStress_l21_q3",
-      "instruction": "Select the stressed syllable.",
-      "difficulty": 1,
-      "subtype": "syllableStress",
-      "interactionType": "choice",
-      "word": "DETERMINATION",
-      "options": [
-        "DE-",
-        "-TER-",
-        "-MI-",
-        "-NA-"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Third syllable.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "syllableStress_l22_q1",
-      "instruction": "Select the stressed syllable.",
-      "difficulty": 1,
-      "subtype": "syllableStress",
-      "interactionType": "choice",
-      "word": "UNIVERSITY",
-      "options": [
-        "U-",
-        "-NI-",
-        "-VER-",
-        "-SI-"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Third syllable.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "syllableStress_l22_q2",
-      "instruction": "Select the stressed syllable.",
-      "difficulty": 1,
-      "subtype": "syllableStress",
-      "interactionType": "choice",
-      "word": "BANANA",
-      "options": [
-        "BA-",
-        "-NA-",
-        "-NA"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Second syllable.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
       "id": "syllableStress_l22_q3",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "COMPUTER",
+      "word": "EDUCATION",
       "options": [
-        "COM-",
-        "-PU-",
-        "-TER"
+        "ed-u-CA-tion",
+        "ED-u-ca-tion"
       ],
-      "correctAnswerIndex": 1,
-      "hint": "Second syllable.",
+      "correctAnswerIndex": 0,
+      "hint": "Third syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l23_q1",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "ECONOMY",
+      "word": "UNDERSTAND",
       "options": [
-        "E-",
-        "-CON-",
-        "-O-",
-        "-MY"
+        "un-der-STAND",
+        "UN-der-stand"
       ],
-      "correctAnswerIndex": 1,
-      "hint": "Second syllable.",
+      "correctAnswerIndex": 0,
+      "hint": "Last syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l23_q2",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
       "word": "PHOTOGRAPH",
       "options": [
-        "PHO-",
-        "-TO-",
-        "-GRAPH"
+        "PHO-to-graph",
+        "pho-TO-graph"
       ],
       "correctAnswerIndex": 0,
       "hint": "First syllable.",
@@ -145,103 +133,142 @@
     },
     {
       "id": "syllableStress_l23_q3",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "DETERMINATION",
+      "word": "PHOTOGRAPHY",
       "options": [
-        "DE-",
-        "-TER-",
-        "-MI-",
-        "-NA-"
+        "pho-TOG-ra-phy",
+        "PHO-tog-ra-phy"
       ],
-      "correctAnswerIndex": 2,
-      "hint": "Third syllable.",
+      "correctAnswerIndex": 0,
+      "hint": "Second syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l24_q1",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "UNIVERSITY",
+      "word": "TELEPHONE",
       "options": [
-        "U-",
-        "-NI-",
-        "-VER-",
-        "-SI-"
+        "TEL-e-phone",
+        "tel-E-phone"
       ],
-      "correctAnswerIndex": 2,
-      "hint": "Third syllable.",
+      "correctAnswerIndex": 0,
+      "hint": "First syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l24_q2",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "BANANA",
+      "word": "INFORMATION",
       "options": [
-        "BA-",
-        "-NA-",
-        "-NA"
+        "in-for-MA-tion",
+        "IN-for-ma-tion"
       ],
-      "correctAnswerIndex": 1,
-      "hint": "Second syllable.",
+      "correctAnswerIndex": 0,
+      "hint": "Third syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l24_q3",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "COMPUTER",
+      "word": "RESTAURANT",
       "options": [
-        "COM-",
-        "-PU-",
-        "-TER"
+        "RES-tau-rant",
+        "res-TAU-rant"
       ],
-      "correctAnswerIndex": 1,
-      "hint": "Second syllable.",
+      "correctAnswerIndex": 0,
+      "hint": "First syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l25_q1",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "ECONOMY",
+      "word": "DEVELOPMENT",
       "options": [
-        "E-",
-        "-CON-",
-        "-O-",
-        "-MY"
+        "de-VEL-op-ment",
+        "DEV-el-op-ment"
       ],
-      "correctAnswerIndex": 1,
+      "correctAnswerIndex": 0,
       "hint": "Second syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l25_q2",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "PHOTOGRAPH",
+      "word": "VOLUNTEER",
       "options": [
-        "PHO-",
-        "-TO-",
-        "-GRAPH"
+        "vol-un-TEER",
+        "VOL-un-teer"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Last syllable.",
+      "xpReward": 5,
+      "coinReward": 10
+    },
+    {
+      "id": "syllableStress_l25_q3",
+      "instruction": "Where is the stress?",
+      "difficulty": 1,
+      "subtype": "syllableStress",
+      "interactionType": "choice",
+      "word": "ADVERTISEMENT",
+      "options": [
+        "ad-VER-tise-ment",
+        "AD-ver-tise-ment"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Second syllable.",
+      "xpReward": 5,
+      "coinReward": 10
+    },
+    {
+      "id": "syllableStress_l26_q1",
+      "instruction": "Where is the stress?",
+      "difficulty": 1,
+      "subtype": "syllableStress",
+      "interactionType": "choice",
+      "word": "EMPLOYEE",
+      "options": [
+        "em-PLOY-ee",
+        "EM-ploy-ee"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Second syllable.",
+      "xpReward": 5,
+      "coinReward": 10
+    },
+    {
+      "id": "syllableStress_l26_q2",
+      "instruction": "Where is the stress?",
+      "difficulty": 1,
+      "subtype": "syllableStress",
+      "interactionType": "choice",
+      "word": "ATMOSPHERE",
+      "options": [
+        "AT-mos-phere",
+        "at-MOS-phere"
       ],
       "correctAnswerIndex": 0,
       "hint": "First syllable.",
@@ -249,104 +276,31 @@
       "coinReward": 10
     },
     {
-      "id": "syllableStress_l25_q3",
-      "instruction": "Select the stressed syllable.",
-      "difficulty": 1,
-      "subtype": "syllableStress",
-      "interactionType": "choice",
-      "word": "DETERMINATION",
-      "options": [
-        "DE-",
-        "-TER-",
-        "-MI-",
-        "-NA-"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Third syllable.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "syllableStress_l26_q1",
-      "instruction": "Select the stressed syllable.",
-      "difficulty": 1,
-      "subtype": "syllableStress",
-      "interactionType": "choice",
-      "word": "UNIVERSITY",
-      "options": [
-        "U-",
-        "-NI-",
-        "-VER-",
-        "-SI-"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Third syllable.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "syllableStress_l26_q2",
-      "instruction": "Select the stressed syllable.",
-      "difficulty": 1,
-      "subtype": "syllableStress",
-      "interactionType": "choice",
-      "word": "BANANA",
-      "options": [
-        "BA-",
-        "-NA-",
-        "-NA"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Second syllable.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
       "id": "syllableStress_l26_q3",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "COMPUTER",
+      "word": "CERTIFICATE",
       "options": [
-        "COM-",
-        "-PU-",
-        "-TER"
+        "cer-TIF-i-cate",
+        "CER-tif-i-cate"
       ],
-      "correctAnswerIndex": 1,
+      "correctAnswerIndex": 0,
       "hint": "Second syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l27_q1",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "ECONOMY",
+      "word": "CALENDAR",
       "options": [
-        "E-",
-        "-CON-",
-        "-O-",
-        "-MY"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Second syllable.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "syllableStress_l27_q2",
-      "instruction": "Select the stressed syllable.",
-      "difficulty": 1,
-      "subtype": "syllableStress",
-      "interactionType": "choice",
-      "word": "PHOTOGRAPH",
-      "options": [
-        "PHO-",
-        "-TO-",
-        "-GRAPH"
+        "CAL-en-dar",
+        "cal-EN-dar"
       ],
       "correctAnswerIndex": 0,
       "hint": "First syllable.",
@@ -354,176 +308,177 @@
       "coinReward": 10
     },
     {
-      "id": "syllableStress_l27_q3",
-      "instruction": "Select the stressed syllable.",
+      "id": "syllableStress_l27_q2",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "DETERMINATION",
+      "word": "TOMORROW",
       "options": [
-        "DE-",
-        "-TER-",
-        "-MI-",
-        "-NA-"
+        "to-MOR-row",
+        "TOM-or-row"
       ],
-      "correctAnswerIndex": 2,
-      "hint": "Third syllable.",
+      "correctAnswerIndex": 0,
+      "hint": "Second syllable.",
+      "xpReward": 5,
+      "coinReward": 10
+    },
+    {
+      "id": "syllableStress_l27_q3",
+      "instruction": "Where is the stress?",
+      "difficulty": 1,
+      "subtype": "syllableStress",
+      "interactionType": "choice",
+      "word": "HELICOPTER",
+      "options": [
+        "HEL-i-cop-ter",
+        "hel-I-cop-ter"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "First syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l28_q1",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "UNIVERSITY",
+      "word": "PERSONALITY",
       "options": [
-        "U-",
-        "-NI-",
-        "-VER-",
-        "-SI-"
+        "per-son-AL-i-ty",
+        "PER-son-al-i-ty"
       ],
-      "correctAnswerIndex": 2,
+      "correctAnswerIndex": 0,
       "hint": "Third syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l28_q2",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "BANANA",
+      "word": "EXPERIMENT",
       "options": [
-        "BA-",
-        "-NA-",
-        "-NA"
+        "ex-PER-i-ment",
+        "EX-per-i-ment"
       ],
-      "correctAnswerIndex": 1,
+      "correctAnswerIndex": 0,
       "hint": "Second syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l28_q3",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "COMPUTER",
+      "word": "ECONOMY",
       "options": [
-        "COM-",
-        "-PU-",
-        "-TER"
+        "e-CON-o-my",
+        "EC-on-o-my"
       ],
-      "correctAnswerIndex": 1,
+      "correctAnswerIndex": 0,
       "hint": "Second syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l29_q1",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "ECONOMY",
+      "word": "UNIVERSITY",
       "options": [
-        "E-",
-        "-CON-",
-        "-O-",
-        "-MY"
+        "u-ni-VER-si-ty",
+        "UN-i-ver-si-ty"
       ],
-      "correctAnswerIndex": 1,
-      "hint": "Second syllable.",
+      "correctAnswerIndex": 0,
+      "hint": "Third syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l29_q2",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "PHOTOGRAPH",
+      "word": "PARTICIPATE",
       "options": [
-        "PHO-",
-        "-TO-",
-        "-GRAPH"
+        "par-TIC-i-pate",
+        "PAR-tic-i-pate"
       ],
       "correctAnswerIndex": 0,
-      "hint": "First syllable.",
+      "hint": "Second syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l29_q3",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "DETERMINATION",
+      "word": "OPPORTUNITY",
       "options": [
-        "DE-",
-        "-TER-",
-        "-MI-",
-        "-NA-"
+        "op-por-TU-ni-ty",
+        "OP-por-tu-ni-ty"
       ],
-      "correctAnswerIndex": 2,
+      "correctAnswerIndex": 0,
       "hint": "Third syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l30_q1",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "UNIVERSITY",
+      "word": "COMMUNICATE",
       "options": [
-        "U-",
-        "-NI-",
-        "-VER-",
-        "-SI-"
+        "com-MU-ni-cate",
+        "COM-mu-ni-cate"
       ],
-      "correctAnswerIndex": 2,
-      "hint": "Third syllable.",
+      "correctAnswerIndex": 0,
+      "hint": "Second syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l30_q2",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "BANANA",
+      "word": "ENVIRONMENT",
       "options": [
-        "BA-",
-        "-NA-",
-        "-NA"
+        "en-VI-ron-ment",
+        "EN-vi-ron-ment"
       ],
-      "correctAnswerIndex": 1,
+      "correctAnswerIndex": 0,
       "hint": "Second syllable.",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "syllableStress_l30_q3",
-      "instruction": "Select the stressed syllable.",
+      "instruction": "Where is the stress?",
       "difficulty": 1,
       "subtype": "syllableStress",
       "interactionType": "choice",
-      "word": "COMPUTER",
+      "word": "APPRECIATE",
       "options": [
-        "COM-",
-        "-PU-",
-        "-TER"
+        "ap-PRE-ci-ate",
+        "AP-pre-ci-ate"
       ],
-      "correctAnswerIndex": 1,
+      "correctAnswerIndex": 0,
       "hint": "Second syllable.",
       "xpReward": 5,
       "coinReward": 10

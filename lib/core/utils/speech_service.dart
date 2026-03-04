@@ -35,9 +35,29 @@ class SpeechService {
     _tts.setCancelHandler(() {
       _isPlaying = false;
     });
+
+    // Karaoke Progress Tracking
+    _tts.setProgressHandler((text, start, end, word) {
+      _onWordCallback?.call(word);
+    });
   }
 
-  Future<void> speak(String text, {double rate = 0.5}) async {
+  Function(String)? _onWordCallback;
+
+  void setWordCallback(Function(String)? callback) {
+    _onWordCallback = callback;
+  }
+
+  Future<void> setSpeechRate(double rate) async {
+    await _tts.setSpeechRate(rate);
+  }
+
+  Future<void> speak(
+    String text, {
+    double rate = 0.5,
+    String locale = "en-US",
+  }) async {
+    await _tts.setLanguage(locale);
     await _tts.setSpeechRate(rate);
     await _tts.speak(text);
   }
@@ -90,13 +110,12 @@ class SpeechService {
         onResult(result.recognizedWords);
       },
       listenFor: const Duration(seconds: 45),
-      pauseFor: const Duration(
-        seconds: 10,
-      ), // Allow 10 seconds pause to breathe
+      pauseFor: const Duration(seconds: 15), // Highly patient for learners
       // ignore: deprecated_member_use
       partialResults: true,
       // ignore: deprecated_member_use
-      listenMode: ListenMode.confirmation,
+      listenMode:
+          ListenMode.dictation, // Better for continuous speech/shadowing
     );
   }
 

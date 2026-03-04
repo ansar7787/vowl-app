@@ -8,4 +8,11 @@ abstract class AccentRepository {
     required GameSubtype gameType,
     required int level,
   });
+
+  Future<void> preloadNextBatch({
+    required GameSubtype gameType,
+    required int currentLevel,
+  });
+
+  Future<void> clearQuestCache();
 }

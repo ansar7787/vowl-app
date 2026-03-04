@@ -8,4 +8,9 @@ abstract class GrammarRepository {
     required GameSubtype gameType,
     required int level,
   });
+
+  Future<void> preloadGrammarQuest({
+    required GameSubtype gameType,
+    required int level,
+  });
 }

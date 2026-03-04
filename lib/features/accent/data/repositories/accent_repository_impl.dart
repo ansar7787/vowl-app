@@ -3,11 +3,11 @@ import '../../../../core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 import '../../domain/repositories/accent_repository.dart';
-import '../datasources/accent_remote_data_source.dart';
+import '../datasources/accent_data_source.dart';
 import '../../../../core/network/network_info.dart';
 
 class AccentRepositoryImpl implements AccentRepository {
-  final AccentRemoteDataSource remoteDataSource;
+  final AccentDataSource remoteDataSource;
   final NetworkInfo networkInfo;
 
   AccentRepositoryImpl({
@@ -29,5 +29,21 @@ class AccentRepositoryImpl implements AccentRepository {
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }
+  }
+
+  @override
+  Future<void> preloadNextBatch({
+    required GameSubtype gameType,
+    required int currentLevel,
+  }) async {
+    await remoteDataSource.preloadNextBatch(
+      gameType: gameType,
+      currentLevel: currentLevel,
+    );
+  }
+
+  @override
+  Future<void> clearQuestCache() async {
+    await remoteDataSource.clearQuestCache();
   }
 }

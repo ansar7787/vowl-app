@@ -10,7 +10,7 @@ import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
@@ -95,14 +95,22 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                 context.read<AuthBloc>().state.user?.isPremium ?? false;
             di.sl<AdService>().showInterstitialAd(
               isPremium: isPremium,
-              onDismissed: () => _showCompletionDialog(
-                context,
-                state.xpEarned,
-                state.coinsEarned,
-              ),
+              onDismissed: () => GameDialogHelper.showCompletion(
+          context,
+          xp: state.xpEarned,
+          coins: state.coinsEarned,
+          title: 'Thought Leader!',
+          description:
+              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for sharing your views!',
+        ),
             );
           } else if (state is WritingGameOver) {
-            _showGameOverDialog(context);
+            GameDialogHelper.showGameOver(
+        context,
+        title: 'Creative Block',
+        description: 'Try to elaborate more on your thoughts next time!',
+        onRestore: () => context.read<WritingBloc>().add(RestoreLife()),
+      );
           } else if (state is WritingLoaded &&
               state.lastAnswerCorrect == null) {
             setState(() {
@@ -476,60 +484,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
 
   bool get isDark => Theme.of(context).brightness == Brightness.dark;
 
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Thought Leader!',
-        description:
-            'You earned $xp XP and $coins Coins for sharing your views!',
-        buttonText: 'GREAT',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
+  
 
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Creative Block',
-        description: 'Try to elaborate more on your thoughts next time!',
-        isSuccess: false,
-        isRescueLife: true,
-        buttonText: 'GIVE UP',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-        onAdAction: () {
-          void restoreLife() {
-            context.read<WritingBloc>().add(RestoreLife());
-            Navigator.pop(c);
-          }
-
-          final isPremium =
-              context.read<AuthBloc>().state.user?.isPremium ?? false;
-          if (isPremium) {
-            restoreLife();
-          } else {
-            di.sl<AdService>().showRewardedAd(
-              isPremium: false,
-              onUserEarnedReward: (_) => restoreLife(),
-              onDismissed: () {},
-            );
-          }
-        },
-        adButtonText: 'WATCH AD TO CONTINUE',
-      ),
-    );
-  }
+  
 }

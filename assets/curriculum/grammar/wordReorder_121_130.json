@@ -5,721 +5,789 @@
   "quests": [
     {
       "id": "wordReorder_l121_q1",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "The cat sat on the mat",
       "shuffledWords": [
-        "quickly",
-        "ran",
-        "She",
-        "home."
+        "mat",
+        "the",
+        "on",
+        "sat",
+        "cat",
+        "The"
       ],
       "correctOrder": [
+        5,
+        4,
+        3,
         2,
         1,
-        0,
-        3
+        0
       ],
-      "hint": "Subject first.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "The cat sat on the mat",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l121_q2",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "She is reading a book",
       "shuffledWords": [
-        "the",
-        "are",
-        "park.",
-        "in",
-        "They"
+        "book",
+        "a",
+        "reading",
+        "is",
+        "She"
       ],
       "correctOrder": [
         4,
-        1,
         3,
-        0,
-        2
+        2,
+        1,
+        0
       ],
-      "hint": "Subject + verb + preposition.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "She is reading a book",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l121_q3",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "They went to the park",
       "shuffledWords": [
-        "yesterday.",
-        "went",
-        "I",
-        "cinema",
+        "park",
         "the",
-        "to"
+        "to",
+        "went",
+        "They"
       ],
       "correctOrder": [
-        2,
-        1,
-        5,
         4,
         3,
+        2,
+        1,
         0
       ],
-      "hint": "Subject + past verb + place.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "They went to the park",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l122_q1",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "I like eating fresh fruit",
       "shuffledWords": [
-        "beautiful",
-        "is",
-        "This",
-        "a",
-        "painting."
+        "fruit",
+        "fresh",
+        "eating",
+        "like",
+        "I"
       ],
       "correctOrder": [
+        4,
+        3,
         2,
         1,
-        3,
-        0,
-        4
+        0
       ],
-      "hint": "Start with 'This'.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "I like eating fresh fruit",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l122_q2",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "He plays guitar every evening",
       "shuffledWords": [
-        "can",
-        "English.",
-        "speak",
-        "We"
+        "evening",
+        "every",
+        "guitar",
+        "plays",
+        "He"
       ],
       "correctOrder": [
+        4,
         3,
-        0,
         2,
-        1
+        1,
+        0
       ],
-      "hint": "Subject + modal + verb.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "He plays guitar every evening",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l122_q3",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "We should help each other",
       "shuffledWords": [
-        "every",
-        "brushes",
-        "He",
-        "teeth",
-        "day.",
-        "his"
+        "other",
+        "each",
+        "help",
+        "should",
+        "We"
       ],
       "correctOrder": [
+        4,
+        3,
         2,
         1,
-        5,
-        3,
-        0,
-        4
+        0
       ],
-      "hint": "Daily routine.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "We should help each other",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l123_q1",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "The sun rises in the east",
       "shuffledWords": [
-        "quickly",
-        "ran",
-        "She",
-        "home."
+        "east",
+        "the",
+        "in",
+        "rises",
+        "sun",
+        "The"
       ],
       "correctOrder": [
+        5,
+        4,
+        3,
         2,
         1,
-        0,
-        3
+        0
       ],
-      "hint": "Subject first.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "The sun rises in the east",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l123_q2",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "Birds fly south in winter",
       "shuffledWords": [
-        "the",
-        "are",
-        "park.",
+        "winter",
         "in",
-        "They"
+        "south",
+        "fly",
+        "Birds"
       ],
       "correctOrder": [
         4,
-        1,
         3,
-        0,
-        2
+        2,
+        1,
+        0
       ],
-      "hint": "Subject + verb + preposition.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "Birds fly south in winter",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l123_q3",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "She speaks three languages fluently",
       "shuffledWords": [
-        "yesterday.",
-        "went",
-        "I",
-        "cinema",
-        "the",
-        "to"
+        "fluently",
+        "languages",
+        "three",
+        "speaks",
+        "She"
       ],
       "correctOrder": [
-        2,
-        1,
-        5,
         4,
         3,
+        2,
+        1,
         0
       ],
-      "hint": "Subject + past verb + place.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "She speaks three languages fluently",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l124_q1",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "My brother works at a hospital",
       "shuffledWords": [
-        "beautiful",
-        "is",
-        "This",
+        "hospital",
         "a",
-        "painting."
+        "at",
+        "works",
+        "brother",
+        "My"
       ],
       "correctOrder": [
+        5,
+        4,
+        3,
         2,
         1,
-        3,
-        0,
-        4
+        0
       ],
-      "hint": "Start with 'This'.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "My brother works at a hospital",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l124_q2",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "Please close the door quietly",
       "shuffledWords": [
-        "can",
-        "English.",
-        "speak",
-        "We"
+        "quietly",
+        "door",
+        "the",
+        "close",
+        "Please"
       ],
       "correctOrder": [
+        4,
         3,
-        0,
         2,
-        1
+        1,
+        0
       ],
-      "hint": "Subject + modal + verb.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "Please close the door quietly",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l124_q3",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "The children are playing outside",
       "shuffledWords": [
-        "every",
-        "brushes",
-        "He",
-        "teeth",
-        "day.",
-        "his"
+        "outside",
+        "playing",
+        "are",
+        "children",
+        "The"
       ],
       "correctOrder": [
+        4,
+        3,
         2,
         1,
-        5,
-        3,
-        0,
-        4
+        0
       ],
-      "hint": "Daily routine.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "The children are playing outside",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l125_q1",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "I have never been to Japan",
       "shuffledWords": [
-        "quickly",
-        "ran",
-        "She",
-        "home."
+        "Japan",
+        "to",
+        "been",
+        "never",
+        "have",
+        "I"
       ],
       "correctOrder": [
+        5,
+        4,
+        3,
         2,
         1,
-        0,
-        3
+        0
       ],
-      "hint": "Subject first.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "I have never been to Japan",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l125_q2",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "She always arrives on time",
       "shuffledWords": [
-        "the",
-        "are",
-        "park.",
-        "in",
-        "They"
+        "time",
+        "on",
+        "arrives",
+        "always",
+        "She"
       ],
       "correctOrder": [
         4,
-        1,
         3,
-        0,
-        2
+        2,
+        1,
+        0
       ],
-      "hint": "Subject + verb + preposition.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "She always arrives on time",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l125_q3",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "The teacher explained the lesson",
       "shuffledWords": [
-        "yesterday.",
-        "went",
-        "I",
-        "cinema",
+        "lesson",
         "the",
-        "to"
+        "explained",
+        "teacher",
+        "The"
       ],
       "correctOrder": [
-        2,
-        1,
-        5,
         4,
         3,
+        2,
+        1,
         0
       ],
-      "hint": "Subject + past verb + place.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "The teacher explained the lesson",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l126_q1",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "We are going to the beach",
       "shuffledWords": [
-        "beautiful",
-        "is",
-        "This",
-        "a",
-        "painting."
+        "beach",
+        "the",
+        "to",
+        "going",
+        "are",
+        "We"
       ],
       "correctOrder": [
+        5,
+        4,
+        3,
         2,
         1,
-        3,
-        0,
-        4
+        0
       ],
-      "hint": "Start with 'This'.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "We are going to the beach",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l126_q2",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "He bought a new car",
       "shuffledWords": [
-        "can",
-        "English.",
-        "speak",
-        "We"
+        "car",
+        "new",
+        "a",
+        "bought",
+        "He"
       ],
       "correctOrder": [
+        4,
         3,
-        0,
         2,
-        1
+        1,
+        0
       ],
-      "hint": "Subject + modal + verb.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "He bought a new car",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l126_q3",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "The flowers bloom in spring",
       "shuffledWords": [
-        "every",
-        "brushes",
-        "He",
-        "teeth",
-        "day.",
-        "his"
+        "spring",
+        "in",
+        "bloom",
+        "flowers",
+        "The"
       ],
       "correctOrder": [
+        4,
+        3,
         2,
         1,
-        5,
-        3,
-        0,
-        4
+        0
       ],
-      "hint": "Daily routine.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "The flowers bloom in spring",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l127_q1",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "I will finish this tomorrow",
       "shuffledWords": [
-        "quickly",
-        "ran",
-        "She",
-        "home."
+        "tomorrow",
+        "this",
+        "finish",
+        "will",
+        "I"
       ],
       "correctOrder": [
+        4,
+        3,
         2,
         1,
-        0,
-        3
+        0
       ],
-      "hint": "Subject first.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "I will finish this tomorrow",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l127_q2",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "She made a delicious cake",
       "shuffledWords": [
-        "the",
-        "are",
-        "park.",
-        "in",
-        "They"
+        "cake",
+        "delicious",
+        "a",
+        "made",
+        "She"
       ],
       "correctOrder": [
         4,
-        1,
         3,
-        0,
-        2
+        2,
+        1,
+        0
       ],
-      "hint": "Subject + verb + preposition.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "She made a delicious cake",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l127_q3",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "The dog chased the cat",
       "shuffledWords": [
-        "yesterday.",
-        "went",
-        "I",
-        "cinema",
+        "cat",
         "the",
-        "to"
+        "chased",
+        "dog",
+        "The"
       ],
       "correctOrder": [
-        2,
-        1,
-        5,
         4,
         3,
+        2,
+        1,
         0
       ],
-      "hint": "Subject + past verb + place.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "The dog chased the cat",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l128_q1",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "We enjoy watching movies together",
       "shuffledWords": [
-        "beautiful",
-        "is",
-        "This",
-        "a",
-        "painting."
+        "together",
+        "movies",
+        "watching",
+        "enjoy",
+        "We"
       ],
       "correctOrder": [
+        4,
+        3,
         2,
         1,
-        3,
-        0,
-        4
+        0
       ],
-      "hint": "Start with 'This'.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "We enjoy watching movies together",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l128_q2",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "He can solve difficult problems",
       "shuffledWords": [
+        "problems",
+        "difficult",
+        "solve",
         "can",
-        "English.",
-        "speak",
-        "We"
+        "He"
       ],
       "correctOrder": [
+        4,
         3,
-        0,
         2,
-        1
+        1,
+        0
       ],
-      "hint": "Subject + modal + verb.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "He can solve difficult problems",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l128_q3",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "The train arrives at noon",
       "shuffledWords": [
-        "every",
-        "brushes",
-        "He",
-        "teeth",
-        "day.",
-        "his"
+        "noon",
+        "at",
+        "arrives",
+        "train",
+        "The"
       ],
       "correctOrder": [
+        4,
+        3,
         2,
         1,
-        5,
-        3,
-        0,
-        4
+        0
       ],
-      "hint": "Daily routine.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "The train arrives at noon",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l129_q1",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "I need to study harder",
       "shuffledWords": [
-        "quickly",
-        "ran",
-        "She",
-        "home."
+        "harder",
+        "study",
+        "to",
+        "need",
+        "I"
       ],
       "correctOrder": [
+        4,
+        3,
         2,
         1,
-        0,
-        3
+        0
       ],
-      "hint": "Subject first.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "I need to study harder",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l129_q2",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "She gave him a present",
       "shuffledWords": [
-        "the",
-        "are",
-        "park.",
-        "in",
-        "They"
+        "present",
+        "a",
+        "him",
+        "gave",
+        "She"
       ],
       "correctOrder": [
         4,
-        1,
         3,
-        0,
-        2
+        2,
+        1,
+        0
       ],
-      "hint": "Subject + verb + preposition.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "She gave him a present",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l129_q3",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "The museum opens at nine",
       "shuffledWords": [
-        "yesterday.",
-        "went",
-        "I",
-        "cinema",
-        "the",
-        "to"
+        "nine",
+        "at",
+        "opens",
+        "museum",
+        "The"
       ],
       "correctOrder": [
-        2,
-        1,
-        5,
         4,
         3,
+        2,
+        1,
         0
       ],
-      "hint": "Subject + past verb + place.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "The museum opens at nine",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l130_q1",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "They celebrated their anniversary",
       "shuffledWords": [
-        "beautiful",
-        "is",
-        "This",
-        "a",
-        "painting."
+        "anniversary",
+        "their",
+        "celebrated",
+        "They"
       ],
       "correctOrder": [
+        3,
         2,
         1,
-        3,
-        0,
-        4
+        0
       ],
-      "hint": "Start with 'This'.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "They celebrated their anniversary",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l130_q2",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "I usually walk to school",
       "shuffledWords": [
-        "can",
-        "English.",
-        "speak",
-        "We"
+        "school",
+        "to",
+        "walk",
+        "usually",
+        "I"
       ],
       "correctOrder": [
+        4,
         3,
-        0,
         2,
-        1
+        1,
+        0
       ],
-      "hint": "Subject + modal + verb.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "I usually walk to school",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "wordReorder_l130_q3",
-      "instruction": "Reorder words into a correct sentence.",
-      "difficulty": 3,
+      "instruction": "Reorder the words.",
+      "difficulty": 4,
       "subtype": "wordReorder",
-      "interactionType": "sequence",
+      "interactionType": "reorder",
+      "question": "The baby is sleeping peacefully",
       "shuffledWords": [
-        "every",
-        "brushes",
-        "He",
-        "teeth",
-        "day.",
-        "his"
+        "peacefully",
+        "sleeping",
+        "is",
+        "baby",
+        "The"
       ],
       "correctOrder": [
+        4,
+        3,
         2,
         1,
-        5,
-        3,
-        0,
-        4
+        0
       ],
-      "hint": "Daily routine.",
+      "hint": "Rearrange to form a sentence.",
+      "sentence": "The baby is sleeping peacefully",
       "xpReward": 5,
       "coinReward": 10
     }

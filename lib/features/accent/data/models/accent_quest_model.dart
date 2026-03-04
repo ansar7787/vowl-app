@@ -19,6 +19,7 @@ class AccentQuestModel extends AccentQuest {
     super.word,
     super.phoneticHint,
     super.targetWord,
+    super.question,
     super.textToSpeak,
     super.prompt,
     super.sampleAnswer,
@@ -29,6 +30,14 @@ class AccentQuestModel extends AccentQuest {
     super.syllables,
     super.targetSpeed,
     super.pitchPatterns,
+    super.sentence,
+    super.stressPattern,
+    super.word1,
+    super.word2,
+    super.ipa1,
+    super.ipa2,
+    super.mouthPosition,
+    super.slowForm,
   });
 
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -58,6 +67,7 @@ class AccentQuestModel extends AccentQuest {
       word: map['word'],
       phoneticHint: map['phoneticHint'] ?? map['phonetic'],
       targetWord: map['targetWord'],
+      question: map['question'],
       textToSpeak: map['textToSpeak'],
       prompt: map['prompt'],
       sampleAnswer: map['sampleAnswer'],
@@ -74,6 +84,14 @@ class AccentQuestModel extends AccentQuest {
       pitchPatterns: map['pitchPatterns'] != null
           ? List<int>.from(map['pitchPatterns'])
           : null,
+      sentence: map['sentence'],
+      stressPattern: map['stressPattern'],
+      word1: map['word1'],
+      word2: map['word2'],
+      ipa1: map['ipa1'],
+      ipa2: map['ipa2'],
+      mouthPosition: map['mouthPosition'],
+      slowForm: map['slowForm'],
     );
   }
 
@@ -93,6 +111,7 @@ class AccentQuestModel extends AccentQuest {
       'word': word,
       'phoneticHint': phoneticHint,
       'targetWord': targetWord,
+      'question': question,
       'textToSpeak': textToSpeak,
       'prompt': prompt,
       'sampleAnswer': sampleAnswer,
@@ -103,6 +122,14 @@ class AccentQuestModel extends AccentQuest {
       'syllables': syllables,
       'targetSpeed': targetSpeed,
       'pitchPatterns': pitchPatterns,
+      'sentence': sentence,
+      'stressPattern': stressPattern,
+      'word1': word1,
+      'word2': word2,
+      'ipa1': ipa1,
+      'ipa2': ipa2,
+      'mouthPosition': mouthPosition,
+      'slowForm': slowForm,
     };
   }
 }

@@ -10,7 +10,7 @@ import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
@@ -128,14 +128,21 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> {
                 context.read<AuthBloc>().state.user?.isPremium ?? false;
             di.sl<AdService>().showInterstitialAd(
               isPremium: isPremium,
-              onDismissed: () => _showCompletionDialog(
-                context,
-                state.xpEarned,
-                state.coinsEarned,
-              ),
+              onDismissed: () => GameDialogHelper.showCompletion(
+          context,
+          xp: state.xpEarned,
+          coins: state.coinsEarned,
+          title: 'Context Mastered!',
+          description:
+              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for filling in the linguistic gaps!',
+        ),
             );
           } else if (state is SpeakingGameOver) {
-            _showGameOverDialog(context);
+            GameDialogHelper.showGameOver(
+        context,
+        title: 'Context Lost',
+        description: 'The blank remained empty. Recharge and try again!',
+      );
           }
         },
         builder: (context, state) {
@@ -548,42 +555,7 @@ class _SpeakMissingWordScreenState extends State<SpeakMissingWordScreen> {
 
   bool get isDark => Theme.of(context).brightness == Brightness.dark;
 
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Context Mastered!',
-        description:
-            'You earned $xp XP and $coins Coins for filling in the linguistic gaps!',
-        buttonText: 'AWESOME',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
+  
 
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Context Lost',
-        description: 'The blank remained empty. Recharge and try again!',
-        buttonText: 'RETRY',
-        isSuccess: false,
-        onButtonPressed: () => Navigator.pop(c),
-        secondaryButtonText: 'QUIT',
-        onSecondaryPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
+  
 }

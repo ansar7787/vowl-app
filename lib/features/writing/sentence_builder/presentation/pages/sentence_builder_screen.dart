@@ -10,7 +10,7 @@ import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
@@ -138,15 +138,23 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
                 context.read<AuthBloc>().state.user?.isPremium ?? false;
             di.sl<AdService>().showInterstitialAd(
               isPremium: isPremium,
-              onDismissed: () => _showCompletionDialog(
+              onDismissed: () => GameDialogHelper.showCompletion(
                 context,
-                state.xpEarned,
-                state.coinsEarned,
-                theme.primaryColor,
+                xp: state.xpEarned,
+                coins: state.coinsEarned,
+                title: 'Sentence Architect!',
+                description:
+                    'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins!',
+                enableDoubleUp: true,
               ),
             );
           } else if (state is WritingGameOver) {
-            _showGameOverDialog(context);
+            GameDialogHelper.showGameOver(
+              context,
+              title: 'Construction Halted',
+              description:
+                  'Your sentence lacked support. Recharge and try again!',
+            );
           } else if (state is WritingLoaded &&
               state.lastAnswerCorrect == null) {
             setState(() {
@@ -495,50 +503,6 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
                       : Colors.black87),
           ),
         ),
-      ),
-    );
-  }
-
-  void _showCompletionDialog(
-    BuildContext context,
-    int xp,
-    int coins,
-    Color primaryColor,
-  ) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Structure Complete!',
-        description:
-            'You earned $xp XP and $coins Coins for building flawless sentences!',
-        buttonText: 'GREAT',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
-
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Construction Halted',
-        description: 'Your sentence lacked support. Recharge and try again!',
-        buttonText: 'RETRY',
-        isSuccess: false,
-        onButtonPressed: () => Navigator.pop(c),
-        secondaryButtonText: 'QUIT',
-        onSecondaryPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
       ),
     );
   }

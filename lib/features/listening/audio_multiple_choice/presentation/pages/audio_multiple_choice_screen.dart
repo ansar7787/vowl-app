@@ -11,7 +11,7 @@ import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/listening/sound_wave.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
@@ -100,14 +100,23 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
                 context.read<AuthBloc>().state.user?.isPremium ?? false;
             di.sl<AdService>().showInterstitialAd(
               isPremium: isPremium,
-              onDismissed: () => _showCompletionDialog(
-                context,
-                state.xpEarned,
-                state.coinsEarned,
-              ),
+              onDismissed: () => GameDialogHelper.showCompletion(
+          context,
+          xp: state.xpEarned,
+          coins: state.coinsEarned,
+          title: 'Auditory Genius!',
+          description:
+              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for choosing correctly!',
+          enableDoubleUp: true,
+        ),
             );
           } else if (state is ListeningGameOver) {
-            _showGameOverDialog(context);
+            GameDialogHelper.showGameOver(
+        context,
+        title: 'Audio Cut Off',
+        description: 'Your listening streak was interrupted. Try again!',
+        onRestore: () => context.read<ListeningBloc>().add(RestoreLife()),
+      );
           } else if (state is ListeningLoaded &&
               state.lastAnswerCorrect == null) {
             _selectedOptionIndex = null;
@@ -455,90 +464,6 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
           color: used ? Colors.grey : primaryColor,
           size: 24.r,
         ),
-      ),
-    );
-  }
-
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Auditory Genius!',
-        description:
-            'You earned $xp XP and $coins Coins for choosing correctly!',
-        buttonText: 'OK',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-        onAdAction: () {
-          Navigator.pop(c);
-          final isPremium =
-              context.read<AuthBloc>().state.user?.isPremium ?? false;
-          final adService = di.sl<AdService>();
-          adService.showRewardedAd(
-            isPremium: isPremium,
-            onUserEarnedReward: (reward) {
-              // Dispatch Double Up Event
-              context.read<AuthBloc>().add(
-                AuthDoubleUpRewardsRequested(xp, coins),
-              );
-              // Show Success SnackBar
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text("REWARDS DOUBLED! 💎💎"),
-                  backgroundColor: Color(0xFF10B981),
-                ),
-              );
-            },
-            onDismissed: () {
-              context.pop();
-            },
-          );
-        },
-      ),
-    );
-  }
-
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => ModernGameDialog(
-        title: 'Audio Cut Off',
-        description: 'Your listening streak was interrupted. Try again!',
-        isSuccess: false,
-        isRescueLife: true,
-        buttonText: 'GIVE UP',
-        onButtonPressed: () {
-          Navigator.pop(context);
-          context.pop();
-        },
-        adButtonText: "RESCUE LIFE (AD)",
-        onAdAction: () {
-          Navigator.pop(context);
-          final isPremium =
-              context.read<AuthBloc>().state.user?.isPremium ?? false;
-          final adService = di.sl<AdService>();
-          adService.showRewardedAd(
-            isPremium: isPremium,
-            onDismissed: () {},
-            onUserEarnedReward: (reward) {
-              context.read<ListeningBloc>().add(RestoreLife());
-              _hapticService.success();
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text("LIFE RESCUED! ❤️"),
-                  backgroundColor: Color(0xFF10B981),
-                ),
-              );
-            },
-          );
-        },
       ),
     );
   }

@@ -9,6 +9,11 @@ abstract class GrammarRemoteDataSource {
     required GameSubtype gameType,
     required int level,
   });
+
+  Future<void> preloadBatch({
+    required GameSubtype gameType,
+    required int level,
+  });
 }
 
 class GrammarRemoteDataSourceImpl implements GrammarRemoteDataSource {
@@ -26,13 +31,13 @@ class GrammarRemoteDataSourceImpl implements GrammarRemoteDataSource {
       // 1. Try to load from Local Assets (Free & Fast)
       final localData = await assetQuestService.getQuests(gameType.name, level);
       if (localData.isNotEmpty) {
-        return localData.map((q) {
-          final questMap = q;
-          return GrammarQuestModel.fromJson(questMap, questMap['id'] ?? '');
-        }).toList();
+        return localData
+            .map((q) => GrammarQuestModel.fromJson(q, q['id'] ?? ''))
+            .toList();
       }
 
-      // 2. Fallback to Firestore (Cloud)
+      // 2. Fallback to Firestore (Cloud) - Only if not found in assets
+      // This part remains as is for cloud backup
       var doc = await firestore
           .collection('quests')
           .doc(gameType.name)
@@ -87,7 +92,15 @@ class GrammarRemoteDataSourceImpl implements GrammarRemoteDataSource {
         throw ServerException();
       }
     } catch (e) {
-      throw ServerException();
+      throw ServerException(e.toString());
     }
+  }
+
+  @override
+  Future<void> preloadBatch({
+    required GameSubtype gameType,
+    required int level,
+  }) async {
+    await assetQuestService.preloadBatch(gameType.name, level);
   }
 }

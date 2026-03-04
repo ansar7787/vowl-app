@@ -5,787 +5,601 @@
   "quests": [
     {
       "id": "audioSentenceOrder_l41_q1",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "The weather is beautiful today.",
-      "shuffledSentences": [
-        "beautiful",
-        "weather",
-        "The",
-        "today.",
-        "is"
+      "interactionType": "choice",
+      "passage": "The weather today is ___ and warm.",
+      "question": "Choose the missing word.",
+      "options": [
+        "sunny",
+        "rainy",
+        "snowy",
+        "foggy"
       ],
-      "correctOrder": [
-        2,
-        1,
-        4,
-        0,
-        3
-      ],
-      "hint": "Start with the article.",
+      "correctAnswerIndex": 0,
+      "hint": "Warm weather.",
+      "missingWord": "sunny",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l41_q2",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "She walked to the park.",
-      "shuffledSentences": [
-        "the",
-        "walked",
-        "park.",
-        "She",
-        "to"
+      "interactionType": "choice",
+      "passage": "She went to the ___ to buy groceries.",
+      "question": "Choose the missing word.",
+      "options": [
+        "store",
+        "library",
+        "gym",
+        "park"
       ],
-      "correctOrder": [
-        3,
-        1,
-        4,
-        0,
-        2
-      ],
-      "hint": "Start with the subject.",
+      "correctAnswerIndex": 0,
+      "hint": "Shopping place.",
+      "missingWord": "store",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l41_q3",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "I have finished my homework.",
-      "shuffledSentences": [
-        "homework.",
-        "finished",
-        "I",
-        "my",
-        "have"
+      "interactionType": "choice",
+      "passage": "The children were playing in the ___ after school.",
+      "question": "Choose the missing word.",
+      "options": [
+        "park",
+        "office",
+        "hospital",
+        "bank"
       ],
-      "correctOrder": [
-        2,
-        4,
-        1,
-        3,
-        0
-      ],
-      "hint": "Use present perfect tense.",
+      "correctAnswerIndex": 0,
+      "hint": "Play area.",
+      "missingWord": "park",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l42_q1",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "They are going to the cinema tonight.",
-      "shuffledSentences": [
-        "tonight.",
-        "cinema",
-        "going",
-        "They",
-        "the",
-        "are",
-        "to"
+      "interactionType": "choice",
+      "passage": "He ___ his homework before dinner every day.",
+      "question": "Choose the missing word.",
+      "options": [
+        "finishes",
+        "ignores",
+        "burns",
+        "plants"
       ],
-      "correctOrder": [
-        3,
-        5,
-        2,
-        6,
-        4,
-        1,
-        0
-      ],
-      "hint": "Subject first, then verb.",
+      "correctAnswerIndex": 0,
+      "hint": "Completing tasks.",
+      "missingWord": "finishes",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l42_q2",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "The cat sat on the mat.",
-      "shuffledSentences": [
-        "mat.",
-        "on",
-        "The",
-        "sat",
-        "cat",
-        "the"
+      "interactionType": "choice",
+      "passage": "The cat sat on the ___ and watched the birds.",
+      "question": "Choose the missing word.",
+      "options": [
+        "windowsill",
+        "roof",
+        "street",
+        "cloud"
       ],
-      "correctOrder": [
-        2,
-        4,
-        3,
-        1,
-        5,
-        0
-      ],
-      "hint": "A classic simple sentence.",
+      "correctAnswerIndex": 0,
+      "hint": "Inside the house.",
+      "missingWord": "windowsill",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l42_q3",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "We should leave before sunset.",
-      "shuffledSentences": [
-        "sunset.",
-        "should",
-        "We",
-        "before",
-        "leave"
+      "interactionType": "choice",
+      "passage": "Please ___ the door when you leave the room.",
+      "question": "Choose the missing word.",
+      "options": [
+        "close",
+        "paint",
+        "break",
+        "eat"
       ],
-      "correctOrder": [
-        2,
-        1,
-        4,
-        3,
-        0
-      ],
-      "hint": "Modal verb after subject.",
+      "correctAnswerIndex": 0,
+      "hint": "Action with a door.",
+      "missingWord": "close",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l43_q1",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "He quickly ran across the field.",
-      "shuffledSentences": [
-        "field.",
-        "across",
-        "quickly",
-        "He",
-        "the",
-        "ran"
+      "interactionType": "choice",
+      "passage": "The ___ rises in the east every morning.",
+      "question": "Choose the missing word.",
+      "options": [
+        "sun",
+        "moon",
+        "star",
+        "cloud"
       ],
-      "correctOrder": [
-        3,
-        2,
-        5,
-        1,
-        4,
-        0
-      ],
-      "hint": "Adverb before the verb.",
+      "correctAnswerIndex": 0,
+      "hint": "Morning sky.",
+      "missingWord": "sun",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l43_q2",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "My mother bakes delicious cakes.",
-      "shuffledSentences": [
-        "cakes.",
-        "delicious",
-        "mother",
-        "My",
-        "bakes"
+      "interactionType": "choice",
+      "passage": "She ___ a beautiful song at the concert last night.",
+      "question": "Choose the missing word.",
+      "options": [
+        "sang",
+        "wrote",
+        "painted",
+        "built"
       ],
-      "correctOrder": [
-        3,
-        2,
-        4,
-        1,
-        0
-      ],
-      "hint": "Possessive pronoun first.",
+      "correctAnswerIndex": 0,
+      "hint": "Musical performance.",
+      "missingWord": "sang",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l43_q3",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "The children laughed and played outside.",
-      "shuffledSentences": [
-        "played",
-        "outside.",
-        "children",
-        "and",
-        "The",
-        "laughed"
+      "interactionType": "choice",
+      "passage": "We need to ___ the train at 8 AM sharp.",
+      "question": "Choose the missing word.",
+      "options": [
+        "catch",
+        "throw",
+        "kick",
+        "drop"
       ],
-      "correctOrder": [
-        4,
-        2,
-        5,
-        3,
-        0,
-        1
-      ],
-      "hint": "Two verbs connected by \"and\".",
+      "correctAnswerIndex": 0,
+      "hint": "Board transportation.",
+      "missingWord": "catch",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l44_q1",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "She will visit her grandmother tomorrow.",
-      "shuffledSentences": [
-        "grandmother",
-        "tomorrow.",
-        "She",
-        "visit",
-        "will",
-        "her"
+      "interactionType": "choice",
+      "passage": "The flowers in the ___ bloom every spring.",
+      "question": "Choose the missing word.",
+      "options": [
+        "garden",
+        "kitchen",
+        "bedroom",
+        "garage"
       ],
-      "correctOrder": [
-        2,
-        4,
-        3,
-        5,
-        0,
-        1
-      ],
-      "hint": "Future tense with \"will\".",
+      "correctAnswerIndex": 0,
+      "hint": "Where plants grow.",
+      "missingWord": "garden",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l44_q2",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "The weather is beautiful today.",
-      "shuffledSentences": [
-        "beautiful",
-        "weather",
-        "The",
-        "today.",
-        "is"
+      "interactionType": "choice",
+      "passage": "He wore a thick ___ because it was very cold outside.",
+      "question": "Choose the missing word.",
+      "options": [
+        "jacket",
+        "hat",
+        "ring",
+        "watch"
       ],
-      "correctOrder": [
-        2,
-        1,
-        4,
-        0,
-        3
-      ],
-      "hint": "Start with the article.",
+      "correctAnswerIndex": 0,
+      "hint": "Winter clothing.",
+      "missingWord": "jacket",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l44_q3",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "She walked to the park.",
-      "shuffledSentences": [
-        "the",
-        "walked",
-        "park.",
-        "She",
-        "to"
+      "interactionType": "choice",
+      "passage": "The teacher asked the students to open their ___.",
+      "question": "Choose the missing word.",
+      "options": [
+        "books",
+        "windows",
+        "bags",
+        "mouths"
       ],
-      "correctOrder": [
-        3,
-        1,
-        4,
-        0,
-        2
-      ],
-      "hint": "Start with the subject.",
+      "correctAnswerIndex": 0,
+      "hint": "Learning materials.",
+      "missingWord": "books",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l45_q1",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "I have finished my homework.",
-      "shuffledSentences": [
-        "homework.",
-        "finished",
-        "I",
-        "my",
-        "have"
+      "interactionType": "choice",
+      "passage": "They traveled by ___ to reach the island.",
+      "question": "Choose the missing word.",
+      "options": [
+        "boat",
+        "car",
+        "train",
+        "bicycle"
       ],
-      "correctOrder": [
-        2,
-        4,
-        1,
-        3,
-        0
-      ],
-      "hint": "Use present perfect tense.",
+      "correctAnswerIndex": 0,
+      "hint": "Water transport.",
+      "missingWord": "boat",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l45_q2",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "They are going to the cinema tonight.",
-      "shuffledSentences": [
-        "tonight.",
-        "cinema",
-        "going",
-        "They",
-        "the",
-        "are",
-        "to"
+      "interactionType": "choice",
+      "passage": "She ___ her grandmother every weekend.",
+      "question": "Choose the missing word.",
+      "options": [
+        "visits",
+        "avoids",
+        "forgets",
+        "scolds"
       ],
-      "correctOrder": [
-        3,
-        5,
-        2,
-        6,
-        4,
-        1,
-        0
-      ],
-      "hint": "Subject first, then verb.",
+      "correctAnswerIndex": 0,
+      "hint": "Family time.",
+      "missingWord": "visits",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l45_q3",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "The cat sat on the mat.",
-      "shuffledSentences": [
-        "mat.",
-        "on",
-        "The",
-        "sat",
-        "cat",
-        "the"
+      "interactionType": "choice",
+      "passage": "The library is the quietest ___ in the school.",
+      "question": "Choose the missing word.",
+      "options": [
+        "place",
+        "sport",
+        "food",
+        "color"
       ],
-      "correctOrder": [
-        2,
-        4,
-        3,
-        1,
-        5,
-        0
-      ],
-      "hint": "A classic simple sentence.",
+      "correctAnswerIndex": 0,
+      "hint": "Location descriptor.",
+      "missingWord": "place",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l46_q1",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "We should leave before sunset.",
-      "shuffledSentences": [
-        "sunset.",
-        "should",
-        "We",
-        "before",
-        "leave"
+      "interactionType": "choice",
+      "passage": "He ___ the ball over the fence during the game.",
+      "question": "Choose the missing word.",
+      "options": [
+        "kicked",
+        "ate",
+        "read",
+        "slept"
       ],
-      "correctOrder": [
-        2,
-        1,
-        4,
-        3,
-        0
-      ],
-      "hint": "Modal verb after subject.",
+      "correctAnswerIndex": 0,
+      "hint": "Sports action.",
+      "missingWord": "kicked",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l46_q2",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "He quickly ran across the field.",
-      "shuffledSentences": [
-        "field.",
-        "across",
-        "quickly",
-        "He",
-        "the",
-        "ran"
+      "interactionType": "choice",
+      "passage": "The movie was so ___ that everyone laughed.",
+      "question": "Choose the missing word.",
+      "options": [
+        "funny",
+        "scary",
+        "boring",
+        "long"
       ],
-      "correctOrder": [
-        3,
-        2,
-        5,
-        1,
-        4,
-        0
-      ],
-      "hint": "Adverb before the verb.",
+      "correctAnswerIndex": 0,
+      "hint": "Caused laughter.",
+      "missingWord": "funny",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l46_q3",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "My mother bakes delicious cakes.",
-      "shuffledSentences": [
-        "cakes.",
-        "delicious",
-        "mother",
-        "My",
-        "bakes"
+      "interactionType": "choice",
+      "passage": "She ___ a letter to her friend who lives abroad.",
+      "question": "Choose the missing word.",
+      "options": [
+        "wrote",
+        "cooked",
+        "drove",
+        "swam"
       ],
-      "correctOrder": [
-        3,
-        2,
-        4,
-        1,
-        0
-      ],
-      "hint": "Possessive pronoun first.",
+      "correctAnswerIndex": 0,
+      "hint": "Written communication.",
+      "missingWord": "wrote",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l47_q1",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "The children laughed and played outside.",
-      "shuffledSentences": [
-        "played",
-        "outside.",
-        "children",
-        "and",
-        "The",
-        "laughed"
+      "interactionType": "choice",
+      "passage": "The baby was sleeping ___ in the crib.",
+      "question": "Choose the missing word.",
+      "options": [
+        "peacefully",
+        "loudly",
+        "angrily",
+        "quickly"
       ],
-      "correctOrder": [
-        4,
-        2,
-        5,
-        3,
-        0,
-        1
-      ],
-      "hint": "Two verbs connected by \"and\".",
+      "correctAnswerIndex": 0,
+      "hint": "Calm rest.",
+      "missingWord": "peacefully",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l47_q2",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "She will visit her grandmother tomorrow.",
-      "shuffledSentences": [
-        "grandmother",
-        "tomorrow.",
-        "She",
-        "visit",
-        "will",
-        "her"
+      "interactionType": "choice",
+      "passage": "They planted a ___ in the backyard last spring.",
+      "question": "Choose the missing word.",
+      "options": [
+        "tree",
+        "chair",
+        "television",
+        "computer"
       ],
-      "correctOrder": [
-        2,
-        4,
-        3,
-        5,
-        0,
-        1
-      ],
-      "hint": "Future tense with \"will\".",
+      "correctAnswerIndex": 0,
+      "hint": "Garden activity.",
+      "missingWord": "tree",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l47_q3",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "The weather is beautiful today.",
-      "shuffledSentences": [
-        "beautiful",
-        "weather",
-        "The",
-        "today.",
-        "is"
+      "interactionType": "choice",
+      "passage": "The ___ was delicious and everyone asked for seconds.",
+      "question": "Choose the missing word.",
+      "options": [
+        "cake",
+        "chair",
+        "pencil",
+        "shoe"
       ],
-      "correctOrder": [
-        2,
-        1,
-        4,
-        0,
-        3
-      ],
-      "hint": "Start with the article.",
+      "correctAnswerIndex": 0,
+      "hint": "Something you eat.",
+      "missingWord": "cake",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l48_q1",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "She walked to the park.",
-      "shuffledSentences": [
-        "the",
-        "walked",
-        "park.",
-        "She",
-        "to"
+      "interactionType": "choice",
+      "passage": "He always ___ his teeth before going to bed.",
+      "question": "Choose the missing word.",
+      "options": [
+        "brushes",
+        "paints",
+        "throws",
+        "hides"
       ],
-      "correctOrder": [
-        3,
-        1,
-        4,
-        0,
-        2
-      ],
-      "hint": "Start with the subject.",
+      "correctAnswerIndex": 0,
+      "hint": "Dental hygiene.",
+      "missingWord": "brushes",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l48_q2",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "I have finished my homework.",
-      "shuffledSentences": [
-        "homework.",
-        "finished",
-        "I",
-        "my",
-        "have"
+      "interactionType": "choice",
+      "passage": "The exam was very ___ and many students struggled.",
+      "question": "Choose the missing word.",
+      "options": [
+        "difficult",
+        "easy",
+        "short",
+        "fun"
       ],
-      "correctOrder": [
-        2,
-        4,
-        1,
-        3,
-        0
-      ],
-      "hint": "Use present perfect tense.",
+      "correctAnswerIndex": 0,
+      "hint": "Challenging test.",
+      "missingWord": "difficult",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l48_q3",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "They are going to the cinema tonight.",
-      "shuffledSentences": [
-        "tonight.",
-        "cinema",
-        "going",
-        "They",
-        "the",
-        "are",
-        "to"
+      "interactionType": "choice",
+      "passage": "She lives in a small ___ near the mountains.",
+      "question": "Choose the missing word.",
+      "options": [
+        "village",
+        "ocean",
+        "desert",
+        "cloud"
       ],
-      "correctOrder": [
-        3,
-        5,
-        2,
-        6,
-        4,
-        1,
-        0
-      ],
-      "hint": "Subject first, then verb.",
+      "correctAnswerIndex": 0,
+      "hint": "Rural settlement.",
+      "missingWord": "village",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l49_q1",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "The cat sat on the mat.",
-      "shuffledSentences": [
-        "mat.",
-        "on",
-        "The",
-        "sat",
-        "cat",
-        "the"
+      "interactionType": "choice",
+      "passage": "The dog ___ its tail when it saw its owner.",
+      "question": "Choose the missing word.",
+      "options": [
+        "wagged",
+        "hid",
+        "bit",
+        "cooked"
       ],
-      "correctOrder": [
-        2,
-        4,
-        3,
-        1,
-        5,
-        0
-      ],
-      "hint": "A classic simple sentence.",
+      "correctAnswerIndex": 0,
+      "hint": "Happy dog behavior.",
+      "missingWord": "wagged",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l49_q2",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "We should leave before sunset.",
-      "shuffledSentences": [
-        "sunset.",
-        "should",
-        "We",
-        "before",
-        "leave"
+      "interactionType": "choice",
+      "passage": "We should always ___ water to stay hydrated.",
+      "question": "Choose the missing word.",
+      "options": [
+        "drink",
+        "throw",
+        "waste",
+        "boil"
       ],
-      "correctOrder": [
-        2,
-        1,
-        4,
-        3,
-        0
-      ],
-      "hint": "Modal verb after subject.",
+      "correctAnswerIndex": 0,
+      "hint": "Healthy habit.",
+      "missingWord": "drink",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l49_q3",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "He quickly ran across the field.",
-      "shuffledSentences": [
-        "field.",
-        "across",
-        "quickly",
-        "He",
-        "the",
-        "ran"
+      "interactionType": "choice",
+      "passage": "The artist ___ a stunning portrait of the queen.",
+      "question": "Choose the missing word.",
+      "options": [
+        "painted",
+        "deleted",
+        "erased",
+        "broke"
       ],
-      "correctOrder": [
-        3,
-        2,
-        5,
-        1,
-        4,
-        0
-      ],
-      "hint": "Adverb before the verb.",
+      "correctAnswerIndex": 0,
+      "hint": "Creating art.",
+      "missingWord": "painted",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l50_q1",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "My mother bakes delicious cakes.",
-      "shuffledSentences": [
-        "cakes.",
-        "delicious",
-        "mother",
-        "My",
-        "bakes"
+      "interactionType": "choice",
+      "passage": "She ___ the bus to work every morning at seven.",
+      "question": "Choose the missing word.",
+      "options": [
+        "takes",
+        "throws",
+        "eats",
+        "reads"
       ],
-      "correctOrder": [
-        3,
-        2,
-        4,
-        1,
-        0
-      ],
-      "hint": "Possessive pronoun first.",
+      "correctAnswerIndex": 0,
+      "hint": "Daily commute.",
+      "missingWord": "takes",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l50_q2",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "The children laughed and played outside.",
-      "shuffledSentences": [
-        "played",
-        "outside.",
-        "children",
-        "and",
-        "The",
-        "laughed"
+      "interactionType": "choice",
+      "passage": "The stars ___ brightly in the clear night sky.",
+      "question": "Choose the missing word.",
+      "options": [
+        "shine",
+        "fall",
+        "sleep",
+        "grow"
       ],
-      "correctOrder": [
-        4,
-        2,
-        5,
-        3,
-        0,
-        1
-      ],
-      "hint": "Two verbs connected by \"and\".",
+      "correctAnswerIndex": 0,
+      "hint": "Starlight.",
+      "missingWord": "shine",
       "xpReward": 5,
       "coinReward": 10
     },
     {
       "id": "audioSentenceOrder_l50_q3",
-      "instruction": "Arrange the words in the order you heard them.",
+      "instruction": "Put the sentences in order.",
       "difficulty": 1,
       "subtype": "audioSentenceOrder",
-      "interactionType": "sequence",
-      "textToSpeak": "She will visit her grandmother tomorrow.",
-      "shuffledSentences": [
-        "grandmother",
-        "tomorrow.",
-        "She",
-        "visit",
-        "will",
-        "her"
+      "interactionType": "choice",
+      "passage": "He ___ the trophy for winning first place.",
+      "question": "Choose the missing word.",
+      "options": [
+        "received",
+        "lost",
+        "broke",
+        "forgot"
       ],
-      "correctOrder": [
-        2,
-        4,
-        3,
-        5,
-        0,
-        1
-      ],
-      "hint": "Future tense with \"will\".",
+      "correctAnswerIndex": 0,
+      "hint": "Award ceremony.",
+      "missingWord": "received",
       "xpReward": 5,
       "coinReward": 10
     }

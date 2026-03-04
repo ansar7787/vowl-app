@@ -11,7 +11,7 @@ import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/listening/sound_wave.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
@@ -82,9 +82,21 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
         listener: (context, state) {
           if (state is ListeningGameComplete) {
             setState(() => _showConfetti = true);
-            _showCompletionDialog(context, state.xpEarned, state.coinsEarned);
+            GameDialogHelper.showCompletion(
+          context,
+          xp: state.xpEarned,
+          coins: state.coinsEarned,
+          title: 'PRECISION LISTENER!',
+          description:
+              'Your attention to detail is remarkable. Earned ${state.xpEarned} XP and ${state.coinsEarned} coins.',
+        );
           } else if (state is ListeningGameOver) {
-            _showGameOverDialog(context);
+            GameDialogHelper.showGameOver(
+        context,
+        title: 'OUT OF FOCUS',
+        description: 'The small details matter most. Ready to sharpen your focus?',
+        onRestore: () => context.read<ListeningBloc>().add(RestoreLife()),
+      );
           } else if (state is ListeningLoaded &&
               state.lastAnswerCorrect == null) {
             setState(() => _selectedOptionIndex = null);
@@ -407,61 +419,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     );
   }
 
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _hapticService.success();
-    _soundService.playLevelComplete();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => ModernGameDialog(
-        title: "PRECISION LISTENER!",
-        description:
-            "Your attention to detail is remarkable. Earned $xp XP and $coins coins.",
-        buttonText: "CONTINUE",
-        onButtonPressed: () {
-          Navigator.pop(context);
-          context.pop();
-        },
-      ),
-    );
-  }
+  
 
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => ModernGameDialog(
-        title: "OUT OF FOCUS",
-        description:
-            "The small details matter most. Ready to sharpen your focus?",
-        isSuccess: false,
-        isRescueLife: true,
-        buttonText: 'GIVE UP',
-        onButtonPressed: () {
-          Navigator.pop(context);
-          context.pop();
-        },
-        onAdAction: () {
-          void restoreLife() {
-            context.read<ListeningBloc>().add(RestoreLife());
-            Navigator.pop(context);
-          }
-
-          final isPremium =
-              context.read<AuthBloc>().state.user?.isPremium ?? false;
-          if (isPremium) {
-            restoreLife();
-          } else {
-            di.sl<AdService>().showRewardedAd(
-              isPremium: false,
-              onUserEarnedReward: (_) => restoreLife(),
-              onDismissed: () {},
-            );
-          }
-        },
-        adButtonText: 'WATCH AD TO CONTINUE',
-      ),
-    );
-  }
+  
 }

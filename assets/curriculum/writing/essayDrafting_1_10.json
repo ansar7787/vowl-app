@@ -1,335 +1,577 @@
 {
   "gameType": "essayDrafting",
+  "batchIndex": 1,
+  "levels": "1-10",
   "quests": [
     {
       "id": "essayDrafting_l1_q1",
-      "instruction": "Draft a short essay on the importance of daily exercise. Focus on the introduction.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "The early bird catches the ___.",
+      "expectedAnswer": "worm",
+      "hint": "A common proverb.",
+      "options": [
+        "worm",
+        "cat",
+        "bus",
+        "ball"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Importance of Daily Exercise",
-      "sampleAnswer": "Daily exercise is crucial for maintaining physical and mental health. It helps in weight management and reduces the risk of chronic diseases.",
-      "minWords": 50
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l1_q2",
-      "instruction": "Continuing from before, focus on the benefits of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the benefits of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "The Importance of Daily Exercise - Part 2",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Practice makes ___.",
+      "expectedAnswer": "perfect",
+      "hint": "Repetition leads to skill.",
+      "options": [
+        "perfect",
+        "permanent",
+        "possible",
+        "pretty"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l1_q3",
-      "instruction": "Continuing from before, focus on the challenges of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the challenges of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "The Importance of Daily Exercise - Part 3",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Actions speak louder than ___.",
+      "expectedAnswer": "words",
+      "hint": "What you do matters more.",
+      "options": [
+        "words",
+        "sounds",
+        "music",
+        "thunder"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l2_q1",
-      "instruction": "Explain why reading books is beneficial for personal growth. Focus on the main argument.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "A journey of a thousand miles begins with a single ___.",
+      "expectedAnswer": "step",
+      "hint": "Starting small.",
+      "options": [
+        "step",
+        "mile",
+        "thought",
+        "word"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "Benefits of Reading Books",
-      "sampleAnswer": "Reading books expands one's knowledge and improves vocabulary. It also enhances critical thinking skills and empathy towards others.",
-      "minWords": 50
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l2_q2",
-      "instruction": "Continuing from before, focus on the benefits of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the benefits of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Benefits of Reading Books - Part 2",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Every cloud has a silver ___.",
+      "expectedAnswer": "lining",
+      "hint": "Something positive in bad situations.",
+      "options": [
+        "lining",
+        "color",
+        "edge",
+        "star"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l2_q3",
-      "instruction": "Continuing from before, focus on the challenges of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the challenges of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Benefits of Reading Books - Part 3",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Don't count your chickens before they ___.",
+      "expectedAnswer": "hatch",
+      "hint": "Don't assume success.",
+      "options": [
+        "hatch",
+        "fly",
+        "grow",
+        "sing"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l3_q1",
-      "instruction": "Summarize the impact of social media on modern communication. Focus on the conclusion.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Where there is a will, there is a ___.",
+      "expectedAnswer": "way",
+      "hint": "Determination finds solutions.",
+      "options": [
+        "way",
+        "wall",
+        "road",
+        "door"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "Social Media and Communication",
-      "sampleAnswer": "In conclusion, social media has revolutionized how we connect, making communication faster but often less personal. Balancing digital and face-to-face interaction is key.",
-      "minWords": 50
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l3_q2",
-      "instruction": "Continuing from before, focus on the benefits of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the benefits of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Social Media and Communication - Part 2",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Rome wasn't built in a ___.",
+      "expectedAnswer": "day",
+      "hint": "Great things take time.",
+      "options": [
+        "day",
+        "year",
+        "week",
+        "moment"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l3_q3",
-      "instruction": "Continuing from before, focus on the challenges of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the challenges of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Social Media and Communication - Part 3",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "A penny saved is a penny ___.",
+      "expectedAnswer": "earned",
+      "hint": "Saving money is like making money.",
+      "options": [
+        "earned",
+        "lost",
+        "spent",
+        "found"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l4_q1",
-      "instruction": "Discuss the advantages and disadvantages of remote work.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "You can't judge a book by its ___.",
+      "expectedAnswer": "cover",
+      "hint": "Appearances can be deceiving.",
+      "options": [
+        "cover",
+        "title",
+        "price",
+        "size"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "Remote Work: Pros and Cons",
-      "sampleAnswer": "Remote work offers flexibility and eliminates commuting, but it can also lead to isolation and a blurred line between work and home life.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l4_q2",
-      "instruction": "Continuing from before, focus on the benefits of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the benefits of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Remote Work: Pros and Cons - Part 2",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Two heads are better than ___.",
+      "expectedAnswer": "one",
+      "hint": "Collaboration helps.",
+      "options": [
+        "one",
+        "three",
+        "none",
+        "ten"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l4_q3",
-      "instruction": "Continuing from before, focus on the challenges of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the challenges of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Remote Work: Pros and Cons - Part 3",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Honesty is the best ___.",
+      "expectedAnswer": "policy",
+      "hint": "Being truthful.",
+      "options": [
+        "policy",
+        "answer",
+        "plan",
+        "choice"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l5_q1",
-      "instruction": "Write about the role of technology in modern education.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Better late than ___.",
+      "expectedAnswer": "never",
+      "hint": "Doing something matters.",
+      "options": [
+        "never",
+        "early",
+        "always",
+        "sometimes"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "Technology in Education",
-      "sampleAnswer": "Technology provides access to vast resources and facilitates interactive learning, yet it requires careful integration to avoid distractions.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l5_q2",
-      "instruction": "Continuing from before, focus on the benefits of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the benefits of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Technology in Education - Part 2",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Time flies when you're having ___.",
+      "expectedAnswer": "fun",
+      "hint": "Enjoyable moments pass quickly.",
+      "options": [
+        "fun",
+        "lunch",
+        "trouble",
+        "rain"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l5_q3",
-      "instruction": "Continuing from before, focus on the challenges of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the challenges of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Technology in Education - Part 3",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Knowledge is ___.",
+      "expectedAnswer": "power",
+      "hint": "Information gives advantage.",
+      "options": [
+        "power",
+        "money",
+        "love",
+        "pain"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l6_q1",
-      "instruction": "Analyze the importance of environmental conservation.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "The pen is mightier than the ___.",
+      "expectedAnswer": "sword",
+      "hint": "Writing over violence.",
+      "options": [
+        "sword",
+        "pencil",
+        "hammer",
+        "gun"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "Environmental Conservation",
-      "sampleAnswer": "Protecting our natural environment is essential for the survival of all species. Sustainable practices today ensure a healthier planet for future generations.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l6_q2",
-      "instruction": "Continuing from before, focus on the benefits of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the benefits of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Environmental Conservation - Part 2",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "All that glitters is not ___.",
+      "expectedAnswer": "gold",
+      "hint": "Not everything shiny is valuable.",
+      "options": [
+        "gold",
+        "silver",
+        "bright",
+        "real"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l6_q3",
-      "instruction": "Continuing from before, focus on the challenges of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the challenges of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Environmental Conservation - Part 3",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "When in Rome, do as the Romans ___.",
+      "expectedAnswer": "do",
+      "hint": "Adapt to local customs.",
+      "options": [
+        "do",
+        "say",
+        "eat",
+        "think"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l7_q1",
-      "instruction": "Draft an essay on the impact of artificial intelligence on the job market.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Curiosity killed the ___.",
+      "expectedAnswer": "cat",
+      "hint": "Being too nosy can backfire.",
+      "options": [
+        "cat",
+        "dog",
+        "bird",
+        "mouse"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "AI and the Job Market",
-      "sampleAnswer": "Artificial intelligence is automating routine tasks, creating new roles while displacing others. Continuous upskilling is necessary for the future workforce.",
-      "minWords": 70
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l7_q2",
-      "instruction": "Continuing from before, focus on the benefits of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the benefits of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "AI and the Job Market - Part 2",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Necessity is the mother of ___.",
+      "expectedAnswer": "invention",
+      "hint": "Need drives creativity.",
+      "options": [
+        "invention",
+        "education",
+        "nature",
+        "art"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l7_q3",
-      "instruction": "Continuing from before, focus on the challenges of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the challenges of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "AI and the Job Market - Part 3",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "The grass is always greener on the other ___.",
+      "expectedAnswer": "side",
+      "hint": "Others seem to have it better.",
+      "options": [
+        "side",
+        "hill",
+        "road",
+        "fence"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l8_q1",
-      "instruction": "Discuss the significance of healthy eating habits for long-term well-being.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "A picture is worth a thousand ___.",
+      "expectedAnswer": "words",
+      "hint": "Visual impact.",
+      "options": [
+        "words",
+        "dollars",
+        "colors",
+        "stories"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "Healthy Eating Habits",
-      "sampleAnswer": "A balanced diet rich in nutrients supports physical health and enhances cognitive function, reducing the risk of lifestyle-related ailments.",
-      "minWords": 70
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l8_q2",
-      "instruction": "Continuing from before, focus on the benefits of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the benefits of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Healthy Eating Habits - Part 2",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Birds of a feather flock ___.",
+      "expectedAnswer": "together",
+      "hint": "Similar people group up.",
+      "options": [
+        "together",
+        "apart",
+        "away",
+        "south"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l8_q3",
-      "instruction": "Continuing from before, focus on the challenges of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the challenges of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Healthy Eating Habits - Part 3",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Don't put all your eggs in one ___.",
+      "expectedAnswer": "basket",
+      "hint": "Diversify your risks.",
+      "options": [
+        "basket",
+        "bag",
+        "box",
+        "pan"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l9_q1",
-      "instruction": "Evaluate the effects of urbanization on local communities.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "An apple a day keeps the ___ away.",
+      "expectedAnswer": "doctor",
+      "hint": "Healthy eating.",
+      "options": [
+        "doctor",
+        "teacher",
+        "dentist",
+        "nurse"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "Urbanization and Communities",
-      "sampleAnswer": "Urbanization brings economic opportunities but can also lead to overcrowding and the loss of traditional community values and spaces.",
-      "minWords": 70
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l9_q2",
-      "instruction": "Continuing from before, focus on the benefits of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the benefits of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Urbanization and Communities - Part 2",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "No pain, no ___.",
+      "expectedAnswer": "gain",
+      "hint": "Hard work pays off.",
+      "options": [
+        "gain",
+        "loss",
+        "rain",
+        "fame"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l9_q3",
-      "instruction": "Continuing from before, focus on the challenges of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the challenges of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Urbanization and Communities - Part 3",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Look before you ___.",
+      "expectedAnswer": "leap",
+      "hint": "Think before acting.",
+      "options": [
+        "leap",
+        "sleep",
+        "eat",
+        "speak"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l10_q1",
-      "instruction": "Explain the benefits of lifelong learning in a professional context.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "It takes two to ___.",
+      "expectedAnswer": "tango",
+      "hint": "Both sides are responsible.",
+      "options": [
+        "tango",
+        "dance",
+        "fight",
+        "argue"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "Lifelong Learning in Careers",
-      "sampleAnswer": "In a rapidly evolving job market, lifelong learning is vital. It enables professionals to adapt to new technologies and methodologies, boosting career longevity.",
-      "minWords": 80
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l10_q2",
-      "instruction": "Continuing from before, focus on the benefits of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the benefits of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Lifelong Learning in Careers - Part 2",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Laughter is the best ___.",
+      "expectedAnswer": "medicine",
+      "hint": "Humor heals.",
+      "options": [
+        "medicine",
+        "weapon",
+        "food",
+        "friend"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l10_q3",
-      "instruction": "Continuing from before, focus on the challenges of this topic.",
-      "coinReward": 10,
-      "minWords": 50,
-      "xpReward": 5,
-      "sampleAnswer": "This section explores the challenges of this topic in more detail. It is important to consider various perspectives to provide a balanced and comprehensive view of the subject.",
+      "instruction": "Draft a short essay.",
       "difficulty": 1,
-      "prompt": "Lifelong Learning in Careers - Part 3",
-      "subtype": "essayDrafting"
+      "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "The best things in life are ___.",
+      "expectedAnswer": "free",
+      "hint": "Priceless things.",
+      "options": [
+        "free",
+        "expensive",
+        "rare",
+        "hidden"
+      ],
+      "correctAnswerIndex": 0,
+      "xpReward": 5,
+      "coinReward": 10
     }
   ]
 }

@@ -133,25 +133,28 @@ class ModernGameDialog extends StatelessWidget {
                             ),
                           ),
                           onPressed: onAdAction,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                isRescueLife
-                                    ? Icons.play_circle_fill
-                                    : Icons.play_circle_fill_rounded,
-                                size: 20.r,
-                              ),
-                              SizedBox(width: 8.w),
-                              Text(
-                                adButtonText ?? "DOUBLE REWARDS (2X)",
-                                style: GoogleFonts.outfit(
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 0.5,
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  isRescueLife
+                                      ? Icons.play_circle_fill
+                                      : Icons.play_circle_fill_rounded,
+                                  size: 20.r,
                                 ),
-                              ),
-                            ],
+                                SizedBox(width: 8.w),
+                                Text(
+                                  adButtonText ?? "DOUBLE REWARDS (2X)",
+                                  style: GoogleFonts.outfit(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

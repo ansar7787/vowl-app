@@ -44,8 +44,10 @@ import 'package:voxai_quest/features/roleplay/domain/usecases/get_roleplay_quest
 
 import 'package:voxai_quest/features/accent/domain/repositories/accent_repository.dart';
 import 'package:voxai_quest/features/accent/data/repositories/accent_repository_impl.dart';
-import 'package:voxai_quest/features/accent/data/datasources/accent_remote_data_source.dart';
+import 'package:voxai_quest/features/accent/data/datasources/accent_data_source.dart';
 import 'package:voxai_quest/features/accent/domain/usecases/get_accent_quest.dart';
+import 'package:voxai_quest/features/accent/domain/usecases/preload_accent_quest.dart';
+import 'package:voxai_quest/features/accent/domain/usecases/clear_accent_quest_cache.dart';
 
 import 'package:voxai_quest/features/listening/domain/repositories/listening_repository.dart';
 import 'package:voxai_quest/features/listening/data/repositories/listening_repository_impl.dart';
@@ -62,6 +64,7 @@ import 'package:voxai_quest/features/grammar/domain/repositories/grammar_reposit
 import 'package:voxai_quest/features/grammar/data/repositories/grammar_repository_impl.dart';
 import 'package:voxai_quest/features/grammar/data/datasources/grammar_remote_data_source.dart';
 import 'package:voxai_quest/features/grammar/domain/usecases/get_grammar_quest.dart';
+import 'package:voxai_quest/features/grammar/domain/usecases/preload_grammar_quest.dart';
 
 import 'package:voxai_quest/features/auth/domain/usecases/sign_up.dart';
 import 'package:voxai_quest/features/auth/domain/usecases/log_in_with_email.dart';
@@ -170,8 +173,8 @@ Future<void> init() async {
       assetQuestService: sl(),
     ),
   );
-  sl.registerLazySingleton<AccentRemoteDataSource>(
-    () => AccentRemoteDataSourceImpl(
+  sl.registerLazySingleton<AccentDataSource>(
+    () => AccentDataSourceImpl(
       firestore: sl<FirebaseFirestore>(),
       assetQuestService: sl(),
     ),
@@ -201,6 +204,9 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<GetGrammarQuest>(
     () => GetGrammarQuest(sl<GrammarRepository>()),
+  );
+  sl.registerLazySingleton<PreloadGrammarQuest>(
+    () => PreloadGrammarQuest(sl<GrammarRepository>()),
   );
   sl.registerLazySingleton<SignUp>(() => SignUp(sl<AuthRepository>()));
   sl.registerLazySingleton<LogInWithEmail>(
@@ -265,6 +271,12 @@ Future<void> init() async {
   sl.registerLazySingleton<GetAccentQuest>(
     () => GetAccentQuest(sl<AccentRepository>()),
   );
+  sl.registerLazySingleton<PreloadAccentQuest>(
+    () => PreloadAccentQuest(sl<AccentRepository>()),
+  );
+  sl.registerLazySingleton<ClearAccentQuestCache>(
+    () => ClearAccentQuestCache(sl<AccentRepository>()),
+  );
   sl.registerLazySingleton<GetListeningQuests>(
     () => GetListeningQuests(sl<ListeningRepository>()),
   );
@@ -328,7 +340,7 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<AccentRepository>(
     () => AccentRepositoryImpl(
-      remoteDataSource: sl<AccentRemoteDataSource>(),
+      remoteDataSource: sl<AccentDataSource>(),
       networkInfo: sl<NetworkInfo>(),
     ),
   );
@@ -435,6 +447,7 @@ Future<void> init() async {
   sl.registerFactory<GrammarBloc>(
     () => GrammarBloc(
       getQuest: sl<GetGrammarQuest>(),
+      preloadQuest: sl<PreloadGrammarQuest>(),
       updateUserCoins: sl<UpdateUserCoins>(),
       updateUserRewards: sl<UpdateUserRewards>(),
       updateCategoryStats: sl<UpdateCategoryStats>(),
@@ -443,7 +456,6 @@ Future<void> init() async {
       soundService: sl<SoundService>(),
       hapticService: sl<HapticService>(),
       useHint: sl<UseHint>(),
-      networkInfo: sl<NetworkInfo>(),
     ),
   );
   sl.registerFactory<RoleplayBloc>(
@@ -463,6 +475,8 @@ Future<void> init() async {
   sl.registerFactory<AccentBloc>(
     () => AccentBloc(
       getQuest: sl<GetAccentQuest>(),
+      preloadQuest: sl<PreloadAccentQuest>(),
+      clearCache: sl<ClearAccentQuestCache>(),
       updateUserCoins: sl<UpdateUserCoins>(),
       updateUserRewards: sl<UpdateUserRewards>(),
       updateCategoryStats: sl<UpdateCategoryStats>(),

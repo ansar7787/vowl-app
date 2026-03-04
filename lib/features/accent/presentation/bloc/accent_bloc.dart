@@ -5,101 +5,31 @@ import '../../domain/entities/accent_quest.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 import '../../../../core/network/network_info.dart';
 import '../../domain/usecases/get_accent_quest.dart';
+import '../../domain/usecases/preload_accent_quest.dart';
+import '../../domain/usecases/clear_accent_quest_cache.dart';
 import '../../../../features/auth/domain/usecases/update_category_stats.dart';
+import '../../../../features/auth/domain/usecases/update_user_coins.dart';
+import '../../../../features/auth/domain/usecases/update_unlocked_level.dart';
+import '../../../../features/auth/domain/usecases/award_badge.dart';
+import '../../../../features/auth/domain/usecases/use_hint.dart';
+import '../../../../core/utils/sound_service.dart';
+import '../../../../core/utils/haptic_service.dart';
 
-// --- EVENTS ---
-abstract class AccentEvent {}
+part 'accent_event.dart';
+part 'accent_state.dart';
 
-class FetchAccentQuests extends AccentEvent {
-  final dynamic gameType;
-  final int level;
-  FetchAccentQuests({required this.gameType, required this.level});
-}
-
-class SubmitAnswer extends AccentEvent {
-  final bool isCorrect;
-  SubmitAnswer(this.isCorrect);
-}
-
-class NextQuestion extends AccentEvent {}
-
-class RestartLevel extends AccentEvent {}
-
-class AccentHintUsed extends AccentEvent {}
-
-class RestoreLife extends AccentEvent {}
-
-// --- STATES ---
-abstract class AccentState {
-  const AccentState();
-}
-
-class AccentInitial extends AccentState {}
-
-class AccentLoading extends AccentState {}
-
-class AccentLoaded extends AccentState {
-  final List<AccentQuest> quests;
-  final int currentIndex;
-  final int livesRemaining;
-  final bool? lastAnswerCorrect;
-  final bool hintUsed;
-
-  AccentQuest get currentQuest => quests[currentIndex];
-
-  AccentLoaded({
-    required this.quests,
-    required this.currentIndex,
-    required this.livesRemaining,
-    this.lastAnswerCorrect,
-    this.hintUsed = false,
-  });
-
-  AccentLoaded copyWith({
-    List<AccentQuest>? quests,
-    int? currentIndex,
-    int? livesRemaining,
-    bool? lastAnswerCorrect,
-    bool? hintUsed,
-  }) {
-    return AccentLoaded(
-      quests: quests ?? this.quests,
-      currentIndex: currentIndex ?? this.currentIndex,
-      livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: lastAnswerCorrect, // Nullable override
-      hintUsed: hintUsed ?? this.hintUsed,
-    );
-  }
-}
-
-class AccentError extends AccentState {
-  final String message;
-  AccentError(this.message);
-}
-
-class AccentGameComplete extends AccentState {
-  final int xpEarned;
-  final int coinsEarned;
-  const AccentGameComplete({required this.xpEarned, required this.coinsEarned});
-}
-
-class AccentGameOver extends AccentState {
-  final List<AccentQuest> quests;
-  final int currentIndex;
-  AccentGameOver({required this.quests, required this.currentIndex});
-}
-
-// --- BLOC ---
 class AccentBloc extends Bloc<AccentEvent, AccentState> {
   final GetAccentQuest getQuest;
-  final dynamic updateUserCoins;
-  final dynamic updateUserRewards;
-  final dynamic updateCategoryStats;
-  final dynamic updateUnlockedLevel;
-  final dynamic awardBadge;
-  final dynamic soundService;
-  final dynamic hapticService;
-  final dynamic useHint;
+  final PreloadAccentQuest preloadQuest;
+  final ClearAccentQuestCache clearCache;
+  final UpdateUserCoins updateUserCoins;
+  final UpdateUserRewards updateUserRewards;
+  final UpdateCategoryStats updateCategoryStats;
+  final UpdateUnlockedLevel updateUnlockedLevel;
+  final AwardBadge awardBadge;
+  final SoundService soundService;
+  final HapticService hapticService;
+  final UseHint useHint;
   final NetworkInfo networkInfo;
 
   String? currentGameType;
@@ -107,31 +37,31 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
 
   AccentBloc({
     required this.getQuest,
-    this.updateUserCoins,
-    this.updateUserRewards,
-    this.updateCategoryStats,
-    this.updateUnlockedLevel,
-    this.awardBadge,
-    this.soundService,
-    this.hapticService,
-    this.useHint,
+    required this.preloadQuest,
+    required this.clearCache,
+    required this.updateUserCoins,
+    required this.updateUserRewards,
+    required this.updateCategoryStats,
+    required this.updateUnlockedLevel,
+    required this.awardBadge,
+    required this.soundService,
+    required this.hapticService,
+    required this.useHint,
     required this.networkInfo,
   }) : super(AccentInitial()) {
     on<FetchAccentQuests>((event, emit) async {
-      final subtype = event.gameType is GameSubtype
-          ? (event.gameType as GameSubtype)
-          : GameSubtype.values.firstWhere(
-              (e) => e.name == event.gameType.toString(),
-              orElse: () => GameSubtype.minimalPairs,
-            );
-
-      currentGameType = subtype.name;
+      currentGameType = event.gameType.name;
       currentLevel = event.level;
+
+      // Clear cache if starting a new game level 1 to pick up latest JSON changes
+      if (currentLevel == 1) {
+        await clearCache(NoParams());
+      }
 
       emit(AccentLoading());
       try {
         final result = await getQuest(
-          GetAccentQuestParams(gameType: subtype, level: currentLevel!),
+          GetAccentQuestParams(gameType: event.gameType, level: currentLevel!),
         );
 
         result.fold((failure) => emit(AccentError(failure.message)), (quests) {
@@ -142,18 +72,38 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
             return;
           }
 
-          // ENSURE STICKY 3 QUESTIONS PER LEVEL
           final limitedQuests = quests.take(3).toList();
           emit(
             AccentLoaded(
               quests: limitedQuests,
               currentIndex: 0,
-              livesRemaining: 3, // Standard 3 lives
+              livesRemaining: 3,
+              gameType: event.gameType,
+              level: currentLevel!,
             ),
           );
         });
+
+        if (currentLevel! % 10 == 9) {
+          add(
+            PreloadBatch(gameType: event.gameType, currentLevel: currentLevel!),
+          );
+        }
       } catch (e) {
         emit(AccentError("Failed to fetch quests: $e"));
+      }
+    });
+
+    on<PreloadBatch>((event, emit) async {
+      try {
+        await preloadQuest(
+          PreloadAccentQuestParams(
+            gameType: event.gameType,
+            level: event.currentLevel,
+          ),
+        );
+      } catch (e) {
+        // Silently fail for pre-loading
       }
     });
 
@@ -161,14 +111,20 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       final currentState = state;
       if (currentState is! AccentLoaded) return;
 
+      // Handle the null case for resetting feedback state (retries)
+      if (event.isCorrect == null) {
+        emit(currentState.copyWith(lastAnswerCorrect: null));
+        return;
+      }
+
       int newLives = currentState.livesRemaining;
-      if (!event.isCorrect) {
+      if (event.isCorrect == false) {
         newLives--;
-        if (soundService != null) await soundService.playWrong();
-        if (hapticService != null) await hapticService.error();
+        await soundService.playWrong();
+        await hapticService.error();
       } else {
-        if (soundService != null) await soundService.playCorrect();
-        if (hapticService != null) await hapticService.success();
+        await soundService.playCorrect();
+        await hapticService.success();
       }
 
       emit(
@@ -183,6 +139,8 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
           AccentGameOver(
             quests: currentState.quests,
             currentIndex: currentState.currentIndex,
+            gameType: currentState.gameType,
+            level: currentState.level,
           ),
         );
       }
@@ -202,36 +160,40 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
             ),
           );
         } else {
-          if (soundService != null) await soundService.playLevelComplete();
-          // Calculate rewards
-          // Standardized rewards: 5 XP and 10 Coins
-          emit(const AccentGameComplete(xpEarned: 5, coinsEarned: 10));
+          await soundService.playLevelComplete();
+          emit(
+            AccentGameComplete(
+              xpEarned: 5,
+              coinsEarned: 10,
+              lastState: currentState,
+            ),
+          );
 
-          // PERSISTENCE
           if (currentGameType != null && currentLevel != null) {
-            if (updateUserRewards != null) {
-              await updateUserRewards!(
-                UpdateUserRewardsParams(
-                  gameType: currentGameType!,
-                  level: currentLevel!,
-                  xpIncrease: 5,
-                  coinIncrease: 10,
-                ),
-              );
-            }
-            if (updateCategoryStats != null) {
-              await updateCategoryStats!(
-                UpdateCategoryStatsParams(
-                  categoryId: currentGameType!,
-                  isCorrect: true,
-                ),
-              );
-            }
-            if (awardBadge != null) await awardBadge!('accent_master');
+            await updateUserRewards(
+              UpdateUserRewardsParams(
+                gameType: currentGameType!,
+                level: currentLevel!,
+                xpIncrease: 5,
+                coinIncrease: 10,
+              ),
+            );
+            await updateCategoryStats(
+              UpdateCategoryStatsParams(
+                categoryId: currentGameType!,
+                isCorrect: true,
+              ),
+            );
+            await awardBadge('accent_master');
+            await updateUnlockedLevel(
+              UpdateUnlockedLevelParams(
+                categoryId: currentGameType!,
+                newLevel: currentLevel! + 1,
+              ),
+            );
           }
         }
       } else {
-        // Just clear the overlay if it was wrong but they still have lives
         emit(currentState.copyWith(lastAnswerCorrect: null));
       }
     });
@@ -241,12 +203,10 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
         final s = state as AccentLoaded;
         if (s.hintUsed) return;
 
-        if (useHint != null) {
-          final result = await useHint!(NoParams());
-          if (result.isRight()) {
-            emit(s.copyWith(hintUsed: true));
-            if (hapticService != null) hapticService.selection();
-          }
+        final result = await useHint(NoParams());
+        if (result.isRight()) {
+          emit(s.copyWith(hintUsed: true));
+          hapticService.selection();
         }
       }
     });
@@ -257,10 +217,12 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
         emit(
           AccentLoaded(
             quests: s.quests,
-            currentIndex: 0, // Restart level from first question on Retry
-            livesRemaining: 3, // Reset to full 3 lives on retry
+            currentIndex: s.currentIndex,
+            livesRemaining: 1,
             lastAnswerCorrect: null,
             hintUsed: false,
+            gameType: s.gameType,
+            level: s.level,
           ),
         );
       }

@@ -11,18 +11,18 @@ import 'package:voxai_quest/core/presentation/widgets/accent/harmonic_waves.dart
 import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:voxai_quest/core/presentation/widgets/games/victory_screen.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
 import 'package:voxai_quest/core/utils/haptic_service.dart';
 import 'package:voxai_quest/core/utils/injection_container.dart' as di;
 import 'package:voxai_quest/core/utils/sound_service.dart';
 import 'package:voxai_quest/core/utils/speech_service.dart';
 import 'package:voxai_quest/features/accent/domain/entities/accent_quest.dart';
 import 'package:voxai_quest/features/accent/presentation/bloc/accent_bloc.dart';
-import 'package:confetti/confetti.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:voxai_quest/core/presentation/widgets/games/premium_game_widgets.dart';
+import 'package:voxai_quest/features/accent/pitch_pattern_match/presentation/widgets/pitch_pattern_feedback_panel.dart';
 
 class PitchPatternMatchScreen extends StatefulWidget {
   final int level;
@@ -42,29 +42,18 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
 
   bool _hasSubmitted = false;
   int? _selectedOptionIndex;
-  final List<int> _eliminatedIndices = [];
-
-  late ConfettiController _confettiController;
+  final Set<int> _eliminatedIndices = {};
   AccentLoaded? _lastLoadedState;
 
   @override
   void initState() {
     super.initState();
-    _confettiController = ConfettiController(
-      duration: const Duration(seconds: 3),
-    );
     context.read<AccentBloc>().add(
       FetchAccentQuests(
         gameType: GameSubtype.pitchPatternMatch,
         level: widget.level,
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _confettiController.dispose();
-    super.dispose();
   }
 
   void _playAudio(String text) async {
@@ -119,7 +108,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
 
     final options = quest.options ?? ['Rising', 'Falling', 'Flat'];
 
-    int wrongIndex = -1;
+    int? wrongOriginalIndex;
     for (int i = 0; i < options.length; i++) {
       bool isMatch = false;
       if (quest.correctAnswerIndex != null) {
@@ -131,13 +120,13 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
       }
 
       if (!isMatch && !_eliminatedIndices.contains(i)) {
-        wrongIndex = i;
+        wrongOriginalIndex = i;
         break;
       }
     }
 
-    if (wrongIndex != -1) {
-      setState(() => _eliminatedIndices.add(wrongIndex));
+    if (wrongOriginalIndex != null) {
+      setState(() => _eliminatedIndices.add(wrongOriginalIndex!));
     }
     context.read<AccentBloc>().add(AccentHintUsed());
   }
@@ -158,34 +147,55 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
       body: BlocConsumer<AccentBloc, AccentState>(
         listener: (context, state) {
           if (state is AccentGameComplete) {
-            _confettiController.play();
             setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => _showCompletionDialog(
-                context,
-                state.xpEarned,
-                state.coinsEarned,
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => VictoryScreen(
+                  xp: state.xpEarned,
+                  coins: state.coinsEarned,
+                  category: 'accent',
+                  gameType: 'pitchPatternMatch',
+                  level: widget.level,
+                  title: 'PITCH PRODIGY!',
+                  description:
+                      'Your melodic accuracy is incredible. You matched every pitch pattern!',
+                ),
               ),
             );
           } else if (state is AccentGameOver) {
-            _showGameOverDialog(context);
+            GameDialogHelper.showGameOver(
+              context,
+              title: 'Off Key',
+              description: 'The pitch was a bit flat. Try to sing the words!',
+              onRestore: () => context.read<AccentBloc>().add(RestoreLife()),
+            );
           } else if (state is AccentLoaded) {
-            _lastLoadedState = state;
-            if (state.lastAnswerCorrect == null) {
-              setState(() {
-                _hasSubmitted = false;
-                _selectedOptionIndex = null;
-                _eliminatedIndices.clear();
-              });
+            // Verification: Only process if state matches current game and level
+            if (state.gameType == GameSubtype.pitchPatternMatch &&
+                state.level == widget.level) {
+              if (_lastLoadedState?.currentQuest != state.currentQuest) {
+                _lastLoadedState = state;
+                if (state.lastAnswerCorrect == null) {
+                  setState(() {
+                    _hasSubmitted = false;
+                    _selectedOptionIndex = null;
+                    _eliminatedIndices.clear();
+                  });
+                }
+              }
             }
           }
         },
         builder: (context, state) {
+          final bool isStale =
+              state is AccentLoaded &&
+              (state.gameType != GameSubtype.pitchPatternMatch ||
+                  state.level != widget.level);
+
           if (state is AccentLoading ||
-              (state is AccentInitial && _lastLoadedState == null)) {
+              (state is AccentInitial && _lastLoadedState == null) ||
+              isStale) {
             return const GameShimmerLoading();
           }
 
@@ -201,30 +211,18 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
             );
           }
 
-          final displayState = state is AccentLoaded ? state : _lastLoadedState;
-
-          if (displayState != null) {
+          if (state is AccentLoaded || state is AccentGameComplete) {
+            final displayState = state is AccentLoaded
+                ? state
+                : (state as AccentGameComplete).lastState;
             return Stack(
               children: [
                 MeshGradientBackground(colors: theme.backgroundColors),
-                HarmonicWaves(color: theme.primaryColor, height: 100),
+                RepaintBoundary(
+                  child: HarmonicWaves(color: theme.primaryColor, height: 100),
+                ),
                 _buildGameUI(context, displayState, isDark, theme),
-                if (_showConfetti)
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: ConfettiWidget(
-                      confettiController: _confettiController,
-                      blastDirectionality: BlastDirectionality.explosive,
-                      shouldLoop: false,
-                      colors: const [
-                        Colors.amber,
-                        Colors.blue,
-                        Colors.pink,
-                        Colors.orange,
-                        Colors.purple,
-                      ],
-                    ),
-                  ),
+                if (_showConfetti) const GameConfetti(),
               ],
             );
           }
@@ -243,184 +241,164 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
     final quest = state.currentQuest;
     final progress = (state.currentIndex + 1) / state.quests.length;
 
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
+    return SafeArea(
+      child: Stack(
+        children: [
+          Column(
+            children: [
+              PremiumGameHeader(
+                progress: progress,
+                lives: state.livesRemaining,
+                hintCount: state.hintUsed ? null : 1,
+                onHint: () => _useHint(state, quest),
+                onClose: () => context.pop(),
+                isDark: isDark,
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 20.h),
+                      Text(
+                        "PITCH PATTERN MATCH",
+                        style: GoogleFonts.outfit(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 4,
+                          color: theme.primaryColor,
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  if (!state.hintUsed) ...[
-                    _buildHintButton(state, theme.primaryColor, quest),
-                    SizedBox(width: 12.w),
-                  ],
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    Text(
-                      "PITCH PATTERN MATCH",
-                      style: GoogleFonts.outfit(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ),
-                    SizedBox(height: 8.h),
-                    Text(
-                      "Listen and match the rhythm",
-                      style: GoogleFonts.outfit(
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      ),
-                      textAlign: TextAlign.center,
-                    ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2),
-                    SizedBox(height: 40.h),
+                      SizedBox(height: 8.h),
+                      Text(
+                        "Listen and match the rhythm",
+                        style: GoogleFonts.outfit(
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
+                        ),
+                        textAlign: TextAlign.center,
+                      ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2),
+                      SizedBox(height: 40.h),
 
-                    // Media Playback Card
-                    GlassTile(
-                      padding: EdgeInsets.all(32.r),
-                      borderRadius: BorderRadius.circular(40.r),
-                      borderColor: theme.primaryColor.withValues(alpha: 0.3),
-                      child: Column(
-                        children: [
-                          _buildPitchCurve(theme.primaryColor),
-                          SizedBox(height: 24.h),
-                          Text(
-                            quest.word ?? "Listen...",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.outfit(
-                              fontSize: 28.sp,
-                              fontWeight: FontWeight.w900,
-                              color: isDark ? Colors.white : Colors.black87,
-                            ),
-                          ),
-                          SizedBox(height: 12.h),
-                          Text(
-                            quest.instruction,
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.outfit(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w500,
-                              color: isDark ? Colors.white60 : Colors.black54,
-                            ),
-                          ),
-                          SizedBox(height: 24.h),
-                          ScaleButton(
-                            onTap: () => _playAudio(quest.word ?? ""),
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 24.w,
-                                vertical: 16.h,
+                      // Media Playback Card
+                      GlassTile(
+                        padding: EdgeInsets.all(32.r),
+                        borderRadius: BorderRadius.circular(40.r),
+                        borderColor: theme.primaryColor.withValues(alpha: 0.3),
+                        child: Column(
+                          children: [
+                            _buildPitchCurve(theme.primaryColor),
+                            SizedBox(height: 24.h),
+                            Text(
+                              quest.textToSpeak ?? "Listen...",
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.outfit(
+                                fontSize: 28.sp,
+                                fontWeight: FontWeight.w900,
+                                color: isDark ? Colors.white : Colors.black87,
                               ),
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  colors: [
-                                    theme.primaryColor.withValues(alpha: 0.9),
-                                    theme.primaryColor,
+                            ),
+                            SizedBox(height: 12.h),
+                            Text(
+                              quest.instruction,
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.outfit(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w500,
+                                color: isDark ? Colors.white60 : Colors.black54,
+                              ),
+                            ),
+                            SizedBox(height: 24.h),
+                            ScaleButton(
+                              onTap: () => _playAudio(quest.textToSpeak ?? ""),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 24.w,
+                                  vertical: 16.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      theme.primaryColor.withValues(alpha: 0.9),
+                                      theme.primaryColor,
+                                    ],
+                                  ),
+                                  borderRadius: BorderRadius.circular(30.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: theme.primaryColor.withValues(
+                                        alpha: 0.3,
+                                      ),
+                                      blurRadius: 12,
+                                      offset: const Offset(0, 6),
+                                    ),
                                   ],
                                 ),
-                                borderRadius: BorderRadius.circular(30.r),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: theme.primaryColor.withValues(
-                                      alpha: 0.3,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    if (_isPlaying)
+                                      const HarmonicWaves(
+                                        color: Colors.white,
+                                        height: 30,
+                                        width: 40,
+                                      ).animate().fadeIn()
+                                    else
+                                      Icon(
+                                        Icons.volume_up_rounded,
+                                        color: Colors.white,
+                                        size: 28.r,
+                                      ),
+                                    SizedBox(width: 12.w),
+                                    Text(
+                                      "LISTEN",
+                                      style: GoogleFonts.outfit(
+                                        fontSize: 18.sp,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                        letterSpacing: 2,
+                                      ),
                                     ),
-                                    blurRadius: 12,
-                                    offset: const Offset(0, 6),
-                                  ),
-                                ],
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  if (_isPlaying)
-                                    const HarmonicWaves(
-                                      color: Colors.white,
-                                      height: 30,
-                                    ).animate().fadeIn()
-                                  else
-                                    Icon(
-                                      Icons.volume_up_rounded,
-                                      color: Colors.white,
-                                      size: 28.r,
-                                    ),
-                                  SizedBox(width: 12.w),
-                                  Text(
-                                    "LISTEN",
-                                    style: GoogleFonts.outfit(
-                                      fontSize: 18.sp,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                      letterSpacing: 2,
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ).animate().fadeIn(delay: 400.ms).scale(),
+                          ],
+                        ),
+                      ).animate().fadeIn(delay: 400.ms).scale(),
 
-                    SizedBox(height: 48.h),
+                      SizedBox(height: 48.h),
 
-                    // Mood Canvas Grid
-                    if (state.lastAnswerCorrect == null)
-                      _buildMoodCanvases(quest, isDark, theme)
-                    else
-                      SizedBox(height: 150.h),
+                      // Mood Canvas Grid
+                      _buildMoodCanvases(quest, isDark, theme),
 
-                    SizedBox(height: 60.h),
-                  ],
+                      if (_hasSubmitted && state.lastAnswerCorrect != null) ...[
+                        SizedBox(height: 48.h),
+                        PitchPatternFeedbackPanel(
+                          isCorrect: state.lastAnswerCorrect!,
+                          correctPattern:
+                              quest.options?[quest.correctAnswerIndex ?? 0] ??
+                              'Pattern',
+                          hint: quest.hint ?? 'Review the sentence intonation.',
+                          onListenAgain: () =>
+                              _playAudio(quest.textToSpeak ?? ""),
+                          isDark: isDark,
+                        ),
+                      ],
+
+                      SizedBox(height: 100.h),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+            ],
+          ),
+          if (_showConfetti) const GameConfetti(),
+        ],
+      ),
     );
   }
 
@@ -467,7 +445,9 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
         }
 
         return ScaleButton(
-          onTap: isEliminated ? null : () => _checkAnswer(index, quest),
+          onTap: isEliminated || _hasSubmitted
+              ? null
+              : () => _checkAnswer(index, quest),
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 300),
             padding: EdgeInsets.all(16.r),
@@ -481,10 +461,10 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
               border: Border.all(
                 color: isEliminated
                     ? Colors.transparent
-                    : isSelected
+                    : isSelected || (isCorrect && _hasSubmitted)
                     ? canvasColor
                     : canvasColor.withValues(alpha: 0.3),
-                width: isSelected ? 3 : 2,
+                width: isSelected || (isCorrect && _hasSubmitted) ? 3 : 2,
               ),
               boxShadow: [
                 if (isSelected || (isCorrect && _hasSubmitted))
@@ -562,161 +542,30 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen> {
   }
 
   Widget _buildPitchCurve(Color color) {
-    return SizedBox(
-      height: 60.h,
-      width: double.infinity,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: List.generate(12, (index) {
-          final height = (index % 3 + 1) * 15.0;
-          return Container(
-                width: 8.w,
-                height: height.h,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.3 + (index * 0.05)),
-                  borderRadius: BorderRadius.circular(10.r),
-                ),
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scaleY(
-                begin: 0.5,
-                end: 1.5,
-                duration: Duration(milliseconds: 500 + (index * 100)),
-              );
-        }),
-      ),
-    );
-  }
-
-  Widget _buildHeartCount(int lives) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHintButton(
-    AccentLoaded state,
-    Color primaryColor,
-    AccentQuest quest,
-  ) {
-    bool disabled = state.hintUsed;
-    return ScaleButton(
-      onTap: disabled ? null : () => _useHint(state, quest),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: disabled
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: disabled
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
-          ),
-        ),
+    return RepaintBoundary(
+      child: SizedBox(
+        height: 60.h,
+        width: double.infinity,
         child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              disabled
-                  ? Icons.lightbulb_outline_rounded
-                  : Icons.lightbulb_rounded,
-              color: disabled ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            BlocBuilder<AuthBloc, AuthState>(
-              builder: (context, authState) {
-                final hintCount = authState.user?.hintCount ?? 0;
-                return Text(
-                  "$hintCount",
-                  style: GoogleFonts.outfit(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w900,
-                    color: disabled ? Colors.grey : primaryColor,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: List.generate(8, (index) {
+            final height = (index % 3 + 1) * 15.0;
+            return Container(
+                  width: 8.w,
+                  height: height.h,
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.3 + (index * 0.07)),
+                    borderRadius: BorderRadius.circular(10.r),
                   ),
+                )
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scaleY(
+                  begin: 0.5,
+                  end: 1.5,
+                  duration: Duration(milliseconds: 600 + (index * 120)),
                 );
-              },
-            ),
-          ],
+          }),
         ),
-      ),
-    );
-  }
-
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Pitch Prodigy!',
-        description: 'You earned 5 XP and 10 Coins for your melodic accuracy!',
-        buttonText: 'HARMONIOUS',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
-
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Off Key',
-        description: 'The pitch was a bit flat. Try to sing the words!',
-        isSuccess: false,
-        isRescueLife: true,
-        buttonText: 'GIVE UP',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-        onAdAction: () {
-          void restoreLife() {
-            context.read<AccentBloc>().add(RestoreLife());
-            Navigator.pop(c);
-          }
-
-          final isPremium =
-              context.read<AuthBloc>().state.user?.isPremium ?? false;
-          if (isPremium) {
-            restoreLife();
-          } else {
-            di.sl<AdService>().showRewardedAd(
-              isPremium: false,
-              onUserEarnedReward: (_) => restoreLife(),
-              onDismissed: () {},
-            );
-          }
-        },
-        adButtonText: 'WATCH AD TO CONTINUE',
       ),
     );
   }

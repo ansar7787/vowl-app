@@ -6,14 +6,22 @@ import 'dart:math' as math;
 class HarmonicWaves extends StatelessWidget {
   final Color color;
   final double? height;
-  const HarmonicWaves({super.key, required this.color, this.height});
+  final double? width;
+  const HarmonicWaves({
+    super.key,
+    required this.color,
+    this.height,
+    this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
         final h = height ?? 200.h;
-        final w = constraints.hasBoundedWidth ? constraints.maxWidth : 1.sw;
+        final w =
+            width ??
+            (constraints.hasBoundedWidth ? constraints.maxWidth : 1.sw);
 
         return SizedBox(
           height: h,

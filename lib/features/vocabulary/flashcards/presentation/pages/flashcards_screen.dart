@@ -10,7 +10,7 @@ import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
 import 'package:voxai_quest/core/utils/ad_service.dart';
@@ -75,14 +75,21 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                     context.read<AuthBloc>().state.user?.isPremium ?? false;
                 di.sl<AdService>().showInterstitialAd(
                   isPremium: isPremium,
-                  onDismissed: () => _showCompletionDialog(
-                    context,
-                    state.xpEarned,
-                    state.coinsEarned,
-                  ),
+                  onDismissed: () => GameDialogHelper.showCompletion(
+          context,
+          xp: state.xpEarned,
+          coins: state.coinsEarned,
+          title: 'FLASHCARD MASTER!',
+          description:
+              'Great job! You earned ${state.xpEarned} XP and ${state.coinsEarned} coins.',
+        ),
                 );
               } else if (state is VocabularyGameOver) {
-                _showGameOverDialog(context);
+                GameDialogHelper.showGameOver(
+        context,
+        title: 'GAME OVER',
+        description: 'Flashcards can be tricky. Keep practicing!',
+      );
               }
             },
             builder: (context, state) {
@@ -423,45 +430,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     );
   }
 
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => ModernGameDialog(
-        title: "FLASHCARD MASTER!",
-        description: "Great job! You earned $xp XP and $coins coins.",
-        buttonText: "HURRAY",
-        onButtonPressed: () {
-          Navigator.pop(context);
-          context.pop();
-        },
-      ),
-    );
-  }
+  
 
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => ModernGameDialog(
-        title: "GAME OVER",
-        description: "Flashcards can be tricky. Keep practicing!",
-        buttonText: "RETRY",
-        isSuccess: false,
-        onButtonPressed: () {
-          Navigator.pop(context);
-          context.read<VocabularyBloc>().add(RestartLevel());
-          context.read<VocabularyBloc>().add(
-            FetchVocabularyQuests(
-              gameType: GameSubtype.flashcards,
-              level: widget.level,
-            ),
-          );
-        },
-      ),
-    );
-  }
+  
 }

@@ -49,7 +49,7 @@ class GrammarQuestModel extends GrammarQuest {
       ),
       xpReward: map['xpReward'] ?? 10,
       coinReward: map['coinReward'] ?? 5,
-      livesAllowed: map['livesAllowed'],
+      livesAllowed: map['livesAllowed'] ?? 3,
       options: map['options'] != null
           ? List<String>.from(map['options'])
           : null,

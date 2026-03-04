@@ -10,7 +10,7 @@ import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
 import 'package:voxai_quest/core/presentation/widgets/roleplay/cinema_light.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
@@ -101,14 +101,22 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> {
                 context.read<AuthBloc>().state.user?.isPremium ?? false;
             di.sl<AdService>().showInterstitialAd(
               isPremium: isPremium,
-              onDismissed: () => _showCompletionDialog(
-                context,
-                state.xpEarned,
-                state.coinsEarned,
-              ),
+              onDismissed: () => GameDialogHelper.showCompletion(
+          context,
+          xp: state.xpEarned,
+          coins: state.coinsEarned,
+          title: 'Scenario Cleared!',
+          description:
+              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for navigating the situation!',
+        ),
             );
           } else if (state is RoleplayGameOver) {
-            _showGameOverDialog(context);
+            GameDialogHelper.showGameOver(
+        context,
+        title: 'Social Setback',
+        description: 'Take a breath and try to re-evaluate the conversation!',
+        onRestore: () => context.read<RoleplayBloc>().add(RestoreLife()),
+      );
           } else if (state is RoleplayLoaded &&
               state.lastAnswerCorrect == null) {
             _selectedOptionIndex = null;
@@ -523,45 +531,7 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> {
     );
   }
 
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Scenario Cleared!',
-        description:
-            'You earned $xp XP and $coins Coins for navigating the situation!',
-        buttonText: 'AWESOME',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
+  
 
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Social Setback',
-        description: 'Take a breath and try to re-evaluate the conversation!',
-        buttonText: 'TRY AGAIN',
-        isSuccess: false,
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.read<RoleplayBloc>().add(RestoreLife());
-        },
-        secondaryButtonText: 'EXIT',
-        onSecondaryPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
+  
 }

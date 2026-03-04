@@ -859,7 +859,7 @@ class AppRouter {
             case 'reading':
               final gameType = gameTypeStr != null
                   ? GameSubtype.values.firstWhere(
-                      (e) => e.name == gameTypeStr,
+                      (e) => e.name.toLowerCase() == gameTypeStr.toLowerCase(),
                       orElse: () => GameSubtype.readAndAnswer,
                     )
                   : GameSubtype.readAndAnswer;
@@ -867,7 +867,7 @@ class AppRouter {
             case 'writing':
               final gameType = gameTypeStr != null
                   ? GameSubtype.values.firstWhere(
-                      (e) => e.name == gameTypeStr,
+                      (e) => e.name.toLowerCase() == gameTypeStr.toLowerCase(),
                       orElse: () => GameSubtype.sentenceBuilder,
                     )
                   : GameSubtype.sentenceBuilder;
@@ -875,7 +875,7 @@ class AppRouter {
             case 'speaking':
               final gameType = gameTypeStr != null
                   ? GameSubtype.values.firstWhere(
-                      (e) => e.name == gameTypeStr,
+                      (e) => e.name.toLowerCase() == gameTypeStr.toLowerCase(),
                       orElse: () => GameSubtype.repeatSentence,
                     )
                   : GameSubtype.repeatSentence;
@@ -883,7 +883,7 @@ class AppRouter {
             case 'grammar':
               final gameType = gameTypeStr != null
                   ? GameSubtype.values.firstWhere(
-                      (e) => e.name == gameTypeStr,
+                      (e) => e.name.toLowerCase() == gameTypeStr.toLowerCase(),
                       orElse: () => GameSubtype.grammarQuest,
                     )
                   : GameSubtype.grammarQuest;
@@ -891,7 +891,7 @@ class AppRouter {
             case 'roleplay':
               final gameType = gameTypeStr != null
                   ? GameSubtype.values.firstWhere(
-                      (e) => e.name == gameTypeStr,
+                      (e) => e.name.toLowerCase() == gameTypeStr.toLowerCase(),
                       orElse: () => GameSubtype.branchingDialogue,
                     )
                   : GameSubtype.branchingDialogue;
@@ -899,7 +899,7 @@ class AppRouter {
             case 'accent':
               final gameType = gameTypeStr != null
                   ? GameSubtype.values.firstWhere(
-                      (e) => e.name == gameTypeStr,
+                      (e) => e.name.toLowerCase() == gameTypeStr.toLowerCase(),
                       orElse: () => GameSubtype.minimalPairs,
                     )
                   : GameSubtype.minimalPairs;
@@ -907,7 +907,7 @@ class AppRouter {
             case 'listening':
               final gameType = gameTypeStr != null
                   ? GameSubtype.values.firstWhere(
-                      (e) => e.name == gameTypeStr,
+                      (e) => e.name.toLowerCase() == gameTypeStr.toLowerCase(),
                       orElse: () => GameSubtype.audioMultipleChoice,
                     )
                   : GameSubtype.audioMultipleChoice;
@@ -915,7 +915,7 @@ class AppRouter {
             case 'vocabulary':
               final gameType = gameTypeStr != null
                   ? GameSubtype.values.firstWhere(
-                      (e) => e.name == gameTypeStr,
+                      (e) => e.name.toLowerCase() == gameTypeStr.toLowerCase(),
                       orElse: () => GameSubtype.flashcards,
                     )
                   : GameSubtype.flashcards;

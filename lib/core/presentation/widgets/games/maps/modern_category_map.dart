@@ -6,13 +6,12 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/utils/voxin_assets.dart';
+import 'package:voxai_quest/core/presentation/widgets/ad_banner_widget.dart';
 
 class ModernCategoryMap extends StatefulWidget {
   final String gameType;
@@ -98,150 +97,175 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     final double totalContentHeight =
         150.h + (widget.totalLevels * rowSpacing) + 150.h;
 
-    return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
-      body: Stack(
-        children: [
-          // 1. Clean Minimal Static Background
-          _buildBackground(theme, isDark),
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, result) {
+        if (didPop) return;
+        if (context.canPop()) {
+          context.pop();
+        } else {
+          context.go('/home');
+        }
+      },
+      child: Scaffold(
+        backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+        body: Stack(
+          children: [
+            // 1. Clean Minimal Static Background
+            _buildBackground(theme, isDark),
 
-          // 2. CustomScrollView with SliverAppBar
-          CustomScrollView(
-            controller: _scrollController,
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              // ── SliverAppBar ──
-              SliverAppBar(
-                pinned: true,
-                floating: true,
-                snap: true,
-                automaticallyImplyLeading: false,
-                backgroundColor: Colors.transparent,
-                surfaceTintColor: Colors.transparent,
-                elevation: 0,
-                toolbarHeight: 64.h,
-                expandedHeight: 120.h,
-                collapsedHeight: 64.h,
-                flexibleSpace: FlexibleSpaceBar(
-                  centerTitle: true,
-                  titlePadding: EdgeInsets.symmetric(
-                    horizontal: 16.w,
-                    vertical: 8.h,
-                  ),
-                  title: GlassTile(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
-                      vertical: 6.h,
+            // 2. CustomScrollView with SliverAppBar
+            CustomScrollView(
+              controller: _scrollController,
+              physics: const BouncingScrollPhysics(),
+              slivers: [
+                // ── SliverAppBar ──
+                SliverAppBar(
+                  pinned: true,
+                  floating: true,
+                  snap: true,
+                  automaticallyImplyLeading: false,
+                  backgroundColor: Colors.transparent,
+                  surfaceTintColor: Colors.transparent,
+                  elevation: 0,
+                  toolbarHeight: 64.h,
+                  expandedHeight: 120.h,
+                  collapsedHeight: 64.h,
+                  flexibleSpace: FlexibleSpaceBar(
+                    centerTitle: true,
+                    titlePadding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 8.h,
                     ),
-                    borderRadius: BorderRadius.circular(20.r),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SizedBox(
-                          width: 32.r,
-                          height: 32.r,
-                          child: IconButton(
-                            padding: EdgeInsets.zero,
-                            iconSize: 18.r,
-                            onPressed: () => context.pop(),
-                            icon: Icon(
-                              Icons.arrow_back_ios_new_rounded,
-                              color: isDark ? Colors.white : Colors.black87,
+                    title: GlassTile(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 6.h,
+                      ),
+                      borderRadius: BorderRadius.circular(20.r),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(
+                            width: 32.r,
+                            height: 32.r,
+                            child: IconButton(
+                              padding: EdgeInsets.zero,
+                              iconSize: 18.r,
+                              onPressed: () {
+                                if (context.canPop()) {
+                                  context.pop();
+                                } else {
+                                  context.go('/home');
+                                }
+                              },
+                              icon: Icon(
+                                Icons.arrow_back_ios_new_rounded,
+                                color: isDark ? Colors.white : Colors.black87,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(width: 6.w),
-                        Flexible(
-                          child: Text(
-                            theme.title,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                            style: GoogleFonts.outfit(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w800,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF1E3A8A),
+                          SizedBox(width: 6.w),
+                          Flexible(
+                            child: Text(
+                              theme.title,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              style: GoogleFonts.outfit(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w800,
+                                color: isDark
+                                    ? Colors.white
+                                    : const Color(0xFF1E3A8A),
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(width: 8.w),
-                        Icon(theme.icon, color: theme.primaryColor, size: 16.r),
-                      ],
+                          SizedBox(width: 8.w),
+                          Icon(
+                            theme.icon,
+                            color: theme.primaryColor,
+                            size: 16.r,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  background: Container(
-                    padding: EdgeInsets.fromLTRB(24.w, 40.h, 24.w, 0),
-                    alignment: Alignment.center,
-                    child: Text(
-                      theme.category.name.toUpperCase(),
-                      style: GoogleFonts.outfit(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w800,
-                        color: theme.primaryColor.withValues(alpha: 0.6),
-                        letterSpacing: 4,
+                    background: Container(
+                      padding: EdgeInsets.fromLTRB(24.w, 40.h, 24.w, 0),
+                      alignment: Alignment.center,
+                      child: Text(
+                        theme.category.name.toUpperCase(),
+                        style: GoogleFonts.outfit(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w800,
+                          color: theme.primaryColor.withValues(alpha: 0.6),
+                          letterSpacing: 4,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
 
-              // ── The Interactive Path Content ──
-              SliverToBoxAdapter(
-                child: Stack(
-                  children: [
-                    // The Path Line
-                    CustomPaint(
-                      size: Size(ScreenUtil().screenWidth, totalContentHeight),
-                      painter: CategoryPathPainter(
-                        points: points,
-                        color: theme.primaryColor,
-                        category: theme.category,
-                        isDark: isDark,
-                        unlockedLevels: unlockedLevels,
+                // ── The Interactive Path Content ──
+                SliverToBoxAdapter(
+                  child: Stack(
+                    children: [
+                      // The Path Line
+                      CustomPaint(
+                        size: Size(
+                          ScreenUtil().screenWidth,
+                          totalContentHeight,
+                        ),
+                        painter: CategoryPathPainter(
+                          points: points,
+                          color: theme.primaryColor,
+                          category: theme.category,
+                          isDark: isDark,
+                          unlockedLevels: unlockedLevels,
+                        ),
                       ),
-                    ),
 
-                    // Interaction Nodes
-                    Column(
-                      children: [
-                        SizedBox(
-                          height: 150.h,
-                        ), // Match the 150.h base in _generatePoints
-                        ...List.generate(widget.totalLevels, (index) {
-                          final levelNumber = index + 1;
-                          final isUnlocked = levelNumber <= unlockedLevels;
-                          final isCurrent = levelNumber == unlockedLevels;
-                          final point = points[index];
+                      // Interaction Nodes
+                      Column(
+                        children: [
+                          SizedBox(
+                            height: 150.h,
+                          ), // Match the 150.h base in _generatePoints
+                          ...List.generate(widget.totalLevels, (index) {
+                            final levelNumber = index + 1;
+                            final isUnlocked = levelNumber <= unlockedLevels;
+                            final isCurrent = levelNumber == unlockedLevels;
+                            final point = points[index];
 
-                          return Container(
-                            height: rowSpacing,
-                            alignment: Alignment.center,
-                            child: Transform.translate(
-                              offset: Offset(
-                                point.dx - ScreenUtil().screenWidth / 2,
-                                0,
+                            return Container(
+                              height: rowSpacing,
+                              alignment: Alignment.center,
+                              child: Transform.translate(
+                                offset: Offset(
+                                  point.dx - ScreenUtil().screenWidth / 2,
+                                  0,
+                                ),
+                                child: _buildPathNode(
+                                  context,
+                                  levelNumber,
+                                  isUnlocked,
+                                  isCurrent,
+                                  isDark,
+                                  theme,
+                                ),
                               ),
-                              child: _buildPathNode(
-                                context,
-                                levelNumber,
-                                isUnlocked,
-                                isCurrent,
-                                isDark,
-                                theme,
-                              ),
-                            ),
-                          );
-                        }),
-                        SizedBox(height: 150.h),
-                      ],
-                    ),
-                  ],
+                            );
+                          }),
+                          SizedBox(height: 150.h),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
+        bottomNavigationBar: const AdBannerWidget(),
       ),
     );
   }
@@ -335,21 +359,14 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
     ThemeResult theme,
   ) {
     return ScaleButton(
-      onTap: () async {
+      onTap: () {
         if (!isUnlocked) {
           _showLockedFeedback(context, theme.primaryColor);
           return;
         }
-        final authState = context.read<AuthBloc>().state;
-        di.sl<AdService>().showInterstitialAd(
-          onDismissed: () {
-            if (context.mounted) {
-              context.push(
-                '/game?category=${theme.category.name}&gameType=${widget.gameType}&level=$level',
-              );
-            }
-          },
-          isPremium: authState.user?.isPremium ?? false,
+        // Navigate directly to game — no pre-game ad
+        context.push(
+          '/game?category=${theme.category.name}&gameType=${widget.gameType}&level=$level',
         );
       },
       child: Stack(

@@ -1,335 +1,577 @@
 {
   "gameType": "essayDrafting",
+  "batchIndex": 10,
+  "levels": "91-100",
   "quests": [
     {
       "id": "essayDrafting_l91_q1",
-      "instruction": "Draft a well-structured essay discussing Art. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "The early bird catches the ___.",
+      "expectedAnswer": "worm",
+      "hint": "A common proverb.",
+      "options": [
+        "worm",
+        "cat",
+        "bus",
+        "ball"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Art on Modern Society",
-      "sampleAnswer": "The impact of Art is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l91_q2",
-      "instruction": "Draft a well-structured essay discussing Sports. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Practice makes ___.",
+      "expectedAnswer": "perfect",
+      "hint": "Repetition leads to skill.",
+      "options": [
+        "perfect",
+        "permanent",
+        "possible",
+        "pretty"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Sports on Modern Society",
-      "sampleAnswer": "The impact of Sports is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l91_q3",
-      "instruction": "Draft a well-structured essay discussing Nutrition. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Actions speak louder than ___.",
+      "expectedAnswer": "words",
+      "hint": "What you do matters more.",
+      "options": [
+        "words",
+        "sounds",
+        "music",
+        "thunder"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Nutrition on Modern Society",
-      "sampleAnswer": "The impact of Nutrition is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l92_q1",
-      "instruction": "Draft a well-structured essay discussing Artificial Intelligence. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "A journey of a thousand miles begins with a single ___.",
+      "expectedAnswer": "step",
+      "hint": "Starting small.",
+      "options": [
+        "step",
+        "mile",
+        "thought",
+        "word"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Artificial Intelligence on Modern Society",
-      "sampleAnswer": "The impact of Artificial Intelligence is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l92_q2",
-      "instruction": "Draft a well-structured essay discussing Remote Work. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Every cloud has a silver ___.",
+      "expectedAnswer": "lining",
+      "hint": "Something positive in bad situations.",
+      "options": [
+        "lining",
+        "color",
+        "edge",
+        "star"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Remote Work on Modern Society",
-      "sampleAnswer": "The impact of Remote Work is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l92_q3",
-      "instruction": "Draft a well-structured essay discussing Climate Change. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Don't count your chickens before they ___.",
+      "expectedAnswer": "hatch",
+      "hint": "Don't assume success.",
+      "options": [
+        "hatch",
+        "fly",
+        "grow",
+        "sing"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Climate Change on Modern Society",
-      "sampleAnswer": "The impact of Climate Change is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l93_q1",
-      "instruction": "Draft a well-structured essay discussing Urbanization. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Where there is a will, there is a ___.",
+      "expectedAnswer": "way",
+      "hint": "Determination finds solutions.",
+      "options": [
+        "way",
+        "wall",
+        "road",
+        "door"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Urbanization on Modern Society",
-      "sampleAnswer": "The impact of Urbanization is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l93_q2",
-      "instruction": "Draft a well-structured essay discussing Public Transport. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Rome wasn't built in a ___.",
+      "expectedAnswer": "day",
+      "hint": "Great things take time.",
+      "options": [
+        "day",
+        "year",
+        "week",
+        "moment"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Public Transport on Modern Society",
-      "sampleAnswer": "The impact of Public Transport is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l93_q3",
-      "instruction": "Draft a well-structured essay discussing Reading. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "A penny saved is a penny ___.",
+      "expectedAnswer": "earned",
+      "hint": "Saving money is like making money.",
+      "options": [
+        "earned",
+        "lost",
+        "spent",
+        "found"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Reading on Modern Society",
-      "sampleAnswer": "The impact of Reading is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l94_q1",
-      "instruction": "Draft a well-structured essay discussing Technology. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "You can't judge a book by its ___.",
+      "expectedAnswer": "cover",
+      "hint": "Appearances can be deceiving.",
+      "options": [
+        "cover",
+        "title",
+        "price",
+        "size"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Technology on Modern Society",
-      "sampleAnswer": "The impact of Technology is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l94_q2",
-      "instruction": "Draft a well-structured essay discussing Art. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Two heads are better than ___.",
+      "expectedAnswer": "one",
+      "hint": "Collaboration helps.",
+      "options": [
+        "one",
+        "three",
+        "none",
+        "ten"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Art on Modern Society",
-      "sampleAnswer": "The impact of Art is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l94_q3",
-      "instruction": "Draft a well-structured essay discussing Sports. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Honesty is the best ___.",
+      "expectedAnswer": "policy",
+      "hint": "Being truthful.",
+      "options": [
+        "policy",
+        "answer",
+        "plan",
+        "choice"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Sports on Modern Society",
-      "sampleAnswer": "The impact of Sports is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l95_q1",
-      "instruction": "Draft a well-structured essay discussing Nutrition. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Better late than ___.",
+      "expectedAnswer": "never",
+      "hint": "Doing something matters.",
+      "options": [
+        "never",
+        "early",
+        "always",
+        "sometimes"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Nutrition on Modern Society",
-      "sampleAnswer": "The impact of Nutrition is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l95_q2",
-      "instruction": "Draft a well-structured essay discussing Artificial Intelligence. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Time flies when you're having ___.",
+      "expectedAnswer": "fun",
+      "hint": "Enjoyable moments pass quickly.",
+      "options": [
+        "fun",
+        "lunch",
+        "trouble",
+        "rain"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Artificial Intelligence on Modern Society",
-      "sampleAnswer": "The impact of Artificial Intelligence is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l95_q3",
-      "instruction": "Draft a well-structured essay discussing Remote Work. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Knowledge is ___.",
+      "expectedAnswer": "power",
+      "hint": "Information gives advantage.",
+      "options": [
+        "power",
+        "money",
+        "love",
+        "pain"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Remote Work on Modern Society",
-      "sampleAnswer": "The impact of Remote Work is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l96_q1",
-      "instruction": "Draft a well-structured essay discussing Climate Change. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "The pen is mightier than the ___.",
+      "expectedAnswer": "sword",
+      "hint": "Writing over violence.",
+      "options": [
+        "sword",
+        "pencil",
+        "hammer",
+        "gun"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Climate Change on Modern Society",
-      "sampleAnswer": "The impact of Climate Change is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l96_q2",
-      "instruction": "Draft a well-structured essay discussing Urbanization. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "All that glitters is not ___.",
+      "expectedAnswer": "gold",
+      "hint": "Not everything shiny is valuable.",
+      "options": [
+        "gold",
+        "silver",
+        "bright",
+        "real"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Urbanization on Modern Society",
-      "sampleAnswer": "The impact of Urbanization is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l96_q3",
-      "instruction": "Draft a well-structured essay discussing Public Transport. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "When in Rome, do as the Romans ___.",
+      "expectedAnswer": "do",
+      "hint": "Adapt to local customs.",
+      "options": [
+        "do",
+        "say",
+        "eat",
+        "think"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Public Transport on Modern Society",
-      "sampleAnswer": "The impact of Public Transport is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l97_q1",
-      "instruction": "Draft a well-structured essay discussing Reading. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Curiosity killed the ___.",
+      "expectedAnswer": "cat",
+      "hint": "Being too nosy can backfire.",
+      "options": [
+        "cat",
+        "dog",
+        "bird",
+        "mouse"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Reading on Modern Society",
-      "sampleAnswer": "The impact of Reading is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l97_q2",
-      "instruction": "Draft a well-structured essay discussing Technology. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Necessity is the mother of ___.",
+      "expectedAnswer": "invention",
+      "hint": "Need drives creativity.",
+      "options": [
+        "invention",
+        "education",
+        "nature",
+        "art"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Technology on Modern Society",
-      "sampleAnswer": "The impact of Technology is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l97_q3",
-      "instruction": "Draft a well-structured essay discussing Art. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "The grass is always greener on the other ___.",
+      "expectedAnswer": "side",
+      "hint": "Others seem to have it better.",
+      "options": [
+        "side",
+        "hill",
+        "road",
+        "fence"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Art on Modern Society",
-      "sampleAnswer": "The impact of Art is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l98_q1",
-      "instruction": "Draft a well-structured essay discussing Sports. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "A picture is worth a thousand ___.",
+      "expectedAnswer": "words",
+      "hint": "Visual impact.",
+      "options": [
+        "words",
+        "dollars",
+        "colors",
+        "stories"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Sports on Modern Society",
-      "sampleAnswer": "The impact of Sports is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l98_q2",
-      "instruction": "Draft a well-structured essay discussing Nutrition. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Birds of a feather flock ___.",
+      "expectedAnswer": "together",
+      "hint": "Similar people group up.",
+      "options": [
+        "together",
+        "apart",
+        "away",
+        "south"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Nutrition on Modern Society",
-      "sampleAnswer": "The impact of Nutrition is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l98_q3",
-      "instruction": "Draft a well-structured essay discussing Artificial Intelligence. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Don't put all your eggs in one ___.",
+      "expectedAnswer": "basket",
+      "hint": "Diversify your risks.",
+      "options": [
+        "basket",
+        "bag",
+        "box",
+        "pan"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Artificial Intelligence on Modern Society",
-      "sampleAnswer": "The impact of Artificial Intelligence is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l99_q1",
-      "instruction": "Draft a well-structured essay discussing Remote Work. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "An apple a day keeps the ___ away.",
+      "expectedAnswer": "doctor",
+      "hint": "Healthy eating.",
+      "options": [
+        "doctor",
+        "teacher",
+        "dentist",
+        "nurse"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Remote Work on Modern Society",
-      "sampleAnswer": "The impact of Remote Work is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l99_q2",
-      "instruction": "Draft a well-structured essay discussing Climate Change. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "No pain, no ___.",
+      "expectedAnswer": "gain",
+      "hint": "Hard work pays off.",
+      "options": [
+        "gain",
+        "loss",
+        "rain",
+        "fame"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Climate Change on Modern Society",
-      "sampleAnswer": "The impact of Climate Change is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l99_q3",
-      "instruction": "Draft a well-structured essay discussing Urbanization. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Look before you ___.",
+      "expectedAnswer": "leap",
+      "hint": "Think before acting.",
+      "options": [
+        "leap",
+        "sleep",
+        "eat",
+        "speak"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Urbanization on Modern Society",
-      "sampleAnswer": "The impact of Urbanization is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l100_q1",
-      "instruction": "Draft a well-structured essay discussing Public Transport. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "It takes two to ___.",
+      "expectedAnswer": "tango",
+      "hint": "Both sides are responsible.",
+      "options": [
+        "tango",
+        "dance",
+        "fight",
+        "argue"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Public Transport on Modern Society",
-      "sampleAnswer": "The impact of Public Transport is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l100_q2",
-      "instruction": "Draft a well-structured essay discussing Reading. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "Laughter is the best ___.",
+      "expectedAnswer": "medicine",
+      "hint": "Humor heals.",
+      "options": [
+        "medicine",
+        "weapon",
+        "food",
+        "friend"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Reading on Modern Society",
-      "sampleAnswer": "The impact of Reading is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     },
     {
       "id": "essayDrafting_l100_q3",
-      "instruction": "Draft a well-structured essay discussing Technology. Ensure you cover both the benefits and challenges.",
-      "difficulty": 2,
+      "instruction": "Draft a short essay.",
+      "difficulty": 1,
       "subtype": "essayDrafting",
+      "interactionType": "choice",
+      "prompt": "The best things in life are ___.",
+      "expectedAnswer": "free",
+      "hint": "Priceless things.",
+      "options": [
+        "free",
+        "expensive",
+        "rare",
+        "hidden"
+      ],
+      "correctAnswerIndex": 0,
       "xpReward": 5,
-      "coinReward": 10,
-      "prompt": "The Impact of Technology on Modern Society",
-      "sampleAnswer": "The impact of Technology is profound and multifaceted. On one hand, it offers significant advantages, improving various aspects of our daily lives and opening up new opportunities. On the other hand, it also presents unique challenges that must be addressed through careful consideration and sustainable practices. Ultimately, achieving a balanced approach is crucial for long-term success.",
-      "minWords": 60
+      "coinReward": 10
     }
   ]
 }

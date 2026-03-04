@@ -11,7 +11,7 @@ import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/grammar/logic_circuit.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
@@ -90,10 +90,22 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                 context.read<AuthBloc>().state.user?.isPremium ?? false;
             di.sl<AdService>().showInterstitialAd(
               isPremium: isPremium,
-              onDismissed: () => _showCompletionDialog(context, xp, coins),
+              onDismissed: () => GameDialogHelper.showCompletion(
+                context,
+                xp: xp,
+                coins: coins,
+                title: 'Syntax Repaired!',
+                description: 'You earned $xp XP and $coins Coins!',
+                enableDoubleUp: true,
+              ),
             );
           } else if (state is GrammarGameOver) {
-            _showGameOverDialog(context);
+            GameDialogHelper.showGameOver(
+              context,
+              title: 'Grammar Depleted',
+              description: 'Practice more to master these structures!',
+              onRestore: () => context.read<GrammarBloc>().add(RestoreLife()),
+            );
           } else if (state is GrammarLoaded &&
               state.lastAnswerCorrect == null) {
             _selectedOptionIndex = null;
@@ -460,63 +472,6 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Accuracy Master!',
-        description:
-            'You earned $xp XP and $coins Coins for correcting all sentences!',
-        buttonText: 'GREAT',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
-
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Grammar Depleted',
-        description: 'Practice more to master these structures!',
-        isSuccess: false,
-        isRescueLife: true,
-        buttonText: 'GIVE UP',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-        onAdAction: () {
-          void restoreLife() {
-            context.read<GrammarBloc>().add(RestoreLife());
-            Navigator.pop(c);
-          }
-
-          final isPremium =
-              context.read<AuthBloc>().state.user?.isPremium ?? false;
-          if (isPremium) {
-            restoreLife();
-          } else {
-            di.sl<AdService>().showRewardedAd(
-              isPremium: false,
-              onUserEarnedReward: (_) => restoreLife(),
-              onDismissed: () {},
-            );
-          }
-        },
-        adButtonText: 'WATCH AD TO CONTINUE',
       ),
     );
   }

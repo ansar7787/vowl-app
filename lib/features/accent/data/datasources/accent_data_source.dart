@@ -3,18 +3,25 @@ import 'package:voxai_quest/core/data/services/asset_quest_service.dart';
 import '../models/accent_quest_model.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
-abstract class AccentRemoteDataSource {
+abstract class AccentDataSource {
   Future<List<AccentQuestModel>> getAccentQuest({
     required GameSubtype gameType,
     required int level,
   });
+
+  Future<void> preloadNextBatch({
+    required GameSubtype gameType,
+    required int currentLevel,
+  });
+
+  Future<void> clearQuestCache();
 }
 
-class AccentRemoteDataSourceImpl implements AccentRemoteDataSource {
+class AccentDataSourceImpl implements AccentDataSource {
   final FirebaseFirestore firestore;
   final AssetQuestService assetQuestService;
 
-  AccentRemoteDataSourceImpl({
+  AccentDataSourceImpl({
     required this.firestore,
     required this.assetQuestService,
   });
@@ -25,7 +32,7 @@ class AccentRemoteDataSourceImpl implements AccentRemoteDataSource {
     required int level,
   }) async {
     try {
-      // 1. Try to load from Local Assets (Free & Fast)
+      // 1. Try to load from Local Assets (Priority)
       final localData = await assetQuestService.getQuests(gameType.name, level);
       if (localData.isNotEmpty) {
         return localData.map((q) {
@@ -34,7 +41,7 @@ class AccentRemoteDataSourceImpl implements AccentRemoteDataSource {
         }).toList();
       }
 
-      // 2. Fallback to Firestore (Cloud)
+      // 2. Fallback to Firestore
       final doc = await firestore
           .collection('quests')
           .doc(gameType.name)
@@ -60,5 +67,23 @@ class AccentRemoteDataSourceImpl implements AccentRemoteDataSource {
     } catch (e) {
       rethrow;
     }
+  }
+
+  @override
+  Future<void> preloadNextBatch({
+    required GameSubtype gameType,
+    required int currentLevel,
+  }) async {
+    // Determine the next batch level
+    // Batch size is 10, so if level is 1-10 (batch 1), next batch starts at 11
+    final nextBatchStart = (((currentLevel - 1) ~/ 10) + 1) * 10 + 1;
+    if (nextBatchStart <= 200) {
+      await assetQuestService.preloadBatch(gameType.name, nextBatchStart);
+    }
+  }
+
+  @override
+  Future<void> clearQuestCache() async {
+    assetQuestService.clearCache();
   }
 }

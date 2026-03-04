@@ -5,23 +5,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
 import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/accent/harmonic_waves.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
 import 'package:voxai_quest/core/utils/haptic_service.dart';
 import 'package:voxai_quest/core/utils/injection_container.dart' as di;
 import 'package:voxai_quest/core/utils/sound_service.dart';
 import 'package:voxai_quest/core/utils/speech_service.dart';
+import 'package:voxai_quest/core/presentation/widgets/games/premium_game_widgets.dart';
 import 'package:voxai_quest/features/accent/domain/entities/accent_quest.dart';
 import 'package:voxai_quest/features/accent/presentation/bloc/accent_bloc.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:confetti/confetti.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
+import 'package:voxai_quest/core/presentation/widgets/games/victory_screen.dart';
+import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
+import '../widgets/vowel_playback_controls.dart';
+import '../widgets/vowel_word_card.dart';
+import '../widgets/vowel_feedback_panel.dart';
 
 class VowelDistinctionScreen extends StatefulWidget {
   final int level;
@@ -36,21 +38,21 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
   final _soundService = di.sl<SoundService>();
   final _ttsService = di.sl<SpeechService>();
   bool _isPlaying = false;
-  bool _showConfetti = false;
+  double _playbackRate = 1.0;
+  int _listenCount = 0;
+  static const int _maxListens = 3;
 
   bool _hasSubmitted = false;
   int? _selectedOptionIndex;
+  int? _wrongIndex;
   final List<int> _eliminatedIndices = [];
+  List<int> _shuffledIndices = [];
 
-  late ConfettiController _confettiController;
-  AccentLoaded? _lastLoadedState;
+  bool _showConfetti = false;
 
   @override
   void initState() {
     super.initState();
-    _confettiController = ConfettiController(
-      duration: const Duration(seconds: 3),
-    );
     context.read<AccentBloc>().add(
       FetchAccentQuests(
         gameType: GameSubtype.vowelDistinction,
@@ -61,92 +63,133 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
 
   @override
   void dispose() {
-    _confettiController.dispose();
     super.dispose();
   }
 
-  void _playAudio(String text) async {
-    if (_isPlaying) return;
+  void _shuffleOptions(AccentQuest quest) {
+    if (_shuffledIndices.isEmpty) {
+      _shuffledIndices = List.generate(quest.options!.length, (i) => i);
+      _shuffledIndices.shuffle();
+    }
+  }
+
+  Future<void> _playAudio(String text, {double? rate}) async {
+    if (_listenCount >= _maxListens && !_hasSubmitted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Max listens reached for this question!")),
+      );
+      return;
+    }
+
     setState(() => _isPlaying = true);
-    _hapticService.light();
-    // Removed _soundService.playClick() to prevent double sound
-    await _ttsService.speak(text);
-    if (mounted) setState(() => _isPlaying = false);
+    await _ttsService.speak(text, rate: rate ?? _playbackRate);
+    if (!_hasSubmitted && rate == null) {
+      setState(() => _listenCount++);
+    }
+    setState(() => _isPlaying = false);
   }
 
   void _checkAnswer(int index, AccentQuest quest) {
-    if (_hasSubmitted || _eliminatedIndices.contains(index)) return;
-    setState(() => _selectedOptionIndex = index);
+    if (_hasSubmitted) return;
 
-    bool isCorrect = false;
-    if (quest.correctAnswerIndex != null) {
-      isCorrect = (index == quest.correctAnswerIndex);
-    } else if (quest.correctAnswer != null && quest.options != null) {
-      isCorrect = (quest.options![index] == quest.correctAnswer);
-    } else if (quest.phonetic != null && quest.options != null) {
-      isCorrect = (quest.options![index] == quest.phonetic);
-    } else {
-      isCorrect = (index == 0); // Fallback
-    }
+    final isCorrect = _shuffledIndices[index] == quest.correctAnswerIndex;
+    _hapticService.selection();
 
     if (isCorrect) {
-      setState(() => _hasSubmitted = true);
-      _hapticService.success();
       _soundService.playCorrect();
+      _hapticService.success();
+      setState(() {
+        _hasSubmitted = true;
+        _selectedOptionIndex = index;
+      });
       context.read<AccentBloc>().add(SubmitAnswer(true));
 
-      Future.delayed(const Duration(milliseconds: 1000), () {
-        if (mounted) context.read<AccentBloc>().add(NextQuestion());
+      Future.delayed(const Duration(seconds: 2), () {
+        if (mounted) {
+          context.read<AccentBloc>().add(NextQuestion());
+          setState(() {
+            _hasSubmitted = false;
+            _selectedOptionIndex = null;
+            _listenCount = 0;
+            _shuffledIndices = [];
+            _eliminatedIndices.clear();
+          });
+        }
       });
     } else {
-      _hapticService.error();
       _soundService.playWrong();
-      setState(() => _hasSubmitted = false);
+      _hapticService.error();
+      setState(() {
+        _wrongIndex = index;
+        _eliminatedIndices.add(index);
+        _selectedOptionIndex = index;
+      });
       context.read<AccentBloc>().add(SubmitAnswer(false));
+
+      // Reset transient wrong state after a delay
+      Future.delayed(const Duration(milliseconds: 1000), () {
+        if (mounted && _wrongIndex == index) {
+          setState(() {
+            _wrongIndex = null;
+            _selectedOptionIndex = null;
+          });
+        }
+      });
     }
   }
 
   void _useHint(AccentLoaded state, AccentQuest quest) {
-    if (state.hintUsed) {
-      _hapticService.error();
-      return;
-    }
+    if (state.hintUsed) return;
     _hapticService.selection();
     _soundService.playHint();
 
-    final options = quest.options ?? ['A', 'E', 'I', 'O'];
+    final hintText =
+        quest.hint ?? "👂 Focus on whether the sound is short or long.";
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Row(
+          children: [
+            const Icon(Icons.lightbulb_outline, color: Colors.amber),
+            SizedBox(width: 12.w),
+            Expanded(
+              child: Text(
+                hintText,
+                style: GoogleFonts.outfit(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14.sp,
+                ),
+              ),
+            ),
+          ],
+        ),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor: Colors.indigo.withValues(alpha: 0.9),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.r),
+        ),
+        margin: EdgeInsets.all(20.w),
+        duration: const Duration(seconds: 4),
+      ),
+    );
 
-    int wrongIndex = -1;
-    for (int i = 0; i < options.length; i++) {
-      bool isMatch = false;
-      if (quest.correctAnswerIndex != null) {
-        isMatch = (i == quest.correctAnswerIndex);
-      } else if (quest.correctAnswer != null) {
-        isMatch = (options[i] == quest.correctAnswer);
-      } else {
-        isMatch = (options[i] == quest.phonetic);
-      }
-
-      if (!isMatch && !_eliminatedIndices.contains(i)) {
-        wrongIndex = i;
-        break;
+    // Eliminate a wrong option for pedagogical benefit
+    if (_shuffledIndices.isNotEmpty && quest.correctAnswerIndex != null) {
+      for (int i = 0; i < _shuffledIndices.length; i++) {
+        if (_shuffledIndices[i] != quest.correctAnswerIndex &&
+            !_eliminatedIndices.contains(i)) {
+          setState(() => _eliminatedIndices.add(i));
+          break;
+        }
       }
     }
 
-    if (wrongIndex != -1) {
-      setState(() => _eliminatedIndices.add(wrongIndex));
-    }
     context.read<AccentBloc>().add(AccentHintUsed());
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'accent',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('accent', level: widget.level);
 
     return Scaffold(
       backgroundColor: isDark
@@ -155,39 +198,52 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
       body: BlocConsumer<AccentBloc, AccentState>(
         listener: (context, state) {
           if (state is AccentGameComplete) {
-            _confettiController.play();
             setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => _showCompletionDialog(
-                context,
-                state.xpEarned,
-                state.coinsEarned,
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => VictoryScreen(
+                  xp: state.xpEarned,
+                  coins: state.coinsEarned,
+                  category: 'accent',
+                  gameType: 'vowelDistinction',
+                  level: widget.level,
+                  title: 'VOWEL MASTER!',
+                  description:
+                      'You distinguished between those tricky minimal pairs with ease.',
+                ),
               ),
             );
           } else if (state is AccentGameOver) {
-            _showGameOverDialog(context);
-          } else if (state is AccentLoaded) {
-            if (_lastLoadedState?.currentQuest != state.currentQuest) {
-              _lastLoadedState = state;
-              if (state.lastAnswerCorrect == null) {
-                setState(() {
-                  _hasSubmitted = false;
-                  _selectedOptionIndex = null;
-                  _eliminatedIndices.clear();
-                });
-              }
-            }
+            GameDialogHelper.showGameOver(
+              context,
+              onRestore: () => context.read<AccentBloc>().add(RestoreLife()),
+            );
+          }
+          if (state is AccentLoaded) {
+            _shuffleOptions(state.currentQuest);
           }
         },
         builder: (context, state) {
-          if (state is AccentLoading ||
-              (state is AccentInitial && _lastLoadedState == null)) {
+          if (state is AccentLoading || state is AccentInitial) {
             return const GameShimmerLoading();
           }
 
+          if (state is AccentLoaded || state is AccentGameComplete) {
+            final loadedState = state is AccentLoaded
+                ? state
+                : (state as AccentGameComplete).lastState;
+            return Stack(
+              children: [
+                MeshGradientBackground(colors: theme.backgroundColors),
+                HarmonicWaves(color: theme.primaryColor.withValues(alpha: 0.1)),
+                SafeArea(
+                  child: _buildGameUI(context, loadedState, isDark, theme),
+                ),
+                if (_showConfetti) const GameConfetti(),
+              ],
+            );
+          }
           if (state is AccentError) {
             return QuestUnavailableScreen(
               message: state.message,
@@ -199,35 +255,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
               ),
             );
           }
-
-          final displayState = state is AccentLoaded ? state : _lastLoadedState;
-
-          if (displayState != null) {
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                HarmonicWaves(color: theme.primaryColor, height: 100),
-                _buildGameUI(context, displayState, isDark, theme),
-                if (_showConfetti)
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: ConfettiWidget(
-                      confettiController: _confettiController,
-                      blastDirectionality: BlastDirectionality.explosive,
-                      shouldLoop: false,
-                      colors: const [
-                        Colors.amber,
-                        Colors.blue,
-                        Colors.pink,
-                        Colors.orange,
-                        Colors.purple,
-                      ],
-                    ),
-                  ),
-              ],
-            );
-          }
-          return const SizedBox.shrink();
+          return const Center(child: Text("Quest Unavailable"));
         },
       ),
     );
@@ -242,409 +270,181 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
     final quest = state.currentQuest;
     final progress = (state.currentIndex + 1) / state.quests.length;
 
-    return Stack(
+    return Column(
       children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  if (!state.hintUsed) ...[
-                    _buildHintButton(state, theme.primaryColor, quest),
-                    SizedBox(width: 12.w),
-                  ],
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    Text(
-                      "VOWEL DISTINCTION",
-                      style: GoogleFonts.outfit(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ),
-                    SizedBox(height: 8.h),
-                    Text(
-                      quest.instruction,
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      ),
-                    ).animate().fadeIn().slideY(begin: 0.1),
-                    SizedBox(height: 40.h),
-
-                    // Standard Playback Button
-                    ScaleButton(
-                      onTap: () => _playAudio(quest.word ?? ""),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 24.w,
-                          vertical: 16.h,
-                        ),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              theme.primaryColor.withValues(alpha: 0.9),
-                              theme.primaryColor,
-                            ],
-                          ),
-                          borderRadius: BorderRadius.circular(30.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: theme.primaryColor.withValues(alpha: 0.3),
-                              blurRadius: 12,
-                              offset: const Offset(0, 6),
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            if (_isPlaying)
-                              const HarmonicWaves(
-                                color: Colors.white,
-                                height: 30,
-                              ).animate().fadeIn()
-                            else
-                              Icon(
-                                Icons.volume_up_rounded,
-                                color: Colors.white,
-                                size: 28.r,
-                              ),
-                            SizedBox(width: 12.w),
-                            Text(
-                              "LISTEN",
-                              style: GoogleFonts.outfit(
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                letterSpacing: 2,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ).animate().fadeIn(delay: 400.ms).scale(),
-
-                    SizedBox(height: 60.h),
-
-                    // Sound Bubbles Grid
-                    if (state.lastAnswerCorrect == null)
-                      _buildSoundBubbles(quest, isDark, theme)
-                    else
-                      SizedBox(height: 120.h),
-
-                    SizedBox(height: 60.h),
-                  ],
-                ),
-              ),
-            ),
-          ],
+        PremiumGameHeader(
+          progress: progress,
+          lives: state.livesRemaining,
+          hintCount: state.hintUsed ? null : 1,
+          onHint: () => _useHint(state, quest),
+          onClose: () => context.pop(),
+          isDark: isDark,
         ),
-        if (_showConfetti) const GameConfetti(),
+        Expanded(
+          child: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Column(
+              children: [
+                SizedBox(height: 20.h),
+                _buildTitle(theme),
+                _buildPurposeSubtitle(isDark),
+                SizedBox(height: 12.h),
+                _buildInstruction(quest, isDark),
+                SizedBox(height: 30.h),
+                VowelPlaybackControls(
+                  playbackRate: _playbackRate,
+                  listenCount: _listenCount,
+                  maxListens: _maxListens,
+                  isPlaying: _isPlaying,
+                  onPlay: () {
+                    final wordToSpeak = quest.correctAnswerIndex == 0
+                        ? (quest.word1 ?? quest.options?[0] ?? "")
+                        : (quest.word2 ?? quest.options?[1] ?? "");
+                    _playAudio(wordToSpeak);
+                  },
+                  onRateChange: (rate) => setState(() => _playbackRate = rate),
+                  isDark: isDark,
+                  theme: theme,
+                ),
+                SizedBox(height: 40.h),
+                _buildVisualWordCards(quest, isDark, theme),
+                SizedBox(height: 40.h),
+                if (!_hasSubmitted) _buildAnswerButtons(quest, isDark, theme),
+                if (_hasSubmitted)
+                  VowelFeedbackPanel(
+                    quest: quest,
+                    isCorrect:
+                        _shuffledIndices[_selectedOptionIndex!] ==
+                        quest.correctAnswerIndex,
+                    isDark: isDark,
+                    theme: theme,
+                  ),
+                SizedBox(height: 40.h),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }
 
-  Widget _buildSoundBubbles(AccentQuest quest, bool isDark, ThemeResult theme) {
-    final options = quest.options ?? ['A', 'E', 'I', 'O'];
-
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: 24.h,
-        crossAxisSpacing: 24.w,
-        childAspectRatio: 1.2,
+  Widget _buildTitle(ThemeResult theme) {
+    return Text(
+      "VOWEL DISTINCTION",
+      style: GoogleFonts.outfit(
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w900,
+        letterSpacing: 4,
+        color: theme.primaryColor,
       ),
-      itemCount: options.length,
-      itemBuilder: (context, index) {
-        final option = options[index];
-        final isSelected = _selectedOptionIndex == index;
+    );
+  }
 
-        bool isCorrect = false;
-        if (_hasSubmitted) {
-          if (quest.correctAnswerIndex != null) {
-            isCorrect = index == quest.correctAnswerIndex;
-          } else if (quest.correctAnswer != null) {
-            isCorrect = options[index] == quest.correctAnswer;
-          }
-        }
+  Widget _buildPurposeSubtitle(bool isDark) {
+    return Text(
+      "MINIMAL PAIR TRAINING",
+      style: GoogleFonts.outfit(
+        fontSize: 10.sp,
+        fontWeight: FontWeight.bold,
+        letterSpacing: 1.5,
+        color: isDark ? Colors.white38 : Colors.black38,
+      ),
+    ).animate().fadeIn(delay: 200.ms);
+  }
+
+  Widget _buildInstruction(AccentQuest quest, bool isDark) {
+    return Text(
+      quest.instruction,
+      textAlign: TextAlign.center,
+      style: GoogleFonts.outfit(
+        fontSize: 22.sp,
+        fontWeight: FontWeight.w900,
+        color: isDark ? Colors.white : const Color(0xFF0F172A),
+      ),
+    ).animate().fadeIn().slideY(begin: 0.1);
+  }
+
+  Widget _buildVisualWordCards(
+    AccentQuest quest,
+    bool isDark,
+    ThemeResult theme,
+  ) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        VowelWordCard(
+          word: quest.word1 ?? quest.options?[0] ?? "",
+          ipa: quest.ipa1,
+          isDark: isDark,
+          theme: theme,
+          onPlay: () => _playAudio(
+            quest.word1 ?? quest.options?[0] ?? "",
+            rate: _playbackRate,
+          ),
+        ),
+        VowelWordCard(
+          word: quest.word2 ?? quest.options?[1] ?? "",
+          ipa: quest.ipa2,
+          isDark: isDark,
+          theme: theme,
+          onPlay: () => _playAudio(
+            quest.word2 ?? quest.options?[1] ?? "",
+            rate: _playbackRate,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildAnswerButtons(
+    AccentQuest quest,
+    bool isDark,
+    ThemeResult theme,
+  ) {
+    return Column(
+      children: List.generate(_shuffledIndices.length, (index) {
+        final originalIndex = _shuffledIndices[index];
+        final option = quest.options![originalIndex];
+        final isSelected = _selectedOptionIndex == index;
         final isEliminated = _eliminatedIndices.contains(index);
 
-        Color bubbleColor = theme.primaryColor;
-        if (isEliminated) {
-          bubbleColor = isDark ? Colors.white12 : Colors.black12;
-        } else if (_hasSubmitted) {
-          if (isCorrect) {
-            bubbleColor = Colors.greenAccent;
-          } else if (isSelected) {
-            bubbleColor = Colors.redAccent;
-          } else {
-            bubbleColor = isDark ? Colors.white12 : Colors.black12;
-          }
-        }
-
-        return ScaleButton(
-              onTap: isEliminated ? null : () => _checkAnswer(index, quest),
-              child: AnimatedContainer(
-                duration: const Duration(milliseconds: 300),
-                decoration: BoxDecoration(
-                  color: isEliminated
-                      ? Colors.transparent
-                      : isSelected
-                      ? bubbleColor.withValues(alpha: 0.8)
-                      : bubbleColor.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(40.r),
-                  border: Border.all(
-                    color: isEliminated
-                        ? Colors.transparent
-                        : isSelected
-                        ? bubbleColor
-                        : bubbleColor.withValues(alpha: 0.3),
-                    width: isSelected ? 3 : 2,
-                  ),
-                  boxShadow: [
-                    if (isSelected || (isCorrect && _hasSubmitted))
-                      BoxShadow(
-                        color: bubbleColor.withValues(alpha: 0.5),
-                        blurRadius: 20,
-                        spreadRadius: 2,
-                      ),
-                  ],
+        return Padding(
+          padding: EdgeInsets.only(bottom: 16.h),
+          child: ScaleButton(
+            onTap: () => _checkAnswer(index, quest),
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(vertical: 20.h),
+              decoration: BoxDecoration(
+                color: isSelected
+                    ? (isEliminated ? Colors.red : theme.primaryColor)
+                    : (isDark
+                          ? Colors.white.withValues(alpha: 0.05)
+                          : Colors.black.withValues(alpha: 0.03)),
+                borderRadius: BorderRadius.circular(24.r),
+                border: Border.all(
+                  color: isSelected
+                      ? (isEliminated ? Colors.red : theme.primaryColor)
+                      : (isDark ? Colors.white24 : Colors.black12),
+                  width: isSelected && isEliminated ? 2 : 1,
                 ),
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        option,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(
-                          fontSize: 32.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isEliminated
-                              ? (isDark ? Colors.white24 : Colors.black26)
-                              : (isSelected || (isCorrect && _hasSubmitted)) &&
-                                    isDark
-                              ? Colors.white
-                              : (isSelected || (isCorrect && _hasSubmitted)) &&
-                                    !isDark
-                              ? Colors.black87
-                              : (isDark ? Colors.white : Colors.black87),
-                        ),
-                      ),
-                      if (_hasSubmitted && isCorrect) ...[
-                        SizedBox(height: 8.h),
-                        Icon(
-                          Icons.check_circle_rounded,
-                          color: Colors.greenAccent,
-                          size: 24.r,
-                        ).animate().scale().shake(),
-                      ],
-                      if (_selectedOptionIndex == index && !isCorrect) ...[
-                        SizedBox(height: 8.h),
-                        Icon(
-                          Icons.cancel_rounded,
-                          color: Colors.redAccent,
-                          size: 24.r,
-                        ).animate().scale().shake(),
-                      ],
-                    ],
+              ),
+              child: Center(
+                child: Text(
+                  option.toUpperCase(),
+                  style: GoogleFonts.outfit(
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.bold,
+                    color: isSelected
+                        ? Colors.white
+                        : (isDark ? Colors.white : Colors.black),
                   ),
                 ),
               ),
-            )
-            .animate(delay: (200 + index * 100).ms)
-            .fadeIn()
-            .scale()
-            .shimmer(duration: 2.seconds, color: Colors.white24, angle: 1)
-            .then()
-            .shake(
-              hz: 2,
-              curve: Curves.easeInOutSine,
-            ); // Bouncing bubble effect
-      },
-    );
-  }
-
-  Widget _buildHeartCount(int lives) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHintButton(
-    AccentLoaded state,
-    Color primaryColor,
-    AccentQuest quest,
-  ) {
-    bool disabled = state.hintUsed;
-    return ScaleButton(
-      onTap: disabled ? null : () => _useHint(state, quest),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: disabled
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: disabled
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
-          ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              disabled
-                  ? Icons.lightbulb_outline_rounded
-                  : Icons.lightbulb_rounded,
-              color: disabled ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            BlocBuilder<AuthBloc, AuthState>(
-              builder: (context, authState) {
-                final hintCount = authState.user?.hintCount ?? 0;
-                return Text(
-                  "$hintCount",
-                  style: GoogleFonts.outfit(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w900,
-                    color: disabled ? Colors.grey : primaryColor,
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Vowel Virtuoso!',
-        description:
-            'You earned $xp XP and $coins Coins for your phonemic precision!',
-        buttonText: 'STELLAR',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
-
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Sound Merge',
-        description:
-            'The vowels sounded too similar. Try again to distinguish!',
-        isSuccess: false,
-        isRescueLife: true,
-        buttonText: 'GIVE UP',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-        onAdAction: () {
-          void restoreLife() {
-            context.read<AccentBloc>().add(RestoreLife());
-            Navigator.pop(c);
-          }
-
-          final isPremium =
-              context.read<AuthBloc>().state.user?.isPremium ?? false;
-          if (isPremium) {
-            restoreLife();
-          } else {
-            di.sl<AdService>().showRewardedAd(
-              isPremium: false,
-              onUserEarnedReward: (_) => restoreLife(),
-              onDismissed: () {},
-            );
-          }
-        },
-        adButtonText: 'WATCH AD TO CONTINUE',
-      ),
+        );
+      }),
     );
   }
 }

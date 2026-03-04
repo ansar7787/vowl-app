@@ -183,60 +183,42 @@ class LevelThemeHelper {
     }
 
     // Category Determination for Icons/Labels
-    if (type.contains('speak') ||
-        type.contains('pronunci') ||
-        type.contains('dialogue')) {
-      icon = Icons.mic_rounded;
-      category = GameCategory.speaking;
-    } else if (type.contains('read') ||
-        type.contains('paragraph') ||
-        type.contains('guess')) {
-      icon = Icons.auto_stories_rounded;
-      category = GameCategory.reading;
-    } else if (type.contains('write') ||
-        type.contains('journal') ||
-        type.contains('email') ||
-        type.contains('writing')) {
-      icon = Icons.edit_note_rounded;
-      category = GameCategory.writing;
-    } else if (type.contains('grammar') ||
-        type.contains('correction') ||
-        type.contains('tense') ||
-        type.contains('article') ||
-        type.contains('reorder')) {
-      icon = Icons.spellcheck_rounded;
-      category = GameCategory.grammar;
-    } else if (type.contains('vocab') ||
-        type.contains('synonym') ||
-        type.contains('antonym') ||
-        type.contains('idiom') ||
-        type.contains('word') ||
-        type.contains('flashcards')) {
-      icon = Icons.abc_rounded;
-      category = GameCategory.vocabulary;
-    } else if (type.contains('audio') ||
-        type.contains('listening') ||
-        type.contains('sound') ||
-        type.contains('speech')) {
-      icon = Icons.headphones_rounded;
-      category = GameCategory.listening;
-    } else if (type.contains('minimal') ||
-        type.contains('intonation') ||
-        type.contains('accent') ||
-        type.contains('stress') ||
-        type.contains('vowel') ||
-        type.contains('consonant')) {
-      icon = Icons.graphic_eq_rounded;
-      category = GameCategory.accent;
-    } else if (type.contains('roleplay') ||
-        type.contains('dialogue') ||
-        type.contains('interview') ||
-        type.contains('hub') ||
-        type.contains('order') ||
-        type.contains('travel') ||
-        type.contains('spark')) {
-      icon = Icons.theater_comedy_rounded;
-      category = GameCategory.roleplay;
+    final questCategory =
+        subtype.category; // Using the extension from game_quest.dart
+
+    switch (questCategory) {
+      case QuestType.speaking:
+        icon = Icons.mic_rounded;
+        category = GameCategory.speaking;
+        break;
+      case QuestType.listening:
+        icon = Icons.headphones_rounded;
+        category = GameCategory.listening;
+        break;
+      case QuestType.reading:
+        icon = Icons.auto_stories_rounded;
+        category = GameCategory.reading;
+        break;
+      case QuestType.writing:
+        icon = Icons.edit_note_rounded;
+        category = GameCategory.writing;
+        break;
+      case QuestType.grammar:
+        icon = Icons.spellcheck_rounded;
+        category = GameCategory.grammar;
+        break;
+      case QuestType.vocabulary:
+        icon = Icons.abc_rounded;
+        category = GameCategory.vocabulary;
+        break;
+      case QuestType.accent:
+        icon = Icons.graphic_eq_rounded;
+        category = GameCategory.accent;
+        break;
+      case QuestType.roleplay:
+        icon = Icons.theater_comedy_rounded;
+        category = GameCategory.roleplay;
+        break;
     }
 
     return ThemeResult(

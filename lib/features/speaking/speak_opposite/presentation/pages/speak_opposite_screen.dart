@@ -10,7 +10,7 @@ import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
@@ -129,14 +129,21 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> {
                 context.read<AuthBloc>().state.user?.isPremium ?? false;
             di.sl<AdService>().showInterstitialAd(
               isPremium: isPremium,
-              onDismissed: () => _showCompletionDialog(
-                context,
-                state.xpEarned,
-                state.coinsEarned,
-              ),
+              onDismissed: () => GameDialogHelper.showCompletion(
+          context,
+          xp: state.xpEarned,
+          coins: state.coinsEarned,
+          title: 'Antonym Ace!',
+          description:
+              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for knowing your opposites!',
+        ),
             );
           } else if (state is SpeakingGameOver) {
-            _showGameOverDialog(context);
+            GameDialogHelper.showGameOver(
+        context,
+        title: 'Vocabulary Depleted',
+        description: 'Your antonym library is currently empty. Recharge and try again!',
+      );
           }
         },
         builder: (context, state) {
@@ -401,43 +408,7 @@ class _SpeakOppositeScreenState extends State<SpeakOppositeScreen> {
     );
   }
 
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Antonym Ace!',
-        description:
-            'You earned $xp XP and $coins Coins for knowing your opposites!',
-        buttonText: 'GREAT',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
+  
 
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Vocabulary Depleted',
-        description:
-            'Your antonym library is currently empty. Recharge and try again!',
-        buttonText: 'RETRY',
-        isSuccess: false,
-        onButtonPressed: () => Navigator.pop(c),
-        secondaryButtonText: 'QUIT',
-        onSecondaryPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
+  
 }

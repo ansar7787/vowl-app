@@ -1,8 +1,8 @@
-# -------------------------------------------------------------------
-# Flutter & Dart Best Practices Gitignore
-# -------------------------------------------------------------------
+# ===========================================================================
+# VoxAI Quest — Flutter Project .gitignore
+# ===========================================================================
 
-# Miscellaneous
+# ─── Miscellaneous ─────────────────────────────────────────────────────────
 *.class
 *.log
 *.pyc
@@ -15,30 +15,35 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
+Thumbs.db
 
-# IntelliJ related
+# ─── IntelliJ / Android Studio ────────────────────────────────────────────
 *.iml
 *.ipr
 *.iws
 .idea/
 
-# VS Code related
+# ─── VS Code ──────────────────────────────────────────────────────────────
 .vscode/
 !.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
 *.code-workspace
 
-# Flutter/Dart/Pub related
+# ─── Flutter / Dart / Pub ─────────────────────────────────────────────────
 **/doc/api/
 **/ios/Flutter/.last_build_id
 .dart_tool/
+.flutter-plugins
 .flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
 /build/
 /coverage/
-.packages
+pubspec.lock
 
-# Android related
+# ─── Android ──────────────────────────────────────────────────────────────
 /android/app/debug
 /android/app/profile
 /android/app/release
@@ -46,12 +51,14 @@ migrate_working_dir/
 /android/key.properties
 /android/bundle
 /android/fastlane
+/android/.gradle/
+/android/captures/
 *.jks
 *.keystore
 *.apk
 *.aab
 
-# iOS related
+# ─── iOS ──────────────────────────────────────────────────────────────────
 /ios/Flutter/Generated.xcconfig
 /ios/Flutter/flutter_export_environment.sh
 /ios/Pods/
@@ -66,56 +73,67 @@ migrate_working_dir/
 *.moved-aside
 Podfile.lock
 
-# Windows related
+# ─── Windows ──────────────────────────────────────────────────────────────
 /windows/flutter/ephemeral/
 /windows/cmake-build-*/
 *.exe
 *.dll
 *.pdb
 
-# Web related
+# ─── Web ──────────────────────────────────────────────────────────────────
 /web/flutter_service_worker.js
 
-# MacOS related
+# ─── macOS ────────────────────────────────────────────────────────────────
 /macos/flutter/ephemeral/
 /macos/DerivedData
 
-# Symbols and Mapping
+# ─── Linux ────────────────────────────────────────────────────────────────
+/linux/flutter/ephemeral/
+
+# ─── Symbols & Mapping ───────────────────────────────────────────────────
 app.*.symbols
 app.*.map.json
 
-# Security & Secrets
-.env*
+# ─── Security & Secrets ──────────────────────────────────────────────────
+.env
+.env.*
+!.env.template
 *-key.json
 credentials.json
 service-account-key.json
-*.jks
-*.keystore
 *.p12
 *.pfx
 *.pem
 *.key
 
-# Firebase (Highly recommended to ignore for public repos)
-android/app/google-services.json
-ios/Runner/GoogleService-Info.plist
+# ─── Firebase ─────────────────────────────────────────────────────────────
+/android/app/google-services.json
+/ios/Runner/GoogleService-Info.plist
+firebase-debug.log
+firebase-debug.*.log
+.firebase/
+.firebaserc
 
-# Project Metadata
-brain/
-diagnostic_notes.md
-Thumbs.db
-.DS_Store
-
-# Standard Flutter/Dart/IDE
-.dart_tool/
-.packages
-.pub-cache/
-.pub/
-build/
-.idea/
-.vscode/
+# ─── Node.js (scripts directory) ─────────────────────────────────────────
 node_modules/
+
+# ─── Debug / Temporary Output Files ──────────────────────────────────────
+*.txt
+!README.txt
+!LICENSE.txt
+diagnostic_notes.md
+test_regex.dart
+
+# ─── AI / IDE Agent Metadata ─────────────────────────────────────────────
+brain/
+.gemini/
+.agents/
+.agent/
+_agents/
+_agent/
+
+# ─── Plugin Build Artifacts ──────────────────────────────────────────────
 **/razorpay_plugin/
 **/google_mobile_ads/
 
-# -------------------------------------------------------------------
+# ===========================================================================

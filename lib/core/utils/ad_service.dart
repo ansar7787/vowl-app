@@ -2,12 +2,20 @@ import 'dart:io';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class AdService {
+  // ─── Interstitial Ads ───────────────────────────────────────────────
   InterstitialAd? _interstitialAd;
   int _numInterstitialLoadAttempts = 0;
   DateTime? _lastInterstitialTime;
+
+  /// Levels completed since the last interstitial was shown.
+  int _completedLevelsSinceLastAd = 0;
+
+  /// Show an interstitial every N completed levels.
+  static const int levelsPerInterstitial = 2;
+
+  /// Minimum minutes between interstitials (safety net).
   static const int interstitialCooldownMinutes = 3;
   static const int maxFailedLoadAttempts = 3;
 
@@ -17,12 +25,18 @@ class AdService {
     nonPersonalizedAds: true,
   );
 
+  // ─── Lifecycle ──────────────────────────────────────────────────────
+
   Future<void> init() async {
     if (!kIsWeb) {
       await MobileAds.instance.initialize();
+      loadInterstitialAd();
+      loadRewardedAd(); // Pre-load so rewarded ads are ready when needed
       loadAppOpenAd();
     }
   }
+
+  // ─── Interstitial ──────────────────────────────────────────────────
 
   void loadInterstitialAd() {
     final adUnitId = Platform.isAndroid
@@ -49,23 +63,30 @@ class AdService {
     );
   }
 
+  /// Call after every level completion. Returns true if we should show
+  /// an interstitial (i.e. user has completed `levelsPerInterstitial` levels).
+  bool recordLevelCompletion() {
+    _completedLevelsSinceLastAd++;
+    return _completedLevelsSinceLastAd >= levelsPerInterstitial;
+  }
+
   void showInterstitialAd({
     required VoidCallback onDismissed,
     required bool isPremium,
   }) {
-    // Check if premium or ad not loaded
+    // Premium bypass
     if (isPremium || _interstitialAd == null) {
       onDismissed();
       return;
     }
 
-    // Pacing Logic: Don't show if cooldown hasn't passed
+    // Pacing: Don't show if cooldown hasn't passed
     final now = DateTime.now();
     if (_lastInterstitialTime != null) {
       final difference = now.difference(_lastInterstitialTime!);
       if (difference.inMinutes < interstitialCooldownMinutes) {
         debugPrint(
-          'AdService: Interstitial skipped due to pacing ($interstitialCooldownMinutes min cooldown)',
+          'AdService: Interstitial skipped (${interstitialCooldownMinutes}min cooldown)',
         );
         onDismissed();
         return;
@@ -75,6 +96,7 @@ class AdService {
     _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
       onAdDismissedFullScreenContent: (InterstitialAd ad) {
         _lastInterstitialTime = DateTime.now();
+        _completedLevelsSinceLastAd = 0; // Reset counter after showing
         ad.dispose();
         loadInterstitialAd();
         onDismissed();
@@ -89,21 +111,48 @@ class AdService {
     _interstitialAd = null;
   }
 
-  Future<bool> shouldShowFirstTimeAd(String gameCategory, int level) async {
-    final prefs = await SharedPreferences.getInstance();
-    final key = 'ad_shown_${gameCategory}_$level';
+  // ─── Banner Ads ────────────────────────────────────────────────────
 
-    // If we've already shown it for this level, don't show it again
-    if (prefs.getBool(key) == true) {
-      return false;
-    }
+  BannerAd? _bannerAd;
+  bool _isBannerLoaded = false;
 
-    // Otherwise, mark it as shown and return true to show the ad
-    await prefs.setBool(key, true);
-    return true;
+  bool get isBannerLoaded => _isBannerLoaded;
+  BannerAd? get bannerAd => _bannerAd;
+
+  void loadBannerAd() {
+    final adUnitId = Platform.isAndroid
+        ? dotenv.env['ADMOB_BANNER_ANDROID'] ??
+              'ca-app-pub-3940256099942544/6300978111' // Test ID
+        : dotenv.env['ADMOB_BANNER_IOS'] ??
+              'ca-app-pub-3940256099942544/2934735716'; // Test ID
+
+    _bannerAd = BannerAd(
+      adUnitId: adUnitId,
+      size: AdSize.banner,
+      request: request,
+      listener: BannerAdListener(
+        onAdLoaded: (Ad ad) {
+          _isBannerLoaded = true;
+          debugPrint('AdService: Banner ad loaded');
+        },
+        onAdFailedToLoad: (Ad ad, LoadAdError error) {
+          _isBannerLoaded = false;
+          ad.dispose();
+          debugPrint('AdService: Banner ad failed: $error');
+        },
+      ),
+    );
+    _bannerAd!.load();
   }
 
-  // Rewarded Ads
+  void disposeBannerAd() {
+    _bannerAd?.dispose();
+    _bannerAd = null;
+    _isBannerLoaded = false;
+  }
+
+  // ─── Rewarded Ads ──────────────────────────────────────────────────
+
   RewardedAd? _rewardedAd;
   int _numRewardedLoadAttempts = 0;
 
@@ -171,18 +220,18 @@ class AdService {
     _rewardedAd = null;
   }
 
-  // App Open Ads
+  // ─── App Open Ads ──────────────────────────────────────────────────
+
   AppOpenAd? _appOpenAd;
   bool _isShowingAppOpenAd = false;
   DateTime? _appOpenLoadTime;
 
-  /// Load an App Open Ad
   void loadAppOpenAd() {
     final adUnitId = Platform.isAndroid
         ? dotenv.env['ADMOB_APP_OPEN_ANDROID'] ??
-              'ca-app-pub-3940256099942544/9257395921' // Test ID
+              'ca-app-pub-3940256099942544/9257395921'
         : dotenv.env['ADMOB_APP_OPEN_IOS'] ??
-              'ca-app-pub-3940256099942544/5575463023'; // Test ID
+              'ca-app-pub-3940256099942544/5575463023';
 
     AppOpenAd.load(
       adUnitId: adUnitId,
@@ -199,24 +248,16 @@ class AdService {
     );
   }
 
-  /// Needs to be shown if the ad exists and is not expired (active < 4 hours)
   bool get _isAppOpenAdAvailable {
     return _appOpenAd != null &&
         _appOpenLoadTime != null &&
         DateTime.now().difference(_appOpenLoadTime!).inHours < 4;
   }
 
-  /// Show the App Open Ad
   void showAppOpenAdIfAvailable({required bool isPremium}) {
-    if (isPremium) return; // Premium bypass
+    if (isPremium) return;
     if (!_isAppOpenAdAvailable || _isShowingAppOpenAd) {
-      loadAppOpenAd(); // Preload for next time if unavailable
-      return;
-    }
-
-    // Don't show if we are currently showing a rewarded or interstitial ad
-    if (_rewardedAd != null ||
-        _interstitialAd == null && _numInterstitialLoadAttempts > 0) {
+      loadAppOpenAd();
       return;
     }
 

@@ -11,7 +11,7 @@ import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
 import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
 import 'package:voxai_quest/core/presentation/widgets/grammar/logic_circuit.dart';
 import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
 import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
@@ -84,14 +84,22 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                 context.read<AuthBloc>().state.user?.isPremium ?? false;
             di.sl<AdService>().showInterstitialAd(
               isPremium: isPremium,
-              onDismissed: () => _showCompletionDialog(
-                context,
-                state.xpEarned,
-                state.coinsEarned,
-              ),
+              onDismissed: () => GameDialogHelper.showCompletion(
+          context,
+          xp: state.xpEarned,
+          coins: state.coinsEarned,
+          title: 'Active Master!',
+          description:
+              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for mastering voice transitions!',
+        ),
             );
           } else if (state is GrammarGameOver) {
-            _showGameOverDialog(context);
+            GameDialogHelper.showGameOver(
+        context,
+        title: 'Loss of Focus',
+        description: 'You lost all hearts. Passive voice is useful, but stay active in learning!',
+        onRestore: () => context.read<GrammarBloc>().add(RestoreLife()),
+      );
           } else if (state is GrammarLoaded &&
               state.lastAnswerCorrect == null) {
             setState(() => _selectedOptionIndex = null);
@@ -444,61 +452,7 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
     );
   }
 
-  void _showCompletionDialog(BuildContext context, int xp, int coins) {
-    _soundService.playLevelComplete();
-    _hapticService.success();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Active Master!',
-        description:
-            'You earned $xp XP and $coins Coins for mastering voice transitions!',
-        buttonText: 'HURRAY',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-      ),
-    );
-  }
+  
 
-  void _showGameOverDialog(BuildContext context) {
-    _hapticService.error();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => ModernGameDialog(
-        title: 'Loss of Focus',
-        description:
-            'You lost all hearts. Passive voice is useful, but stay active in learning!',
-        isSuccess: false,
-        isRescueLife: true,
-        buttonText: 'GIVE UP',
-        onButtonPressed: () {
-          Navigator.pop(c);
-          context.pop();
-        },
-        onAdAction: () {
-          void restoreLife() {
-            context.read<GrammarBloc>().add(RestoreLife());
-            Navigator.pop(c);
-          }
-
-          final isPremium =
-              context.read<AuthBloc>().state.user?.isPremium ?? false;
-          if (isPremium) {
-            restoreLife();
-          } else {
-            di.sl<AdService>().showRewardedAd(
-              isPremium: false,
-              onUserEarnedReward: (_) => restoreLife(),
-              onDismissed: () {},
-            );
-          }
-        },
-        adButtonText: 'WATCH AD TO CONTINUE',
-      ),
-    );
-  }
+  
 }
