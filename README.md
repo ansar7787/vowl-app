@@ -8,7 +8,8 @@
 
 Vowl is engineered for stability and scale, supporting up to **1 million concurrent users** with an optimized cloud architecture and a massive content library.
 
-- **🛡️ Enterprise Security**: Integrated **Root & Jailbreak Detection** to protect the game economy and ensure a fair leaderboard environment.
+- **🛡️ Enterprise Security**: Integrated **Root & Jailbreak Detection** and robust **Firestore Security Rules** to protect the game economy and ensure a fair leaderboard environment.
+- **💎 Diamond Standard Curriculum**: An exhaustive, 20,000-level curriculum purified for 100% linguistic accuracy, unique icons, and synonym-based pedagogical hints.
 - **🎛️ Dynamic Management**: Powered by **Firebase Remote Config**, allowing real-time tuning of game rewards, ad frequency, and difficulty without app updates.
 - **📈 Scalable Architecture**: High-performance Firestore logic utilizing atomic `FieldValue.increment` and capped history arrays to minimize latency and database costs.
 - **🔒 Production Hardened**: Global debounce protection on all critical UI interactions to prevent race conditions and duplicate reward claims.
@@ -20,7 +21,8 @@ Vowl is engineered for stability and scale, supporting up to **1 million concurr
 Our curriculum is one of the most comprehensive in the world, featuring **9 core categories** with a total progression reaching **over 20,000 levels**.
 
 ### 📚 Core Learning Modules
-*   **Vocabulary Vault**: Immersive contextual learning with over 2,000+ curated terms.
+*   **Flashcard Mastery**: High-speed recall training with context-aware purification.
+*   **Topic Nexus**: Thematic vocabulary sorting for deep lexical retention.
 *   **Grammar Architect**: Interactive tree-based learning to master complex sentence structures.
 *   **Reading Odyssey**: Context-aware reading comprehension quests.
 *   **Writing Workshop**: AI-assisted writing challenges with real-time feedback.
@@ -64,9 +66,9 @@ A massive, tailored environment for young learners featuring **22 specialized ga
 
 ## 🏗️ Getting Started
 
-1.  **Clone the Repository**: `git clone https://github.com/ansar7787/voxai-quest-flutter.git`
+1.  **Clone the Repository**: `git clone https://github.com/ansar7787/vowl-app.git`
 2.  **Install Dependencies**: `flutter pub get`
-3.  **Environment Setup**: Create a `.env` file with your API keys.
+3.  **Environment Setup**: Create a `.env` file with your API keys (see `.env.template`).
 4.  **Run the App**: `flutter run --release`
 
 ---
