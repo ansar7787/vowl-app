@@ -154,10 +154,14 @@ class GameInstructionService {
       return const GameBriefing(
         title: "Topic Nexus",
         icon: Icons.category_rounded,
-        objective: "CATEGORIZE & SORT: Drag or tap words into their matching thematic buckets.",
-        rules: ["Tap to move", "Drag to sort", "Sync all to win"],
-        actionText: "Sync Categories",
-        tip: "PRO TIP: Grouping by topic helps your brain recall clusters of related words 2x faster. 🚀",
+        objective: "CATEGORIZE & SORT: Swipe words into their matching thematic bins.",
+        rules: [
+          "Swipe to categorize",
+          "Flick words into bins",
+          "Sort the whole batch"
+        ],
+        actionText: "Ready to Sort?",
+        tip: "PRO TIP: Categorizing words helps you remember them 2x faster! 🚀",
       );
     }
     if (type == GameSubtype.prefixSuffix) {
