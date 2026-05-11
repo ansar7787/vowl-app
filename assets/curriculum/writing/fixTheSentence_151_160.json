@@ -1,577 +1,307 @@
 {
-  "gameType": "fixTheSentence",
-  "batchIndex": 16,
-  "levels": "151-160",
-  "quests": [
-    {
-      "id": "fixTheSentence_l151_q1",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "The early bird catches the ___.",
-      "expectedAnswer": "worm",
-      "hint": "A common proverb.",
-      "options": [
-        "worm",
-        "cat",
-        "bus",
-        "ball"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l151_q2",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Practice makes ___.",
-      "expectedAnswer": "perfect",
-      "hint": "Repetition leads to skill.",
-      "options": [
-        "perfect",
-        "permanent",
-        "possible",
-        "pretty"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l151_q3",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Actions speak louder than ___.",
-      "expectedAnswer": "words",
-      "hint": "What you do matters more.",
-      "options": [
-        "words",
-        "sounds",
-        "music",
-        "thunder"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l152_q1",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "A journey of a thousand miles begins with a single ___.",
-      "expectedAnswer": "step",
-      "hint": "Starting small.",
-      "options": [
-        "step",
-        "mile",
-        "thought",
-        "word"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l152_q2",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Every cloud has a silver ___.",
-      "expectedAnswer": "lining",
-      "hint": "Something positive in bad situations.",
-      "options": [
-        "lining",
-        "color",
-        "edge",
-        "star"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l152_q3",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Don't count your chickens before they ___.",
-      "expectedAnswer": "hatch",
-      "hint": "Don't assume success.",
-      "options": [
-        "hatch",
-        "fly",
-        "grow",
-        "sing"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l153_q1",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Where there is a will, there is a ___.",
-      "expectedAnswer": "way",
-      "hint": "Determination finds solutions.",
-      "options": [
-        "way",
-        "wall",
-        "road",
-        "door"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l153_q2",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Rome wasn't built in a ___.",
-      "expectedAnswer": "day",
-      "hint": "Great things take time.",
-      "options": [
-        "day",
-        "year",
-        "week",
-        "moment"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l153_q3",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "A penny saved is a penny ___.",
-      "expectedAnswer": "earned",
-      "hint": "Saving money is like making money.",
-      "options": [
-        "earned",
-        "lost",
-        "spent",
-        "found"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l154_q1",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "You can't judge a book by its ___.",
-      "expectedAnswer": "cover",
-      "hint": "Appearances can be deceiving.",
-      "options": [
-        "cover",
-        "title",
-        "price",
-        "size"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l154_q2",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Two heads are better than ___.",
-      "expectedAnswer": "one",
-      "hint": "Collaboration helps.",
-      "options": [
-        "one",
-        "three",
-        "none",
-        "ten"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l154_q3",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Honesty is the best ___.",
-      "expectedAnswer": "policy",
-      "hint": "Being truthful.",
-      "options": [
-        "policy",
-        "answer",
-        "plan",
-        "choice"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l155_q1",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Better late than ___.",
-      "expectedAnswer": "never",
-      "hint": "Doing something matters.",
-      "options": [
-        "never",
-        "early",
-        "always",
-        "sometimes"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l155_q2",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Time flies when you're having ___.",
-      "expectedAnswer": "fun",
-      "hint": "Enjoyable moments pass quickly.",
-      "options": [
-        "fun",
-        "lunch",
-        "trouble",
-        "rain"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l155_q3",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Knowledge is ___.",
-      "expectedAnswer": "power",
-      "hint": "Information gives advantage.",
-      "options": [
-        "power",
-        "money",
-        "love",
-        "pain"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l156_q1",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "The pen is mightier than the ___.",
-      "expectedAnswer": "sword",
-      "hint": "Writing over violence.",
-      "options": [
-        "sword",
-        "pencil",
-        "hammer",
-        "gun"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l156_q2",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "All that glitters is not ___.",
-      "expectedAnswer": "gold",
-      "hint": "Not everything shiny is valuable.",
-      "options": [
-        "gold",
-        "silver",
-        "bright",
-        "real"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l156_q3",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "When in Rome, do as the Romans ___.",
-      "expectedAnswer": "do",
-      "hint": "Adapt to local customs.",
-      "options": [
-        "do",
-        "say",
-        "eat",
-        "think"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l157_q1",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Curiosity killed the ___.",
-      "expectedAnswer": "cat",
-      "hint": "Being too nosy can backfire.",
-      "options": [
-        "cat",
-        "dog",
-        "bird",
-        "mouse"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l157_q2",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Necessity is the mother of ___.",
-      "expectedAnswer": "invention",
-      "hint": "Need drives creativity.",
-      "options": [
-        "invention",
-        "education",
-        "nature",
-        "art"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l157_q3",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "The grass is always greener on the other ___.",
-      "expectedAnswer": "side",
-      "hint": "Others seem to have it better.",
-      "options": [
-        "side",
-        "hill",
-        "road",
-        "fence"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l158_q1",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "A picture is worth a thousand ___.",
-      "expectedAnswer": "words",
-      "hint": "Visual impact.",
-      "options": [
-        "words",
-        "dollars",
-        "colors",
-        "stories"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l158_q2",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Birds of a feather flock ___.",
-      "expectedAnswer": "together",
-      "hint": "Similar people group up.",
-      "options": [
-        "together",
-        "apart",
-        "away",
-        "south"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l158_q3",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Don't put all your eggs in one ___.",
-      "expectedAnswer": "basket",
-      "hint": "Diversify your risks.",
-      "options": [
-        "basket",
-        "bag",
-        "box",
-        "pan"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l159_q1",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "An apple a day keeps the ___ away.",
-      "expectedAnswer": "doctor",
-      "hint": "Healthy eating.",
-      "options": [
-        "doctor",
-        "teacher",
-        "dentist",
-        "nurse"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l159_q2",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "No pain, no ___.",
-      "expectedAnswer": "gain",
-      "hint": "Hard work pays off.",
-      "options": [
-        "gain",
-        "loss",
-        "rain",
-        "fame"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l159_q3",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Look before you ___.",
-      "expectedAnswer": "leap",
-      "hint": "Think before acting.",
-      "options": [
-        "leap",
-        "sleep",
-        "eat",
-        "speak"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l160_q1",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "It takes two to ___.",
-      "expectedAnswer": "tango",
-      "hint": "Both sides are responsible.",
-      "options": [
-        "tango",
-        "dance",
-        "fight",
-        "argue"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l160_q2",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "Laughter is the best ___.",
-      "expectedAnswer": "medicine",
-      "hint": "Humor heals.",
-      "options": [
-        "medicine",
-        "weapon",
-        "food",
-        "friend"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "fixTheSentence_l160_q3",
-      "instruction": "Fix the sentence.",
-      "difficulty": 1,
-      "subtype": "fixTheSentence",
-      "interactionType": "choice",
-      "prompt": "The best things in life are ___.",
-      "expectedAnswer": "free",
-      "hint": "Priceless things.",
-      "options": [
-        "free",
-        "expensive",
-        "rare",
-        "hidden"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "fixTheSentence",
+    "batchIndex":  16,
+    "levels":  "151-160",
+    "quests":  [
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L151_Q1",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L151_Q2",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L151_Q3",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L152_Q1",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L152_Q2",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L152_Q3",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L153_Q1",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L153_Q2",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L153_Q3",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L154_Q1",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L154_Q2",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L154_Q3",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L155_Q1",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L155_Q2",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L155_Q3",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L156_Q1",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L156_Q2",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L156_Q3",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L157_Q1",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L157_Q2",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L157_Q3",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L158_Q1",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L158_Q2",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L158_Q3",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L159_Q1",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L159_Q2",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L159_Q3",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L160_Q1",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L160_Q2",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   },
+                   {
+                       "id":  "WRT_FIXTHESENTENCE_L160_Q3",
+                       "interactionType":  "Error Eraser",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check subject-verb agreement.",
+                       "explanation":  "Editing is a critical high-level writing skill.",
+                       "passage":  "She don\u0027t likes to goes to the gym.",
+                       "correctAnswer":  "She doesn\u0027t like to go to the gym."
+                   }
+               ]
 }

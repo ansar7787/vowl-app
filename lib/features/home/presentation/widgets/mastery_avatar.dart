@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_image.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 class MasteryAvatar extends StatelessWidget {
   const MasteryAvatar({super.key, required this.user, required this.progress});

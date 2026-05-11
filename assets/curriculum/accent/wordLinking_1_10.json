@@ -1,517 +1,487 @@
 {
-  "gameType": "wordLinking",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "wordLinking_l1_q1",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Did you eat",
-      "options": [
-        "Did | you",
-        "Didju",
-        "Did | ju"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "d + y becomes /dʒ/.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l1_q2",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Want to go",
-      "options": [
-        "Want | to",
-        "Wanna",
-        "Wan | to"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Want to becomes 'Wanna'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l1_q3",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick it up",
-      "options": [
-        "Pick | it",
-        "Pickit",
-        "Pick | it | up"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l2_q1",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Turn off the light",
-      "options": [
-        "Turn | off",
-        "Tur | noff",
-        "Turnoff"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "n links to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l2_q2",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Going to stay",
-      "options": [
-        "Going | to",
-        "Gonna",
-        "Go | to"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Going to becomes 'Gonna'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l2_q3",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Got to go",
-      "options": [
-        "Got | to",
-        "Gotta",
-        "Got | go"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Got to becomes 'Gotta'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l3_q1",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Let you know",
-      "options": [
-        "Let | you",
-        "Letchu",
-        "Let | ju"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "t + y becomes /tʃ/.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l3_q2",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick it",
-      "options": [
-        "Pick | it",
-        "pickit",
-        "Pick i | t"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l3_q3",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick on",
-      "options": [
-        "Pick | on",
-        "pickon",
-        "Pick o | n"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l4_q1",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick up",
-      "options": [
-        "Pick | up",
-        "pickup",
-        "Pick u | p"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l4_q2",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick at",
-      "options": [
-        "Pick | at",
-        "pickat",
-        "Pick a | t"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l4_q3",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick in",
-      "options": [
-        "Pick | in",
-        "pickin",
-        "Pick i | n"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l5_q1",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick off",
-      "options": [
-        "Pick | off",
-        "pickoff",
-        "Pick o | ff"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l5_q2",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick out",
-      "options": [
-        "Pick | out",
-        "pickout",
-        "Pick o | ut"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l5_q3",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick about",
-      "options": [
-        "Pick | about",
-        "pickabout",
-        "Pick a | bout"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l6_q1",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick around",
-      "options": [
-        "Pick | around",
-        "pickaround",
-        "Pick a | round"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l6_q2",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick away",
-      "options": [
-        "Pick | away",
-        "pickaway",
-        "Pick a | way"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l6_q3",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick over",
-      "options": [
-        "Pick | over",
-        "pickover",
-        "Pick o | ver"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l7_q1",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick under",
-      "options": [
-        "Pick | under",
-        "pickunder",
-        "Pick u | nder"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l7_q2",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick across",
-      "options": [
-        "Pick | across",
-        "pickacross",
-        "Pick a | cross"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l7_q3",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Pick along",
-      "options": [
-        "Pick | along",
-        "pickalong",
-        "Pick a | long"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "K connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l8_q1",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Hold it",
-      "options": [
-        "Hold | it",
-        "holdit",
-        "Hold i | t"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "D connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l8_q2",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Hold on",
-      "options": [
-        "Hold | on",
-        "holdon",
-        "Hold o | n"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "D connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l8_q3",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Hold up",
-      "options": [
-        "Hold | up",
-        "holdup",
-        "Hold u | p"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "D connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l9_q1",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Hold at",
-      "options": [
-        "Hold | at",
-        "holdat",
-        "Hold a | t"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "D connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l9_q2",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Hold in",
-      "options": [
-        "Hold | in",
-        "holdin",
-        "Hold i | n"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "D connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l9_q3",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Hold off",
-      "options": [
-        "Hold | off",
-        "holdoff",
-        "Hold o | ff"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "D connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l10_q1",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Hold out",
-      "options": [
-        "Hold | out",
-        "holdout",
-        "Hold o | ut"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "D connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l10_q2",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Hold about",
-      "options": [
-        "Hold | about",
-        "holdabout",
-        "Hold a | bout"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "D connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordLinking_l10_q3",
-      "instruction": "Identify the linked sounds.",
-      "difficulty": 1,
-      "subtype": "wordLinking",
-      "interactionType": "choice",
-      "word": "Hold around",
-      "options": [
-        "Hold | around",
-        "holdaround",
-        "Hold a | round"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "D connects to vowel.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "wordLinking",
+    "batchIndex":  1,
+    "levels":  "1-10",
+    "quests":  [
+                   {
+                       "id":  "ACC_WORDLINKING_L1_Q1",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L1_Q2",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L1_Q3",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L2_Q1",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L2_Q2",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L2_Q3",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L3_Q1",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L3_Q2",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L3_Q3",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L4_Q1",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L4_Q2",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L4_Q3",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L5_Q1",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L5_Q2",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L5_Q3",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L6_Q1",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L6_Q2",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L6_Q3",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L7_Q1",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L7_Q2",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L7_Q3",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L8_Q1",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L8_Q2",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L8_Q3",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L9_Q1",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L9_Q2",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L9_Q3",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L10_Q1",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L10_Q2",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   },
+                   {
+                       "id":  "ACC_WORDLINKING_L10_Q3",
+                       "interactionType":  "Chain Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the /n/ sliding into \u0027apple\u0027.",
+                       "explanation":  "Linking creates the smooth flow of natural speech.",
+                       "textToSpeak":  "An apple a day.",
+                       "words":  [
+                                     "An",
+                                     "apple",
+                                     "a",
+                                     "day"
+                                 ],
+                       "correctAnswer":  "An apple"
+                   }
+               ]
 }

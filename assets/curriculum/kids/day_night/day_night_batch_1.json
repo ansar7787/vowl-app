@@ -1,0 +1,514 @@
+[
+  {
+    "level": 1,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L1_Q1",
+        "instruction": "Find the SUN",
+        "question": "☀️✨",
+        "options": [
+          "Sun",
+          "Moon",
+          "Star"
+        ],
+        "correctAnswer": "Sun",
+        "hint": "The sun is big, yellow, and very hot! It makes the day bright!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L1_Q2",
+        "instruction": "Which one is the SUN?",
+        "question": "☀️ vs 🌙",
+        "options": [
+          "Sun",
+          "Moon"
+        ],
+        "correctAnswer": "Sun",
+        "hint": "The sun is round and yellow and shines in the morning!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L1_Q3",
+        "instruction": "Is the sun yellow?",
+        "question": "☀️🟨❓",
+        "options": [
+          "Yes, bright yellow!",
+          "No, it's blue"
+        ],
+        "correctAnswer": "Yes, bright yellow!",
+        "hint": "The sun glows with a beautiful golden-yellow light!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L2_Q1",
+        "instruction": "Find the MOON",
+        "question": "🌙✨",
+        "options": [
+          "Moon",
+          "Sun",
+          "Cloud"
+        ],
+        "correctAnswer": "Moon",
+        "hint": "The moon is white or silver and glows in the dark night sky!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L2_Q2",
+        "instruction": "Which one is the MOON?",
+        "question": "🌙 vs ☀️",
+        "options": [
+          "Moon",
+          "Sun"
+        ],
+        "correctAnswer": "Moon",
+        "hint": "The moon comes out when we go to sleep!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L2_Q3",
+        "instruction": "Is the moon for nighttime?",
+        "question": "🌙🌌❓",
+        "options": [
+          "Yes, for Night!",
+          "No, for Day"
+        ],
+        "correctAnswer": "Yes, for Night!",
+        "hint": "We see the moon when the sky gets dark and the day is over!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L3_Q1",
+        "instruction": "Find the STAR",
+        "question": "⭐✨",
+        "options": [
+          "Star",
+          "Moon",
+          "Sun"
+        ],
+        "correctAnswer": "Star",
+        "hint": "Stars are tiny points of light that twinkle high up in the sky!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L3_Q2",
+        "instruction": "Which one is a STAR?",
+        "question": "⭐ vs ☁️",
+        "options": [
+          "Star",
+          "Cloud"
+        ],
+        "correctAnswer": "Star",
+        "hint": "Stars twinkle and shine like little diamonds in the night!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L3_Q3",
+        "instruction": "Do stars twinkle?",
+        "question": "⭐✨❓",
+        "options": [
+          "Yes, twinkle twinkle!",
+          "No, they bounce"
+        ],
+        "correctAnswer": "Yes, twinkle twinkle!",
+        "hint": "Stars look like they are blinking or twinkling because they are so far away!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L4_Q1",
+        "instruction": "Find the CLOUD",
+        "question": "☁️✨",
+        "options": [
+          "Cloud",
+          "Star",
+          "Sun"
+        ],
+        "correctAnswer": "Cloud",
+        "hint": "Clouds are fluffy and white, like cotton candy floating in the sky!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L4_Q2",
+        "instruction": "Which one is a CLOUD?",
+        "question": "☁️ vs ☀️",
+        "options": [
+          "Cloud",
+          "Sun"
+        ],
+        "correctAnswer": "Cloud",
+        "hint": "Clouds can be gray and rainy or white and fluffy!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L4_Q3",
+        "instruction": "Are clouds fluffy?",
+        "question": "☁️🐑❓",
+        "options": [
+          "Yes, so soft!",
+          "No, they are hard"
+        ],
+        "correctAnswer": "Yes, so soft!",
+        "hint": "Clouds look like big fluffy sheep in the sky!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 5,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L5_Q1",
+        "instruction": "Logic: When does the SUN shine?",
+        "question": "☀️❓",
+        "options": [
+          "Daytime",
+          "Nighttime",
+          "Bedtime"
+        ],
+        "correctAnswer": "Daytime",
+        "hint": "The sun wakes up in the morning and stays all day!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L5_Q2",
+        "instruction": "Logic: When do the STARS shine?",
+        "question": "⭐❓",
+        "options": [
+          "Nighttime",
+          "Daytime",
+          "Lunchtime"
+        ],
+        "correctAnswer": "Nighttime",
+        "hint": "We can see the stars only when the sky is dark at night!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L5_Q3",
+        "instruction": "Logic: Is the MOON for sleeping?",
+        "question": "🌙😴❓",
+        "options": [
+          "Yes, sweet dreams!",
+          "No, for running"
+        ],
+        "correctAnswer": "Yes, sweet dreams!",
+        "hint": "The moon is like a nightlight in the sky while we sleep!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 6,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L6_Q1",
+        "instruction": "Search: Find the sky in the DAY",
+        "question": "🟦☀️ vs ⬛🌙",
+        "options": [
+          "Blue Sky",
+          "Black Sky"
+        ],
+        "correctAnswer": "Blue Sky",
+        "hint": "The sky is bright blue when the sun is out in the day!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L6_Q2",
+        "instruction": "Search: Find the sky in the NIGHT",
+        "question": "⬛🌙 vs 🟦☀️",
+        "options": [
+          "Dark Sky",
+          "Blue Sky"
+        ],
+        "correctAnswer": "Dark Sky",
+        "hint": "The sky turns dark or black when the sun goes down at night!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L6_Q3",
+        "instruction": "Search: Find the RAINBOW cloud",
+        "question": "🌈☁️ vs ⬛",
+        "options": [
+          "Rainbow Cloud",
+          "Dark Night"
+        ],
+        "correctAnswer": "Rainbow Cloud",
+        "hint": "Rainbows usually happen in the daytime sky with the sun and clouds!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L7_Q1",
+        "instruction": "Review: Who is the king of DAY?",
+        "question": "☀️ Review",
+        "options": [
+          "Sun",
+          "Moon",
+          "Cloud"
+        ],
+        "correctAnswer": "Sun",
+        "hint": "The bright yellow ball that makes the light!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L7_Q2",
+        "instruction": "Review: Who is the queen of NIGHT?",
+        "question": "🌙 Review",
+        "options": [
+          "Moon",
+          "Sun",
+          "Star"
+        ],
+        "correctAnswer": "Moon",
+        "hint": "The silver glowing circle in the dark sky!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L7_Q3",
+        "instruction": "Review: Who are the tiny twinklers?",
+        "question": "⭐ Review",
+        "options": [
+          "Stars",
+          "Sun",
+          "Clouds"
+        ],
+        "correctAnswer": "Stars",
+        "hint": "The many little dots that shine at night!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 8,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L8_Q1",
+        "instruction": "Which one is for playing outside?",
+        "question": "🏃‍♂️☀️ vs 🛌🌙",
+        "options": [
+          "Daytime",
+          "Nighttime"
+        ],
+        "correctAnswer": "Daytime",
+        "hint": "We run and play when the sun is out!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L8_Q2",
+        "instruction": "Which one is for cozy dreams?",
+        "question": "🛌🌙 vs 🏃‍♂️☀️",
+        "options": [
+          "Nighttime",
+          "Daytime"
+        ],
+        "correctAnswer": "Nighttime",
+        "hint": "We sleep in our beds when the moon and stars are out!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L8_Q3",
+        "instruction": "Is the sun very bright?",
+        "question": "☀️🕶️❓",
+        "options": [
+          "Yes, wear sunglasses!",
+          "No, it's dark"
+        ],
+        "correctAnswer": "Yes, wear sunglasses!",
+        "hint": "The sun is so bright that we sometimes need glasses to protect our eyes!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L9_Q1",
+        "instruction": "Logic: Where does the sun go at night?",
+        "question": "☀️⬇️❓",
+        "options": [
+          "Down below the Earth",
+          "Inside a house",
+          "To the moon"
+        ],
+        "correctAnswer": "Down below the Earth",
+        "hint": "The sun sets and goes down so the other side of the world can have day!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L9_Q2",
+        "instruction": "Logic: Does the moon change shape?",
+        "question": "🌙🌓🌕❓",
+        "options": [
+          "Yes, sometimes a circle!",
+          "No, always the same"
+        ],
+        "correctAnswer": "Yes, sometimes a circle!",
+        "hint": "Sometimes the moon looks like a banana, and sometimes it looks like a big ball!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L9_Q3",
+        "instruction": "Logic: Can we see clouds at night?",
+        "question": "🌙☁️❓",
+        "options": [
+          "Yes, if they are there!",
+          "No, never"
+        ],
+        "correctAnswer": "Yes, if they are there!",
+        "hint": "Clouds can cover the moon and stars at night too!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L10_Q1",
+        "instruction": "Level 10 Challenge: Sky Watcher!",
+        "question": "Find the SUN in the sky",
+        "options": [
+          "☀️",
+          "🌙",
+          "⭐"
+        ],
+        "correctAnswer": "☀️",
+        "hint": "The bright daytime king!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L10_Q2",
+        "instruction": "Level 10 Challenge: Sky Watcher!",
+        "question": "Find the MOON in the sky",
+        "options": [
+          "🌙",
+          "☀️",
+          "☁️"
+        ],
+        "correctAnswer": "🌙",
+        "hint": "The silver nighttime queen!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L10_Q3",
+        "instruction": "Level 10 Challenge: Mastery!",
+        "question": "Are you a Sky Watcher?",
+        "options": [
+          "YES!",
+          "No"
+        ],
+        "correctAnswer": "YES!",
+        "hint": "Congratulations! You have completed Level 10!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  }
+]

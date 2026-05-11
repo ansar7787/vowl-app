@@ -1,0 +1,521 @@
+[
+  {
+    "level": 71,
+    "quests": [
+      {
+        "id": "KID_COLORS_L71_Q1",
+        "instruction": "Rainbow: How many colors in a rainbow?",
+        "question": "🌈 Count",
+        "options": [
+          "7",
+          "5",
+          "10"
+        ],
+        "correctAnswer": "7",
+        "hint": "Count them: Red, Orange, Yellow, Green, Blue, Indigo, Violet!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      },
+      {
+        "id": "KID_COLORS_L71_Q2",
+        "instruction": "Rainbow: What is the first color?",
+        "question": "🌈 Start",
+        "options": [
+          "Red",
+          "Blue",
+          "Violet"
+        ],
+        "correctAnswer": "Red",
+        "hint": "The rainbow always starts with Red!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      },
+      {
+        "id": "KID_COLORS_L71_Q3",
+        "instruction": "Identify: Is a Rainbow made of light?",
+        "question": "☀️ + 🌧️",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "Sunlight and rain make the rainbow appear!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      }
+    ]
+  },
+  {
+    "level": 72,
+    "quests": [
+      {
+        "id": "KID_COLORS_L72_Q1",
+        "instruction": "Order: What comes after Red?",
+        "question": "🔴 ?",
+        "options": [
+          "Orange",
+          "Green",
+          "Blue"
+        ],
+        "correctAnswer": "Orange",
+        "hint": "Red, then Orange!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_COLORS_L72_Q2",
+        "instruction": "Order: What comes after Orange?",
+        "question": "🔴 🟠 ?",
+        "options": [
+          "Yellow",
+          "Purple",
+          "Pink"
+        ],
+        "correctAnswer": "Yellow",
+        "hint": "Red, Orange, Yellow!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_COLORS_L72_Q3",
+        "instruction": "Order: What comes after Yellow?",
+        "question": "🔴 🟠 🟡 ?",
+        "options": [
+          "Green",
+          "Blue",
+          "Indigo"
+        ],
+        "correctAnswer": "Green",
+        "hint": "Red, Orange, Yellow, Green!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      }
+    ]
+  },
+  {
+    "level": 73,
+    "quests": [
+      {
+        "id": "KID_COLORS_L73_Q1",
+        "instruction": "Order: What is in the middle?",
+        "question": "🔴 🟠 🟡 ? 🔵 🌌 🟣",
+        "options": [
+          "Green",
+          "Red",
+          "White"
+        ],
+        "correctAnswer": "Green",
+        "hint": "Green is right in the middle of the rainbow!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_COLORS_L73_Q2",
+        "instruction": "Order: What comes after Green?",
+        "question": "... 🟢 ?",
+        "options": [
+          "Blue",
+          "Yellow",
+          "Orange"
+        ],
+        "correctAnswer": "Blue",
+        "hint": "After green comes the blue sky!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_COLORS_L73_Q3",
+        "instruction": "Order: What comes after Blue?",
+        "question": "... 🟢 🔵 ?",
+        "options": [
+          "Indigo",
+          "Red",
+          "Pink"
+        ],
+        "correctAnswer": "Indigo",
+        "hint": "Indigo is a very deep, dark blue!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 74,
+    "quests": [
+      {
+        "id": "KID_COLORS_L74_Q1",
+        "instruction": "End: What is the last color?",
+        "question": "🌈 Last",
+        "options": [
+          "Violet",
+          "Red",
+          "Yellow"
+        ],
+        "correctAnswer": "Violet",
+        "hint": "Violet is the pretty purple at the end!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_COLORS_L74_Q2",
+        "instruction": "Order: Blue, Indigo, ...?",
+        "question": "🔵 🌌 ?",
+        "options": [
+          "Violet",
+          "Green",
+          "Red"
+        ],
+        "correctAnswer": "Violet",
+        "hint": "Blue, Indigo, Violet!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_COLORS_L74_Q3",
+        "instruction": "Is Pink in the main 7 colors?",
+        "question": "🌈 Pink?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "No",
+        "hint": "Pink is pretty, but it's not one of the main 7 rainbow colors!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      }
+    ]
+  },
+  {
+    "level": 75,
+    "quests": [
+      {
+        "id": "KID_COLORS_L75_Q1",
+        "instruction": "Full Team: R-O-Y-G-B-I-V",
+        "question": "Which is 'Y'?",
+        "options": [
+          "Yellow",
+          "Blue",
+          "Green"
+        ],
+        "correctAnswer": "Yellow",
+        "hint": "Y is for Yellow!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_COLORS_L75_Q2",
+        "instruction": "Full Team: R-O-Y-G-B-I-V",
+        "question": "Which is 'G'?",
+        "options": [
+          "Green",
+          "Orange",
+          "Indigo"
+        ],
+        "correctAnswer": "Green",
+        "hint": "G is for Green!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_COLORS_L75_Q3",
+        "instruction": "Full Team: R-O-Y-G-B-I-V",
+        "question": "Which is 'V'?",
+        "options": [
+          "Violet",
+          "Blue",
+          "Red"
+        ],
+        "correctAnswer": "Violet",
+        "hint": "V is for Violet!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      }
+    ]
+  },
+  {
+    "level": 76,
+    "quests": [
+      {
+        "id": "KID_COLORS_L76_Q1",
+        "instruction": "Identify: Is Indigo dark or light?",
+        "question": "🌌",
+        "options": [
+          "Dark Blue",
+          "Light Pink",
+          "Bright Yellow"
+        ],
+        "correctAnswer": "Dark Blue",
+        "hint": "Indigo is a deep, dark midnight blue!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_COLORS_L76_Q2",
+        "instruction": "Identify: Is Violet a type of purple?",
+        "question": "🟣",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "Violet is a beautiful, bright purple!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_COLORS_L76_Q3",
+        "instruction": "Match: The 🌈 has...?",
+        "question": "Every Color",
+        "options": [
+          "Yes",
+          "No (Only 7)"
+        ],
+        "correctAnswer": "No (Only 7)",
+        "hint": "The main rainbow has 7 specific colors!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      }
+    ]
+  },
+  {
+    "level": 77,
+    "quests": [
+      {
+        "id": "KID_COLORS_L77_Q1",
+        "instruction": "Logic: If you mix Red and Yellow, you get the 2nd color?",
+        "question": "🔴 + 🟡 = 2nd?",
+        "options": [
+          "Yes (Orange)",
+          "No"
+        ],
+        "correctAnswer": "Yes (Orange)",
+        "hint": "Orange is the 2nd color of the rainbow!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_COLORS_L77_Q2",
+        "instruction": "Logic: If you mix Blue and Yellow, you get the middle color?",
+        "question": "🔵 + 🟡 = Middle?",
+        "options": [
+          "Yes (Green)",
+          "No"
+        ],
+        "correctAnswer": "Yes (Green)",
+        "hint": "Green is in the middle of the rainbow!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_COLORS_L77_Q3",
+        "instruction": "Logic: If you mix Red and Blue, you get the last color?",
+        "question": "🔴 + 🔵 = Last?",
+        "options": [
+          "Yes (Violet)",
+          "No"
+        ],
+        "correctAnswer": "Yes (Violet)",
+        "hint": "Violet/Purple is at the end of the rainbow!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 78,
+    "quests": [
+      {
+        "id": "KID_COLORS_L78_Q1",
+        "instruction": "Rainbow Check: Is White in the rainbow?",
+        "question": "⚪ in 🌈?",
+        "options": [
+          "No",
+          "Yes"
+        ],
+        "correctAnswer": "No",
+        "hint": "White light makes the rainbow, but it's not a stripe!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      },
+      {
+        "id": "KID_COLORS_L78_Q2",
+        "instruction": "Rainbow Check: Is Black in the rainbow?",
+        "question": "⚫ in 🌈?",
+        "options": [
+          "No",
+          "Yes"
+        ],
+        "correctAnswer": "No",
+        "hint": "Black is never in a rainbow stripe!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      },
+      {
+        "id": "KID_COLORS_L78_Q3",
+        "instruction": "Rainbow Check: Is Brown in the rainbow?",
+        "question": "🟤 in 🌈?",
+        "options": [
+          "No",
+          "Yes"
+        ],
+        "correctAnswer": "No",
+        "hint": "Brown is a mix of many colors, not in the rainbow!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      }
+    ]
+  },
+  {
+    "level": 79,
+    "quests": [
+      {
+        "id": "KID_COLORS_L79_Q1",
+        "instruction": "Missing Color: Red, Orange, ... , Green",
+        "question": "🌈 Fill the gap",
+        "options": [
+          "Yellow",
+          "Blue",
+          "Violet"
+        ],
+        "correctAnswer": "Yellow",
+        "hint": "The sun color is missing!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      },
+      {
+        "id": "KID_COLORS_L79_Q2",
+        "instruction": "Missing Color: Green, Blue, ... , Violet",
+        "question": "🌈 Fill the gap",
+        "options": [
+          "Indigo",
+          "Yellow",
+          "Red"
+        ],
+        "correctAnswer": "Indigo",
+        "hint": "The dark blue is missing!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      },
+      {
+        "id": "KID_COLORS_L79_Q3",
+        "instruction": "Missing Color: Yellow, Green, ... , Indigo",
+        "question": "🌈 Fill the gap",
+        "options": [
+          "Blue",
+          "Red",
+          "Orange"
+        ],
+        "correctAnswer": "Blue",
+        "hint": "The sky color is missing!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      }
+    ]
+  },
+  {
+    "level": 80,
+    "quests": [
+      {
+        "id": "KID_COLORS_L80_Q1",
+        "instruction": "Level 80 Challenge: Rainbow Mastery!",
+        "question": "Which color starts the 🌈?",
+        "options": [
+          "Red",
+          "Blue",
+          "Violet"
+        ],
+        "correctAnswer": "Red",
+        "hint": "The hot color!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      },
+      {
+        "id": "KID_COLORS_L80_Q2",
+        "instruction": "Level 80 Challenge: Rainbow Mastery!",
+        "question": "Which color ends the 🌈?",
+        "options": [
+          "Violet",
+          "Orange",
+          "Green"
+        ],
+        "correctAnswer": "Violet",
+        "hint": "The purple color!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      },
+      {
+        "id": "KID_COLORS_L80_Q3",
+        "instruction": "Level 80 Challenge: Mastery!",
+        "question": "Are you a rainbow expert?",
+        "options": [
+          "YES!",
+          "No"
+        ],
+        "correctAnswer": "YES!",
+        "hint": "You know all the colors of the sky!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      }
+    ]
+  }
+]

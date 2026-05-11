@@ -1,460 +1,204 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/presentation/widgets/writing/ink_streak.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class WritingEmailScreen extends StatefulWidget {
   final int level;
-  const WritingEmailScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const WritingEmailScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.writingEmail,
+  });
 
   @override
   State<WritingEmailScreen> createState() => _WritingEmailScreenState();
 }
 
 class _WritingEmailScreenState extends State<WritingEmailScreen> {
-  final TextEditingController _controller = TextEditingController();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  bool _hasSubmitted = false;
+  
+  final Map<String, String?> _slots = {
+    'SUBJECT': null,
+    'SALUTATION': null,
+    'BODY': null,
+    'SIGN-OFF': null,
+  };
+  final Set<String> _jammedSlots = {'BODY'};
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(
-        gameType: GameSubtype.writingEmail,
-        level: widget.level,
-      ),
-    );
+    context.read<WritingBloc>().add(FetchWritingQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+  void _onSlot(String slotKey, String data) {
+    if (_isAnswered || _jammedSlots.contains(slotKey)) {
+      if (_jammedSlots.contains(slotKey)) _hapticService.error();
+      return;
+    }
+    _hapticService.success();
+    setState(() => _slots[slotKey] = data);
+  }
+
+  void _clearJam(String slotKey) {
+    if (!_jammedSlots.contains(slotKey)) return;
+    _hapticService.selection();
+    setState(() => _jammedSlots.remove(slotKey));
   }
 
   void _submitAnswer() {
-    if (_hasSubmitted || _controller.text.trim().isEmpty) {
-      return;
-    }
-    _hapticService.selection();
-
-    final text = _controller.text.trim();
-    // Validate: At least 25 chars and 5 words for an email
-    bool isCorrect =
-        text.length >= 25 && text.split(RegExp(r'\s+')).length >= 5;
-
-    setState(() => _hasSubmitted = true);
-
-    if (isCorrect) {
-      _soundService.playCorrect();
-    } else {
-      _soundService.playWrong();
-    }
-
-    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
-  }
-
-  void _useHint() {
-    _hapticService.selection();
-    context.read<WritingBloc>().add(WritingHintUsed());
+    if (_isAnswered || _slots.values.any((v) => v == null)) return;
+    _hapticService.success();
+    _soundService.playCorrect();
+    setState(() { _isAnswered = true; _isCorrect = true; });
+    context.read<WritingBloc>().add(SubmitAnswer(true));
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: BlocConsumer<WritingBloc, WritingState>(
-        listener: (context, state) {
-          if (state is WritingGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Communication Expert!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins!',
-        ),
-            );
-          } else if (state is WritingGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Inbox Full',
-        description: 'You lost all hearts. Try to focus on the recipient and purpose!',
-        onRestore: () => context.read<WritingBloc>().add(RestoreLife()),
-      );
-          } else if (state is WritingLoaded &&
-              state.lastAnswerCorrect == null) {
+    return BlocConsumer<WritingBloc, WritingState>(
+      listener: (context, state) {
+        if (state is WritingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
             setState(() {
-              _hasSubmitted = false;
-              _controller.clear();
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _slots.updateAll((k, v) => null);
+              _jammedSlots.clear();
+              _jammedSlots.add('BODY');
             });
           }
-        },
-        builder: (context, state) {
-          if (state is WritingLoading || state is WritingInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is WritingLoaded) {
-            final theme = LevelThemeHelper.getTheme(
-              'writing',
-              level: widget.level,
-              isDark: isDark,
-            );
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                InkStreak(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is WritingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<WritingBloc>().add(
-                FetchWritingQuests(
-                  gameType: GameSubtype.writingEmail,
-                  level: widget.level,
+          _lastLives = state.livesRemaining;
+        }
+        if (state is WritingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'CORRESPONDENCE ACE!', enableDoubleUp: true);
+        } else if (state is WritingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<WritingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is WritingLoaded) ? state.currentQuest : null;
+        final components = [
+          "URGENT: PROJECT UPDATE",
+          "DEAR TEAM LEAD,",
+          "I HAVE COMPLETED THE ANALYSIS.",
+          "BEST REGARDS,",
+        ];
+
+        return WritingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
+          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 32.h),
+              Expanded(
+                child: ListView(
+                  children: _slots.keys.map((k) => _buildHexSlot(k, theme.primaryColor, isDark)).toList(),
                 ),
               ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    WritingLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
+              _buildDataStream(components, theme.primaryColor),
+              SizedBox(height: 32.h),
+              if (!_isAnswered)
+                ScaleButton(
+                  onTap: _submitAnswer,
+                  child: Container(
+                    width: double.infinity, height: 60.h,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: _slots.values.every((v) => v != null) ? theme.primaryColor : Colors.grey, boxShadow: [if (_slots.values.every((v) => v != null)) BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)]),
+                    child: Center(child: Text("TRANSMIT PACKET", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
                   ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    Text(
-                      theme.title,
-                      style: GoogleFonts.outfit(
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ),
-                    SizedBox(height: 16.h),
-                    Text(
-                      quest.instruction,
-                      style: GoogleFonts.outfit(
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : Colors.black87,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 24.h),
-
-                    // Email Context Card
-                    GlassTile(
-                      padding: EdgeInsets.all(24.r),
-                      borderRadius: BorderRadius.circular(32.r),
-                      borderColor: theme.primaryColor.withValues(alpha: 0.2),
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.03)
-                          : Colors.black.withValues(alpha: 0.02),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.mark_email_read_rounded,
-                                color: theme.primaryColor,
-                                size: 20.r,
-                              ),
-                              SizedBox(width: 12.w),
-                              Text(
-                                "MESSAGE TASK",
-                                style: GoogleFonts.outfit(
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 2,
-                                  color: theme.primaryColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 16.h),
-                          Text(
-                            quest.prompt ?? "No email context provided.",
-                            style: GoogleFonts.spectral(
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w600,
-                              height: 1.5,
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.9)
-                                  : Colors.black87,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ).animate().fadeIn().slideY(begin: 0.05),
-
-                    if (state.hintUsed)
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.h),
-                        child: Text(
-                          "Hint: ${quest.hint ?? 'Start with Dear... or Hi...'}",
-                          style: GoogleFonts.outfit(
-                            fontSize: 14.sp,
-                            color: Colors.amber,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ).animate().fadeIn(),
-
-                    SizedBox(height: 32.h),
-
-                    // Input Field
-                    GlassTile(
-                      padding: EdgeInsets.all(4.r),
-                      borderRadius: BorderRadius.circular(24.r),
-                      borderColor: _hasSubmitted
-                          ? (state.lastAnswerCorrect == true
-                                ? const Color(0xFF10B981)
-                                : const Color(0xFFF43F5E))
-                          : theme.primaryColor.withValues(alpha: 0.1),
-                      child: TextField(
-                        controller: _controller,
-                        enabled: !_hasSubmitted,
-                        maxLines: 8,
-                        style: GoogleFonts.spectral(
-                          fontSize: 17.sp,
-                          height: 1.5,
-                          color: isDark ? Colors.white : Colors.black87,
-                        ),
-                        decoration: InputDecoration(
-                          hintText: "Draft your email here...",
-                          hintStyle: GoogleFonts.spectral(
-                            color: theme.primaryColor.withValues(alpha: 0.3),
-                          ),
-                          contentPadding: EdgeInsets.all(24.r),
-                          filled: true,
-                          fillColor: Colors.transparent,
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.05),
-
-                    SizedBox(height: 32.h),
-
-                    if (!_hasSubmitted)
-                      ScaleButton(
-                        onTap: _submitAnswer,
-                        child: Container(
-                          width: double.infinity,
-                          height: 56.h,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                theme.primaryColor,
-                                theme.primaryColor.withValues(alpha: 0.8),
-                              ],
-                            ),
-                            borderRadius: BorderRadius.circular(16.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: theme.primaryColor.withValues(
-                                  alpha: 0.3,
-                                ),
-                                blurRadius: 20,
-                                offset: const Offset(0, 10),
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                            child: Text(
-                              "SEND EMAIL",
-                              style: GoogleFonts.outfit(
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ).animate().fadeIn(delay: 400.ms),
-
-                    SizedBox(height: 40.h),
-                  ],
                 ),
-              ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "SENT!" : "RE-DRAFT NEEDED!",
-            subtitle: quest.sampleAnswer ?? "Message sent.",
-            onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+              SizedBox(height: 20.h),
+            ],
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.terminal_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("SEQUENCE THE DATA PACKETS INTO THE NEURAL SLOTS", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
-          ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
+  Widget _buildHexSlot(String key, Color color, bool isDark) {
+    bool isJammed = _jammedSlots.contains(key);
+    bool hasData = _slots[key] != null;
+
+    return GestureDetector(
+      onTap: () => _clearJam(key),
+      child: DragTarget<String>(
+        onAcceptWithDetails: (details) => _onSlot(key, details.data),
+        builder: (context, candidateData, rejectedData) {
+          return Container(
+            margin: EdgeInsets.only(bottom: 12.h),
+            padding: EdgeInsets.all(16.r),
+            decoration: BoxDecoration(
+              color: isJammed ? Colors.redAccent.withValues(alpha: 0.1) : Colors.black45,
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(color: isJammed ? Colors.redAccent : (candidateData.isNotEmpty ? Colors.white : color.withValues(alpha: 0.3)), width: 2),
             ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
+            child: Row(
+              children: [
+                Text(key, style: GoogleFonts.shareTechMono(color: isJammed ? Colors.redAccent : color.withValues(alpha: 0.5), fontSize: 10.sp)),
+                SizedBox(width: 16.w),
+                Expanded(child: Text(isJammed ? "!! INTERFERENCE DETECTED !!" : (_slots[key] ?? "--- EMPTY ---"), style: GoogleFonts.outfit(color: isJammed ? Colors.redAccent : (hasData ? Colors.white : Colors.white24)))),
+                if (isJammed) Icon(Icons.flash_on_rounded, color: Colors.redAccent).animate(onPlay: (c) => c.repeat()).shimmer(),
+              ],
             ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
 
-  
-
-  
+  Widget _buildDataStream(List<String> items, Color color) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: items.map((i) => Draggable<String>(
+          data: i,
+          feedback: Material(color: Colors.transparent, child: Container(padding: EdgeInsets.all(12.r), decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(8.r)), child: Text(i, style: GoogleFonts.shareTechMono(color: Colors.white)))),
+          child: Container(margin: EdgeInsets.only(right: 12.w), padding: EdgeInsets.all(12.r), decoration: BoxDecoration(color: Colors.white10, borderRadius: BorderRadius.circular(8.r), border: Border.all(color: color.withValues(alpha: 0.2))), child: Text(i, style: GoogleFonts.shareTechMono(color: color, fontSize: 10.sp))),
+        )).toList(),
+      ),
+    );
+  }
 }

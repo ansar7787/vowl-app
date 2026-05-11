@@ -1,11 +1,9 @@
-import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
-import 'package:voxai_quest/core/data/services/asset_quest_service.dart';
-import 'package:voxai_quest/core/error/exceptions.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/features/writing/data/models/writing_quest_model.dart';
+import 'package:vowl/core/data/services/asset_quest_service.dart';
+import 'package:vowl/core/error/exceptions.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/writing/data/models/writing_quest_model.dart';
 
 abstract class WritingRemoteDataSource {
   Future<List<WritingQuestModel>> getWritingQuest({
@@ -28,28 +26,18 @@ class WritingRemoteDataSourceImpl implements WritingRemoteDataSource {
     try {
       final String typeString = gameType.name;
 
-      // 1. Try Local Assets first
-      final String assetPath =
-          'assets/curriculum/writing/${typeString}_1_10.json';
-      try {
-        final String jsonString = await rootBundle.loadString(assetPath);
-        final List<dynamic> jsonList = json.decode(jsonString);
-
-        // Filter by level (day)
-        final levelData = jsonList.firstWhere(
-          (item) => item['day'] == level,
-          orElse: () => null,
-        );
-
-        if (levelData != null && levelData['quests'] != null) {
-          return (levelData['quests'] as List)
-              .map((q) => WritingQuestModel.fromJson(q, q['id'] ?? ''))
-              .toList();
+      // 1. Try Local Assets first (Centralized Service)
+      final localData = await assetQuestService.getQuests(typeString, level);
+      if (localData.isNotEmpty) {
+        final List<WritingQuestModel> quests = [];
+        for (final q in localData) {
+          try {
+            quests.add(WritingQuestModel.fromJson(q, q['id'] ?? ''));
+          } catch (e) {
+            debugPrint('Error parsing writing quest ${q['id']}: $e');
+          }
         }
-      } catch (e) {
-        debugPrint(
-          'Local asset not found or error for $typeString level $level: $e',
-        );
+        if (quests.isNotEmpty) return quests;
       }
 
       // 2. Fallback to Firestore
@@ -67,9 +55,10 @@ class WritingRemoteDataSourceImpl implements WritingRemoteDataSource {
             .toList();
       }
 
-      throw ServerException('No quests found for $typeString level $level');
+      throw ServerException("We're having trouble loading this writing exercise. Please try again in a moment.");
     } catch (e) {
       debugPrint('Error in getWritingQuest: $e');
+      if (e is ServerException) rethrow;
       throw ServerException(e.toString());
     }
   }

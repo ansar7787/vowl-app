@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -20,74 +20,129 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   Future<void> _navigateToNext() async {
-    // Minimum splash duration
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(milliseconds: 2000));
     if (!mounted) return;
-
-    final authState = context.read<AuthBloc>().state;
-
-    if (authState.status == AuthStatus.authenticated) {
-      context.go('/home');
-    } else {
-      context.go('/login');
-    }
+    context.go(AppRouter.homeRoute);
   }
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final primaryColor = Theme.of(context).colorScheme.primary;
+    final backgroundColor = isDark ? const Color(0xFF0F172A) : Colors.white;
+
     return Scaffold(
-      backgroundColor: const Color(0xFF2563EB), // Deep Blue to match brand
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(32),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.2),
-                        blurRadius: 20,
-                        offset: const Offset(0, 10),
-                      ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(32),
-                    child: Image.asset(
-                      'assets/images/logo_new.png',
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                )
-                .animate()
-                .scale(duration: 600.ms, curve: Curves.elasticOut)
-                .fadeIn(),
-            const SizedBox(height: 24),
-            Text(
-              'VoxAI Quest',
-              style: GoogleFonts.outfit(
-                fontSize: 32,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                letterSpacing: 1.2,
+      backgroundColor: backgroundColor,
+      body: Stack(
+        children: [
+          // 1. Localized Branding Aura (Not full screen gradient)
+          Center(
+            child: Container(
+              width: 300.r,
+              height: 300.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    primaryColor.withValues(alpha: isDark ? 0.12 : 0.05),
+                    backgroundColor.withValues(alpha: 0.0),
+                  ],
+                ),
               ),
-            ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.2),
-            const SizedBox(height: 8),
-            Text(
-              'AI-Powered Language Adventure',
-              style: GoogleFonts.outfit(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: Colors.white70,
-              ),
-            ).animate().fadeIn(delay: 500.ms),
-          ],
+            ),
+          ).animate().fadeIn(duration: 1.seconds),
+
+          // 2. Center Logo
+          Center(
+            child: RepaintBoundary(
+              child: _SplashLogo(primaryColor: primaryColor),
+            ),
+          ),
+
+          // 3. Footer Branding (Stacked for maximum pop)
+          Positioned(
+            bottom: 64.h, // Increased for breathing space
+            left: 0,
+            right: 0,
+            child: _SplashFooter(primaryColor: primaryColor, isDark: isDark),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SplashLogo extends StatelessWidget {
+  final Color primaryColor;
+  const _SplashLogo({required this.primaryColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 180.r, // Bold Pro Standard
+      height: 180.r,
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        shape: BoxShape.circle,
+        boxShadow: [
+          BoxShadow(
+            color: primaryColor.withValues(alpha: 0.05),
+            blurRadius: 50,
+            spreadRadius: 5,
+          ),
+        ],
+      ),
+      child: Center(
+        child: Image.asset(
+          'assets/images/vowl_logo.webp',
+          height: 130.r, // Increased for mascot detail
+          width: 130.r,
+          fit: BoxFit.contain,
         ),
       ),
+    ).animate().scale(duration: 800.ms, curve: Curves.easeOutBack).fadeIn();
+  }
+}
+
+class _SplashFooter extends StatelessWidget {
+  final Color primaryColor;
+  final bool isDark;
+  const _SplashFooter({required this.primaryColor, required this.isDark});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // The Branding Pop
+        Text(
+          'vowl',
+          style: GoogleFonts.outfit(
+            fontSize: 26.sp,
+            fontWeight: FontWeight.w900,
+            color: const Color(0xFFA8E063), // Exact Launcher Matching Green
+            letterSpacing: 1.2,
+            shadows: [
+              Shadow(
+                color: const Color(0xFFA8E063).withValues(alpha: 0.2),
+                offset: const Offset(0, 4),
+                blurRadius: 10,
+              ),
+            ],
+          ),
+        ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.1),
+        SizedBox(height: 6.h), // Reduced from 14.h for tight professional branding
+        // The Tagline
+        Text(
+          'Your Complete English Quest',
+          style: GoogleFonts.outfit(
+            fontSize: 10.sp,
+            fontWeight: FontWeight.w800,
+            color: isDark ? Colors.white30 : Colors.black26,
+            letterSpacing: 2,
+          ),
+        ).animate().fadeIn(delay: 800.ms),
+      ],
     );
   }
 }

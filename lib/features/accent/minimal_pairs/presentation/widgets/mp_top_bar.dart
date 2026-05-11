@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/features/accent/presentation/bloc/accent_bloc.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 //  MpTopBar — Close + Progress + Hint + Hearts
@@ -14,6 +14,7 @@ import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
 class MpTopBar extends StatelessWidget {
   final bool isDark;
   final ThemeResult theme;
+  final bool isMidnight;
   final double progress;
   final AccentLoaded state;
   final List<String> words;
@@ -31,6 +32,7 @@ class MpTopBar extends StatelessWidget {
     required this.correctWord,
     required this.onClose,
     required this.onHint,
+    this.isMidnight = false,
   });
 
   @override

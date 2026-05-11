@@ -3,16 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/accent/presentation/bloc/accent_bloc.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 
 class WLTopBar extends StatelessWidget {
   final AccentLoaded state;
   final ThemeResult theme;
   final bool isDark;
   final VoidCallback onHintPressed;
+  final bool isMidnight;
 
   const WLTopBar({
     super.key,
@@ -20,6 +21,7 @@ class WLTopBar extends StatelessWidget {
     required this.theme,
     required this.isDark,
     required this.onHintPressed,
+    this.isMidnight = false,
   });
 
   @override

@@ -4,13 +4,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/constants/badge_constants.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/ad_reward_card.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/constants/badge_constants.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:flutter/services.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
 
 class AdventureLevelScreen extends StatelessWidget {
   const AdventureLevelScreen({super.key});
@@ -18,10 +22,13 @@ class AdventureLevelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final bgColor = isMidnight 
+        ? Colors.black 
+        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+
     return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
+      backgroundColor: bgColor,
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           final user = state.user;
@@ -544,8 +551,8 @@ class AdventureLevelScreen extends StatelessWidget {
     return GestureDetector(
       onTap: (isReached && !isClaimed)
           ? () {
-              context.read<AuthBloc>().add(
-                AuthClaimLevelMilestoneRequested(
+              context.read<ProgressionBloc>().add(
+                ProgressionClaimLevelMilestoneRequested(
                   level,
                   250, // Standard reward
                 ),
@@ -650,19 +657,19 @@ class AdventureLevelScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final hints = [
       {
-        'title': 'Single Hint',
-        'desc': 'Buy 1 hint',
-        'cost': 50,
-        'amount': 1,
+        'title': 'Strategic Pack',
+        'desc': 'Get 5 Hints',
+        'cost': 5000,
+        'amount': 5,
         'icon': Icons.lightbulb_outline_rounded,
         'color': const Color(0xFFFBBF24),
       },
       {
-        'title': 'Elite Pack',
-        'desc': 'Buy 5 hints',
-        'cost': 250,
-        'amount': 5,
-        'icon': Icons.lightbulb_rounded,
+        'title': 'Grand Master',
+        'desc': 'Get 25 Hints',
+        'cost': 20000,
+        'amount': 25,
+        'icon': Icons.auto_awesome_rounded,
         'color': const Color(0xFFF59E0B),
       },
     ];
@@ -680,6 +687,14 @@ class AdventureLevelScreen extends StatelessWidget {
               color: isDark ? Colors.white38 : const Color(0xFF64748B),
               letterSpacing: 1.5,
             ),
+          ),
+        ),
+        SizedBox(height: 16.h),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24),
+          child: HintAdCard(
+            title: 'Quick Hint',
+            subtitle: 'Watch ad for +1 Hint',
           ),
         ),
         SizedBox(height: 16.h),
@@ -770,7 +785,7 @@ class AdventureLevelScreen extends StatelessWidget {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            'Insufficient Vox Coins! Needed: $cost',
+            'Insufficient Vowl Coins! Needed: $cost',
             style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
           ),
           backgroundColor: const Color(0xFFEF4444),
@@ -807,7 +822,7 @@ class AdventureLevelScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 16.h),
                 Text(
-                  amount > 1 ? 'ELITE HINT PACK' : 'STRATEGIC HINT',
+                  amount > 5 ? 'GRAND MASTER PACK' : 'STRATEGIC HINT PACK',
                   style: GoogleFonts.outfit(
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
@@ -816,7 +831,7 @@ class AdventureLevelScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 12.h),
                 Text(
-                  'Exchange $cost Vox Coins for ${amount == 1 ? "1 hint" : "$amount hints"}.',
+                  'Exchange $cost Vowl Coins for ${amount == 1 ? "1 hint" : "$amount hints"}.',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.outfit(
                     fontSize: 14.sp,
@@ -840,8 +855,8 @@ class AdventureLevelScreen extends StatelessWidget {
                         ),
                         onPressed: () {
                           Navigator.of(ctx).pop();
-                          context.read<AuthBloc>().add(
-                            AuthPurchaseHintRequested(cost, hintAmount: amount),
+                          context.read<EconomyBloc>().add(
+                            EconomyPurchaseHintRequested(cost, hintAmount: amount),
                           );
                           HapticFeedback.heavyImpact();
                           _showSuccessSnackbar(context, amount);
@@ -872,3 +887,4 @@ class AdventureLevelScreen extends StatelessWidget {
     );
   }
 }
+

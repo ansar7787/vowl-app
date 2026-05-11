@@ -1,4 +1,4 @@
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class ListeningQuest extends GameQuest {
   final String? audioUrl;
@@ -13,6 +13,9 @@ class ListeningQuest extends GameQuest {
   final List<String>? audioOptions;
   final String? transcript;
   final String? targetEmotion;
+  final String? targetDetail;
+  final String? impliedMeaning;
+  final String? location;
 
   const ListeningQuest({
     required super.id,
@@ -30,6 +33,7 @@ class ListeningQuest extends GameQuest {
     super.hint,
     this.audioUrl,
     super.textToSpeak,
+    super.visualConfig,
     this.transcription,
     this.question,
     this.statement,
@@ -41,6 +45,9 @@ class ListeningQuest extends GameQuest {
     this.audioOptions,
     this.transcript,
     this.targetEmotion,
+    this.targetDetail,
+    this.impliedMeaning,
+    this.location,
     this.missingWord,
   });
 
@@ -48,3 +55,4 @@ class ListeningQuest extends GameQuest {
 
   String? get audioTranscript => transcript ?? transcription ?? textToSpeak;
 }
+

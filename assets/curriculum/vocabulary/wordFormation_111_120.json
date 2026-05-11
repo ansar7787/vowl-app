@@ -1,607 +1,487 @@
 {
-  "gameType": "wordFormation",
-  "batchIndex": 12,
-  "levels": "111-120",
-  "quests": [
-    {
-      "id": "wordFormation_l111_q1",
-      "instruction": "What is the noun form of 'happy'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'happy'?",
-      "baseWord": "happy",
-      "targetForm": "noun",
-      "options": [
-        "happiness",
-        "happily",
-        "happier",
-        "happiest"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"happy\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l111_q2",
-      "instruction": "What is the adjective form of 'create'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the adjective form of 'create'?",
-      "baseWord": "create",
-      "targetForm": "adjective",
-      "options": [
-        "creation",
-        "creative",
-        "creator",
-        "created"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Change \"create\" to its adjective form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l111_q3",
-      "instruction": "What is the adjective form of 'beauty'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the adjective form of 'beauty'?",
-      "baseWord": "beauty",
-      "targetForm": "adjective",
-      "options": [
-        "beautiful",
-        "beautify",
-        "beautifully",
-        "beauteous"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"beauty\" to its adjective form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l112_q1",
-      "instruction": "What is the adjective form of 'success'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the adjective form of 'success'?",
-      "baseWord": "success",
-      "targetForm": "adjective",
-      "options": [
-        "successful",
-        "succeed",
-        "succession",
-        "successively"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"success\" to its adjective form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l112_q2",
-      "instruction": "What is the noun form of 'decide'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'decide'?",
-      "baseWord": "decide",
-      "targetForm": "noun",
-      "options": [
-        "decision",
-        "decisive",
-        "decidedly",
-        "decider"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"decide\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l112_q3",
-      "instruction": "What is the noun form of 'move'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'move'?",
-      "baseWord": "move",
-      "targetForm": "noun",
-      "options": [
-        "movement",
-        "movable",
-        "mover",
-        "moving"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"move\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l113_q1",
-      "instruction": "What is the verb form of 'strong'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the verb form of 'strong'?",
-      "baseWord": "strong",
-      "targetForm": "verb",
-      "options": [
-        "strength",
-        "strengthen",
-        "strongly",
-        "stronger"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Change \"strong\" to its verb form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l113_q2",
-      "instruction": "What is the noun form of 'real'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'real'?",
-      "baseWord": "real",
-      "targetForm": "noun",
-      "options": [
-        "reality",
-        "realize",
-        "really",
-        "realistic"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"real\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l113_q3",
-      "instruction": "What is the noun form of 'friend'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'friend'?",
-      "baseWord": "friend",
-      "targetForm": "noun",
-      "options": [
-        "friendly",
-        "friendship",
-        "friendless",
-        "befriend"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Change \"friend\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l114_q1",
-      "instruction": "What is the noun form of 'act'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'act'?",
-      "baseWord": "act",
-      "targetForm": "noun",
-      "options": [
-        "action",
-        "active",
-        "actor",
-        "actually"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"act\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l114_q2",
-      "instruction": "What is the noun form of 'educate'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'educate'?",
-      "baseWord": "educate",
-      "targetForm": "noun",
-      "options": [
-        "education",
-        "educated",
-        "educator",
-        "educational"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"educate\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l114_q3",
-      "instruction": "What is the adjective form of 'differ'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the adjective form of 'differ'?",
-      "baseWord": "differ",
-      "targetForm": "adjective",
-      "options": [
-        "difference",
-        "different",
-        "differently",
-        "differentiate"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Change \"differ\" to its adjective form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l115_q1",
-      "instruction": "What is the adjective form of 'care'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the adjective form of 'care'?",
-      "baseWord": "care",
-      "targetForm": "adjective",
-      "options": [
-        "careful",
-        "careless",
-        "carer",
-        "caring"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"care\" to its adjective form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l115_q2",
-      "instruction": "What is the adjective form of 'wonder'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the adjective form of 'wonder'?",
-      "baseWord": "wonder",
-      "targetForm": "adjective",
-      "options": [
-        "wonderful",
-        "wondering",
-        "wonderment",
-        "wondrous"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"wonder\" to its adjective form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l115_q3",
-      "instruction": "What is the noun form of 'inform'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'inform'?",
-      "baseWord": "inform",
-      "targetForm": "noun",
-      "options": [
-        "information",
-        "informative",
-        "informed",
-        "informer"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"inform\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l116_q1",
-      "instruction": "What is the noun form of 'enjoy'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'enjoy'?",
-      "baseWord": "enjoy",
-      "targetForm": "noun",
-      "options": [
-        "enjoyable",
-        "enjoyment",
-        "enjoying",
-        "enjoyed"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Change \"enjoy\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l116_q2",
-      "instruction": "What is the noun form of 'construct'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'construct'?",
-      "baseWord": "construct",
-      "targetForm": "noun",
-      "options": [
-        "construction",
-        "constructive",
-        "constructor",
-        "constructed"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"construct\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l116_q3",
-      "instruction": "What is the noun form of 'develop'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'develop'?",
-      "baseWord": "develop",
-      "targetForm": "noun",
-      "options": [
-        "development",
-        "developing",
-        "developer",
-        "developed"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"develop\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l117_q1",
-      "instruction": "What is the adjective form of 'danger'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the adjective form of 'danger'?",
-      "baseWord": "danger",
-      "targetForm": "adjective",
-      "options": [
-        "dangerous",
-        "endanger",
-        "dangerously",
-        "endangered"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"danger\" to its adjective form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l117_q2",
-      "instruction": "What is the adjective form of 'power'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the adjective form of 'power'?",
-      "baseWord": "power",
-      "targetForm": "adjective",
-      "options": [
-        "powerful",
-        "powerless",
-        "empower",
-        "powered"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"power\" to its adjective form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l117_q3",
-      "instruction": "What is the adjective form of 'rely'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the adjective form of 'rely'?",
-      "baseWord": "rely",
-      "targetForm": "adjective",
-      "options": [
-        "reliable",
-        "reliance",
-        "reliably",
-        "relied"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"rely\" to its adjective form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l118_q1",
-      "instruction": "What is the adjective form of 'sense'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the adjective form of 'sense'?",
-      "baseWord": "sense",
-      "targetForm": "adjective",
-      "options": [
-        "sensible",
-        "sensitive",
-        "sensation",
-        "sensory"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Change \"sense\" to its adjective form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l118_q2",
-      "instruction": "What is the noun form of 'produce'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'produce'?",
-      "baseWord": "produce",
-      "targetForm": "noun",
-      "options": [
-        "production",
-        "productive",
-        "producer",
-        "producing"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"produce\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l118_q3",
-      "instruction": "What is the noun form of 'imagine'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'imagine'?",
-      "baseWord": "imagine",
-      "targetForm": "noun",
-      "options": [
-        "imagination",
-        "imaginative",
-        "imaginary",
-        "imagined"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"imagine\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l119_q1",
-      "instruction": "What is the noun form of 'compete'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'compete'?",
-      "baseWord": "compete",
-      "targetForm": "noun",
-      "options": [
-        "competition",
-        "competitive",
-        "competitor",
-        "competing"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"compete\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l119_q2",
-      "instruction": "What is the noun form of 'invest'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'invest'?",
-      "baseWord": "invest",
-      "targetForm": "noun",
-      "options": [
-        "investment",
-        "investor",
-        "invested",
-        "investing"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"invest\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l119_q3",
-      "instruction": "What is the noun form of 'employ'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'employ'?",
-      "baseWord": "employ",
-      "targetForm": "noun",
-      "options": [
-        "employment",
-        "employee",
-        "employer",
-        "employed"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"employ\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l120_q1",
-      "instruction": "What is the noun form of 'achieve'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'achieve'?",
-      "baseWord": "achieve",
-      "targetForm": "noun",
-      "options": [
-        "achievement",
-        "achiever",
-        "achievable",
-        "achieving"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"achieve\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l120_q2",
-      "instruction": "What is the noun form of 'communicate'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'communicate'?",
-      "baseWord": "communicate",
-      "targetForm": "noun",
-      "options": [
-        "communication",
-        "communicative",
-        "communicator",
-        "communicated"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"communicate\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordFormation_l120_q3",
-      "instruction": "What is the noun form of 'organize'?",
-      "difficulty": 1,
-      "subtype": "wordFormation",
-      "interactionType": "choice",
-      "question": "What is the noun form of 'organize'?",
-      "baseWord": "organize",
-      "targetForm": "noun",
-      "options": [
-        "organization",
-        "organized",
-        "organizer",
-        "organizing"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Change \"organize\" to its noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "wordFormation",
+    "batchIndex":  12,
+    "levels":  "111-120",
+    "quests":  [
+                   {
+                       "id":  "VOC_WORDFORMATION_L111_Q1",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "LOGIC",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "LOGIC",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "LOGIC"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L111_Q2",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "METHOD",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "METHOD",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "METHOD"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L111_Q3",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "NETWORK",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "NETWORK"
+                                   ],
+                       "correctAnswer":  "NETWORK"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L112_Q1",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "OBJECTIVE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "OBJECTIVE",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "OBJECTIVE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L112_Q2",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "PERSPECTIVE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "PERSPECTIVE"
+                                   ],
+                       "correctAnswer":  "PERSPECTIVE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L112_Q3",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "QUALITY",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "QUALITY",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "QUALITY"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L113_Q1",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "RESEARCH",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "RESEARCH"
+                                   ],
+                       "correctAnswer":  "RESEARCH"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L113_Q2",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "SOURCE",
+                       "options":  [
+                                       "SOURCE",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "SOURCE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L113_Q3",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "THEORY",
+                       "options":  [
+                                       "THEORY",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "THEORY"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L114_Q1",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "UNIQUE",
+                       "options":  [
+                                       "UNIQUE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "UNIQUE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L114_Q2",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "ANALYZE",
+                       "options":  [
+                                       "ANALYZE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "ANALYZE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L114_Q3",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "CONCEPT",
+                       "options":  [
+                                       "CONCEPT",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "CONCEPT"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L115_Q1",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "DATA",
+                       "options":  [
+                                       "DATA",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "DATA"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L115_Q2",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "EVIDENCE",
+                       "options":  [
+                                       "EVIDENCE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "EVIDENCE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L115_Q3",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "FACTOR",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "FACTOR"
+                                   ],
+                       "correctAnswer":  "FACTOR"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L116_Q1",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "GLOBAL",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "GLOBAL"
+                                   ],
+                       "correctAnswer":  "GLOBAL"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L116_Q2",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "HYPOTHESIS",
+                       "options":  [
+                                       "HYPOTHESIS",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "HYPOTHESIS"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L116_Q3",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "INTERPRET",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "INTERPRET"
+                                   ],
+                       "correctAnswer":  "INTERPRET"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L117_Q1",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "JUSTICE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "JUSTICE",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "JUSTICE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L117_Q2",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "KNOWLEDGE",
+                       "options":  [
+                                       "KNOWLEDGE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "KNOWLEDGE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L117_Q3",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "LOGIC",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "LOGIC"
+                                   ],
+                       "correctAnswer":  "LOGIC"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L118_Q1",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "METHOD",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "METHOD"
+                                   ],
+                       "correctAnswer":  "METHOD"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L118_Q2",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "NETWORK",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "NETWORK",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "NETWORK"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L118_Q3",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "OBJECTIVE",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "OBJECTIVE",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "OBJECTIVE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L119_Q1",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "PERSPECTIVE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "PERSPECTIVE"
+                                   ],
+                       "correctAnswer":  "PERSPECTIVE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L119_Q2",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "QUALITY",
+                       "options":  [
+                                       "QUALITY",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "QUALITY"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L119_Q3",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "RESEARCH",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "RESEARCH"
+                                   ],
+                       "correctAnswer":  "RESEARCH"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L120_Q1",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "SOURCE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "SOURCE"
+                                   ],
+                       "correctAnswer":  "SOURCE"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L120_Q2",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "THEORY",
+                       "options":  [
+                                       "THEORY",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "THEORY"
+                   },
+                   {
+                       "id":  "VOC_WORDFORMATION_L120_Q3",
+                       "interactionType":  "Morpheme Mixer",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "UNIQUE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "UNIQUE"
+                                   ],
+                       "correctAnswer":  "UNIQUE"
+                   }
+               ]
 }

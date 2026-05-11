@@ -61,5 +61,9 @@ class ModernPathPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant ModernPathPainter oldDelegate) {
+    return oldDelegate.color != color || 
+           oldDelegate.thickness != thickness || 
+           oldDelegate.points.length != points.length;
+  }
 }

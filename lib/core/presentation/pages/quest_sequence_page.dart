@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
 class QuestSequencePage extends StatefulWidget {
   final String sequenceId;
@@ -51,27 +51,8 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     // Derive category from subtype if type is missing as a separate field
     // Subtypes are grouped in ranges (0-9: speaking, 10-19: listening, etc.)
     final subtype = quest.subtype?.name ?? '';
-    String category = 'speaking';
-    if (quest.subtype != null) {
-      final index = quest.subtype!.index;
-      if (index < 10) {
-        category = 'speaking';
-      } else if (index < 20) {
-        category = 'listening';
-      } else if (index < 30) {
-        category = 'reading';
-      } else if (index < 40) {
-        category = 'writing';
-      } else if (index < 50) {
-        category = 'grammar';
-      } else if (index < 60) {
-        category = 'vocabulary';
-      } else if (index < 70) {
-        category = 'accent';
-      } else {
-        category = 'roleplay';
-      }
-    }
+    // Use the subtype's built-in category mapping instead of fragile index ranges
+    String category = quest.subtype != null ? quest.subtype!.category.name : (quest.type?.name ?? 'speaking');
 
     final level = quest.difficulty;
 
@@ -88,43 +69,26 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         } else {
           _finishSequence();
         }
+      } else {
+        GameDialogHelper.showPremiumSnackBar(
+          context,
+          'Quest part cancelled. You can try again or exit.',
+          icon: Icons.info_outline_rounded,
+          color: Colors.orange,
+        );
       }
     }
   }
 
   void _finishSequence() {
-    Haptics.vibrate(HapticsType.heavy);
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (c) => AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(28.r),
-        ),
-        title: Text(
-          'Quest Completed!',
-          style: GoogleFonts.outfit(fontWeight: FontWeight.w900),
-        ),
-        content: Text(
-          'You finished the $_sequenceTitle! Great work on your training.',
-          style: GoogleFonts.outfit(),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(c);
-              context.pop(); // Back to home
-            },
-            child: Text(
-              'FINISH',
-              style: GoogleFonts.outfit(
-                fontWeight: FontWeight.w800,
-                color: const Color(0xFF2563EB),
-              ),
-            ),
-          ),
-        ],
-      ),
+    GameDialogHelper.showCompletion(
+      context,
+      xp: 0, // Sequence doesn't track total cumulative XP yet
+      coins: 0,
+      title: 'QUEST COMPLETED!',
+      description: 'You finished the $_sequenceTitle! Great work on your training.',
+      buttonText: 'FINISH',
+      popResult: true,
     );
   }
 
@@ -136,12 +100,16 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         : _currentIndex / widget.quests.length;
 
     return Scaffold(
+      backgroundColor: Theme.of(context).brightness == Brightness.dark 
+          ? const Color(0xFF0F172A) 
+          : Colors.white,
       body: Stack(
         children: [
-          const MeshGradientBackground(),
+          const MeshGradientBackground(showLetters: false),
           SafeArea(
+            bottom: false,
             child: Padding(
-              padding: EdgeInsets.all(24.w),
+              padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 24.w),
               child: Column(
                 children: [
                   Row(
@@ -287,14 +255,26 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
 extension on GameQuest {
   IconData get iconData {
     if (subtype == null) return Icons.auto_awesome_rounded;
-    final index = subtype!.index;
-    if (index < 10) return Icons.mic_rounded; // Speaking
-    if (index < 20) return Icons.hearing_rounded; // Listening
-    if (index < 30) return Icons.menu_book_rounded; // Reading
-    if (index < 40) return Icons.edit_note_rounded; // Writing
-    if (index < 50) return Icons.extension_rounded; // Grammar
-    if (index < 60) return Icons.abc_rounded; // Vocabulary
-    if (index < 70) return Icons.record_voice_over_rounded; // Accent
-    return Icons.forum_rounded; // Roleplay
+    final type = subtype!.category;
+    switch (type) {
+      case QuestType.speaking:
+        return Icons.mic_rounded;
+      case QuestType.listening:
+        return Icons.hearing_rounded;
+      case QuestType.reading:
+        return Icons.menu_book_rounded;
+      case QuestType.writing:
+        return Icons.edit_note_rounded;
+      case QuestType.grammar:
+        return Icons.extension_rounded;
+      case QuestType.vocabulary:
+        return Icons.abc_rounded;
+      case QuestType.accent:
+        return Icons.record_voice_over_rounded;
+      case QuestType.roleplay:
+        return Icons.forum_rounded;
+      case QuestType.eliteMastery:
+        return Icons.workspace_premium_rounded;
+    }
   }
 }

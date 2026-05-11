@@ -1,5 +1,5 @@
-import 'package:voxai_quest/features/vocabulary/domain/repositories/vocabulary_repository.dart';
-import 'package:voxai_quest/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/domain/repositories/vocabulary_repository.dart';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 class GetVocabularyQuests {
   final VocabularyRepository repository;

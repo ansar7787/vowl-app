@@ -1,88 +1,75 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/listening/sound_wave.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/core/utils/speech_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/listening/presentation/bloc/listening_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
+import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class AudioMultipleChoiceScreen extends StatefulWidget {
   final int level;
-  const AudioMultipleChoiceScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const AudioMultipleChoiceScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.audioMultipleChoice,
+  });
 
   @override
-  State<AudioMultipleChoiceScreen> createState() =>
-      _AudioMultipleChoiceScreenState();
+  State<AudioMultipleChoiceScreen> createState() => _AudioMultipleChoiceScreenState();
 }
 
 class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _ttsService = di.sl<SpeechService>();
-  int? _selectedOptionIndex;
-  bool _isPlaying = false;
+  
+  double _rotation = 0.0;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
+  int? _selectedIndex;
 
   @override
   void initState() {
     super.initState();
-    context.read<ListeningBloc>().add(
-      FetchListeningQuests(
-        gameType: GameSubtype.audioMultipleChoice,
-        level: widget.level,
-      ),
-    );
-    // Pre-load ads
-    di.sl<AdService>().loadRewardedAd();
+    context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _playAudio(String text) async {
-    if (_isPlaying) return;
-    setState(() => _isPlaying = true);
-    _hapticService.light();
-    await _ttsService.speak(text);
-    if (mounted) setState(() => _isPlaying = false);
+  void _onSpin(double delta) {
+    if (_isAnswered) return;
+    setState(() {
+      _rotation += delta / 200;
+      _hapticService.selection();
+    });
   }
 
-  void _onOptionSelected(int index) {
-    if (_selectedOptionIndex != null) return;
-    _hapticService.selection();
-    setState(() => _selectedOptionIndex = index);
+  void _submitAnswer(int index, int correct) {
+    if (_isAnswered) return;
+    setState(() => _selectedIndex = index);
+    bool isCorrect = index == correct;
 
-    final state = context.read<ListeningBloc>().state;
-    if (state is ListeningLoaded) {
-      final isCorrect = index == (state.currentQuest.correctAnswerIndex ?? 0);
-      if (isCorrect) {
-        _soundService.playCorrect();
-        _hapticService.success();
-      } else {
-        _soundService.playWrong();
-        _hapticService.error();
-      }
-      context.read<ListeningBloc>().add(SubmitAnswer(isCorrect));
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<ListeningBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
-  }
-
-  void _useHint() {
-    _hapticService.selection();
-    context.read<ListeningBloc>().add(ListeningHintUsed());
   }
 
   @override
@@ -90,381 +77,146 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<ListeningBloc, ListeningState>(
-        listener: (context, state) {
-          if (state is ListeningGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Auditory Genius!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for choosing correctly!',
-          enableDoubleUp: true,
-        ),
-            );
-          } else if (state is ListeningGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Audio Cut Off',
-        description: 'Your listening streak was interrupted. Try again!',
-        onRestore: () => context.read<ListeningBloc>().add(RestoreLife()),
-      );
-          } else if (state is ListeningLoaded &&
-              state.lastAnswerCorrect == null) {
-            _selectedOptionIndex = null;
+    return BlocConsumer<ListeningBloc, ListeningState>(
+      listener: (context, state) {
+        if (state is ListeningLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _selectedIndex = null;
+              _rotation = 0.0;
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is ListeningLoading || state is ListeningInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is ListeningLoaded) {
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                SoundWave(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is ListeningError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<ListeningBloc>().add(
-                FetchListeningQuests(
-                  gameType: GameSubtype.audioMultipleChoice,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    ListeningLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black12,
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    Text(
-                      "AUDIO MULTIPLE CHOICE",
-                      style: GoogleFonts.outfit(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ).animate().fadeIn(),
-                    SizedBox(height: 40.h),
-
-                    Container(
-                          width: 160.r,
-                          height: 160.r,
-                          decoration: BoxDecoration(
-                            color: theme.primaryColor.withValues(alpha: 0.1),
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: theme.primaryColor.withValues(alpha: 0.2),
-                              width: 2,
-                            ),
-                          ),
-                          child: ScaleButton(
-                            onTap: () => _playAudio(quest.transcript ?? ""),
-                            child: Center(
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  if (_isPlaying)
-                                    const SoundWave(
-                                      color: Colors.white,
-                                    ).animate().fadeIn(),
-                                  Icon(
-                                    _isPlaying
-                                        ? Icons.volume_up_rounded
-                                        : Icons.play_arrow_rounded,
-                                    size: 64.r,
-                                    color: theme.primaryColor,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        )
-                        .animate(target: _isPlaying ? 1 : 0)
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(1.1, 1.1),
-                          duration: 400.ms,
-                          curve: Curves.elasticOut,
-                        ),
-
-                    SizedBox(height: 40.h),
-
-                    Text(
-                      quest.instruction,
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-
-                    if (quest.question != null) ...[
-                      SizedBox(height: 20.h),
-                      Text(
-                        quest.question!,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                          color: isDark ? Colors.white60 : Colors.black45,
-                        ),
-                      ),
-                    ],
-
-                    SizedBox(height: 30.h),
-
-                    ...List.generate(quest.options?.length ?? 0, (index) {
-                      final isCorrect = index == quest.correctAnswerIndex;
-                      final isSelected = _selectedOptionIndex == index;
-                      return _buildOptionCard(
-                        text: quest.options![index],
-                        index: index,
-                        isSelected: isSelected,
-                        isCorrect: isCorrect,
-                        showResult: _selectedOptionIndex != null,
-                        isDark: isDark,
-                        theme: theme,
-                      );
-                    }),
-
-                    SizedBox(height: 40.h),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect!
-                ? "TASTEFUL LISTENING!"
-                : "KEEP AT IT!",
-            subtitle:
-                "Correct Answer: ${quest.options?[quest.correctAnswerIndex ?? 0] ?? ""}",
-            onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
-          ),
-        if (_showConfetti) const GameConfetti(),
-      ],
-    );
-  }
-
-  Widget _buildOptionCard({
-    required String text,
-    required int index,
-    required bool isSelected,
-    required bool isCorrect,
-    required bool showResult,
-    required bool isDark,
-    required ThemeResult theme,
-  }) {
-    Color? cardColor;
-    if (showResult) {
-      if (isCorrect) {
-        cardColor = const Color(0xFF10B981);
-      } else if (isSelected) {
-        cardColor = const Color(0xFFF43F5E);
-      }
-    }
-
-    return Padding(
-      padding: EdgeInsets.only(bottom: 16.h),
-      child: ScaleButton(
-        onTap: () => _onOptionSelected(index),
-        child: GlassTile(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
-          borderRadius: BorderRadius.circular(20.r),
-          color: cardColor?.withValues(alpha: 0.8),
-          borderColor: (isSelected && showResult
-              ? Colors.white.withValues(alpha: 0.5)
-              : (isSelected
-                    ? theme.primaryColor
-                    : theme.primaryColor.withValues(alpha: 0.1))),
-          child: Row(
+          _lastLives = state.livesRemaining;
+        }
+        if (state is ListeningGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'SONIC RADAR!', enableDoubleUp: true);
+        } else if (state is ListeningGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ListeningBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is ListeningLoaded) ? state.currentQuest : null;
+        
+        return ListeningBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
+          onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
             children: [
-              Container(
-                width: 40.r,
-                height: 40.r,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      isSelected
-                          ? Colors.white24
-                          : theme.primaryColor.withValues(alpha: 0.1),
-                      isSelected
-                          ? Colors.white10
-                          : theme.primaryColor.withValues(alpha: 0.05),
-                    ],
-                  ),
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: isSelected
-                        ? Colors.white24
-                        : theme.primaryColor.withValues(alpha: 0.2),
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    String.fromCharCode(65 + index),
-                    style: GoogleFonts.outfit(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isSelected ? Colors.white : theme.primaryColor,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(width: 18.w),
-              Expanded(
-                child: Text(
-                  text,
-                  style: GoogleFonts.outfit(
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w700,
-                    color: isSelected
-                        ? Colors.white
-                        : (isDark
-                              ? Colors.white.withValues(alpha: 0.9)
-                              : Colors.black87),
-                    letterSpacing: 0.5,
-                  ),
-                ),
-              ),
-              if (showResult && isCorrect)
-                Icon(
-                  Icons.check_circle_rounded,
-                  color: Colors.white,
-                  size: 24.r,
-                ),
+              SizedBox(height: 24.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 40.h),
+              _buildQuestionDisplay(quest.question ?? "", theme.primaryColor, isDark),
+              const Spacer(),
+              _buildOrbitalSpinner(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, quest.textToSpeak ?? ""),
+              const Spacer(),
             ],
           ),
-        ),
-      ),
-    ).animate().fadeIn(delay: (index * 100).ms).slideX(begin: 0.1);
+        );
+      },
+    );
   }
 
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.track_changes_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("SPIN SATELLITES TO LOCK IN CORRECT DATA", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.all(8.r),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          shape: BoxShape.circle,
-        ),
-        child: Icon(
-          Icons.lightbulb_rounded,
-          color: used ? Colors.grey : primaryColor,
-          size: 24.r,
+  Widget _buildQuestionDisplay(String text, Color color, bool isDark) {
+    return GlassTile(
+      padding: EdgeInsets.all(24.r), borderRadius: BorderRadius.circular(20.r),
+      child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w700, color: isDark ? Colors.white : Colors.black87)),
+    );
+  }
+
+  Widget _buildOrbitalSpinner(List<String> options, int correct, Color color, String tts) {
+    return GestureDetector(
+      onPanUpdate: (details) => _onSpin(details.delta.dx),
+      child: SizedBox(
+        height: 400.h, width: double.infinity,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            // Orbital Ring
+            Container(
+              width: 300.r, height: 300.r,
+              decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: color.withValues(alpha: 0.1), width: 2)),
+            ),
+            
+            // Central Core
+            ScaleButton(
+              onTap: () {
+                _soundService.playTts(tts);
+                _hapticService.selection();
+              },
+              child: Container(
+                width: 100.r, height: 100.r,
+                decoration: BoxDecoration(shape: BoxShape.circle, color: color, boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 20)]),
+                child: Icon(Icons.play_arrow_rounded, color: Colors.white, size: 50.r),
+              ),
+            ),
+            
+            // Satellite Options
+            ...List.generate(options.length, (index) {
+              double angle = (index * (2 * 3.14159 / options.length)) + _rotation;
+              double radius = 140.r;
+              return Positioned(
+                left: (MediaQuery.of(context).size.width / 2 - 40.r) + radius * math.cos(angle),
+                top: (200.h - 40.r) + radius * math.sin(angle),
+                child: _buildSatellite(index, options[index], correct, color),
+              );
+            }),
+            
+            // Target Zone
+            Positioned(
+              top: 40.h,
+              child: Container(
+                width: 40.w, height: 10.h,
+                decoration: BoxDecoration(color: Colors.white24, borderRadius: BorderRadius.circular(5.r)),
+              ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 1.seconds),
+            ),
+          ],
         ),
       ),
     );
   }
+
+  Widget _buildSatellite(int index, String text, int correct, Color color) {
+    bool isSelected = _selectedIndex == index;
+    bool isCorrect = _isAnswered && index == correct;
+    bool isWrong = _isAnswered && isSelected && index != correct;
+    Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isSelected ? Colors.white : color));
+
+    return ScaleButton(
+      onTap: () => _submitAnswer(index, correct),
+      child: Container(
+        width: 80.r, height: 80.r,
+        padding: EdgeInsets.all(8.r),
+        decoration: BoxDecoration(
+          color: tileColor.withValues(alpha: 0.2),
+          shape: BoxShape.circle,
+          border: Border.all(color: tileColor, width: 2),
+          boxShadow: isSelected ? [BoxShadow(color: tileColor.withValues(alpha: 0.5), blurRadius: 15)] : [],
+        ),
+        child: Center(child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white))),
+      ),
+    );
+  }
 }
+

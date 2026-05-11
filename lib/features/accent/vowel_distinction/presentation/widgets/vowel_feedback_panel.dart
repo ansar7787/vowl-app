@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/features/accent/domain/entities/accent_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 import 'vowel_length_visualizer.dart';
 
 class VowelFeedbackPanel extends StatelessWidget {
   final AccentQuest quest;
   final bool isCorrect;
   final bool isDark;
+  final bool isMidnight;
   final ThemeResult theme;
 
   const VowelFeedbackPanel({
@@ -17,6 +18,7 @@ class VowelFeedbackPanel extends StatelessWidget {
     required this.quest,
     required this.isCorrect,
     required this.isDark,
+    this.isMidnight = false,
     required this.theme,
   });
 

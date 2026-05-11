@@ -1,15 +1,23 @@
+import 'dart:async';
+import 'dart:ui';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:confetti/confetti.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/ad_reward_card.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
-import 'package:voxai_quest/features/kids_zone/presentation/utils/kids_assets.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_magic_chest.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_watch_earn_card.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_category_grid.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_zone_home_header.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
 
 class KidsZoneScreen extends StatefulWidget {
   const KidsZoneScreen({super.key});
@@ -19,630 +27,368 @@ class KidsZoneScreen extends StatefulWidget {
 }
 
 class _KidsZoneScreenState extends State<KidsZoneScreen> {
+  final math.Random _random = math.Random();
+  final List<Map<String, dynamic>> _activeCoins = [];
+  late ConfettiController _confettiController;
+
+  @override
+  void initState() {
+    super.initState();
+    _confettiController = ConfettiController(duration: const Duration(seconds: 2));
+  }
+
+  @override
+  void dispose() {
+    _confettiController.dispose();
+    super.dispose();
+  }
+
+  void _spawnCoins() {
+    _confettiController.play();
+    for (int i = 0; i < 15; i++) {
+      final id = DateTime.now().millisecondsSinceEpoch + i;
+      setState(() {
+        _activeCoins.add({
+          'id': id,
+          'x': 0.3 + _random.nextDouble() * 0.4,
+          'y': 0.8,
+          'targetX': 0.8 + _random.nextDouble() * 0.1,
+          'targetY': 0.05,
+          'delay': i * 100,
+        });
+      });
+      Future.delayed(Duration(milliseconds: 1000 + (i * 100)), () {
+        if (mounted) {
+          setState(() {
+            _activeCoins.removeWhere((c) => c['id'] == id);
+          });
+        }
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final backgroundColor = isDark
-        ? const Color(0xFF1E3A8A)
-        : const Color(0xFFF8FAFC);
+    final user = context.watch<AuthBloc>().state.user;
+    if (user == null) return const Scaffold(body: Center(child: CircularProgressIndicator()));
+
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final bgColor = isMidnight 
+        ? Colors.black 
+        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: bgColor,
       body: Stack(
         children: [
-          MeshGradientBackground(
-            colors: isDark
-                ? [
-                    const Color(0xFF4F46E5),
-                    const Color(0xFF7C3AED),
-                    const Color(0xFF1E3A8A),
-                  ]
-                : [
-                    const Color(0xFFFFE4E6),
-                    const Color(0xFFE0F2FE),
-                    const Color(0xFFF0FDF4),
-                  ],
+          const MeshGradientBackground(showLetters: false),
+          
+          // Floating Coins Layer
+          ..._activeCoins.map((coin) {
+            return _FloatingCoin(
+              x: coin['x'],
+              y: coin['y'],
+              targetX: coin['targetX'],
+              targetY: coin['targetY'],
+              delay: coin['delay'],
+            );
+          }),
+
+          BlocListener<AuthBloc, AuthState>(
+            listener: (context, state) {
+              // React to state changes if needed
+            },
+            child: RefreshIndicator(
+              onRefresh: () async {
+                di.sl<HapticService>().selection();
+                context.read<AuthBloc>().add(const AuthReloadUser());
+                await Future.delayed(const Duration(milliseconds: 1000));
+              },
+              color: const Color(0xFF6366F1),
+              backgroundColor: Colors.white,
+              displacement: 100,
+              child: CustomScrollView(
+                physics: const AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+                slivers: [
+                  SliverToBoxAdapter(child: SizedBox(height: MediaQuery.of(context).padding.top + 10.h)),
+                  
+                  _buildSlimAppBar(context, user.kidsCoins),
+
+                  KidsZoneHomeHeader(
+                    mascot: user.kidsMascot ?? 'owly',
+                    isDark: isDark,
+                  ),
+
+                  SliverPadding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+                    sliver: SliverToBoxAdapter(
+                      child: KidsMagicChest(
+                        onClaimed: _spawnCoins,
+                        showNotification: _showModernNotification,
+                      ),
+                    ),
+                  ),
+
+                  KidsCategoryGrid(isDark: isDark),
+
+                  SliverPadding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 32.h),
+                    sliver: SliverToBoxAdapter(
+                      child: KidsWatchEarnCard(showNotification: _showModernNotification),
+                    ),
+                  ),
+                  
+                  SliverToBoxAdapter(child: SizedBox(height: 40.h)),
+                ],
+              ),
+            ),
           ),
-          ..._buildFloatingBackgroundElements(),
-          CustomScrollView(
-            physics: const BouncingScrollPhysics(),
-            slivers: [
-              _buildAppBar(context, isDark),
-              _buildHeaderSection(context, isDark),
-              _buildModernCategorySection(context),
-              const SliverToBoxAdapter(child: AdRewardCard()),
-              SliverToBoxAdapter(child: SizedBox(height: 100.h)),
-            ],
+          
+          // FLOATING QUICK MENU
+          Positioned(
+            bottom: 24.h,
+            left: 20.w,
+            right: 20.w,
+            child: Container(
+              decoration: BoxDecoration(
+                color: (isDark ? Colors.black54 : Colors.white).withValues(alpha: isDark ? 0.8 : 0.9),
+                borderRadius: BorderRadius.circular(40.r),
+                border: Border.all(color: (isDark ? Colors.white24 : Colors.indigo.withValues(alpha: 0.2)), width: 1.5.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.15),
+                    blurRadius: 30,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(40.r),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 12.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        _buildNavIcon(
+                          context,
+                          Icons.auto_stories_rounded,
+                          "Album",
+                          Colors.pinkAccent,
+                          () => context.push('/kids-stickers'),
+                        ),
+                        _buildNavIcon(
+                          context,
+                          Icons.bedroom_child_rounded,
+                          "Room",
+                          Colors.purpleAccent,
+                          () => context.push('/kids-room'),
+                        ),
+                        _buildNavIcon(
+                          context,
+                          Icons.shopping_bag_rounded,
+                          "Shop",
+                          Colors.orangeAccent,
+                          () => context.pushNamed('kids-boutique'),
+                        ),
+                        _buildNavIcon(
+                          context,
+                          Icons.face_retouching_natural_rounded,
+                          "Buddies",
+                          Colors.blueAccent,
+                          () => context.push('/kids-mascot'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+
+          Align(
+            alignment: Alignment.topCenter,
+            child: ConfettiWidget(
+              confettiController: _confettiController,
+              blastDirectionality: BlastDirectionality.explosive,
+              shouldLoop: false,
+              colors: const [Colors.amber, Colors.orange, Colors.yellow, Colors.white],
+            ),
           ),
         ],
       ),
     );
   }
 
-  List<Widget> _buildFloatingBackgroundElements() {
-    return [
-      _buildFloatingMascot('🦉', top: 150.h, left: -40.w, size: 80.r, delay: 0),
-      _buildFloatingMascot(
-        '⭐',
-        top: 400.h,
-        right: -30.w,
-        size: 60.r,
-        delay: 500,
-      ),
-      _buildFloatingMascot(
-        '🌈',
-        bottom: 200.h,
-        left: 20.w,
-        size: 70.r,
-        delay: 1000,
-      ),
-      _buildFloatingMascot(
-        '🎨',
-        top: 600.h,
-        left: -20.w,
-        size: 50.r,
-        delay: 1500,
-      ),
-    ];
-  }
-
-  Widget _buildFloatingMascot(
-    String emoji, {
-    double? top,
-    double? bottom,
-    double? left,
-    double? right,
-    required double size,
-    required int delay,
-  }) {
-    return Positioned(
-          top: top,
-          bottom: bottom,
-          left: left,
-          right: right,
-          child: Opacity(
-            opacity: 0.1,
-            child: Text(emoji, style: TextStyle(fontSize: size)),
-          ),
-        )
-        .animate(onPlay: (controller) => controller.repeat(reverse: true))
-        .moveY(
-          begin: -20,
-          end: 20,
-          duration: 3.seconds + delay.ms,
-          curve: Curves.easeInOutSine,
-        )
-        .rotate(
-          begin: -0.1,
-          end: 0.1,
-          duration: 5.seconds + delay.ms,
-          curve: Curves.easeInOutSine,
-        );
-  }
-
-  Widget _buildAppBar(BuildContext context, bool isDark) {
-    return SliverAppBar(
-      pinned: true,
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      leading: Padding(
-        padding: EdgeInsets.all(8.r),
-        child: ScaleButton(
-          onTap: () => context.pop(),
-          child: Container(
-            decoration: const BoxDecoration(
-              color: Colors.white,
+  Widget _buildNavIcon(BuildContext context, IconData icon, String label, Color color, VoidCallback onTap) {
+    return ScaleButton(
+      onTap: onTap,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            padding: EdgeInsets.all(10.r),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
-            child: const Icon(
-              Icons.arrow_back_ios_new_rounded,
-              color: Color(0xFF6366F1),
-              size: 18,
+            child: Icon(icon, color: color, size: 24.sp),
+          ),
+          SizedBox(height: 4.h),
+          Text(
+            label,
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w800,
+              color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54,
             ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSlimAppBar(BuildContext context, int coins) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final contrastColor = isDark ? Colors.white : const Color(0xFF1E293B);
+    final buttonBgColor = isDark ? Colors.white10 : Colors.indigo.withValues(alpha: 0.08);
+
+    return SliverAppBar(
+      floating: true,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      automaticallyImplyLeading: false,
+      leading: Center(
+        child: ScaleButton(
+          onTap: () => Navigator.pop(context),
+          child: Container(
+            padding: EdgeInsets.all(10.r),
+            decoration: BoxDecoration(
+              color: buttonBgColor,
+              shape: BoxShape.circle,
+              border: Border.all(color: contrastColor.withValues(alpha: 0.1)),
+            ),
+            child: Icon(Icons.arrow_back_ios_new_rounded, color: contrastColor, size: 20.sp),
           ),
         ),
       ),
       actions: [
-        BlocBuilder<AuthBloc, AuthState>(
-          builder: (context, state) {
-            final coins = state.user?.kidsCoins ?? 0;
-            return Container(
-              margin: EdgeInsets.only(right: 16.w, top: 8.h, bottom: 8.h),
-              padding: EdgeInsets.symmetric(horizontal: 12.w),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.05),
-                    blurRadius: 10,
-                  ),
-                ],
-              ),
-              child: Row(
-                children: [
-                  const Icon(
-                    Icons.toys_rounded,
-                    color: Colors.redAccent,
-                    size: 18,
-                  ),
-                  SizedBox(width: 6.w),
-                  Text(
-                    "$coins",
-                    style: GoogleFonts.outfit(
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFF1E293B),
-                    ),
-                  ),
-                ],
-              ),
-            );
-          },
+        Padding(
+          padding: EdgeInsets.only(right: 16.w),
+          child: Center(child: _buildCoinBadge(context, coins, contrastColor)),
         ),
       ],
     );
   }
 
-  Widget _buildHeaderSection(BuildContext context, bool isDark) {
-    return SliverToBoxAdapter(
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(24.w, 10.h, 24.w, 20.h),
-        child: Column(
-          children: [
-            Column(
-              children: [
-                Text(
-                  "KIDS ZONE",
-                  style: GoogleFonts.outfit(
-                    fontSize: 40.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : const Color(0xFF1E293B),
-                    letterSpacing: -1,
-                  ),
-                ).animate().fadeIn().scale(delay: 200.ms),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 12.w,
-                    vertical: 4.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF6366F1).withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: Text(
-                    "ADVENTURE HUB",
-                    style: GoogleFonts.outfit(
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w900,
-                      color: const Color(0xFF6366F1),
-                      letterSpacing: 2,
-                    ),
-                  ),
-                ).animate().fadeIn(delay: 400.ms),
-              ],
-            ),
-            SizedBox(height: 32.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _buildModernHeaderAction(
-                  context,
-                  () => context.push(AppRouter.kidsMascotSelectionRoute),
-                  'Buddy',
-                  context.watch<AuthBloc>().state.user?.kidsMascot ?? 'owly',
-                  const Color(0xFF6366F1),
-                  0,
-                ),
-                _buildModernHeaderAction(
-                  context,
-                  () => context.push(AppRouter.kidsStickerBookRoute),
-                  'Album',
-                  '⭐',
-                  Colors.amber,
-                  1,
-                ),
-                _buildModernHeaderAction(
-                  context,
-                  () => context.pushNamed('kids-boutique'),
-                  'Boutique',
-                  '🛍️',
-                  const Color(0xFFEF4444),
-                  2,
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildModernHeaderAction(
-    BuildContext context,
-    VoidCallback onTap,
-    String label,
-    String mascotIdOrEmoji,
-    Color color,
-    int index,
-  ) {
+  Widget _buildCoinBadge(BuildContext context, int coins, Color contrastColor) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    String displayEmoji = mascotIdOrEmoji;
-    if (KidsAssets.mascotMap.containsKey(mascotIdOrEmoji)) {
-      displayEmoji = KidsAssets.mascotMap[mascotIdOrEmoji]!;
-    }
-    return ScaleButton(
-      onTap: onTap,
-      child:
-          Column(
-                children: [
-                  Container(
-                    width: 70.r,
-                    height: 70.r,
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? color.withValues(alpha: 0.2)
-                          : Colors.white,
-                      borderRadius: BorderRadius.circular(24.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: color.withValues(alpha: 0.15),
-                          blurRadius: 20,
-                          offset: const Offset(0, 10),
-                        ),
-                      ],
-                      border: Border.all(color: Colors.white, width: 2),
-                    ),
-                    child: Center(
-                      child: Text(
-                        displayEmoji,
-                        style: TextStyle(fontSize: 32.sp),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    label.toUpperCase(),
-                    style: GoogleFonts.outfit(
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white70 : const Color(0xFF1E293B),
-                      letterSpacing: 1,
-                    ),
-                  ),
-                ],
-              )
-              .animate()
-              .fadeIn(delay: (index * 100 + 600).ms)
-              .scale(curve: Curves.easeOutBack),
-    );
-  }
-
-  Widget _buildModernCategorySection(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, state) {
-        final completedData = state.user?.completedLevels ?? {};
-        final categories = [
-          (
-            'Alphabet',
-            'A B C',
-            Icons.font_download_rounded,
-            const Color(0xFFF43F5E),
-            'alphabet',
-          ),
-          (
-            'Numbers',
-            '1 2 3',
-            Icons.numbers_rounded,
-            const Color(0xFF0EA5E9),
-            'numbers',
-          ),
-          (
-            'Colors',
-            'Rainbow',
-            Icons.color_lens_rounded,
-            const Color(0xFFF59E0B),
-            'colors',
-          ),
-          (
-            'Shapes',
-            'Circle...',
-            Icons.category_rounded,
-            const Color(0xFF10B981),
-            'shapes',
-          ),
-          (
-            'Animals',
-            'Pets',
-            Icons.pets_rounded,
-            const Color(0xFF6366F1),
-            'animals',
-          ),
-          (
-            'Fruits',
-            'Yummy!',
-            Icons.apple_rounded,
-            const Color(0xFFEF4444),
-            'fruits',
-          ),
-          (
-            'Family',
-            'My People',
-            Icons.people_rounded,
-            const Color(0xFFEC4899),
-            'family',
-          ),
-          (
-            'School',
-            'Learning',
-            Icons.school_rounded,
-            const Color(0xFFF59E0B),
-            'school',
-          ),
-          (
-            'Verbs',
-            'Actions',
-            Icons.directions_run_rounded,
-            const Color(0xFF8B5CF6),
-            'verbs',
-          ),
-          (
-            'Routine',
-            'My Day',
-            Icons.wb_sunny_rounded,
-            const Color(0xFFF97316),
-            'routine',
-          ),
-          (
-            'Emotions',
-            'Feelings',
-            Icons.mood_rounded,
-            const Color(0xFF06B6D4),
-            'emotions',
-          ),
-          (
-            'Prepositions',
-            'Where?',
-            Icons.place_rounded,
-            const Color(0xFF64748B),
-            'prepositions',
-          ),
-          (
-            'Phonics',
-            'Sounds',
-            Icons.record_voice_over_rounded,
-            const Color(0xFFFFCC00),
-            'phonics',
-          ),
-          (
-            'Time',
-            'Tick Tock',
-            Icons.access_time_filled_rounded,
-            const Color(0xFF333333),
-            'time',
-          ),
-          (
-            'Opposites',
-            'Big/Small',
-            Icons.compare_arrows_rounded,
-            const Color(0xFF94A3B8),
-            'opposites',
-          ),
-          (
-            'Day/Night',
-            'Sun/Moon',
-            Icons.nights_stay_rounded,
-            const Color(0xFF1E293B),
-            'day_night',
-          ),
-          (
-            'Nature',
-            'Outdoors',
-            Icons.forest_rounded,
-            const Color(0xFF16A34A),
-            'nature',
-          ),
-          (
-            'Home',
-            'House',
-            Icons.home_rounded,
-            const Color(0xFFD946EF),
-            'home_kids',
-          ),
-          (
-            'Food',
-            'Yummy!',
-            Icons.restaurant_rounded,
-            const Color(0xFFFB923C),
-            'food_kids',
-          ),
-          (
-            'Transport',
-            'Vroom!',
-            Icons.directions_car_rounded,
-            const Color(0xFF2563EB),
-            'transport',
-          ),
-        ];
-
-        return SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          sliver: SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-              // Creating a staggered "island" effect by grouping into rows of 1 or 2
-              if (index >= (categories.length / 2).ceil()) return null;
-
-              final firstIdx = index * 2;
-              final secondIdx = firstIdx + 1;
-
-              return Padding(
-                padding: EdgeInsets.only(bottom: 20.h),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: _buildBubblyCard(
-                        context,
-                        categories[firstIdx],
-                        completedData[categories[firstIdx].$5]?.length ?? 0,
-                        true,
-                      ),
-                    ),
-                    if (secondIdx < categories.length) ...[
-                      SizedBox(width: 20.w),
-                      Expanded(
-                        child: _buildBubblyCard(
-                          context,
-                          categories[secondIdx],
-                          completedData[categories[secondIdx].$5]?.length ?? 0,
-                          false,
-                        ),
-                      ),
-                    ],
-                  ],
-                ),
-              );
-            }, childCount: (categories.length / 2).ceil()),
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _buildBubblyCard(
-    BuildContext context,
-    dynamic cat,
-    int completedLevels,
-    bool isLarge,
-  ) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final color = cat.$4 as Color;
-    final progress = (completedLevels / 10).clamp(0.0, 1.0);
-
-    return ScaleButton(
-          onTap: () {
-            context.push(
-              '/kids-level-map',
-              extra: {
-                'gameType': cat.$5,
-                'title': cat.$1,
-                'primaryColor': color,
-              },
-            );
-          },
-          child: Container(
-            height: isLarge ? 200.h : 180.h,
-            decoration: BoxDecoration(
-              color: isDark
-                  ? Colors.black.withValues(alpha: 0.3)
-                  : Colors.white,
-              borderRadius: BorderRadius.circular(36.r),
-              boxShadow: [
-                BoxShadow(
-                  color: color.withValues(alpha: 0.1),
-                  blurRadius: 20,
-                  offset: const Offset(0, 10),
-                ),
-              ],
-              border: Border.all(color: color.withValues(alpha: 0.1), width: 2),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(36.r),
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: -20,
-                    right: -20,
-                    child: CircleAvatar(
-                      radius: 50.r,
-                      backgroundColor: color.withValues(alpha: 0.05),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(20.r),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(12.r),
-                          decoration: BoxDecoration(
-                            color: color.withValues(alpha: 0.1),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            cat.$3 as IconData,
-                            color: color,
-                            size: 28.r,
-                          ),
-                        ),
-                        const Spacer(),
-                        Text(
-                          cat.$1 as String,
-                          style: GoogleFonts.outfit(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF1E293B),
-                            height: 1.1,
-                          ),
-                        ),
-                        Text(
-                          cat.$2 as String,
-                          style: GoogleFonts.outfit(
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w600,
-                            color: isDark ? Colors.white38 : Colors.black38,
-                          ),
-                        ),
-                        SizedBox(height: 12.h),
-                        _buildModernProgressBar(color, progress),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(
-          begin: 0,
-          end: isLarge ? 5 : -5,
-          duration: 2.seconds,
-          curve: Curves.easeInOutSine,
-        )
-        .animate()
-        .fadeIn(delay: 400.ms)
-        .slideY(begin: 0.1);
-  }
-
-  Widget _buildModernProgressBar(Color color, double progress) {
     return Container(
-      height: 6.h,
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(3.r),
+        color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.white.withValues(alpha: 0.6),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: contrastColor.withValues(alpha: isDark ? 0.1 : 0.2)),
+        boxShadow: isDark ? [] : [
+          BoxShadow(color: Colors.black.withValues(alpha: 0.03), blurRadius: 10, offset: const Offset(0, 4)),
+        ],
       ),
-      child: Stack(
+      child: Row(
         children: [
-          FractionallySizedBox(
-            widthFactor: progress,
-            child: Container(
-              decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.circular(3.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.3),
-                    blurRadius: 4,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
+          Text('🚗', style: TextStyle(fontSize: 20.sp)),
+          SizedBox(width: 8.w),
+          Text(
+            coins.toString(),
+            style: GoogleFonts.outfit(
+              fontWeight: FontWeight.w900,
+              color: contrastColor,
+              fontSize: 16.sp,
             ),
           ),
         ],
       ),
+    );
+  }
+
+  void _showModernNotification(BuildContext context, String message, {bool isError = false}) {
+    final messenger = ScaffoldMessenger.of(context);
+    messenger.hideCurrentSnackBar();
+    messenger.showSnackBar(
+      SnackBar(
+        duration: const Duration(seconds: 3),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        behavior: SnackBarBehavior.floating,
+        content: Center(
+          child: GlassTile(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+            borderRadius: BorderRadius.circular(25.r),
+            borderColor: isError ? Colors.redAccent.withValues(alpha: 0.3) : Colors.greenAccent.withValues(alpha: 0.3),
+            child: Row(
+              children: [
+                Icon(isError ? Icons.warning_amber_rounded : Icons.check_circle_outline_rounded,
+                    color: isError ? Colors.redAccent : Colors.greenAccent, size: 24.sp),
+                SizedBox(width: 15.w),
+                Expanded(
+                  child: Text(
+                    message,
+                    style: GoogleFonts.outfit(
+                      color: Theme.of(context).brightness == Brightness.dark ? Colors.white : const Color(0xFF0F172A),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.sp,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _FloatingCoin extends StatefulWidget {
+  final double x, y, targetX, targetY;
+  final int delay;
+  const _FloatingCoin({required this.x, required this.y, required this.targetX, required this.targetY, required this.delay});
+  @override
+  State<_FloatingCoin> createState() => _FloatingCoinState();
+}
+
+class _FloatingCoinState extends State<_FloatingCoin> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animX, _animY, _animScale, _animOpacity;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 1000));
+    _animX = Tween<double>(begin: widget.x, end: widget.targetX).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOutCubic));
+    _animY = Tween<double>(begin: widget.y, end: widget.targetY).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInCubic));
+    _animScale = TweenSequence([TweenSequenceItem(tween: Tween<double>(begin: 0.0, end: 1.5), weight: 30), TweenSequenceItem(tween: Tween<double>(begin: 1.5, end: 1.0), weight: 70)])
+        .animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+    _animOpacity = TweenSequence([TweenSequenceItem(tween: Tween<double>(begin: 0.0, end: 1.0), weight: 20), TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 1.0), weight: 60), TweenSequenceItem(tween: Tween<double>(begin: 1.0, end: 0.0), weight: 20)])
+        .animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
+    Future.delayed(Duration(milliseconds: widget.delay), () { if (mounted) _controller.forward(); });
+  }
+
+  @override
+  void dispose() { _controller.dispose(); super.dispose(); }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        return Positioned(
+          left: _animX.value * 1.sw,
+          top: _animY.value * 1.sh,
+          child: Opacity(opacity: _animOpacity.value, child: Transform.scale(scale: _animScale.value, child: Text('🚗', style: TextStyle(fontSize: 30.sp)))),
+        );
+      },
     );
   }
 }

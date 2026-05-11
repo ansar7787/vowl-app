@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class ConnectedSpeechFeedbackPanel extends StatelessWidget {
   final bool isCorrect;
@@ -11,6 +11,7 @@ class ConnectedSpeechFeedbackPanel extends StatelessWidget {
   final String hint;
   final Function(String, {double rate}) onPlayAudio;
   final bool isDark;
+  final bool isMidnight;
 
   const ConnectedSpeechFeedbackPanel({
     super.key,
@@ -20,6 +21,7 @@ class ConnectedSpeechFeedbackPanel extends StatelessWidget {
     required this.hint,
     required this.onPlayAudio,
     required this.isDark,
+    this.isMidnight = false,
   });
 
   @override

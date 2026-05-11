@@ -1,577 +1,427 @@
 {
-  "gameType": "pitchPatternMatch",
-  "batchIndex": 6,
-  "levels": "51-60",
-  "quests": [
-    {
-      "id": "pitchPatternMatch_l51_q1",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "How interesting!",
-      "pitchPattern": "Rise-fall ↗↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Excitement or strong emotion often rises then falls.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l51_q2",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Are they ready?",
-      "pitchPattern": "Rising ↗",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Questions usually end with a rising pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l51_q3",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Are you okay?",
-      "pitchPattern": "Rising ↗",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Questions usually end with a rising pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l52_q1",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "That was amazing!",
-      "pitchPattern": "Rise-fall ↗↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Excitement or strong emotion often rises then falls.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l52_q2",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "He closed the door.",
-      "pitchPattern": "Falling ↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Statements usually end with a falling pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l52_q3",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "We watched TV.",
-      "pitchPattern": "Falling ↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Statements usually end with a falling pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l53_q1",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "I saw a movie.",
-      "pitchPattern": "Falling ↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Statements usually end with a falling pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l53_q2",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "I finished the report.",
-      "pitchPattern": "Falling ↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Statements usually end with a falling pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l53_q3",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "In a minute.",
-      "pitchPattern": "Flat →",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Neutral or uncertain phrases often have a flat pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l54_q1",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Are we there yet?",
-      "pitchPattern": "Rising ↗",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Questions usually end with a rising pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l54_q2",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "That is brilliant!",
-      "pitchPattern": "Rise-fall ↗↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Excitement or strong emotion often rises then falls.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l54_q3",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "It doesn't matter.",
-      "pitchPattern": "Flat →",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Neutral or uncertain phrases often have a flat pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l55_q1",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Is that true?",
-      "pitchPattern": "Rising ↗",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Questions usually end with a rising pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l55_q2",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Is it raining?",
-      "pitchPattern": "Rising ↗",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Questions usually end with a rising pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l55_q3",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Not really sure.",
-      "pitchPattern": "Flat →",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Neutral or uncertain phrases often have a flat pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l56_q1",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "That is absolutely incredible!",
-      "pitchPattern": "Rise-fall ↗↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Excitement or strong emotion often rises then falls.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l56_q2",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Stop doing that!",
-      "pitchPattern": "Rise-fall ↗↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Excitement or strong emotion often rises then falls.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l56_q3",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "What a surprise!",
-      "pitchPattern": "Rise-fall ↗↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Excitement or strong emotion often rises then falls.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l57_q1",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "That is outrageous!",
-      "pitchPattern": "Rise-fall ↗↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Excitement or strong emotion often rises then falls.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l57_q2",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Do they understand?",
-      "pitchPattern": "Rising ↗",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Questions usually end with a rising pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l57_q3",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "They left early.",
-      "pitchPattern": "Falling ↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Statements usually end with a falling pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l58_q1",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Do we have time?",
-      "pitchPattern": "Rising ↗",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Questions usually end with a rising pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l58_q2",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "You are kidding me!",
-      "pitchPattern": "Rise-fall ↗↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Excitement or strong emotion often rises then falls.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l58_q3",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Is it raining?",
-      "pitchPattern": "Rising ↗",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Questions usually end with a rising pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l59_q1",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "She lost her phone.",
-      "pitchPattern": "Falling ↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Statements usually end with a falling pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l59_q2",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Watch out!",
-      "pitchPattern": "Rise-fall ↗↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Excitement or strong emotion often rises then falls.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l59_q3",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Who cares.",
-      "pitchPattern": "Flat →",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Neutral or uncertain phrases often have a flat pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l60_q1",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Kind of.",
-      "pitchPattern": "Flat →",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Neutral or uncertain phrases often have a flat pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l60_q2",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "Do we have time?",
-      "pitchPattern": "Rising ↗",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Questions usually end with a rising pitch.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "pitchPatternMatch_l60_q3",
-      "instruction": "Match the pitch pattern.",
-      "difficulty": 2,
-      "subtype": "pitchPatternMatch",
-      "interactionType": "choice",
-      "textToSpeak": "That is a disaster!",
-      "pitchPattern": "Rise-fall ↗↘",
-      "options": [
-        "Rising ↗",
-        "Falling ↘",
-        "Flat →",
-        "Rise-fall ↗↘"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Excitement or strong emotion often rises then falls.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "pitchPatternMatch",
+    "batchIndex":  6,
+    "levels":  "51-60",
+    "quests":  [
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L51_Q1",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L51_Q2",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L51_Q3",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L52_Q1",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L52_Q2",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L52_Q3",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L53_Q1",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L53_Q2",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L53_Q3",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L54_Q1",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L54_Q2",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L54_Q3",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L55_Q1",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L55_Q2",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L55_Q3",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L56_Q1",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L56_Q2",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L56_Q3",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L57_Q1",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L57_Q2",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L57_Q3",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L58_Q1",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L58_Q2",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L58_Q3",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L59_Q1",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L59_Q2",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L59_Q3",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L60_Q1",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L60_Q2",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_PITCHPATTERNMATCH_L60_Q3",
+                       "interactionType":  "Frequency Finder",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should peak in the middle.",
+                       "explanation":  "Pitch matching improves emotional expressiveness.",
+                       "textToSpeak":  "Good morning!",
+                       "pitchPatterns":  [
+                                             1,
+                                             2,
+                                             1
+                                         ]
+                   }
+               ]
 }

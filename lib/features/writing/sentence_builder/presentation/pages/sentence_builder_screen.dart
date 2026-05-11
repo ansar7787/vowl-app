@@ -1,30 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/presentation/widgets/writing/ink_streak.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class SentenceBuilderScreen extends StatefulWidget {
   final int level;
-  const SentenceBuilderScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const SentenceBuilderScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.sentenceBuilder,
+  });
 
   @override
   State<SentenceBuilderScreen> createState() => _SentenceBuilderScreenState();
@@ -33,477 +29,199 @@ class SentenceBuilderScreen extends StatefulWidget {
 class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-
-  final List<String> _selectedWords = [];
-  List<String>? _remainingWords;
-  bool _hasSubmitted = false;
+  
+  final List<String> _assembledPieces = [];
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(
-        gameType: GameSubtype.sentenceBuilder,
-        level: widget.level,
-      ),
-    );
+    context.read<WritingBloc>().add(FetchWritingQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _initWordsIfNeeded(List<String> shuffled) {
-    _remainingWords ??= List.from(shuffled);
+  void _onSnap(String piece) {
+    if (_isAnswered) return;
+    _hapticService.success();
+    setState(() => _assembledPieces.add(piece));
   }
 
-  void _addWord(String word, int index) {
-    if (_hasSubmitted) {
-      return;
-    }
+  void _onRemovePiece(int index) {
+    if (_isAnswered) return;
     _hapticService.selection();
-    setState(() {
-      _selectedWords.add(word);
-      _remainingWords!.removeAt(index);
-    });
+    setState(() => _assembledPieces.removeAt(index));
   }
 
-  void _removeWord(String word, int index) {
-    if (_hasSubmitted) {
-      return;
-    }
-    _hapticService.selection();
-    setState(() {
-      _remainingWords!.add(word);
-      _selectedWords.removeAt(index);
-    });
-  }
+  void _submitAnswer(String correct) {
+    if (_isAnswered || _assembledPieces.isEmpty) return;
+    
+    String built = _assembledPieces.join(' ').trim().toLowerCase();
+    String normalizedCorrect = correct.trim().toLowerCase().replaceAll(RegExp(r'[.!?]'), '');
+    
+    bool isCorrect = built == normalizedCorrect;
 
-  void _submitAnswer(String? correctSentence) {
-    if (_hasSubmitted || _selectedWords.isEmpty) {
-      return;
-    }
-    _hapticService.selection();
-    setState(() => _hasSubmitted = true);
-
-    final userSentence = _selectedWords.join(' ').trim();
-    final target = (correctSentence ?? "").trim();
-
-    bool isCorrect =
-        userSentence.toLowerCase().replaceAll(RegExp(r'[.!?]'), '') ==
-        target.toLowerCase().replaceAll(RegExp(r'[.!?]'), '');
-
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (mounted) {
-        context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
-      }
-    });
-  }
-
-  void _useHint(String correctSentence) {
-    _hapticService.selection();
-    context.read<WritingBloc>().add(WritingHintUsed());
-
-    // Auto-select the next correct word if hint is used
-    final targetWords = correctSentence.split(' ');
-    if (_selectedWords.length < targetWords.length) {
-      final nextWord = targetWords[_selectedWords.length];
-      final indexInRemaining =
-          _remainingWords?.indexWhere(
-            (w) =>
-                w.toLowerCase().replaceAll(RegExp(r'[.!?]'), '') ==
-                nextWord.toLowerCase().replaceAll(RegExp(r'[.!?]'), ''),
-          ) ??
-          -1;
-
-      if (indexInRemaining != -1) {
-        _addWord(_remainingWords![indexInRemaining], indexInRemaining);
-      }
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<WritingBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<WritingBloc>().add(SubmitAnswer(false));
+      Future.delayed(1.seconds, () => setState(() => _assembledPieces.clear()));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'writing',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<WritingBloc, WritingState>(
-        listener: (context, state) {
-          if (state is WritingGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-                context,
-                xp: state.xpEarned,
-                coins: state.coinsEarned,
-                title: 'Sentence Architect!',
-                description:
-                    'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins!',
-                enableDoubleUp: true,
-              ),
-            );
-          } else if (state is WritingGameOver) {
-            GameDialogHelper.showGameOver(
-              context,
-              title: 'Construction Halted',
-              description:
-                  'Your sentence lacked support. Recharge and try again!',
-            );
-          } else if (state is WritingLoaded &&
-              state.lastAnswerCorrect == null) {
+    return BlocConsumer<WritingBloc, WritingState>(
+      listener: (context, state) {
+        if (state is WritingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
             setState(() {
-              _hasSubmitted = false;
-              _selectedWords.clear();
-              _remainingWords = null;
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _assembledPieces.clear();
             });
           }
-        },
-        builder: (context, state) {
-          if (state is WritingLoading || state is WritingInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is WritingLoaded) {
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                InkStreak(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is WritingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<WritingBloc>().add(
-                FetchWritingQuests(
-                  gameType: GameSubtype.sentenceBuilder,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    WritingLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-    _initWordsIfNeeded(quest.shuffledWords ?? []);
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            // Modern Header
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black12,
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(
-                    state.hintUsed,
-                    quest.correctSentence ?? "",
-                    theme.primaryColor,
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 20.h),
-                  Text(
-                    "MASTER BUILDER",
-                    style: GoogleFonts.outfit(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 4,
-                      color: theme.primaryColor,
-                    ),
-                  ).animate().fadeIn(),
-                  SizedBox(height: 12.h),
-                  Text(
-                    quest.instruction,
-                    style: GoogleFonts.outfit(
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
-                    ),
-                    textAlign: TextAlign.center,
-                  ).animate().fadeIn(delay: 200.ms),
-
-                  SizedBox(height: 48.h),
-
-                  // Assembly Area
-                  GlassTile(
-                    borderRadius: BorderRadius.circular(32.r),
-                    padding: EdgeInsets.all(24.r),
-                    borderColor: _hasSubmitted
-                        ? (state.lastAnswerCorrect == true
-                              ? const Color(0xFF10B981)
-                              : const Color(0xFFF43F5E))
-                        : theme.primaryColor.withValues(alpha: 0.1),
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.03)
-                        : Colors.black.withValues(alpha: 0.02),
-                    child: Container(
-                      constraints: BoxConstraints(minHeight: 160.h),
-                      width: double.infinity,
-                      child: Wrap(
-                        spacing: 10.w,
-                        runSpacing: 14.h,
-                        children: List.generate(
-                          _selectedWords.length,
-                          (index) => _buildWordChip(
-                            _selectedWords[index],
-                            true,
-                            index,
-                            isDark,
-                            theme.primaryColor,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ).animate().fadeIn().slideY(begin: 0.05),
-
-                  if (_selectedWords.isEmpty)
-                    Padding(
-                      padding: EdgeInsets.only(top: 40.h),
-                      child: Text(
-                        "Tap words below to build...",
-                        style: GoogleFonts.outfit(
-                          fontSize: 16.sp,
-                          color: isDark ? Colors.white24 : Colors.black26,
-                          fontStyle: FontStyle.italic,
-                        ),
-                      ),
-                    ),
-
-                  SizedBox(height: 60.h),
-
-                  // Options Area
-                  Wrap(
-                    alignment: WrapAlignment.center,
-                    spacing: 12.w,
-                    runSpacing: 16.h,
-                    children: List.generate(
-                      _remainingWords!.length,
-                      (index) => _buildWordChip(
-                        _remainingWords![index],
-                        false,
-                        index,
-                        isDark,
-                        theme.primaryColor,
-                      ),
-                    ),
-                  ).animate().fadeIn(delay: 200.ms),
-                ],
-              ),
-            ),
-
-            const Spacer(),
-
-            if (!_hasSubmitted)
-              Padding(
-                padding: EdgeInsets.all(24.r),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: 60.h,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: theme.primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.r),
-                      ),
-                      elevation: 8,
-                      shadowColor: theme.primaryColor.withValues(alpha: 0.4),
-                    ),
-                    onPressed: _selectedWords.isEmpty
-                        ? null
-                        : () => _submitAnswer(quest.correctSentence),
-                    child: Text(
-                      "BUILD SENTENCE",
-                      style: GoogleFonts.outfit(
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w900,
-                        color: Colors.white,
-                      ),
-                    ),
+          _lastLives = state.livesRemaining;
+        }
+        if (state is WritingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'SYNTAX ARCHITECT!', enableDoubleUp: true);
+        } else if (state is WritingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<WritingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is WritingLoaded) ? state.currentQuest : null;
+        final pool = quest?.shuffledWords ?? [];
+        
+        return WritingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
+          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 48.h),
+              _buildWorkbench(theme.primaryColor, isDark),
+              SizedBox(height: 48.h),
+              _buildPiecePool(pool, theme.primaryColor, isDark),
+              const Spacer(),
+              if (!_isAnswered)
+                ScaleButton(
+                  onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
+                  child: Container(
+                    width: double.infinity, height: 60.h,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: theme.primaryColor, boxShadow: [BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)]),
+                    child: Center(child: Text("POLISH SENTENCE", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
                   ),
                 ),
-              ).animate().slideY(begin: 0.5),
-
-            SizedBox(height: 20.h),
-          ],
-        ),
-
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "STURDY!" : "TWEAK IT!",
-            subtitle: "Correct Sentence: ${quest.correctSentence}",
-            onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+              SizedBox(height: 20.h),
+            ],
           ),
-
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.carpenter_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("ASSEMBLE THE JIGSAW OF LOGIC", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(
-    bool used,
-    String correctSentence,
-    Color primaryColor,
-  ) {
-    return ScaleButton(
-      onTap: used ? null : () => _useHint(correctSentence),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
+  Widget _buildWorkbench(Color color, bool isDark) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) => _onSnap(details.data),
+      builder: (context, candidateData, rejectedData) {
+        return Container(
+          width: double.infinity,
+          constraints: BoxConstraints(minHeight: 100.h),
+          padding: EdgeInsets.all(24.r),
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.05),
+            borderRadius: BorderRadius.circular(24.r),
+            border: Border.all(color: candidateData.isNotEmpty ? color : Colors.white10, width: 2),
+            image: DecorationImage(image: const NetworkImage('https://www.transparenttextures.com/patterns/wood-pattern.png'), opacity: 0.1, repeat: ImageRepeat.repeat),
           ),
+          child: Wrap(
+            spacing: 8.w, runSpacing: 8.h,
+            children: _assembledPieces.asMap().entries.map((e) => _buildJigsawPiece(e.value, true, () => _onRemovePiece(e.key), color)).toList(),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildPiecePool(List<String> pool, Color color, bool isDark) {
+    final available = pool.where((p) {
+      int countInAssembled = _assembledPieces.where((a) => a == p).length;
+      int countInOriginal = pool.where((o) => o == p).length;
+      return countInAssembled < countInOriginal;
+    }).toList();
+
+    return Wrap(
+      spacing: 12.w, runSpacing: 12.h, alignment: WrapAlignment.center,
+      children: available.map((p) => Draggable<String>(
+        data: p,
+        feedback: Material(color: Colors.transparent, child: _buildJigsawPiece(p, false, null, color, isDragging: true)),
+        childWhenDragging: Opacity(opacity: 0.3, child: _buildJigsawPiece(p, false, null, color)),
+        child: _buildJigsawPiece(p, false, null, color),
+      )).toList(),
+    );
+  }
+
+  Widget _buildJigsawPiece(String text, bool isAssembled, VoidCallback? onTap, Color color, {bool isDragging = false}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: isAssembled ? color.withValues(alpha: 0.2) : Colors.black45,
+          border: Border.all(color: isAssembled ? color : Colors.white24, width: 2),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(8.r),
+            bottomLeft: Radius.circular(8.r),
+            topRight: Radius.circular(20.r),
+            bottomRight: Radius.circular(20.r),
+          ),
+          boxShadow: [if (isDragging || isAssembled) BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 10)],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
-            ),
+            Text(text, style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.bold, color: Colors.white)),
+            if (!isAssembled) ...[
+              SizedBox(width: 8.w),
+              Icon(Icons.extension_rounded, size: 14.r, color: Colors.white24),
+            ],
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildWordChip(
-    String word,
-    bool isSelected,
-    int index,
-    bool isDark,
-    Color primaryColor,
-  ) {
-    return ScaleButton(
-      onTap: () =>
-          isSelected ? _removeWord(word, index) : _addWord(word, index),
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(16.r),
-        padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 14.h),
-        color: isSelected
-            ? primaryColor.withValues(alpha: 0.1)
-            : (isDark
-                  ? Colors.white.withValues(alpha: 0.05)
-                  : Colors.black.withValues(alpha: 0.03)),
-        borderColor: isSelected
-            ? primaryColor
-            : primaryColor.withValues(alpha: 0.1),
-        child: Text(
-          word,
-          style: GoogleFonts.spectral(
-            fontSize: 18.sp,
-            fontWeight: FontWeight.w600,
-            fontStyle: FontStyle.italic,
-            color: isSelected
-                ? primaryColor
-                : (isDark
-                      ? Colors.white.withValues(alpha: 0.9)
-                      : Colors.black87),
-          ),
-        ),
-      ),
-    );
+    ).animate(target: isAssembled ? 1 : 0).shimmer(duration: 1.seconds);
   }
 }
+

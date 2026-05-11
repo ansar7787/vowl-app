@@ -1,0 +1,517 @@
+[
+  {
+    "level": 1,
+    "quests": [
+      {
+        "id": "KID_EMOTIONS_L1_Q1",
+        "instruction": "Find the HAPPY face",
+        "question": "😊✨",
+        "options": [
+          "Happy",
+          "Sad",
+          "Angry"
+        ],
+        "correctAnswer": "Happy",
+        "hint": "A happy face has a big smile and bright eyes because something good happened!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_EMOTIONS_L1_Q2",
+        "instruction": "Which one is HAPPY?",
+        "question": "🥳 vs 😡",
+        "options": [
+          "Party Face",
+          "Angry Face"
+        ],
+        "correctAnswer": "Party Face",
+        "hint": "Look for the friend who is celebrating and wearing a party hat!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_EMOTIONS_L1_Q3",
+        "instruction": "Is a hug HAPPY?",
+        "question": "🫂❓",
+        "options": [
+          "Yes, Yay!",
+          "No, it's Sad"
+        ],
+        "correctAnswer": "Yes, Yay!",
+        "hint": "Hugging someone you love makes you feel warm and HAPPY inside!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "quests": [
+      {
+        "id": "KID_EMOTIONS_L2_Q1",
+        "instruction": "Find the SAD face",
+        "question": "😢✨",
+        "options": [
+          "Sad",
+          "Happy",
+          "Angry"
+        ],
+        "correctAnswer": "Sad",
+        "hint": "A sad face has a frown and maybe a little tear because they are feeling blue!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_EMOTIONS_L2_Q2",
+        "instruction": "Which one is SAD?",
+        "question": "🧸🩹 vs 😊",
+        "options": [
+          "Broken Bear",
+          "Happy Face"
+        ],
+        "correctAnswer": "Broken Bear",
+        "hint": "When our favorite toy is hurt, it can make us feel SAD!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_EMOTIONS_L2_Q3",
+        "instruction": "Is a rainy day SAD?",
+        "question": "🌧️❓",
+        "options": [
+          "Sometimes, if we want to play!",
+          "No, never"
+        ],
+        "correctAnswer": "Sometimes, if we want to play!",
+        "hint": "Rain can make us feel SAD if it means we have to stay inside and wait for the sun!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "quests": [
+      {
+        "id": "KID_EMOTIONS_L3_Q1",
+        "instruction": "Find the ANGRY face",
+        "question": "😡✨",
+        "options": [
+          "Angry",
+          "Happy",
+          "Surprised"
+        ],
+        "correctAnswer": "Angry",
+        "hint": "An angry face has a scowl and maybe red cheeks because they are mad!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_EMOTIONS_L3_Q2",
+        "instruction": "Which one is ANGRY?",
+        "question": "😤 vs 😲",
+        "options": [
+          "Mad Face",
+          "Surprised Face"
+        ],
+        "correctAnswer": "Mad Face",
+        "hint": "Look for the friend who is huffing with steam coming out of their nose! They are ANGRY!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_EMOTIONS_L3_Q3",
+        "instruction": "Is stomping feet ANGRY?",
+        "question": "👣💥❓",
+        "options": [
+          "Yes, Grrr!",
+          "No, it's Happy"
+        ],
+        "correctAnswer": "Yes, Grrr!",
+        "hint": "When we feel ANGRY, we sometimes want to stomp our feet on the ground!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "quests": [
+      {
+        "id": "KID_EMOTIONS_L4_Q1",
+        "instruction": "Find the SURPRISED face",
+        "question": "😲✨",
+        "options": [
+          "Surprised",
+          "Sad",
+          "Happy"
+        ],
+        "correctAnswer": "Surprised",
+        "hint": "A surprised face has wide eyes and an open mouth because something unexpected happened!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_EMOTIONS_L4_Q2",
+        "instruction": "Which one is SURPRISED?",
+        "question": "🪄😲 vs 😊",
+        "options": [
+          "Magic Trick Face",
+          "Smiling Face"
+        ],
+        "correctAnswer": "Magic Trick Face",
+        "hint": "When we see something amazing that we didn't expect, we look SURPRISED!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_EMOTIONS_L4_Q3",
+        "instruction": "Is a gift a SURPRISE?",
+        "question": "🎁❓",
+        "options": [
+          "Yes, what is it?!",
+          "No, it's boring"
+        ],
+        "correctAnswer": "Yes, what is it?!",
+        "hint": "Opening a gift makes us feel SURPRISED because we don't know what treasure is inside!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 5,
+    "quests": [
+      {
+        "id": "KID_EMOTIONS_L5_Q1",
+        "instruction": "Mix: Find the HAPPY friend",
+        "question": "😊 vs 😡",
+        "options": [
+          "Happy",
+          "Angry"
+        ],
+        "correctAnswer": "Happy",
+        "hint": "The one with the big smile!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      },
+      {
+        "id": "KID_EMOTIONS_L5_Q2",
+        "instruction": "Mix: Find the SAD friend",
+        "question": "😢 vs 😲",
+        "options": [
+          "Sad",
+          "Surprised"
+        ],
+        "correctAnswer": "Sad",
+        "hint": "The one with the blue frown!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      },
+      {
+        "id": "KID_EMOTIONS_L5_Q3",
+        "instruction": "Mix: Find the ANGRY friend",
+        "question": "😡 vs 😊",
+        "options": [
+          "Angry",
+          "Happy"
+        ],
+        "correctAnswer": "Angry",
+        "hint": "The one who looks very mad!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      }
+    ]
+  },
+  {
+    "level": 6,
+    "quests": [
+      {
+        "id": "KID_EMOTIONS_L6_Q1",
+        "instruction": "Logic: What do we do when HAPPY?",
+        "question": "😊❓",
+        "options": [
+          "Smile and Laugh!",
+          "Cry",
+          "Stomp"
+        ],
+        "correctAnswer": "Smile and Laugh!",
+        "hint": "Happy feelings come out in big bright grins and giggles!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_EMOTIONS_L6_Q2",
+        "instruction": "Logic: What do we do when SAD?",
+        "question": "😢❓",
+        "options": [
+          "Maybe Cry or Frown",
+          "Party",
+          "Jump high"
+        ],
+        "correctAnswer": "Maybe Cry or Frown",
+        "hint": "Sad feelings might make a little tear fall from our eye!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_EMOTIONS_L6_Q3",
+        "instruction": "Logic: What do we do when SURPRISED?",
+        "question": "😲❓",
+        "options": [
+          "Eyes get Wide!",
+          "Sleep",
+          "Eat"
+        ],
+        "correctAnswer": "Eyes get Wide!",
+        "hint": "Our eyes and mouth pop open when we see something amazing!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "quests": [
+      {
+        "id": "KID_EMOTIONS_L7_Q1",
+        "instruction": "Search: Find the ice cream",
+        "question": "🍦 vs 🥦",
+        "options": [
+          "Ice Cream",
+          "Broccoli"
+        ],
+        "correctAnswer": "Ice Cream",
+        "hint": "Getting a cold treat like ice cream makes most kids feel HAPPY!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_EMOTIONS_L7_Q2",
+        "instruction": "Search: Find the scraped knee",
+        "question": "🩹 vs 🎈",
+        "options": [
+          "Boo-boo",
+          "Balloon"
+        ],
+        "correctAnswer": "Boo-boo",
+        "hint": "Getting an ouchie can make us feel a little SAD!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_EMOTIONS_L7_Q3",
+        "instruction": "Search: Find the dragon",
+        "question": "🐉🔥 vs 🐑",
+        "options": [
+          "Fiery Dragon",
+          "Soft Sheep"
+        ],
+        "correctAnswer": "Fiery Dragon",
+        "hint": "A fire-breathing dragon looks very ANGRY and mad!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 8,
+    "quests": [
+      {
+        "id": "KID_EMOTIONS_L8_Q1",
+        "instruction": "Actions: How do we help a sad friend?",
+        "question": "😢 Choice",
+        "options": [
+          "Give a Hug!",
+          "Laugh at them",
+          "Run away"
+        ],
+        "correctAnswer": "Give a Hug!",
+        "hint": "Kindness and hugs help SAD friends feel happy again!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_EMOTIONS_L8_Q2",
+        "instruction": "Actions: What do we do when angry?",
+        "question": "😡 Choice",
+        "options": [
+          "Take Deep Breaths!",
+          "Shout and Scream",
+          "Kick"
+        ],
+        "correctAnswer": "Take Deep Breaths!",
+        "hint": "Taking slow breaths helps our ANGRY feelings go away quietly!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_EMOTIONS_L8_Q3",
+        "instruction": "Actions: How do we show we're happy?",
+        "question": "😊 Choice",
+        "options": [
+          "Dance and Play!",
+          "Hide",
+          "Frown"
+        ],
+        "correctAnswer": "Dance and Play!",
+        "hint": "When we are HAPPY, we want to share our joy with everyone!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "quests": [
+      {
+        "id": "KID_EMOTIONS_L9_Q1",
+        "instruction": "Review: Who is happy?",
+        "question": "😊 Review",
+        "options": [
+          "Happy",
+          "Sad",
+          "Angry"
+        ],
+        "correctAnswer": "Happy",
+        "hint": "The smiling face friend!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_EMOTIONS_L9_Q2",
+        "instruction": "Review: Who is sad?",
+        "question": "😢 Review",
+        "options": [
+          "Sad",
+          "Happy",
+          "Surprised"
+        ],
+        "correctAnswer": "Sad",
+        "hint": "The blue face friend!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_EMOTIONS_L9_Q3",
+        "instruction": "Review: Who is angry?",
+        "question": "😡 Review",
+        "options": [
+          "Angry",
+          "Happy",
+          "Surprised"
+        ],
+        "correctAnswer": "Angry",
+        "hint": "The mad face friend!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "quests": [
+      {
+        "id": "KID_EMOTIONS_L10_Q1",
+        "instruction": "Level 10 Challenge: Faces!",
+        "question": "Which face looks SURPRISED?",
+        "options": [
+          "😲",
+          "😊",
+          "😡"
+        ],
+        "correctAnswer": "😲",
+        "hint": "The one with the wide eyes!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_EMOTIONS_L10_Q2",
+        "instruction": "Level 10 Challenge: Feelings!",
+        "question": "How do you feel today?",
+        "options": [
+          "Happy!",
+          "Sad",
+          "Angry"
+        ],
+        "correctAnswer": "Happy!",
+        "hint": "I hope you are feeling wonderful!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_EMOTIONS_L10_Q3",
+        "instruction": "Level 10 Challenge: Mastery!",
+        "question": "Are you a Heart Finder?",
+        "options": [
+          "YES!",
+          "No"
+        ],
+        "correctAnswer": "YES!",
+        "hint": "Congratulations! You have completed Level 10!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  }
+]

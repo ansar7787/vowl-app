@@ -1,4 +1,4 @@
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class VocabularyQuest extends GameQuest {
   final String? word;
@@ -34,12 +34,26 @@ class VocabularyQuest extends GameQuest {
     this.contextSentence,
     this.prompt,
     super.textToSpeak,
+    super.visualConfig,
     this.explanation,
     this.audioUrl,
     this.passage,
     this.synonyms,
     this.antonyms,
+    this.topicEmoji,
+    this.topicFact,
+    this.rootWord,
+    this.prefix,
+    this.suffix,
+    this.topicBuckets,
   });
+
+  final String? rootWord;
+  final String? prefix;
+  final String? suffix;
+  final List<String>? topicBuckets;
+  final String? topicEmoji;
+  final String? topicFact;
 
   String? get sentence => contextSentence ?? passage;
   String? get question => instruction;
@@ -47,3 +61,4 @@ class VocabularyQuest extends GameQuest {
   String? get example => contextSentence ?? explanation;
   String? get meaning => definition;
 }
+

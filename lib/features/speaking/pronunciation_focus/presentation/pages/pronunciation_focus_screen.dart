@@ -1,422 +1,215 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/presentation/widgets/speaking/sonic_mic_button.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/core/utils/speech_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/features/speaking/presentation/widgets/speaking_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class PronunciationFocusScreen extends StatefulWidget {
   final int level;
-  const PronunciationFocusScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const PronunciationFocusScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.pronunciationFocus,
+  });
 
   @override
-  State<PronunciationFocusScreen> createState() =>
-      _PronunciationFocusScreenState();
+  State<PronunciationFocusScreen> createState() => _PronunciationFocusScreenState();
 }
 
 class _PronunciationFocusScreenState extends State<PronunciationFocusScreen> {
-  final _speechService = di.sl<SpeechService>();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  bool _isListening = false;
-  String _recognizedText = '';
-  bool _hasAnalyzed = false;
+  
+  double _heatLevel = 0.0;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
+  bool _isListening = false;
 
   @override
   void initState() {
     super.initState();
-    _speechService.initializeStt();
-    context.read<SpeakingBloc>().add(
-      FetchSpeakingQuests(
-        gameType: GameSubtype.pronunciationFocus,
-        level: widget.level,
-      ),
-    );
+    context.read<SpeakingBloc>().add(FetchSpeakingQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _startListening() {
-    _hapticService.success();
-    setState(() {
-      _isListening = true;
-      _recognizedText = '';
-      _hasAnalyzed = false;
-    });
-
-    _speechService.listen(
-      onResult: (result) {
-        setState(() {
-          _recognizedText = result;
-        });
-      },
-      onDone: () {
-        if (mounted) {
-          setState(() => _isListening = false);
-          _analyzeSpeech();
-        }
-      },
-    );
-  }
-
-  void _stopListening() async {
-    _hapticService.light();
-    await _speechService.stop();
-    setState(() => _isListening = false);
-    _analyzeSpeech();
-  }
-
-  void _analyzeSpeech() {
-    if (_hasAnalyzed || _recognizedText.isEmpty) return;
-    _hasAnalyzed = true;
-
-    final state = context.read<SpeakingBloc>().state;
-    if (state is! SpeakingLoaded) return;
-
-    final targetText =
-        (state.currentQuest.correctAnswer ??
-                state.currentQuest.textToSpeak ??
-                "")
-            .toLowerCase()
-            .replaceAll(RegExp(r'[^\w\s]'), '');
-    final utteredText = _recognizedText.toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
-    );
-
-    // Pronunciation focus allows 80% similarity or containment
-    bool isCorrect =
-        utteredText == targetText ||
-        utteredText.contains(targetText) ||
-        (targetText.contains(utteredText) &&
-            utteredText.length > targetText.length * 0.8);
-
-    context.read<SpeakingBloc>().add(SubmitAnswer(isCorrect));
-  }
-
-  void _useHint() {
+  void _onMicDown() {
+    if (_isAnswered) return;
     _hapticService.selection();
-    context.read<SpeakingBloc>().add(SpeakingHintUsed());
+    setState(() => _isListening = true);
+  }
+
+  void _onMicUp() {
+    if (_isAnswered) return;
+    setState(() => _isListening = false);
+    if (_heatLevel >= 1.0) {
+      _submitAnswer();
+    } else {
+      setState(() => _heatLevel = 0.0);
+    }
+  }
+
+  void _submitAnswer() {
+    _hapticService.success();
+    _soundService.playCorrect();
+    setState(() { _isAnswered = true; _isCorrect = true; });
+    context.read<SpeakingBloc>().add(SubmitAnswer(true));
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'speaking',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<SpeakingBloc, SpeakingState>(
-        listener: (context, state) {
-          if (state is SpeakingGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Phonetic Maestro!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for your perfect pronunciation!',
-        ),
-            );
-          } else if (state is SpeakingGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Articulation Failed',
-        description: 'Your syntax was muffled. Recharge and try again!',
-      );
+    if (_isListening && _heatLevel < 1.0) {
+      Future.delayed(16.ms, () {
+        if (mounted && _isListening) {
+          setState(() {
+            _heatLevel += 0.012;
+            _hapticService.selection();
+          });
+        }
+      });
+    }
+
+    return BlocConsumer<SpeakingBloc, SpeakingState>(
+      listener: (context, state) {
+        if (state is SpeakingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _isListening = false;
+              _heatLevel = 0.0;
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is SpeakingLoading || state is SpeakingInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is SpeakingLoaded) {
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is SpeakingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<SpeakingBloc>().add(
-                FetchSpeakingQuests(
-                  gameType: GameSubtype.pronunciationFocus,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    SpeakingLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black12,
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    Text(
-                      "Listen, Focus, Speak",
-                      style: GoogleFonts.outfit(
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF1E293B),
-                      ),
-                      textAlign: TextAlign.center,
-                    ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2),
-                    SizedBox(height: 40.h),
-
-                    // Pronunciation Card
-                    GlassTile(
-                      padding: EdgeInsets.all(48.r),
-                      borderRadius: BorderRadius.circular(32.r),
-                      borderColor: theme.primaryColor.withValues(alpha: 0.3),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            quest.correctAnswer ??
-                                quest.textToSpeak ??
-                                "Pronounce",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.outfit(
-                              fontSize: 36.sp,
-                              fontWeight: FontWeight.w900,
-                              color: theme.primaryColor,
-                              letterSpacing: 1,
-                            ),
-                          ),
-                          if (quest.phoneticHint != null) ...[
-                            SizedBox(height: 16.h),
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 16.w,
-                                vertical: 8.h,
-                              ),
-                              decoration: BoxDecoration(
-                                color: theme.primaryColor.withValues(
-                                  alpha: 0.1,
-                                ),
-                                borderRadius: BorderRadius.circular(12.r),
-                              ),
-                              child: Text(
-                                "[ ${quest.phoneticHint} ]",
-                                style: GoogleFonts.outfit(
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w700,
-                                  color: theme.primaryColor.withValues(
-                                    alpha: 0.8,
-                                  ),
-                                  fontStyle: FontStyle.italic,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ],
-                      ),
-                    ).animate().fadeIn(delay: 400.ms).scale(),
-
-                    if (state.hintUsed)
-                      Padding(
-                        padding: EdgeInsets.only(top: 24.h),
-                        child: Text(
-                          "Focus on the '${quest.phoneticHint?[0] ?? ""}' sound",
-                          style: GoogleFonts.outfit(
-                            fontSize: 16.sp,
-                            color: Colors.amber,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ).animate().fadeIn().shimmer(),
-
-                    SizedBox(height: 48.h),
-                    if (_recognizedText.isNotEmpty)
-                      GlassTile(
-                        padding: EdgeInsets.all(20.r),
-                        color: theme.primaryColor.withValues(alpha: 0.1),
-                        child: Text(
-                          _recognizedText,
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.outfit(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w800,
-                            color: theme.primaryColor,
-                          ),
-                        ),
-                      ).animate().fadeIn(),
-                    SizedBox(height: 40.h),
-                    if (state.lastAnswerCorrect == null)
-                      SonicMicButton(
-                        isListening: _isListening,
-                        onStart: _startListening,
-                        onStop: _stopListening,
-                        primaryColor: theme.primaryColor,
-                      ),
-                    SizedBox(height: 16.h),
-                    Text(
-                      _isListening ? "RECORDING..." : "PRESS & HOLD TO SPEAK",
-                      style: GoogleFonts.outfit(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w700,
-                        color: isDark ? Colors.white38 : Colors.black38,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    SizedBox(height: 60.h),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect!
-                ? "PERFECT SOUND!"
-                : "KEEP PRACTICING!",
-            subtitle: quest.hint ?? "Correct Pronunciation!",
-            onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+          _lastLives = state.livesRemaining;
+        }
+        if (state is SpeakingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'CRYSTAL CLARITY!', enableDoubleUp: true);
+        } else if (state is SpeakingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<SpeakingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
+        
+        return SpeakingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
+          onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 40.h),
+              _buildThermalTarget(quest.targetPhoneme ?? "PHONEME", theme.primaryColor),
+              SizedBox(height: 24.h),
+              _buildHeatmapSentence(quest.textToSpeak ?? "PRONOUNCE THIS.", theme.primaryColor, isDark),
+              const Spacer(),
+              _buildSizzleMic(theme.primaryColor, isDark),
+              SizedBox(height: 40.h),
+            ],
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
+          Icon(Icons.whatshot_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("HEAT THE PLATE TO CRITICAL MASS", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildThermalTarget(String phoneme, Color primaryColor) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
+      decoration: BoxDecoration(
+        color: Color.lerp(Colors.blue[900], Colors.orange[900], _heatLevel),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: Colors.white24),
+        boxShadow: [BoxShadow(color: Color.lerp(Colors.blue, Colors.orange, _heatLevel)!.withValues(alpha: 0.5), blurRadius: 15)],
+      ),
+      child: Text(phoneme, style: GoogleFonts.outfit(fontSize: 24.sp, fontWeight: FontWeight.w900, color: Colors.white)),
+    );
+  }
+
+  Widget _buildHeatmapSentence(String text, Color primaryColor, bool isDark) {
+    return GlassTile(
+      padding: EdgeInsets.all(32.r), borderRadius: BorderRadius.circular(24.r),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 22.sp, color: Color.lerp(isDark ? Colors.white54 : Colors.black54, Colors.orangeAccent, _heatLevel))),
+          if (_isListening)
+            ...List.generate(3, (i) => Container(
+              width: 200.w, height: 60.h,
+              decoration: BoxDecoration(
+                color: Colors.orangeAccent.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(30.r),
+              ),
+            ).animate(onPlay: (c) => c.repeat()).moveX(begin: -5, end: 5, duration: 200.ms).moveY(begin: -2, end: 2, duration: 300.ms)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSizzleMic(Color primaryColor, bool isDark) {
+    return GestureDetector(
+      onLongPressStart: (_) => _onMicDown(),
+      onLongPressEnd: (_) => _onMicUp(),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          SizedBox(
+            width: 100.r, height: 100.r,
+            child: CircularProgressIndicator(
+              value: _heatLevel,
+              strokeWidth: 6.r,
+              color: Colors.orangeAccent,
+              backgroundColor: Colors.blue[900]!.withValues(alpha: 0.3),
+            ),
+          ),
+          ScaleButton(
+            onTap: () {},
+            child: Container(
+              width: 80.r, height: 80.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: _isListening ? Colors.orange[800] : Colors.blue[900],
+                boxShadow: _isListening ? [BoxShadow(color: Colors.orangeAccent.withValues(alpha: 0.5), blurRadius: 25)] : [],
+              ),
+              child: Icon(_isListening ? Icons.local_fire_department_rounded : Icons.mic_none_rounded, color: Colors.white, size: 36.r),
             ),
           ),
         ],
       ),
     );
   }
-
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.all(8.r),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          shape: BoxShape.circle,
-        ),
-        child: Icon(
-          Icons.lightbulb_rounded,
-          color: used ? Colors.grey : primaryColor,
-          size: 24.r,
-        ),
-      ),
-    );
-  }
-
-  
-
-  
 }

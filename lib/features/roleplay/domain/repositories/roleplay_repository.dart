@@ -8,4 +8,9 @@ abstract class RoleplayRepository {
     required GameSubtype gameType,
     required int level,
   });
+
+  Future<void> preloadNextBatch({
+    required GameSubtype gameType,
+    required int currentLevel,
+  });
 }

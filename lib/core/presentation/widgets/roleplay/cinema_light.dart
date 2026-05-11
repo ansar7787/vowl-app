@@ -15,16 +15,16 @@ class CinemaLight extends StatelessWidget {
           top: -100.h,
           left: 0,
           right: 0,
-          child: Opacity(
-            opacity: 0.1,
-            child: Container(
-              height: 400.h,
-              decoration: BoxDecoration(
-                gradient: RadialGradient(
-                  center: const Alignment(0, -1),
-                  radius: 1.5,
-                  colors: [color, color.withValues(alpha: 0)],
-                ),
+          child: Container(
+            height: 400.h,
+            decoration: BoxDecoration(
+              gradient: RadialGradient(
+                center: const Alignment(0, -1),
+                radius: 1.5,
+                colors: [
+                  color.withValues(alpha: 0.1),
+                  color.withValues(alpha: 0),
+                ],
               ),
             ),
           ),

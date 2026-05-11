@@ -1,517 +1,457 @@
 {
-  "gameType": "trueFalseReading",
-  "batchIndex": 5,
-  "levels": "41-50",
-  "quests": [
-    {
-      "id": "trueFalseReading_l41_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "The Earth orbits the Sun once every 365.25 days.",
-      "question": "The Earth takes exactly 365 days to orbit the Sun.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Note the '.25' part.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l41_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Water boils at 100 degrees Celsius at sea level.",
-      "question": "Water boils at 100°C at sea level.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Standard boiling point.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l41_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Dolphins are fish that live in the ocean.",
-      "question": "Dolphins are fish.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Dolphins are mammals.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l42_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "The Moon has no atmosphere and no weather.",
-      "question": "The Moon has weather systems.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "No atmosphere means no weather.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l42_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Lightning is hotter than the surface of the Sun, reaching temperatures of about 30,000 Kelvin.",
-      "question": "Lightning is hotter than the Sun's surface.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Compare the temperatures.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l42_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Humans share about 98.7% of their DNA with chimpanzees.",
-      "question": "Humans share over 95% DNA with chimps.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "98.7% is over 95%.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l43_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Gold is the most conductive metal for electricity.",
-      "question": "Gold is the best electrical conductor.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Silver is actually better.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l43_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "The Pacific Ocean is the largest ocean on Earth, covering about 165 million square kilometers.",
-      "question": "The Atlantic is the largest ocean.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "The passage says Pacific.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l43_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Bats are blind and navigate using echolocation alone.",
-      "question": "Bats are completely blind.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Bats can actually see.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l44_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Mount Kilimanjaro is located in Tanzania and is the highest peak in Africa.",
-      "question": "Kilimanjaro is in Tanzania.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Directly stated in the passage.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l44_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "An ostrich's eye is bigger than its brain.",
-      "question": "An ostrich's brain is larger than its eye.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Reversed comparison.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l44_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Venus rotates clockwise, opposite to most other planets in the solar system.",
-      "question": "Venus rotates the same direction as Earth.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Venus rotates opposite.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l45_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Honey bees can recognize human faces using pattern recognition.",
-      "question": "Bees can recognize human faces.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Stated in the passage.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l45_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Sound travels faster in water than in air.",
-      "question": "Sound is slower in water than air.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Sound is FASTER in water.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l45_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "A day on Venus is longer than a year on Venus due to its slow rotation.",
-      "question": "A Venus day is shorter than a Venus year.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "The opposite is true.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l46_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Strawberries are not true berries, but bananas are.",
-      "question": "Strawberries are true berries.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "The passage says they are not.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l46_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "The Great Wall of China is visible from space with the naked eye.",
-      "question": "You can see the Great Wall from space.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "This is a common myth.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l46_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Antarctica is the driest, windiest, and coldest continent on Earth.",
-      "question": "Antarctica is the coldest continent.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Stated in the passage.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l47_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Octopuses have blue blood because they use copper-based hemocyanin.",
-      "question": "Octopuses have red blood.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Their blood is blue.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l47_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "The Eiffel Tower can grow taller by up to 15 cm during summer due to thermal expansion.",
-      "question": "The Eiffel Tower changes height with temperature.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Thermal expansion is real.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l47_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Cats have fewer toes on their back paws than on their front paws.",
-      "question": "Cats have equal toes on all paws.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Front paws have 5, back have 4.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l48_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "The Amazon River is the longest river in the world.",
-      "question": "The Amazon is the world's longest river.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "The Nile is longer.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l48_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Sharks must keep swimming to breathe; if they stop, they will suffocate.",
-      "question": "All sharks die if they stop swimming.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Some sharks can pump water over gills.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l48_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Diamond is the hardest known natural material on Earth.",
-      "question": "Diamond is the hardest natural material.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Stated directly.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l49_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "The human nose can detect over 1 trillion distinct scents.",
-      "question": "Humans can smell about 10,000 scents.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "The real number is much higher.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l49_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Pluto was reclassified as a dwarf planet in 2006 by the International Astronomical Union.",
-      "question": "Pluto is still classified as a planet.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Reclassified in 2006.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l49_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "A group of crows is called a murder.",
-      "question": "A group of crows is called a flock.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "The correct term is 'murder'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l50_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "The human heart beats approximately 100,000 times per day.",
-      "question": "The heart beats about 100,000 times daily.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Stated in the passage.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l50_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "Peanuts are not actually nuts; they are legumes that grow underground.",
-      "question": "Peanuts are tree nuts.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "They are legumes.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "trueFalseReading_l50_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "choice",
-      "passage": "The tongue is the strongest muscle in the human body relative to its size.",
-      "question": "The tongue is the body's strongest muscle.",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Relative to its size, yes.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "trueFalseReading",
+    "batchIndex":  5,
+    "levels":  "41-50",
+    "quests":  [
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L41_Q1",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L41_Q2",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L41_Q3",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L42_Q1",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L42_Q2",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L42_Q3",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L43_Q1",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L43_Q2",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L43_Q3",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L44_Q1",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L44_Q2",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L44_Q3",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L45_Q1",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L45_Q2",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L45_Q3",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L46_Q1",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L46_Q2",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L46_Q3",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L47_Q1",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L47_Q2",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L47_Q3",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L48_Q1",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L48_Q2",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L48_Q3",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L49_Q1",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L49_Q2",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L49_Q3",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L50_Q1",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L50_Q2",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   },
+                   {
+                       "id":  "RDG_TRUEFALSEREADING_L50_Q3",
+                       "interactionType":  "Coin Flip",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the moon count in the text.",
+                       "explanation":  "Fact verification requires cross-referencing text with claims.",
+                       "passage":  "Mars is known as the Red Planet due to its iron oxide surface. It has two small moons.",
+                       "question":  "Mars has three moons.",
+                       "correctAnswer":  "False",
+                       "options":  [
+                                       "True",
+                                       "False"
+                                   ]
+                   }
+               ]
 }

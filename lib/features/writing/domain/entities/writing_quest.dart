@@ -1,4 +1,4 @@
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class WritingQuest extends GameQuest {
   final String? passage;
@@ -19,6 +19,9 @@ class WritingQuest extends GameQuest {
   final String? context;
   final String? partialSentence;
   final String? completion;
+  final String? subject;
+  final String? recipient;
+  final String? essayTopic;
 
   const WritingQuest({
     required super.id,
@@ -37,6 +40,7 @@ class WritingQuest extends GameQuest {
     this.passage,
     this.question,
     super.textToSpeak,
+    super.visualConfig,
     this.missingWord,
     this.prompt,
     this.sampleAnswer,
@@ -53,8 +57,12 @@ class WritingQuest extends GameQuest {
     this.context,
     this.partialSentence,
     this.completion,
+    this.subject,
+    this.recipient,
+    this.essayTopic,
   });
 
   String? get incorrectSentence => passage;
   String? get correctSentence => correctAnswer;
 }
+

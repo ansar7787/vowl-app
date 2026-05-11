@@ -16,6 +16,7 @@ class GrammarQuestModel extends GrammarQuest {
     super.correctAnswerIndex,
     super.correctAnswer,
     super.hint,
+    super.visualConfig,
     super.sentence,
     super.verb,
     super.word,
@@ -30,6 +31,8 @@ class GrammarQuestModel extends GrammarQuest {
     super.passage,
     super.passiveSentence,
     super.activeSentence,
+    super.shuffledWords,
+    super.explanation,
   });
 
   factory GrammarQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -41,22 +44,23 @@ class GrammarQuestModel extends GrammarQuest {
       id: id,
       type: subtype.category,
       subtype: subtype,
-      instruction: map['instruction'] ?? 'Solve the grammar puzzle.',
-      difficulty: map['difficulty'] ?? 1,
+      instruction: map['instruction'] ?? map['question'] ?? 'Solve the grammar puzzle.',
+      difficulty: (map['difficulty'] as num?)?.toInt() ?? 1,
       interactionType: InteractionType.values.firstWhere(
         (i) => i.name == (map['interactionType'] ?? 'choice'),
         orElse: () => InteractionType.choice,
       ),
-      xpReward: map['xpReward'] ?? 10,
-      coinReward: map['coinReward'] ?? 5,
-      livesAllowed: map['livesAllowed'] ?? 3,
+      xpReward: (map['xpReward'] as num?)?.toInt() ?? 10,
+      coinReward: (map['coinReward'] as num?)?.toInt() ?? 5,
+      livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
       options: map['options'] != null
           ? List<String>.from(map['options'])
-          : null,
+          : (map['choices'] != null ? List<String>.from(map['choices']) : null),
       correctAnswerIndex: map['correctAnswerIndex'],
       correctAnswer: map['correctAnswer'],
       hint: map['hint'],
-      sentence: map['sentence'] ?? map['question'],
+      visualConfig: map['visual_config'] != null ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'])) : null,
+      sentence: map['sentence'] ?? map['question'] ?? map['text'],
       verb: map['verb'],
       word: map['word'],
       targetTense: map['targetTense'],
@@ -64,12 +68,14 @@ class GrammarQuestModel extends GrammarQuest {
       firstClause: map['firstClause'],
       secondClause: map['secondClause'],
       connectorToUse: map['connectorToUse'],
-      sentenceWithBlank: map['sentenceWithBlank'],
+      sentenceWithBlank: map['sentenceWithBlank'] ?? map['sentence'],
       articleToInsert: map['articleToInsert'],
       targetWord: map['targetWord'],
       passage: map['passage'],
       passiveSentence: map['passiveSentence'],
       activeSentence: map['activeSentence'],
+      shuffledWords: map['shuffledWords'] != null ? List<String>.from(map['shuffledWords']) : null,
+      explanation: map['explanation'],
     );
   }
 
@@ -100,6 +106,9 @@ class GrammarQuestModel extends GrammarQuest {
       'passage': passage,
       'passiveSentence': passiveSentence,
       'activeSentence': activeSentence,
+      'shuffledWords': shuffledWords,
+      'explanation': explanation,
     };
   }
 }
+

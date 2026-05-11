@@ -1,31 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/listening/sound_wave.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/core/utils/speech_service.dart';
-import 'package:voxai_quest/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
+import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class AudioTrueFalseScreen extends StatefulWidget {
   final int level;
-  const AudioTrueFalseScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const AudioTrueFalseScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.audioTrueFalse,
+  });
 
   @override
   State<AudioTrueFalseScreen> createState() => _AudioTrueFalseScreenState();
@@ -34,354 +29,150 @@ class AudioTrueFalseScreen extends StatefulWidget {
 class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
-  bool? _selectedAnswer;
-  bool _isPlaying = false;
+  
+  double _tuningValue = 0.5;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<ListeningBloc>().add(
-      FetchListeningQuests(
-        gameType: GameSubtype.audioTrueFalse,
-        level: widget.level,
-      ),
-    );
+    context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _playAudio(String text) async {
-    if (_isPlaying) return;
-    setState(() => _isPlaying = true);
-    _hapticService.light();
-    await _speechService.speak(text);
-    if (mounted) setState(() => _isPlaying = false);
+  void _onTune(double delta) {
+    if (_isAnswered) return;
+    setState(() {
+      _tuningValue = (_tuningValue + delta / 300).clamp(0.0, 1.0);
+      _hapticService.selection();
+    });
   }
 
-  void _onAnswerTap(bool value, String correctAnswer) {
-    if (_selectedAnswer != null) return;
-    _hapticService.selection();
-    setState(() => _selectedAnswer = value);
-
-    final isCorrect = value == (correctAnswer.toLowerCase() == 'true');
+  void _submitAnswer(bool verdict, String correct) {
+    if (_isAnswered) return;
+    bool isCorrect = verdict.toString().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
-
-    context.read<ListeningBloc>().add(SubmitAnswer(isCorrect));
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'listening',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<ListeningBloc, ListeningState>(
-        listener: (context, state) {
-          if (state is ListeningGameComplete) {
-            setState(() => _showConfetti = true);
-            GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'FACT FINDER!',
-          description:
-              'Your ability to discern truth is unmatched. Earned ${state.xpEarned} XP and ${state.coinsEarned} coins.',
+    return BlocConsumer<ListeningBloc, ListeningState>(
+      listener: (context, state) {
+        if (state is ListeningLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _tuningValue = 0.5;
+            });
+          }
+          _lastLives = state.livesRemaining;
+        }
+        if (state is ListeningGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'FACT VERDICTOR!', enableDoubleUp: true);
+        } else if (state is ListeningGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ListeningBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is ListeningLoaded) ? state.currentQuest : null;
+        
+        return ListeningBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
+          onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 48.h),
+              _buildAudioTuner(quest.textToSpeak ?? "", theme.primaryColor),
+              SizedBox(height: 40.h),
+              _buildSignalScreen(quest.statement ?? "", theme.primaryColor, isDark),
+              const Spacer(),
+              _buildPolarizedFilters(quest.correctAnswer ?? "", theme.primaryColor),
+              SizedBox(height: 40.h),
+            ],
+          ),
         );
-          } else if (state is ListeningGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'TRUTH CONCEALED',
-        description: 'Some facts slipped past your ears. Want to try again?',
-        onRestore: () => context.read<ListeningBloc>().add(RestoreLife()),
-      );
-          } else if (state is ListeningLoaded &&
-              state.lastAnswerCorrect == null) {
-            setState(() => _selectedAnswer = null);
-          }
-        },
-        builder: (context, state) {
-          if (state is ListeningLoading || state is ListeningInitial) {
-            return const GameShimmerLoading();
-          }
-
-          if (state is ListeningError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<ListeningBloc>().add(
-                FetchListeningQuests(
-                  gameType: GameSubtype.audioTrueFalse,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          if (state is ListeningLoaded) {
-            return Stack(
-              children: [
-                const MeshGradientBackground(),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-
-          return const SizedBox.shrink();
-        },
-      ),
+      },
     );
   }
 
-  Widget _buildGameUI(
-    BuildContext context,
-    ListeningLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        SafeArea(
-          child: Column(
-            children: [
-              _buildHeader(context, state, progress, theme, isDark),
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 20.h),
-                      Text(
-                        "TRUE OR FALSE",
-                        style: GoogleFonts.outfit(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 4,
-                          color: theme.primaryColor,
-                        ),
-                      ),
-                      SizedBox(height: 12.h),
-                      Text(
-                        quest.instruction,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF1E293B),
-                        ),
-                      ).animate().fadeIn().slideY(begin: 0.1),
-                      SizedBox(height: 40.h),
-                      _buildAudioPlayer(
-                        quest.transcript ?? "The statement is correct.",
-                        theme,
-                      ),
-                      SizedBox(height: 50.h),
-                      _buildTrueFalseButtons(
-                        quest.correctAnswer ?? "true",
-                        theme,
-                        isDark,
-                      ),
-                      SizedBox(height: 40.h),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "SHARP ANALYSIS!" : "OVAL ERROR!",
-            subtitle: "Listening closely is the key to truth.",
-            onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
-          ),
-        if (_showConfetti) const GameConfetti(),
-      ],
-    );
-  }
-
-  Widget _buildHeader(
-    BuildContext context,
-    ListeningLoaded state,
-    double progress,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 10.h),
-      child: Row(
-        children: [
-          ScaleButton(
-            onTap: () => context.pop(),
-            child: Container(
-              padding: EdgeInsets.all(10.r),
-              decoration: BoxDecoration(
-                color: isDark ? Colors.white10 : Colors.black12,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.close_rounded,
-                size: 24.r,
-                color: isDark ? Colors.white70 : Colors.black54,
-              ),
-            ),
-          ),
-          SizedBox(width: 12.w),
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.r),
-              child: LinearProgressIndicator(
-                value: progress,
-                minHeight: 14.h,
-                backgroundColor: isDark ? Colors.white10 : Colors.black12,
-                valueColor: AlwaysStoppedAnimation<Color>(theme.primaryColor),
-              ),
-            ),
-          ),
-          SizedBox(width: 12.w),
-          _buildHeartCount(state.livesRemaining),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildAudioPlayer(String transcript, ThemeResult theme) {
-    return GlassTile(
-      padding: EdgeInsets.all(32.r),
-      borderRadius: BorderRadius.circular(32.r),
-      child: Column(
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              if (_isPlaying)
-                SizedBox(
-                  width: 120.r,
-                  height: 120.r,
-                  child: SoundWave(color: theme.primaryColor),
-                ),
-              ScaleButton(
-                onTap: () => _playAudio(transcript),
-                child: Container(
-                  width: 80.r,
-                  height: 80.r,
-                  decoration: BoxDecoration(
-                    color: theme.primaryColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    _isPlaying ? Icons.pause_rounded : Icons.play_arrow_rounded,
-                    color: Colors.white,
-                    size: 40.r,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 16.h),
-          Text(
-            "TAP TO HEAR STATEMENT",
-            style: GoogleFonts.outfit(
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 2,
-              color: Colors.white70,
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn().scale();
-  }
-
-  Widget _buildTrueFalseButtons(
-    String correctAnswer,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    return Column(
-      children: [
-        _buildChoiceCard(true, correctAnswer, theme, isDark),
-        SizedBox(height: 20.h),
-        _buildChoiceCard(false, correctAnswer, theme, isDark),
-      ],
-    );
-  }
-
-  Widget _buildChoiceCard(
-    bool value,
-    String correctAnswer,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    final isSelected = _selectedAnswer == value;
-
-    return ScaleButton(
-      onTap: () => _onAnswerTap(value, correctAnswer),
-      child: GlassTile(
-        padding: EdgeInsets.symmetric(vertical: 24.h),
-        borderRadius: BorderRadius.circular(24.r),
-        borderColor: isSelected ? theme.primaryColor : Colors.white12,
-        color: isSelected ? theme.primaryColor.withValues(alpha: 0.1) : null,
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                value ? Icons.check_circle_rounded : Icons.cancel_rounded,
-                color: value ? Colors.greenAccent : Colors.redAccent,
-                size: 32.r,
-              ),
-              SizedBox(width: 16.w),
-              Text(
-                value ? "TRUE" : "FALSE",
-                style: GoogleFonts.outfit(
-                  fontSize: 24.sp,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 2,
-                  color: isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    ).animate().fadeIn().slideY(begin: 0.2);
-  }
-
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
+          Icon(Icons.radio_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("TUNE THE SIGNAL TO CATEGORIZE VERDICT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildAudioTuner(String tts, Color color) {
+    return ScaleButton(
+      onTap: () {
+        _soundService.playTts(tts);
+        _hapticService.selection();
+      },
+      child: Container(
+        width: 80.r, height: 80.r,
+        decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color, width: 2)),
+        child: Icon(Icons.record_voice_over_rounded, color: color, size: 32.r),
+      ),
+    );
+  }
+
+  Widget _buildSignalScreen(String statement, Color color, bool isDark) {
+    double clarity = (1.0 - (_tuningValue - 0.5).abs() * 2).clamp(0.0, 1.0);
+    return Container(
+      width: double.infinity, height: 180.h,
+      decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(20.r), border: Border.all(color: color.withValues(alpha: 0.3))),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // The Static
+          if (clarity < 0.9)
+            ...List.generate(15, (i) => Positioned(
+              left: (i * 20).w,
+              child: Container(
+                width: 2.w, height: 180.h,
+                color: Colors.white10.withValues(alpha: 1.0 - clarity),
+              ).animate(onPlay: (c) => c.repeat()).moveX(begin: 0, end: 10, duration: 100.ms),
+            )),
+            
+          // The Statement
+          Opacity(
+            opacity: clarity.clamp(0.1, 1.0),
+            child: Padding(
+              padding: EdgeInsets.all(24.r),
+              child: Text(statement, textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 20.sp, fontWeight: FontWeight.w600, color: Color.lerp(Colors.white24, Colors.white, clarity))),
             ),
           ),
         ],
@@ -389,7 +180,44 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     );
   }
 
-  
+  Widget _buildPolarizedFilters(String correct, Color color) {
+    return GestureDetector(
+      onHorizontalDragUpdate: (details) => _onTune(details.delta.dx),
+      onHorizontalDragEnd: (_) {
+        if (_tuningValue > 0.9) _submitAnswer(true, correct);
+        if (_tuningValue < 0.1) _submitAnswer(false, correct);
+      },
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _buildFilterZone("FALSE", Colors.redAccent, _tuningValue < 0.2),
+              _buildFilterZone("TRUE", Colors.greenAccent, _tuningValue > 0.8),
+            ],
+          ),
+          SizedBox(height: 20.h),
+          Slider(
+            value: _tuningValue,
+            onChanged: (v) => _onTune((v - _tuningValue) * 300),
+            activeColor: color,
+            inactiveColor: color.withValues(alpha: 0.2),
+          ),
+        ],
+      ),
+    );
+  }
 
-  
+  Widget _buildFilterZone(String label, Color color, bool isActive) {
+    return Container(
+      width: 120.w, height: 60.h,
+      decoration: BoxDecoration(
+        color: isActive ? color.withValues(alpha: 0.3) : color.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(15.r),
+        border: Border.all(color: isActive ? color : color.withValues(alpha: 0.2), width: 2),
+      ),
+      child: Center(child: Text(label, style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: color))),
+    );
+  }
 }
+

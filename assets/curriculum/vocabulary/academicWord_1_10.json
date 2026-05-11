@@ -1,577 +1,307 @@
 {
-  "gameType": "academicWord",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "academicWord_l1_q1",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Melancholy\" mean?",
-      "word": "Melancholy",
-      "options": [
-        "A feeling of pensive sadness",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "He felt a wave of melancholy after the movie.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l1_q2",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Ephemeral\" mean?",
-      "word": "Ephemeral",
-      "options": [
-        "Lasting a very short time",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The beauty of cherry blossoms is ephemeral.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l1_q3",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Ubiquitous\" mean?",
-      "word": "Ubiquitous",
-      "options": [
-        "Present everywhere",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Smartphones have become ubiquitous.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l2_q1",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Resilient\" mean?",
-      "word": "Resilient",
-      "options": [
-        "Able to recover quickly",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "She proved to be remarkably resilient.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l2_q2",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Pragmatic\" mean?",
-      "word": "Pragmatic",
-      "options": [
-        "Dealing with things practically",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "He took a pragmatic approach to the problem.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l2_q3",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Eloquent\" mean?",
-      "word": "Eloquent",
-      "options": [
-        "Fluent and persuasive in speaking",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "She gave an eloquent speech at the ceremony.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l3_q1",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Tenacious\" mean?",
-      "word": "Tenacious",
-      "options": [
-        "Holding firmly; persistent",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The tenacious climber reached the summit.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l3_q2",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Meticulous\" mean?",
-      "word": "Meticulous",
-      "options": [
-        "Showing great attention to detail",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Her meticulous planning ensured success.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l3_q3",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Candid\" mean?",
-      "word": "Candid",
-      "options": [
-        "Truthful and straightforward",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "His candid remarks surprised everyone.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l4_q1",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Benevolent\" mean?",
-      "word": "Benevolent",
-      "options": [
-        "Kind and generous",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The benevolent donor funded the school.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l4_q2",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Ambiguous\" mean?",
-      "word": "Ambiguous",
-      "options": [
-        "Open to more than one interpretation",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The ambiguous message confused us all.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l4_q3",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Diligent\" mean?",
-      "word": "Diligent",
-      "options": [
-        "Showing careful persistent effort",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The diligent student earned top marks.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l5_q1",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Lucid\" mean?",
-      "word": "Lucid",
-      "options": [
-        "Clear and easy to understand",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Her lucid explanation helped everyone.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l5_q2",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Vivacious\" mean?",
-      "word": "Vivacious",
-      "options": [
-        "Lively and attractive",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Her vivacious personality lit up the room.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l5_q3",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Astute\" mean?",
-      "word": "Astute",
-      "options": [
-        "Shrewd and perceptive",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "An astute investor spots trends early.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l6_q1",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Gregarious\" mean?",
-      "word": "Gregarious",
-      "options": [
-        "Fond of company; sociable",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "His gregarious nature won many friends.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l6_q2",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Arduous\" mean?",
-      "word": "Arduous",
-      "options": [
-        "Involving great effort; difficult",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The arduous trek lasted five days.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l6_q3",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Copious\" mean?",
-      "word": "Copious",
-      "options": [
-        "Abundant in supply",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "She took copious notes during the lecture.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l7_q1",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Jubilant\" mean?",
-      "word": "Jubilant",
-      "options": [
-        "Feeling or expressing great happiness",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The crowd was jubilant after the victory.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l7_q2",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Profound\" mean?",
-      "word": "Profound",
-      "options": [
-        "Very deep or intense",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The book had a profound impact on me.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l7_q3",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Obsolete\" mean?",
-      "word": "Obsolete",
-      "options": [
-        "No longer produced or used",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Typewriters have become obsolete.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l8_q1",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Innovative\" mean?",
-      "word": "Innovative",
-      "options": [
-        "Introducing new ideas; creative",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The innovative design won many awards.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l8_q2",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Frugal\" mean?",
-      "word": "Frugal",
-      "options": [
-        "Sparing or economical with money",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Her frugal habits helped her save a fortune.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l8_q3",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Lethargic\" mean?",
-      "word": "Lethargic",
-      "options": [
-        "Lacking energy; sluggish",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The heat made everyone feel lethargic.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l9_q1",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Ominous\" mean?",
-      "word": "Ominous",
-      "options": [
-        "Giving the feeling something bad will happen",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The ominous clouds signaled a storm.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l9_q2",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Pervasive\" mean?",
-      "word": "Pervasive",
-      "options": [
-        "Spreading widely throughout",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Music has a pervasive influence on culture.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l9_q3",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Credible\" mean?",
-      "word": "Credible",
-      "options": [
-        "Able to be believed; convincing",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The witness gave a credible account.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l10_q1",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Whimsical\" mean?",
-      "word": "Whimsical",
-      "options": [
-        "Playfully quaint or fanciful",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The garden had a whimsical fairy-tale feel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l10_q2",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Nonchalant\" mean?",
-      "word": "Nonchalant",
-      "options": [
-        "Casually calm and relaxed",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "He gave a nonchalant shrug.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "academicWord_l10_q3",
-      "instruction": "Choose the correct definition.",
-      "difficulty": 1,
-      "subtype": "academicWord",
-      "interactionType": "choice",
-      "question": "What does \"Versatile\" mean?",
-      "word": "Versatile",
-      "options": [
-        "Able to adapt to many functions",
-        "A type of animal",
-        "A cooking method",
-        "A sport"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "She is a versatile musician.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "academicWord",
+    "batchIndex":  1,
+    "levels":  "1-10",
+    "quests":  [
+                   {
+                       "id":  "VOC_ACADEMICWORD_L1_Q1",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "ANALYZE_id0",
+                       "passage":  "The primary analyze of the study was academic stream 0."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L1_Q2",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "CONCEPT_id1",
+                       "passage":  "We must concept the underlying academic stream 1."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L1_Q3",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "DATA_id2",
+                       "passage":  "A critical data in this academic stream 2 is required."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L2_Q1",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "EVIDENCE_id3",
+                       "passage":  "Environmental evidence impacts the academic stream 3 significantly."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L2_Q2",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "FACTOR_id4",
+                       "passage":  "The factor structure remains academic stream 4 throughout."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L2_Q3",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "GLOBAL_id5",
+                       "passage":  "Scientists global how academic stream 5 influences results."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L3_Q1",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "HYPOTHESIS_id6",
+                       "passage":  "His hypothesis approach to academic stream 6 was impressive."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L3_Q2",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "INTERPRET_id7",
+                       "passage":  "Without interpret, the academic stream 7 cannot be solved."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L3_Q3",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "JUSTICE_id8",
+                       "passage":  "The justice framework supports the academic stream 8."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L4_Q1",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "KNOWLEDGE_id9",
+                       "passage":  "Evaluating knowledge leads to better academic stream 9."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L4_Q2",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "LOGIC_id10",
+                       "passage":  "The primary logic of the study was academic stream 10."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L4_Q3",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "METHOD_id11",
+                       "passage":  "We must method the underlying academic stream 11."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L5_Q1",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "NETWORK_id12",
+                       "passage":  "A critical network in this academic stream 12 is required."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L5_Q2",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "OBJECTIVE_id13",
+                       "passage":  "Environmental objective impacts the academic stream 13 significantly."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L5_Q3",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "PERSPECTIVE_id14",
+                       "passage":  "The perspective structure remains academic stream 14 throughout."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L6_Q1",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "QUALITY_id15",
+                       "passage":  "Scientists quality how academic stream 15 influences results."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L6_Q2",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "RESEARCH_id16",
+                       "passage":  "His research approach to academic stream 16 was impressive."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L6_Q3",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "SOURCE_id17",
+                       "passage":  "Without source, the academic stream 17 cannot be solved."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L7_Q1",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "THEORY_id18",
+                       "passage":  "The theory framework supports the academic stream 18."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L7_Q2",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "UNIQUE_id19",
+                       "passage":  "Evaluating unique leads to better academic stream 19."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L7_Q3",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "ANALYZE_id20",
+                       "passage":  "The primary analyze of the study was academic stream 20."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L8_Q1",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "CONCEPT_id21",
+                       "passage":  "We must concept the underlying academic stream 21."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L8_Q2",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "DATA_id22",
+                       "passage":  "A critical data in this academic stream 22 is required."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L8_Q3",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "EVIDENCE_id23",
+                       "passage":  "Environmental evidence impacts the academic stream 23 significantly."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L9_Q1",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "FACTOR_id24",
+                       "passage":  "The factor structure remains academic stream 24 throughout."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L9_Q2",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "GLOBAL_id25",
+                       "passage":  "Scientists global how academic stream 25 influences results."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L9_Q3",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "HYPOTHESIS_id26",
+                       "passage":  "His hypothesis approach to academic stream 26 was impressive."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L10_Q1",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "INTERPRET_id27",
+                       "passage":  "Without interpret, the academic stream 27 cannot be solved."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L10_Q2",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "JUSTICE_id28",
+                       "passage":  "The justice framework supports the academic stream 28."
+                   },
+                   {
+                       "id":  "VOC_ACADEMICWORD_L10_Q3",
+                       "interactionType":  "Thesis Thrust",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "KNOWLEDGE_id29",
+                       "passage":  "Evaluating knowledge leads to better academic stream 29."
+                   }
+               ]
 }

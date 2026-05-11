@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SsTopBar extends StatelessWidget {
   final double progress;
   final int livesRemaining;
   final Color primaryColor;
+  final bool isMidnight;
 
   const SsTopBar({
     super.key,
     required this.progress,
     required this.livesRemaining,
     required this.primaryColor,
+    this.isMidnight = false,
   });
 
   @override

@@ -5,8 +5,14 @@ import 'package:google_fonts/google_fonts.dart';
 class ConsonantMouthTip extends StatelessWidget {
   final String? tip;
   final bool isDark;
+  final bool isMidnight;
 
-  const ConsonantMouthTip({super.key, this.tip, required this.isDark});
+  const ConsonantMouthTip({
+    super.key,
+    this.tip,
+    required this.isDark,
+    this.isMidnight = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +29,7 @@ class ConsonantMouthTip extends StatelessWidget {
         ),
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             padding: EdgeInsets.all(8.r),

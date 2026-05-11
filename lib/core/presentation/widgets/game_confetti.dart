@@ -1,9 +1,9 @@
+import 'dart:math';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 
-/// Smooth colored-paper confetti for level completion.
-/// Uses RepaintBoundary to isolate repaints and tuned particle
-/// counts for 60fps on mid-range devices.
+/// Premium, multi-emitter confetti for level completion.
+/// Features different shapes and realistic physics for a high-end feel.
 class GameConfetti extends StatefulWidget {
   final bool shouldPop;
   const GameConfetti({super.key, this.shouldPop = false});
@@ -18,7 +18,7 @@ class _GameConfettiState extends State<GameConfetti> {
   @override
   void initState() {
     super.initState();
-    _controller = ConfettiController(duration: const Duration(seconds: 5));
+    _controller = ConfettiController(duration: const Duration(seconds: 4));
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) _controller.play();
     });
@@ -30,44 +30,90 @@ class _GameConfettiState extends State<GameConfetti> {
     super.dispose();
   }
 
-  /// Creates a small paper-rectangle shape for each confetti piece.
-  Path _createPaperPath(Size size) {
+  /// Creates varied shapes for a more dynamic look.
+  Path _createVariedPath(Size size) {
     final path = Path();
-    // Rectangular paper piece with slight variation
-    path.addRect(Rect.fromLTWH(0, 0, size.width * 0.8, size.height * 0.5));
+    final random = Random();
+    final shapeType = random.nextInt(3);
+
+    switch (shapeType) {
+      case 0: // Rectangle/Paper
+        path.addRect(Rect.fromLTWH(0, 0, size.width, size.height * 0.6));
+        break;
+      case 1: // Circle
+        path.addOval(Rect.fromLTWH(0, 0, size.width * 0.8, size.width * 0.8));
+        break;
+      case 2: // Triangle/Diamond
+        path.moveTo(size.width / 2, 0);
+        path.lineTo(size.width, size.height);
+        path.lineTo(0, size.height);
+        path.close();
+        break;
+    }
     return path;
   }
 
   @override
   Widget build(BuildContext context) {
-    return RepaintBoundary(
-      child: Align(
-        alignment: const Alignment(0, -1.0),
-        child: ConfettiWidget(
-          confettiController: _controller,
-          blastDirectionality: BlastDirectionality.explosive,
-          shouldLoop: false,
-          emissionFrequency: 0.06,
-          numberOfParticles: 18,
-          gravity: 0.15,
-          maxBlastForce: 60,
-          minBlastForce: 30,
-          particleDrag: 0.05,
-          createParticlePath: _createPaperPath,
-          colors: const [
-            Color(0xFFFF6B6B), // Coral red
-            Color(0xFFFF8E53), // Warm orange
-            Color(0xFFFECA57), // Bright yellow
-            Color(0xFF48DBFB), // Sky blue
-            Color(0xFF0ABDE3), // Ocean blue
-            Color(0xFF5F27CD), // Deep purple
-            Color(0xFFFF9FF3), // Soft pink
-            Color(0xFF1DD1A1), // Mint green
-            Color(0xFFFF6348), // Tomato
-            Color(0xFFA29BFE), // Lavender
-          ],
+    return Stack(
+      children: [
+        // Left Emitter
+        Align(
+          alignment: Alignment.topLeft,
+          child: ConfettiWidget(
+            confettiController: _controller,
+            blastDirection: 0, // Shoot right
+            emissionFrequency: 0.05,
+            numberOfParticles: 20,
+            maxBlastForce: 40,
+            minBlastForce: 20,
+            gravity: 0.2,
+            createParticlePath: _createVariedPath,
+            colors: _confettiColors,
+          ),
         ),
-      ),
+        // Right Emitter
+        Align(
+          alignment: Alignment.topRight,
+          child: ConfettiWidget(
+            confettiController: _controller,
+            blastDirection: pi, // Shoot left
+            emissionFrequency: 0.05,
+            numberOfParticles: 20,
+            maxBlastForce: 40,
+            minBlastForce: 20,
+            gravity: 0.2,
+            createParticlePath: _createVariedPath,
+            colors: _confettiColors,
+          ),
+        ),
+        // Center Burst
+        Align(
+          alignment: const Alignment(0, -0.8),
+          child: ConfettiWidget(
+            confettiController: _controller,
+            blastDirectionality: BlastDirectionality.explosive,
+            emissionFrequency: 0.02,
+            numberOfParticles: 30,
+            gravity: 0.1,
+            maxBlastForce: 80,
+            minBlastForce: 40,
+            createParticlePath: _createVariedPath,
+            colors: _confettiColors,
+          ),
+        ),
+      ],
     );
   }
+
+  static const List<Color> _confettiColors = [
+    Color(0xFFFFD700), // Gold
+    Color(0xFF6366F1), // Indigo
+    Color(0xFF10B981), // Emerald
+    Color(0xFFF43F5E), // Rose
+    Color(0xFF8B5CF6), // Violet
+    Color(0xFF3B82F6), // Blue
+    Color(0xFFF59E0B), // Amber
+    Color(0xFFEC4899), // Pink
+  ];
 }

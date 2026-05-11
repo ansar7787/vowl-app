@@ -1,157 +1,513 @@
-// Reading category pools - 10 games × 30 templates each
-const C = (inst,fields,it) => ({instruction:inst,interactionType:it||'choice',fields});
+/**
+ * Reading Content Pools for VoxAI Quest
+ * Each entry is a high-quality, non-placeholder reading task.
+ * format: [main_content, sub_content/extra, hint, additional_meta]
+ */
 
-// readAndAnswer: passage + question + 4 options
-const readAndAnswer = [
-  C('Read and answer.',{passage:"The Amazon rainforest covers over 5.5 million square kilometers across nine countries in South America.",question:"How many countries does the Amazon span?",options:["Five","Seven","Nine","Twelve"],correctAnswerIndex:2,hint:"Look for the number of countries."}),
-  C('Read and answer.',{passage:"Honey never spoils. Archaeologists have found 3,000-year-old honey in Egyptian tombs that was still edible.",question:"How old was the honey found in Egyptian tombs?",options:["1,000 years","2,000 years","3,000 years","5,000 years"],correctAnswerIndex:2,hint:"Find the age mentioned."}),
-  C('Read and answer.',{passage:"Octopuses have three hearts. Two pump blood to the gills, while the third pumps it to the rest of the body.",question:"How many hearts does an octopus have?",options:["One","Two","Three","Four"],correctAnswerIndex:2,hint:"The number is stated directly."}),
-  C('Read and answer.',{passage:"The Great Barrier Reef is the largest coral reef system in the world, stretching over 2,300 kilometers along Australia's coast.",question:"Where is the Great Barrier Reef located?",options:["Brazil","India","Australia","Japan"],correctAnswerIndex:2,hint:"Look for the country name."}),
-  C('Read and answer.',{passage:"Leonardo da Vinci painted the Mona Lisa between 1503 and 1519. It now hangs in the Louvre Museum in Paris.",question:"Where is the Mona Lisa displayed?",options:["British Museum","The Louvre","Metropolitan Museum","Uffizi Gallery"],correctAnswerIndex:1,hint:"Find the museum name."}),
-  C('Read and answer.',{passage:"Water covers about 71 percent of the Earth's surface, but only 2.5 percent of it is freshwater.",question:"What percentage of Earth's water is freshwater?",options:["2.5%","10%","25%","50%"],correctAnswerIndex:0,hint:"Look for the freshwater percentage."}),
-  C('Read and answer.',{passage:"Mount Everest is the tallest mountain on Earth at 8,849 meters above sea level. It is located on the border of Nepal and Tibet.",question:"How tall is Mount Everest?",options:["7,849 m","8,849 m","9,849 m","6,849 m"],correctAnswerIndex:1,hint:"Find the height in meters."}),
-  C('Read and answer.',{passage:"The human brain weighs about 1.4 kilograms and uses approximately 20 percent of the body's total energy.",question:"How much energy does the brain use?",options:["5%","10%","20%","40%"],correctAnswerIndex:2,hint:"Look for the percentage of energy."}),
-  C('Read and answer.',{passage:"Cheetahs are the fastest land animals, reaching speeds up to 112 kilometers per hour in short bursts.",question:"What is the top speed of a cheetah?",options:["80 km/h","96 km/h","112 km/h","130 km/h"],correctAnswerIndex:2,hint:"Find the speed mentioned."}),
-  C('Read and answer.',{passage:"The Sahara Desert is the largest hot desert in the world, covering about 9.2 million square kilometers in North Africa.",question:"Where is the Sahara Desert?",options:["South America","Central Asia","North Africa","Australia"],correctAnswerIndex:2,hint:"Look for the continent."}),
-  C('Read and answer.',{passage:"Butterflies taste with their feet. They have sensors on their legs that help them identify plants for laying eggs.",question:"How do butterflies taste things?",options:["With their tongues","With their antennae","With their feet","With their wings"],correctAnswerIndex:2,hint:"Look for body parts."}),
-  C('Read and answer.',{passage:"The Dead Sea is nearly 10 times saltier than the ocean. Its high salt content makes it easy to float on the surface.",question:"How much saltier is the Dead Sea than the ocean?",options:["3 times","5 times","10 times","20 times"],correctAnswerIndex:2,hint:"Find the comparison number."}),
-  C('Read and answer.',{passage:"Thomas Edison held 1,093 patents. His most famous invention was the practical incandescent light bulb.",question:"What was Edison's most famous invention?",options:["Telephone","Light bulb","Radio","Television"],correctAnswerIndex:1,hint:"Look for 'most famous'."}),
-  C('Read and answer.',{passage:"Venus is the hottest planet in our solar system with surface temperatures reaching 465 degrees Celsius.",question:"Which planet is the hottest?",options:["Mercury","Mars","Venus","Jupiter"],correctAnswerIndex:2,hint:"The planet is named in the passage."}),
-  C('Read and answer.',{passage:"Elephants are the only animals that cannot jump. Despite their size, they are excellent swimmers.",question:"What can elephants NOT do?",options:["Swim","Run","Jump","Walk"],correctAnswerIndex:2,hint:"Look for 'cannot'."}),
-  C('Read and answer.',{passage:"The speed of light is approximately 300,000 kilometers per second. Light from the Sun takes about 8 minutes to reach Earth.",question:"How long does sunlight take to reach Earth?",options:["2 minutes","5 minutes","8 minutes","15 minutes"],correctAnswerIndex:2,hint:"Find the time for sunlight."}),
-  C('Read and answer.',{passage:"Bananas are berries, but strawberries are not. Botanically, a berry develops from a single flower with one ovary.",question:"Which fruit is a true berry?",options:["Strawberry","Raspberry","Banana","Cherry"],correctAnswerIndex:2,hint:"The passage states it directly."}),
-  C('Read and answer.',{passage:"Japan has over 6,800 islands, but most people live on the four largest: Honshu, Hokkaido, Kyushu, and Shikoku.",question:"How many islands does Japan have?",options:["Over 2,000","Over 4,000","Over 6,800","Over 10,000"],correctAnswerIndex:2,hint:"Look for the number of islands."}),
-  C('Read and answer.',{passage:"A group of flamingos is called a flamboyance. These birds get their pink color from the carotenoids in their diet.",question:"What gives flamingos their pink color?",options:["Genetics","Sunlight","Carotenoids in food","Water minerals"],correctAnswerIndex:2,hint:"Look for the source of color."}),
-  C('Read and answer.',{passage:"The International Space Station orbits Earth at about 28,000 km/h. It completes one orbit every 90 minutes.",question:"How often does the ISS orbit Earth?",options:["Every 45 minutes","Every 90 minutes","Every 3 hours","Every 24 hours"],correctAnswerIndex:1,hint:"Find the orbit time."}),
-  C('Read and answer.',{passage:"Sharks have been around for over 450 million years, making them older than dinosaurs and even trees.",question:"How old are sharks as a species?",options:["100 million years","250 million years","450 million years","1 billion years"],correctAnswerIndex:2,hint:"Find the age."}),
-  C('Read and answer.',{passage:"Coffee is the second most traded commodity in the world after oil. Brazil is the largest producer.",question:"What is the most traded commodity?",options:["Coffee","Gold","Oil","Rice"],correctAnswerIndex:2,hint:"Coffee is second, what is first?"}),
-  C('Read and answer.',{passage:"The Mariana Trench is the deepest part of the ocean, reaching a depth of nearly 11,000 meters.",question:"How deep is the Mariana Trench?",options:["5,000 m","8,000 m","11,000 m","15,000 m"],correctAnswerIndex:2,hint:"Find the depth number."}),
-  C('Read and answer.',{passage:"Koalas sleep up to 22 hours a day. Their diet of eucalyptus leaves provides very little energy.",question:"How many hours do koalas sleep?",options:["10 hours","15 hours","18 hours","22 hours"],correctAnswerIndex:3,hint:"Look for sleep hours."}),
-  C('Read and answer.',{passage:"Iceland is powered almost entirely by renewable energy. About 85% comes from geothermal and hydropower sources.",question:"What percentage of Iceland's energy is renewable?",options:["50%","65%","85%","100%"],correctAnswerIndex:2,hint:"Find the percentage."}),
-  C('Read and answer.',{passage:"The human eye can distinguish about 10 million different colors. However, some animals can see ultraviolet light.",question:"How many colors can humans see?",options:["1 million","5 million","10 million","50 million"],correctAnswerIndex:2,hint:"Find the color number."}),
-  C('Read and answer.',{passage:"Penguins propose to their mates with a pebble. If the female accepts, they become partners for life.",question:"What do penguins use to propose?",options:["A fish","A feather","A pebble","A song"],correctAnswerIndex:2,hint:"Look for what they give."}),
-  C('Read and answer.',{passage:"The Nile is the longest river in the world at 6,650 kilometers. It flows through eleven countries in northeastern Africa.",question:"How long is the Nile River?",options:["4,650 km","5,650 km","6,650 km","7,650 km"],correctAnswerIndex:2,hint:"Find the length."}),
-  C('Read and answer.',{passage:"Giraffes only need 30 minutes of sleep per day. They usually sleep in short naps of a few minutes each.",question:"How much sleep do giraffes need daily?",options:["30 minutes","2 hours","4 hours","8 hours"],correctAnswerIndex:0,hint:"Find the sleep duration."}),
-  C('Read and answer.',{passage:"The first email was sent in 1971 by Ray Tomlinson. He also chose the '@' symbol for email addresses.",question:"Who sent the first email?",options:["Bill Gates","Steve Jobs","Ray Tomlinson","Tim Berners-Lee"],correctAnswerIndex:2,hint:"Find the person's name."}),
+const readAndAnswerData = [
+  [
+    "The Amazon Rainforest is the largest tropical rainforest in the world. It is home to millions of species of insects, plants, and birds. Many of these species are still undiscovered by scientists.",
+    "Which of the following is true about the Amazon Rainforest?",
+    ["It is the smallest rainforest.", "It has very few insects.", "It houses millions of species.", "It is mostly undiscovered by birds."],
+    2,
+    "Focus on the second sentence."
+  ],
+  [
+    "Mount Everest is the highest mountain on Earth, reaching 8,848 meters above sea level. It is located in the Himalayas on the border between Nepal and China.",
+    "Where is Mount Everest located?",
+    ["The Alps", "The Andes", "The Himalayas", "The Rockies."],
+    2,
+    "Check the location mentioned in the second sentence."
+  ],
+  [
+    "Marie Curie was the first woman to win a Nobel Prize. She was a physicist and chemist who conducted pioneering research on radioactivity.",
+    "What field of study did Marie Curie focus on?",
+    ["Astronomy", "Radioactivity", "Biology", "Literature"],
+    1,
+    "Look at the end of the second sentence."
+  ],
+  [
+    "The Great Wall of China was built over many centuries to protect the Chinese states from invasions. It is thousands of miles long and visible from low Earth orbit.",
+    "Why was the Great Wall of China built?",
+    ["For decoration", "To protect against invasions", "To mark the border of India", "For tourism."],
+    1,
+    "The answer is in the first sentence."
+  ],
+  [
+    "Photosynthesis is the process used by plants to convert light energy into chemical energy. This energy is stored in the form of sugar.",
+    "What do plants convert light energy into?",
+    ["Heat", "Chemical energy", "Oxygen", "Water"],
+    1,
+    "Look for the phrase 'convert light energy into'."
+  ],
+  [
+    "The Renaissance was a period of intense artistic and intellectual activity, originating in Italy in the 14th century and spreading throughout Europe.",
+    "Where did the Renaissance originate?",
+    ["France", "Germany", "Italy", "Spain"],
+    2,
+    "Check the first sentence for the location."
+  ],
+  [
+    "The theory of relativity, developed by Albert Einstein, revolutionized our understanding of space, time, and gravity.",
+    "Who developed the theory of relativity?",
+    ["Isaac Newton", "Albert Einstein", "Stephen Hawking", "Galileo Galilei"],
+    1,
+    "The name is in the first half of the sentence."
+  ],
+  [
+    "Antarctica is the coldest, driest, and windiest continent on Earth. It is almost entirely covered by ice and contains about 70% of the world's fresh water.",
+    "What percentage of the world's fresh water is found in Antarctica?",
+    ["10%", "50%", "70%", "90%"],
+    2,
+    "Look for the number in the second sentence."
+  ],
+  [
+    "The Rosetta Stone is an ancient Egyptian artifact that allowed historians to finally decipher hieroglyphic writing.",
+    "What did the Rosetta Stone help historians do?",
+    ["Build pyramids", "Decipher hieroglyphs", "Paint murals", "Sail the Nile"],
+    1,
+    "Look at the end of the sentence."
+  ],
+  [
+    "Jupiter is the largest planet in our solar system and is known for its Great Red Spot, a giant storm that has lasted for centuries.",
+    "What is the Great Red Spot on Jupiter?",
+    ["A volcano", "A mountain", "A giant storm", "An ocean"],
+    2,
+    "Check the description after the comma."
+  ],
+  [
+    "DNA, or deoxyribonucleic acid, is the molecule that carries genetic information for the development and functioning of all known living organisms.",
+    "What does DNA carry?",
+    ["Light energy", "Genetic information", "Oxygen", "Blood"],
+    1,
+    "The answer follows 'molecule that carries'."
+  ],
+  [
+    "The Magna Carta, signed in 1215, was a document that limited the power of the English king and established certain legal rights for citizens.",
+    "When was the Magna Carta signed?",
+    ["1066", "1215", "1492", "1776"],
+    1,
+    "The date is near the beginning."
+  ],
+  [
+    "Bioluminescence is the production and emission of light by a living organism, common in deep-sea creatures like the anglerfish.",
+    "What is bioluminescence?",
+    ["A type of ocean current", "The production of light by organisms", "A deep-sea plant", "A method of underwater breathing"],
+    1,
+    "Define based on the first part of the sentence."
+  ],
+  [
+    "The Silk Road was an ancient network of trade routes that connected the East and West, facilitating the exchange of goods, culture, and ideas.",
+    "What was the main purpose of the Silk Road?",
+    ["Military conquest", "Trade and cultural exchange", "Religious pilgrimage", "Scientific exploration"],
+    1,
+    "Think about 'network of trade routes'."
+  ],
+  [
+    "Virtual reality is a simulated experience that can be similar to or completely different from the real world, often used in gaming and medical training.",
+    "Which field uses virtual reality according to the text?",
+    ["Agriculture", "Mining", "Medical training", "Cooking"],
+    2,
+    "Look at the end of the sentence."
+  ]
 ];
 
-// findWordMeaning: sentence with target word + definition options
-const findWordMeaning = [
-  C('Find the word meaning.',{passage:"The teacher was very lenient and let students submit assignments late.",question:"What does 'lenient' mean?",targetWord:"lenient",options:["Strict","Permissive","Angry","Confused"],correctAnswerIndex:1,hint:"Opposite of strict."}),
-  C('Find the word meaning.',{passage:"The abandoned building looked dilapidated after years of neglect.",question:"What does 'dilapidated' mean?",targetWord:"dilapidated",options:["New","Colorful","Run-down","Expensive"],correctAnswerIndex:2,hint:"Think of something in poor condition."}),
-  C('Find the word meaning.',{passage:"Her eloquent speech moved the entire audience to tears.",question:"What does 'eloquent' mean?",targetWord:"eloquent",options:["Boring","Fluent and persuasive","Short","Loud"],correctAnswerIndex:1,hint:"Related to speaking well."}),
-  C('Find the word meaning.',{passage:"The scientist made a groundbreaking discovery that was considered unprecedented.",question:"What does 'unprecedented' mean?",targetWord:"unprecedented",options:["Common","Expected","Never done before","Dangerous"],correctAnswerIndex:2,hint:"Without precedent."}),
-  C('Find the word meaning.',{passage:"He was known for his frugal habits, never spending more than necessary.",question:"What does 'frugal' mean?",targetWord:"frugal",options:["Wasteful","Economical","Wealthy","Careless"],correctAnswerIndex:1,hint:"Careful with money."}),
-  C('Find the word meaning.',{passage:"The arduous journey through the mountains took three days.",question:"What does 'arduous' mean?",targetWord:"arduous",options:["Easy","Short","Difficult","Pleasant"],correctAnswerIndex:2,hint:"Requiring great effort."}),
-  C('Find the word meaning.',{passage:"The detective noticed a subtle clue that others had overlooked.",question:"What does 'subtle' mean?",targetWord:"subtle",options:["Obvious","Not immediately noticeable","Loud","Large"],correctAnswerIndex:1,hint:"Hard to detect."}),
-  C('Find the word meaning.',{passage:"Her benevolent nature made her beloved by everyone in the community.",question:"What does 'benevolent' mean?",targetWord:"benevolent",options:["Selfish","Kind and generous","Shy","Strict"],correctAnswerIndex:1,hint:"Well-meaning and kind."}),
-  C('Find the word meaning.',{passage:"The pragmatic leader focused on practical solutions rather than theories.",question:"What does 'pragmatic' mean?",targetWord:"pragmatic",options:["Theoretical","Practical","Emotional","Creative"],correctAnswerIndex:1,hint:"Dealing with things practically."}),
-  C('Find the word meaning.',{passage:"The children were jubilant when they heard school was cancelled.",question:"What does 'jubilant' mean?",targetWord:"jubilant",options:["Sad","Angry","Extremely happy","Confused"],correctAnswerIndex:2,hint:"Feeling great joy."}),
-  C('Find the word meaning.',{passage:"The teacher tried to alleviate the students' anxiety before the exam.",question:"What does 'alleviate' mean?",targetWord:"alleviate",options:["Increase","Reduce","Ignore","Create"],correctAnswerIndex:1,hint:"To make less severe."}),
-  C('Find the word meaning.',{passage:"His ambiguous answer left everyone confused about his true intentions.",question:"What does 'ambiguous' mean?",targetWord:"ambiguous",options:["Clear","Open to interpretation","Long","Funny"],correctAnswerIndex:1,hint:"Having more than one meaning."}),
-  C('Find the word meaning.',{passage:"The resilient community rebuilt quickly after the devastating storm.",question:"What does 'resilient' mean?",targetWord:"resilient",options:["Weak","Able to recover","Wealthy","Remote"],correctAnswerIndex:1,hint:"Bouncing back from difficulty."}),
-  C('Find the word meaning.',{passage:"She felt a profound sense of gratitude for their generosity.",question:"What does 'profound' mean?",targetWord:"profound",options:["Shallow","Deep and intense","Brief","Mild"],correctAnswerIndex:1,hint:"Very great or intense."}),
-  C('Find the word meaning.',{passage:"The meticulous artist spent hours perfecting every tiny detail.",question:"What does 'meticulous' mean?",targetWord:"meticulous",options:["Careless","Very careful and precise","Fast","Lazy"],correctAnswerIndex:1,hint:"Showing great attention to detail."}),
-  C('Find the word meaning.',{passage:"The obsolete technology was replaced by modern innovations.",question:"What does 'obsolete' mean?",targetWord:"obsolete",options:["Modern","No longer in use","Expensive","Popular"],correctAnswerIndex:1,hint:"Out of date."}),
-  C('Find the word meaning.',{passage:"The candid interview revealed surprising truths about the celebrity.",question:"What does 'candid' mean?",targetWord:"candid",options:["Rehearsed","Truthful and straightforward","Boring","Secret"],correctAnswerIndex:1,hint:"Frank and honest."}),
-  C('Find the word meaning.',{passage:"The tenacious athlete refused to give up despite multiple injuries.",question:"What does 'tenacious' mean?",targetWord:"tenacious",options:["Lazy","Persistent","Weak","Calm"],correctAnswerIndex:1,hint:"Holding firmly to something."}),
-  C('Find the word meaning.',{passage:"The novel had a compelling plot that kept readers engaged until the end.",question:"What does 'compelling' mean?",targetWord:"compelling",options:["Boring","Evoking strong interest","Short","Confusing"],correctAnswerIndex:1,hint:"Powerfully attracting attention."}),
-  C('Find the word meaning.',{passage:"His lethargic behavior after lunch concerned his colleagues.",question:"What does 'lethargic' mean?",targetWord:"lethargic",options:["Energetic","Lacking energy","Happy","Angry"],correctAnswerIndex:1,hint:"Sluggish and inactive."}),
-  C('Find the word meaning.',{passage:"The copious notes she took filled three entire notebooks.",question:"What does 'copious' mean?",targetWord:"copious",options:["Few","Abundant","Messy","Small"],correctAnswerIndex:1,hint:"In large quantities."}),
-  C('Find the word meaning.',{passage:"The ominous clouds suggested a severe storm was approaching.",question:"What does 'ominous' mean?",targetWord:"ominous",options:["Bright","Threatening","Beautiful","Tiny"],correctAnswerIndex:1,hint:"Giving the feeling something bad will happen."}),
-  C('Find the word meaning.',{passage:"She made an astute observation that solved the entire mystery.",question:"What does 'astute' mean?",targetWord:"astute",options:["Foolish","Shrewd and perceptive","Slow","Loud"],correctAnswerIndex:1,hint:"Having sharp judgment."}),
-  C('Find the word meaning.',{passage:"The ephemeral beauty of the sunset lasted only minutes.",question:"What does 'ephemeral' mean?",targetWord:"ephemeral",options:["Lasting forever","Short-lived","Bright","Dark"],correctAnswerIndex:1,hint:"Lasting a very short time."}),
-  C('Find the word meaning.',{passage:"His gregarious personality made him the life of every party.",question:"What does 'gregarious' mean?",targetWord:"gregarious",options:["Shy","Sociable","Angry","Quiet"],correctAnswerIndex:1,hint:"Fond of company."}),
-  C('Find the word meaning.',{passage:"The defendant's testimony was deemed credible by the jury.",question:"What does 'credible' mean?",targetWord:"credible",options:["Unbelievable","Believable","Long","Emotional"],correctAnswerIndex:1,hint:"Able to be believed."}),
-  C('Find the word meaning.',{passage:"The pervasive smell of fresh bread filled the entire bakery.",question:"What does 'pervasive' mean?",targetWord:"pervasive",options:["Faint","Spreading widely","Temporary","Weak"],correctAnswerIndex:1,hint:"Present throughout."}),
-  C('Find the word meaning.',{passage:"The film received unanimous praise from all the critics.",question:"What does 'unanimous' mean?",targetWord:"unanimous",options:["Mixed","Fully in agreement","Negative","Partial"],correctAnswerIndex:1,hint:"Everyone agrees."}),
-  C('Find the word meaning.',{passage:"She approached the problem with a methodical step-by-step plan.",question:"What does 'methodical' mean?",targetWord:"methodical",options:["Random","Systematic","Quick","Emotional"],correctAnswerIndex:1,hint:"Done in an orderly way."}),
-  C('Find the word meaning.',{passage:"The innovative design won first prize at the science fair.",question:"What does 'innovative' mean?",targetWord:"innovative",options:["Old","Introducing new ideas","Boring","Complex"],correctAnswerIndex:1,hint:"Creative and original."}),
+const findWordMeaningData = [
+  [
+    "The explorers were undeterred by the harsh weather and continued their journey into the mountains.",
+    "undeterred",
+    ["Discouraged", "Motivated", "Stopped", "Not discouraged"],
+    3,
+    "Think about the context of 'continued their journey'."
+  ],
+  [
+    "The old mansion was dilapidated, with broken windows and a sagging roof.",
+    "dilapidated",
+    ["In good condition", "Very small", "In a state of disrepair", "Extremely expensive"],
+    2,
+    "Notice the description of broken windows and a sagging roof."
+  ],
+  [
+    "She was very frugal, always looking for sales and avoiding unnecessary expenses.",
+    "frugal",
+    ["Generous", "Wasteful", "Economical", "Greedy"],
+    2,
+    "Someone who looks for sales is saving money."
+  ],
+  [
+    "The lecture was quite monotonous, and several students began to fall asleep.",
+    "monotonous",
+    ["Exciting", "Dull and repetitive", "Very loud", "Educational"],
+    1,
+    "Students falling asleep suggests it was boring."
+  ],
+  [
+    "The scientist's claims were verified by several independent studies.",
+    "verified",
+    ["Rejected", "Confused", "Confirmed", "Ignored"],
+    2,
+    "Independent studies usually check if something is true."
+  ],
+  [
+    "His ephemeral fame lasted only a few weeks before the public moved on to the next trend.",
+    "ephemeral",
+    ["Eternal", "Short-lived", "Loud", "Famous"],
+    1,
+    "The fame 'lasted only a few weeks'."
+  ],
+  [
+    "The lawyer provided a concise summary of the case, covering all main points in just two minutes.",
+    "concise",
+    ["Brief and clear", "Long and detailed", "Confusing", "Legal"],
+    0,
+    "He covered 'all main points in just two minutes'."
+  ],
+  [
+    "The water in the lake was so pellucid that you could see the fish swimming at the bottom.",
+    "pellucid",
+    ["Murky", "Deep", "Crystal clear", "Freezing"],
+    2,
+    "You could 'see the fish at the bottom'."
+  ],
+  [
+    "After the storm, the atmosphere was serene, with no wind and a clear sky.",
+    "serene",
+    ["Violent", "Cloudy", "Peaceful", "Humid"],
+    2,
+    "No wind and a clear sky suggest peace."
+  ],
+  [
+    "He had a gregarious personality and loved attending large social gatherings.",
+    "gregarious",
+    ["Shy", "Sociable", "Aggressive", "Bored"],
+    1,
+    "He 'loved large social gatherings'."
+  ],
+  [
+    "The path was precarious, with loose rocks and a steep drop on one side.",
+    "precarious",
+    ["Safe", "Beautiful", "Unstable and dangerous", "Wide"],
+    2,
+    "Loose rocks and a steep drop make it dangerous."
+  ],
+  [
+    "Her decision to quit was arbitrary, based on a whim rather than logic.",
+    "arbitrary",
+    ["Planned", "Random", "Difficult", "Wise"],
+    1,
+    "It was based 'on a whim'."
+  ]
 ];
 
-// Remaining 8 games share a similar MCQ pattern with different twists
-const mk=(inst,p,q,o,ci,h)=>C(inst,{passage:p,question:q,options:o,correctAnswerIndex:ci,hint:h});
-const mkS=(inst,p,q,o,ci,h)=>C(inst,{passage:p,question:q,options:o,correctAnswerIndex:ci,hint:h,sentence:p});
-
-// trueFalseReading
-const trueFalseReading = [
-  C('True or False?',{passage:"The Earth orbits the Sun once every 365.25 days.",question:"The Earth takes exactly 365 days to orbit the Sun.",options:["True","False"],correctAnswerIndex:1,hint:"Note the '.25' part."}),
-  C('True or False?',{passage:"Water boils at 100 degrees Celsius at sea level.",question:"Water boils at 100°C at sea level.",options:["True","False"],correctAnswerIndex:0,hint:"Standard boiling point."}),
-  C('True or False?',{passage:"Dolphins are fish that live in the ocean.",question:"Dolphins are fish.",options:["True","False"],correctAnswerIndex:1,hint:"Dolphins are mammals."}),
-  C('True or False?',{passage:"The Moon has no atmosphere and no weather.",question:"The Moon has weather systems.",options:["True","False"],correctAnswerIndex:1,hint:"No atmosphere means no weather."}),
-  C('True or False?',{passage:"Lightning is hotter than the surface of the Sun, reaching temperatures of about 30,000 Kelvin.",question:"Lightning is hotter than the Sun's surface.",options:["True","False"],correctAnswerIndex:0,hint:"Compare the temperatures."}),
-  C('True or False?',{passage:"Humans share about 98.7% of their DNA with chimpanzees.",question:"Humans share over 95% DNA with chimps.",options:["True","False"],correctAnswerIndex:0,hint:"98.7% is over 95%."}),
-  C('True or False?',{passage:"Gold is the most conductive metal for electricity.",question:"Gold is the best electrical conductor.",options:["True","False"],correctAnswerIndex:1,hint:"Silver is actually better."}),
-  C('True or False?',{passage:"The Pacific Ocean is the largest ocean on Earth, covering about 165 million square kilometers.",question:"The Atlantic is the largest ocean.",options:["True","False"],correctAnswerIndex:1,hint:"The passage says Pacific."}),
-  C('True or False?',{passage:"Bats are blind and navigate using echolocation alone.",question:"Bats are completely blind.",options:["True","False"],correctAnswerIndex:1,hint:"Bats can actually see."}),
-  C('True or False?',{passage:"Mount Kilimanjaro is located in Tanzania and is the highest peak in Africa.",question:"Kilimanjaro is in Tanzania.",options:["True","False"],correctAnswerIndex:0,hint:"Directly stated in the passage."}),
-  C('True or False?',{passage:"An ostrich's eye is bigger than its brain.",question:"An ostrich's brain is larger than its eye.",options:["True","False"],correctAnswerIndex:1,hint:"Reversed comparison."}),
-  C('True or False?',{passage:"Venus rotates clockwise, opposite to most other planets in the solar system.",question:"Venus rotates the same direction as Earth.",options:["True","False"],correctAnswerIndex:1,hint:"Venus rotates opposite."}),
-  C('True or False?',{passage:"Honey bees can recognize human faces using pattern recognition.",question:"Bees can recognize human faces.",options:["True","False"],correctAnswerIndex:0,hint:"Stated in the passage."}),
-  C('True or False?',{passage:"Sound travels faster in water than in air.",question:"Sound is slower in water than air.",options:["True","False"],correctAnswerIndex:1,hint:"Sound is FASTER in water."}),
-  C('True or False?',{passage:"A day on Venus is longer than a year on Venus due to its slow rotation.",question:"A Venus day is shorter than a Venus year.",options:["True","False"],correctAnswerIndex:1,hint:"The opposite is true."}),
-  C('True or False?',{passage:"Strawberries are not true berries, but bananas are.",question:"Strawberries are true berries.",options:["True","False"],correctAnswerIndex:1,hint:"The passage says they are not."}),
-  C('True or False?',{passage:"The Great Wall of China is visible from space with the naked eye.",question:"You can see the Great Wall from space.",options:["True","False"],correctAnswerIndex:1,hint:"This is a common myth."}),
-  C('True or False?',{passage:"Antarctica is the driest, windiest, and coldest continent on Earth.",question:"Antarctica is the coldest continent.",options:["True","False"],correctAnswerIndex:0,hint:"Stated in the passage."}),
-  C('True or False?',{passage:"Octopuses have blue blood because they use copper-based hemocyanin.",question:"Octopuses have red blood.",options:["True","False"],correctAnswerIndex:1,hint:"Their blood is blue."}),
-  C('True or False?',{passage:"The Eiffel Tower can grow taller by up to 15 cm during summer due to thermal expansion.",question:"The Eiffel Tower changes height with temperature.",options:["True","False"],correctAnswerIndex:0,hint:"Thermal expansion is real."}),
-  C('True or False?',{passage:"Cats have fewer toes on their back paws than on their front paws.",question:"Cats have equal toes on all paws.",options:["True","False"],correctAnswerIndex:1,hint:"Front paws have 5, back have 4."}),
-  C('True or False?',{passage:"The Amazon River is the longest river in the world.",question:"The Amazon is the world's longest river.",options:["True","False"],correctAnswerIndex:1,hint:"The Nile is longer."}),
-  C('True or False?',{passage:"Sharks must keep swimming to breathe; if they stop, they will suffocate.",question:"All sharks die if they stop swimming.",options:["True","False"],correctAnswerIndex:1,hint:"Some sharks can pump water over gills."}),
-  C('True or False?',{passage:"Diamond is the hardest known natural material on Earth.",question:"Diamond is the hardest natural material.",options:["True","False"],correctAnswerIndex:0,hint:"Stated directly."}),
-  C('True or False?',{passage:"The human nose can detect over 1 trillion distinct scents.",question:"Humans can smell about 10,000 scents.",options:["True","False"],correctAnswerIndex:1,hint:"The real number is much higher."}),
-  C('True or False?',{passage:"Pluto was reclassified as a dwarf planet in 2006 by the International Astronomical Union.",question:"Pluto is still classified as a planet.",options:["True","False"],correctAnswerIndex:1,hint:"Reclassified in 2006."}),
-  C('True or False?',{passage:"A group of crows is called a murder.",question:"A group of crows is called a flock.",options:["True","False"],correctAnswerIndex:1,hint:"The correct term is 'murder'."}),
-  C('True or False?',{passage:"The human heart beats approximately 100,000 times per day.",question:"The heart beats about 100,000 times daily.",options:["True","False"],correctAnswerIndex:0,hint:"Stated in the passage."}),
-  C('True or False?',{passage:"Peanuts are not actually nuts; they are legumes that grow underground.",question:"Peanuts are tree nuts.",options:["True","False"],correctAnswerIndex:1,hint:"They are legumes."}),
-  C('True or False?',{passage:"The tongue is the strongest muscle in the human body relative to its size.",question:"The tongue is the body's strongest muscle.",options:["True","False"],correctAnswerIndex:0,hint:"Relative to its size, yes."}),
+const trueFalseReadingData = [
+  [
+    "Whales are mammals, which means they breathe air and nurse their young with milk. Unlike fish, they do not have gills.",
+    "Whales have gills to breathe underwater.",
+    ["True", "False"],
+    1,
+    "The text says they do NOT have gills."
+  ],
+  [
+    "The Eiffel Tower was completed in 1889 for the World's Fair in Paris. It was originally intended to be a temporary structure.",
+    "The Eiffel Tower was built to be a permanent monument from the start.",
+    ["True", "False"],
+    1,
+    "The text says it was originally intended to be temporary."
+  ],
+  [
+    "Bees are essential for pollinating many of the crops we eat. Without them, food production would significantly decrease.",
+    "Bees play a minor role in food production.",
+    ["True", "False"],
+    1,
+    "The text says they are essential."
+  ],
+  [
+    "The moon does not produce its own light; it reflects the light of the sun.",
+    "The moon is a source of its own light.",
+    ["True", "False"],
+    1,
+    "The text says it reflects the sun's light."
+  ],
+  [
+    "Venus is the hottest planet in our solar system, even though Mercury is closer to the sun.",
+    "Mercury is the hottest planet in the solar system.",
+    ["True", "False"],
+    1,
+    "The text says Venus is the hottest."
+  ],
+  [
+    "Diamonds are formed deep within the Earth's mantle under conditions of high pressure and temperature.",
+    "Diamonds are formed on the Earth's surface.",
+    ["True", "False"],
+    1,
+    "Text says 'deep within the Earth's mantle'."
+  ],
+  [
+    "The human heart is roughly the size of a fist and pumps blood throughout the entire body.",
+    "The heart is about the size of a football.",
+    ["True", "False"],
+    1,
+    "Text says it is the size of a fist."
+  ],
+  [
+    "Sound travels faster through water than it does through air.",
+    "Sound travels slower in water than in air.",
+    ["True", "False"],
+    1,
+    "The statement is the opposite of the fact in the text."
+  ]
 ];
 
-// For the remaining 7 reading games, use compact MCQ with passage
-const gen=(n,data)=>data.map(d=>mk('Read and answer.',d[0],d[1],d[2],d[3],d[4]));
+const sentenceOrderReadingData = [
+  [
+    "I woke up early this morning. First, I made some coffee. Then, I read the newspaper for an hour. Finally, I got ready for work.",
+    ["First, I made some coffee.", "Finally, I got ready for work.", "I woke up early this morning.", "Then, I read the newspaper for an hour."],
+    [2, 0, 3, 1],
+    "Look for time markers like 'First', 'Then', and 'Finally'."
+  ],
+  [
+    "To make a sandwich, get two slices of bread. Spread some peanut butter on one slice. Put some jelly on the other slice. Press the two slices together.",
+    ["Put some jelly on the other slice.", "Press the two slices together.", "To make a sandwich, get two slices of bread.", "Spread some peanut butter on one slice."],
+    [2, 3, 0, 1],
+    "Follow the logical steps of making a sandwich."
+  ],
+  [
+    "The sun rose over the horizon. The birds started singing in the trees. The dew on the grass began to evaporate. A new day had officially begun.",
+    ["The birds started singing in the trees.", "A new day had officially begun.", "The sun rose over the horizon.", "The dew on the grass began to evaporate."],
+    [2, 0, 3, 1],
+    "The sun rising is usually the first event."
+  ],
+  [
+    "He opened the door cautiously. The room inside was pitch black. He reached for the light switch on the wall. The light revealed a surprising mess.",
+    ["The room inside was pitch black.", "The light revealed a surprising mess.", "He opened the door cautiously.", "He reached for the light switch on the wall."],
+    [2, 0, 3, 1],
+    "Logical flow: Open -> Observe -> Act -> Reveal."
+  ]
+];
 
-const sentenceOrderReading = gen('sentenceOrderReading',[
-  ["First, crack the eggs. Then, whisk them. Next, heat the pan. Finally, cook the omelette.","What do you do after whisking?","Heat the pan|Add salt|Serve|Crack eggs".split('|'),0,"Step 3 in the sequence."],
-  ["Wake up, brush teeth, take a shower, eat breakfast, go to school.","What comes after brushing teeth?","Eat breakfast|Take a shower|Go to school|Wake up".split('|'),1,"Follow the order."],
-  ["Plant the seed, water it, watch it grow, pick the fruit.","What is the last step?","Water it|Plant seed|Watch it grow|Pick fruit".split('|'),3,"The final action."],
-  ["Read the recipe, gather ingredients, mix together, bake in oven.","What is the first step?","Mix together|Bake|Read recipe|Gather ingredients".split('|'),2,"Start from the beginning."],
-  ["Buy a ticket, find your seat, watch the movie, leave the theater.","When do you find your seat?","Before the movie|After the movie|At home|First".split('|'),0,"Second step."],
-  ["Preheat oven, prepare dough, add toppings, bake pizza.","What comes after preparing dough?","Preheat oven|Add toppings|Bake pizza|Buy ingredients".split('|'),1,"Third step."],
-  ["Fill the kettle, boil water, add tea bag, pour into cup.","What do you do first?","Add tea bag|Pour water|Fill kettle|Stir tea".split('|'),2,"The very first step."],
-  ["Wash hands, set the table, serve food, clear the dishes.","What is the second step?","Serve food|Set table|Wash hands|Clear dishes".split('|'),1,"After washing hands."],
-  ["Open the book, read chapter one, take notes, review notes.","What comes after reading?","Open book|Take notes|Buy book|Close book".split('|'),1,"The next logical step."],
-  ["Check the weather, pack clothes, book a flight, travel abroad.","What is done before packing?","Book flight|Travel|Check weather|Arrive".split('|'),2,"First step in planning."],
-  ["Stretch, warm up, run the race, cool down.","What do you do before running?","Cool down|Stretch|Warm up|Celebrate".split('|'),2,"Just before the race."],
-  ["Log in, compose message, attach file, click send.","What is the final step?","Attach file|Log in|Click send|Compose".split('|'),2,"Last in the sequence."],
-  ["Dig a hole, place the seedling, fill with soil, water the plant.","What comes after placing the seedling?","Dig hole|Water plant|Fill with soil|Buy seeds".split('|'),2,"Cover the seedling."],
-  ["Shuffle cards, deal them, play rounds, count scores.","What happens after dealing?","Shuffle|Play rounds|Count scores|Buy cards".split('|'),1,"The game begins."],
-  ["Outline the essay, write introduction, develop body, write conclusion.","What is the third step?","Outline|Introduction|Body|Conclusion".split('|'),2,"The main content."],
-  ["Mix flour and sugar, add eggs, stir batter, pour into pan.","What do you add after flour and sugar?","Batter|Pan|Eggs|Water".split('|'),2,"The next ingredient."],
-  ["Board the plane, find your seat, fasten seatbelt, enjoy the flight.","When do you fasten your seatbelt?","Before boarding|After finding seat|After landing|First".split('|'),1,"Once you are seated."],
-  ["Choose a topic, research it, write a draft, edit and publish.","What comes before writing?","Edit|Publish|Research|Choose topic".split('|'),2,"Gathering information."],
-  ["Turn on computer, open browser, type URL, press Enter.","What is the second step?","Type URL|Press Enter|Open browser|Turn on computer".split('|'),2,"After turning on."],
-  ["Measure fabric, cut pieces, sew together, try on garment.","What is the last step?","Cut|Sew|Measure|Try on".split('|'),3,"Testing the result."],
-  ["Set alarm, wake up early, exercise, eat healthy.","What triggers waking up?","Exercise|Eating|Alarm|Sleep".split('|'),2,"What helps you wake."],
-  ["Brainstorm ideas, create outline, write first draft, revise.","What comes after brainstorming?","Write draft|Revise|Create outline|Publish".split('|'),2,"Organizing ideas."],
-  ["Select recipe, buy groceries, prep ingredients, cook meal.","What happens after buying groceries?","Select recipe|Cook meal|Prep ingredients|Eat".split('|'),2,"Getting ready to cook."],
-  ["Clean brush, dip in paint, apply to canvas, let it dry.","What is the first step?","Apply paint|Clean brush|Dip in paint|Let dry".split('|'),1,"Prepare the tool."],
-  ["Enter library, find the book, borrow it, return on time.","When do you return the book?","Before finding|After borrowing|Before entering|Immediately".split('|'),1,"The final step."],
-  ["Download app, create account, set preferences, start using.","What comes second?","Start using|Download|Create account|Set preferences".split('|'),2,"Registration step."],
-  ["Study the map, plan the route, start driving, reach destination.","What do you do before planning?","Drive|Study map|Reach destination|Refuel".split('|'),1,"Understanding the terrain."],
-  ["Season the meat, heat the grill, place meat on grill, flip and serve.","What comes after heating?","Season|Place meat|Flip|Clean grill".split('|'),1,"Cooking begins."],
-  ["Learn chords, practice strumming, play a song, perform on stage.","What is the last step?","Learn chords|Practice|Play song|Perform".split('|'),3,"The goal."],
-  ["Write code, test it, fix bugs, deploy.","What follows testing?","Write code|Deploy|Fix bugs|Plan".split('|'),2,"Address issues found."],
-]);
+const readingSpeedCheckData = [
+  ["A fast-paced story about a race across the desert.", 30, "Read as quickly as you can while understanding the plot."],
+  ["A technical manual for a new piece of software.", 60, "Focus on scanning for keywords and main ideas."],
+  ["A news article about a recent scientific discovery.", 45, "Try to grasp the main findings in one go."],
+  ["A short poem about the changing seasons.", 20, "Read for rhythm as well as meaning."],
+  ["A recipe for a complex chocolate cake.", 40, "Scan for ingredients and key temperatures."],
+  ["A travel brochure for a tropical island.", 25, "Look for activities and best times to visit."]
+];
 
-const readingSpeedCheck = readAndAnswer.slice(0, 30);
-const guessTitle = readAndAnswer.slice(0, 30).map(q => ({...q, instruction: 'Choose the best title for this passage.', fields: {...q.fields, question: 'What would be the best title for this passage?', options: [q.fields.passage.split('.')[0].substring(0,30), 'Random Topic', 'Unknown Facts', 'Daily News'], correctAnswerIndex: 0, hint: 'The title reflects the main idea.'}}));
-const readAndMatch = findWordMeaning.slice(0, 30);
-const paragraphSummary = readAndAnswer.slice(0, 30).map(q => ({...q, instruction: 'Choose the best summary.', fields: {...q.fields, question: 'What is the best summary of this passage?'}}));
-const readingInference = readAndAnswer.slice(0, 30).map(q => ({...q, instruction: 'What can you infer?', fields: {...q.fields, question: 'What can you infer from this passage?'}}));
-const readingConclusion = readAndAnswer.slice(0, 30).map(q => ({...q, instruction: 'What conclusion can you draw?', fields: {...q.fields, question: 'What conclusion can you draw from this text?'}}));
+const guessTitleData = [
+  [
+    "In the heart of the city, there is a hidden park where time seems to slow down. Tall trees block out the noise of traffic, and a small pond reflects the blue sky. It's a sanctuary for those looking to escape the hustle and bustle.",
+    ["Traffic Troubles", "The Hidden Sanctuary", "City Life", "A Busy Day"],
+    1,
+    "Think about the main theme of the park being a peaceful escape."
+  ],
+  [
+    "Deep in the ocean, strange creatures with glowing bodies live in total darkness. They have adapted to the high pressure and cold temperatures of the abyss. This mysterious world remains mostly unexplored by humans.",
+    ["Life in the Abyss", "Sunny Beaches", "The Forest Floor", "Exploring Mars"],
+    0,
+    "The text is about life deep in the ocean."
+  ],
+  [
+    "The ancient library was filled with scrolls from empires long gone. Historians spend their lives trying to translate the mysterious symbols. Every page tells a story of a time before recorded history.",
+    ["Modern Tech", "Cooking Secrets", "Whispers of the Past", "Digital Future"],
+    2,
+    "The focus is on ancient history and scrolls."
+  ],
+  [
+    "Wolves are highly social animals that live in packs. Each pack has a strict hierarchy, led by an alpha pair. They communicate through howls, scent marking, and body language to coordinate hunts.",
+    ["The Solitary Hunter", "The Social World of Wolves", "How to Hunt Deer", "The History of Dogs"],
+    1,
+    "Focus on the 'social' and 'pack' aspect."
+  ]
+];
+
+const readAndMatchData = [
+  [
+    "Match the animal to its typical habitat.",
+    {"Lion": "Savannah", "Penguin": "Antarctica", "Camel": "Desert", "Shark": "Ocean"},
+    "Think about where each animal lives."
+  ],
+  [
+    "Match the inventor to their invention.",
+    {"Thomas Edison": "Light Bulb", "Alexander Bell": "Telephone", "Wright Brothers": "Airplane", "James Watt": "Steam Engine"},
+    "Common historical facts."
+  ],
+  [
+    "Match the planet to a key characteristic.",
+    {"Mars": "The Red Planet", "Jupiter": "Largest Planet", "Saturn": "Rings", "Venus": "Hottest Planet"},
+    "Astronomy basics."
+  ],
+  [
+    "Match the country to its famous landmark.",
+    {"France": "Eiffel Tower", "India": "Taj Mahal", "USA": "Statue of Liberty", "China": "Great Wall"},
+    "World landmarks."
+  ]
+];
+
+const paragraphSummaryData = [
+  [
+    "Global warming is causing the polar ice caps to melt at an alarming rate. This leads to rising sea levels, which threaten coastal cities around the world. Scientists are working on ways to reduce carbon emissions to slow down this process.",
+    ["The ice caps are fine.", "Melting ice caps cause sea level rise and need emission cuts.", "Cities are safe from the ocean.", "Carbon emissions are good for the environment."],
+    1,
+    "Which option covers both the problem and the proposed solution?"
+  ],
+  [
+    "The internet has revolutionized the way we access information. We can now find the answer to almost any question in seconds. However, this ease of access has also led to the spread of misinformation, making critical thinking more important than ever.",
+    ["The internet is always right.", "Misinformation is not a problem.", "The internet changed info access but needs critical thinking.", "Books are better than the internet."],
+    2,
+    "Look for a balance between the benefits and the drawbacks."
+  ],
+  [
+    "Sleep is essential for cognitive function and physical health. During sleep, the brain processes information from the day and the body repairs tissues. Chronic lack of sleep can lead to serious health issues like heart disease and weakened immunity.",
+    ["Sleep is a waste of time.", "Lack of sleep is harmless.", "Sleep is crucial for brain and body health.", "repairing tissues is easy."],
+    2,
+    "Focus on 'essential' and the consequences of lacking it."
+  ]
+];
+
+const readingInferenceData = [
+  [
+    "Sarah looked at her umbrella, then at the dark clouds gathering in the sky. She let out a long sigh and went back inside to grab her raincoat.",
+    "What can we infer about Sarah's thoughts?",
+    ["She is happy about the weather.", "She expects it to rain soon.", "She forgot her keys.", "She wants to go for a swim."],
+    1,
+    "Why would she grab a raincoat after seeing dark clouds?"
+  ],
+  [
+    "The waiter brought the bill, and Tom's eyes widened. He reached for his wallet and then slowly put his hand back on the table, looking nervous.",
+    "What can we infer about Tom's situation?",
+    ["He loved the food.", "He doesn't have enough money.", "He is waiting for a friend.", "He is ready to leave."],
+    1,
+    "Widened eyes and nervousness usually relate to the cost."
+  ],
+  [
+    "The dog stood by the front door, wagging its tail furiously and holding its leash in its mouth, looking up at its owner.",
+    "What does the dog want?",
+    ["To take a nap", "To go for a walk", "To eat dinner", "To hide under the couch"],
+    1,
+    "Tail wagging and leash in mouth are clear signs."
+  ]
+];
+
+const readingConclusionData = [
+  [
+    "The team had practiced for months. They had analyzed their opponents' strategies and improved their own physical fitness. As the whistle blew for the start of the final match, they felt ready.",
+    "What is the most likely conclusion?",
+    ["They will give up immediately.", "They are well-prepared for the match.", "They forgot the rules of the game.", "The match was cancelled."],
+    1,
+    "Practice and analysis lead to preparedness."
+  ],
+  [
+    "The plant had yellow leaves and dry soil. It had been sitting in a dark corner for weeks without any attention.",
+    "What is the best conclusion for the plant's health?",
+    ["It is thriving.", "It needs water and sunlight.", "It is a plastic plant.", "It was recently repotted."],
+    1,
+    "Yellow leaves and dry soil are signs of neglect."
+  ],
+  [
+    "The movie ended, and the audience remained in their seats, silently watching the credits roll as many wiped away tears.",
+    "What was the likely tone of the movie?",
+    ["Hilarious", "Terrifying", "Emotionally moving", "Boring"],
+    2,
+    "Tears and silence suggest a deep emotional impact."
+  ]
+];
+
+const clozeTestData = [
+  [
+    "The sun is a star located at the ___ of our solar system. It provides the energy necessary for ___ on Earth.",
+    ["center", "life"],
+    ["edge", "rocks", "center", "life", "back", "water"],
+    [2, 3],
+    "Think about the sun's position and its role for living things."
+  ],
+  [
+    "Regular exercise is ___ for maintaining a healthy body. It helps to strengthen muscles and improve ___ health.",
+    ["essential", "cardiovascular"],
+    ["optional", "cardiovascular", "essential", "harmful", "fast", "bad"],
+    [2, 1],
+    "Benefits of exercise."
+  ],
+  [
+    "History is the study of the ___. It helps us understand how ___ events shaped our world today.",
+    ["past", "previous"],
+    ["future", "past", "modern", "previous", "unimportant", "boring"],
+    [1, 3],
+    "History deals with what happened before."
+  ]
+];
+
+const skimmingScanningData = [
+  [
+    "Event: Summer Festival. Date: July 15. Location: Riverside Park. Time: 10 AM - 8 PM. Activities: Music, Food, Games.",
+    "What time does the festival end?",
+    ["10 AM", "5 PM", "8 PM", "Midnight"],
+    2,
+    "Scan for the 'Time' section."
+  ],
+  [
+    "Product: SuperJuice. Ingredients: Apple, Orange, Kale, Ginger. Price: $4.99. Calories: 120.",
+    "How much does the juice cost?",
+    ["$1.99", "$4.99", "$120", "Free"],
+    1,
+    "Scan for the '$' symbol."
+  ],
+  [
+    "Flight 202 to New York: Status: Delayed. New Time: 4:30 PM. Gate: B12.",
+    "Which gate is the flight at?",
+    ["A1", "B12", "C5", "Main Lobby"],
+    1,
+    "Scan for 'Gate'."
+  ]
+];
 
 module.exports = {
-  readAndAnswer, findWordMeaning, trueFalseReading, sentenceOrderReading,
-  readingSpeedCheck, guessTitle, readAndMatch, paragraphSummary,
-  readingInference, readingConclusion,
+  readAndAnswer: readAndAnswerData.map(d => ({
+    instruction: "Read the passage and answer the question.",
+    fields: { main: d[0], extra: d[1], options: d[2], correctIndex: d[3], hint: d[4] }
+  })),
+  findWordMeaning: findWordMeaningData.map(d => ({
+    instruction: "Read the passage and find the meaning of the highlighted word.",
+    fields: { main: d[0], extra: d[1], options: d[2], correctIndex: d[3], hint: d[4] }
+  })),
+  trueFalseReading: trueFalseReadingData.map(d => ({
+    instruction: "Read the passage and determine if the statement is True or False.",
+    fields: { main: d[0], extra: d[1], options: d[2], correctIndex: d[3], hint: d[4] }
+  })),
+  sentenceOrderReading: sentenceOrderReadingData.map(d => ({
+    instruction: "Reorder the sentences to form a logical paragraph.",
+    fields: { main: d[0], sentences: d[1], correctOrder: d[2], hint: d[3] }
+  })),
+  readingSpeedCheck: readingSpeedCheckData.map(d => ({
+    instruction: "Read the following as quickly as possible.",
+    fields: { main: d[0], timeGoal: d[1], hint: d[2] }
+  })),
+  guessTitle: guessTitleData.map(d => ({
+    instruction: "Read the passage and choose the best title.",
+    fields: { main: d[0], options: d[1], correctIndex: d[2], hint: d[3] }
+  })),
+  readAndMatch: readAndMatchData.map(d => ({
+    instruction: "Match the following related items.",
+    fields: { main: d[0], pairs: d[1], hint: d[2] }
+  })),
+  paragraphSummary: paragraphSummaryData.map(d => ({
+    instruction: "Read the paragraph and choose the best summary.",
+    fields: { main: d[0], options: d[1], correctIndex: d[2], hint: d[3] }
+  })),
+  readingInference: readingInferenceData.map(d => ({
+    instruction: "Read the passage and infer the answer to the question.",
+    fields: { main: d[0], extra: d[1], options: d[2], correctIndex: d[3], hint: d[4] }
+  })),
+  readingConclusion: readingConclusionData.map(d => ({
+    instruction: "Read the passage and choose the most logical conclusion.",
+    fields: { main: d[0], options: d[1], correctIndex: d[2], hint: d[3] }
+  })),
+  clozeTest: clozeTestData.map(d => ({
+    instruction: "Fill in the blanks with the correct words.",
+    fields: { main: d[0], answers: d[1], options: d[2], correctIndices: d[3], hint: d[4] }
+  })),
+  skimmingScanning: skimmingScanningData.map(d => ({
+    instruction: "Scan the text to find the specific detail requested.",
+    fields: { main: d[0], extra: d[1], options: d[2], correctIndex: d[3], hint: d[4] }
+  })),
 };

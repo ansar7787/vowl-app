@@ -4,14 +4,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/games/voxai_letter_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/games/modern_path_painter.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/games/vowl_letter_background.dart';
+import 'package:vowl/core/presentation/widgets/games/modern_path_painter.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class ModernPathGameMap extends StatelessWidget {
   final String gameType;
@@ -55,13 +56,12 @@ class ModernPathGameMap extends StatelessWidget {
       appBar: _buildAppBar(context, theme, isDark),
       body: Stack(
         children: [
-          // Dynamic Background Layer
-          _buildBackground(theme),
-
           SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Stack(
               children: [
+                // Dynamic Background Layer
+                _buildBackground(theme, totalLevels),
                 // The Curvy Path
                 CustomPaint(
                   size: Size(
@@ -96,6 +96,7 @@ class ModernPathGameMap extends StatelessWidget {
                             isCurrent,
                             isDark,
                             theme,
+                            authState,
                           ),
                         ),
                       );
@@ -137,28 +138,58 @@ class ModernPathGameMap extends StatelessWidget {
     );
   }
 
-  Widget _buildBackground(ThemeResult theme) {
+  Widget _buildBackground(ThemeResult theme, int totalLevels) {
+    final segmentHeight = (totalLevels * 140.h) / 4;
     return Stack(
       children: [
-        // Custom letter background for texture
-        VoxaiLetterBackground(
-          color: theme.primaryColor.withValues(alpha: 0.1),
-          style: VoxaiBackgroundStyle.scatter,
+        // Dividing the map into 4 environments
+        Column(
+          children: [
+            _buildEnvSection(Colors.green, "EMERALD FOREST", segmentHeight),
+            _buildEnvSection(Colors.blue, "AZURE PEAKS", segmentHeight),
+            _buildEnvSection(Colors.orange, "SUNSET PLATEAU", segmentHeight),
+            _buildEnvSection(Colors.amber, "CELESTIAL CITADEL", segmentHeight),
+          ],
         ),
-        // Subtle gradient overlay
-        Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                theme.primaryColor.withValues(alpha: 0.05),
-                Colors.transparent,
-              ],
-            ),
-          ),
+        // Custom letter background for texture
+        VowlLetterBackground(
+          color: Colors.white.withValues(alpha: 0.05),
+          style: VowlBackgroundStyle.scatter,
         ),
       ],
+    );
+  }
+
+  Widget _buildEnvSection(Color color, String name, double height) {
+    return Container(
+      height: height,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            color.withValues(alpha: 0.15),
+            color.withValues(alpha: 0.05),
+          ],
+        ),
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            right: -20.w,
+            top: 50.h,
+            child: Text(
+              name,
+              style: GoogleFonts.outfit(
+                fontSize: 60.sp,
+                fontWeight: FontWeight.w900,
+                color: color.withValues(alpha: 0.03),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -169,6 +200,7 @@ class ModernPathGameMap extends StatelessWidget {
     bool isCurrent,
     bool isDark,
     ThemeResult theme,
+    AuthState authState,
   ) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 40.h),
@@ -200,6 +232,21 @@ class ModernPathGameMap extends StatelessWidget {
                   duration: 2.seconds,
                 )
                 .fadeOut(),
+
+          // Floating Vowl Mascot near the current level
+          if (isCurrent)
+            Positioned(
+              left: -80.w,
+              child: VowlMascot(
+                state: VowlMascotState.happy,
+                size: 80,
+                level: authState.user?.level ?? 1,
+                accessoryId: authState.user?.vowlEquippedAccessory,
+              )
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut)
+                  .rotate(begin: -0.05, end: 0.05, duration: 4.seconds),
+            ),
 
           // The Glass Node
           ScaleButton(

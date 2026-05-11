@@ -1,607 +1,487 @@
 {
-  "gameType": "phrasalVerbs",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "phrasalVerbs_l1_q1",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"break down\" means:",
-      "targetWord": "break down",
-      "example": "My car broke down on the highway.",
-      "options": [
-        "stop functioning",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"break down\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l1_q2",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"bring up\" means:",
-      "targetWord": "bring up",
-      "example": "She brought up an interesting point.",
-      "options": [
-        "mention a topic",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"bring up\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l1_q3",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"call off\" means:",
-      "targetWord": "call off",
-      "example": "They called off the meeting.",
-      "options": [
-        "cancel",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"call off\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l2_q1",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"carry on\" means:",
-      "targetWord": "carry on",
-      "example": "Please carry on with your work.",
-      "options": [
-        "continue",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"carry on\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l2_q2",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"come across\" means:",
-      "targetWord": "come across",
-      "example": "I came across an old photo.",
-      "options": [
-        "find by chance",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"come across\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l2_q3",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"cut down\" means:",
-      "targetWord": "cut down",
-      "example": "We need to cut down on expenses.",
-      "options": [
-        "reduce",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"cut down\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l3_q1",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"figure out\" means:",
-      "targetWord": "figure out",
-      "example": "Can you figure out this puzzle?",
-      "options": [
-        "understand or solve",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"figure out\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l3_q2",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"get along\" means:",
-      "targetWord": "get along",
-      "example": "They get along very well.",
-      "options": [
-        "have a good relationship",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"get along\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l3_q3",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"give up\" means:",
-      "targetWord": "give up",
-      "example": "Never give up on your dreams.",
-      "options": [
-        "stop trying",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"give up\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l4_q1",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"go over\" means:",
-      "targetWord": "go over",
-      "example": "Let's go over the plan once more.",
-      "options": [
-        "review",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"go over\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l4_q2",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"hold on\" means:",
-      "targetWord": "hold on",
-      "example": "Hold on, I'll be right back.",
-      "options": [
-        "wait",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"hold on\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l4_q3",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"keep up\" means:",
-      "targetWord": "keep up",
-      "example": "Try to keep up with the class.",
-      "options": [
-        "maintain pace",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"keep up\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l5_q1",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"look after\" means:",
-      "targetWord": "look after",
-      "example": "She looks after her grandmother.",
-      "options": [
-        "take care of",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"look after\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l5_q2",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"look into\" means:",
-      "targetWord": "look into",
-      "example": "The police are looking into the case.",
-      "options": [
-        "investigate",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"look into\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l5_q3",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"look forward to\" means:",
-      "targetWord": "look forward to",
-      "example": "I look forward to the holiday.",
-      "options": [
-        "anticipate with pleasure",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"look forward to\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l6_q1",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"make up\" means:",
-      "targetWord": "make up",
-      "example": "They made up after the argument.",
-      "options": [
-        "invent or reconcile",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"make up\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l6_q2",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"pass away\" means:",
-      "targetWord": "pass away",
-      "example": "Her grandfather passed away last year.",
-      "options": [
-        "die",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"pass away\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l6_q3",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"pick up\" means:",
-      "targetWord": "pick up",
-      "example": "I picked up some Spanish abroad.",
-      "options": [
-        "collect or learn",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"pick up\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l7_q1",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"put off\" means:",
-      "targetWord": "put off",
-      "example": "Don't put off your homework.",
-      "options": [
-        "postpone",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"put off\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l7_q2",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"run out of\" means:",
-      "targetWord": "run out of",
-      "example": "We ran out of milk.",
-      "options": [
-        "exhaust supply",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"run out of\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l7_q3",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"set up\" means:",
-      "targetWord": "set up",
-      "example": "She set up her own business.",
-      "options": [
-        "arrange or establish",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"set up\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l8_q1",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"show up\" means:",
-      "targetWord": "show up",
-      "example": "He didn't show up for the interview.",
-      "options": [
-        "arrive",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"show up\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l8_q2",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"take off\" means:",
-      "targetWord": "take off",
-      "example": "The plane took off on time.",
-      "options": [
-        "leave the ground or remove",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"take off\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l8_q3",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"turn down\" means:",
-      "targetWord": "turn down",
-      "example": "She turned down the job offer.",
-      "options": [
-        "reject",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"turn down\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l9_q1",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"turn up\" means:",
-      "targetWord": "turn up",
-      "example": "He turned up unexpectedly.",
-      "options": [
-        "arrive or increase volume",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"turn up\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l9_q2",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"work out\" means:",
-      "targetWord": "work out",
-      "example": "I work out three times a week.",
-      "options": [
-        "exercise or solve",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"work out\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l9_q3",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"point out\" means:",
-      "targetWord": "point out",
-      "example": "He pointed out the mistake.",
-      "options": [
-        "indicate",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"point out\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l10_q1",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"put up with\" means:",
-      "targetWord": "put up with",
-      "example": "I can't put up with the noise.",
-      "options": [
-        "tolerate",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"put up with\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l10_q2",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"run into\" means:",
-      "targetWord": "run into",
-      "example": "I ran into an old friend.",
-      "options": [
-        "meet by chance",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"run into\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "phrasalVerbs_l10_q3",
-      "instruction": "What does this phrasal verb mean?",
-      "difficulty": 1,
-      "subtype": "phrasalVerbs",
-      "interactionType": "choice",
-      "question": "\"take over\" means:",
-      "targetWord": "take over",
-      "example": "The new manager took over today.",
-      "options": [
-        "assume control",
-        "to eat quickly",
-        "to sleep well",
-        "to sing loudly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Think about \"take over\" in context.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "phrasalVerbs",
+    "batchIndex":  1,
+    "levels":  "1-10",
+    "quests":  [
+                   {
+                       "id":  "VOC_PHRASALVERBS_L1_Q1",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "ANALYZE_id0",
+                       "options":  [
+                                       "ANALYZE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "ANALYZE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L1_Q2",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "CONCEPT_id1",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "CONCEPT",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "CONCEPT"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L1_Q3",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "DATA_id2",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "DATA"
+                                   ],
+                       "correctAnswer":  "DATA"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L2_Q1",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "EVIDENCE_id3",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "EVIDENCE"
+                                   ],
+                       "correctAnswer":  "EVIDENCE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L2_Q2",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "FACTOR_id4",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "FACTOR"
+                                   ],
+                       "correctAnswer":  "FACTOR"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L2_Q3",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "GLOBAL_id5",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "GLOBAL",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "GLOBAL"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L3_Q1",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "HYPOTHESIS_id6",
+                       "options":  [
+                                       "HYPOTHESIS",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "HYPOTHESIS"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L3_Q2",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "INTERPRET_id7",
+                       "options":  [
+                                       "INTERPRET",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "INTERPRET"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L3_Q3",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "JUSTICE_id8",
+                       "options":  [
+                                       "JUSTICE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "JUSTICE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L4_Q1",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "KNOWLEDGE_id9",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "KNOWLEDGE"
+                                   ],
+                       "correctAnswer":  "KNOWLEDGE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L4_Q2",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "LOGIC_id10",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "LOGIC",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "LOGIC"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L4_Q3",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "METHOD_id11",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "METHOD",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "METHOD"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L5_Q1",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "NETWORK_id12",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "NETWORK"
+                                   ],
+                       "correctAnswer":  "NETWORK"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L5_Q2",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "OBJECTIVE_id13",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "OBJECTIVE",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "OBJECTIVE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L5_Q3",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "PERSPECTIVE_id14",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "PERSPECTIVE"
+                                   ],
+                       "correctAnswer":  "PERSPECTIVE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L6_Q1",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "QUALITY_id15",
+                       "options":  [
+                                       "QUALITY",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "QUALITY"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L6_Q2",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "RESEARCH_id16",
+                       "options":  [
+                                       "RESEARCH",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "RESEARCH"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L6_Q3",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "SOURCE_id17",
+                       "options":  [
+                                       "SOURCE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "SOURCE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L7_Q1",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "THEORY_id18",
+                       "options":  [
+                                       "THEORY",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "THEORY"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L7_Q2",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "UNIQUE_id19",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "UNIQUE"
+                                   ],
+                       "correctAnswer":  "UNIQUE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L7_Q3",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "ANALYZE_id20",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "ANALYZE",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "ANALYZE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L8_Q1",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "CONCEPT_id21",
+                       "options":  [
+                                       "CONCEPT",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "CONCEPT"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L8_Q2",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "DATA_id22",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DATA",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "DATA"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L8_Q3",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "EVIDENCE_id23",
+                       "options":  [
+                                       "EVIDENCE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "EVIDENCE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L9_Q1",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "FACTOR_id24",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "FACTOR",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "FACTOR"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L9_Q2",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "GLOBAL_id25",
+                       "options":  [
+                                       "GLOBAL",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "GLOBAL"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L9_Q3",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "HYPOTHESIS_id26",
+                       "options":  [
+                                       "HYPOTHESIS",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "HYPOTHESIS"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L10_Q1",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "INTERPRET_id27",
+                       "options":  [
+                                       "INTERPRET",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "INTERPRET"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L10_Q2",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "JUSTICE_id28",
+                       "options":  [
+                                       "JUSTICE",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "JUSTICE"
+                   },
+                   {
+                       "id":  "VOC_PHRASALVERBS_L10_Q3",
+                       "interactionType":  "Verb Vault",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "KNOWLEDGE_id29",
+                       "options":  [
+                                       "KNOWLEDGE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "KNOWLEDGE"
+                   }
+               ]
 }

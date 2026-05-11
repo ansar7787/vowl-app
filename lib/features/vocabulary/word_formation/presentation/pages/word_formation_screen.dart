@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
 class WordFormationScreen extends StatefulWidget {
   final int level;
-  const WordFormationScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const WordFormationScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.wordFormation,
+  });
 
   @override
   State<WordFormationScreen> createState() => _WordFormationScreenState();
@@ -32,319 +28,185 @@ class WordFormationScreen extends StatefulWidget {
 class _WordFormationScreenState extends State<WordFormationScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  
+  double _sliderProgress = 0.0;
+  int? _activeSuffixIndex;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
-  int? _selectedOptionIndex;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(
-        gameType: GameSubtype.wordFormation,
-        level: widget.level,
-      ),
-    );
+    context.read<VocabularyBloc>().add(FetchVocabularyQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onOptionSelected(int index, bool isCorrect) {
-    if (_selectedOptionIndex != null) return;
-    setState(() => _selectedOptionIndex = index);
+  void _onSlideUpdate(int index, double delta, double maxWidth, String suffix, String root, String correct) {
+    if (_isAnswered) return;
+    setState(() {
+      _activeSuffixIndex = index;
+      _sliderProgress = (_sliderProgress + delta / maxWidth).clamp(0.0, 1.0);
+    });
 
-    _hapticService.selection();
-    context.read<VocabularyBloc>().add(SubmitAnswer(isCorrect));
+    if (_sliderProgress >= 0.95) {
+      _hapticService.success();
+      _submitMorph(suffix, root, correct);
+    }
   }
 
-  void _useHint() {
-    _hapticService.selection();
-    context.read<VocabularyBloc>().add(VocabularyHintUsed());
+  void _submitMorph(String suffix, String root, String correct) {
+    if (_isAnswered) return;
+    
+    String cleanS = suffix.replaceAll('-', '').trim().toLowerCase();
+    bool isCorrect = correct.trim().toLowerCase().endsWith(cleanS) || 
+                    correct.trim().toLowerCase() == (root.trim() + cleanS).toLowerCase();
+    
+    if (isCorrect) {
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'vocabulary',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: BlocConsumer<VocabularyBloc, VocabularyState>(
-        listener: (context, state) {
-          if (state is VocabularyGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Word Architect!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins. You have a great sense of word structure!',
-        ),
-            );
-          } else if (state is VocabularyGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Need a rebuild?',
-        description: 'Word formation can be challenging. Try again!',
-      );
-          } else if (state is VocabularyLoaded &&
-              state.lastAnswerCorrect == null) {
-            _selectedOptionIndex = null;
+    return BlocConsumer<VocabularyBloc, VocabularyState>(
+      listener: (context, state) {
+        if (state is VocabularyLoaded) {
+          final livesChanged = state.livesRemaining > (_lastLives ?? 3);
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _sliderProgress = 0.0;
+              _activeSuffixIndex = null;
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is VocabularyLoading || state is VocabularyInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is VocabularyLoaded) {
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is VocabularyError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<VocabularyBloc>().add(
-                FetchVocabularyQuests(
-                  gameType: GameSubtype.wordFormation,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
+          _lastLives = state.livesRemaining;
+        }
+        if (state is VocabularyGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'MORPHOLOGY MASTER!', enableDoubleUp: true);
+        } else if (state is VocabularyGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is VocabularyLoaded) ? state.currentQuest : null;
+        final root = quest?.rootWord ?? "???";
+        final options = quest?.options ?? [];
+        final activeSuffix = _activeSuffixIndex != null ? options[_activeSuffixIndex!] : null;
 
-  Widget _buildGameUI(
-    BuildContext context,
-    VocabularyLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-          child: Row(
+        return VocabularyBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
+          onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
             children: [
-              ScaleButton(
-                onTap: () => context.pop(),
-                child: Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.white10 : Colors.black12,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.close_rounded,
-                    size: 24.r,
-                    color: isDark ? Colors.white70 : Colors.black54,
-                  ),
-                ),
-              ),
-              SizedBox(width: 12.w),
-              Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.r),
-                  child: LinearProgressIndicator(
-                    value: progress,
-                    minHeight: 14.h,
-                    backgroundColor: isDark
-                        ? Colors.white10
-                        : Colors.black.withValues(alpha: 0.05),
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      theme.primaryColor,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(width: 12.w),
-              _buildHintButton(state.hintUsed, theme.primaryColor),
-              SizedBox(width: 12.w),
-              _buildHeartCount(state.livesRemaining),
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 40.h),
+              _buildMorphChamber(root, activeSuffix, theme.primaryColor, isDark),
+              const Spacer(),
+              _buildMorphRail(options, root, quest.correctAnswer ?? "", theme.primaryColor, isDark),
+              SizedBox(height: 20.h),
             ],
           ),
-        ),
-        Expanded(
-          child: Center(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.all(24.r),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "WORD FORMATION",
-                    style: GoogleFonts.outfit(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 4,
-                      color: theme.primaryColor,
-                    ),
-                  ).animate().fadeIn().scale(),
-                  SizedBox(height: 24.h),
-                  GlassTile(
-                    padding: EdgeInsets.all(32.r),
-                    borderRadius: BorderRadius.circular(32.r),
-                    borderColor: theme.primaryColor.withValues(alpha: 0.3),
-                    child: Column(
-                      children: [
-                        Text(
-                          "Form the correct word for the context:",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.outfit(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w500,
-                            color: isDark ? Colors.white70 : Colors.black54,
-                          ),
-                        ),
-                        SizedBox(height: 16.h),
-                        Text(
-                          "Root Word: ${quest.word ?? "---"}",
-                          style: GoogleFonts.outfit(
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.bold,
-                            color: theme.primaryColor,
-                          ),
-                        ),
-                        SizedBox(height: 20.h),
-                        Text(
-                          quest.sentence ?? "---",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.outfit(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w600,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF1E293B),
-                            height: 1.5,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ).animate().slideY(begin: 0.1),
-                  SizedBox(height: 48.h),
-                  ...List.generate(quest.options?.length ?? 0, (index) {
-                    final option = quest.options![index];
-                    final isCorrect = index == quest.correctAnswerIndex;
-                    final isSelected = _selectedOptionIndex == index;
+        );
+      },
+    );
+  }
 
-                    return Padding(
-                      padding: EdgeInsets.only(bottom: 16.h),
-                      child: ScaleButton(
-                        onTap: () => _onOptionSelected(index, isCorrect),
-                        child: GlassTile(
-                          borderRadius: BorderRadius.circular(20.r),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 24.w,
-                            vertical: 20.h,
-                          ),
-                          borderColor: isSelected
-                              ? (isCorrect ? Colors.green : Colors.red)
-                              : Colors.white10,
-                          color: isSelected
-                              ? (isCorrect
-                                    ? Colors.green.withValues(alpha: 0.2)
-                                    : Colors.red.withValues(alpha: 0.2))
-                              : theme.primaryColor.withValues(alpha: 0.05),
-                          child: Center(
-                            child: Text(
-                              option,
-                              style: GoogleFonts.outfit(
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
-                                color: isDark
-                                    ? Colors.white
-                                    : const Color(0xFF1E293B),
-                              ),
-                            ),
-                          ),
+  Widget _buildInstruction(Color color) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.2))),
+      child: Text("SLIDE A SUFFIX TO THE MORPH CHAMBER", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
+    );
+  }
+
+  Widget _buildMorphChamber(String root, String? suffix, Color color, bool isDark) {
+    return Container(
+      width: 250.r, height: 150.r,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: color, width: 2),
+        boxShadow: [BoxShadow(color: color.withValues(alpha: _sliderProgress * 0.5), blurRadius: 40)],
+      ),
+      child: Center(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(root.toUpperCase(), style: GoogleFonts.shareTechMono(fontSize: 24.sp, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 2)),
+            if (suffix != null)
+              Opacity(
+                opacity: _sliderProgress,
+                child: Text(suffix.toUpperCase(), style: GoogleFonts.shareTechMono(fontSize: 24.sp, fontWeight: FontWeight.bold, color: color, letterSpacing: 2)),
+              ).animate(target: _sliderProgress > 0.8 ? 1 : 0).shake(),
+          ],
+        ),
+      ),
+    ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -5, end: 5, duration: 2.seconds);
+  }
+
+  Widget _buildMorphRail(List<String> options, String root, String correct, Color color, bool isDark) {
+    return Column(
+      children: options.asMap().entries.map((entry) {
+        int idx = entry.key;
+        String s = entry.value;
+        bool isActive = _activeSuffixIndex == idx;
+
+        return Padding(
+          padding: EdgeInsets.only(bottom: 12.h, left: 24.w, right: 24.w),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return Container(
+                height: 50.h,
+                decoration: BoxDecoration(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(10.r)),
+                child: Stack(
+                  children: [
+                    // Rail progress
+                    if (isActive)
+                      FractionallySizedBox(
+                        widthFactor: _sliderProgress,
+                        child: Container(decoration: BoxDecoration(color: color.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(10.r))),
+                      ),
+                    // Handle
+                    Positioned(
+                      left: isActive ? (constraints.maxWidth - 60.w) * _sliderProgress : 0,
+                      child: GestureDetector(
+                        onHorizontalDragUpdate: (details) => _onSlideUpdate(idx, details.delta.dx, constraints.maxWidth, s, root, correct),
+                        onHorizontalDragEnd: (_) {
+                           if (!_isAnswered) setState(() { _sliderProgress = 0.0; _activeSuffixIndex = null; });
+                        },
+                        child: Container(
+                          width: 80.w, height: 50.h,
+                          decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(8.r), boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 10)]),
+                          child: Center(child: Text(s.toUpperCase(), style: GoogleFonts.shareTechMono(fontSize: 12.sp, fontWeight: FontWeight.bold, color: Colors.white))),
                         ),
                       ),
-                    );
-                  }).animate().fadeIn(delay: 400.ms),
-                ],
-              ),
-            ),
+                    ),
+                  ],
+                ),
+              );
+            }
           ),
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "IMPRESSIVE!" : "NOT QUITE!",
-            subtitle:
-                "Tip: ${quest.explanation ?? "Many words are formed by adding prefixes or suffixes to a root word."}",
-            onContinue: () =>
-                context.read<VocabularyBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
-          ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      }).toList(),
     );
   }
-
-  Widget _buildHeartCount(int lives) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.all(8.r),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          shape: BoxShape.circle,
-        ),
-        child: Icon(
-          Icons.lightbulb_rounded,
-          color: used ? Colors.grey : primaryColor,
-          size: 24.r,
-        ),
-      ),
-    );
-  }
-
-  
-
-  
 }
+

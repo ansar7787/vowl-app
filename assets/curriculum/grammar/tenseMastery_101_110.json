@@ -1,607 +1,307 @@
 {
-  "gameType": "tenseMastery",
-  "batchIndex": 11,
-  "levels": "101-110",
-  "quests": [
-    {
-      "id": "tenseMastery_l101_q1",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "She ___ to school every day.",
-      "options": [
-        "walks",
-        "walked",
-        "will walk",
-        "is walking"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Simple present for habits.",
-      "verb": "walk",
-      "targetTense": "Simple present",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l101_q2",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "I ___ my homework yesterday.",
-      "options": [
-        "finish",
-        "finished",
-        "will finish",
-        "am finishing"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Simple past for completed action.",
-      "verb": "finish",
-      "targetTense": "Simple past",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l101_q3",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "They ___ a movie right now.",
-      "options": [
-        "watch",
-        "watched",
-        "will watch",
-        "are watching"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Present continuous for now.",
-      "verb": "watch",
-      "targetTense": "Present continuous",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l102_q1",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "He ___ the project by Friday.",
-      "options": [
-        "completes",
-        "completed",
-        "will complete",
-        "is completing"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Future simple with 'will'.",
-      "verb": "complete",
-      "targetTense": "Future simple",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l102_q2",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "She ___ here since 2010.",
-      "options": [
-        "lives",
-        "lived",
-        "will live",
-        "has lived"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Present perfect for duration.",
-      "verb": "live",
-      "targetTense": "Present perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l102_q3",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "I ___ when the phone rang.",
-      "options": [
-        "sleep",
-        "slept",
-        "was sleeping",
-        "have slept"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Past continuous interrupted.",
-      "verb": "sleep",
-      "targetTense": "Past continuous",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l103_q1",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "By next month, I ___ the course.",
-      "options": [
-        "finish",
-        "finished",
-        "will have finished",
-        "am finishing"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Future perfect.",
-      "verb": "finish",
-      "targetTense": "Future perfect.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l103_q2",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "She ___ three books this year.",
-      "options": [
-        "reads",
-        "read",
-        "has read",
-        "is reading"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Present perfect for this period.",
-      "verb": "read",
-      "targetTense": "Present perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l103_q3",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "They ___ dinner when we arrived.",
-      "options": [
-        "cook",
-        "cooked",
-        "had cooked",
-        "are cooking"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Past perfect before past event.",
-      "verb": "cook",
-      "targetTense": "Past perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l104_q1",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "He ___ English for five years.",
-      "options": [
-        "studies",
-        "studied",
-        "has been studying",
-        "will study"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Present perfect continuous.",
-      "verb": "study",
-      "targetTense": "Present perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l104_q2",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "We ___ to Paris next summer.",
-      "options": [
-        "travel",
-        "traveled",
-        "will travel",
-        "are traveling"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Future plans with 'will'.",
-      "verb": "travel",
-      "targetTense": "Future plans",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l104_q3",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "She ___ the dishes every morning.",
-      "options": [
-        "washes",
-        "washed",
-        "will wash",
-        "is washing"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Simple present routine.",
-      "verb": "wash",
-      "targetTense": "Simple present",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l105_q1",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "I ___ that book last week.",
-      "options": [
-        "read",
-        "read",
-        "will read",
-        "am reading"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Simple past completed.",
-      "verb": "read",
-      "targetTense": "Simple past",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l105_q2",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "They ___ for two hours already.",
-      "options": [
-        "wait",
-        "waited",
-        "have been waiting",
-        "will wait"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Present perfect continuous.",
-      "verb": "wait",
-      "targetTense": "Present perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l105_q3",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "He ___ to work by bus daily.",
-      "options": [
-        "goes",
-        "went",
-        "will go",
-        "is going"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Simple present habit.",
-      "verb": "go",
-      "targetTense": "Simple present",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l106_q1",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "She ___ a letter when I called.",
-      "options": [
-        "writes",
-        "wrote",
-        "was writing",
-        "has written"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Past continuous at that moment.",
-      "verb": "write",
-      "targetTense": "Past continuous",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l106_q2",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "By 2030, technology ___ a lot.",
-      "options": [
-        "changes",
-        "changed",
-        "will have changed",
-        "is changing"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Future perfect prediction.",
-      "verb": "change",
-      "targetTense": "Future perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l106_q3",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "I ___ sushi before I went to Japan.",
-      "options": [
-        "never try",
-        "never tried",
-        "had never tried",
-        "am never trying"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Past perfect before past.",
-      "verb": "try",
-      "targetTense": "Past perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l107_q1",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "We ___ this project since January.",
-      "options": [
-        "work on",
-        "worked on",
-        "have been working on",
-        "will work on"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Present perfect continuous.",
-      "verb": "work on",
-      "targetTense": "Present perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l107_q2",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "She ___ her keys. She can't find them.",
-      "options": [
-        "loses",
-        "lost",
-        "has lost",
-        "is losing"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Present perfect recent result.",
-      "verb": "lose",
-      "targetTense": "Present perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l107_q3",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "Tomorrow at 8, I ___ to work.",
-      "options": [
-        "drive",
-        "drove",
-        "will be driving",
-        "have driven"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Future continuous.",
-      "verb": "drive",
-      "targetTense": "Future continuous.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l108_q1",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "He ___ his lunch before noon daily.",
-      "options": [
-        "eats",
-        "ate",
-        "will eat",
-        "has eaten"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Simple present routine.",
-      "verb": "eat",
-      "targetTense": "Simple present",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l108_q2",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "They ___ the house last summer.",
-      "options": [
-        "paint",
-        "painted",
-        "will paint",
-        "are painting"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Simple past completed.",
-      "verb": "paint",
-      "targetTense": "Simple past",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l108_q3",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "I ___ about this topic all day.",
-      "options": [
-        "think",
-        "thought",
-        "have been thinking",
-        "will think"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Present perfect continuous.",
-      "verb": "think",
-      "targetTense": "Present perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l109_q1",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "She ___ abroad if she saves enough.",
-      "options": [
-        "travels",
-        "traveled",
-        "will travel",
-        "is traveling"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "First conditional future.",
-      "verb": "travel",
-      "targetTense": "First conditional",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l109_q2",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "We ___ a great time at the party.",
-      "options": [
-        "have",
-        "had",
-        "will have",
-        "are having"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Simple past narrative.",
-      "verb": "have",
-      "targetTense": "Simple past",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l109_q3",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "He ___ for the exam all week.",
-      "options": [
-        "prepares",
-        "prepared",
-        "has been preparing",
-        "will prepare"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Present perfect continuous.",
-      "verb": "prepare",
-      "targetTense": "Present perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l110_q1",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "The concert ___ at 8 PM tonight.",
-      "options": [
-        "starts",
-        "started",
-        "will start",
-        "is starting"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Scheduled event simple present.",
-      "verb": "start",
-      "targetTense": "Scheduled event",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l110_q2",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "I ___ you since childhood.",
-      "options": [
-        "know",
-        "knew",
-        "have known",
-        "am knowing"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Present perfect duration.",
-      "verb": "know",
-      "targetTense": "Present perfect",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "tenseMastery_l110_q3",
-      "instruction": "Choose the correct tense.",
-      "difficulty": 3,
-      "subtype": "tenseMastery",
-      "interactionType": "choice",
-      "question": "She ___ when the alarm went off.",
-      "options": [
-        "sleeps",
-        "slept",
-        "was sleeping",
-        "has slept"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Past continuous interrupted.",
-      "verb": "sleep",
-      "targetTense": "Past continuous",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "tenseMastery",
+    "batchIndex":  11,
+    "levels":  "101-110",
+    "quests":  [
+                   {
+                       "id":  "GRM_TENSEMASTERY_L101_Q1",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Continuous temporal coordinate.",
+                       "sentence":  "The engineer is scaning the portal right now.",
+                       "correctAnswer":  "Present Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L101_Q2",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Perfect temporal coordinate.",
+                       "sentence":  "The droid has already repaired the data.",
+                       "correctAnswer":  "Present Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L101_Q3",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Continuous temporal coordinate.",
+                       "sentence":  "The system was monitoring the circuit when the alarm rang.",
+                       "correctAnswer":  "Past Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L102_Q1",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Perfect temporal coordinate.",
+                       "sentence":  "The scout had activated the reactor before we arrived.",
+                       "correctAnswer":  "Past Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L102_Q2",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Continuous temporal coordinate.",
+                       "sentence":  "The analyst is decrypting the signal right now.",
+                       "correctAnswer":  "Present Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L102_Q3",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Perfect temporal coordinate.",
+                       "sentence":  "The pilot has already scanned the module.",
+                       "correctAnswer":  "Present Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L103_Q1",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Continuous temporal coordinate.",
+                       "sentence":  "The researcher was repairing the portal when the alarm rang.",
+                       "correctAnswer":  "Past Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L103_Q2",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Perfect temporal coordinate.",
+                       "sentence":  "The commander had monitored the data before we arrived.",
+                       "correctAnswer":  "Past Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L103_Q3",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Continuous temporal coordinate.",
+                       "sentence":  "The engineer is activateing the circuit right now.",
+                       "correctAnswer":  "Present Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L104_Q1",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Perfect temporal coordinate.",
+                       "sentence":  "The droid has already decrypted the reactor.",
+                       "correctAnswer":  "Present Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L104_Q2",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Continuous temporal coordinate.",
+                       "sentence":  "The system was scaning the signal when the alarm rang.",
+                       "correctAnswer":  "Past Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L104_Q3",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Perfect temporal coordinate.",
+                       "sentence":  "The scout had repaired the module before we arrived.",
+                       "correctAnswer":  "Past Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L105_Q1",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Continuous temporal coordinate.",
+                       "sentence":  "The analyst is monitoring the portal right now.",
+                       "correctAnswer":  "Present Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L105_Q2",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Perfect temporal coordinate.",
+                       "sentence":  "The pilot has already activated the data.",
+                       "correctAnswer":  "Present Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L105_Q3",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Continuous temporal coordinate.",
+                       "sentence":  "The researcher was decrypting the circuit when the alarm rang.",
+                       "correctAnswer":  "Past Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L106_Q1",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Perfect temporal coordinate.",
+                       "sentence":  "The commander had scanned the reactor before we arrived.",
+                       "correctAnswer":  "Past Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L106_Q2",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Continuous temporal coordinate.",
+                       "sentence":  "The engineer is repairing the signal right now.",
+                       "correctAnswer":  "Present Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L106_Q3",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Perfect temporal coordinate.",
+                       "sentence":  "The droid has already monitored the module.",
+                       "correctAnswer":  "Present Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L107_Q1",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Continuous temporal coordinate.",
+                       "sentence":  "The system was activateing the portal when the alarm rang.",
+                       "correctAnswer":  "Past Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L107_Q2",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Perfect temporal coordinate.",
+                       "sentence":  "The scout had decrypted the data before we arrived.",
+                       "correctAnswer":  "Past Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L107_Q3",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Continuous temporal coordinate.",
+                       "sentence":  "The analyst is scaning the circuit right now.",
+                       "correctAnswer":  "Present Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L108_Q1",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Perfect temporal coordinate.",
+                       "sentence":  "The pilot has already repaired the reactor.",
+                       "correctAnswer":  "Present Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L108_Q2",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Continuous temporal coordinate.",
+                       "sentence":  "The researcher was monitoring the signal when the alarm rang.",
+                       "correctAnswer":  "Past Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L108_Q3",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Perfect temporal coordinate.",
+                       "sentence":  "The commander had activated the module before we arrived.",
+                       "correctAnswer":  "Past Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L109_Q1",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Continuous temporal coordinate.",
+                       "sentence":  "The engineer is decrypting the portal right now.",
+                       "correctAnswer":  "Present Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L109_Q2",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Perfect temporal coordinate.",
+                       "sentence":  "The droid has already scanned the data.",
+                       "correctAnswer":  "Present Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L109_Q3",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Continuous temporal coordinate.",
+                       "sentence":  "The system was repairing the circuit when the alarm rang.",
+                       "correctAnswer":  "Past Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L110_Q1",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Past Perfect temporal coordinate.",
+                       "sentence":  "The scout had monitored the reactor before we arrived.",
+                       "correctAnswer":  "Past Perfect"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L110_Q2",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Continuous temporal coordinate.",
+                       "sentence":  "The analyst is activateing the signal right now.",
+                       "correctAnswer":  "Present Continuous"
+                   },
+                   {
+                       "id":  "GRM_TENSEMASTERY_L110_Q3",
+                       "interactionType":  "Tense Slider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Identify the temporal state of the verb.",
+                       "explanation":  "Identification successful. The verb conjugation matches the Present Perfect temporal coordinate.",
+                       "sentence":  "The pilot has already decrypted the module.",
+                       "correctAnswer":  "Present Perfect"
+                   }
+               ]
 }

@@ -1,167 +1,51 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
-import 'package:voxai_quest/features/home/presentation/widgets/mastery_avatar.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/features/home/presentation/widgets/mastery_avatar.dart';
+import 'package:vowl/features/home/presentation/widgets/vowl_mascot_card.dart';
+
+enum CommandPodMode { headerOnly, kidsOnly, vaultOnly, full }
 
 class CommandPod extends StatelessWidget {
-  const CommandPod({super.key, required this.user});
+  const CommandPod({
+    super.key,
+    required this.user,
+    this.mode = CommandPodMode.full,
+  });
 
   final UserEntity user;
+  final CommandPodMode mode;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Column(
-        children: [
-          SizedBox(height: 24.h),
-          _buildDiscoveryHero(context),
-          SizedBox(height: 32.h),
-          _buildKidsSectionHeader(
-            context,
-            'Kids Learning Hub',
-            '20 games designed for early learners',
-          ),
-          SizedBox(height: 16.h),
-          _buildKidsLearningCard(context),
-          SizedBox(height: 32.h),
-          _buildCompactStats(context),
-        ],
-      ),
-    ).animate().fadeIn(duration: 800.ms).slideY(begin: 0.05, end: 0);
-  }
-
-  Widget _buildKidsSectionHeader(
-    BuildContext context,
-    String title,
-    String subtitle,
-  ) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
+    return Column(
       children: [
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title.toUpperCase(),
-                style: GoogleFonts.outfit(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  letterSpacing: 1.2,
-                ),
-              ),
-              Text(
-                subtitle,
-                style: GoogleFonts.outfit(
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white38 : const Color(0xFF64748B),
-                ),
-              ),
-            ],
-          ),
-        ),
+        if (mode == CommandPodMode.full ||
+            mode == CommandPodMode.headerOnly) ...[
+          SizedBox(height: 12.h),
+          _buildDiscoveryHero(context),
+        ],
+        if (mode == CommandPodMode.full || mode == CommandPodMode.kidsOnly) ...[
+          _buildKidsLearningCard(context),
+        ],
+        if (mode == CommandPodMode.full ||
+            mode == CommandPodMode.vaultOnly) ...[
+          _buildBentoMasteryVault(context),
+        ],
       ],
-    );
-  }
-
-  Widget _buildKidsLearningCard(BuildContext context) {
-    return ScaleButton(
-      onTap: () => context.push(AppRouter.kidsZoneRoute),
-      child: Container(
-        padding: EdgeInsets.symmetric(
-          vertical: 24.h,
-        ), // Adaptive height via padding
-        decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [Color(0xFFF43F5E), Color(0xFFFB923C)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(30.r),
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xFFF43F5E).withValues(alpha: 0.3),
-              blurRadius: 20,
-              offset: const Offset(0, 10),
-            ),
-          ],
-        ),
-        child: Stack(
-          children: [
-            Positioned(
-              right: -20,
-              bottom: -20,
-              child: Icon(
-                Icons.child_care_rounded,
-                size: 180.r,
-                color: Colors.white.withValues(alpha: 0.2),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(24.r),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                      vertical: 4.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(20.r),
-                    ),
-                    child: Text(
-                      "DISCOVER",
-                      style: GoogleFonts.poppins(
-                        color: Colors.white,
-                        fontSize: 9.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    "Kids Learning Zone",
-                    style: GoogleFonts.poppins(
-                      color: Colors.white,
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    "Fun games for alphabets, animals & more",
-                    style: GoogleFonts.poppins(
-                      color: Colors.white70,
-                      fontSize: 13.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
+    ).animate().fadeIn(duration: 800.ms).slideY(begin: 0.05, end: 0);
   }
 
   Widget _buildDiscoveryHero(BuildContext context) {
     final progress = (user.totalExp % 100) / 100.0;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
       decoration: BoxDecoration(
@@ -169,8 +53,8 @@ class CommandPod extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: const Color(0xFF2563EB).withValues(alpha: 0.15),
-            blurRadius: 30,
-            offset: const Offset(0, 10),
+            blurRadius: 40,
+            offset: const Offset(0, 15),
           ),
         ],
       ),
@@ -182,26 +66,52 @@ class CommandPod extends StatelessWidget {
             Row(
               children: [
                 Stack(
+                  alignment: Alignment.center,
                   children: [
+                    // Outer pulsing ring
+                    Container(
+                          width: 75.r,
+                          height: 75.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: const Color(
+                                0xFF2563EB,
+                              ).withValues(alpha: 0.2),
+                              width: 2,
+                            ),
+                          ),
+                        )
+                        .animate(onPlay: (controller) => controller.repeat())
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.15, 1.15),
+                          duration: 2.seconds,
+                        )
+                        .fadeOut(duration: 2.seconds),
+
                     MasteryAvatar(user: user, progress: progress),
+
                     Positioned(
                       right: 0,
                       bottom: 0,
                       child: Container(
-                        padding: EdgeInsets.all(4.r),
+                        padding: EdgeInsets.all(5.r),
                         decoration: BoxDecoration(
                           color: const Color(0xFF2563EB),
                           shape: BoxShape.circle,
-                          border: Border.all(
-                            color: isDark
-                                ? const Color(0xFF1E293B)
-                                : Colors.white,
-                            width: 2,
-                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(
+                                0xFF2563EB,
+                              ).withValues(alpha: 0.4),
+                              blurRadius: 10,
+                            ),
+                          ],
                         ),
                         child: Icon(
                           Icons.bolt_rounded,
-                          size: 10.r,
+                          size: 12.r,
                           color: Colors.white,
                         ),
                       ),
@@ -213,14 +123,25 @@ class CommandPod extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      _buildDynamicGreeting(),
-                      SizedBox(height: 2.h),
-                      Text(
-                        'Ready for your next mission?',
-                        style: GoogleFonts.outfit(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w500,
-                          color: isDark ? Colors.white38 : Colors.black38,
+                      _buildDynamicGreeting(context),
+                      SizedBox(height: 4.h),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 4.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF2563EB).withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(12.r),
+                        ),
+                        child: Text(
+                          'RANK: VOWL OPERATIVE',
+                          style: GoogleFonts.outfit(
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w800,
+                            color: const Color(0xFF2563EB),
+                            letterSpacing: 1.0,
+                          ),
                         ),
                       ),
                     ],
@@ -229,42 +150,445 @@ class CommandPod extends StatelessWidget {
               ],
             ),
             SizedBox(height: 24.h),
+            _buildFuturisticXPBar(context, progress),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFuturisticXPBar(BuildContext context, double progress) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.auto_awesome_rounded,
+                  size: 14.r,
+                  color: const Color(0xFF2563EB),
+                ),
+                SizedBox(width: 6.w),
+                Text(
+                  'LEVEL ${user.level}',
+                  style: GoogleFonts.outfit(
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w900,
+                    color: isDark ? Colors.white70 : const Color(0xFF0F172A),
+                    letterSpacing: 1,
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              '${(progress * 100).toInt()}% COMPLETED',
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w800,
+                color: const Color(0xFF2563EB),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: 10.h),
+        Stack(
+          children: [
             Container(
-              padding: EdgeInsets.all(16.r),
+              height: 12.h,
+              width: double.infinity,
               decoration: BoxDecoration(
                 color: isDark
-                    ? Colors.white.withValues(alpha: 0.03)
-                    : Colors.black.withValues(alpha: 0.02),
-                borderRadius: BorderRadius.circular(24.r),
-                border: Border.all(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.05)
-                      : Colors.black.withValues(alpha: 0.03),
+                    ? Colors.white.withValues(alpha: 0.05)
+                    : Colors.black.withValues(alpha: 0.03),
+                borderRadius: BorderRadius.circular(6.r),
+              ),
+            ),
+            FractionallySizedBox(
+              widthFactor: progress.clamp(0.05, 1.0),
+              child: Container(
+                height: 12.h,
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color(0xFF3B82F6),
+                      Color(0xFF6366F1),
+                      Color(0xFF8B5CF6),
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  borderRadius: BorderRadius.circular(6.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF6366F1).withValues(alpha: 0.4),
+                      blurRadius: 10,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+              ).animate().shimmer(duration: 2.seconds, color: Colors.white24),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildKidsLearningCard(BuildContext context) {
+    return ScaleButton(
+      onTap: () => context.push(AppRouter.kidsZoneRoute),
+      child: Container(
+        height: 160.h,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(32.r),
+          gradient: const LinearGradient(
+            colors: [Color(0xFF6366F1), Color(0xFFA855F7), Color(0xFFEC4899)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xFFA855F7).withValues(alpha: 0.3),
+              blurRadius: 30,
+              offset: const Offset(0, 15),
+            ),
+          ],
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(32.r),
+          child: Stack(
+            children: [
+              // Decorative background circles
+              Positioned(
+                right: -30.w,
+                bottom: -30.h,
+                child: Container(
+                  width: 180.r,
+                  height: 180.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white.withValues(alpha: 0.1),
+                  ),
                 ),
               ),
-              child: Column(
+
+              // Playful background icons
+              Positioned(
+                left: 20.w,
+                top: 20.h,
+                child:
+                    Icon(
+                          Icons.auto_awesome_rounded,
+                          size: 24.r,
+                          color: Colors.white.withValues(alpha: 0.2),
+                        )
+                        .animate(onPlay: (c) => c.repeat(reverse: true))
+                        .scale(
+                          begin: const Offset(1, 1),
+                          end: const Offset(1.3, 1.3),
+                          duration: 3.seconds,
+                        ),
+              ),
+
+              // Content Layer
+              Stack(
                 children: [
-                  Center(
-                    child: _buildHeroStatAction(
-                      context,
-                      'OPERATIVE LEVEL',
-                      '${user.level}',
-                      Icons.military_tech_rounded,
-                      const Color(0xFF2563EB),
-                      () => context.push(AppRouter.levelRoute),
+                  // Text Content (Moved to left side)
+                  Padding(
+                    padding: EdgeInsets.fromLTRB(24.w, 16.h, 150.w, 16.h),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 4.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withValues(alpha: 0.2),
+                            borderRadius: BorderRadius.circular(12.r),
+                            border: Border.all(
+                              color: Colors.white.withValues(alpha: 0.3),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.rocket_launch_rounded,
+                                size: 10.r,
+                                color: Colors.white,
+                              ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                "EARLY LEARNERS",
+                                style: GoogleFonts.outfit(
+                                  color: Colors.white,
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.w900,
+                                  letterSpacing: 1.5,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 8.h),
+                        Text(
+                          "JUNIOR\nADVENTURE",
+                          style: GoogleFonts.outfit(
+                            color: Colors.white,
+                            fontSize: 24.sp, // Slightly larger
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: -0.5,
+                            height: 1.0,
+                          ),
+                        ),
+                        SizedBox(height: 4.h),
+                        Text(
+                          "22 playful missions for\nyoung explorers!",
+                          style: GoogleFonts.outfit(
+                            color: Colors.white.withValues(alpha: 0.9),
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w600,
+                            height: 1.2,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(height: 16.h),
-                  ScaleButton(
-                    onTap: () => context.push(AppRouter.adventureXPRoute),
-                    child: _buildLinearProgress(
-                      context,
-                      progress,
-                      user.totalExp % 100,
+
+                  // Mascot Area (Concentric & Engaging Design)
+                  Positioned(
+                    right: -10.w,
+                    bottom: 0,
+                    top: 0,
+                    child: SizedBox(
+                      width: 140.w,
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          // 1. Outer Soft Glow
+                          Container(
+                                width: 140.r,
+                                height: 140.r,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  gradient: RadialGradient(
+                                    colors: [
+                                      Colors.white.withValues(alpha: 0.1),
+                                      Colors.transparent,
+                                    ],
+                                  ),
+                                ),
+                              )
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .scale(
+                                begin: const Offset(0.8, 0.8),
+                                end: const Offset(1.2, 1.2),
+                                duration: 4.seconds,
+                              ),
+
+                          // 2. Secondary Interactive Ring
+                          Container(
+                                width: 100.r,
+                                height: 100.r,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.white.withValues(alpha: 0.15),
+                                    width: 1.5,
+                                  ),
+                                ),
+                              )
+                              .animate(onPlay: (c) => c.repeat())
+                              .rotate(duration: 10.seconds),
+
+                          // 3. Floating Sparkles/Particles
+                          ...List.generate(5, (index) {
+                            final random = math.Random(index + 50);
+                            return Positioned(
+                              left: 20.w + random.nextDouble() * 100.w,
+                              top: 20.h + random.nextDouble() * 80.h,
+                              child:
+                                  Icon(
+                                        Icons.star_rounded,
+                                        color: Colors.white.withValues(
+                                          alpha: 0.3,
+                                        ),
+                                        size: (8 + random.nextInt(8)).r,
+                                      )
+                                      .animate(
+                                        onPlay: (c) => c.repeat(reverse: true),
+                                      )
+                                      .fadeIn(
+                                        duration:
+                                            (1 + random.nextDouble()).seconds,
+                                      )
+                                      .moveY(
+                                        begin: 0,
+                                        end: -20,
+                                        duration: 2.seconds,
+                                      ),
+                            );
+                          }),
+
+                          // 4. The Buddy Icon (Grounded in Center)
+                          Container(
+                                padding: EdgeInsets.all(18.r),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withValues(alpha: 0.15),
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.white.withValues(alpha: 0.25),
+                                    width: 2.r,
+                                  ),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withValues(
+                                        alpha: 0.1,
+                                      ),
+                                      blurRadius: 25,
+                                      offset: const Offset(0, 12),
+                                    ),
+                                  ],
+                                ),
+                                child: Text(
+                                  "🧸",
+                                  style: TextStyle(fontSize: 48.sp),
+                                ),
+                              )
+                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                              .moveY(
+                                begin: -6,
+                                end: 6,
+                                duration: 2.seconds,
+                                curve: Curves.easeInOut,
+                              )
+                              .scale(
+                                begin: const Offset(1, 1),
+                                end: const Offset(1.05, 1.05),
+                                duration: 2.seconds,
+                              ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBentoMasteryVault(BuildContext context) {
+    return Column(
+      children: [
+        const VowlMascotCard(),
+
+        SizedBox(height: 8.h),
+
+        Row(
+          children: [
+            Expanded(
+              child: _buildMiniStatTile(
+                context,
+                'BADGES',
+                '${user.badges.length}',
+                Icons.emoji_events_rounded,
+                const Color(0xFFF59E0B),
+                AppRouter.trophyRoomRoute,
+              ),
+            ),
+            SizedBox(width: 12.w),
+            Expanded(
+              child: _buildMiniStatTile(
+                context,
+                'LEVEL',
+                '${user.level}',
+                Icons.star_rounded,
+                const Color(0xFF3B82F6),
+                AppRouter.levelRoute,
+              ),
+            ),
+            SizedBox(width: 12.w),
+            Expanded(
+              child: _buildMiniStatTile(
+                context,
+                'TOTAL XP',
+                _formatXp(user.totalExp),
+                Icons.bolt_rounded,
+                const Color(0xFFA855F7),
+                AppRouter.adventureXPRoute,
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  String _formatXp(int xp) {
+    if (xp >= 1000) {
+      return '${(xp / 1000).toStringAsFixed(1)}k';
+    }
+    return xp.toString();
+  }
+
+  Widget _buildMiniStatTile(
+    BuildContext context,
+    String label,
+    String value,
+    IconData icon,
+    Color color,
+    String route,
+  ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return ScaleButton(
+      onTap: () => context.push(route),
+      child: GlassTile(
+        borderRadius: BorderRadius.circular(20.r),
+        padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 6.w),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: EdgeInsets.all(8.r),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: color, size: 20.r),
+            ),
+            SizedBox(height: 8.h),
+            Text(
+              value,
+              style: GoogleFonts.outfit(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                height: 1.1,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            SizedBox(height: 2.h),
+            Text(
+              label,
+              style: GoogleFonts.outfit(
+                fontSize: 8.sp,
+                fontWeight: FontWeight.w800,
+                color: isDark ? Colors.white38 : Colors.black45,
+                letterSpacing: 1.0,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
@@ -272,67 +596,21 @@ class CommandPod extends StatelessWidget {
     );
   }
 
-  Widget _buildHeroStatAction(
-    BuildContext context,
-    String label,
-    String value,
-    IconData icon,
-    Color color,
-    VoidCallback onTap,
-  ) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return ScaleButton(
-      onTap: onTap,
-      child: Row(
-        children: [
-          Container(
-            padding: EdgeInsets.all(8.r),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(icon, size: 16.r, color: color),
-          ),
-          SizedBox(width: 10.w),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                label,
-                style: GoogleFonts.outfit(
-                  fontSize: 8.sp,
-                  fontWeight: FontWeight.w800,
-                  color: isDark ? Colors.white38 : Colors.black38,
-                  letterSpacing: 1.0,
-                ),
-              ),
-              Text(
-                value,
-                style: GoogleFonts.outfit(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDynamicGreeting() {
+  Widget _buildDynamicGreeting(BuildContext context) {
     final name = user.displayName?.split(' ').first ?? 'Seeker';
     final hour = DateTime.now().hour;
     String greeting = 'Salutations';
-    if (hour < 12) {
+    if (hour >= 5 && hour < 12) {
       greeting = 'Good Morning';
-    } else if (hour < 17) {
+    } else if (hour >= 12 && hour < 17) {
       greeting = 'Good Afternoon';
-    } else {
+    } else if (hour >= 17 && hour < 22) {
       greeting = 'Good Evening';
+    } else {
+      greeting = 'Good Night';
     }
 
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -340,212 +618,22 @@ class CommandPod extends StatelessWidget {
           '$greeting,',
           style: GoogleFonts.outfit(
             fontSize: 14.sp,
-            fontWeight: FontWeight.w600,
-            color: const Color(0xFF2563EB),
-            letterSpacing: 1.2,
+            fontWeight: FontWeight.w700,
+            color: const Color(0xFF2563EB).withValues(alpha: isDark ? 0.7 : 0.9),
+            letterSpacing: 0.5,
           ),
         ),
         Text(
           name,
           style: GoogleFonts.outfit(
-            fontSize: 28.sp,
+            fontSize: 26.sp,
             fontWeight: FontWeight.w900,
+            color: MeshGradientBackground.getContrastColor(context),
             letterSpacing: -1.0,
             height: 1.1,
           ),
         ),
       ],
-    );
-  }
-
-  Widget _buildLinearProgress(BuildContext context, double progress, int xp) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'EXP PROGRESS',
-              style: GoogleFonts.outfit(
-                fontSize: 9.sp,
-                fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white54 : Colors.black45,
-                letterSpacing: 1.5,
-              ),
-            ),
-            Text(
-              '$xp/100',
-              style: GoogleFonts.outfit(
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: const Color(0xFF2563EB),
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 8.h),
-        Container(
-          height: 10.h,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.05)
-                : Colors.black.withValues(alpha: 0.03),
-            borderRadius: BorderRadius.circular(10.r),
-            border: Border.all(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.05)
-                  : Colors.black.withValues(alpha: 0.02),
-            ),
-          ),
-          child: FractionallySizedBox(
-            alignment: Alignment.centerLeft,
-            widthFactor: progress.clamp(0.05, 1.0),
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xFF2563EB), Color(0xFF6366F1)],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
-                borderRadius: BorderRadius.circular(10.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFF2563EB).withValues(alpha: 0.3),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildCompactStats(BuildContext context) {
-    return Column(
-      children: [
-        _buildStatCard(
-          context,
-          'CURRENT STREAK',
-          '${user.currentStreak} DAYS',
-          'KEEP THE FLAME ALIVE!',
-          Icons.local_fire_department_rounded,
-          const Color(0xFFF97316),
-          () => context.push(AppRouter.streakRoute),
-        ),
-        SizedBox(height: 12.h),
-        _buildStatCard(
-          context,
-          'VOX TREASURY',
-          '${user.coins}',
-          'VISIT REWARDS HUB',
-          Icons.paid_rounded,
-          const Color(0xFF10B981),
-          () => context.push(AppRouter.questCoinsRoute),
-        ),
-        SizedBox(height: 12.h),
-        _buildStatCard(
-          context,
-          'KIDS COINS',
-          '${user.kidsCoins}',
-          'VISIT KIDS SHOP',
-          Icons.shopping_bag_rounded,
-          const Color(0xFFF43F5E),
-          () => context.push('${AppRouter.kidsZoneRoute}/boutique'),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildStatCard(
-    BuildContext context,
-    String label,
-    String value,
-    String subLabel,
-    IconData icon,
-    Color color,
-    VoidCallback onTap,
-  ) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return ScaleButton(
-      onTap: onTap,
-      child: GlassTile(
-        padding: EdgeInsets.all(20.r),
-        borderRadius: BorderRadius.circular(28.r),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(14.r),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    color.withValues(alpha: 0.2),
-                    color.withValues(alpha: 0.05),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(color: color.withValues(alpha: 0.2)),
-              ),
-              child: Icon(icon, color: color, size: 28.r),
-            ),
-            SizedBox(width: 18.w),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    label,
-                    style: GoogleFonts.outfit(
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w900,
-                      color: color,
-                      letterSpacing: 2,
-                    ),
-                  ),
-                  SizedBox(height: 2.h),
-                  Text(
-                    value,
-                    style: GoogleFonts.outfit(
-                      fontSize: 26.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      height: 1.1,
-                    ),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  SizedBox(height: 4.h),
-                  Row(
-                    children: [
-                      Text(
-                        subLabel,
-                        style: GoogleFonts.outfit(
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w700,
-                          color: isDark ? Colors.white38 : Colors.black38,
-                          letterSpacing: 0.5,
-                        ),
-                      ),
-                      const Spacer(),
-                      Icon(
-                        Icons.arrow_forward_ios_rounded,
-                        size: 10.r,
-                        color: isDark ? Colors.white12 : Colors.black12,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

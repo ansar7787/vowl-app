@@ -1,607 +1,487 @@
 {
-  "gameType": "prefixSuffix",
-  "batchIndex": 20,
-  "levels": "191-200",
-  "quests": [
-    {
-      "id": "prefixSuffix_l191_q1",
-      "instruction": "What does the prefix 'un-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'un-' mean?",
-      "affix": "un-",
-      "meaning": "not",
-      "options": [
-        "not",
-        "again",
-        "before",
-        "after"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "'Unhappy' means not happy.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l191_q2",
-      "instruction": "What does the prefix 're-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 're-' mean?",
-      "affix": "re-",
-      "meaning": "again",
-      "options": [
-        "not",
-        "again",
-        "under",
-        "over"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Redo' means do again.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l191_q3",
-      "instruction": "What does the prefix 'pre-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'pre-' mean?",
-      "affix": "pre-",
-      "meaning": "before",
-      "options": [
-        "after",
-        "not",
-        "before",
-        "with"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Preview' means view before.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l192_q1",
-      "instruction": "What does the prefix 'mis-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'mis-' mean?",
-      "affix": "mis-",
-      "meaning": "wrongly",
-      "options": [
-        "correctly",
-        "under",
-        "wrongly",
-        "over"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Misunderstand' means understand wrongly.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l192_q2",
-      "instruction": "What does the prefix 'over-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'over-' mean?",
-      "affix": "over-",
-      "meaning": "too much",
-      "options": [
-        "under",
-        "too much",
-        "not",
-        "again"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Overeat' means eat too much.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l192_q3",
-      "instruction": "What does the prefix 'dis-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'dis-' mean?",
-      "affix": "dis-",
-      "meaning": "not or opposite",
-      "options": [
-        "not",
-        "again",
-        "before",
-        "with"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "'Disagree' means not agree.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l193_q1",
-      "instruction": "What does the prefix 'sub-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'sub-' mean?",
-      "affix": "sub-",
-      "meaning": "under",
-      "options": [
-        "over",
-        "with",
-        "under",
-        "again"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Submarine' means under the sea.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l193_q2",
-      "instruction": "What does the prefix 'inter-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'inter-' mean?",
-      "affix": "inter-",
-      "meaning": "between",
-      "options": [
-        "within",
-        "between",
-        "above",
-        "below"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'International' means between nations.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l193_q3",
-      "instruction": "What does the suffix '-ful' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the suffix '-ful' mean?",
-      "affix": "-ful",
-      "meaning": "full of",
-      "options": [
-        "without",
-        "full of",
-        "like",
-        "able to"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Hopeful' means full of hope.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l194_q1",
-      "instruction": "What does the suffix '-less' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the suffix '-less' mean?",
-      "affix": "-less",
-      "meaning": "without",
-      "options": [
-        "full of",
-        "without",
-        "able to",
-        "like"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Careless' means without care.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l194_q2",
-      "instruction": "What does the suffix '-tion' do?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the suffix '-tion' do?",
-      "affix": "-tion",
-      "meaning": "makes a noun",
-      "options": [
-        "Makes verb",
-        "Makes adjective",
-        "Makes noun",
-        "Makes adverb"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Education' is a noun form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l194_q3",
-      "instruction": "What does the suffix '-able' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the suffix '-able' mean?",
-      "affix": "-able",
-      "meaning": "can be done",
-      "options": [
-        "without",
-        "full of",
-        "can be done",
-        "makes noun"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Readable' means can be read.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l195_q1",
-      "instruction": "What does the suffix '-ly' do?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the suffix '-ly' do?",
-      "affix": "-ly",
-      "meaning": "in the manner of",
-      "options": [
-        "Makes noun",
-        "Makes verb",
-        "Makes adjective",
-        "Makes adverb"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "'Quickly' is an adverb.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l195_q2",
-      "instruction": "What does the suffix '-ment' do?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the suffix '-ment' do?",
-      "affix": "-ment",
-      "meaning": "result or action",
-      "options": [
-        "Makes verb",
-        "Makes noun",
-        "Makes adjective",
-        "Makes adverb"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Enjoyment' is a noun.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l195_q3",
-      "instruction": "What does the suffix '-ness' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the suffix '-ness' mean?",
-      "affix": "-ness",
-      "meaning": "state or quality",
-      "options": [
-        "State or quality",
-        "Action",
-        "Full of",
-        "Without"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "'Kindness' is a state.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l196_q1",
-      "instruction": "What does the prefix 'anti-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'anti-' mean?",
-      "affix": "anti-",
-      "meaning": "against",
-      "options": [
-        "for",
-        "with",
-        "against",
-        "under"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Antibody' fights against.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l196_q2",
-      "instruction": "What does the prefix 'auto-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'auto-' mean?",
-      "affix": "auto-",
-      "meaning": "self",
-      "options": [
-        "other",
-        "self",
-        "many",
-        "few"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Autobiography' is about self.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l196_q3",
-      "instruction": "What does the prefix 'bi-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'bi-' mean?",
-      "affix": "bi-",
-      "meaning": "two",
-      "options": [
-        "one",
-        "two",
-        "three",
-        "many"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Bicycle' has two wheels.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l197_q1",
-      "instruction": "What does the prefix 'tri-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'tri-' mean?",
-      "affix": "tri-",
-      "meaning": "three",
-      "options": [
-        "one",
-        "two",
-        "three",
-        "four"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Triangle' has three sides.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l197_q2",
-      "instruction": "What does the prefix 'mono-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'mono-' mean?",
-      "affix": "mono-",
-      "meaning": "one",
-      "options": [
-        "one",
-        "two",
-        "many",
-        "none"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "'Monologue' is one person speaking.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l197_q3",
-      "instruction": "What does the prefix 'multi-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the prefix 'multi-' mean?",
-      "affix": "multi-",
-      "meaning": "many",
-      "options": [
-        "one",
-        "few",
-        "none",
-        "many"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "'Multilingual' means many languages.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l198_q1",
-      "instruction": "What does the suffix '-ize' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the suffix '-ize' mean?",
-      "affix": "-ize",
-      "meaning": "to make",
-      "options": [
-        "without",
-        "to make",
-        "full of",
-        "state of"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Modernize' means to make modern.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l198_q2",
-      "instruction": "What does the suffix '-er' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the suffix '-er' mean?",
-      "affix": "-er",
-      "meaning": "one who does",
-      "options": [
-        "place",
-        "one who does",
-        "without",
-        "action"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Teacher' is one who teaches.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l198_q3",
-      "instruction": "What does the suffix '-ist' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does the suffix '-ist' mean?",
-      "affix": "-ist",
-      "meaning": "one who practices",
-      "options": [
-        "place",
-        "action",
-        "one who practices",
-        "without"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Artist' practices art.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l199_q1",
-      "instruction": "What does '-ous' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does '-ous' mean?",
-      "affix": "-ous",
-      "meaning": "having the quality of",
-      "options": [
-        "without",
-        "having quality of",
-        "action",
-        "place"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Dangerous' has quality of danger.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l199_q2",
-      "instruction": "What does '-ive' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does '-ive' mean?",
-      "affix": "-ive",
-      "meaning": "having tendency to",
-      "options": [
-        "without",
-        "place",
-        "having tendency to",
-        "one who"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Active' tends to act.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l199_q3",
-      "instruction": "What does 'super-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does 'super-' mean?",
-      "affix": "super-",
-      "meaning": "above or beyond",
-      "options": [
-        "below",
-        "above/beyond",
-        "beside",
-        "within"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Superhero' is beyond a hero.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l200_q1",
-      "instruction": "What does 'micro-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does 'micro-' mean?",
-      "affix": "micro-",
-      "meaning": "very small",
-      "options": [
-        "very large",
-        "very small",
-        "very fast",
-        "very old"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Microscope' sees small things.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l200_q2",
-      "instruction": "What does 'semi-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does 'semi-' mean?",
-      "affix": "semi-",
-      "meaning": "half",
-      "options": [
-        "full",
-        "double",
-        "half",
-        "quarter"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Semicircle' is half a circle.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "prefixSuffix_l200_q3",
-      "instruction": "What does 'trans-' mean?",
-      "difficulty": 1,
-      "subtype": "prefixSuffix",
-      "interactionType": "choice",
-      "question": "What does 'trans-' mean?",
-      "affix": "trans-",
-      "meaning": "across",
-      "options": [
-        "within",
-        "under",
-        "across",
-        "above"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "'Transport' carries across.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "prefixSuffix",
+    "batchIndex":  20,
+    "levels":  "191-200",
+    "quests":  [
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L191_Q1",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "LOGIC",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "LOGIC"
+                                   ],
+                       "correctAnswer":  "LOGIC"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L191_Q2",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "METHOD",
+                       "options":  [
+                                       "METHOD",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "METHOD"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L191_Q3",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "NETWORK",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "NETWORK",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "NETWORK"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L192_Q1",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "OBJECTIVE",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "OBJECTIVE"
+                                   ],
+                       "correctAnswer":  "OBJECTIVE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L192_Q2",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "PERSPECTIVE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "PERSPECTIVE"
+                                   ],
+                       "correctAnswer":  "PERSPECTIVE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L192_Q3",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "QUALITY",
+                       "options":  [
+                                       "QUALITY",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "QUALITY"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L193_Q1",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "RESEARCH",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "RESEARCH"
+                                   ],
+                       "correctAnswer":  "RESEARCH"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L193_Q2",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "SOURCE",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "SOURCE"
+                                   ],
+                       "correctAnswer":  "SOURCE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L193_Q3",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "THEORY",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "THEORY",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "THEORY"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L194_Q1",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "UNIQUE",
+                       "options":  [
+                                       "UNIQUE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "UNIQUE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L194_Q2",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "ANALYZE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "ANALYZE"
+                                   ],
+                       "correctAnswer":  "ANALYZE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L194_Q3",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "CONCEPT",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "CONCEPT",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "CONCEPT"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L195_Q1",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "DATA",
+                       "options":  [
+                                       "DATA",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "DATA"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L195_Q2",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "EVIDENCE",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "EVIDENCE"
+                                   ],
+                       "correctAnswer":  "EVIDENCE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L195_Q3",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "FACTOR",
+                       "options":  [
+                                       "FACTOR",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "FACTOR"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L196_Q1",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "GLOBAL",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "GLOBAL",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "GLOBAL"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L196_Q2",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "HYPOTHESIS",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "HYPOTHESIS",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "HYPOTHESIS"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L196_Q3",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "INTERPRET",
+                       "options":  [
+                                       "INTERPRET",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "INTERPRET"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L197_Q1",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "JUSTICE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "JUSTICE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "JUSTICE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L197_Q2",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "KNOWLEDGE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "KNOWLEDGE"
+                                   ],
+                       "correctAnswer":  "KNOWLEDGE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L197_Q3",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "LOGIC",
+                       "options":  [
+                                       "LOGIC",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "LOGIC"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L198_Q1",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "METHOD",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "METHOD",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "METHOD"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L198_Q2",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "NETWORK",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "NETWORK"
+                                   ],
+                       "correctAnswer":  "NETWORK"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L198_Q3",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "OBJECTIVE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "OBJECTIVE"
+                                   ],
+                       "correctAnswer":  "OBJECTIVE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L199_Q1",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "PERSPECTIVE",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "PERSPECTIVE"
+                                   ],
+                       "correctAnswer":  "PERSPECTIVE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L199_Q2",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "QUALITY",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "QUALITY",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "QUALITY"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L199_Q3",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "RESEARCH",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "RESEARCH",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "RESEARCH"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L200_Q1",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "SOURCE",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "SOURCE",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "SOURCE"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L200_Q2",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "THEORY",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "THEORY"
+                                   ],
+                       "correctAnswer":  "THEORY"
+                   },
+                   {
+                       "id":  "VOC_PREFIXSUFFIX_L200_Q3",
+                       "interactionType":  "Root Rover",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "rootWord":  "UNIQUE",
+                       "options":  [
+                                       "UNIQUE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "UNIQUE"
+                   }
+               ]
 }

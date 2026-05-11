@@ -1,0 +1,521 @@
+[
+  {
+    "level": 11,
+    "quests": [
+      {
+        "id": "KID_COLORS_L11_Q1",
+        "instruction": "Nature: What color is the high sky?",
+        "question": "☁️",
+        "options": [
+          "Blue",
+          "Green",
+          "Pink"
+        ],
+        "correctAnswer": "Blue",
+        "hint": "On a sunny day, the sky is blue!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_COLORS_L11_Q2",
+        "instruction": "Nature: What color is the grass?",
+        "question": "🌱",
+        "options": [
+          "Purple",
+          "Green",
+          "Red"
+        ],
+        "correctAnswer": "Green",
+        "hint": "Green grass grows in the garden!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_COLORS_L11_Q3",
+        "instruction": "Identify: Which is Blue?",
+        "question": "🔵 vs 🟢",
+        "options": [
+          "Blue",
+          "Green"
+        ],
+        "correctAnswer": "Blue",
+        "hint": "Look for the color of the sky!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "quests": [
+      {
+        "id": "KID_COLORS_L12_Q1",
+        "instruction": "Nature: What color is the bright sun?",
+        "question": "☀️",
+        "options": [
+          "Yellow",
+          "Blue",
+          "Black"
+        ],
+        "correctAnswer": "Yellow",
+        "hint": "The sun is a yellow star!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_COLORS_L12_Q2",
+        "instruction": "Nature: What color is the soil?",
+        "question": "⛰️",
+        "options": [
+          "White",
+          "Brown",
+          "Purple"
+        ],
+        "correctAnswer": "Brown",
+        "hint": "The ground and dirt are brown!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_COLORS_L12_Q3",
+        "instruction": "Identify: Which is Yellow?",
+        "question": "🟡 vs 🟤",
+        "options": [
+          "Yellow",
+          "Brown"
+        ],
+        "correctAnswer": "Yellow",
+        "hint": "Look for the color of the sun!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      }
+    ]
+  },
+  {
+    "level": 13,
+    "quests": [
+      {
+        "id": "KID_COLORS_L13_Q1",
+        "instruction": "Group: All these are RED",
+        "question": "🍎🍓🎈",
+        "options": [
+          "Red",
+          "Blue",
+          "Yellow"
+        ],
+        "correctAnswer": "Red",
+        "hint": "Apple, Strawberry, and Balloon are red!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_COLORS_L13_Q2",
+        "instruction": "Group: All these are GREEN",
+        "question": "🍏🥦🐢",
+        "options": [
+          "Green",
+          "Purple",
+          "Orange"
+        ],
+        "correctAnswer": "Green",
+        "hint": "Apple, Broccoli, and Turtle are green!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_COLORS_L13_Q3",
+        "instruction": "Which one is GREEN?",
+        "question": "🍏 vs 🍎",
+        "options": [
+          "Green Apple",
+          "Red Apple"
+        ],
+        "correctAnswer": "Green Apple",
+        "hint": "Find the green fruit!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      }
+    ]
+  },
+  {
+    "level": 14,
+    "quests": [
+      {
+        "id": "KID_COLORS_L14_Q1",
+        "instruction": "The Odd One Out: Find the one that is NOT Red",
+        "question": "🍎🍓🎈🍌",
+        "options": [
+          "Apple",
+          "Strawberry",
+          "Banana"
+        ],
+        "correctAnswer": "Banana",
+        "hint": "The banana is yellow, not red!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_COLORS_L14_Q2",
+        "instruction": "The Odd One Out: Find the one that is NOT Blue",
+        "question": "🔵🐦🌊🥕",
+        "options": [
+          "Bird",
+          "Ocean",
+          "Carrot"
+        ],
+        "correctAnswer": "Carrot",
+        "hint": "The carrot is orange, not blue!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_COLORS_L14_Q3",
+        "instruction": "Is an orange... Orange?",
+        "question": "🍊",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "Yes! The fruit and color have the same name!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 15,
+    "quests": [
+      {
+        "id": "KID_COLORS_L15_Q1",
+        "instruction": "Night: What color is the moon?",
+        "question": "🌙",
+        "options": [
+          "White",
+          "Black",
+          "Green"
+        ],
+        "correctAnswer": "White",
+        "hint": "The moon glows white at night!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      },
+      {
+        "id": "KID_COLORS_L15_Q2",
+        "instruction": "Night: What color is the night sky?",
+        "question": "🌌",
+        "options": [
+          "Black",
+          "Yellow",
+          "Pink"
+        ],
+        "correctAnswer": "Black",
+        "hint": "The sky is black or very dark blue at night!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      },
+      {
+        "id": "KID_COLORS_L15_Q3",
+        "instruction": "What shines at night?",
+        "question": "⭐",
+        "options": [
+          "White/Yellow",
+          "Green",
+          "Purple"
+        ],
+        "correctAnswer": "White/Yellow",
+        "hint": "Stars twinkle with bright light!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      }
+    ]
+  },
+  {
+    "level": 16,
+    "quests": [
+      {
+        "id": "KID_COLORS_L16_Q1",
+        "instruction": "Fire: What color is fire?",
+        "question": "🔥",
+        "options": [
+          "Red/Orange",
+          "Blue",
+          "Green"
+        ],
+        "correctAnswer": "Red/Orange",
+        "hint": "Fire is hot and glows red or orange!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      },
+      {
+        "id": "KID_COLORS_L16_Q2",
+        "instruction": "Which animal has Orange fur?",
+        "question": "🐅 vs 🐘",
+        "options": [
+          "Tiger",
+          "Elephant"
+        ],
+        "correctAnswer": "Tiger",
+        "hint": "Tigers are orange with black stripes!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      },
+      {
+        "id": "KID_COLORS_L16_Q3",
+        "instruction": "Which animal is Pink?",
+        "question": "🐷 vs 🐒",
+        "options": [
+          "Pig",
+          "Monkey"
+        ],
+        "correctAnswer": "Pig",
+        "hint": "Pigs are usually pink!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      }
+    ]
+  },
+  {
+    "level": 17,
+    "quests": [
+      {
+        "id": "KID_COLORS_L17_Q1",
+        "instruction": "Identify: Which is PURPLE?",
+        "question": "🟣 vs 🔴",
+        "options": [
+          "Purple",
+          "Red"
+        ],
+        "correctAnswer": "Purple",
+        "hint": "Purple is like grapes!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      },
+      {
+        "id": "KID_COLORS_L17_Q2",
+        "instruction": "Identify: Which is PINK?",
+        "question": "💗 vs 💙",
+        "options": [
+          "Pink",
+          "Blue"
+        ],
+        "correctAnswer": "Pink",
+        "hint": "Pink is like a flamingo!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      },
+      {
+        "id": "KID_COLORS_L17_Q3",
+        "instruction": "What color is a grape?",
+        "question": "🍇",
+        "options": [
+          "Purple",
+          "Yellow",
+          "Blue"
+        ],
+        "correctAnswer": "Purple",
+        "hint": "Grapes are often purple!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      }
+    ]
+  },
+  {
+    "level": 18,
+    "quests": [
+      {
+        "id": "KID_COLORS_L18_Q1",
+        "instruction": "Identify: Which is BLACK?",
+        "question": "⚫ vs ⚪",
+        "options": [
+          "Black",
+          "White"
+        ],
+        "correctAnswer": "Black",
+        "hint": "Black is dark like the night!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_COLORS_L18_Q2",
+        "instruction": "Identify: Which is WHITE?",
+        "question": "⚪ vs ⚫",
+        "options": [
+          "White",
+          "Black"
+        ],
+        "correctAnswer": "White",
+        "hint": "White is bright like a cloud!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_COLORS_L18_Q3",
+        "instruction": "What color is a sheep?",
+        "question": "🐑",
+        "options": [
+          "White",
+          "Purple",
+          "Green"
+        ],
+        "correctAnswer": "White",
+        "hint": "Sheep have fluffy white wool!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      }
+    ]
+  },
+  {
+    "level": 19,
+    "quests": [
+      {
+        "id": "KID_COLORS_L19_Q1",
+        "instruction": "Mix: What do you see in the mirror?",
+        "question": "Your hair is...?",
+        "options": [
+          "Black/Brown/Yellow",
+          "Blue",
+          "Green"
+        ],
+        "correctAnswer": "Black/Brown/Yellow",
+        "hint": "Hair is usually black, brown, or yellow/blonde!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_COLORS_L19_Q2",
+        "instruction": "What color are chocolate treats?",
+        "question": "🍫",
+        "options": [
+          "Brown",
+          "White",
+          "Red"
+        ],
+        "correctAnswer": "Brown",
+        "hint": "Chocolate is brown and sweet!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_COLORS_L19_Q3",
+        "instruction": "Which animal is Gray?",
+        "question": "🐘 vs 🦓",
+        "options": [
+          "Elephant",
+          "Zebra"
+        ],
+        "correctAnswer": "Elephant",
+        "hint": "Elephants have big gray bodies!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 20,
+    "quests": [
+      {
+        "id": "KID_COLORS_L20_Q1",
+        "instruction": "Mastery: Find the color of the SUN",
+        "question": "☀️",
+        "options": [
+          "Yellow",
+          "Blue",
+          "Red"
+        ],
+        "correctAnswer": "Yellow",
+        "hint": "The sun is yellow!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_COLORS_L20_Q2",
+        "instruction": "Mastery: Find the color of the GRASS",
+        "question": "🌱",
+        "options": [
+          "Green",
+          "Purple",
+          "Pink"
+        ],
+        "correctAnswer": "Green",
+        "hint": "The grass is green!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_COLORS_L20_Q3",
+        "instruction": "Mastery: Find the color of the SKY",
+        "question": "☁️",
+        "options": [
+          "Blue",
+          "Orange",
+          "Black"
+        ],
+        "correctAnswer": "Blue",
+        "hint": "The sky is blue!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      }
+    ]
+  }
+]

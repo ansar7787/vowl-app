@@ -16,6 +16,7 @@ class ListeningQuestModel extends ListeningQuest {
     super.correctAnswerIndex,
     super.correctAnswer,
     super.hint,
+    super.visualConfig,
     super.audioUrl,
     super.question,
     super.statement,
@@ -25,6 +26,9 @@ class ListeningQuestModel extends ListeningQuest {
     super.targetEmotion,
     super.textToSpeak,
     super.missingWord,
+    super.targetDetail,
+    super.impliedMeaning,
+    super.location,
   });
 
   factory ListeningQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -51,17 +55,21 @@ class ListeningQuestModel extends ListeningQuest {
       correctAnswerIndex: (map['correctAnswerIndex'] as num?)?.toInt(),
       correctAnswer: map['correctAnswer'],
       hint: map['hint'],
+      visualConfig: map['visual_config'] != null ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'])) : null,
       audioUrl: map['audioUrl'] ?? map['ambientAudioUrl'],
-      question: map['question'],
-      statement: map['statement'],
-      textWithBlanks: map['textWithBlanks'],
+      question: map['question'] ?? map['sentence'] ?? map['statement'],
+      statement: map['statement'] ?? map['text'],
+      textWithBlanks: map['textWithBlanks'] ?? map['sentenceWithBlank'],
       audioOptions: map['audioOptions'] != null
           ? List<String>.from(map['audioOptions'])
           : null,
-      transcript: map['transcript'] as String?,
+      transcript: map['transcript'] ?? map['text'] ?? map['sentence'] ?? map['audioTranscript'],
       targetEmotion: map['targetEmotion'],
-      textToSpeak: map['textToSpeak'] as String?,
+      textToSpeak: (map['textToSpeak'] ?? map['transcript'] ?? map['text'] ?? map['sentence']) as String?,
       missingWord: map['missingWord'] as String?,
+      targetDetail: map['targetDetail'],
+      impliedMeaning: map['impliedMeaning'],
+      location: map['location'],
     );
   }
 
@@ -85,6 +93,10 @@ class ListeningQuestModel extends ListeningQuest {
       'audioOptions': audioOptions,
       'transcript': transcript,
       'targetEmotion': targetEmotion,
+      'targetDetail': targetDetail,
+      'impliedMeaning': impliedMeaning,
+      'location': location,
     };
   }
 }
+

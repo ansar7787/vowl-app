@@ -1,547 +1,487 @@
 {
-  "gameType": "grammarQuest",
-  "batchIndex": 6,
-  "levels": "51-60",
-  "quests": [
-    {
-      "id": "grammarQuest_l51_q1",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "He doesn't like coffee.",
-      "options": [
-        "He don't like coffee.",
-        "He doesn't like coffee.",
-        "He not like coffee.",
-        "He doesn't likes coffee."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Third person singular needs 'doesn't'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l51_q2",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "She has two brothers.",
-      "options": [
-        "She have two brothers.",
-        "She has two brothers.",
-        "She haves two brothers.",
-        "She having two brothers."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Has' for third person singular.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l51_q3",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "They are playing outside.",
-      "options": [
-        "They is playing outside.",
-        "They are playing outside.",
-        "They am playing outside.",
-        "They be playing outside."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Plural subject uses 'are'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l52_q1",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "I went to school yesterday.",
-      "options": [
-        "I goed to school yesterday.",
-        "I went to school yesterday.",
-        "I wented to school yesterday.",
-        "I go to school yesterday."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Irregular past tense of 'go'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l52_q2",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "She can swim very well.",
-      "options": [
-        "She can swims very well.",
-        "She can swim very well.",
-        "She can swimming very well.",
-        "She can swam very well."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Base form after modal verbs.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l52_q3",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "The children play in the park.",
-      "options": [
-        "The childs play in the park.",
-        "The children play in the park.",
-        "The childrens play in the park.",
-        "The children plays in the park."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Irregular plural + verb agreement.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l53_q1",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "This is the best movie ever.",
-      "options": [
-        "This is the most best movie ever.",
-        "This is the best movie ever.",
-        "This is the more best movie ever.",
-        "This is the bestest movie ever."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Superlative of 'good' is 'best'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l53_q2",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "I have been to London twice.",
-      "options": [
-        "I have went to London twice.",
-        "I have been to London twice.",
-        "I have go to London twice.",
-        "I have going to London twice."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Present perfect uses past participle.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l53_q3",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "She told me to wait.",
-      "options": [
-        "She told me wait.",
-        "She told me to wait.",
-        "She told me waiting.",
-        "She told to me wait."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Tell someone to do something'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l54_q1",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "We need to buy some milk.",
-      "options": [
-        "We need buy some milk.",
-        "We need to buy some milk.",
-        "We need buying some milk.",
-        "We needs to buy some milk."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Need to + base form'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l54_q2",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "He was reading when I arrived.",
-      "options": [
-        "He was read when I arrived.",
-        "He was reading when I arrived.",
-        "He reading when I arrived.",
-        "He were reading when I arrived."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Past continuous: was + -ing.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l54_q3",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "If I were rich, I would travel.",
-      "options": [
-        "If I was rich, I would travel.",
-        "If I were rich, I would travel.",
-        "If I am rich, I would travel.",
-        "If I be rich, I would travel."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Subjunctive mood uses 'were'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l55_q1",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "Neither Tom nor Jane is here.",
-      "options": [
-        "Neither Tom nor Jane are here.",
-        "Neither Tom nor Jane is here.",
-        "Neither Tom or Jane is here.",
-        "Neither Tom nor Jane be here."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Neither...nor' with singular verb.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l55_q2",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "She speaks English fluently.",
-      "options": [
-        "She speak English fluently.",
-        "She speaks English fluently.",
-        "She speaking English fluently.",
-        "She speaked English fluently."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Third person singular adds 's'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l55_q3",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "I wish I had more time.",
-      "options": [
-        "I wish I have more time.",
-        "I wish I had more time.",
-        "I wish I has more time.",
-        "I wish I having more time."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Wish' + past tense for unreal present.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l56_q1",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "He suggested that we leave early.",
-      "options": [
-        "He suggested that we left early.",
-        "He suggested that we leave early.",
-        "He suggested that we leaves early.",
-        "He suggested us to leave early."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Subjunctive after 'suggest'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l56_q2",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "The book which I read was good.",
-      "options": [
-        "The book who I read was good.",
-        "The book which I read was good.",
-        "The book whom I read was good.",
-        "The book whose I read was good."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Which' for things.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l56_q3",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "She would rather stay home.",
-      "options": [
-        "She would rather stays home.",
-        "She would rather stay home.",
-        "She would rather staying home.",
-        "She would rather to stay home."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Would rather' + base form.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l57_q1",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "By next year, I will have graduated.",
-      "options": [
-        "By next year, I will graduated.",
-        "By next year, I will have graduated.",
-        "By next year, I will be graduate.",
-        "By next year, I have graduated."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Future perfect tense.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l57_q2",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "He apologized for being late.",
-      "options": [
-        "He apologized for be late.",
-        "He apologized for being late.",
-        "He apologized to being late.",
-        "He apologized of being late."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Preposition + gerund.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l57_q3",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "The more you practice, the better you get.",
-      "options": [
-        "The more you practice, the more better you get.",
-        "The more you practice, the better you get.",
-        "More you practice, better you get.",
-        "The more you practice, the good you get."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Comparative correlative structure.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l58_q1",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "She asked me where I lived.",
-      "options": [
-        "She asked me where I live.",
-        "She asked me where I lived.",
-        "She asked me where do I live.",
-        "She asked me where did I live."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Reported speech: tense shift.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l58_q2",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "I am used to waking up early.",
-      "options": [
-        "I am used to wake up early.",
-        "I am used to waking up early.",
-        "I used to waking up early.",
-        "I am use to waking up early."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Be used to' + gerund.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l58_q3",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "Not only is he smart, but also kind.",
-      "options": [
-        "Not only he is smart, but also kind.",
-        "Not only is he smart, but also kind.",
-        "Not only is he smart, and also kind.",
-        "Not only he smart, but also kind."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Inversion with 'not only'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l59_q1",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "Had I known, I would have helped.",
-      "options": [
-        "If I had known, I would helped.",
-        "Had I known, I would have helped.",
-        "Had I know, I would have helped.",
-        "Have I known, I would have helped."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Inverted conditional (third).",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l59_q2",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "She insisted on paying the bill.",
-      "options": [
-        "She insisted to pay the bill.",
-        "She insisted on paying the bill.",
-        "She insisted for paying the bill.",
-        "She insisted in paying the bill."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Insist on' + gerund.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l59_q3",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "It is essential that he be present.",
-      "options": [
-        "It is essential that he is present.",
-        "It is essential that he be present.",
-        "It is essential that he being present.",
-        "It is essential that he been present."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Subjunctive with 'essential'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l60_q1",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "Scarcely had he left when it rained.",
-      "options": [
-        "Scarcely he had left when it rained.",
-        "Scarcely had he left when it rained.",
-        "Scarcely had he leave when it rained.",
-        "Scarcely he left when it rained."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Inversion with 'scarcely'.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l60_q2",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "Despite being tired, she continued.",
-      "options": [
-        "Despite she was tired, she continued.",
-        "Despite being tired, she continued.",
-        "Despite of being tired, she continued.",
-        "Despite to be tired, she continued."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "'Despite' + gerund/noun.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "grammarQuest_l60_q3",
-      "instruction": "Choose the correct answer.",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "choice",
-      "question": "He acts as if he were the boss.",
-      "options": [
-        "He acts as if he is the boss.",
-        "He acts as if he were the boss.",
-        "He acts as if he was the boss.",
-        "He acts like he were the boss."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Subjunctive with 'as if'.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "grammarQuest",
+    "batchIndex":  6,
+    "levels":  "51-60",
+    "quests":  [
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L51_Q1",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the beam damages the engine into the deep.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L51_Q2",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the merchant chooses the beam behind the console.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L51_Q3",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the gear transmits the archive by the reactor.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L52_Q1",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the peak secures the blueprint behind the console.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L52_Q2",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the hunter tracks the key through the portal.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L52_Q3",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"mira heats the shield among the droids.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L53_Q1",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the soldier tracks the platform under the stars.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L53_Q2",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the explorer saves the battery between the cores.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L53_Q3",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the signal repairs the relay through the portal.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L54_Q1",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the core activates the code out of the shadows.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L54_Q2",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the ocean saves the module across the bridge.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L54_Q3",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the fluid secures the key inside the station.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L55_Q1",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"mira records the report through the portal.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L55_Q2",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the laser locks the sensor after the breach.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L55_Q3",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the shield merges the relic against the wind.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L56_Q1",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"a sentinel measures the chamber between the cores.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L56_Q2",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"mira aligns the beam past the gate.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L56_Q3",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the assembly processes the core at the foundry.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L57_Q1",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the void chooses the sensor inside the station.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L57_Q2",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the circuit builds the engine in the hub.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L57_Q3",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"someone signals the beam in the hub.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L58_Q1",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the team damages the gate on the relay.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L58_Q2",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the engineer saves the data among the droids.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L58_Q3",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the archivist damages the report within the sector.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L59_Q1",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the tool boots the relay past the gate.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L59_Q2",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the gas transmits the data at the foundry.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L59_Q3",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the medic aligns the bridge behind the console.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L60_Q1",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the tool locks the core past the gate.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L60_Q2",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"zane detects the report near the void.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_GRAMMARQUEST_L60_Q3",
+                       "interactionType":  "Quest Compass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the first character\u0027s case.",
+                       "explanation":  "Vowl protocols require capitalization.",
+                       "question":  "Analyze: \"the relay opens the bridge out of the shadows.\"",
+                       "options":  [
+                                       "Case Error",
+                                       "Punctuation Gap",
+                                       "Logic Breach",
+                                       "None"
+                                   ],
+                       "correctAnswerIndex":  0
+                   }
+               ]
 }

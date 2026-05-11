@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class ImOptionButton extends StatelessWidget {
   final String option;
@@ -13,6 +13,7 @@ class ImOptionButton extends StatelessWidget {
   final bool showResult;
   final ThemeResult theme;
   final VoidCallback onTap;
+  final bool isMidnight;
 
   const ImOptionButton({
     super.key,
@@ -22,6 +23,7 @@ class ImOptionButton extends StatelessWidget {
     required this.showResult,
     required this.theme,
     required this.onTap,
+    this.isMidnight = false,
   });
 
   @override

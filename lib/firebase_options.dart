@@ -47,32 +47,30 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAtYoq_-SySpdtxN9RzEKL38AMan34P640',
-    appId: '1:979122525797:web:f8d68318a5a680724d988c',
-    messagingSenderId: '979122525797',
-    projectId: 'voxai-quest',
-    authDomain: 'voxai-quest.firebaseapp.com',
-    storageBucket: 'voxai-quest.firebasestorage.app',
-    measurementId: 'G-LKRP70XDJX',
+    apiKey: 'AIzaSyCQW28i4Mcb7qx4BCB4kY_KPher_-g_Bhc',
+    appId: '1:497469756340:web:0c6158771d3696aa65d8e1',
+    messagingSenderId: '497469756340',
+    projectId: 'vowl-acbc5',
+    authDomain: 'vowl-acbc5.firebaseapp.com',
+    storageBucket: 'vowl-acbc5.firebasestorage.app',
+    measurementId: 'G-QS8XJS8854',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC67mjKunDsrot3Uh6Tg9XjNn1hhFv_5Co',
-    appId: '1:979122525797:android:a44a492d7a6fec854d988c',
-    messagingSenderId: '979122525797',
-    projectId: 'voxai-quest',
-    storageBucket: 'voxai-quest.firebasestorage.app',
+    apiKey: 'AIzaSyDqku10x730salv8uDeCBMX19Wm19Pn-VM',
+    appId: '1:497469756340:android:2c107108a2fc009765d8e1',
+    messagingSenderId: '497469756340',
+    projectId: 'vowl-acbc5',
+    storageBucket: 'vowl-acbc5.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBwT54xT0vwRAPJyHzkOFef7L-dhSk3lxQ',
-    appId: '1:979122525797:ios:d36e0e4d5e23889f4d988c',
-    messagingSenderId: '979122525797',
-    projectId: 'voxai-quest',
-    storageBucket: 'voxai-quest.firebasestorage.app',
-    androidClientId: '979122525797-mtsk50uopobsq7lpm0pq2bajceea878e.apps.googleusercontent.com',
-    iosClientId: '979122525797-c6id3b5rvl068de8e70rh6ovo5sp84vd.apps.googleusercontent.com',
-    iosBundleId: 'com.example.voxaiQuest',
+    apiKey: 'AIzaSyBQKoZmbi2rUWF5-Ds3yT5H8W4fQFyPZ_w',
+    appId: '1:497469756340:ios:a8fa82c0c68e34d765d8e1',
+    messagingSenderId: '497469756340',
+    projectId: 'vowl-acbc5',
+    storageBucket: 'vowl-acbc5.firebasestorage.app',
+    iosBundleId: 'com.vowl.app',
   );
 
 }

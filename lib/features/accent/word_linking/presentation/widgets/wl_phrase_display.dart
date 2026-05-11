@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/features/accent/domain/entities/accent_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
 class WLPhraseDisplay extends StatelessWidget {
   final AccentQuest quest;
   final ThemeResult theme;
   final bool isDark;
   final bool isPlaying;
+  final bool isMidnight;
 
   const WLPhraseDisplay({
     super.key,
@@ -17,6 +18,7 @@ class WLPhraseDisplay extends StatelessWidget {
     required this.theme,
     required this.isDark,
     required this.isPlaying,
+    this.isMidnight = false,
   });
 
   @override
@@ -42,6 +44,20 @@ class WLPhraseDisplay extends StatelessWidget {
       ),
       child: Column(
         children: [
+          if (quest.phoneticHint != null && quest.phoneticHint!.isNotEmpty)
+            Padding(
+              padding: EdgeInsets.only(bottom: 12.h),
+              child: Text(
+                "[ ${quest.phoneticHint} ]",
+                style: GoogleFonts.outfit(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                  color: theme.primaryColor.withValues(alpha: 0.6),
+                  fontStyle: FontStyle.italic,
+                  letterSpacing: 1.5,
+                ),
+              ),
+            ),
           Wrap(
             alignment: WrapAlignment.center,
             spacing: 24.w,

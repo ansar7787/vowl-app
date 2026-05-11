@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SsOptionButton extends StatelessWidget {
   final String option;
@@ -13,6 +13,7 @@ class SsOptionButton extends StatelessWidget {
   final bool hasSubmitted;
   final Color primaryColor;
   final VoidCallback onTap;
+  final bool isMidnight;
 
   const SsOptionButton({
     super.key,
@@ -24,6 +25,7 @@ class SsOptionButton extends StatelessWidget {
     required this.hasSubmitted,
     required this.primaryColor,
     required this.onTap,
+    this.isMidnight = false,
   });
 
   @override

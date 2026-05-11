@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/features/accent/domain/entities/accent_quest.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
 class WLOptionsList extends StatelessWidget {
   final AccentQuest quest;
   final bool isDark;
+  final bool isMidnight;
   final ThemeResult theme;
   final List<int> shuffledIndices;
   final List<int> eliminatedIndices;
@@ -26,6 +27,7 @@ class WLOptionsList extends StatelessWidget {
     required this.hasSubmitted,
     this.selectedOptionIndex,
     required this.onOptionSelected,
+    this.isMidnight = false,
   });
 
   @override
@@ -144,10 +146,12 @@ class WLOptionsList extends StatelessWidget {
     Color getTextColor() {
       if (isEliminated) return isDark ? Colors.white24 : Colors.black26;
       if (isSelected || (isCorrect && hasSubmitted)) {
-        if (isCorrect && hasSubmitted)
+        if (isCorrect && hasSubmitted) {
           return isDark ? Colors.greenAccent : Colors.green.shade800;
-        if (isSelected && hasSubmitted)
+        }
+        if (isSelected && hasSubmitted) {
           return isDark ? Colors.redAccent : Colors.red.shade800;
+        }
         return theme.primaryColor;
       }
       return isDark ? Colors.white70 : Colors.black87;

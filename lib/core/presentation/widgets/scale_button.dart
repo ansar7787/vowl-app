@@ -1,3 +1,4 @@
+import 'package:clock/clock.dart';
 import 'package:flutter/material.dart';
 
 class ScaleButton extends StatefulWidget {
@@ -22,6 +23,7 @@ class _ScaleButtonState extends State<ScaleButton>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
+  DateTime? _lastTapTime;
 
   @override
   void initState() {
@@ -39,29 +41,35 @@ class _ScaleButtonState extends State<ScaleButton>
     super.dispose();
   }
 
-  void _onTapDown(TapDownDetails details) {
-    if (widget.onTap != null) _controller.forward();
-  }
-
-  void _onTapUp(TapUpDetails details) {
-    if (widget.onTap != null) {
-      _controller.reverse();
+  void _handleTap() {
+    if (widget.onTap == null) return;
+    
+    final now = clock.now();
+    if (_lastTapTime == null || 
+        now.difference(_lastTapTime!) > const Duration(milliseconds: 500)) {
+      _lastTapTime = now;
       widget.onTap!();
     }
-  }
-
-  void _onTapCancel() {
-    if (widget.onTap != null) _controller.reverse();
   }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTapDown: _onTapDown,
-      onTapUp: _onTapUp,
-      onTapCancel: _onTapCancel,
+      onTapDown: (_) {
+        if (widget.onTap != null) _controller.forward();
+      },
+      onTapUp: (_) {
+        if (widget.onTap != null) _controller.reverse();
+      },
+      onTapCancel: () {
+        if (widget.onTap != null) _controller.reverse();
+      },
+      onTap: _handleTap,
       behavior: HitTestBehavior.opaque,
-      child: ScaleTransition(scale: _scaleAnimation, child: widget.child),
+      child: ScaleTransition(
+        scale: _scaleAnimation,
+        child: widget.child,
+      ),
     );
   }
 }

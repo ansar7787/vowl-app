@@ -1,447 +1,220 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/grammar/logic_circuit.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class SubjectVerbAgreementScreen extends StatefulWidget {
   final int level;
-  const SubjectVerbAgreementScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const SubjectVerbAgreementScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.subjectVerbAgreement,
+  });
 
   @override
-  State<SubjectVerbAgreementScreen> createState() =>
-      _SubjectVerbAgreementScreenState();
+  State<SubjectVerbAgreementScreen> createState() => _SubjectVerbAgreementScreenState();
 }
 
-class _SubjectVerbAgreementScreenState
-    extends State<SubjectVerbAgreementScreen> {
+class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  int? _selectedOptionIndex;
+  Offset _ringOffset = Offset.zero;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(
-        gameType: GameSubtype.subjectVerbAgreement,
-        level: widget.level,
-      ),
-    );
+    context.read<GrammarBloc>().add(FetchGrammarQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onOptionSelected(int index) {
-    if (_selectedOptionIndex != null) return;
-    _hapticService.selection();
-    setState(() => _selectedOptionIndex = index);
+  void _onConnect(int targetIndex, int correctIndex) {
+    if (_isAnswered) return;
 
-    final state = context.read<GrammarBloc>().state;
-    if (state is GrammarLoaded) {
-      final isCorrect = index == (state.currentQuest.correctAnswerIndex ?? 0);
-      if (isCorrect) {
-        _soundService.playCorrect();
-        _hapticService.success();
-      } else {
-        _soundService.playWrong();
-        _hapticService.error();
-      }
-      context.read<GrammarBloc>().add(SubmitAnswer(isCorrect));
+    bool isCorrect = targetIndex == correctIndex;
+
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<GrammarBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { 
+        _isAnswered = true; 
+        _isCorrect = false;
+        _ringOffset = Offset.zero;
+      });
+      context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
-  }
-
-  void _useHint() {
-    _hapticService.selection();
-    context.read<GrammarBloc>().add(GrammarHintUsed());
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: BlocConsumer<GrammarBloc, GrammarState>(
-        listener: (context, state) {
-          if (state is GrammarGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Agreement Ace!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for perfect subject-verb matching!',
-        ),
-            );
-          } else if (state is GrammarGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Discord Found',
-        description: 'You lost all hearts. Subjects and verbs must agree in number!',
-        onRestore: () => context.read<GrammarBloc>().add(RestoreLife()),
-      );
-          } else if (state is GrammarLoaded &&
-              state.lastAnswerCorrect == null) {
-            setState(() => _selectedOptionIndex = null);
+    return BlocConsumer<GrammarBloc, GrammarState>(
+      listener: (context, state) {
+        if (state is GrammarLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _ringOffset = Offset.zero;
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is GrammarLoading || state is GrammarInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is GrammarLoaded) {
-            final theme = LevelThemeHelper.getTheme(
-              'grammar',
-              level: widget.level,
-            );
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                LogicCircuit(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is GrammarError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<GrammarBloc>().add(
-                FetchGrammarQuests(
-                  gameType: GameSubtype.subjectVerbAgreement,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    GrammarLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
+          _lastLives = state.livesRemaining;
+        }
+        if (state is GrammarGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'AGREEMENT MASTER!', enableDoubleUp: true);
+        } else if (state is GrammarGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<GrammarBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final options = quest?.options ?? ["Is", "Are"];
+        
+        return GrammarBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
+          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 20.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 48.h),
+              _buildSubjectCore(quest.subject ?? "THE SUBJECT", theme.primaryColor, isDark),
+              SizedBox(height: 60.h),
+              Expanded(
+                child: Stack(
+                  alignment: Alignment.center,
                   children: [
-                    SizedBox(height: 20.h),
-                    Text(
-                      theme.title,
-                      style: GoogleFonts.outfit(
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ),
-                    SizedBox(height: 30.h),
-
-                    // Agreement Card
-                    GlassTile(
-                      padding: EdgeInsets.all(32.r),
-                      borderRadius: BorderRadius.circular(32.r),
-                      borderColor: theme.primaryColor.withValues(alpha: 0.3),
-                      color: isDark
-                          ? theme.primaryColor.withValues(alpha: 0.05)
-                          : Colors.white.withValues(alpha: 0.5),
-                      child: Column(
-                        children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 16.w,
-                              vertical: 6.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: theme.primaryColor.withValues(alpha: 0.1),
-                              borderRadius: BorderRadius.circular(12.r),
-                              border: Border.all(
-                                color: theme.primaryColor.withValues(
-                                  alpha: 0.2,
-                                ),
-                              ),
-                            ),
-                            child: Text(
-                              "SUBJECT-VERB HARMONY",
-                              style: GoogleFonts.outfit(
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 2,
-                                color: theme.primaryColor,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 24.h),
-                          Text(
-                            quest.question ??
-                                "Complete the sentence with correct agreement...",
-                            style: GoogleFonts.outfit(
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark ? Colors.white : Colors.black87,
-                              height: 1.6,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                    ).animate().fadeIn().scale(begin: const Offset(0.95, 0.95)),
-
-                    SizedBox(height: 32.h),
-                    Text(
-                      quest.instruction,
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.white60 : Colors.black54,
-                      ),
-                    ),
-                    SizedBox(height: 30.h),
-
-                    // Options Grid
-                    GridView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 16.w,
-                        mainAxisSpacing: 16.h,
-                        childAspectRatio: 2.2,
-                      ),
-                      itemCount: quest.options?.length ?? 0,
-                      itemBuilder: (context, index) {
-                        final isSelected = _selectedOptionIndex == index;
-                        final isCorrect = index == quest.correctAnswerIndex;
-                        final showResult = _selectedOptionIndex != null;
-
-                        return _buildOptionCard(
-                          text: quest.options![index],
-                          index: index,
-                          isSelected: isSelected,
-                          isCorrect: isCorrect,
-                          showResult: showResult,
-                          isDark: isDark,
-                          theme: theme,
-                        );
-                      },
-                    ),
-
-                    SizedBox(height: 40.h),
+                    // Verb Options
+                    _buildVerbOption(0, options[0], theme.primaryColor, Alignment.centerLeft, quest.correctAnswerIndex ?? 0),
+                    _buildVerbOption(1, options[1], theme.primaryColor, Alignment.centerRight, quest.correctAnswerIndex ?? 0),
+                    
+                    // The Marriage Ring
+                    if (!_isAnswered)
+                      GestureDetector(
+                        onPanUpdate: (details) {
+                          setState(() => _ringOffset += details.delta);
+                          _checkConnection(quest.correctAnswerIndex ?? 0);
+                        },
+                        onPanEnd: (details) {
+                          setState(() => _ringOffset = Offset.zero);
+                        },
+                        child: Transform.translate(
+                          offset: _ringOffset,
+                          child: _buildRing(theme.primaryColor),
+                        ),
+                      ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
                   ],
                 ),
               ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect!
-                ? "PERFECT HARMONY!"
-                : "DISCORDANT VERB!",
-            subtitle:
-                quest.explanation ?? "Singular subjects need singular verbs!",
-            onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+              SizedBox(height: 40.h),
+            ],
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildOptionCard({
-    required String text,
-    required int index,
-    required bool isSelected,
-    required bool isCorrect,
-    required bool showResult,
-    required bool isDark,
-    required ThemeResult theme,
-  }) {
-    Color? cardColor;
-    if (showResult) {
-      if (isCorrect) {
-        cardColor = const Color(0xFF10B981);
-      } else if (isSelected) {
-        cardColor = const Color(0xFFF43F5E);
-      }
+  void _checkConnection(int correctIndex) {
+    final threshold = 100.w;
+    if (_ringOffset.dx < -threshold) {
+      _onConnect(0, correctIndex);
+    } else if (_ringOffset.dx > threshold) {
+      _onConnect(1, correctIndex);
     }
-
-    return ScaleButton(
-          onTap: () => _onOptionSelected(index),
-          child: GlassTile(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            borderRadius: BorderRadius.circular(20.r),
-            color: cardColor?.withValues(alpha: 0.8),
-            borderColor: isSelected && showResult
-                ? Colors.white54
-                : theme.primaryColor.withValues(alpha: 0.1),
-            child: Center(
-              child: Text(
-                text,
-                style: GoogleFonts.outfit(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w800,
-                  color: (isSelected || showResult)
-                      ? Colors.white
-                      : (isDark ? Colors.white70 : Colors.black87),
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-        )
-        .animate()
-        .fadeIn(delay: (index * 80).ms)
-        .scale(begin: const Offset(0.9, 0.9));
   }
 
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.favorite_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("UNITE SUBJECT AND VERB", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
+  Widget _buildSubjectCore(String subject, Color primaryColor, bool isDark) {
+    return GlassTile(
+      padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 24.h),
+      borderRadius: BorderRadius.circular(50.r),
+      child: Column(
+        children: [
+          Text("THE SUBJECT", style: GoogleFonts.outfit(fontSize: 9.sp, fontWeight: FontWeight.w900, color: primaryColor.withValues(alpha: 0.6), letterSpacing: 2)),
+          SizedBox(height: 8.h),
+          Text(subject, style: GoogleFonts.fredoka(fontSize: 24.sp, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
+        ],
+      ),
+    ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 3.seconds, color: Colors.white24);
+  }
+
+  Widget _buildVerbOption(int index, String verb, Color primaryColor, Alignment alignment, int correctIndex) {
+    final isCorrect = _isAnswered && _isCorrect == true && index == correctIndex;
+    return Align(
+      alignment: alignment,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+        width: 120.r, height: 120.r,
+        margin: EdgeInsets.symmetric(horizontal: 20.w),
         decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
-          ),
+          shape: BoxShape.circle,
+          color: isCorrect ? Colors.greenAccent.withValues(alpha: 0.2) : Colors.transparent,
+          border: Border.all(color: isCorrect ? Colors.greenAccent : primaryColor.withValues(alpha: 0.2), width: 2.r),
         ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
-            ),
-          ],
+        child: Center(
+          child: Text(verb, style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w900, color: isCorrect ? Colors.greenAccent : primaryColor)),
         ),
       ),
     );
   }
 
-  
-
-  
+  Widget _buildRing(Color primaryColor) {
+    return Container(
+      width: 70.r, height: 70.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.amber, width: 6.r),
+        boxShadow: [
+          BoxShadow(color: Colors.amber.withValues(alpha: 0.5), blurRadius: 20, spreadRadius: 5)
+        ],
+      ),
+      child: Center(
+        child: Container(
+          width: 20.r, height: 20.r,
+          decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+        ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 1.seconds),
+      ),
+    );
+  }
 }
+

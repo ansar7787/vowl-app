@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart' show debugPrint, VoidCallback;
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -121,5 +121,3 @@ class SpeechService {
 
   bool get isListening => _stt.isListening;
 }
-
-typedef VoidCallback = void Function();

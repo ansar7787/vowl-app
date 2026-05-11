@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class VowelPlaybackControls extends StatelessWidget {
   final double playbackRate;
@@ -13,6 +13,7 @@ class VowelPlaybackControls extends StatelessWidget {
   final VoidCallback onPlay;
   final Function(double) onRateChange;
   final bool isDark;
+  final bool isMidnight;
   final ThemeResult theme;
 
   const VowelPlaybackControls({
@@ -24,6 +25,7 @@ class VowelPlaybackControls extends StatelessWidget {
     required this.onPlay,
     required this.onRateChange,
     required this.isDark,
+    this.isMidnight = false,
     required this.theme,
   });
 
@@ -40,13 +42,13 @@ class VowelPlaybackControls extends StatelessWidget {
               gradient: SweepGradient(
                 colors: [
                   theme.primaryColor,
-                  theme.primaryColor.withOpacity(0.5),
+                  theme.primaryColor.withValues(alpha: 0.5),
                   theme.primaryColor,
                 ],
               ),
               boxShadow: [
                 BoxShadow(
-                  color: theme.primaryColor.withOpacity(0.3),
+                  color: theme.primaryColor.withValues(alpha: 0.3),
                   blurRadius: 20,
                   spreadRadius: 5,
                 ),

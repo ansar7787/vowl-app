@@ -1,607 +1,307 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 14,
-  "levels": "131-140",
-  "quests": [
-    {
-      "id": "questionFormatter_l131_q1",
-      "instruction": "Yes/No question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"She likes ice cream.\"",
-      "sentence": "She likes ice cream.",
-      "options": [
-        "Does she like ice cream?",
-        "She likes ice cream.?",
-        "Do she likes ice cream.",
-        "She likes ice cream?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Yes/No question",
-      "explanation": "Does she like ice cream?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l131_q2",
-      "instruction": "Past tense question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"They went to school.\"",
-      "sentence": "They went to school.",
-      "options": [
-        "Did they go to school?",
-        "They went to school.?",
-        "Do they went to school.",
-        "They went to school?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Past tense question",
-      "explanation": "Did they go to school?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l131_q3",
-      "instruction": "Be-verb question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"He is a doctor.\"",
-      "sentence": "He is a doctor.",
-      "options": [
-        "Is he a doctor?",
-        "He is a doctor.?",
-        "Do he is a doctor.",
-        "He is a doctor?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Be-verb question",
-      "explanation": "Is he a doctor?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l132_q1",
-      "instruction": "Modal question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"She can swim well.\"",
-      "sentence": "She can swim well.",
-      "options": [
-        "Can she swim well?",
-        "She can swim well.?",
-        "Do she can swim well.",
-        "She can swim well?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Modal question",
-      "explanation": "Can she swim well?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l132_q2",
-      "instruction": "Perfect tense question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"They have finished lunch.\"",
-      "sentence": "They have finished lunch.",
-      "options": [
-        "Have they finished lunch?",
-        "They have finished lunch.?",
-        "Do they have finished lunch.",
-        "They have finished lunch?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Perfect tense question",
-      "explanation": "Have they finished lunch?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l132_q3",
-      "instruction": "Wh-question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"He lives in London.\"",
-      "sentence": "He lives in London.",
-      "options": [
-        "Where does he live?",
-        "He lives in London.?",
-        "Do he lives in london.",
-        "He lives in London?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Wh-question",
-      "explanation": "Where does he live?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l133_q1",
-      "instruction": "Quantity question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"She bought three books.\"",
-      "sentence": "She bought three books.",
-      "options": [
-        "How many books did she buy?",
-        "She bought three books.?",
-        "Do she bought three books.",
-        "She bought three books?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Quantity question",
-      "explanation": "How many books did she buy?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l133_q2",
-      "instruction": "Time question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"They arrived yesterday.\"",
-      "sentence": "They arrived yesterday.",
-      "options": [
-        "When did they arrive?",
-        "They arrived yesterday.?",
-        "Do they arrived yesterday.",
-        "They arrived yesterday?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Time question",
-      "explanation": "When did they arrive?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l133_q3",
-      "instruction": "Object question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"He was reading a novel.\"",
-      "sentence": "He was reading a novel.",
-      "options": [
-        "What was he reading?",
-        "He was reading a novel.?",
-        "Do he was reading a novel.",
-        "He was reading a novel?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Object question",
-      "explanation": "What was he reading?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l134_q1",
-      "instruction": "Reason question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"She studies because she loves learning.\"",
-      "sentence": "She studies because she loves learning.",
-      "options": [
-        "Why does she study?",
-        "She studies because she loves learning.?",
-        "Do she studies because she loves learning.",
-        "She studies because she loves learning?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Reason question",
-      "explanation": "Why does she study?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l134_q2",
-      "instruction": "Subject question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"Tom broke the window.\"",
-      "sentence": "Tom broke the window.",
-      "options": [
-        "Who broke the window?",
-        "Tom broke the window.?",
-        "Do tom broke the window.",
-        "Tom broke the window?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Subject question",
-      "explanation": "Who broke the window?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l134_q3",
-      "instruction": "Present continuous",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"She is cooking dinner.\"",
-      "sentence": "She is cooking dinner.",
-      "options": [
-        "Is she cooking dinner?",
-        "She is cooking dinner.?",
-        "Do she is cooking dinner.",
-        "She is cooking dinner?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Present continuous",
-      "explanation": "Is she cooking dinner?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l135_q1",
-      "instruction": "Future question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"They will come tomorrow.\"",
-      "sentence": "They will come tomorrow.",
-      "options": [
-        "Will they come tomorrow?",
-        "They will come tomorrow.?",
-        "Do they will come tomorrow.",
-        "They will come tomorrow?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Future question",
-      "explanation": "Will they come tomorrow?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l135_q2",
-      "instruction": "Perfect continuous",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"He has been working here.\"",
-      "sentence": "He has been working here.",
-      "options": [
-        "Has he been working here?",
-        "He has been working here.?",
-        "Do he has been working here.",
-        "He has been working here?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Perfect continuous",
-      "explanation": "Has he been working here?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l135_q3",
-      "instruction": "Yes/No question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"She speaks French fluently.\"",
-      "sentence": "She speaks French fluently.",
-      "options": [
-        "Does she speak French fluently?",
-        "She speaks French fluently.?",
-        "Do she speaks french fluently.",
-        "She speaks French fluently?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Yes/No question",
-      "explanation": "Does she speak French fluently?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l136_q1",
-      "instruction": "Past continuous",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"They were playing outside.\"",
-      "sentence": "They were playing outside.",
-      "options": [
-        "Were they playing outside?",
-        "They were playing outside.?",
-        "Do they were playing outside.",
-        "They were playing outside?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Past continuous",
-      "explanation": "Were they playing outside?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l136_q2",
-      "instruction": "Modal question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"He should apologize.\"",
-      "sentence": "He should apologize.",
-      "options": [
-        "Should he apologize?",
-        "He should apologize.?",
-        "Do he should apologize.",
-        "He should apologize?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Modal question",
-      "explanation": "Should he apologize?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l136_q3",
-      "instruction": "Manner question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"She traveled by train.\"",
-      "sentence": "She traveled by train.",
-      "options": [
-        "How did she travel?",
-        "She traveled by train.?",
-        "Do she traveled by train.",
-        "She traveled by train?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Manner question",
-      "explanation": "How did she travel?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l137_q1",
-      "instruction": "Place question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"They live on Main Street.\"",
-      "sentence": "They live on Main Street.",
-      "options": [
-        "Where do they live?",
-        "They live on Main Street.?",
-        "Do they live on main street.",
-        "They live on Main Street?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Place question",
-      "explanation": "Where do they live?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l137_q2",
-      "instruction": "Future perfect",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"He will have finished by then.\"",
-      "sentence": "He will have finished by then.",
-      "options": [
-        "Will he have finished by then?",
-        "He will have finished by then.?",
-        "Do he will have finished by then.",
-        "He will have finished by then?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Future perfect",
-      "explanation": "Will he have finished by then?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l137_q3",
-      "instruction": "Be-verb question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"I am going to the store.\"",
-      "sentence": "I am going to the store.",
-      "options": [
-        "Am I going to the store?",
-        "I am going to the store.?",
-        "Do i am going to the store.",
-        "I am going to the store?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Be-verb question",
-      "explanation": "Am I going to the store?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l138_q1",
-      "instruction": "Modal question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"She must complete the form.\"",
-      "sentence": "She must complete the form.",
-      "options": [
-        "Must she complete the form?",
-        "She must complete the form.?",
-        "Do she must complete the form.",
-        "She must complete the form?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Modal question",
-      "explanation": "Must she complete the form?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l138_q2",
-      "instruction": "Object question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"They ate pizza for dinner.\"",
-      "sentence": "They ate pizza for dinner.",
-      "options": [
-        "What did they eat for dinner?",
-        "They ate pizza for dinner.?",
-        "Do they ate pizza for dinner.",
-        "They ate pizza for dinner?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Object question",
-      "explanation": "What did they eat for dinner?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l138_q3",
-      "instruction": "Distance question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"He runs five miles daily.\"",
-      "sentence": "He runs five miles daily.",
-      "options": [
-        "How far does he run daily?",
-        "He runs five miles daily.?",
-        "Do he runs five miles daily.",
-        "He runs five miles daily?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Distance question",
-      "explanation": "How far does he run daily?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l139_q1",
-      "instruction": "Place question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"She was born in Paris.\"",
-      "sentence": "She was born in Paris.",
-      "options": [
-        "Where was she born?",
-        "She was born in Paris.?",
-        "Do she was born in paris.",
-        "She was born in Paris?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Place question",
-      "explanation": "Where was she born?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l139_q2",
-      "instruction": "Duration question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"They have been waiting long.\"",
-      "sentence": "They have been waiting long.",
-      "options": [
-        "How long have they been waiting?",
-        "They have been waiting long.?",
-        "Do they have been waiting long.",
-        "They have been waiting long?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Duration question",
-      "explanation": "How long have they been waiting?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l139_q3",
-      "instruction": "Modal question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"He could solve the problem.\"",
-      "sentence": "He could solve the problem.",
-      "options": [
-        "Could he solve the problem?",
-        "He could solve the problem.?",
-        "Do he could solve the problem.",
-        "He could solve the problem?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Modal question",
-      "explanation": "Could he solve the problem?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l140_q1",
-      "instruction": "Yes/No question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"She drives to work daily.\"",
-      "sentence": "She drives to work daily.",
-      "options": [
-        "Does she drive to work daily?",
-        "She drives to work daily.?",
-        "Do she drives to work daily.",
-        "She drives to work daily?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Yes/No question",
-      "explanation": "Does she drive to work daily?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l140_q2",
-      "instruction": "Place question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"They met at the cafe.\"",
-      "sentence": "They met at the cafe.",
-      "options": [
-        "Where did they meet?",
-        "They met at the cafe.?",
-        "Do they met at the cafe.",
-        "They met at the cafe?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Place question",
-      "explanation": "Where did they meet?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "questionFormatter_l140_q3",
-      "instruction": "Possessive question",
-      "difficulty": 4,
-      "subtype": "questionFormatter",
-      "interactionType": "choice",
-      "question": "Convert to a question: \"He is reading Tom's book.\"",
-      "sentence": "He is reading Tom's book.",
-      "options": [
-        "Whose book is he reading?",
-        "He is reading Tom's book.?",
-        "Do he is reading tom's book.",
-        "He is reading Tom's book?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Possessive question",
-      "explanation": "Whose book is he reading?",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "questionFormatter",
+    "batchIndex":  14,
+    "levels":  "131-140",
+    "quests":  [
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L131_Q1",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The echo repairs the battery near the Void.",
+                       "correctAnswer":  "Does The echo repairs the battery near the Void?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L131_Q2",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The sand identifies the gate against the wind.",
+                       "correctAnswer":  "Does The sand identifies the gate against the wind?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L131_Q3",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The engineer measures the module into the deep.",
+                       "correctAnswer":  "Does The engineer measures the module into the deep?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L132_Q1",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "Someone splits the code before the dawn.",
+                       "correctAnswer":  "Does Someone splits the code before the dawn?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L132_Q2",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The tool routes the relay after the breach.",
+                       "correctAnswer":  "Does The tool routes the relay after the breach?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L132_Q3",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "Someone makes the relay by the reactor.",
+                       "correctAnswer":  "Does Someone makes the relay by the reactor?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L133_Q1",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The team signals the sensor among the droids.",
+                       "correctAnswer":  "Does The team signals the sensor among the droids?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L133_Q2",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The cave observes the blueprint between the cores.",
+                       "correctAnswer":  "Does The cave observes the blueprint between the cores?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L133_Q3",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The signal builds the system by the reactor.",
+                       "correctAnswer":  "Does The signal builds the system by the reactor?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L134_Q1",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The gas repairs the code after the breach.",
+                       "correctAnswer":  "Does The gas repairs the code after the breach?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L134_Q2",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The wings protects the system during the storm.",
+                       "correctAnswer":  "Does The wings protects the system during the storm?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L134_Q3",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The explorer repairs the report under the stars.",
+                       "correctAnswer":  "Does The explorer repairs the report under the stars?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L135_Q1",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The commander powers the gate behind the console.",
+                       "correctAnswer":  "Does The commander powers the gate behind the console?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L135_Q2",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The circuit updates the system under the stars.",
+                       "correctAnswer":  "Does The circuit updates the system under the stars?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L135_Q3",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The weapon filters the pulse through the portal.",
+                       "correctAnswer":  "Does The weapon filters the pulse through the portal?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L136_Q1",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The screen splits the core by the reactor.",
+                       "correctAnswer":  "Does The screen splits the core by the reactor?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L136_Q2",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The river explores the report near the Void.",
+                       "correctAnswer":  "Does The river explores the report near the Void?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L136_Q3",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The leader binds the data before the dawn.",
+                       "correctAnswer":  "Does The leader binds the data before the dawn?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L137_Q1",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The engine monitors the console through the portal.",
+                       "correctAnswer":  "Does The engine monitors the console through the portal?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L137_Q2",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The button makes the console by the reactor.",
+                       "correctAnswer":  "Does The button makes the console by the reactor?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L137_Q3",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The scholar aligns the code behind the console.",
+                       "correctAnswer":  "Does The scholar aligns the code behind the console?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L138_Q1",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The scholar signals the vault into the deep.",
+                       "correctAnswer":  "Does The scholar signals the vault into the deep?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L138_Q2",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The keeper fixes the relay by the reactor.",
+                       "correctAnswer":  "Does The keeper fixes the relay by the reactor?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L138_Q3",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The guard filters the platform in the Hub.",
+                       "correctAnswer":  "Does The guard filters the platform in the Hub?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L139_Q1",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The crystal collects the platform through the portal.",
+                       "correctAnswer":  "Does The crystal collects the platform through the portal?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L139_Q2",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "Each scout explores the archive within the sector.",
+                       "correctAnswer":  "Does Each scout explores the archive within the sector?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L139_Q3",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The group calculates the circuit at the foundry.",
+                       "correctAnswer":  "Does The group calculates the circuit at the foundry?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L140_Q1",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The deck scans the drone against the wind.",
+                       "correctAnswer":  "Does The deck scans the drone against the wind?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L140_Q2",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The bridge aligns the data on the relay.",
+                       "correctAnswer":  "Does The bridge aligns the data on the relay?"
+                   },
+                   {
+                       "id":  "GRM_QUESTIONFORMATTER_L140_Q3",
+                       "interactionType":  "Question Inverter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Use \u0027Does\u0027 and a question mark.",
+                       "explanation":  "Interrogatives shift sequence.",
+                       "sentence":  "The satellite builds the data after the breach.",
+                       "correctAnswer":  "Does The satellite builds the data after the breach?"
+                   }
+               ]
 }

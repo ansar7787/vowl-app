@@ -3,8 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class SCRecordingButton extends StatelessWidget {
   final bool isListening;
@@ -14,6 +14,7 @@ class SCRecordingButton extends StatelessWidget {
   final String targetSentence;
   final VoidCallback onStartListening;
   final VoidCallback onStopListening;
+  final bool isMidnight;
 
   const SCRecordingButton({
     super.key,
@@ -24,6 +25,7 @@ class SCRecordingButton extends StatelessWidget {
     required this.targetSentence,
     required this.onStartListening,
     required this.onStopListening,
+    this.isMidnight = false,
   });
 
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voxai_quest/core/presentation/widgets/games/maps/modern_category_map.dart';
+import 'package:vowl/core/presentation/widgets/games/maps/modern_category_map.dart';
 
 class SituationalResponseMap extends StatelessWidget {
   const SituationalResponseMap({super.key});

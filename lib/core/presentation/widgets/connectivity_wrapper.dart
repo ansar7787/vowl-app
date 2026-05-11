@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
-import 'package:voxai_quest/core/presentation/pages/no_internet_page.dart';
+import 'package:vowl/core/presentation/pages/no_internet_page.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class ConnectivityWrapper extends StatelessWidget {
   final Widget child;
@@ -10,7 +11,7 @@ class ConnectivityWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<InternetStatus>(
-      stream: InternetConnection().onStatusChange,
+      stream: di.sl<InternetConnection>().onStatusChange,
       builder: (context, snapshot) {
         if (snapshot.hasData && snapshot.data == InternetStatus.disconnected) {
           return NoInternetPage(

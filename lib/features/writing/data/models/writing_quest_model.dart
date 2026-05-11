@@ -16,6 +16,7 @@ class WritingQuestModel extends WritingQuest {
     super.correctAnswerIndex,
     super.correctAnswer,
     super.hint,
+    super.visualConfig,
     super.prefix,
     super.suffix,
     super.situation,
@@ -34,6 +35,9 @@ class WritingQuestModel extends WritingQuest {
     super.context,
     super.partialSentence,
     super.completion,
+    super.subject,
+    super.recipient,
+    super.essayTopic,
   });
 
   factory WritingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -42,6 +46,15 @@ class WritingQuestModel extends WritingQuest {
       (s) => s.name == subtypeStr,
       orElse: () => GameSubtype.sentenceBuilder,
     );
+
+    // Helper to safely get a string from either a String or a List of Strings
+    String? getString(dynamic value) {
+      if (value == null) return null;
+      if (value is String) return value;
+      if (value is List) return value.join(' ');
+      return value.toString();
+    }
+
     return WritingQuestModel(
       id: id,
       type: subtype.category,
@@ -54,39 +67,45 @@ class WritingQuestModel extends WritingQuest {
       ),
       xpReward: map['xpReward'] ?? 10,
       coinReward: map['coinReward'] ?? 5,
-      livesAllowed: map['livesAllowed'],
+      livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
       options: map['options'] != null
           ? List<String>.from(map['options'])
-          : null,
+          : (map['choices'] != null ? List<String>.from(map['choices']) : null),
       correctAnswerIndex: map['correctAnswerIndex'],
-      correctAnswer: map['correctAnswer'],
+      correctAnswer: getString(map['correctAnswer']),
       hint: map['hint'],
+      visualConfig: map['visual_config'] != null
+          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config']))
+          : null,
       prefix: map['prefix'],
       suffix: map['suffix'],
-      situation: map['situation'],
+      situation: map['situation'] ?? map['context'] ?? map['story'],
       minWords: map['minWords'],
-      story: map['story'],
+      story: map['story'] ?? map['passage'] ?? map['text'],
       requiredPoints: map['requiredPoints'] != null
           ? List<String>.from(map['requiredPoints'])
           : null,
-      passage: map['passage'],
-      question: map['question'],
+      passage: map['passage'] ?? map['text'] ?? map['content'] ?? map['story'],
+      question: map['question'] ?? map['instruction'] ?? map['prompt'],
       missingWord: map['missingWord'],
-      prompt: map['prompt'] ?? map['journalPrompt'],
-      sampleAnswer: map['sampleAnswer'],
+      prompt: map['prompt'] ?? map['journalPrompt'] ?? map['question'] ?? map['instruction'],
+      sampleAnswer: getString(map['sampleAnswer'] ?? map['correctAnswer']),
       explanation: map['explanation'],
       shuffledWords: map['shuffledWords'] != null
           ? List<String>.from(map['shuffledWords'])
           : (map['shuffledSentences'] != null
-                ? List<String>.from(map['shuffledSentences'])
-                : null),
+              ? List<String>.from(map['shuffledSentences'])
+              : (map['options'] != null ? List<String>.from(map['options']) : null)),
       correctOrder: map['correctOrder'] != null
-          ? List<int>.from(map['correctOrder'])
+          ? (map['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
           : null,
       dayDescription: map['dayDescription'],
-      context: map['context'],
-      partialSentence: map['partialSentence'],
+      context: map['context'] ?? map['situation'],
+      partialSentence: map['partialSentence'] ?? map['sentence'],
       completion: map['completion'],
+      subject: map['subject'],
+      recipient: map['recipient'],
+      essayTopic: map['essayTopic'],
     );
   }
 
@@ -121,6 +140,10 @@ class WritingQuestModel extends WritingQuest {
       'context': context,
       'partialSentence': partialSentence,
       'completion': completion,
+      'subject': subject,
+      'recipient': recipient,
+      'essayTopic': essayTopic,
     };
   }
 }
+

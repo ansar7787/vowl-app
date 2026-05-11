@@ -1,607 +1,337 @@
 {
-  "gameType": "findWordMeaning",
-  "batchIndex": 2,
-  "levels": "11-20",
-  "quests": [
-    {
-      "id": "findWordMeaning_l11_q1",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The teacher was very lenient and let students submit assignments late.",
-      "question": "What does 'lenient' mean?",
-      "targetWord": "lenient",
-      "options": [
-        "Strict",
-        "Permissive",
-        "Angry",
-        "Confused"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Opposite of strict.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l11_q2",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The abandoned building looked dilapidated after years of neglect.",
-      "question": "What does 'dilapidated' mean?",
-      "targetWord": "dilapidated",
-      "options": [
-        "New",
-        "Colorful",
-        "Run-down",
-        "Expensive"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Think of something in poor condition.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l11_q3",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "Her eloquent speech moved the entire audience to tears.",
-      "question": "What does 'eloquent' mean?",
-      "targetWord": "eloquent",
-      "options": [
-        "Boring",
-        "Fluent and persuasive",
-        "Short",
-        "Loud"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Related to speaking well.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l12_q1",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The scientist made a groundbreaking discovery that was considered unprecedented.",
-      "question": "What does 'unprecedented' mean?",
-      "targetWord": "unprecedented",
-      "options": [
-        "Common",
-        "Expected",
-        "Never done before",
-        "Dangerous"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Without precedent.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l12_q2",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "He was known for his frugal habits, never spending more than necessary.",
-      "question": "What does 'frugal' mean?",
-      "targetWord": "frugal",
-      "options": [
-        "Wasteful",
-        "Economical",
-        "Wealthy",
-        "Careless"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Careful with money.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l12_q3",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The arduous journey through the mountains took three days.",
-      "question": "What does 'arduous' mean?",
-      "targetWord": "arduous",
-      "options": [
-        "Easy",
-        "Short",
-        "Difficult",
-        "Pleasant"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Requiring great effort.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l13_q1",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The detective noticed a subtle clue that others had overlooked.",
-      "question": "What does 'subtle' mean?",
-      "targetWord": "subtle",
-      "options": [
-        "Obvious",
-        "Not immediately noticeable",
-        "Loud",
-        "Large"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Hard to detect.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l13_q2",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "Her benevolent nature made her beloved by everyone in the community.",
-      "question": "What does 'benevolent' mean?",
-      "targetWord": "benevolent",
-      "options": [
-        "Selfish",
-        "Kind and generous",
-        "Shy",
-        "Strict"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Well-meaning and kind.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l13_q3",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The pragmatic leader focused on practical solutions rather than theories.",
-      "question": "What does 'pragmatic' mean?",
-      "targetWord": "pragmatic",
-      "options": [
-        "Theoretical",
-        "Practical",
-        "Emotional",
-        "Creative"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Dealing with things practically.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l14_q1",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The children were jubilant when they heard school was cancelled.",
-      "question": "What does 'jubilant' mean?",
-      "targetWord": "jubilant",
-      "options": [
-        "Sad",
-        "Angry",
-        "Extremely happy",
-        "Confused"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Feeling great joy.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l14_q2",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The teacher tried to alleviate the students' anxiety before the exam.",
-      "question": "What does 'alleviate' mean?",
-      "targetWord": "alleviate",
-      "options": [
-        "Increase",
-        "Reduce",
-        "Ignore",
-        "Create"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "To make less severe.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l14_q3",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "His ambiguous answer left everyone confused about his true intentions.",
-      "question": "What does 'ambiguous' mean?",
-      "targetWord": "ambiguous",
-      "options": [
-        "Clear",
-        "Open to interpretation",
-        "Long",
-        "Funny"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Having more than one meaning.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l15_q1",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The resilient community rebuilt quickly after the devastating storm.",
-      "question": "What does 'resilient' mean?",
-      "targetWord": "resilient",
-      "options": [
-        "Weak",
-        "Able to recover",
-        "Wealthy",
-        "Remote"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Bouncing back from difficulty.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l15_q2",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "She felt a profound sense of gratitude for their generosity.",
-      "question": "What does 'profound' mean?",
-      "targetWord": "profound",
-      "options": [
-        "Shallow",
-        "Deep and intense",
-        "Brief",
-        "Mild"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Very great or intense.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l15_q3",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The meticulous artist spent hours perfecting every tiny detail.",
-      "question": "What does 'meticulous' mean?",
-      "targetWord": "meticulous",
-      "options": [
-        "Careless",
-        "Very careful and precise",
-        "Fast",
-        "Lazy"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Showing great attention to detail.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l16_q1",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The obsolete technology was replaced by modern innovations.",
-      "question": "What does 'obsolete' mean?",
-      "targetWord": "obsolete",
-      "options": [
-        "Modern",
-        "No longer in use",
-        "Expensive",
-        "Popular"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Out of date.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l16_q2",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The candid interview revealed surprising truths about the celebrity.",
-      "question": "What does 'candid' mean?",
-      "targetWord": "candid",
-      "options": [
-        "Rehearsed",
-        "Truthful and straightforward",
-        "Boring",
-        "Secret"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Frank and honest.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l16_q3",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The tenacious athlete refused to give up despite multiple injuries.",
-      "question": "What does 'tenacious' mean?",
-      "targetWord": "tenacious",
-      "options": [
-        "Lazy",
-        "Persistent",
-        "Weak",
-        "Calm"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Holding firmly to something.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l17_q1",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The novel had a compelling plot that kept readers engaged until the end.",
-      "question": "What does 'compelling' mean?",
-      "targetWord": "compelling",
-      "options": [
-        "Boring",
-        "Evoking strong interest",
-        "Short",
-        "Confusing"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Powerfully attracting attention.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l17_q2",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "His lethargic behavior after lunch concerned his colleagues.",
-      "question": "What does 'lethargic' mean?",
-      "targetWord": "lethargic",
-      "options": [
-        "Energetic",
-        "Lacking energy",
-        "Happy",
-        "Angry"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Sluggish and inactive.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l17_q3",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The copious notes she took filled three entire notebooks.",
-      "question": "What does 'copious' mean?",
-      "targetWord": "copious",
-      "options": [
-        "Few",
-        "Abundant",
-        "Messy",
-        "Small"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "In large quantities.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l18_q1",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The ominous clouds suggested a severe storm was approaching.",
-      "question": "What does 'ominous' mean?",
-      "targetWord": "ominous",
-      "options": [
-        "Bright",
-        "Threatening",
-        "Beautiful",
-        "Tiny"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Giving the feeling something bad will happen.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l18_q2",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "She made an astute observation that solved the entire mystery.",
-      "question": "What does 'astute' mean?",
-      "targetWord": "astute",
-      "options": [
-        "Foolish",
-        "Shrewd and perceptive",
-        "Slow",
-        "Loud"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Having sharp judgment.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l18_q3",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The ephemeral beauty of the sunset lasted only minutes.",
-      "question": "What does 'ephemeral' mean?",
-      "targetWord": "ephemeral",
-      "options": [
-        "Lasting forever",
-        "Short-lived",
-        "Bright",
-        "Dark"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Lasting a very short time.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l19_q1",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "His gregarious personality made him the life of every party.",
-      "question": "What does 'gregarious' mean?",
-      "targetWord": "gregarious",
-      "options": [
-        "Shy",
-        "Sociable",
-        "Angry",
-        "Quiet"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Fond of company.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l19_q2",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The defendant's testimony was deemed credible by the jury.",
-      "question": "What does 'credible' mean?",
-      "targetWord": "credible",
-      "options": [
-        "Unbelievable",
-        "Believable",
-        "Long",
-        "Emotional"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Able to be believed.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l19_q3",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The pervasive smell of fresh bread filled the entire bakery.",
-      "question": "What does 'pervasive' mean?",
-      "targetWord": "pervasive",
-      "options": [
-        "Faint",
-        "Spreading widely",
-        "Temporary",
-        "Weak"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Present throughout.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l20_q1",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The film received unanimous praise from all the critics.",
-      "question": "What does 'unanimous' mean?",
-      "targetWord": "unanimous",
-      "options": [
-        "Mixed",
-        "Fully in agreement",
-        "Negative",
-        "Partial"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Everyone agrees.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l20_q2",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "She approached the problem with a methodical step-by-step plan.",
-      "question": "What does 'methodical' mean?",
-      "targetWord": "methodical",
-      "options": [
-        "Random",
-        "Systematic",
-        "Quick",
-        "Emotional"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Done in an orderly way.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "findWordMeaning_l20_q3",
-      "instruction": "Find the word meaning.",
-      "difficulty": 1,
-      "subtype": "findWordMeaning",
-      "interactionType": "choice",
-      "passage": "The innovative design won first prize at the science fair.",
-      "question": "What does 'innovative' mean?",
-      "targetWord": "innovative",
-      "options": [
-        "Old",
-        "Introducing new ideas",
-        "Boring",
-        "Complex"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Creative and original.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "findWordMeaning",
+    "batchIndex":  2,
+    "levels":  "11-20",
+    "quests":  [
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L11_Q1",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L11_Q2",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L11_Q3",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L12_Q1",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L12_Q2",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L12_Q3",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L13_Q1",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L13_Q2",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L13_Q3",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L14_Q1",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L14_Q2",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L14_Q3",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L15_Q1",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L15_Q2",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L15_Q3",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L16_Q1",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L16_Q2",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L16_Q3",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L17_Q1",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L17_Q2",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L17_Q3",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L18_Q1",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L18_Q2",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L18_Q3",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L19_Q1",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L19_Q2",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L19_Q3",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L20_Q1",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L20_Q2",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   },
+                   {
+                       "id":  "RDG_FINDWORDMEANING_L20_Q3",
+                       "interactionType":  "Magnifying Glass",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for a noun meaning \u0027not giving up\u0027.",
+                       "explanation":  "Contextual meaning is inferred from surrounding lexical neighbors.",
+                       "passage":  "The team\u0027s persistence led to a breakthrough in renewable energy.",
+                       "question":  "Definition: The quality of continuing steadily despite problems.",
+                       "targetWord":  "persistence"
+                   }
+               ]
 }

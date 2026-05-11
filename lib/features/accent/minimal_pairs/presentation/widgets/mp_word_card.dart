@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/utils/ipa_dictionary.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 //  MpWordCard — Tap card showing word + IPA with dynamic color states
@@ -18,7 +17,9 @@ class MpWordCard extends StatelessWidget {
   final List<int> eliminated;
   final bool isDark;
   final ThemeResult theme;
+  final bool isMidnight;
   final void Function(int index, String word) onTap;
+  final String? ipa;
 
   const MpWordCard({
     super.key,
@@ -30,6 +31,8 @@ class MpWordCard extends StatelessWidget {
     required this.isDark,
     required this.theme,
     required this.onTap,
+    this.ipa,
+    this.isMidnight = false,
   });
 
   static const _green = Color(0xFF10B981);
@@ -48,7 +51,7 @@ class MpWordCard extends StatelessWidget {
     final isCorrect =
         word.trim().toLowerCase() == correctWord.trim().toLowerCase();
     final showResult = selectedIndex != null;
-    final ipa = IpaDictionary.getIpa(word);
+    final ipaText = ipa ?? '';
 
     final (Color bg, Color border, Color text) = _resolveColors(
       isElim: isElim,
@@ -110,10 +113,10 @@ class MpWordCard extends StatelessWidget {
                   ),
 
                   // IPA transcription
-                  if (ipa.isNotEmpty) ...[
+                  if (ipaText.isNotEmpty) ...[
                     SizedBox(height: 6.h),
                     Text(
-                      ipa,
+                      ipaText,
                       style: _ipaStyle.copyWith(
                         fontSize: 14.sp,
                         color: isDark ? Colors.white38 : Colors.black38,

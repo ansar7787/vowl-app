@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:voxai_quest/features/auth/domain/usecases/log_in_with_email.dart';
-import 'package:voxai_quest/features/auth/domain/usecases/log_in_with_google.dart';
-import 'package:voxai_quest/features/auth/domain/usecases/forgot_password.dart';
-import 'package:voxai_quest/core/usecases/usecase.dart';
-import 'package:voxai_quest/core/utils/auth_error_handler.dart';
-import 'package:voxai_quest/core/network/network_info.dart';
+import 'package:vowl/features/auth/domain/usecases/log_in_with_email.dart';
+import 'package:vowl/features/auth/domain/usecases/log_in_with_google.dart';
+import 'package:vowl/features/auth/domain/usecases/forgot_password.dart';
+import 'package:vowl/core/usecases/usecase.dart';
+import 'package:vowl/core/utils/auth_error_handler.dart';
+import 'package:vowl/core/network/network_info.dart';
 
 class LoginState extends Equatable {
   final String email;
@@ -96,13 +96,19 @@ class LoginCubit extends Cubit<LoginState> {
       LogInParams(email: state.email, password: state.password),
     );
     result.fold(
-      (failure) => emit(
-        state.copyWith(
-          isSubmitting: false,
-          errorMessage: AuthErrorHandler.getMessage(failure.message),
-        ),
-      ),
-      (_) => emit(state.copyWith(isSubmitting: false, isSuccess: true)),
+      (failure) {
+        if (isClosed) return;
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            errorMessage: AuthErrorHandler.getMessage(failure.message),
+          ),
+        );
+      },
+      (_) {
+        if (isClosed) return;
+        emit(state.copyWith(isSubmitting: false, isSuccess: true));
+      },
     );
   }
 
@@ -121,13 +127,19 @@ class LoginCubit extends Cubit<LoginState> {
     emit(state.copyWith(isSubmitting: true));
     final result = await _logInWithGoogle(NoParams());
     result.fold(
-      (failure) => emit(
-        state.copyWith(
-          isSubmitting: false,
-          errorMessage: AuthErrorHandler.getMessage(failure.message),
-        ),
-      ),
-      (_) => emit(state.copyWith(isSubmitting: false, isSuccess: true)),
+      (failure) {
+        if (isClosed) return;
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            errorMessage: AuthErrorHandler.getMessage(failure.message),
+          ),
+        );
+      },
+      (_) {
+        if (isClosed) return;
+        emit(state.copyWith(isSubmitting: false, isSuccess: true));
+      },
     );
   }
 
@@ -146,18 +158,24 @@ class LoginCubit extends Cubit<LoginState> {
     emit(state.copyWith(isSubmitting: true));
     final result = await _forgotPassword(email);
     result.fold(
-      (failure) => emit(
-        state.copyWith(
-          isSubmitting: false,
-          errorMessage: AuthErrorHandler.getMessage(failure.message),
-        ),
-      ),
-      (_) => emit(
-        state.copyWith(
-          isSubmitting: false,
-          successMessage: 'Password reset link sent! Check your email.',
-        ),
-      ),
+      (failure) {
+        if (isClosed) return;
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            errorMessage: AuthErrorHandler.getMessage(failure.message),
+          ),
+        );
+      },
+      (_) {
+        if (isClosed) return;
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            successMessage: 'Password reset link sent! Check your email.',
+          ),
+        );
+      },
     );
   }
 

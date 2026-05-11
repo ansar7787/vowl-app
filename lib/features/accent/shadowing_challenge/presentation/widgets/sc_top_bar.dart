@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/features/accent/domain/entities/accent_quest.dart';
-import 'package:voxai_quest/features/accent/presentation/bloc/accent_bloc.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
+import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class SCTopBar extends StatelessWidget {
   final AccentLoaded state;
   final ThemeResult theme;
   final bool isDark;
   final VoidCallback onHintPressed;
+  final VoidCallback onClose;
   final AccentQuest quest;
+  final bool isMidnight;
 
   const SCTopBar({
     super.key,
@@ -23,7 +24,9 @@ class SCTopBar extends StatelessWidget {
     required this.theme,
     required this.isDark,
     required this.onHintPressed,
+    required this.onClose,
     required this.quest,
+    this.isMidnight = false,
   });
 
   @override
@@ -34,17 +37,24 @@ class SCTopBar extends StatelessWidget {
       child: Row(
         children: [
           ScaleButton(
-            onTap: () => context.pop(),
+            onTap: onClose,
             child: Container(
               padding: EdgeInsets.all(10.r),
               decoration: BoxDecoration(
-                color: isDark ? Colors.white10 : Colors.black12,
+                color: isDark ? Colors.black45 : Colors.white,
                 shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
               ),
               child: Icon(
                 Icons.close_rounded,
                 size: 24.r,
-                color: isDark ? Colors.white70 : Colors.black54,
+                color: isDark ? Colors.white : Colors.black87,
               ),
             ),
           ),
@@ -74,8 +84,15 @@ class SCTopBar extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
+        color: isDark ? Colors.black45 : Colors.white,
         borderRadius: BorderRadius.circular(20.r),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -104,12 +121,20 @@ class SCTopBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: disabled
               ? Colors.grey.withValues(alpha: 0.1)
-              : theme.primaryColor.withValues(alpha: 0.1),
+              : (isDark ? Colors.black45 : Colors.white),
           borderRadius: BorderRadius.circular(20.r),
+          boxShadow: [
+            if (!disabled)
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.05),
+                blurRadius: 10,
+                offset: const Offset(0, 4),
+              ),
+          ],
           border: Border.all(
             color: disabled
                 ? Colors.grey.withValues(alpha: 0.3)
-                : theme.primaryColor.withValues(alpha: 0.5),
+                : theme.primaryColor.withValues(alpha: 0.1),
             width: 1,
           ),
         ),

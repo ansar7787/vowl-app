@@ -92,7 +92,7 @@ class KidsAudioService {
     if (!(await isSfxEnabled())) return;
     try {
       await _sfxPlayer.stop();
-      await _sfxPlayer.setSource(AssetSource('sounds/level_complete.mp3'));
+      await _sfxPlayer.setSource(AssetSource('sounds/level_completed.mp3'));
       await _sfxPlayer.setVolume(1.0);
       await _sfxPlayer.resume();
     } catch (e) {

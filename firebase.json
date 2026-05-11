@@ -1,1 +1,40 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"voxai-quest","appId":"1:979122525797:android:a44a492d7a6fec854d988c","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"voxai-quest","configurations":{"android":"1:979122525797:android:a44a492d7a6fec854d988c","ios":"1:979122525797:ios:d36e0e4d5e23889f4d988c","web":"1:979122525797:web:f8d68318a5a680724d988c"}}}}}}
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "vowl-acbc5",
+          "appId": "1:497469756340:android:2c107108a2fc009765d8e1",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "vowl-acbc5",
+          "configurations": {
+            "android": "1:497469756340:android:2c107108a2fc009765d8e1",
+            "ios": "1:497469756340:ios:a8fa82c0c68e34d765d8e1",
+            "web": "1:497469756340:web:0c6158771d3696aa65d8e1"
+          }
+        }
+      }
+    }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "disallowLegacyRuntimeConfig": true,
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:voxai_quest/features/auth/domain/usecases/sign_up.dart';
-import 'package:voxai_quest/features/auth/domain/usecases/send_email_verification.dart';
-import 'package:voxai_quest/core/utils/auth_error_handler.dart';
-import 'package:voxai_quest/core/usecases/usecase.dart';
-import 'package:voxai_quest/core/network/network_info.dart';
+import 'package:vowl/features/auth/domain/usecases/sign_up.dart';
+import 'package:vowl/features/auth/domain/usecases/send_email_verification.dart';
+import 'package:vowl/core/utils/auth_error_handler.dart';
+import 'package:vowl/core/usecases/usecase.dart';
+import 'package:vowl/core/network/network_info.dart';
 
 class SignUpState extends Equatable {
   final String name;
@@ -96,15 +96,19 @@ class SignUpCubit extends Cubit<SignUpState> {
       ),
     );
     result.fold(
-      (failure) => emit(
-        state.copyWith(
-          isSubmitting: false,
-          errorMessage: AuthErrorHandler.getMessage(failure.message),
-        ),
-      ),
+      (failure) {
+        if (isClosed) return;
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            errorMessage: AuthErrorHandler.getMessage(failure.message),
+          ),
+        );
+      },
       (_) async {
         // Send verification email
         final verificationResult = await _sendEmailVerification(NoParams());
+        if (isClosed) return;
         verificationResult.fold(
           (failure) => emit(
             state.copyWith(

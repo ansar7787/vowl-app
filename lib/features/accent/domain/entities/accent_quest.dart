@@ -1,4 +1,4 @@
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class AccentQuest extends GameQuest {
   final String? word;
@@ -22,6 +22,7 @@ class AccentQuest extends GameQuest {
   final String? ipa2;
   final String? mouthPosition;
   final String? slowForm;
+  final String? accentName;
 
   const AccentQuest({
     required super.id,
@@ -42,6 +43,7 @@ class AccentQuest extends GameQuest {
     this.targetWord,
     this.question,
     super.textToSpeak,
+    super.visualConfig,
     this.prompt,
     this.sampleAnswer,
     this.explanation,
@@ -59,6 +61,7 @@ class AccentQuest extends GameQuest {
     this.ipa2,
     this.mouthPosition,
     this.slowForm,
+    this.accentName,
   });
 
   String? get phonetic => phoneticHint;
@@ -165,3 +168,4 @@ class AccentQuest extends GameQuest {
     slowForm,
   ];
 }
+

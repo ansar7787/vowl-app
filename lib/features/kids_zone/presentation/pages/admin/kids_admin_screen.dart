@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/features/kids_zone/data/datasources/kids_quest_upload_service.dart';
+import 'package:vowl/features/kids_zone/data/datasources/kids_quest_upload_service.dart';
 
 class KidsAdminScreen extends StatefulWidget {
   const KidsAdminScreen({super.key});
@@ -601,3 +601,4 @@ Rules:
     }
   }
 }
+

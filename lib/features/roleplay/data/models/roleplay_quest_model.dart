@@ -16,16 +16,23 @@ class RoleplayQuestModel extends RoleplayQuest {
     super.correctAnswerIndex,
     super.correctAnswer,
     super.hint,
-    super.nodes,
+    super.visualConfig,
+    super.dialogues,
     super.situation,
     super.keywords,
-    super.scenario,
+    super.scene,
     super.lastLine,
     super.dispatcherQuestion,
     super.interviewerQuestion,
     super.persona,
     super.prompt,
     super.sampleAnswer,
+    super.empathyScore,
+    super.professionalismRating,
+    super.symptoms,
+    super.itinerary,
+    super.explanation,
+    super.shuffledWords,
   });
 
   factory RoleplayQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -33,6 +40,34 @@ class RoleplayQuestModel extends RoleplayQuest {
       (s) => s.name == map['subtype'],
       orElse: () => GameSubtype.branchingDialogue,
     );
+
+    Map<String, DialogueNode>? dialoguesMap;
+    if (map['dialogues'] != null) {
+      dialoguesMap = {};
+      final List<dynamic> dialoguesList = map['dialogues'];
+      for (var nodeJson in dialoguesList) {
+        final node = DialogueNode(
+          id: nodeJson['id'],
+          speaker: nodeJson['speaker'] ?? 'Unknown',
+          text: nodeJson['text'] ?? '',
+          end: nodeJson['end'] ?? false,
+          emotion: nodeJson['emotion'],
+          choices: nodeJson['choices'] != null
+              ? (nodeJson['choices'] as List)
+                    .map(
+                      (c) => DialogueChoice(
+                        text: c['text'] ?? '',
+                        next: c['next'],
+                        score: c['score'],
+                      ),
+                    )
+                    .toList()
+              : null,
+        );
+        dialoguesMap[node.id] = node;
+      }
+    }
+
     return RoleplayQuestModel(
       id: id,
       type: subtype.category,
@@ -45,25 +80,32 @@ class RoleplayQuestModel extends RoleplayQuest {
       ),
       xpReward: map['xpReward'] ?? 10,
       coinReward: map['coinReward'] ?? 5,
-      livesAllowed: map['livesAllowed'],
+      livesAllowed: map['livesAllowed'] ?? 3,
       options: map['options'] != null
           ? List<String>.from(map['options'])
-          : null,
+          : (map['choices'] != null ? List<String>.from(map['choices']) : null),
       correctAnswerIndex: map['correctAnswerIndex'],
       correctAnswer: map['correctAnswer'],
       hint: map['hint'],
-      nodes: map['nodes'],
-      situation: map['situation'],
+      visualConfig: map['visual_config'] != null ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'])) : null,
+      dialogues: dialoguesMap,
+      situation: map['situation'] ?? map['context'] ?? map['story'] ?? map['scenario'],
       keywords: map['keywords'] != null
           ? List<String>.from(map['keywords'])
           : null,
-      scenario: map['scenario'],
+      scene: map['scene'] ?? map['location'],
       lastLine: map['lastLine'],
       dispatcherQuestion: map['dispatcherQuestion'],
       interviewerQuestion: map['interviewerQuestion'],
-      persona: map['persona'],
-      prompt: map['prompt'],
-      sampleAnswer: map['sampleAnswer'],
+      persona: map['persona'] ?? map['role'],
+      prompt: map['prompt'] ?? map['question'] ?? map['instruction'],
+      sampleAnswer: map['sampleAnswer'] ?? map['correctAnswer'],
+      empathyScore: (map['empathyScore'] as num?)?.toDouble(),
+      professionalismRating: map['professionalismRating'],
+      symptoms: map['symptoms'] != null ? List<String>.from(map['symptoms']) : null,
+      itinerary: map['itinerary'] != null ? List<String>.from(map['itinerary']) : null,
+      explanation: map['explanation'],
+      shuffledWords: map['shuffledWords'] != null ? List<String>.from(map['shuffledWords']) : (map['keywords'] != null ? List<String>.from(map['keywords']) : null),
     );
   }
 
@@ -80,16 +122,37 @@ class RoleplayQuestModel extends RoleplayQuest {
       'correctAnswerIndex': correctAnswerIndex,
       'correctAnswer': correctAnswer,
       'hint': hint,
-      'nodes': nodes,
+      'dialogues': dialogues?.values
+          .map(
+            (node) => {
+              'id': node.id,
+              'speaker': node.speaker,
+              'text': node.text,
+              'end': node.end,
+              'emotion': node.emotion,
+              'choices': node.choices
+                  ?.map(
+                    (c) => {'text': c.text, 'next': c.next, 'score': c.score},
+                  )
+                  .toList(),
+            },
+          )
+          .toList(),
       'situation': situation,
       'keywords': keywords,
-      'scenario': scenario,
+      'scene': scene,
       'lastLine': lastLine,
       'dispatcherQuestion': dispatcherQuestion,
       'interviewerQuestion': interviewerQuestion,
       'persona': persona,
       'prompt': prompt,
       'sampleAnswer': sampleAnswer,
+      'empathyScore': empathyScore,
+      'professionalismRating': professionalismRating,
+      'symptoms': symptoms,
+      'itinerary': itinerary,
+      'explanation': explanation,
     };
   }
 }
+

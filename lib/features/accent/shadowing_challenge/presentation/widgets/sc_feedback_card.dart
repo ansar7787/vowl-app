@@ -3,14 +3,15 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class SCFeedbackCard extends StatelessWidget {
   final bool isDark;
   final ThemeResult theme;
   final bool isCorrect;
   final bool isLastQuestion;
+  final bool isMidnight;
 
   const SCFeedbackCard({
     super.key,
@@ -18,6 +19,7 @@ class SCFeedbackCard extends StatelessWidget {
     required this.theme,
     required this.isCorrect,
     this.isLastQuestion = false,
+    this.isMidnight = false,
   });
 
   @override

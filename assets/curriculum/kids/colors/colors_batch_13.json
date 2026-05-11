@@ -1,0 +1,522 @@
+[
+  {
+    "level": 121,
+    "quests": [
+      {
+        "id": "KID_COLORS_L121_Q1",
+        "instruction": "Opposites: Who is Red's best friend?",
+        "question": "🔴 + ?",
+        "options": [
+          "Green",
+          "Blue",
+          "Yellow"
+        ],
+        "correctAnswer": "Green",
+        "hint": "Red and Green are across from each other on the wheel!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_COLORS_L121_Q2",
+        "instruction": "Opposites: Red and Green are...?",
+        "question": "Relationship",
+        "options": [
+          "Complementary",
+          "Primary",
+          "Same"
+        ],
+        "correctAnswer": "Complementary",
+        "hint": "Complementary colors are 'Best Friends' of the color wheel!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_COLORS_L121_Q3",
+        "instruction": "Does 🔴 and 🟢 remind you of Christmas?",
+        "question": "🎄 🍓",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "They are the classic holiday colors!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      }
+    ]
+  },
+  {
+    "level": 122,
+    "quests": [
+      {
+        "id": "KID_COLORS_L122_Q1",
+        "instruction": "Opposites: Who is Blue's best friend?",
+        "question": "🔵 + ?",
+        "options": [
+          "Orange",
+          "Red",
+          "Green"
+        ],
+        "correctAnswer": "Orange",
+        "hint": "Blue and Orange pop when they are together!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_COLORS_L122_Q2",
+        "instruction": "Opposites: Blue and Orange are...?",
+        "question": "Relationship",
+        "options": [
+          "Complementary",
+          "Secondary",
+          "Dark"
+        ],
+        "correctAnswer": "Complementary",
+        "hint": "They are opposites on the color wheel!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_COLORS_L122_Q3",
+        "instruction": "Does 🔵 and 🟠 remind you of the sunset?",
+        "question": "🌊 🌅",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "The orange sun over the blue ocean!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 123,
+    "quests": [
+      {
+        "id": "KID_COLORS_L123_Q1",
+        "instruction": "Opposites: Who is Yellow's best friend?",
+        "question": "🟡 + ?",
+        "options": [
+          "Purple",
+          "Green",
+          "Blue"
+        ],
+        "correctAnswer": "Purple",
+        "hint": "Yellow and Purple are a royal pair!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      },
+      {
+        "id": "KID_COLORS_L123_Q2",
+        "instruction": "Opposites: Yellow and Purple are...?",
+        "question": "Relationship",
+        "options": [
+          "Complementary",
+          "Primary",
+          "Light"
+        ],
+        "correctAnswer": "Complementary",
+        "hint": "They create the strongest contrast!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      },
+      {
+        "id": "KID_COLORS_L123_Q3",
+        "instruction": "Does 🟡 and 🟣 remind you of a pansy flower?",
+        "question": "🌸",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "Many flowers use these two colors together!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      }
+    ]
+  },
+  {
+    "level": 124,
+    "quests": [
+      {
+        "id": "KID_COLORS_L124_Q1",
+        "instruction": "Logic: Match the Best Friend",
+        "question": "🔴 -> ?",
+        "options": [
+          "🟢 Green",
+          "🔵 Blue",
+          "🟡 Yellow"
+        ],
+        "correctAnswer": "🟢 Green",
+        "hint": "Green is Red's opposite!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      },
+      {
+        "id": "KID_COLORS_L124_Q2",
+        "instruction": "Logic: Match the Best Friend",
+        "question": "🔵 -> ?",
+        "options": [
+          "🟠 Orange",
+          "🔴 Red",
+          "🟣 Purple"
+        ],
+        "correctAnswer": "🟠 Orange",
+        "hint": "Orange is Blue's opposite!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      },
+      {
+        "id": "KID_COLORS_L124_Q3",
+        "instruction": "Logic: Match the Best Friend",
+        "question": "🟡 -> ?",
+        "options": [
+          "🟣 Purple",
+          "🟢 Green",
+          "🟠 Orange"
+        ],
+        "correctAnswer": "🟣 Purple",
+        "hint": "Purple is Yellow's opposite!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      }
+    ]
+  },
+  {
+    "level": 125,
+    "quests": [
+      {
+        "id": "KID_COLORS_L125_Q1",
+        "instruction": "Contrast: Which pair stands out most?",
+        "question": "Selection",
+        "options": [
+          "Red & Green",
+          "Red & Pink",
+          "Red & Orange"
+        ],
+        "correctAnswer": "Red & Green",
+        "hint": "Opposite colors stand out the most!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      },
+      {
+        "id": "KID_COLORS_L125_Q2",
+        "instruction": "Contrast: Which pair stands out most?",
+        "question": "Selection",
+        "options": [
+          "Blue & Orange",
+          "Blue & Purple",
+          "Blue & Green"
+        ],
+        "correctAnswer": "Blue & Orange",
+        "hint": "Opposite colors create high contrast!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      },
+      {
+        "id": "KID_COLORS_L125_Q3",
+        "instruction": "Contrast: Which pair stands out most?",
+        "question": "Selection",
+        "options": [
+          "Yellow & Purple",
+          "Yellow & Gold",
+          "Yellow & Green"
+        ],
+        "correctAnswer": "Yellow & Purple",
+        "hint": "These two are perfectly balanced opposites!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      }
+    ]
+  },
+  {
+    "level": 126,
+    "quests": [
+      {
+        "id": "KID_COLORS_L126_Q1",
+        "instruction": "Wheel: Can colors be enemies?",
+        "question": "🎨 Logic",
+        "options": [
+          "No, they are all friends!",
+          "Yes"
+        ],
+        "correctAnswer": "No, they are all friends!",
+        "hint": "Every color has a place and a friend!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_COLORS_L126_Q2",
+        "instruction": "Wheel: What is a Color Wheel?",
+        "question": "🎡 Definition",
+        "options": [
+          "A map of colors",
+          "A real wheel",
+          "A game"
+        ],
+        "correctAnswer": "A map of colors",
+        "hint": "The wheel shows how colors relate to each other!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_COLORS_L126_Q3",
+        "instruction": "Wheel: Are the 🌈 colors in a circle?",
+        "question": "🌈 -> 🎡",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "The rainbow order forms the color wheel!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      }
+    ]
+  },
+  {
+    "level": 127,
+    "quests": [
+      {
+        "id": "KID_COLORS_L127_Q1",
+        "instruction": "Design: If a logo is Blue, what color pops?",
+        "question": "🔵 Logo",
+        "options": [
+          "Orange",
+          "Purple",
+          "Green"
+        ],
+        "correctAnswer": "Orange",
+        "hint": "Orange will make the blue look brighter!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_COLORS_L127_Q2",
+        "instruction": "Design: If a flower is Red, what color are the leaves?",
+        "question": "🔴 Flower",
+        "options": [
+          "Green",
+          "Blue",
+          "Pink"
+        ],
+        "correctAnswer": "Green",
+        "hint": "Green leaves make the red flower stand out!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_COLORS_L127_Q3",
+        "instruction": "Design: If a sun is Yellow, what color is the sky in art?",
+        "question": "🟡 Sun",
+        "options": [
+          "Purple (Sunset)",
+          "Green",
+          "White"
+        ],
+        "correctAnswer": "Purple (Sunset)",
+        "hint": "Purple sky makes a yellow sun look glowing!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 128,
+    "quests": [
+      {
+        "id": "KID_COLORS_L128_Q1",
+        "instruction": "Artist: Use opposites to make a POP!",
+        "question": "Pop Art",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "This is a secret trick of all great painters!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_COLORS_L128_Q2",
+        "instruction": "Artist: Red's Opposite?",
+        "question": "🔴 -> ?",
+        "options": [
+          "Green",
+          "Blue",
+          "Black"
+        ],
+        "correctAnswer": "Green",
+        "hint": "Think of a strawberry!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_COLORS_L128_Q3",
+        "instruction": "Artist: Yellow's Opposite?",
+        "question": "🟡 -> ?",
+        "options": [
+          "Purple",
+          "Orange",
+          "White"
+        ],
+        "correctAnswer": "Purple",
+        "hint": "The dark, rich purple!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      }
+    ]
+  },
+  {
+    "level": 129,
+    "quests": [
+      {
+        "id": "KID_COLORS_L129_Q1",
+        "instruction": "Compare: Is Orange across from Blue?",
+        "question": "🎡 Check",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "They are perfectly across from each other!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_COLORS_L129_Q2",
+        "instruction": "Compare: Is Green across from Red?",
+        "question": "🎡 Check",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "They are perfectly across from each other!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_COLORS_L129_Q3",
+        "instruction": "Compare: Is Purple across from Yellow?",
+        "question": "🎡 Check",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "They are perfectly across from each other!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      }
+    ]
+  },
+  {
+    "level": 130,
+    "quests": [
+      {
+        "id": "KID_COLORS_L130_Q1",
+        "instruction": "Level 130 Challenge: Best Friends!",
+        "question": "Blue + Orange = ?",
+        "options": [
+          "Complementary",
+          "Primary",
+          "Wrong"
+        ],
+        "correctAnswer": "Complementary",
+        "hint": "Opposite friends!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_COLORS_L130_Q2",
+        "instruction": "Level 130 Challenge: Best Friends!",
+        "question": "Yellow + Purple = ?",
+        "options": [
+          "Complementary",
+          "Secondary",
+          "Dark"
+        ],
+        "correctAnswer": "Complementary",
+        "hint": "Opposite friends!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_COLORS_L130_Q3",
+        "instruction": "Level 130 Challenge: Mastery!",
+        "question": "Do you know the color wheel?",
+        "options": [
+          "YES!",
+          "No"
+        ],
+        "correctAnswer": "YES!",
+        "hint": "You are a color relationship master!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      }
+    ]
+  }
+]

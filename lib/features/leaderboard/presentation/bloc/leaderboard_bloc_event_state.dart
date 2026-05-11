@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 // Events
 abstract class LeaderboardEvent extends Equatable {
@@ -23,9 +23,10 @@ class LeaderboardLoading extends LeaderboardState {}
 
 class LeaderboardLoaded extends LeaderboardState {
   final List<UserEntity> users;
-  const LeaderboardLoaded(this.users);
+  final DateTime lastUpdated;
+  const LeaderboardLoaded(this.users, this.lastUpdated);
   @override
-  List<Object> get props => [users];
+  List<Object> get props => [users, lastUpdated];
 }
 
 class LeaderboardError extends LeaderboardState {

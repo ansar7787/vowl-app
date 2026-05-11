@@ -1,4 +1,4 @@
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class PromptStrategy {
   String getSpecificInstructions(QuestType skill, GameSubtype subtype) {
@@ -180,6 +180,46 @@ class PromptStrategy {
         return '{"id": "v_wf_L{L}_{I}", "instruction": "Form new words.", "type": "vocabulary", "subtype": "wordFormation", "difficulty": {L}, "base": "{BASE}", "target": "{TARGET}"}';
       case GameSubtype.prefixSuffix:
         return '{"id": "v_ps_L{L}_{I}", "instruction": "Add prefix/suffix.", "type": "vocabulary", "subtype": "prefixSuffix", "difficulty": {L}, "word": "{WORD}", "options": ["P1", "S1"]}';
+      case GameSubtype.clozeTest:
+        return '{"id": "clz_L{L}_{I}", "instruction": "Fill the blanks.", "type": "reading", "subtype": "clozeTest", "difficulty": {L}, "passage": "{TEXT_WITH_BLANKS}", "options": ["W1", "W2"], "correctAnswers": [0]}';
+      case GameSubtype.skimmingScanning:
+        return '{"id": "skm_L{L}_{I}", "instruction": "Scan for details.", "type": "reading", "subtype": "skimmingScanning", "difficulty": {L}, "passage": "{TEXT}", "questions": ["Q1"]}';
+      case GameSubtype.modifierPlacement:
+        return '{"id": "mod_L{L}_{I}", "instruction": "Place the modifier.", "type": "grammar", "subtype": "modifierPlacement", "difficulty": {L}, "sentence": "{TEXT}", "options": ["P1", "P2"]}';
+      case GameSubtype.modalsSelection:
+        return '{"id": "mdl_L{L}_{I}", "instruction": "Pick the modal.", "type": "grammar", "subtype": "modalsSelection", "difficulty": {L}, "sentence": "{TEXT}", "options": ["can", "must"]}';
+      case GameSubtype.prepositionChoice:
+        return '{"id": "prep_L{L}_{I}", "instruction": "Pick the preposition.", "type": "grammar", "subtype": "prepositionChoice", "difficulty": {L}, "sentence": "{TEXT}", "options": ["in", "on"]}';
+      case GameSubtype.pronounResolution:
+        return '{"id": "pro_L{L}_{I}", "instruction": "Resolve the pronoun.", "type": "grammar", "subtype": "pronounResolution", "difficulty": {L}, "sentence": "{TEXT}", "options": ["he", "she"]}';
+      case GameSubtype.punctuationMastery:
+        return '{"id": "punc_L{L}_{I}", "instruction": "Add punctuation.", "type": "grammar", "subtype": "punctuationMastery", "difficulty": {L}, "sentence": "{TEXT}"}';
+      case GameSubtype.relativeClauses:
+        return '{"id": "rel_L{L}_{I}", "instruction": "Join with relative clause.", "type": "grammar", "subtype": "relativeClauses", "difficulty": {L}, "clauses": ["C1", "C2"]}';
+      case GameSubtype.conditionals:
+        return '{"id": "cond_L{L}_{I}", "instruction": "Complete the conditional.", "type": "grammar", "subtype": "conditionals", "difficulty": {L}, "sentence": "If I..."}';
+      case GameSubtype.conjunctions:
+        return '{"id": "conj_L{L}_{I}", "instruction": "Pick the conjunction.", "type": "grammar", "subtype": "conjunctions", "difficulty": {L}, "options": ["and", "but"]}';
+      case GameSubtype.directIndirectSpeech:
+        return '{"id": "dis_L{L}_{I}", "instruction": "Change the speech.", "type": "grammar", "subtype": "directIndirectSpeech", "difficulty": {L}, "sentence": "He said..."}';
+      case GameSubtype.collocations:
+        return '{"id": "coll_L{L}_{I}", "instruction": "Find the collocation.", "type": "vocabulary", "subtype": "collocations", "difficulty": {L}, "word": "{WORD}", "options": ["W1", "W2"]}';
+      case GameSubtype.contextualUsage:
+        return '{"id": "ctx_L{L}_{I}", "instruction": "Use in context.", "type": "vocabulary", "subtype": "contextualUsage", "difficulty": {L}, "word": "{WORD}"}';
+      case GameSubtype.connectedSpeech:
+        return '{"id": "conn_L{L}_{I}", "instruction": "Natural linking.", "type": "accent", "subtype": "connectedSpeech", "difficulty": {L}, "phrase": "{PHRASE}"}';
+      case GameSubtype.pitchModulation:
+        return '{"id": "pitch_L{L}_{I}", "instruction": "Vary your pitch.", "type": "accent", "subtype": "pitchModulation", "difficulty": {L}, "phrase": "{PHRASE}"}';
+
+      // Category: Elite Mastery (4)
+      case GameSubtype.storyBuilder:
+        return '{"id": "sb_elite_L{L}_{I}", "instruction": "Reorder the sentences to form a story.", "type": "eliteMastery", "subtype": "storyBuilder", "difficulty": {L}, "sentences": ["S1", "S2"], "correctOrder": [0, 1]}';
+      case GameSubtype.idiomMatch:
+        return '{"id": "im_elite_L{L}_{I}", "instruction": "Match the idiom to its meaning.", "type": "eliteMastery", "subtype": "idiomMatch", "difficulty": {L}, "idiom": "{IDIOM}", "options": ["M1", "M2"], "correctAnswerIndex": 0}';
+      case GameSubtype.speedSpelling:
+        return '{"id": "ss_elite_L{L}_{I}", "instruction": "Spell the word quickly.", "type": "eliteMastery", "subtype": "speedSpelling", "difficulty": {L}, "word": "{WORD}", "speedMultiplier": 1.0}';
+      case GameSubtype.accentShadowing:
+        return '{"id": "as_elite_L{L}_{I}", "instruction": "Listen and shadow.", "type": "eliteMastery", "subtype": "accentShadowing", "difficulty": {L}, "text": "{TEXT}", "audioUrl": ""}';
     }
   }
 }

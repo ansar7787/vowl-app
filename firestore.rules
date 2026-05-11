@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ─── USER DATA ───────────────────────────────────────────────────
+    match /users/{userId} {
+      // Anyone authenticated can READ profiles (needed for global rankings)
+      allow read: if request.auth != null;
+
+      // CREATE: Only own document, prevent spoofing isAdmin
+      allow create: if request.auth != null && request.auth.uid == userId
+        && !request.resource.data.keys().hasAny(['isAdmin']);
+
+      // UPDATE: Only own document with basic anti-cheat guards
+      allow update: if request.auth != null && request.auth.uid == userId
+        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['isAdmin'])
+        // Sanity checks for progression (prevent jumping to 1M XP instantly)
+        && (
+          !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalExp'])
+          || request.resource.data.totalExp <= resource.data.totalExp + 2000
+        );
+
+      // DELETE: Only own document
+      allow delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // ─── GLOBAL METADATA ─────────────────────────────────────────────
+    match /metadata/leaderboard_cache {
+      // Allow all users to read the pre-calculated rankings (1 Read instead of 50)
+      allow read: if request.auth != null;
+      
+      // Allow users to refresh the cache if it is stale
+      // App Check (configured in main.dart) provides the primary layer of security here
+      allow write: if request.auth != null;
+    }
+
+    // ─── LEGACY / OTHER ─────────────────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 class LocalSmartTutor {
   /// Analyzes the user's category stats and returns the ID of the category

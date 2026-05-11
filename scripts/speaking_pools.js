@@ -1,84 +1,241 @@
-// Speaking category pools - 10 games × 30 templates
-const C = (inst,fields,it) => ({instruction:inst,interactionType:it||'speaking',fields});
+/**
+ * Speaking Content Pools for VoxAI Quest
+ * Each entry is a high-quality, non-professional speaking scenario.
+ */
 
 const dailyExpression = [
-  C('Say the expression.',{phrase:"Good morning! How are you?",context:"Greeting someone in the morning",expectedResponse:"Good morning! How are you?",hint:"Common morning greeting."}),
-  C('Say the expression.',{phrase:"Excuse me, where is the nearest bank?",context:"Asking for directions",expectedResponse:"Excuse me, where is the nearest bank?",hint:"Polite way to ask."}),
-  C('Say the expression.',{phrase:"Could you please pass the salt?",context:"At the dinner table",expectedResponse:"Could you please pass the salt?",hint:"Polite request."}),
-  C('Say the expression.',{phrase:"I would like a cup of coffee, please.",context:"Ordering at a cafe",expectedResponse:"I would like a cup of coffee, please.",hint:"Polite order."}),
-  C('Say the expression.',{phrase:"Thank you so much for your help!",context:"Expressing gratitude",expectedResponse:"Thank you so much for your help!",hint:"Showing appreciation."}),
-  C('Say the expression.',{phrase:"I'm sorry, I didn't catch that.",context:"Asking someone to repeat",expectedResponse:"I'm sorry, I didn't catch that.",hint:"Polite repetition request."}),
-  C('Say the expression.',{phrase:"Nice to meet you!",context:"Meeting someone new",expectedResponse:"Nice to meet you!",hint:"First introduction."}),
-  C('Say the expression.',{phrase:"How much does this cost?",context:"Shopping",expectedResponse:"How much does this cost?",hint:"Asking about price."}),
-  C('Say the expression.',{phrase:"Could I have the bill, please?",context:"At a restaurant",expectedResponse:"Could I have the bill, please?",hint:"End of meal."}),
-  C('Say the expression.',{phrase:"Have a great weekend!",context:"Saying goodbye on Friday",expectedResponse:"Have a great weekend!",hint:"Weekend farewell."}),
-  C('Say the expression.',{phrase:"I need to make an appointment.",context:"At a doctor's office",expectedResponse:"I need to make an appointment.",hint:"Scheduling."}),
-  C('Say the expression.',{phrase:"What time does the store close?",context:"Checking hours",expectedResponse:"What time does the store close?",hint:"Business hours."}),
-  C('Say the expression.',{phrase:"I'd like to book a table for two.",context:"Restaurant reservation",expectedResponse:"I'd like to book a table for two.",hint:"Dining reservation."}),
-  C('Say the expression.',{phrase:"Can you recommend a good restaurant?",context:"Asking for suggestions",expectedResponse:"Can you recommend a good restaurant?",hint:"Seeking advice."}),
-  C('Say the expression.',{phrase:"I'm looking for the train station.",context:"Finding transportation",expectedResponse:"I'm looking for the train station.",hint:"Travel navigation."}),
-  C('Say the expression.',{phrase:"May I speak with the manager?",context:"Customer service",expectedResponse:"May I speak with the manager?",hint:"Escalating a concern."}),
-  C('Say the expression.',{phrase:"What do you do for a living?",context:"Small talk",expectedResponse:"What do you do for a living?",hint:"Career question."}),
-  C('Say the expression.',{phrase:"I'll have the chicken salad, please.",context:"Ordering food",expectedResponse:"I'll have the chicken salad, please.",hint:"Menu selection."}),
-  C('Say the expression.',{phrase:"Do you accept credit cards?",context:"Payment method",expectedResponse:"Do you accept credit cards?",hint:"Payment inquiry."}),
-  C('Say the expression.',{phrase:"It was lovely seeing you again!",context:"Saying goodbye to a friend",expectedResponse:"It was lovely seeing you again!",hint:"Warm farewell."}),
-  C('Say the expression.',{phrase:"Could you speak more slowly, please?",context:"Language barrier",expectedResponse:"Could you speak more slowly, please?",hint:"Comprehension help."}),
-  C('Say the expression.',{phrase:"What's the Wi-Fi password?",context:"At a hotel or cafe",expectedResponse:"What's the Wi-Fi password?",hint:"Connectivity."}),
-  C('Say the expression.',{phrase:"I'd like to return this item.",context:"At a store",expectedResponse:"I'd like to return this item.",hint:"Returning purchase."}),
-  C('Say the expression.',{phrase:"Congratulations on your promotion!",context:"Celebrating someone",expectedResponse:"Congratulations on your promotion!",hint:"Celebrating success."}),
-  C('Say the expression.',{phrase:"I'm afraid I can't make it tonight.",context:"Declining an invitation",expectedResponse:"I'm afraid I can't make it tonight.",hint:"Polite decline."}),
-  C('Say the expression.',{phrase:"Would you mind closing the window?",context:"Making a request",expectedResponse:"Would you mind closing the window?",hint:"Polite request."}),
-  C('Say the expression.',{phrase:"Let me think about it and get back to you.",context:"Delaying a decision",expectedResponse:"Let me think about it and get back to you.",hint:"Buying time."}),
-  C('Say the expression.',{phrase:"I really appreciate your patience.",context:"Customer service",expectedResponse:"I really appreciate your patience.",hint:"Thanking for waiting."}),
-  C('Say the expression.',{phrase:"Is this seat taken?",context:"Public transport or cafe",expectedResponse:"Is this seat taken?",hint:"Checking availability."}),
-  C('Say the expression.',{phrase:"I hope you feel better soon!",context:"Someone is sick",expectedResponse:"I hope you feel better soon!",hint:"Wishing recovery."}),
+  { phrase: "Let's call it a day.", context: "Finishing work", meaning: "To stop working on something." },
+  { phrase: "Keep me in the loop.", context: "Business communication", meaning: "Keep me informed." },
+  { phrase: "I'm on the fence about it.", context: "Making a decision", meaning: "Undecided." },
+  { phrase: "Piece of cake!", context: "Task difficulty", meaning: "Very easy." },
+  { phrase: "Break a leg!", context: "Performance", meaning: "Good luck." },
+  { phrase: "Better late than never.", context: "Arrival", meaning: "It's better to arrive late than not at all." },
+  { phrase: "Bite the bullet.", context: "Difficult situation", meaning: "To endure a painful situation." },
+  { phrase: "Call it a night.", context: "Ending an evening", meaning: "Go to bed or stop an activity." },
+  { phrase: "Cutting corners.", context: "Quality", meaning: "Doing something poorly to save time or money." },
+  { phrase: "Get out of hand.", context: "Control", meaning: "Get out of control." },
+  { phrase: "Hit the sack.", context: "Sleep", meaning: "Go to sleep." },
+  { phrase: "It's not rocket science.", context: "Complexity", meaning: "It's not complicated." },
+  { phrase: "Make a long story short.", context: "Storytelling", meaning: "Summarize." },
+  { phrase: "On the ball.", context: "Competence", meaning: "Alert and efficient." },
+  { phrase: "Pull yourself together.", context: "Emotions", meaning: "Calm down." },
+  { phrase: "So far so good.", context: "Progress", meaning: "Things are going well up to now." },
+  { phrase: "The best of both worlds.", context: "Choices", meaning: "An ideal situation." },
+  { phrase: "Under the weather.", context: "Health", meaning: "Feeling sick." },
+  { phrase: "Wrap your head around it.", context: "Understanding", meaning: "Understand something complex." },
+  { phrase: "Your guess is as good as mine.", context: "Uncertainty", meaning: "I don't know either." },
+  { phrase: "Actions speak louder than words.", context: "Integrity", meaning: "What you do is more important than what you say." },
+  { phrase: "Back to the drawing board.", context: "Failure", meaning: "Start over after a failed attempt." },
+  { phrase: "Comparing apples to oranges.", context: "Logic", meaning: "Comparing two things that are completely different." },
+  { phrase: "Don't cry over spilled milk.", context: "Mistakes", meaning: "Don't worry about things that have already happened." },
+  { phrase: "Every cloud has a silver lining.", context: "Optimism", meaning: "Every bad situation has a positive side." },
+  { phrase: "Get a taste of your own medicine.", context: "Justice", meaning: "Being treated the same way you treat others." },
+  { phrase: "Give someone the cold shoulder.", context: "Social", meaning: "Intentionally ignore someone." },
+  { phrase: "Hit the nail on the head.", context: "Accuracy", meaning: "Describe exactly what is causing a situation." },
+  { phrase: "Kill two birds with one stone.", context: "Efficiency", meaning: "Accomplish two things at once." },
+  { phrase: "Let the cat out of the bag.", context: "Secrets", meaning: "Accidentally reveal a secret." }
 ];
 
-// Other speaking games reuse the same template structure
-const mkSpk = (p,c,h) => C('Repeat the sentence.',{phrase:p,context:c,expectedResponse:p,hint:h});
-const dialogueRoleplay = dailyExpression.map(q => ({...q, instruction:'Act out the dialogue.', interactionType:'speaking'}));
-const pronunciationFocus = dailyExpression.map(q => ({...q, instruction:'Focus on pronunciation.'}));
-const repeatSentence = dailyExpression.map(q => ({...q, instruction:'Repeat the sentence clearly.'}));
-const sceneDescriptionSpeaking = [
-  C('Describe the scene.',{phrase:"A family is having a picnic in the park on a sunny day.",context:"Outdoor scene",expectedResponse:"A family is having a picnic in the park.",hint:"What do you see?"}),
-  C('Describe the scene.',{phrase:"Children are playing with a dog on the beach.",context:"Beach scene",expectedResponse:"Children are playing with a dog on the beach.",hint:"Beach activity."}),
-  C('Describe the scene.',{phrase:"A chef is cooking pasta in a busy restaurant kitchen.",context:"Kitchen scene",expectedResponse:"A chef is cooking pasta in a busy kitchen.",hint:"Cooking activity."}),
-  C('Describe the scene.',{phrase:"Students are studying in a quiet library.",context:"Library scene",expectedResponse:"Students are studying in a library.",hint:"Study environment."}),
-  C('Describe the scene.',{phrase:"A farmer is harvesting wheat in a golden field.",context:"Farm scene",expectedResponse:"A farmer is harvesting wheat.",hint:"Agricultural activity."}),
-  C('Describe the scene.',{phrase:"People are jogging along a river path at sunrise.",context:"Exercise scene",expectedResponse:"People are jogging by the river.",hint:"Morning exercise."}),
-  C('Describe the scene.',{phrase:"A musician is playing guitar on a street corner.",context:"Street scene",expectedResponse:"A musician is playing guitar on the street.",hint:"Street performance."}),
-  C('Describe the scene.',{phrase:"An artist is painting a landscape on a hilltop.",context:"Art scene",expectedResponse:"An artist is painting outdoors.",hint:"Creative activity."}),
-  C('Describe the scene.',{phrase:"A teacher is explaining a math problem on the board.",context:"Classroom scene",expectedResponse:"A teacher is explaining math.",hint:"Teaching moment."}),
-  C('Describe the scene.',{phrase:"Firefighters are putting out a fire in a building.",context:"Emergency scene",expectedResponse:"Firefighters are putting out a fire.",hint:"Emergency response."}),
-  C('Describe the scene.',{phrase:"A doctor is examining a patient in a clinic.",context:"Medical scene",expectedResponse:"A doctor is examining a patient.",hint:"Healthcare."}),
-  C('Describe the scene.',{phrase:"People are shopping at a colorful outdoor market.",context:"Market scene",expectedResponse:"People are shopping at an outdoor market.",hint:"Shopping activity."}),
-  C('Describe the scene.',{phrase:"A pilot is preparing for takeoff in the cockpit.",context:"Aviation scene",expectedResponse:"A pilot is preparing for takeoff.",hint:"Flying preparation."}),
-  C('Describe the scene.',{phrase:"Children are opening presents around a Christmas tree.",context:"Holiday scene",expectedResponse:"Children are opening presents.",hint:"Christmas morning."}),
-  C('Describe the scene.',{phrase:"An astronaut is floating in the space station.",context:"Space scene",expectedResponse:"An astronaut is floating in space.",hint:"Zero gravity."}),
-  C('Describe the scene.',{phrase:"A baker is decorating a wedding cake.",context:"Bakery scene",expectedResponse:"A baker is decorating a cake.",hint:"Pastry work."}),
-  C('Describe the scene.',{phrase:"Tourists are taking photos at the Eiffel Tower.",context:"Travel scene",expectedResponse:"Tourists are photographing the Eiffel Tower.",hint:"Sightseeing."}),
-  C('Describe the scene.',{phrase:"A mechanic is repairing a car engine in a garage.",context:"Workshop scene",expectedResponse:"A mechanic is repairing a car.",hint:"Vehicle maintenance."}),
-  C('Describe the scene.',{phrase:"A gardener is watering flowers in a greenhouse.",context:"Garden scene",expectedResponse:"A gardener is watering flowers.",hint:"Plant care."}),
-  C('Describe the scene.',{phrase:"A lifeguard is watching swimmers at the pool.",context:"Pool scene",expectedResponse:"A lifeguard is watching swimmers.",hint:"Safety duty."}),
-  C('Describe the scene.',{phrase:"A scientist is looking through a microscope.",context:"Lab scene",expectedResponse:"A scientist is using a microscope.",hint:"Research work."}),
-  C('Describe the scene.',{phrase:"A postal worker is delivering letters on a bicycle.",context:"Delivery scene",expectedResponse:"A postal worker is delivering mail.",hint:"Mail delivery."}),
-  C('Describe the scene.',{phrase:"A carpenter is building a wooden bookshelf.",context:"Workshop scene",expectedResponse:"A carpenter is building a bookshelf.",hint:"Woodworking."}),
-  C('Describe the scene.',{phrase:"Athletes are racing on a track at a stadium.",context:"Sports scene",expectedResponse:"Athletes are racing on a track.",hint:"Track event."}),
-  C('Describe the scene.',{phrase:"A librarian is organizing books on the shelves.",context:"Library scene",expectedResponse:"A librarian is organizing books.",hint:"Book management."}),
-  C('Describe the scene.',{phrase:"A photographer is taking a photo of a mountain.",context:"Nature scene",expectedResponse:"A photographer is capturing mountains.",hint:"Nature photography."}),
-  C('Describe the scene.',{phrase:"A waiter is serving food at an outdoor cafe.",context:"Dining scene",expectedResponse:"A waiter is serving food outdoors.",hint:"Restaurant service."}),
-  C('Describe the scene.',{phrase:"A mother is reading a bedtime story to her child.",context:"Home scene",expectedResponse:"A mother is reading to her child.",hint:"Bedtime routine."}),
-  C('Describe the scene.',{phrase:"Workers are constructing a new bridge over a river.",context:"Construction scene",expectedResponse:"Workers are building a bridge.",hint:"Infrastructure."}),
-  C('Describe the scene.',{phrase:"An elderly couple is walking hand in hand in the park.",context:"Park scene",expectedResponse:"A couple is walking in the park.",hint:"Peaceful stroll."}),
+const pronunciationFocus = [
+  { word: "Anemone", phonetic: "/əˈnɛməni/", focus: "Vowel shifting" },
+  { word: "Otorhinolaryngologist", phonetic: "/ˌoʊtoʊˌraɪnoʊˌlærənˈɡɒlədʒɪst/", focus: "Multi-syllabic stress" },
+  { word: "Squirrel", phonetic: "/ˈskwɪrəl/", focus: "Rhotic 'r' sound" },
+  { word: "Worcestershire", phonetic: "/ˈwʊstərʃɪər/", focus: "Silent letters" },
+  { word: "Phenomenon", phonetic: "/fəˈnɒmɪnən/", focus: "Nasal transitions" },
+  { word: "Rural", phonetic: "/ˈrʊərəl/", focus: "Double 'r' clarity" },
+  { word: "Mischievous", phonetic: "/ˈmɪstʃɪvəs/", focus: "Correct syllable count" },
+  { word: "Colonel", phonetic: "/ˈkɜːrnəl/", focus: "Spelling-sound mismatch" },
+  { word: "Sixth", phonetic: "/sɪksθ/", focus: "Consonant cluster" },
+  { word: "Isthmus", phonetic: "/ˈɪsməs/", focus: "Sibilant clarity" },
+  { word: "Library", phonetic: "/ˈlaɪbrɛri/", focus: "R-vowel combo" },
+  { word: "Regularly", phonetic: "/ˈrɛɡjʊlərli/", focus: "Rapid syllable transitions" },
+  { word: "Specific", phonetic: "/spəˈsɪfɪk/", focus: "S-P cluster" },
+  { word: "Hierarchy", phonetic: "/ˈhaɪərɑːrki/", focus: "Diphthongs" },
+  { word: "Antarctic", phonetic: "/ænˈtɑːrktɪk/", focus: "Internal 'c' sound" },
+  { word: "Subtle", phonetic: "/ˈsʌtəl/", focus: "Silent 'b'" },
+  { word: "Cache", phonetic: "/kæʃ/", focus: "French loanword" },
+  { word: "Entrepreneur", phonetic: "/ˌɒntrəprəˈnɜːr/", focus: "Nasalized vowels" },
+  { word: "Queue", phonetic: "/kjuː/", focus: "Monophthong" },
+  { word: "Draught", phonetic: "/drɑːft/", focus: "Old English 'gh' sound" }
 ];
-const situationSpeaking = dailyExpression.map(q => ({...q, instruction:'Respond to the situation.'}));
-const speakMissingWord = dailyExpression.map(q => ({...q, instruction:'Say the missing word.'}));
-const speakOpposite = dailyExpression.map(q => ({...q, instruction:'Say the opposite meaning.'}));
-const speakSynonym = dailyExpression.map(q => ({...q, instruction:'Say a synonym.'}));
-const yesNoSpeaking = dailyExpression.map(q => ({...q, instruction:'Answer Yes or No.'}));
+
+const repeatSentence = [
+  { text: "The economic forecast suggests a period of significant growth in the tech sector.", difficulty: 1 },
+  { text: "Scientific research indicates that bioluminescence is more common in deep-sea organisms than previously thought.", difficulty: 2 },
+  { text: "Archaeologists in {{location}} discovered a hidden chamber containing ancient {{item}}s from the Bronze Age.", difficulty: 2 },
+  { text: "Quantum computing has the potential to revolutionize how {{business}} handles complex data encryption.", difficulty: 3 },
+  { text: "Environmental policies must balance industrial development with the conservation of natural habitats in {{location}}.", difficulty: 2 },
+  { text: "The architectural design of the new {{business}} headquarters emphasizes sustainability and natural light.", difficulty: 1 },
+  { text: "Philosophical debates often center on the intersection of human ethics and artificial intelligence.", difficulty: 3 },
+  { text: "Linguistic studies show that immersion is the most effective method for mastering the {{item}} language.", difficulty: 2 },
+  { text: "The rapid expansion of urban centers in {{location}} has led to a surge in demand for smart infrastructure.", difficulty: 2 },
+  { text: "Medical breakthroughs in gene editing are providing new hope for patients with {{symptom}} related conditions.", difficulty: 3 },
+  { text: "The global supply chain for {{item}}s has been significantly impacted by the recent events in {{location}}.", difficulty: 2 },
+  { text: "Neuroscience research explores how the brain processes complex {{item}} patterns in the {{business}} lab.", difficulty: 3 },
+  { text: "Sustainable agriculture in {{location}} relies on the integration of traditional methods and modern tech.", difficulty: 2 },
+  { text: "The development of reusable rockets at {{business}} has drastically reduced the cost of space exploration.", difficulty: 1 },
+  { text: "Urban planning in {{location}} must prioritize pedestrian safety and the expansion of green spaces.", difficulty: 2 }
+];
+
+const situationSpeaking = [
+  { scenario: "You are at {{business}} and need to ask {{name}} for help with the {{item}}.", prompt: "How do you ask politely?" },
+  { scenario: "You missed a meeting with the team in {{location}} this {{time}}.", prompt: "How do you apologize?" },
+  { scenario: "A colleague at {{business}} won an award for their work on the {{item}}.", prompt: "How do you congratulate them?" },
+  { scenario: "You are at a cafe in {{location}} and they brought you the wrong {{item}}.", prompt: "How do you tell the waiter?" },
+  { scenario: "You need to leave the {{time}} party early because of an emergency.", prompt: "How do you tell the host, {{name}}?" },
+  { scenario: "You are asking a stranger in {{location}} for the direction to the {{business}} office.", prompt: "What is your opening line?" },
+  { scenario: "Your friend {{name}} is feeling {{feeling}} about their new {{item}}.", prompt: "How do you comfort them?" },
+  { scenario: "You want to invite the CEO of {{business}} to lunch this {{time}}.", prompt: "How do you phrase the invitation?" },
+  { scenario: "A customer in {{location}} is complaining that their {{item}} is defective.", prompt: "How do you handle the complaint?" },
+  { scenario: "You are being introduced to a famous scientist at the {{business}} gala.", prompt: "What is your first sentence?" }
+];
+
+const speakMissingWord = [
+  { sentence: "The sun rises in the ______.", answer: "east" },
+  { sentence: "Please turn ______ the lights before you leave.", answer: "off" },
+  { sentence: "I'm looking forward ______ meeting you in {{location}}.", answer: "to" },
+  { sentence: "She is very good ______ playing the {{item}}.", answer: "at" },
+  { sentence: "We need to discuss the {{item}} ______ the meeting.", answer: "during" },
+  { sentence: "He arrived ______ {{location}} yesterday morning.", answer: "in" },
+  { sentence: "I prefer coffee ______ tea.", answer: "to" },
+  { sentence: "The cat is hiding ______ the table.", answer: "under" },
+  { sentence: "Wait ______ me at the {{business}} entrance.", answer: "for" },
+  { sentence: "This {{item}} belongs ______ {{name}}.", answer: "to" },
+  { sentence: "They are planning to travel ______ Japan next {{time}}.", answer: "to" },
+  { sentence: "I cannot wait ______ see the new {{item}} at {{business}}.", answer: "to" },
+  { sentence: "The book was written ______ a famous author in {{location}}.", answer: "by" },
+  { sentence: "She was surprised ______ the news about the {{item}}.", answer: "by" },
+  { sentence: "We should go ______ a walk in the {{location}} park.", answer: "for" }
+];
+
+const speakOpposite = [
+  { word: "Hot", opposite: "Cold" },
+  { word: "Fast", opposite: "Slow" },
+  { word: "Happy", opposite: "Sad" },
+  { word: "Big", opposite: "Small" },
+  { word: "Rich", opposite: "Poor" },
+  { word: "Old", opposite: "Young" },
+  { word: "Strong", opposite: "Weak" },
+  { word: "Hard", opposite: "Soft" },
+  { word: "Beautiful", opposite: "Ugly" },
+  { word: "Expensive", opposite: "Cheap" },
+  { word: "Dark", opposite: "Light" },
+  { word: "Victory", opposite: "Defeat" },
+  { word: "Friend", opposite: "Enemy" },
+  { word: "Arrive", opposite: "Depart" },
+  { word: "Increase", opposite: "Decrease" },
+  { word: "Success", opposite: "Failure" },
+  { word: "Public", opposite: "Private" },
+  { word: "Ancient", opposite: "Modern" },
+  { word: "Bold", opposite: "Timid" },
+  { word: "Complex", opposite: "Simple" }
+];
+
+const speakSynonym = [
+  { word: "Happy", synonym: "Joyful" },
+  { word: "Smart", synonym: "Intelligent" },
+  { word: "Fast", synonym: "Quick" },
+  { word: "Angry", synonym: "Furious" },
+  { word: "Big", synonym: "Enormous" },
+  { word: "Beautiful", synonym: "Gorgeous" },
+  { word: "Small", synonym: "Tiny" },
+  { word: "Difficult", synonym: "Challenging" },
+  { word: "Funny", synonym: "Hilarious" },
+  { word: "Scared", synonym: "Terrified" },
+  { word: "Tired", synonym: "Exhausted" },
+  { word: "Interesting", synonym: "Fascinating" },
+  { word: "Start", synonym: "Begin" },
+  { word: "Stop", synonym: "Cease" },
+  { word: "Help", synonym: "Assist" },
+  { word: "Brief", synonym: "Short" },
+  { word: "Brave", synonym: "Courageous" },
+  { word: "Calm", synonym: "Peaceful" },
+  { word: "Wealthy", synonym: "Prosperous" },
+  { word: "Reliable", synonym: "Dependable" }
+];
+
+const yesNoSpeaking = [
+  { question: "Is the capital of France London?", answer: "No" },
+  { question: "Do humans need water to survive?", answer: "Yes" },
+  { question: "Is the sun a planet?", answer: "No" },
+  { question: "Can birds fly?", answer: "Yes" },
+  { question: "Is 10 greater than 5?", answer: "Yes" },
+  { question: "Does ice melt when heated?", answer: "Yes" },
+  { question: "Is the ocean made of fresh water?", answer: "No" },
+  { question: "Do apples grow on trees?", answer: "Yes" },
+  { question: "Is blue a primary color?", answer: "Yes" },
+  { question: "Can humans breathe underwater without equipment?", answer: "No" },
+  { question: "Is Mars the closest planet to the Sun?", answer: "No" },
+  { question: "Do snakes have legs?", answer: "No" },
+  { question: "Is the Great Wall of China in Asia?", answer: "Yes" },
+  { question: "Can computers process data faster than humans?", answer: "Yes" },
+  { question: "Is diamond the hardest natural substance?", answer: "Yes" }
+];
+
+const sceneDescriptionSpeaking = [
+  { scene: "A busy market in {{location}} with people buying colorful fruits.", description: "People are shopping for fruits in a busy {{location}} market." },
+  { scene: "A futuristic office at {{business}} with robots and holograms.", description: "The office of {{business}} is filled with robots and holograms." },
+  { scene: "A quiet snowy evening in {{location}} with glowing street lamps.", description: "Snow is falling in {{location}} under the street lamps." },
+  { scene: "A chef at {{business}} preparing a complex {{item}} dish.", description: "A chef is carefully preparing a meal at {{business}}." },
+  { scene: "A group of hikers reaching the summit of a mountain in {{location}}.", description: "Hikers have reached the top of the mountain." },
+  { scene: "A vibrant street festival in {{location}} with dancers and musicians.", description: "Musicians and dancers are performing at a festival in {{location}}." },
+  { scene: "A high-tech lab at {{business}} where scientists are testing a new {{item}}.", description: "Scientists are conducting experiments with a {{item}}." },
+  { scene: "A serene sunset over the ocean in {{location}} with a single sailboat.", description: "A sailboat is drifting on the ocean under a golden sunset." },
+  { scene: "A crowded train station in {{location}} during the morning rush.", description: "Commuters are rushing to catch their trains in {{location}}." },
+  { scene: "A peaceful library in {{location}} with students studying quietly.", description: "Students are reading and studying in the quiet library." }
+];
+
+const dialogueRoleplay = [
+  {
+    role: "Customer",
+    partner: "Waiter",
+    context: "Ordering at a restaurant",
+    script: [
+      { speaker: "Customer", text: "I'd like to order the {{item}}, please." },
+      { speaker: "Waiter", text: "Would you like any drinks with that?" },
+      { speaker: "Customer", text: "Just a glass of water, thank you." }
+    ]
+  },
+  {
+    role: "Candidate",
+    partner: "Interviewer",
+    context: "Job interview at {{business}}",
+    script: [
+      { speaker: "Interviewer", text: "Why do you want to work for {{business}}?" },
+      { speaker: "Candidate", text: "I admire your work in the {{location}} market." }
+    ]
+  },
+  {
+    role: "Patient",
+    partner: "Doctor",
+    context: "Discussing symptoms in {{location}}",
+    script: [
+      { speaker: "Doctor", text: "How long have you been feeling this {{symptom}}?" },
+      { speaker: "Patient", text: "It started around {{time}} yesterday." },
+      { speaker: "Doctor", text: "I'll prescribe some {{item}} for you." }
+    ]
+  },
+  {
+    role: "Traveler",
+    partner: "Desk Agent",
+    context: "Booking a flight to {{location}}",
+    script: [
+      { speaker: "Traveler", text: "Are there any seats left for the {{time}} flight?" },
+      { speaker: "Desk Agent", text: "Yes, we have one window seat in business class." },
+      { speaker: "Traveler", text: "I'll take it! Do you accept credit cards?" }
+    ]
+  }
+];
 
 module.exports = {
-  dailyExpression, dialogueRoleplay, pronunciationFocus, repeatSentence,
-  sceneDescriptionSpeaking, situationSpeaking, speakMissingWord,
-  speakOpposite, speakSynonym, yesNoSpeaking,
+  dailyExpression,
+  pronunciationFocus,
+  repeatSentence,
+  situationSpeaking,
+  speakMissingWord,
+  speakOpposite,
+  speakSynonym,
+  yesNoSpeaking,
+  sceneDescriptionSpeaking,
+  dialogueRoleplay
 };

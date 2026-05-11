@@ -1,30 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/presentation/widgets/writing/ink_streak.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class FixTheSentenceScreen extends StatefulWidget {
   final int level;
-  const FixTheSentenceScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const FixTheSentenceScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.fixTheSentence,
+  });
 
   @override
   State<FixTheSentenceScreen> createState() => _FixTheSentenceScreenState();
@@ -33,443 +28,165 @@ class FixTheSentenceScreen extends StatefulWidget {
 class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final TextEditingController _controller = TextEditingController();
-  bool _hasSubmitted = false;
+  final List<Offset> _erasePoints = [];
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
+  int _erasedAmount = 0;
 
   @override
   void initState() {
     super.initState();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(
-        gameType: GameSubtype.fixTheSentence,
-        level: widget.level,
-      ),
-    );
+    context.read<WritingBloc>().add(FetchWritingQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  void _submitAnswer(String? correctSentence) {
-    if (_hasSubmitted || _controller.text.trim().isEmpty) {
-      return;
+  void _onErase(Offset localPosition) {
+    if (_isAnswered) return;
+    setState(() {
+      _erasePoints.add(localPosition);
+      _erasedAmount++;
+      if (_erasedAmount % 10 == 0) _hapticService.selection();
+    });
+    
+    if (_erasedAmount > 100) {
+      _hapticService.success();
+      // Auto-fix for demo, normally would show options
     }
-    _hapticService.selection();
-    setState(() => _hasSubmitted = true);
-
-    final userText = _controller.text.trim().toLowerCase().replaceAll(
-      RegExp(r'[.!?]'),
-      '',
-    );
-    final targetText = (correctSentence ?? "").trim().toLowerCase().replaceAll(
-      RegExp(r'[.!?]'),
-      '',
-    );
-
-    bool isCorrect = userText == targetText;
-
-    if (isCorrect) {
-      _soundService.playCorrect();
-    } else {
-      _soundService.playWrong();
-    }
-
-    context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
   }
 
-  void _useHint() {
-    _hapticService.selection();
-    context.read<WritingBloc>().add(WritingHintUsed());
+  void _submitAnswer(String correct) {
+    if (_isAnswered || _erasedAmount < 50) return;
+    
+    _hapticService.success();
+    _soundService.playCorrect();
+    setState(() { _isAnswered = true; _isCorrect = true; });
+    context.read<WritingBloc>().add(SubmitAnswer(true));
   }
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: BlocConsumer<WritingBloc, WritingState>(
-        listener: (context, state) {
-          if (state is WritingGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Expert Editor!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins!',
-        ),
-            );
-          } else if (state is WritingGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Grammar Overload',
-        description: 'You lost all hearts. Try reviewing some common grammar rules!',
-        onRestore: () => context.read<WritingBloc>().add(RestoreLife()),
-      );
-          } else if (state is WritingLoaded &&
-              state.lastAnswerCorrect == null) {
+    return BlocConsumer<WritingBloc, WritingState>(
+      listener: (context, state) {
+        if (state is WritingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
             setState(() {
-              _hasSubmitted = false;
-              _controller.clear();
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _erasePoints.clear();
+              _erasedAmount = 0;
             });
           }
-        },
-        builder: (context, state) {
-          if (state is WritingLoading || state is WritingInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is WritingLoaded) {
-            final theme = LevelThemeHelper.getTheme(
-              'writing',
-              level: widget.level,
-            );
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                InkStreak(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is WritingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<WritingBloc>().add(
-                FetchWritingQuests(
-                  gameType: GameSubtype.fixTheSentence,
-                  level: widget.level,
-                ),
+          _lastLives = state.livesRemaining;
+        }
+        if (state is WritingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'SYNTAX SURGEON!', enableDoubleUp: true);
+        } else if (state is WritingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<WritingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is WritingLoaded) ? state.currentQuest : null;
+        
+        return WritingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
+          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 48.h),
+              Expanded(
+                child: _buildDigitalBlackboard(quest.passage ?? "", theme.primaryColor),
               ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    WritingLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-    final broken = quest.incorrectSentence ?? "No sentence provided.";
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
+              if (!_isAnswered)
+                ScaleButton(
+                  onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
+                  child: Container(
+                    width: double.infinity, height: 60.h,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: _erasedAmount > 50 ? theme.primaryColor : Colors.grey, boxShadow: [if (_erasedAmount > 50) BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)]),
+                    child: Center(child: Text("VERIFY RESTORATION", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
                   ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    Text(
-                      theme.title,
-                      style: GoogleFonts.outfit(
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ),
-                    SizedBox(height: 24.h),
-                    Text(
-                      quest.instruction,
-                      style: GoogleFonts.outfit(
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : Colors.black87,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 40.h),
-
-                    // Broken Sentence Card
-                    GlassTile(
-                      padding: EdgeInsets.all(32.r),
-                      borderRadius: BorderRadius.circular(32.r),
-                      borderColor: const Color(
-                        0xFFF43F5E,
-                      ).withValues(alpha: 0.2),
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.03)
-                          : Colors.black.withValues(alpha: 0.02),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: 4.w,
-                                height: 20.h,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xFFF43F5E),
-                                  borderRadius: BorderRadius.circular(2.r),
-                                ),
-                              ),
-                              SizedBox(width: 12.w),
-                              Text(
-                                "ERROR DETECTED",
-                                style: GoogleFonts.outfit(
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 2,
-                                  color: const Color(0xFFF43F5E),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 24.h),
-                          Text(
-                            "\"$broken\"",
-                            style: GoogleFonts.spectral(
-                              fontSize: 22.sp,
-                              fontWeight: FontWeight.w600,
-                              height: 1.5,
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.9)
-                                  : Colors.black87,
-                              fontStyle: FontStyle.italic,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                    ).animate().fadeIn().shake(hz: 4, duration: 600.ms),
-
-                    if (state.hintUsed)
-                      Padding(
-                        padding: EdgeInsets.only(top: 24.h),
-                        child: Text(
-                          "Hint: ${quest.hint ?? 'Try to correct the spelling or grammar.'}",
-                          style: GoogleFonts.outfit(
-                            fontSize: 16.sp,
-                            color: Colors.amber,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ).animate().fadeIn().shimmer(),
-
-                    SizedBox(height: 48.h),
-
-                    // Input Field
-                    GlassTile(
-                      padding: EdgeInsets.all(4.r),
-                      borderRadius: BorderRadius.circular(24.r),
-                      borderColor: _hasSubmitted
-                          ? (state.lastAnswerCorrect == true
-                                ? const Color(0xFF10B981)
-                                : const Color(0xFFF43F5E))
-                          : theme.primaryColor.withValues(alpha: 0.1),
-                      child: TextField(
-                        controller: _controller,
-                        enabled: !_hasSubmitted,
-                        maxLines: 4,
-                        style: GoogleFonts.spectral(
-                          fontSize: 18.sp,
-                          height: 1.5,
-                          fontWeight: FontWeight.w700,
-                          color: theme.primaryColor,
-                        ),
-                        decoration: InputDecoration(
-                          hintText: "Enter the correction...",
-                          hintStyle: GoogleFonts.spectral(
-                            color: theme.primaryColor.withValues(alpha: 0.3),
-                          ),
-                          contentPadding: EdgeInsets.all(24.r),
-                          filled: true,
-                          fillColor: Colors.transparent,
-                          border: InputBorder.none,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.05),
-
-                    SizedBox(height: 32.h),
-
-                    if (!_hasSubmitted)
-                      ScaleButton(
-                        onTap: () => _submitAnswer(quest.correctSentence),
-                        child: Container(
-                          width: double.infinity,
-                          height: 56.h,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                theme.primaryColor,
-                                theme.primaryColor.withValues(alpha: 0.8),
-                              ],
-                            ),
-                            borderRadius: BorderRadius.circular(16.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: theme.primaryColor.withValues(
-                                  alpha: 0.3,
-                                ),
-                                blurRadius: 20,
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                            child: Text(
-                              "FIX IT",
-                              style: GoogleFonts.outfit(
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ).animate().fadeIn(delay: 600.ms),
-                  ],
                 ),
-              ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "FIXED!" : "STILL BROKEN!",
-            subtitle: quest.correctSentence ?? "Sentence corrected.",
-            onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+              SizedBox(height: 20.h),
+            ],
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.auto_fix_normal_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("SCRUB AWAY THE LOGICAL DECAY", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
+  Widget _buildDigitalBlackboard(String text, Color color) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: Colors.white10, width: 4),
+        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 40)],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.r),
+        child: GestureDetector(
+          onPanUpdate: (details) => _onErase(details.localPosition),
+          child: CustomPaint(
+            painter: EraserPainter(points: _erasePoints, text: text, color: color, isCorrected: _isAnswered),
+            size: Size.infinite,
           ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
-            ),
-          ],
         ),
       ),
     );
   }
-
-  bool get isDark => Theme.of(context).brightness == Brightness.dark;
-
-  
-
-  
 }
+
+class EraserPainter extends CustomPainter {
+  final List<Offset> points;
+  final String text;
+  final Color color;
+  final bool isCorrected;
+  EraserPainter({required this.points, required this.text, required this.color, required this.isCorrected});
+  @override
+  void paint(Canvas canvas, Size size) {
+    final textPainter = TextPainter(
+      text: TextSpan(text: text, style: GoogleFonts.shareTechMono(fontSize: 24.sp, color: isCorrected ? Colors.greenAccent : Colors.redAccent.withValues(alpha: 0.7), fontWeight: FontWeight.bold)),
+      textAlign: TextAlign.center,
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout(maxWidth: size.width - 40);
+    textPainter.paint(canvas, Offset(20, size.height / 2 - textPainter.height / 2));
+
+    // Draw erasure paths
+    final paint = Paint()..color = Colors.black..strokeWidth = 30..strokeCap = StrokeCap.round..blendMode = BlendMode.clear;
+    if (!isCorrected) {
+      for (var point in points) {
+        canvas.drawCircle(point, 20.r, paint);
+      }
+    }
+  }
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
+}
+

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voxai_quest/core/presentation/widgets/games/modern_path_game_map.dart';
+import 'package:vowl/core/presentation/widgets/games/modern_path_game_map.dart';
 
 class PlaceholderGameMap extends StatelessWidget {
   final String gameType;

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
-import 'package:voxai_quest/core/utils/game_helper.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/game_helper.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class CategoryShelf extends StatelessWidget {
   const CategoryShelf({super.key, required this.user, required this.subtypes});
@@ -19,43 +19,71 @@ class CategoryShelf extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 215.h,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        itemCount: subtypes.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: EdgeInsets.only(right: 16.w),
-            child: _GameEntryCard(subtype: subtypes[index]),
-          );
-        },
+      child: RepaintBoundary(
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          itemCount: subtypes.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: EdgeInsets.only(right: 16.w),
+              child: _GameEntryCard(subtype: subtypes[index], user: user),
+            );
+          },
+        ),
       ),
     );
   }
 }
 
 class _GameEntryCard extends StatelessWidget {
-  const _GameEntryCard({required this.subtype});
+  const _GameEntryCard({required this.subtype, required this.user});
 
   final GameSubtype subtype;
+  final UserEntity user;
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final metadata = GameHelper.getGameMetadata(subtype, isDark: isDark);
+    final displayColor = isDark ? metadata.color : HSLColor.fromColor(metadata.color).withLightness(0.4).toColor();
 
     return ScaleButton(
       onTap: () {
         final category = GameHelper.getCategoryForSubtype(subtype);
+        
+        // Handle Elite Mastery specific maps
+        if (category == 'elitemastery') {
+          if (subtype == GameSubtype.storyBuilder) {
+            context.push('/story-builder-map');
+            return;
+          }
+          if (subtype == GameSubtype.idiomMatch) {
+            context.push('/idiom-match-map');
+            return;
+          }
+          if (subtype == GameSubtype.speedSpelling) {
+            context.push('/speed-spelling-map');
+            return;
+          }
+          if (subtype == GameSubtype.accentShadowing) {
+            context.push('/accent-shadowing-map');
+            return;
+          }
+        }
+
         context.push(
           '${AppRouter.levelsRoute}?category=$category&gameType=${subtype.name}',
         );
       },
       child: GlassTile(
         width: 150.w,
-        borderRadius: BorderRadius.circular(32.r),
-        padding: EdgeInsets.all(20.r),
+        borderRadius: BorderRadius.circular(30.r),
+        padding: EdgeInsets.all(18.r),
+        usePremiumStyle: true,
+        showShadow: false, // Remove unwanted glow/shadow between cards
+        glassOpacity: 0.15, // Slightly higher opacity to hide background 'splashes'
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,23 +94,19 @@ class _GameEntryCard extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(10.r),
                   decoration: BoxDecoration(
-                    color: metadata.color.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(14.r),
-                    border: Border.all(
-                      color: metadata.color.withValues(alpha: 0.2),
-                    ),
-                  ),
-                  child: Icon(metadata.icon, color: metadata.color, size: 22.r),
-                ),
-                // Tiny badge or accent
-                Container(
-                  width: 4.r,
-                  height: 4.r,
-                  decoration: BoxDecoration(
-                    color: metadata.color,
+                    color: displayColor.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: displayColor.withValues(alpha: 0.1),
+                        blurRadius: 5,
+                      ),
+                    ],
                   ),
+                  child: Icon(metadata.icon, color: displayColor, size: 22.r),
                 ),
+                // Progress Indicator or New Badge
+                _buildCardIndicator(displayColor),
               ],
             ),
             Column(
@@ -105,7 +129,7 @@ class _GameEntryCard extends StatelessWidget {
                   style: GoogleFonts.outfit(
                     fontSize: 8.sp,
                     fontWeight: FontWeight.w900,
-                    color: metadata.color.withValues(alpha: 0.8),
+                    color: displayColor.withValues(alpha: 0.7),
                     letterSpacing: 1.0,
                   ),
                 ),
@@ -117,7 +141,7 @@ class _GameEntryCard extends StatelessWidget {
               width: 40.w,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [metadata.color, metadata.color.withValues(alpha: 0)],
+                  colors: [displayColor, displayColor.withValues(alpha: 0)],
                 ),
                 borderRadius: BorderRadius.circular(1.r),
               ),
@@ -125,6 +149,59 @@ class _GameEntryCard extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildCardIndicator(Color color) {
+    final currentLevel = user.unlockedLevels[subtype.name] ?? 1;
+    final isNew = currentLevel == 1 && !user.categoryStats.containsKey(subtype.name);
+
+    if (isNew) {
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.15),
+          borderRadius: BorderRadius.circular(6.r),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
+        ),
+        child: Text(
+          'NEW',
+          style: GoogleFonts.outfit(
+            fontSize: 8.sp,
+            fontWeight: FontWeight.w900,
+            color: color,
+            letterSpacing: 0.5,
+          ),
+        ),
+      );
+    }
+
+    // Progress towards the next 10-level milestone
+    final levelsCleared = currentLevel > 1 ? currentLevel - 1 : 0;
+    final progress = (levelsCleared % 10) / 10.0;
+
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        SizedBox(
+          width: 24.r,
+          height: 24.r,
+          child: CircularProgressIndicator(
+            value: progress == 0 ? 0.05 : progress, // 5% minimum visibility
+            backgroundColor: color.withValues(alpha: 0.1),
+            valueColor: AlwaysStoppedAnimation<Color>(color),
+            strokeWidth: 2.5.r,
+          ),
+        ),
+        Text(
+          '$currentLevel',
+          style: GoogleFonts.outfit(
+            fontSize: 10.sp,
+            fontWeight: FontWeight.w900,
+            color: color,
+          ),
+        ),
+      ],
     );
   }
 }

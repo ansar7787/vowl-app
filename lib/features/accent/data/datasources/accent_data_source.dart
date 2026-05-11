@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:voxai_quest/core/data/services/asset_quest_service.dart';
+import 'package:vowl/core/data/services/asset_quest_service.dart';
 import '../models/accent_quest_model.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 

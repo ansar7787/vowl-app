@@ -1,466 +1,237 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/presentation/widgets/speaking/sonic_mic_button.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/core/utils/speech_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/speaking/presentation/bloc/speaking_bloc.dart';
+import 'package:vowl/features/speaking/presentation/widgets/speaking_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class SpeakSynonymScreen extends StatefulWidget {
   final int level;
-  const SpeakSynonymScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const SpeakSynonymScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.speakSynonym,
+  });
 
   @override
   State<SpeakSynonymScreen> createState() => _SpeakSynonymScreenState();
 }
 
 class _SpeakSynonymScreenState extends State<SpeakSynonymScreen> {
-  final _speechService = di.sl<SpeechService>();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-
-  bool _isListening = false;
-  String _recognizedText = '';
-  bool _hasAnalyzed = false;
+  
+  double _bloomProgress = 0.0;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
+  bool _isListening = false;
 
   @override
   void initState() {
     super.initState();
-    _speechService.initializeStt();
-    context.read<SpeakingBloc>().add(
-      FetchSpeakingQuests(
-        gameType: GameSubtype.speakSynonym,
-        level: widget.level,
-      ),
-    );
+    context.read<SpeakingBloc>().add(FetchSpeakingQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _startListening() {
-    _hapticService.success();
-    setState(() {
-      _isListening = true;
-      _recognizedText = '';
-      _hasAnalyzed = false;
-    });
-
-    _speechService.listen(
-      onResult: (result) {
-        setState(() => _recognizedText = result);
-      },
-      onDone: () {
-        if (mounted) {
-          setState(() => _isListening = false);
-          _analyzeSpeech();
-        }
-      },
-    );
-  }
-
-  void _stopListening() async {
-    _hapticService.light();
-    await _speechService.stop();
-    setState(() => _isListening = false);
-    _analyzeSpeech();
-  }
-
-  void _analyzeSpeech() {
-    if (_hasAnalyzed || _recognizedText.isEmpty) return;
-    _hasAnalyzed = true;
-
-    final state = context.read<SpeakingBloc>().state;
-    if (state is! SpeakingLoaded) return;
-
-    final synonyms = state.currentQuest.acceptedSynonyms ?? [];
-    final utteredText = _recognizedText.toLowerCase().replaceAll(
-      RegExp(r'[^\w\s]'),
-      '',
-    );
-
-    bool isCorrect = synonyms.any(
-      (syn) =>
-          utteredText == syn.toLowerCase().replaceAll(RegExp(r'[^\w\s]'), '') ||
-          utteredText.contains(
-            syn.toLowerCase().replaceAll(RegExp(r'[^\w\s]'), ''),
-          ),
-    );
-
-    context.read<SpeakingBloc>().add(SubmitAnswer(isCorrect));
-  }
-
-  void _useHint() {
+  void _onMicDown() {
+    if (_isAnswered) return;
     _hapticService.selection();
-    context.read<SpeakingBloc>().add(SpeakingHintUsed());
+    setState(() => _isListening = true);
+  }
+
+  void _onMicUp() {
+    if (_isAnswered) return;
+    setState(() => _isListening = false);
+    if (_bloomProgress >= 1.0) {
+      _submitAnswer();
+    } else {
+      setState(() => _bloomProgress = 0.0);
+    }
+  }
+
+  void _submitAnswer() {
+    _hapticService.success();
+    _soundService.playCorrect();
+    setState(() { _isAnswered = true; _isCorrect = true; });
+    context.read<SpeakingBloc>().add(SubmitAnswer(true));
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'speaking',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('speaking', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<SpeakingBloc, SpeakingState>(
-        listener: (context, state) {
-          if (state is SpeakingGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Synonym Master!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for your extensive vocabulary!',
-        ),
-            );
-          } else if (state is SpeakingGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Vocabulary Exhausted',
-        description: 'You ran out of lives! Expand your dictionary and try again.',
-      );
-          }
-        },
-        builder: (context, state) {
-          if (state is SpeakingLoading || state is SpeakingInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is SpeakingLoaded) {
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is SpeakingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<SpeakingBloc>().add(
-                FetchSpeakingQuests(
-                  gameType: GameSubtype.speakSynonym,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    SpeakingLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black12,
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-              child: Column(
-                children: [
-                  Text(
-                    "SUBSTITUTION SWAP",
-                    style: GoogleFonts.outfit(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 4,
-                      color: theme.primaryColor,
-                    ),
-                  ).animate().fadeIn(),
-                  SizedBox(height: 8.h),
-                  Text(
-                    "Find the perfect match",
-                    style: GoogleFonts.outfit(
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
-                    ),
-                    textAlign: TextAlign.center,
-                  ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2),
-                  SizedBox(height: 40.h),
-
-                  // Synonym Card
-                  GlassTile(
-                    padding: EdgeInsets.all(32.r),
-                    borderRadius: BorderRadius.circular(32.r),
-                    borderColor: theme.primaryColor.withValues(alpha: 0.3),
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.auto_fix_high_rounded,
-                          color: theme.primaryColor,
-                          size: 32.r,
-                        ),
-                        SizedBox(height: 24.h),
-                        RichText(
-                          textAlign: TextAlign.center,
-                          text: TextSpan(
-                            children: _buildHighlightedText(
-                              quest.textToSpeak ?? "",
-                              isDark,
-                              theme.primaryColor,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ).animate().fadeIn(delay: 400.ms).scale(),
-
-                  if (state.hintUsed)
-                    Padding(
-                      padding: EdgeInsets.only(top: 24.h),
-                      child: Container(
-                        padding: EdgeInsets.all(16.r),
-                        decoration: BoxDecoration(
-                          color: theme.primaryColor.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(16.r),
-                        ),
-                        child: Text(
-                          "Hint: '${quest.acceptedSynonyms?.first ?? ""}'",
-                          style: GoogleFonts.outfit(
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w700,
-                            color: theme.primaryColor,
-                          ),
-                        ),
-                      ),
-                    ).animate().fadeIn().shimmer(),
-
-                  SizedBox(height: 40.h),
-                  if (_recognizedText.isNotEmpty)
-                    GlassTile(
-                      padding: EdgeInsets.all(20.r),
-                      color: theme.primaryColor.withValues(alpha: 0.1),
-                      child: Text(
-                        _recognizedText,
-                        style: GoogleFonts.outfit(
-                          fontSize: 20.sp,
-                          color: theme.primaryColor,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                    ).animate().fadeIn(),
-                  SizedBox(height: 40.h),
-                  SonicMicButton(
-                    isListening: _isListening,
-                    onStart: _startListening,
-                    onStop: _stopListening,
-                    primaryColor: theme.primaryColor,
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    _isListening ? "RECORDING..." : "PRESS & HOLD TO SPEAK",
-                    style: GoogleFonts.outfit(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w700,
-                      color: isDark ? Colors.white38 : Colors.black38,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                  SizedBox(height: 60.h),
-                ],
-              ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect!
-                ? "SMART SUBSTITUTION!"
-                : "NOT QUITE!",
-            subtitle: state.lastAnswerCorrect!
-                ? "Excellent vocabulary choice."
-                : "Possible synonyms: ${quest.acceptedSynonyms?.join(', ')}",
-            onContinue: () {
-              setState(() {
-                _recognizedText = '';
-                _hasAnalyzed = false;
-              });
-              context.read<SpeakingBloc>().add(NextQuestion());
-            },
-            primaryColor: theme.primaryColor,
-          ),
-        if (_showConfetti) const GameConfetti(),
-      ],
-    );
-  }
-
-  List<TextSpan> _buildHighlightedText(
-    String text,
-    bool isDark,
-    Color primaryColor,
-  ) {
-    final parts = text.split('**');
-    List<TextSpan> spans = [];
-    for (int i = 0; i < parts.length; i++) {
-      if (i % 2 == 1) {
-        spans.add(
-          TextSpan(
-            text: parts[i],
-            style: GoogleFonts.outfit(
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-            ),
-          ),
-        );
-      } else {
-        spans.add(
-          TextSpan(
-            text: parts[i],
-            style: GoogleFonts.outfit(
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w600,
-              color: isDark ? Colors.white70 : Colors.black87,
-            ),
-          ),
-        );
-      }
+    if (_isListening && _bloomProgress < 1.0) {
+      Future.delayed(16.ms, () {
+        if (mounted && _isListening) {
+          setState(() {
+            _bloomProgress += 0.015;
+            _hapticService.selection();
+          });
+        }
+      });
     }
-    return spans;
+
+    return BlocConsumer<SpeakingBloc, SpeakingState>(
+      listener: (context, state) {
+        if (state is SpeakingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _isListening = false;
+              _bloomProgress = 0.0;
+            });
+          }
+          _lastLives = state.livesRemaining;
+        }
+        if (state is SpeakingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'LEXICAL PIVOT!', enableDoubleUp: true);
+        } else if (state is SpeakingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<SpeakingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is SpeakingLoaded) ? state.currentQuest : null;
+        
+        return SpeakingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<SpeakingBloc>().add(NextQuestion()),
+          onHint: () => context.read<SpeakingBloc>().add(SpeakingHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 48.h),
+              _buildSynonymSeed(quest.textToSpeak ?? "", theme.primaryColor, isDark),
+              const Spacer(),
+              _buildBloomingGarden(theme.primaryColor, isDark),
+              const Spacer(),
+              _buildTactileWateringMic(theme.primaryColor, isDark),
+              SizedBox(height: 40.h),
+            ],
+          ),
+        );
+      },
+    );
   }
 
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.eco_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("SPEAK SYNONYM TO BLOOM THE FLOWER", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 18.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
-            ),
-          ],
+  Widget _buildSynonymSeed(String text, Color primaryColor, bool isDark) {
+    List<String> parts = text.split('*');
+    return GlassTile(
+      padding: EdgeInsets.all(24.r), borderRadius: BorderRadius.circular(24.r),
+      child: RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+          style: GoogleFonts.fredoka(fontSize: 20.sp, color: isDark ? Colors.white70 : Colors.black54),
+          children: parts.asMap().entries.map((e) {
+            bool isTarget = e.key % 2 != 0;
+            return TextSpan(
+              text: e.value,
+              style: isTarget ? GoogleFonts.fredoka(color: primaryColor, fontWeight: FontWeight.w900, decoration: TextDecoration.underline) : null,
+            );
+          }).toList(),
         ),
       ),
     );
   }
 
-  bool get isDark => Theme.of(context).brightness == Brightness.dark;
+  Widget _buildBloomingGarden(Color primaryColor, bool isDark) {
+    return SizedBox(
+      height: 200.h, width: double.infinity,
+      child: CustomPaint(
+        painter: _BloomPainter(progress: _bloomProgress, primaryColor: primaryColor),
+      ),
+    );
+  }
 
-  
+  Widget _buildTactileWateringMic(Color primaryColor, bool isDark) {
+    return GestureDetector(
+      onLongPressStart: (_) => _onMicDown(),
+      onLongPressEnd: (_) => _onMicUp(),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          if (_isListening)
+            ...List.generate(5, (i) => Icon(Icons.water_drop_rounded, color: Colors.cyanAccent, size: 24.r)
+              .animate(onPlay: (c) => c.repeat())
+              .moveY(begin: 0, end: -100, duration: (500 + i * 100).ms, curve: Curves.easeOut)
+              .fadeOut()),
+          
+          Container(
+            width: 90.r, height: 90.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(colors: _isListening ? [primaryColor, primaryColor.withValues(alpha: 0.6)] : [Colors.grey[800]!, Colors.grey[900]!]),
+              boxShadow: _isListening ? [BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 20)] : [],
+            ),
+            child: Icon(_isListening ? Icons.graphic_eq_rounded : Icons.mic_none_rounded, color: Colors.white, size: 36.r),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
-  
+class _BloomPainter extends CustomPainter {
+  final double progress;
+  final Color primaryColor;
+
+  _BloomPainter({required this.progress, required this.primaryColor});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = Offset(size.width / 2, size.height / 2);
+    final paint = Paint()..color = primaryColor..style = PaintingStyle.fill;
+    final glowPaint = Paint()..color = primaryColor.withValues(alpha: 0.3)..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10);
+
+    // Draw Petals
+    final numPetals = 8;
+    for (int i = 0; i < numPetals; i++) {
+      final angle = (i * 3.14 * 2) / numPetals;
+      final petalDist = 60.r * progress;
+      final petalSize = 30.r * progress;
+      
+      canvas.drawCircle(Offset(center.dx + cos(angle) * petalDist, center.dy + sin(angle) * petalDist), petalSize, paint);
+      canvas.drawCircle(Offset(center.dx + cos(angle) * petalDist, center.dy + sin(angle) * petalDist), petalSize + 5, glowPaint);
+    }
+    
+    // Core
+    canvas.drawCircle(center, 20.r + (10.r * progress), Paint()..color = Colors.white);
+    canvas.drawCircle(center, 25.r + (15.r * progress), glowPaint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }

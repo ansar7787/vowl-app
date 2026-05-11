@@ -1,14 +1,18 @@
-class GetRoleplayQuest {
-  final dynamic arg1;
-  final dynamic arg2;
-  final dynamic arg3;
-  GetRoleplayQuest([this.arg1, this.arg2, this.arg3]);
-  Future<dynamic> call(dynamic params) async {
-    return null;
-  }
-}
+import 'package:dartz/dartz.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/domain/entities/game_quest.dart';
+import '../entities/roleplay_quest.dart';
+import '../repositories/roleplay_repository.dart';
 
-class GetRoleplayQuestParams {
-  final dynamic user;
-  const GetRoleplayQuestParams({this.user});
+class GetRoleplayQuest {
+  final RoleplayRepository repository;
+
+  GetRoleplayQuest(this.repository);
+
+  Future<Either<Failure, List<RoleplayQuest>>> call({
+    required GameSubtype gameType,
+    required int level,
+  }) async {
+    return await repository.getRoleplayQuests(gameType: gameType, level: level);
+  }
 }

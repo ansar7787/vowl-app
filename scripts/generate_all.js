@@ -48,11 +48,53 @@ const CATEGORIES = {
   ],
 };
 
+function applyVariation(template, vocab, seed) {
+  if (!vocab) return JSON.parse(JSON.stringify(template));
+  
+  const copy = JSON.parse(JSON.stringify(template));
+  const keys = Object.keys(vocab);
+  
+  // Use a simple deterministic "random" based on level/q index
+  let s = seed;
+  const nextRand = () => {
+    s = (s * 9301 + 49297) % 233280;
+    return s / 233280;
+  };
+
+  const replacePlaceholders = (str) => {
+    if (typeof str !== 'string') return str;
+    let newStr = str;
+    keys.forEach(key => {
+      const regex = new RegExp(`{{${key}}}`, 'g');
+      if (newStr.includes(`{{${key}}}`)) {
+        const options = vocab[key];
+        const val = options[Math.floor(nextRand() * (options.options?.length || options.length))];
+        newStr = newStr.replace(regex, val);
+      }
+    });
+    return newStr;
+  };
+
+  // Apply to fields
+  if (copy.fields) {
+    for (let f in copy.fields) {
+      if (typeof copy.fields[f] === 'string') {
+        copy.fields[f] = replacePlaceholders(copy.fields[f]);
+      } else if (Array.isArray(copy.fields[f])) {
+        copy.fields[f] = copy.fields[f].map(item => replacePlaceholders(item));
+      }
+    }
+  }
+
+  return copy;
+}
+
 function generateCategory(category, pools) {
   const outDir = path.join(__dirname, '..', 'assets', 'curriculum', category);
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
   const gameTypes = CATEGORIES[category];
+  const vocab = pools.VOCAB;
   let totalFiles = 0;
 
   for (const gameType of gameTypes) {
@@ -70,8 +112,13 @@ function generateCategory(category, pools) {
 
       for (let level = startLevel; level <= endLevel; level++) {
         for (let q = 1; q <= QUESTIONS_PER_LEVEL; q++) {
+          const seed = (level * 100) + q;
           const gi = ((level - 1) * QUESTIONS_PER_LEVEL + (q - 1)) % pool.length;
-          const t = pool[gi];
+          const baseTemplate = pool[gi];
+          
+          // Apply variations
+          const t = applyVariation(baseTemplate, vocab, seed);
+
           const quest = {
             id: `${gameType}_l${level}_q${q}`,
             instruction: t.instruction,

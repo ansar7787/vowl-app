@@ -1,517 +1,307 @@
 {
-  "gameType": "speedVariance",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "speedVariance_l1_q1",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Whatcha gonna do?",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "What are you going to do?",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l1_q2",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "I wanna go.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "I want to go.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l1_q3",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Lemme see.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Let me see.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l2_q1",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "I dunno.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "I don't know.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l2_q2",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "You shoulda done it.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "You should have done it.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l2_q3",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Couldja help me?",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Could you help me?",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l3_q1",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Gimme that.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Give me that.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l3_q2",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "I gotta go.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "I got to go.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l3_q3",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Wouldja like some?",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Would you like some?",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l4_q1",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Tell 'em I said hi.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Tell them I said hi.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l4_q2",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Sorta.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Sort of.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l4_q3",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Kinda.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Kind of.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l5_q1",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Lotta people.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Lot of people.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l5_q2",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Outta here.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Out of here.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l5_q3",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Whatcha doin'?",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "What are you doing?",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l6_q1",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Didja see that?",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Did you see that?",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l6_q2",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "I've gotta leave.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "I have got to leave.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l6_q3",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Doncha know?",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Don't you know?",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l7_q1",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Mighta been.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Might have been.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l7_q2",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Musta seen it.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Must have seen it.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l7_q3",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Gonna happen.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Going to happen.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l8_q1",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Wanna eat?",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Want to eat?",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l8_q2",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Lemme know.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Let me know.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l8_q3",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Gimme a sec.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Give me a second.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l9_q1",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Tryna find it.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Trying to find it.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l9_q2",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Fronta the line.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Front of the line.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l9_q3",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Cuppa coffee.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Cup of coffee.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l10_q1",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "I'm'a.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "I am going to.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l10_q2",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Cuz I said so.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Because I said so.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "speedVariance_l10_q3",
-      "instruction": "Identify the speaking speed.",
-      "difficulty": 1,
-      "subtype": "speedVariance",
-      "interactionType": "choice",
-      "textToSpeak": "Prolly not.",
-      "options": [
-        "Fast casual speech",
-        "Careful slow speech"
-      ],
-      "correctAnswerIndex": 0,
-      "slowForm": "Probably not.",
-      "hint": "Words blend together (reduction) in fast speech.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "speedVariance",
+    "batchIndex":  1,
+    "levels":  "1-10",
+    "quests":  [
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L1_Q1",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L1_Q2",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L1_Q3",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L2_Q1",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L2_Q2",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L2_Q3",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L3_Q1",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L3_Q2",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L3_Q3",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L4_Q1",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L4_Q2",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L4_Q3",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L5_Q1",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L5_Q2",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L5_Q3",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L6_Q1",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L6_Q2",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L6_Q3",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L7_Q1",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L7_Q2",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L7_Q3",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L8_Q1",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L8_Q2",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L8_Q3",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L9_Q1",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L9_Q2",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L9_Q3",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L10_Q1",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L10_Q2",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   },
+                   {
+                       "id":  "ACC_SPEEDVARIANCE_L10_Q3",
+                       "interactionType":  "Tempo Slide",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Speak slightly faster than your normal pace.",
+                       "explanation":  "Speed variance builds elastic fluency.",
+                       "textToSpeak":  "I need to go now.",
+                       "targetSpeed":  1.25
+                   }
+               ]
 }

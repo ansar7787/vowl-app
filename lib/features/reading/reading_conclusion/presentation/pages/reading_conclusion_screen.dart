@@ -1,475 +1,242 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/reading/book_streak.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class ReadingConclusionScreen extends StatefulWidget {
   final int level;
-  const ReadingConclusionScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const ReadingConclusionScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.readingConclusion,
+  });
 
   @override
-  State<ReadingConclusionScreen> createState() =>
-      _ReadingConclusionScreenState();
+  State<ReadingConclusionScreen> createState() => _ReadingConclusionScreenState();
 }
 
 class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  int? _selectedOptionIndex;
+  
+  Offset? _dragStart;
+  Offset? _dragCurrent;
+  int? _selectedIndex;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(
-      FetchReadingQuests(
-        gameType: GameSubtype.readingConclusion,
-        level: widget.level,
-      ),
-    );
+    context.read<ReadingBloc>().add(FetchReadingQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onOptionSelected(int index) {
-    if (_selectedOptionIndex != null) return;
-    _hapticService.selection();
-    setState(() => _selectedOptionIndex = index);
+  void _onBridgeStart(Offset position) {
+    if (_isAnswered) return;
+    setState(() {
+      _dragStart = position;
+      _dragCurrent = position;
+      _hapticService.selection();
+    });
+  }
 
-    final state = context.read<ReadingBloc>().state;
-    if (state is ReadingLoaded) {
-      final isCorrect = index == (state.currentQuest.correctAnswerIndex ?? 0);
-      if (isCorrect) {
-        _soundService.playCorrect();
-        _hapticService.success();
-      } else {
-        _soundService.playWrong();
-        _hapticService.error();
-      }
-      context.read<ReadingBloc>().add(SubmitAnswer(isCorrect));
+  void _onBridgeUpdate(Offset delta) {
+    if (_isAnswered || _dragStart == null) return;
+    setState(() {
+      _dragCurrent = (_dragCurrent ?? Offset.zero) + delta;
+    });
+  }
+
+  void _onBridgeEnd(int index, String selected, String correct) {
+    if (_isAnswered) return;
+    _submitAnswer(index, selected, correct);
+  }
+
+  void _submitAnswer(int index, String selected, String correct) {
+    setState(() => _selectedIndex = index);
+    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<ReadingBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<ReadingBloc>().add(SubmitAnswer(false));
+      Future.delayed(1.seconds, () => setState(() {
+        _dragStart = null;
+        _dragCurrent = null;
+        _selectedIndex = null;
+      }));
     }
-  }
-
-  void _useHint() {
-    _hapticService.selection();
-    context.read<ReadingBloc>().add(ReadingHintUsed());
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<ReadingBloc, ReadingState>(
-        listener: (context, state) {
-          if (state is ReadingGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Master of Flow!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for concluding the narrative!',
-        ),
-            );
-          } else if (state is ReadingGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Thread Broken',
-        description: 'Try to find the logical end of the story next time!',
-        onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
-      );
-          } else if (state is ReadingLoaded &&
-              state.lastAnswerCorrect == null) {
-            _selectedOptionIndex = null;
+    return BlocConsumer<ReadingBloc, ReadingState>(
+      listener: (context, state) {
+        if (state is ReadingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _selectedIndex = null;
+              _dragStart = null;
+              _dragCurrent = null;
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is ReadingLoading || state is ReadingInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is ReadingLoaded) {
-            final theme = LevelThemeHelper.getTheme(
-              'reading',
-              level: widget.level,
-            );
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                BookStreak(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is ReadingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<ReadingBloc>().add(
-                FetchReadingQuests(
-                  gameType: GameSubtype.readingConclusion,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    ReadingLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
+          _lastLives = state.livesRemaining;
+        }
+        if (state is ReadingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'FINAL VERDICT DELIVERED!', enableDoubleUp: true);
+        } else if (state is ReadingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ReadingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        
+        return ReadingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
+          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+          child: quest == null ? const SizedBox() : Stack(
+            children: [
+              Column(
                 children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 48.h),
+                  _buildCentralPassage(quest.passage ?? "", theme.primaryColor, isDark),
+                  const Spacer(),
+                  _buildConclusionTerminals(quest.options ?? [], quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 40.h),
                 ],
               ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    Text(
-                      theme.title,
-                      style: GoogleFonts.outfit(
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ).animate().fadeIn(),
-                    SizedBox(height: 30.h),
-                    GlassTile(
-                      borderRadius: BorderRadius.circular(32.r),
-                      padding: EdgeInsets.all(28.r),
-                      borderColor: theme.primaryColor.withValues(alpha: 0.2),
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.03)
-                          : Colors.black.withValues(alpha: 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                width: 4.w,
-                                height: 24.h,
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor,
-                                  borderRadius: BorderRadius.circular(2.r),
-                                ),
-                              ),
-                              SizedBox(width: 12.w),
-                              Text(
-                                "PASSAGE",
-                                style: GoogleFonts.outfit(
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 2,
-                                  color: theme.primaryColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 20.h),
-                          Text(
-                            quest.passage ?? "",
-                            style: GoogleFonts.spectral(
-                              fontSize: 19.sp,
-                              height: 1.7,
-                              fontWeight: FontWeight.w500,
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.9)
-                                  : Colors.black87,
-                            ),
-                            textAlign: TextAlign.justify,
-                          ),
-                          SizedBox(height: 32.h),
-                          Container(
-                            padding: EdgeInsets.all(16.r),
-                            decoration: BoxDecoration(
-                              color: theme.primaryColor.withValues(alpha: 0.05),
-                              borderRadius: BorderRadius.circular(16.r),
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.help_outline_rounded,
-                                  color: theme.primaryColor,
-                                  size: 20.r,
-                                ),
-                                SizedBox(width: 12.w),
-                                Expanded(
-                                  child: Text(
-                                    "How should this story naturally conclude?",
-                                    style: GoogleFonts.outfit(
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: theme.primaryColor,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.05),
-                    SizedBox(height: 30.h),
-                    ...List.generate(quest.options?.length ?? 0, (index) {
-                      final isCorrect = index == quest.correctAnswerIndex;
-                      final isSelected = _selectedOptionIndex == index;
-                      return _buildOptionCard(
-                        text: quest.options![index],
-                        index: index,
-                        isSelected: isSelected,
-                        isCorrect: isCorrect,
-                        showResult: _selectedOptionIndex != null,
-                        isDark: isDark,
-                        primaryColor: theme.primaryColor,
-                      );
-                    }),
-                    SizedBox(height: 40.h),
-                  ],
+              if (_dragStart != null && _dragCurrent != null)
+                CustomPaint(
+                  painter: BridgePainter(start: _dragStart!, end: _dragCurrent!, color: theme.primaryColor),
+                  size: Size.infinite,
                 ),
-              ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "LOGICAL GENIUS!" : "ALMOST!",
-            subtitle: quest.explanation ?? "Narrative flow recognized!",
-            onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+            ],
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildOptionCard({
-    required String text,
-    required int index,
-    required bool isSelected,
-    required bool isCorrect,
-    required bool showResult,
-    required bool isDark,
-    required Color primaryColor,
-  }) {
-    Color? cardColor;
-    Color? borderColor;
-
-    if (showResult) {
-      if (isCorrect) {
-        cardColor = const Color(0xFF10B981);
-        borderColor = cardColor;
-      } else if (isSelected) {
-        cardColor = const Color(0xFFF43F5E);
-        borderColor = cardColor;
-      }
-    } else if (isSelected) {
-      cardColor = primaryColor.withValues(alpha: 0.2);
-      borderColor = primaryColor;
-    }
-
-    return Padding(
-      padding: EdgeInsets.only(bottom: 16.h),
-      child: ScaleButton(
-        onTap: () => _onOptionSelected(index),
-        child: GlassTile(
-          borderRadius: BorderRadius.circular(20.r),
-          padding: EdgeInsets.all(24.r),
-          color: cardColor,
-          borderColor: borderColor,
-          child: Row(
-            children: [
-              Container(
-                width: 32.r,
-                height: 32.r,
-                decoration: BoxDecoration(
-                  color: isSelected
-                      ? Colors.white24
-                      : primaryColor.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Center(
-                  child: Text(
-                    String.fromCharCode(65 + index),
-                    style: GoogleFonts.outfit(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w800,
-                      color: isSelected ? Colors.white : primaryColor,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(width: 16.w),
-              Expanded(
-                child: Text(
-                  text,
-                  style: GoogleFonts.outfit(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : Colors.black87,
-                  ),
-                ),
-              ),
-              if (showResult && isCorrect)
-                Icon(
-                  Icons.check_circle_rounded,
-                  color: Colors.white,
-                  size: 24.r,
-                ),
-              if (showResult && isSelected && !isCorrect)
-                Icon(Icons.cancel_rounded, color: Colors.white, size: 24.r),
-            ],
-          ),
-        ),
-      ),
-    ).animate().fadeIn(delay: (index * 100).ms).slideX(begin: 0.1);
-  }
-
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.hub_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("BRIDGE THE PASSAGE TO THE CORRECT VERDICT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
+  Widget _buildCentralPassage(String text, Color color, bool isDark) {
+    return GestureDetector(
+      onPanStart: (details) => _onBridgeStart(details.globalPosition),
+      onPanUpdate: (details) => _onBridgeUpdate(details.delta),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+        padding: EdgeInsets.all(24.r),
         decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
+          color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
-          ),
+          border: Border.all(color: color, width: 2),
+          boxShadow: [BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 30)],
         ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
+        child: Column(
           children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
-            ),
+            Icon(Icons.auto_awesome_motion_rounded, color: color, size: 32.r),
+            SizedBox(height: 16.h),
+            Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 16.sp, height: 1.5, color: Colors.white70)),
           ],
         ),
-      ),
+      ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -5, end: 5, duration: 2.seconds),
     );
   }
 
-  
+  Widget _buildConclusionTerminals(List<String> options, String correct, Color color, bool isDark) {
+    return Column(
+      children: List.generate(options.length, (index) => Padding(
+        padding: EdgeInsets.only(bottom: 12.h),
+        child: DragTarget<String>(
+          onAcceptWithDetails: (details) => _onBridgeEnd(index, options[index], correct),
+          builder: (context, candidateData, rejectedData) {
+            bool isSelected = _selectedIndex == index;
+            bool isCorrect = _isAnswered && options[index].trim().toLowerCase() == correct.trim().toLowerCase();
+            bool isWrong = _isAnswered && isSelected && !isCorrect;
 
-  
+            return AnimatedContainer(
+              duration: 300.milliseconds,
+              width: double.infinity,
+              padding: EdgeInsets.all(16.r),
+              decoration: BoxDecoration(
+                color: isCorrect ? Colors.greenAccent.withValues(alpha: 0.2) : (isWrong ? Colors.redAccent.withValues(alpha: 0.2) : (isSelected ? color.withValues(alpha: 0.2) : Colors.white10)),
+                borderRadius: BorderRadius.circular(15.r),
+                border: Border.all(color: isCorrect || isWrong || isSelected ? (isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color)) : Colors.white24, width: 2),
+              ),
+              child: Text(options[index].toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.shareTechMono(fontSize: 14.sp, fontWeight: FontWeight.bold, color: Colors.white)),
+            );
+          },
+        ),
+      )),
+    );
+  }
 }
+
+class BridgePainter extends CustomPainter {
+  final Offset start;
+  final Offset end;
+  final Color color;
+  BridgePainter({required this.start, required this.end, required this.color});
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color..strokeWidth = 3..style = PaintingStyle.stroke;
+    final glow = Paint()..color = color.withValues(alpha: 0.3)..strokeWidth = 10..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
+    
+    final path = Path();
+    path.moveTo(start.dx, start.dy);
+    path.quadraticBezierTo((start.dx + end.dx) / 2, (start.dy + end.dy) / 2 + 50, end.dx, end.dy);
+    
+    canvas.drawPath(path, glow);
+    canvas.drawPath(path, paint);
+    
+    // Draw crystal joints
+    canvas.drawCircle(start, 5.r, Paint()..color = color);
+    canvas.drawCircle(end, 5.r, Paint()..color = color);
+  }
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
+}
+

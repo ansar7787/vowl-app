@@ -1,0 +1,512 @@
+[
+  {
+    "level": 111,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L111_Q1",
+        "instruction": "Find the MORNING shadow",
+        "question": "🌅👤📏✨",
+        "options": [
+          "Long Shadow",
+          "Short Shadow",
+          "No Shadow"
+        ],
+        "correctAnswer": "Long Shadow",
+        "hint": "In the morning, the sun is low, so your shadow stretches out very long on the grass!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L111_Q2",
+        "instruction": "Which one is LONG?",
+        "question": "👤📏 vs 👤🤏",
+        "options": [
+          "Morning Shadow",
+          "Noon Shadow"
+        ],
+        "correctAnswer": "Morning Shadow",
+        "hint": "When the sun is waking up, your shadow looks like a giant version of you!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L111_Q3",
+        "instruction": "Does the sun make shadows?",
+        "question": "☀️👤❓",
+        "options": [
+          "Yes, it's a big light!",
+          "No, only moon"
+        ],
+        "correctAnswer": "Yes, it's a big light!",
+        "hint": "Shadows are made whenever you stand in front of the sun's bright light!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      }
+    ]
+  },
+  {
+    "level": 112,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L112_Q1",
+        "instruction": "Find the NOON shadow",
+        "question": "☀️🆙👤🤏✨",
+        "options": [
+          "Tiny Shadow",
+          "Long Shadow",
+          "Giant Shadow"
+        ],
+        "correctAnswer": "Tiny Shadow",
+        "hint": "At noon, the sun is right above you, so your shadow is very small and stays under your feet!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L112_Q2",
+        "instruction": "Which one is TINY?",
+        "question": "👤🤏 vs 👤📏",
+        "options": [
+          "Noon Shadow",
+          "Evening Shadow"
+        ],
+        "correctAnswer": "Noon Shadow",
+        "hint": "Look down! At lunchtime, you can barely see your shadow because it's so short!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L112_Q3",
+        "instruction": "Is the sun high at NOON?",
+        "question": "☀️🆙❓",
+        "options": [
+          "Yes, top of the sky!",
+          "No, it's setting"
+        ],
+        "correctAnswer": "Yes, top of the sky!",
+        "hint": "When the sun is highest, your shadow is the smallest it can be!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 113,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L113_Q1",
+        "instruction": "Find the EVENING shadow",
+        "question": "🌇👤📏✨",
+        "options": [
+          "Long Shadow",
+          "Short Shadow",
+          "Circle Shadow"
+        ],
+        "correctAnswer": "Long Shadow",
+        "hint": "In the evening, the sun is setting, making your shadow stretch out long again!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L113_Q2",
+        "instruction": "Which one stretches out?",
+        "question": "👤📏 vs 👤🤏",
+        "options": [
+          "Evening Shadow",
+          "Noon Shadow"
+        ],
+        "correctAnswer": "Evening Shadow",
+        "hint": "The setting sun makes your shadow grow longer and longer as the day ends!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L113_Q3",
+        "instruction": "Do shadows MOVE?",
+        "question": "👤➡️👤❓",
+        "options": [
+          "Yes, with the Sun!",
+          "No, they stay still"
+        ],
+        "correctAnswer": "Yes, with the Sun!",
+        "hint": "As the sun travels across the sky, your shadow follows and changes its shape!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      }
+    ]
+  },
+  {
+    "level": 114,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L114_Q1",
+        "instruction": "Find the SUNDIAL",
+        "question": "🧭☀️🕰️✨",
+        "options": [
+          "Sundial",
+          "Watch",
+          "Clock"
+        ],
+        "correctAnswer": "Sundial",
+        "hint": "A sundial is an ancient clock that uses the sun's shadow to tell what time it is!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L114_Q2",
+        "instruction": "Which one uses SHADOWS?",
+        "question": "🧭 vs ⌚",
+        "options": [
+          "Sundial",
+          "Wristwatch"
+        ],
+        "correctAnswer": "Sundial",
+        "hint": "People used sundials a long time ago before they had batteries or power!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L114_Q3",
+        "instruction": "Does a sundial work at NIGHT?",
+        "question": "🌙🧭❌❓",
+        "options": [
+          "No, needs the Sun!",
+          "Yes, with Moon"
+        ],
+        "correctAnswer": "No, needs the Sun!",
+        "hint": "A sundial needs the bright sun to make the shadow that points to the time!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 115,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L115_Q1",
+        "instruction": "Logic: Do CLOUDS hide shadows?",
+        "question": "☁️👤🚫❓",
+        "options": [
+          "Yes, light is blocked!",
+          "No, shadows stay"
+        ],
+        "correctAnswer": "Yes, light is blocked!",
+        "hint": "When a cloud covers the sun, your shadow disappears because the light is gone!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L115_Q2",
+        "instruction": "Logic: Where is the shadow at NIGHT?",
+        "question": "🌑👤❓",
+        "options": [
+          "It hides in the dark!",
+          "Under the sun",
+          "In a box"
+        ],
+        "correctAnswer": "It hides in the dark!",
+        "hint": "At night, there is no sun to make a shadow, so everything is dark together!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L115_Q3",
+        "instruction": "Logic: Can a LAMP make a shadow?",
+        "question": "💡👤❓",
+        "options": [
+          "Yes, any bright light!",
+          "No, only sun"
+        ],
+        "correctAnswer": "Yes, any bright light!",
+        "hint": "Any bright light can make a shadow if you stand right in front of it!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 116,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L116_Q1",
+        "instruction": "Search: Find the shadow on the WALL",
+        "question": "🧱👤 vs 🌲",
+        "options": [
+          "Wall Shadow",
+          "Tree Trunk"
+        ],
+        "correctAnswer": "Wall Shadow",
+        "hint": "Look for the dark shape cast against the flat surface!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L116_Q2",
+        "instruction": "Search: Find the SHADOW PUPPET",
+        "question": "✋👤 vs 🧸",
+        "options": [
+          "Hand Shadow",
+          "Teddy Bear"
+        ],
+        "correctAnswer": "Hand Shadow",
+        "hint": "Using your hands in front of a light can make fun shapes like a bunny or a bird!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L116_Q3",
+        "instruction": "Search: Find the long TREE shadow",
+        "question": "🌲👤📏 vs ⚽",
+        "options": [
+          "Tall Tree Shadow",
+          "Soccer Ball"
+        ],
+        "correctAnswer": "Tall Tree Shadow",
+        "hint": "Even big trees have long shadows that stretch across the ground in the evening!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 117,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L117_Q1",
+        "instruction": "Review: Who is the morning giant?",
+        "question": "🌅👤 Review",
+        "options": [
+          "Long Shadow",
+          "Tiny Shadow",
+          "Circle"
+        ],
+        "correctAnswer": "Long Shadow",
+        "hint": "The one that stretches out at sunrise!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L117_Q2",
+        "instruction": "Review: Who is the lunchtime helper?",
+        "question": "☀️🆙👤 Review",
+        "options": [
+          "Tiny Shadow",
+          "Long Shadow",
+          "Star"
+        ],
+        "correctAnswer": "Tiny Shadow",
+        "hint": "The one that stays small under your feet!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L117_Q3",
+        "instruction": "Review: Who tells time with sun?",
+        "question": "🧭 Review",
+        "options": [
+          "Sundial",
+          "Watch",
+          "Phone"
+        ],
+        "correctAnswer": "Sundial",
+        "hint": "The old stone clock for the garden!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      }
+    ]
+  },
+  {
+    "level": 118,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L118_Q1",
+        "instruction": "Which one is for sunset patterns?",
+        "question": "🌇👤📏 vs ⚽",
+        "options": [
+          "Long Shadows",
+          "Soccer Play"
+        ],
+        "correctAnswer": "Long Shadows",
+        "hint": "As the sun says goodbye, everything in the world gets a long shadow!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L118_Q2",
+        "instruction": "Which one is for shadow puppets?",
+        "question": "✋💡👤 vs 🥣",
+        "options": [
+          "Playing with Light",
+          "Eating Breakfast"
+        ],
+        "correctAnswer": "Playing with Light",
+        "hint": "We can make our own shadows using a lamp in our bedroom!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L118_Q3",
+        "instruction": "Is the shadow always behind the light?",
+        "question": "💡👤➡️❓",
+        "options": [
+          "Yes, opposite side!",
+          "No, inside the light"
+        ],
+        "correctAnswer": "Yes, opposite side!",
+        "hint": "The shadow always points away from where the light is shining!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      }
+    ]
+  },
+  {
+    "level": 119,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L119_Q1",
+        "instruction": "Logic: Do we see shadows in FOG?",
+        "question": "🌫️👤❓",
+        "options": [
+          "No, too blurry!",
+          "Yes, very sharp"
+        ],
+        "correctAnswer": "No, too blurry!",
+        "hint": "Fog hides the bright light, so shadows become fuzzy and hard to see!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L119_Q2",
+        "instruction": "Logic: Does a bird make a shadow?",
+        "question": "🐦👤❓",
+        "options": [
+          "Yes, on the ground!",
+          "No, they are too high"
+        ],
+        "correctAnswer": "Yes, on the ground!",
+        "hint": "Even a small bird flying high can make a tiny shadow on the grass!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L119_Q3",
+        "instruction": "Logic: Is your shadow your FRIEND?",
+        "question": "👤🤝❓",
+        "options": [
+          "Yes, it follows you!",
+          "No, it's a ghost"
+        ],
+        "correctAnswer": "Yes, it follows you!",
+        "hint": "Your shadow is always with you whenever there is a bright light!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      }
+    ]
+  },
+  {
+    "level": 120,
+    "quests": [
+      {
+        "id": "KID_DAY_NIGHT_L120_Q1",
+        "instruction": "Level 120 Challenge: Shadow Tracker!",
+        "question": "Find the LONG shadow",
+        "options": [
+          "👤📏",
+          "👤🤏",
+          "🌑"
+        ],
+        "correctAnswer": "👤📏",
+        "hint": "The one from the morning sun!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L120_Q2",
+        "instruction": "Level 120 Challenge: Shadow Tracker!",
+        "question": "Find the ancient SUNDIAL",
+        "options": [
+          "🧭☀️",
+          "⌚",
+          "📱"
+        ],
+        "correctAnswer": "🧭☀️",
+        "hint": "The shadow clock!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_DAY_NIGHT_L120_Q3",
+        "instruction": "Level 120 Challenge: Mastery!",
+        "question": "Are you a Shadow Tracker?",
+        "options": [
+          "YES!",
+          "No"
+        ],
+        "correctAnswer": "YES!",
+        "hint": "Congratulations! You have completed Level 120!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  }
+]

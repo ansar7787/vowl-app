@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:voxai_quest/core/error/failures.dart';
-import 'package:voxai_quest/core/usecases/usecase.dart';
-import 'package:voxai_quest/features/grammar/domain/repositories/grammar_repository.dart';
-import 'package:voxai_quest/features/speaking/domain/usecases/get_speaking_quest.dart';
+import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/core/usecases/usecase.dart';
+import 'package:vowl/features/grammar/domain/repositories/grammar_repository.dart';
+import 'package:vowl/features/speaking/domain/usecases/get_speaking_quest.dart';
 
 class PreloadGrammarQuest implements UseCase<void, QuestParams> {
   final GrammarRepository repository;

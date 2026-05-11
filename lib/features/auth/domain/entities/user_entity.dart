@@ -1,11 +1,12 @@
 import 'package:equatable/equatable.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class UserEntity extends Equatable {
   final String id;
   final String email;
   final String? displayName;
   final String? photoUrl;
+  final String? fcmToken;
   final int coins;
   final int totalExp;
   final bool isAdmin;
@@ -33,10 +34,10 @@ class UserEntity extends Equatable {
   final String? kidsEquippedSticker;
   final List<String> kidsOwnedAccessories;
   final String? kidsEquippedAccessory;
-  final String? voxinMascot;
-  final String? voxinEquippedAccessory;
-  final List<String> voxinOwnedAccessories;
-  final List<String> voxinOwnedMascots;
+  final String? vowlMascot;
+  final String? vowlEquippedAccessory;
+  final List<String> vowlOwnedAccessories;
+  final List<String> vowlOwnedMascots;
   final List<int> claimedStreakMilestones;
   final List<int> claimedLevelMilestones;
   final List<Map<String, dynamic>> coinHistory;
@@ -44,12 +45,16 @@ class UserEntity extends Equatable {
   final DateTime? lastFreeSpinDate;
   final DateTime? lastAdSpinDate;
   final int adSpinsUsedToday;
+  final DateTime? lastKidsDailyRewardDate;
+  final List<String> kidsOwnedFurniture;
+  final Map<String, String> kidsEquippedFurniture;
 
   const UserEntity({
     required this.id,
     required this.email,
     this.displayName,
     this.photoUrl,
+    this.fcmToken,
     this.coins = 0,
     this.totalExp = 0,
     this.isAdmin = false,
@@ -130,6 +135,14 @@ class UserEntity extends Equatable {
       'home_kids': 1,
       'food_kids': 1,
       'transport': 1,
+      'body_parts': 1,
+      'clothing': 1,
+      // Elite Mastery
+      'storyBuilder': 1,
+      'idiomMatch': 1,
+      'speedSpelling': 1,
+      'accentShadowing': 1,
+      'elitemastery': 1,
     },
     this.completedLevels = const {},
     this.badges = const [],
@@ -142,16 +155,22 @@ class UserEntity extends Equatable {
     this.recentActivities = const [],
     this.lastVipGiftDate,
     this.lastDailyRewardDate,
+    this.lastKidsDailyRewardDate,
+    this.kidsOwnedFurniture = const ['default_bed', 'default_window'],
+    this.kidsEquippedFurniture = const {
+      'bed': 'default_bed',
+      'window': 'default_window',
+    },
     this.kidsCoins = 0,
     this.kidsStickers = const [],
     this.kidsMascot,
     this.kidsEquippedSticker,
     this.kidsOwnedAccessories = const [],
     this.kidsEquippedAccessory,
-    this.voxinMascot,
-    this.voxinEquippedAccessory,
-    this.voxinOwnedAccessories = const [],
-    this.voxinOwnedMascots = const ['voxin_prime'],
+    this.vowlMascot,
+    this.vowlEquippedAccessory,
+    this.vowlOwnedAccessories = const [],
+    this.vowlOwnedMascots = const ['vowl_prime'],
     this.claimedStreakMilestones = const [],
     this.claimedLevelMilestones = const [],
     this.coinHistory = const [],
@@ -179,21 +198,49 @@ class UserEntity extends Equatable {
   int get accentMastery => getCategoryProgress(QuestType.accent);
   int get roleplayMastery => getCategoryProgress(QuestType.roleplay);
 
-  /// Calculates the average progress for a category based on its subtypes.
+  /// Calculates the highest progress among subtypes in a category.
+  /// This provides a better sense of achievement for new users.
   int getCategoryProgress(QuestType type) {
-    final subtypes = type.subtypes;
+    final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
     if (subtypes.isEmpty) return 0;
 
-    int totalProgress = 0;
-    int count = 0;
+    int maxProgress = 0;
 
     for (final subtype in subtypes) {
       final progress = categoryStats[subtype.name] ?? 0;
-      totalProgress += progress;
-      count++;
+      if (progress > maxProgress) {
+        maxProgress = progress;
+      }
     }
 
-    return count > 0 ? (totalProgress / count).round() : 0;
+    return maxProgress;
+  }
+
+  /// Calculates the total number of levels cleared across all games in a category.
+  /// This provides a cumulative progression metric that encourages playing all games.
+  int getTotalCategoryLevelsCleared(QuestType type) {
+    final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
+    if (subtypes.isEmpty) return 0;
+
+    int totalCleared = 0;
+
+    for (final subtype in subtypes) {
+      if (unlockedLevels.containsKey(subtype.name)) {
+        // If they are on level N, they have cleared N-1 levels.
+        final level = unlockedLevels[subtype.name]!;
+        if (level > 1) {
+          totalCleared += (level - 1);
+        }
+      }
+    }
+
+    return totalCleared;
+  }
+
+  /// Calculates the maximum theoretical levels for a category (200 levels per active game).
+  int getMaxCategoryLevels(QuestType type) {
+    final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
+    return subtypes.length * 200;
   }
 
   /// Returns the effective level for content fetching.
@@ -229,6 +276,7 @@ class UserEntity extends Equatable {
     email,
     displayName,
     photoUrl,
+    fcmToken,
     coins,
     totalExp,
     isAdmin,
@@ -256,10 +304,10 @@ class UserEntity extends Equatable {
     kidsEquippedSticker,
     kidsOwnedAccessories,
     kidsEquippedAccessory,
-    voxinMascot,
-    voxinEquippedAccessory,
-    voxinOwnedAccessories,
-    voxinOwnedMascots,
+    vowlMascot,
+    vowlEquippedAccessory,
+    vowlOwnedAccessories,
+    vowlOwnedMascots,
     claimedStreakMilestones,
     claimedLevelMilestones,
     coinHistory,
@@ -267,6 +315,9 @@ class UserEntity extends Equatable {
     lastFreeSpinDate,
     lastAdSpinDate,
     adSpinsUsedToday,
+    lastKidsDailyRewardDate,
+    kidsOwnedFurniture,
+    kidsEquippedFurniture,
   ];
 
   UserEntity copyWith({
@@ -294,9 +345,11 @@ class UserEntity extends Equatable {
     List<String>? kidsOwnedAccessories,
     List<String>? kidsStickers,
     DateTime? lastDailyRewardDate,
+    DateTime? lastKidsDailyRewardDate,
     DateTime? lastLoginDate,
     DateTime? lastVipGiftDate,
     String? photoUrl,
+    String? fcmToken,
     DateTime? premiumExpiryDate,
     List<Map<String, dynamic>>? recentActivities,
     int? streakFreezes,
@@ -306,10 +359,12 @@ class UserEntity extends Equatable {
     DateTime? lastFreeSpinDate,
     DateTime? lastAdSpinDate,
     int? adSpinsUsedToday,
-    String? voxinMascot,
-    String? voxinEquippedAccessory,
-    List<String>? voxinOwnedAccessories,
-    List<String>? voxinOwnedMascots,
+    String? vowlMascot,
+    String? vowlEquippedAccessory,
+    List<String>? vowlOwnedAccessories,
+    List<String>? vowlOwnedMascots,
+    List<String>? kidsOwnedFurniture,
+    Map<String, String>? kidsEquippedFurniture,
   }) {
     return UserEntity(
       id: id,
@@ -341,9 +396,11 @@ class UserEntity extends Equatable {
       kidsOwnedAccessories: kidsOwnedAccessories ?? this.kidsOwnedAccessories,
       kidsStickers: kidsStickers ?? this.kidsStickers,
       lastDailyRewardDate: lastDailyRewardDate ?? this.lastDailyRewardDate,
+      lastKidsDailyRewardDate: lastKidsDailyRewardDate ?? this.lastKidsDailyRewardDate,
       lastLoginDate: lastLoginDate ?? this.lastLoginDate,
       lastVipGiftDate: lastVipGiftDate ?? this.lastVipGiftDate,
       photoUrl: photoUrl ?? this.photoUrl,
+      fcmToken: fcmToken ?? this.fcmToken,
       premiumExpiryDate: premiumExpiryDate ?? this.premiumExpiryDate,
       recentActivities: recentActivities ?? this.recentActivities,
       streakFreezes: streakFreezes ?? this.streakFreezes,
@@ -353,12 +410,15 @@ class UserEntity extends Equatable {
       lastFreeSpinDate: lastFreeSpinDate ?? this.lastFreeSpinDate,
       lastAdSpinDate: lastAdSpinDate ?? this.lastAdSpinDate,
       adSpinsUsedToday: adSpinsUsedToday ?? this.adSpinsUsedToday,
-      voxinMascot: voxinMascot ?? this.voxinMascot,
-      voxinEquippedAccessory:
-          voxinEquippedAccessory ?? this.voxinEquippedAccessory,
-      voxinOwnedAccessories:
-          voxinOwnedAccessories ?? this.voxinOwnedAccessories,
-      voxinOwnedMascots: voxinOwnedMascots ?? this.voxinOwnedMascots,
+      vowlMascot: vowlMascot ?? this.vowlMascot,
+      vowlEquippedAccessory:
+          vowlEquippedAccessory ?? this.vowlEquippedAccessory,
+      vowlOwnedAccessories:
+          vowlOwnedAccessories ?? this.vowlOwnedAccessories,
+      vowlOwnedMascots: vowlOwnedMascots ?? this.vowlOwnedMascots,
+      kidsOwnedFurniture: kidsOwnedFurniture ?? this.kidsOwnedFurniture,
+      kidsEquippedFurniture:
+          kidsEquippedFurniture ?? this.kidsEquippedFurniture,
     );
   }
 }

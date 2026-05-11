@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:voxai_quest/core/data/services/asset_quest_service.dart';
-import 'package:voxai_quest/core/error/exceptions.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/features/grammar/data/models/grammar_quest_model.dart';
+import 'package:vowl/core/data/services/asset_quest_service.dart';
+import 'package:vowl/core/error/exceptions.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/grammar/data/models/grammar_quest_model.dart';
 
 abstract class GrammarRemoteDataSource {
   Future<List<GrammarQuestModel>> getGrammarQuest({

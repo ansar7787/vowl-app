@@ -1,637 +1,307 @@
 {
-  "gameType": "voiceSwap",
-  "batchIndex": 14,
-  "levels": "131-140",
-  "quests": [
-    {
-      "id": "voiceSwap_l131_q1",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The cat chased the mouse.\"",
-      "options": [
-        "The mouse was chased by the cat.",
-        "The cat chased the mouse.",
-        "The cat chased the mouse. (no change)",
-        "The mouse was chased from the cat."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "The cat chased the mouse.",
-      "activeSentence": "The cat chased the mouse.",
-      "explanation": "The mouse was chased by the cat.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l131_q2",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"A cake was baked by Mom.\"",
-      "options": [
-        "Mom baked a cake.",
-        "A cake was baked by Mom.",
-        "A cake was baked by Mom. (no change)",
-        "Mom baked a cake."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "A cake was baked by Mom.",
-      "activeSentence": "A cake was baked by Mom.",
-      "explanation": "Mom baked a cake.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l131_q3",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"She wrote a beautiful poem.\"",
-      "options": [
-        "A beautiful poem was written by her.",
-        "She wrote a beautiful poem.",
-        "She wrote a beautiful poem. (no change)",
-        "A beautiful poem was written from her."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "She wrote a beautiful poem.",
-      "activeSentence": "She wrote a beautiful poem.",
-      "explanation": "A beautiful poem was written by her.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l132_q1",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The letter was sent by Tom.\"",
-      "options": [
-        "Tom sent the letter.",
-        "The letter was sent by Tom.",
-        "The letter was sent by Tom. (no change)",
-        "Tom sent the letter."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The letter was sent by Tom.",
-      "activeSentence": "The letter was sent by Tom.",
-      "explanation": "Tom sent the letter.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l132_q2",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"They are building a new bridge.\"",
-      "options": [
-        "A new bridge is being built by them.",
-        "They are building a new bridge.",
-        "They are building a new bridge. (no change)",
-        "A new bridge is being built from them."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "They are building a new bridge.",
-      "activeSentence": "They are building a new bridge.",
-      "explanation": "A new bridge is being built by them.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l132_q3",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The song was sung by the choir.\"",
-      "options": [
-        "The choir sang the song.",
-        "The song was sung by the choir.",
-        "The song was sung by the choir. (no change)",
-        "The choir sang the song."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The song was sung by the choir.",
-      "activeSentence": "The song was sung by the choir.",
-      "explanation": "The choir sang the song.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l133_q1",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"He painted the fence white.\"",
-      "options": [
-        "The fence was painted white by him.",
-        "He painted the fence white.",
-        "He painted the fence white. (no change)",
-        "The fence was painted white from him."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "He painted the fence white.",
-      "activeSentence": "He painted the fence white.",
-      "explanation": "The fence was painted white by him.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l133_q2",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The window was broken by the ball.\"",
-      "options": [
-        "The ball broke the window.",
-        "The window was broken by the ball.",
-        "The window was broken by the ball. (no change)",
-        "The ball broke the window."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The window was broken by the ball.",
-      "activeSentence": "The window was broken by the ball.",
-      "explanation": "The ball broke the window.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l133_q3",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"She teaches English every day.\"",
-      "options": [
-        "English is taught by her every day.",
-        "She teaches English every day.",
-        "She teaches English every day. (no change)",
-        "English is taught from her every day."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "She teaches English every day.",
-      "activeSentence": "She teaches English every day.",
-      "explanation": "English is taught by her every day.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l134_q1",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The book was read by thousands.\"",
-      "options": [
-        "Thousands read the book.",
-        "The book was read by thousands.",
-        "The book was read by thousands. (no change)",
-        "Thousands read the book."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The book was read by thousands.",
-      "activeSentence": "The book was read by thousands.",
-      "explanation": "Thousands read the book.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l134_q2",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"We will complete the task soon.\"",
-      "options": [
-        "The task will be completed by us soon.",
-        "We will complete the task soon.",
-        "We will complete the task soon. (no change)",
-        "The task will be completed from us soon."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "We will complete the task soon.",
-      "activeSentence": "We will complete the task soon.",
-      "explanation": "The task will be completed by us soon.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l134_q3",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The car was repaired by the mechanic.\"",
-      "options": [
-        "The mechanic repaired the car.",
-        "The car was repaired by the mechanic.",
-        "The car was repaired by the mechanic. (no change)",
-        "The mechanic repaired the car."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The car was repaired by the mechanic.",
-      "activeSentence": "The car was repaired by the mechanic.",
-      "explanation": "The mechanic repaired the car.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l135_q1",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"He has finished the assignment.\"",
-      "options": [
-        "The assignment has been finished by him.",
-        "He has finished the assignment.",
-        "He has finished the assignment. (no change)",
-        "The assignment has been finished from him."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "He has finished the assignment.",
-      "activeSentence": "He has finished the assignment.",
-      "explanation": "The assignment has been finished by him.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l135_q2",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The cake was eaten by the children.\"",
-      "options": [
-        "The children ate the cake.",
-        "The cake was eaten by the children.",
-        "The cake was eaten by the children. (no change)",
-        "The children ate the cake."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The cake was eaten by the children.",
-      "activeSentence": "The cake was eaten by the children.",
-      "explanation": "The children ate the cake.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l135_q3",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"She is cooking dinner right now.\"",
-      "options": [
-        "Dinner is being cooked by her right now.",
-        "She is cooking dinner right now.",
-        "She is cooking dinner right now. (no change)",
-        "Dinner is being cooked from her right now."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "She is cooking dinner right now.",
-      "activeSentence": "She is cooking dinner right now.",
-      "explanation": "Dinner is being cooked by her right now.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l136_q1",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The film was directed by Spielberg.\"",
-      "options": [
-        "Spielberg directed the film.",
-        "The film was directed by Spielberg.",
-        "The film was directed by Spielberg. (no change)",
-        "Spielberg directed the film."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The film was directed by Spielberg.",
-      "activeSentence": "The film was directed by Spielberg.",
-      "explanation": "Spielberg directed the film.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l136_q2",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"I will send the package tomorrow.\"",
-      "options": [
-        "The package will be sent by me tomorrow.",
-        "I will send the package tomorrow.",
-        "I will send the package tomorrow. (no change)",
-        "The package will be sent from me tomorrow."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "I will send the package tomorrow.",
-      "activeSentence": "I will send the package tomorrow.",
-      "explanation": "The package will be sent by me tomorrow.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l136_q3",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The painting was admired by everyone.\"",
-      "options": [
-        "Everyone admired the painting.",
-        "The painting was admired by everyone.",
-        "The painting was admired by everyone. (no change)",
-        "Everyone admired the painting."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The painting was admired by everyone.",
-      "activeSentence": "The painting was admired by everyone.",
-      "explanation": "Everyone admired the painting.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l137_q1",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"They had already solved the problem.\"",
-      "options": [
-        "The problem had already been solved by them.",
-        "They had already solved the problem.",
-        "They had already solved the problem. (no change)",
-        "The problem had already been solved from them."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "They had already solved the problem.",
-      "activeSentence": "They had already solved the problem.",
-      "explanation": "The problem had already been solved by them.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l137_q2",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The house was designed by an architect.\"",
-      "options": [
-        "An architect designed the house.",
-        "The house was designed by an architect.",
-        "The house was designed by an architect. (no change)",
-        "An architect designed the house."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The house was designed by an architect.",
-      "activeSentence": "The house was designed by an architect.",
-      "explanation": "An architect designed the house.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l137_q3",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"She can speak four languages.\"",
-      "options": [
-        "Four languages can be spoken by her.",
-        "She can speak four languages.",
-        "She can speak four languages. (no change)",
-        "Four languages can be spoken from her."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "She can speak four languages.",
-      "activeSentence": "She can speak four languages.",
-      "explanation": "Four languages can be spoken by her.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l138_q1",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The homework was completed by all students.\"",
-      "options": [
-        "All students completed the homework.",
-        "The homework was completed by all students.",
-        "The homework was completed by all students. (no change)",
-        "All students completed the homework."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The homework was completed by all students.",
-      "activeSentence": "The homework was completed by all students.",
-      "explanation": "All students completed the homework.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l138_q2",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"People celebrate festivals with joy.\"",
-      "options": [
-        "Festivals are celebrated with joy by people.",
-        "People celebrate festivals with joy.",
-        "People celebrate festivals with joy. (no change)",
-        "Festivals are celebrated with joy from people."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "People celebrate festivals with joy.",
-      "activeSentence": "People celebrate festivals with joy.",
-      "explanation": "Festivals are celebrated with joy by people.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l138_q3",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The novel was written by Dickens.\"",
-      "options": [
-        "Dickens wrote the novel.",
-        "The novel was written by Dickens.",
-        "The novel was written by Dickens. (no change)",
-        "Dickens wrote the novel."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The novel was written by Dickens.",
-      "activeSentence": "The novel was written by Dickens.",
-      "explanation": "Dickens wrote the novel.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l139_q1",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"He must finish the report today.\"",
-      "options": [
-        "The report must be finished by him today.",
-        "He must finish the report today.",
-        "He must finish the report today. (no change)",
-        "The report must be finished from him today."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "He must finish the report today.",
-      "activeSentence": "He must finish the report today.",
-      "explanation": "The report must be finished by him today.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l139_q2",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The tree was planted by volunteers.\"",
-      "options": [
-        "Volunteers planted the tree.",
-        "The tree was planted by volunteers.",
-        "The tree was planted by volunteers. (no change)",
-        "Volunteers planted the tree."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The tree was planted by volunteers.",
-      "activeSentence": "The tree was planted by volunteers.",
-      "explanation": "Volunteers planted the tree.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l139_q3",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"She has been teaching for ten years.\"",
-      "options": [
-        "Students have been taught by her for ten years.",
-        "She has been teaching for ten years.",
-        "She has been teaching for ten years. (no change)",
-        "Students have been taught from her for ten years."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "She has been teaching for ten years.",
-      "activeSentence": "She has been teaching for ten years.",
-      "explanation": "Students have been taught by her for ten years.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l140_q1",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The prize was won by our team.\"",
-      "options": [
-        "Our team won the prize.",
-        "The prize was won by our team.",
-        "The prize was won by our team. (no change)",
-        "Our team won the prize."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "The prize was won by our team.",
-      "activeSentence": "The prize was won by our team.",
-      "explanation": "Our team won the prize.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l140_q2",
-      "instruction": "Active → Passive",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"The children are flying kites.\"",
-      "options": [
-        "Kites are being flown by the children.",
-        "The children are flying kites.",
-        "The children are flying kites. (no change)",
-        "Kites are being flown from the children."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Active → Passive",
-      "passiveSentence": "The children are flying kites.",
-      "activeSentence": "The children are flying kites.",
-      "explanation": "Kites are being flown by the children.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "voiceSwap_l140_q3",
-      "instruction": "Passive → Active",
-      "difficulty": 4,
-      "subtype": "voiceSwap",
-      "interactionType": "choice",
-      "question": "Convert: \"A new policy was announced by the CEO.\"",
-      "options": [
-        "The CEO announced a new policy.",
-        "A new policy was announced by the CEO.",
-        "A new policy was announced by the CEO. (no change)",
-        "The CEO announced a new policy."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Passive → Active",
-      "passiveSentence": "A new policy was announced by the CEO.",
-      "activeSentence": "A new policy was announced by the CEO.",
-      "explanation": "The CEO announced a new policy.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "voiceSwap",
+    "batchIndex":  14,
+    "levels":  "131-140",
+    "quests":  [
+                   {
+                       "id":  "GRM_VOICESWAP_L131_Q1",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The analyst built the archive quickly.",
+                       "correctAnswer":  "The archive was built by the analyst quickly."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L131_Q2",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The engineer analyzed the data silently.",
+                       "correctAnswer":  "The data was analyzed by the engineer silently."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L131_Q3",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The technician created the circuit efficiently.",
+                       "correctAnswer":  "The circuit was created by the technician efficiently."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L132_Q1",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The explorer protected the portal carefully.",
+                       "correctAnswer":  "The portal was protected by the explorer carefully."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L132_Q2",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The pilot sent the reactor immediately.",
+                       "correctAnswer":  "The reactor was sent by the pilot immediately."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L132_Q3",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The scientist received the signal successfully.",
+                       "correctAnswer":  "The signal was received by the scientist successfully."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L133_Q1",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The commander observed the system quickly.",
+                       "correctAnswer":  "The system was observed by the commander quickly."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L133_Q2",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The droid repaired the module silently.",
+                       "correctAnswer":  "The module was repaired by the droid silently."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L133_Q3",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The analyst activated the archive efficiently.",
+                       "correctAnswer":  "The archive was activated by the analyst efficiently."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L134_Q1",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The engineer monitored the data carefully.",
+                       "correctAnswer":  "The data was monitored by the engineer carefully."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L134_Q2",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The technician will build the circuit immediately.",
+                       "correctAnswer":  "The circuit will be built by the technician immediately."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L134_Q3",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The explorer will analyze the portal successfully.",
+                       "correctAnswer":  "The portal will be analyzed by the explorer successfully."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L135_Q1",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The pilot will create the reactor quickly.",
+                       "correctAnswer":  "The reactor will be created by the pilot quickly."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L135_Q2",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The scientist will protect the signal silently.",
+                       "correctAnswer":  "The signal will be protected by the scientist silently."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L135_Q3",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The commander will send the system efficiently.",
+                       "correctAnswer":  "The system will be sent by the commander efficiently."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L136_Q1",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The droid will receive the module carefully.",
+                       "correctAnswer":  "The module will be received by the droid carefully."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L136_Q2",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The analyst will observe the archive immediately.",
+                       "correctAnswer":  "The archive will be observed by the analyst immediately."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L136_Q3",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The engineer will repair the data successfully.",
+                       "correctAnswer":  "The data will be repaired by the engineer successfully."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L137_Q1",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The technician will activate the circuit quickly.",
+                       "correctAnswer":  "The circuit will be activated by the technician quickly."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L137_Q2",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The explorer will monitor the portal silently.",
+                       "correctAnswer":  "The portal will be monitored by the explorer silently."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L137_Q3",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The pilot will build the reactor efficiently.",
+                       "correctAnswer":  "The reactor will be built by the pilot efficiently."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L138_Q1",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The scientist will analyze the signal carefully.",
+                       "correctAnswer":  "The signal will be analyzed by the scientist carefully."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L138_Q2",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The commander will create the system immediately.",
+                       "correctAnswer":  "The system will be created by the commander immediately."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L138_Q3",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The droid will protect the module successfully.",
+                       "correctAnswer":  "The module will be protected by the droid successfully."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L139_Q1",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The analyst will send the archive quickly.",
+                       "correctAnswer":  "The archive will be sent by the analyst quickly."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L139_Q2",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The engineer will receive the data silently.",
+                       "correctAnswer":  "The data will be received by the engineer silently."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L139_Q3",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The technician will observe the circuit efficiently.",
+                       "correctAnswer":  "The circuit will be observed by the technician efficiently."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L140_Q1",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The explorer will repair the portal carefully.",
+                       "correctAnswer":  "The portal will be repaired by the explorer carefully."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L140_Q2",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The pilot will activate the reactor immediately.",
+                       "correctAnswer":  "The reactor will be activated by the pilot immediately."
+                   },
+                   {
+                       "id":  "GRM_VOICESWAP_L140_Q3",
+                       "interactionType":  "Voice Toggle",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Focus on who or what receives the action.",
+                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
+                       "sentence":  "The scientist will monitor the signal successfully.",
+                       "correctAnswer":  "The signal will be monitored by the scientist successfully."
+                   }
+               ]
 }

@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class RewardedAdCard extends StatefulWidget {
   final String title;
@@ -34,9 +34,9 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
     if (!mounted) return;
 
     // Dispatch event to add coins
-    final authBloc = context.read<AuthBloc>();
-    authBloc.add(
-      const AuthAddCoinsRequested(
+    final economyBloc = context.read<EconomyBloc>();
+    economyBloc.add(
+      const EconomyAddCoinsRequested(
         20,
         title: 'Watched Rewarded Ad',
         isEarned: true,
@@ -52,7 +52,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
             Icon(Icons.check_circle_rounded, color: Colors.white, size: 20.r),
             SizedBox(width: 8.w),
             Text(
-              'Reward Earned! +20 Vox Coins',
+              'Reward Earned! +20 Vowl Coins',
               style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
             ),
           ],

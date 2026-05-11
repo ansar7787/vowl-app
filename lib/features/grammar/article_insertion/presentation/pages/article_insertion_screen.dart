@@ -1,30 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/grammar/logic_circuit.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class ArticleInsertionScreen extends StatefulWidget {
   final int level;
-  const ArticleInsertionScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const ArticleInsertionScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.articleInsertion,
+  });
 
   @override
   State<ArticleInsertionScreen> createState() => _ArticleInsertionScreenState();
@@ -33,408 +29,239 @@ class ArticleInsertionScreen extends StatefulWidget {
 class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  int? _selectedOptionIndex;
+  String? _selectedArticle;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(
-        gameType: GameSubtype.articleInsertion,
-        level: widget.level,
-      ),
-    );
+    context.read<GrammarBloc>().add(FetchGrammarQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onOptionSelected(int index) {
-    if (_selectedOptionIndex != null) return;
+  void _onPop(String article, String correctAnswer) {
+    if (_isAnswered) return;
+    
     _hapticService.selection();
-    setState(() => _selectedOptionIndex = index);
 
-    final state = context.read<GrammarBloc>().state;
-    if (state is GrammarLoaded) {
-      final isCorrect = index == (state.currentQuest.correctAnswerIndex ?? 0);
-      if (isCorrect) {
-        _soundService.playCorrect();
-        _hapticService.success();
-      } else {
-        _soundService.playWrong();
-        _hapticService.error();
-      }
-      context.read<GrammarBloc>().add(SubmitAnswer(isCorrect));
+    bool isCorrect = article.toLowerCase() == correctAnswer.toLowerCase();
+
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; _selectedArticle = article; });
+      context.read<GrammarBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { 
+        _isAnswered = true; 
+        _isCorrect = false;
+        _selectedArticle = article;
+      });
+      context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
-  }
-
-  void _useHint() {
-    _hapticService.selection();
-    context.read<GrammarBloc>().add(GrammarHintUsed());
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: BlocConsumer<GrammarBloc, GrammarState>(
-        listener: (context, state) {
-          if (state is GrammarGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Article Ace!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for defining the indefinite!',
-        ),
-            );
-          } else if (state is GrammarGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Generic Failure',
-        description: 'You lost all hearts. Articles are essential for specificity!',
-        onRestore: () => context.read<GrammarBloc>().add(RestoreLife()),
-      );
-          } else if (state is GrammarLoaded &&
-              state.lastAnswerCorrect == null) {
-            setState(() => _selectedOptionIndex = null);
+    return BlocConsumer<GrammarBloc, GrammarState>(
+      listener: (context, state) {
+        if (state is GrammarLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _selectedArticle = null;
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is GrammarLoading || state is GrammarInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is GrammarLoaded) {
-            final theme = LevelThemeHelper.getTheme(
-              'grammar',
-              level: widget.level,
-            );
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                LogicCircuit(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is GrammarError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<GrammarBloc>().add(
-                FetchGrammarQuests(
-                  gameType: GameSubtype.articleInsertion,
-                  level: widget.level,
-                ),
+          _lastLives = state.livesRemaining;
+        }
+        if (state is GrammarGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'ARTICLE ACE!', enableDoubleUp: true);
+        } else if (state is GrammarGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<GrammarBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final options = quest?.options ?? ["a", "an", "the", "Ø"];
+        
+        return GrammarBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
+          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 20.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 32.h),
+              _buildSentenceBoard(quest.sentenceWithBlank ?? quest.question ?? "____ sentence.", _selectedArticle, theme.primaryColor, isDark),
+              SizedBox(height: 40.h),
+              Expanded(
+                child: _isAnswered 
+                  ? _buildResultView(theme.primaryColor)
+                  : _buildBubbleArea(options, quest.correctAnswer ?? "", theme.primaryColor, isDark),
               ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
+              SizedBox(height: 40.h),
+            ],
+          ),
+        );
+      },
     );
   }
 
-  Widget _buildGameUI(
-    BuildContext context,
-    GrammarLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    Text(
-                      theme.title,
-                      style: GoogleFonts.outfit(
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ),
-                    SizedBox(height: 30.h),
-
-                    // Article Card
-                    GlassTile(
-                      padding: EdgeInsets.all(32.r),
-                      borderRadius: BorderRadius.circular(32.r),
-                      borderColor: theme.primaryColor.withValues(alpha: 0.3),
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.05)
-                          : Colors.black.withValues(alpha: 0.02),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.title_rounded,
-                                color: theme.primaryColor,
-                                size: 24.r,
-                              ),
-                              SizedBox(width: 12.w),
-                              Text(
-                                "ARTICLE PRECISION",
-                                style: GoogleFonts.outfit(
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 2,
-                                  color: theme.primaryColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 24.h),
-                          Text(
-                            quest.question ?? "Insert the correct article...",
-                            style: GoogleFonts.outfit(
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark ? Colors.white : Colors.black87,
-                              height: 1.6,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                    ).animate().fadeIn().scale(begin: const Offset(0.95, 0.95)),
-
-                    SizedBox(height: 32.h),
-                    Text(
-                      quest.instruction,
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
-                        color: isDark ? Colors.white60 : Colors.black54,
-                      ),
-                    ),
-                    SizedBox(height: 30.h),
-
-                    // Options Grid
-                    GridView.builder(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 16.w,
-                        mainAxisSpacing: 16.h,
-                        childAspectRatio: 2.5,
-                      ),
-                      itemCount: quest.options?.length ?? 0,
-                      itemBuilder: (context, index) {
-                        final isSelected = _selectedOptionIndex == index;
-                        final isCorrect = index == quest.correctAnswerIndex;
-                        final showResult = _selectedOptionIndex != null;
-
-                        return _buildOptionCard(
-                          text: quest.options![index],
-                          index: index,
-                          isSelected: isSelected,
-                          isCorrect: isCorrect,
-                          showResult: showResult,
-                          isDark: isDark,
-                          theme: theme,
-                        );
-                      },
-                    ),
-
-                    SizedBox(height: 40.h),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect!
-                ? "SPECIFICALLY CORRECT!"
-                : "ARTICLE ERROR!",
-            subtitle:
-                quest.explanation ??
-                "'The' is definite, 'A/An' are indefinite!",
-            onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
-          ),
-        if (_showConfetti) const GameConfetti(),
-      ],
-    );
-  }
-
-  Widget _buildOptionCard({
-    required String text,
-    required int index,
-    required bool isSelected,
-    required bool isCorrect,
-    required bool showResult,
-    required bool isDark,
-    required ThemeResult theme,
-  }) {
-    Color? cardColor;
-    if (showResult) {
-      if (isCorrect) {
-        cardColor = const Color(0xFF10B981);
-      } else if (isSelected) {
-        cardColor = const Color(0xFFF43F5E);
-      }
-    }
-
-    return ScaleButton(
-          onTap: () => _onOptionSelected(index),
-          child: GlassTile(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            borderRadius: BorderRadius.circular(20.r),
-            color: cardColor?.withValues(alpha: 0.8),
-            borderColor: isSelected && showResult
-                ? Colors.white54
-                : theme.primaryColor.withValues(alpha: 0.1),
-            child: Center(
-              child: Text(
-                text,
-                style: GoogleFonts.outfit(
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w800,
-                  color: (isSelected || showResult)
-                      ? Colors.white
-                      : (isDark ? Colors.white70 : Colors.black87),
-                ),
-              ),
-            ),
-          ),
-        )
-        .animate()
-        .fadeIn(delay: (index * 80).ms)
-        .slideY(begin: 0.2, curve: Curves.easeOutBack);
-  }
-
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.bubble_chart_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("POP THE CORRECT BUBBLE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
-          ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
-            ),
-          ],
+  Widget _buildSentenceBoard(String template, String? selected, Color primaryColor, bool isDark) {
+    return GlassTile(
+      padding: EdgeInsets.all(24.r),
+      borderRadius: BorderRadius.circular(24.r),
+      child: RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+          style: GoogleFonts.fredoka(fontSize: 22.sp, color: isDark ? Colors.white70 : Colors.black87),
+          children: _buildSentenceWithBlank(template, selected, primaryColor, isDark),
         ),
       ),
     );
   }
 
-  
+  List<InlineSpan> _buildSentenceWithBlank(String template, String? selected, Color primaryColor, bool isDark) {
+    final parts = template.split("____");
+    List<InlineSpan> spans = [];
+    for (int i = 0; i < parts.length; i++) {
+      spans.add(TextSpan(text: parts[i]));
+      if (i < parts.length - 1) {
+        spans.add(WidgetSpan(
+          alignment: PlaceholderAlignment.middle,
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 8.w),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+            decoration: BoxDecoration(border: Border(bottom: BorderSide(color: selected != null ? primaryColor : (isDark ? Colors.white38 : Colors.black38), width: 2))),
+            child: Text(selected ?? "      ", style: GoogleFonts.outfit(fontSize: 22.sp, fontWeight: FontWeight.bold, color: primaryColor)),
+          ),
+        ));
+      }
+    }
+    return spans;
+  }
 
-  
+  Widget _buildBubbleArea(List<String> options, String correct, Color primaryColor, bool isDark) {
+    return Stack(
+      children: options.asMap().entries.map((entry) {
+        final index = entry.key;
+        final article = entry.value;
+        return _FloatingBubble(
+          article: article,
+          index: index,
+          onTap: () => _onPop(article, correct),
+          primaryColor: primaryColor,
+          isDark: isDark,
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildResultView(Color primaryColor) {
+    return Center(
+      child: Icon(
+        _isCorrect == true ? Icons.check_circle_rounded : Icons.cancel_rounded,
+        color: _isCorrect == true ? Colors.greenAccent : Colors.redAccent,
+        size: 80.r,
+      ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+    );
+  }
 }
+
+class _FloatingBubble extends StatefulWidget {
+  final String article;
+  final int index;
+  final VoidCallback onTap;
+  final Color primaryColor;
+  final bool isDark;
+
+  const _FloatingBubble({required this.article, required this.index, required this.onTap, required this.primaryColor, required this.isDark});
+
+  @override
+  State<_FloatingBubble> createState() => _FloatingBubbleState();
+}
+
+class _FloatingBubbleState extends State<_FloatingBubble> with SingleTickerProviderStateMixin {
+  late AnimationController _driftController;
+  late double _top;
+  late double _left;
+
+  @override
+  void initState() {
+    super.initState();
+    _top = widget.index * 60.h + 20.h;
+    _left = (widget.index % 2 == 0) ? 40.w : 200.w;
+    _driftController = AnimationController(vsync: this, duration: Duration(seconds: 3 + widget.index))..repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _driftController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: _driftController,
+      builder: (context, child) {
+        return Positioned(
+          top: _top + (10.h * _driftController.value),
+          left: _left + (10.w * (1 - _driftController.value)),
+          child: GestureDetector(
+            onTap: widget.onTap,
+            child: Container(
+              width: 80.r, height: 80.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(
+                  colors: [
+                    widget.primaryColor.withValues(alpha: 0.4),
+                    widget.primaryColor.withValues(alpha: 0.1),
+                    Colors.white.withValues(alpha: 0.05),
+                  ],
+                ),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 2),
+                boxShadow: [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.1), blurRadius: 10, spreadRadius: 2)],
+              ),
+              child: Center(
+                child: Text(widget.article.toUpperCase(), style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white)),
+              ),
+            ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), duration: 2.seconds),
+          ),
+        );
+      },
+    );
+  }
+}
+

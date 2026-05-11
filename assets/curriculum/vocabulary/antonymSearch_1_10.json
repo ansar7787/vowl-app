@@ -1,577 +1,487 @@
 {
-  "gameType": "antonymSearch",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "antonymSearch_l1_q1",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Hot\"?",
-      "targetWord": "Hot",
-      "options": [
-        "Cold",
-        "Warm",
-        "Dry",
-        "Wet"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Hot\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l1_q2",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Happy\"?",
-      "targetWord": "Happy",
-      "options": [
-        "Sad",
-        "Glad",
-        "Calm",
-        "Shy"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Happy\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l1_q3",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Fast\"?",
-      "targetWord": "Fast",
-      "options": [
-        "Slow",
-        "Quick",
-        "Hard",
-        "Deep"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Fast\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l2_q1",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Big\"?",
-      "targetWord": "Big",
-      "options": [
-        "Small",
-        "Wide",
-        "Tall",
-        "Long"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Big\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l2_q2",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Light\"?",
-      "targetWord": "Light",
-      "options": [
-        "Dark",
-        "Bright",
-        "Soft",
-        "Thin"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Light\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l2_q3",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Old\"?",
-      "targetWord": "Old",
-      "options": [
-        "Young",
-        "Ancient",
-        "Wise",
-        "Tall"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Old\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l3_q1",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Hard\"?",
-      "targetWord": "Hard",
-      "options": [
-        "Soft",
-        "Strong",
-        "Tough",
-        "Firm"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Hard\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l3_q2",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Love\"?",
-      "targetWord": "Love",
-      "options": [
-        "Hate",
-        "Like",
-        "Want",
-        "Need"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Love\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l3_q3",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Rich\"?",
-      "targetWord": "Rich",
-      "options": [
-        "Poor",
-        "Wealthy",
-        "Lucky",
-        "Bold"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Rich\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l4_q1",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Open\"?",
-      "targetWord": "Open",
-      "options": [
-        "Closed",
-        "Wide",
-        "Free",
-        "New"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Open\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l4_q2",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Clean\"?",
-      "targetWord": "Clean",
-      "options": [
-        "Dirty",
-        "Fresh",
-        "Pure",
-        "Clear"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Clean\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l4_q3",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Brave\"?",
-      "targetWord": "Brave",
-      "options": [
-        "Cowardly",
-        "Strong",
-        "Bold",
-        "Wise"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Brave\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l5_q1",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Calm\"?",
-      "targetWord": "Calm",
-      "options": [
-        "Anxious",
-        "Still",
-        "Quiet",
-        "Cool"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Calm\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l5_q2",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Early\"?",
-      "targetWord": "Early",
-      "options": [
-        "Late",
-        "Soon",
-        "Quick",
-        "Fast"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Early\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l5_q3",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Simple\"?",
-      "targetWord": "Simple",
-      "options": [
-        "Complex",
-        "Easy",
-        "Plain",
-        "Clear"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Simple\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l6_q1",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Loud\"?",
-      "targetWord": "Loud",
-      "options": [
-        "Quiet",
-        "Noisy",
-        "Bold",
-        "Sharp"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Loud\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l6_q2",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"True\"?",
-      "targetWord": "True",
-      "options": [
-        "False",
-        "Real",
-        "Honest",
-        "Sure"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"True\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l6_q3",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Win\"?",
-      "targetWord": "Win",
-      "options": [
-        "Lose",
-        "Gain",
-        "Score",
-        "Beat"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Win\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l7_q1",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Full\"?",
-      "targetWord": "Full",
-      "options": [
-        "Empty",
-        "Complete",
-        "Total",
-        "Round"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Full\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l7_q2",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Strong\"?",
-      "targetWord": "Strong",
-      "options": [
-        "Weak",
-        "Tough",
-        "Hard",
-        "Firm"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Strong\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l7_q3",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"War\"?",
-      "targetWord": "War",
-      "options": [
-        "Peace",
-        "Fight",
-        "Battle",
-        "Clash"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"War\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l8_q1",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Accept\"?",
-      "targetWord": "Accept",
-      "options": [
-        "Reject",
-        "Take",
-        "Want",
-        "Agree"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Accept\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l8_q2",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Rise\"?",
-      "targetWord": "Rise",
-      "options": [
-        "Fall",
-        "Grow",
-        "Climb",
-        "Jump"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Rise\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l8_q3",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Buy\"?",
-      "targetWord": "Buy",
-      "options": [
-        "Sell",
-        "Shop",
-        "Pay",
-        "Get"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Buy\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l9_q1",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Awake\"?",
-      "targetWord": "Awake",
-      "options": [
-        "Asleep",
-        "Alert",
-        "Active",
-        "Alive"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Awake\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l9_q2",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Begin\"?",
-      "targetWord": "Begin",
-      "options": [
-        "End",
-        "Start",
-        "Open",
-        "Try"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Begin\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l9_q3",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Safe\"?",
-      "targetWord": "Safe",
-      "options": [
-        "Dangerous",
-        "Secure",
-        "Sure",
-        "Good"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Safe\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l10_q1",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Polite\"?",
-      "targetWord": "Polite",
-      "options": [
-        "Rude",
-        "Kind",
-        "Nice",
-        "Gentle"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Polite\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l10_q2",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Wet\"?",
-      "targetWord": "Wet",
-      "options": [
-        "Dry",
-        "Damp",
-        "Moist",
-        "Soaked"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Wet\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "antonymSearch_l10_q3",
-      "instruction": "Find the antonym.",
-      "difficulty": 1,
-      "subtype": "antonymSearch",
-      "interactionType": "choice",
-      "question": "What is the opposite of \"Success\"?",
-      "targetWord": "Success",
-      "options": [
-        "Failure",
-        "Win",
-        "Gain",
-        "Pride"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Opposite meaning of \"Success\".",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "antonymSearch",
+    "batchIndex":  1,
+    "levels":  "1-10",
+    "quests":  [
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L1_Q1",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "ANALYZE_id0",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "ANALYZE",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "ANALYZE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L1_Q2",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "CONCEPT_id1",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "CONCEPT",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "CONCEPT"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L1_Q3",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "DATA_id2",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DATA"
+                                   ],
+                       "correctAnswer":  "DATA"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q1",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "EVIDENCE_id3",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "EVIDENCE"
+                                   ],
+                       "correctAnswer":  "EVIDENCE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q2",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "FACTOR_id4",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "FACTOR"
+                                   ],
+                       "correctAnswer":  "FACTOR"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q3",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "GLOBAL_id5",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "GLOBAL",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "GLOBAL"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L3_Q1",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "HYPOTHESIS_id6",
+                       "options":  [
+                                       "HYPOTHESIS",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "HYPOTHESIS"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L3_Q2",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "INTERPRET_id7",
+                       "options":  [
+                                       "INTERPRET",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "INTERPRET"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L3_Q3",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "JUSTICE_id8",
+                       "options":  [
+                                       "JUSTICE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "JUSTICE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L4_Q1",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "KNOWLEDGE_id9",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "KNOWLEDGE",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "KNOWLEDGE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L4_Q2",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "LOGIC_id10",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "LOGIC"
+                                   ],
+                       "correctAnswer":  "LOGIC"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L4_Q3",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "METHOD_id11",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "METHOD"
+                                   ],
+                       "correctAnswer":  "METHOD"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L5_Q1",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "NETWORK_id12",
+                       "options":  [
+                                       "NETWORK",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "NETWORK"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L5_Q2",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "OBJECTIVE_id13",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "OBJECTIVE",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "OBJECTIVE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L5_Q3",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "PERSPECTIVE_id14",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "PERSPECTIVE",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "PERSPECTIVE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L6_Q1",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "QUALITY_id15",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "QUALITY"
+                                   ],
+                       "correctAnswer":  "QUALITY"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L6_Q2",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "RESEARCH_id16",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "RESEARCH"
+                                   ],
+                       "correctAnswer":  "RESEARCH"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L6_Q3",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "SOURCE_id17",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "SOURCE"
+                                   ],
+                       "correctAnswer":  "SOURCE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L7_Q1",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "THEORY_id18",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "THEORY",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "THEORY"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L7_Q2",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "UNIQUE_id19",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "UNIQUE",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "UNIQUE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L7_Q3",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "ANALYZE_id20",
+                       "options":  [
+                                       "ANALYZE",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "ANALYZE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L8_Q1",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "CONCEPT_id21",
+                       "options":  [
+                                       "CONCEPT",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "CONCEPT"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L8_Q2",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "DATA_id22",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "DATA"
+                                   ],
+                       "correctAnswer":  "DATA"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L8_Q3",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "EVIDENCE_id23",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "EVIDENCE"
+                                   ],
+                       "correctAnswer":  "EVIDENCE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L9_Q1",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "FACTOR_id24",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "FACTOR",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "FACTOR"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L9_Q2",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "GLOBAL_id25",
+                       "options":  [
+                                       "GLOBAL",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "GLOBAL"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L9_Q3",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "HYPOTHESIS_id26",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "HYPOTHESIS"
+                                   ],
+                       "correctAnswer":  "HYPOTHESIS"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L10_Q1",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "INTERPRET_id27",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "INTERPRET"
+                                   ],
+                       "correctAnswer":  "INTERPRET"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L10_Q2",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "JUSTICE_id28",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "JUSTICE"
+                                   ],
+                       "correctAnswer":  "JUSTICE"
+                   },
+                   {
+                       "id":  "VOC_ANTONYMSEARCH_L10_Q3",
+                       "interactionType":  "Polarity Pull",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "KNOWLEDGE_id29",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "KNOWLEDGE",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "KNOWLEDGE"
+                   }
+               ]
 }

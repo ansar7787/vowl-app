@@ -12,11 +12,14 @@ class QuestRegistry {
     'syllableStress': 'accent',
     'vowelDistinction': 'accent',
     'wordLinking': 'accent',
+    'pitchModulation': 'accent',
+    'connectedSpeech': 'accent',
 
     // Grammar
     'articleInsertion': 'grammar',
     'clauseConnector': 'grammar',
     'grammarQuest': 'grammar',
+    'modifierPlacement': 'grammar',
     'partsOfSpeech': 'grammar',
     'questionFormatter': 'grammar',
     'sentenceCorrection': 'grammar',
@@ -24,6 +27,14 @@ class QuestRegistry {
     'tenseMastery': 'grammar',
     'voiceSwap': 'grammar',
     'wordReorder': 'grammar',
+    'modalsSelection': 'grammar',
+    'prepositionChoice': 'grammar',
+    'pronounResolution': 'grammar',
+    'punctuationMastery': 'grammar',
+    'relativeClauses': 'grammar',
+    'conditionals': 'grammar',
+    'conjunctions': 'grammar',
+    'directIndirectSpeech': 'grammar',
 
     // Listening
     'ambientId': 'listening',
@@ -48,6 +59,8 @@ class QuestRegistry {
     'readingSpeedCheck': 'reading',
     'sentenceOrderReading': 'reading',
     'trueFalseReading': 'reading',
+    'skimmingScanning': 'reading',
+    'clozeTest': 'reading',
 
     // Roleplay
     'branchingDialogue': 'roleplay',
@@ -84,6 +97,8 @@ class QuestRegistry {
     'synonymSearch': 'vocabulary',
     'topicVocab': 'vocabulary',
     'wordFormation': 'vocabulary',
+    'contextualUsage': 'vocabulary',
+    'collocations': 'vocabulary',
 
     // Writing
     'completeSentence': 'writing',
@@ -97,6 +112,12 @@ class QuestRegistry {
     'shortAnswerWriting': 'writing',
     'summarizeStoryWriting': 'writing',
     'writingEmail': 'writing',
+    
+    // Elite Mastery
+    'storyBuilder': 'elite_mastery',
+    'idiomMatch': 'elite_mastery',
+    'speedSpelling': 'elite_mastery',
+    'accentShadowing': 'elite_mastery',
   };
 
   /// Gets the full asset path for a specific game and level batch.

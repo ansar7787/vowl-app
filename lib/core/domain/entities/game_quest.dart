@@ -11,6 +11,46 @@ enum InteractionType {
   reorder,
   trueFalse,
   text,
+  spell,
+  voice,
+  selection,
+  dialogue,
+  slider,
+  rating,
+  mapping,
+  bubbles,
+  flip,
+  lens,
+  mirror,
+  rub,
+  paint,
+  sort,
+  lab,
+  tree,
+  slot,
+  chain,
+  scroll,
+  verdict,
+  condenser,
+  search,
+  journal,
+  digest,
+  audit,
+  draft,
+  blueprint,
+  echo,
+  verbalizer,
+  narrator,
+  pivot,
+  clarity,
+  radar,
+  probe,
+  pulse,
+  anchor,
+  mimic,
+  shadow,
+  stress,
+  linking,
 }
 
 enum GameSubtype {
@@ -47,6 +87,8 @@ enum GameSubtype {
   paragraphSummary,
   readingInference,
   readingConclusion,
+  clozeTest,
+  skimmingScanning,
   // 4. Writing
   sentenceBuilder,
   completeSentence,
@@ -70,6 +112,15 @@ enum GameSubtype {
   voiceSwap,
   questionFormatter,
   articleInsertion,
+  modifierPlacement,
+  modalsSelection,
+  prepositionChoice,
+  pronounResolution,
+  punctuationMastery,
+  relativeClauses,
+  conditionals,
+  conjunctions,
+  directIndirectSpeech,
   // 6. Vocabulary
   flashcards,
   synonymSearch,
@@ -81,6 +132,8 @@ enum GameSubtype {
   topicVocab,
   wordFormation,
   prefixSuffix,
+  collocations,
+  contextualUsage,
   // 7. Accent
   minimalPairs,
   intonationMimic,
@@ -92,6 +145,8 @@ enum GameSubtype {
   pitchPatternMatch,
   speedVariance,
   dialectDrill,
+  connectedSpeech,
+  pitchModulation,
   // 8. Roleplay
   branchingDialogue,
   situationalResponse,
@@ -103,6 +158,11 @@ enum GameSubtype {
   elevatorPitch,
   socialSpark,
   emergencyHub,
+  // 9. Elite Mastery
+  storyBuilder,
+  idiomMatch,
+  speedSpelling,
+  accentShadowing,
 }
 
 enum QuestType {
@@ -114,18 +174,20 @@ enum QuestType {
   vocabulary,
   accent,
   roleplay,
+  eliteMastery,
 }
 
 extension GameSubtypeX on GameSubtype {
   QuestType get category {
-    if (index >= 0 && index <= 9) return QuestType.speaking;
-    if (index >= 10 && index <= 19) return QuestType.listening;
-    if (index >= 20 && index <= 29) return QuestType.reading;
-    if (index >= 30 && index <= 40) return QuestType.writing;
-    if (index >= 41 && index <= 50) return QuestType.grammar;
-    if (index >= 51 && index <= 60) return QuestType.vocabulary;
-    if (index >= 61 && index <= 70) return QuestType.accent;
-    return QuestType.roleplay;
+    if (index <= GameSubtype.dailyExpression.index) return QuestType.speaking;
+    if (index <= GameSubtype.ambientId.index) return QuestType.listening;
+    if (index <= GameSubtype.skimmingScanning.index) return QuestType.reading;
+    if (index <= GameSubtype.essayDrafting.index) return QuestType.writing;
+    if (index <= GameSubtype.directIndirectSpeech.index) return QuestType.grammar;
+    if (index <= GameSubtype.contextualUsage.index) return QuestType.vocabulary;
+    if (index <= GameSubtype.pitchModulation.index) return QuestType.accent;
+    if (index <= GameSubtype.emergencyHub.index) return QuestType.roleplay;
+    return QuestType.eliteMastery;
   }
 
   bool get isLegacy => false;
@@ -135,21 +197,50 @@ extension QuestTypeX on QuestType {
   List<GameSubtype> get subtypes {
     switch (this) {
       case QuestType.speaking:
-        return GameSubtype.values.sublist(0, 10);
+        return GameSubtype.values.sublist(
+          GameSubtype.repeatSentence.index,
+          GameSubtype.dailyExpression.index + 1,
+        );
       case QuestType.listening:
-        return GameSubtype.values.sublist(10, 20);
+        return GameSubtype.values.sublist(
+          GameSubtype.audioFillBlanks.index,
+          GameSubtype.ambientId.index + 1,
+        );
       case QuestType.reading:
-        return GameSubtype.values.sublist(20, 30);
+        return GameSubtype.values.sublist(
+          GameSubtype.readAndAnswer.index,
+          GameSubtype.skimmingScanning.index + 1,
+        );
       case QuestType.writing:
-        return GameSubtype.values.sublist(30, 41);
+        return GameSubtype.values.sublist(
+          GameSubtype.sentenceBuilder.index,
+          GameSubtype.essayDrafting.index + 1,
+        );
       case QuestType.grammar:
-        return GameSubtype.values.sublist(41, 51);
+        return GameSubtype.values.sublist(
+          GameSubtype.grammarQuest.index,
+          GameSubtype.directIndirectSpeech.index + 1,
+        );
       case QuestType.vocabulary:
-        return GameSubtype.values.sublist(51, 61);
+        return GameSubtype.values.sublist(
+          GameSubtype.flashcards.index,
+          GameSubtype.contextualUsage.index + 1,
+        );
       case QuestType.accent:
-        return GameSubtype.values.sublist(61, 71);
+        return GameSubtype.values.sublist(
+          GameSubtype.minimalPairs.index,
+          GameSubtype.pitchModulation.index + 1,
+        );
       case QuestType.roleplay:
-        return GameSubtype.values.sublist(71, 81);
+        return GameSubtype.values.sublist(
+          GameSubtype.branchingDialogue.index,
+          GameSubtype.emergencyHub.index + 1,
+        );
+      case QuestType.eliteMastery:
+        return GameSubtype.values.sublist(
+          GameSubtype.storyBuilder.index,
+          GameSubtype.accentShadowing.index + 1,
+        );
     }
   }
 
@@ -171,8 +262,47 @@ extension QuestTypeX on QuestType {
         return 'accent';
       case QuestType.roleplay:
         return 'roleplay';
+      case QuestType.eliteMastery:
+        return 'elitemastery';
     }
   }
+}
+
+/// Visual configuration for quest UI theming.
+/// Maps to the `visual_config` JSON object in curriculum files.
+class VisualConfig extends Equatable {
+  final String painterType;
+  final String primaryColor;
+  final double pulseIntensity;
+  final String shaderEffect;
+
+  const VisualConfig({
+    this.painterType = 'DataLogSync',
+    this.primaryColor = '0xFF03A9F4',
+    this.pulseIntensity = 0.5,
+    this.shaderEffect = 'glow_shimmer',
+  });
+
+  /// Parse from JSON map.
+  factory VisualConfig.fromJson(Map<String, dynamic> json) {
+    return VisualConfig(
+      painterType: json['painter_type'] as String? ?? 'DataLogSync',
+      primaryColor: json['primary_color'] as String? ?? '0xFF03A9F4',
+      pulseIntensity: (json['pulse_intensity'] as num?)?.toDouble() ?? 0.5,
+      shaderEffect: json['shader_effect'] as String? ?? 'glow_shimmer',
+    );
+  }
+
+  /// Convert to JSON map.
+  Map<String, dynamic> toJson() => {
+    'painter_type': painterType,
+    'primary_color': primaryColor,
+    'pulse_intensity': pulseIntensity,
+    'shader_effect': shaderEffect,
+  };
+
+  @override
+  List<Object?> get props => [painterType, primaryColor, pulseIntensity, shaderEffect];
 }
 
 class GameQuest extends Equatable {
@@ -190,6 +320,7 @@ class GameQuest extends Equatable {
   final String? correctAnswer;
   final String? hint;
   final String? textToSpeak;
+  final VisualConfig? visualConfig;
 
   const GameQuest({
     required this.id,
@@ -206,6 +337,7 @@ class GameQuest extends Equatable {
     this.correctAnswer,
     this.hint,
     this.textToSpeak,
+    this.visualConfig,
   });
 
   @override
@@ -224,5 +356,6 @@ class GameQuest extends Equatable {
     correctAnswer,
     hint,
     textToSpeak,
+    visualConfig,
   ];
 }

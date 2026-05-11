@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
 class AdRewardCard extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
@@ -54,7 +55,7 @@ class AdRewardCard extends StatelessWidget {
                     ),
                     SizedBox(width: 8.w),
                     Text(
-                      '20 VOX COINS',
+                      '20 VOWL COINS',
                       style: GoogleFonts.outfit(
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w900,
@@ -120,9 +121,9 @@ class AdRewardCard extends StatelessWidget {
       isPremium: isPremium,
       onUserEarnedReward: (reward) {
         rewardEarned = true;
-        // Use AuthAddCoinsRequested to ensure history is logged
-        context.read<AuthBloc>().add(
-          const AuthAddCoinsRequested(
+        // Use EconomyAddCoinsRequested to ensure history is logged
+        context.read<EconomyBloc>().add(
+          const EconomyAddCoinsRequested(
             20,
             title: 'Watched Rewarded Ad',
             isEarned: true,
@@ -149,7 +150,7 @@ class AdRewardCard extends StatelessWidget {
                   ),
                   SizedBox(width: 12.w),
                   Text(
-                    'Reward Earned! +20 Vox Coins',
+                    'Reward Earned! +20 Vowl Coins',
                     style: GoogleFonts.outfit(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w600,

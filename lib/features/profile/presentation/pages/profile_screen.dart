@@ -1,3 +1,4 @@
+import 'package:vowl/core/utils/sound_service.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -8,22 +9,23 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:voxai_quest/core/constants/badge_constants.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/ad_reward_card.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_image.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/theme/theme_cubit.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/kids_zone/presentation/utils/kids_assets.dart';
-import 'package:voxai_quest/features/kids_zone/presentation/utils/kids_audio_service.dart';
-import 'package:voxai_quest/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/core/constants/badge_constants.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
+import 'package:vowl/features/kids_zone/presentation/utils/kids_assets.dart';
+import 'package:vowl/features/kids_zone/presentation/utils/kids_audio_service.dart';
+import 'package:vowl/features/kids_zone/presentation/utils/kids_tts_service.dart';
+import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -52,7 +54,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Future<void> _toggleSound(bool value) async {
     if (!value) {
-      // Show confirmation dialog when trying to turn off
       final confirmed = await _showSoundConfirmationDialog();
       if (!confirmed) return;
     }
@@ -63,15 +64,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('sound_enabled', value);
 
-    // Update master SoundService
     di.sl<SoundService>().setMuted(!value);
 
-    // Handle Kids Zone services specifically
     final kidsAudio = di.sl<KidsAudioService>();
     final kidsTTS = di.sl<KidsTTSService>();
 
     if (!value) {
-      // If muting, stop everything active
       await kidsAudio.stopBgm();
       await kidsTTS.stop();
     }
@@ -156,9 +154,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           borderRadius: BorderRadius.circular(20.r),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(
-                                0xFF2563EB,
-                              ).withValues(alpha: 0.3),
+                              color: const Color(0xFF2563EB).withValues(alpha: 0.3),
                               blurRadius: 15,
                               offset: const Offset(0, 8),
                             ),
@@ -205,10 +201,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final bgColor = isMidnight 
+        ? Colors.black 
+        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+
     return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
+      backgroundColor: bgColor,
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           final user = state.user;
@@ -224,7 +223,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             displacement: 100.h,
             child: Stack(
               children: [
-                const MeshGradientBackground(),
+                const MeshGradientBackground(showLetters: false),
                 CustomScrollView(
                   physics: const AlwaysScrollableScrollPhysics(
                     parent: BouncingScrollPhysics(),
@@ -256,60 +255,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Premium Banner
                             if (!user.isPremium) ...[
                               SizedBox(height: 24.h),
-                              _buildPremiumBanner(
-                                context,
-                              ).animate(delay: 200.ms).fadeIn().scale(),
+                              _buildPremiumBanner(context),
                             ],
 
                             SizedBox(height: 24.h),
                             const AdRewardCard(margin: EdgeInsets.zero),
 
                             SizedBox(height: 40.h),
-                            _buildSectionHeader(
-                              context,
-                              'Adventure Stats',
-                            ).animate(delay: 200.ms).fadeIn(),
+                            _buildSectionHeader(context, 'Adventure Stats'),
                             SizedBox(height: 20.h),
-                            _buildBentoStats(context, user)
-                                .animate(delay: 400.ms)
-                                .fadeIn(duration: 600.ms)
-                                .slideY(begin: 0.1, curve: Curves.easeOutQuad),
+                            _buildBentoStats(context, user),
 
                             SizedBox(height: 40.h),
-                            _buildSectionHeader(
-                              context,
-                              'Battle Badges',
-                            ).animate(delay: 600.ms).fadeIn(),
+                            _buildSectionHeader(context, 'Hall of Fame'),
                             SizedBox(height: 20.h),
-                            _buildBadgesList(context, user)
-                                .animate(delay: 800.ms)
-                                .fadeIn()
-                                .slideY(begin: 0.1, curve: Curves.easeOutQuad),
+                            _buildBadgesList(context, user),
 
                             SizedBox(height: 40.h),
-                            _buildSectionHeader(
-                              context,
-                              'Kids Stickers',
-                            ).animate(delay: 850.ms).fadeIn(),
+                            _buildSectionHeader(context, 'Kids Stickers'),
                             SizedBox(height: 20.h),
-                            _buildKidsStickersList(context, user)
-                                .animate(delay: 900.ms)
-                                .fadeIn()
-                                .slideY(begin: 0.1, curve: Curves.easeOutQuad),
+                            _buildKidsStickersList(context, user),
 
                             SizedBox(height: 40.h),
-                            _buildSectionHeader(
-                              context,
-                              'App Preferences',
-                            ).animate(delay: 1000.ms).fadeIn(),
+                            _buildSectionHeader(context, 'App Preferences'),
                             SizedBox(height: 20.h),
-                            _buildPreferencesList(context, user)
-                                .animate(delay: 1100.ms)
-                                .fadeIn()
-                                .slideY(begin: 0.1),
+                            _buildPreferencesList(context, user),
 
                             SizedBox(height: 140.h),
                           ],
@@ -529,7 +501,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget _buildBadgesList(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    // Only show badges that have been CLAIMED in the Adventure Level Hub
     final earnedBadgesList = BadgeConstants.badges
         .where((b) => user.claimedLevelMilestones.contains(b.minLevel))
         .toList();
@@ -541,32 +512,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
         borderRadius: BorderRadius.circular(32.r),
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.all(16.r),
-              decoration: BoxDecoration(
-                color: (isDark ? Colors.white : Colors.black).withValues(
-                  alpha: 0.05,
-                ),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.emoji_events_outlined,
-                color: isDark ? Colors.white24 : Colors.black12,
-                size: 40.r,
-              ),
-            ),
+            VowlMascot(state: VowlMascotState.thinking, size: 60.r),
             SizedBox(height: 16.h),
             Text(
-              'No badges earned yet.',
+              'HALL OF FAME VACANT',
               style: GoogleFonts.outfit(
                 color: isDark ? Colors.white : const Color(0xFF0F172A),
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w900,
                 fontSize: 16.sp,
+                letterSpacing: 1,
               ),
             ),
             SizedBox(height: 8.h),
             Text(
-              'Claim milestones in the Adventure Hub to earn badges!',
+              'Claim milestones to display your legendary trophies here.',
               style: GoogleFonts.outfit(
                 color: isDark ? Colors.white38 : Colors.black38,
                 fontSize: 12.sp,
@@ -580,101 +539,84 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
 
     return SizedBox(
-      height: 140.h,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
+      height: 220.h,
+      child: PageView.builder(
+        controller: PageController(viewportFraction: 0.7),
         physics: const BouncingScrollPhysics(),
         itemCount: earnedBadgesList.length,
         itemBuilder: (context, index) {
           final badge = earnedBadgesList[index];
-          return Padding(
-            padding: EdgeInsets.only(right: 16.w),
-            child: Container(
-              width: 110.w,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    badge.color.withValues(alpha: 0.15),
-                    badge.color.withValues(alpha: 0.05),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(28.r),
-                border: Border.all(
-                  color: badge.color.withValues(alpha: 0.2),
-                  width: 1.5,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: badge.color.withValues(alpha: 0.1),
-                    blurRadius: 15,
-                    offset: const Offset(0, 8),
-                  ),
+          return Container(
+            margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(32.r),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  badge.color.withValues(alpha: 0.2),
+                  Colors.black.withValues(alpha: 0.3),
                 ],
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              boxShadow: [
+                BoxShadow(
+                  color: badge.color.withValues(alpha: 0.2),
+                  blurRadius: 20,
+                  spreadRadius: -5,
+                  offset: const Offset(0, 10),
+                ),
+              ],
+            ),
+            child: GlassTile(
+              borderRadius: BorderRadius.circular(32.r),
+              usePremiumStyle: true,
+              child: Stack(
                 children: [
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Container(
-                        width: 50.r,
-                        height: 50.r,
-                        decoration: BoxDecoration(
-                          color: badge.color.withValues(alpha: 0.2),
-                          shape: BoxShape.circle,
-                          boxShadow: [
-                            BoxShadow(
-                              color: badge.color.withValues(alpha: 0.3),
-                              blurRadius: 10,
-                            ),
-                          ],
+                  Center(
+                    child: Transform(
+                      transform: Matrix4.identity()
+                        ..setEntry(3, 2, 0.001)
+                        ..rotateY(0.1),
+                      alignment: FractionalOffset.center,
+                      child: Image.asset(
+                        'assets/images/mascot/gold_trophy.webp',
+                        height: 140.h,
+                        color: badge.color.withValues(alpha: 0.9),
+                        colorBlendMode: BlendMode.screen,
+                      ),
+                    ),
+                  ).animate(onPlay: (c) => c.repeat(reverse: true))
+                      .moveY(begin: -5, end: 5, duration: 2000.ms),
+                  
+                  Positioned(
+                    bottom: 20.h,
+                    left: 0,
+                    right: 0,
+                    child: Column(
+                      children: [
+                        Text(
+                          badge.name.toUpperCase(),
+                          style: GoogleFonts.outfit(
+                            color: Colors.white,
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: 2,
+                          ),
                         ),
-                      ),
-                      Icon(badge.icon, color: badge.color, size: 28.r),
-                    ],
-                  ),
-                  SizedBox(height: 12.h),
-                  Text(
-                    badge.name.toUpperCase(),
-                    style: GoogleFonts.outfit(
-                      color: isDark ? Colors.white : const Color(0xFF0F172A),
-                      fontSize: 9.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 0.5,
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  SizedBox(height: 2.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
-                      vertical: 2.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: badge.color,
-                      borderRadius: BorderRadius.circular(8.r),
-                    ),
-                    child: Text(
-                      'LVL ${badge.minLevel}',
-                      style: GoogleFonts.outfit(
-                        color: Colors.white,
-                        fontSize: 8.sp,
-                        fontWeight: FontWeight.w900,
-                      ),
+                        Text(
+                          'LEVEL ${badge.minLevel} ACHIEVED',
+                          style: GoogleFonts.outfit(
+                            color: Colors.white70,
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
             ),
-          ).animate().scale(
-            delay: (index * 100).ms,
-            duration: 400.ms,
-            curve: Curves.easeOutBack,
           );
         },
       ),
@@ -684,7 +626,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildKidsStickersList(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final earnedStickers = user.kidsStickers;
-    final totalPossible = 80; // 20 categories * 4 milestones
+    const totalPossible = 88; // 22 categories * 4 stickers
 
     return GlassTile(
       borderRadius: BorderRadius.circular(32.r),
@@ -762,7 +704,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: earnedStickers.length.clamp(0, 6),
                 itemBuilder: (context, index) {
-                  // Show most recent first
                   final revIndex = earnedStickers.length - 1 - index;
                   final stickerId = earnedStickers[revIndex];
                   final emoji = KidsAssets.getStickerEmoji(stickerId);
@@ -806,21 +747,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildBentoStats(BuildContext context, UserEntity user) {
     return Column(
       children: [
-        // 1. Adventure Level Card (Top)
-        _buildAdventureLevelCard(
-          context,
-          user,
-        ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1),
+        _buildAdventureLevelCard(context, user),
 
         SizedBox(height: 16.h),
 
-        // 2. Secondary Stats Pods (Coins & Streak - Middle)
         Row(
           children: [
             Expanded(
               child: _buildStatPod(
                 context: context,
-                title: 'Vox Treasury',
+                title: 'Vowl Treasury',
                 value: '${user.coins}',
                 icon: Icons.paid_rounded,
                 color: const Color(0xFF10B981),
@@ -843,7 +779,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
         SizedBox(height: 16.h),
 
-        // 3. Adventure XP Card (Bottom)
         _buildAdventureXPCard(
           context,
           user,
@@ -891,21 +826,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   SizedBox(height: 4.h),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    textBaseline: TextBaseline.alphabetic,
-                    children: [
-                      Text(
-                        'Level ${user.level}',
-                        style: GoogleFonts.outfit(
-                          fontSize: 26.sp,
-                          fontWeight: FontWeight.w900,
-                          color: Theme.of(context).brightness == Brightness.dark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
-                        ),
-                      ),
-                    ],
+                  Text(
+                    'Level ${user.level}',
+                    style: GoogleFonts.outfit(
+                      fontSize: 26.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? Colors.white
+                          : const Color(0xFF0F172A),
+                    ),
                   ),
                   Text(
                     'Tap to view rank details',
@@ -935,6 +864,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Widget _buildAdventureXPCard(BuildContext context, UserEntity user) {
     final xpProgress = (user.totalExp % 100) / 100;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return ScaleButton(
       onTap: () => context.push(AppRouter.adventureXPRoute),
@@ -976,9 +906,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: GoogleFonts.outfit(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w900,
-                          color: Theme.of(context).brightness == Brightness.dark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : const Color(0xFF0F172A),
                         ),
                       ),
                     ],
@@ -986,9 +914,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 Icon(
                   Icons.chevron_right_rounded,
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.white24
-                      : Colors.black12,
+                  color: isDark ? Colors.white24 : Colors.black12,
                   size: 28.r,
                 ),
               ],
@@ -1037,9 +963,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     AnimatedContainer(
                       duration: 800.ms,
                       height: 10.h,
-                      width:
-                          (MediaQuery.of(context).size.width - 96.w) *
-                          xpProgress,
+                      width: (MediaQuery.of(context).size.width - 96.w) * xpProgress,
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
                           colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
@@ -1181,22 +1105,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   Widget _buildPreferencesList(BuildContext context, UserEntity user) {
-    // Watch ThemeCubit to rebuild when state changes
-    final isDarkMode = context.watch<ThemeCubit>().state == ThemeMode.dark;
-
     return GlassTile(
       borderRadius: BorderRadius.circular(28.r),
       padding: EdgeInsets.symmetric(horizontal: 4.w),
       child: Column(
         children: [
-          _buildSwitchTile(
-            context,
-            'Dark Mode',
-            Icons.dark_mode_rounded,
-            Colors.indigo,
-            isDarkMode,
-            (value) => context.read<ThemeCubit>().toggleTheme(value),
-          ),
+          // Theme preferences have been unified to "Match System" for production stability
+          // Manual switches removed to eliminate splash flicker and state mismatch
           Divider(
             height: 1,
             thickness: 1,
@@ -1235,6 +1150,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
               },
             ),
           ],
+          Divider(
+            height: 1,
+            thickness: 1,
+            color: Theme.of(context).brightness == Brightness.dark
+                ? Colors.white.withValues(alpha: 0.1)
+                : const Color(0xFFE2E8F0),
+            indent: 20.w,
+            endIndent: 20.w,
+          ),
+          _buildPreferenceTile(
+            context,
+            'Settings',
+            Icons.settings_rounded,
+            Colors.grey,
+            () {
+              Haptics.vibrate(HapticsType.medium);
+              context.push(AppRouter.settingsRoute);
+            },
+          ),
         ],
       ),
     );
@@ -1291,59 +1225,61 @@ class _ProfileScreenState extends State<ProfileScreen> {
     IconData icon,
     Color color,
     bool value,
-    ValueChanged<bool> onChanged,
+    ValueChanged<bool>? onChanged,
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bool isDisabled = onChanged == null;
 
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      child: Row(
-        children: [
-          Container(
-            padding: EdgeInsets.all(10.r),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(12.r),
+    return Opacity(
+      opacity: isDisabled ? 0.5 : 1.0,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.all(10.r),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+              ),
+              child: Icon(icon, color: color, size: 22.r),
             ),
-            child: Icon(icon, color: color, size: 22.r),
-          ),
-          SizedBox(width: 16.w),
-          Expanded(
-            child: Text(
-              title,
-              style: GoogleFonts.outfit(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: isDark ? Colors.white : const Color(0xFF1E293B),
+            SizedBox(width: 16.w),
+            Expanded(
+              child: Text(
+                title,
+                style: GoogleFonts.outfit(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white : const Color(0xFF1E293B),
+                ),
               ),
             ),
-          ),
-          Transform.scale(
-            scale: 0.8,
-            child: Switch(
-              value: value,
-              onChanged: (v) {
-                Haptics.vibrate(HapticsType.selection);
-                onChanged(v);
-              },
-              activeThumbColor: color,
-              activeTrackColor: color.withValues(alpha: 0.2),
-              inactiveThumbColor: isDark ? Colors.white60 : Colors.white,
-              inactiveTrackColor: isDark
-                  ? Colors.white24
-                  : const Color(0xFFE2E8F0),
-              trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
+            Transform.scale(
+              scale: 0.8,
+              child: Switch(
+                value: value,
+                onChanged: isDisabled
+                    ? null
+                    : (v) {
+                        Haptics.vibrate(HapticsType.selection);
+                        onChanged(v);
+                      },
+                activeThumbColor: color,
+                activeTrackColor: color.withValues(alpha: 0.2),
+                inactiveThumbColor: isDark ? Colors.white60 : Colors.white,
+                inactiveTrackColor: isDark ? Colors.white24 : const Color(0xFFE2E8F0),
+                trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
   void _showEditNameSheet(BuildContext context, String currentName) {
-    final TextEditingController nameController = TextEditingController(
-      text: currentName,
-    );
+    final TextEditingController nameController = TextEditingController(text: currentName);
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     showModalBottomSheet(
@@ -1353,18 +1289,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
       builder: (context) => BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
-          padding: EdgeInsets.only(
-            bottom: MediaQuery.of(context).viewInsets.bottom,
-          ),
+          padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           decoration: BoxDecoration(
-            color: isDark
-                ? const Color(0xFF1E293B).withValues(alpha: 0.8)
-                : Colors.white.withValues(alpha: 0.8),
+            color: isDark ? const Color(0xFF1E293B).withValues(alpha: 0.8) : Colors.white.withValues(alpha: 0.8),
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
             border: Border.all(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : Colors.black.withValues(alpha: 0.05),
+              color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
             ),
           ),
           child: Column(
@@ -1404,14 +1334,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(height: 32.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.05)
-                            : Colors.black.withValues(alpha: 0.05),
+                        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
                         borderRadius: BorderRadius.circular(24.r),
                         border: Border.all(
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.1)
-                              : Colors.transparent,
+                          color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.transparent,
                         ),
                       ),
                       child: TextField(
@@ -1420,18 +1346,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: GoogleFonts.outfit(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w600,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF0F172A),
+                          color: isDark ? Colors.white : const Color(0xFF0F172A),
                         ),
                         decoration: InputDecoration(
                           hintText: 'Enter new name',
                           hintStyle: GoogleFonts.outfit(color: Colors.grey),
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(
-                            horizontal: 24.w,
-                            vertical: 20.h,
-                          ),
+                          contentPadding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
                         ),
                       ),
                     ),
@@ -1440,9 +1361,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       onTap: () {
                         final newName = nameController.text.trim();
                         if (newName.isNotEmpty && newName != currentName) {
-                          context.read<AuthBloc>().add(
-                            AuthUpdateDisplayNameRequested(newName),
-                          );
+                          context.read<ProfileBloc>().add(ProfileUpdateDisplayNameRequested(newName));
                         }
                         Navigator.pop(context);
                       },
@@ -1450,15 +1369,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 20.h),
                         decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
-                          ),
+                          gradient: const LinearGradient(colors: [Color(0xFF2563EB), Color(0xFF4F46E5)]),
                           borderRadius: BorderRadius.circular(24.r),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(
-                                0xFF2563EB,
-                              ).withValues(alpha: 0.3),
+                              color: const Color(0xFF2563EB).withValues(alpha: 0.3),
                               blurRadius: 20,
                               offset: const Offset(0, 10),
                             ),
@@ -1499,9 +1414,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       );
 
       if (pickedFile != null && mounted) {
-        context.read<AuthBloc>().add(
-          AuthUpdateProfilePictureRequested(pickedFile.path),
-        );
+        context.read<ProfileBloc>().add(ProfileUpdatePictureRequested(pickedFile.path));
       }
     } catch (e) {
       debugPrint('Error picking image: $e');
@@ -1518,14 +1431,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Container(
           padding: EdgeInsets.all(32.w),
           decoration: BoxDecoration(
-            color: isDark
-                ? const Color(0xFF1E293B).withValues(alpha: 0.8)
-                : Colors.white.withValues(alpha: 0.8),
+            color: isDark ? const Color(0xFF1E293B).withValues(alpha: 0.8) : Colors.white.withValues(alpha: 0.8),
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
             border: Border.all(
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.1)
-                  : Colors.black.withValues(alpha: 0.05),
+              color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
             ),
           ),
           child: Column(
@@ -1624,9 +1533,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               style: GoogleFonts.outfit(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w800,
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white
-                    : const Color(0xFF1E293B),
+                color: Theme.of(context).brightness == Brightness.dark ? Colors.white : const Color(0xFF1E293B),
               ),
             ),
             SizedBox(height: 4.h),
@@ -1635,9 +1542,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               style: GoogleFonts.outfit(
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w500,
-                color: Theme.of(context).brightness == Brightness.dark
-                    ? Colors.white38
-                    : Colors.black38,
+                color: Theme.of(context).brightness == Brightness.dark ? Colors.white38 : Colors.black38,
               ),
             ),
           ],

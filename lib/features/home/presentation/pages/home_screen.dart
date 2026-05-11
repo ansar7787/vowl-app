@@ -1,30 +1,32 @@
-import 'dart:math';
-import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/features/home/presentation/widgets/bento_arena.dart';
-import 'package:voxai_quest/features/home/presentation/widgets/category_shelf.dart';
-import 'package:voxai_quest/features/home/presentation/widgets/command_pod.dart';
-import 'package:voxai_quest/features/home/presentation/widgets/discovery_deck.dart';
-import 'package:voxai_quest/features/home/presentation/widgets/motivational_quote.dart';
-import 'package:voxai_quest/features/home/presentation/widgets/mystery_chest_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/ad_reward_card.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/features/home/presentation/widgets/global_progress_card.dart';
+import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/home/presentation/widgets/bento_arena.dart';
+import 'package:vowl/features/home/presentation/widgets/command_pod.dart';
+import 'package:vowl/features/home/presentation/widgets/discovery_deck.dart';
+import 'package:vowl/features/home/presentation/widgets/hoot_of_wisdom.dart';
+import 'package:vowl/features/home/presentation/widgets/mystery_chest_dialog.dart';
+import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_reward_ad_card.dart';
 
-import 'package:voxai_quest/features/kids_zone/presentation/widgets/kids_reward_ad_card.dart';
-import 'package:voxai_quest/features/home/presentation/widgets/voxin_mascot_card.dart';
-import 'package:voxai_quest/core/presentation/widgets/banner_ad_widget.dart';
-import 'package:voxai_quest/features/home/presentation/widgets/daily_spin_card.dart';
-import 'package:voxai_quest/features/home/presentation/widgets/daily_mystery_spin_overlay.dart';
+
+
+import 'package:vowl/core/theme/theme_cubit.dart';
+
+final ScrollController homeScrollController = ScrollController();
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,112 +36,263 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool _showChest = true;
-  bool _showSpinWheel = false;
-  bool _chestOpened = false;
-  int _rewardAmount = 0;
-  late ConfettiController _confettiController;
+  int? _globalRank;
+
+  static bool _hasCheckedDailyChestThisSession = false;
 
   @override
   void initState() {
     super.initState();
-    _checkDailyChest();
-    _confettiController = ConfettiController(
-      duration: const Duration(seconds: 3),
-    );
-  }
-
-  @override
-  void dispose() {
-    _confettiController.dispose();
-    super.dispose();
+    _fetchGlobalRank();
   }
 
   Future<void> _checkDailyChest() async {
     if (!mounted) return;
+    
+    // Safety check to ensure we don't fire this twice if called rapidly
+    if (_hasCheckedDailyChestThisSession) return;
+    _hasCheckedDailyChestThisSession = true;
+
+    // Small delay to ensure AuthBloc has received the latest Firestore data
+    await Future.delayed(const Duration(seconds: 2));
+    if (!mounted) return;
+
     final user = context.read<AuthBloc>().state.user;
     if (user == null) return;
 
     final lastReward = user.lastDailyRewardDate;
     if (lastReward != null) {
       final now = DateTime.now();
-      final isSameDay =
-          now.year == lastReward.year &&
+      final isSameDay = now.year == lastReward.year &&
           now.month == lastReward.month &&
           now.day == lastReward.day;
 
-      if (isSameDay) {
-        if (mounted) {
-          setState(() => _showChest = false);
-        }
-      }
+      if (isSameDay) return;
+    }
+
+    if (mounted) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => const MysteryChestDialog(),
+      );
     }
   }
-
-  Future<void> _openChest() async {
-    Haptics.vibrate(HapticsType.heavy);
-    if (!mounted) return;
-    final user = context.read<AuthBloc>().state.user;
-    if (user != null) {
-      // 1 to 50 coins as requested
-      final int totalCoins = Random().nextInt(50) + 1;
-
-      setState(() {
-        _chestOpened = true;
-        _rewardAmount = totalCoins;
-      });
-      _confettiController.play();
-
-      context.read<AuthBloc>().add(AuthClaimDailyChestRequested(totalCoins));
-
-      // Store the collected amount for the UI (can be passed to MysteryChestOverlay if needed)
-      // For now, let's just use it in the confetti delay
-
-      Future.delayed(const Duration(milliseconds: 2500), () {
-        if (mounted) {
-          setState(() => _showChest = false);
+  Future<void> _fetchGlobalRank() async {
+    try {
+      final repo = di.sl<LeaderboardRepository>();
+      final result = await repo.getTopUsers(limit: 100);
+      result.fold((_) {}, (data) {
+        final sorted = List<UserEntity>.from(data.users)
+          ..sort((a, b) {
+            final aL = a.totalLevelsCompleted;
+            final bL = b.totalLevelsCompleted;
+            if (bL != aL) {
+              return bL.compareTo(aL);
+            }
+            if (b.totalExp != a.totalExp) {
+              return b.totalExp.compareTo(a.totalExp);
+            }
+            return b.currentStreak.compareTo(a.currentStreak);
+          });
+        final currentUser = context.read<AuthBloc>().state.user;
+        if (currentUser != null && mounted) {
+          final idx = sorted.indexWhere((u) => u.id == currentUser.id);
+          setState(() => _globalRank = idx >= 0 ? idx + 1 : null);
         }
       });
-    }
+    } catch (_) {}
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bgColor = isMidnight
+        ? Colors.black
+        : (isDark ? const Color(0xFF0F172A) : Colors.white);
 
     return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: BlocBuilder<AuthBloc, AuthState>(
-        builder: (context, state) {
-          final user = state.user;
-          if (user == null) return const HomeShimmerLoading();
-
-          return Stack(
-            children: [
-              const MeshGradientBackground(),
-              RefreshIndicator(
-                onRefresh: () async {
-                  context.read<AuthBloc>().add(AuthReloadUser());
-                  await Future.delayed(const Duration(milliseconds: 400));
-                },
+      backgroundColor: bgColor,
+      body: BlocListener<AuthBloc, AuthState>(
+        listenWhen: (previous, current) => 
+            previous.status != current.status && 
+            current.status == AuthStatus.authenticated,
+        listener: (context, state) {
+          if (!_hasCheckedDailyChestThisSession) {
+            _checkDailyChest();
+            _hasCheckedDailyChestThisSession = true;
+          }
+        },
+        child: BlocBuilder<AuthBloc, AuthState>(
+          builder: (context, state) {
+            final user = state.user;
+            if (user == null) return const HomeShimmerLoading();
+  
+            return Stack(
+              children: [
+                const MeshGradientBackground(showLetters: false),
+                RefreshIndicator(
+                  onRefresh: () async {
+                    context.read<AuthBloc>().add(AuthReloadUser());
+                    await Future.delayed(const Duration(milliseconds: 400));
+                  },
                 color: const Color(0xFF2563EB),
                 displacement: 40.h,
                 child: CustomScrollView(
+                  controller: homeScrollController,
                   physics: const BouncingScrollPhysics(),
                   slivers: [
-                    // Adaptive Command Pod
-                    SliverToBoxAdapter(child: CommandPod(user: user)),
+                    // 1. TOP MARGIN & STATUS
+                    SliverToBoxAdapter(
+                      child: SizedBox(
+                        height: MediaQuery.of(context).padding.top + 16.h,
+                      ),
+                    ),
 
-                    // Voxin Companion (2026 Redesign)
-                    const SliverToBoxAdapter(child: VoxinMascotCard()),
+                    // 2. COMMAND HEADER (Identity & XP)
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: CommandPod(
+                          user: user,
+                          mode: CommandPodMode.headerOnly,
+                        ),
+                      ),
+                    ),
 
-                    // Discovery Hub
+                    // 3. GLOBAL PROGRESS + QUICK STATS
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 20.h),
+                            GlobalProgressCard(
+                              user: user,
+                              globalRank: _globalRank,
+                            ),
+                            SizedBox(height: 14.h),
+                            _buildQuickStatsRow(context, user),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    // 4. JUNIOR ADVENTURE (Kids Zone)
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 25.h),
+                            _buildSectionHeader(
+                              context,
+                              'Kids Learning Zone',
+                              '22 educational games for early learners',
+                              const Color(0xFFF43F5E),
+                            ),
+                            SizedBox(height: 18.h),
+                            CommandPod(
+                              user: user,
+                              mode: CommandPodMode.kidsOnly,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    // 5. QUEST ARENA (8-Step Journey)
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 30.h),
+                            _buildSectionHeader(
+                              context,
+                              'Quest Arena',
+                              '9-step real-world journey',
+                              const Color(0xFF6366F1),
+                              badge: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 8.w,
+                                  vertical: 2.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: const Color(
+                                    0xFFF59E0B,
+                                  ).withValues(alpha: 0.1),
+                                  borderRadius: BorderRadius.circular(20.r),
+                                  border: Border.all(
+                                    color: const Color(
+                                      0xFFF59E0B,
+                                    ).withValues(alpha: 0.3),
+                                    width: 1,
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      Icons.auto_awesome_rounded,
+                                      color: const Color(0xFFF59E0B),
+                                      size: 10.r,
+                                    ),
+                                    SizedBox(width: 4.w),
+                                    Text(
+                                      '9 STEPS',
+                                      style: GoogleFonts.outfit(
+                                        fontSize: 8.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: const Color(0xFFF59E0B),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 2.h),
+                            BentoArena(user: user),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    // 6. VOWL PRIME & BADGES
+                    SliverPadding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      sliver: SliverToBoxAdapter(
+                        child: Column(
+                          children: [
+                            SizedBox(height: 0),
+                            _buildSectionHeader(
+                              context,
+                              'Elite Companion & Stats',
+                              'Your mascot and adventure stats',
+                              const Color(0xFF10B981),
+                            ),
+                            SizedBox(height: 12.h),
+                            CommandPod(
+                              user: user,
+                              mode: CommandPodMode.vaultOnly,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    // 6. DISCOVERY HUB (Audio Deck)
                     _buildSliverSectionHeader(
                       context,
                       'Discovery Hub',
-                      '10 immersive audio experiences',
+                      '4 curated quest sequences',
+                      const Color(0xFF3B82F6),
                     ),
                     SliverToBoxAdapter(
                       child: DiscoveryDeck(
@@ -148,214 +301,42 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
 
-                    // Study Shelves - Area 1: Production
-                    _buildSliverSectionHeader(
-                      context,
-                      'Speaking Mastery',
-                      '10 vocal challenges for fluency',
-                      onSeeAll: () => context.push(
-                        '${AppRouter.categoryGamesRoute}?category=speaking',
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CategoryShelf(
-                        user: user,
-                        subtypes: QuestType.speaking.subtypes
-                            .where((s) => !s.isLegacy)
-                            .toList(),
-                      ),
-                    ),
-
-                    _buildSliverSectionHeader(
-                      context,
-                      'Writing Studio',
-                      '10 ways to craft perfect text',
-                      onSeeAll: () => context.push(
-                        '${AppRouter.categoryGamesRoute}?category=writing',
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CategoryShelf(
-                        user: user,
-                        subtypes: QuestType.writing.subtypes
-                            .where((s) => !s.isLegacy)
-                            .toList(),
-                      ),
-                    ),
-
-                    // Study Shelves - Area 2: Comprehension
-                    _buildSliverSectionHeader(
-                      context,
-                      'Reading Foundations',
-                      '10 quests for speed & insight',
-                      onSeeAll: () => context.push(
-                        '${AppRouter.categoryGamesRoute}?category=reading',
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CategoryShelf(
-                        user: user,
-                        subtypes: QuestType.reading.subtypes
-                            .where((s) => !s.isLegacy)
-                            .toList(),
-                      ),
-                    ),
-
-                    _buildSliverSectionHeader(
-                      context,
-                      'Listening Lab',
-                      '10 scenarios for real-world practice',
-                      onSeeAll: () => context.push(
-                        '${AppRouter.categoryGamesRoute}?category=listening',
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CategoryShelf(
-                        user: user,
-                        subtypes: QuestType.listening.subtypes
-                            .where((s) => !s.isLegacy)
-                            .toList(),
-                      ),
-                    ),
-
-                    // Study Shelves - Area 3: Knowledge
-                    _buildSliverSectionHeader(
-                      context,
-                      'Vocabulary Vault',
-                      '10 games to expand your lexicon',
-                      onSeeAll: () => context.push(
-                        '${AppRouter.categoryGamesRoute}?category=vocabulary',
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CategoryShelf(
-                        user: user,
-                        subtypes: QuestType.vocabulary.subtypes
-                            .where((s) => !s.isLegacy)
-                            .toList(),
-                      ),
-                    ),
-
-                    _buildSliverSectionHeader(
-                      context,
-                      'Grammar Hub',
-                      '10 rules for structural mastery',
-                      onSeeAll: () => context.push(
-                        '${AppRouter.categoryGamesRoute}?category=grammar',
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CategoryShelf(
-                        user: user,
-                        subtypes: QuestType.grammar.subtypes
-                            .where((s) => !s.isLegacy)
-                            .toList(),
-                      ),
-                    ),
-
-                    // Study Shelves - Area 4: Nuance
-                    _buildSliverSectionHeader(
-                      context,
-                      'Accent Academy',
-                      '10 drills for natural pronunciation',
-                      onSeeAll: () => context.push(
-                        '${AppRouter.categoryGamesRoute}?category=accent',
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CategoryShelf(
-                        user: user,
-                        subtypes: QuestType.accent.subtypes
-                            .where((s) => !s.isLegacy)
-                            .toList(),
-                      ),
-                    ),
-
-                    _buildSliverSectionHeader(
-                      context,
-                      'Roleplay Realm',
-                      '10 immersive situational scenarios',
-                      onSeeAll: () => context.push(
-                        '${AppRouter.categoryGamesRoute}?category=roleplay',
-                      ),
-                    ),
-                    SliverToBoxAdapter(
-                      child: CategoryShelf(
-                        user: user,
-                        subtypes: QuestType.roleplay.subtypes
-                            .where((s) => !s.isLegacy)
-                            .toList(),
-                      ),
-                    ),
-
-                    // Quest Arena (Bento)
-                    SliverPadding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
-                      sliver: SliverToBoxAdapter(
-                        child: Column(
-                          children: [
-                            SizedBox(height: 48.h),
-                            BentoArena(user: user),
-                          ],
-                        ),
-                      ),
-                    ),
-
-                    // Mastery Stats & Quote
+                    // 7. FOOTER (Quote, Ads)
                     SliverPadding(
                       padding: EdgeInsets.symmetric(horizontal: 24.w),
                       sliver: SliverList(
                         delegate: SliverChildListDelegate([
-                          SizedBox(height: 48.h),
-                          SizedBox(height: 48.h),
-                          const MotivationalQuote(),
-                          SizedBox(height: 32.h),
-                          DailySpinCard(
-                            onTap: () {
-                              setState(() {
-                                _showSpinWheel = true;
-                              });
-                            },
-                          ),
-                          SizedBox(height: 32.h),
+                          SizedBox(height: 28.h),
+                          const HootOfWisdom(),
+                          SizedBox(
+                            height: 24.h,
+                          ), // Space between owls hoot and reward card
                           const AdRewardCard(margin: EdgeInsets.zero),
                           SizedBox(height: 16.h),
                           const KidsRewardAdCard(),
-                          SizedBox(height: 32.h),
-                          const BannerAdWidget(),
-                          SizedBox(height: 120.h),
+                          SizedBox(height: 80.h),
                         ]),
                       ),
                     ),
                   ],
                 ),
               ),
-              if (_showChest)
-                MysteryChestOverlay(
-                  isOpened: _chestOpened,
-                  rewardAmount: _rewardAmount,
-                  onOpen: _openChest,
-                  confettiController: _confettiController,
-                ),
-              if (_showSpinWheel)
-                DailyMysterySpinOverlay(
-                  onClose: () {
-                    setState(() {
-                      _showSpinWheel = false;
-                    });
-                  },
-                ),
+
+
+
             ],
           );
         },
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildSliverSectionHeader(
     BuildContext context,
     String title,
-    String subtitle, {
+    String subtitle,
+    Color categoryColor, {
     VoidCallback? onSeeAll,
   }) {
     return SliverPadding(
@@ -364,7 +345,13 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             SizedBox(height: 32.h),
-            _buildSectionHeader(context, title, subtitle, onSeeAll: onSeeAll),
+            _buildSectionHeader(
+              context,
+              title,
+              subtitle,
+              categoryColor,
+              onSeeAll: onSeeAll,
+            ),
             SizedBox(height: 16.h),
           ],
         ),
@@ -375,32 +362,58 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildSectionHeader(
     BuildContext context,
     String title,
-    String subtitle, {
+    String subtitle,
+    Color categoryColor, {
     VoidCallback? onSeeAll,
+    Widget? badge,
   }) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final contrastColor = MeshGradientBackground.getContrastColor(context);
+    final secondaryColor = contrastColor.withValues(alpha: 0.6);
+
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        // Premium vertical indicator
+        Container(
+          width: 4.w,
+          height: 32.h,
+          decoration: BoxDecoration(
+            color: categoryColor,
+            borderRadius: BorderRadius.circular(2.r),
+            boxShadow: [
+              BoxShadow(
+                color: categoryColor.withValues(alpha: 0.3),
+                blurRadius: 8,
+                spreadRadius: 1,
+              ),
+            ],
+          ),
+        ),
+        SizedBox(width: 12.w),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title.toUpperCase(),
-                style: GoogleFonts.outfit(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w900,
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  letterSpacing: 1.2,
-                ),
+              Row(
+                children: [
+                  Text(
+                    title.toUpperCase(),
+                    style: GoogleFonts.outfit(
+                      fontSize: 18.sp,
+                      fontWeight: FontWeight.w900,
+                      color: contrastColor,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                  if (badge != null) ...[SizedBox(width: 10.w), badge],
+                ],
               ),
               Text(
                 subtitle,
                 style: GoogleFonts.outfit(
-                  fontSize: 12.sp,
+                  fontSize: 11.sp,
                   fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white38 : const Color(0xFF64748B),
+                  color: secondaryColor,
                 ),
               ),
             ],
@@ -412,21 +425,114 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
               decoration: BoxDecoration(
-                color: const Color(0xFF2563EB).withValues(alpha: 0.1),
+                color: categoryColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(color: categoryColor.withValues(alpha: 0.2)),
               ),
               child: Text(
                 'SEE ALL',
                 style: GoogleFonts.outfit(
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
-                  color: const Color(0xFF2563EB),
+                  color: categoryColor,
                   letterSpacing: 1.0,
                 ),
               ),
             ),
           ),
       ],
+    );
+  }
+
+  Widget _buildQuickStatsRow(BuildContext context, UserEntity user) {
+    return Row(
+      children: [
+        Expanded(
+          child: _buildMiniStatTile(
+            context,
+            'STREAK',
+            '${user.currentStreak}',
+            Icons.local_fire_department_rounded,
+            const Color(0xFFF97316),
+            AppRouter.streakRoute,
+          ),
+        ),
+        SizedBox(width: 12.w),
+        Expanded(
+          child: _buildMiniStatTile(
+            context,
+            'COINS',
+            '${user.coins}',
+            Icons.paid_rounded,
+            const Color(0xFF10B981),
+            AppRouter.questCoinsRoute,
+          ),
+        ),
+        SizedBox(width: 12.w),
+        Expanded(
+          child: _buildMiniStatTile(
+            context,
+            'KIDS',
+            '${user.kidsCoins}',
+            Icons.directions_car_rounded,
+            const Color(0xFFF43F5E),
+            '${AppRouter.kidsZoneRoute}/boutique',
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildMiniStatTile(
+    BuildContext context,
+    String label,
+    String value,
+    IconData icon,
+    Color color,
+    String route,
+  ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return ScaleButton(
+      onTap: () => context.push(route),
+      child: GlassTile(
+        borderRadius: BorderRadius.circular(20.r),
+        padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 8.w),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: EdgeInsets.all(8.r),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: color, size: 20.r),
+            ),
+            SizedBox(height: 8.h),
+            Text(
+              value,
+              style: GoogleFonts.outfit(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : const Color(0xFF0F172A),
+                height: 1.1,
+              ),
+            ),
+            SizedBox(height: 2.h),
+            Text(
+              label,
+              style: GoogleFonts.outfit(
+                fontSize: 8.sp,
+                fontWeight: FontWeight.w800,
+                color: isDark ? Colors.white38 : Colors.black45,
+                letterSpacing: 1.0,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
+      ),
     );
   }
 

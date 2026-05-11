@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class PitchPatternFeedbackPanel extends StatelessWidget {
   final bool isCorrect;
@@ -10,6 +10,7 @@ class PitchPatternFeedbackPanel extends StatelessWidget {
   final String hint;
   final VoidCallback onListenAgain;
   final bool isDark;
+  final bool isMidnight;
 
   const PitchPatternFeedbackPanel({
     super.key,
@@ -18,6 +19,7 @@ class PitchPatternFeedbackPanel extends StatelessWidget {
     required this.hint,
     required this.onListenAgain,
     required this.isDark,
+    this.isMidnight = false,
   });
 
   IconData _getPatternIcon() {
@@ -107,9 +109,9 @@ class PitchPatternFeedbackPanel extends StatelessWidget {
                     hint,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.outfit(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? Colors.white : Colors.black87,
+                      fontSize: 16.sp,
+                      fontStyle: FontStyle.italic,
+                      color: isDark ? Colors.white70 : Colors.black87,
                       height: 1.4,
                     ),
                   ),

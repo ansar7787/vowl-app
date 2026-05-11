@@ -1,0 +1,512 @@
+[
+  {
+    "level": 41,
+    "quests": [
+      {
+        "id": "KID_FAMILY_L41_Q1",
+        "instruction": "Find the DOG",
+        "question": "🐶✨",
+        "options": [
+          "Dog",
+          "Cat",
+          "Bird"
+        ],
+        "correctAnswer": "Dog",
+        "hint": "A dog is a furry friend who loves to bark and wag its tail when you come home!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_FAMILY_L41_Q2",
+        "instruction": "Which one says WOOF?",
+        "question": "🐶 vs 🐱",
+        "options": [
+          "Dog",
+          "Cat"
+        ],
+        "correctAnswer": "Dog",
+        "hint": "Dogs talk to us by barking and making happy noises!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_FAMILY_L41_Q3",
+        "instruction": "Does a dog wag its TAIL?",
+        "question": "🐶👋❓",
+        "options": [
+          "Yes, when happy!",
+          "No, only cats"
+        ],
+        "correctAnswer": "Yes, when happy!",
+        "hint": "When a dog is excited to see its family, its tail goes swish-swish back and forth!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      }
+    ]
+  },
+  {
+    "level": 42,
+    "quests": [
+      {
+        "id": "KID_FAMILY_L42_Q1",
+        "instruction": "Find the CAT",
+        "question": "🐱✨",
+        "options": [
+          "Cat",
+          "Dog",
+          "Hamster"
+        ],
+        "correctAnswer": "Cat",
+        "hint": "A cat is a soft friend with whiskers who loves to take long naps in the sun!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_FAMILY_L42_Q2",
+        "instruction": "Which one says MEOW?",
+        "question": "🐱 vs 🐶",
+        "options": [
+          "Cat",
+          "Dog"
+        ],
+        "correctAnswer": "Cat",
+        "hint": "Cats have a gentle meow and love to rub against your legs!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_FAMILY_L42_Q3",
+        "instruction": "Does a cat PURR?",
+        "question": "🐱🎶❓",
+        "options": [
+          "Yes, when cozy!",
+          "No, they only bark"
+        ],
+        "correctAnswer": "Yes, when cozy!",
+        "hint": "A purr is a soft vibration a cat makes to show it is happy and relaxed!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 43,
+    "quests": [
+      {
+        "id": "KID_FAMILY_L43_Q1",
+        "instruction": "Find the HAMSTER",
+        "question": "🐹✨",
+        "options": [
+          "Hamster",
+          "Rabbit",
+          "Mouse"
+        ],
+        "correctAnswer": "Hamster",
+        "hint": "A hamster is a tiny furry ball that lives in a cage and loves to store seeds in its cheeks!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_FAMILY_L43_Q2",
+        "instruction": "Which one runs on a WHEEL?",
+        "question": "🐹🎡 vs 🐶",
+        "options": [
+          "Hamster",
+          "Dog"
+        ],
+        "correctAnswer": "Hamster",
+        "hint": "Hamsters are very active at night and love to run round and round on their exercise wheel!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_FAMILY_L43_Q3",
+        "instruction": "Is a hamster SMALL?",
+        "question": "🐹🤏❓",
+        "options": [
+          "Yes, tiny friend!",
+          "No, like a horse"
+        ],
+        "correctAnswer": "Yes, tiny friend!",
+        "hint": "Hamsters can fit right in the palm of your hand and have soft little paws!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      }
+    ]
+  },
+  {
+    "level": 44,
+    "quests": [
+      {
+        "id": "KID_FAMILY_L44_Q1",
+        "instruction": "Find the BIRD",
+        "question": "🦜✨",
+        "options": [
+          "Bird",
+          "Hamster",
+          "Dog"
+        ],
+        "correctAnswer": "Bird",
+        "hint": "A pet bird has colorful feathers and can sing beautiful songs in its cage!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_FAMILY_L44_Q2",
+        "instruction": "Which one has FEATHERS?",
+        "question": "🦜 vs 🐱",
+        "options": [
+          "Bird",
+          "Cat"
+        ],
+        "correctAnswer": "Bird",
+        "hint": "Birds have pretty feathers and wings that help them hop and flutter around!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_FAMILY_L44_Q3",
+        "instruction": "Can some birds TALK?",
+        "question": "🦜🗣️❓",
+        "options": [
+          "Yes, like a parrot!",
+          "No, only bark"
+        ],
+        "correctAnswer": "Yes, like a parrot!",
+        "hint": "Some smart birds can learn to say 'Hello' or mimic the sounds you make!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 45,
+    "quests": [
+      {
+        "id": "KID_FAMILY_L45_Q1",
+        "instruction": "Logic: Do we FEED our pets?",
+        "question": "🐶🥣❓",
+        "options": [
+          "Yes, they get hungry!",
+          "No, they eat air",
+          "Only on Sundays"
+        ],
+        "correctAnswer": "Yes, they get hungry!",
+        "hint": "Just like you, your pets need yummy food and fresh water every day to stay healthy!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_FAMILY_L45_Q2",
+        "instruction": "Logic: Do we brush a CAT?",
+        "question": "🐱🪥❓",
+        "options": [
+          "Yes, for soft fur!",
+          "No, only for rocks"
+        ],
+        "correctAnswer": "Yes, for soft fur!",
+        "hint": "Brushing your pet's fur helps keep it clean and makes them feel very loved!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_FAMILY_L45_Q3",
+        "instruction": "Logic: Are pets part of the FAMILY?",
+        "question": "🐶🤝👨‍👩‍👧‍👦❓",
+        "options": [
+          "Yes, we love them!",
+          "No, they are robots"
+        ],
+        "correctAnswer": "Yes, we love them!",
+        "hint": "Even though they are animals, our pets are special members of our family who we take care of!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 46,
+    "quests": [
+      {
+        "id": "KID_FAMILY_L46_Q1",
+        "instruction": "Search: Find the dog BONE",
+        "question": "🐶🦴 vs 🐱",
+        "options": [
+          "Dog Snack",
+          "Cozy Cat"
+        ],
+        "correctAnswer": "Dog Snack",
+        "hint": "Look for the white bone that the dog loves to chew on!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_FAMILY_L46_Q2",
+        "instruction": "Search: Find the cat BALL of YARN",
+        "question": "🐱🧶 vs 🦜",
+        "options": [
+          "Playful Cat",
+          "Singing Bird"
+        ],
+        "correctAnswer": "Playful Cat",
+        "hint": "Look for the cat playing with the soft ball of string!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_FAMILY_L46_Q3",
+        "instruction": "Search: Find the bird CAGE",
+        "question": "🦜🏠 vs 🐹",
+        "options": [
+          "Bird Home",
+          "Hamster Wheel"
+        ],
+        "correctAnswer": "Bird Home",
+        "hint": "Look for the wire house where the bird sits on its perch!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 47,
+    "quests": [
+      {
+        "id": "KID_FAMILY_L47_Q1",
+        "instruction": "Review: Who says Woof?",
+        "question": "🐶 Review",
+        "options": [
+          "Dog",
+          "Cat",
+          "Bird"
+        ],
+        "correctAnswer": "Dog",
+        "hint": "The one that wags its tail for you!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_FAMILY_L47_Q2",
+        "instruction": "Review: Who says Meow?",
+        "question": "🐱 Review",
+        "options": [
+          "Cat",
+          "Hamster",
+          "Dog"
+        ],
+        "correctAnswer": "Cat",
+        "hint": "The one with the soft fur and whiskers!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_FAMILY_L47_Q3",
+        "instruction": "Review: Who runs on a wheel?",
+        "question": "🐹 Review",
+        "options": [
+          "Hamster",
+          "Bird",
+          "Cat"
+        ],
+        "correctAnswer": "Hamster",
+        "hint": "The tiny one who lives in a cage!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      }
+    ]
+  },
+  {
+    "level": 48,
+    "quests": [
+      {
+        "id": "KID_FAMILY_L48_Q1",
+        "instruction": "Which one is for a dog walk?",
+        "question": "🐶🦮 vs 🛌",
+        "options": [
+          "Outdoor Walk",
+          "Nap Time"
+        ],
+        "correctAnswer": "Outdoor Walk",
+        "hint": "We put a leash on the dog so we can take them for a fun walk in the park!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_FAMILY_L48_Q2",
+        "instruction": "Which one is for a cat scratch?",
+        "question": "🐱🧱 vs 🍦",
+        "options": [
+          "Scratching Post",
+          "Ice Cream"
+        ],
+        "correctAnswer": "Scratching Post",
+        "hint": "Cats love to sharpen their claws on a special scratchy post!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_FAMILY_L48_Q3",
+        "instruction": "Do pets need LOVE?",
+        "question": "🐶❤️❓",
+        "options": [
+          "Yes, lots of it!",
+          "No, only water"
+        ],
+        "correctAnswer": "Yes, lots of it!",
+        "hint": "Pets are happy when you pet them, talk to them, and show them you care!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      }
+    ]
+  },
+  {
+    "level": 49,
+    "quests": [
+      {
+        "id": "KID_FAMILY_L49_Q1",
+        "instruction": "Logic: Do we take pets to the VET?",
+        "question": "🐶🏥❓",
+        "options": [
+          "Yes, animal doctor!",
+          "No, to the beach"
+        ],
+        "correctAnswer": "Yes, animal doctor!",
+        "hint": "The vet is a special doctor who helps pets feel better when they are sick!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_FAMILY_L49_Q2",
+        "instruction": "Logic: Does a fish live in WATER?",
+        "question": "🐟🌊❓",
+        "options": [
+          "Yes, in a tank!",
+          "No, in a bed"
+        ],
+        "correctAnswer": "Yes, in a tank!",
+        "hint": "Pet fish need to stay in clean water so they can breathe and swim!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_FAMILY_L49_Q3",
+        "instruction": "Logic: Can a bird fly in the HOUSE?",
+        "question": "🦜🏠❓",
+        "options": [
+          "Yes, if cage is open!",
+          "No, only planes"
+        ],
+        "correctAnswer": "Yes, if cage is open!",
+        "hint": "Some pet birds like to fly around the room for a little bit of exercise!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      }
+    ]
+  },
+  {
+    "level": 50,
+    "quests": [
+      {
+        "id": "KID_FAMILY_L50_Q1",
+        "instruction": "Level 50 Challenge: Animal Whisperer!",
+        "question": "Find wagging DOG",
+        "options": [
+          "🐶",
+          "🐱",
+          "🦜"
+        ],
+        "correctAnswer": "🐶",
+        "hint": "The one that says Woof!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_FAMILY_L50_Q2",
+        "instruction": "Level 50 Challenge: Animal Whisperer!",
+        "question": "Find purring CAT",
+        "options": [
+          "🐱",
+          "🐹",
+          "🐶"
+        ],
+        "correctAnswer": "🐱",
+        "hint": "The one that says Meow!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_FAMILY_L50_Q3",
+        "instruction": "Level 50 Challenge: Mastery!",
+        "question": "Are you an Animal Whisperer?",
+        "options": [
+          "YES!",
+          "No"
+        ],
+        "correctAnswer": "YES!",
+        "hint": "Congratulations! You have completed Level 50!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  }
+]

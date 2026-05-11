@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
 class ConsonantWordCard extends StatelessWidget {
   final String word;
+  final String? phoneticHint;
   final bool isDark;
   final ThemeResult theme;
+  final bool isMidnight;
 
   const ConsonantWordCard({
     super.key,
     required this.word,
+    this.phoneticHint,
     required this.isDark,
     required this.theme,
+    this.isMidnight = false,
   });
 
   static final _regex = RegExp(r'\[(.*?)\]');
@@ -29,6 +33,7 @@ class ConsonantWordCard extends StatelessWidget {
 
       return _buildCard(
         RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             style: GoogleFonts.outfit(
               fontSize: 48.sp,
@@ -52,6 +57,7 @@ class ConsonantWordCard extends StatelessWidget {
     return _buildCard(
       Text(
         word,
+        textAlign: TextAlign.center,
         style: GoogleFonts.outfit(
           fontSize: 48.sp,
           fontWeight: FontWeight.w900,
@@ -65,7 +71,7 @@ class ConsonantWordCard extends StatelessWidget {
   Widget _buildCard(Widget child) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 40.h),
+      padding: EdgeInsets.symmetric(vertical: 32.h, horizontal: 24.w),
       decoration: BoxDecoration(
         color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white,
         borderRadius: BorderRadius.circular(32.r),
@@ -77,7 +83,26 @@ class ConsonantWordCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Center(child: child),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (phoneticHint != null && phoneticHint!.isNotEmpty)
+            Padding(
+              padding: EdgeInsets.only(bottom: 8.h),
+              child: Text(
+                "[ $phoneticHint ]",
+                style: GoogleFonts.outfit(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
+                  color: theme.primaryColor.withValues(alpha: 0.6),
+                  fontStyle: FontStyle.italic,
+                  letterSpacing: 2,
+                ),
+              ),
+            ),
+          Center(child: child),
+        ],
+      ),
     );
   }
 }

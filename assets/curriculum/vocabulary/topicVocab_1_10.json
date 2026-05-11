@@ -1,607 +1,487 @@
 {
-  "gameType": "topicVocab",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "topicVocab_l1_q1",
-      "instruction": "Topic: Medicine",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Prescription\" mean?",
-      "word": "Prescription",
-      "topic": "Medicine",
-      "options": [
-        "A doctor's order for medicine",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Take the prescription to the pharmacy.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l1_q2",
-      "instruction": "Topic: Technology",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Algorithm\" mean?",
-      "word": "Algorithm",
-      "topic": "Technology",
-      "options": [
-        "A set of rules for solving problems",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Search engines use complex algorithms.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l1_q3",
-      "instruction": "Topic: Law",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Verdict\" mean?",
-      "word": "Verdict",
-      "topic": "Law",
-      "options": [
-        "The decision of a jury",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The jury reached a guilty verdict.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l2_q1",
-      "instruction": "Topic: Finance",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Dividend\" mean?",
-      "word": "Dividend",
-      "topic": "Finance",
-      "options": [
-        "A share of profits paid to shareholders",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The company paid quarterly dividends.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l2_q2",
-      "instruction": "Topic: Science",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Hypothesis\" mean?",
-      "word": "Hypothesis",
-      "topic": "Science",
-      "options": [
-        "A proposed explanation for a phenomenon",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "She tested her hypothesis in the lab.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l2_q3",
-      "instruction": "Topic: Education",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Curriculum\" mean?",
-      "word": "Curriculum",
-      "topic": "Education",
-      "options": [
-        "The subjects in a course of study",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The new curriculum includes coding.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l3_q1",
-      "instruction": "Topic: Environment",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Biodiversity\" mean?",
-      "word": "Biodiversity",
-      "topic": "Environment",
-      "options": [
-        "Variety of life in a habitat",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Rainforests have incredible biodiversity.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l3_q2",
-      "instruction": "Topic: Politics",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Democracy\" mean?",
-      "word": "Democracy",
-      "topic": "Politics",
-      "options": [
-        "Government by the people",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "They fought for democracy.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l3_q3",
-      "instruction": "Topic: Sports",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Endurance\" mean?",
-      "word": "Endurance",
-      "topic": "Sports",
-      "options": [
-        "The ability to sustain effort",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Marathon running requires great endurance.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l4_q1",
-      "instruction": "Topic: Art",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Aesthetic\" mean?",
-      "word": "Aesthetic",
-      "topic": "Art",
-      "options": [
-        "Concerned with beauty",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The building has great aesthetic appeal.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l4_q2",
-      "instruction": "Topic: Music",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Tempo\" mean?",
-      "word": "Tempo",
-      "topic": "Music",
-      "options": [
-        "The speed of a musical piece",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The tempo of the song increased gradually.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l4_q3",
-      "instruction": "Topic: Geography",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Peninsula\" mean?",
-      "word": "Peninsula",
-      "topic": "Geography",
-      "options": [
-        "Land surrounded by water on three sides",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Florida is a peninsula.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l5_q1",
-      "instruction": "Topic: History",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Renaissance\" mean?",
-      "word": "Renaissance",
-      "topic": "History",
-      "options": [
-        "A period of cultural rebirth in Europe",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The Renaissance began in Italy.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l5_q2",
-      "instruction": "Topic: Psychology",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Cognitive\" mean?",
-      "word": "Cognitive",
-      "topic": "Psychology",
-      "options": [
-        "Related to mental processes",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Cognitive therapy helps change thought patterns.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l5_q3",
-      "instruction": "Topic: Astronomy",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Constellation\" mean?",
-      "word": "Constellation",
-      "topic": "Astronomy",
-      "options": [
-        "A group of stars forming a pattern",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Orion is a well-known constellation.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l6_q1",
-      "instruction": "Topic: Cooking",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Simmer\" mean?",
-      "word": "Simmer",
-      "topic": "Cooking",
-      "options": [
-        "Cook just below boiling point",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Let the sauce simmer for 20 minutes.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l6_q2",
-      "instruction": "Topic: Architecture",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Facade\" mean?",
-      "word": "Facade",
-      "topic": "Architecture",
-      "options": [
-        "The front face of a building",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The facade was beautifully decorated.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l6_q3",
-      "instruction": "Topic: Literature",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Metaphor\" mean?",
-      "word": "Metaphor",
-      "topic": "Literature",
-      "options": [
-        "A figure of speech comparing unlike things",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Life is a journey is a metaphor.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l7_q1",
-      "instruction": "Topic: Economics",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Inflation\" mean?",
-      "word": "Inflation",
-      "topic": "Economics",
-      "options": [
-        "A general increase in prices",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Inflation erodes purchasing power.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l7_q2",
-      "instruction": "Topic: Biology",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Photosynthesis\" mean?",
-      "word": "Photosynthesis",
-      "topic": "Biology",
-      "options": [
-        "Plants converting light to energy",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Photosynthesis requires sunlight.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l7_q3",
-      "instruction": "Topic: Chemistry",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Catalyst\" mean?",
-      "word": "Catalyst",
-      "topic": "Chemistry",
-      "options": [
-        "A substance that speeds up a reaction",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Enzymes act as biological catalysts.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l8_q1",
-      "instruction": "Topic: Physics",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Velocity\" mean?",
-      "word": "Velocity",
-      "topic": "Physics",
-      "options": [
-        "Speed in a given direction",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The car's velocity was 60 km/h north.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l8_q2",
-      "instruction": "Topic: Sociology",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Demographic\" mean?",
-      "word": "Demographic",
-      "topic": "Sociology",
-      "options": [
-        "A section of the population",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The survey targeted a young demographic.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l8_q3",
-      "instruction": "Topic: Marine",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Coral\" mean?",
-      "word": "Coral",
-      "topic": "Marine",
-      "options": [
-        "Marine organisms forming reefs",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Coral reefs support diverse ecosystems.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l9_q1",
-      "instruction": "Topic: Weather",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Precipitation\" mean?",
-      "word": "Precipitation",
-      "topic": "Weather",
-      "options": [
-        "Rain, snow, sleet, or hail",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The forecast predicts heavy precipitation.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l9_q2",
-      "instruction": "Topic: Math",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Equation\" mean?",
-      "word": "Equation",
-      "topic": "Math",
-      "options": [
-        "A mathematical statement of equality",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Solve the equation for x.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l9_q3",
-      "instruction": "Topic: Philosophy",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Ethics\" mean?",
-      "word": "Ethics",
-      "topic": "Philosophy",
-      "options": [
-        "Moral principles governing behavior",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Business ethics are increasingly important.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l10_q1",
-      "instruction": "Topic: Journalism",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Headline\" mean?",
-      "word": "Headline",
-      "topic": "Journalism",
-      "options": [
-        "The title of a news article",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The headline grabbed everyone's attention.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l10_q2",
-      "instruction": "Topic: Agriculture",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Irrigation\" mean?",
-      "word": "Irrigation",
-      "topic": "Agriculture",
-      "options": [
-        "Supplying water to crops",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Irrigation transformed the desert farm.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "topicVocab_l10_q3",
-      "instruction": "Topic: Aviation",
-      "difficulty": 1,
-      "subtype": "topicVocab",
-      "interactionType": "choice",
-      "question": "What does \"Turbulence\" mean?",
-      "word": "Turbulence",
-      "topic": "Aviation",
-      "options": [
-        "Irregular air movement",
-        "A type of dance",
-        "A kitchen tool",
-        "A board game"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The flight encountered severe turbulence.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "topicVocab",
+    "batchIndex":  1,
+    "levels":  "1-10",
+    "quests":  [
+                   {
+                       "id":  "VOC_TOPICVOCAB_L1_Q1",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "ANALYZE_id0",
+                       "options":  [
+                                       "ANALYZE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "ANALYZE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L1_Q2",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "CONCEPT_id1",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "CONCEPT",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "CONCEPT"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L1_Q3",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "DATA_id2",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DATA"
+                                   ],
+                       "correctAnswer":  "DATA"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L2_Q1",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "EVIDENCE_id3",
+                       "options":  [
+                                       "EVIDENCE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "EVIDENCE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L2_Q2",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "FACTOR_id4",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "FACTOR",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "FACTOR"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L2_Q3",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "GLOBAL_id5",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "GLOBAL",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "GLOBAL"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L3_Q1",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "HYPOTHESIS_id6",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "HYPOTHESIS"
+                                   ],
+                       "correctAnswer":  "HYPOTHESIS"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L3_Q2",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "INTERPRET_id7",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "INTERPRET"
+                                   ],
+                       "correctAnswer":  "INTERPRET"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L3_Q3",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "JUSTICE_id8",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "JUSTICE",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "JUSTICE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L4_Q1",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "KNOWLEDGE_id9",
+                       "options":  [
+                                       "KNOWLEDGE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "KNOWLEDGE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L4_Q2",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "LOGIC_id10",
+                       "options":  [
+                                       "LOGIC",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "LOGIC"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L4_Q3",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "METHOD_id11",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "METHOD"
+                                   ],
+                       "correctAnswer":  "METHOD"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L5_Q1",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "NETWORK_id12",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "NETWORK",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "NETWORK"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L5_Q2",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "OBJECTIVE_id13",
+                       "options":  [
+                                       "OBJECTIVE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "OBJECTIVE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L5_Q3",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "PERSPECTIVE_id14",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "PERSPECTIVE"
+                                   ],
+                       "correctAnswer":  "PERSPECTIVE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L6_Q1",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "QUALITY_id15",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "QUALITY",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "QUALITY"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L6_Q2",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "RESEARCH_id16",
+                       "options":  [
+                                       "RESEARCH",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "RESEARCH"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L6_Q3",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "SOURCE_id17",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "SOURCE",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "SOURCE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L7_Q1",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "THEORY_id18",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "THEORY"
+                                   ],
+                       "correctAnswer":  "THEORY"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L7_Q2",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "UNIQUE_id19",
+                       "options":  [
+                                       "UNIQUE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "UNIQUE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L7_Q3",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "ANALYZE_id20",
+                       "options":  [
+                                       "ANALYZE",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "ANALYZE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L8_Q1",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "CONCEPT_id21",
+                       "options":  [
+                                       "CONCEPT",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "CONCEPT"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L8_Q2",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "DATA_id22",
+                       "options":  [
+                                       "DATA",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "DATA"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L8_Q3",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "EVIDENCE_id23",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "EVIDENCE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "EVIDENCE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L9_Q1",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "FACTOR_id24",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "FACTOR",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "FACTOR"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L9_Q2",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "GLOBAL_id25",
+                       "options":  [
+                                       "GLOBAL",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "GLOBAL"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L9_Q3",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "HYPOTHESIS_id26",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "HYPOTHESIS",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "HYPOTHESIS"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L10_Q1",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "INTERPRET_id27",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "INTERPRET",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "INTERPRET"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L10_Q2",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "JUSTICE_id28",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "JUSTICE",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "JUSTICE"
+                   },
+                   {
+                       "id":  "VOC_TOPICVOCAB_L10_Q3",
+                       "interactionType":  "Category Climb",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "KNOWLEDGE_id29",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "KNOWLEDGE"
+                                   ],
+                       "correctAnswer":  "KNOWLEDGE"
+                   }
+               ]
 }

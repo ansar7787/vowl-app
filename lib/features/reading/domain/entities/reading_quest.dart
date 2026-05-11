@@ -1,4 +1,4 @@
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class ReadingQuest extends GameQuest {
   final String? passage;
@@ -12,6 +12,9 @@ class ReadingQuest extends GameQuest {
   final String? targetWord;
   final String? explanation;
   final String? prompt;
+  final List<String>? keywords;
+  final int? timeLimit;
+  final String? targetItem;
 
   const ReadingQuest({
     required super.id,
@@ -38,8 +41,13 @@ class ReadingQuest extends GameQuest {
     this.targetWord,
     this.explanation,
     super.textToSpeak,
+    super.visualConfig,
     this.prompt,
+    this.keywords,
+    this.timeLimit,
+    this.targetItem,
   });
 
   String? get word => targetWord ?? highlightedWord;
 }
+

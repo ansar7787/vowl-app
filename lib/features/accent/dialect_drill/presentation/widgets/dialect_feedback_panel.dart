@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class DialectFeedbackPanel extends StatelessWidget {
   final bool isCorrect;
@@ -12,6 +12,7 @@ class DialectFeedbackPanel extends StatelessWidget {
   final String hint;
   final Function(String text, String locale) onPlayAudio;
   final bool isDark;
+  final bool isMidnight;
 
   const DialectFeedbackPanel({
     super.key,
@@ -22,6 +23,7 @@ class DialectFeedbackPanel extends StatelessWidget {
     required this.hint,
     required this.onPlayAudio,
     required this.isDark,
+    required this.isMidnight,
   });
 
   @override
@@ -153,9 +155,7 @@ class DialectFeedbackPanel extends StatelessWidget {
                   style: GoogleFonts.outfit(
                     fontSize: 16.sp,
                     fontStyle: FontStyle.italic,
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.8)
-                        : Colors.black87,
+                    color: isDark ? Colors.white70 : Colors.black87,
                   ),
                 ),
               ],

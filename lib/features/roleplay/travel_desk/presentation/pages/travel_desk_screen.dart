@@ -1,31 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/roleplay/cinema_light.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/core/utils/speech_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/roleplay/presentation/bloc/roleplay_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
+import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
 class TravelDeskScreen extends StatefulWidget {
   final int level;
-  const TravelDeskScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const TravelDeskScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.travelDesk,
+  });
 
   @override
   State<TravelDeskScreen> createState() => _TravelDeskScreenState();
@@ -34,396 +27,214 @@ class TravelDeskScreen extends StatefulWidget {
 class _TravelDeskScreenState extends State<TravelDeskScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _ttsService = di.sl<SpeechService>();
-  final List<Map<String, dynamic>> _chatMessages = [];
-  bool _isPlaying = false;
+  
+  int _lastProcessedIndex = -1;
+  int? _selectedIndex;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
-  int? _selectedOptionIndex;
+  Offset _stampOffset = Offset.zero;
 
   @override
   void initState() {
     super.initState();
-    context.read<RoleplayBloc>().add(
-      FetchRoleplayQuests(
-        gameType: GameSubtype.travelDesk,
-        level: widget.level,
-      ),
-    );
+    context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _playAudio(String text) async {
-    if (_isPlaying) return;
-    setState(() => _isPlaying = true);
-    _hapticService.light();
-    await _ttsService.speak(text);
-    if (mounted) setState(() => _isPlaying = false);
-  }
-
-  void _onOptionSelected(int index, String optionText) {
-    if (_selectedOptionIndex != null) return;
-    _hapticService.selection();
+  void _onStampUpdate(DragUpdateDetails details) {
+    if (_isAnswered) return;
     setState(() {
-      _selectedOptionIndex = index;
-      _chatMessages.add({'text': optionText, 'isUser': true});
+      _stampOffset += details.delta;
     });
+    _hapticService.selection();
+  }
 
-    final state = context.read<RoleplayBloc>().state;
-    if (state is RoleplayLoaded) {
-      final isCorrect = index == 0;
-
-      if (isCorrect) {
-        _soundService.playCorrect();
-        _hapticService.success();
+  void _onStampEnd(int correctIndex) {
+    if (_isAnswered) return;
+    
+    // Check if stamp is over a page
+    int? detectedIndex;
+    if (_stampOffset.dy > 100.h) {
+      if (_stampOffset.dx < -50.w) {
+        detectedIndex = 0;
+      } else if (_stampOffset.dx > 50.w) {
+        detectedIndex = 1;
       } else {
-        _soundService.playWrong();
-        _hapticService.error();
+        detectedIndex = 2;
       }
+    }
 
-      context.read<RoleplayBloc>().add(SubmitAnswer(isCorrect));
+    if (detectedIndex != null) {
+      _submitStamp(detectedIndex, correctIndex);
+    } else {
+      setState(() {
+        _stampOffset = Offset.zero;
+      });
     }
   }
 
-  void _useHint() {
-    _hapticService.selection();
-    context.read<RoleplayBloc>().add(RoleplayHintUsed());
+  void _submitStamp(int index, int correct) {
+    setState(() {
+      _selectedIndex = index;
+      _isAnswered = true;
+      _isCorrect = index == correct;
+    });
+
+    if (_isCorrect!) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      context.read<RoleplayBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      context.read<RoleplayBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'roleplay',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('roleplay', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: BlocConsumer<RoleplayBloc, RoleplayState>(
-        listener: (context, state) {
-          if (state is RoleplayGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Voyage Expert!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins. Bon Voyage!',
-        ),
-            );
-          } else if (state is RoleplayGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Travel Disruption',
-        description: 'You missed your connection. Study the travel terms!',
-      );
-          } else if (state is RoleplayLoaded &&
-              state.lastAnswerCorrect == null) {
-            _selectedOptionIndex = null;
-            if (_chatMessages.isEmpty || !_chatMessages.last['isUser']) {
-              _chatMessages.add({
-                'text': state.currentQuest.instruction,
-                'isUser': false,
-              });
-            }
+    return BlocConsumer<RoleplayBloc, RoleplayState>(
+      listener: (context, state) {
+        if (state is RoleplayLoaded) {
+          if (state.currentIndex != _lastProcessedIndex) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _selectedIndex = null;
+              _stampOffset = Offset.zero;
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is RoleplayLoading || state is RoleplayInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is RoleplayLoaded) {
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                CinemaLight(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is RoleplayError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<RoleplayBloc>().add(
-                FetchRoleplayQuests(
-                  gameType: GameSubtype.travelDesk,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
+        }
+        if (state is RoleplayGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'GLOBAL TRAVELER!', enableDoubleUp: true);
+        } else if (state is RoleplayGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<RoleplayBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is RoleplayLoaded) ? state.currentQuest : null;
+        final options = quest?.options ?? [];
 
-  Widget _buildGameUI(
-    BuildContext context,
-    RoleplayLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-            Expanded(
-              child: ListView.builder(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-                itemCount: _chatMessages.length,
-                itemBuilder: (context, index) {
-                  final msg = _chatMessages[index];
-                  return _buildChatBubble(
-                    msg['text'],
-                    msg['isUser'],
-                    isDark,
-                    theme.primaryColor,
-                  );
-                },
-              ),
-            ),
-            if (state.lastAnswerCorrect == null)
-              GlassTile(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-                padding: EdgeInsets.zero,
-                borderColor: theme.primaryColor.withValues(alpha: 0.3),
-                child: Container(
-                  padding: EdgeInsets.fromLTRB(24.r, 32.r, 24.r, 48.r),
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? const Color(0xFF0F172A).withValues(alpha: 0.8)
-                        : Colors.white.withValues(alpha: 0.9),
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(40.r),
-                    ),
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        "TRAVEL AGENT WAITING...",
-                        style: GoogleFonts.outfit(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: 3,
-                          color: theme.primaryColor,
-                        ),
-                      ),
-                      SizedBox(height: 24.h),
-                      ...List.generate(quest.options?.length ?? 0, (index) {
-                        return Padding(
-                          padding: EdgeInsets.only(bottom: 16.h),
-                          child: ScaleButton(
-                            onTap: () =>
-                                _onOptionSelected(index, quest.options![index]),
-                            child: GlassTile(
-                              borderRadius: BorderRadius.circular(20.r),
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 24.w,
-                                vertical: 18.h,
-                              ),
-                              borderColor: theme.primaryColor.withValues(
-                                alpha: 0.1,
-                              ),
-                              color: (isDark ? Colors.white : Colors.black)
-                                  .withValues(alpha: 0.05),
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.flight_takeoff_rounded,
-                                    color: theme.primaryColor,
-                                    size: 20.r,
-                                  ),
-                                  SizedBox(width: 16.w),
-                                  Expanded(
-                                    child: Text(
-                                      quest.options![index],
-                                      style: GoogleFonts.outfit(
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w600,
-                                        color: isDark
-                                            ? Colors.white
-                                            : const Color(0xFF1E293B),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
-                      }),
-                    ],
-                  ),
-                ),
-              ).animate().slideY(
-                begin: 1,
-                duration: 600.ms,
-                curve: Curves.easeOutCubic,
-              ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect!
-                ? "SMOOTH TRAVELS!"
-                : "MISTAKE AT DESK!",
-            subtitle:
-                "Agent Tip: ${quest.explanation ?? "Always confirm your travel details clearly."}",
-            onContinue: () => context.read<RoleplayBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+        return RoleplayBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<RoleplayBloc>().add(NextQuestion()),
+          onHint: () => context.read<RoleplayBloc>().add(RoleplayHintUsed()),
+          child: quest == null ? const SizedBox() : Stack(
+            alignment: Alignment.center,
+            children: [
+              _buildInstruction(theme.primaryColor),
+              _buildCustomsHeader(quest.prompt ?? "", theme.primaryColor, isDark),
+              _buildPassportPages(options, theme.primaryColor, isDark),
+              if (!_isAnswered) _buildMechanicalStamp(theme.primaryColor, quest.correctAnswerIndex ?? 0),
+            ],
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildChatBubble(
-    String text,
-    bool isUser,
-    bool isDark,
-    Color userColor,
-  ) {
-    return Align(
-      alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
-      child: GlassTile(
-        borderRadius: BorderRadius.circular(20.r).copyWith(
-          bottomRight: isUser ? Radius.zero : Radius.circular(20.r),
-          bottomLeft: isUser ? Radius.circular(20.r) : Radius.zero,
-        ),
-        padding: EdgeInsets.all(16.r),
-        color: isUser ? userColor.withValues(alpha: 0.8) : null,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            if (!isUser)
-              ScaleButton(
-                onTap: () => _playAudio(text),
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: 8.h),
-                  child: Icon(
-                    Icons.volume_up_rounded,
-                    size: 18.r,
-                    color: isDark ? Colors.white54 : Colors.black45,
-                  ),
-                ),
-              ),
-            Text(
-              text,
-              style: GoogleFonts.outfit(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w500,
-                color: isUser
-                    ? Colors.white
-                    : (isDark ? Colors.white : Colors.black87),
-              ),
-            ),
-          ],
-        ),
+  Widget _buildInstruction(Color color) {
+    return Positioned(
+      top: 10.h,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+        decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.2))),
+        child: Text("SLAM THE STAMP ONTO THE CORRECT PASSPORT PAGE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
       ),
-    ).animate().fadeIn().slideX(begin: isUser ? 0.2 : -0.2);
+    );
   }
 
-  Widget _buildHeartCount(int lives) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
+  Widget _buildCustomsHeader(String prompt, Color color, bool isDark) {
+    return Positioned(
+      top: 60.h,
+      child: Column(
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
+          Icon(Icons.flight_takeoff_rounded, color: color, size: 40.r),
+          SizedBox(height: 12.h),
+          Container(
+            width: 0.85.sw,
+            padding: EdgeInsets.all(20.r),
+            decoration: BoxDecoration(color: color.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(20.r), border: Border.all(color: color.withValues(alpha: 0.1))),
+            child: Text(prompt, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 18.sp, color: isDark ? Colors.white70 : Colors.black87)),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.all(8.r),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          shape: BoxShape.circle,
-        ),
-        child: Icon(
-          Icons.lightbulb_rounded,
-          color: used ? Colors.grey : primaryColor,
-          size: 24.r,
-        ),
+  Widget _buildPassportPages(List<String> options, Color color, bool isDark) {
+    return Positioned(
+      bottom: 40.h,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: List.generate(options.length, (i) => _buildPage(i, options[i], color, isDark)),
       ),
     );
   }
 
-  
+  Widget _buildPage(int index, String text, Color color, bool isDark) {
+    bool isSelected = _selectedIndex == index;
+    return Container(
+      width: 110.w, height: 160.h,
+      margin: EdgeInsets.symmetric(horizontal: 5.w),
+      decoration: BoxDecoration(
+        color: isDark ? Colors.white10 : Colors.white,
+        borderRadius: BorderRadius.circular(10.r),
+        border: Border.all(color: isSelected ? color : color.withValues(alpha: 0.1), width: isSelected ? 3 : 1),
+        boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
+      ),
+      child: Stack(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(12.r),
+            child: Column(
+              children: [
+                Icon(Icons.public_rounded, color: color.withValues(alpha: 0.2), size: 30.r),
+                SizedBox(height: 12.h),
+                Text(text.toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.shareTechMono(fontSize: 12.sp, color: color, fontWeight: FontWeight.bold)),
+              ],
+            ),
+          ),
+          if (isSelected) Center(
+            child: Icon(_isCorrect! ? Icons.check_circle_outline_rounded : Icons.highlight_off_rounded, color: _isCorrect! ? Colors.green : Colors.red, size: 60.r),
+          ),
+        ],
+      ),
+    );
+  }
 
-  
+  Widget _buildMechanicalStamp(Color color, int correctIndex) {
+    return Positioned(
+      top: 0.5.sh - 100.h,
+      child: GestureDetector(
+        onPanUpdate: _onStampUpdate,
+        onPanEnd: (_) => _onStampEnd(correctIndex),
+        child: Transform.translate(
+          offset: _stampOffset,
+          child: Column(
+            children: [
+              Container(
+                width: 60.r, height: 100.r,
+                decoration: BoxDecoration(
+                  color: color,
+                  borderRadius: BorderRadius.circular(10.r),
+                  gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [color, color.withValues(alpha: 0.7)]),
+                  boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 15, offset: const Offset(0, 5))],
+                ),
+                child: Icon(Icons.approval_rounded, color: Colors.white, size: 32.r),
+              ),
+              Container(width: 80.w, height: 10.h, decoration: BoxDecoration(color: color.withValues(alpha: 0.5), borderRadius: BorderRadius.circular(5.r))),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
+

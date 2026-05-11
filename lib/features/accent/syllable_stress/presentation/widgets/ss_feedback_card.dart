@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SsFeedbackCard extends StatelessWidget {
   final bool isCorrect;
@@ -11,6 +11,7 @@ class SsFeedbackCard extends StatelessWidget {
   final String correctOption;
   final Color primaryColor;
   final VoidCallback onNext;
+  final bool isMidnight;
 
   const SsFeedbackCard({
     super.key,
@@ -20,6 +21,7 @@ class SsFeedbackCard extends StatelessWidget {
     required this.correctOption,
     required this.primaryColor,
     required this.onNext,
+    this.isMidnight = false,
   });
 
   @override

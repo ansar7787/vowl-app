@@ -1,4 +1,4 @@
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class SpeakingQuest extends GameQuest {
   final String? missingWord;
@@ -12,6 +12,9 @@ class SpeakingQuest extends GameQuest {
   final String? phoneticHint;
   final String? meaning;
   final String? sampleUsage;
+  final String? partnerDialogue;
+  final String? targetPhoneme;
+  final String? expression;
 
   const SpeakingQuest({
     required super.id,
@@ -28,6 +31,7 @@ class SpeakingQuest extends GameQuest {
     super.correctAnswer,
     super.hint,
     super.textToSpeak,
+    super.visualConfig,
     this.missingWord,
     this.prompt,
     this.sampleAnswer,
@@ -39,5 +43,9 @@ class SpeakingQuest extends GameQuest {
     this.phoneticHint,
     this.meaning,
     this.sampleUsage,
+    this.partnerDialogue,
+    this.targetPhoneme,
+    this.expression,
   });
 }
+

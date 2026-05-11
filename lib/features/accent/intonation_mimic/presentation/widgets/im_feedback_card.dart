@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/features/accent/domain/entities/accent_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
 class ImFeedbackCard extends StatelessWidget {
   final AccentQuest quest;
@@ -13,6 +13,7 @@ class ImFeedbackCard extends StatelessWidget {
   final String? tip;
   final ThemeResult theme;
   final bool isCorrect;
+  final bool isMidnight;
 
   const ImFeedbackCard({
     super.key,
@@ -22,11 +23,18 @@ class ImFeedbackCard extends StatelessWidget {
     required this.tip,
     required this.theme,
     required this.isCorrect,
+    this.isMidnight = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    /// Prevent duplicate hint & tip
+    final bool showTip =
+        tip != null &&
+        tip!.trim().isNotEmpty &&
+        tip!.trim() != quest.hint?.trim();
 
     return GlassTile(
       padding: EdgeInsets.all(24.r),
@@ -58,7 +66,10 @@ class ImFeedbackCard extends StatelessWidget {
               ),
             ],
           ),
+
           SizedBox(height: 16.h),
+
+          /// Hint text
           if (quest.hint != null)
             Text(
               quest.hint!,
@@ -69,7 +80,9 @@ class ImFeedbackCard extends StatelessWidget {
                 height: 1.4,
               ),
             ),
-          if (tip != null) ...[
+
+          /// PRO TIP (only if different from hint)
+          if (showTip) ...[
             SizedBox(height: 12.h),
             Divider(color: theme.primaryColor.withValues(alpha: 0.1)),
             SizedBox(height: 12.h),

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/features/accent/domain/entities/accent_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
 class ConsonantFeedbackPanel extends StatelessWidget {
   final AccentQuest quest;
@@ -12,6 +12,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
   final VoidCallback onPlayAgain;
   final bool isDark;
   final ThemeResult theme;
+  final bool isMidnight;
 
   const ConsonantFeedbackPanel({
     super.key,
@@ -20,6 +21,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
     required this.onPlayAgain,
     required this.isDark,
     required this.theme,
+    this.isMidnight = false,
   });
 
   @override
@@ -74,6 +76,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20.r),
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
@@ -149,6 +152,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
         border: Border.all(color: Colors.blue.withValues(alpha: 0.2), width: 1),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [

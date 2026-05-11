@@ -1,30 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/presentation/widgets/writing/ink_streak.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class DailyJournalScreen extends StatefulWidget {
   final int level;
-  const DailyJournalScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const DailyJournalScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.dailyJournal,
+  });
 
   @override
   State<DailyJournalScreen> createState() => _DailyJournalScreenState();
@@ -34,441 +31,204 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   final _controller = TextEditingController();
-  int _wordCount = 0;
+  
+  final List<Offset> _revealPoints = [];
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(
-        gameType: GameSubtype.dailyJournal,
-        level: widget.level,
-      ),
-    );
-    _controller.addListener(_updateWordCount);
+    context.read<WritingBloc>().add(FetchWritingQuests(gameType: widget.gameType, level: widget.level));
+    _controller.addListener(() {
+      setState(() {}); // Trigger repaint to reveal text
+    });
   }
 
-  void _updateWordCount() {
-    final text = _controller.text.trim();
-    if (text.isEmpty) {
-      setState(() => _wordCount = 0);
-    } else {
-      setState(() => _wordCount = text.split(RegExp(r'\s+')).length);
-    }
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+  void _onReveal(Offset localPosition) {
+    if (_isAnswered) return;
+    setState(() {
+      _revealPoints.add(localPosition);
+      if (_revealPoints.length % 5 == 0) _hapticService.selection();
+    });
   }
 
   void _submitAnswer() {
-    if (_wordCount < 10) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please write at least 10 words.')),
-      );
-      return;
-    }
-    _hapticService.selection();
-    context.read<WritingBloc>().add(
-      SubmitAnswer(true),
-    ); // Simplified: open journaling is self-reflective
-  }
-
-  void _useHint() {
-    _hapticService.selection();
-    context.read<WritingBloc>().add(WritingHintUsed());
+    if (_isAnswered || _controller.text.isEmpty) return;
+    _hapticService.success();
+    _soundService.playCorrect();
+    setState(() { _isAnswered = true; _isCorrect = true; });
+    context.read<WritingBloc>().add(SubmitAnswer(true));
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: BlocConsumer<WritingBloc, WritingState>(
-        listener: (context, state) {
-          if (state is WritingGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Mindful Writer!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins!',
-        ),
-            );
-          } else if (state is WritingGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Journal Closed',
-        description: 'Reflection interrupted. Try again!',
-        onRestore: () => context.read<WritingBloc>().add(RestoreLife()),
-      );
-          } else if (state is WritingLoaded &&
-              state.lastAnswerCorrect == null) {
-            _controller.clear();
+    return BlocConsumer<WritingBloc, WritingState>(
+      listener: (context, state) {
+        if (state is WritingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _controller.clear();
+              _revealPoints.clear();
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is WritingLoading || state is WritingInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is WritingLoaded) {
-            final theme = LevelThemeHelper.getTheme(
-              'writing',
-              level: widget.level,
-            );
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                InkStreak(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is WritingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<WritingBloc>().add(
-                FetchWritingQuests(
-                  gameType: GameSubtype.dailyJournal,
-                  level: widget.level,
-                ),
+          _lastLives = state.livesRemaining;
+        }
+        if (state is WritingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'REFLECTIVE MASTER!', enableDoubleUp: true);
+        } else if (state is WritingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<WritingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is WritingLoaded) ? state.currentQuest : null;
+        
+        return WritingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
+          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 32.h),
+              _buildJournalPrompt(quest.prompt ?? "", theme.primaryColor, isDark),
+              SizedBox(height: 32.h),
+              Expanded(
+                child: _buildScratchArea(_controller.text, theme.primaryColor, isDark),
               ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    WritingLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
+              SizedBox(height: 20.h),
+              _buildHiddenInput(theme.primaryColor),
+              SizedBox(height: 32.h),
+              if (!_isAnswered)
+                ScaleButton(
+                  onTap: _submitAnswer,
+                  child: Container(
+                    width: double.infinity, height: 60.h,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: _controller.text.length > 10 ? theme.primaryColor : Colors.grey, boxShadow: [if (_controller.text.length > 10) BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)]),
+                    child: Center(child: Text("CRYSTALLIZE MEMORY", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
                   ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    Text(
-                      theme.title,
-                      style: GoogleFonts.outfit(
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ),
-                    SizedBox(height: 16.h),
-                    GlassTile(
-                      padding: EdgeInsets.all(24.r),
-                      borderRadius: BorderRadius.circular(24.r),
-                      borderColor: theme.primaryColor.withValues(alpha: 0.2),
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.03)
-                          : Colors.black.withValues(alpha: 0.02),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Container(
-                                width: 4.w,
-                                height: 20.h,
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor,
-                                  borderRadius: BorderRadius.circular(2.r),
-                                ),
-                              ),
-                              SizedBox(width: 8.w),
-                              Text(
-                                "JOURNAL PROMPT",
-                                style: GoogleFonts.outfit(
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 2,
-                                  color: theme.primaryColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 16.h),
-                          Text(
-                            quest.instruction,
-                            style: GoogleFonts.spectral(
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w600,
-                              height: 1.5,
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.9)
-                                  : Colors.black87,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ).animate().fadeIn().slideY(begin: 0.05),
-                    SizedBox(height: 30.h),
-                    GlassTile(
-                      padding: EdgeInsets.all(4.r),
-                      borderRadius: BorderRadius.circular(24.r),
-                      borderColor: theme.primaryColor.withValues(alpha: 0.1),
-                      child: TextField(
-                        controller: _controller,
-                        maxLines: 12,
-                        style: GoogleFonts.spectral(
-                          fontSize: 17.sp,
-                          height: 1.6,
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.9)
-                              : Colors.black87,
-                        ),
-                        decoration: InputDecoration(
-                          hintText: "Begin your reflection...",
-                          hintStyle: GoogleFonts.spectral(
-                            color: Colors.grey.withValues(alpha: 0.6),
-                          ),
-                          filled: true,
-                          fillColor: Colors.transparent,
-                          border: InputBorder.none,
-                          contentPadding: EdgeInsets.all(24.r),
-                        ),
-                      ),
-                    ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.05),
-                    SizedBox(height: 20.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        _buildStatChip(
-                          icon: Icons.text_snippet_outlined,
-                          label: "$_wordCount WORDS",
-                          color: _wordCount >= 10
-                              ? theme.primaryColor
-                              : Colors.grey,
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 40.h),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: 24.h),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 64.h,
-                        child: ScaleButton(
-                          onTap: _submitAnswer,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  theme.primaryColor,
-                                  theme.primaryColor.withValues(alpha: 0.8),
-                                ],
-                              ),
-                              borderRadius: BorderRadius.circular(20.r),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: theme.primaryColor.withValues(
-                                    alpha: 0.3,
-                                  ),
-                                  blurRadius: 20,
-                                  offset: const Offset(0, 10),
-                                ),
-                              ],
-                            ),
-                            child: Center(
-                              child: Text(
-                                "FINISH ENTRY",
-                                style: GoogleFonts.outfit(
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.white,
-                                  letterSpacing: 1,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ).animate().fadeIn(delay: 400.ms),
-                    SizedBox(height: 40.h),
-                  ],
                 ),
-              ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: "JOURNAL LOGGED!",
-            subtitle: quest.sampleAnswer ?? "Thought recognized.",
-            onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+              SizedBox(height: 20.h),
+            ],
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildStatChip({
-    required IconData icon,
-    required String label,
-    required Color color,
-  }) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, color: color, size: 18.r),
-          SizedBox(width: 8.w),
-          Text(
-            label,
-            style: GoogleFonts.outfit(
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w800,
-              color: color,
-            ),
-          ),
+          Icon(Icons.auto_awesome_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("MANIFEST YOUR THOUGHTS THROUGH THE FOG", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHeartCount(int lives) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+  Widget _buildJournalPrompt(String text, Color primaryColor, bool isDark) {
+    return GlassTile(
+      padding: EdgeInsets.all(20.r), borderRadius: BorderRadius.circular(24.r),
+      color: primaryColor.withValues(alpha: 0.1),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.nightlight_round, color: Colors.amberAccent, size: 24.r).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 3.seconds),
+          SizedBox(width: 16.w),
+          Expanded(child: Text(text, style: GoogleFonts.outfit(fontSize: 15.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white70 : Colors.black87))),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
+  Widget _buildScratchArea(String text, Color color, bool isDark) {
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.black12,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: Colors.white10),
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(24.r),
+        child: GestureDetector(
+          onPanUpdate: (details) => _onReveal(details.localPosition),
+          child: CustomPaint(
+            painter: FogPainter(points: _revealPoints, text: text, color: color, isRevealed: _isAnswered),
+            size: Size.infinite,
           ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
-            ),
-          ],
         ),
       ),
     );
   }
 
-  
+  Widget _buildHiddenInput(Color color) {
+    return TextField(
+      controller: _controller,
+      autofocus: true,
+      maxLines: 1,
+      style: const TextStyle(color: Colors.transparent),
+      decoration: InputDecoration(
+        hintText: "Begin typing to manifest...",
+        hintStyle: GoogleFonts.outfit(color: color.withValues(alpha: 0.3), fontSize: 14.sp),
+        border: InputBorder.none,
+      ),
+    );
+  }
+}
 
-  
+class FogPainter extends CustomPainter {
+  final List<Offset> points;
+  final String text;
+  final Color color;
+  final bool isRevealed;
+  FogPainter({required this.points, required this.text, required this.color, required this.isRevealed});
+  @override
+  void paint(Canvas canvas, Size size) {
+    // Draw Background Parchment
+    final bgPaint = Paint()..color = const Color(0xFF1A1A1A);
+    canvas.drawRect(Offset.zero & size, bgPaint);
+
+    // Draw manifested text
+    final textPainter = TextPainter(
+      text: TextSpan(text: text, style: GoogleFonts.spectral(fontSize: 18.sp, color: color, height: 1.6)),
+      textAlign: TextAlign.left,
+      textDirection: TextDirection.ltr,
+    );
+    textPainter.layout(maxWidth: size.width - 40);
+    textPainter.paint(canvas, const Offset(20, 20));
+
+    // Draw Fog Overlay
+    if (!isRevealed) {
+      canvas.saveLayer(Offset.zero & size, Paint());
+      final fogPaint = Paint()..shader = LinearGradient(colors: [Colors.grey.shade800, Colors.grey.shade900]).createShader(Offset.zero & size);
+      canvas.drawRect(Offset.zero & size, fogPaint);
+
+      // Eraser/Reveal paths
+      final revealPaint = Paint()..color = Colors.black..strokeWidth = 40..strokeCap = StrokeCap.round..blendMode = BlendMode.clear;
+      for (var point in points) {
+        canvas.drawCircle(point, 25.r, revealPaint);
+      }
+      canvas.restore();
+    }
+  }
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
 }

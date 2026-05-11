@@ -1,517 +1,337 @@
 {
-  "gameType": "audioTrueFalse",
-  "batchIndex": 6,
-  "levels": "51-60",
-  "quests": [
-    {
-      "id": "audioTrueFalse_l51_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear chirping in the morning. What is the source?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Animals at dawn.",
-      "soundDescription": "Chirping at dawn",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l51_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a siren getting louder. What is it?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Emergency vehicle.",
-      "soundDescription": "Approaching siren",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l51_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear splashing in a park. What could it be?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Water feature.",
-      "soundDescription": "Splashing water",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l52_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a rhythmic ticking. What is the source?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Timekeeping device.",
-      "soundDescription": "Rhythmic ticking",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l52_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear thunder rumbling. What weather follows?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Before rain.",
-      "soundDescription": "Rumbling thunder",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l52_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a whistle blowing at a field. Who uses it?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Sports context.",
-      "soundDescription": "Whistle at field",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l53_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear crunching underfoot in autumn. What is it?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Fall season.",
-      "soundDescription": "Crunching leaves",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l53_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a buzzing near flowers. What is it?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Pollinator.",
-      "soundDescription": "Buzzing near flowers",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l53_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear waves crashing. Where are you?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Coastal area.",
-      "soundDescription": "Crashing waves",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l54_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a dog barking at night. What's happening?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Animal reaction.",
-      "soundDescription": "Dog barking",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l54_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a kettle whistling. Where are you?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Where water is boiled.",
-      "soundDescription": "Kettle whistling",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l54_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear typing sounds. What is someone doing?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Computer work.",
-      "soundDescription": "Keyboard typing",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l55_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a rooster crowing. What time is it?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Dawn time.",
-      "soundDescription": "Rooster crowing",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l55_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear glass breaking. What happened?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "An accident.",
-      "soundDescription": "Glass breaking",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l55_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a train horn. Where are you?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Railway.",
-      "soundDescription": "Train horn",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l56_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear rain pattering on a window. What's the weather?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Water on glass.",
-      "soundDescription": "Rain on window",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l56_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a school bell ringing. What does it signal?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Academic schedule.",
-      "soundDescription": "School bell",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l56_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear pages turning. Where might you be?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Reading space.",
-      "soundDescription": "Pages turning",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l57_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear coins jingling. What is someone doing?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Currency handling.",
-      "soundDescription": "Coins jingling",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l57_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a doorbell. What should you do?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Someone is visiting.",
-      "soundDescription": "Doorbell ring",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l57_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear birds singing in a forest. How does it feel?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Nature ambiance.",
-      "soundDescription": "Forest birds",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l58_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear an airplane overhead. Where is it?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Air travel.",
-      "soundDescription": "Airplane overhead",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l58_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a baby crying. What might it need?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Infant needs.",
-      "soundDescription": "Baby crying",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l58_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear popcorn popping. Where are you?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Snack preparation.",
-      "soundDescription": "Popcorn popping",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l59_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear applause. What just happened?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Audience reaction.",
-      "soundDescription": "Applause",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l59_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a car honking in traffic. Why?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Road communication.",
-      "soundDescription": "Car horn",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l59_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear crickets chirping. What time is it?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Nocturnal insects.",
-      "soundDescription": "Crickets at night",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l60_q1",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a camera shutter clicking. What is happening?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Photography.",
-      "soundDescription": "Camera shutter",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l60_q2",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear hammering. What is someone doing?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Construction work.",
-      "soundDescription": "Hammering",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "audioTrueFalse_l60_q3",
-      "instruction": "True or False?",
-      "difficulty": 1,
-      "subtype": "audioTrueFalse",
-      "interactionType": "choice",
-      "question": "You hear a microwave beeping. What does it mean?",
-      "options": [
-        "True",
-        "False"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Kitchen appliance.",
-      "soundDescription": "Microwave beep",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "audioTrueFalse",
+    "batchIndex":  6,
+    "levels":  "51-60",
+    "quests":  [
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L51_Q1",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L51_Q2",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L51_Q3",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L52_Q1",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L52_Q2",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L52_Q3",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L53_Q1",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L53_Q2",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L53_Q3",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L54_Q1",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L54_Q2",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L54_Q3",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L55_Q1",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L55_Q2",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L55_Q3",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L56_Q1",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L56_Q2",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L56_Q3",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L57_Q1",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L57_Q2",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L57_Q3",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L58_Q1",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L58_Q2",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L58_Q3",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L59_Q1",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L59_Q2",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L59_Q3",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L60_Q1",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L60_Q2",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   },
+                   {
+                       "id":  "LIS_AUDIOTRUEFALSE_L60_Q3",
+                       "interactionType":  "Static Filter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Listen for the season mentioned.",
+                       "explanation":  "Veracity checks build critical listening skills.",
+                       "textToSpeak":  "I visited Paris last summer and loved the Eiffel Tower.",
+                       "statement":  "The speaker visited Paris in the winter.",
+                       "correctAnswer":  "false"
+                   }
+               ]
 }

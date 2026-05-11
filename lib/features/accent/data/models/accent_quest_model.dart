@@ -16,6 +16,7 @@ class AccentQuestModel extends AccentQuest {
     super.correctAnswerIndex,
     super.correctAnswer,
     super.hint,
+    super.visualConfig,
     super.word,
     super.phoneticHint,
     super.targetWord,
@@ -38,6 +39,7 @@ class AccentQuestModel extends AccentQuest {
     super.ipa2,
     super.mouthPosition,
     super.slowForm,
+    super.accentName,
   });
 
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -60,16 +62,17 @@ class AccentQuestModel extends AccentQuest {
       livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
       options: map['options'] != null
           ? List<String>.from(map['options'])
-          : null,
+          : (map['choices'] != null ? List<String>.from(map['choices']) : null),
       correctAnswerIndex: (map['correctAnswerIndex'] as num?)?.toInt(),
       correctAnswer: map['correctAnswer'],
       hint: map['hint'],
-      word: map['word'],
+      visualConfig: map['visual_config'] != null ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'])) : null,
+      word: map['word'] ?? map['targetWord'],
       phoneticHint: map['phoneticHint'] ?? map['phonetic'],
-      targetWord: map['targetWord'],
-      question: map['question'],
-      textToSpeak: map['textToSpeak'],
-      prompt: map['prompt'],
+      targetWord: map['targetWord'] ?? map['word'],
+      question: map['question'] ?? map['prompt'] ?? map['instruction'],
+      textToSpeak: map['textToSpeak'] ?? map['text'] ?? map['sentence'] ?? map['word'] ?? map['targetWord'],
+      prompt: map['prompt'] ?? map['question'] ?? map['instruction'],
       sampleAnswer: map['sampleAnswer'],
       explanation: map['explanation'],
       audioUrl: map['audioUrl'],
@@ -84,7 +87,7 @@ class AccentQuestModel extends AccentQuest {
       pitchPatterns: map['pitchPatterns'] != null
           ? List<int>.from(map['pitchPatterns'])
           : null,
-      sentence: map['sentence'],
+      sentence: map['sentence'] ?? map['text'] ?? map['textToSpeak'],
       stressPattern: map['stressPattern'],
       word1: map['word1'],
       word2: map['word2'],
@@ -92,6 +95,7 @@ class AccentQuestModel extends AccentQuest {
       ipa2: map['ipa2'],
       mouthPosition: map['mouthPosition'],
       slowForm: map['slowForm'],
+      accentName: map['accentName'] ?? map['dialect'],
     );
   }
 
@@ -130,6 +134,8 @@ class AccentQuestModel extends AccentQuest {
       'ipa2': ipa2,
       'mouthPosition': mouthPosition,
       'slowForm': slowForm,
+      'accentName': accentName,
     };
   }
 }
+

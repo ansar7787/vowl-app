@@ -1,607 +1,487 @@
 {
-  "gameType": "medicalConsult",
-  "batchIndex": 6,
-  "levels": "51-60",
-  "quests": [
-    {
-      "id": "medicalConsult_l51_q1",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A customer asks: 'Is this shirt available in blue?'",
-      "question": "How should the store clerk respond?",
-      "options": [
-        "Let me check for you.",
-        "Buy it or leave.",
-        "I don't know.",
-        "That's not my job."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Be helpful.",
-      "role": "Store clerk",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l51_q2",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "Your friend says: 'I'm feeling really stressed about exams.'",
-      "question": "What's the best reply?",
-      "options": [
-        "That's your problem.",
-        "Let's study together!",
-        "Exams are easy.",
-        "Just don't go."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Be supportive.",
-      "role": "Friend",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l51_q3",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A tourist asks: 'How do I get to the museum?'",
-      "question": "Give directions.",
-      "options": [
-        "Go straight and turn left at the second light.",
-        "I'm busy.",
-        "Find it yourself.",
-        "What museum?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Be clear and helpful.",
-      "role": "Local",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l52_q1",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "Your boss says: 'Can you finish this report by tomorrow?'",
-      "question": "What's the best reply?",
-      "options": [
-        "I'll do my best to get it done.",
-        "No way.",
-        "That's impossible.",
-        "Ask someone else."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Show willingness.",
-      "role": "Employee",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l52_q2",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A new neighbor introduces themselves.",
-      "question": "How do you respond?",
-      "options": [
-        "Welcome! I'm your neighbor from next door.",
-        "Whatever.",
-        "I'm busy.",
-        "Who are you?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Be welcoming.",
-      "role": "Neighbor",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l52_q3",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A patient says: 'I've had a headache for three days.'",
-      "question": "How should the doctor respond?",
-      "options": [
-        "Let's run some tests to find the cause.",
-        "Just take aspirin.",
-        "It's nothing.",
-        "Come back later."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Show concern.",
-      "role": "Doctor",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l53_q1",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A student asks: 'Can you explain this again?'",
-      "question": "How should the teacher respond?",
-      "options": [
-        "Of course! Let me try a different approach.",
-        "I already explained it.",
-        "Figure it out.",
-        "No."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Patient teaching.",
-      "role": "Teacher",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l53_q2",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A waiter asks: 'Are you ready to order?'",
-      "question": "What do you say?",
-      "options": [
-        "Yes, I'll have the pasta please.",
-        "I don't know what food is.",
-        "Maybe tomorrow.",
-        "Why?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Ready to order.",
-      "role": "Customer",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l53_q3",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "Your colleague says: 'I made a mistake in the report.'",
-      "question": "How should you respond?",
-      "options": [
-        "Don't worry, let's fix it together.",
-        "That's terrible.",
-        "You always make mistakes.",
-        "Not my problem."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Be supportive.",
-      "role": "Colleague",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l54_q1",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A librarian asks: 'Can I help you find something?'",
-      "question": "What do you say?",
-      "options": [
-        "Yes, I'm looking for books on history.",
-        "No, go away.",
-        "I don't read.",
-        "What's a book?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Accept the help.",
-      "role": "Library visitor",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l54_q2",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "Your parent asks: 'How was school today?'",
-      "question": "What's a good response?",
-      "options": [
-        "It was great! I learned about space.",
-        "Don't ask me.",
-        "Terrible.",
-        "I forgot."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Share positively.",
-      "role": "Child",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l54_q3",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A taxi driver asks: 'Where would you like to go?'",
-      "question": "How do you respond?",
-      "options": [
-        "To the airport, please.",
-        "Anywhere.",
-        "I don't know.",
-        "Just drive."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Give clear directions.",
-      "role": "Passenger",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l55_q1",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A friend invites you to dinner but you're busy.",
-      "question": "How do you politely decline?",
-      "options": [
-        "I'd love to but I have plans. Rain check?",
-        "No.",
-        "I don't want to.",
-        "That restaurant is bad."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Polite refusal.",
-      "role": "Friend",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l55_q2",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "The hotel receptionist asks: 'Do you have a reservation?'",
-      "question": "What do you say?",
-      "options": [
-        "Yes, under the name Smith.",
-        "Maybe.",
-        "What's a reservation?",
-        "I forgot."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Confirm booking.",
-      "role": "Guest",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l55_q3",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A mechanic says: 'Your car needs new brakes.'",
-      "question": "How do you respond?",
-      "options": [
-        "How much will that cost?",
-        "I don't believe you.",
-        "Fix it for free.",
-        "That's a lie."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Ask about cost.",
-      "role": "Car owner",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l56_q1",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A fitness trainer asks: 'What are your fitness goals?'",
-      "question": "What do you say?",
-      "options": [
-        "I'd like to improve my endurance.",
-        "I have no goals.",
-        "Make me a superhero.",
-        "I don't exercise."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Set realistic goals.",
-      "role": "Client",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l56_q2",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "Your doctor says: 'You should eat more vegetables.'",
-      "question": "How do you respond?",
-      "options": [
-        "I'll try to include more in my diet.",
-        "Vegetables taste bad.",
-        "I refuse.",
-        "You eat them."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Accept advice.",
-      "role": "Patient",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l56_q3",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A cashier says: 'Would you like a bag?'",
-      "question": "What do you say?",
-      "options": [
-        "No thanks, I brought my own.",
-        "Give me ten.",
-        "What's a bag?",
-        "I don't care."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Eco-friendly choice.",
-      "role": "Shopper",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l57_q1",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A flight attendant says: 'Please fasten your seatbelt.'",
-      "question": "How do you respond?",
-      "options": [
-        "Sure, thank you for reminding me.",
-        "I don't want to.",
-        "Why?",
-        "Make me."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Follow safety instructions.",
-      "role": "Passenger",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l57_q2",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A coworker suggests: 'Let's grab coffee during the break.'",
-      "question": "What's a friendly response?",
-      "options": [
-        "Sounds great! I could use one.",
-        "I hate coffee.",
-        "Leave me alone.",
-        "No."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Friendly acceptance.",
-      "role": "Coworker",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l57_q3",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A child asks: 'Why is the sky blue?'",
-      "question": "How should you respond?",
-      "options": [
-        "Great question! The sunlight scatters in the atmosphere.",
-        "Because it is.",
-        "I don't know.",
-        "Stop asking questions."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Educational answer.",
-      "role": "Parent",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l58_q1",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "Your landlord says: 'The rent is due next Monday.'",
-      "question": "How do you respond?",
-      "options": [
-        "Thank you for the reminder. I'll have it ready.",
-        "I can't pay.",
-        "That's too soon.",
-        "Why?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Acknowledge responsibility.",
-      "role": "Tenant",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l58_q2",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A fellow traveler asks: 'Is this the right platform for the London train?'",
-      "question": "How do you help?",
-      "options": [
-        "Yes, the London train departs from here.",
-        "I don't know and I don't care.",
-        "Maybe. Maybe not.",
-        "What's London?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Help fellow travelers.",
-      "role": "Traveler",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l58_q3",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "The dentist says: 'You should floss daily.'",
-      "question": "How do you respond?",
-      "options": [
-        "I'll make it a habit. Thanks for the advice.",
-        "Flossing is boring.",
-        "No way.",
-        "You're wrong."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Accept health advice.",
-      "role": "Patient",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l59_q1",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A volunteer asks: 'Would you like to donate to our cause?'",
-      "question": "How do you respond politely?",
-      "options": [
-        "I'd be happy to contribute.",
-        "Get away from me.",
-        "I don't care about causes.",
-        "No, never."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Gracious response.",
-      "role": "Citizen",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l59_q2",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A bank teller asks: 'How can I assist you today?'",
-      "question": "What do you say?",
-      "options": [
-        "I'd like to open a savings account, please.",
-        "Give me money.",
-        "I don't know.",
-        "Nothing."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Clear banking request.",
-      "role": "Bank customer",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l59_q3",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "Your roommate says: 'Could you clean up the kitchen?'",
-      "question": "How do you respond?",
-      "options": [
-        "Sure, I'll take care of it right away.",
-        "That's your mess.",
-        "I'm too tired.",
-        "What kitchen?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Cooperative living.",
-      "role": "Roommate",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l60_q1",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "An interviewer asks: 'What is your greatest strength?'",
-      "question": "How do you respond?",
-      "options": [
-        "I'm very organized and detail-oriented.",
-        "Everything.",
-        "I don't have any.",
-        "I'm the best at everything."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Professional and honest.",
-      "role": "Job candidate",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l60_q2",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A pharmacist says: 'Take this medicine twice daily with food.'",
-      "question": "What do you ask?",
-      "options": [
-        "Are there any side effects I should know about?",
-        "I don't like medicine.",
-        "Can I take it all at once?",
-        "Why?"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Important health follow-up.",
-      "role": "Patient",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "medicalConsult_l60_q3",
-      "instruction": "Respond to the medical query.",
-      "difficulty": 1,
-      "subtype": "medicalConsult",
-      "interactionType": "choice",
-      "scenario": "A friend says: 'I just got promoted at work!'",
-      "question": "How do you respond?",
-      "options": [
-        "Congratulations! That's wonderful news!",
-        "So what?",
-        "I'm jealous.",
-        "Lucky you."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Celebrate with them.",
-      "role": "Friend",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "medicalConsult",
+    "batchIndex":  6,
+    "levels":  "51-60",
+    "quests":  [
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L51_Q1",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L51_Q2",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L51_Q3",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L52_Q1",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L52_Q2",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L52_Q3",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L53_Q1",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L53_Q2",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L53_Q3",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L54_Q1",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L54_Q2",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L54_Q3",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L55_Q1",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L55_Q2",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L55_Q3",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L56_Q1",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L56_Q2",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L56_Q3",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L57_Q1",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L57_Q2",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L57_Q3",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L58_Q1",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L58_Q2",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L58_Q3",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L59_Q1",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L59_Q2",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L59_Q3",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L60_Q1",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L60_Q2",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   },
+                   {
+                       "id":  "RLP_MEDICALCONSULT_L60_Q3",
+                       "interactionType":  "Vitals Scan",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check the limb first.",
+                       "explanation":  "Diagnosis requires precision.",
+                       "prompt":  "Patient reports pain in the left limb and central core.",
+                       "symptoms":  [
+                                        "Left Limb",
+                                        "Central Core",
+                                        "Right Wing",
+                                        "Head Sensor"
+                                    ],
+                       "correctAnswer":  "Left Limb, Central Core"
+                   }
+               ]
 }

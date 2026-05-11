@@ -1,499 +1,229 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/reading/book_streak.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
-class SentenceOrderScreen extends StatefulWidget {
+class SentenceOrderReadingScreen extends StatefulWidget {
   final int level;
-  const SentenceOrderScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const SentenceOrderReadingScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.sentenceOrderReading,
+  });
 
   @override
-  State<SentenceOrderScreen> createState() => _SentenceOrderScreenState();
+  State<SentenceOrderReadingScreen> createState() => _SentenceOrderReadingScreenState();
 }
 
-class _SentenceOrderScreenState extends State<SentenceOrderScreen> {
+class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  List<int>? _currentOrder;
-  bool _hasSubmitted = false;
+  
+  List<String> _currentOrder = [];
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(
-      FetchReadingQuests(
-        gameType: GameSubtype.sentenceOrderReading,
-        level: widget.level,
-      ),
-    );
-  }
-
-  void _initializeOrderIfNeeded(List<String> sentences) {
-    _currentOrder ??= List.generate(sentences.length, (i) => i);
+    context.read<ReadingBloc>().add(FetchReadingQuests(gameType: widget.gameType, level: widget.level));
   }
 
   void _onReorder(int oldIndex, int newIndex) {
-    if (_hasSubmitted) return;
-    _hapticService.selection();
+    if (_isAnswered) return;
     setState(() {
-      if (newIndex > oldIndex) {
-        newIndex -= 1;
-      }
-      final item = _currentOrder!.removeAt(oldIndex);
-      _currentOrder!.insert(newIndex, item);
+      if (newIndex > oldIndex) newIndex -= 1;
+      final item = _currentOrder.removeAt(oldIndex);
+      _currentOrder.insert(newIndex, item);
+      _hapticService.selection();
     });
   }
 
-  void _submitAnswer(List<int> correctOrder) {
-    if (_hasSubmitted) return;
-    _hapticService.selection();
-    setState(() => _hasSubmitted = true);
-
+  void _submitAnswer(List<int> correctOrder, List<String> original) {
+    if (_isAnswered) return;
+    
     bool isCorrect = true;
-    for (int i = 0; i < correctOrder.length; i++) {
-      if (_currentOrder![i] != correctOrder[i]) {
+    for (int i = 0; i < _currentOrder.length; i++) {
+      if (_currentOrder[i] != original[correctOrder[i]]) {
         isCorrect = false;
         break;
       }
     }
 
     if (isCorrect) {
-      _soundService.playCorrect();
       _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<ReadingBloc>().add(SubmitAnswer(true));
     } else {
-      _soundService.playWrong();
       _hapticService.error();
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<ReadingBloc>().add(SubmitAnswer(false));
     }
-
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (mounted) {
-        context.read<ReadingBloc>().add(SubmitAnswer(isCorrect));
-      }
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<ReadingBloc, ReadingState>(
-        listener: (context, state) {
-          if (state is ReadingGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Order Master!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins!',
-        ),
-            );
-          } else if (state is ReadingGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Out of Logic',
-        description: 'The sentences are still a bit messy. Try again!',
-        onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
-      );
-          } else if (state is ReadingLoaded &&
-              state.lastAnswerCorrect == null) {
+    return BlocConsumer<ReadingBloc, ReadingState>(
+      listener: (context, state) {
+        if (state is ReadingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
             setState(() {
-              _hasSubmitted = false;
-              _currentOrder = null;
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _currentOrder = List<String>.from(state.currentQuest.shuffledSentences ?? []);
             });
           }
-        },
-        builder: (context, state) {
-          if (state is ReadingLoading || state is ReadingInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is ReadingLoaded) {
-            final theme = LevelThemeHelper.getTheme(
-              'reading',
-              level: widget.level,
-            );
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                BookStreak(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is ReadingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<ReadingBloc>().add(
-                FetchReadingQuests(
-                  gameType: GameSubtype.sentenceOrderReading,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    ReadingLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-    final sentences =
-        quest.shuffledSentences ?? ["Sentence 1", "Sentence 2", "Sentence 3"];
-    final correctOrder = quest.correctOrder ?? [0, 1, 2];
-
-    _initializeOrderIfNeeded(sentences);
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-              child: Column(
-                children: [
-                  Text(
-                    theme.title,
-                    style: GoogleFonts.outfit(
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 4,
-                      color: theme.primaryColor,
-                    ),
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    quest.instruction.isNotEmpty
-                        ? quest.instruction
-                        : "Reorder the blocks into a logical story.",
-                    style: GoogleFonts.outfit(
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : Colors.black87,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
-
-            Expanded(
-              child: Theme(
-                data: ThemeData(canvasColor: Colors.transparent),
-                child: ReorderableListView.builder(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 24.w,
-                    vertical: 8.h,
-                  ),
-                  itemCount: _currentOrder!.length,
+          _lastLives = state.livesRemaining;
+        }
+        if (state is ReadingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'LOGIC FLOW EXPERT!', enableDoubleUp: true);
+        } else if (state is ReadingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ReadingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        
+        return ReadingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
+          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 32.h),
+              Expanded(
+                child: ReorderableListView(
+                  physics: const BouncingScrollPhysics(),
+                  proxyDecorator: (child, index, animation) => _buildProxy(child, animation, theme.primaryColor),
                   onReorder: _onReorder,
-                  proxyDecorator: (child, index, animation) {
-                    return Material(
-                      color: Colors.transparent,
-                      elevation: 0,
-                      child: child.animate().scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.02, 1.02),
-                        duration: 150.ms,
-                      ),
-                    );
-                  },
-                  itemBuilder: (context, index) {
-                    final originalIndex = _currentOrder![index];
-                    final text = sentences[originalIndex];
-
-                    Color? cardColor;
-                    Color? borderColor;
-
-                    if (_hasSubmitted && state.lastAnswerCorrect != null) {
-                      bool isRightPlace = originalIndex == correctOrder[index];
-                      cardColor = isRightPlace
-                          ? const Color(0xFF10B981)
-                          : const Color(0xFFF43F5E);
-                      borderColor = cardColor;
-                    }
-
-                    return Padding(
-                          key: ValueKey(originalIndex),
-                          padding: EdgeInsets.only(bottom: 16.h),
-                          child: GlassTile(
-                            padding: EdgeInsets.all(24.r),
-                            borderRadius: BorderRadius.circular(24.r),
-                            borderColor:
-                                borderColor ??
-                                theme.primaryColor.withValues(alpha: 0.15),
-                            color:
-                                cardColor ??
-                                (isDark
-                                    ? Colors.white.withValues(alpha: 0.05)
-                                    : Colors.black.withValues(alpha: 0.02)),
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: 36.r,
-                                  height: 36.r,
-                                  decoration: BoxDecoration(
-                                    color: (cardColor != null)
-                                        ? Colors.white24
-                                        : theme.primaryColor.withValues(
-                                            alpha: 0.1,
-                                          ),
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      "${index + 1}",
-                                      style: GoogleFonts.outfit(
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w900,
-                                        color: (cardColor != null)
-                                            ? Colors.white
-                                            : theme.primaryColor,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(width: 20.w),
-                                Expanded(
-                                  child: Text(
-                                    text,
-                                    style: GoogleFonts.spectral(
-                                      fontSize: 17.sp,
-                                      height: 1.5,
-                                      fontWeight: FontWeight.w500,
-                                      color: (cardColor != null)
-                                          ? Colors.white.withValues(alpha: 0.95)
-                                          : (isDark
-                                                ? Colors.white.withValues(
-                                                    alpha: 0.85,
-                                                  )
-                                                : Colors.black87),
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(width: 12.w),
-                                Icon(
-                                  Icons.drag_indicator_rounded,
-                                  color: (cardColor != null)
-                                      ? Colors.white38
-                                      : (isDark
-                                            ? Colors.white24
-                                            : Colors.black12),
-                                ),
-                              ],
-                            ),
-                          ),
-                        )
-                        .animate()
-                        .fadeIn(delay: (index * 50).ms)
-                        .slideX(begin: 0.02);
-                  },
+                  children: List.generate(_currentOrder.length, (index) => _buildStoneSlab(_currentOrder[index], index, theme.primaryColor, isDark)),
                 ),
               ),
-            ),
-
-            if (!_hasSubmitted)
-              Padding(
-                padding: EdgeInsets.all(24.r),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: 64.h,
-                  child: ScaleButton(
-                    onTap: () => _submitAnswer(correctOrder),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            theme.primaryColor,
-                            theme.primaryColor.withValues(alpha: 0.8),
-                          ],
-                        ),
-                        borderRadius: BorderRadius.circular(20.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: theme.primaryColor.withValues(alpha: 0.3),
-                            blurRadius: 20,
-                            offset: const Offset(0, 10),
-                          ),
-                        ],
-                      ),
-                      child: Center(
-                        child: Text(
-                          "CHECK ORDER",
-                          style: GoogleFonts.outfit(
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            letterSpacing: 1,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+              if (!_isAnswered)
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 24.h),
+                  child: _buildCapstone(quest.correctOrder ?? [], quest.shuffledSentences ?? [], theme.primaryColor),
                 ),
-              ).animate().fadeIn(delay: 400.ms),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "CHRONO MASTER!" : "MISALIGNED!",
-            subtitle: quest.explanation ?? "Structure recognized!",
-            onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+              SizedBox(height: 20.h),
+            ],
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.architecture_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("RESTORE THE LOGICAL STRUCTURE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used
-          ? null
-          : () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
-          ),
-        ),
+  Widget _buildStoneSlab(String text, int index, Color color, bool isDark) {
+    return Container(
+      key: ValueKey(text),
+      margin: EdgeInsets.only(bottom: 12.h),
+      child: GlassTile(
+        padding: EdgeInsets.all(24.r), borderRadius: BorderRadius.circular(15.r),
+        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
+        border: Border.all(color: Colors.white10, width: 2),
         child: Row(
-          mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
+            Container(
+              width: 32.r, height: 32.r,
+              decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.2)),
+              child: Center(child: Text("${index + 1}", style: GoogleFonts.shareTechMono(color: color, fontSize: 14.sp, fontWeight: FontWeight.bold))),
             ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
-            ),
+            SizedBox(width: 16.w),
+            Expanded(child: Text(text, style: GoogleFonts.fredoka(fontSize: 15.sp, height: 1.4, color: Colors.white.withValues(alpha: 0.8)))),
+            Icon(Icons.drag_handle_rounded, color: Colors.white24, size: 24.r),
           ],
         ),
       ),
     );
   }
 
-  bool get isDark => Theme.of(context).brightness == Brightness.dark;
+  Widget _buildProxy(Widget child, Animation<double> animation, Color color) {
+    return AnimatedBuilder(
+      animation: animation,
+      builder: (context, child) {
+        final double scale = lerpDouble(1, 1.05, animation.value)!;
+        return Transform.scale(
+          scale: scale,
+          child: Material(
+            color: Colors.transparent,
+            child: Container(
+              decoration: BoxDecoration(
+                boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 20, spreadRadius: 5)],
+              ),
+              child: child,
+            ),
+          ),
+        );
+      },
+      child: child,
+    );
+  }
 
-  
-
-  
+  Widget _buildCapstone(List<int> correct, List<String> original, Color color) {
+    return ScaleButton(
+      onTap: () {
+        _hapticService.heavy();
+        _submitAnswer(correct, original);
+      },
+      child: Container(
+        width: double.infinity, height: 70.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.r),
+          gradient: LinearGradient(colors: [color, color.withValues(alpha: 0.7)]),
+          boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 15, offset: const Offset(0, 5))],
+        ),
+        child: Center(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.lock_clock_rounded, color: Colors.white, size: 24.r),
+              SizedBox(width: 16.w),
+              Text("LOCK CAPSTONE", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
+

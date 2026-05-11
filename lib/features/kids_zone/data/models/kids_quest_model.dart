@@ -1,4 +1,4 @@
-import 'package:voxai_quest/features/kids_zone/domain/entities/kids_quest.dart';
+import 'package:vowl/features/kids_zone/domain/entities/kids_quest.dart';
 
 class KidsQuestModel extends KidsQuest {
   const KidsQuestModel({
@@ -12,6 +12,9 @@ class KidsQuestModel extends KidsQuest {
     super.imageUrl,
     super.audioUrl,
     super.metadata,
+    super.painter,
+    super.shader,
+    super.hint = "Think carefully!",
   });
 
   factory KidsQuestModel.fromJson(Map<String, dynamic> json) {
@@ -33,6 +36,9 @@ class KidsQuestModel extends KidsQuest {
       metadata: (json['metadata'] is Map)
           ? Map<String, dynamic>.from(json['metadata'] as Map)
           : null,
+      painter: json['painter'] as String?,
+      shader: json['shader'] as String?,
+      hint: json['hint'] as String? ?? 'Think carefully!',
     );
   }
 
@@ -48,6 +54,9 @@ class KidsQuestModel extends KidsQuest {
       'imageUrl': imageUrl,
       'audioUrl': audioUrl,
       'metadata': metadata,
+      'painter': painter,
+      'shader': shader,
+      'hint': hint,
     };
   }
 }

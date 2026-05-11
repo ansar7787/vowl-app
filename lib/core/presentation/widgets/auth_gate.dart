@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/auth/presentation/pages/login_page.dart';
-import 'package:voxai_quest/features/home/presentation/pages/home_screen.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/pages/login_page.dart';
+import 'package:vowl/features/home/presentation/pages/home_screen.dart';
 
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});

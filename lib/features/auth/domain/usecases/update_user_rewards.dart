@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:voxai_quest/core/error/failures.dart';
-import 'package:voxai_quest/core/usecases/usecase.dart';
-import 'package:voxai_quest/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/core/usecases/usecase.dart';
+import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
 
 class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
   final AuthRepository repository;
@@ -16,6 +16,7 @@ class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
       level: params.level,
       xpIncrease: params.xpIncrease,
       coinIncrease: params.coinIncrease,
+      isDoubleReward: params.isDoubleReward,
     );
   }
 }
@@ -25,14 +26,16 @@ class UpdateUserRewardsParams extends Equatable {
   final int level;
   final int xpIncrease;
   final int coinIncrease;
+  final bool isDoubleReward;
 
   const UpdateUserRewardsParams({
     required this.gameType,
     required this.level,
     required this.xpIncrease,
     required this.coinIncrease,
+    this.isDoubleReward = false,
   });
 
   @override
-  List<Object?> get props => [gameType, level, xpIncrease, coinIncrease];
+  List<Object?> get props => [gameType, level, xpIncrease, coinIncrease, isDoubleReward];
 }

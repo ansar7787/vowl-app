@@ -1,487 +1,228 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/utils/hint_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/grammar/logic_circuit.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
+import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class GrammarQuestScreen extends StatefulWidget {
   final int level;
-  const GrammarQuestScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const GrammarQuestScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.grammarQuest,
+  });
 
   @override
   State<GrammarQuestScreen> createState() => _GrammarQuestScreenState();
 }
 
-class _GrammarQuestScreenState extends State<GrammarQuestScreen> {
+class _GrammarQuestScreenState extends State<GrammarQuestScreen> with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  int? _selectedOptionIndex;
-  bool _hasSubmitted = false;
+  
+  double _needleRotation = 0.0; // In radians
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(
-      FetchGrammarQuests(
-        gameType: GameSubtype.grammarQuest,
-        level: widget.level,
-      ),
-    );
-    // Pre-load ads
-    di.sl<AdService>().loadRewardedAd();
+    context.read<GrammarBloc>().add(FetchGrammarQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _submitAnswer(int index, int correctIndex) {
-    if (_hasSubmitted) return;
-    _hapticService.selection();
+  void _onQuadrantSelect(int index, int correctIndex) {
+    if (_isAnswered) return;
+    
+    // Snap needle to quadrant center
     setState(() {
-      _selectedOptionIndex = index;
-      _hasSubmitted = true;
+      _needleRotation = (index * (3.14159 * 2) / 4);
     });
+    
+    _hapticService.selection();
 
     bool isCorrect = index == correctIndex;
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (mounted) context.read<GrammarBloc>().add(SubmitAnswer(isCorrect));
-    });
-  }
 
-  void _useHint() {
-    HintHelper.useHint(
-      context: context,
-      onHintAction: () {
-        context.read<GrammarBloc>().add(GrammarHintUsed());
-      },
-    );
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<GrammarBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { 
+        _isAnswered = true; 
+        _isCorrect = false;
+      });
+      context.read<GrammarBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'grammar',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('grammar', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<GrammarBloc, GrammarState>(
-        listener: (context, state) {
-          if (state is GrammarGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Logic Stage Mastered!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for your precise grammar skills!',
-          enableDoubleUp: true,
-        ),
-            );
-          } else if (state is GrammarGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Paradox Detected',
-        description: 'Your syntax failed. Recharge and try again!',
-        onRestore: () => context.read<GrammarBloc>().add(RestoreLife()),
-      );
-          } else if (state is GrammarLoaded &&
-              state.lastAnswerCorrect == null) {
+    return BlocConsumer<GrammarBloc, GrammarState>(
+      listener: (context, state) {
+        if (state is GrammarLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
             setState(() {
-              _hasSubmitted = false;
-              _selectedOptionIndex = null;
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _needleRotation = 0.0;
             });
           }
-        },
-        builder: (context, state) {
-          if (state is GrammarLoading || state is GrammarInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is GrammarLoaded) {
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                LogicCircuit(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is GrammarError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<GrammarBloc>().add(
-                FetchGrammarQuests(
-                  gameType: GameSubtype.grammarQuest,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    GrammarLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black12,
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
-            ),
-
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 20.h),
-                  Text(
-                    "SYNTAX LABS",
-                    style: GoogleFonts.outfit(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 4,
-                      color: theme.primaryColor,
-                    ),
-                  ).animate().fadeIn(),
-                  SizedBox(height: 12.h),
-                  Text(
-                    quest.instruction,
-                    style: GoogleFonts.outfit(
-                      fontSize: 24.sp,
-                      fontWeight: FontWeight.w900,
-                      color: isDark ? Colors.white : const Color(0xFF1E293B),
-                    ),
-                    textAlign: TextAlign.center,
-                  ).animate().fadeIn(delay: 200.ms),
-
-                  SizedBox(height: 48.h),
-
-                  GlassTile(
-                    borderRadius: BorderRadius.circular(32.r),
-                    padding: EdgeInsets.all(32.r),
-                    borderColor: theme.primaryColor.withValues(alpha: 0.3),
-                    color: isDark
-                        ? theme.primaryColor.withValues(alpha: 0.05)
-                        : Colors.white.withValues(alpha: 0.5),
-                    child: Column(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 6.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: theme.primaryColor.withValues(alpha: 0.1),
-                            borderRadius: BorderRadius.circular(12.r),
-                            border: Border.all(
-                              color: theme.primaryColor.withValues(alpha: 0.2),
-                            ),
-                          ),
-                          child: Text(
-                            "SYNTAX ANALYSIS",
-                            style: GoogleFonts.outfit(
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: 2,
-                              color: theme.primaryColor,
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 24.h),
-                        Text(
-                          quest.question ?? "...",
-                          style: GoogleFonts.outfit(
-                            fontSize: 22.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF1E293B),
-                            height: 1.5,
-                            letterSpacing: 0.5,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
-                    ),
-                  ).animate().fadeIn().scale(begin: const Offset(0.95, 0.95)),
-
-                  SizedBox(height: 50.h),
-
-                  ...List.generate(quest.options?.length ?? 0, (index) {
-                    final isSelected = _selectedOptionIndex == index;
-                    final correctIndex = quest.correctAnswerIndex;
-                    final isCorrectOption = (index == correctIndex);
-
-                    Color? cardColor;
-                    if (_hasSubmitted) {
-                      if (isCorrectOption) {
-                        cardColor = const Color(0xFF10B981);
-                      } else if (isSelected) {
-                        cardColor = const Color(0xFFF43F5E);
-                      }
-                    } else if (state.hintUsed && isCorrectOption) {
-                      cardColor = theme.primaryColor.withValues(alpha: 0.15);
-                    }
-
-                    return Padding(
-                          padding: EdgeInsets.only(bottom: 16.h),
-                          child: ScaleButton(
-                            onTap: () =>
-                                _submitAnswer(index, correctIndex ?? 0),
-                            child: GlassTile(
-                              borderRadius: BorderRadius.circular(20.r),
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 20.w,
-                                vertical: 18.h,
-                              ),
-                              color: cardColor?.withValues(alpha: 0.8),
-                              borderColor: (state.hintUsed && isCorrectOption)
-                                  ? theme.primaryColor
-                                  : (isSelected && _hasSubmitted
-                                        ? Colors.white.withValues(alpha: 0.5)
-                                        : theme.primaryColor.withValues(
-                                            alpha: 0.1,
-                                          )),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    width: 40.r,
-                                    height: 40.r,
-                                    decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          isSelected
-                                              ? Colors.white24
-                                              : theme.primaryColor.withValues(
-                                                  alpha: 0.1,
-                                                ),
-                                          isSelected
-                                              ? Colors.white10
-                                              : theme.primaryColor.withValues(
-                                                  alpha: 0.05,
-                                                ),
-                                        ],
-                                      ),
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: isSelected
-                                            ? Colors.white24
-                                            : theme.primaryColor.withValues(
-                                                alpha: 0.2,
-                                              ),
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                        String.fromCharCode(64 + (index + 1)),
-                                        style: GoogleFonts.outfit(
-                                          fontSize: 18.sp,
-                                          fontWeight: FontWeight.w900,
-                                          color: isSelected
-                                              ? Colors.white
-                                              : theme.primaryColor,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(width: 18.w),
-                                  Expanded(
-                                    child: Text(
-                                      quest.options![index],
-                                      style: GoogleFonts.outfit(
-                                        fontSize: 18.sp,
-                                        fontWeight: FontWeight.w700,
-                                        color: isSelected
-                                            ? Colors.white
-                                            : (isDark
-                                                  ? Colors.white.withValues(
-                                                      alpha: 0.9,
-                                                    )
-                                                  : Colors.black87),
-                                        letterSpacing: 0.5,
-                                      ),
-                                    ),
-                                  ),
-                                  if (_hasSubmitted && isCorrectOption)
-                                    Icon(
-                                      Icons.check_circle_rounded,
-                                      color: Colors.white,
-                                      size: 24.r,
-                                    ),
-                                  if (state.hintUsed &&
-                                      isCorrectOption &&
-                                      !_hasSubmitted)
-                                    Icon(
-                                          Icons.lightbulb_rounded,
-                                          color: theme.primaryColor,
-                                          size: 20.r,
-                                        )
-                                        .animate(onPlay: (c) => c.repeat())
-                                        .shimmer(duration: 1500.ms),
-                                ],
-                              ),
-                            ),
-                          ),
-                        )
-                        .animate()
-                        .fadeIn(delay: (index * 100).ms)
-                        .slideX(begin: 0.05);
-                  }),
-                ],
-              ),
-            ),
-          ],
-        ),
-
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "SYNTAX OK!" : "RULE BREAK!",
-            subtitle: quest.explanation,
-            onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+          _lastLives = state.livesRemaining;
+        }
+        if (state is GrammarGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'SENTINEL!', enableDoubleUp: true);
+        } else if (state is GrammarGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<GrammarBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final options = quest?.options ?? ["Subject", "Verb", "Object", "Tense"]; // Fallback options
+        
+        return GrammarBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
+          onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 20.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 32.h),
+              _buildSentenceDisplay(quest.sentence ?? quest.question ?? "", theme.primaryColor, isDark),
+              SizedBox(height: 60.h),
+              _buildQuestCompass(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+              SizedBox(height: 40.h),
+            ],
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.explore_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("STEER TO THE CORRECT RULE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
-          ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
+  Widget _buildSentenceDisplay(String text, Color primaryColor, bool isDark) {
+    return GlassTile(
+      padding: EdgeInsets.all(24.r),
+      borderRadius: BorderRadius.circular(28.r),
+      child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 20.sp, color: isDark ? Colors.white : Colors.black87, height: 1.4)),
+    );
+  }
+
+  Widget _buildQuestCompass(List<String> options, int correctIndex, Color primaryColor, bool isDark) {
+    return Container(
+      width: 280.r, height: 280.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2), width: 4.r),
+        boxShadow: [BoxShadow(color: primaryColor.withValues(alpha: 0.1), blurRadius: 40, spreadRadius: 10)],
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Quadrants
+          ...List.generate(4, (index) {
+            final angle = index * (3.14159 * 2) / 4;
+            final optionText = index < options.length ? options[index] : "";
+            return Transform.rotate(
+              angle: angle,
+              child: GestureDetector(
+                onTap: () => _onQuadrantSelect(index, correctIndex),
+                child: Container(
+                  width: 280.r, height: 280.r,
+                  decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.transparent),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: 20.r, left: 0, right: 0,
+                        child: Transform.rotate(
+                          angle: -angle,
+                          child: Center(
+                            child: Container(
+                              padding: EdgeInsets.all(8.r),
+                              width: 80.r,
+                              child: Text(optionText, textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor.withValues(alpha: 0.7), letterSpacing: 1)),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
+            );
+          }),
+          // Center Dial
+          Container(
+            width: 40.r, height: 40.r,
+            decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle, boxShadow: [BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 10)]),
+          ),
+          // Needle
+          AnimatedRotation(
+            duration: const Duration(milliseconds: 600),
+            curve: Curves.elasticOut,
+            turns: _needleRotation / (2 * 3.14159),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  width: 4.w, height: 180.h,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter, end: Alignment.bottomCenter,
+                      colors: [primaryColor, primaryColor.withValues(alpha: 0.2)],
+                    ),
+                    borderRadius: BorderRadius.circular(2.r),
+                  ),
+                ),
+                Positioned(
+                  top: 0,
+                  child: Container(
+                    width: 16.r, height: 16.r,
+                    decoration: BoxDecoration(color: primaryColor, shape: BoxShape.circle),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

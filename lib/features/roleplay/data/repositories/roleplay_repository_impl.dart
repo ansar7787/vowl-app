@@ -4,10 +4,16 @@ import 'package:dartz/dartz.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 import '../../domain/repositories/roleplay_repository.dart';
 
+import '../../../../core/network/network_info.dart';
+import '../datasources/roleplay_remote_data_source.dart';
+
 class RoleplayRepositoryImpl implements RoleplayRepository {
-  final dynamic remoteDataSource;
-  final dynamic networkInfo;
-  RoleplayRepositoryImpl({this.remoteDataSource, this.networkInfo});
+  final RoleplayRemoteDataSource remoteDataSource;
+  final NetworkInfo networkInfo;
+  RoleplayRepositoryImpl({
+    required this.remoteDataSource,
+    required this.networkInfo,
+  });
 
   @override
   Future<Either<Failure, List<RoleplayQuest>>> getRoleplayQuests({
@@ -21,11 +27,18 @@ class RoleplayRepositoryImpl implements RoleplayRepository {
       );
       return Right(remoteQuests);
     } catch (e) {
-      return const Left(
-        ServerFailure(
-          "Failed to connect to the server. Please check your internet connection.",
-        ),
-      );
+      return Left(ServerFailure("Error loading quests: ${e.toString()}"));
     }
+  }
+
+  @override
+  Future<void> preloadNextBatch({
+    required GameSubtype gameType,
+    required int currentLevel,
+  }) async {
+    await remoteDataSource.preloadNextBatch(
+      gameType: gameType,
+      level: currentLevel,
+    );
   }
 }

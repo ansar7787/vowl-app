@@ -2,51 +2,73 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/features/accent/domain/entities/accent_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
 class SCSentenceDisplay extends StatelessWidget {
   final AccentQuest quest;
   final ThemeResult theme;
   final bool isDark;
-  final String currentSpokenWord;
+  final String recognizedText;
+  final int pacingIndex;
+  final bool isMidnight;
 
   const SCSentenceDisplay({
     super.key,
     required this.quest,
     required this.theme,
     required this.isDark,
-    this.currentSpokenWord = '',
+    this.recognizedText = '',
+    this.pacingIndex = -1,
+    this.isMidnight = false,
   });
 
   Widget _buildKaraokeSentence() {
     final originalText = quest.sentence ?? quest.word ?? "Speak naturally";
-    final words = originalText.split(' ');
+    final words = originalText
+        .split(RegExp(r'\s+'))
+        .where((w) => w.isNotEmpty)
+        .toList();
+    final utteredWords = recognizedText
+        .toLowerCase()
+        .replaceAll(RegExp(r'[^\w\s]'), '')
+        .split(RegExp(r'\s+'))
+        .where((w) => w.isNotEmpty)
+        .toList();
 
     return Wrap(
       alignment: WrapAlignment.center,
-      children: words.map((word) {
+      children: words.asMap().entries.map((entry) {
+        final index = entry.key;
+        final word = entry.value;
         final cleanWord = word.toLowerCase().replaceAll(RegExp(r'[^\w]'), '');
-        final cleanSpoken = currentSpokenWord.toLowerCase().replaceAll(
-          RegExp(r'[^\w]'),
-          '',
-        );
-        final bool isCurrent =
-            cleanWord == cleanSpoken && cleanSpoken.isNotEmpty;
+
+        final bool isRecognized =
+            cleanWord.isNotEmpty && utteredWords.contains(cleanWord);
+        final bool isPaced = index == pacingIndex;
+
+        Color wordColor;
+        if (isRecognized) {
+          wordColor = Colors.green;
+        } else if (isPaced) {
+          wordColor = theme.primaryColor;
+        } else {
+          wordColor = isDark ? Colors.white : Colors.black87;
+        }
 
         return AnimatedDefaultTextStyle(
           duration: const Duration(milliseconds: 200),
           style: GoogleFonts.outfit(
-            fontSize: isCurrent ? 30.sp : 26.sp,
-            fontWeight: isCurrent ? FontWeight.w900 : FontWeight.w800,
-            color: isCurrent
-                ? theme.primaryColor
-                : (isDark ? Colors.white : Colors.black87),
+            fontSize: (isRecognized || isPaced) ? 30.sp : 26.sp,
+            fontWeight: (isRecognized || isPaced)
+                ? FontWeight.w900
+                : FontWeight.w800,
+            color: wordColor,
             height: 1.2,
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.w),
+            padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
             child: Text(word),
           ),
         );
@@ -59,6 +81,9 @@ class SCSentenceDisplay extends StatelessWidget {
     return GlassTile(
       padding: EdgeInsets.all(24.r),
       borderRadius: BorderRadius.circular(30.r),
+      color: isDark
+          ? const Color(0xFF1E293B).withValues(alpha: 0.9)
+          : Colors.white.withValues(alpha: 0.9),
       borderColor: theme.primaryColor.withValues(alpha: 0.3),
       child: Column(
         children: [

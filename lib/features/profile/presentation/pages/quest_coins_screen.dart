@@ -6,29 +6,37 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/ad_reward_card.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
 
-class VoxCoinsScreen extends StatelessWidget {
-  const VoxCoinsScreen({super.key});
+class VowlCoinsScreen extends StatelessWidget {
+  const VowlCoinsScreen({super.key});
 
-  static const int _hintPackCost = 250;
+  static const int _hintPackCost = 5000;
   static const int _hintsPerPack = 5;
-  static const int _singleHintCost = 50;
+  static const int _bulkHintCost = 20000;
+  static const int _bulkHintAmount = 25;
+  static const int _singleHintCost = 1500;
   static const int _singleHintAmount = 1;
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final bgColor = isMidnight 
+        ? Colors.black 
+        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+
     return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
+      backgroundColor: bgColor,
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           final user = state.user;
@@ -52,88 +60,74 @@ class VoxCoinsScreen extends StatelessWidget {
                       parent: BouncingScrollPhysics(),
                     ),
                     slivers: [
-                      // ── SliverAppBar ──
                       SliverAppBar(
                         pinned: true,
-                        floating: true,
-                        snap: true,
-                        automaticallyImplyLeading: false,
                         backgroundColor: Colors.transparent,
                         surfaceTintColor: Colors.transparent,
                         elevation: 0,
-                        expandedHeight: 80.h,
-                        collapsedHeight: 64.h,
-                        flexibleSpace: FlexibleSpaceBar(
-                          titlePadding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
+                        toolbarHeight: 70.h,
+                        automaticallyImplyLeading: false,
+                        title: GlassTile(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
                             vertical: 8.h,
                           ),
-                          title: GlassTile(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 8.w,
-                              vertical: 6.h,
-                            ),
-                            borderRadius: BorderRadius.circular(20.r),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                SizedBox(
-                                  width: 32.r,
-                                  height: 32.r,
-                                  child: IconButton(
-                                    padding: EdgeInsets.zero,
-                                    iconSize: 18.r,
-                                    onPressed: () => context.pop(),
-                                    icon: const Icon(
-                                      Icons.arrow_back_ios_new_rounded,
+                          borderRadius: BorderRadius.circular(24.r),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 32.r,
+                                height: 32.r,
+                                child: IconButton(
+                                  padding: EdgeInsets.zero,
+                                  iconSize: 18.r,
+                                  onPressed: () => context.pop(),
+                                  icon: Icon(
+                                    Icons.arrow_back_ios_new_rounded,
+                                    color: isDark ? Colors.white : Colors.black87,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 10.w),
+                              Text(
+                                'Vowl Treasury',
+                                style: GoogleFonts.outfit(
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: isDark ? Colors.white : const Color(0xFF0F172A),
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 10.w,
+                                  vertical: 4.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF10B981).withValues(alpha: 0.15),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      Icons.paid_rounded,
+                                      color: const Color(0xFF10B981),
+                                      size: 14.r,
                                     ),
-                                  ),
-                                ),
-                                SizedBox(width: 6.w),
-                                Text(
-                                  'Vox Treasury',
-                                  style: GoogleFonts.outfit(
-                                    fontSize: 14.sp,
-                                    fontWeight: FontWeight.w800,
-                                    color: isDark
-                                        ? Colors.white
-                                        : const Color(0xFF0F172A),
-                                  ),
-                                ),
-                                const Spacer(),
-                                Container(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 10.w,
-                                    vertical: 4.h,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    color: const Color(
-                                      0xFF10B981,
-                                    ).withValues(alpha: 0.15),
-                                    borderRadius: BorderRadius.circular(12.r),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Icon(
-                                        Icons.paid_rounded,
+                                    SizedBox(width: 4.w),
+                                    Text(
+                                      '${user.coins}',
+                                      style: GoogleFonts.outfit(
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w800,
                                         color: const Color(0xFF10B981),
-                                        size: 14.r,
                                       ),
-                                      SizedBox(width: 4.w),
-                                      Text(
-                                        '${user.coins}',
-                                        style: GoogleFonts.outfit(
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w800,
-                                          color: const Color(0xFF10B981),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -149,32 +143,30 @@ class VoxCoinsScreen extends StatelessWidget {
                               context,
                               title: 'WAYS TO EARN',
                               items: [
-                                _ActionItem(
-                                  title: 'Maintain Daily Streak',
-                                  subtitle: 'Earn up to 5,000+ coins',
-                                  icon: Icons.local_fire_department_rounded,
-                                  color: const Color(0xFFEF4444),
-                                  onTap: () =>
-                                      context.push(AppRouter.streakRoute),
+                                _buildActionItem(
+                                  context,
+                                  _ActionItem(
+                                    title: 'Maintain Daily Streak',
+                                    subtitle: 'Earn up to 5,000+ coins',
+                                    icon: Icons.local_fire_department_rounded,
+                                    color: const Color(0xFFEF4444),
+                                    onTap: () =>
+                                        context.push(AppRouter.streakRoute),
+                                  ),
                                 ),
-                                _ActionItem(
-                                  title: 'Master 80 Quests',
-                                  subtitle: '8 Categories, 10 Quests each',
-                                  icon: Icons.sports_esports_rounded,
-                                  color: const Color(0xFF3B82F6),
-                                  onTap: () => context.go(AppRouter.homeRoute),
+
+                                _buildActionItem(
+                                  context,
+                                  _ActionItem(
+                                    title: 'Watch Rewarded Ads',
+                                    subtitle: 'Earn 20 coins instantly',
+                                    icon: Icons.play_circle_filled_rounded,
+                                    color: const Color(0xFF10B981),
+                                    onTap: () {},
+                                    isAdPlaceholder: true,
+                                  ),
                                 ),
-                                _ActionItem(
-                                  title: 'Watch Rewarded Ads',
-                                  subtitle: 'Earn 20 coins instantly',
-                                  icon: Icons.play_circle_filled_rounded,
-                                  color: const Color(0xFF10B981),
-                                  onTap: () {
-                                    // AdRewardCard internally handles logic,
-                                    // but we can provide a shortcut if needed.
-                                  },
-                                  isAdPlaceholder: true,
-                                ),
+                                const HintAdCard(margin: EdgeInsets.zero),
                               ],
                             ),
                             SizedBox(height: 32.h),
@@ -182,47 +174,75 @@ class VoxCoinsScreen extends StatelessWidget {
                               context,
                               title: 'WHERE TO SPEND',
                               items: [
-                                _ActionItem(
-                                  title: 'Streak Boosters',
-                                  subtitle: 'Buy freezes & XP multipliers',
-                                  icon: Icons.bolt_rounded,
-                                  color: const Color(0xFF8B5CF6),
-                                  onTap: () =>
-                                      context.push(AppRouter.streakRoute),
-                                ),
-                                _ActionItem(
-                                  title: 'Adventure Store',
-                                  subtitle:
-                                      'Buy Masteries, Scroll of Wisdom & more',
-                                  icon: Icons.storefront_rounded,
-                                  color: const Color(0xFF6366F1),
-                                  onTap: () =>
-                                      context.push(AppRouter.adventureXPRoute),
-                                ),
-                                _ActionItem(
-                                  title: 'Single Hint',
-                                  subtitle:
-                                      'Buy 1 hint for $_singleHintCost coins',
-                                  icon: Icons.lightbulb_outline_rounded,
-                                  color: const Color(0xFFFBBF24),
-                                  onTap: () => _purchaseHint(
-                                    context,
-                                    user,
-                                    _singleHintCost,
-                                    _singleHintAmount,
+                                _buildActionItem(
+                                  context,
+                                  _ActionItem(
+                                    title: 'Streak Boosters',
+                                    subtitle: 'Buy freezes & XP multipliers',
+                                    icon: Icons.bolt_rounded,
+                                    color: const Color(0xFF8B5CF6),
+                                    onTap: () =>
+                                        context.push(AppRouter.streakRoute),
                                   ),
                                 ),
-                                _ActionItem(
-                                  title: 'Elite Hint Pack',
-                                  subtitle:
-                                      'Get $_hintsPerPack hints for $_hintPackCost coins',
-                                  icon: Icons.lightbulb_rounded,
-                                  color: const Color(0xFFF59E0B),
-                                  onTap: () => _purchaseHint(
-                                    context,
-                                    user,
-                                    _hintPackCost,
-                                    _hintsPerPack,
+                                _buildActionItem(
+                                  context,
+                                  _ActionItem(
+                                    title: 'Adventure Store',
+                                    subtitle:
+                                        'Buy Masteries, Scroll of Wisdom & more',
+                                    icon: Icons.storefront_rounded,
+                                    color: const Color(0xFF6366F1),
+                                    onTap: () =>
+                                        context.push(AppRouter.adventureXPRoute),
+                                  ),
+                                ),
+                                _buildActionItem(
+                                  context,
+                                  _ActionItem(
+                                    title: 'Single Hint',
+                                    subtitle:
+                                        'Buy 1 hint for $_singleHintCost coins',
+                                    icon: Icons.lightbulb_outline_rounded,
+                                    color: const Color(0xFFFBBF24),
+                                    onTap: () => _purchaseHint(
+                                      context,
+                                      user,
+                                      _singleHintCost,
+                                      _singleHintAmount,
+                                    ),
+                                  ),
+                                ),
+                                _buildActionItem(
+                                  context,
+                                  _ActionItem(
+                                    title: 'Elite Hint Pack',
+                                    subtitle:
+                                        'Get $_hintsPerPack hints for $_hintPackCost coins',
+                                    icon: Icons.lightbulb_rounded,
+                                    color: const Color(0xFFF59E0B),
+                                    onTap: () => _purchaseHint(
+                                      context,
+                                      user,
+                                      _hintPackCost,
+                                      _hintsPerPack,
+                                    ),
+                                  ),
+                                ),
+                                _buildActionItem(
+                                  context,
+                                  _ActionItem(
+                                    title: 'Legendary Hint Pack',
+                                    subtitle:
+                                        'Get $_bulkHintAmount hints for $_bulkHintCost coins',
+                                    icon: Icons.auto_awesome_rounded,
+                                    color: const Color(0xFF10B981),
+                                    onTap: () => _purchaseHint(
+                                      context,
+                                      user,
+                                      _bulkHintCost,
+                                      _bulkHintAmount,
+                                    ),
                                   ),
                                 ),
                               ],
@@ -265,7 +285,7 @@ class VoxCoinsScreen extends StatelessWidget {
               ),
               SizedBox(width: 8.w),
               Text(
-                'Insufficient Vox Coins! Needed: $cost',
+                'Insufficient Vowl Coins! Needed: $cost',
                 style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
               ),
             ],
@@ -319,7 +339,7 @@ class VoxCoinsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 12.h),
                 Text(
-                  'Exchange $cost Vox Coins for ${amount == 1 ? "1 hint" : "$amount hints"}.\nReady to enhance your mission?',
+                  'Exchange $cost Vowl Coins for ${amount == 1 ? "1 hint" : "$amount hints"}.\nReady to enhance your mission?',
                   textAlign: TextAlign.center,
                   style: GoogleFonts.outfit(
                     fontSize: 14.sp,
@@ -360,8 +380,8 @@ class VoxCoinsScreen extends StatelessWidget {
                         ),
                         onPressed: () {
                           Navigator.of(ctx).pop();
-                          context.read<AuthBloc>().add(
-                            AuthPurchaseHintRequested(cost, hintAmount: amount),
+                          context.read<EconomyBloc>().add(
+                            EconomyPurchaseHintRequested(cost, hintAmount: amount),
                           );
                           HapticFeedback.heavyImpact(); // Premium haptic
                           _showSuccessSnackbar(context, amount);
@@ -509,7 +529,7 @@ class VoxCoinsScreen extends StatelessWidget {
             textAlign: TextAlign.center,
           ).animate().scale(begin: const Offset(0.9, 0.9)),
           Text(
-            "VOX COINS",
+            "VOWL COINS",
             style: GoogleFonts.outfit(
               fontSize: 14.sp,
               fontWeight: FontWeight.w900,
@@ -567,7 +587,7 @@ class VoxCoinsScreen extends StatelessWidget {
   Widget _buildActionSection(
     BuildContext context, {
     required String title,
-    required List<_ActionItem> items,
+    required List<Widget> items,
   }) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Column(
@@ -583,69 +603,67 @@ class VoxCoinsScreen extends StatelessWidget {
           ),
         ),
         SizedBox(height: 16.h),
-        ...items.map((item) {
-          if (item.isAdPlaceholder) {
-            return Padding(
-              padding: EdgeInsets.only(bottom: 12.h),
-              child: const AdRewardCard(margin: EdgeInsets.zero),
-            );
-          }
+        ...items.map((widget) {
           return Padding(
             padding: EdgeInsets.only(bottom: 12.h),
-            child: ScaleButton(
-              onTap: item.onTap,
-              child: GlassTile(
-                padding: EdgeInsets.all(16.r),
-                borderRadius: BorderRadius.circular(24.r),
-                child: Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(12.r),
-                      decoration: BoxDecoration(
-                        color: item.color.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(16.r),
-                      ),
-                      child: Icon(item.icon, color: item.color, size: 24.r),
-                    ),
-                    SizedBox(width: 16.w),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            item.title,
-                            style: GoogleFonts.outfit(
-                              fontSize: 16.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark
-                                  ? Colors.white
-                                  : const Color(0xFF1E293B),
-                            ),
-                          ),
-                          Text(
-                            item.subtitle,
-                            style: GoogleFonts.outfit(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w500,
-                              color: isDark
-                                  ? Colors.white54
-                                  : const Color(0xFF64748B),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Icon(
-                      Icons.chevron_right_rounded,
-                      color: isDark ? Colors.white24 : Colors.black12,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            child: widget,
           );
         }),
       ],
+    );
+  }
+
+  Widget _buildActionItem(BuildContext context, _ActionItem item) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    if (item.isAdPlaceholder) {
+      return const AdRewardCard(margin: EdgeInsets.zero);
+    }
+    return ScaleButton(
+      onTap: item.onTap,
+      child: GlassTile(
+        padding: EdgeInsets.all(16.r),
+        borderRadius: BorderRadius.circular(24.r),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: item.color.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(16.r),
+              ),
+              child: Icon(item.icon, color: item.color, size: 24.r),
+            ),
+            SizedBox(width: 16.w),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    item.title,
+                    style: GoogleFonts.outfit(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white : const Color(0xFF1E293B),
+                    ),
+                  ),
+                  Text(
+                    item.subtitle,
+                    style: GoogleFonts.outfit(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                      color: isDark ? Colors.white54 : const Color(0xFF64748B),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(
+              Icons.chevron_right_rounded,
+              color: isDark ? Colors.white24 : Colors.black12,
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -869,3 +887,4 @@ class _ActionItem {
     this.isAdPlaceholder = false,
   });
 }
+

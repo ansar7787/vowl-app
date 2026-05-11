@@ -13,7 +13,7 @@ class AdService {
   int _completedLevelsSinceLastAd = 0;
 
   /// Show an interstitial every N completed levels.
-  static const int levelsPerInterstitial = 2;
+  static const int levelsPerInterstitial = 3;
 
   /// Minimum minutes between interstitials (safety net).
   static const int interstitialCooldownMinutes = 3;
@@ -21,27 +21,57 @@ class AdService {
 
   static final AdRequest request = AdRequest(
     keywords: const <String>['game', 'learning', 'education'],
-    contentUrl: 'https://voxai-quest.com',
+    contentUrl: 'https://Vowl-quest.com',
     nonPersonalizedAds: true,
   );
 
   // ─── Lifecycle ──────────────────────────────────────────────────────
 
+  bool _isInitialized = false;
+
   Future<void> init() async {
-    if (!kIsWeb) {
-      await MobileAds.instance.initialize();
-      loadInterstitialAd();
-      loadRewardedAd(); // Pre-load so rewarded ads are ready when needed
-      loadAppOpenAd();
+    if (kIsWeb || _isInitialized) return;
+
+    try {
+      // Initialize without awaiting to prevent blocking the UI thread
+      MobileAds.instance.initialize().then((status) {
+        _isInitialized = true;
+        if (kDebugMode) {
+          debugPrint('AdService: MobileAds initialized');
+        }
+
+        // Configure test device IDs only in debug mode
+        if (kDebugMode) {
+          MobileAds.instance.updateRequestConfiguration(
+            RequestConfiguration(testDeviceIds: ["6739FCB31DECCBA1A191319DC27E562A"]),
+          );
+        }
+
+        // Load ads with a slight staggered delay to keep the UI smooth during startup
+        Future.delayed(const Duration(seconds: 2), () => loadInterstitialAd());
+        Future.delayed(const Duration(seconds: 4), () => loadRewardedAd());
+      });
+    } catch (e) {
+      if (kDebugMode) {
+        debugPrint('AdService: Initialization error: $e');
+      }
     }
   }
 
   // ─── Interstitial ──────────────────────────────────────────────────
 
   void loadInterstitialAd() {
-    final adUnitId = Platform.isAndroid
-        ? dotenv.env['ADMOB_INTERSTITIAL_ANDROID'] ?? ''
-        : dotenv.env['ADMOB_INTERSTITIAL_IOS'] ?? '';
+    String adUnitId;
+    if (kDebugMode) {
+      // Standard Google Test Interstitial ID
+      adUnitId = Platform.isAndroid 
+          ? 'ca-app-pub-3940256099942544/1033173712' 
+          : 'ca-app-pub-3940256099942544/4411468910';
+    } else {
+      adUnitId = Platform.isAndroid
+          ? dotenv.env['ADMOB_INTERSTITIAL_ANDROID'] ?? ''
+          : dotenv.env['ADMOB_INTERSTITIAL_IOS'] ?? '';
+    }
 
     InterstitialAd.load(
       adUnitId: adUnitId,
@@ -73,21 +103,49 @@ class AdService {
   void showInterstitialAd({
     required VoidCallback onDismissed,
     required bool isPremium,
+    bool isLevelCompletion = true,
   }) {
-    // Premium bypass
-    if (isPremium || _interstitialAd == null) {
+    // 1. Increment counter on level completion
+    if (isLevelCompletion) {
+      _completedLevelsSinceLastAd++;
+    }
+
+    // 2. Premium bypass
+    if (isPremium) {
       onDismissed();
       return;
     }
 
-    // Pacing: Don't show if cooldown hasn't passed
+    // 3. Frequency check (Enforce levelsPerInterstitial globally)
+    if (_completedLevelsSinceLastAd < levelsPerInterstitial) {
+      if (kDebugMode) {
+        debugPrint(
+          'AdService: Interstitial skipped (Level completion count: $_completedLevelsSinceLastAd/$levelsPerInterstitial)',
+        );
+      }
+      onDismissed();
+      return;
+    }
+
+    // 4. Availability check
+    if (_interstitialAd == null) {
+      if (kDebugMode) {
+        debugPrint('AdService: Interstitial skipped (Ad not loaded)');
+      }
+      onDismissed();
+      return;
+    }
+
+    // 5. Pacing cooldown
     final now = DateTime.now();
     if (_lastInterstitialTime != null) {
       final difference = now.difference(_lastInterstitialTime!);
       if (difference.inMinutes < interstitialCooldownMinutes) {
-        debugPrint(
-          'AdService: Interstitial skipped (${interstitialCooldownMinutes}min cooldown)',
-        );
+        if (kDebugMode) {
+          debugPrint(
+            'AdService: Interstitial skipped (${interstitialCooldownMinutes}min cooldown)',
+          );
+        }
         onDismissed();
         return;
       }
@@ -111,71 +169,57 @@ class AdService {
     _interstitialAd = null;
   }
 
-  // ─── Banner Ads ────────────────────────────────────────────────────
-
-  BannerAd? _bannerAd;
-  bool _isBannerLoaded = false;
-
-  bool get isBannerLoaded => _isBannerLoaded;
-  BannerAd? get bannerAd => _bannerAd;
-
-  void loadBannerAd() {
-    final adUnitId = Platform.isAndroid
-        ? dotenv.env['ADMOB_BANNER_ANDROID'] ??
-              'ca-app-pub-3940256099942544/6300978111' // Test ID
-        : dotenv.env['ADMOB_BANNER_IOS'] ??
-              'ca-app-pub-3940256099942544/2934735716'; // Test ID
-
-    _bannerAd = BannerAd(
-      adUnitId: adUnitId,
-      size: AdSize.banner,
-      request: request,
-      listener: BannerAdListener(
-        onAdLoaded: (Ad ad) {
-          _isBannerLoaded = true;
-          debugPrint('AdService: Banner ad loaded');
-        },
-        onAdFailedToLoad: (Ad ad, LoadAdError error) {
-          _isBannerLoaded = false;
-          ad.dispose();
-          debugPrint('AdService: Banner ad failed: $error');
-        },
-      ),
-    );
-    _bannerAd!.load();
-  }
-
-  void disposeBannerAd() {
-    _bannerAd?.dispose();
-    _bannerAd = null;
-    _isBannerLoaded = false;
-  }
-
   // ─── Rewarded Ads ──────────────────────────────────────────────────
 
   RewardedAd? _rewardedAd;
   int _numRewardedLoadAttempts = 0;
 
+  bool get isRewardedAdLoaded => _rewardedAd != null;
+
   void loadRewardedAd() {
-    final adUnitId = Platform.isAndroid
-        ? dotenv.env['ADMOB_REWARDED_ANDROID'] ??
-              'ca-app-pub-3940256099942544/5224354917'
-        : dotenv.env['ADMOB_REWARDED_IOS'] ??
-              'ca-app-pub-3940256099942544/1712485313';
+    String adUnitId;
+    if (kDebugMode) {
+      // Standard Google Test Rewarded ID
+      adUnitId = Platform.isAndroid 
+          ? 'ca-app-pub-3940256099942544/5224354917' 
+          : 'ca-app-pub-3940256099942544/1712485313';
+    } else {
+      adUnitId = Platform.isAndroid
+          ? dotenv.env['ADMOB_REWARDED_ANDROID'] ?? ''
+          : dotenv.env['ADMOB_REWARDED_IOS'] ?? '';
+    }
+
+    if (adUnitId.isEmpty) {
+      if (kDebugMode) {
+        debugPrint('AdService: Missing rewarded ad unit ID in .env');
+      }
+      return;
+    }
 
     RewardedAd.load(
       adUnitId: adUnitId,
       request: request,
       rewardedAdLoadCallback: RewardedAdLoadCallback(
         onAdLoaded: (RewardedAd ad) {
+          if (kDebugMode) {
+            debugPrint('AdService: Rewarded ad loaded.');
+          }
           _rewardedAd = ad;
           _numRewardedLoadAttempts = 0;
         },
         onAdFailedToLoad: (LoadAdError error) {
+          if (kDebugMode) {
+            debugPrint('AdService: Rewarded ad failed to load: ${error.message} (Code: ${error.code})');
+          }
           _numRewardedLoadAttempts += 1;
           _rewardedAd = null;
           if (_numRewardedLoadAttempts <= maxFailedLoadAttempts) {
-            loadRewardedAd();
+            // Retry with exponential backoff delay (2s, 4s, 8s...)
+            final delay = Duration(seconds: 2 * _numRewardedLoadAttempts);
+            if (kDebugMode) {
+              debugPrint('AdService: Retrying rewarded load in ${delay.inSeconds}s...');
+            }
+            Future.delayed(delay, () => loadRewardedAd());
           }
         },
       ),
@@ -194,7 +238,9 @@ class AdService {
     }
 
     if (_rewardedAd == null) {
-      debugPrint('Warning: Attempted to show rewarded ad before loaded.');
+      if (kDebugMode) {
+        debugPrint('Warning: Attempted to show rewarded ad before loaded.');
+      }
       onDismissed();
       return;
     }
@@ -220,66 +266,17 @@ class AdService {
     _rewardedAd = null;
   }
 
-  // ─── App Open Ads ──────────────────────────────────────────────────
-
-  AppOpenAd? _appOpenAd;
-  bool _isShowingAppOpenAd = false;
-  DateTime? _appOpenLoadTime;
-
-  void loadAppOpenAd() {
-    final adUnitId = Platform.isAndroid
-        ? dotenv.env['ADMOB_APP_OPEN_ANDROID'] ??
-              'ca-app-pub-3940256099942544/9257395921'
-        : dotenv.env['ADMOB_APP_OPEN_IOS'] ??
-              'ca-app-pub-3940256099942544/5575463023';
-
-    AppOpenAd.load(
-      adUnitId: adUnitId,
-      request: request,
-      adLoadCallback: AppOpenAdLoadCallback(
-        onAdLoaded: (ad) {
-          _appOpenLoadTime = DateTime.now();
-          _appOpenAd = ad;
-        },
-        onAdFailedToLoad: (error) {
-          debugPrint('AppOpenAd failed to load: $error');
-        },
-      ),
+  void showHintRewardedAd({
+    required bool isPremium,
+    required VoidCallback onHintEarned,
+    required VoidCallback onDismissed,
+  }) {
+    showRewardedAd(
+      isPremium: isPremium,
+      onUserEarnedReward: (reward) {
+        onHintEarned();
+      },
+      onDismissed: onDismissed,
     );
-  }
-
-  bool get _isAppOpenAdAvailable {
-    return _appOpenAd != null &&
-        _appOpenLoadTime != null &&
-        DateTime.now().difference(_appOpenLoadTime!).inHours < 4;
-  }
-
-  void showAppOpenAdIfAvailable({required bool isPremium}) {
-    if (isPremium) return;
-    if (!_isAppOpenAdAvailable || _isShowingAppOpenAd) {
-      loadAppOpenAd();
-      return;
-    }
-
-    _isShowingAppOpenAd = true;
-    _appOpenAd!.fullScreenContentCallback = FullScreenContentCallback(
-      onAdShowedFullScreenContent: (ad) {
-        _isShowingAppOpenAd = true;
-      },
-      onAdFailedToShowFullScreenContent: (ad, error) {
-        _isShowingAppOpenAd = false;
-        ad.dispose();
-        _appOpenAd = null;
-        loadAppOpenAd();
-      },
-      onAdDismissedFullScreenContent: (ad) {
-        _isShowingAppOpenAd = false;
-        ad.dispose();
-        _appOpenAd = null;
-        loadAppOpenAd();
-      },
-    );
-
-    _appOpenAd!.show();
   }
 }

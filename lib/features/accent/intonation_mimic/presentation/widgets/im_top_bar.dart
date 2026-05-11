@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/features/accent/domain/entities/accent_quest.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
 class ImTopBar extends StatelessWidget {
   final double progress;
@@ -13,6 +13,7 @@ class ImTopBar extends StatelessWidget {
   final Color primaryColor;
   final AccentQuest quest;
   final VoidCallback onHintTap;
+  final bool isMidnight;
 
   const ImTopBar({
     super.key,
@@ -23,6 +24,7 @@ class ImTopBar extends StatelessWidget {
     required this.primaryColor,
     required this.quest,
     required this.onHintTap,
+    this.isMidnight = false,
   });
 
   @override
@@ -38,7 +40,9 @@ class ImTopBar extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(10.r),
               decoration: BoxDecoration(
-                color: isDark ? Colors.white10 : Colors.black12,
+                color: isMidnight 
+                    ? Colors.white.withValues(alpha: 0.15)
+                    : (isDark ? Colors.white10 : Colors.black12),
                 shape: BoxShape.circle,
               ),
               child: Icon(
@@ -55,7 +59,9 @@ class ImTopBar extends StatelessWidget {
               child: LinearProgressIndicator(
                 value: progress,
                 minHeight: 14.h,
-                backgroundColor: isDark ? Colors.white10 : Colors.black12,
+                backgroundColor: isMidnight 
+                    ? Colors.white10 
+                    : (isDark ? Colors.white10 : Colors.black12),
                 valueColor: AlwaysStoppedAnimation<Color>(primaryColor),
               ),
             ),

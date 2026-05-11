@@ -1,607 +1,487 @@
 {
-  "gameType": "articleInsertion",
-  "batchIndex": 15,
-  "levels": "141-150",
-  "quests": [
-    {
-      "id": "articleInsertion_l141_q1",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "I saw ___ elephant at the zoo.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Vowel sound = 'an'.",
-      "sentenceWithBlank": "I saw ___ elephant at the zoo.",
-      "articleToInsert": "an",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l141_q2",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ sun rises in the east.",
-      "options": [
-        "A",
-        "An",
-        "The",
-        "No article"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Unique object = 'the'.",
-      "sentenceWithBlank": "___ sun rises in the east.",
-      "articleToInsert": "The",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l141_q3",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "She is ___ honest person.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Silent 'h' = vowel sound.",
-      "sentenceWithBlank": "She is ___ honest person.",
-      "articleToInsert": "an",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l142_q1",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "I need ___ glass of water.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Consonant sound = 'a'.",
-      "sentenceWithBlank": "I need ___ glass of water.",
-      "articleToInsert": "a",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l142_q2",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "He plays ___ guitar beautifully.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Musical instruments use 'the'.",
-      "sentenceWithBlank": "He plays ___ guitar beautifully.",
-      "articleToInsert": "the",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l142_q3",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ Mount Everest is very tall.",
-      "options": [
-        "A",
-        "An",
-        "The",
-        "No article"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Proper noun of mountain.",
-      "sentenceWithBlank": "___ Mount Everest is very tall.",
-      "articleToInsert": "No article",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l143_q1",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "She wants to be ___ engineer.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Vowel sound = 'an'.",
-      "sentenceWithBlank": "She wants to be ___ engineer.",
-      "articleToInsert": "an",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l143_q2",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ milk is good for health.",
-      "options": [
-        "A",
-        "An",
-        "The",
-        "No article"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "General uncountable = no article.",
-      "sentenceWithBlank": "___ milk is good for health.",
-      "articleToInsert": "No article",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l143_q3",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "I bought ___ umbrella yesterday.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Vowel sound = 'an'.",
-      "sentenceWithBlank": "I bought ___ umbrella yesterday.",
-      "articleToInsert": "an",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l144_q1",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "He is ___ tallest boy in class.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Superlative uses 'the'.",
-      "sentenceWithBlank": "He is ___ tallest boy in class.",
-      "articleToInsert": "the",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l144_q2",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ honesty is the best policy.",
-      "options": [
-        "A",
-        "An",
-        "The",
-        "No article"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Abstract noun = no article.",
-      "sentenceWithBlank": "___ honesty is the best policy.",
-      "articleToInsert": "No article",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l144_q3",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "She ate ___ apple for lunch.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Vowel sound = 'an'.",
-      "sentenceWithBlank": "She ate ___ apple for lunch.",
-      "articleToInsert": "an",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l145_q1",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "We visited ___ Eiffel Tower.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Famous landmark = 'the'.",
-      "sentenceWithBlank": "We visited ___ Eiffel Tower.",
-      "articleToInsert": "the",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l145_q2",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ water in this bottle is cold.",
-      "options": [
-        "A",
-        "An",
-        "The",
-        "No article"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Specific water = 'the'.",
-      "sentenceWithBlank": "___ water in this bottle is cold.",
-      "articleToInsert": "The",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l145_q3",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "He is ___ European tourist.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "'European' starts with /j/ sound.",
-      "sentenceWithBlank": "He is ___ European tourist.",
-      "articleToInsert": "a",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l146_q1",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "I have ___ dog and ___ cat.",
-      "options": [
-        "a...a",
-        "an...an",
-        "the...the",
-        "a...an"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Consonant sounds = 'a'.",
-      "sentenceWithBlank": "I have ___ dog and ___ cat.",
-      "articleToInsert": "a...a",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l146_q2",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ Pacific Ocean is vast.",
-      "options": [
-        "A",
-        "An",
-        "The",
-        "No article"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Ocean names use 'the'.",
-      "sentenceWithBlank": "___ Pacific Ocean is vast.",
-      "articleToInsert": "The",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l146_q3",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "She gave me ___ useful tip.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "'Useful' starts with /j/ sound.",
-      "sentenceWithBlank": "She gave me ___ useful tip.",
-      "articleToInsert": "a",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l147_q1",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "He wants ___ hour to rest.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Silent 'h' in 'hour'.",
-      "sentenceWithBlank": "He wants ___ hour to rest.",
-      "articleToInsert": "an",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l147_q2",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ gold is a precious metal.",
-      "options": [
-        "A",
-        "An",
-        "The",
-        "No article"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "General material = no article.",
-      "sentenceWithBlank": "___ gold is a precious metal.",
-      "articleToInsert": "No article",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l147_q3",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "Please pass me ___ salt.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Specific item = 'the'.",
-      "sentenceWithBlank": "Please pass me ___ salt.",
-      "articleToInsert": "the",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l148_q1",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "She is ___ university student.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "'University' = /j/ sound.",
-      "sentenceWithBlank": "She is ___ university student.",
-      "articleToInsert": "a",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l148_q2",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ Earth revolves around ___ Sun.",
-      "options": [
-        "A...a",
-        "An...an",
-        "The...the",
-        "No article"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Unique objects = 'the'.",
-      "sentenceWithBlank": "___ Earth revolves around ___ Sun.",
-      "articleToInsert": "The...the",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l148_q3",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "I need ___ new pair of shoes.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Consonant sound = 'a'.",
-      "sentenceWithBlank": "I need ___ new pair of shoes.",
-      "articleToInsert": "a",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l149_q1",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ Amazon is a long river.",
-      "options": [
-        "A",
-        "An",
-        "The",
-        "No article"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "River names use 'the'.",
-      "sentenceWithBlank": "___ Amazon is a long river.",
-      "articleToInsert": "The",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l149_q2",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "He is ___ one-year-old baby.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "'One' starts with /w/ sound.",
-      "sentenceWithBlank": "He is ___ one-year-old baby.",
-      "articleToInsert": "a",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l149_q3",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ happiness cannot be bought.",
-      "options": [
-        "A",
-        "An",
-        "The",
-        "No article"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Abstract noun = no article.",
-      "sentenceWithBlank": "___ happiness cannot be bought.",
-      "articleToInsert": "No article",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l150_q1",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "She lives in ___ United States.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Country with 'United' = 'the'.",
-      "sentenceWithBlank": "She lives in ___ United States.",
-      "articleToInsert": "the",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l150_q2",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "I saw ___ owl in the garden.",
-      "options": [
-        "a",
-        "an",
-        "the",
-        "no article"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Vowel sound = 'an'.",
-      "sentenceWithBlank": "I saw ___ owl in the garden.",
-      "articleToInsert": "an",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "articleInsertion_l150_q3",
-      "instruction": "Select the correct article.",
-      "difficulty": 4,
-      "subtype": "articleInsertion",
-      "interactionType": "choice",
-      "question": "___ lunch is ready now.",
-      "options": [
-        "A",
-        "An",
-        "The",
-        "No article"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Meal names = no article.",
-      "sentenceWithBlank": "___ lunch is ready now.",
-      "articleToInsert": "No article",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "articleInsertion",
+    "batchIndex":  15,
+    "levels":  "141-150",
+    "quests":  [
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L141_Q1",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ screen locates the relic in the Hub.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L141_Q2",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ laser loads the log near the Void.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L141_Q3",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ wings tells the vault through the portal.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L142_Q1",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ pilot repairs the console at the foundry.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L142_Q2",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ peak calibrates the archive during the storm.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L142_Q3",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ explorer explores the shield among the droids.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L143_Q1",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ vapor tells the chamber within the sector.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L143_Q2",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ rock routes the engine past the gate.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L143_Q3",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ scout repairs the key during the storm.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L144_Q1",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ mainframe damages the chamber across the bridge.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L144_Q2",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ lever makes the system past the gate.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L144_Q3",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ beam repairs the gate by the reactor.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L145_Q1",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ probe builds the beam between the cores.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L145_Q2",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ council analyzes the drone by the reactor.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L145_Q3",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ sentinel locks the relay inside the station.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "a"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L146_Q1",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ weapon splits the data past the gate.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L146_Q2",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ pipe boots the map before the dawn.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L146_Q3",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ droid splits the map near the Void.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L147_Q1",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ feeds the module during the storm.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L147_Q2",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ ocean collects the sensor before the dawn.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L147_Q3",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ scholar locks the sensor against the wind.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L148_Q1",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ peak merges the code out of the shadows.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L148_Q2",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ transmits the vault under the stars.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L148_Q3",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ assembly binds the system after the breach.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L149_Q1",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ light builds the relic near the Void.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L149_Q2",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ armor observes the lab after the breach.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L149_Q3",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ button makes the system within the sector.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L150_Q1",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ screen aligns the shield among the droids.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L150_Q2",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ armor splits the platform past the gate.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   },
+                   {
+                       "id":  "GRM_ARTICLEINSERTION_L150_Q3",
+                       "interactionType":  "Bubble Pop",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Check if the noun is definite.",
+                       "explanation":  "Articles provide context.",
+                       "sentenceWithBlank":  "____ screen aligns the relic behind the console.",
+                       "options":  [
+                                       "a",
+                                       "an",
+                                       "the",
+                                       "no article"
+                                   ],
+                       "correctAnswer":  "the"
+                   }
+               ]
 }

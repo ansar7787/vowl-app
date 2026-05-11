@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voxai_quest/core/presentation/widgets/games/maps/modern_category_map.dart';
+import 'package:vowl/core/presentation/widgets/games/maps/modern_category_map.dart';
 
 class DetailSpotlightMap extends StatelessWidget {
   const DetailSpotlightMap({super.key});

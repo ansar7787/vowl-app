@@ -1,795 +1,577 @@
 {
-  "gameType": "wordReorder",
-  "batchIndex": 3,
-  "levels": "21-30",
-  "quests": [
-    {
-      "id": "wordReorder_l21_q1",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "The cat sat on the mat",
-      "shuffledWords": [
-        "mat",
-        "the",
-        "on",
-        "sat",
-        "cat",
-        "The"
-      ],
-      "correctOrder": [
-        5,
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "The cat sat on the mat",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l21_q2",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "She is reading a book",
-      "shuffledWords": [
-        "book",
-        "a",
-        "reading",
-        "is",
-        "She"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "She is reading a book",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l21_q3",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "They went to the park",
-      "shuffledWords": [
-        "park",
-        "the",
-        "to",
-        "went",
-        "They"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "They went to the park",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l22_q1",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "I like eating fresh fruit",
-      "shuffledWords": [
-        "fruit",
-        "fresh",
-        "eating",
-        "like",
-        "I"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "I like eating fresh fruit",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l22_q2",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "He plays guitar every evening",
-      "shuffledWords": [
-        "evening",
-        "every",
-        "guitar",
-        "plays",
-        "He"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "He plays guitar every evening",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l22_q3",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "We should help each other",
-      "shuffledWords": [
-        "other",
-        "each",
-        "help",
-        "should",
-        "We"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "We should help each other",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l23_q1",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "The sun rises in the east",
-      "shuffledWords": [
-        "east",
-        "the",
-        "in",
-        "rises",
-        "sun",
-        "The"
-      ],
-      "correctOrder": [
-        5,
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "The sun rises in the east",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l23_q2",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "Birds fly south in winter",
-      "shuffledWords": [
-        "winter",
-        "in",
-        "south",
-        "fly",
-        "Birds"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "Birds fly south in winter",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l23_q3",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "She speaks three languages fluently",
-      "shuffledWords": [
-        "fluently",
-        "languages",
-        "three",
-        "speaks",
-        "She"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "She speaks three languages fluently",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l24_q1",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "My brother works at a hospital",
-      "shuffledWords": [
-        "hospital",
-        "a",
-        "at",
-        "works",
-        "brother",
-        "My"
-      ],
-      "correctOrder": [
-        5,
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "My brother works at a hospital",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l24_q2",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "Please close the door quietly",
-      "shuffledWords": [
-        "quietly",
-        "door",
-        "the",
-        "close",
-        "Please"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "Please close the door quietly",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l24_q3",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "The children are playing outside",
-      "shuffledWords": [
-        "outside",
-        "playing",
-        "are",
-        "children",
-        "The"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "The children are playing outside",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l25_q1",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "I have never been to Japan",
-      "shuffledWords": [
-        "Japan",
-        "to",
-        "been",
-        "never",
-        "have",
-        "I"
-      ],
-      "correctOrder": [
-        5,
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "I have never been to Japan",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l25_q2",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "She always arrives on time",
-      "shuffledWords": [
-        "time",
-        "on",
-        "arrives",
-        "always",
-        "She"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "She always arrives on time",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l25_q3",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "The teacher explained the lesson",
-      "shuffledWords": [
-        "lesson",
-        "the",
-        "explained",
-        "teacher",
-        "The"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "The teacher explained the lesson",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l26_q1",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "We are going to the beach",
-      "shuffledWords": [
-        "beach",
-        "the",
-        "to",
-        "going",
-        "are",
-        "We"
-      ],
-      "correctOrder": [
-        5,
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "We are going to the beach",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l26_q2",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "He bought a new car",
-      "shuffledWords": [
-        "car",
-        "new",
-        "a",
-        "bought",
-        "He"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "He bought a new car",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l26_q3",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "The flowers bloom in spring",
-      "shuffledWords": [
-        "spring",
-        "in",
-        "bloom",
-        "flowers",
-        "The"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "The flowers bloom in spring",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l27_q1",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "I will finish this tomorrow",
-      "shuffledWords": [
-        "tomorrow",
-        "this",
-        "finish",
-        "will",
-        "I"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "I will finish this tomorrow",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l27_q2",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "She made a delicious cake",
-      "shuffledWords": [
-        "cake",
-        "delicious",
-        "a",
-        "made",
-        "She"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "She made a delicious cake",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l27_q3",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "The dog chased the cat",
-      "shuffledWords": [
-        "cat",
-        "the",
-        "chased",
-        "dog",
-        "The"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "The dog chased the cat",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l28_q1",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "We enjoy watching movies together",
-      "shuffledWords": [
-        "together",
-        "movies",
-        "watching",
-        "enjoy",
-        "We"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "We enjoy watching movies together",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l28_q2",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "He can solve difficult problems",
-      "shuffledWords": [
-        "problems",
-        "difficult",
-        "solve",
-        "can",
-        "He"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "He can solve difficult problems",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l28_q3",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "The train arrives at noon",
-      "shuffledWords": [
-        "noon",
-        "at",
-        "arrives",
-        "train",
-        "The"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "The train arrives at noon",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l29_q1",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "I need to study harder",
-      "shuffledWords": [
-        "harder",
-        "study",
-        "to",
-        "need",
-        "I"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "I need to study harder",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l29_q2",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "She gave him a present",
-      "shuffledWords": [
-        "present",
-        "a",
-        "him",
-        "gave",
-        "She"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "She gave him a present",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l29_q3",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "The museum opens at nine",
-      "shuffledWords": [
-        "nine",
-        "at",
-        "opens",
-        "museum",
-        "The"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "The museum opens at nine",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l30_q1",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "They celebrated their anniversary",
-      "shuffledWords": [
-        "anniversary",
-        "their",
-        "celebrated",
-        "They"
-      ],
-      "correctOrder": [
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "They celebrated their anniversary",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l30_q2",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "I usually walk to school",
-      "shuffledWords": [
-        "school",
-        "to",
-        "walk",
-        "usually",
-        "I"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "I usually walk to school",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "wordReorder_l30_q3",
-      "instruction": "Reorder the words.",
-      "difficulty": 1,
-      "subtype": "wordReorder",
-      "interactionType": "reorder",
-      "question": "The baby is sleeping peacefully",
-      "shuffledWords": [
-        "peacefully",
-        "sleeping",
-        "is",
-        "baby",
-        "The"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        2,
-        1,
-        0
-      ],
-      "hint": "Rearrange to form a sentence.",
-      "sentence": "The baby is sleeping peacefully",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "wordReorder",
+    "batchIndex":  3,
+    "levels":  "21-30",
+    "quests":  [
+                   {
+                       "id":  "GRM_WORDREORDER_L21_Q1",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "hunter",
+                                             "across",
+                                             "bridge",
+                                             "scans",
+                                             "log",
+                                             "the",
+                                             "the",
+                                             "The"
+                                         ],
+                       "correctAnswer":  "The hunter scans the log across the bridge"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L21_Q2",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "processes",
+                                             "relay",
+                                             "the",
+                                             "pulse",
+                                             "on",
+                                             "shadow",
+                                             "The",
+                                             "the"
+                                         ],
+                       "correctAnswer":  "The shadow processes the pulse on the relay"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L21_Q3",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "boots",
+                                             "wind",
+                                             "the",
+                                             "the",
+                                             "against",
+                                             "merchant",
+                                             "console",
+                                             "The"
+                                         ],
+                       "correctAnswer":  "The merchant boots the console against the wind"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L22_Q1",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "core",
+                                             "the",
+                                             "stars",
+                                             "Void",
+                                             "under",
+                                             "the",
+                                             "The",
+                                             "activates"
+                                         ],
+                       "correctAnswer":  "The Void activates the core under the stars"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L22_Q2",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "gate",
+                                             "the",
+                                             "near",
+                                             "signals",
+                                             "the",
+                                             "Void",
+                                             "weapon",
+                                             "The"
+                                         ],
+                       "correctAnswer":  "The weapon signals the gate near the Void"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L22_Q3",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "the",
+                                             "the",
+                                             "after",
+                                             "code",
+                                             "breach",
+                                             "peak",
+                                             "opens",
+                                             "The"
+                                         ],
+                       "correctAnswer":  "The peak opens the code after the breach"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L23_Q1",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "heats",
+                                             "droid",
+                                             "the",
+                                             "gate",
+                                             "Neither",
+                                             "deep",
+                                             "the",
+                                             "into"
+                                         ],
+                       "correctAnswer":  "Neither droid heats the gate into the deep"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L23_Q2",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "merges",
+                                             "after",
+                                             "the",
+                                             "The",
+                                             "portal",
+                                             "tank",
+                                             "the",
+                                             "breach"
+                                         ],
+                       "correctAnswer":  "The tank merges the portal after the breach"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L23_Q3",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "light",
+                                             "the",
+                                             "stars",
+                                             "the",
+                                             "under",
+                                             "locks",
+                                             "portal",
+                                             "The"
+                                         ],
+                       "correctAnswer":  "The light locks the portal under the stars"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L24_Q1",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "The",
+                                             "into",
+                                             "miner",
+                                             "the",
+                                             "lab",
+                                             "protects",
+                                             "the",
+                                             "deep"
+                                         ],
+                       "correctAnswer":  "The miner protects the lab into the deep"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L24_Q2",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "the",
+                                             "under",
+                                             "sensor",
+                                             "stars",
+                                             "the",
+                                             "explorer",
+                                             "The",
+                                             "saves"
+                                         ],
+                       "correctAnswer":  "The explorer saves the sensor under the stars"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L24_Q3",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "engine",
+                                             "wind",
+                                             "Mira",
+                                             "the",
+                                             "opens",
+                                             "against",
+                                             "the"
+                                         ],
+                       "correctAnswer":  "Mira opens the engine against the wind"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L25_Q1",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "sensor",
+                                             "the",
+                                             "studies",
+                                             "technician",
+                                             "The",
+                                             "within",
+                                             "the",
+                                             "sector"
+                                         ],
+                       "correctAnswer":  "The technician studies the sensor within the sector"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L25_Q2",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "in",
+                                             "the",
+                                             "wrench",
+                                             "transmits",
+                                             "relay",
+                                             "Hub",
+                                             "the",
+                                             "The"
+                                         ],
+                       "correctAnswer":  "The wrench transmits the relay in the Hub"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L25_Q3",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "behind",
+                                             "the",
+                                             "module",
+                                             "the",
+                                             "The",
+                                             "chooses",
+                                             "explorer",
+                                             "console"
+                                         ],
+                       "correctAnswer":  "The explorer chooses the module behind the console"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L26_Q1",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "the",
+                                             "wind",
+                                             "report",
+                                             "The",
+                                             "against",
+                                             "observer",
+                                             "the",
+                                             "tunes"
+                                         ],
+                       "correctAnswer":  "The observer tunes the report against the wind"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L26_Q2",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "sand",
+                                             "makes",
+                                             "the",
+                                             "system",
+                                             "past",
+                                             "The",
+                                             "gate",
+                                             "the"
+                                         ],
+                       "correctAnswer":  "The sand makes the system past the gate"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L26_Q3",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "the",
+                                             "valve",
+                                             "fixes",
+                                             "the",
+                                             "station",
+                                             "inside",
+                                             "The",
+                                             "platform"
+                                         ],
+                       "correctAnswer":  "The valve fixes the platform inside the station"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L27_Q1",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "relic",
+                                             "the",
+                                             "the",
+                                             "within",
+                                             "button",
+                                             "sector",
+                                             "secures",
+                                             "The"
+                                         ],
+                       "correctAnswer":  "The button secures the relic within the sector"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L27_Q2",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "after",
+                                             "breach",
+                                             "calculates",
+                                             "the",
+                                             "The",
+                                             "vault",
+                                             "the",
+                                             "gear"
+                                         ],
+                       "correctAnswer":  "The gear calculates the vault after the breach"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L27_Q3",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "the",
+                                             "platform",
+                                             "the",
+                                             "cores",
+                                             "fluid",
+                                             "The",
+                                             "calibrates",
+                                             "between"
+                                         ],
+                       "correctAnswer":  "The fluid calibrates the platform between the cores"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L28_Q1",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "The",
+                                             "deck",
+                                             "the",
+                                             "blueprint",
+                                             "Hub",
+                                             "calibrates",
+                                             "in",
+                                             "the"
+                                         ],
+                       "correctAnswer":  "The deck calibrates the blueprint in the Hub"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L28_Q2",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "system",
+                                             "the",
+                                             "before",
+                                             "the",
+                                             "The",
+                                             "dawn",
+                                             "locates",
+                                             "button"
+                                         ],
+                       "correctAnswer":  "The button locates the system before the dawn"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L28_Q3",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "sentinel",
+                                             "the",
+                                             "past",
+                                             "routes",
+                                             "gate",
+                                             "the",
+                                             "A",
+                                             "drone"
+                                         ],
+                       "correctAnswer":  "A sentinel routes the drone past the gate"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L29_Q1",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "the",
+                                             "armor",
+                                             "the",
+                                             "between",
+                                             "signal",
+                                             "The",
+                                             "powers",
+                                             "cores"
+                                         ],
+                       "correctAnswer":  "The armor powers the signal between the cores"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L29_Q2",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "of",
+                                             "the",
+                                             "shadows",
+                                             "The",
+                                             "out",
+                                             "opens",
+                                             "rock",
+                                             "the",
+                                             "engine"
+                                         ],
+                       "correctAnswer":  "The rock opens the engine out of the shadows"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L29_Q3",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "calculates",
+                                             "cores",
+                                             "the",
+                                             "vault",
+                                             "battery",
+                                             "the",
+                                             "between",
+                                             "The"
+                                         ],
+                       "correctAnswer":  "The battery calculates the vault between the cores"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L30_Q1",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "the",
+                                             "under",
+                                             "stars",
+                                             "loads",
+                                             "system",
+                                             "the",
+                                             "The",
+                                             "Archivist"
+                                         ],
+                       "correctAnswer":  "The Archivist loads the system under the stars"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L30_Q2",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "pulse",
+                                             "screen",
+                                             "The",
+                                             "saves",
+                                             "on",
+                                             "relay",
+                                             "the",
+                                             "the"
+                                         ],
+                       "correctAnswer":  "The screen saves the pulse on the relay"
+                   },
+                   {
+                       "id":  "GRM_WORDREORDER_L30_Q3",
+                       "interactionType":  "Gravity Fall",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Follow the logical subject-action flow.",
+                       "explanation":  "Reassembly restores meaning.",
+                       "shuffledWords":  [
+                                             "battery",
+                                             "the",
+                                             "The",
+                                             "shield",
+                                             "within",
+                                             "saves",
+                                             "sector",
+                                             "the"
+                                         ],
+                       "correctAnswer":  "The shield saves the battery within the sector"
+                   }
+               ]
 }

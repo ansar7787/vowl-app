@@ -1,487 +1,307 @@
 {
-  "gameType": "dialectDrill",
-  "batchIndex": 11,
-  "levels": "101-110",
-  "quests": [
-    {
-      "id": "dialectDrill_l101_q1",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Semi",
-      "options": [
-        "SEM-ee (British)",
-        "SEM-eye (American)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l101_q2",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Schedule",
-      "options": [
-        "SHED-yool (British)",
-        "SKED-yool (American)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l101_q3",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Tomato",
-      "options": [
-        "tuh-MAY-toh (American)",
-        "tuh-MAH-toh (British)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l102_q1",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Garage",
-      "options": [
-        "guh-RAHZH (American)",
-        "GARR-ij (British)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l102_q2",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Either",
-      "options": [
-        "EYE-ther (British)",
-        "EE-ther (American)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l102_q3",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Neither",
-      "options": [
-        "NY-ther (British)",
-        "NEE-ther (American)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l103_q1",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Aluminum",
-      "options": [
-        "uh-LOO-min-um (American)",
-        "al-yoo-MIN-ee-um (British)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l103_q2",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Vase",
-      "options": [
-        "VAYS (American)",
-        "VAHZ (British)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l103_q3",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Route",
-      "options": [
-        "ROOT (British)",
-        "ROWT (American)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l104_q1",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Privacy",
-      "options": [
-        "PRIV-uh-see (British)",
-        "PRY-vuh-see (American)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l104_q2",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Mobile",
-      "options": [
-        "MOH-b'l (American)",
-        "MOH-byle (British)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l104_q3",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Advertisement",
-      "options": [
-        "ad-ver-TYZE-ment (American)",
-        "ad-VER-tiss-ment (British)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l105_q1",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Hostile",
-      "options": [
-        "HOS-tyle (British)",
-        "HOS-t'l (American)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l105_q2",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Agile",
-      "options": [
-        "AJ-yle (British)",
-        "AJ-il (American)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l105_q3",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Leisure",
-      "options": [
-        "LEE-zher (American)",
-        "LEZH-er (British)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l106_q1",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Direct",
-      "options": [
-        "duh-REKT (American)",
-        "dy-REKT (British)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l106_q2",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Herb",
-      "options": [
-        "HERB (British)",
-        "ERB (American)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l106_q3",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Aunt",
-      "options": [
-        "AHNT (British)",
-        "ANT (American)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l107_q1",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Data",
-      "options": [
-        "DAY-tuh (American)",
-        "DAH-tuh (British)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l107_q2",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Vitamin",
-      "options": [
-        "VY-tuh-min (American)",
-        "VIT-uh-min (British)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l107_q3",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Laboratory",
-      "options": [
-        "luh-BOR-uh-tree (British)",
-        "LAB-ruh-tor-ee (American)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l108_q1",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Missile",
-      "options": [
-        "MISS-yle (British)",
-        "MISS-il (American)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l108_q2",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Zebra",
-      "options": [
-        "ZEE-bruh (American)",
-        "ZEB-ruh (British)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l108_q3",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Patriot",
-      "options": [
-        "PAY-tree-ut (American)",
-        "PAT-ree-ut (British)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l109_q1",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Yogurt",
-      "options": [
-        "YOG-ert (British)",
-        "YOH-gert (American)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l109_q2",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Bouquet",
-      "options": [
-        "Boo-KAY (British)",
-        "Boh-KAY (American)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l109_q3",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Docile",
-      "options": [
-        "DAH-s'l (American)",
-        "DOH-syle (British)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l110_q1",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Futile",
-      "options": [
-        "FYOO-t'l (American)",
-        "FYOO-tyle (British)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l110_q2",
-      "instruction": "Which pronunciation is British?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Fragile",
-      "options": [
-        "FRAJ-yle (British)",
-        "FRAJ-il (American)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Listen closely to the vowel sounds and specific consonant hits typical in UK English.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "dialectDrill_l110_q3",
-      "instruction": "Which pronunciation is American?",
-      "difficulty": 3,
-      "subtype": "dialectDrill",
-      "interactionType": "choice",
-      "word": "Status",
-      "options": [
-        "STAY-tus (British)",
-        "STAT-us (American)"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Listen for the relaxed vowels or flapped 't' sounds typical in US English.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "dialectDrill",
+    "batchIndex":  11,
+    "levels":  "101-110",
+    "quests":  [
+                   {
+                       "id":  "ACC_DIALECTDRILL_L101_Q1",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L101_Q2",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L101_Q3",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L102_Q1",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L102_Q2",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L102_Q3",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L103_Q1",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L103_Q2",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L103_Q3",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L104_Q1",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L104_Q2",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L104_Q3",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L105_Q1",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L105_Q2",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L105_Q3",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L106_Q1",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L106_Q2",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L106_Q3",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L107_Q1",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L107_Q2",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L107_Q3",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L108_Q1",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L108_Q2",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L108_Q3",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L109_Q1",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L109_Q2",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L109_Q3",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L110_Q1",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L110_Q2",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   },
+                   {
+                       "id":  "ACC_DIALECTDRILL_L110_Q3",
+                       "interactionType":  "Region Switch",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Try to sound like someone from London.",
+                       "explanation":  "Dialect drills expand your cultural speech range.",
+                       "accentName":  "British (RP)",
+                       "textToSpeak":  "I\u0027d like a bottle of water."
+                   }
+               ]
 }

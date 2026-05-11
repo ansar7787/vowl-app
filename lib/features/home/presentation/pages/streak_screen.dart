@@ -6,25 +6,37 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:lucide_icons/lucide_icons.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/core/presentation/widgets/ad_reward_card.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
+import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/ad_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/theme/theme_cubit.dart';
 
-class StreakScreen extends StatelessWidget {
+class StreakScreen extends StatefulWidget {
   const StreakScreen({super.key});
 
   @override
+  State<StreakScreen> createState() => _StreakScreenState();
+}
+
+class _StreakScreenState extends State<StreakScreen> {
+  bool _isProcessing = false;
+
+  @override
   Widget build(BuildContext context) {
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final bgColor = isMidnight 
+        ? Colors.black 
+        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+
     return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
+      backgroundColor: bgColor,
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           final user = state.user;
@@ -37,58 +49,46 @@ class StreakScreen extends StatelessWidget {
                 child: CustomScrollView(
                   physics: const BouncingScrollPhysics(),
                   slivers: [
-                    // ── SliverAppBar ──
                     SliverAppBar(
                       pinned: true,
-                      floating: true,
-                      snap: true,
-                      automaticallyImplyLeading: false,
                       backgroundColor: Colors.transparent,
                       surfaceTintColor: Colors.transparent,
                       elevation: 0,
-                      expandedHeight: 80.h,
-                      collapsedHeight: 64.h,
-                      flexibleSpace: FlexibleSpaceBar(
-                        titlePadding: EdgeInsets.symmetric(
-                          horizontal: 16.w,
+                      toolbarHeight: 70.h,
+                      automaticallyImplyLeading: false,
+                      title: GlassTile(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12.w,
                           vertical: 8.h,
                         ),
-                        title: GlassTile(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 8.w,
-                            vertical: 6.h,
-                          ),
-                          borderRadius: BorderRadius.circular(20.r),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              SizedBox(
-                                width: 32.r,
-                                height: 32.r,
-                                child: IconButton(
-                                  padding: EdgeInsets.zero,
-                                  iconSize: 18.r,
-                                  onPressed: () => Navigator.pop(context),
-                                  icon: const Icon(
-                                    Icons.arrow_back_ios_new_rounded,
-                                  ),
+                        borderRadius: BorderRadius.circular(24.r),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: 32.r,
+                              height: 32.r,
+                              child: IconButton(
+                                padding: EdgeInsets.zero,
+                                iconSize: 18.r,
+                                onPressed: () => Navigator.pop(context),
+                                icon: Icon(
+                                  Icons.arrow_back_ios_new_rounded,
+                                  color: isDark ? Colors.white : Colors.black87,
                                 ),
                               ),
-                              SizedBox(width: 6.w),
-                              Text(
-                                'Daily Streak',
-                                style: GoogleFonts.outfit(
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: isDark
-                                      ? Colors.white
-                                      : const Color(0xFF0F172A),
-                                ),
+                            ),
+                            SizedBox(width: 10.w),
+                            Text(
+                              'Daily Streak',
+                              style: GoogleFonts.outfit(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w800,
+                                color: isDark ? Colors.white : const Color(0xFF0F172A),
                               ),
-                              const Spacer(),
-                              _buildCoinsChip(user),
-                            ],
-                          ),
+                            ),
+                            const Spacer(),
+                            _buildCoinsChip(user),
+                          ],
                         ),
                       ),
                     ),
@@ -318,13 +318,14 @@ class StreakScreen extends StatelessWidget {
 
   Widget _buildModernCalendar(BuildContext context, UserEntity user) {
     final now = DateTime.now();
-    final startOfWeek = now.subtract(Duration(days: now.weekday - 1));
+    // Activity Heatmap Logic: Show the last 7 days ending today
+    final startOfHeatmap = now.subtract(const Duration(days: 6));
     final history = user.dailyXpHistory;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(7, (index) {
-        final day = startOfWeek.add(Duration(days: index));
+        final day = startOfHeatmap.add(Duration(days: index));
         final dateKey = DateFormat('yyyy-MM-dd').format(day);
         final xp = history[dateKey] ?? 0;
         final isToday =
@@ -525,8 +526,8 @@ class StreakScreen extends StatelessWidget {
                   name: 'Streak Repair',
                   cost: 200,
                   currentCoins: user.coins,
-                  action: () => context.read<AuthBloc>().add(
-                    const AuthRepairStreakRequested(200),
+                  action: () => context.read<ProgressionBloc>().add(
+                    const ProgressionRepairStreakRequested(200),
                   ),
                 ),
           onAdTap: user.currentStreak > 0
@@ -537,8 +538,8 @@ class StreakScreen extends StatelessWidget {
                     isPremium: user.isPremium,
                     onDismissed: () {},
                     onUserEarnedReward: (reward) {
-                      context.read<AuthBloc>().add(
-                        const AuthRepairStreakWithAdRequested(),
+                      context.read<ProgressionBloc>().add(
+                        const ProgressionRepairStreakWithAdRequested(),
                       );
                       Haptics.vibrate(HapticsType.success);
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -566,8 +567,8 @@ class StreakScreen extends StatelessWidget {
             name: 'Streak Shield',
             cost: 150,
             currentCoins: user.coins,
-            action: () => context.read<AuthBloc>().add(
-              const AuthPurchaseStreakFreezeRequested(150),
+            action: () => context.read<ProgressionBloc>().add(
+              const ProgressionPurchaseStreakFreezeRequested(150),
             ),
           ),
         ),
@@ -587,8 +588,8 @@ class StreakScreen extends StatelessWidget {
             name: 'Double XP',
             cost: 300,
             currentCoins: user.coins,
-            action: () => context.read<AuthBloc>().add(
-              const AuthActivateDoubleXPRequested(300),
+            action: () => context.read<ProgressionBloc>().add(
+              const ProgressionActivateDoubleXPRequested(300),
             ),
           ),
         ),
@@ -750,8 +751,8 @@ class StreakScreen extends StatelessWidget {
                           SizedBox(height: 12.h),
                           if (isReached && !isClaimed)
                             ElevatedButton(
-                                  onPressed: () => context.read<AuthBloc>().add(
-                                    AuthClaimStreakMilestoneRequested(
+                                  onPressed: () => context.read<ProgressionBloc>().add(
+                                    ProgressionClaimStreakMilestoneRequested(
                                       days,
                                       reward,
                                     ),
@@ -834,7 +835,9 @@ class StreakScreen extends StatelessWidget {
     required int cost,
     required int currentCoins,
     required VoidCallback action,
-  }) {
+  }) async {
+    if (_isProcessing) return; // Anti-spam protection
+
     if (currentCoins < cost) {
       Haptics.vibrate(HapticsType.error);
       ScaffoldMessenger.of(context).showSnackBar(
@@ -848,7 +851,7 @@ class StreakScreen extends StatelessWidget {
               ),
               SizedBox(width: 12.w),
               Text(
-                "Insufficient Vox Coins! Needed: $cost",
+                "Insufficient Vowl Coins! Needed: $cost",
                 style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
               ),
             ],
@@ -864,7 +867,10 @@ class StreakScreen extends StatelessWidget {
       return;
     }
 
+    setState(() => _isProcessing = true);
     Haptics.vibrate(HapticsType.heavy);
+    
+    // Execute purchase
     action();
 
     // Show premium success feedback
@@ -900,6 +906,10 @@ class StreakScreen extends StatelessWidget {
         ),
       ),
     );
+
+    // Release lock after a short delay to allow UI to sync
+    await Future.delayed(const Duration(milliseconds: 1500));
+    if (mounted) setState(() => _isProcessing = false);
   }
 
   Widget _buildShopItem(
@@ -1032,8 +1042,8 @@ class StreakScreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 color:
                                     (isActive
-                                            ? const Color(0xFF10B981)
-                                            : Colors.grey)
+                                             ? const Color(0xFF10B981)
+                                             : Colors.grey)
                                         .withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(8.r),
                               ),
@@ -1078,6 +1088,38 @@ class StreakScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                if (!isDisabled && !isActive) ...[
+                  SizedBox(width: 8.w),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                    decoration: BoxDecoration(
+                      color: canAfford ? color.withValues(alpha: 0.1) : Colors.red.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(
+                        color: canAfford ? color.withValues(alpha: 0.3) : Colors.red.withValues(alpha: 0.3),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          LucideIcons.circleDollarSign,
+                          color: canAfford ? color : Colors.red,
+                          size: 14.r,
+                        ),
+                        SizedBox(width: 4.w),
+                        Text(
+                          '$cost',
+                          style: GoogleFonts.outfit(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w900,
+                            color: canAfford ? color : Colors.red,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
                 if (onAdTap != null && !isDisabled) ...[
                   SizedBox(width: 8.w),
                   InkWell(
@@ -1123,3 +1165,4 @@ class StreakScreen extends StatelessWidget {
     );
   }
 }
+

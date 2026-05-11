@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:voxai_quest/core/error/failures.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 abstract class AuthRepository {
   Stream<UserEntity?> get user;
@@ -27,6 +27,7 @@ abstract class AuthRepository {
     required int level,
     required int xpIncrease,
     required int coinIncrease,
+    bool isDoubleReward = false,
   });
   Future<Either<Failure, void>> useHint();
   Future<Either<Failure, void>> purchaseHint(int cost, int hintAmount);
@@ -54,4 +55,5 @@ abstract class AuthRepository {
   Future<Either<Failure, void>> activateDoubleXP(int cost);
   Future<Either<Failure, void>> deleteAccount();
   Future<Either<Failure, void>> awardKidsCoins(int amount);
+  Future<Either<Failure, void>> claimDailyGift();
 }

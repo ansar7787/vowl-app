@@ -1,577 +1,517 @@
 {
-  "gameType": "partsOfSpeech",
-  "batchIndex": 7,
-  "levels": "61-70",
-  "quests": [
-    {
-      "id": "partsOfSpeech_l61_q1",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What part of speech is 'quickly' in: 'She ran quickly.'",
-      "options": [
-        "Noun",
-        "Verb",
-        "Adverb",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Modifies the verb 'ran'.",
-      "targetWord": "quickly",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l61_q2",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'beautiful' in: 'A beautiful sunset.'",
-      "options": [
-        "Noun",
-        "Adjective",
-        "Adverb",
-        "Verb"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Describes the noun 'sunset'.",
-      "targetWord": "beautiful",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l61_q3",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'they' in: 'They are coming.'",
-      "options": [
-        "Pronoun",
-        "Noun",
-        "Verb",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Replaces a noun.",
-      "targetWord": "they",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l62_q1",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'running' in: 'He is running fast.'",
-      "options": [
-        "Noun",
-        "Adjective",
-        "Verb",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Part of present continuous.",
-      "targetWord": "running",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l62_q2",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'under' in: 'The cat is under the table.'",
-      "options": [
-        "Noun",
-        "Verb",
-        "Preposition",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Shows position.",
-      "targetWord": "under",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l62_q3",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'joy' in: 'Joy filled the room.'",
-      "options": [
-        "Verb",
-        "Noun",
-        "Adjective",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Names an emotion.",
-      "targetWord": "joy",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l63_q1",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'and' in: 'Tom and Jerry.'",
-      "options": [
-        "Preposition",
-        "Conjunction",
-        "Noun",
-        "Pronoun"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Connects two nouns.",
-      "targetWord": "and",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l63_q2",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'Wow' in: 'Wow! That's amazing!'",
-      "options": [
-        "Noun",
-        "Verb",
-        "Interjection",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Expresses emotion.",
-      "targetWord": "Wow",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l63_q3",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'carefully' in: 'Drive carefully.'",
-      "options": [
-        "Adjective",
-        "Adverb",
-        "Noun",
-        "Verb"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Modifies the verb 'drive'.",
-      "targetWord": "carefully",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l64_q1",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'the' in: 'The dog barked.'",
-      "options": [
-        "Pronoun",
-        "Article",
-        "Noun",
-        "Verb"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Definite article.",
-      "targetWord": "the",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l64_q2",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'swim' in: 'I like to swim.'",
-      "options": [
-        "Noun",
-        "Adjective",
-        "Verb",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Action word.",
-      "targetWord": "swim",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l64_q3",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'his' in: 'His car is red.'",
-      "options": [
-        "Pronoun",
-        "Adjective",
-        "Noun",
-        "Article"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Possessive pronoun.",
-      "targetWord": "his",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l65_q1",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'between' in: 'Sit between us.'",
-      "options": [
-        "Adverb",
-        "Conjunction",
-        "Preposition",
-        "Noun"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Shows relationship.",
-      "targetWord": "between",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l65_q2",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'happy' in: 'She looks happy.'",
-      "options": [
-        "Noun",
-        "Verb",
-        "Adverb",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Describes feeling.",
-      "targetWord": "happy",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l65_q3",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'slowly' in: 'Walk slowly.'",
-      "options": [
-        "Adjective",
-        "Adverb",
-        "Verb",
-        "Noun"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Modifies 'walk'.",
-      "targetWord": "slowly",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l66_q1",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'but' in: 'Smart but lazy.'",
-      "options": [
-        "Preposition",
-        "Conjunction",
-        "Adverb",
-        "Noun"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Contrasting connector.",
-      "targetWord": "but",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l66_q2",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'freedom' in: 'Freedom is precious.'",
-      "options": [
-        "Verb",
-        "Adjective",
-        "Noun",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Abstract noun.",
-      "targetWord": "freedom",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l66_q3",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'Oh' in: 'Oh, I see!'",
-      "options": [
-        "Noun",
-        "Interjection",
-        "Adverb",
-        "Verb"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Expresses realization.",
-      "targetWord": "Oh",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l67_q1",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'extremely' in: 'Extremely hot day.'",
-      "options": [
-        "Adjective",
-        "Noun",
-        "Adverb",
-        "Verb"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Modifies adjective 'hot'.",
-      "targetWord": "extremely",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l67_q2",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'we' in: 'We love pizza.'",
-      "options": [
-        "Noun",
-        "Pronoun",
-        "Adjective",
-        "Verb"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "First person plural pronoun.",
-      "targetWord": "we",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l67_q3",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'above' in: 'Above the clouds.'",
-      "options": [
-        "Noun",
-        "Verb",
-        "Preposition",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Shows position.",
-      "targetWord": "above",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l68_q1",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'tall' in: 'A tall building.'",
-      "options": [
-        "Noun",
-        "Verb",
-        "Adverb",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Describes the building.",
-      "targetWord": "tall",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l68_q2",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'sing' in: 'They sing well.'",
-      "options": [
-        "Noun",
-        "Adverb",
-        "Verb",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Action word.",
-      "targetWord": "sing",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l68_q3",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'always' in: 'She always smiles.'",
-      "options": [
-        "Adjective",
-        "Adverb",
-        "Verb",
-        "Noun"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Frequency adverb.",
-      "targetWord": "always",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l69_q1",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'or' in: 'Tea or coffee?'",
-      "options": [
-        "Preposition",
-        "Conjunction",
-        "Noun",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Gives alternatives.",
-      "targetWord": "or",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l69_q2",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'these' in: 'These are mine.'",
-      "options": [
-        "Verb",
-        "Pronoun",
-        "Adjective",
-        "Noun"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Demonstrative pronoun.",
-      "targetWord": "these",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l69_q3",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'honestly' in: 'Speak honestly.'",
-      "options": [
-        "Adjective",
-        "Noun",
-        "Adverb",
-        "Verb"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Modifies 'speak'.",
-      "targetWord": "honestly",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l70_q1",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'during' in: 'During the storm.'",
-      "options": [
-        "Conjunction",
-        "Preposition",
-        "Adverb",
-        "Noun"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Shows time relation.",
-      "targetWord": "during",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l70_q2",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "What is 'Ouch' in: 'Ouch! That hurt!'",
-      "options": [
-        "Verb",
-        "Adjective",
-        "Interjection",
-        "Noun"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Expresses pain.",
-      "targetWord": "Ouch",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "partsOfSpeech_l70_q3",
-      "instruction": "Identify the part of speech.",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "choice",
-      "question": "Identify 'many' in: 'Many students passed.'",
-      "options": [
-        "Adverb",
-        "Adjective",
-        "Noun",
-        "Verb"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Quantifier/adjective.",
-      "targetWord": "many",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "partsOfSpeech",
+    "batchIndex":  7,
+    "levels":  "61-70",
+    "quests":  [
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L61_Q1",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The explorer emits the circuit in the Hub.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L61_Q2",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The rock monitors the shield behind the console.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L61_Q3",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The traveler makes the shield inside the station.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L62_Q1",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The echo saves the system before the dawn.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L62_Q2",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The pulse identifies the module at the foundry.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L62_Q3",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The battery merges the relic into the deep.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L63_Q1",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The echo secures the shield against the wind.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L63_Q2",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The relay routes the beam through the portal.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L63_Q3",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The guard explores the circuit among the droids.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L64_Q1",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The valve sends the beam out of the shadows.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L64_Q2",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The pulse emits the bridge past the gate.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L64_Q3",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The shadow filters the signal in the Hub.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L65_Q1",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The miner measures the beam among the droids.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L65_Q2",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The ghost loads the system by the reactor.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L65_Q3",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The gear detects the engine inside the station.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L66_Q1",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The ghost powers the platform into the deep.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L66_Q2",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "Each",
+                       "sentence":  "Each scout fixes the module across the bridge.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L66_Q3",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The armor secures the key between the cores.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L67_Q1",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The valley fixes the pulse on the relay.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L67_Q2",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The shadow studies the log inside the station.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L67_Q3",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The shadow makes the relay during the storm.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L68_Q1",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "Everyone",
+                       "sentence":  "Everyone calibrates the archive during the storm.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L68_Q2",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The valley transmits the bridge before the dawn.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L68_Q3",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The traveler shuts the relic through the portal.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L69_Q1",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The valley signals the module across the bridge.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L69_Q2",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The tank makes the pulse through the portal.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L69_Q3",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The core tunes the vault during the storm.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L70_Q1",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The builder aligns the signal past the gate.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L70_Q2",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "Someone",
+                       "sentence":  "Someone tracks the map within the sector.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_PARTSOFSPEECH_L70_Q3",
+                       "interactionType":  "POS Sorter",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "This is the primary actor.",
+                       "explanation":  "Lexical categories organize data.",
+                       "targetWord":  "The",
+                       "sentence":  "The satellite cleans the lab out of the shadows.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adjective",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0
+                   }
+               ]
 }

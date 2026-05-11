@@ -1,577 +1,307 @@
 {
-  "gameType": "describeSituationWriting",
-  "batchIndex": 8,
-  "levels": "71-80",
-  "quests": [
-    {
-      "id": "describeSituationWriting_l71_q1",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "The early bird catches the ___.",
-      "expectedAnswer": "worm",
-      "hint": "A common proverb.",
-      "options": [
-        "worm",
-        "cat",
-        "bus",
-        "ball"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l71_q2",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Practice makes ___.",
-      "expectedAnswer": "perfect",
-      "hint": "Repetition leads to skill.",
-      "options": [
-        "perfect",
-        "permanent",
-        "possible",
-        "pretty"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l71_q3",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Actions speak louder than ___.",
-      "expectedAnswer": "words",
-      "hint": "What you do matters more.",
-      "options": [
-        "words",
-        "sounds",
-        "music",
-        "thunder"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l72_q1",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "A journey of a thousand miles begins with a single ___.",
-      "expectedAnswer": "step",
-      "hint": "Starting small.",
-      "options": [
-        "step",
-        "mile",
-        "thought",
-        "word"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l72_q2",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Every cloud has a silver ___.",
-      "expectedAnswer": "lining",
-      "hint": "Something positive in bad situations.",
-      "options": [
-        "lining",
-        "color",
-        "edge",
-        "star"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l72_q3",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Don't count your chickens before they ___.",
-      "expectedAnswer": "hatch",
-      "hint": "Don't assume success.",
-      "options": [
-        "hatch",
-        "fly",
-        "grow",
-        "sing"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l73_q1",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Where there is a will, there is a ___.",
-      "expectedAnswer": "way",
-      "hint": "Determination finds solutions.",
-      "options": [
-        "way",
-        "wall",
-        "road",
-        "door"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l73_q2",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Rome wasn't built in a ___.",
-      "expectedAnswer": "day",
-      "hint": "Great things take time.",
-      "options": [
-        "day",
-        "year",
-        "week",
-        "moment"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l73_q3",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "A penny saved is a penny ___.",
-      "expectedAnswer": "earned",
-      "hint": "Saving money is like making money.",
-      "options": [
-        "earned",
-        "lost",
-        "spent",
-        "found"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l74_q1",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "You can't judge a book by its ___.",
-      "expectedAnswer": "cover",
-      "hint": "Appearances can be deceiving.",
-      "options": [
-        "cover",
-        "title",
-        "price",
-        "size"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l74_q2",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Two heads are better than ___.",
-      "expectedAnswer": "one",
-      "hint": "Collaboration helps.",
-      "options": [
-        "one",
-        "three",
-        "none",
-        "ten"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l74_q3",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Honesty is the best ___.",
-      "expectedAnswer": "policy",
-      "hint": "Being truthful.",
-      "options": [
-        "policy",
-        "answer",
-        "plan",
-        "choice"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l75_q1",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Better late than ___.",
-      "expectedAnswer": "never",
-      "hint": "Doing something matters.",
-      "options": [
-        "never",
-        "early",
-        "always",
-        "sometimes"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l75_q2",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Time flies when you're having ___.",
-      "expectedAnswer": "fun",
-      "hint": "Enjoyable moments pass quickly.",
-      "options": [
-        "fun",
-        "lunch",
-        "trouble",
-        "rain"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l75_q3",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Knowledge is ___.",
-      "expectedAnswer": "power",
-      "hint": "Information gives advantage.",
-      "options": [
-        "power",
-        "money",
-        "love",
-        "pain"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l76_q1",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "The pen is mightier than the ___.",
-      "expectedAnswer": "sword",
-      "hint": "Writing over violence.",
-      "options": [
-        "sword",
-        "pencil",
-        "hammer",
-        "gun"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l76_q2",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "All that glitters is not ___.",
-      "expectedAnswer": "gold",
-      "hint": "Not everything shiny is valuable.",
-      "options": [
-        "gold",
-        "silver",
-        "bright",
-        "real"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l76_q3",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "When in Rome, do as the Romans ___.",
-      "expectedAnswer": "do",
-      "hint": "Adapt to local customs.",
-      "options": [
-        "do",
-        "say",
-        "eat",
-        "think"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l77_q1",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Curiosity killed the ___.",
-      "expectedAnswer": "cat",
-      "hint": "Being too nosy can backfire.",
-      "options": [
-        "cat",
-        "dog",
-        "bird",
-        "mouse"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l77_q2",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Necessity is the mother of ___.",
-      "expectedAnswer": "invention",
-      "hint": "Need drives creativity.",
-      "options": [
-        "invention",
-        "education",
-        "nature",
-        "art"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l77_q3",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "The grass is always greener on the other ___.",
-      "expectedAnswer": "side",
-      "hint": "Others seem to have it better.",
-      "options": [
-        "side",
-        "hill",
-        "road",
-        "fence"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l78_q1",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "A picture is worth a thousand ___.",
-      "expectedAnswer": "words",
-      "hint": "Visual impact.",
-      "options": [
-        "words",
-        "dollars",
-        "colors",
-        "stories"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l78_q2",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Birds of a feather flock ___.",
-      "expectedAnswer": "together",
-      "hint": "Similar people group up.",
-      "options": [
-        "together",
-        "apart",
-        "away",
-        "south"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l78_q3",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Don't put all your eggs in one ___.",
-      "expectedAnswer": "basket",
-      "hint": "Diversify your risks.",
-      "options": [
-        "basket",
-        "bag",
-        "box",
-        "pan"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l79_q1",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "An apple a day keeps the ___ away.",
-      "expectedAnswer": "doctor",
-      "hint": "Healthy eating.",
-      "options": [
-        "doctor",
-        "teacher",
-        "dentist",
-        "nurse"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l79_q2",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "No pain, no ___.",
-      "expectedAnswer": "gain",
-      "hint": "Hard work pays off.",
-      "options": [
-        "gain",
-        "loss",
-        "rain",
-        "fame"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l79_q3",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Look before you ___.",
-      "expectedAnswer": "leap",
-      "hint": "Think before acting.",
-      "options": [
-        "leap",
-        "sleep",
-        "eat",
-        "speak"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l80_q1",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "It takes two to ___.",
-      "expectedAnswer": "tango",
-      "hint": "Both sides are responsible.",
-      "options": [
-        "tango",
-        "dance",
-        "fight",
-        "argue"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l80_q2",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "Laughter is the best ___.",
-      "expectedAnswer": "medicine",
-      "hint": "Humor heals.",
-      "options": [
-        "medicine",
-        "weapon",
-        "food",
-        "friend"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "describeSituationWriting_l80_q3",
-      "instruction": "Describe the situation.",
-      "difficulty": 1,
-      "subtype": "describeSituationWriting",
-      "interactionType": "choice",
-      "prompt": "The best things in life are ___.",
-      "expectedAnswer": "free",
-      "hint": "Priceless things.",
-      "options": [
-        "free",
-        "expensive",
-        "rare",
-        "hidden"
-      ],
-      "correctAnswerIndex": 0,
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "describeSituationWriting",
+    "batchIndex":  8,
+    "levels":  "71-80",
+    "quests":  [
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L71_Q1",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L71_Q2",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L71_Q3",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L72_Q1",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L72_Q2",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L72_Q3",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L73_Q1",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L73_Q2",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L73_Q3",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L74_Q1",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L74_Q2",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L74_Q3",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L75_Q1",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L75_Q2",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L75_Q3",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L76_Q1",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L76_Q2",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L76_Q3",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L77_Q1",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L77_Q2",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L77_Q3",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L78_Q1",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L78_Q2",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L78_Q3",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L79_Q1",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L79_Q2",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L79_Q3",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L80_Q1",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L80_Q2",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   },
+                   {
+                       "id":  "WRT_DESCRIBESITUATIONWRITING_L80_Q3",
+                       "interactionType":  "Emoji Map",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Describe the colors and sounds.",
+                       "explanation":  "Descriptive writing builds narrative depth.",
+                       "situation":  "A rainy day in a crowded city with people holding umbrellas.",
+                       "minWords":  15
+                   }
+               ]
 }

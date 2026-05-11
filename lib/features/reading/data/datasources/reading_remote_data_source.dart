@@ -1,8 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:voxai_quest/core/data/services/asset_quest_service.dart';
-import 'package:voxai_quest/core/error/exceptions.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/features/reading/data/models/reading_quest_model.dart';
+import 'package:vowl/core/data/services/asset_quest_service.dart';
+import 'package:vowl/core/error/exceptions.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/reading/data/models/reading_quest_model.dart';
 
 abstract class ReadingRemoteDataSource {
   Future<List<ReadingQuestModel>> getReadingQuest({
@@ -25,11 +26,18 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
     try {
       // 1. Try to load from Local Assets (Free & Fast)
       final localData = await assetQuestService.getQuests(gameType.name, level);
+      debugPrint('ReadingRemoteDataSourceImpl: Found ${localData.length} quests for ${gameType.name} at level $level');
+
       if (localData.isNotEmpty) {
-        return localData.map((q) {
-          final questMap = q;
-          return ReadingQuestModel.fromJson(questMap, questMap['id'] ?? '');
-        }).toList();
+        final List<ReadingQuestModel> quests = [];
+        for (final q in localData) {
+          try {
+            quests.add(ReadingQuestModel.fromJson(q, q['id'] ?? ''));
+          } catch (e) {
+            debugPrint('Error parsing reading quest ${q['id']}: $e');
+          }
+        }
+        if (quests.isNotEmpty) return quests;
       }
 
       // 2. Fallback to Firestore (Cloud)
@@ -82,10 +90,12 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
         data['subtype'] = gameType.name;
         return [ReadingQuestModel.fromJson(data, data['id'] ?? doc.id)];
       } else {
-        throw ServerException();
+        throw ServerException("We're having trouble loading this level. Please check your internet or try again later.");
       }
     } catch (e) {
-      throw ServerException();
+      debugPrint('Error in getReadingQuest: $e');
+      if (e is ServerException) rethrow;
+      throw ServerException(e.toString());
     }
   }
 }

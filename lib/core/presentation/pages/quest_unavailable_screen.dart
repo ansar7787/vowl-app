@@ -1,18 +1,21 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 
 class QuestUnavailableScreen extends StatelessWidget {
   final VoidCallback? onRetry;
   final String message;
+  final String? technicalError;
 
   const QuestUnavailableScreen({
     super.key,
     this.onRetry,
     this.message = "We couldn't find any quests for this level yet.",
+    this.technicalError,
   });
 
   @override
@@ -74,27 +77,26 @@ class QuestUnavailableScreen extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(height: 16.h),
-                  // DEBUGGING ERROR SUBHEADING
-                  Container(
-                    padding: EdgeInsets.all(12.r),
-                    decoration: BoxDecoration(
-                      color: Colors.red.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(
-                        color: Colors.red.withValues(alpha: 0.3),
+                  if (technicalError != null && kDebugMode)
+                    Container(
+                      margin: EdgeInsets.only(top: 16.h),
+                      padding: EdgeInsets.all(12.r),
+                      decoration: BoxDecoration(
+                        color: Colors.red.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(12.r),
+                        border: Border.all(
+                          color: Colors.red.withValues(alpha: 0.3),
+                        ),
+                      ),
+                      child: SelectableText(
+                        "TECHNICAL INFO:\n$technicalError",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.robotoMono(
+                          fontSize: 10.sp,
+                          color: Colors.redAccent.withValues(alpha: 0.7),
+                        ),
                       ),
                     ),
-                    child: SelectableText(
-                      "DEBUG ERROR:\n$message",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.robotoMono(
-                        fontSize: 12.sp,
-                        color: Colors.redAccent,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
                   SizedBox(height: 40.h),
                   ScaleButton(
                     onTap: onRetry ?? () => context.pop(),

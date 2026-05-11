@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:voxai_quest/core/error/failures.dart';
-import 'package:voxai_quest/core/usecases/usecase.dart';
-import 'package:voxai_quest/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/core/usecases/usecase.dart';
+import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
 
 class UpdateUnlockedLevel extends UseCase<void, UpdateUnlockedLevelParams> {
   final AuthRepository repository;

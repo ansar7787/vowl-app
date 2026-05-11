@@ -6,12 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/core/presentation/widgets/ad_reward_card.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
+import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
 
 class AdventureXPScreen extends StatelessWidget {
   const AdventureXPScreen({super.key});
@@ -19,7 +21,7 @@ class AdventureXPScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    return BlocListener<AuthBloc, AuthState>(
+    return BlocListener<ProgressionBloc, ProgressionState>(
       listener: (context, state) {
         if (state.message != null) {
           final isError =
@@ -58,10 +60,14 @@ class AdventureXPScreen extends StatelessWidget {
           );
         }
       },
-      child: Scaffold(
-        backgroundColor: isDark
-            ? const Color(0xFF0F172A)
-            : const Color(0xFFF8FAFC),
+      child: Builder(
+        builder: (context) {
+          final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+          final bgColor = isMidnight 
+              ? Colors.black 
+              : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+          return Scaffold(
+            backgroundColor: bgColor,
         body: BlocBuilder<AuthBloc, AuthState>(
           builder: (context, state) {
             final user = state.user;
@@ -175,9 +181,11 @@ class AdventureXPScreen extends StatelessWidget {
             );
           },
         ),
-      ),
-    );
-  }
+      );
+    },
+  ),
+);
+}
 
   Widget _buildTotalXPCard(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -421,6 +429,10 @@ class AdventureXPScreen extends StatelessWidget {
           icon = Icons.groups_rounded;
           color = const Color(0xFF6366F1);
           break;
+        case QuestType.eliteMastery:
+          icon = Icons.workspace_premium_rounded;
+          color = const Color(0xFFFFD700);
+          break;
       }
 
       return {
@@ -582,7 +594,7 @@ class AdventureXPScreen extends StatelessWidget {
       },
     ];
 
-    return BlocBuilder<AuthBloc, AuthState>(
+    return BlocBuilder<ProgressionBloc, ProgressionState>(
       builder: (context, state) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -633,13 +645,19 @@ class AdventureXPScreen extends StatelessWidget {
                       onTap: isLocked || isCurrentlyActive
                           ? null
                           : () {
-                              context.read<AuthBloc>().add(
-                                AuthPurchaseXPBoostRequested(
-                                  type: item['type'] as String,
-                                  cost: item['cost'] as int,
-                                  title: item['title'] as String,
-                                ),
-                              );
+                              if (item['type'] == 'shield') {
+                                context.read<ProgressionBloc>().add(
+                                  ProgressionPurchaseStreakFreezeRequested(item['cost'] as int),
+                                );
+                              } else if (item['type'] == 'warp') {
+                                context.read<ProgressionBloc>().add(
+                                  ProgressionActivateDoubleXPRequested(item['cost'] as int),
+                                );
+                              } else if (item['type'] == 'scroll') {
+                                context.read<ProgressionBloc>().add(
+                                  ProgressionPurchasePermanentXPBoostRequested(item['cost'] as int),
+                                );
+                              }
                             },
                       child: GlassTile(
                         width: 200.w,
@@ -861,3 +879,4 @@ class AdventureXPScreen extends StatelessWidget {
     return 'Just now';
   }
 }
+

@@ -1,478 +1,225 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/presentation/widgets/writing/ink_streak.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 
 class ShortAnswerScreen extends StatefulWidget {
   final int level;
-  const ShortAnswerScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const ShortAnswerScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.shortAnswerWriting,
+  });
 
   @override
   State<ShortAnswerScreen> createState() => _ShortAnswerScreenState();
 }
 
 class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
-  final TextEditingController _controller = TextEditingController();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  bool _hasSubmitted = false;
+  final _answerController = TextEditingController();
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int _attempts = 0;
+  int? _lastLives;
+  double _inkLevel = 0.0;
 
   @override
   void initState() {
     super.initState();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(
-        gameType: GameSubtype.shortAnswerWriting,
-        level: widget.level,
-      ),
-    );
+    context.read<WritingBloc>().add(FetchWritingQuests(gameType: widget.gameType, level: widget.level));
+    _answerController.addListener(() {
+      setState(() {
+        _inkLevel = (_answerController.text.length / 50).clamp(0.0, 1.0);
+      });
+    });
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _answerController.dispose();
     super.dispose();
   }
 
   void _submitAnswer() {
-    if (_hasSubmitted || _controller.text.trim().isEmpty) {
-      return;
-    }
-    _hapticService.selection();
-    setState(() => _hasSubmitted = true);
-
-    final text = _controller.text.trim();
-    // Validate: 15 chars, 3 words
-    bool isCorrect =
-        text.length >= 15 && text.split(RegExp(r'\s+')).length >= 3;
+    if (_isAnswered || _answerController.text.trim().isEmpty) return;
+    
+    final text = _answerController.text.trim();
+    final isCorrect = text.length >= 15 && text.split(RegExp(r'\s+')).length >= 3;
 
     if (isCorrect) {
+      _hapticService.success();
       _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
+      _hapticService.error();
       _soundService.playWrong();
+      setState(() { 
+        _attempts++;
+        if (_attempts >= 2) {
+          _isAnswered = true; _isCorrect = false;
+        }
+      });
+      context.read<WritingBloc>().add(SubmitAnswer(false));
     }
-
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (mounted) {
-        context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
-      }
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: BlocConsumer<WritingBloc, WritingState>(
-        listener: (context, state) {
-          if (state is WritingGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-                context,
-                xp: state.xpEarned,
-                coins: state.coinsEarned,
-                title: 'Writing Master!',
-                description:
-                    'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins!',
-              ),
-            );
-          } else if (state is WritingGameOver) {
-            GameDialogHelper.showGameOver(
-              context,
-              title: 'Writers Block',
-              description:
-                  'Try to express your thoughts more clearly next time!',
-              onRestore: () => context.read<WritingBloc>().add(RestoreLife()),
-            );
-          } else if (state is WritingLoaded &&
-              state.lastAnswerCorrect == null) {
+    return BlocConsumer<WritingBloc, WritingState>(
+      listener: (context, state) {
+        if (state is WritingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
             setState(() {
-              _hasSubmitted = false;
-              _controller.clear();
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _answerController.clear();
+              _attempts = 0;
+              _inkLevel = 0.0;
             });
           }
-        },
-        builder: (context, state) {
-          if (state is WritingLoading || state is WritingInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is WritingLoaded) {
-            final theme = LevelThemeHelper.getTheme(
-              'writing',
-              level: widget.level,
-            );
-            return Stack(
+          _lastLives = state.livesRemaining;
+        }
+        if (state is WritingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'CREATIVE AUTHOR!', enableDoubleUp: true);
+        } else if (state is WritingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<WritingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is WritingLoaded) ? state.currentQuest : null;
+
+        return WritingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          isFinalFailure: _attempts >= 2,
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
+          onHint: () {},
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            child: Column(
               children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                InkStreak(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is WritingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<WritingBloc>().add(
-                FetchWritingQuests(
-                  gameType: GameSubtype.shortAnswerWriting,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    WritingLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
-                children: [
+                SizedBox(height: 16.h),
+                _buildInstruction(theme.primaryColor),
+                SizedBox(height: 32.h),
+                _buildQuillPrompt(quest.prompt ?? "", theme.primaryColor, isDark),
+                SizedBox(height: 40.h),
+                _buildInkwell(theme.primaryColor, isDark),
+                SizedBox(height: 48.h),
+                if (!_isAnswered)
                   ScaleButton(
-                    onTap: () => context.pop(),
+                    onTap: _submitAnswer,
                     child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
+                      width: double.infinity, height: 60.h,
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: _inkLevel > 0.3 ? theme.primaryColor : Colors.grey, boxShadow: [if (_inkLevel > 0.3) BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)]),
+                      child: Center(child: Text("SEAL WITH WAX", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
                     ),
                   ),
-                  SizedBox(width: 12.w),
-                  Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
-                ],
-              ),
+                SizedBox(height: 20.h),
+              ],
             ),
-
-            Expanded(
-              child: SingleChildScrollView(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    SizedBox(height: 10.h),
-                    Text(
-                      theme.title,
-                      style: GoogleFonts.outfit(
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ),
-                    SizedBox(height: 24.h),
-                    Text(
-                      quest.instruction,
-                      style: GoogleFonts.outfit(
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : Colors.black87,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 32.h),
-
-                    // Prompt Card
-                    GlassTile(
-                      padding: EdgeInsets.all(28.r),
-                      borderRadius: BorderRadius.circular(32.r),
-                      borderColor: theme.primaryColor.withValues(alpha: 0.2),
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.03)
-                          : Colors.black.withValues(alpha: 0.02),
-                      child: Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: 4.w,
-                                height: 20.h,
-                                decoration: BoxDecoration(
-                                  color: theme.primaryColor,
-                                  borderRadius: BorderRadius.circular(2.r),
-                                ),
-                              ),
-                              SizedBox(width: 8.w),
-                              Text(
-                                "PROMPT",
-                                style: GoogleFonts.outfit(
-                                  fontSize: 12.sp,
-                                  fontWeight: FontWeight.w900,
-                                  letterSpacing: 2,
-                                  color: theme.primaryColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 24.h),
-                          Text(
-                            quest.prompt ?? "",
-                            style: GoogleFonts.spectral(
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w600,
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.9)
-                                  : Colors.black87,
-                              height: 1.6,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                    ).animate().fadeIn().slideY(begin: 0.05),
-
-                    SizedBox(height: 40.h),
-
-                    // Input Field
-                    GlassTile(
-                      padding: EdgeInsets.all(4.r),
-                      borderRadius: BorderRadius.circular(24.r),
-                      borderColor: _hasSubmitted
-                          ? (state.lastAnswerCorrect == true
-                                ? const Color(0xFF10B981)
-                                : const Color(0xFFF43F5E))
-                          : theme.primaryColor.withValues(alpha: 0.1),
-                      child: Column(
-                        children: [
-                          TextField(
-                            controller: _controller,
-                            enabled: !_hasSubmitted,
-                            maxLines: 5,
-                            style: GoogleFonts.spectral(
-                              fontSize: 17.sp,
-                              height: 1.6,
-                              color: isDark
-                                  ? Colors.white.withValues(alpha: 0.9)
-                                  : Colors.black87,
-                            ),
-                            decoration: InputDecoration(
-                              hintText: "Reflect and write...",
-                              hintStyle: GoogleFonts.spectral(
-                                color: Colors.grey.withValues(alpha: 0.6),
-                              ),
-                              contentPadding: EdgeInsets.all(24.r),
-                              filled: true,
-                              fillColor: Colors.transparent,
-                              border: InputBorder.none,
-                            ),
-                            onChanged: (_) => setState(() {}),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(24.w, 0, 24.w, 16.h),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  "${_controller.text.length} characters",
-                                  style: GoogleFonts.outfit(
-                                    fontSize: 12.sp,
-                                    color: isDark
-                                        ? Colors.white24
-                                        : Colors.black26,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.05),
-
-                    SizedBox(height: 32.h),
-
-                    if (!_hasSubmitted)
-                      ScaleButton(
-                        onTap: _submitAnswer,
-                        child: Container(
-                          width: double.infinity,
-                          height: 64.h,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                theme.primaryColor,
-                                theme.primaryColor.withValues(alpha: 0.8),
-                              ],
-                            ),
-                            borderRadius: BorderRadius.circular(20.r),
-                            boxShadow: [
-                              BoxShadow(
-                                color: theme.primaryColor.withValues(
-                                  alpha: 0.3,
-                                ),
-                                blurRadius: 20,
-                                offset: const Offset(0, 10),
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                            child: Text(
-                              "SUBMIT RESPONSE",
-                              style: GoogleFonts.outfit(
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
-                                letterSpacing: 1,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ).animate().fadeIn(delay: 600.ms),
-
-                    SizedBox(height: 100.h),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "EXCELLENT!" : "KEEP AT IT!",
-            subtitle: quest.sampleAnswer ?? "Response recorded.",
-            onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.history_edu_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("DRIP YOUR THOUGHTS INTO THE WELL", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used
-          ? null
-          : () {
-              _controller.text = "In my opinion, I think that...";
-              context.read<WritingBloc>().add(WritingHintUsed());
-            },
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
-          ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
-            ),
-          ],
-        ),
+  Widget _buildQuillPrompt(String prompt, Color color, bool isDark) {
+    return Container(
+      padding: EdgeInsets.all(28.r),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(28.r),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
+        image: DecorationImage(image: const NetworkImage('https://www.transparenttextures.com/patterns/pinstriped-suit.png'), opacity: 0.1, repeat: ImageRepeat.repeat),
+      ),
+      child: Column(
+        children: [
+          Icon(Icons.auto_stories_rounded, color: color, size: 32.r).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -5, end: 5),
+          SizedBox(height: 16.h),
+          Text(prompt, style: GoogleFonts.spectral(fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white70 : Colors.black87, height: 1.6), textAlign: TextAlign.center),
+        ],
       ),
     );
   }
 
-  bool get isDark => Theme.of(context).brightness == Brightness.dark;
+  Widget _buildInkwell(Color color, bool isDark) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 3),
+        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 30, spreadRadius: -10)],
+      ),
+      child: Column(
+        children: [
+          TextField(
+            controller: _answerController,
+            maxLines: 5,
+            enabled: !_isAnswered,
+            style: GoogleFonts.spectral(fontSize: 18.sp, color: color, height: 1.5),
+            decoration: InputDecoration(
+              hintText: "Let the ink flow...",
+              hintStyle: GoogleFonts.spectral(color: color.withValues(alpha: 0.2)),
+              border: InputBorder.none,
+            ),
+          ),
+          SizedBox(height: 20.h),
+          Stack(
+            children: [
+              Container(width: double.infinity, height: 8.h, decoration: BoxDecoration(color: Colors.white10, borderRadius: BorderRadius.circular(4.r))),
+              AnimatedContainer(
+                duration: 500.milliseconds,
+                width: MediaQuery.of(context).size.width * _inkLevel,
+                height: 8.h,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [color, color.withValues(alpha: 0.5)]),
+                  borderRadius: BorderRadius.circular(4.r),
+                  boxShadow: [BoxShadow(color: color.withValues(alpha: 0.5), blurRadius: 10)],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    ).animate(target: _inkLevel).shimmer(duration: 2.seconds);
+  }
 }
+

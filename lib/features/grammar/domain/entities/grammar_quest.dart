@@ -1,4 +1,4 @@
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class GrammarQuest extends GameQuest {
   final String? sentence;
@@ -9,6 +9,7 @@ class GrammarQuest extends GameQuest {
   final List<int>? correctOrder;
   final String? explanation;
   final String? prompt;
+  final String? subject;
   final String? verb;
   final String? word;
   final String? targetTense;
@@ -46,6 +47,8 @@ class GrammarQuest extends GameQuest {
     this.explanation,
     this.prompt,
     super.textToSpeak,
+    super.visualConfig,
+    this.subject,
     this.verb,
     this.word,
     this.targetTense,
@@ -76,6 +79,7 @@ class GrammarQuest extends GameQuest {
     correctOrder,
     explanation,
     prompt,
+    subject,
     verb,
     word,
     targetTense,
@@ -91,3 +95,4 @@ class GrammarQuest extends GameQuest {
     activeSentence,
   ];
 }
+

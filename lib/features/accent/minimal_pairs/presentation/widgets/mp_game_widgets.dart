@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
 //  MpFocusBadge — Shows phoneme focus (e.g. "Focus: /ɪ/")
@@ -11,6 +11,7 @@ import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
 class MpFocusBadge extends StatelessWidget {
   final String phoneme;
   final bool isDark;
+  final bool isMidnight;
   final Color primaryColor;
 
   const MpFocusBadge({
@@ -18,6 +19,7 @@ class MpFocusBadge extends StatelessWidget {
     required this.phoneme,
     required this.isDark,
     required this.primaryColor,
+    this.isMidnight = false,
   });
 
   static const _blue = Color(0xFF3B82F6);
@@ -78,12 +80,14 @@ class MpFeedbackPanel extends StatelessWidget {
   final bool isCorrect;
   final String hint;
   final bool isDark;
+  final bool isMidnight;
 
   const MpFeedbackPanel({
     super.key,
     required this.isCorrect,
     required this.hint,
     required this.isDark,
+    this.isMidnight = false,
   });
 
   static const _green = Color(0xFF10B981);

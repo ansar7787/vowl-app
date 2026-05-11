@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 class UserModel extends UserEntity {
   const UserModel({
@@ -7,6 +7,7 @@ class UserModel extends UserEntity {
     required super.email,
     super.displayName,
     super.photoUrl,
+    super.fcmToken,
     super.coins,
     super.totalExp,
     super.isAdmin,
@@ -34,10 +35,10 @@ class UserModel extends UserEntity {
     super.kidsEquippedSticker,
     super.kidsOwnedAccessories,
     super.kidsEquippedAccessory,
-    super.voxinMascot,
-    super.voxinEquippedAccessory,
-    super.voxinOwnedAccessories = const [],
-    super.voxinOwnedMascots = const ['voxin_prime'],
+    super.vowlMascot,
+    super.vowlEquippedAccessory,
+    super.vowlOwnedAccessories = const [],
+    super.vowlOwnedMascots = const ['vowl_prime'],
     super.claimedStreakMilestones,
     super.claimedLevelMilestones,
     super.coinHistory,
@@ -45,6 +46,12 @@ class UserModel extends UserEntity {
     super.lastFreeSpinDate,
     super.lastAdSpinDate,
     super.adSpinsUsedToday,
+    super.lastKidsDailyRewardDate,
+    super.kidsOwnedFurniture = const ['default_bed', 'default_window'],
+    super.kidsEquippedFurniture = const {
+      'bed': 'default_bed',
+      'window': 'default_window',
+    },
   });
 
   factory UserModel.fromJson(Map<String, dynamic> map) {
@@ -53,6 +60,7 @@ class UserModel extends UserEntity {
       email: map['email'] ?? '',
       displayName: map['displayName'],
       photoUrl: map['photoUrl'],
+      fcmToken: map['fcmToken'],
       coins: (map['coins'] as num?)?.toInt() ?? 0,
       totalExp: (map['totalExp'] as num?)?.toInt() ?? 0,
       isAdmin: map['isAdmin'] ?? false,
@@ -170,6 +178,9 @@ class UserModel extends UserEntity {
       lastDailyRewardDate: map['lastDailyRewardDate'] != null
           ? (map['lastDailyRewardDate'] as Timestamp).toDate()
           : null,
+      lastKidsDailyRewardDate: map['lastKidsDailyRewardDate'] != null
+          ? (map['lastKidsDailyRewardDate'] as Timestamp).toDate()
+          : null,
       kidsStickers: map['kidsStickers'] != null
           ? List<String>.from(map['kidsStickers'])
           : const [],
@@ -201,14 +212,23 @@ class UserModel extends UserEntity {
           ? (map['lastAdSpinDate'] as Timestamp).toDate()
           : null,
       adSpinsUsedToday: (map['adSpinsUsedToday'] as num?)?.toInt() ?? 0,
-      voxinMascot: map['voxinMascot'],
-      voxinEquippedAccessory: map['voxinEquippedAccessory'],
-      voxinOwnedAccessories: map['voxinOwnedAccessories'] != null
-          ? List<String>.from(map['voxinOwnedAccessories'])
+      vowlMascot: map['vowlMascot'],
+      vowlEquippedAccessory: map['vowlEquippedAccessory'],
+      vowlOwnedAccessories: map['vowlOwnedAccessories'] != null
+          ? List<String>.from(map['vowlOwnedAccessories'])
           : const [],
-      voxinOwnedMascots: map['voxinOwnedMascots'] != null
-          ? List<String>.from(map['voxinOwnedMascots'])
-          : const ['voxin_prime'],
+      vowlOwnedMascots: map['vowlOwnedMascots'] != null
+          ? List<String>.from(map['vowlOwnedMascots'])
+          : const ['vowl_prime'],
+      kidsOwnedFurniture: map['kidsOwnedFurniture'] != null
+          ? List<String>.from(map['kidsOwnedFurniture'])
+          : const ['default_bed', 'default_window'],
+      kidsEquippedFurniture: map['kidsEquippedFurniture'] != null
+          ? Map<String, String>.from(map['kidsEquippedFurniture'])
+          : const {
+              'bed': 'default_bed',
+              'window': 'default_window',
+            },
     );
   }
 
@@ -241,6 +261,7 @@ class UserModel extends UserEntity {
     DateTime? lastLoginDate,
     DateTime? lastVipGiftDate,
     String? photoUrl,
+    String? fcmToken,
     DateTime? premiumExpiryDate,
     List<Map<String, dynamic>>? recentActivities,
     int? streakFreezes,
@@ -250,10 +271,13 @@ class UserModel extends UserEntity {
     DateTime? lastFreeSpinDate,
     DateTime? lastAdSpinDate,
     int? adSpinsUsedToday,
-    String? voxinMascot,
-    String? voxinEquippedAccessory,
-    List<String>? voxinOwnedAccessories,
-    List<String>? voxinOwnedMascots,
+    DateTime? lastKidsDailyRewardDate,
+    String? vowlMascot,
+    String? vowlEquippedAccessory,
+    List<String>? vowlOwnedAccessories,
+    List<String>? vowlOwnedMascots,
+    List<String>? kidsOwnedFurniture,
+    Map<String, String>? kidsEquippedFurniture,
   }) {
     return UserModel(
       id: id,
@@ -288,6 +312,7 @@ class UserModel extends UserEntity {
       lastLoginDate: lastLoginDate ?? this.lastLoginDate,
       lastVipGiftDate: lastVipGiftDate ?? this.lastVipGiftDate,
       photoUrl: photoUrl ?? this.photoUrl,
+      fcmToken: fcmToken ?? this.fcmToken,
       premiumExpiryDate: premiumExpiryDate ?? this.premiumExpiryDate,
       recentActivities: recentActivities ?? this.recentActivities,
       streakFreezes: streakFreezes ?? this.streakFreezes,
@@ -297,12 +322,15 @@ class UserModel extends UserEntity {
       lastFreeSpinDate: lastFreeSpinDate ?? this.lastFreeSpinDate,
       lastAdSpinDate: lastAdSpinDate ?? this.lastAdSpinDate,
       adSpinsUsedToday: adSpinsUsedToday ?? this.adSpinsUsedToday,
-      voxinMascot: voxinMascot ?? this.voxinMascot,
-      voxinEquippedAccessory:
-          voxinEquippedAccessory ?? this.voxinEquippedAccessory,
-      voxinOwnedAccessories:
-          voxinOwnedAccessories ?? this.voxinOwnedAccessories,
-      voxinOwnedMascots: voxinOwnedMascots ?? this.voxinOwnedMascots,
+      lastKidsDailyRewardDate: lastKidsDailyRewardDate ?? this.lastKidsDailyRewardDate,
+      vowlMascot: vowlMascot ?? this.vowlMascot,
+      vowlEquippedAccessory:
+          vowlEquippedAccessory ?? this.vowlEquippedAccessory,
+      vowlOwnedAccessories:
+          vowlOwnedAccessories ?? this.vowlOwnedAccessories,
+      vowlOwnedMascots: vowlOwnedMascots ?? this.vowlOwnedMascots,
+      kidsOwnedFurniture: kidsOwnedFurniture ?? this.kidsOwnedFurniture,
+      kidsEquippedFurniture: kidsEquippedFurniture ?? this.kidsEquippedFurniture,
     );
   }
 
@@ -312,6 +340,7 @@ class UserModel extends UserEntity {
       'email': email,
       'displayName': displayName,
       'photoUrl': photoUrl,
+      'fcmToken': fcmToken,
       'coins': coins,
       'totalExp': totalExp,
       'isAdmin': isAdmin,
@@ -343,6 +372,10 @@ class UserModel extends UserEntity {
       'lastDailyRewardDate': lastDailyRewardDate != null
           ? Timestamp.fromDate(lastDailyRewardDate!)
           : null,
+      'lastKidsDailyRewardDate': lastKidsDailyRewardDate != null
+          ? Timestamp.fromDate(lastKidsDailyRewardDate!)
+          : null,
+      'kidsCoins': kidsCoins,
       'kidsStickers': kidsStickers,
       'kidsMascot': kidsMascot,
       'kidsEquippedSticker': kidsEquippedSticker,
@@ -359,10 +392,12 @@ class UserModel extends UserEntity {
           ? Timestamp.fromDate(lastAdSpinDate!)
           : null,
       'adSpinsUsedToday': adSpinsUsedToday,
-      'voxinMascot': voxinMascot,
-      'voxinEquippedAccessory': voxinEquippedAccessory,
-      'voxinOwnedAccessories': voxinOwnedAccessories,
-      'voxinOwnedMascots': voxinOwnedMascots,
+      'vowlMascot': vowlMascot,
+      'vowlEquippedAccessory': vowlEquippedAccessory,
+      'vowlOwnedAccessories': vowlOwnedAccessories,
+      'vowlOwnedMascots': vowlOwnedMascots,
+      'kidsOwnedFurniture': kidsOwnedFurniture,
+      'kidsEquippedFurniture': kidsEquippedFurniture,
     };
   }
 

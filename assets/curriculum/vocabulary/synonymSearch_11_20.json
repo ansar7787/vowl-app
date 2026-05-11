@@ -1,577 +1,487 @@
 {
-  "gameType": "synonymSearch",
-  "batchIndex": 2,
-  "levels": "11-20",
-  "quests": [
-    {
-      "id": "synonymSearch_l11_q1",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Happy\"?",
-      "targetWord": "Happy",
-      "options": [
-        "Joyful",
-        "Sad",
-        "Angry",
-        "Tired"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Happy\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l11_q2",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Big\"?",
-      "targetWord": "Big",
-      "options": [
-        "Enormous",
-        "Tiny",
-        "Slow",
-        "Dark"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Big\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l11_q3",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Fast\"?",
-      "targetWord": "Fast",
-      "options": [
-        "Quick",
-        "Heavy",
-        "Dull",
-        "Rough"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Fast\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l12_q1",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Smart\"?",
-      "targetWord": "Smart",
-      "options": [
-        "Intelligent",
-        "Lazy",
-        "Tall",
-        "Wide"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Smart\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l12_q2",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Pretty\"?",
-      "targetWord": "Pretty",
-      "options": [
-        "Beautiful",
-        "Ugly",
-        "Short",
-        "Loud"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Pretty\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l12_q3",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Start\"?",
-      "targetWord": "Start",
-      "options": [
-        "Begin",
-        "End",
-        "Break",
-        "Fall"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Start\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l13_q1",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Brave\"?",
-      "targetWord": "Brave",
-      "options": [
-        "Courageous",
-        "Scared",
-        "Weak",
-        "Small"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Brave\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l13_q2",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Angry\"?",
-      "targetWord": "Angry",
-      "options": [
-        "Furious",
-        "Calm",
-        "Happy",
-        "Shy"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Angry\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l13_q3",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Quiet\"?",
-      "targetWord": "Quiet",
-      "options": [
-        "Silent",
-        "Loud",
-        "Fast",
-        "Hard"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Quiet\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l14_q1",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Rich\"?",
-      "targetWord": "Rich",
-      "options": [
-        "Wealthy",
-        "Poor",
-        "Thin",
-        "Cold"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Rich\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l14_q2",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Strange\"?",
-      "targetWord": "Strange",
-      "options": [
-        "Peculiar",
-        "Normal",
-        "Big",
-        "Flat"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Strange\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l14_q3",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Old\"?",
-      "targetWord": "Old",
-      "options": [
-        "Ancient",
-        "New",
-        "Wet",
-        "Soft"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Old\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l15_q1",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Hard\"?",
-      "targetWord": "Hard",
-      "options": [
-        "Difficult",
-        "Easy",
-        "Light",
-        "Hot"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Hard\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l15_q2",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Small\"?",
-      "targetWord": "Small",
-      "options": [
-        "Tiny",
-        "Huge",
-        "Wide",
-        "Deep"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Small\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l15_q3",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Kind\"?",
-      "targetWord": "Kind",
-      "options": [
-        "Generous",
-        "Mean",
-        "Tall",
-        "Dark"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Kind\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l16_q1",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Scared\"?",
-      "targetWord": "Scared",
-      "options": [
-        "Frightened",
-        "Brave",
-        "Strong",
-        "Loud"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Scared\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l16_q2",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Tired\"?",
-      "targetWord": "Tired",
-      "options": [
-        "Exhausted",
-        "Energetic",
-        "Fast",
-        "Cold"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Tired\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l16_q3",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Honest\"?",
-      "targetWord": "Honest",
-      "options": [
-        "Truthful",
-        "Deceitful",
-        "Slow",
-        "Big"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Honest\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l17_q1",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Rude\"?",
-      "targetWord": "Rude",
-      "options": [
-        "Impolite",
-        "Polite",
-        "Quiet",
-        "Soft"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Rude\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l17_q2",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Create\"?",
-      "targetWord": "Create",
-      "options": [
-        "Invent",
-        "Destroy",
-        "Hide",
-        "Sleep"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Create\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l17_q3",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Fix\"?",
-      "targetWord": "Fix",
-      "options": [
-        "Repair",
-        "Break",
-        "Lose",
-        "Drop"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Fix\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l18_q1",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Gather\"?",
-      "targetWord": "Gather",
-      "options": [
-        "Collect",
-        "Scatter",
-        "Push",
-        "Burn"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Gather\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l18_q2",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Keep\"?",
-      "targetWord": "Keep",
-      "options": [
-        "Retain",
-        "Discard",
-        "Throw",
-        "Run"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Keep\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l18_q3",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Leave\"?",
-      "targetWord": "Leave",
-      "options": [
-        "Depart",
-        "Arrive",
-        "Stay",
-        "Sit"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Leave\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l19_q1",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Look\"?",
-      "targetWord": "Look",
-      "options": [
-        "Observe",
-        "Ignore",
-        "Sleep",
-        "Talk"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Look\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l19_q2",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"End\"?",
-      "targetWord": "End",
-      "options": [
-        "Conclude",
-        "Start",
-        "Jump",
-        "Fly"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"End\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l19_q3",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Calm\"?",
-      "targetWord": "Calm",
-      "options": [
-        "Serene",
-        "Anxious",
-        "Fast",
-        "Rough"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Calm\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l20_q1",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Harm\"?",
-      "targetWord": "Harm",
-      "options": [
-        "Damage",
-        "Help",
-        "Build",
-        "Grow"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Harm\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l20_q2",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Allow\"?",
-      "targetWord": "Allow",
-      "options": [
-        "Permit",
-        "Forbid",
-        "Run",
-        "Eat"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Allow\".",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "synonymSearch_l20_q3",
-      "instruction": "Find the synonym.",
-      "difficulty": 1,
-      "subtype": "synonymSearch",
-      "interactionType": "choice",
-      "question": "What is a synonym for \"Show\"?",
-      "targetWord": "Show",
-      "options": [
-        "Display",
-        "Hide",
-        "Cook",
-        "Drive"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Similar meaning to \"Show\".",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "synonymSearch",
+    "batchIndex":  2,
+    "levels":  "11-20",
+    "quests":  [
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L11_Q1",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "LOGIC_id30",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "LOGIC",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "LOGIC"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L11_Q2",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "METHOD_id31",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "METHOD",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "METHOD"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L11_Q3",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "NETWORK_id32",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "NETWORK"
+                                   ],
+                       "correctAnswer":  "NETWORK"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L12_Q1",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "OBJECTIVE_id33",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "OBJECTIVE"
+                                   ],
+                       "correctAnswer":  "OBJECTIVE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L12_Q2",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "PERSPECTIVE_id34",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "PERSPECTIVE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "PERSPECTIVE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L12_Q3",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "QUALITY_id35",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "QUALITY"
+                                   ],
+                       "correctAnswer":  "QUALITY"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L13_Q1",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "RESEARCH_id36",
+                       "options":  [
+                                       "RESEARCH",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "RESEARCH"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L13_Q2",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "SOURCE_id37",
+                       "options":  [
+                                       "SOURCE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "SOURCE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L13_Q3",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "THEORY_id38",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "THEORY"
+                                   ],
+                       "correctAnswer":  "THEORY"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L14_Q1",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "UNIQUE_id39",
+                       "options":  [
+                                       "UNIQUE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "UNIQUE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L14_Q2",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "ANALYZE_id40",
+                       "options":  [
+                                       "ANALYZE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "ANALYZE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L14_Q3",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "CONCEPT_id41",
+                       "options":  [
+                                       "CONCEPT",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "CONCEPT"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L15_Q1",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "DATA_id42",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DATA",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "DATA"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L15_Q2",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "EVIDENCE_id43",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "EVIDENCE",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "EVIDENCE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L15_Q3",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "FACTOR_id44",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "FACTOR",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "FACTOR"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L16_Q1",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "GLOBAL_id45",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "GLOBAL",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "GLOBAL"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L16_Q2",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "HYPOTHESIS_id46",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "HYPOTHESIS",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "HYPOTHESIS"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L16_Q3",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "INTERPRET_id47",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "INTERPRET",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "INTERPRET"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L17_Q1",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "JUSTICE_id48",
+                       "options":  [
+                                       "JUSTICE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "JUSTICE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L17_Q2",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "KNOWLEDGE_id49",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "KNOWLEDGE",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "KNOWLEDGE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L17_Q3",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "LOGIC_id50",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "LOGIC"
+                                   ],
+                       "correctAnswer":  "LOGIC"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L18_Q1",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "METHOD_id51",
+                       "options":  [
+                                       "METHOD",
+                                       "DISTRACT_A",
+                                       "DISTRACT_C",
+                                       "DISTRACT_B"
+                                   ],
+                       "correctAnswer":  "METHOD"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L18_Q2",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "NETWORK_id52",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "NETWORK"
+                                   ],
+                       "correctAnswer":  "NETWORK"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L18_Q3",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "OBJECTIVE_id53",
+                       "options":  [
+                                       "DISTRACT_A",
+                                       "OBJECTIVE",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "OBJECTIVE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L19_Q1",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "PERSPECTIVE_id54",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "PERSPECTIVE"
+                                   ],
+                       "correctAnswer":  "PERSPECTIVE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L19_Q2",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "QUALITY_id55",
+                       "options":  [
+                                       "QUALITY",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "QUALITY"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L19_Q3",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "RESEARCH_id56",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A",
+                                       "RESEARCH"
+                                   ],
+                       "correctAnswer":  "RESEARCH"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L20_Q1",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "SOURCE_id57",
+                       "options":  [
+                                       "SOURCE",
+                                       "DISTRACT_A",
+                                       "DISTRACT_B",
+                                       "DISTRACT_C"
+                                   ],
+                       "correctAnswer":  "SOURCE"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L20_Q2",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "THEORY_id58",
+                       "options":  [
+                                       "DISTRACT_C",
+                                       "THEORY",
+                                       "DISTRACT_B",
+                                       "DISTRACT_A"
+                                   ],
+                       "correctAnswer":  "THEORY"
+                   },
+                   {
+                       "id":  "VOC_SYNONYMSEARCH_L20_Q3",
+                       "interactionType":  "Word Warp",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Think about the word\u0027s meaning.",
+                       "explanation":  "Review the vocabulary rule.",
+                       "word":  "UNIQUE_id59",
+                       "options":  [
+                                       "DISTRACT_B",
+                                       "DISTRACT_C",
+                                       "DISTRACT_A",
+                                       "UNIQUE"
+                                   ],
+                       "correctAnswer":  "UNIQUE"
+                   }
+               ]
 }

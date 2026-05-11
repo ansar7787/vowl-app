@@ -1,436 +1,193 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/listening/sound_wave.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/core/utils/speech_service.dart';
-import 'package:voxai_quest/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
+import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class FastSpeechDecoderScreen extends StatefulWidget {
   final int level;
-  const FastSpeechDecoderScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const FastSpeechDecoderScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.fastSpeechDecoder,
+  });
 
   @override
-  State<FastSpeechDecoderScreen> createState() =>
-      _FastSpeechDecoderScreenState();
+  State<FastSpeechDecoderScreen> createState() => _FastSpeechDecoderScreenState();
 }
 
 class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
-  int? _selectedOptionIndex;
-  bool _isPlaying = false;
+  
+  double _dialRotation = 0.0; // 0.0 to 1.0 (0.5x to 2.0x)
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
+  int? _selectedIndex;
 
   @override
   void initState() {
     super.initState();
-    context.read<ListeningBloc>().add(
-      FetchListeningQuests(
-        gameType: GameSubtype.fastSpeechDecoder,
-        level: widget.level,
-      ),
-    );
+    context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _playAudio(String text) async {
-    if (_isPlaying) return;
-    setState(() => _isPlaying = true);
-    _hapticService.light();
-    // Simulate fast speech by passing a higher rate if the service supports it,
-    // or just play normally for now as SpeechService.speak(text) is standard.
-    await _speechService.speak(text);
-    if (mounted) setState(() => _isPlaying = false);
+  void _onRotate(double delta) {
+    if (_isAnswered) return;
+    setState(() {
+      _dialRotation = (_dialRotation + delta / 500).clamp(0.0, 1.0);
+      _hapticService.selection();
+    });
   }
 
-  void _onOptionTap(int index, int correctIndex) {
-    if (_selectedOptionIndex != null) return;
-    _hapticService.selection();
-    setState(() => _selectedOptionIndex = index);
+  void _submitAnswer(int index, int correct) {
+    if (_isAnswered) return;
+    setState(() => _selectedIndex = index);
+    bool isCorrect = index == correct;
 
-    final isCorrect = index == correctIndex;
-    context.read<ListeningBloc>().add(SubmitAnswer(isCorrect));
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<ListeningBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'listening',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<ListeningBloc, ListeningState>(
-        listener: (context, state) {
-          if (state is ListeningGameComplete) {
-            setState(() => _showConfetti = true);
-            GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'SIGNAL DECODED!',
-          description:
-              'Youve proven your processing power. Earned ${state.xpEarned} XP and ${state.coinsEarned} coins.',
-        );
-          } else if (state is ListeningGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'SIGNAL TIMEOUT',
-        description: 'The rapid signal was lost. Re-initialize decoder?',
-        onRestore: () => context.read<ListeningBloc>().add(RestoreLife()),
-      );
-          } else if (state is ListeningLoaded &&
-              state.lastAnswerCorrect == null) {
-            setState(() => _selectedOptionIndex = null);
+    return BlocConsumer<ListeningBloc, ListeningState>(
+      listener: (context, state) {
+        if (state is ListeningLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _selectedIndex = null;
+              _dialRotation = 0.5;
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is ListeningLoading || state is ListeningInitial) {
-            return const GameShimmerLoading();
-          }
-
-          if (state is ListeningError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<ListeningBloc>().add(
-                FetchListeningQuests(
-                  gameType: GameSubtype.fastSpeechDecoder,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          if (state is ListeningLoaded) {
-            return Stack(
-              children: [
-                const MeshGradientBackground(),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    ListeningLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        SafeArea(
-          child: Column(
+          _lastLives = state.livesRemaining;
+        }
+        if (state is ListeningGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'NUANCE DECODER!', enableDoubleUp: true);
+        } else if (state is ListeningGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ListeningBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is ListeningLoaded) ? state.currentQuest : null;
+        double speed = 0.5 + (_dialRotation * 1.5);
+        
+        return ListeningBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
+          onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
             children: [
-              _buildHeader(context, state, progress, theme, isDark),
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 10.h),
-                      Text(
-                        "SONIC SPEECH DECODER",
-                        style: GoogleFonts.outfit(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 4,
-                          color: theme.primaryColor,
-                        ),
-                      ),
-                      SizedBox(height: 12.h),
-                      Text(
-                        quest.instruction,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF1E293B),
-                        ),
-                      ).animate().fadeIn().slideY(begin: 0.1),
-                      SizedBox(height: 30.h),
-                      _buildSpeedVisualizer(
-                        quest.transcript ?? "Listen to the rapid transmission.",
-                        theme,
-                      ),
-                      SizedBox(height: 30.h),
-                      _buildOptionsGrid(
-                        quest.options ?? [],
-                        quest.correctAnswerIndex ?? 0,
-                        theme,
-                        isDark,
-                      ),
-                      SizedBox(height: 40.h),
-                    ],
-                  ),
-                ),
-              ),
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 40.h),
+              _buildSpeedGauges(speed, theme.primaryColor),
+              const Spacer(),
+              _buildMechanicalCore(quest.textToSpeak ?? "", speed, theme.primaryColor),
+              const Spacer(),
+              _buildSteamVents(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+              SizedBox(height: 40.h),
             ],
           ),
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "SONIC SUCCESS!" : "SIGNAL LOST!",
-            subtitle: "Your brains clock speed is impressive.",
-            onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
-          ),
-        if (_showConfetti) const GameConfetti(),
-      ],
-    );
-  }
-
-  Widget _buildHeader(
-    BuildContext context,
-    ListeningLoaded state,
-    double progress,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 10.h),
-      child: Row(
-        children: [
-          ScaleButton(
-            onTap: () => context.pop(),
-            child: Container(
-              padding: EdgeInsets.all(10.r),
-              decoration: BoxDecoration(
-                color: isDark ? Colors.white10 : Colors.black12,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.close_rounded,
-                size: 24.r,
-                color: isDark ? Colors.white70 : Colors.black54,
-              ),
-            ),
-          ),
-          SizedBox(width: 12.w),
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.r),
-              child: LinearProgressIndicator(
-                value: progress,
-                minHeight: 14.h,
-                backgroundColor: isDark ? Colors.white10 : Colors.black12,
-                valueColor: AlwaysStoppedAnimation<Color>(theme.primaryColor),
-              ),
-            ),
-          ),
-          SizedBox(width: 12.w),
-          _buildHeartCount(state.livesRemaining),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSpeedVisualizer(String transcript, ThemeResult theme) {
-    return GlassTile(
-      padding: EdgeInsets.all(32.r),
-      borderRadius: BorderRadius.circular(32.r),
-      child: Column(
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              if (_isPlaying)
-                SizedBox(
-                  width: 150.r,
-                  height: 150.r,
-                  child: SoundWave(color: theme.primaryColor),
-                ),
-              ScaleButton(
-                onTap: () => _playAudio(transcript),
-                child: Container(
-                  width: 90.r,
-                  height: 90.r,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        theme.primaryColor,
-                        theme.primaryColor.withValues(alpha: 0.7),
-                      ],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: theme.primaryColor.withValues(alpha: 0.4),
-                        blurRadius: 20,
-                        spreadRadius: 5,
-                      ),
-                    ],
-                  ),
-                  child: Icon(
-                    _isPlaying
-                        ? Icons.fast_forward_rounded
-                        : Icons.bolt_rounded,
-                    color: Colors.white,
-                    size: 44.r,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 20.h),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-            decoration: BoxDecoration(
-              color: Colors.white10,
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-            child: Text(
-              _isPlaying ? "DECOMPRESSING 2.0X" : "READY FOR SONIC SIGNAL",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                letterSpacing: 2,
-                color: Colors.cyanAccent,
-              ),
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn().scale();
-  }
-
-  Widget _buildOptionsGrid(
-    List<String> options,
-    int correctIndex,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    return ListView.separated(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: options.length,
-      separatorBuilder: (context, index) => SizedBox(height: 16.h),
-      itemBuilder: (context, index) {
-        return _buildOptionTile(
-          index,
-          options[index],
-          correctIndex,
-          theme,
-          isDark,
         );
       },
     );
   }
 
-  Widget _buildOptionTile(
-    int index,
-    String text,
-    int correctIndex,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    final isSelected = _selectedOptionIndex == index;
-
-    return ScaleButton(
-      onTap: () => _onOptionTap(index, correctIndex),
-      child: GlassTile(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-        borderRadius: BorderRadius.circular(20.r),
-        borderColor: isSelected ? theme.primaryColor : Colors.white12,
-        color: isSelected ? theme.primaryColor.withValues(alpha: 0.1) : null,
-        child: Row(
-          children: [
-            Container(
-              width: 40.r,
-              height: 40.r,
-              decoration: BoxDecoration(
-                color: isSelected
-                    ? theme.primaryColor
-                    : (isDark ? Colors.white10 : Colors.black12),
-                borderRadius: BorderRadius.circular(12.r),
-              ),
-              child: Center(
-                child: Text(
-                  "${index + 1}",
-                  style: GoogleFonts.outfit(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isSelected
-                        ? Colors.white
-                        : (isDark ? Colors.white70 : Colors.black54),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(width: 16.w),
-            Expanded(
-              child: Text(
-                text,
-                style: GoogleFonts.outfit(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ),
-            if (isSelected)
-              Icon(
-                Icons.check_circle_outline_rounded,
-                color: theme.primaryColor,
-                size: 24.r,
-              ),
-          ],
-        ),
-      ),
-    ).animate().fadeIn(delay: (index * 100).ms).slideX(begin: 0.1);
-  }
-
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
+          Icon(Icons.settings_input_composite_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("CALIBRATE SPEED TO DECODE SPEECH", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSpeedGauges(double speed, Color color) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(Icons.speed_rounded, color: color, size: 24.r),
+        SizedBox(width: 12.w),
+        Text("${speed.toStringAsFixed(1)}X", style: GoogleFonts.shareTechMono(fontSize: 32.sp, fontWeight: FontWeight.w900, color: color)),
+        SizedBox(width: 12.w),
+        Text("PLAYBACK VELOCITY", style: GoogleFonts.shareTechMono(fontSize: 12.sp, color: color.withValues(alpha: 0.5))),
+      ],
+    );
+  }
+
+  Widget _buildMechanicalCore(String tts, double speed, Color color) {
+    return GestureDetector(
+      onPanUpdate: (details) => _onRotate(details.delta.dx + details.delta.dy),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // The Outer Gear
+          Transform.rotate(
+            angle: _dialRotation * 6.28,
+            child: Icon(Icons.settings_suggest_rounded, size: 180.r, color: color.withValues(alpha: 0.1)),
+          ),
+          
+          // The Playable Dial
+          ScaleButton(
+            onTap: () {
+              _soundService.playTts(tts, speed: speed);
+              _hapticService.selection();
+            },
+            child: Container(
+              width: 120.r, height: 120.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: RadialGradient(colors: [color, color.withValues(alpha: 0.7)]),
+                boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 20)],
+              ),
+              child: Icon(Icons.play_arrow_rounded, color: Colors.white, size: 60.r),
+            ),
+          ),
+          
+          // Speed Indicator Notch
+          Transform.rotate(
+            angle: (_dialRotation - 0.5) * 4.0,
+            child: Container(
+              height: 140.h, width: 4.w,
+              alignment: Alignment.topCenter,
+              child: Container(width: 4.w, height: 15.h, decoration: BoxDecoration(color: Colors.orangeAccent, borderRadius: BorderRadius.circular(2.r))),
             ),
           ),
         ],
@@ -438,7 +195,30 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
     );
   }
 
-  
-
-  
+  Widget _buildSteamVents(List<String> options, int correct, Color color, bool isDark) {
+    return Column(
+      children: List.generate(options.length, (index) {
+        bool isSelected = _selectedIndex == index;
+        return Padding(
+          padding: EdgeInsets.only(bottom: 12.h),
+          child: ScaleButton(
+            onTap: () => _submitAnswer(index, correct),
+            child: GlassTile(
+              padding: EdgeInsets.all(16.r), borderRadius: BorderRadius.circular(15.r),
+              color: isSelected ? Colors.orangeAccent.withValues(alpha: 0.2) : Colors.white10,
+              child: Row(
+                children: [
+                  Icon(Icons.air_rounded, color: isSelected ? Colors.orangeAccent : Colors.white24),
+                  SizedBox(width: 16.w),
+                  Expanded(child: Text(options[index], style: GoogleFonts.outfit(fontSize: 14.sp, color: Colors.white70))),
+                  if (_isAnswered && index == correct) Icon(Icons.check_circle_rounded, color: Colors.greenAccent),
+                ],
+              ),
+            ),
+          ),
+        );
+      }),
+    );
+  }
 }
+

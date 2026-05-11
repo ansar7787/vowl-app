@@ -1,6 +1,6 @@
 import 'dart:math';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
 class DiscoveryHelper {
   static List<GameQuest> getQuestsForSequence(
@@ -22,66 +22,84 @@ class DiscoveryHelper {
   }
 
   static List<GameQuest> _generateSmartRecommendation(UserEntity user) {
-    // Pick the category with the lowest progress
+    // 1. Find weakest category
     QuestType lowestType = QuestType.speaking;
-    int lowestProgress = 100;
+    int lowestProgress = 9999;
+    bool allZero = true;
+
+    // 2. Find favorite category
+    QuestType favoriteType = QuestType.vocabulary;
+    int highestProgress = -1;
 
     for (final type in QuestType.values) {
-      final progress = user.getCategoryProgress(type);
-      if (progress < lowestProgress) {
-        lowestProgress = progress;
+      final cleared = user.getTotalCategoryLevelsCleared(type);
+      if (cleared > 0) allZero = false;
+      
+      if (cleared < lowestProgress) {
+        lowestProgress = cleared;
         lowestType = type;
+      }
+      
+      if (cleared > highestProgress) {
+        highestProgress = cleared;
+        favoriteType = type;
       }
     }
 
-    return [_getRandomGameForCategory(user, lowestType)];
+    if (allZero) {
+      final types = QuestType.values;
+      lowestType = types[Random().nextInt(types.length)];
+      favoriteType = types[Random().nextInt(types.length)];
+    }
+
+    final types = QuestType.values;
+    final randomType = types[Random().nextInt(types.length)];
+
+    // Curated mix: Weakest -> Favorite -> Random wildcard
+    return [
+      _getRandomGameForCategory(user, lowestType).copyWith(instruction: 'Let\'s strengthen your weak spots!'),
+      _getRandomGameForCategory(user, favoriteType).copyWith(instruction: 'Play to your strengths.'),
+      _getRandomGameForCategory(user, randomType).copyWith(instruction: 'A wildcard challenge!'),
+    ];
   }
 
   static List<GameQuest> _generateDailyDuo(UserEntity user) {
-    // Mixed vocal & reading
+    // Mixed vocal & listening/reading
     final speakingGame = _getRandomGameForCategory(user, QuestType.speaking);
-    final readingGame = _getRandomGameForCategory(user, QuestType.reading);
+    final isListening = Random().nextBool();
+    final secondGame = _getRandomGameForCategory(user, isListening ? QuestType.listening : QuestType.reading);
 
     return [
-      speakingGame.copyWith(
-        instruction: 'Warm up your voice with this speaking drill.',
-      ),
-      readingGame.copyWith(
-        instruction: 'Switch gears and focus on reading comprehension.',
-      ),
+      speakingGame.copyWith(instruction: 'Warm up your voice with this speaking drill.'),
+      secondGame.copyWith(instruction: isListening ? 'Now tune your ears.' : 'Now focus on comprehension.'),
     ];
   }
 
   static List<GameQuest> _generateSpeedBlitz(UserEntity user) {
-    // Fast challenges: reading speed + sentence order
+    // Fast, randomized challenges across categories
     return [
-      _getQuestForSubtype(
-        user,
-        GameSubtype.readingSpeedCheck,
-        'Read as fast as you can!',
-      ),
-      _getQuestForSubtype(
-        user,
-        GameSubtype.sentenceOrderReading,
-        'Put the sentences in order fast.',
-      ),
+      _getRandomGameForCategory(user, QuestType.reading).copyWith(instruction: 'Read and react as fast as you can!'),
+      _getRandomGameForCategory(user, QuestType.listening).copyWith(instruction: 'Listen carefully, answer quickly.'),
+      _getRandomGameForCategory(user, QuestType.accent).copyWith(instruction: 'Rapid-fire pronunciation.'),
     ];
   }
 
   static List<GameQuest> _generateGrammarPro(UserEntity user) {
-    // Elite structural drill
-    return [
-      _getQuestForSubtype(
-        user,
-        GameSubtype.grammarQuest,
-        'Analyze and solve the grammar puzzle.',
-      ),
-      _getQuestForSubtype(
-        user,
-        GameSubtype.sentenceCorrection,
-        'Identify and fix any structural errors.',
-      ),
-    ];
+    // 3 distinct grammar drills
+    final grammarGames = <GameQuest>{};
+    int attempts = 0;
+    while (grammarGames.length < 3 && attempts < 10) {
+      grammarGames.add(_getRandomGameForCategory(user, QuestType.grammar));
+      attempts++;
+    }
+
+    // Ensure we have 3 even if random failed to pick unique ones
+    final list = grammarGames.toList();
+    if (list.length < 3) {
+      list.add(_getRandomGameForCategory(user, QuestType.writing));
+    }
+    
+    return list;
   }
 
   static List<GameQuest> _generateRandomQuest(UserEntity user) {
@@ -91,7 +109,14 @@ class DiscoveryHelper {
   }
 
   static GameQuest _getRandomGameForCategory(UserEntity user, QuestType type) {
-    final subtypes = type.subtypes;
+    // Filter out legacy subtypes that have no game data
+    final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
+    if (subtypes.isEmpty) {
+      // Fallback: pick any non-legacy subtype
+      final fallback = GameSubtype.values.where((s) => !s.isLegacy).toList();
+      final subtype = fallback[Random().nextInt(fallback.length)];
+      return _getQuestForSubtype(user, subtype, 'Explore this quest!');
+    }
     final subtype = subtypes[Random().nextInt(subtypes.length)];
     return _getQuestForSubtype(
       user,

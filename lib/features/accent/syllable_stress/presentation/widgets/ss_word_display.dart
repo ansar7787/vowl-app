@@ -2,22 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/accent/harmonic_waves.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/accent/harmonic_waves.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SsWordDisplay extends StatelessWidget {
   final String word;
+  final String? phoneticHint;
   final bool isPlaying;
   final Color primaryColor;
   final VoidCallback onPlayTap;
+  final bool isMidnight;
 
   const SsWordDisplay({
     super.key,
     required this.word,
+    this.phoneticHint,
     required this.isPlaying,
     required this.primaryColor,
     required this.onPlayTap,
+    this.isMidnight = false,
   });
 
   @override
@@ -79,6 +83,20 @@ class SsWordDisplay extends StatelessWidget {
           borderColor: primaryColor.withValues(alpha: 0.3),
           child: Column(
             children: [
+              if (phoneticHint != null && phoneticHint!.isNotEmpty)
+                Padding(
+                  padding: EdgeInsets.only(bottom: 12.h),
+                  child: Text(
+                    "[ $phoneticHint ]",
+                    style: GoogleFonts.outfit(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w500,
+                      color: primaryColor.withValues(alpha: 0.7),
+                      fontStyle: FontStyle.italic,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                ).animate().fadeIn().slideY(begin: 0.2),
               FittedBox(
                 fit: BoxFit.scaleDown,
                 child: Text(

@@ -16,6 +16,7 @@ class SpeakingQuestModel extends SpeakingQuest {
     super.correctAnswerIndex,
     super.correctAnswer,
     super.hint,
+    super.visualConfig,
     super.textToSpeak,
     super.situationText,
     super.sceneText,
@@ -24,6 +25,9 @@ class SpeakingQuestModel extends SpeakingQuest {
     super.meaning,
     super.sampleUsage,
     super.missingWord,
+    super.partnerDialogue,
+    super.targetPhoneme,
+    super.expression,
   });
 
   factory SpeakingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -31,6 +35,15 @@ class SpeakingQuestModel extends SpeakingQuest {
       (s) => s.name == map['subtype'],
       orElse: () => GameSubtype.repeatSentence,
     );
+
+    // Helper to safely get a string from either a String or a List of Strings
+    String? getString(dynamic value) {
+      if (value == null) return null;
+      if (value is String) return value;
+      if (value is List) return value.join(' ');
+      return value.toString();
+    }
+
     return SpeakingQuestModel(
       id: id,
       type: subtype.category,
@@ -41,25 +54,29 @@ class SpeakingQuestModel extends SpeakingQuest {
         (i) => i.name == (map['interactionType'] ?? 'speech'),
         orElse: () => InteractionType.speech,
       ),
-      xpReward: map['xpReward'] ?? 10,
-      coinReward: map['coinReward'] ?? 5,
-      livesAllowed: map['livesAllowed'],
-      options: map['options'] != null
-          ? List<String>.from(map['options'])
-          : null,
+      xpReward: (map['xpReward'] as num?)?.toInt() ?? 10,
+      coinReward: (map['coinReward'] as num?)?.toInt() ?? 5,
+      livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
+      options: map['options'] != null ? List<String>.from(map['options']) : null,
       correctAnswerIndex: map['correctAnswerIndex'],
-      correctAnswer: map['correctAnswer'],
+      correctAnswer: getString(map['correctAnswer']),
       hint: map['hint'],
-      textToSpeak: map['textToSpeak'],
-      situationText: map['situationText'],
-      sceneText: map['sceneText'],
+      visualConfig: map['visual_config'] != null
+          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config']))
+          : null,
+      textToSpeak: getString(map['textToSpeak'] ?? map['text'] ?? map['sentence'] ?? map['question']),
+      situationText: map['situationText'] ?? map['situation'],
+      sceneText: map['sceneText'] ?? map['scene'],
       acceptedSynonyms: map['acceptedSynonyms'] != null
           ? List<String>.from(map['acceptedSynonyms'])
           : null,
-      phoneticHint: map['phoneticHint'],
+      phoneticHint: map['phoneticHint'] ?? map['phonetic'],
       meaning: map['meaning'],
       sampleUsage: map['sampleUsage'],
       missingWord: map['missingWord'],
+      partnerDialogue: map['partnerDialogue'],
+      targetPhoneme: map['targetPhoneme'],
+      expression: map['expression'],
     );
   }
 
@@ -84,6 +101,10 @@ class SpeakingQuestModel extends SpeakingQuest {
       'meaning': meaning,
       'sampleUsage': sampleUsage,
       'missingWord': missingWord,
+      'partnerDialogue': partnerDialogue,
+      'targetPhoneme': targetPhoneme,
+      'expression': expression,
     };
   }
 }
+

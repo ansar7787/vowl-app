@@ -1,22 +1,39 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/writing/domain/usecases/use_writing_hint.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/writing/domain/usecases/use_writing_hint.dart';
 import '../../domain/entities/writing_quest.dart';
+import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
+import '../../../../features/auth/domain/usecases/update_unlocked_level.dart';
+import '../../../../features/auth/domain/usecases/update_category_stats.dart';
+import '../../../../features/auth/domain/usecases/update_user_coins.dart';
+import '../../../../features/auth/domain/usecases/award_badge.dart';
+import '../../../../features/writing/domain/usecases/get_writing_quest.dart';
+import '../../../../features/speaking/domain/usecases/get_speaking_quest.dart';
 
 // --- EVENTS ---
-abstract class WritingEvent {}
+abstract class WritingEvent extends Equatable {
+  @override
+  List<Object?> get props => [];
+}
 
 class FetchWritingQuests extends WritingEvent {
   final dynamic gameType;
   final int level;
   FetchWritingQuests({required this.gameType, required this.level});
+
+  @override
+  List<Object?> get props => [gameType, level];
 }
 
 class SubmitAnswer extends WritingEvent {
   final bool isCorrect;
   SubmitAnswer(this.isCorrect);
+
+  @override
+  List<Object?> get props => [isCorrect];
 }
 
 class NextQuestion extends WritingEvent {}
@@ -28,7 +45,10 @@ class WritingHintUsed extends WritingEvent {}
 class RestoreLife extends WritingEvent {}
 
 // --- STATES ---
-abstract class WritingState {}
+abstract class WritingState extends Equatable {
+  @override
+  List<Object?> get props => [];
+}
 
 class WritingInitial extends WritingState {}
 
@@ -40,6 +60,8 @@ class WritingLoaded extends WritingState {
   final int livesRemaining;
   final bool? lastAnswerCorrect;
   final bool hintUsed;
+  final int wrongCount;
+  final bool isFinalFailure;
 
   WritingQuest get currentQuest => quests[currentIndex];
 
@@ -49,7 +71,12 @@ class WritingLoaded extends WritingState {
     required this.livesRemaining,
     this.lastAnswerCorrect,
     this.hintUsed = false,
+    this.wrongCount = 0,
+    this.isFinalFailure = false,
   });
+
+  @override
+  List<Object?> get props => [quests, currentIndex, livesRemaining, lastAnswerCorrect, hintUsed, wrongCount, isFinalFailure];
 
   WritingLoaded copyWith({
     List<WritingQuest>? quests,
@@ -57,26 +84,37 @@ class WritingLoaded extends WritingState {
     int? livesRemaining,
     bool? lastAnswerCorrect,
     bool? hintUsed,
+    int? wrongCount,
+    bool? isFinalFailure,
   }) {
     return WritingLoaded(
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: lastAnswerCorrect, // Nullable override
+      lastAnswerCorrect: lastAnswerCorrect,
       hintUsed: hintUsed ?? this.hintUsed,
+      wrongCount: wrongCount ?? this.wrongCount,
+      isFinalFailure: isFinalFailure ?? this.isFinalFailure,
     );
   }
 }
 
 class WritingError extends WritingState {
   final String message;
-  WritingError(this.message);
+  final String? technicalError;
+  WritingError(this.message, {this.technicalError});
+
+  @override
+  List<Object?> get props => [message, technicalError];
 }
 
 class WritingGameComplete extends WritingState {
   final int xpEarned;
   final int coinsEarned;
   WritingGameComplete({required this.xpEarned, required this.coinsEarned});
+
+  @override
+  List<Object?> get props => [xpEarned, coinsEarned];
 }
 
 class WritingGameOver extends WritingState {
@@ -84,62 +122,74 @@ class WritingGameOver extends WritingState {
   final int currentIndex;
 
   WritingGameOver({required this.quests, required this.currentIndex});
+
+  @override
+  List<Object?> get props => [quests, currentIndex];
 }
 
 // --- BLOC ---
 class WritingBloc extends Bloc<WritingEvent, WritingState> {
-  final dynamic getQuest;
-  final dynamic updateUserCoins;
-  final dynamic updateUserRewards;
-  final dynamic updateCategoryStats;
-  final dynamic updateUnlockedLevel;
-  final dynamic awardBadge;
+  final GetWritingQuest getQuest;
+  final UpdateUserCoins updateUserCoins;
+  final UpdateUserRewards updateUserRewards;
+  final UpdateCategoryStats updateCategoryStats;
+  final UpdateUnlockedLevel updateUnlockedLevel;
+  final AwardBadge awardBadge;
   final SoundService soundService;
   final HapticService hapticService;
   final UseWritingHint useHint;
 
-  String? currentGameType;
+  GameSubtype? currentGameType;
   int? currentLevel;
 
   WritingBloc({
     required this.soundService,
     required this.hapticService,
     required this.useHint,
-    this.getQuest,
-    this.updateUserCoins,
-    this.updateUserRewards,
-    this.updateCategoryStats,
-    this.updateUnlockedLevel,
-    this.awardBadge,
+    required this.getQuest,
+    required this.updateUserCoins,
+    required this.updateUserRewards,
+    required this.updateCategoryStats,
+    required this.updateUnlockedLevel,
+    required this.awardBadge,
   }) : super(WritingInitial()) {
     on<FetchWritingQuests>(_onFetchQuests);
 
     on<SubmitAnswer>((event, emit) async {
       final currentState = state;
-      if (currentState is! WritingLoaded) return;
+      if (currentState is! WritingLoaded || currentState.livesRemaining <= 0) return;
 
-      int newLives = currentState.livesRemaining;
       if (!event.isCorrect) {
-        newLives--;
+        final newLives = currentState.livesRemaining - 1;
+        final newWrongCount = currentState.wrongCount + 1;
+        bool isFinal = newWrongCount >= 2;
+
+        List<WritingQuest> updatedQuests = currentState.quests;
+        if (isFinal) {
+          updatedQuests = List<WritingQuest>.from(currentState.quests);
+          updatedQuests.add(currentState.currentQuest); // Mastery Loop
+        }
+
         await soundService.playWrong();
         await hapticService.error();
+
+        emit(
+          currentState.copyWith(
+            livesRemaining: newLives,
+            lastAnswerCorrect: false,
+            quests: updatedQuests,
+            wrongCount: isFinal ? 0 : newWrongCount,
+            isFinalFailure: isFinal || newLives <= 0,
+          ),
+        );
       } else {
         await soundService.playCorrect();
         await hapticService.success();
-      }
-
-      emit(
-        currentState.copyWith(
-          livesRemaining: newLives,
-          lastAnswerCorrect: event.isCorrect,
-        ),
-      );
-
-      if (newLives <= 0) {
         emit(
-          WritingGameOver(
-            quests: currentState.quests,
-            currentIndex: currentState.currentIndex,
+          currentState.copyWith(
+            lastAnswerCorrect: true,
+            wrongCount: 0,
+            isFinalFailure: false,
           ),
         );
       }
@@ -149,45 +199,70 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
       final currentState = state;
       if (currentState is! WritingLoaded) return;
 
-      if (currentState.lastAnswerCorrect == true) {
-        if (currentState.currentIndex + 1 < currentState.quests.length) {
+      if (currentState.livesRemaining <= 0) {
+        emit(WritingGameOver(
+          quests: currentState.quests,
+          currentIndex: currentState.currentIndex,
+        ));
+        return;
+      }
+
+      // Move to next question if it was a success OR a final failure (since it's re-queued)
+      if (currentState.currentIndex + 1 < currentState.quests.length) {
+        if (currentState.lastAnswerCorrect == true || currentState.isFinalFailure) {
           emit(
             currentState.copyWith(
               currentIndex: currentState.currentIndex + 1,
               lastAnswerCorrect: null,
               hintUsed: false,
+              wrongCount: 0,
+              isFinalFailure: false,
             ),
           );
         } else {
-          await soundService.playLevelComplete();
-          // Calculate rewards
-          int totalXp = currentState.quests.fold(
-            0,
-            (sum, q) => sum + q.xpReward,
-          );
-          int totalCoins = currentState.quests.fold(
-            0,
-            (sum, q) => sum + q.coinReward,
-          );
-
-          emit(WritingGameComplete(xpEarned: totalXp, coinsEarned: totalCoins));
-
-          // PERSISTENCE
-          if (currentGameType != null) {
-            if (updateUserCoins != null) await updateUserCoins!(totalXp);
-            if (updateUserRewards != null) await updateUserRewards!(totalCoins);
-            if (updateCategoryStats != null) {
-              await updateCategoryStats!(currentGameType!, 100);
-            }
-            if (updateUnlockedLevel != null && currentLevel != null) {
-              await updateUnlockedLevel!(currentGameType!, currentLevel! + 1);
-            }
-            if (awardBadge != null) await awardBadge!('writing_master');
-          }
+          // First-time wrong answer, stay and retry
+          emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
         }
+      } else if (currentState.lastAnswerCorrect == true) {
+        // We only complete the level if the LAST question in the queue was answered correctly
+        await soundService.playLevelComplete();
+        
+        // Calculate rewards
+        const int totalXp = 10;
+        const int totalCoins = 10;
+
+        if (currentGameType != null && currentLevel != null) {
+          // 1. Atomic Save: Await all updates to the user's progress and wallet
+          await Future.wait([
+            updateUserRewards(
+              UpdateUserRewardsParams(
+                gameType: currentGameType!.name,
+                level: currentLevel!,
+                xpIncrease: 10,
+                coinIncrease: 10,
+              ),
+            ),
+            updateCategoryStats(
+              UpdateCategoryStatsParams(
+                categoryId: currentGameType!.name,
+                isCorrect: true,
+              ),
+            ),
+            updateUnlockedLevel(
+              UpdateUnlockedLevelParams(
+                categoryId: currentGameType!.name,
+                newLevel: currentLevel! + 1,
+              ),
+            ),
+            awardBadge('writing_master'),
+          ]);
+        }
+
+        // 2. Only show the success UI once the server has confirmed the data
+        emit(WritingGameComplete(xpEarned: totalXp, coinsEarned: totalCoins));
       } else {
-        // Just clear the overlay if it was wrong but they still have lives
-        emit(currentState.copyWith(lastAnswerCorrect: null));
+        // Wrong answer on the very last quest
+        emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
       }
     });
 
@@ -228,53 +303,49 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     FetchWritingQuests event,
     Emitter<WritingState> emit,
   ) async {
-    currentGameType = event.gameType is GameSubtype
-        ? (event.gameType as GameSubtype).name
-        : event.gameType.toString();
+    final GameSubtype subtype = event.gameType is GameSubtype
+        ? event.gameType
+        : GameSubtype.values.firstWhere(
+            (s) => s.name == event.gameType.toString(),
+            orElse: () => GameSubtype.sentenceBuilder,
+          );
+    currentGameType = subtype;
     currentLevel = event.level;
 
     emit(WritingLoading());
     try {
-      if (getQuest == null) {
-        emit(WritingError("UseCase dependency not provided"));
-        return;
-      }
+      final result = await getQuest(
+        QuestParams(gameType: subtype, level: event.level),
+      );
 
-      final List<WritingQuest> quests = [];
-      try {
-        final result = await getQuest!(event.gameType, event.level);
-        if (result != null && result is List<WritingQuest>) {
-          quests.addAll(result);
-        }
-      } catch (e) {
-        try {
-          final result = await getQuest!(event.gameType);
-          if (result != null && result is List<WritingQuest>) {
-            quests.addAll(result);
+      result.fold(
+        (failure) => emit(WritingError(
+          failure.message,
+          technicalError: failure.toString(),
+        )),
+        (quests) {
+          if (quests.isEmpty) {
+            emit(WritingError(
+              "We couldn't find any quests for this level yet.",
+              technicalError: "Empty quest list for ${subtype.name}, Level ${event.level}",
+            ));
+            return;
           }
-        } catch (_) {}
-      }
 
-      if (quests.isEmpty) {
-        emit(WritingError("We couldn't find any quests for this level yet."));
-        return;
-      }
-
-      if (quests.isEmpty) {
-        emit(WritingError("Check back later for new quests!"));
-      } else {
-        // ENSURE STICKY 3 QUESTIONS PER LEVEL
-        final limitedQuests = quests.take(3).toList();
-        emit(
-          WritingLoaded(
-            quests: limitedQuests,
-            currentIndex: 0,
-            livesRemaining: 3, // Standard 3 lives
-          ),
-        );
-      }
+          // ENSURE STICKY 3 QUESTIONS PER LEVEL
+          final limitedQuests = quests.take(3).toList();
+          emit(
+            WritingLoaded(
+              quests: limitedQuests,
+              currentIndex: 0,
+              livesRemaining: 3,
+            ),
+          );
+        },
+      );
     } catch (e) {
       emit(WritingError("Failed to fetch quests: $e"));
     }
   }
 }
+

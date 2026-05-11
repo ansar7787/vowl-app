@@ -4,11 +4,11 @@ import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'dart:io';
-import 'package:voxai_quest/core/error/failures.dart';
-import 'package:voxai_quest/features/auth/data/datasources/auth_remote_data_source.dart';
-import 'package:voxai_quest/features/auth/data/models/user_model.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
-import 'package:voxai_quest/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/core/error/failures.dart';
+import 'package:vowl/features/auth/data/datasources/auth_remote_data_source.dart';
+import 'package:vowl/features/auth/data/models/user_model.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource _remoteDataSource;
@@ -32,18 +32,27 @@ class AuthRepositoryImpl implements AuthRepository {
       if (firebaseUser == null) {
         return Stream.value(null);
       }
-      return _firestore.collection('users').doc(firebaseUser.uid).snapshots().map((
-        doc,
-      ) {
+      return _firestore
+          .collection('users')
+          .doc(firebaseUser.uid)
+          .snapshots()
+          .handleError((error) {
+            final errorStr = error.toString();
+            if (errorStr.contains('PERMISSION_DENIED') || 
+                errorStr.contains('permission-denied')) {
+              debugPrint('AuthRepository: Firestore permission denied (expected during logout).');
+              return;
+            }
+            throw error;
+          })
+          .map((doc) {
         try {
           if (doc.exists && doc.data() != null) {
             final userModel = UserModel.fromMap(doc.data()!);
-            // Keep Auth-managed fields in sync if needed
             return userModel.copyWith(
               isEmailVerified: firebaseUser.emailVerified,
             );
           } else {
-            // Fallback if doc doesn't exist yet (rare race condition or new user)
             return UserModel(
               id: firebaseUser.uid,
               email: firebaseUser.email ?? '',
@@ -57,9 +66,6 @@ class AuthRepositoryImpl implements AuthRepository {
         } catch (e, stack) {
           debugPrint('Error in AuthRepository.user stream mapping: $e');
           debugPrint(stack.toString());
-          // We could return null here, but the stream is Stream<UserEntity?>.
-          // Returning null might log the user out if AuthBloc emits it.
-          // For now, let's at least not crash the stream.
           return null;
         }
       });
@@ -280,155 +286,146 @@ class AuthRepositoryImpl implements AuthRepository {
     required int level,
     required int xpIncrease,
     required int coinIncrease,
+    bool isDoubleReward = false,
   }) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user != null) {
-        final docRef = _firestore.collection('users').doc(user.uid);
-        final doc = await docRef.get();
+      if (user == null) return Left(AuthFailure('User not logged in'));
 
-        if (doc.exists && doc.data() != null) {
-          final data = doc.data()!;
-          Map<String, int> dailyHistory = {};
-          List<Map<String, dynamic>> activities = [];
-          Map<String, List<int>> completedLevels = {};
-          Map<String, int> unlockedLevels = {};
+      final docRef = _firestore.collection('users').doc(user.uid);
 
-          if (data['dailyXpHistory'] != null) {
-            dailyHistory = Map<String, int>.from(data['dailyXpHistory']);
-          }
-          if (data['recentActivities'] != null) {
-            activities = List<Map<String, dynamic>>.from(
-              data['recentActivities'],
-            );
-          }
-          if (data['completedLevels'] != null) {
-            completedLevels = (data['completedLevels'] as Map<String, dynamic>)
-                .map((key, value) => MapEntry(key, List<int>.from(value)));
-          }
-          if (data['unlockedLevels'] != null) {
-            unlockedLevels = Map<String, int>.from(data['unlockedLevels']);
-          }
+      await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          throw Exception('User data not found');
+        }
 
-          // Deduplication Check
-          final categoryCompleted = completedLevels[gameType] ?? [];
-          if (categoryCompleted.contains(level)) {
-            return const Right(null); // Already rewarded
-          }
+        final data = doc.data()!;
+        Map<String, int> dailyHistory = {};
+        List<Map<String, dynamic>> activities = [];
+        Map<String, List<int>> completedLevels = {};
+        Map<String, int> unlockedLevels = {};
 
-          // Apply Multipliers
-          double xpMultiplier = 1.0;
-          if (data['hasPermanentXPBoost'] == true) xpMultiplier *= 1.1;
+        if (data['dailyXpHistory'] != null) {
+          dailyHistory = Map<String, int>.from(data['dailyXpHistory']);
+        }
+        if (data['recentActivities'] != null) {
+          activities = List<Map<String, dynamic>>.from(
+            data['recentActivities'],
+          );
+        }
+        if (data['completedLevels'] != null) {
+          completedLevels = (data['completedLevels'] as Map<String, dynamic>)
+              .map((key, value) => MapEntry(key, List<int>.from(value)));
+        }
+        if (data['unlockedLevels'] != null) {
+          unlockedLevels = Map<String, int>.from(data['unlockedLevels']);
+        }
 
-          final doubleXPExpiry = data['doubleXPExpiry'] != null
-              ? (data['doubleXPExpiry'] as Timestamp).toDate()
-              : null;
-          if (doubleXPExpiry != null &&
-              doubleXPExpiry.isAfter(DateTime.now())) {
-            xpMultiplier *= 2.0;
-          }
+        // Replay Check (Coin Deflation & 50% XP)
+        final categoryCompleted = completedLevels[gameType] ?? [];
+        final bool isReplay = categoryCompleted.contains(level);
 
-          final finalXpIncrease = (xpIncrease * xpMultiplier).round();
+        // Apply Multipliers
+        double xpMultiplier = 1.0;
+        if (data['hasPermanentXPBoost'] == true) xpMultiplier *= 1.1;
 
-          // Mark as Completed
+        final doubleXPExpiry = data['doubleXPExpiry'] != null
+            ? (data['doubleXPExpiry'] as Timestamp).toDate()
+            : null;
+        if (doubleXPExpiry != null &&
+            doubleXPExpiry.isAfter(DateTime.now())) {
+          xpMultiplier *= 2.0;
+        }
+
+        final baseXp = isReplay ? (xpIncrease * 0.5) : xpIncrease;
+        final finalXpIncrease = (baseXp * xpMultiplier).round();
+
+        // Mark as Completed if not replay
+        if (!isReplay) {
           categoryCompleted.add(level);
           completedLevels[gameType] = categoryCompleted;
-
-          // Update Daily XP
-          final now = DateTime.now();
-          final todayKey =
-              "${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}";
-          final currentDaily = dailyHistory[todayKey] ?? 0;
-          dailyHistory[todayKey] = currentDaily + finalXpIncrease;
-
-          // Add Activity
-          final newActivity = {
-            'title': 'Quest Completed',
-            'subtitle': '+$finalXpIncrease XP · +$coinIncrease Coins',
-            'timestamp': Timestamp.now(),
-            'type': 'quest',
-          };
-          activities.insert(0, newActivity);
-          if (activities.length > 10) {
-            activities = activities.sublist(0, 10);
-          }
-
-          // Apply Multiplier for Premium Users or Level 100+
-          int finalCoinIncrease = coinIncrease;
-          final userExp = data['totalExp'] as int? ?? 0;
-          final userLevel = (userExp / 100).floor() + 1;
-
-          if (data['isPremium'] == true || userLevel >= 100) {
-            finalCoinIncrease = coinIncrease * 2;
-          }
-
-          // Detect if it's a Kids Zone game to update kidsCoins
-          final kidsGames = {
-            'alphabet',
-            'numbers',
-            'colors',
-            'shapes',
-            'animals',
-            'fruits',
-            'family',
-            'school',
-            'verbs',
-            'routine',
-            'emotions',
-            'prepositions',
-            'phonics',
-            'day_night',
-            'nature',
-            'home_kids',
-            'food_kids',
-            'transport',
-            'time',
-            'opposites',
-          };
-          final isKidsGame = kidsGames.contains(gameType);
-
-          // Unlock next level if applicable
-          final currentUnlocked = unlockedLevels[gameType] ?? 1;
-          if (level >= currentUnlocked) {
-            unlockedLevels[gameType] = level + 1;
-          }
-
-          // Update history list
-          List<Map<String, dynamic>> history = [];
-          if (data['coinHistory'] != null) {
-            history = List<Map<String, dynamic>>.from(data['coinHistory']);
-          }
-
-          final entry = {
-            'title': 'Quest Reward - ${gameType.toUpperCase()}',
-            'amount': finalCoinIncrease,
-            'isEarned': true,
-            'date': DateTime.now().toIso8601String(),
-          };
-
-          history.insert(0, entry);
-          if (history.length > 10) history.removeLast();
-
-          await docRef.update({
-            'totalExp': FieldValue.increment(finalXpIncrease),
-            isKidsGame ? 'kidsCoins' : 'coins': FieldValue.increment(
-              finalCoinIncrease,
-            ),
-            'coinHistory': history,
-            'dailyXpHistory': dailyHistory,
-            'recentActivities': activities,
-            'completedLevels': completedLevels,
-            'unlockedLevels': unlockedLevels,
-          });
         }
-        return const Right(null);
-      } else {
-        return Left(AuthFailure('User not logged in'));
-      }
+
+        // Update Daily XP
+        final now = DateTime.now();
+        final todayKey =
+            "${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}";
+        final currentDaily = dailyHistory[todayKey] ?? 0;
+        dailyHistory[todayKey] = currentDaily + finalXpIncrease;
+
+        // Add Activity
+        final newActivity = {
+          'title': 'Quest Completed',
+          'subtitle': '+$finalXpIncrease XP · +$coinIncrease Coins',
+          'timestamp': Timestamp.now(),
+          'type': 'quest',
+        };
+        activities.insert(0, newActivity);
+        if (activities.length > 10) {
+          activities = activities.sublist(0, 10);
+        }
+
+        // Apply Multiplier for Premium Users or Level 100+
+        int finalCoinIncrease = (isReplay && !isDoubleReward) ? 0 : coinIncrease;
+        final userExp = data['totalExp'] as int? ?? 0;
+        final userLevel = (userExp / 100).floor() + 1;
+
+        if (!isReplay && (data['isPremium'] == true || userLevel >= 100)) {
+          finalCoinIncrease = coinIncrease * 2;
+        }
+
+        // Detect if it's a Kids Zone game to update kidsCoins
+        final kidsGames = {
+          'alphabet', 'numbers', 'colors', 'shapes', 'animals',
+          'fruits', 'family', 'school', 'verbs', 'routine',
+          'emotions', 'prepositions', 'phonics', 'day_night',
+          'nature', 'home_kids', 'food_kids', 'transport',
+          'time', 'opposites', 'body', 'clothing',
+        };
+        final isKidsGame = kidsGames.contains(gameType);
+
+        // Unlock next level if applicable
+        final currentUnlocked = unlockedLevels[gameType] ?? 1;
+        if (level >= currentUnlocked) {
+          unlockedLevels[gameType] = level + 1;
+        }
+
+        // Update history list
+        List<Map<String, dynamic>> history = [];
+        if (data['coinHistory'] != null) {
+          history = List<Map<String, dynamic>>.from(data['coinHistory']);
+        }
+
+        final entry = {
+          'title': 'Quest Reward - ${gameType.toUpperCase()}',
+          'amount': finalCoinIncrease,
+          'isEarned': true,
+          'date': DateTime.now().toIso8601String(),
+        };
+
+        history.insert(0, entry);
+        if (history.length > 10) history.removeLast();
+
+        transaction.update(docRef, {
+          'totalExp': (userExp + finalXpIncrease),
+          isKidsGame ? 'kidsCoins' : 'coins': FieldValue.increment(
+            finalCoinIncrease,
+          ),
+          'coinHistory': history,
+          'dailyXpHistory': dailyHistory,
+          'recentActivities': activities,
+          'completedLevels': completedLevels,
+          'unlockedLevels': unlockedLevels,
+        });
+      });
+
+      return const Right(null);
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }
   }
+
 
   @override
   Future<Either<Failure, void>> useHint() async {
@@ -624,15 +621,18 @@ class AuthRepositoryImpl implements AuthRepository {
         completedLevels: user.completedLevels,
         lastVipGiftDate: user.lastVipGiftDate,
         lastDailyRewardDate: user.lastDailyRewardDate,
+        lastKidsDailyRewardDate: user.lastKidsDailyRewardDate,
         kidsCoins: user.kidsCoins,
         kidsStickers: user.kidsStickers,
         kidsMascot: user.kidsMascot,
         kidsEquippedSticker: user.kidsEquippedSticker,
         kidsOwnedAccessories: user.kidsOwnedAccessories,
         kidsEquippedAccessory: user.kidsEquippedAccessory,
+        kidsOwnedFurniture: user.kidsOwnedFurniture,
+        kidsEquippedFurniture: user.kidsEquippedFurniture,
       );
 
-      await docRef.update(userModel.toMap());
+      await docRef.set(userModel.toMap(), SetOptions(merge: true));
       return const Right(null);
     } catch (e) {
       return Left(ServerFailure(e.toString()));
@@ -661,6 +661,46 @@ class AuthRepositoryImpl implements AuthRepository {
           final updatedUser = userData.copyWith(
             coins: userData.coins + 100,
             lastVipGiftDate: DateTime.now(),
+          );
+
+          await docRef.update(updatedUser.toMap());
+          return const Right(null);
+        }
+        return Left(AuthFailure('User data not found'));
+      } else {
+        return Left(AuthFailure('User not logged in'));
+      }
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> claimDailyGift() async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user != null) {
+        final docRef = _firestore.collection('users').doc(user.uid);
+        final doc = await docRef.get();
+
+        if (doc.exists && doc.data() != null) {
+          final userData = UserModel.fromMap(doc.data()!);
+
+          final now = DateTime.now();
+          final lastGift = userData.lastDailyRewardDate;
+          final bool available = lastGift == null ||
+              lastGift.year != now.year ||
+              lastGift.month != now.month ||
+              lastGift.day != now.day;
+
+          if (!available) {
+            return Left(AuthFailure('Daily gift already claimed today'));
+          }
+
+          final reward = 50 + (now.day % 5) * 10; // Varied reward
+          final updatedUser = userData.copyWith(
+            coins: userData.coins + reward,
+            lastDailyRewardDate: now,
           );
 
           await docRef.update(updatedUser.toMap());
@@ -865,10 +905,16 @@ class AuthRepositoryImpl implements AuthRepository {
       final user = _firebaseAuth.currentUser;
       if (user != null) {
         final docRef = _firestore.collection('users').doc(user.uid);
-        final doc = await docRef.get();
+        await _firestore.runTransaction((transaction) async {
+          final doc = await transaction.get(docRef);
+          if (!doc.exists || doc.data() == null) {
+            throw Exception('User data not found');
+          }
 
-        if (doc.exists && doc.data() != null) {
           final data = doc.data()!;
+          final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+          if (currentCoins < cost) throw Exception('Not enough coins');
+
           List<Map<String, dynamic>> history = [];
           if (data['coinHistory'] != null) {
             history = List<Map<String, dynamic>>.from(data['coinHistory']);
@@ -884,14 +930,13 @@ class AuthRepositoryImpl implements AuthRepository {
           history.insert(0, entry);
           if (history.length > 10) history.removeLast();
 
-          await docRef.update({
-            'coins': FieldValue.increment(-cost),
+          transaction.update(docRef, {
+            'coins': currentCoins - cost,
             'streakFreezes': FieldValue.increment(1),
             'coinHistory': history,
           });
-          return const Right(null);
-        }
-        return Left(ServerFailure('User data not found'));
+        });
+        return const Right(null);
       }
       return Left(AuthFailure('User not logged in'));
     } catch (e) {
@@ -905,10 +950,16 @@ class AuthRepositoryImpl implements AuthRepository {
       final user = _firebaseAuth.currentUser;
       if (user != null) {
         final docRef = _firestore.collection('users').doc(user.uid);
-        final doc = await docRef.get();
+        await _firestore.runTransaction((transaction) async {
+          final doc = await transaction.get(docRef);
+          if (!doc.exists || doc.data() == null) {
+            throw Exception('User data not found');
+          }
 
-        if (doc.exists && doc.data() != null) {
           final data = doc.data()!;
+          final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+          if (currentCoins < cost) throw Exception('Not enough coins');
+
           List<Map<String, dynamic>> history = [];
           if (data['coinHistory'] != null) {
             history = List<Map<String, dynamic>>.from(data['coinHistory']);
@@ -925,15 +976,14 @@ class AuthRepositoryImpl implements AuthRepository {
           if (history.length > 10) history.removeLast();
 
           final expiry = DateTime.now().add(const Duration(hours: 24));
-          await docRef.update({
-            'coins': FieldValue.increment(-cost),
+          transaction.update(docRef, {
+            'coins': currentCoins - cost,
             'doubleXP': 1,
             'doubleXPExpiry': Timestamp.fromDate(expiry),
             'coinHistory': history,
           });
-          return const Right(null);
-        }
-        return Left(ServerFailure('User data not found'));
+        });
+        return const Right(null);
       }
       return Left(AuthFailure('User not logged in'));
     } catch (e) {
@@ -947,10 +997,20 @@ class AuthRepositoryImpl implements AuthRepository {
       final user = _firebaseAuth.currentUser;
       if (user != null) {
         final uid = user.uid;
-        // 1. Delete Firestore document
-        await _firestore.collection('users').doc(uid).delete();
-        // 2. Delete Firebase Auth user
+        
+        // 1. Delete Firebase Auth user first (most likely to fail due to recent login requirement)
         await user.delete();
+
+        // 2. Delete Profile Picture from Storage (if it exists)
+        try {
+          await _storage.ref().child('profile_pics').child('$uid.jpg').delete();
+        } catch (e) {
+          debugPrint('No profile pic to delete or error: $e');
+        }
+
+        // 3. Delete Firestore document
+        await _firestore.collection('users').doc(uid).delete();
+        
         return const Right(null);
       }
       return Left(AuthFailure('User not logged in'));

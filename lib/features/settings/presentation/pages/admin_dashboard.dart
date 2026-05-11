@@ -4,12 +4,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/utils/generation_strategies.dart';
-import 'package:voxai_quest/core/utils/quest_upload_service.dart';
-import 'package:voxai_quest/core/utils/game_content_generator.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
+import 'package:vowl/core/utils/generation_strategies.dart';
+import 'package:vowl/core/utils/quest_upload_service.dart';
+import 'package:vowl/core/utils/game_content_generator.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/utils/app_router.dart';
 import 'package:go_router/go_router.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
@@ -270,14 +272,19 @@ class _AdminDashboardState extends State<AdminDashboard>
         ? const Color(0xFF38BDF8)
         : const Color(0xFF0284C7);
 
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    final bgColor = isMidnight 
+        ? Colors.black 
+        : (isDark ? const Color(0xFF0F172A) : Colors.grey[50]!);
+
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.grey[50],
+      backgroundColor: bgColor,
       appBar: AppBar(
         toolbarHeight: 80.h,
         title: Column(
           children: [
             Text(
-              'VOXAI COMMAND',
+              'Vowl COMMAND',
               style: GoogleFonts.outfit(
                 fontWeight: FontWeight.w900,
                 letterSpacing: 4,

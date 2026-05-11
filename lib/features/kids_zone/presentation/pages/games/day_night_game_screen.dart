@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
-import 'package:voxai_quest/features/kids_zone/presentation/bloc/kids_bloc.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
+import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:voxai_quest/features/kids_zone/presentation/widgets/kids_image.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_image.dart';
 
 class DayNightGameScreen extends StatelessWidget {
   final int level;
@@ -18,8 +18,8 @@ class DayNightGameScreen extends StatelessWidget {
       gameType: "day_night",
       level: level,
       primaryColor: const Color(0xFF1E293B),
-      backgroundColors: const [Color(0xFFF1F5F9), Color(0xFFF8FAFC)],
-      buildGameUI: (context, state) {
+      backgroundColors: const [], // Using Unified Background
+      buildGameUI: (context, state, onHintTap) {
         final quest = state.currentQuest;
 
         return Column(
@@ -47,6 +47,7 @@ class DayNightGameScreen extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 8.w),
                       child: _buildCelestialCard(
                         context,
+                        state,
                         option,
                         quest.correctAnswer == option,
                       ),
@@ -81,6 +82,7 @@ class DayNightGameScreen extends StatelessWidget {
 
   Widget _buildCelestialCard(
     BuildContext context,
+    KidsLoaded state,
     String text,
     bool isCorrect,
   ) {
@@ -89,7 +91,9 @@ class DayNightGameScreen extends StatelessWidget {
         text.toLowerCase().contains("sun");
     return ScaleButton(
       onTap: () {
-        context.read<KidsBloc>().add(SubmitKidsAnswer(isCorrect));
+        context.read<KidsBloc>().add(SubmitKidsAnswer(
+              isCorrect,
+            ));
       },
       child: Container(
         height: 120.h,
@@ -137,3 +141,4 @@ class DayNightGameScreen extends StatelessWidget {
     );
   }
 }
+

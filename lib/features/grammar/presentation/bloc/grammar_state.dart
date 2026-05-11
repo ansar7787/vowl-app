@@ -1,6 +1,10 @@
+import 'package:equatable/equatable.dart';
 import '../../domain/entities/grammar_quest.dart';
 
-abstract class GrammarState {}
+abstract class GrammarState extends Equatable {
+  @override
+  List<Object?> get props => [];
+}
 
 class GrammarInitial extends GrammarState {}
 
@@ -12,6 +16,8 @@ class GrammarLoaded extends GrammarState {
   final int livesRemaining;
   final bool? lastAnswerCorrect;
   final bool hintUsed;
+  final int wrongCount;
+  final bool isFinalFailure;
 
   GrammarQuest get currentQuest => quests[currentIndex];
 
@@ -21,7 +27,12 @@ class GrammarLoaded extends GrammarState {
     required this.livesRemaining,
     this.lastAnswerCorrect,
     this.hintUsed = false,
+    this.wrongCount = 0,
+    this.isFinalFailure = false,
   });
+
+  @override
+  List<Object?> get props => [quests, currentIndex, livesRemaining, lastAnswerCorrect, hintUsed, wrongCount, isFinalFailure];
 
   GrammarLoaded copyWith({
     List<GrammarQuest>? quests,
@@ -29,6 +40,8 @@ class GrammarLoaded extends GrammarState {
     int? livesRemaining,
     bool? lastAnswerCorrect,
     bool? hintUsed,
+    int? wrongCount,
+    bool? isFinalFailure,
   }) {
     return GrammarLoaded(
       quests: quests ?? this.quests,
@@ -36,19 +49,28 @@ class GrammarLoaded extends GrammarState {
       livesRemaining: livesRemaining ?? this.livesRemaining,
       lastAnswerCorrect: lastAnswerCorrect,
       hintUsed: hintUsed ?? this.hintUsed,
+      wrongCount: wrongCount ?? this.wrongCount,
+      isFinalFailure: isFinalFailure ?? this.isFinalFailure,
     );
   }
 }
 
 class GrammarError extends GrammarState {
   final String message;
-  GrammarError(this.message);
+  final String? technicalError;
+  GrammarError(this.message, {this.technicalError});
+
+  @override
+  List<Object?> get props => [message, technicalError];
 }
 
 class GrammarGameComplete extends GrammarState {
   final int xpEarned;
   final int coinsEarned;
   GrammarGameComplete({required this.xpEarned, required this.coinsEarned});
+
+  @override
+  List<Object?> get props => [xpEarned, coinsEarned];
 }
 
 class GrammarGameOver extends GrammarState {
@@ -56,4 +78,7 @@ class GrammarGameOver extends GrammarState {
   final int currentIndex;
 
   GrammarGameOver({required this.quests, required this.currentIndex});
+
+  @override
+  List<Object?> get props => [quests, currentIndex];
 }

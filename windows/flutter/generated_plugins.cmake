@@ -7,9 +7,12 @@ list(APPEND FLUTTER_PLUGIN_LIST
   cloud_firestore
   connectivity_plus
   file_selector_windows
+  firebase_app_check
   firebase_auth
   firebase_core
+  firebase_remote_config
   firebase_storage
+  flutter_timezone
   flutter_tts
   permission_handler_windows
   share_plus

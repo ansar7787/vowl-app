@@ -1,0 +1,525 @@
+[
+  {
+    "level": 11,
+    "quests": [
+      {
+        "id": "KID_SHAPES_L11_Q1",
+        "instruction": "Detective: Find the round ball",
+        "question": "⚽",
+        "options": [
+          "Circle",
+          "Square",
+          "Triangle"
+        ],
+        "correctAnswer": "Circle",
+        "hint": "Balls are circles so they can roll!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_SHAPES_L11_Q2",
+        "instruction": "Detective: Find the pointy hat",
+        "question": "🥳",
+        "options": [
+          "Triangle",
+          "Square",
+          "Circle"
+        ],
+        "correctAnswer": "Triangle",
+        "hint": "Party hats are shaped like triangles!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_SHAPES_L11_Q3",
+        "instruction": "Detective: Find the flat sandwich",
+        "question": "🥪",
+        "options": [
+          "Triangle",
+          "Square",
+          "Star"
+        ],
+        "correctAnswer": "Triangle",
+        "hint": "This sandwich is cut into two triangles!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "quests": [
+      {
+        "id": "KID_SHAPES_L12_Q1",
+        "instruction": "Counting: How many corners on a TRIANGLE?",
+        "question": "🔺 Corners",
+        "options": [
+          "3",
+          "4",
+          "0"
+        ],
+        "correctAnswer": "3",
+        "hint": "1, 2, 3 pointy corners!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_SHAPES_L12_Q2",
+        "instruction": "Counting: How many corners on a SQUARE?",
+        "question": "🟦 Corners",
+        "options": [
+          "4",
+          "3",
+          "5"
+        ],
+        "correctAnswer": "4",
+        "hint": "1, 2, 3, 4 corners for the box!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      },
+      {
+        "id": "KID_SHAPES_L12_Q3",
+        "instruction": "Counting: How many corners on a CIRCLE?",
+        "question": "⭕ Corners",
+        "options": [
+          "0",
+          "1",
+          "4"
+        ],
+        "correctAnswer": "0",
+        "hint": "Circles have no sharp corners at all!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "CandyCloud",
+        "shader": "sugar_glow"
+      }
+    ]
+  },
+  {
+    "level": 13,
+    "quests": [
+      {
+        "id": "KID_SHAPES_L13_Q1",
+        "instruction": "Identify: Who has 4 equal sides?",
+        "question": "Selection",
+        "options": [
+          "Square",
+          "Triangle",
+          "Heart"
+        ],
+        "correctAnswer": "Square",
+        "hint": "A square is special because all sides are the same length!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_SHAPES_L13_Q2",
+        "instruction": "Identify: Who has 3 straight sides?",
+        "question": "Selection",
+        "options": [
+          "Triangle",
+          "Circle",
+          "Star"
+        ],
+        "correctAnswer": "Triangle",
+        "hint": "The three-sided shape!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      },
+      {
+        "id": "KID_SHAPES_L13_Q3",
+        "instruction": "Identify: Who has no straight sides?",
+        "question": "Selection",
+        "options": [
+          "Circle",
+          "Square",
+          "Triangle"
+        ],
+        "correctAnswer": "Circle",
+        "hint": "Circles are only made of curves!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "ForestFriend",
+        "shader": "leaf_flutter"
+      }
+    ]
+  },
+  {
+    "level": 14,
+    "quests": [
+      {
+        "id": "KID_SHAPES_L14_Q1",
+        "instruction": "Compare: ⭕ vs ⚽",
+        "question": "Are they the same shape?",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "Both are perfectly round!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_SHAPES_L14_Q2",
+        "instruction": "Compare: 🟦 vs 🧱",
+        "question": "Which is a square?",
+        "options": [
+          "🟦",
+          "🧱"
+        ],
+        "correctAnswer": "🟦",
+        "hint": "The brick is longer, but the blue one is a square!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      },
+      {
+        "id": "KID_SHAPES_L14_Q3",
+        "instruction": "Compare: ⭐ vs 🔺",
+        "question": "Which has more points?",
+        "options": [
+          "Star",
+          "Triangle"
+        ],
+        "correctAnswer": "Star",
+        "hint": "A star has 5 or more points, a triangle only has 3!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "StarryNight",
+        "shader": "magic_twinkle"
+      }
+    ]
+  },
+  {
+    "level": 15,
+    "quests": [
+      {
+        "id": "KID_SHAPES_L15_Q1",
+        "instruction": "World: Find the pizza slice",
+        "question": "🍕",
+        "options": [
+          "Triangle",
+          "Circle",
+          "Heart"
+        ],
+        "correctAnswer": "Triangle",
+        "hint": "One slice is a triangle, the whole pizza is a circle!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      },
+      {
+        "id": "KID_SHAPES_L15_Q2",
+        "instruction": "World: Find the whole pizza",
+        "question": "🍕 Full",
+        "options": [
+          "Circle",
+          "Square",
+          "Star"
+        ],
+        "correctAnswer": "Circle",
+        "hint": "A whole pizza starts as a big circle!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      },
+      {
+        "id": "KID_SHAPES_L15_Q3",
+        "instruction": "World: Find the donut",
+        "question": "🍩",
+        "options": [
+          "Circle",
+          "Square",
+          "Triangle"
+        ],
+        "correctAnswer": "Circle",
+        "hint": "Donuts are yummy circles with a hole!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "PandaPlay",
+        "shader": "bamboo_breeze"
+      }
+    ]
+  },
+  {
+    "level": 16,
+    "quests": [
+      {
+        "id": "KID_SHAPES_L16_Q1",
+        "instruction": "Logic: Does a square roll?",
+        "question": "🟦 Check",
+        "options": [
+          "No",
+          "Yes"
+        ],
+        "correctAnswer": "No",
+        "hint": "Squares have flat sides that stop them from rolling!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      },
+      {
+        "id": "KID_SHAPES_L16_Q2",
+        "instruction": "Logic: Does a circle roll?",
+        "question": "⭕ Check",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correctAnswer": "Yes",
+        "hint": "Circles roll perfectly because they are round!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      },
+      {
+        "id": "KID_SHAPES_L16_Q3",
+        "instruction": "Logic: Can you build a tower with circles?",
+        "question": "⭕ Check",
+        "options": [
+          "No, they roll off!",
+          "Yes"
+        ],
+        "correctAnswer": "No, they roll off!",
+        "hint": "Try building with squares instead!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "UnicornMist",
+        "shader": "pastel_dream"
+      }
+    ]
+  },
+  {
+    "level": 17,
+    "quests": [
+      {
+        "id": "KID_SHAPES_L17_Q1",
+        "instruction": "Identify: Who has 5 points?",
+        "question": "Selection",
+        "options": [
+          "Star",
+          "Square",
+          "Triangle"
+        ],
+        "correctAnswer": "Star",
+        "hint": "Count the tips of the star!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_SHAPES_L17_Q2",
+        "instruction": "Identify: Who has 2 curves?",
+        "question": "Selection",
+        "options": [
+          "Heart",
+          "Circle",
+          "Triangle"
+        ],
+        "correctAnswer": "Heart",
+        "hint": "A heart has two curvy bumps at the top!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      },
+      {
+        "id": "KID_SHAPES_L17_Q3",
+        "instruction": "Identify: Who has 4 corners?",
+        "question": "Selection",
+        "options": [
+          "Square",
+          "Triangle",
+          "Circle"
+        ],
+        "correctAnswer": "Square",
+        "hint": "The boxy shape!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "SunnyMeadow",
+        "shader": "sparkle_dust"
+      }
+    ]
+  },
+  {
+    "level": 18,
+    "quests": [
+      {
+        "id": "KID_SHAPES_L18_Q1",
+        "instruction": "Search: Find the CLOCK",
+        "question": "⏰",
+        "options": [
+          "Circle",
+          "Triangle",
+          "Star"
+        ],
+        "correctAnswer": "Circle",
+        "hint": "Most clocks are round circles!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      },
+      {
+        "id": "KID_SHAPES_L18_Q2",
+        "instruction": "Search: Find the GIFT",
+        "question": "🎁",
+        "options": [
+          "Square",
+          "Circle",
+          "Heart"
+        ],
+        "correctAnswer": "Square",
+        "hint": "This gift box is a perfect square!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      },
+      {
+        "id": "KID_SHAPES_L18_Q3",
+        "instruction": "Search: Find the NACHO",
+        "question": "🧀",
+        "options": [
+          "Triangle",
+          "Square",
+          "Circle"
+        ],
+        "correctAnswer": "Triangle",
+        "hint": "Nacho chips are crunchy triangles!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "DinoDesert",
+        "shader": "sand_swirl"
+      }
+    ]
+  },
+  {
+    "level": 19,
+    "quests": [
+      {
+        "id": "KID_SHAPES_L19_Q1",
+        "instruction": "Review: Who has 3 corners?",
+        "question": "🔺 Review",
+        "options": [
+          "Triangle",
+          "Square",
+          "Circle"
+        ],
+        "correctAnswer": "Triangle",
+        "hint": "The pointy friend!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_SHAPES_L19_Q2",
+        "instruction": "Review: Who has NO corners?",
+        "question": "⭕ Review",
+        "options": [
+          "Circle",
+          "Square",
+          "Star"
+        ],
+        "correctAnswer": "Circle",
+        "hint": "The curvy friend!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      },
+      {
+        "id": "KID_SHAPES_L19_Q3",
+        "instruction": "Review: Who has 4 sides?",
+        "question": "🟦 Review",
+        "options": [
+          "Square",
+          "Triangle",
+          "Heart"
+        ],
+        "correctAnswer": "Square",
+        "hint": "The box friend!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "RainbowSwirl",
+        "shader": "bubble_pop"
+      }
+    ]
+  },
+  {
+    "level": 20,
+    "quests": [
+      {
+        "id": "KID_SHAPES_L20_Q1",
+        "instruction": "Level 20 Challenge: Counting!",
+        "question": "How many corners on a square?",
+        "options": [
+          "4",
+          "3",
+          "0"
+        ],
+        "correctAnswer": "4",
+        "hint": "Count the corners of a box!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_SHAPES_L20_Q2",
+        "instruction": "Level 20 Challenge: Roll!",
+        "question": "Which shape can roll down a hill?",
+        "options": [
+          "Circle",
+          "Square",
+          "Triangle"
+        ],
+        "correctAnswer": "Circle",
+        "hint": "The round one!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      },
+      {
+        "id": "KID_SHAPES_L20_Q3",
+        "instruction": "Level 20 Challenge: Mastery!",
+        "question": "Are you a Junior Architect?",
+        "options": [
+          "YES!",
+          "No"
+        ],
+        "correctAnswer": "YES!",
+        "hint": "Congratulations! You have completed Level 20!",
+        "gameType": "choice_multi",
+        "interactionType": "choice",
+        "painter": "OceanWave",
+        "shader": "water_ripples"
+      }
+    ]
+  }
+]

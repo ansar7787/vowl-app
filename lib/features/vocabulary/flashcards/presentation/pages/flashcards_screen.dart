@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'dart:math';
 
 class FlashcardsScreen extends StatefulWidget {
   final int level;
-
-  const FlashcardsScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const FlashcardsScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.flashcards,
+  });
 
   @override
   State<FlashcardsScreen> createState() => _FlashcardsScreenState();
@@ -32,186 +29,252 @@ class FlashcardsScreen extends StatefulWidget {
 class _FlashcardsScreenState extends State<FlashcardsScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+
+  Offset _dragOffset = Offset.zero;
+  double _dragAngle = 0.0;
   bool _isFlipped = false;
+  bool _isAnswered = false;
+  bool _isRetrying = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
 
   @override
   void initState() {
     super.initState();
     context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(
-        gameType: GameSubtype.flashcards,
-        level: widget.level,
-      ),
+      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
     );
   }
 
-  void _onFlip() {
-    setState(() => _isFlipped = !_isFlipped);
-    _hapticService.selection();
+  void _onDragUpdate(DragUpdateDetails details) {
+    if (_isAnswered) return;
+    if (_isRetrying) setState(() => _isRetrying = false);
+    setState(() {
+      _dragOffset += details.delta;
+      _dragAngle = _dragOffset.dx / 500;
+      if (_dragOffset.dx.abs() % 10 < 1) _hapticService.selection();
+    });
+  }
+
+  void _onDragEnd(DragEndDetails details) {
+    if (_isAnswered) return;
+    if (_dragOffset.dx.abs() > 150) {
+      _submitAnswer(_dragOffset.dx > 0);
+    } else {
+      setState(() {
+        _dragOffset = Offset.zero;
+        _dragAngle = 0.0;
+      });
+    }
+  }
+
+  void _submitAnswer(bool mastered) {
+    if (_isAnswered) return;
+    if (mastered) {
+      _hapticService.success();
+      _soundService.playCorrect();
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+    }
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = mastered;
+      _dragOffset = Offset(mastered ? 1000 : -1000, 0);
+    });
+    context.read<VocabularyBloc>().add(SubmitAnswer(mastered));
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'vocabulary',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: Stack(
-        children: [
-          MeshGradientBackground(colors: theme.backgroundColors),
-          BlocConsumer<VocabularyBloc, VocabularyState>(
-            listener: (context, state) {
-              if (state is VocabularyGameComplete) {
-                setState(() => _showConfetti = true);
-                final isPremium =
-                    context.read<AuthBloc>().state.user?.isPremium ?? false;
-                di.sl<AdService>().showInterstitialAd(
-                  isPremium: isPremium,
-                  onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'FLASHCARD MASTER!',
-          description:
-              'Great job! You earned ${state.xpEarned} XP and ${state.coinsEarned} coins.',
-        ),
-                );
-              } else if (state is VocabularyGameOver) {
-                GameDialogHelper.showGameOver(
-        context,
-        title: 'GAME OVER',
-        description: 'Flashcards can be tricky. Keep practicing!',
-      );
-              }
-            },
-            builder: (context, state) {
-              if (state is VocabularyLoading || state is VocabularyInitial) {
-                return const GameShimmerLoading();
-              }
+    return BlocConsumer<VocabularyBloc, VocabularyState>(
+      listener: (context, state) {
+        if (state is VocabularyLoaded) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
+          
+          if (isNewQuestion || isRetry) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isRetrying = isRetry;
+              _isCorrect = null;
+              _isFlipped = false;
+              _dragOffset = Offset.zero;
+              _dragAngle = 0.0;
+            });
+          }
+        }
+        if (state is VocabularyGameComplete) {
+          if (!_showConfetti) {
+            setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'VOCAB MASTERY!',
+            enableDoubleUp: true,
+          );
+        }
+      } else if (state is VocabularyGameOver) {
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
+          );
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is VocabularyLoaded) ? state.currentQuest : null;
 
-              if (state is VocabularyError) {
-                return QuestUnavailableScreen(
-                  message: state.message,
-                  onRetry: () => context.read<VocabularyBloc>().add(
-                    FetchVocabularyQuests(
-                      gameType: GameSubtype.flashcards,
-                      level: widget.level,
-                    ),
-                  ),
-                );
-              }
-              if (state is VocabularyLoaded) {
-                final quest = state.currentQuest;
-                final progress = (state.currentIndex + 1) / state.quests.length;
+        return VocabularyBaseLayout(
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
+          onHint: () =>
+              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+          child: quest == null
+              ? const SizedBox()
+              : LayoutBuilder(
+                  builder: (context, constraints) {
+                    // Calculate dynamic card height based on available space
+                    // Subtracting some space for instruction and hints
+                    final availableHeight = constraints.maxHeight;
+                    final cardHeight = (availableHeight * 0.65)
+                        .clamp(300.0, 450.0)
+                        .h;
+                    final cardWidth = (constraints.maxWidth * 0.85)
+                        .clamp(280.0, 320.0)
+                        .w;
 
-                return SafeArea(
-                  child: Column(
-                    children: [
-                      _buildHeader(context, state, progress, theme, isDark),
-                      SizedBox(height: 20.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Text(
-                          "Memorize and Reveal",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.outfit(
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w500,
-                            color: isDark ? Colors.white70 : Colors.black54,
-                          ),
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(height: 12.h),
+                        _buildInstruction(theme.primaryColor),
+                        SizedBox(height: 24.h),
+                        _buildCardStack(
+                          quest,
+                          theme.primaryColor,
+                          isDark,
+                          cardWidth,
+                          cardHeight,
                         ),
-                      ),
-                      const Spacer(),
-                      _buildFlashcard(quest, theme, isDark),
-                      const Spacer(),
-                      _buildActionButtons(context, state, theme, isDark),
-                      SizedBox(height: 40.h),
-                    ],
-                  ),
-                );
-              }
-
-              return const SizedBox.shrink();
-            },
-          ),
-          if (_showConfetti) const GameConfetti(),
-        ],
-      ),
+                        SizedBox(height: 32.h),
+                        _buildSwipeHints(theme.primaryColor),
+                        SizedBox(height: 20.h),
+                      ],
+                    );
+                  },
+                ),
+        );
+      },
     );
   }
 
-  Widget _buildHeader(
-    BuildContext context,
-    VocabularyLoaded state,
-    double progress,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    return Padding(
-      padding: EdgeInsets.all(20.r),
+  Widget _buildInstruction(Color primaryColor) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          ScaleButton(
-            onTap: () => context.pop(),
-            child: Container(
-              padding: EdgeInsets.all(8.r),
-              decoration: BoxDecoration(
-                color: isDark ? Colors.white10 : Colors.black12,
-                shape: BoxShape.circle,
+          Icon(Icons.swipe_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 8.w),
+          Flexible(
+            child: Text(
+              "SWIPE RIGHT TO MASTER, LEFT TO REVIEW",
+              style: GoogleFonts.outfit(
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.2,
               ),
-              child: Icon(
-                Icons.close_rounded,
-                color: isDark ? Colors.white70 : Colors.black54,
-                size: 24.r,
-              ),
+              overflow: TextOverflow.visible,
+              textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(width: 15.w),
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10.r),
-              child: LinearProgressIndicator(
-                value: progress,
-                backgroundColor: isDark
+        ],
+      ),
+    ).animate().fadeIn(duration: 600.ms).slideY(begin: -0.2, end: 0);
+  }
+
+  Widget _buildCardStack(
+    dynamic quest,
+    Color color,
+    bool isDark,
+    double width,
+    double height,
+  ) {
+    return GestureDetector(
+      onPanUpdate: _onDragUpdate,
+      onPanEnd: _onDragEnd,
+      onTap: () {
+        _hapticService.light();
+        setState(() => _isFlipped = !_isFlipped);
+      },
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Bottom Card Decoration (Shadow/Stack effect)
+          Transform.translate(
+            offset: const Offset(0, 10),
+            child: Container(
+              width: width * 0.95,
+              height: height,
+              decoration: BoxDecoration(
+                color: isDark
                     ? Colors.white10
                     : Colors.black.withValues(alpha: 0.05),
-                valueColor: AlwaysStoppedAnimation<Color>(theme.primaryColor),
-                minHeight: 12.h,
+                borderRadius: BorderRadius.circular(24.r),
               ),
             ),
           ),
-          SizedBox(width: 15.w),
-          _buildHeartCount(state.livesRemaining),
-        ],
-      ),
-    );
-  }
 
-  Widget _buildHeartCount(int lives) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Row(
-        children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
+          // Main Interactive Card
+          RepaintBoundary(
+            child: AnimatedContainer(
+              duration: (_isAnswered || _isRetrying) ? 400.ms : 0.ms,
+              curve: Curves.easeOutBack,
+              transform: Matrix4.identity()
+                ..setTranslationRaw(_dragOffset.dx, _dragOffset.dy, 0.0)
+                ..rotateZ(_dragAngle),
+              child: TweenAnimationBuilder(
+                tween: Tween<double>(begin: 0, end: _isFlipped ? 1 : 0),
+                duration: 400.ms,
+                curve: Curves.easeInOutBack,
+                builder: (context, value, child) {
+                  return Transform(
+                    transform: Matrix4.identity()
+                      ..setEntry(3, 2, 0.001)
+                      ..rotateY(value * pi),
+                    alignment: Alignment.center,
+                    child: value > 0.5
+                        ? Transform(
+                            transform: Matrix4.identity()..rotateY(pi),
+                            alignment: Alignment.center,
+                            child: _buildCardBack(
+                              quest,
+                              color,
+                              isDark,
+                              width,
+                              height,
+                            ),
+                          )
+                        : _buildCardFront(quest, color, isDark, width, height),
+                  );
+                },
+              ),
             ),
           ),
         ],
@@ -219,218 +282,228 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     );
   }
 
-  Widget _buildFlashcard(dynamic quest, ThemeResult theme, bool isDark) {
-    return GestureDetector(
-      onTap: _onFlip,
-      child: SizedBox(
-        height: 400.h,
-        width: 320.w,
-        child: AnimatedSwitcher(
-          duration: const Duration(milliseconds: 600),
-          transitionBuilder: (child, animation) {
-            final rotate = Tween(begin: 3.1415, end: 0.0).animate(animation);
-            return AnimatedBuilder(
-              animation: rotate,
-              child: child,
-              builder: (context, child) {
-                final isUnder = (ValueKey(_isFlipped) != child!.key);
-                final value = isUnder
-                    ? rotate.value
-                    : (rotate.value - 3.1415).abs();
-                return Transform(
-                  transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.001)
-                    ..rotateY(value),
-                  alignment: Alignment.center,
-                  child: child,
-                );
-              },
-            );
-          },
-          child: _isFlipped
-              ? _buildCardSide(
-                  key: const ValueKey(true),
-                  title: 'Definition / Example',
-                  content:
-                      quest.explanation ?? quest.sentence ?? 'No explanation',
-                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                  textColor: isDark ? Colors.white : Colors.black87,
-                  theme: theme,
-                )
-              : _buildCardSide(
-                  key: const ValueKey(false),
-                  title: 'Vocabulary Word',
-                  content: quest.word ?? 'Unknown',
-                  color: theme.primaryColor.withValues(alpha: 0.9),
-                  textColor: Colors.white,
-                  theme: theme,
-                ),
+  Widget _buildCardFront(
+    dynamic quest,
+    Color color,
+    bool isDark,
+    double width,
+    double height,
+  ) {
+    return Container(
+      width: width,
+      height: height,
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : Colors.white,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(
+          color: isDark ? Colors.white10 : color.withValues(alpha: 0.15),
+          width: 1,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 25,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            padding: EdgeInsets.all(20.r),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.1),
+              shape: BoxShape.circle,
+            ),
+            child: Text(
+              quest.topicEmoji ?? "🏷️",
+              style: TextStyle(fontSize: 56.sp),
+            ),
+          ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
+          SizedBox(height: 32.h),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              quest.word?.toUpperCase() ?? "",
+              style: GoogleFonts.outfit(
+                fontSize: 32.sp,
+                fontWeight: FontWeight.w900,
+                color: isDark ? Colors.white : Colors.black87,
+                letterSpacing: 4,
+              ),
+            ),
+          ),
+          const Spacer(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.touch_app_rounded,
+                size: 14.r,
+                color: color.withValues(alpha: 0.5),
+              ),
+              SizedBox(width: 8.w),
+              Text(
+                "TAP TO FLIP",
+                style: GoogleFonts.outfit(
+                  fontSize: 10.sp,
+                  color: color.withValues(alpha: 0.5),
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildCardSide({
-    required Key key,
-    required String title,
-    required String content,
-    required Color color,
-    required Color textColor,
-    required ThemeResult theme,
-  }) {
-    return GlassTile(
-      key: key,
-      borderRadius: BorderRadius.circular(30.r),
-      borderColor: Colors.white10,
-      padding: EdgeInsets.zero,
-      child: Container(
-        padding: EdgeInsets.all(32.r),
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(30.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              blurRadius: 20.r,
-              offset: const Offset(0, 10),
-            ),
-          ],
-        ),
+  Widget _buildCardBack(
+    dynamic quest,
+    Color color,
+    bool isDark,
+    double width,
+    double height,
+  ) {
+    return Container(
+      width: width,
+      height: height,
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF0F172A) : Colors.white,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: color, width: 3),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: 0.2),
+            blurRadius: 20,
+            offset: const Offset(0, 5),
+          ),
+        ],
+      ),
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(height: 10.h),
             Text(
-              title,
+              "DEFINITION",
               style: GoogleFonts.outfit(
-                fontSize: 14.sp,
-                letterSpacing: 2,
-                color: textColor.withValues(alpha: 0.6),
+                fontSize: 10.sp,
+                color: color,
                 fontWeight: FontWeight.w900,
+                letterSpacing: 2,
               ),
             ),
-            const Divider(height: 40, color: Colors.white24),
+            SizedBox(height: 16.h),
             Text(
-              content,
+              quest.definition ?? "",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.fredoka(
+                fontSize: 19.sp,
+                color: isDark ? Colors.white : Colors.black87,
+                height: 1.4,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(height: 28.h),
+            Divider(
+              color: color.withValues(alpha: 0.1),
+              thickness: 1,
+              indent: 40.w,
+              endIndent: 40.w,
+            ),
+            SizedBox(height: 24.h),
+            Text(
+              "EXAMPLE",
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp,
+                color: Colors.amber.shade700,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 2,
+              ),
+            ),
+            SizedBox(height: 12.h),
+            Text(
+              quest.example ?? "",
               textAlign: TextAlign.center,
               style: GoogleFonts.outfit(
-                fontSize: 28.sp,
-                fontWeight: FontWeight.bold,
-                color: textColor,
+                fontSize: 15.sp,
+                color: isDark ? Colors.white70 : Colors.black54,
+                fontStyle: FontStyle.italic,
+                height: 1.5,
               ),
             ),
-            if (_isFlipped) ...[
-              const Spacer(),
-              ScaleButton(
-                onTap: () {
-                  _hapticService.selection();
-                  // Integration for speech could go here
-                },
-                child: Icon(
-                  Icons.volume_up_rounded,
-                  color: theme.primaryColor,
-                  size: 48.r,
+            if (quest.explanation != null && quest.explanation!.isNotEmpty) ...[
+              SizedBox(height: 24.h),
+              Text(
+                "EXPLANATION",
+                style: GoogleFonts.outfit(
+                  fontSize: 10.sp,
+                  color: Colors.blue.shade700,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 2,
                 ),
-              ).animate().shimmer(),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildActionButtons(
-    BuildContext context,
-    VocabularyLoaded state,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    if (!_isFlipped) {
-      return Text(
-            'TAP CARD TO REVEAL',
-            style: GoogleFonts.outfit(
-              color: isDark ? Colors.white38 : Colors.black38,
-              letterSpacing: 2,
-              fontWeight: FontWeight.bold,
-            ),
-          )
-          .animate(onPlay: (controller) => controller.repeat())
-          .fadeIn(duration: 1.seconds)
-          .fadeOut(delay: 1.seconds);
-    }
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 40.w),
-      child: Row(
-        children: [
-          Expanded(
-            child: _buildActionButton(
-              label: 'AGAIN',
-              icon: Icons.refresh_rounded,
-              color: Colors.red.withValues(alpha: 0.2),
-              textColor: Colors.redAccent,
-              onTap: () {
-                _hapticService.error();
-                setState(() => _isFlipped = false);
-                context.read<VocabularyBloc>().add(SubmitAnswer(false));
-              },
-            ),
-          ),
-          SizedBox(width: 20.w),
-          Expanded(
-            child: _buildActionButton(
-              label: 'KNOW',
-              icon: Icons.check_circle_rounded,
-              color: theme.primaryColor.withValues(alpha: 0.2),
-              textColor: theme.primaryColor,
-              onTap: () {
-                _hapticService.success();
-                setState(() => _isFlipped = false);
-                context.read<VocabularyBloc>().add(SubmitAnswer(true));
-                context.read<VocabularyBloc>().add(NextQuestion());
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildActionButton({
-    required String label,
-    required IconData icon,
-    required Color color,
-    required Color textColor,
-    required VoidCallback onTap,
-  }) {
-    return ScaleButton(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.symmetric(vertical: 16.h),
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(color: textColor.withValues(alpha: 0.3)),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, color: textColor, size: 24.r),
-            SizedBox(width: 8.w),
-            Text(
-              label,
-              style: GoogleFonts.outfit(
-                color: textColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 16.sp,
               ),
-            ),
+              SizedBox(height: 12.h),
+              Text(
+                quest.explanation!,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.outfit(
+                  fontSize: 14.sp,
+                  color: isDark ? Colors.white60 : Colors.black45,
+                  height: 1.5,
+                ),
+              ),
+            ],
+            SizedBox(height: 10.h),
           ],
         ),
       ),
     );
   }
 
-  
+  Widget _buildSwipeHints(Color color) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildHintIcon(Icons.refresh_rounded, Colors.redAccent, "REVIEW"),
+        _buildHintIcon(
+          Icons.check_circle_rounded,
+          Colors.greenAccent,
+          "MASTER",
+        ),
+      ],
+    );
+  }
 
-  
+  Widget _buildHintIcon(IconData icon, Color color, String label) {
+    return Column(
+      children: [
+        Container(
+          padding: EdgeInsets.all(12.r),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: color.withValues(alpha: 0.1),
+            border: Border.all(color: color.withValues(alpha: 0.3)),
+          ),
+          child: Icon(icon, color: color, size: 24.r),
+        ),
+        SizedBox(height: 8.h),
+        Text(
+          label,
+          style: GoogleFonts.outfit(
+            fontSize: 10.sp,
+            fontWeight: FontWeight.w900,
+            color: color,
+            letterSpacing: 1,
+          ),
+        ),
+      ],
+    ).animate().fadeIn(delay: 400.ms).scale();
+  }
 }

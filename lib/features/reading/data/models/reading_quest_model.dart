@@ -16,6 +16,7 @@ class ReadingQuestModel extends ReadingQuest {
     super.correctAnswerIndex,
     super.correctAnswer,
     super.hint,
+    super.visualConfig,
     super.passage,
     super.question,
     super.highlightedWord,
@@ -28,6 +29,9 @@ class ReadingQuestModel extends ReadingQuest {
     super.explanation,
     super.textToSpeak,
     super.prompt,
+    super.keywords,
+    super.timeLimit,
+    super.targetItem,
   });
 
   factory ReadingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -35,6 +39,15 @@ class ReadingQuestModel extends ReadingQuest {
       (s) => s.name == map['subtype'],
       orElse: () => GameSubtype.readAndAnswer,
     );
+
+    // Helper to safely get a string from either a String or a List of Strings
+    String? getString(dynamic value) {
+      if (value == null) return null;
+      if (value is String) return value;
+      if (value is List) return value.join(' ');
+      return value.toString();
+    }
+
     return ReadingQuestModel(
       id: id,
       type: subtype.category,
@@ -42,38 +55,44 @@ class ReadingQuestModel extends ReadingQuest {
       instruction: map['instruction'] ?? 'Read and answer.',
       difficulty: map['difficulty'] ?? 1,
       interactionType: InteractionType.values.firstWhere(
-        (i) => i.name == map['interactionType'],
+        (i) => i.name == (map['interactionType'] ?? 'choice'),
         orElse: () => InteractionType.choice,
       ),
-      xpReward: map['xpReward'] ?? 10,
-      coinReward: map['coinReward'] ?? 5,
-      livesAllowed: map['livesAllowed'],
+      xpReward: (map['xpReward'] as num?)?.toInt() ?? 10,
+      coinReward: (map['coinReward'] as num?)?.toInt() ?? 5,
+      livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
       options: map['options'] != null
           ? List<String>.from(map['options'])
-          : null,
+          : (map['choices'] != null ? List<String>.from(map['choices']) : null),
       correctAnswerIndex: map['correctAnswerIndex'],
-      correctAnswer: map['correctAnswer'],
+      correctAnswer: getString(map['correctAnswer']),
       hint: map['hint'],
-      passage: map['passage'],
-      question: map['question'],
-      highlightedWord: map['highlightedWord'],
-      statement: map['statement'],
+      visualConfig: map['visual_config'] != null
+          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config']))
+          : null,
+      passage: getString(map['passage'] ?? map['text'] ?? map['content'] ?? map['story'] ?? map['sentence']),
+      question: map['question'] ?? map['instruction'],
+      highlightedWord: map['highlightedWord'] ?? map['targetWord'],
+      statement: map['statement'] ?? map['text'],
       shuffledSentences: map['shuffledSentences'] != null
           ? List<String>.from(map['shuffledSentences'])
           : null,
       correctOrder: map['correctOrder'] != null
-          ? List<int>.from(map['correctOrder'])
+          ? (map['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
           : null,
       pairs: map['pairs'] != null
           ? List<Map<String, String>>.from(
               (map['pairs'] as List).map((e) => Map<String, String>.from(e)),
             )
           : null,
-      phoneticHint: map['phoneticHint'],
+      phoneticHint: map['phoneticHint'] ?? map['phonetic'],
       targetWord: map['targetWord'] ?? map['word'],
       explanation: map['explanation'],
-      textToSpeak: map['textToSpeak'],
+      textToSpeak: getString(map['textToSpeak'] ?? map['passage'] ?? map['text']),
       prompt: map['prompt'],
+      keywords: map['keywords'] != null ? List<String>.from(map['keywords']) : null,
+      timeLimit: map['timeLimit'],
+      targetItem: map['targetItem'],
     );
   }
 
@@ -102,6 +121,10 @@ class ReadingQuestModel extends ReadingQuest {
       'explanation': explanation,
       'textToSpeak': textToSpeak,
       'prompt': prompt,
+      'keywords': keywords,
+      'timeLimit': timeLimit,
+      'targetItem': targetItem,
     };
   }
 }
+

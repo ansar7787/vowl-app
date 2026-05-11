@@ -4,12 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/auth/domain/repositories/auth_repository.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/utils/injection_container.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
 
 class VerifyEmailPage extends StatefulWidget {
   const VerifyEmailPage({super.key});
@@ -109,7 +110,16 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
           context.go(AppRouter.homeRoute);
         }
       },
-      child: Scaffold(
+      child: Builder(builder: (context) {
+        final isDark = Theme.of(context).brightness == Brightness.dark;
+        final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+        
+        final bgColor = isMidnight 
+            ? const Color(0xFF000000) 
+            : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+
+        return Scaffold(
+          backgroundColor: bgColor,
         body: Stack(
           children: [
             const MeshGradientBackground(),
@@ -226,8 +236,9 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
               ),
             ),
           ],
-        ),
-      ),
+          ),
+        );
+      }),
     );
   }
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_dialog.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class HintHelper {
   static void useHint({
@@ -18,7 +20,7 @@ class HintHelper {
       return;
     }
 
-    authBloc.add(const AuthConsumeHintRequested());
+    di.sl<EconomyBloc>().add(const EconomyConsumeHintRequested());
     onHintAction();
   }
 

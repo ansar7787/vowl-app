@@ -1,15 +1,15 @@
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:voxai_quest/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PaymentService {
   late Razorpay _razorpay;
-  final AuthRepository authRepository;
+  final GetCurrentUser getCurrentUser;
   final FirebaseFirestore firestore;
 
-  PaymentService({required this.authRepository, required this.firestore});
+  PaymentService({required this.getCurrentUser, required this.firestore});
 
   void init({
     required Function(PaymentSuccessResponse) onSuccess,
@@ -26,12 +26,12 @@ class PaymentService {
     required double amount,
     required String contact,
     required String email,
-    String description = 'VoxAI Quest Premium - 30 Days',
+    String description = 'Vowl Premium - 30 Days',
   }) {
     var options = {
-      'key': dotenv.env['RAZORPAY_KEY_ID'] ?? 'rzp_test_YourKeyHere',
+      'key': dotenv.env['RAZORPAY_KEY_ID'] ?? '',
       'amount': (amount * 100).toInt(), // Amount in paise
-      'name': 'VoxAI Quest',
+      'name': 'Vowl',
       'description': description,
       'prefill': {'contact': contact, 'email': email},
       'external': {
@@ -46,17 +46,23 @@ class PaymentService {
     }
   }
 
-  void purchaseSubscription({required String contact, required String email}) {
+  void purchaseSubscription({
+    required String contact,
+    required String email,
+    required double amount,
+    required int days,
+    required String planName,
+  }) {
     openCheckout(
-      amount: 99, // 99 INR
+      amount: amount,
       contact: contact,
       email: email,
-      description: 'VoxAI Quest Premium - 1 Month',
+      description: 'Vowl Pro - $planName ($days Days)',
     );
   }
 
-  Future<void> upgradeToPremium(String userId) async {
-    final expiryDate = DateTime.now().add(const Duration(days: 30));
+  Future<void> upgradeToPremium(String userId, int days) async {
+    final expiryDate = DateTime.now().add(Duration(days: days));
     await firestore.collection('users').doc(userId).update({
       'isPremium': true,
       'premiumExpiryDate': Timestamp.fromDate(expiryDate),

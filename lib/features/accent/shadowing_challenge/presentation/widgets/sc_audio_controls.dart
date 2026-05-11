@@ -3,20 +3,22 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/accent/harmonic_waves.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/accent/harmonic_waves.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SCAudioControls extends StatelessWidget {
   final ThemeResult theme;
   final bool isPlaying;
   final VoidCallback onPlayAudio;
+  final bool isMidnight;
 
   const SCAudioControls({
     super.key,
     required this.theme,
     required this.isPlaying,
     required this.onPlayAudio,
+    this.isMidnight = false,
   });
 
   @override

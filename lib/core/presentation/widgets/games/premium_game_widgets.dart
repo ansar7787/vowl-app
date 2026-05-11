@@ -9,8 +9,10 @@ class PremiumGameHeader extends StatelessWidget {
   final int lives;
   final int? hintCount;
   final VoidCallback onHint;
+  final VoidCallback onHintAd;
   final VoidCallback onClose;
   final bool isDark;
+  final bool isMidnight;
 
   const PremiumGameHeader({
     super.key,
@@ -18,8 +20,10 @@ class PremiumGameHeader extends StatelessWidget {
     required this.lives,
     this.hintCount,
     required this.onHint,
+    required this.onHintAd,
     required this.onClose,
     this.isDark = false,
+    this.isMidnight = false,
   });
 
   @override
@@ -45,7 +49,9 @@ class PremiumGameHeader extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(10.r),
         decoration: BoxDecoration(
-          color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+          color: isMidnight 
+              ? Colors.white.withValues(alpha: 0.15) 
+              : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
           shape: BoxShape.circle,
         ),
         child: Icon(
@@ -63,9 +69,11 @@ class PremiumGameHeader extends StatelessWidget {
         Container(
           height: 12.h,
           decoration: BoxDecoration(
-            color: isDark
-                ? Colors.white10
-                : Colors.black.withValues(alpha: 0.05),
+            color: isMidnight
+                ? Colors.white24
+                : (isDark
+                    ? Colors.white10
+                    : Colors.black.withValues(alpha: 0.05)),
             borderRadius: BorderRadius.circular(10.r),
           ),
         ),
@@ -126,23 +134,51 @@ class PremiumGameHeader extends StatelessWidget {
   }
 
   Widget _buildHintButton() {
+    final bool hasHints = (hintCount ?? 0) > 0;
+    final color = hasHints ? const Color(0xFFEAB308) : const Color(0xFF10B981);
+
     return GestureDetector(
-      onTap: onHint,
-      child: Container(
-        padding: EdgeInsets.all(8.r),
-        decoration: BoxDecoration(
-          color: const Color(0xFFEAB308).withValues(alpha: 0.1),
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: const Color(0xFFEAB308).withValues(alpha: 0.2),
-            width: 1,
+      onTap: hasHints ? onHint : onHintAd,
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Container(
+            padding: EdgeInsets.all(8.r),
+            decoration: BoxDecoration(
+              color: color.withValues(alpha: 0.1),
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: color.withValues(alpha: 0.2),
+                width: 1,
+              ),
+            ),
+            child: Icon(
+              hasHints ? Icons.lightbulb_rounded : Icons.play_circle_fill_rounded,
+              color: color,
+              size: 18.r,
+            ),
           ),
-        ),
-        child: Icon(
-          Icons.lightbulb_rounded,
-          color: const Color(0xFFEAB308),
-          size: 18.r,
-        ),
+          if (hasHints)
+            Positioned(
+              top: -4.r,
+              right: -4.r,
+              child: Container(
+                padding: EdgeInsets.all(4.r),
+                decoration: const BoxDecoration(
+                  color: Color(0xFFEAB308),
+                  shape: BoxShape.circle,
+                ),
+                child: Text(
+                  hintCount.toString(),
+                  style: GoogleFonts.outfit(
+                    color: Colors.white,
+                    fontSize: 8.sp,
+                    fontWeight: FontWeight.w900,
+                  ),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }

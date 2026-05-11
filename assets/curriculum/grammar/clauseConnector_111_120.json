@@ -1,607 +1,487 @@
 {
-  "gameType": "clauseConnector",
-  "batchIndex": 12,
-  "levels": "111-120",
-  "quests": [
-    {
-      "id": "clauseConnector_l111_q1",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "I was tired ___ I went to bed early.",
-      "options": [
-        "so",
-        "but",
-        "because",
-        "although"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Cause → result.",
-      "firstClause": "I was tired",
-      "secondClause": "I went to bed early.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l111_q2",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "She studied hard ___ she passed the exam.",
-      "options": [
-        "but",
-        "and",
-        "although",
-        "so"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Addition/sequence.",
-      "firstClause": "She studied hard",
-      "secondClause": "she passed the exam.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l111_q3",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "___ it was raining, we went outside.",
-      "options": [
-        "Because",
-        "Although",
-        "So",
-        "And"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Contrast/concession.",
-      "firstClause": "",
-      "secondClause": "it was raining, we went outside.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l112_q1",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "He is smart ___ hardworking.",
-      "options": [
-        "but",
-        "and",
-        "or",
-        "so"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Adding qualities.",
-      "firstClause": "He is smart",
-      "secondClause": "hardworking.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l112_q2",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "Would you like tea ___ coffee?",
-      "options": [
-        "and",
-        "but",
-        "or",
-        "so"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Giving alternatives.",
-      "firstClause": "Would you like tea",
-      "secondClause": "coffee?",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l112_q3",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "I'll wait ___ you come back.",
-      "options": [
-        "until",
-        "although",
-        "because",
-        "but"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Time clause.",
-      "firstClause": "I'll wait",
-      "secondClause": "you come back.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l113_q1",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "___ he apologized, she forgave him.",
-      "options": [
-        "Although",
-        "After",
-        "But",
-        "Or"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Time sequence.",
-      "firstClause": "",
-      "secondClause": "he apologized, she forgave him.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l113_q2",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "She sings ___ she dances beautifully.",
-      "options": [
-        "but",
-        "and",
-        "or",
-        "because"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Adding two actions.",
-      "firstClause": "She sings",
-      "secondClause": "she dances beautifully.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l113_q3",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "He failed ___ he didn't study enough.",
-      "options": [
-        "although",
-        "and",
-        "so",
-        "because"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Reason/cause.",
-      "firstClause": "He failed",
-      "secondClause": "he didn't study enough.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l114_q1",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "Take an umbrella ___ it rains.",
-      "options": [
-        "although",
-        "in case",
-        "but",
-        "and"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Precaution.",
-      "firstClause": "Take an umbrella",
-      "secondClause": "it rains.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l114_q2",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "___ arriving late, he apologized.",
-      "options": [
-        "Although",
-        "Upon",
-        "But",
-        "Or"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Time/manner.",
-      "firstClause": "",
-      "secondClause": "arriving late, he apologized.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l114_q3",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "I like summer ___ I prefer winter.",
-      "options": [
-        "and",
-        "but",
-        "so",
-        "because"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Contrast.",
-      "firstClause": "I like summer",
-      "secondClause": "I prefer winter.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l115_q1",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "She left early ___ avoid the traffic.",
-      "options": [
-        "in order to",
-        "although",
-        "because",
-        "but"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Purpose.",
-      "firstClause": "She left early",
-      "secondClause": "avoid the traffic.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l115_q2",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "___ you finish, please call me.",
-      "options": [
-        "Although",
-        "When",
-        "But",
-        "And"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Time clause.",
-      "firstClause": "",
-      "secondClause": "you finish, please call me.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l115_q3",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "He is rich ___ unhappy.",
-      "options": [
-        "and",
-        "yet",
-        "so",
-        "because"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Contrast despite expectation.",
-      "firstClause": "He is rich",
-      "secondClause": "unhappy.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l116_q1",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "I'll go ___ you go too.",
-      "options": [
-        "unless",
-        "although",
-        "but",
-        "if"
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "Condition.",
-      "firstClause": "I'll go",
-      "secondClause": "you go too.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l116_q2",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "She smiled ___ she was sad inside.",
-      "options": [
-        "because",
-        "even though",
-        "so",
-        "and"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Concession.",
-      "firstClause": "She smiled",
-      "secondClause": "she was sad inside.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l116_q3",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "Finish your homework ___ go play.",
-      "options": [
-        "but",
-        "then",
-        "although",
-        "because"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Sequence.",
-      "firstClause": "Finish your homework",
-      "secondClause": "go play.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l117_q1",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "I stayed home ___ I was sick.",
-      "options": [
-        "but",
-        "and",
-        "because",
-        "although"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Reason.",
-      "firstClause": "I stayed home",
-      "secondClause": "I was sick.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l117_q2",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "He ran fast ___ he missed the bus.",
-      "options": [
-        "and",
-        "but",
-        "so",
-        "because"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Unexpected result.",
-      "firstClause": "He ran fast",
-      "secondClause": "he missed the bus.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l117_q3",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "___ the weather was bad, we went out.",
-      "options": [
-        "Because",
-        "Despite",
-        "Although",
-        "So"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Concession.",
-      "firstClause": "",
-      "secondClause": "the weather was bad, we went out.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l118_q1",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "Not only smart ___ also kind.",
-      "options": [
-        "and",
-        "but",
-        "or",
-        "yet"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Correlative conjunction.",
-      "firstClause": "Not only smart",
-      "secondClause": "also kind.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l118_q2",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "She ate lunch ___ going to work.",
-      "options": [
-        "after",
-        "before",
-        "although",
-        "because"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Time order.",
-      "firstClause": "She ate lunch",
-      "secondClause": "going to work.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l118_q3",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "I trust him ___ he is honest.",
-      "options": [
-        "but",
-        "although",
-        "because",
-        "yet"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Reason.",
-      "firstClause": "I trust him",
-      "secondClause": "he is honest.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l119_q1",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "You must hurry ___ you'll be late.",
-      "options": [
-        "and",
-        "or",
-        "but",
-        "because"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Warning/alternative.",
-      "firstClause": "You must hurry",
-      "secondClause": "you'll be late.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l119_q2",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "___ studying all night, he failed.",
-      "options": [
-        "Despite",
-        "Because",
-        "So",
-        "And"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Concession.",
-      "firstClause": "",
-      "secondClause": "studying all night, he failed.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l119_q3",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "She's talented, ___ she's also modest.",
-      "options": [
-        "but",
-        "and",
-        "or",
-        "so"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Addition.",
-      "firstClause": "She's talented,",
-      "secondClause": "she's also modest.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l120_q1",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "Call me ___ you need help.",
-      "options": [
-        "although",
-        "whenever",
-        "but",
-        "so"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Time/frequency.",
-      "firstClause": "Call me",
-      "secondClause": "you need help.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l120_q2",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "He neither called ___ texted me.",
-      "options": [
-        "and",
-        "or",
-        "nor",
-        "but"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Correlative: neither...nor.",
-      "firstClause": "He neither called",
-      "secondClause": "texted me.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "clauseConnector_l120_q3",
-      "instruction": "Choose the correct connector.",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "choice",
-      "question": "Let's leave now ___ we miss the train.",
-      "options": [
-        "lest",
-        "and",
-        "but",
-        "because"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Purpose/avoidance.",
-      "firstClause": "Let's leave now",
-      "secondClause": "we miss the train.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "clauseConnector",
+    "batchIndex":  12,
+    "levels":  "111-120",
+    "quests":  [
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L111_Q1",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The commander builds the relay inside the station ____ the system responded.",
+                       "options":  [
+                                       "because",
+                                       "or",
+                                       "and",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  1
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L111_Q2",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The laser collects the vault across the bridge ____ the system responded.",
+                       "options":  [
+                                       "and",
+                                       "or",
+                                       "because",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  2
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L111_Q3",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The citizen sends the console between the cores ____ the system responded.",
+                       "options":  [
+                                       "but",
+                                       "or",
+                                       "and",
+                                       "although"
+                                   ],
+                       "correctAnswerIndex":  3
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L112_Q1",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The crystal heats the gate during the storm ____ the system responded.",
+                       "options":  [
+                                       "and",
+                                       "since",
+                                       "but",
+                                       "or"
+                                   ],
+                       "correctAnswerIndex":  1
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L112_Q2",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The reactor records the circuit among the droids ____ the system responded.",
+                       "options":  [
+                                       "and",
+                                       "but",
+                                       "or",
+                                       "unless"
+                                   ],
+                       "correctAnswerIndex":  3
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L112_Q3",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "Nova updates the system after the breach ____ the system responded.",
+                       "options":  [
+                                       "or",
+                                       "but",
+                                       "while",
+                                       "and"
+                                   ],
+                       "correctAnswerIndex":  2
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L113_Q1",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The wings analyzes the log during the storm ____ the system responded.",
+                       "options":  [
+                                       "but",
+                                       "or",
+                                       "and",
+                                       "because"
+                                   ],
+                       "correctAnswerIndex":  2
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L113_Q2",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The traveler filters the platform during the storm ____ the system responded.",
+                       "options":  [
+                                       "and",
+                                       "because",
+                                       "but",
+                                       "or"
+                                   ],
+                       "correctAnswerIndex":  2
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L113_Q3",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The miner locks the portal against the wind ____ the system responded.",
+                       "options":  [
+                                       "because",
+                                       "and",
+                                       "or",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  2
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L114_Q1",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "Zane opens the drone out of the shadows ____ the system responded.",
+                       "options":  [
+                                       "but",
+                                       "or",
+                                       "because",
+                                       "and"
+                                   ],
+                       "correctAnswerIndex":  2
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L114_Q2",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The valley makes the vault between the cores ____ the system responded.",
+                       "options":  [
+                                       "and",
+                                       "or",
+                                       "although",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  2
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L114_Q3",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The explorer fixes the relay across the bridge ____ the system responded.",
+                       "options":  [
+                                       "since",
+                                       "and",
+                                       "or",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L115_Q1",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The satellite tracks the battery under the stars ____ the system responded.",
+                       "options":  [
+                                       "but",
+                                       "and",
+                                       "or",
+                                       "unless"
+                                   ],
+                       "correctAnswerIndex":  3
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L115_Q2",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The armor repairs the map within the sector ____ the system responded.",
+                       "options":  [
+                                       "or",
+                                       "and",
+                                       "but",
+                                       "while"
+                                   ],
+                       "correctAnswerIndex":  3
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L115_Q3",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The echo receives the key at the foundry ____ the system responded.",
+                       "options":  [
+                                       "because",
+                                       "and",
+                                       "but",
+                                       "or"
+                                   ],
+                       "correctAnswerIndex":  1
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L116_Q1",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The group monitors the beam at the foundry ____ the system responded.",
+                       "options":  [
+                                       "or",
+                                       "but",
+                                       "because",
+                                       "and"
+                                   ],
+                       "correctAnswerIndex":  1
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L116_Q2",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The weapon tells the circuit into the deep ____ the system responded.",
+                       "options":  [
+                                       "because",
+                                       "but",
+                                       "and",
+                                       "or"
+                                   ],
+                       "correctAnswerIndex":  3
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L116_Q3",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The ghost secures the engine under the stars ____ the system responded.",
+                       "options":  [
+                                       "but",
+                                       "and",
+                                       "because",
+                                       "or"
+                                   ],
+                       "correctAnswerIndex":  2
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L117_Q1",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The medic protects the core under the stars ____ the system responded.",
+                       "options":  [
+                                       "but",
+                                       "although",
+                                       "or",
+                                       "and"
+                                   ],
+                       "correctAnswerIndex":  1
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L117_Q2",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The shield receives the bridge after the breach ____ the system responded.",
+                       "options":  [
+                                       "and",
+                                       "or",
+                                       "but",
+                                       "since"
+                                   ],
+                       "correctAnswerIndex":  3
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L117_Q3",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The satellite analyzes the data during the storm ____ the system responded.",
+                       "options":  [
+                                       "unless",
+                                       "and",
+                                       "but",
+                                       "or"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L118_Q1",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The dust shuts the module before the dawn ____ the system responded.",
+                       "options":  [
+                                       "or",
+                                       "but",
+                                       "and",
+                                       "while"
+                                   ],
+                       "correctAnswerIndex":  3
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L118_Q2",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The weapon loads the log inside the station ____ the system responded.",
+                       "options":  [
+                                       "and",
+                                       "but",
+                                       "or",
+                                       "because"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L118_Q3",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The pulse damages the beam behind the console ____ the system responded.",
+                       "options":  [
+                                       "but",
+                                       "and",
+                                       "because",
+                                       "or"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L119_Q1",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The mainframe builds the chamber after the breach ____ the system responded.",
+                       "options":  [
+                                       "but",
+                                       "or",
+                                       "because",
+                                       "and"
+                                   ],
+                       "correctAnswerIndex":  1
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L119_Q2",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The pulse receives the beam within the sector ____ the system responded.",
+                       "options":  [
+                                       "because",
+                                       "or",
+                                       "but",
+                                       "and"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L119_Q3",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The button watches the report under the stars ____ the system responded.",
+                       "options":  [
+                                       "although",
+                                       "but",
+                                       "or",
+                                       "and"
+                                   ],
+                       "correctAnswerIndex":  0
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L120_Q1",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The assembly opens the platform in the Hub ____ the system responded.",
+                       "options":  [
+                                       "but",
+                                       "and",
+                                       "or",
+                                       "since"
+                                   ],
+                       "correctAnswerIndex":  3
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L120_Q2",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The ghost binds the shield after the breach ____ the system responded.",
+                       "options":  [
+                                       "but",
+                                       "and",
+                                       "or",
+                                       "unless"
+                                   ],
+                       "correctAnswerIndex":  3
+                   },
+                   {
+                       "id":  "GRM_CLAUSECONNECTOR_L120_Q3",
+                       "interactionType":  "Coupler Snap",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "Look for causal links.",
+                       "explanation":  "Connectors define logic flow.",
+                       "question":  "The gear tells the archive at the foundry ____ the system responded.",
+                       "options":  [
+                                       "and",
+                                       "or",
+                                       "while",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  2
+                   }
+               ]
 }

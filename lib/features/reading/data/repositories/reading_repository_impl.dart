@@ -21,9 +21,9 @@ class ReadingRepositoryImpl implements ReadingRepository {
       );
       return Right(remoteQuests);
     } catch (e) {
-      return const Left(
+      return Left(
         ServerFailure(
-          "Failed to connect to the server. Please check your internet connection.",
+          e.toString(),
         ),
       );
     }

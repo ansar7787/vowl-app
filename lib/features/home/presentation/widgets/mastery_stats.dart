@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/utils/app_router.dart';
-import 'package:voxai_quest/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:go_router/go_router.dart';
 
 class MasteryStats extends StatelessWidget {
@@ -38,7 +38,7 @@ class MasteryStats extends StatelessWidget {
         SizedBox(height: 12.h),
         _buildInteractiveStatCard(
           context,
-          'VOX COINS',
+          'VOWL COINS',
           '${user.coins}',
           'VISIT COIN REWARDS',
           Icons.monetization_on_rounded,

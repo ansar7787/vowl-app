@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:voxai_quest/features/kids_zone/data/models/kids_quest_model.dart';
+import 'package:vowl/features/kids_zone/data/models/kids_quest_model.dart';
 
 abstract class KidsRemoteDataSource {
   Future<List<KidsQuestModel>> getQuestsByLevel(String gameType, int level);

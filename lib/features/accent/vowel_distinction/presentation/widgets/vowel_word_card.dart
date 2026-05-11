@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class VowelWordCard extends StatelessWidget {
   final String word;
   final String? ipa;
   final bool isDark;
+  final bool isMidnight;
   final ThemeResult theme;
   final VoidCallback onPlay;
 
@@ -17,6 +18,7 @@ class VowelWordCard extends StatelessWidget {
     required this.word,
     this.ipa,
     required this.isDark,
+    this.isMidnight = false,
     required this.theme,
     required this.onPlay,
   });
@@ -36,7 +38,25 @@ class VowelWordCard extends StatelessWidget {
                   : Colors.black.withValues(alpha: 0.05),
             ),
           ),
-          child: _renderHighlightedWord(word, theme),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (ipa != null && ipa!.isNotEmpty)
+                Padding(
+                  padding: EdgeInsets.only(bottom: 4.h),
+                  child: Text(
+                    "[ $ipa ]",
+                    style: GoogleFonts.outfit(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w500,
+                      color: theme.primaryColor.withValues(alpha: 0.6),
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ),
+              _renderHighlightedWord(word, theme),
+            ],
+          ),
         ),
         SizedBox(height: 8.h),
         ScaleButton(

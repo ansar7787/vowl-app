@@ -21,11 +21,7 @@ class WritingRepositoryImpl implements WritingRepository {
       );
       return Right(remoteQuests);
     } catch (e) {
-      return const Left(
-        ServerFailure(
-          "Failed to connect to the server. Please check your internet connection.",
-        ),
-      );
+      return Left(ServerFailure(e.toString()));
     }
   }
 }

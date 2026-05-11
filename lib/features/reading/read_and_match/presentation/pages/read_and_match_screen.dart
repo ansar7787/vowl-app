@@ -1,31 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/reading/book_streak.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/reading/domain/entities/reading_quest.dart';
-import 'package:voxai_quest/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
+import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class ReadAndMatchScreen extends StatefulWidget {
   final int level;
-  const ReadAndMatchScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const ReadAndMatchScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.readAndMatch,
+  });
 
   @override
   State<ReadAndMatchScreen> createState() => _ReadAndMatchScreenState();
@@ -34,428 +28,203 @@ class ReadAndMatchScreen extends StatefulWidget {
 class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  int? _selectedLeftIndex;
-  int? _selectedRightIndex;
-  List<int> _matchedIndices = [];
+  
+  Offset? _dragStart;
+  Offset? _dragCurrent;
+  String? _activeKey;
+  final Map<String, String> _matches = {};
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<ReadingBloc>().add(
-      FetchReadingQuests(
-        gameType: GameSubtype.readAndMatch,
-        level: widget.level,
-      ),
-    );
+    context.read<ReadingBloc>().add(FetchReadingQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onLeftSelect(int index) {
-    if (_matchedIndices.contains(index)) return;
-    _hapticService.selection();
+  void _onTerminalDragStart(String key, Offset position) {
+    if (_isAnswered || _matches.containsKey(key)) return;
     setState(() {
-      _selectedLeftIndex = index;
-      if (_selectedRightIndex != null) {
-        _checkMatch();
-      }
+      _activeKey = key;
+      _dragStart = position;
+      _dragCurrent = position;
+      _hapticService.selection();
     });
   }
 
-  void _onRightSelect(int index) {
-    if (_matchedIndices.contains(index)) {
-      return;
+  void _onTerminalDragUpdate(Offset delta) {
+    if (_isAnswered || _activeKey == null) return;
+    setState(() {
+      _dragCurrent = (_dragCurrent ?? Offset.zero) + delta;
+      _hapticService.selection();
+    });
+  }
+
+  void _onTerminalDragEnd(String value, List<Map<String, String>> pairs) {
+    if (_isAnswered || _activeKey == null) return;
+    
+    _hapticService.success();
+    setState(() {
+      _matches[_activeKey!] = value;
+      _activeKey = null;
+      _dragStart = null;
+      _dragCurrent = null;
+    });
+
+    if (_matches.length == pairs.length) {
+      _submitAnswer(pairs);
     }
-    _hapticService.selection();
-    setState(() {
-      _selectedRightIndex = index;
-      if (_selectedLeftIndex != null) {
-        _checkMatch();
-      }
-    });
   }
 
-  void _checkMatch() {
-    // For simplicity in this UI, we assume parallel indices are the correct pairs
-    // Real logic would use quest.pairs or similar
-    if (_selectedLeftIndex == _selectedRightIndex) {
-      _soundService.playCorrect();
+  void _submitAnswer(List<Map<String, String>> pairs) {
+    bool isCorrect = true;
+    for (var pair in pairs) {
+      if (_matches[pair['key']] != pair['value']) {
+        isCorrect = false;
+        break;
+      }
+    }
+
+    if (isCorrect) {
       _hapticService.success();
-      setState(() {
-        _matchedIndices.add(_selectedLeftIndex!);
-        _selectedLeftIndex = null;
-        _selectedRightIndex = null;
-      });
-
-      // Check if all matched
-      final state = context.read<ReadingBloc>().state;
-      if (state is ReadingLoaded) {
-        final totalPairs = state.currentQuest.pairs?.length ?? 3;
-        if (_matchedIndices.length == totalPairs) {
-          context.read<ReadingBloc>().add(SubmitAnswer(true));
-        }
-      }
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<ReadingBloc>().add(SubmitAnswer(true));
     } else {
-      _soundService.playWrong();
       _hapticService.error();
-      setState(() {
-        _selectedLeftIndex = null;
-        _selectedRightIndex = null;
-      });
-      // Optionally deduct life on wrong match if that's the game design,
-      // but usually matching games just let you try again until you fail overall or succeed
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
       context.read<ReadingBloc>().add(SubmitAnswer(false));
+      Future.delayed(1.seconds, () => setState(() => _matches.clear()));
     }
-  }
-
-  void _useHint() {
-    _hapticService.selection();
-    context.read<ReadingBloc>().add(ReadingHintUsed());
   }
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final theme = LevelThemeHelper.getTheme('reading', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<ReadingBloc, ReadingState>(
-        listener: (context, state) {
-          if (state is ReadingGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'Matching Marvel!',
-          description:
-              'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins for your connectivity!',
-        ),
-            );
-          } else if (state is ReadingGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'Connection Lost',
-        description: 'Try to match the items more accurately next time!',
-        onRestore: () => context.read<ReadingBloc>().add(RestoreLife()),
-      );
-          } else if (state is ReadingLoaded &&
-              state.lastAnswerCorrect == null) {
-            // Reset for next question
+    return BlocConsumer<ReadingBloc, ReadingState>(
+      listener: (context, state) {
+        if (state is ReadingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
             setState(() {
-              _matchedIndices = [];
-              _selectedLeftIndex = null;
-              _selectedRightIndex = null;
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _matches.clear();
+              _activeKey = null;
             });
           }
-        },
-        builder: (context, state) {
-          if (state is ReadingLoading || state is ReadingInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is ReadingLoaded) {
-            final theme = LevelThemeHelper.getTheme(
-              'reading',
-              level: widget.level,
-            );
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                BookStreak(color: theme.primaryColor),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is ReadingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<ReadingBloc>().add(
-                FetchReadingQuests(
-                  gameType: GameSubtype.readAndMatch,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    ReadingLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final ReadingQuest quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-    final pairs = quest.pairs ?? [];
-
-    return Stack(
-      children: [
-        Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-              child: Row(
+          _lastLives = state.livesRemaining;
+        }
+        if (state is ReadingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'RELATIONSHIP MASTER!', enableDoubleUp: true);
+        } else if (state is ReadingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ReadingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        final pairs = quest?.pairs ?? [];
+        final keys = pairs.map((p) => p['key']!).toList();
+        final values = pairs.map((p) => p['value']!).toList();
+        
+        return ReadingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
+          onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
+          child: quest == null ? const SizedBox() : Stack(
+            children: [
+              Column(
                 children: [
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? Colors.white10 : Colors.black12,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.close_rounded,
-                        size: 24.r,
-                        color: isDark ? Colors.white70 : Colors.black54,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 12.w),
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 48.h),
                   Expanded(
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.r),
-                      child: LinearProgressIndicator(
-                        value: progress,
-                        minHeight: 14.h,
-                        backgroundColor: isDark
-                            ? Colors.white10
-                            : Colors.black.withValues(alpha: 0.05),
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                          theme.primaryColor,
-                        ),
-                      ),
+                    child: Row(
+                      children: [
+                        Expanded(child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: keys.map((k) => _buildTerminal(k, true, theme.primaryColor)).toList())),
+                        SizedBox(width: 60.w),
+                        Expanded(child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: values.map((v) => _buildTerminal(v, false, theme.primaryColor, pairs: pairs)).toList())),
+                      ],
                     ),
                   ),
-                  SizedBox(width: 12.w),
-                  _buildHintButton(state.hintUsed, theme.primaryColor),
-                  SizedBox(width: 12.w),
-                  _buildHeartCount(state.livesRemaining),
                 ],
               ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                child: Column(
-                  children: [
-                    SizedBox(height: 20.h),
-                    Text(
-                      theme.title,
-                      style: GoogleFonts.outfit(
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 4,
-                        color: theme.primaryColor,
-                      ),
-                    ).animate().fadeIn(),
-                    SizedBox(height: 20.h),
-                    Text(
-                      "Match the descriptions to the correct items.",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
-                        fontSize: 16.sp,
-                        color: isDark ? Colors.white70 : Colors.black87,
-                      ),
-                    ).animate().fadeIn(),
-                    SizedBox(height: 40.h),
-                    Expanded(
-                      child: Row(
-                        children: [
-                          // Left Column
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: pairs.length,
-                              itemBuilder: (context, index) {
-                                final text = pairs[index].keys.first;
-                                final isMatched = _matchedIndices.contains(
-                                  index,
-                                );
-                                final isSelected = _selectedLeftIndex == index;
-                                return _buildMatchCard(
-                                  text: text,
-                                  isLeft: true,
-                                  isSelected: isSelected,
-                                  isMatched: isMatched,
-                                  isDark: isDark,
-                                  primaryColor: theme.primaryColor,
-                                  onTap: () => _onLeftSelect(index),
-                                );
-                              },
-                            ),
-                          ),
-                          SizedBox(width: 16.w),
-                          // Right Column
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: pairs.length,
-                              itemBuilder: (context, index) {
-                                final text = pairs[index].values.first;
-                                final isMatched = _matchedIndices.contains(
-                                  index,
-                                );
-                                final isSelected = _selectedRightIndex == index;
-                                return _buildMatchCard(
-                                  text: text,
-                                  isLeft: false,
-                                  isSelected: isSelected,
-                                  isMatched: isMatched,
-                                  isDark: isDark,
-                                  primaryColor: theme.primaryColor,
-                                  onTap: () => _onRightSelect(index),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+              if (_dragStart != null && _dragCurrent != null)
+                CustomPaint(
+                  painter: LaserPainter(start: _dragStart!, end: _dragCurrent!, color: theme.primaryColor),
+                  size: Size.infinite,
                 ),
-              ),
-            ),
-          ],
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "PERFECT MATCH!" : "ALMOST!",
-            subtitle:
-                state.currentQuest.explanation ??
-                "Connectivity skills expanding!",
-            onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
+            ],
           ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+        );
+      },
     );
   }
 
-  Widget _buildMatchCard({
-    required String text,
-    required bool isLeft,
-    required bool isSelected,
-    required bool isMatched,
-    required bool isDark,
-    required Color primaryColor,
-    required VoidCallback onTap,
-  }) {
-    Color? cardColor;
-    Color? borderColor;
-
-    if (isMatched) {
-      cardColor = const Color(0xFF10B981);
-      borderColor = cardColor;
-    } else if (isSelected) {
-      cardColor = primaryColor.withValues(alpha: 0.2);
-      borderColor = primaryColor;
-    }
-
-    return Padding(
-      padding: EdgeInsets.only(bottom: 12.h),
-      child: ScaleButton(
-        onTap: isMatched ? null : onTap,
-        child: GlassTile(
-          borderRadius: BorderRadius.circular(20.r),
-          padding: EdgeInsets.all(20.r),
-          color: cardColor,
-          borderColor: borderColor ?? primaryColor.withValues(alpha: 0.1),
-          child: Center(
-            child: Text(
-              text,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.spectral(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: isMatched
-                    ? Colors.white
-                    : isSelected
-                    ? primaryColor
-                    : (isDark
-                          ? Colors.white.withValues(alpha: 0.8)
-                          : Colors.black87),
-              ),
-            ),
-          ),
-        ),
-      ),
-    ).animate().fadeIn(delay: 100.ms).slideX(begin: isLeft ? -0.05 : 0.05);
-  }
-
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
-            ),
-          ),
+          Icon(Icons.bolt_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("BRIDGE THE SEMANTIC GAP WITH LASERS", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: used
-                ? Colors.grey.withValues(alpha: 0.3)
-                : primaryColor.withValues(alpha: 0.5),
-            width: 1,
+  Widget _buildTerminal(String text, bool isSource, Color color, {List<Map<String, String>>? pairs}) {
+    bool isMatched = isSource ? _matches.containsKey(text) : _matches.containsValue(text);
+    bool isActive = isSource && _activeKey == text;
+    
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) => isSource ? null : _onTerminalDragEnd(text, pairs!),
+      builder: (context, candidateData, rejectedData) {
+        return GestureDetector(
+          onPanStart: (details) => isSource ? _onTerminalDragStart(text, details.globalPosition) : null,
+          onPanUpdate: (details) => isSource ? _onTerminalDragUpdate(details.delta) : null,
+          child: AnimatedContainer(
+            duration: 300.milliseconds,
+            padding: EdgeInsets.all(16.r),
+            decoration: BoxDecoration(
+              color: isMatched ? color.withValues(alpha: 0.2) : (isActive ? color.withValues(alpha: 0.4) : Colors.white10),
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(color: isMatched || isActive ? color : Colors.white24, width: 2),
+              boxShadow: [if (isMatched || isActive) BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 15)],
+            ),
+            child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.shareTechMono(fontSize: 14.sp, color: isMatched || isActive ? Colors.white : Colors.white70, fontWeight: FontWeight.bold)),
           ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              used ? Icons.lightbulb_outline_rounded : Icons.lightbulb_rounded,
-              color: used ? Colors.grey : primaryColor,
-              size: 20.r,
-            ),
-            SizedBox(width: 6.w),
-            Text(
-              "HINT",
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w800,
-                color: used ? Colors.grey : primaryColor,
-              ),
-            ),
-          ],
-        ),
-      ),
+        );
+      },
     );
   }
-
-  
-
-  
 }
+
+class LaserPainter extends CustomPainter {
+  final Offset start;
+  final Offset end;
+  final Color color;
+  LaserPainter({required this.start, required this.end, required this.color});
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color..strokeWidth = 4..strokeCap = StrokeCap.round;
+    final glow = Paint()..color = color.withValues(alpha: 0.3)..strokeWidth = 12..strokeCap = StrokeCap.round..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);
+    canvas.drawLine(start, end, glow);
+    canvas.drawLine(start, end, paint);
+    canvas.drawCircle(end, 6.r, paint);
+  }
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
+}
+

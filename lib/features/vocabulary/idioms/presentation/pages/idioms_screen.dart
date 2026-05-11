@@ -1,29 +1,27 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class IdiomsScreen extends StatefulWidget {
   final int level;
-  const IdiomsScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const IdiomsScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.idioms,
+  });
 
   @override
   State<IdiomsScreen> createState() => _IdiomsScreenState();
@@ -32,314 +30,187 @@ class IdiomsScreen extends StatefulWidget {
 class _IdiomsScreenState extends State<IdiomsScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  
+  Offset _mirrorPosition = const Offset(150, 100);
+  bool _meaningRevealed = false;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
-  int? _selectedOptionIndex;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<VocabularyBloc>().add(
-      FetchVocabularyQuests(gameType: GameSubtype.idioms, level: widget.level),
-    );
+    context.read<VocabularyBloc>().add(FetchVocabularyQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onOptionSelected(int index, bool isCorrect) {
-    if (_selectedOptionIndex != null) return;
-    setState(() => _selectedOptionIndex = index);
-
-    _hapticService.selection();
-    context.read<VocabularyBloc>().add(SubmitAnswer(isCorrect));
+  void _onMirrorMove(DragUpdateDetails details) {
+    if (_isAnswered) return;
+    setState(() {
+      _mirrorPosition += details.delta;
+      // Reveal meaning if mirror is near center
+      if ((_mirrorPosition - const Offset(150, 150)).distance < 50) {
+        if (!_meaningRevealed) {
+          _hapticService.success();
+          _meaningRevealed = true;
+        }
+      }
+    });
   }
 
-  void _useHint() {
-    _hapticService.selection();
-    context.read<VocabularyBloc>().add(VocabularyHintUsed());
+  void _submitAnswer(int index, String selected, String correct) {
+    if (_isAnswered) return;
+    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+    
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'vocabulary',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: isDark
-          ? const Color(0xFF0F172A)
-          : const Color(0xFFF8FAFC),
-      body: BlocConsumer<VocabularyBloc, VocabularyState>(
-        listener: (context, state) {
-          if (state is VocabularyGameComplete) {
-            setState(() => _showConfetti = true);
-            final isPremium =
-                context.read<AuthBloc>().state.user?.isPremium ?? false;
-            di.sl<AdService>().showInterstitialAd(
-              isPremium: isPremium,
-              onDismissed: () => GameDialogHelper.showCompletion(
-                context,
-                xp: state.xpEarned,
-                coins: state.coinsEarned,
-                title: 'Idiom Expert!',
-                description:
-                    'You earned ${state.xpEarned} XP and ${state.coinsEarned} Coins. Your English is becoming more natural!',
-              ),
-            );
-          } else if (state is VocabularyGameOver) {
-            GameDialogHelper.showGameOver(
-              context,
-              title: 'Keep Trying!',
-              description: 'Idioms take time to master. Keep going!',
-            );
-          } else if (state is VocabularyLoaded &&
-              state.lastAnswerCorrect == null) {
-            _selectedOptionIndex = null;
+    return BlocConsumer<VocabularyBloc, VocabularyState>(
+      listener: (context, state) {
+        if (state is VocabularyLoaded) {
+          final livesChanged = state.livesRemaining > (_lastLives ?? 3);
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _meaningRevealed = false;
+              _mirrorPosition = const Offset(150, 100);
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is VocabularyLoading || state is VocabularyInitial) {
-            return const GameShimmerLoading();
-          }
-          if (state is VocabularyLoaded) {
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-          if (state is VocabularyError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<VocabularyBloc>().add(
-                FetchVocabularyQuests(
-                  gameType: GameSubtype.idioms,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
+          _lastLives = state.livesRemaining;
+        }
+        if (state is VocabularyGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'IDIOM EXPERT!', enableDoubleUp: true);
+        } else if (state is VocabularyGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is VocabularyLoaded) ? state.currentQuest : null;
+        final options = quest?.options ?? [];
+        final literalImage = quest?.topicEmoji ?? "🎨";
 
-  Widget _buildGameUI(
-    BuildContext context,
-    VocabularyLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.fromLTRB(20.w, 60.h, 20.w, 10.h),
-          child: Row(
+        return VocabularyBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
+          onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
             children: [
-              ScaleButton(
-                onTap: () => context.pop(),
-                child: Container(
-                  padding: EdgeInsets.all(10.r),
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.white10 : Colors.black12,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.close_rounded,
-                    size: 24.r,
-                    color: isDark ? Colors.white70 : Colors.black54,
-                  ),
-                ),
-              ),
-              SizedBox(width: 12.w),
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
               Expanded(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.r),
-                  child: LinearProgressIndicator(
-                    value: progress,
-                    minHeight: 14.h,
-                    backgroundColor: isDark
-                        ? Colors.white10
-                        : Colors.black.withValues(alpha: 0.05),
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      theme.primaryColor,
-                    ),
-                  ),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    _buildArtFrame(literalImage, quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                    if (!_isAnswered) _buildPortalMirror(theme.primaryColor),
+                  ],
                 ),
               ),
-              SizedBox(width: 12.w),
-              _buildHintButton(state.hintUsed, theme.primaryColor),
-              SizedBox(width: 12.w),
-              _buildHeartCount(state.livesRemaining),
+              _buildIdiomPlates(options, quest.word ?? "", theme.primaryColor, isDark),
+              SizedBox(height: 20.h),
             ],
           ),
-        ),
-        Expanded(
-          child: Center(
-            child: SingleChildScrollView(
-              padding: EdgeInsets.all(24.r),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "IDIOM MASTERY",
-                    style: GoogleFonts.outfit(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: 4,
-                      color: theme.primaryColor,
-                    ),
-                  ).animate().fadeIn().scale(),
-                  SizedBox(height: 24.h),
-                  GlassTile(
-                    padding: EdgeInsets.all(32.r),
-                    borderRadius: BorderRadius.circular(32.r),
-                    borderColor: theme.primaryColor.withValues(alpha: 0.3),
-                    child: Column(
-                      children: [
-                        Text(
-                          "What does this idiom mean?",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.outfit(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w500,
-                            color: isDark ? Colors.white70 : Colors.black54,
-                          ),
-                        ),
-                        SizedBox(height: 16.h),
-                        Text(
-                          quest.word ?? "---",
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.outfit(
-                            fontSize: 28.sp,
-                            fontWeight: FontWeight.bold,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF1E293B),
-                          ),
-                        ),
-                        if (quest.sentence != null) ...[
-                          SizedBox(height: 16.h),
-                          Text(
-                            "\"${quest.sentence}\"",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.outfit(
-                              fontSize: 16.sp,
-                              fontStyle: FontStyle.italic,
-                              color: isDark ? Colors.white60 : Colors.black45,
-                            ),
-                          ),
-                        ],
-                      ],
-                    ),
-                  ).animate().slideY(begin: 0.1),
-                  SizedBox(height: 48.h),
-                  ...List.generate(quest.options?.length ?? 0, (index) {
-                    final option = quest.options![index];
-                    final isCorrect = index == quest.correctAnswerIndex;
-                    final isSelected = _selectedOptionIndex == index;
+        );
+      },
+    );
+  }
 
-                    return Padding(
-                      padding: EdgeInsets.only(bottom: 16.h),
-                      child: ScaleButton(
-                        onTap: () => _onOptionSelected(index, isCorrect),
-                        child: GlassTile(
-                          borderRadius: BorderRadius.circular(20.r),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 24.w,
-                            vertical: 20.h,
-                          ),
-                          borderColor: isSelected
-                              ? (isCorrect ? Colors.green : Colors.red)
-                              : Colors.white10,
-                          color: isSelected
-                              ? (isCorrect
-                                    ? Colors.green.withValues(alpha: 0.2)
-                                    : Colors.red.withValues(alpha: 0.2))
-                              : theme.primaryColor.withValues(alpha: 0.05),
-                          child: Center(
-                            child: Text(
-                              option,
-                              style: GoogleFonts.outfit(
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w600,
-                                color: isDark
-                                    ? Colors.white
-                                    : const Color(0xFF1E293B),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  }).animate().fadeIn(delay: 400.ms),
-                ],
+  Widget _buildInstruction(Color color) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.2))),
+      child: Text("USE THE MIRROR TO REVEAL THE MEANING", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
+    );
+  }
+
+  Widget _buildArtFrame(String emoji, String meaning, Color color, bool isDark) {
+    return Container(
+      width: 300.r, height: 300.r,
+      decoration: BoxDecoration(
+        color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(32.r),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 4),
+      ),
+      child: Center(
+        child: _meaningRevealed 
+          ? Padding(
+              padding: EdgeInsets.all(20.r),
+              child: Text(meaning.toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.specialElite(fontSize: 18.sp, fontWeight: FontWeight.bold, color: color)),
+            )
+          : Text(emoji, style: TextStyle(fontSize: 80.sp)).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), duration: 2.seconds),
+      ),
+    );
+  }
+
+  Widget _buildPortalMirror(Color color) {
+    return Positioned(
+      left: _mirrorPosition.dx - 80.r, top: _mirrorPosition.dy - 80.r,
+      child: GestureDetector(
+        onPanUpdate: _onMirrorMove,
+        child: Container(
+          width: 160.r, height: 160.r,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: color, width: 6),
+            boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 30)],
+          ),
+          child: ClipOval(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+              child: Container(
+                decoration: BoxDecoration(color: color.withValues(alpha: 0.1), shape: BoxShape.circle),
+                child: Center(child: Icon(Icons.auto_awesome_rounded, color: color.withValues(alpha: 0.5), size: 40.r)),
               ),
             ),
           ),
         ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "SPOT ON!" : "NOT REALLY!",
-            subtitle:
-                "Meaning: ${quest.explanation ?? "Idioms are phrases with meanings different from their individual words."}",
-            onContinue: () =>
-                context.read<VocabularyBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
-          ),
-        if (_showConfetti) const GameConfetti(),
-      ],
+      ),
     );
   }
 
-  Widget _buildHeartCount(int lives) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
+  Widget _buildIdiomPlates(List<String> options, String correctWord, Color color, bool isDark) {
+    return Column(
+      children: [
+        Text("SELECT THE MATCHING IDIOM", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
+        SizedBox(height: 16.h),
+        Wrap(
+          spacing: 12.w, runSpacing: 12.h,
+          alignment: WrapAlignment.center,
+          children: options.map((o) => ScaleButton(
+            onTap: () => _submitAnswer(options.indexOf(o), o, correctWord),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+              decoration: BoxDecoration(
+                color: _isAnswered && o == correctWord ? Colors.greenAccent.withValues(alpha: 0.2) : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(color: _isAnswered && o == correctWord ? Colors.greenAccent : color.withValues(alpha: 0.2)),
+              ),
+              child: Text(o, style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
             ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHintButton(bool used, Color primaryColor) {
-    return ScaleButton(
-      onTap: used ? null : _useHint,
-      child: Container(
-        padding: EdgeInsets.all(8.r),
-        decoration: BoxDecoration(
-          color: used
-              ? Colors.grey.withValues(alpha: 0.1)
-              : primaryColor.withValues(alpha: 0.1),
-          shape: BoxShape.circle,
+          )).toList(),
         ),
-        child: Icon(
-          Icons.lightbulb_rounded,
-          color: used ? Colors.grey : primaryColor,
-          size: 24.r,
-        ),
-      ),
-    );
+      ],
+    ).animate().fadeIn().moveY(begin: 20, end: 0);
   }
 }
+

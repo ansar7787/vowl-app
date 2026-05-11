@@ -1,434 +1,217 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/features/writing/domain/entities/writing_quest.dart';
-import 'package:voxai_quest/features/writing/presentation/bloc/writing_bloc.dart';
-import 'package:voxai_quest/core/presentation/widgets/games/premium_game_widgets.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
+import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class EssayDraftingScreen extends StatefulWidget {
   final int level;
-  const EssayDraftingScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const EssayDraftingScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.essayDrafting,
+  });
 
   @override
   State<EssayDraftingScreen> createState() => _EssayDraftingScreenState();
 }
 
 class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
-  final TextEditingController _controller = TextEditingController();
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  bool _hasSubmitted = false;
+  final Map<String, String?> _blueprintSlots = {};
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
-
-  final List<String> _segments = [
-    "Introduction",
-    "Main Argument",
-    "Conclusion",
-  ];
-  int _activeSegment = 0;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
+  double _traceProgress = 0.0;
 
   @override
   void initState() {
     super.initState();
-    context.read<WritingBloc>().add(
-      FetchWritingQuests(
-        gameType: GameSubtype.essayDrafting,
-        level: widget.level,
-      ),
-    );
-    // Pre-load ads
-    di.sl<AdService>().loadRewardedAd();
+    context.read<WritingBloc>().add(FetchWritingQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+  void _onSlot(String slotKey, String data) {
+    if (_isAnswered) return;
+    _hapticService.success();
+    setState(() => _blueprintSlots[slotKey] = data);
+  }
+
+  void _onTrace(double delta) {
+    if (_isAnswered || _blueprintSlots.values.any((v) => v == null)) return;
+    setState(() {
+      _traceProgress = (_traceProgress + delta / 300).clamp(0.0, 1.0);
+    });
+    if (_traceProgress >= 1.0) _submitAnswer();
   }
 
   void _submitAnswer() {
-    if (_hasSubmitted || _controller.text.trim().isEmpty) return;
-    _hapticService.selection();
-    setState(() => _hasSubmitted = true);
-
-    final text = _controller.text.trim();
-    // Validate: At least 50 chars for a "Master Draft"
-    bool isCorrect = text.length >= 50;
-
-    if (isCorrect) {
-      _soundService.playCorrect();
-      _hapticService.success();
-    } else {
-      _soundService.playWrong();
-      _hapticService.error();
-    }
-
-    Future.delayed(const Duration(milliseconds: 300), () {
-      if (mounted) {
-        context.read<WritingBloc>().add(SubmitAnswer(isCorrect));
-      }
-    });
+    if (_isAnswered) return;
+    _hapticService.success();
+    _soundService.playCorrect();
+    setState(() { _isAnswered = true; _isCorrect = true; });
+    context.read<WritingBloc>().add(SubmitAnswer(true));
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      GameSubtype.essayDrafting.name,
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<WritingBloc, WritingState>(
-        listener: (context, state) {
-          if (state is WritingGameComplete) {
-            setState(() => _showConfetti = true);
-            GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'LITERARY TRIUMPH!',
-          description:
-              'You',
-          enableDoubleUp: true,
-        );
-          } else if (state is WritingGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'WRITER',
-        description: 'The draft was incomplete or lacked substance. Want to revisit your thesis?',
-      );
-          } else if (state is WritingLoaded &&
-              state.lastAnswerCorrect == null) {
+    return BlocConsumer<WritingBloc, WritingState>(
+      listener: (context, state) {
+        if (state is WritingLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
             setState(() {
-              _hasSubmitted = false;
-              _controller.clear();
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _blueprintSlots.clear();
+              for (var point in (state.currentQuest.requiredPoints ?? [])) {
+                _blueprintSlots[point] = null;
+              }
+              _traceProgress = 0.0;
             });
           }
-        },
-        builder: (context, state) {
-          if (state is WritingLoading || state is WritingInitial) {
-            return const GameShimmerLoading();
-          }
+          _lastLives = state.livesRemaining;
+        }
+        if (state is WritingGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'ESSAY ARCHITECT!', enableDoubleUp: true);
+        } else if (state is WritingGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<WritingBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is WritingLoaded) ? state.currentQuest : null;
+        final modules = ["STRONG THESIS", "DATA ANALYSIS", "COUNTER ARGUMENT", "FINAL SYNTHESIS", "RELEVANT HOOK"];
 
-          if (state is WritingError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<WritingBloc>().add(
-                FetchWritingQuests(
-                  gameType: GameSubtype.essayDrafting,
-                  level: widget.level,
-                ),
+        return WritingBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
+          onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 24.h),
+              _buildTopicBanner(quest.essayTopic ?? "", theme.primaryColor, isDark),
+              Expanded(
+                child: _buildBlueprintGrid(theme.primaryColor),
               ),
-            );
-          }
+              _buildModuleStream(modules, theme.primaryColor),
+              SizedBox(height: 32.h),
+              if (_blueprintSlots.values.every((v) => v != null) && !_isAnswered)
+                _buildCircuitTrace(theme.primaryColor),
+              SizedBox(height: 20.h),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
-          if (state is WritingLoaded) {
-            final WritingQuest quest = state.currentQuest;
-            final progress = (state.currentIndex + 1) / state.quests.length;
-
-            return Stack(
-              children: [
-                MeshGradientBackground(colors: theme.backgroundColors),
-                Column(
-                  children: [
-                    SizedBox(height: 50.h),
-                    PremiumGameHeader(
-                      progress: progress,
-                      lives: state.livesRemaining,
-                      onHint: () {
-                        context.read<WritingBloc>().add(WritingHintUsed());
-                        _controller.text =
-                            "Regarding ${quest.prompt ?? 'this topic'}, it is evident that ${quest.requiredPoints?.first ?? 'several factors play a key role'}...";
-                      },
-                      onClose: () => context.pop(),
-                      isDark: isDark,
-                    ),
-                    Expanded(
-                      child: SingleChildScrollView(
-                        padding: EdgeInsets.symmetric(horizontal: 24.w),
-                        child: Column(
-                          children: [
-                            SizedBox(height: 10.h),
-                            Text(
-                              "MASTER DRAFT",
-                              style: GoogleFonts.outfit(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w800,
-                                letterSpacing: 4,
-                                color: theme.primaryColor,
-                              ),
-                            ).animate().fadeIn(),
-                            SizedBox(height: 8.h),
-                            Text(
-                                  quest.instruction.isNotEmpty
-                                      ? quest.instruction
-                                      : "Construct your literary masterpiece.",
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.outfit(
-                                    fontSize: 24.sp,
-                                    fontWeight: FontWeight.w900,
-                                    color: isDark
-                                        ? Colors.white
-                                        : const Color(0xFF1E293B),
-                                  ),
-                                )
-                                .animate()
-                                .fadeIn(delay: 200.ms)
-                                .slideY(begin: 0.1),
-                            SizedBox(height: 32.h),
-
-                            _buildPromptCard(
-                              quest.prompt ?? 'Construct your essay.',
-                              quest.requiredPoints,
-                              theme,
-                              isDark,
-                            ),
-
-                            SizedBox(height: 24.h),
-
-                            _buildSegmentSelector(theme, isDark),
-
-                            SizedBox(height: 16.h),
-
-                            _buildInputArea(theme, isDark),
-
-                            SizedBox(height: 48.h),
-
-                            if (!_hasSubmitted)
-                              ScaleButton(
-                                    onTap: _submitAnswer,
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: 64.h,
-                                      decoration: BoxDecoration(
-                                        color: theme.primaryColor,
-                                        borderRadius: BorderRadius.circular(
-                                          24.r,
-                                        ),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: theme.primaryColor
-                                                .withValues(alpha: 0.3),
-                                            blurRadius: 20,
-                                            offset: const Offset(0, 10),
-                                          ),
-                                        ],
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          "FINALIZE DRAFT",
-                                          style: GoogleFonts.outfit(
-                                            fontSize: 18.sp,
-                                            fontWeight: FontWeight.w900,
-                                            letterSpacing: 2,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                  .animate()
-                                  .fadeIn(delay: 800.ms)
-                                  .slideY(begin: 0.1),
-
-                            SizedBox(height: 40.h),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                if (state.lastAnswerCorrect != null)
-                  ModernGameResultOverlay(
-                    isCorrect: state.lastAnswerCorrect!,
-                    title: state.lastAnswerCorrect!
-                        ? "DRAFT APPROVED!"
-                        : "CONTENT INSUFFICIENT!",
-                    subtitle:
-                        "Sample: ${quest.sampleAnswer ?? 'Your essay structure is solid.'}",
-                    onContinue: () =>
-                        context.read<WritingBloc>().add(NextQuestion()),
-                    primaryColor: theme.primaryColor,
-                  ),
-                if (_showConfetti) const GameConfetti(),
-              ],
-            );
-          }
-
-          return const SizedBox.shrink();
-        },
+  Widget _buildInstruction(Color primaryColor) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.architecture_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("CONSTRUCT THE STRUCTURAL BLUEPRINT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+        ],
       ),
     );
   }
 
-  Widget _buildPromptCard(
-    String topic,
-    List<String>? mainPoints,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    return GlassTile(
-      padding: EdgeInsets.all(28.r),
-      borderRadius: BorderRadius.circular(36.r),
-      borderColor: theme.primaryColor.withValues(alpha: 0.2),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.edit_document, color: theme.primaryColor, size: 20.r),
-              SizedBox(width: 8.w),
-              Text(
-                "THESIS PROMPT",
-                style: GoogleFonts.outfit(
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 2,
-                  color: theme.primaryColor,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 24.h),
-          Text(
-            topic,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.spectral(
-              fontSize: 18.sp,
-              height: 1.5,
-              fontWeight: FontWeight.w600,
-              color: isDark
-                  ? Colors.white.withValues(alpha: 0.9)
-                  : Colors.black87,
-            ),
-          ),
-          if (mainPoints != null && mainPoints.isNotEmpty) ...[
-            SizedBox(height: 16.h),
-            Wrap(
-              spacing: 8.w,
-              runSpacing: 8.h,
-              alignment: WrapAlignment.center,
-              children: mainPoints
-                  .map(
-                    (point) => Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12.w,
-                        vertical: 6.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: theme.primaryColor.withValues(alpha: 0.1),
-                        borderRadius: BorderRadius.circular(12.r),
-                      ),
-                      child: Text(
-                        point,
-                        style: GoogleFonts.outfit(
-                          fontSize: 11.sp,
-                          fontWeight: FontWeight.w600,
-                          color: theme.primaryColor,
-                        ),
-                      ),
-                    ),
-                  )
-                  .toList(),
-            ),
-          ],
-        ],
+  Widget _buildTopicBanner(String topic, Color color, bool isDark) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+        image: DecorationImage(image: const NetworkImage('https://www.transparenttextures.com/patterns/graphy.png'), opacity: 0.1, repeat: ImageRepeat.repeat),
       ),
-    ).animate().fadeIn(delay: 400.ms).scale(begin: const Offset(0.95, 0.95));
+      child: Text(topic, textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : Colors.black87)),
+    );
   }
 
-  Widget _buildSegmentSelector(ThemeResult theme, bool isDark) {
+  Widget _buildBlueprintGrid(Color color) {
+    return ListView(
+      padding: EdgeInsets.symmetric(vertical: 20.h),
+      children: _blueprintSlots.keys.map((k) => DragTarget<String>(
+        onAcceptWithDetails: (details) => _onSlot(k, details.data),
+        builder: (context, candidateData, rejectedData) {
+          bool hasData = _blueprintSlots[k] != null;
+          return Container(
+            margin: EdgeInsets.only(bottom: 24.h),
+            padding: EdgeInsets.all(16.r),
+            decoration: BoxDecoration(
+              color: hasData ? color.withValues(alpha: 0.1) : Colors.black45,
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(color: candidateData.isNotEmpty ? Colors.white : color.withValues(alpha: 0.2), width: 2),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(k, style: GoogleFonts.shareTechMono(color: color.withValues(alpha: 0.5), fontSize: 10.sp, letterSpacing: 1)),
+                SizedBox(height: 8.h),
+                Text(_blueprintSlots[k] ?? "DROP LOGIC MODULE HERE", style: GoogleFonts.outfit(color: hasData ? Colors.white : Colors.white24, fontWeight: FontWeight.bold)),
+              ],
+            ),
+          );
+        },
+      )).toList(),
+    );
+  }
+
+  Widget _buildModuleStream(List<String> items, Color color) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: _segments.asMap().entries.map((entry) {
-          final isSelected = _activeSegment == entry.key;
-          return Padding(
-            padding: EdgeInsets.only(right: 12.w),
-            child: GestureDetector(
-              onTap: () {
-                _hapticService.light();
-                setState(() => _activeSegment = entry.key);
-              },
-              child: AnimatedContainer(
-                duration: 300.ms,
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  color: isSelected
-                      ? theme.primaryColor
-                      : (isDark
-                            ? Colors.white12
-                            : Colors.black.withValues(alpha: 0.05)),
-                  borderRadius: BorderRadius.circular(20.r),
-                  border: Border.all(
-                    color: isSelected ? Colors.white24 : Colors.transparent,
-                  ),
-                ),
-                child: Text(
-                  entry.value,
-                  style: GoogleFonts.outfit(
-                    fontSize: 13.sp,
-                    fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
-                    color: isSelected
-                        ? Colors.white
-                        : (isDark ? Colors.white60 : Colors.black54),
-                  ),
-                ),
-              ),
-            ),
-          );
-        }).toList(),
+        children: items.map((i) => Draggable<String>(
+          data: i,
+          feedback: Material(color: Colors.transparent, child: Container(padding: EdgeInsets.all(12.r), decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(8.r), boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 20)]), child: Text(i, style: GoogleFonts.shareTechMono(color: Colors.white)))),
+          child: Container(margin: EdgeInsets.only(right: 12.w), padding: EdgeInsets.all(12.r), decoration: BoxDecoration(color: Colors.white10, borderRadius: BorderRadius.circular(8.r), border: Border.all(color: color.withValues(alpha: 0.3))), child: Text(i, style: GoogleFonts.shareTechMono(color: color, fontSize: 10.sp))),
+        )).toList(),
       ),
-    ).animate().fadeIn(delay: 500.ms);
+    );
   }
 
-  Widget _buildInputArea(ThemeResult theme, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(8.r),
-      borderRadius: BorderRadius.circular(28.r),
-      borderColor: theme.primaryColor.withValues(alpha: 0.1),
-      child: TextField(
-        controller: _controller,
-        enabled: !_hasSubmitted,
-        maxLines: 12,
-        style: GoogleFonts.spectral(
-          fontSize: 17.sp,
-          height: 1.6,
-          fontWeight: FontWeight.w600,
-          color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
-        ),
-        decoration: InputDecoration(
-          hintText:
-              "Elaborate on your ${_segments[_activeSegment].toLowerCase()}...",
-          hintStyle: GoogleFonts.spectral(
-            color: isDark ? Colors.white24 : Colors.black26,
-            fontStyle: FontStyle.italic,
+  Widget _buildCircuitTrace(Color color) {
+    return GestureDetector(
+      onPanUpdate: (details) => _onTrace(details.delta.dx + details.delta.dy),
+      child: Column(
+        children: [
+          Container(
+            width: double.infinity, height: 60.h,
+            decoration: BoxDecoration(color: Colors.black87, borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color, width: 2)),
+            child: Stack(
+              children: [
+                Align(alignment: Alignment.centerLeft, child: Container(width: MediaQuery.of(context).size.width * _traceProgress, decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(30.r)))),
+                Center(child: Text("TRACE CIRCUIT TO SOLIDIFY LOGIC", style: GoogleFonts.shareTechMono(color: _traceProgress > 0.5 ? Colors.black : color, fontWeight: FontWeight.bold, fontSize: 10.sp))),
+              ],
+            ),
           ),
-          contentPadding: EdgeInsets.all(24.r),
-          border: InputBorder.none,
-        ),
+        ],
       ),
-    ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.05);
+    ).animate().fadeIn().moveY(begin: 20, end: 0);
   }
 }

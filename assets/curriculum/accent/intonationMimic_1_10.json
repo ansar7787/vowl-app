@@ -1,487 +1,457 @@
 {
-  "gameType": "intonationMimic",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "intonationMimic_l1_q1",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "THINK",
-      "options": [
-        "Voiced",
-        "Unvoiced"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "No throat vibration.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l1_q2",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "THIS",
-      "options": [
-        "Voiced",
-        "Unvoiced"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Throat vibrates.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l1_q3",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "THREE",
-      "options": [
-        "Voiced",
-        "Unvoiced"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "No vibration.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l2_q1",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "THAT",
-      "options": [
-        "Voiced",
-        "Unvoiced"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Vibrates.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l2_q2",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "THROUGH",
-      "options": [
-        "Voiced",
-        "Unvoiced"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "No vibration.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l2_q3",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "THEM",
-      "options": [
-        "Voiced",
-        "Unvoiced"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Throat vibrates.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l3_q1",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "THROW",
-      "options": [
-        "Voiced",
-        "Unvoiced"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "No vibration.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l3_q2",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "THEN",
-      "options": [
-        "Voiced",
-        "Unvoiced"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Vibrates.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l3_q3",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "THANK",
-      "options": [
-        "Voiced",
-        "Unvoiced"
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "No vibration.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l4_q1",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "THOSE",
-      "options": [
-        "Voiced",
-        "Unvoiced"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Vibrates.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l4_q2",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "SHIP",
-      "options": [
-        "/ʃ/ (sh)",
-        "/s/ (s)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Wider mouth.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l4_q3",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "CHIP",
-      "options": [
-        "/tʃ/ (ch)",
-        "/ʃ/ (sh)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Starts with a stop.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l5_q1",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "JOB",
-      "options": [
-        "/dʒ/ (j)",
-        "/ʒ/ (zh)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Voiced with a stop.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l5_q2",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "VISION",
-      "options": [
-        "/ʒ/ (zh)",
-        "/dʒ/ (j)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "No stop, continuous sound.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l5_q3",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "RING",
-      "options": [
-        "/ŋ/ (ng)",
-        "/n/ (n)"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Nasal at back of mouth.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l6_q1",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "STRENGTH",
-      "options": [
-        "str-",
-        "st-"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Three consonants at start.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l6_q2",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "SPLASH",
-      "options": [
-        "spl-",
-        "sp-"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Three consonants.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l6_q3",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "SCRIPT",
-      "options": [
-        "scr-",
-        "sc-"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Three consonants.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l7_q1",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "KNIGHT",
-      "options": [
-        "K",
-        "N"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The K is not pronounced.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l7_q2",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "WRITE",
-      "options": [
-        "W",
-        "R"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "W is silent before R.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l7_q3",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "LISTEN",
-      "options": [
-        "T",
-        "L"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "The T is silent.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l8_q1",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "CASTLE",
-      "options": [
-        "T",
-        "C"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "T is silent.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l8_q2",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "COMB",
-      "options": [
-        "B",
-        "C"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "B is silent at end.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l8_q3",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "DOUBT",
-      "options": [
-        "B",
-        "D"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "B is silent.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l9_q1",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "PSALM",
-      "options": [
-        "P",
-        "S"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "P is silent.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l9_q2",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "GNAW",
-      "options": [
-        "G",
-        "N"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "G is silent before N.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l9_q3",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "HOUR",
-      "options": [
-        "H",
-        "R"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "H is silent.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l10_q1",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "WRAP",
-      "options": [
-        "W",
-        "R"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "W is silent.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l10_q2",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "ISLAND",
-      "options": [
-        "S",
-        "L"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "S is silent.",
-      "xpReward": 5,
-      "coinReward": 10
-    },
-    {
-      "id": "intonationMimic_l10_q3",
-      "instruction": "Mimic the intonation.",
-      "difficulty": 1,
-      "subtype": "intonationMimic",
-      "interactionType": "speaking",
-      "word": "SUBTLE",
-      "options": [
-        "B",
-        "T"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "B is silent.",
-      "xpReward": 5,
-      "coinReward": 10
-    }
-  ]
+    "gameType":  "intonationMimic",
+    "batchIndex":  1,
+    "levels":  "1-10",
+    "quests":  [
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L1_Q1",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L1_Q2",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L1_Q3",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L2_Q1",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L2_Q2",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L2_Q3",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L3_Q1",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L3_Q2",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L3_Q3",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L4_Q1",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L4_Q2",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L4_Q3",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L5_Q1",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L5_Q2",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L5_Q3",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L6_Q1",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L6_Q2",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L6_Q3",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L7_Q1",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L7_Q2",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L7_Q3",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L8_Q1",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L8_Q2",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L8_Q3",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L9_Q1",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L9_Q2",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L9_Q3",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L10_Q1",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L10_Q2",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   },
+                   {
+                       "id":  "ACC_INTONATIONMIMIC_L10_Q3",
+                       "interactionType":  "Wave Rider",
+                       "xp":  10,
+                       "coins":  10,
+                       "hint":  "The pitch should rise at the end of the question.",
+                       "explanation":  "Intonation mimicry builds natural speech melody.",
+                       "textToSpeak":  "Are you coming tonight?",
+                       "intonationMap":  [
+                                             1,
+                                             1,
+                                             1,
+                                             2
+                                         ]
+                   }
+               ]
 }

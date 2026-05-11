@@ -1,417 +1,192 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/core/presentation/pages/quest_unavailable_screen.dart';
-import 'package:voxai_quest/core/presentation/themes/level_theme_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_confetti.dart';
-import 'package:voxai_quest/core/presentation/widgets/glass_tile.dart';
-import 'package:voxai_quest/core/presentation/widgets/listening/sound_wave.dart';
-import 'package:voxai_quest/core/presentation/widgets/mesh_gradient_background.dart';
-import 'package:voxai_quest/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:voxai_quest/core/presentation/widgets/modern_game_result_overlay.dart';
-import 'package:voxai_quest/core/presentation/widgets/scale_button.dart';
-import 'package:voxai_quest/core/presentation/widgets/shimmer_loading.dart';
-import 'package:voxai_quest/core/utils/haptic_service.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/sound_service.dart';
-import 'package:voxai_quest/core/utils/speech_service.dart';
-import 'package:voxai_quest/features/listening/presentation/bloc/listening_bloc.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:voxai_quest/core/utils/ad_service.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
+import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class EmotionRecognitionScreen extends StatefulWidget {
   final int level;
-  const EmotionRecognitionScreen({super.key, required this.level});
+  final GameSubtype gameType;
+  const EmotionRecognitionScreen({
+    super.key,
+    required this.level,
+    this.gameType = GameSubtype.emotionRecognition,
+  });
 
   @override
-  State<EmotionRecognitionScreen> createState() =>
-      _EmotionRecognitionScreenState();
+  State<EmotionRecognitionScreen> createState() => _EmotionRecognitionScreenState();
 }
 
 class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
-  int? _selectedOptionIndex;
-  bool _isPlaying = false;
+  
+  Offset _coreOffset = Offset.zero;
+  bool _isAnswered = false;
+  bool? _isCorrect;
   bool _showConfetti = false;
+  int _lastProcessedIndex = -1;
+  int? _lastLives;
 
   @override
   void initState() {
     super.initState();
-    context.read<ListeningBloc>().add(
-      FetchListeningQuests(
-        gameType: GameSubtype.emotionRecognition,
-        level: widget.level,
-      ),
-    );
+    context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _playAudio(String text) async {
-    if (_isPlaying) return;
-    setState(() => _isPlaying = true);
-    _hapticService.light();
-    await _speechService.speak(text);
-    if (mounted) setState(() => _isPlaying = false);
+  void _onCoreMove(Offset delta) {
+    if (_isAnswered) return;
+    setState(() {
+      _coreOffset += delta;
+      _hapticService.selection();
+    });
   }
 
-  void _onOptionTap(int index, int correctIndex) {
-    if (_selectedOptionIndex != null) return;
-    _hapticService.selection();
-    setState(() => _selectedOptionIndex = index);
+  void _submitAnswer(int index, int correct) {
+    if (_isAnswered) return;
+    bool isCorrect = index == correct;
 
-    final isCorrect = index == correctIndex;
-    context.read<ListeningBloc>().add(SubmitAnswer(isCorrect));
-  }
-
-  String _getEmojiForEmotion(String emotion) {
-    switch (emotion.toLowerCase()) {
-      case 'happy':
-        return '😊';
-      case 'sad':
-        return '😢';
-      case 'angry':
-        return '😠';
-      case 'surprised':
-        return '😲';
-      case 'fearful':
-        return '😨';
-      case 'disgusted':
-        return '🤢';
-      case 'neutral':
-        return '😐';
-      default:
-        return '🎭';
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<ListeningBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(
-      'listening',
-      level: widget.level,
-      isDark: isDark,
-    );
+    final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: BlocConsumer<ListeningBloc, ListeningState>(
-        listener: (context, state) {
-          if (state is ListeningGameComplete) {
-            setState(() => _showConfetti = true);
-            GameDialogHelper.showCompletion(
-          context,
-          xp: state.xpEarned,
-          coins: state.coinsEarned,
-          title: 'EMOTIONALLY INTELLIGENT!',
-          description:
-              'Youve mastered the art of hearing feelings. Earned ${state.xpEarned} XP and ${state.coinsEarned} coins.',
-        );
-          } else if (state is ListeningGameOver) {
-            GameDialogHelper.showGameOver(
-        context,
-        title: 'MISUNDERSTOOD',
-        description: 'Emotions are complex. Ready to listen again?',
-        onRestore: () => context.read<ListeningBloc>().add(RestoreLife()),
-      );
-          } else if (state is ListeningLoaded &&
-              state.lastAnswerCorrect == null) {
-            setState(() => _selectedOptionIndex = null);
+    return BlocConsumer<ListeningBloc, ListeningState>(
+      listener: (context, state) {
+        if (state is ListeningLoaded) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+            setState(() {
+              _lastProcessedIndex = state.currentIndex;
+              _isAnswered = false;
+              _isCorrect = null;
+              _coreOffset = Offset.zero;
+            });
           }
-        },
-        builder: (context, state) {
-          if (state is ListeningLoading || state is ListeningInitial) {
-            return const GameShimmerLoading();
-          }
-
-          if (state is ListeningError) {
-            return QuestUnavailableScreen(
-              message: state.message,
-              onRetry: () => context.read<ListeningBloc>().add(
-                FetchListeningQuests(
-                  gameType: GameSubtype.emotionRecognition,
-                  level: widget.level,
-                ),
-              ),
-            );
-          }
-          if (state is ListeningLoaded) {
-            return Stack(
-              children: [
-                const MeshGradientBackground(),
-                _buildGameUI(context, state, isDark, theme),
-              ],
-            );
-          }
-
-          return const SizedBox.shrink();
-        },
-      ),
-    );
-  }
-
-  Widget _buildGameUI(
-    BuildContext context,
-    ListeningLoaded state,
-    bool isDark,
-    ThemeResult theme,
-  ) {
-    final quest = state.currentQuest;
-    final progress = (state.currentIndex + 1) / state.quests.length;
-
-    return Stack(
-      children: [
-        SafeArea(
-          child: Column(
+          _lastLives = state.livesRemaining;
+        }
+        if (state is ListeningGameComplete) {
+          setState(() => _showConfetti = true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'SENTIMENT PROBER!', enableDoubleUp: true);
+        } else if (state is ListeningGameOver) {
+          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ListeningBloc>().add(RestoreLife()));
+        }
+      },
+      builder: (context, state) {
+        final quest = (state is ListeningLoaded) ? state.currentQuest : null;
+        
+        return ListeningBaseLayout(
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          showConfetti: _showConfetti,
+          onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
+          onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
+          child: quest == null ? const SizedBox() : Column(
             children: [
-              _buildHeader(context, state, progress, theme, isDark),
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 10.h),
-                      Text(
-                        "EMOTION RADAR",
-                        style: GoogleFonts.outfit(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 4,
-                          color: theme.primaryColor,
-                        ),
-                      ),
-                      SizedBox(height: 12.h),
-                      Text(
-                        quest.instruction,
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark
-                              ? Colors.white
-                              : const Color(0xFF1E293B),
-                        ),
-                      ).animate().fadeIn().slideY(begin: 0.1),
-                      SizedBox(height: 30.h),
-                      _buildAudioVisualizer(
-                        quest.transcript ?? "Detect the emotion in the voice.",
-                        theme,
-                      ),
-                      SizedBox(height: 30.h),
-                      _buildEmotionGrid(
-                        quest.options ?? [],
-                        quest.correctAnswerIndex ?? 0,
-                        theme,
-                        isDark,
-                      ),
-                      SizedBox(height: 40.h),
-                    ],
-                  ),
-                ),
-              ),
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 40.h),
+              _buildEmitterNode(quest.textToSpeak ?? "", theme.primaryColor),
+              const Spacer(),
+              _buildNeuralField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+              const Spacer(),
             ],
           ),
-        ),
-        if (state.lastAnswerCorrect != null)
-          ModernGameResultOverlay(
-            isCorrect: state.lastAnswerCorrect!,
-            title: state.lastAnswerCorrect! ? "EMPATHY EXPERT!" : "TONE DEAF?",
-            subtitle: "Emotions are the colors of speech.",
-            onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
-            primaryColor: theme.primaryColor,
-          ),
-        if (_showConfetti) const GameConfetti(),
-      ],
-    );
-  }
-
-  Widget _buildHeader(
-    BuildContext context,
-    ListeningLoaded state,
-    double progress,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(20.w, 20.h, 20.w, 10.h),
-      child: Row(
-        children: [
-          ScaleButton(
-            onTap: () => context.pop(),
-            child: Container(
-              padding: EdgeInsets.all(10.r),
-              decoration: BoxDecoration(
-                color: isDark ? Colors.white10 : Colors.black12,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.close_rounded,
-                size: 24.r,
-                color: isDark ? Colors.white70 : Colors.black54,
-              ),
-            ),
-          ),
-          SizedBox(width: 12.w),
-          Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.r),
-              child: LinearProgressIndicator(
-                value: progress,
-                minHeight: 14.h,
-                backgroundColor: isDark ? Colors.white10 : Colors.black12,
-                valueColor: AlwaysStoppedAnimation<Color>(theme.primaryColor),
-              ),
-            ),
-          ),
-          SizedBox(width: 12.w),
-          _buildHeartCount(state.livesRemaining),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildAudioVisualizer(String transcript, ThemeResult theme) {
-    return GlassTile(
-      padding: EdgeInsets.all(32.r),
-      borderRadius: BorderRadius.circular(32.r),
-      child: Column(
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              if (_isPlaying)
-                SizedBox(
-                  width: 120.r,
-                  height: 120.r,
-                  child: SoundWave(color: theme.primaryColor),
-                ),
-              ScaleButton(
-                onTap: () => _playAudio(transcript),
-                child: Container(
-                  width: 80.r,
-                  height: 80.r,
-                  decoration: BoxDecoration(
-                    color: theme.primaryColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    _isPlaying ? Icons.pause_rounded : Icons.play_arrow_rounded,
-                    color: Colors.white,
-                    size: 40.r,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 16.h),
-          Text(
-            _isPlaying ? "CAPTURING VIBRATIONS..." : "PLAY VOICE CLIP",
-            style: GoogleFonts.outfit(
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 2,
-              color: Colors.white70,
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn().scale();
-  }
-
-  Widget _buildEmotionGrid(
-    List<String> options,
-    int correctIndex,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 16.r,
-        mainAxisSpacing: 16.r,
-        childAspectRatio: 0.9,
-      ),
-      itemCount: options.length,
-      itemBuilder: (context, index) {
-        return _buildEmotionCard(
-          index,
-          options[index],
-          correctIndex,
-          theme,
-          isDark,
         );
       },
     );
   }
 
-  Widget _buildEmotionCard(
-    int index,
-    String text,
-    int correctIndex,
-    ThemeResult theme,
-    bool isDark,
-  ) {
-    final isSelected = _selectedOptionIndex == index;
-    final emoji = _getEmojiForEmotion(text);
-
-    return ScaleButton(
-          onTap: () => _onOptionTap(index, correctIndex),
-          child: GlassTile(
-            padding: EdgeInsets.all(16.r),
-            borderRadius: BorderRadius.circular(24.r),
-            borderColor: isSelected ? theme.primaryColor : Colors.white12,
-            color: isSelected
-                ? theme.primaryColor.withValues(alpha: 0.1)
-                : null,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(emoji, style: TextStyle(fontSize: 40.sp)),
-                SizedBox(height: 12.h),
-                Text(
-                  text.toUpperCase(),
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1,
-                    color: isDark ? Colors.white : Colors.black87,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        )
-        .animate()
-        .fadeIn(delay: (index * 100).ms)
-        .scale(begin: const Offset(0.8, 0.8));
-  }
-
-  Widget _buildHeartCount(int lives) {
+  Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: Colors.pink.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 20.r),
-          SizedBox(width: 6.w),
-          Text(
-            "$lives",
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.pinkAccent,
+          Icon(Icons.psychology_rounded, size: 14.r, color: primaryColor),
+          SizedBox(width: 12.w),
+          Text("NAVIGATE THE CORE TO MATCH EMOTION", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildEmitterNode(String tts, Color color) {
+    return ScaleButton(
+      onTap: () {
+        _soundService.playTts(tts);
+        _hapticService.selection();
+      },
+      child: Container(
+        width: 80.r, height: 80.r,
+        decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color.withValues(alpha: 0.3))),
+        child: Icon(Icons.waves_rounded, color: color, size: 32.r),
+      ),
+    );
+  }
+
+  Widget _buildNeuralField(List<String> options, int correct, Color color, bool isDark) {
+    return SizedBox(
+      height: 400.h, width: double.infinity,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // The Neural Grid
+          ...List.generate(options.length, (index) {
+            double x = (index % 2 == 0) ? -120.w : 120.w;
+            double y = (index < 2) ? -140.h : 140.h;
+            return Transform.translate(
+              offset: Offset(x, y),
+              child: _buildReservoir(index, options[index], correct, color),
+            );
+          }),
+          
+          // The Psychology Core
+          Transform.translate(
+            offset: _coreOffset,
+            child: GestureDetector(
+              onPanUpdate: (details) => _onCoreMove(details.delta),
+              onPanEnd: (_) {
+                for (int i = 0; i < options.length; i++) {
+                  double x = (i % 2 == 0) ? -120.w : 120.w;
+                  double y = (i < 2) ? -140.h : 140.h;
+                  if ((_coreOffset - Offset(x, y)).distance < 60.r) {
+                    _submitAnswer(i, correct);
+                    break;
+                  }
+                }
+              },
+              child: Container(
+                width: 80.r, height: 80.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: color,
+                  boxShadow: [BoxShadow(color: color.withValues(alpha: 0.5), blurRadius: 20)],
+                ),
+                child: Icon(Icons.bolt_rounded, color: Colors.white, size: 40.r),
+              ).animate(onPlay: (c) => c.repeat()).shimmer(color: Colors.white24, duration: 2.seconds),
             ),
           ),
         ],
@@ -419,7 +194,40 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
     );
   }
 
-  
+  Widget _buildReservoir(int index, String text, int correct, Color color) {
+    bool isCorrect = _isAnswered && index == correct;
+    bool isWrong = _isAnswered && !isCorrect;
+    Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color);
 
-  
+    return Container(
+      width: 100.r, height: 100.r,
+      padding: EdgeInsets.all(8.r),
+      decoration: BoxDecoration(
+        color: tileColor.withValues(alpha: 0.1),
+        shape: BoxShape.circle,
+        border: Border.all(color: tileColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(_getEmotionEmoji(text), style: TextStyle(fontSize: 24.sp)),
+          SizedBox(height: 4.h),
+          Text(text.toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 8.sp, fontWeight: FontWeight.w900, color: tileColor)),
+        ],
+      ),
+    );
+  }
+
+  String _getEmotionEmoji(String emotion) {
+    switch (emotion.toLowerCase()) {
+      case 'anger': return '😡';
+      case 'excitement': return '🤩';
+      case 'sadness': return '😢';
+      case 'boredom': return '😑';
+      case 'happiness': return '😊';
+      case 'surprise': return '😲';
+      default: return '🎭';
+    }
+  }
 }
+

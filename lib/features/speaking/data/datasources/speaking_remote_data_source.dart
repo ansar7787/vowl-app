@@ -1,8 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:voxai_quest/core/data/services/asset_quest_service.dart';
-import 'package:voxai_quest/core/error/exceptions.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
-import 'package:voxai_quest/features/speaking/data/models/speaking_quest_model.dart';
+import 'package:vowl/core/data/services/asset_quest_service.dart';
+import 'package:vowl/core/error/exceptions.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/speaking/data/models/speaking_quest_model.dart';
 
 abstract class SpeakingRemoteDataSource {
   Future<List<SpeakingQuestModel>> getSpeakingQuest({
@@ -26,9 +27,15 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
       // 1. Try to load from Local Assets (Free & Fast)
       final localData = await assetQuestService.getQuests(gameType.name, level);
       if (localData.isNotEmpty) {
-        return localData.map((q) {
-          return SpeakingQuestModel.fromJson(q, q['id'] ?? '');
-        }).toList();
+        final List<SpeakingQuestModel> quests = [];
+        for (final q in localData) {
+          try {
+            quests.add(SpeakingQuestModel.fromJson(q, q['id'] ?? ''));
+          } catch (e) {
+            debugPrint('Error parsing speaking quest ${q['id']}: $e');
+          }
+        }
+        if (quests.isNotEmpty) return quests;
       }
 
       // 2. Fallback to Firestore (Cloud)
@@ -83,10 +90,12 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
         data['subtype'] = gameType.name;
         return [SpeakingQuestModel.fromJson(data, data['id'] ?? doc.id)];
       } else {
-        throw ServerException();
+        throw ServerException("We're having trouble loading this speaking quest. Please check your microphone or try again.");
       }
     } catch (e) {
-      throw ServerException();
+      debugPrint('Error in getSpeakingQuest: $e');
+      if (e is ServerException) rethrow;
+      throw ServerException(e.toString());
     }
   }
 }

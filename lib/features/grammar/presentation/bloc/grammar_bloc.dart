@@ -1,16 +1,17 @@
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:voxai_quest/features/speaking/domain/usecases/get_speaking_quest.dart';
-import 'package:voxai_quest/core/usecases/usecase.dart';
+import 'package:vowl/features/speaking/domain/usecases/get_speaking_quest.dart';
+import 'package:vowl/core/usecases/usecase.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 import '../../domain/usecases/get_grammar_quest.dart';
 import '../../domain/usecases/preload_grammar_quest.dart';
+import '../../domain/entities/grammar_quest.dart';
 import '../../../auth/domain/usecases/update_user_coins.dart';
 import '../../../auth/domain/usecases/update_user_rewards.dart';
 import '../../../auth/domain/usecases/update_category_stats.dart';
 import '../../../auth/domain/usecases/update_unlocked_level.dart';
 import '../../../auth/domain/usecases/award_badge.dart';
 import '../../../auth/domain/usecases/use_hint.dart';
-import '../../../../core/utils/sound_service.dart';
 import '../../../../core/utils/haptic_service.dart';
 
 import 'grammar_event.dart';
@@ -68,11 +69,19 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
       QuestParams(gameType: event.gameType, level: event.level),
     );
 
-    result.fold((failure) => emit(GrammarError(failure.message)), (quests) {
-      if (quests.isEmpty) {
-        emit(GrammarError("Check back later for new quests!"));
-        return;
-      }
+    result.fold(
+      (failure) => emit(GrammarError(
+        failure.message,
+        technicalError: "Usecase Failure: ${failure.toString()}",
+      )),
+      (quests) {
+        if (quests.isEmpty) {
+          emit(GrammarError(
+            "Check back later for new quests!",
+            technicalError: "Empty quest list for ${event.gameType.name}, Level ${event.level}",
+          ));
+          return;
+        }
 
       // Industrial standard: check if we should preload next batch
       // Trigger preloading if level ends in 9
@@ -97,30 +106,38 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     Emitter<GrammarState> emit,
   ) async {
     final currentState = state;
-    if (currentState is! GrammarLoaded) return;
+    if (currentState is! GrammarLoaded || currentState.livesRemaining <= 0) return;
 
-    int newLives = currentState.livesRemaining;
     if (!event.isCorrect) {
-      newLives--;
+      final newLives = currentState.livesRemaining - 1;
+      final newWrongCount = currentState.wrongCount + 1;
+      bool isFinal = newWrongCount >= 2;
+
+      List<GrammarQuest> updatedQuests = List.from(currentState.quests);
+      if (isFinal) {
+        updatedQuests.add(currentState.currentQuest); // Mastery Loop
+      }
+      
       await soundService.playWrong();
       await hapticService.error();
+
+      emit(
+        currentState.copyWith(
+          livesRemaining: newLives,
+          lastAnswerCorrect: false,
+          quests: updatedQuests,
+          wrongCount: isFinal ? 0 : newWrongCount,
+          isFinalFailure: isFinal || newLives <= 0,
+        ),
+      );
     } else {
       await soundService.playCorrect();
       await hapticService.success();
-    }
-
-    emit(
-      currentState.copyWith(
-        livesRemaining: newLives,
-        lastAnswerCorrect: event.isCorrect,
-      ),
-    );
-
-    if (newLives <= 0) {
       emit(
-        GrammarGameOver(
-          quests: currentState.quests,
-          currentIndex: currentState.currentIndex,
+        currentState.copyWith(
+          lastAnswerCorrect: true,
+          wrongCount: 0,
+          isFinalFailure: false,
         ),
       );
     }
@@ -133,57 +150,66 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     final currentState = state;
     if (currentState is! GrammarLoaded) return;
 
-    if (currentState.lastAnswerCorrect == true) {
-      if (currentState.currentIndex + 1 < currentState.quests.length) {
+    if (currentState.livesRemaining <= 0) {
+      emit(GrammarGameOver(
+        quests: currentState.quests,
+        currentIndex: currentState.currentIndex,
+      ));
+      return;
+    }
+
+    // Move to next question if it was a success OR a final failure (since it's re-queued)
+    if (currentState.currentIndex + 1 < currentState.quests.length) {
+      if (currentState.lastAnswerCorrect == true || currentState.isFinalFailure) {
         emit(
           currentState.copyWith(
             currentIndex: currentState.currentIndex + 1,
             lastAnswerCorrect: null,
             hintUsed: false,
+            wrongCount: 0,
+            isFinalFailure: false,
           ),
         );
       } else {
-        await soundService.playLevelComplete();
+        // First-time wrong answer, stay and retry
+        emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      }
+    } else if (currentState.lastAnswerCorrect == true) {
+      // We only complete the level if the LAST question in the queue was answered correctly
+      await soundService.playLevelComplete();
 
-        final totalXp = currentState.quests.fold(
-          0,
-          (sum, q) => sum + q.xpReward,
+      const totalXp = 10;
+      const totalCoins = 10;
+
+      emit(GrammarGameComplete(xpEarned: totalXp, coinsEarned: totalCoins));
+
+      // Persistence
+      if (currentGameType != null && currentLevel != null) {
+        await updateUserRewards(
+          UpdateUserRewardsParams(
+            gameType: currentGameType!.name,
+            level: currentLevel!,
+            xpIncrease: totalXp,
+            coinIncrease: totalCoins,
+          ),
         );
-        final totalCoins = currentState.quests.fold(
-          0,
-          (sum, q) => sum + q.coinReward,
+        await updateCategoryStats(
+          UpdateCategoryStatsParams(
+            categoryId: currentGameType!.name,
+            isCorrect: true,
+          ),
         );
-
-        emit(GrammarGameComplete(xpEarned: totalXp, coinsEarned: totalCoins));
-
-        // Persistence
-        if (currentGameType != null && currentLevel != null) {
-          await updateUserCoins(UpdateUserCoinsParams(amountChange: totalXp));
-          await updateUserRewards(
-            UpdateUserRewardsParams(
-              gameType: currentGameType!.name,
-              level: currentLevel!,
-              xpIncrease: totalXp,
-              coinIncrease: totalCoins,
-            ),
-          );
-          await updateCategoryStats(
-            UpdateCategoryStatsParams(
-              categoryId: currentGameType!.name,
-              isCorrect: true,
-            ),
-          );
-          await updateUnlockedLevel(
-            UpdateUnlockedLevelParams(
-              categoryId: currentGameType!.name,
-              newLevel: currentLevel! + 1,
-            ),
-          );
-          await awardBadge('grammar_master');
-        }
+        await updateUnlockedLevel(
+          UpdateUnlockedLevelParams(
+            categoryId: currentGameType!.name,
+            newLevel: currentLevel! + 1,
+          ),
+        );
+        await awardBadge('grammar_master');
       }
     } else {
-      emit(currentState.copyWith(lastAnswerCorrect: null));
+      // Wrong answer on the very last quest
+      emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
     }
   }
 
@@ -235,3 +261,4 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     );
   }
 }
+

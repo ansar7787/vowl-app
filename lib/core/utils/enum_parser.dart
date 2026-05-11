@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:voxai_quest/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class EnumParser {
   /// Safely parses a string into an enum of type [T].

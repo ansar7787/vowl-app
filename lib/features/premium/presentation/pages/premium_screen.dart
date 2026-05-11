@@ -6,9 +6,10 @@ import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
-import 'package:voxai_quest/core/utils/injection_container.dart' as di;
-import 'package:voxai_quest/core/utils/payment_service.dart';
-import 'package:voxai_quest/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/payment_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class PremiumScreen extends StatefulWidget {
   const PremiumScreen({super.key});
@@ -19,6 +20,34 @@ class PremiumScreen extends StatefulWidget {
 
 class _PremiumScreenState extends State<PremiumScreen> {
   final _paymentService = di.sl<PaymentService>();
+  int _selectedPlanIndex = 1;
+
+  final List<Map<String, dynamic>> _plans = const [
+    {
+      'name': 'Weekly',
+      'price': 39.0,
+      'oldPrice': 49.0,
+      'days': 7,
+      'tag': 'FESTIVE OFFER',
+      'color': Color(0xFFF43F5E),
+    },
+    {
+      'name': 'Monthly',
+      'price': 99.0,
+      'oldPrice': 149.0,
+      'days': 30,
+      'tag': 'MOST POPULAR',
+      'color': Color(0xFF6366F1),
+    },
+    {
+      'name': 'Yearly',
+      'price': 799.0,
+      'oldPrice': 1499.0,
+      'days': 365,
+      'tag': 'BEST VALUE',
+      'color': Color(0xFF10B981),
+    },
+  ];
 
   @override
   void initState() {
@@ -33,26 +62,17 @@ class _PremiumScreenState extends State<PremiumScreen> {
   void _handlePaymentSuccess(PaymentSuccessResponse response) async {
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
-      await _paymentService.upgradeToPremium(user.id);
+      final selectedPlan = _plans[_selectedPlanIndex];
+      await _paymentService.upgradeToPremium(user.id, selectedPlan['days'] as int);
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Congratulations! You are now a Pro member!'),
-            backgroundColor: Colors.green,
-          ),
-        );
+        Haptics.vibrate(HapticsType.success);
         context.pop();
       }
     }
   }
 
   void _handlePaymentFailure(PaymentFailureResponse response) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Payment Failed: ${response.message}'),
-        backgroundColor: Colors.red,
-      ),
-    );
+    Haptics.vibrate(HapticsType.error);
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {}
@@ -65,556 +85,323 @@ class _PremiumScreenState extends State<PremiumScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
     return Scaffold(
-      body: Stack(
-        children: [
-          // 1. Immersive Mesh Gradient Background
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: Theme.of(context).brightness == Brightness.dark
-                    ? [
-                        const Color(0xFF0F172A), // Slate 900
-                        const Color(0xFF1E1B4B), // Indigo 950
-                        const Color(0xFF312E81), // Indigo 900
-                      ]
-                    : [
-                        const Color(0xFFF8FAFC), // Slate 50
-                        const Color(0xFFFFF7ED), // Orange 50
-                        const Color(0xFFF3E8FF), // Purple 100
-                      ],
-              ),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          color: isDark ? const Color(0xFF020617) : const Color(0xFFF8FAFC),
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              top: -100,
+              right: -50,
+              child: _StaticGlow(color: isDark ? const Color(0x14F59E0B) : const Color(0x08F59E0B)),
             ),
-          ),
-          // 2. Subtle Pattern
-          Positioned.fill(
-            child: CustomPaint(
-              painter: _PremiumPatternPainter(
-                color: const Color(0xFFF59E0B).withValues(alpha: 0.05),
-              ),
-            ),
-          ),
-          // 3. Content
-          SafeArea(
-            child: Column(
-              children: [
-                _buildHeader(context),
-                Expanded(
-                  child: SingleChildScrollView(
-                    physics: const BouncingScrollPhysics(),
+            SafeArea(
+              child: Column(
+                children: [
+                  _PremiumHeader(),
+                  Expanded(
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Column(
                         children: [
+                          const Spacer(),
+                          RepaintBoundary(child: _PremiumHero()),
+                          const Spacer(),
+                          _buildPlanList(),
+                          const Spacer(),
+                          _ModernFeatureBar(),
+                          const Spacer(flex: 2),
+                          _buildCTAButton(),
                           SizedBox(height: 20.h),
-                          _buildHeroSection()
-                              .animate()
-                              .scale(
-                                duration: 600.ms,
-                                curve: Curves.easeOutBack,
-                              )
-                              .fadeIn(),
-                          SizedBox(height: 40.h),
-                          _buildFeaturesList()
-                              .animate(delay: 300.ms)
-                              .slideY(begin: 0.1)
-                              .fadeIn(),
-                          SizedBox(height: 40.h),
-                          _buildPriceCard()
-                              .animate(delay: 500.ms)
-                              .slideY(begin: 0.1)
-                              .fadeIn(),
-                          SizedBox(height: 120.h), // Spacing for FAB/Button
+                          _buildSecureTag(isDark),
+                          SizedBox(height: 12.h),
                         ],
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ),
-          // 4. Floating CTA
-          Positioned(
-            bottom: 32.h,
-            left: 24.w,
-            right: 24.w,
-            child: _buildCTAButton()
-                .animate(delay: 800.ms)
-                .slideY(begin: 1.0)
-                .fadeIn(),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHeader(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          GestureDetector(
-            onTap: () {
-              Haptics.vibrate(HapticsType.selection);
-              context.pop();
-            },
-            child: Container(
-              padding: EdgeInsets.all(12.w),
-              decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.1)
-                    : Colors.white,
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.1)
-                      : const Color(0xFFE2E8F0),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFF0F172A).withValues(alpha: 0.05),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  ),
                 ],
               ),
-              child: Icon(
-                Icons.close_rounded,
-                color: isDark ? Colors.white : const Color(0xFF1E293B),
-                size: 24.r,
-              ),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-            decoration: BoxDecoration(
-              color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(
-                color: const Color(0xFFF59E0B).withValues(alpha: 0.2),
-              ),
-            ),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.verified_rounded,
-                  color: const Color(0xFFF59E0B),
-                  size: 16.r,
-                ),
-                SizedBox(width: 8.w),
-                Text(
-                  'PRO MEMBER',
-                  style: GoogleFonts.outfit(
-                    color: const Color(0xFFF59E0B), // Always amber/orange
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 1,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildHeroSection() {
+  Widget _buildPlanList() {
     return Column(
-      children: [
-        Stack(
-          alignment: Alignment.center,
-          children: [
-            Container(
-                  width: 140.r,
-                  height: 140.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.1),
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(
-                  begin: const Offset(0.9, 0.9),
-                  end: const Offset(1.1, 1.1),
-                  duration: 2.seconds,
-                ),
-            Container(
-              width: 100.r,
-              height: 100.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: const LinearGradient(
-                  colors: [Color(0xFFF59E0B), Color(0xFFD97706)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.4),
-                    blurRadius: 30,
-                    offset: const Offset(0, 15),
-                  ),
-                ],
-              ),
-              child: Icon(
-                Icons.workspace_premium_rounded,
-                color: Colors.white,
-                size: 50.r,
-              ),
-            ),
-            Positioned(
-              top: 0,
-              right: 20.r,
-              child:
-                  Icon(
-                        Icons.star_rounded,
-                        color: const Color(0xFFFCD34D),
-                        size: 30.r,
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .rotate(begin: -0.1, end: 0.1)
-                      .scale(
-                        begin: const Offset(0.8, 0.8),
-                        end: const Offset(1.2, 1.2),
-                      ),
-            ),
-          ],
-        ),
-        SizedBox(height: 24.h),
-        Text(
-          'Unlock the Full Potential',
-          style: GoogleFonts.outfit(
-            color: Theme.of(context).brightness == Brightness.dark
-                ? Colors.white
-                : const Color(0xFF0F172A),
-            fontSize: 28.sp,
-            fontWeight: FontWeight.w900,
-            letterSpacing: -1,
-            height: 1.1,
-          ),
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(height: 12.h),
-        Text(
-          'Join thousands of learners achieving fluency faster with VoxAI Quest Pro.',
-          style: GoogleFonts.outfit(
-            color: Theme.of(context).brightness == Brightness.dark
-                ? Colors.white70
-                : const Color(0xFF64748B),
-            fontSize: 16.sp,
-            height: 1.5,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ],
-    );
-  }
-
-  Widget _buildFeaturesList() {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    return Container(
-      padding: EdgeInsets.all(24.w),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(32.r),
-        border: Border.all(
-          color: isDark
-              ? Colors.white.withValues(alpha: 0.1)
-              : const Color(0xFFE2E8F0),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF0F172A).withValues(alpha: 0.05),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          _buildFeatureItem(
-            Icons.block_rounded,
-            'Remove All Ads',
-            'No interruptions while learning.',
-            Colors.redAccent,
-          ),
-          Divider(
-            color: Theme.of(context).dividerColor.withValues(alpha: 0.1),
-            height: 32.h,
-          ),
-          _buildFeatureItem(
-            Icons.bolt_rounded,
-            '2x Coin Multiplier',
-            'Earn double coins on every lesson.',
-            Colors.blueAccent,
-          ),
-          Divider(
-            color: Theme.of(context).dividerColor.withValues(alpha: 0.1),
-            height: 32.h,
-          ),
-          _buildFeatureItem(
-            Icons.card_giftcard_rounded,
-            'VIP Daily Gifts',
-            'Exclusive rewards every day.',
-            Colors.purpleAccent,
-          ),
-          Divider(
-            color: Theme.of(context).dividerColor.withValues(alpha: 0.1),
-            height: 32.h,
-          ),
-          _buildFeatureItem(
-            Icons.verified_rounded,
-            'Pro Badge',
-            'Stand out on the leaderboard.',
-            Colors.amber,
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildFeatureItem(
-    IconData icon,
-    String title,
-    String subtitle,
-    Color color,
-  ) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return Row(
-      children: [
-        Container(
-          padding: EdgeInsets.all(12.r),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(16.r),
-          ),
-          child: Icon(icon, color: color, size: 24.r),
-        ),
-        SizedBox(width: 16.w),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: GoogleFonts.outfit(
-                  color: isDark ? Colors.white : const Color(0xFF0F172A),
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-              SizedBox(height: 4.h),
-              Text(
-                subtitle,
-                style: GoogleFonts.outfit(
-                  color: isDark ? Colors.white70 : const Color(0xFF64748B),
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildPriceCard() {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    return Container(
-      padding: EdgeInsets.all(4.w),
-      decoration: BoxDecoration(
-        color: isDark
-            ? const Color(0xFF334155).withValues(alpha: 0.5)
-            : const Color(0xFFFFF7ED), // Orange 50
-        borderRadius: BorderRadius.circular(28.r),
-        border: Border.all(
-          color: isDark
-              ? const Color(0xFFF59E0B).withValues(alpha: 0.3)
-              : const Color(0xFFFED7AA),
-        ),
-      ),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF1E293B) : Colors.white,
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(
-            color: isDark ? Colors.transparent : const Color(0xFFFFF7ED),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFF59E0B),
-                    borderRadius: BorderRadius.circular(8.r),
-                  ),
-                  child: Text(
-                    'Best Value',
-                    style: GoogleFonts.outfit(
-                      color: Colors.white,
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                Text(
-                  'Monthly Pack',
-                  style: GoogleFonts.outfit(
-                    color: isDark ? Colors.white : const Color(0xFF0F172A),
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w800,
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  '₹99',
-                  style: GoogleFonts.outfit(
-                    color: const Color(0xFFF59E0B),
-                    fontSize: 28.sp,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-                Text(
-                  '/ 30 Days',
-                  style: GoogleFonts.outfit(
-                    color: isDark ? Colors.white60 : const Color(0xFF94A3B8),
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
+      children: List.generate(_plans.length, (index) {
+        return _PlanCard(
+          plan: _plans[index],
+          isSelected: _selectedPlanIndex == index,
+          onTap: () {
+            Haptics.vibrate(HapticsType.selection);
+            setState(() => _selectedPlanIndex = index);
+          },
+        );
+      }),
     );
   }
 
   Widget _buildCTAButton() {
-    return SizedBox(
-          width: double.infinity,
-          height: 64.h,
-          child: ElevatedButton(
-            onPressed: () {
-              Haptics.vibrate(HapticsType.heavy);
-              final user = context.read<AuthBloc>().state.user;
-              if (user != null) {
-                _paymentService.purchaseSubscription(
-                  contact: '',
-                  email: user.email,
-                );
-              }
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              padding: EdgeInsets.zero,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.r),
-              ),
-            ),
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [
-                    Color(0xFFF59E0B),
-                    Color(0xFFEA580C),
-                  ], // Amber to Orange
-                ),
-                borderRadius: BorderRadius.circular(20.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xFFF59E0B).withValues(alpha: 0.4),
-                    blurRadius: 20,
-                    offset: const Offset(0, 10),
-                  ),
-                  BoxShadow(
-                    color: const Color(0xFFEA580C).withValues(alpha: 0.4),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-                border: Border.all(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  width: 1.5,
-                ),
-              ),
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'UPGRADE NOW',
-                      style: GoogleFonts.outfit(
-                        color: Colors.white,
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                    SizedBox(width: 8.w),
-                    Icon(
-                      Icons.arrow_forward_rounded,
-                      color: Colors.white,
-                      size: 20.r,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+    return ScaleButton(
+      onTap: () {
+        Haptics.vibrate(HapticsType.heavy);
+        final user = context.read<AuthBloc>().state.user;
+        if (user != null) {
+          final plan = _plans[_selectedPlanIndex];
+          _paymentService.purchaseSubscription(
+            contact: '', 
+            email: user.email, 
+            amount: plan['price'] as double, 
+            days: plan['days'] as int, 
+            planName: plan['name'] as String
+          );
+        }
+      },
+      child: Container(
+        width: double.infinity,
+        height: 60.h,
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Color(0xFFF59E0B), Color(0xFFEA580C)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(
-          duration: 3.seconds,
-          delay: 1.seconds,
-          color: Colors.white.withValues(alpha: 0.3),
-        );
+          borderRadius: BorderRadius.circular(20.r),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0x4DF59E0B),
+              blurRadius: 20,
+              offset: const Offset(0, 8),
+            ),
+          ],
+        ),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'ACTIVATE PRO ACCESS',
+                style: GoogleFonts.outfit(
+                  color: Colors.white,
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 1,
+                ),
+              ),
+              SizedBox(width: 10.w),
+              const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: 16),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSecureTag(bool isDark) {
+    return Text(
+      'SECURE TRANSACTION • CANCEL ANYTIME',
+      style: GoogleFonts.outfit(
+        color: isDark ? const Color(0x3DFFFFFF) : const Color(0x42000000),
+        fontSize: 9.sp,
+        fontWeight: FontWeight.w900,
+        letterSpacing: 1.5,
+      ),
+    );
   }
 }
 
-class _PremiumPatternPainter extends CustomPainter {
+class _StaticGlow extends StatelessWidget {
   final Color color;
-  _PremiumPatternPainter({required this.color});
+  const _StaticGlow({required this.color});
 
   @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = 1.0;
-
-    double spacing = 40.w;
-    for (double x = 0; x < size.width; x += spacing) {
-      canvas.drawCircle(
-        Offset(x, x % (spacing * 2) == 0 ? 0 : size.height),
-        2,
-        paint,
-      );
-      // Draw diagonal lines
-      canvas.drawLine(Offset(x, 0), Offset(x + 20, 20), paint);
-    }
+  Widget build(BuildContext context) {
+    return Container(
+      width: 350.r,
+      height: 350.r,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        boxShadow: [BoxShadow(color: color, blurRadius: 80, spreadRadius: 40)],
+      ),
+    );
   }
+}
+
+class _PremiumHeader extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          IconButton(
+            onPressed: () => context.pop(),
+            icon: Icon(Icons.keyboard_backspace_rounded, color: isDark ? const Color(0x61FFFFFF) : const Color(0x61000000)),
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0x0DFFFFFF) : const Color(0x08000000),
+              borderRadius: BorderRadius.circular(30.r),
+            ),
+            child: Row(
+              children: [
+                Icon(Icons.shield_rounded, color: const Color(0xFFF59E0B), size: 14.r),
+                SizedBox(width: 6.w),
+                Text('VERIFIED PRO', style: GoogleFonts.outfit(color: isDark ? const Color(0xB3FFFFFF) : const Color(0xDE000000), fontSize: 10.sp, fontWeight: FontWeight.w900, letterSpacing: 1)),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _PremiumHero extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Column(
+      children: [
+        Container(
+          width: 70.r,
+          height: 70.r,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: const LinearGradient(colors: [Color(0xFFF59E0B), Color(0xFFEA580C)]),
+            boxShadow: [BoxShadow(color: const Color(0x4DF59E0B), blurRadius: 20)],
+          ),
+          child: Icon(Icons.auto_awesome_rounded, color: Colors.white, size: 36.r),
+        ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 3.seconds),
+        SizedBox(height: 16.h),
+        Text(
+          'Unlimited Growth.',
+          style: GoogleFonts.outfit(
+            color: isDark ? Colors.white : const Color(0xFF0F172A),
+            fontSize: 30.sp,
+            fontWeight: FontWeight.w900,
+            letterSpacing: -1,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _PlanCard extends StatelessWidget {
+  final Map<String, dynamic> plan;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  const _PlanCard({required this.plan, required this.isSelected, required this.onTap});
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final accentColor = plan['color'] as Color;
+
+    return GestureDetector(
+      onTap: onTap,
+      child: AnimatedContainer(
+        duration: 250.ms,
+        margin: EdgeInsets.only(bottom: 10.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: isSelected ? (isDark ? const Color(0x0DFFFFFF) : const Color(0x08000000)) : Colors.transparent,
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(color: isSelected ? accentColor : (isDark ? const Color(0x1AFFFFFF) : const Color(0x1E000000)), width: isSelected ? 2 : 1),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(plan['name'].toString().toUpperCase(), style: GoogleFonts.outfit(color: isDark ? Colors.white : Colors.black, fontSize: 15.sp, fontWeight: FontWeight.w900, letterSpacing: 0.5)),
+                      if (plan['tag'] != null) ...[
+                        SizedBox(width: 8.w),
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                          decoration: BoxDecoration(color: accentColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(6.r)),
+                          child: Text(plan['tag'] as String, style: GoogleFonts.outfit(color: accentColor, fontSize: 8.sp, fontWeight: FontWeight.w900)),
+                        ),
+                      ],
+                    ],
+                  ),
+                  Text('${plan['days']} days of elite access', style: GoogleFonts.outfit(color: isDark ? const Color(0x61FFFFFF) : const Color(0x61000000), fontSize: 10.sp, fontWeight: FontWeight.w600)),
+                ],
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Row(
+                  children: [
+                    if (plan['oldPrice'] != null)
+                      Text('₹${(plan['oldPrice'] as double).toInt()}', style: GoogleFonts.outfit(color: isDark ? const Color(0x3DFFFFFF) : const Color(0x42000000), fontSize: 13.sp, decoration: TextDecoration.lineThrough)),
+                    SizedBox(width: 6.w),
+                    Text('₹${(plan['price'] as double).toInt()}', style: GoogleFonts.outfit(color: isDark ? Colors.white : Colors.black, fontSize: 20.sp, fontWeight: FontWeight.w900)),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ModernFeatureBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 12.h),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0x08FFFFFF) : const Color(0x05000000),
+        borderRadius: BorderRadius.circular(20.r),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _FeatureItem(icon: Icons.block_rounded, label: 'ZERO ADS'),
+          _FeatureItem(icon: Icons.auto_graph_rounded, label: '2X SPEED'),
+          _FeatureItem(icon: Icons.psychology_rounded, label: 'AI UNLIMITED'),
+          _FeatureItem(icon: Icons.workspace_premium_rounded, label: 'PRO STATUS'),
+        ],
+      ),
+    );
+  }
+}
+
+class _FeatureItem extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  const _FeatureItem({required this.icon, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Column(
+      children: [
+        Icon(icon, color: const Color(0xFFF59E0B), size: 18.r),
+        SizedBox(height: 6.h),
+        Text(label, style: GoogleFonts.outfit(color: isDark ? const Color(0x61FFFFFF) : const Color(0x61000000), fontSize: 7.sp, fontWeight: FontWeight.w900)),
+      ],
+    );
+  }
 }
