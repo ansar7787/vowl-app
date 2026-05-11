@@ -50,10 +50,16 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
   void _onDragUpdate(DragUpdateDetails details) {
     if (_isAnswered) return;
     if (_isRetrying) setState(() => _isRetrying = false);
+    
+    final oldOffset = _dragOffset;
     setState(() {
       _dragOffset += details.delta;
       _dragAngle = _dragOffset.dx / 500;
-      if (_dragOffset.dx.abs() % 10 < 1) _hapticService.selection();
+      
+      // Better haptic throttle: trigger only every 20 pixels of horizontal movement
+      if ((_dragOffset.dx - oldOffset.dx).abs() > 0 && (_dragOffset.dx.abs() % 20 < 2)) {
+         _hapticService.selection();
+      }
     });
   }
 
@@ -216,6 +222,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     double width,
     double height,
   ) {
+    // Optimization: Pre-calculate card faces to avoid rebuilds during animation frames
+    final frontCard = _buildCardFront(quest, color, isDark, width, height);
+    final backCard = _buildCardBack(quest, color, isDark, width, height);
+
     return GestureDetector(
       onPanUpdate: _onDragUpdate,
       onPanEnd: _onDragEnd,
@@ -263,15 +273,9 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                         ? Transform(
                             transform: Matrix4.identity()..rotateY(pi),
                             alignment: Alignment.center,
-                            child: _buildCardBack(
-                              quest,
-                              color,
-                              isDark,
-                              width,
-                              height,
-                            ),
+                            child: backCard,
                           )
-                        : _buildCardFront(quest, color, isDark, width, height),
+                        : frontCard,
                   );
                 },
               ),
