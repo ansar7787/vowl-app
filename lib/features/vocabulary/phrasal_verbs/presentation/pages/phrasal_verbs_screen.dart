@@ -237,7 +237,7 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen> with SingleTick
               border: Border.all(color: color, width: 8),
               boxShadow: [
                 BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 30, spreadRadius: 10),
-                const BoxShadow(color: Colors.black, blurRadius: 10, spreadRadius: 5, inset: true),
+                BoxShadow(color: Colors.black.withValues(alpha: 0.5), blurRadius: 10, spreadRadius: 2),
               ],
             ),
             child: Stack(

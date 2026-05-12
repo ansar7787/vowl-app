@@ -121,26 +121,79 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
   Widget _buildChatInterface(VocabularyQuest quest, Color color) {
     return Column(
       children: [
+        // Mission Header
+        Container(
+          padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 20.w),
+          margin: EdgeInsets.only(bottom: 10.h),
+          decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: color.withValues(alpha: 0.1))),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 8.r, height: 8.r,
+                decoration: const BoxDecoration(color: Colors.greenAccent, shape: BoxShape.circle),
+              ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+              SizedBox(width: 10.w),
+              Text("DECRYPTION CHANNEL ACTIVE", 
+                style: GoogleFonts.shareTechMono(fontSize: 10.sp, color: color.withValues(alpha: 0.7), letterSpacing: 2)
+              ),
+              const Spacer(),
+              Icon(Icons.security_rounded, size: 14.r, color: color.withValues(alpha: 0.5)),
+            ],
+          ),
+        ),
+
         Expanded(
           child: ListView(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h),
+            reverse: false, // Normal chat flow
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             children: [
-              _buildSystemMessage("DECODE THE EMOJI SEQUENCE", color),
+              _buildSystemMessage("INCOMING TRANSMISSION...", color),
               SizedBox(height: 20.h),
-              _buildStrangerMessage(quest.topicEmoji ?? "❓", color),
+              
+              // Stranger/Mission Control Message
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  CircleAvatar(
+                    radius: 16.r,
+                    backgroundColor: color.withValues(alpha: 0.2),
+                    child: Icon(Icons.hub_rounded, size: 16.r, color: color),
+                  ),
+                  SizedBox(width: 8.w),
+                  _buildStrangerMessage(quest.topicEmoji ?? "❓", color),
+                ],
+              ),
+
               if (_selectedOption != null) ...[
-                SizedBox(height: 20.h),
-                _buildUserMessage(_selectedOption!, color, _isCorrect),
+                SizedBox(height: 24.h),
+                // User Message
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    _buildUserMessage(_selectedOption!, color, _isCorrect),
+                    SizedBox(width: 8.w),
+                    CircleAvatar(
+                      radius: 16.r,
+                      backgroundColor: Colors.white10,
+                      child: Icon(Icons.person_rounded, size: 16.r, color: Colors.white70),
+                    ),
+                  ],
+                ),
               ],
+
               if (_isAnswered && _isCorrect == false) ...[
-                SizedBox(height: 10.h),
-                _buildSystemMessage("INCORRECT. TRY AGAIN.", Colors.redAccent),
+                SizedBox(height: 15.h),
+                _buildSystemMessage("DECRYPTION FAILED. RE-EVALUATE SEQUENCE.", Colors.redAccent),
               ],
             ],
           ),
         ),
+        
         _buildOptions(quest.options ?? [], quest.correctAnswer ?? "", color),
-        SizedBox(height: 20.h),
+        SizedBox(height: 30.h),
       ],
     );
   }
@@ -148,111 +201,115 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
   Widget _buildSystemMessage(String text, Color color) {
     return Center(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(12.r),
+          color: color.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(color: color.withValues(alpha: 0.1)),
         ),
         child: Text(
           text,
-          style: GoogleFonts.shareTechMono(fontSize: 10.sp, color: color, letterSpacing: 1),
+          style: GoogleFonts.shareTechMono(fontSize: 9.sp, color: color, letterSpacing: 1.5, fontWeight: FontWeight.bold),
         ),
       ),
-    ).animate().fadeIn().scale();
+    ).animate().fadeIn().slideY(begin: 0.2);
   }
 
   Widget _buildStrangerMessage(String emojis, Color color) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        constraints: BoxConstraints(maxWidth: 0.7.sw),
-        padding: EdgeInsets.all(16.r),
-        decoration: BoxDecoration(
-          color: const Color(0xFF1E293B),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.r),
-            topRight: Radius.circular(20.r),
-            bottomRight: Radius.circular(20.r),
-          ),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
+    return Container(
+      constraints: BoxConstraints(maxWidth: 0.7.sw),
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: const Color(0xFF1E293B).withValues(alpha: 0.8),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(24.r),
+          topRight: Radius.circular(24.r),
+          bottomRight: Radius.circular(24.r),
         ),
-        child: Text(
-          emojis,
-          style: TextStyle(fontSize: 40.sp),
-        ),
+        border: Border.all(color: color.withValues(alpha: 0.4), width: 1.5),
+        boxShadow: [
+          BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 20, spreadRadius: -5)
+        ],
       ),
-    ).animate().slideX(begin: -0.2, duration: 400.ms).fadeIn();
+      child: Text(
+        emojis,
+        style: TextStyle(fontSize: 42.sp),
+      ),
+    ).animate().slideX(begin: -0.1, duration: 500.ms, curve: Curves.easeOutCubic).fadeIn();
   }
 
   Widget _buildUserMessage(String text, Color color, bool? isCorrect) {
     final bgColor = isCorrect == true ? Colors.green : (isCorrect == false ? Colors.red : color);
-    return Align(
-      alignment: Alignment.centerRight,
-      child: Container(
-        constraints: BoxConstraints(maxWidth: 0.7.sw),
-        padding: EdgeInsets.all(16.r),
-        decoration: BoxDecoration(
-          color: bgColor.withValues(alpha: 0.2),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20.r),
-            topRight: Radius.circular(20.r),
-            bottomLeft: Radius.circular(20.r),
-          ),
-          border: Border.all(color: bgColor),
+    return Container(
+      constraints: BoxConstraints(maxWidth: 0.7.sw),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+      decoration: BoxDecoration(
+        color: bgColor.withValues(alpha: 0.15),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(24.r),
+          topRight: Radius.circular(24.r),
+          bottomLeft: Radius.circular(24.r),
         ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Flexible(
-              child: Text(
-                text,
-                style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.bold, color: Colors.white),
-              ),
-            ),
-            if (isCorrect != null) ...[
-              SizedBox(width: 8.w),
-              Icon(
-                isCorrect ? Icons.done_all_rounded : Icons.close_rounded,
-                color: isCorrect ? Colors.greenAccent : Colors.redAccent,
-                size: 16.r,
-              ),
-            ],
-          ],
-        ),
+        border: Border.all(color: bgColor, width: 1.5),
+        boxShadow: [
+          BoxShadow(color: bgColor.withValues(alpha: 0.1), blurRadius: 15, spreadRadius: -2)
+        ],
       ),
-    ).animate().slideX(begin: 0.2, duration: 400.ms).fadeIn();
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Flexible(
+            child: Text(
+              text.toUpperCase(),
+              style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w800, color: Colors.white, letterSpacing: 0.5),
+            ),
+          ),
+          if (isCorrect != null) ...[
+            SizedBox(width: 10.w),
+            Icon(
+              isCorrect ? Icons.verified_rounded : Icons.gpp_bad_rounded,
+              color: isCorrect ? Colors.greenAccent : Colors.redAccent,
+              size: 18.r,
+            ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
+          ],
+        ],
+      ),
+    ).animate().slideX(begin: 0.1, duration: 500.ms, curve: Curves.easeOutCubic).fadeIn();
   }
 
   Widget _buildOptions(List<String> options, String correct, Color color) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Wrap(
-        spacing: 10.w,
-        runSpacing: 10.h,
+        spacing: 12.w,
+        runSpacing: 12.h,
         alignment: WrapAlignment.center,
         children: options.map((o) {
           final isSelected = _selectedOption == o;
           return ScaleButton(
             onTap: () => _submitAnswer(o, correct),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+            child: AnimatedContainer(
+              duration: 300.ms,
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
               decoration: BoxDecoration(
-                color: isSelected ? color.withValues(alpha: 0.3) : Colors.white.withValues(alpha: 0.05),
-                borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(color: isSelected ? color : color.withValues(alpha: 0.2)),
+                color: isSelected ? color.withValues(alpha: 0.4) : Colors.white.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(30.r), // Capsule style
+                border: Border.all(color: isSelected ? color : color.withValues(alpha: 0.2), width: 1.5),
+                boxShadow: isSelected ? [BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 15)] : [],
               ),
               child: Text(
-                o,
+                o.toUpperCase(),
                 style: GoogleFonts.outfit(
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w600,
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w700,
                   color: isSelected ? Colors.white : Colors.white70,
+                  letterSpacing: 0.5,
                 ),
               ),
             ),
           );
         }).toList(),
       ),
-    ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.2);
+    ).animate().fadeIn(delay: 800.ms).slideY(begin: 0.3, curve: Curves.easeOutCubic);
   }
 }
