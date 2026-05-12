@@ -243,22 +243,22 @@ class GameInstructionService {
     }
     if (type == GameSubtype.idioms) {
       return const GameBriefing(
-        title: "Idiom Echo",
-        icon: Icons.record_voice_over_rounded,
-        objective: "Decode emojis to find figurative meanings.",
-        rules: ["Decode visual clues", "Avoid literal traps", "3 Hearts per mission"],
-        actionText: "Echo Meaning",
-        tip: "Idioms are the 'code' of English. Master them to sound native! 🗣️",
+        title: "Emojify",
+        icon: Icons.forum_rounded,
+        objective: "Decode cryptic emoji transmissions into idioms.",
+        rules: ["Interpret emoji sequences", "Select the matching idiom", "3 Hearts per mission"],
+        actionText: "Send Message",
+        tip: "Idioms are like secret codes. Learn them to decode culture! 💬",
       );
     }
     if (type == GameSubtype.contextualUsage) {
       return const GameBriefing(
-        title: "Usage Expert",
-        icon: Icons.fact_check_rounded,
-        objective: "Slot the word into the correct sentence.",
-        rules: ["Analyze all slots", "Identify correct usage", "3 Hearts per mission"],
-        actionText: "Validate Usage",
-        tip: "Check the part of speech—it's the key to the correct slot! 📋",
+        title: "Usage Unfold",
+        icon: Icons.auto_stories_rounded,
+        objective: "UNFOLD MEANING: Analyze the context and unfold the perfect word to complete the document structure.",
+        rules: ["Evaluate context", "Unfold the correct fit", "3 Hearts per mission"],
+        actionText: "Unfold Truth",
+        tip: "PRO TIP: Nuance is everything. Choose the word that belongs in the specific sentence structure! 📖✨",
       );
     }
 
