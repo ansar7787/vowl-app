@@ -28,16 +28,20 @@ class CollocationsScreen extends StatefulWidget {
   State<CollocationsScreen> createState() => _CollocationsScreenState();
 }
 
-class _CollocationsScreenState extends State<CollocationsScreen> {
+class _CollocationsScreenState extends State<CollocationsScreen> with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
-  Offset _dragPosition = Offset.zero;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
+
+  // Pair Pop State
+  int? _selectedLeftIndex;
+  int? _selectedRightIndex;
+  bool _isProcessing = false;
 
   @override
   void initState() {
@@ -45,51 +49,43 @@ class _CollocationsScreenState extends State<CollocationsScreen> {
     context.read<VocabularyBloc>().add(FetchVocabularyQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onTraceUpdate(DragUpdateDetails details) {
-    if (_isAnswered) return;
+  void _onLeftTap(int index) {
+    if (_isAnswered || _isProcessing) return;
+    _hapticService.light();
     setState(() {
-      _dragPosition += details.delta;
+      _selectedLeftIndex = index;
     });
   }
 
-  void _onTraceRelease(List<String> options, String correct) {
-    if (_isAnswered) return;
+  void _onRightTap(int index, String selected, String correct) async {
+    if (_isAnswered || _isProcessing || _selectedLeftIndex == null) return;
     
-    // Check collision with stars
-    int? collisionIndex;
-    for (int i = 0; i < options.length; i++) {
-       double angle = (i * (2 * math.pi / options.length));
-       double radius = 140.r;
-       Offset starPos = Offset(math.cos(angle) * radius, math.sin(angle) * radius);
-       if ((_dragPosition - starPos).distance < 50.r) {
-         collisionIndex = i;
-         break;
-       }
-    }
+    setState(() {
+      _selectedRightIndex = index;
+      _isProcessing = true;
+    });
 
-    if (collisionIndex != null) {
+    bool isMatch = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+
+    if (isMatch) {
       _hapticService.success();
-      _submitChoice(options[collisionIndex], correct);
-    } else {
-      setState(() {
-        _dragPosition = Offset.zero;
-      });
-    }
-  }
-
-  void _submitChoice(String selected, String correct) {
-    if (_isAnswered) return;
-    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
-    
-    if (isCorrect) {
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
+      await Future.delayed(500.ms);
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+        _isProcessing = false;
+      });
       context.read<VocabularyBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { _isAnswered = true; _isCorrect = false; });
-      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+      await Future.delayed(500.ms);
+      setState(() {
+        _selectedLeftIndex = null;
+        _selectedRightIndex = null;
+        _isProcessing = false;
+      });
     }
   }
 
@@ -101,29 +97,25 @@ class _CollocationsScreenState extends State<CollocationsScreen> {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
-
-          if (isNewQuestion || isRetry) {
+          if (state.currentIndex != _lastProcessedIndex || (_isAnswered && state.lastAnswerCorrect == null)) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _dragPosition = Offset.zero;
+              _selectedLeftIndex = null;
+              _selectedRightIndex = null;
+              _isProcessing = false;
             });
           }
         }
         if (state is VocabularyGameComplete) {
-          final xp = state.xpEarned;
-          final coins = state.coinsEarned;
           setState(() => _showConfetti = true);
-          if (!context.mounted) return;
           GameDialogHelper.showCompletion(
             context,
-            xp: xp,
-            coins: coins,
-            title: 'CHAIN LINKER!',
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'PAIR MASTER!',
             enableDoubleUp: true,
           );
         } else if (state is VocabularyGameOver) {
@@ -133,20 +125,68 @@ class _CollocationsScreenState extends State<CollocationsScreen> {
       builder: (context, state) {
         final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
         if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
-        final options = quest?.options ?? [];
-        final word = quest?.word ?? "???";
 
         return VocabularyBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           child: quest == null ? const SizedBox() : Stack(
             alignment: Alignment.center,
             children: [
-              _buildInstruction(theme.primaryColor),
-              _buildStarMap(word, options, theme.primaryColor, isDark),
-              if (!_isAnswered) _buildTracingLayer(options, quest.correctAnswer ?? ""),
+              // Chamber Background
+              Positioned.fill(child: CustomPaint(painter: EnergyChamberPainter(theme.primaryColor.withValues(alpha: 0.1)))),
+
+              Column(
+                children: [
+                  SizedBox(height: 30.h),
+                  _buildInstruction(theme.primaryColor),
+                  const Spacer(),
+                  
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Left Column (Anchor Word)
+                        Column(
+                          children: [
+                            _buildEnergyBubble(
+                              0, 
+                              quest.word ?? "", 
+                              true, 
+                              theme.primaryColor, 
+                              isDark,
+                              () => _onLeftTap(0)
+                            ),
+                          ],
+                        ),
+
+                        // Right Column (Options)
+                        Column(
+                          children: List.generate(quest.options?.length ?? 0, (i) {
+                            return _buildEnergyBubble(
+                              i, 
+                              quest.options![i], 
+                              false, 
+                              theme.primaryColor, 
+                              isDark,
+                              () => _onRightTap(i, quest.options![i], quest.correctAnswer ?? "")
+                            );
+                          }),
+                        ),
+                      ],
+                    ),
+                  ),
+                  
+                  const Spacer(),
+                  _buildStatusText(theme.primaryColor),
+                  SizedBox(height: 40.h),
+                ],
+              ),
             ],
           ),
         );
@@ -155,96 +195,100 @@ class _CollocationsScreenState extends State<CollocationsScreen> {
   }
 
   Widget _buildInstruction(Color color) {
-    return Positioned(
-      top: 20.h,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-        decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.2))),
-        child: Text("TRACE A PATH TO ALIGN THE CONSTELLATION", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
-      ),
-    );
-  }
-
-  Widget _buildStarMap(String word, List<String> options, Color color, bool isDark) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        // Connecting Line
-        if (_dragPosition != Offset.zero)
-          CustomPaint(
-            size: Size(1.sw, 1.sh),
-            painter: _StarBeamPainter(_dragPosition, color),
-          ),
-        
-        // Alpha Star
-        _buildAlphaStar(word, color, isDark),
-        
-        // Choice Stars
-        ...List.generate(options.length, (i) => _buildChoiceStar(i, options.length, options[i], color, isDark)),
-      ],
-    );
-  }
-
-  Widget _buildAlphaStar(String word, Color color, bool isDark) {
     return Container(
-      width: 140.r, height: 140.r,
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: color,
-        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 30, spreadRadius: 5)],
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
-      child: Center(
-        child: Text(word.toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2)),
-      ),
-    ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1,1), end: const Offset(1.1, 1.1), duration: 2.seconds);
-  }
-
-  Widget _buildChoiceStar(int index, int total, String text, Color color, bool isDark) {
-    double angle = (index * (2 * math.pi / total));
-    final x = 150.w * math.cos(angle);
-    final y = 150.w * math.sin(angle);
-
-    return Transform.translate(
-      offset: Offset(x, y),
-      child: Container(
-        padding: EdgeInsets.all(12.r),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-          border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
+      child: Text(
+        "FUSE THE COLLOCATION PAIR",
+        style: GoogleFonts.shareTechMono(
+          fontSize: 12.sp,
+          fontWeight: FontWeight.bold,
+          color: color,
+          letterSpacing: 1.5,
         ),
-        child: Text(text.toUpperCase(), style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.bold, color: color)),
       ),
-    ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -5, end: 5, duration: (2 + index).seconds);
+    ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 2.seconds);
   }
 
-  Widget _buildTracingLayer(List<String> options, String correct) {
-    return GestureDetector(
-      onPanUpdate: _onTraceUpdate,
-      onPanEnd: (_) => _onTraceRelease(options, correct),
-      child: Container(color: Colors.transparent, width: 1.sw, height: 1.sh),
-    );
+  Widget _buildStatusText(Color color) {
+    if (_selectedLeftIndex != null && _selectedRightIndex == null) {
+      return Text(
+        "AWAITING PARTNER...",
+        style: GoogleFonts.shareTechMono(fontSize: 14.sp, color: color, fontWeight: FontWeight.bold, letterSpacing: 3),
+      ).animate(onPlay: (c) => c.repeat(reverse: true)).fadeIn();
+    }
+    return const SizedBox();
+  }
+
+  Widget _buildEnergyBubble(int index, String text, bool isLeft, Color color, bool isDark, VoidCallback onTap) {
+    bool isSelected = isLeft ? (_selectedLeftIndex == index) : (_selectedRightIndex == index);
+    bool isPopped = _isAnswered && _isCorrect == true && (isLeft || (index == _selectedRightIndex));
+    
+    Color bubbleColor = isLeft ? const Color(0xFF00D2FF) : const Color(0xFFAD00FF);
+    if (isSelected) bubbleColor = Colors.white;
+
+    return Opacity(
+      opacity: isPopped ? 0 : 1,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          width: 140.w,
+          height: 140.w,
+          margin: EdgeInsets.symmetric(vertical: 15.h),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: RadialGradient(
+              colors: [
+                bubbleColor.withValues(alpha: 0.4),
+                bubbleColor.withValues(alpha: 0.1),
+              ],
+            ),
+            border: Border.all(color: bubbleColor.withValues(alpha: isSelected ? 1 : 0.4), width: isSelected ? 4 : 2),
+            boxShadow: [
+              BoxShadow(color: bubbleColor.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 5),
+            ],
+          ),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.all(10.r),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  text.toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.shareTechMono(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.bold,
+                    color: isSelected ? bubbleColor : (isDark ? Colors.white : Colors.black87),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -10, end: 10, duration: (2 + index).seconds)
+     .scale(begin: const Offset(1,1), end: const Offset(1.05, 1.05), duration: (3 + index).seconds);
   }
 }
 
-class _StarBeamPainter extends CustomPainter {
-  final Offset end;
+class EnergyChamberPainter extends CustomPainter {
   final Color color;
-  _StarBeamPainter(this.end, this.color);
+  EnergyChamberPainter(this.color);
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color.withValues(alpha: 0.6)
-      ..strokeWidth = 3
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round;
+    final paint = Paint()..color = color..strokeWidth = 1.0..style = PaintingStyle.stroke;
     
-    canvas.drawLine(Offset.zero, end, paint);
-    canvas.drawCircle(end, 6, paint..style = PaintingStyle.fill);
+    for (int i = 0; i < 5; i++) {
+      canvas.drawCircle(Offset(size.width / 2, size.height / 2), 100.r + (i * 50), paint);
+    }
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
-

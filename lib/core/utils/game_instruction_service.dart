@@ -223,12 +223,12 @@ class GameInstructionService {
     }
     if (type == GameSubtype.collocations) {
       return const GameBriefing(
-        title: "Chain Linker",
-        icon: Icons.link_rounded,
-        objective: "Connect words to their natural partners.",
-        rules: ["Find the partner", "Secure the link", "3 Hearts per mission"],
-        actionText: "Secure Links",
-        tip: "Collocations are words that 'just sound right' together! 🔗",
+        title: "Pair Pop",
+        icon: Icons.bubble_chart_rounded,
+        objective: "ENERGY FUSION: Match the anchor word with its natural partner. Select both bubbles to trigger a Pair Pop.",
+        rules: ["Tap Left Anchor", "Find Right Partner", "Fuse all pairs"],
+        actionText: "Initiate Fusion",
+        tip: "PRO TIP: Collocations are words that 'just sound right' together! Trust your ear for natural English phrasing. 🫧⚡",
       );
     }
     if (type == GameSubtype.phrasalVerbs) {

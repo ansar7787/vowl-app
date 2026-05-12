@@ -1,487 +1,427 @@
-{
-    "gameType":  "collocations",
-    "batchIndex":  5,
+﻿{
     "levels":  "41-50",
     "quests":  [
                    {
-                       "id":  "VOC_COLLOCATIONS_L41_Q1",
+                       "id":  "VOC_COLLOCATIONS_L5_Q1",
+                       "word":  "PAY",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: PAY",
+                       "explanation":  "The collocation is \u0027PAY ATTENTION\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id120",
+                       "correctAnswer":  "ATTENTION",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "ANALYZE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
+                                       "ATTENTION",
+                                       "O",
+                                       "R",
+                                       "E"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L41_Q2",
+                       "id":  "VOC_COLLOCATIONS_L5_Q2",
+                       "word":  "DAILY",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: DAILY",
+                       "explanation":  "The collocation is \u0027DAILY ROUTINE\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id121",
+                       "correctAnswer":  "ROUTINE",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "CONCEPT"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
+                                       "ROUTINE",
+                                       "I",
+                                       "R",
+                                       "E"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L41_Q3",
+                       "id":  "VOC_COLLOCATIONS_L5_Q3",
+                       "word":  "POOR",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: POOR",
+                       "explanation":  "The collocation is \u0027POOR QUALITY\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id122",
+                       "correctAnswer":  "QUALITY",
                        "options":  [
-                                       "DATA",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "DATA"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L42_Q1",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id123",
-                       "options":  [
-                                       "EVIDENCE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L42_Q2",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id124",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "FACTOR"
-                                   ],
-                       "correctAnswer":  "FACTOR"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L42_Q3",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id125",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "GLOBAL"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L43_Q1",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id126",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "HYPOTHESIS"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L43_Q2",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id127",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "INTERPRET"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L43_Q3",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id128",
-                       "options":  [
-                                       "JUSTICE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L44_Q1",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id129",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "KNOWLEDGE"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L44_Q2",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "LOGIC_id130",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "LOGIC",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "LOGIC"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L44_Q3",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "METHOD_id131",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "METHOD"
-                                   ],
-                       "correctAnswer":  "METHOD"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L45_Q1",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "NETWORK_id132",
-                       "options":  [
-                                       "NETWORK",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "NETWORK"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L45_Q2",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "OBJECTIVE_id133",
-                       "options":  [
-                                       "DISTRACT_A",
-                                       "OBJECTIVE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L45_Q3",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "PERSPECTIVE_id134",
-                       "options":  [
-                                       "PERSPECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
-                   },
-                   {
-                       "id":  "VOC_COLLOCATIONS_L46_Q1",
-                       "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "QUALITY_id135",
-                       "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
+                                       "O",
                                        "QUALITY",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "QUALITY"
+                                       "I",
+                                       "R"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L46_Q2",
+                       "id":  "VOC_COLLOCATIONS_L5_Q4",
+                       "word":  "DIRTY",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: DIRTY",
+                       "explanation":  "The collocation is \u0027DIRTY LOOK\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "RESEARCH_id136",
+                       "correctAnswer":  "LOOK",
                        "options":  [
-                                       "RESEARCH",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
+                                       "LOOK",
+                                       "O",
+                                       "E",
+                                       "L"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L46_Q3",
+                       "id":  "VOC_COLLOCATIONS_L5_Q5",
+                       "word":  "UTTERLY",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: UTTERLY",
+                       "explanation":  "The collocation is \u0027UTTERLY RIDICULOUS\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "SOURCE_id137",
+                       "correctAnswer":  "RIDICULOUS",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "SOURCE"
-                                   ],
-                       "correctAnswer":  "SOURCE"
+                                       "R",
+                                       "M",
+                                       "H",
+                                       "RIDICULOUS"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L47_Q1",
+                       "id":  "VOC_COLLOCATIONS_L5_Q6",
+                       "word":  "WHOLE",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: WHOLE",
+                       "explanation":  "The collocation is \u0027WHOLE WORLD\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "THEORY_id138",
+                       "correctAnswer":  "WORLD",
                        "options":  [
-                                       "THEORY",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "THEORY"
+                                       "E",
+                                       "WORLD",
+                                       "O",
+                                       "R"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L47_Q2",
+                       "id":  "VOC_COLLOCATIONS_L5_Q7",
+                       "word":  "GIVE",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: GIVE",
+                       "explanation":  "The collocation is \u0027GIVE ADVICE\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "UNIQUE_id139",
+                       "correctAnswer":  "ADVICE",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "UNIQUE",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
+                                       "U",
+                                       "ADVICE",
+                                       "O",
+                                       "E"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L47_Q3",
+                       "id":  "VOC_COLLOCATIONS_L5_Q8",
+                       "word":  "DEEP",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: DEEP",
+                       "explanation":  "The collocation is \u0027DEEP BREATH\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id140",
+                       "correctAnswer":  "BREATH",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "ANALYZE"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
+                                       "A",
+                                       "X",
+                                       "BREATH",
+                                       "R"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L48_Q1",
+                       "id":  "VOC_COLLOCATIONS_L5_Q9",
+                       "word":  "LOSE",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: LOSE",
+                       "explanation":  "The collocation is \u0027LOSE WEIGHT\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id141",
+                       "correctAnswer":  "WEIGHT",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "CONCEPT",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
+                                       "E",
+                                       "D",
+                                       "I",
+                                       "WEIGHT"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L48_Q2",
+                       "id":  "VOC_COLLOCATIONS_L5_Q10",
+                       "word":  "SMALL",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: SMALL",
+                       "explanation":  "The collocation is \u0027SMALL AMOUNT\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id142",
+                       "correctAnswer":  "AMOUNT",
                        "options":  [
-                                       "DATA",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "DATA"
+                                       "E",
+                                       "AMOUNT",
+                                       "W",
+                                       "R"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L48_Q3",
+                       "id":  "VOC_COLLOCATIONS_L5_Q11",
+                       "word":  "DEEP",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: DEEP",
+                       "explanation":  "The collocation is \u0027DEEP SLEEP\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id143",
+                       "correctAnswer":  "SLEEP",
                        "options":  [
-                                       "EVIDENCE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
+                                       "I",
+                                       "L",
+                                       "A",
+                                       "SLEEP"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L49_Q1",
+                       "id":  "VOC_COLLOCATIONS_L5_Q12",
+                       "word":  "BARE",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: BARE",
+                       "explanation":  "The collocation is \u0027BARE MINIMUM\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id144",
+                       "correctAnswer":  "MINIMUM",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "FACTOR",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "FACTOR"
+                                       "I",
+                                       "R",
+                                       "MINIMUM",
+                                       "E"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L49_Q2",
+                       "id":  "VOC_COLLOCATIONS_L5_Q13",
+                       "word":  "NEW",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: NEW",
+                       "explanation":  "The collocation is \u0027NEW IDEA\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id145",
+                       "correctAnswer":  "IDEA",
                        "options":  [
-                                       "GLOBAL",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
+                                       "R",
+                                       "IDEA",
+                                       "L",
+                                       "O"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L49_Q3",
+                       "id":  "VOC_COLLOCATIONS_L5_Q14",
+                       "word":  "DIRECT",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: DIRECT",
+                       "explanation":  "The collocation is \u0027DIRECT FLIGHT\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id146",
+                       "correctAnswer":  "FLIGHT",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "HYPOTHESIS",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
+                                       "FLIGHT",
+                                       "R",
+                                       "I",
+                                       "A"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L50_Q1",
+                       "id":  "VOC_COLLOCATIONS_L5_Q15",
+                       "word":  "BREAK",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: BREAK",
+                       "explanation":  "The collocation is \u0027BREAK RECORD\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id147",
+                       "correctAnswer":  "RECORD",
                        "options":  [
-                                       "INTERPRET",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
+                                       "E",
+                                       "U",
+                                       "RECORD",
+                                       "A"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L50_Q2",
+                       "id":  "VOC_COLLOCATIONS_L5_Q16",
+                       "word":  "FAMOUS",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: FAMOUS",
+                       "explanation":  "The collocation is \u0027FAMOUS PERSON\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id148",
+                       "correctAnswer":  "PERSON",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "JUSTICE"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
+                                       "O",
+                                       "U",
+                                       "PERSON",
+                                       "E"
+                                   ]
                    },
                    {
-                       "id":  "VOC_COLLOCATIONS_L50_Q3",
+                       "id":  "VOC_COLLOCATIONS_L5_Q17",
+                       "word":  "WIDELY",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: WIDELY",
+                       "explanation":  "The collocation is \u0027WIDELY AVAILABLE\u0027.",
                        "interactionType":  "Pair Pop",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id149",
+                       "correctAnswer":  "AVAILABLE",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "KNOWLEDGE",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
+                                       "AVAILABLE",
+                                       "A",
+                                       "D",
+                                       "U"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q18",
+                       "word":  "DIFFICULT",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: DIFFICULT",
+                       "explanation":  "The collocation is \u0027DIFFICULT TIME\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "TIME",
+                       "options":  [
+                                       "TIME",
+                                       "E",
+                                       "O",
+                                       "I"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q19",
+                       "word":  "OLD",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: OLD",
+                       "explanation":  "The collocation is \u0027OLD AGE\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "AGE",
+                       "options":  [
+                                       "L",
+                                       "A",
+                                       "AGE",
+                                       "R"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q20",
+                       "word":  "COLD",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: COLD",
+                       "explanation":  "The collocation is \u0027COLD WAR\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "WAR",
+                       "options":  [
+                                       "N",
+                                       "A",
+                                       "I",
+                                       "WAR"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q21",
+                       "word":  "HIGH",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: HIGH",
+                       "explanation":  "The collocation is \u0027HIGH PRESSURE\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "PRESSURE",
+                       "options":  [
+                                       "PRESSURE",
+                                       "E",
+                                       "O",
+                                       "I"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q22",
+                       "word":  "FAST",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: FAST",
+                       "explanation":  "The collocation is \u0027FAST FOOD\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "FOOD",
+                       "options":  [
+                                       "P",
+                                       "E",
+                                       "A",
+                                       "FOOD"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q23",
+                       "word":  "FALSE",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: FALSE",
+                       "explanation":  "The collocation is \u0027FALSE HOPE\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "HOPE",
+                       "options":  [
+                                       "H",
+                                       "HOPE",
+                                       "E",
+                                       "I"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q24",
+                       "word":  "TOP",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: TOP",
+                       "explanation":  "The collocation is \u0027TOP PRIORITY\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "PRIORITY",
+                       "options":  [
+                                       "A",
+                                       "PRIORITY",
+                                       "H",
+                                       "L"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q25",
+                       "word":  "DEAD",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: DEAD",
+                       "explanation":  "The collocation is \u0027DEAD TIRED\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "TIRED",
+                       "options":  [
+                                       "TIRED",
+                                       "R",
+                                       "E",
+                                       "M"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q26",
+                       "word":  "BRIGHT",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: BRIGHT",
+                       "explanation":  "The collocation is \u0027BRIGHT FUTURE\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "FUTURE",
+                       "options":  [
+                                       "R",
+                                       "L",
+                                       "FUTURE",
+                                       "I"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q27",
+                       "word":  "EASY",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: EASY",
+                       "explanation":  "The collocation is \u0027EASY WAY\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "WAY",
+                       "options":  [
+                                       "WAY",
+                                       "O",
+                                       "L",
+                                       "E"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q28",
+                       "word":  "EARLY",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: EARLY",
+                       "explanation":  "The collocation is \u0027EARLY MORNING\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "MORNING",
+                       "options":  [
+                                       "U",
+                                       "O",
+                                       "MORNING",
+                                       "L"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q29",
+                       "word":  "AWFUL",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: AWFUL",
+                       "explanation":  "The collocation is \u0027AWFUL LOT\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "LOT",
+                       "options":  [
+                                       "U",
+                                       "O",
+                                       "R",
+                                       "LOT"
+                                   ]
+                   },
+                   {
+                       "id":  "VOC_COLLOCATIONS_L5_Q30",
+                       "word":  "BLANK",
+                       "hint":  "FIND THE NATURAL PARTNER FOR: BLANK",
+                       "explanation":  "The collocation is \u0027BLANK SPACE\u0027.",
+                       "interactionType":  "Pair Pop",
+                       "correctAnswer":  "SPACE",
+                       "options":  [
+                                       "H",
+                                       "I",
+                                       "A",
+                                       "SPACE"
+                                   ]
                    }
-               ]
+               ],
+    "gameType":  "collocations",
+    "batchIndex":  5
 }
