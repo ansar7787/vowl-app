@@ -233,12 +233,12 @@ class GameInstructionService {
     }
     if (type == GameSubtype.phrasalVerbs) {
       return const GameBriefing(
-        title: "Verb Magnet",
-        icon: Icons.flash_on_rounded,
-        objective: "Attract particles to form phrasal verbs.",
-        rules: ["Select the particle", "Complete the verb", "3 Hearts per mission"],
-        actionText: "Activate Magnet",
-        tip: "Particles like 'up' or 'down' change everything! 🧲",
+        title: "Verb Vault",
+        icon: Icons.vpn_key_rounded,
+        objective: "VAULT CRACKING: Identify the correct particle to complete the phrasal verb and unlock the vault.",
+        rules: ["Analyze the definition", "Select the correct key", "Unlock the vault"],
+        actionText: "Crack the Vault",
+        tip: "PRO TIP: Phrasal verbs change meaning based on the particle! 'Look up' is very different from 'Look after'. 🔐⚙️",
       );
     }
     if (type == GameSubtype.idioms) {

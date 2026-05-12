@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,6 +14,7 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_la
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class PhrasalVerbsScreen extends StatefulWidget {
   final int level;
@@ -28,53 +29,48 @@ class PhrasalVerbsScreen extends StatefulWidget {
   State<PhrasalVerbsScreen> createState() => _PhrasalVerbsScreenState();
 }
 
-class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen> {
+class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen> with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
-  final List<Offset> _bubbleOffsets = [];
-  int? _poppedIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
 
+  late AnimationController _vaultController;
+
   @override
   void initState() {
     super.initState();
+    _vaultController = AnimationController(vsync: this, duration: 1.seconds);
     context.read<VocabularyBloc>().add(FetchVocabularyQuests(gameType: widget.gameType, level: widget.level));
-    _initBubbles();
   }
 
-  void _initBubbles() {
-    final rand = Random();
-    _bubbleOffsets.clear();
-    for (int i = 0; i < 6; i++) {
-      _bubbleOffsets.add(Offset(rand.nextDouble() * 300 - 150, rand.nextDouble() * 100));
-    }
+  @override
+  void dispose() {
+    _vaultController.dispose();
+    super.dispose();
   }
 
-  void _onPop(int index, String selected, String correct) {
+  void _submitChoice(String selected, String correct) async {
     if (_isAnswered) return;
-    _hapticService.success();
-    setState(() => _poppedIndex = index);
-
+    
     bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
     
-    final bloc = context.read<VocabularyBloc>();
-    Future.delayed(400.ms, () {
-      if (!context.mounted) return;
-      if (isCorrect) {
-        _soundService.playCorrect();
-        setState(() { _isAnswered = true; _isCorrect = true; });
-        bloc.add(SubmitAnswer(true));
-      } else {
-        _soundService.playWrong();
-        setState(() { _isAnswered = true; _isCorrect = false; });
-        bloc.add(SubmitAnswer(false));
-      }
-    });
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      _vaultController.forward(from: 0);
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
   }
 
   @override
@@ -85,30 +81,23 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen> {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
-
-          if (isNewQuestion || isRetry) {
+          if (state.currentIndex != _lastProcessedIndex || (_isAnswered && state.lastAnswerCorrect == null)) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _poppedIndex = null;
-              _initBubbles();
+              _vaultController.reset();
             });
           }
         }
         if (state is VocabularyGameComplete) {
-          final xp = state.xpEarned;
-          final coins = state.coinsEarned;
           setState(() => _showConfetti = true);
-          if (!context.mounted) return;
           GameDialogHelper.showCompletion(
             context,
-            xp: xp,
-            coins: coins,
-            title: 'PHRASAL VORTEX!',
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'VAULT CRACKED!',
             enableDoubleUp: true,
           );
         } else if (state is VocabularyGameOver) {
@@ -118,20 +107,42 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen> {
       builder: (context, state) {
         final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
         if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
-        final verb = quest?.word?.split(' ')[0] ?? "???";
-        final options = quest?.options ?? [];
 
         return VocabularyBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           child: quest == null ? const SizedBox() : Stack(
             alignment: Alignment.center,
             children: [
-              _buildVerbVortex(verb, theme.primaryColor, isDark),
-              ...List.generate(options.length, (i) => _buildParticleBubble(i, options[i], quest.correctAnswer ?? "", theme.primaryColor, isDark)),
-              Positioned(top: 20.h, child: _buildInstruction(theme.primaryColor)),
+              // Industrial Background
+              Positioned.fill(child: _buildVaultBackground(theme.primaryColor)),
+
+              Column(
+                children: [
+                  SizedBox(height: 20.h),
+                  _buildVaultStatus(theme.primaryColor),
+                  SizedBox(height: 30.h),
+                  
+                  // LCD Display
+                  _buildLcdDisplay(quest.hint?.replaceFirst("DEFINITION: ", "") ?? "ANALYZING VAULT...", theme.primaryColor),
+                  
+                  const Spacer(),
+                  
+                  // The Central Vault Handle
+                  _buildVaultHandle(quest.word ?? "VERB", theme.primaryColor),
+                  
+                  const Spacer(),
+
+                  // Key Options (Particles)
+                  _buildParticleKeys(quest.options ?? [], quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 40.h),
+                ],
+              ),
             ],
           ),
         );
@@ -139,78 +150,189 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen> {
     );
   }
 
-  Widget _buildInstruction(Color color) {
+  Widget _buildVaultBackground(Color color) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.bubble_chart_rounded, size: 14.r, color: color),
-          SizedBox(width: 8.w),
-          Text("POP THE PARTICLE INTO THE VORTEX", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
-        ],
+      decoration: BoxDecoration(
+        color: const Color(0xFF0F172A),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.black,
+            color.withValues(alpha: 0.1),
+            Colors.black,
+          ],
+        ),
       ),
+      child: CustomPaint(painter: GridPainter(color.withValues(alpha: 0.05))),
     );
   }
 
-  Widget _buildVerbVortex(String verb, Color color, bool isDark) {
-    return Positioned(
-      top: 100.h,
+  Widget _buildVaultStatus(Color color) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(Icons.security_rounded, size: 16.r, color: color),
+        SizedBox(width: 10.w),
+        Text(
+          "SECURITY CLEARANCE: LEVEL ${widget.level}",
+          style: GoogleFonts.shareTechMono(
+            fontSize: 12.sp,
+            fontWeight: FontWeight.bold,
+            color: color,
+            letterSpacing: 2,
+          ),
+        ),
+      ],
+    ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 3.seconds);
+  }
+
+  Widget _buildLcdDisplay(String text, Color color) {
+    return Container(
+      width: 0.85.sw,
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(10.r),
+        border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
+        boxShadow: [
+          BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 15, spreadRadius: 2),
+        ],
+      ),
       child: Column(
         children: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(verb.toUpperCase(), style: GoogleFonts.outfit(fontSize: 40.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 5)),
-              SizedBox(width: 20.w),
-              Container(
-                width: 100.w, height: 60.h,
-                decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(12.r), border: Border.all(color: color, width: 2), boxShadow: [BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 20)]),
-                child: Center(
-                  child: _isAnswered 
-                    ? Text(_isCorrect == true ? "!" : "?", style: GoogleFonts.outfit(fontSize: 30.sp, color: _isCorrect == true ? Colors.greenAccent : Colors.redAccent))
-                    : Icon(Icons.auto_fix_high_rounded, color: color.withValues(alpha: 0.3)),
-                ),
-              ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
-            ],
+          Text(
+            "OBJECTIVE: IDENTIFY PARTICLE",
+            style: GoogleFonts.shareTechMono(fontSize: 10.sp, color: color.withValues(alpha: 0.6)),
+          ),
+          SizedBox(height: 10.h),
+          Text(
+            text.toUpperCase(),
+            textAlign: TextAlign.center,
+            style: GoogleFonts.shareTechMono(
+              fontSize: 16.sp,
+              fontWeight: FontWeight.bold,
+              color: color,
+              height: 1.4,
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildParticleBubble(int index, String text, String correct, Color color, bool isDark) {
-    bool isPopped = _poppedIndex == index;
-    final pos = _bubbleOffsets[index];
+  Widget _buildVaultHandle(String verb, Color color) {
+    return AnimatedBuilder(
+      animation: _vaultController,
+      builder: (context, child) {
+        final rotation = _vaultController.value * math.pi * 0.5;
+        return Transform.rotate(
+          angle: rotation,
+          child: Container(
+            width: 180.r,
+            height: 180.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: const Color(0xFF1E293B),
+              border: Border.all(color: color, width: 8),
+              boxShadow: [
+                BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 30, spreadRadius: 10),
+                const BoxShadow(color: Colors.black, blurRadius: 10, spreadRadius: 5, inset: true),
+              ],
+            ),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                // Inner Spokes
+                ...List.generate(3, (i) {
+                  return Transform.rotate(
+                    angle: i * math.pi / 1.5,
+                    child: Container(width: 160.r, height: 20.r, color: color.withValues(alpha: 0.2)),
+                  );
+                }),
+                // The Verb
+                Container(
+                  padding: EdgeInsets.all(15.r),
+                  decoration: const BoxDecoration(shape: BoxShape.circle, color: Color(0xFF334155)),
+                  child: Text(
+                    verb.toUpperCase(),
+                    style: GoogleFonts.shareTechMono(
+                      fontSize: 24.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 2,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 
-    return Positioned(
-      bottom: 100.h + pos.dy,
-      left: 150.w + pos.dx,
-      child: GestureDetector(
-        onTap: () => _onPop(index, text, correct),
-        child: AnimatedContainer(
-          duration: 400.ms,
-          curve: Curves.easeInBack,
-          transform: isPopped ? (Matrix4.identity()..setTranslationRaw(0.0, -300.h, 0.0)) : Matrix4.identity(),
-          child: Opacity(
-            opacity: isPopped ? 0.0 : 1.0,
-            child: Container(
-              width: 80.r, height: 80.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(colors: [color.withValues(alpha: 0.4), color.withValues(alpha: 0.1)], center: const Alignment(-0.3, -0.3)),
-                border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 1),
-                boxShadow: [BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 10)],
+  Widget _buildParticleKeys(List<String> options, String correct, Color color, bool isDark) {
+    return Wrap(
+      spacing: 20.w,
+      runSpacing: 20.h,
+      alignment: WrapAlignment.center,
+      children: options.map((o) {
+        final isSelected = _isAnswered && o == correct;
+        final isWrong = _isAnswered && _isCorrect == false && o != correct;
+
+        return ScaleButton(
+          onTap: () => _submitChoice(o, correct),
+          child: Container(
+            width: 80.r,
+            height: 80.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: isSelected 
+                  ? Colors.green.withValues(alpha: 0.2) 
+                  : (isWrong ? Colors.red.withValues(alpha: 0.2) : Colors.black),
+              border: Border.all(
+                color: isSelected ? Colors.green : (isWrong ? Colors.red : color.withValues(alpha: 0.4)),
+                width: 3,
               ),
-              child: Center(
-                child: Text(text.toUpperCase(), style: GoogleFonts.shareTechMono(fontSize: 12.sp, color: isDark ? Colors.white : Colors.black87, fontWeight: FontWeight.bold)),
+              boxShadow: [
+                if (isSelected) BoxShadow(color: Colors.green.withValues(alpha: 0.4), blurRadius: 20),
+                BoxShadow(color: Colors.black26, blurRadius: 5, offset: const Offset(3, 3)),
+              ],
+            ),
+            child: Center(
+              child: Text(
+                o.toUpperCase(),
+                style: GoogleFonts.shareTechMono(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.bold,
+                  color: isSelected ? Colors.green : (isWrong ? Colors.red : color),
+                ),
               ),
             ),
-          ).animate(onPlay: (c) => c.repeat()).moveY(begin: -5, end: 5, duration: 2.seconds).shake(hz: 1, curve: Curves.easeInOut),
-        ),
-      ),
+          ),
+        );
+      }).toList(),
     );
   }
 }
 
+class GridPainter extends CustomPainter {
+  final Color color;
+  GridPainter(this.color);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color..strokeWidth = 0.5;
+    const step = 40.0;
+    for (double x = 0; x < size.width; x += step) {
+      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
+    }
+    for (double y = 0; y < size.height; y += step) {
+      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
