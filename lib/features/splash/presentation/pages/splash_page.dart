@@ -5,6 +5,9 @@ import 'package:vowl/core/utils/app_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
@@ -13,15 +16,35 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  bool _timerFinished = false;
+
   @override
   void initState() {
     super.initState();
-    _navigateToNext();
+    _startTimer();
   }
 
-  Future<void> _navigateToNext() async {
-    await Future.delayed(const Duration(milliseconds: 2000));
-    if (!mounted) return;
+  void _startTimer() {
+    Future.delayed(const Duration(milliseconds: 2000), () {
+      if (mounted) {
+        setState(() => _timerFinished = true);
+        _checkNavigation();
+      }
+    });
+  }
+
+  void _checkNavigation() {
+    if (!_timerFinished) return;
+    
+    final authState = context.read<AuthBloc>().state;
+    if (authState.status == AuthStatus.unknown) {
+      // If auth is still resolving, we wait. The BlocListener will catch the change.
+      debugPrint('SplashPage: Auth still unknown, waiting...');
+      return;
+    }
+
+    debugPrint('SplashPage: Navigating with status: ${authState.status}');
+    // Router redirect logic will handle where to go (Home or Login)
     context.go(AppRouter.homeRoute);
   }
 
@@ -31,42 +54,50 @@ class _SplashPageState extends State<SplashPage> {
     final primaryColor = Theme.of(context).colorScheme.primary;
     final backgroundColor = isDark ? const Color(0xFF0F172A) : Colors.white;
 
-    return Scaffold(
-      backgroundColor: backgroundColor,
-      body: Stack(
-        children: [
-          // 1. Localized Branding Aura (Not full screen gradient)
-          Center(
-            child: Container(
-              width: 300.r,
-              height: 300.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  colors: [
-                    primaryColor.withValues(alpha: isDark ? 0.12 : 0.05),
-                    backgroundColor.withValues(alpha: 0.0),
-                  ],
+    return BlocListener<AuthBloc, AuthState>(
+      listenWhen: (prev, curr) => prev.status != curr.status,
+      listener: (context, state) {
+        if (state.status != AuthStatus.unknown) {
+          _checkNavigation();
+        }
+      },
+      child: Scaffold(
+        backgroundColor: backgroundColor,
+        body: Stack(
+          children: [
+            // 1. Localized Branding Aura (Not full screen gradient)
+            Center(
+              child: Container(
+                width: 300.r,
+                height: 300.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    colors: [
+                      primaryColor.withValues(alpha: isDark ? 0.12 : 0.05),
+                      backgroundColor.withValues(alpha: 0.0),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ).animate().fadeIn(duration: 1.seconds),
+            ).animate().fadeIn(duration: 1.seconds),
 
-          // 2. Center Logo
-          Center(
-            child: RepaintBoundary(
-              child: _SplashLogo(primaryColor: primaryColor),
+            // 2. Center Logo
+            Center(
+              child: RepaintBoundary(
+                child: _SplashLogo(primaryColor: primaryColor),
+              ),
             ),
-          ),
 
-          // 3. Footer Branding (Stacked for maximum pop)
-          Positioned(
-            bottom: 64.h, // Increased for breathing space
-            left: 0,
-            right: 0,
-            child: _SplashFooter(primaryColor: primaryColor, isDark: isDark),
-          ),
-        ],
+            // 3. Footer Branding (Stacked for maximum pop)
+            Positioned(
+              bottom: 64.h, // Increased for breathing space
+              left: 0,
+              right: 0,
+              child: _SplashFooter(primaryColor: primaryColor, isDark: isDark),
+            ),
+          ],
+        ),
       ),
     );
   }

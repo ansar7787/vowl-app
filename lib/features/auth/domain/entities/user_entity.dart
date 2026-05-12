@@ -147,7 +147,7 @@ class UserEntity extends Equatable {
     this.completedLevels = const {},
     this.badges = const [],
     this.streakFreezes = 0,
-    this.hintCount = 3,
+    this.hintCount = 0,
     this.hintPacks = 0,
     this.doubleXP = 0,
     this.doubleXPExpiry,

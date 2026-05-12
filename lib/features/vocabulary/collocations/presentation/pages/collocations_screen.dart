@@ -12,6 +12,8 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 class CollocationsScreen extends StatefulWidget {
   final int level;
@@ -35,7 +37,7 @@ class _CollocationsScreenState extends State<CollocationsScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
-  int? _lastLives;
+  VocabularyQuest? _lastQuest;
 
   @override
   void initState() {
@@ -99,26 +101,38 @@ class _CollocationsScreenState extends State<CollocationsScreen> {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          final livesChanged = state.livesRemaining > (_lastLives ?? 3);
-          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
+
+          if (isNewQuestion || isRetry) {
             setState(() {
+              _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _dragPosition = Offset.zero;
             });
           }
-          _lastLives = state.livesRemaining;
         }
         if (state is VocabularyGameComplete) {
+          final xp = state.xpEarned;
+          final coins = state.coinsEarned;
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'CHAIN LINKER!', enableDoubleUp: true);
+          if (!context.mounted) return;
+          GameDialogHelper.showCompletion(
+            context,
+            xp: xp,
+            coins: coins,
+            title: 'CHAIN LINKER!',
+            enableDoubleUp: true,
+          );
         } else if (state is VocabularyGameOver) {
           GameDialogHelper.showGameOver(context, onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()));
         }
       },
       builder: (context, state) {
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : null;
+        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
         final options = quest?.options ?? [];
         final word = quest?.word ?? "???";
 

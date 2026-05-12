@@ -9,7 +9,10 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 // Extracted Optimized Widgets
 import '../widgets/topic_machine_head.dart';
@@ -32,6 +35,7 @@ class TopicVocabScreen extends StatefulWidget {
 
 class _TopicVocabScreenState extends State<TopicVocabScreen> {
   final _hapticService = di.sl<HapticService>();
+  final _soundService = di.sl<SoundService>();
 
   int _currentWordIndex = 0;
   bool _isAnswered = false;
@@ -39,6 +43,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
   bool _showConfetti = false;
   int? _lastProcessedIndex = -1;
   bool _isHintActive = false;
+  VocabularyQuest? _lastQuest;
 
   // Track the user's choices for the batch check
   final List<Map<String, String>> _userChoices = [];
@@ -62,33 +67,36 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
     if (_isAnswered || _flickedWord != null) return;
 
     setState(() {
-      _isHintActive = false;
       int targetBin = velocity < 0 ? 0 : 1;
       String bucketName = buckets[targetBin % buckets.length];
 
       _flickedWord = word;
       _flickTarget = targetBin;
       
+      final bloc = context.read<VocabularyBloc>();
       // Delay the actual state update to allow animation to play
-      Future.delayed(const Duration(milliseconds: 400), () {
-        if (!mounted) return;
+      Future.delayed(const Duration(milliseconds: 100), () {
+        if (!context.mounted) return;
         setState(() {
           _userChoices.add({'word': word, 'bucket': bucketName});
           _wordsInBins[targetBin]?.add(word);
           _flickedWord = null;
           _flickTarget = null;
+          _isHintActive = false; 
 
-          if (_currentWordIndex < 4) {
+          if (_currentWordIndex < (wordsPerQuest(buckets) - 1)) {
             _currentWordIndex++;
           } else {
-            _performBatchCheck(correctAnswer);
+            _performBatchCheck(correctAnswer, bloc);
           }
         });
       });
     });
   }
 
-  void _performBatchCheck(String correctAnswer) {
+  int wordsPerQuest(List<String> buckets) => (buckets.length * 2 + 1).clamp(3, 5);
+
+  void _performBatchCheck(String correctAnswer, VocabularyBloc bloc) {
     bool allCorrect = true;
     for (var choice in _userChoices) {
       if (!_validateChoice(choice['word']!, choice['bucket']!, correctAnswer)) {
@@ -98,24 +106,33 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
     }
 
     if (allCorrect) {
+      _soundService.playCorrect();
       _hapticService.success();
       setState(() {
         _isAnswered = true;
         _isCorrect = true;
-        context.read<VocabularyBloc>().add(SubmitAnswer(true));
+        bloc.add(SubmitAnswer(true));
       });
     } else {
+      _soundService.playWrong();
       _hapticService.error();
       setState(() {
         _isAnswered = true;
         _isCorrect = false;
-        context.read<VocabularyBloc>().add(SubmitAnswer(false));
+        bloc.add(SubmitAnswer(false));
       });
     }
   }
 
   bool _validateChoice(String word, String bucket, String correctAnswer) {
-    return correctAnswer.contains("$bucket:$word");
+    final cleanWord = word.trim().toLowerCase();
+    final cleanLabel = bucket.trim().toLowerCase();
+    
+    final target1 = "$cleanLabel:$cleanWord";
+    final target2 = "$cleanLabel: $cleanWord";
+    final lowerAnswer = correctAnswer.toLowerCase();
+    
+    return lowerAnswer.contains(target1) || lowerAnswer.contains(target2);
   }
 
   @override
@@ -131,6 +148,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
 
           if (isNewQuestion || isRetry) {
             setState(() {
+              _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
@@ -142,33 +160,44 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
           }
         }
         if (state is VocabularyGameComplete) {
+          final xp = state.xpEarned;
+          final coins = state.coinsEarned;
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'TOPIC NEXUS!', enableDoubleUp: true);
+          if (!context.mounted) return;
+          GameDialogHelper.showCompletion(
+            context,
+            xp: xp,
+            coins: coins,
+            title: 'TOPIC NEXUS!',
+            enableDoubleUp: true,
+          );
         } else if (state is VocabularyGameOver) {
           GameDialogHelper.showGameOver(context, onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()));
         }
       },
       builder: (context, state) {
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : null;
-        if (quest == null) return const VocabularyBaseLayout(gameType: GameSubtype.topicVocab, level: 0, isAnswered: false, onContinue: _noop, onHint: _noop, child: SizedBox());
+        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
 
-        final words = quest.options ?? [];
-        final buckets = quest.topicBuckets ?? ["A", "B"];
-        final currentWord = _currentWordIndex < words.length ? words[_currentWordIndex] : "";
-        final correctAnswer = quest.correctAnswer ?? "";
+        final options = quest?.options ?? [];
+        final buckets = quest?.topicBuckets ?? ["A", "B"];
+        final currentWord = _currentWordIndex < options.length ? options[_currentWordIndex] : "";
+        final correctAnswer = quest?.correctAnswer ?? "";
         
-        String displayInstruction = quest.instruction;
+        String displayInstruction = quest?.instruction ?? "";
         if (displayInstruction.toLowerCase().contains("choose the correct answer")) {
           displayInstruction = "SORT THE WORDS INTO BINS";
         }
 
         return VocabularyBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType, 
+          level: widget.level, 
+          isAnswered: _isAnswered, 
+          isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () {
             setState(() => _isHintActive = true);
-            context.read<VocabularyBloc>().add(VocabularyHintUsed());
           },
           child: Container(
             height: 0.75.sh, 
@@ -177,25 +206,33 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
               alignment: Alignment.center,
               clipBehavior: Clip.none,
               children: [
-                // 1. BATCH PROGRESS (Highest Priority)
+                // 1. BATCH PROGRESS
                 Positioned(
                   top: 0,
-                  child: RepaintBoundary(child: TopicBatchCounter(count: _userChoices.length, total: 5, color: theme.primaryColor)),
+                  child: RepaintBoundary(
+                    child: TopicBatchCounter(
+                      count: _userChoices.length, 
+                      total: options.length, 
+                      color: theme.primaryColor
+                    ),
+                  ),
                 ),
 
-                // 2. INSTRUCTION (Under progress)
+                // 2. INSTRUCTION
                 Positioned(
                   top: 60.h, 
                   child: _buildInstruction(displayInstruction, theme.primaryColor)
                 ),
 
-                // 3. EMISSION MACHINE (Under instruction)
+                // 3. EMISSION MACHINE
                 Positioned(
                   top: 180.h,
-                  child: RepaintBoundary(child: TopicMachineHead(primaryColor: theme.primaryColor, emoji: quest.topicEmoji)),
+                  child: RepaintBoundary(
+                    child: TopicMachineHead(primaryColor: theme.primaryColor, emoji: quest?.topicEmoji ?? "📦"),
+                  ),
                 ),
 
-                // Containment Bins (Bottom)
+                // Containment Bins
                 Positioned(
                   bottom: 20.h,
                   left: 0,
@@ -220,29 +257,27 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                     ),
                   ),
                 
-                // Draggable Word Core (Center-Bottom)
+                // Draggable Word Core
                 if (!_isAnswered && currentWord.isNotEmpty && _flickedWord == null) 
                   Positioned(
                     bottom: 250.h,
-                    child: RepaintBoundary(
-                      child: TopicDraggableWord(
-                        word: currentWord, 
-                        primaryColor: theme.primaryColor, 
-                        isDark: isDark,
-                        onFlick: (v) => _handleFlick(v, currentWord, buckets, correctAnswer),
-                      ),
-                    ),
-                  ).animate(key: ValueKey("word_$_currentWordIndex"))
-                   .move(begin: const Offset(0, -100), end: Offset.zero, duration: 500.ms, curve: Curves.bounceOut)
-                   .fadeIn(),
+                    child: TopicDraggableWord(
+                      word: currentWord, 
+                      primaryColor: theme.primaryColor, 
+                      isDark: isDark,
+                      onFlick: (v) => _handleFlick(v, currentWord, buckets, correctAnswer),
+                    ).animate(key: ValueKey("word_$_currentWordIndex"))
+                     .move(begin: const Offset(0, -100), end: Offset.zero, duration: 500.ms, curve: Curves.bounceOut)
+                     .fadeIn(),
+                  ),
 
                 // Flying Word Animation
                 if (_flickedWord != null)
                   Positioned(
                     bottom: 250.h,
                     child: Container(
-                      width: 140.w, // Matched ultra-small size
-                      height: 70.h,  // Matched ultra-small size
+                      width: 140.w, 
+                      height: 70.h,  
                       decoration: BoxDecoration(
                         color: isDark ? const Color(0xFF1E293B) : Colors.white,
                         borderRadius: BorderRadius.circular(12.r),
@@ -300,6 +335,4 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
       ],
     );
   }
-
-  static void _noop() {}
 }

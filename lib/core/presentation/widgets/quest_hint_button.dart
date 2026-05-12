@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -35,7 +34,6 @@ class QuestHintButton extends StatelessWidget {
         return ScaleButton(
           onTap: () {
             if (canUseHint) {
-              context.read<EconomyBloc>().add(const EconomyConsumeHintRequested());
               soundService.playHint();
               onTap();
               if (hintText != null) {
@@ -119,7 +117,7 @@ class QuestHintButton extends StatelessWidget {
                 );
               }
             } else if (!used) {
-              GameDialogHelper.showHintAdDialog(context);
+              GameDialogHelper.showHintAdDialog(context, onHintEarned: onTap);
             }
           },
           child: Container(
@@ -133,10 +131,12 @@ class QuestHintButton extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                // Main Icon (Lightbulb/Psychology)
+                // Main Icon (Lightbulb/Psychology/Video)
                 Icon(
-                  used ? Icons.psychology_outlined : Icons.lightbulb_rounded,
-                  color: used ? Colors.grey : (hintCount > 0 ? primaryColor : Colors.grey.withValues(alpha: 0.6)),
+                  used 
+                    ? Icons.psychology_outlined 
+                    : (hintCount > 0 ? Icons.lightbulb_rounded : Icons.video_collection_rounded),
+                  color: used ? Colors.grey : (hintCount > 0 ? primaryColor : Colors.amber[700]),
                   size: 26.r,
                 ).animate(onPlay: (c) => used ? c.stop() : c.repeat(reverse: true)).shimmer(duration: 2.seconds, color: primaryColor.withValues(alpha: 0.3)),
                 

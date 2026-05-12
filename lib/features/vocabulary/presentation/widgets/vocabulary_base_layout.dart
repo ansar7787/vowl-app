@@ -20,6 +20,7 @@ import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashca
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/painters/visual_config_background.dart';
@@ -92,12 +93,11 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
             _hasSpokenNudge = true; // Permanent for this session
             // Delay to allow the "Wrong" sound effect to finish
             Future.delayed(const Duration(milliseconds: 1200), () {
-              if (mounted) {
-                _ttsService.speak(
-                  "Oh no! Use a hint to save your life!",
-                );
-                di.sl<HapticService>().warning();
-              }
+              if (!context.mounted) return;
+              _ttsService.speak(
+                "Oh no! Use a hint to save your life!",
+              );
+              di.sl<HapticService>().warning();
             });
           }
           
@@ -147,7 +147,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                                 child: Stack(
                                   clipBehavior: Clip.none,
                                   children: [
-                                    AnimatedOpacity(
+                                     AnimatedOpacity(
                                       duration: const Duration(milliseconds: 400),
                                       opacity: widget.isAnswered ? 0.6 : 1.0,
                                       child: AbsorbPointer(
@@ -184,8 +184,6 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                           bottom: 0, left: 0, right: 0,
                           child: _buildModernFeedbackCard(context, state, theme, isDark),
                         ),
-                      if (widget.showConfetti) const GameConfetti(),
-
                       if (_showBriefing)
                         Builder(
                           builder: (context) {
@@ -202,6 +200,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                             );
                           },
                         ),
+                      if (widget.showConfetti) const GameConfetti(),
                     ],
                   ),
                 );
@@ -251,10 +250,11 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
               child: QuestHintButton(
                 used: (state is VocabularyLoaded) ? state.hintUsed : false,
                 primaryColor: theme.primaryColor,
-                hintText: quest.hint,
+                hintText: widget.gameType == GameSubtype.topicVocab ? null : quest.hint,
                 soundService: di.sl<SoundService>(),
                 onTap: () {
                   context.read<VocabularyBloc>().add(VocabularyHintUsed());
+                  context.read<EconomyBloc>().add(const EconomyConsumeHintRequested());
                   widget.onHint();
                 },
               ).animate(target: hintShouldGlow ? 1 : 0, onPlay: (c) => c.repeat(reverse: true))

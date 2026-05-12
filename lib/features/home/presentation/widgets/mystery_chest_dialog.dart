@@ -85,6 +85,7 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
         isPremium: isPremium,
         rewardAmount: _rewardAmount,
         onOpen: _openChest,
+        onClose: () => Navigator.of(context).pop(),
         confettiController: _confettiController,
       ),
     );

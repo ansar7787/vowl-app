@@ -12,6 +12,7 @@ class MysteryChestOverlay extends StatelessWidget {
     required this.isPremium,
     required this.rewardAmount,
     required this.onOpen,
+    required this.onClose,
     required this.confettiController,
   });
 
@@ -19,6 +20,7 @@ class MysteryChestOverlay extends StatelessWidget {
   final bool isPremium;
   final int rewardAmount;
   final VoidCallback onOpen;
+  final VoidCallback onClose;
   final ConfettiController confettiController;
 
   @override
@@ -29,13 +31,37 @@ class MysteryChestOverlay extends StatelessWidget {
         children: [
           Positioned.fill(
             child: GestureDetector(
-              onTap: () {}, // Capture all hits
+              onTap: isOpened
+                  ? onClose
+                  : null, // Dismiss on background tap only if already opened
               child: BackdropFilter(
                 filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                 child: Container(color: Colors.black.withValues(alpha: 0.95)),
               ),
             ),
           ),
+          // Close button in top right
+          if (isOpened)
+            Positioned(
+              top: MediaQuery.of(context).padding.top + 20.h,
+              right: 20.w,
+              child: GestureDetector(
+                onTap: onClose,
+                child: Container(
+                  padding: EdgeInsets.all(12.r),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.white24),
+                  ),
+                  child: Icon(
+                    Icons.close_rounded,
+                    color: Colors.white,
+                    size: 24.r,
+                  ),
+                ),
+              ).animate().fadeIn(delay: 1.seconds).scale(),
+            ),
           Center(
             child: Material(
               type: MaterialType.transparency,
@@ -44,18 +70,24 @@ class MysteryChestOverlay extends StatelessWidget {
                 children: [
                   // Title with premium glow
                   Text(
-                    isOpened 
-                        ? 'CLAIMED!' 
+                    isOpened
+                        ? 'CLAIMED!'
                         : (isPremium ? 'VIP DAILY GIFT' : 'DAILY MYSTERY'),
                     style: GoogleFonts.outfit(
                       fontSize: isPremium && !isOpened ? 26.sp : 28.sp,
                       fontWeight: FontWeight.w900,
-                      color: isPremium && !isOpened ? const Color(0xFFFCD34D) : Colors.white,
+                      color: isPremium && !isOpened
+                          ? const Color(0xFFFCD34D)
+                          : Colors.white,
                       letterSpacing: 4,
                       decoration: TextDecoration.none,
                       shadows: [
                         Shadow(
-                          color: (isPremium ? const Color(0xFFF59E0B) : Colors.amber).withValues(alpha: 0.5),
+                          color:
+                              (isPremium
+                                      ? const Color(0xFFF59E0B)
+                                      : Colors.amber)
+                                  .withValues(alpha: 0.5),
                           blurRadius: 20,
                         ),
                       ],
@@ -64,24 +96,28 @@ class MysteryChestOverlay extends StatelessWidget {
                     duration: 600.ms,
                     curve: Curves.easeOutBack,
                   ),
-    
+
                   SizedBox(height: 8.h),
-    
+
                   Text(
-                    isOpened 
-                        ? 'TREASURE UNLOCKED' 
-                        : (isPremium ? 'YOUR EXCLUSIVE PRO REWARD' : 'READY TO OPEN?'),
+                    isOpened
+                        ? 'TREASURE UNLOCKED'
+                        : (isPremium
+                              ? 'YOUR EXCLUSIVE PRO REWARD'
+                              : 'READY TO OPEN?'),
                     style: GoogleFonts.outfit(
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
-                      color: isPremium && !isOpened ? const Color(0xFFFDE68A) : Colors.white54,
+                      color: isPremium && !isOpened
+                          ? const Color(0xFFFDE68A)
+                          : Colors.white54,
                       letterSpacing: 2,
                       decoration: TextDecoration.none,
                     ),
                   ).animate().fadeIn(delay: 300.ms),
-    
+
                   SizedBox(height: 50.h),
-    
+
                   GestureDetector(
                     onTap: isOpened ? null : onOpen,
                     child: Stack(
@@ -95,9 +131,14 @@ class MysteryChestOverlay extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 gradient: RadialGradient(
                                   colors: [
-                                    (isPremium ? const Color(0xFFF59E0B) : Colors.amber).withValues(
-                                      alpha: isOpened ? 0.3 : (isPremium ? 0.4 : 0.1),
-                                    ),
+                                    (isPremium
+                                            ? const Color(0xFFF59E0B)
+                                            : Colors.amber)
+                                        .withValues(
+                                          alpha: isOpened
+                                              ? 0.3
+                                              : (isPremium ? 0.4 : 0.1),
+                                        ),
                                     Colors.transparent,
                                   ],
                                 ),
@@ -109,7 +150,7 @@ class MysteryChestOverlay extends StatelessWidget {
                               end: const Offset(1.2, 1.2),
                               duration: 2.seconds,
                             ),
-    
+
                         // The Chest Image
                         Image.asset(
                               'assets/images/daily_chest.png', // Assuming user added this
@@ -166,10 +207,10 @@ class MysteryChestOverlay extends StatelessWidget {
                       ],
                     ),
                   ),
-    
+
                   if (isOpened) ...[
                     SizedBox(height: 40.h),
-    
+
                     // Reward Card
                     Container(
                           padding: EdgeInsets.symmetric(
@@ -228,7 +269,7 @@ class MysteryChestOverlay extends StatelessWidget {
                         .fadeIn(delay: 500.ms)
                         .slideY(begin: 0.5, curve: Curves.easeOutBack),
                   ],
-    
+
                   if (!isOpened) ...[
                     SizedBox(height: 60.h),
                     Text(
@@ -236,7 +277,9 @@ class MysteryChestOverlay extends StatelessWidget {
                           style: GoogleFonts.outfit(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w800,
-                            color: isPremium ? const Color(0xFFF59E0B) : Colors.amber,
+                            color: isPremium
+                                ? const Color(0xFFF59E0B)
+                                : Colors.amber,
                             letterSpacing: 3,
                             decoration: TextDecoration.none,
                           ),

@@ -40,12 +40,16 @@ void main() async {
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
-      statusBarIconBrightness: brightness == Brightness.dark ? Brightness.light : Brightness.dark,
+      statusBarIconBrightness: brightness == Brightness.dark
+          ? Brightness.light
+          : Brightness.dark,
       systemNavigationBarColor: Colors.transparent,
-      systemNavigationBarIconBrightness: brightness == Brightness.dark ? Brightness.light : Brightness.dark,
+      systemNavigationBarIconBrightness: brightness == Brightness.dark
+          ? Brightness.light
+          : Brightness.dark,
     ),
   );
-  
+
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
   await SystemChrome.setPreferredOrientations([
@@ -57,14 +61,17 @@ void main() async {
   await dotenv.load(fileName: ".env");
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
-  
+
   await di.init();
   final isSecure = await SecurityService.isDeviceSecure();
 
   // 2. Configure Firestore Persistence (Non-blocking)
   FirebaseFirestore.instance.settings = const Settings(
     persistenceEnabled: true,
-    cacheSizeBytes: 50 * 1024 * 1024, // 50MB - prevents storage exhaustion on low-end devices
+    cacheSizeBytes:
+        50 *
+        1024 *
+        1024, // 50MB - prevents storage exhaustion on low-end devices
   );
 
   if (!isSecure) {
@@ -93,13 +100,19 @@ void main() async {
       // Initialize heavy SDKs only once the UI is stable
       di.sl<AdService>().init();
       di.sl<RemoteConfigService>().init();
-      
-      // Initialize App Check and Notifications
-      FirebaseAppCheck.instance.activate(
-        providerAndroid: AndroidPlayIntegrityProvider(),
-        providerApple: AppleDeviceCheckProvider(),
+
+      // ignore: deprecated_member_use
+      await FirebaseAppCheck.instance.activate(
+        // ignore: deprecated_member_use
+        appleProvider: kDebugMode
+            ? AppleProvider.debug
+            : AppleProvider.deviceCheck,
+        // ignore: deprecated_member_use
+        androidProvider: kDebugMode
+            ? AndroidProvider.debug
+            : AndroidProvider.playIntegrity,
       );
-      
+
       di.sl<NotificationService>().init().then((_) {
         di.sl<NotificationService>().requestPermissions();
         di.sl<NotificationService>().scheduleWeeklyMotivation();
@@ -120,14 +133,26 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    
+
     // Global Asset Pre-caching for "Elite Performance"
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // Pre-load mascot WEBP assets into RAM early
-      precacheImage(const AssetImage('assets/images/mascot/voxbot_happy.webp'), context);
-      precacheImage(const AssetImage('assets/images/mascot/voxbot_neutral.webp'), context);
-      precacheImage(const AssetImage('assets/images/mascot/voxbot_thinking.webp'), context);
-      precacheImage(const AssetImage('assets/images/mascot/voxbot_worried.webp'), context);
+      precacheImage(
+        const AssetImage('assets/images/mascot/voxbot_happy.webp'),
+        context,
+      );
+      precacheImage(
+        const AssetImage('assets/images/mascot/voxbot_neutral.webp'),
+        context,
+      );
+      precacheImage(
+        const AssetImage('assets/images/mascot/voxbot_thinking.webp'),
+        context,
+      );
+      precacheImage(
+        const AssetImage('assets/images/mascot/voxbot_worried.webp'),
+        context,
+      );
     });
   }
 
@@ -147,9 +172,15 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         return MultiBlocProvider(
           providers: [
             BlocProvider<AuthBloc>(create: (context) => di.sl<AuthBloc>()),
-            BlocProvider<EconomyBloc>(create: (context) => di.sl<EconomyBloc>()),
-            BlocProvider<ProgressionBloc>(create: (context) => di.sl<ProgressionBloc>()),
-            BlocProvider<ProfileBloc>(create: (context) => di.sl<ProfileBloc>()),
+            BlocProvider<EconomyBloc>(
+              create: (context) => di.sl<EconomyBloc>(),
+            ),
+            BlocProvider<ProgressionBloc>(
+              create: (context) => di.sl<ProgressionBloc>(),
+            ),
+            BlocProvider<ProfileBloc>(
+              create: (context) => di.sl<ProfileBloc>(),
+            ),
             BlocProvider<ThemeCubit>(create: (context) => di.sl<ThemeCubit>()),
           ],
           child: BlocBuilder<ThemeCubit, ThemeState>(
@@ -161,60 +192,70 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
               SystemChrome.setSystemUIOverlayStyle(
                 SystemUiOverlayStyle(
                   statusBarColor: Colors.transparent,
-                  statusBarIconBrightness:
-                      isActuallyDark ? Brightness.light : Brightness.dark,
+                  statusBarIconBrightness: isActuallyDark
+                      ? Brightness.light
+                      : Brightness.dark,
                   systemNavigationBarColor: Colors.transparent,
-                  systemNavigationBarIconBrightness:
-                      isActuallyDark ? Brightness.light : Brightness.dark,
+                  systemNavigationBarIconBrightness: isActuallyDark
+                      ? Brightness.light
+                      : Brightness.dark,
                 ),
               );
 
-              return MaterialApp.router(
-                title: 'Vowl',
-                debugShowCheckedModeBanner: false,
-                theme: AppTheme.lightTheme,
-                darkTheme: state.isMidnight ? AppTheme.midnightTheme : AppTheme.darkTheme,
-                themeMode: state.themeMode,
-                routerConfig: AppRouter.router,
-                builder: (context, child) {
-                  return GlobalErrorBoundary(
-                    child: ConnectivityWrapper(
-                      child: GlobalAudioFeedbackListener(
-                        child: MultiBlocListener(
-                          listeners: [
-                            BlocListener<AuthBloc, AuthState>(
-                              listenWhen: (prev, curr) => 
-                                prev.status != AuthStatus.authenticated && 
-                                curr.status == AuthStatus.authenticated,
-                              listener: (context, authState) {
-                                context.read<ProgressionBloc>().add(
-                                  const ProgressionCheckDailyStreakRequested(),
-                                );
-                              },
-                            ),
-                          ],
-                          child: BlocBuilder<AuthBloc, AuthState>(
-                            builder: (context, authState) {
-                              final isLoggingOut =
-                                  authState.status == AuthStatus.loggingOut;
-        
-                              return LoadingOverlay(
-                                isLoading: isLoggingOut,
-                                message: 'Securing your quest data',
-                                child: Container(
-                                  color: state.isMidnight
-                                      ? Colors.black
-                                      : (isActuallyDark
-                                          ? const Color(0xFF0F172A)
-                                          : const Color(0xFFF8FAFC)),
-                                  child: child!,
+              return BlocBuilder<AuthBloc, AuthState>(
+                buildWhen: (prev, curr) => prev.user?.id != curr.user?.id,
+                builder: (context, authState) {
+                  return MaterialApp.router(
+                    key: ValueKey(authState.user?.id ?? 'guest'),
+                    title: 'Vowl',
+                    debugShowCheckedModeBanner: false,
+                    theme: AppTheme.lightTheme,
+                    darkTheme: state.isMidnight
+                        ? AppTheme.midnightTheme
+                        : AppTheme.darkTheme,
+                    themeMode: state.themeMode,
+                    routerConfig: AppRouter.router,
+                    builder: (context, child) {
+                      return GlobalErrorBoundary(
+                        child: ConnectivityWrapper(
+                          child: GlobalAudioFeedbackListener(
+                            child: MultiBlocListener(
+                              listeners: [
+                                BlocListener<AuthBloc, AuthState>(
+                                  listenWhen: (prev, curr) =>
+                                      prev.status != AuthStatus.authenticated &&
+                                      curr.status == AuthStatus.authenticated,
+                                  listener: (context, authState) {
+                                    context.read<ProgressionBloc>().add(
+                                      const ProgressionCheckDailyStreakRequested(),
+                                    );
+                                  },
                                 ),
-                              );
-                            },
+                              ],
+                              child: BlocBuilder<AuthBloc, AuthState>(
+                                builder: (context, authState) {
+                                  final isLoggingOut =
+                                      authState.status == AuthStatus.loggingOut;
+
+                                  return LoadingOverlay(
+                                    isLoading: isLoggingOut,
+                                    message: 'Securing your quest data',
+                                    child: Container(
+                                      color: state.isMidnight
+                                          ? Colors.black
+                                          : (isActuallyDark
+                                                ? const Color(0xFF0F172A)
+                                                : const Color(0xFFF8FAFC)),
+                                      child: child!,
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ),
+                      );
+                    },
                   );
                 },
               );

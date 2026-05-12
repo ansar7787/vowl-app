@@ -11,7 +11,9 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'dart:math';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 class FlashcardsScreen extends StatefulWidget {
   final int level;
@@ -38,6 +40,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
+  bool _isHintActive = false;
+  VocabularyQuest? _lastQuest;
 
   @override
   void initState() {
@@ -50,15 +54,16 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
   void _onDragUpdate(DragUpdateDetails details) {
     if (_isAnswered) return;
     if (_isRetrying) setState(() => _isRetrying = false);
-    
+
     final oldOffset = _dragOffset;
     setState(() {
       _dragOffset += details.delta;
       _dragAngle = _dragOffset.dx / 500;
-      
+
       // Better haptic throttle: trigger only every 20 pixels of horizontal movement
-      if ((_dragOffset.dx - oldOffset.dx).abs() > 0 && (_dragOffset.dx.abs() % 20 < 2)) {
-         _hapticService.selection();
+      if ((_dragOffset.dx - oldOffset.dx).abs() > 0 &&
+          (_dragOffset.dx.abs() % 20 < 2)) {
+        _hapticService.selection();
       }
     });
   }
@@ -102,9 +107,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         if (state is VocabularyLoaded) {
           final isNewQuestion = state.currentIndex != _lastProcessedIndex;
           final isRetry = state.lastAnswerCorrect == null && _isAnswered;
-          
+
           if (isNewQuestion || isRetry) {
             setState(() {
+              _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isRetrying = isRetry;
@@ -117,16 +123,19 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         }
         if (state is VocabularyGameComplete) {
           if (!_showConfetti) {
+            final xp = state.xpEarned;
+            final coins = state.coinsEarned;
             setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(
-            context,
-            xp: state.xpEarned,
-            coins: state.coinsEarned,
-            title: 'VOCAB MASTERY!',
-            enableDoubleUp: true,
-          );
-        }
-      } else if (state is VocabularyGameOver) {
+            if (!context.mounted) return;
+            GameDialogHelper.showCompletion(
+              context,
+              xp: xp,
+              coins: coins,
+              title: 'VOCAB MASTERY!',
+              enableDoubleUp: true,
+            );
+          }
+        } else if (state is VocabularyGameOver) {
           GameDialogHelper.showGameOver(
             context,
             onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
@@ -134,7 +143,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : null;
+        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
@@ -143,10 +153,26 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          onHint: () =>
-              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+        onHint: () {
+          if (!_isFlipped) {
+            setState(() {
+              _isFlipped = true;
+              _isHintActive = true;
+            });
+            // Flip back after 4 seconds to maintain the "test" aspect
+            Future.delayed(const Duration(seconds: 4), () {
+              if (!context.mounted) return;
+              if (_isHintActive) {
+                setState(() {
+                  _isFlipped = false;
+                  _isHintActive = false;
+                });
+              }
+            });
+          }
+        },
           child: quest == null
-              ? const SizedBox()
+              ? const GameShimmerLoading()
               : LayoutBuilder(
                   builder: (context, constraints) {
                     // Calculate dynamic card height based on available space
@@ -409,9 +435,10 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
               textAlign: TextAlign.center,
               style: GoogleFonts.fredoka(
                 fontSize: 19.sp,
-                color: isDark ? Colors.white : Colors.black87,
+                color: _isHintActive ? color : (isDark ? Colors.white : Colors.black87),
                 height: 1.4,
-                fontWeight: FontWeight.w500,
+                fontWeight: _isHintActive ? FontWeight.w900 : FontWeight.w500,
+                shadows: _isHintActive ? [Shadow(color: color.withValues(alpha: 0.5), blurRadius: 10)] : null,
               ),
             ),
             SizedBox(height: 28.h),

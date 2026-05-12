@@ -10,6 +10,7 @@ import 'package:vowl/features/auth/domain/usecases/log_out.dart';
 import 'package:vowl/features/auth/domain/usecases/reload_user.dart';
 import 'package:vowl/features/auth/domain/usecases/delete_account.dart';
 import 'package:vowl/features/auth/domain/usecases/forgot_password.dart';
+import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
 class MockGetUserStream extends Mock implements GetUserStream {}
@@ -17,6 +18,7 @@ class MockLogOut extends Mock implements LogOut {}
 class MockReloadUser extends Mock implements ReloadUser {}
 class MockDeleteAccount extends Mock implements DeleteAccount {}
 class MockForgotPassword extends Mock implements ForgotPassword {}
+class MockGetCurrentUser extends Mock implements GetCurrentUser {}
 
 class FakeNoParams extends Fake implements NoParams {}
 
@@ -31,6 +33,7 @@ void main() {
   late MockReloadUser mockReloadUser;
   late MockDeleteAccount mockDeleteAccount;
   late MockForgotPassword mockForgotPassword;
+  late MockGetCurrentUser mockGetCurrentUser;
   late StreamController<UserEntity?> userStreamController;
 
   final tUser = UserEntity(
@@ -45,6 +48,7 @@ void main() {
     mockReloadUser = MockReloadUser();
     mockDeleteAccount = MockDeleteAccount();
     mockForgotPassword = MockForgotPassword();
+    mockGetCurrentUser = MockGetCurrentUser();
     userStreamController = StreamController<UserEntity?>();
 
     when(() => mockGetUserStream()).thenAnswer((_) => userStreamController.stream);
@@ -55,6 +59,7 @@ void main() {
       reloadUser: mockReloadUser,
       deleteAccount: mockDeleteAccount,
       forgotPassword: mockForgotPassword,
+      getCurrentUser: mockGetCurrentUser,
     );
   });
 

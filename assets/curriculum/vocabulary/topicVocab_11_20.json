@@ -1,487 +1,547 @@
 {
-    "gameType":  "topicVocab",
-    "batchIndex":  2,
-    "levels":  "11-20",
-    "quests":  [
-                   {
-                       "id":  "VOC_TOPICVOCAB_L11_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "LOGIC_id30",
-                       "options":  [
-                                       "LOGIC",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "LOGIC"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L11_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "METHOD_id31",
-                       "options":  [
-                                       "METHOD",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "METHOD"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L11_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "NETWORK_id32",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "NETWORK"
-                                   ],
-                       "correctAnswer":  "NETWORK"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L12_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "OBJECTIVE_id33",
-                       "options":  [
-                                       "OBJECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L12_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "PERSPECTIVE_id34",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "PERSPECTIVE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L12_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "QUALITY_id35",
-                       "options":  [
-                                       "QUALITY",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "QUALITY"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L13_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "RESEARCH_id36",
-                       "options":  [
-                                       "RESEARCH",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L13_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "SOURCE_id37",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "SOURCE"
-                                   ],
-                       "correctAnswer":  "SOURCE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L13_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "THEORY_id38",
-                       "options":  [
-                                       "DISTRACT_A",
-                                       "THEORY",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "THEORY"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L14_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "UNIQUE_id39",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "UNIQUE"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L14_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id40",
-                       "options":  [
-                                       "ANALYZE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L14_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id41",
-                       "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "CONCEPT",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L15_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id42",
-                       "options":  [
-                                       "DATA",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "DATA"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L15_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id43",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "EVIDENCE"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L15_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id44",
-                       "options":  [
-                                       "FACTOR",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "FACTOR"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L16_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id45",
-                       "options":  [
-                                       "GLOBAL",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L16_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id46",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "HYPOTHESIS",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L16_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id47",
-                       "options":  [
-                                       "INTERPRET",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L17_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id48",
-                       "options":  [
-                                       "JUSTICE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L17_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id49",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "KNOWLEDGE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L17_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "LOGIC_id50",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "LOGIC",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "LOGIC"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L18_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "METHOD_id51",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "METHOD"
-                                   ],
-                       "correctAnswer":  "METHOD"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L18_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "NETWORK_id52",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "NETWORK"
-                                   ],
-                       "correctAnswer":  "NETWORK"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L18_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "OBJECTIVE_id53",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "OBJECTIVE"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L19_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "PERSPECTIVE_id54",
-                       "options":  [
-                                       "PERSPECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L19_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "QUALITY_id55",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "QUALITY",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "QUALITY"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L19_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "RESEARCH_id56",
-                       "options":  [
-                                       "RESEARCH",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L20_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "SOURCE_id57",
-                       "options":  [
-                                       "SOURCE",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "SOURCE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L20_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "THEORY_id58",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "THEORY",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "THEORY"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L20_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "UNIQUE_id59",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "UNIQUE"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
-                   }
-               ]
+    "gameType": "topicVocab",
+    "batchIndex": 2,
+    "levels": "11-20",
+    "quests": [
+        {
+            "id": "VOC_TOPICVOCAB_L11_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Old",
+                "Young"
+            ],
+            "hint": "Sort words into Old or Young based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Old or Young.",
+            "options": [
+                "Elder",
+                "New",
+                "Vintage",
+                "Minor",
+                "Green"
+            ],
+            "correctAnswer": "Old:Elder, Young:New, Old:Vintage, Young:Minor, Young:Green"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L11_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Old",
+                "Young"
+            ],
+            "hint": "Sort words into Old or Young based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Old or Young.",
+            "options": [
+                "Child",
+                "Past",
+                "Youth",
+                "Relic",
+                "Ancient"
+            ],
+            "correctAnswer": "Young:Child, Old:Past, Young:Youth, Old:Relic, Old:Ancient"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L11_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Old",
+                "Young"
+            ],
+            "hint": "Sort words into Old or Young based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Old or Young.",
+            "options": [
+                "New",
+                "Child",
+                "Senior",
+                "Youth",
+                "Relic"
+            ],
+            "correctAnswer": "Young:New, Young:Child, Old:Senior, Young:Youth, Old:Relic"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L12_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Round",
+                "Sharp"
+            ],
+            "hint": "Sort words into Round or Sharp based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Round or Sharp.",
+            "options": [
+                "Alert",
+                "Ring",
+                "Direct",
+                "Curved",
+                "Pointy"
+            ],
+            "correctAnswer": "Sharp:Alert, Round:Ring, Sharp:Direct, Round:Curved, Sharp:Pointy"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L12_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Round",
+                "Sharp"
+            ],
+            "hint": "Sort words into Round or Sharp based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Round or Sharp.",
+            "options": [
+                "Ring",
+                "Elite",
+                "Alert",
+                "Circle",
+                "Orb"
+            ],
+            "correctAnswer": "Round:Ring, Sharp:Elite, Sharp:Alert, Round:Circle, Round:Orb"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L12_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Round",
+                "Sharp"
+            ],
+            "hint": "Sort words into Round or Sharp based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Round or Sharp.",
+            "options": [
+                "Elite",
+                "Direct",
+                "Edge",
+                "Ball",
+                "Ring"
+            ],
+            "correctAnswer": "Sharp:Elite, Sharp:Direct, Sharp:Edge, Round:Ball, Round:Ring"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L13_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Sweet",
+                "Sour"
+            ],
+            "hint": "Sort words into Sweet or Sour based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Sweet or Sour.",
+            "options": [
+                "Pickle",
+                "Tangy",
+                "Acid",
+                "Sugar",
+                "Mellow"
+            ],
+            "correctAnswer": "Sour:Pickle, Sour:Tangy, Sour:Acid, Sweet:Sugar, Sweet:Mellow"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L13_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Sweet",
+                "Sour"
+            ],
+            "hint": "Sort words into Sweet or Sour based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Sweet or Sour.",
+            "options": [
+                "Lime",
+                "Mellow",
+                "Candy",
+                "Tangy",
+                "Fruit"
+            ],
+            "correctAnswer": "Sour:Lime, Sweet:Mellow, Sweet:Candy, Sour:Tangy, Sweet:Fruit"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L13_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Sweet",
+                "Sour"
+            ],
+            "hint": "Sort words into Sweet or Sour based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Sweet or Sour.",
+            "options": [
+                "Mellow",
+                "Lemon",
+                "Candy",
+                "Tangy",
+                "Pickle"
+            ],
+            "correctAnswer": "Sweet:Mellow, Sour:Lemon, Sweet:Candy, Sour:Tangy, Sour:Pickle"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L14_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Dry",
+                "Wet"
+            ],
+            "hint": "Sort words into Dry or Wet based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Dry or Wet.",
+            "options": [
+                "Moist",
+                "Drought",
+                "Humid",
+                "Soggy",
+                "Parch"
+            ],
+            "correctAnswer": "Wet:Moist, Dry:Drought, Wet:Humid, Wet:Soggy, Dry:Parch"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L14_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Dry",
+                "Wet"
+            ],
+            "hint": "Sort words into Dry or Wet based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Dry or Wet.",
+            "options": [
+                "Parch",
+                "Barren",
+                "Soggy",
+                "Arid",
+                "Humid"
+            ],
+            "correctAnswer": "Dry:Parch, Dry:Barren, Wet:Soggy, Dry:Arid, Wet:Humid"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L14_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Dry",
+                "Wet"
+            ],
+            "hint": "Sort words into Dry or Wet based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Dry or Wet.",
+            "options": [
+                "Dusty",
+                "Drenched",
+                "Rainy",
+                "Damp",
+                "Drought"
+            ],
+            "correctAnswer": "Dry:Dusty, Wet:Drenched, Wet:Rainy, Wet:Damp, Dry:Drought"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L15_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Friendly",
+                "Hostile"
+            ],
+            "hint": "Sort words into Friendly or Hostile based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Friendly or Hostile.",
+            "options": [
+                "Mean",
+                "Rude",
+                "Nice",
+                "Cruel",
+                "Open"
+            ],
+            "correctAnswer": "Hostile:Mean, Hostile:Rude, Friendly:Nice, Hostile:Cruel, Friendly:Open"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L15_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Friendly",
+                "Hostile"
+            ],
+            "hint": "Sort words into Friendly or Hostile based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Friendly or Hostile.",
+            "options": [
+                "Warm",
+                "Nice",
+                "Gentle",
+                "Cruel",
+                "Harsh"
+            ],
+            "correctAnswer": "Friendly:Warm, Friendly:Nice, Friendly:Gentle, Hostile:Cruel, Hostile:Harsh"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L15_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Friendly",
+                "Hostile"
+            ],
+            "hint": "Sort words into Friendly or Hostile based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Friendly or Hostile.",
+            "options": [
+                "Rude",
+                "Gentle",
+                "Nice",
+                "Cold",
+                "Fierce"
+            ],
+            "correctAnswer": "Hostile:Rude, Friendly:Gentle, Friendly:Nice, Hostile:Cold, Hostile:Fierce"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L16_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Simple",
+                "Complex"
+            ],
+            "hint": "Sort words into Simple or Complex based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Simple or Complex.",
+            "options": [
+                "Vague",
+                "Hybrid",
+                "Dense",
+                "Basic",
+                "Easy"
+            ],
+            "correctAnswer": "Complex:Vague, Complex:Hybrid, Complex:Dense, Simple:Basic, Simple:Easy"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L16_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Simple",
+                "Complex"
+            ],
+            "hint": "Sort words into Simple or Complex based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Simple or Complex.",
+            "options": [
+                "Plain",
+                "Dense",
+                "Brief",
+                "Small",
+                "Vague"
+            ],
+            "correctAnswer": "Simple:Plain, Complex:Dense, Simple:Brief, Simple:Small, Complex:Vague"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L16_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Simple",
+                "Complex"
+            ],
+            "hint": "Sort words into Simple or Complex based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Simple or Complex.",
+            "options": [
+                "Tough",
+                "Hard",
+                "Basic",
+                "Hybrid",
+                "Brief"
+            ],
+            "correctAnswer": "Complex:Tough, Complex:Hard, Simple:Basic, Complex:Hybrid, Simple:Brief"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L17_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Internal",
+                "External"
+            ],
+            "hint": "Sort words into Internal or External based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Internal or External.",
+            "options": [
+                "Shell",
+                "Skin",
+                "Mental",
+                "Foreign",
+                "Mind"
+            ],
+            "correctAnswer": "External:Shell, External:Skin, Internal:Mental, External:Foreign, Internal:Mind"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L17_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Internal",
+                "External"
+            ],
+            "hint": "Sort words into Internal or External based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Internal or External.",
+            "options": [
+                "World",
+                "Global",
+                "Heart",
+                "Inside",
+                "Inner"
+            ],
+            "correctAnswer": "External:World, External:Global, Internal:Heart, Internal:Inside, Internal:Inner"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L17_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Internal",
+                "External"
+            ],
+            "hint": "Sort words into Internal or External based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Internal or External.",
+            "options": [
+                "Foreign",
+                "Shell",
+                "Core",
+                "World",
+                "Heart"
+            ],
+            "correctAnswer": "External:Foreign, External:Shell, Internal:Core, External:World, Internal:Heart"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L18_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Visible",
+                "Hidden"
+            ],
+            "hint": "Sort words into Visible or Hidden based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Visible or Hidden.",
+            "options": [
+                "Secret",
+                "Bright",
+                "Veiled",
+                "Shown",
+                "Covered"
+            ],
+            "correctAnswer": "Hidden:Secret, Visible:Bright, Hidden:Veiled, Visible:Shown, Hidden:Covered"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L18_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Visible",
+                "Hidden"
+            ],
+            "hint": "Sort words into Visible or Hidden based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Visible or Hidden.",
+            "options": [
+                "Shown",
+                "Vivid",
+                "Bright",
+                "Veiled",
+                "Buried"
+            ],
+            "correctAnswer": "Visible:Shown, Visible:Vivid, Visible:Bright, Hidden:Veiled, Hidden:Buried"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L18_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Visible",
+                "Hidden"
+            ],
+            "hint": "Sort words into Visible or Hidden based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Visible or Hidden.",
+            "options": [
+                "Buried",
+                "Deep",
+                "Vivid",
+                "Clear",
+                "Veiled"
+            ],
+            "correctAnswer": "Hidden:Buried, Hidden:Deep, Visible:Vivid, Visible:Clear, Hidden:Veiled"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L19_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Strong",
+                "Fragile"
+            ],
+            "hint": "Sort words into Strong or Fragile based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Strong or Fragile.",
+            "options": [
+                "Faint",
+                "Mighty",
+                "Dainty",
+                "Solid",
+                "Shaky"
+            ],
+            "correctAnswer": "Fragile:Faint, Strong:Mighty, Fragile:Dainty, Strong:Solid, Fragile:Shaky"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L19_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Strong",
+                "Fragile"
+            ],
+            "hint": "Sort words into Strong or Fragile based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Strong or Fragile.",
+            "options": [
+                "Powerful",
+                "Soft",
+                "Mighty",
+                "Bold",
+                "Brakable"
+            ],
+            "correctAnswer": "Strong:Powerful, Fragile:Soft, Strong:Mighty, Strong:Bold, Fragile:Brakable"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L19_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Strong",
+                "Fragile"
+            ],
+            "hint": "Sort words into Strong or Fragile based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Strong or Fragile.",
+            "options": [
+                "Thin",
+                "Solid",
+                "Brakable",
+                "Robust",
+                "Glass"
+            ],
+            "correctAnswer": "Fragile:Thin, Strong:Solid, Fragile:Brakable, Strong:Robust, Fragile:Glass"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L20_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Fixed",
+                "Mobile"
+            ],
+            "hint": "Sort words into Fixed or Mobile based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Fixed or Mobile.",
+            "options": [
+                "Roaming",
+                "Solid",
+                "Agile",
+                "Static",
+                "Fluid"
+            ],
+            "correctAnswer": "Mobile:Roaming, Fixed:Solid, Mobile:Agile, Fixed:Static, Mobile:Fluid"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L20_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Fixed",
+                "Mobile"
+            ],
+            "hint": "Sort words into Fixed or Mobile based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Fixed or Mobile.",
+            "options": [
+                "Roaming",
+                "Stuck",
+                "Rigid",
+                "Fluid",
+                "Static"
+            ],
+            "correctAnswer": "Mobile:Roaming, Fixed:Stuck, Fixed:Rigid, Mobile:Fluid, Fixed:Static"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L20_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Fixed",
+                "Mobile"
+            ],
+            "hint": "Sort words into Fixed or Mobile based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Fixed or Mobile.",
+            "options": [
+                "Flying",
+                "Agile",
+                "Firm",
+                "Fluid",
+                "Stable"
+            ],
+            "correctAnswer": "Mobile:Flying, Mobile:Agile, Fixed:Firm, Mobile:Fluid, Fixed:Stable"
+        }
+    ]
 }

@@ -92,7 +92,7 @@ class AuthRepositoryImpl implements AuthRepository {
       final doc = await _firestore
           .collection('users')
           .doc(firebaseUser.uid)
-          .get();
+          .get(const GetOptions(source: Source.server));
       if (doc.exists) {
         final user = UserModel.fromMap(doc.data()!);
         return user.copyWith(isEmailVerified: firebaseUser.emailVerified);
@@ -433,20 +433,26 @@ class AuthRepositoryImpl implements AuthRepository {
       final user = _firebaseAuth.currentUser;
       if (user != null) {
         final docRef = _firestore.collection('users').doc(user.uid);
-        final doc = await docRef.get();
-        if (doc.exists && doc.data() != null) {
-          final hintCount = doc.data()?['hintCount'] ?? 0;
+        
+        return await _firestore.runTransaction((transaction) async {
+          // FORCE server read in transaction
+          final snapshot = await transaction.get(docRef);
+          if (!snapshot.exists) return Left(ServerFailure('User data not found'));
+          
+          final hintCount = snapshot.data()?['hintCount'] ?? 0;
           if (hintCount > 0) {
-            await docRef.update({'hintCount': FieldValue.increment(-1)});
+            debugPrint('AuthRepository: Atomic Hint Decrement (Transaction) triggered.');
+            transaction.update(docRef, {'hintCount': FieldValue.increment(-1)});
             return const Right(null);
           } else {
+            debugPrint('AuthRepository: Hint decrement FAILED: No hints available.');
             return Left(ServerFailure('No hints available'));
           }
-        }
-        return Left(ServerFailure('User data not found'));
+        });
       }
       return Left(AuthFailure('User not logged in'));
     } catch (e) {
+      debugPrint('AuthRepository: useHint ERROR: $e');
       return Left(ServerFailure(e.toString()));
     }
   }
@@ -654,16 +660,10 @@ class AuthRepositoryImpl implements AuthRepository {
             return Left(AuthFailure('User is not premium'));
           }
 
-          if (!userData.isVipGiftAvailable) {
-            return Left(AuthFailure('VIP gift already claimed today'));
-          }
-
-          final updatedUser = userData.copyWith(
-            coins: userData.coins + 100,
-            lastVipGiftDate: DateTime.now(),
-          );
-
-          await docRef.update(updatedUser.toMap());
+          await docRef.update({
+            'coins': FieldValue.increment(100),
+            'lastVipGiftDate': Timestamp.now(),
+          });
           return const Right(null);
         }
         return Left(AuthFailure('User data not found'));
@@ -698,12 +698,10 @@ class AuthRepositoryImpl implements AuthRepository {
           }
 
           final reward = 50 + (now.day % 5) * 10; // Varied reward
-          final updatedUser = userData.copyWith(
-            coins: userData.coins + reward,
-            lastDailyRewardDate: now,
-          );
-
-          await docRef.update(updatedUser.toMap());
+          await docRef.update({
+            'coins': FieldValue.increment(reward),
+            'lastDailyRewardDate': Timestamp.now(),
+          });
           return const Right(null);
         }
         return Left(AuthFailure('User data not found'));
@@ -997,9 +995,8 @@ class AuthRepositoryImpl implements AuthRepository {
       final user = _firebaseAuth.currentUser;
       if (user != null) {
         final uid = user.uid;
-        
-        // 1. Delete Firebase Auth user first (most likely to fail due to recent login requirement)
-        await user.delete();
+        // 1. Delete Firestore document first while user still has permissions
+        await _firestore.collection('users').doc(uid).delete();
 
         // 2. Delete Profile Picture from Storage (if it exists)
         try {
@@ -1008,8 +1005,8 @@ class AuthRepositoryImpl implements AuthRepository {
           debugPrint('No profile pic to delete or error: $e');
         }
 
-        // 3. Delete Firestore document
-        await _firestore.collection('users').doc(uid).delete();
+        // 3. Delete Firebase Auth user last (as this invalidates the token)
+        await user.delete();
         
         return const Right(null);
       }
@@ -1036,6 +1033,52 @@ class AuthRepositoryImpl implements AuthRepository {
       }
       return Left(AuthFailure('User not logged in'));
     } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> claimDailyChest(int amount) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user != null) {
+        final docRef = _firestore.collection('users').doc(user.uid);
+        debugPrint('AuthRepository: Atomic Daily Chest (Transaction) triggered for ${user.uid} (Amount: $amount)');
+        
+        return await _firestore.runTransaction((transaction) async {
+          transaction.update(docRef, {
+            'coins': FieldValue.increment(amount),
+            'lastDailyRewardDate': Timestamp.now(),
+          });
+          return const Right(null);
+        });
+      }
+      return Left(AuthFailure('User not logged in'));
+    } catch (e) {
+      debugPrint('AuthRepository: Daily Chest ERROR: $e');
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> claimKidsDailyReward(int amount) async {
+    try {
+      final user = _firebaseAuth.currentUser;
+      if (user != null) {
+        final docRef = _firestore.collection('users').doc(user.uid);
+        debugPrint('AuthRepository: Atomic Kids Reward (Transaction) triggered for ${user.uid}');
+        
+        return await _firestore.runTransaction((transaction) async {
+          transaction.update(docRef, {
+            'kidsCoins': FieldValue.increment(amount),
+            'lastKidsDailyRewardDate': Timestamp.now(),
+          });
+          return const Right(null);
+        });
+      }
+      return Left(AuthFailure('User not logged in'));
+    } catch (e) {
+      debugPrint('AuthRepository: Kids Reward ERROR: $e');
       return Left(ServerFailure(e.toString()));
     }
   }

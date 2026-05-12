@@ -56,4 +56,6 @@ abstract class AuthRepository {
   Future<Either<Failure, void>> deleteAccount();
   Future<Either<Failure, void>> awardKidsCoins(int amount);
   Future<Either<Failure, void>> claimDailyGift();
+  Future<Either<Failure, void>> claimDailyChest(int amount);
+  Future<Either<Failure, void>> claimKidsDailyReward(int amount);
 }

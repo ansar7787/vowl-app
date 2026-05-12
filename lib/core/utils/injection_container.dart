@@ -131,6 +131,9 @@ import 'package:vowl/features/auth/domain/usecases/buy_kids_accessory.dart';
 import 'package:vowl/features/auth/domain/usecases/equip_kids_accessory.dart';
 import 'package:vowl/features/auth/domain/usecases/delete_account.dart';
 import 'package:vowl/features/auth/domain/usecases/claim_daily_gift.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_daily_chest.dart';
+import 'package:vowl/features/auth/domain/usecases/claim_kids_daily_reward.dart';
+import 'package:vowl/features/auth/domain/usecases/award_kids_coins.dart';
 
 import 'package:vowl/features/kids_zone/domain/repositories/kids_repository.dart';
 import 'package:vowl/features/kids_zone/data/repositories/kids_repository_impl.dart';
@@ -335,6 +338,15 @@ Future<void> init() async {
   sl.registerLazySingleton<ClaimDailyGift>(
     () => ClaimDailyGift(sl<AuthRepository>()),
   );
+  sl.registerLazySingleton<ClaimDailyChest>(
+    () => ClaimDailyChest(sl<AuthRepository>()),
+  );
+  sl.registerLazySingleton<ClaimKidsDailyReward>(
+    () => ClaimKidsDailyReward(sl<AuthRepository>()),
+  );
+  sl.registerLazySingleton<AwardKidsCoins>(
+    () => AwardKidsCoins(sl<AuthRepository>()),
+  );
   sl.registerLazySingleton<GetKidsQuests>(() => GetKidsQuests(sl()));
   sl.registerLazySingleton<GetEliteMasteryQuests>(
     () => GetEliteMasteryQuests(sl<EliteMasteryRepository>()),
@@ -413,6 +425,7 @@ Future<void> init() async {
       reloadUser: sl<ReloadUser>(),
       deleteAccount: sl<DeleteAccount>(),
       forgotPassword: sl<ForgotPassword>(),
+      getCurrentUser: sl<GetCurrentUser>(),
     ),
   );
   sl.registerLazySingleton<EconomyBloc>(
@@ -422,6 +435,10 @@ Future<void> init() async {
       claimVipGift: sl<ClaimVipGift>(),
       claimDailyGift: sl<ClaimDailyGift>(),
       updateUser: sl<UpdateUser>(),
+      claimDailyChest: sl<ClaimDailyChest>(),
+      claimKidsDailyReward: sl<ClaimKidsDailyReward>(),
+      awardKidsCoins: sl<AwardKidsCoins>(),
+      useHint: sl<UseHint>(),
       authBloc: sl<AuthBloc>(),
     ),
   );

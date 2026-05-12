@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
-import 'package:go_router/go_router.dart';
+
 import 'package:image_picker/image_picker.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/utils/app_router.dart';
+
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 
@@ -622,8 +622,8 @@ class SettingsDialogs {
                           child: ElevatedButton(
                             onPressed: confirmController.text == 'DELETE' 
                               ? () {
+                                  Navigator.pop(context);
                                   context.read<AuthBloc>().add(const AuthDeleteAccountRequested());
-                                  context.go(AppRouter.loginRoute);
                                 }
                               : null,
                             style: ElevatedButton.styleFrom(

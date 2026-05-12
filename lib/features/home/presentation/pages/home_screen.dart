@@ -12,6 +12,8 @@ import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_reposi
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
+import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/home/presentation/widgets/bento_arena.dart';
@@ -38,46 +40,20 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int? _globalRank;
 
-  static bool _hasCheckedDailyChestThisSession = false;
+  bool _hasCheckedDailyChestThisSession = false;
 
   @override
   void initState() {
     super.initState();
     _fetchGlobalRank();
+    // Initial check for reward availability
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (context.read<AuthBloc>().state.status == AuthStatus.authenticated) {
+        context.read<EconomyBloc>().add(const EconomyCheckDailyRewardRequested());
+      }
+    });
   }
 
-  Future<void> _checkDailyChest() async {
-    if (!mounted) return;
-    
-    // Safety check to ensure we don't fire this twice if called rapidly
-    if (_hasCheckedDailyChestThisSession) return;
-    _hasCheckedDailyChestThisSession = true;
-
-    // Small delay to ensure AuthBloc has received the latest Firestore data
-    await Future.delayed(const Duration(seconds: 2));
-    if (!mounted) return;
-
-    final user = context.read<AuthBloc>().state.user;
-    if (user == null) return;
-
-    final lastReward = user.lastDailyRewardDate;
-    if (lastReward != null) {
-      final now = DateTime.now();
-      final isSameDay = now.year == lastReward.year &&
-          now.month == lastReward.month &&
-          now.day == lastReward.day;
-
-      if (isSameDay) return;
-    }
-
-    if (mounted) {
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (context) => const MysteryChestDialog(),
-      );
-    }
-  }
   Future<void> _fetchGlobalRank() async {
     try {
       final repo = di.sl<LeaderboardRepository>();
@@ -119,16 +95,42 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       backgroundColor: bgColor,
-      body: BlocListener<AuthBloc, AuthState>(
-        listenWhen: (previous, current) => 
-            previous.status != current.status && 
-            current.status == AuthStatus.authenticated,
-        listener: (context, state) {
-          if (!_hasCheckedDailyChestThisSession) {
-            _checkDailyChest();
-            _hasCheckedDailyChestThisSession = true;
-          }
-        },
+      body: MultiBlocListener(
+        listeners: [
+          BlocListener<AuthBloc, AuthState>(
+            listener: (context, state) {
+              if (state.status == AuthStatus.authenticated) {
+                // Trigger a check whenever user becomes authenticated
+                context.read<EconomyBloc>().add(const EconomyCheckDailyRewardRequested());
+              } else if (state.status == AuthStatus.unauthenticated) {
+                // Reset global blocs that persist outside the widget tree
+                context.read<EconomyBloc>().add(const EconomyResetRequested());
+                context.read<ProgressionBloc>().add(const ProgressionResetRequested());
+                
+                // Reset local session flags
+                setState(() {
+                  _hasCheckedDailyChestThisSession = false;
+                  _globalRank = null;
+                });
+              }
+            },
+          ),
+          BlocListener<EconomyBloc, EconomyState>(
+            listenWhen: (previous, current) =>
+                previous.isDailyRewardAvailable != current.isDailyRewardAvailable &&
+                current.isDailyRewardAvailable,
+            listener: (context, state) {
+              if (!_hasCheckedDailyChestThisSession) {
+                _hasCheckedDailyChestThisSession = true;
+                showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (context) => const MysteryChestDialog(),
+                );
+              }
+            },
+          ),
+        ],
         child: BlocBuilder<AuthBloc, AuthState>(
           builder: (context, state) {
             final user = state.user;
@@ -140,7 +142,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 RefreshIndicator(
                   onRefresh: () async {
                     context.read<AuthBloc>().add(AuthReloadUser());
-                    await Future.delayed(const Duration(milliseconds: 400));
+                    // Allow checking for chest again on manual refresh
+                    _hasCheckedDailyChestThisSession = false;
+                    // Trigger BLoC re-check
+                    context.read<EconomyBloc>().add(const EconomyCheckDailyRewardRequested());
+                    await Future.delayed(const Duration(milliseconds: 600));
                   },
                 color: const Color(0xFF2563EB),
                 displacement: 40.h,

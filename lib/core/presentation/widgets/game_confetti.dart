@@ -62,12 +62,12 @@ class _GameConfettiState extends State<GameConfetti> {
           alignment: Alignment.topLeft,
           child: ConfettiWidget(
             confettiController: _controller,
-            blastDirection: 0, // Shoot right
-            emissionFrequency: 0.05,
-            numberOfParticles: 20,
-            maxBlastForce: 40,
-            minBlastForce: 20,
-            gravity: 0.2,
+            blastDirection: pi / 4, // Inward and down
+            emissionFrequency: 0.1,
+            numberOfParticles: 15,
+            maxBlastForce: 35,
+            minBlastForce: 15,
+            gravity: 0.3,
             createParticlePath: _createVariedPath,
             colors: _confettiColors,
           ),
@@ -77,27 +77,28 @@ class _GameConfettiState extends State<GameConfetti> {
           alignment: Alignment.topRight,
           child: ConfettiWidget(
             confettiController: _controller,
-            blastDirection: pi, // Shoot left
-            emissionFrequency: 0.05,
-            numberOfParticles: 20,
-            maxBlastForce: 40,
-            minBlastForce: 20,
-            gravity: 0.2,
+            blastDirection: 3 * pi / 4, // Inward and down
+            emissionFrequency: 0.1,
+            numberOfParticles: 15,
+            maxBlastForce: 35,
+            minBlastForce: 15,
+            gravity: 0.3,
             createParticlePath: _createVariedPath,
             colors: _confettiColors,
           ),
         ),
         // Center Burst
         Align(
-          alignment: const Alignment(0, -0.8),
+          alignment: Alignment.topCenter,
           child: ConfettiWidget(
             confettiController: _controller,
+            blastDirection: pi / 2, // Straight down
             blastDirectionality: BlastDirectionality.explosive,
-            emissionFrequency: 0.02,
-            numberOfParticles: 30,
-            gravity: 0.1,
-            maxBlastForce: 80,
-            minBlastForce: 40,
+            emissionFrequency: 0.05,
+            numberOfParticles: 25,
+            gravity: 0.2,
+            maxBlastForce: 60,
+            minBlastForce: 30,
             createParticlePath: _createVariedPath,
             colors: _confettiColors,
           ),

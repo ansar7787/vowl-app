@@ -1,487 +1,547 @@
 {
-    "gameType":  "topicVocab",
-    "batchIndex":  11,
-    "levels":  "101-110",
-    "quests":  [
-                   {
-                       "id":  "VOC_TOPICVOCAB_L101_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id300",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "ANALYZE",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L101_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id301",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "CONCEPT"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L101_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id302",
-                       "options":  [
-                                       "DATA",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "DATA"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L102_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id303",
-                       "options":  [
-                                       "EVIDENCE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L102_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id304",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "FACTOR"
-                                   ],
-                       "correctAnswer":  "FACTOR"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L102_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id305",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "GLOBAL",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L103_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id306",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "HYPOTHESIS"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L103_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id307",
-                       "options":  [
-                                       "INTERPRET",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L103_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id308",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "JUSTICE"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L104_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id309",
-                       "options":  [
-                                       "KNOWLEDGE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L104_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "LOGIC_id310",
-                       "options":  [
-                                       "LOGIC",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "LOGIC"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L104_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "METHOD_id311",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "METHOD"
-                                   ],
-                       "correctAnswer":  "METHOD"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L105_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "NETWORK_id312",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "NETWORK"
-                                   ],
-                       "correctAnswer":  "NETWORK"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L105_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "OBJECTIVE_id313",
-                       "options":  [
-                                       "OBJECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L105_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "PERSPECTIVE_id314",
-                       "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "PERSPECTIVE"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L106_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "QUALITY_id315",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "QUALITY"
-                                   ],
-                       "correctAnswer":  "QUALITY"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L106_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "RESEARCH_id316",
-                       "options":  [
-                                       "RESEARCH",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L106_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "SOURCE_id317",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "SOURCE"
-                                   ],
-                       "correctAnswer":  "SOURCE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L107_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "THEORY_id318",
-                       "options":  [
-                                       "DISTRACT_A",
-                                       "THEORY",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "THEORY"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L107_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "UNIQUE_id319",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "UNIQUE"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L107_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id320",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "ANALYZE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L108_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id321",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "CONCEPT"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L108_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id322",
-                       "options":  [
-                                       "DATA",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "DATA"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L108_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id323",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "EVIDENCE"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L109_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id324",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "FACTOR"
-                                   ],
-                       "correctAnswer":  "FACTOR"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L109_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id325",
-                       "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "GLOBAL"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L109_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id326",
-                       "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "HYPOTHESIS",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L110_Q1",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id327",
-                       "options":  [
-                                       "DISTRACT_B",
-                                       "INTERPRET",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L110_Q2",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id328",
-                       "options":  [
-                                       "JUSTICE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
-                   },
-                   {
-                       "id":  "VOC_TOPICVOCAB_L110_Q3",
-                       "interactionType":  "Category Climb",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id329",
-                       "options":  [
-                                       "KNOWLEDGE",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
-                   }
-               ]
+    "gameType": "topicVocab",
+    "batchIndex": 11,
+    "levels": "101-110",
+    "quests": [
+        {
+            "id": "VOC_TOPICVOCAB_L101_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Calm",
+                "Tense"
+            ],
+            "hint": "Sort words into Calm or Tense based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Calm or Tense.",
+            "options": [
+                "Cool",
+                "Alert",
+                "Stiff",
+                "Still",
+                "Sharp"
+            ],
+            "correctAnswer": "Calm:Cool, Tense:Alert, Tense:Stiff, Calm:Still, Tense:Sharp"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L101_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Calm",
+                "Tense"
+            ],
+            "hint": "Sort words into Calm or Tense based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Calm or Tense.",
+            "options": [
+                "Rest",
+                "Stiff",
+                "Quiet",
+                "Rigid",
+                "Lull"
+            ],
+            "correctAnswer": "Calm:Rest, Tense:Stiff, Calm:Quiet, Tense:Rigid, Calm:Lull"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L101_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Calm",
+                "Tense"
+            ],
+            "hint": "Sort words into Calm or Tense based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Calm or Tense.",
+            "options": [
+                "Stiff",
+                "Fast",
+                "Cool",
+                "Alert",
+                "Quiet"
+            ],
+            "correctAnswer": "Tense:Stiff, Tense:Fast, Calm:Cool, Tense:Alert, Calm:Quiet"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L102_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Excited",
+                "Bored"
+            ],
+            "hint": "Sort words into Excited or Bored based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Excited or Bored.",
+            "options": [
+                "Wild",
+                "Vague",
+                "Loud",
+                "Slow",
+                "Idle"
+            ],
+            "correctAnswer": "Excited:Wild, Bored:Vague, Excited:Loud, Bored:Slow, Bored:Idle"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L102_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Excited",
+                "Bored"
+            ],
+            "hint": "Sort words into Excited or Bored based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Excited or Bored.",
+            "options": [
+                "Idle",
+                "Stale",
+                "Agile",
+                "Bold",
+                "Hot"
+            ],
+            "correctAnswer": "Bored:Idle, Bored:Stale, Excited:Agile, Excited:Bold, Excited:Hot"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L102_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Excited",
+                "Bored"
+            ],
+            "hint": "Sort words into Excited or Bored based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Excited or Bored.",
+            "options": [
+                "Stale",
+                "High",
+                "Slow",
+                "Loud",
+                "Dull"
+            ],
+            "correctAnswer": "Bored:Stale, Excited:High, Bored:Slow, Excited:Loud, Bored:Dull"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L103_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Happy",
+                "Grief"
+            ],
+            "hint": "Sort words into Happy or Grief based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Happy or Grief.",
+            "options": [
+                "Deep",
+                "Sad",
+                "Dark",
+                "Warm",
+                "Glee"
+            ],
+            "correctAnswer": "Grief:Deep, Grief:Sad, Grief:Dark, Happy:Warm, Happy:Glee"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L103_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Happy",
+                "Grief"
+            ],
+            "hint": "Sort words into Happy or Grief based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Happy or Grief.",
+            "options": [
+                "Tears",
+                "Joyful",
+                "Glad",
+                "Sorrow",
+                "Sweet"
+            ],
+            "correctAnswer": "Grief:Tears, Happy:Joyful, Happy:Glad, Grief:Sorrow, Happy:Sweet"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L103_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Happy",
+                "Grief"
+            ],
+            "hint": "Sort words into Happy or Grief based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Happy or Grief.",
+            "options": [
+                "Sweet",
+                "Sorrow",
+                "Pain",
+                "Beam",
+                "Tears"
+            ],
+            "correctAnswer": "Happy:Sweet, Grief:Sorrow, Grief:Pain, Happy:Beam, Grief:Tears"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L104_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Laughter",
+                "Tears"
+            ],
+            "hint": "Sort words into Laughter or Tears based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Laughter or Tears.",
+            "options": [
+                "Deep",
+                "Humor",
+                "Low",
+                "Giggle",
+                "Rain"
+            ],
+            "correctAnswer": "Tears:Deep, Laughter:Humor, Tears:Low, Laughter:Giggle, Tears:Rain"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L104_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Laughter",
+                "Tears"
+            ],
+            "hint": "Sort words into Laughter or Tears based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Laughter or Tears.",
+            "options": [
+                "Sob",
+                "Humor",
+                "Light",
+                "Deep",
+                "Funny"
+            ],
+            "correctAnswer": "Tears:Sob, Laughter:Humor, Laughter:Light, Tears:Deep, Laughter:Funny"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L104_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Laughter",
+                "Tears"
+            ],
+            "hint": "Sort words into Laughter or Tears based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Laughter or Tears.",
+            "options": [
+                "Wail",
+                "Funny",
+                "Grief",
+                "Crying",
+                "Light"
+            ],
+            "correctAnswer": "Tears:Wail, Laughter:Funny, Tears:Grief, Tears:Crying, Laughter:Light"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L105_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Harmony",
+                "Discord"
+            ],
+            "hint": "Sort words into Harmony or Discord based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Harmony or Discord.",
+            "options": [
+                "Shock",
+                "Jar",
+                "Peace",
+                "Flow",
+                "Storm"
+            ],
+            "correctAnswer": "Discord:Shock, Discord:Jar, Harmony:Peace, Harmony:Flow, Discord:Storm"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L105_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Harmony",
+                "Discord"
+            ],
+            "hint": "Sort words into Harmony or Discord based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Harmony or Discord.",
+            "options": [
+                "Flow",
+                "Chime",
+                "Mad",
+                "Clash",
+                "Soft"
+            ],
+            "correctAnswer": "Harmony:Flow, Harmony:Chime, Discord:Mad, Discord:Clash, Harmony:Soft"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L105_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Harmony",
+                "Discord"
+            ],
+            "hint": "Sort words into Harmony or Discord based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Harmony or Discord.",
+            "options": [
+                "Shock",
+                "Clash",
+                "Unity",
+                "Accord",
+                "Storm"
+            ],
+            "correctAnswer": "Discord:Shock, Discord:Clash, Harmony:Unity, Harmony:Accord, Discord:Storm"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L106_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Symmetry",
+                "Chaos"
+            ],
+            "hint": "Sort words into Symmetry or Chaos based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Symmetry or Chaos.",
+            "options": [
+                "Even",
+                "Wild",
+                "Mad",
+                "Mirror",
+                "Mix"
+            ],
+            "correctAnswer": "Symmetry:Even, Chaos:Wild, Chaos:Mad, Symmetry:Mirror, Chaos:Mix"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L106_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Symmetry",
+                "Chaos"
+            ],
+            "hint": "Sort words into Symmetry or Chaos based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Symmetry or Chaos.",
+            "options": [
+                "Prime",
+                "Blur",
+                "Mad",
+                "Proper",
+                "Neat"
+            ],
+            "correctAnswer": "Symmetry:Prime, Chaos:Blur, Chaos:Mad, Symmetry:Proper, Symmetry:Neat"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L106_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Symmetry",
+                "Chaos"
+            ],
+            "hint": "Sort words into Symmetry or Chaos based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Symmetry or Chaos.",
+            "options": [
+                "Riot",
+                "Blur",
+                "Equal",
+                "Neat",
+                "Wild"
+            ],
+            "correctAnswer": "Chaos:Riot, Chaos:Blur, Symmetry:Equal, Symmetry:Neat, Chaos:Wild"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L107_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Truth",
+                "Fiction"
+            ],
+            "hint": "Sort words into Truth or Fiction based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Truth or Fiction.",
+            "options": [
+                "Story",
+                "Magic",
+                "Dream",
+                "Logic",
+                "Pure"
+            ],
+            "correctAnswer": "Fiction:Story, Fiction:Magic, Fiction:Dream, Truth:Logic, Truth:Pure"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L107_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Truth",
+                "Fiction"
+            ],
+            "hint": "Sort words into Truth or Fiction based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Truth or Fiction.",
+            "options": [
+                "Myth",
+                "Right",
+                "Story",
+                "Light",
+                "Logic"
+            ],
+            "correctAnswer": "Fiction:Myth, Truth:Right, Fiction:Story, Truth:Light, Truth:Logic"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L107_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Truth",
+                "Fiction"
+            ],
+            "hint": "Sort words into Truth or Fiction based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Truth or Fiction.",
+            "options": [
+                "Void",
+                "Right",
+                "Dream",
+                "Fable",
+                "Logic"
+            ],
+            "correctAnswer": "Fiction:Void, Truth:Right, Fiction:Dream, Fiction:Fable, Truth:Logic"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L108_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Fact",
+                "Myth"
+            ],
+            "hint": "Sort words into Fact or Myth based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Fact or Myth.",
+            "options": [
+                "Solid",
+                "Old",
+                "Base",
+                "Fake",
+                "Ancient"
+            ],
+            "correctAnswer": "Fact:Solid, Myth:Old, Fact:Base, Myth:Fake, Myth:Ancient"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L108_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Fact",
+                "Myth"
+            ],
+            "hint": "Sort words into Fact or Myth based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Fact or Myth.",
+            "options": [
+                "Old",
+                "Check",
+                "Data",
+                "Ancient",
+                "Proof"
+            ],
+            "correctAnswer": "Myth:Old, Fact:Check, Fact:Data, Myth:Ancient, Fact:Proof"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L108_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Fact",
+                "Myth"
+            ],
+            "hint": "Sort words into Fact or Myth based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Fact or Myth.",
+            "options": [
+                "Old",
+                "Fixed",
+                "Ghost",
+                "Base",
+                "Scroll"
+            ],
+            "correctAnswer": "Myth:Old, Fact:Fixed, Myth:Ghost, Fact:Base, Myth:Scroll"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L109_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Reality",
+                "Dream"
+            ],
+            "hint": "Sort words into Reality or Dream based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Reality or Dream.",
+            "options": [
+                "Vague",
+                "Blur",
+                "Soft",
+                "Fact",
+                "World"
+            ],
+            "correctAnswer": "Dream:Vague, Dream:Blur, Dream:Soft, Reality:Fact, Reality:World"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L109_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Reality",
+                "Dream"
+            ],
+            "hint": "Sort words into Reality or Dream based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Reality or Dream.",
+            "options": [
+                "Sleep",
+                "Seen",
+                "Soft",
+                "True",
+                "Direct"
+            ],
+            "correctAnswer": "Dream:Sleep, Reality:Seen, Dream:Soft, Reality:True, Reality:Direct"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L109_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Reality",
+                "Dream"
+            ],
+            "hint": "Sort words into Reality or Dream based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Reality or Dream.",
+            "options": [
+                "Idea",
+                "World",
+                "Cloud",
+                "Seen",
+                "Blur"
+            ],
+            "correctAnswer": "Dream:Idea, Reality:World, Dream:Cloud, Reality:Seen, Dream:Blur"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L110_Q1",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Energy",
+                "Matter"
+            ],
+            "hint": "Sort words into Energy or Matter based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Energy or Matter.",
+            "options": [
+                "Live",
+                "Rock",
+                "Lead",
+                "Pulse",
+                "Clay"
+            ],
+            "correctAnswer": "Energy:Live, Matter:Rock, Matter:Lead, Energy:Pulse, Matter:Clay"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L110_Q2",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Energy",
+                "Matter"
+            ],
+            "hint": "Sort words into Energy or Matter based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Energy or Matter.",
+            "options": [
+                "Heat",
+                "Pulse",
+                "Body",
+                "Spark",
+                "Lead"
+            ],
+            "correctAnswer": "Energy:Heat, Energy:Pulse, Matter:Body, Energy:Spark, Matter:Lead"
+        },
+        {
+            "id": "VOC_TOPICVOCAB_L110_Q3",
+            "interactionType": "Category Climb",
+            "topicBuckets": [
+                "Energy",
+                "Matter"
+            ],
+            "hint": "Sort words into Energy or Matter based on their meaning.",
+            "explanation": "These words are categorized by their thematic relationship to Energy or Matter.",
+            "options": [
+                "Live",
+                "Force",
+                "Rock",
+                "Solid",
+                "Body"
+            ],
+            "correctAnswer": "Energy:Live, Energy:Force, Matter:Rock, Matter:Solid, Matter:Body"
+        }
+    ]
 }

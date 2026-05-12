@@ -7,6 +7,7 @@ import 'package:vowl/features/auth/domain/usecases/log_out.dart';
 import 'package:vowl/features/auth/domain/usecases/reload_user.dart';
 import 'package:vowl/features/auth/domain/usecases/delete_account.dart';
 import 'package:vowl/features/auth/domain/usecases/forgot_password.dart';
+import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 
 // Events
@@ -29,6 +30,10 @@ class AuthLogoutRequested extends AuthEvent {
 
 class AuthReloadUser extends AuthEvent {
   const AuthReloadUser();
+}
+
+class AuthRefreshUser extends AuthEvent {
+  const AuthRefreshUser();
 }
 
 class AuthDeleteAccountRequested extends AuthEvent {
@@ -90,6 +95,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final ReloadUser _reloadUser;
   final DeleteAccount _deleteAccount;
   final ForgotPassword _forgotPassword;
+  final GetCurrentUser _getCurrentUser;
 
   StreamSubscription<UserEntity?>? _userSubscription;
 
@@ -99,15 +105,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     required ReloadUser reloadUser,
     required DeleteAccount deleteAccount,
     required ForgotPassword forgotPassword,
+    required GetCurrentUser getCurrentUser,
   })  : _getUserStream = getUserStream,
         _logOut = logOut,
         _reloadUser = reloadUser,
         _deleteAccount = deleteAccount,
         _forgotPassword = forgotPassword,
+        _getCurrentUser = getCurrentUser,
         super(const AuthState.unknown()) {
     on<AuthUserChanged>(_onUserChanged);
     on<AuthLogoutRequested>(_onLogoutRequested);
     on<AuthReloadUser>(_onReloadUser);
+    on<AuthRefreshUser>(_onRefreshUser);
     on<AuthDeleteAccountRequested>(_onDeleteAccountRequested);
     on<AuthPasswordResetRequested>(_onPasswordResetRequested);
 
@@ -134,10 +143,32 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     await _reloadUser(NoParams());
   }
 
-  Future<void> _onDeleteAccountRequested(AuthDeleteAccountRequested event, Emitter<AuthState> emit) async {
-    final result = await _deleteAccount(NoParams());
+  Future<void> _onRefreshUser(AuthRefreshUser event, Emitter<AuthState> emit) async {
+    final result = await _getCurrentUser(NoParams());
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
+      (user) {
+        if (user != null) {
+          emit(AuthState.authenticated(user));
+        }
+      },
+    );
+  }
+
+  Future<void> _onDeleteAccountRequested(AuthDeleteAccountRequested event, Emitter<AuthState> emit) async {
+    emit(state.copyWith(status: AuthStatus.loggingOut));
+    final result = await _deleteAccount(NoParams());
+    result.fold(
+      (failure) {
+        String message = failure.message;
+        if (message == 'requires-recent-login') {
+          message = 'SECURITY: Please log out and log back in before deleting your account.';
+        }
+        emit(state.copyWith(
+          status: AuthStatus.authenticated,
+          message: message,
+        ));
+      },
       (_) => add(const AuthLogoutRequested()),
     );
   }

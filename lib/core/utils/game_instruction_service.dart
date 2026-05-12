@@ -176,12 +176,16 @@ class GameInstructionService {
     }
     if (type == GameSubtype.wordFormation) {
       return const GameBriefing(
-        title: "Word Synthesis",
+        title: "Morpheme Mixer",
         icon: Icons.science_rounded,
-        objective: "SYNTHESIZE & EVOLVE: Transform root words into new forms by adding the correct suffixes.",
-        rules: ["Select the suffix", "Watch the root changes", "3 Hearts per mission"],
-        actionText: "Start Synthesis",
-        tip: "PRO TIP: Knowing one root allows you to unlock 4-5 words instantly by changing the suffix. 🧪",
+        objective: "SYNTHESIZE & FORM: Slide the correct suffix into the core to transform the word.",
+        rules: [
+          "Analyze the root word",
+          "Tap or slide a suffix",
+          "Form the target word"
+        ],
+        actionText: "Ready to Mix?",
+        tip: "PRO TIP: Suffixes instantly change words from verbs to nouns or adjectives! 🧪🚀",
       );
     }
     if (type == GameSubtype.synonymSearch) {

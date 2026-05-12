@@ -78,6 +78,10 @@ class ProgressionClearMessageRequested extends ProgressionEvent {
   const ProgressionClearMessageRequested();
 }
 
+class ProgressionResetRequested extends ProgressionEvent {
+  const ProgressionResetRequested();
+}
+
 // --- STATE ---
 class ProgressionState extends Equatable {
   final String? message;
@@ -144,9 +148,11 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     on<ProgressionAddXpRequested>(_onAddXp);
     on<ProgressionPurchasePermanentXPBoostRequested>(_onPurchasePermanentXPBoost);
     on<ProgressionClearMessageRequested>((event, emit) => emit(state.copyWith(message: null, lastPurchaseType: null, lastPurchaseSuccess: null)));
+    on<ProgressionResetRequested>(_onReset);
   }
 
   Future<void> _onCheckDailyStreak(ProgressionCheckDailyStreakRequested event, Emitter<ProgressionState> emit) async {
+    if (authBloc.state.status != AuthStatus.authenticated) return;
     final user = authBloc.state.user;
     if (user == null || _lastProcessedUser == user) return;
     _lastProcessedUser = user;
@@ -219,6 +225,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   }
 
   Future<void> _onRepairStreak(ProgressionRepairStreakRequested event, Emitter<ProgressionState> emit) async {
+    if (authBloc.state.status != AuthStatus.authenticated) return;
     final result = await repairStreak(event.cost);
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
@@ -227,6 +234,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   }
 
   Future<void> _onRepairStreakWithAd(ProgressionRepairStreakWithAdRequested event, Emitter<ProgressionState> emit) async {
+    if (authBloc.state.status != AuthStatus.authenticated) return;
     final user = authBloc.state.user;
     if (user == null) return;
     
@@ -241,6 +249,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   }
 
   Future<void> _onPurchaseStreakFreeze(ProgressionPurchaseStreakFreezeRequested event, Emitter<ProgressionState> emit) async {
+    if (authBloc.state.status != AuthStatus.authenticated) return;
     final result = await purchaseStreakFreeze(event.cost);
     result.fold(
       (failure) => emit(state.copyWith(
@@ -257,6 +266,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   }
 
   Future<void> _onActivateDoubleXP(ProgressionActivateDoubleXPRequested event, Emitter<ProgressionState> emit) async {
+    if (authBloc.state.status != AuthStatus.authenticated) return;
     final result = await activateDoubleXP(event.cost);
     result.fold(
       (failure) => emit(state.copyWith(
@@ -273,6 +283,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   }
 
   Future<void> _onPurchasePermanentXPBoost(ProgressionPurchasePermanentXPBoostRequested event, Emitter<ProgressionState> emit) async {
+    if (authBloc.state.status != AuthStatus.authenticated) return;
     final user = authBloc.state.user;
     if (user == null) return;
     
@@ -306,6 +317,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   }
 
   Future<void> _onClaimStreakMilestone(ProgressionClaimStreakMilestoneRequested event, Emitter<ProgressionState> emit) async {
+    if (authBloc.state.status != AuthStatus.authenticated) return;
     final user = authBloc.state.user;
     if (user == null) return;
     
@@ -322,6 +334,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   }
 
   Future<void> _onClaimLevelMilestone(ProgressionClaimLevelMilestoneRequested event, Emitter<ProgressionState> emit) async {
+    if (authBloc.state.status != AuthStatus.authenticated) return;
     final user = authBloc.state.user;
     if (user == null) return;
     
@@ -337,6 +350,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
   }
 
   Future<void> _onAddXp(ProgressionAddXpRequested event, Emitter<ProgressionState> emit) async {
+    if (authBloc.state.status != AuthStatus.authenticated) return;
     final user = authBloc.state.user;
     if (user == null) return;
 
@@ -346,5 +360,10 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
       (failure) => emit(state.copyWith(message: failure.message)),
       (_) => null,
     );
+  }
+
+  void _onReset(ProgressionResetRequested event, Emitter<ProgressionState> emit) {
+    _lastProcessedUser = null;
+    emit(const ProgressionState());
   }
 }

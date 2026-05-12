@@ -58,42 +58,42 @@ class VictoryFlightOverlay extends StatelessWidget {
               .moveX(
                 begin: 0,
                 end: 1.2.sw + 200,
-                duration: 2200.ms,
+                duration: 1200.ms,
                 curve: Curves.easeInCubic,
               )
               // Vertical Arc
               .moveY(
                 begin: 0,
                 end: -150.h,
-                duration: 1100.ms,
+                duration: 600.ms,
                 curve: Curves.easeOutQuad,
               )
               .then()
               .moveY(
                 begin: 0,
                 end: 200.h,
-                duration: 1100.ms,
+                duration: 600.ms,
                 curve: Curves.easeInQuad,
               )
               // Dynamic Rotation (Leaning into flight)
               .rotate(
                 begin: 0.1,
                 end: 0.4,
-                duration: 2200.ms,
+                duration: 1200.ms,
                 curve: Curves.easeInOut,
               )
               // Zoom Effect (Coming closer to camera)
               .scale(
                 begin: const Offset(0.8, 0.8),
                 end: const Offset(1.2, 1.2),
-                duration: 1100.ms,
+                duration: 600.ms,
                 curve: Curves.easeOutBack,
               )
               .then()
               .scale(
                 begin: const Offset(1, 1),
                 end: const Offset(0.4, 0.4),
-                duration: 1100.ms,
+                duration: 600.ms,
                 curve: Curves.easeInBack,
               ),
             ),
@@ -109,8 +109,8 @@ class VictoryFlightOverlay extends StatelessWidget {
 
   Widget _buildSparkle(int index) {
     final random = Random();
-    final delay = (index * 150).ms;
-    final duration = 2000.ms;
+    final delay = (index * 100).ms;
+    final duration = 1000.ms;
 
     return Positioned(
       left: -50,
@@ -127,10 +127,10 @@ class VictoryFlightOverlay extends StatelessWidget {
         curve: Curves.easeInOutBack,
         delay: delay,
       )
-      .scale(begin: const Offset(0, 0), end: const Offset(1.2, 1.2), duration: 400.ms, delay: delay)
+      .scale(begin: const Offset(0, 0), end: const Offset(1.2, 1.2), duration: 200.ms, delay: delay)
       .then()
-      .scale(begin: const Offset(1, 1), end: const Offset(0, 0), duration: 800.ms, delay: 1000.ms)
-      .fadeOut(delay: 1500.ms),
+      .scale(begin: const Offset(1, 1), end: const Offset(0, 0), duration: 400.ms, delay: 500.ms)
+      .fadeOut(delay: 750.ms),
     );
   }
 }

@@ -27,7 +27,14 @@ class TopicContainmentBin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isHinted = isHintActive && correctAnswer.contains("$label:$currentWord");
+    // Robust check: trim and lowercase to ensure match regardless of JSON formatting quirks
+    final cleanWord = currentWord.trim().toLowerCase();
+    final cleanLabel = label.trim().toLowerCase();
+    final target1 = "$cleanLabel:$cleanWord";
+    final target2 = "$cleanLabel: $cleanWord";
+    final lowerAnswer = correctAnswer.toLowerCase();
+    
+    bool isHinted = isHintActive && (lowerAnswer.contains(target1) || lowerAnswer.contains(target2));
 
     // Contextual Icons for Categories
     IconData bucketIcon = Icons.settings_input_component_rounded;

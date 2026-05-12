@@ -476,8 +476,7 @@ class AppRouter {
     refreshListenable: _StreamListenable(di.sl<AuthBloc>().stream),
     redirect: (context, state) {
       final authState = di.sl<AuthBloc>().state;
-      final isAuthenticated = authState.status == AuthStatus.authenticated || 
-                             authState.status == AuthStatus.loggingOut;
+      final isAuthenticated = authState.status == AuthStatus.authenticated;
       final isVerified = authState.user?.isEmailVerified ?? false;
 
       final isLoginRoute = state.uri.path == loginRoute;

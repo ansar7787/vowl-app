@@ -158,7 +158,7 @@ class UserModel extends UserEntity {
           ? List<String>.from(map['badges'])
           : const [],
       streakFreezes: (map['streakFreezes'] as num?)?.toInt() ?? 0,
-      hintCount: (map['hintCount'] as num?)?.toInt() ?? 3,
+      hintCount: (map['hintCount'] as num?)?.toInt() ?? 0,
       hintPacks: (map['hintPacks'] as num?)?.toInt() ?? 0,
       doubleXP: (map['doubleXP'] as num?)?.toInt() ?? 0,
       doubleXPExpiry: map['doubleXPExpiry'] != null
