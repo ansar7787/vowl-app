@@ -58,18 +58,22 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     final options = quest.options ?? [];
     int? dockedIndex;
     
-    // Check collision with terminals using the same responsive logic as build
+    // Check collision with terminals - INCREASED RADIUS (90.r) for better touch feedback
     for (int i = 0; i < options.length; i++) {
       final terminalPos = _getTerminalPosition(i, options.length, _lastConstraints!);
       final roverPos = Offset.zero + _dragOffset; 
       
-      if ((roverPos - terminalPos).distance < 60.r) {
+      if ((roverPos - terminalPos).distance < 90.r) {
         dockedIndex = i;
         break;
       }
     }
 
     if (dockedIndex != null) {
+      // Visual Snap to terminal
+      setState(() {
+        _dragOffset = _getTerminalPosition(dockedIndex!, options.length, _lastConstraints!);
+      });
       _submitAffix(options[dockedIndex], quest);
     } else {
       setState(() {
@@ -81,16 +85,16 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
 
   void _submitAffix(String option, VocabularyQuest quest) {
     final correctWord = quest.correctAnswer?.toLowerCase() ?? "";
-    final root = quest.rootWord?.toLowerCase() ?? "";
     final cleanOption = option.replaceAll('-', '').trim().toLowerCase();
     
     bool isCorrect = false;
-    if (option.endsWith('-')) { // Prefix
-      isCorrect = (cleanOption + root) == correctWord;
-    } else if (option.startsWith('-')) { // Suffix
-      isCorrect = (root + cleanOption) == correctWord;
+    // ROBUST CHECK: Handles spelling changes (like Create -> Creation)
+    if (option.endsWith('-')) { // Prefix (e.g., UN-)
+      isCorrect = correctWord.startsWith(cleanOption);
+    } else if (option.startsWith('-')) { // Suffix (e.g., -NESS)
+      isCorrect = correctWord.endsWith(cleanOption);
     } else {
-      isCorrect = correctWord.contains(cleanOption) && correctWord.contains(root);
+      isCorrect = correctWord.contains(cleanOption);
     }
 
     if (isCorrect) {
