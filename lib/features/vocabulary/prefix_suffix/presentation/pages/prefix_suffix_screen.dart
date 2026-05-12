@@ -157,7 +157,6 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
             // Find correct terminal
             final options = quest?.options ?? [];
             final correct = quest?.correctAnswer?.toLowerCase() ?? "";
-            final root = quest?.rootWord?.toLowerCase() ?? "";
             
             for (int i = 0; i < options.length; i++) {
               final opt = options[i].replaceAll('-', '').trim().toLowerCase();
@@ -182,7 +181,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                 ...List.generate(quest.options?.length ?? 0, (i) => _buildDockingTerminal(i, quest.options![i], theme.primaryColor, isDark, quest.options!.length)),
 
                 // The Root Rover
-                _buildRootRover(quest.rootWord ?? "???", theme.primaryColor, isDark),
+                _buildRootRover(quest, theme.primaryColor, isDark),
               ],
             ),
           ),
@@ -234,7 +233,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
           border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               text.toUpperCase(),
@@ -249,10 +248,10 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     );
   }
 
-  Widget _buildRootRover(String root, Color color, bool isDark) {
+  Widget _buildRootRover(VocabularyQuest quest, Color color, bool isDark) {
     return GestureDetector(
       onPanUpdate: _onRoverDrag,
-      onPanEnd: (_) => _onRoverRelease(_lastQuest!),
+      onPanEnd: (_) => _onRoverRelease(quest),
       child: Transform.translate(
         offset: _dragOffset,
         child: AnimatedScale(
@@ -281,7 +280,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                 Icon(Icons.rocket_launch_rounded, color: color, size: 24.r),
                 SizedBox(height: 12.h),
                 Text(
-                  root.toUpperCase(),
+                  (quest.rootWord ?? "???").toUpperCase(),
                   style: GoogleFonts.fredoka(fontSize: 22.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : Colors.black87, letterSpacing: 1.5),
                 ),
               ],
@@ -293,4 +292,5 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
      .shake(duration: 2.seconds, hz: 0.5);
   }
 }
+
 
