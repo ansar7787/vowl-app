@@ -155,7 +155,28 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          onHint: () {},
+          onHint: () {
+            // Find correct suffix index
+            final correct = quest?.correctAnswer ?? "";
+            final options = quest?.options ?? [];
+            int? correctIdx;
+            for (int i = 0; i < options.length; i++) {
+              final cleanS = options[i].replaceAll('-', '').trim().toLowerCase();
+              if (correct.toLowerCase().endsWith(cleanS) || correct.toLowerCase().contains(cleanS)) {
+                correctIdx = i;
+                break;
+              }
+            }
+            if (correctIdx != null) {
+              setState(() => _hoveringSuffixIndex = correctIdx);
+              // Auto-reset after a short delay if they don't drag
+              Future.delayed(2.seconds, () {
+                if (mounted && !_isAnswered) {
+                  setState(() => _hoveringSuffixIndex = null);
+                }
+              });
+            }
+          },
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

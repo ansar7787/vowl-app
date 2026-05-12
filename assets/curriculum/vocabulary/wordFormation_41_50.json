@@ -1,487 +1,427 @@
-{
-    "gameType":  "wordFormation",
-    "batchIndex":  5,
+﻿{
     "levels":  "41-50",
     "quests":  [
                    {
                        "id":  "VOC_WORDFORMATION_L41_Q1",
+                       "hint":  "Form a verb for arranging.",
+                       "explanation":  "ORGAN + IZE = ORGANIZE.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "ANALYZE",
+                       "correctAnswer":  "ORGANIZE",
+                       "rootWord":  "ORGAN",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "ANALYZE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
+                                       "-IC",
+                                       "-OUS",
+                                       "-LY",
+                                       "-IZE"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L41_Q2",
+                       "hint":  "Form an adjective for something great.",
+                       "explanation":  "WONDER + FUL = WONDERFUL.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "CONCEPT",
+                       "correctAnswer":  "WONDERFUL",
+                       "rootWord":  "WONDER",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "CONCEPT",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
+                                       "-AL",
+                                       "-FUL",
+                                       "-IST",
+                                       "-LESS"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L41_Q3",
+                       "hint":  "Form an adjective for lack of optimism.",
+                       "explanation":  "HOPE + LESS = HOPELESS.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "DATA",
+                       "correctAnswer":  "HOPELESS",
+                       "rootWord":  "HOPE",
                        "options":  [
-                                       "DATA",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "DATA"
+                                       "-LESS",
+                                       "-ORY",
+                                       "-NESS",
+                                       "-MENT"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L42_Q1",
+                       "hint":  "Form an adjective for being flexible.",
+                       "explanation":  "ADAPT + ABLE = ADAPTABLE.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "EVIDENCE",
+                       "correctAnswer":  "ADAPTABLE",
+                       "rootWord":  "ADAPT",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "EVIDENCE"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
+                                       "-FUL",
+                                       "-OUS",
+                                       "-HOOD",
+                                       "-ABLE"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L42_Q2",
+                       "hint":  "Form an adjective for being strong.",
+                       "explanation":  "POWER + FUL = POWERFUL.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "FACTOR",
+                       "correctAnswer":  "POWERFUL",
+                       "rootWord":  "POWER",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "FACTOR",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "FACTOR"
+                                       "-ARY",
+                                       "-ER",
+                                       "-FUL",
+                                       "-ISM"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L42_Q3",
+                       "hint":  "Make it the opposite of covered.",
+                       "explanation":  "UN + WRAP = UNWRAP.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "GLOBAL",
+                       "correctAnswer":  "UNWRAP",
+                       "rootWord":  "WRAP",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "GLOBAL",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
+                                       "-RY",
+                                       "-IC",
+                                       "UN-",
+                                       "-TY"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L43_Q1",
+                       "hint":  "Form a noun for a substitute.",
+                       "explanation":  "REPLACE + MENT = REPLACEMENT.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "HYPOTHESIS",
+                       "correctAnswer":  "REPLACEMENT",
+                       "rootWord":  "REPLACE",
                        "options":  [
-                                       "HYPOTHESIS",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
+                                       "-IST",
+                                       "-FUL",
+                                       "-ANCE",
+                                       "-MENT"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L43_Q2",
+                       "hint":  "Make it the opposite of capable.",
+                       "explanation":  "UN + ABLE = UNABLE.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "INTERPRET",
+                       "correctAnswer":  "UNABLE",
+                       "rootWord":  "ABLE",
                        "options":  [
-                                       "INTERPRET",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
+                                       "-ITY",
+                                       "-ENCE",
+                                       "-IST",
+                                       "UN-"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L43_Q3",
+                       "hint":  "Make it the opposite of knotted.",
+                       "explanation":  "UN + TIE = UNTIE.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "JUSTICE",
+                       "correctAnswer":  "UNTIE",
+                       "rootWord":  "TIE",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "JUSTICE"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
+                                       "-MENT",
+                                       "UN-",
+                                       "-AL",
+                                       "-ABLE"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L44_Q1",
+                       "hint":  "Form an adjective for being strong.",
+                       "explanation":  "POWER + FUL = POWERFUL.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "KNOWLEDGE",
+                       "correctAnswer":  "POWERFUL",
+                       "rootWord":  "POWER",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "KNOWLEDGE"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
+                                       "-ABLE",
+                                       "-MENT",
+                                       "-FUL",
+                                       "-ISM"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L44_Q2",
+                       "hint":  "Form an adjective for not being cautious.",
+                       "explanation":  "CARE + LESS = CARELESS.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "LOGIC",
+                       "correctAnswer":  "CARELESS",
+                       "rootWord":  "CARE",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "LOGIC"
-                                   ],
-                       "correctAnswer":  "LOGIC"
+                                       "-TY",
+                                       "-IVE",
+                                       "-LESS",
+                                       "-NESS"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L44_Q3",
+                       "hint":  "Form an adjective related to the wild.",
+                       "explanation":  "NATURE + AL = NATURAL.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "METHOD",
+                       "correctAnswer":  "NATURAL",
+                       "rootWord":  "NATURE",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "METHOD",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "METHOD"
+                                       "-LY",
+                                       "-ORY",
+                                       "-ER",
+                                       "-AL"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L45_Q1",
+                       "hint":  "Form a noun for a structure.",
+                       "explanation":  "BUILD + ING = BUILDING.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "NETWORK",
+                       "correctAnswer":  "BUILDING",
+                       "rootWord":  "BUILD",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "NETWORK"
-                                   ],
-                       "correctAnswer":  "NETWORK"
+                                       "-ENCE",
+                                       "-ING",
+                                       "-FUL",
+                                       "-ANCE"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L45_Q2",
+                       "hint":  "Form a noun for a blast.",
+                       "explanation":  "EXPLODE + ION = EXPLOSION.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "OBJECTIVE",
+                       "correctAnswer":  "EXPLOSION",
+                       "rootWord":  "EXPLODE",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "OBJECTIVE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
+                                       "-ION",
+                                       "-TY",
+                                       "-ER",
+                                       "-TION"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L45_Q3",
+                       "hint":  "Form an adjective related to the wild.",
+                       "explanation":  "NATURE + AL = NATURAL.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "PERSPECTIVE",
+                       "correctAnswer":  "NATURAL",
+                       "rootWord":  "NATURE",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "PERSPECTIVE"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
+                                       "-IZE",
+                                       "-HOOD",
+                                       "-IFY",
+                                       "-AL"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L46_Q1",
+                       "hint":  "Form an adjective related to self.",
+                       "explanation":  "PERSON + AL = PERSONAL.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "QUALITY",
+                       "correctAnswer":  "PERSONAL",
+                       "rootWord":  "PERSON",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "QUALITY",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "QUALITY"
+                                       "-RY",
+                                       "-LESS",
+                                       "-AL",
+                                       "-FUL"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L46_Q2",
+                       "hint":  "Form a noun for the local area.",
+                       "explanation":  "NEIGHBOR + HOOD = NEIGHBORHOOD.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "RESEARCH",
+                       "correctAnswer":  "NEIGHBORHOOD",
+                       "rootWord":  "NEIGHBOR",
                        "options":  [
-                                       "RESEARCH",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
+                                       "-RY",
+                                       "-HOOD",
+                                       "-ENCE",
+                                       "-OR"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L46_Q3",
+                       "hint":  "Form a noun for giving consent.",
+                       "explanation":  "APPROVE + AL = APPROVAL.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "SOURCE",
+                       "correctAnswer":  "APPROVAL",
+                       "rootWord":  "APPROVE",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "SOURCE",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "SOURCE"
+                                       "-OR",
+                                       "-NESS",
+                                       "-IST",
+                                       "-AL"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L47_Q1",
+                       "hint":  "Form an adjective for feeling good.",
+                       "explanation":  "COMFORT + ABLE = COMFORTABLE.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "THEORY",
+                       "correctAnswer":  "COMFORTABLE",
+                       "rootWord":  "COMFORT",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "THEORY",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "THEORY"
+                                       "-ABLE",
+                                       "-RY",
+                                       "-IC",
+                                       "-EN"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L47_Q2",
+                       "hint":  "Form an adjective for feeling good.",
+                       "explanation":  "COMFORT + ABLE = COMFORTABLE.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "UNIQUE",
+                       "correctAnswer":  "COMFORTABLE",
+                       "rootWord":  "COMFORT",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "UNIQUE",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
+                                       "-IC",
+                                       "-ABLE",
+                                       "-FUL",
+                                       "-IFY"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L47_Q3",
+                       "hint":  "Form a noun for an idea offered.",
+                       "explanation":  "SUGGEST + ION = SUGGESTION.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "ANALYZE",
+                       "correctAnswer":  "SUGGESTION",
+                       "rootWord":  "SUGGEST",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "ANALYZE",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
+                                       "-ANCE",
+                                       "-ION",
+                                       "-ORY",
+                                       "-LESS"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L48_Q1",
+                       "hint":  "Form a verb for grouping.",
+                       "explanation":  "CLASS + IFY = CLASSIFY.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "CONCEPT",
+                       "correctAnswer":  "CLASSIFY",
+                       "rootWord":  "CLASS",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "CONCEPT",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
+                                       "-ER",
+                                       "-RY",
+                                       "-IFY",
+                                       "-ISM"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L48_Q2",
+                       "hint":  "Form a noun for being capable.",
+                       "explanation":  "ABLE + ITY = ABILITY.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "DATA",
+                       "correctAnswer":  "ABILITY",
+                       "rootWord":  "ABLE",
                        "options":  [
-                                       "DATA",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "DATA"
+                                       "-LY",
+                                       "-ARY",
+                                       "-ITY",
+                                       "-RY"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L48_Q3",
+                       "hint":  "Form a noun for lack of strength.",
+                       "explanation":  "WEAK + NESS = WEAKNESS.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "EVIDENCE",
+                       "correctAnswer":  "WEAKNESS",
+                       "rootWord":  "WEAK",
                        "options":  [
-                                       "EVIDENCE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
+                                       "-NESS",
+                                       "-LESS",
+                                       "-TY",
+                                       "-IFY"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L49_Q1",
+                       "hint":  "Form an adjective for lack of purpose.",
+                       "explanation":  "USE + LESS = USELESS.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "FACTOR",
+                       "correctAnswer":  "USELESS",
+                       "rootWord":  "USE",
                        "options":  [
-                                       "FACTOR",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "FACTOR"
+                                       "-IZE",
+                                       "-TION",
+                                       "-IST",
+                                       "-LESS"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L49_Q2",
+                       "hint":  "Form an adjective related to money.",
+                       "explanation":  "ECONOMY + IC = ECONOMIC.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "GLOBAL",
+                       "correctAnswer":  "ECONOMIC",
+                       "rootWord":  "ECONOMY",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "GLOBAL",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
+                                       "-IZE",
+                                       "-TION",
+                                       "-ER",
+                                       "-IC"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L49_Q3",
+                       "hint":  "Form an adjective for keeping safe.",
+                       "explanation":  "PROTECT + IVE = PROTECTIVE.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "HYPOTHESIS",
+                       "correctAnswer":  "PROTECTIVE",
+                       "rootWord":  "PROTECT",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "HYPOTHESIS"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
+                                       "-NESS",
+                                       "-ITY",
+                                       "-IVE",
+                                       "-MENT"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L50_Q1",
+                       "hint":  "Form a noun for entering by force.",
+                       "explanation":  "INVADE + ION = INVASION.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "INTERPRET",
+                       "correctAnswer":  "INVASION",
+                       "rootWord":  "INVADE",
                        "options":  [
-                                       "INTERPRET",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
+                                       "-ION",
+                                       "-ANCE",
+                                       "-TY",
+                                       "-EN"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L50_Q2",
+                       "hint":  "Form a noun for what we wear.",
+                       "explanation":  "CLOTHE + ING = CLOTHING.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "JUSTICE",
+                       "correctAnswer":  "CLOTHING",
+                       "rootWord":  "CLOTHE",
                        "options":  [
-                                       "JUSTICE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
+                                       "-LESS",
+                                       "-ER",
+                                       "-IFY",
+                                       "-ING"
+                                   ]
                    },
                    {
                        "id":  "VOC_WORDFORMATION_L50_Q3",
+                       "hint":  "Form a noun for convincing someone.",
+                       "explanation":  "PERSUADE + ION = PERSUASION.",
                        "interactionType":  "Morpheme Mixer",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "KNOWLEDGE",
+                       "correctAnswer":  "PERSUASION",
+                       "rootWord":  "PERSUADE",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "KNOWLEDGE"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
+                                       "-SHIP",
+                                       "-ORY",
+                                       "-AL",
+                                       "-ION"
+                                   ]
                    }
-               ]
+               ],
+    "gameType":  "wordFormation",
+    "batchIndex":  5
 }
