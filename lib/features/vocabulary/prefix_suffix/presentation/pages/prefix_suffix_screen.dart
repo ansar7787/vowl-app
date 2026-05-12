@@ -150,6 +150,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
 
         return VocabularyBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          isFinalFailure: (state is VocabularyLoaded) ? state.isFinalFailure : false,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () {
