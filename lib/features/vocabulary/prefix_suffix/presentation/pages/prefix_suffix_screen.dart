@@ -58,12 +58,12 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     final options = quest.options ?? [];
     int? dockedIndex;
     
-    // Check collision with terminals using LayoutBuilder-aware positioning
+    // Check collision with terminals using the same responsive logic as build
     for (int i = 0; i < options.length; i++) {
-      final terminalPos = _getTerminalPosition(i, options.length);
+      final terminalPos = _getTerminalPosition(i, options.length, _lastConstraints!);
       final roverPos = Offset.zero + _dragOffset; 
       
-      if ((roverPos - terminalPos).distance < 50.r) {
+      if ((roverPos - terminalPos).distance < 60.r) {
         dockedIndex = i;
         break;
       }
@@ -106,11 +106,28 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     }
   }
 
-  Offset _getTerminalPosition(int index, int total) {
-    // Reduced radius for better responsiveness on small screens
-    double angle = (index * (2 * math.pi / total)) - (math.pi / 2);
-    double radius = 135.r; 
-    return Offset(math.cos(angle) * radius, math.sin(angle) * radius);
+  BoxConstraints? _lastConstraints;
+
+  Offset _getTerminalPosition(int index, int total, BoxConstraints constraints) {
+    // Dynamic Responsive Positioning (Diamond/Corner Grid)
+    // Centers the nodes around the available space to prevent clipping
+    double hDist = (constraints.maxWidth - 120.w) / 2;
+    double vDist = (constraints.maxHeight - 180.h) / 2;
+    
+    // Use a smaller radius if the screen is tiny
+    hDist = hDist.clamp(80.w, 140.w);
+    vDist = vDist.clamp(100.h, 160.h);
+
+    switch (index) {
+      case 0: return Offset(-hDist, -vDist); // Top Left
+      case 1: return Offset(hDist, -vDist);  // Top Right
+      case 2: return Offset(-hDist, vDist);  // Bottom Left
+      case 3: return Offset(hDist, vDist);   // Bottom Right
+      default:
+        // Fallback for more than 4 options (unlikely in this game type)
+        double angle = (index * (2 * math.pi / total)) - (math.pi / 2);
+        return Offset(math.cos(angle) * hDist, math.sin(angle) * vDist);
+    }
   }
 
   @override
@@ -159,7 +176,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
             for (int i = 0; i < options.length; i++) {
               final opt = options[i].replaceAll('-', '').trim().toLowerCase();
               if (correct.contains(opt)) {
-                setState(() => _dragOffset = _getTerminalPosition(i, options.length) * 0.4);
+                setState(() => _dragOffset = _getTerminalPosition(i, options.length, _lastConstraints!) * 0.4);
                 Future.delayed(1.seconds, () {
                   if (mounted && !_isAnswered) setState(() => _dragOffset = Offset.zero);
                 });
@@ -169,6 +186,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
           },
           child: quest == null ? const SizedBox() : LayoutBuilder(
             builder: (context, constraints) {
+              _lastConstraints = constraints;
               return Center(
                 child: Stack(
                   alignment: Alignment.center,
@@ -177,7 +195,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                     _buildMissionControl(theme.primaryColor),
                     
                     // Docking Terminals (Options)
-                    ...List.generate(quest.options?.length ?? 0, (i) => _buildDockingTerminal(i, quest.options![i], theme.primaryColor, isDark, quest.options!.length)),
+                    ...List.generate(quest.options?.length ?? 0, (i) => _buildDockingTerminal(i, quest.options![i], theme.primaryColor, isDark, quest.options!.length, constraints)),
 
                     // The Root Rover (Central Draggable)
                     _buildRootRover(quest, theme.primaryColor, isDark),
@@ -218,12 +236,12 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     );
   }
 
-  Widget _buildDockingTerminal(int index, String text, Color color, bool isDark, int total) {
-    final pos = _getTerminalPosition(index, total);
+  Widget _buildDockingTerminal(int index, String text, Color color, bool isDark, int total, BoxConstraints constraints) {
+    final pos = _getTerminalPosition(index, total, constraints);
     
     return Positioned(
-      left: pos.dx - 40.w,
-      top: pos.dy - 35.h,
+      left: constraints.maxWidth / 2 + pos.dx - 40.w,
+      top: constraints.maxHeight / 2 + pos.dy - 35.h,
       child: Container(
         width: 80.w,
         height: 70.h,
