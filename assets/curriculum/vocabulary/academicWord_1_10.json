@@ -1,307 +1,457 @@
-{
-    "gameType":  "academicWord",
-    "batchIndex":  1,
+﻿{
     "levels":  "1-10",
     "quests":  [
                    {
+                       "word":  "CREDIT",
+                       "interactionType":  "Thesis Thrust",
                        "id":  "VOC_ACADEMICWORD_L1_Q1",
-                       "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id0",
-                       "passage":  "The primary analyze of the study was academic stream 0."
+                       "hint":  "DEFINITION: The ability of a customer to obtain goods or services.",
+                       "options":  [
+                                       "Honor",
+                                       "CREDIT",
+                                       "RECOGNITION",
+                                       "Blame"
+                                   ],
+                       "explanation":  "Academic context: The author was given [TARGET] for the discovery of the lost manuscript.",
+                       "passage":  "The author was given [TARGET] for the discovery of the lost manuscript.",
+                       "correctAnswer":  "CREDIT"
                    },
                    {
+                       "word":  "CONCEPT",
+                       "interactionType":  "Thesis Thrust",
                        "id":  "VOC_ACADEMICWORD_L1_Q2",
-                       "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id1",
-                       "passage":  "We must concept the underlying academic stream 1."
+                       "hint":  "DEFINITION: An abstract idea; a general notion.",
+                       "options":  [
+                                       "Notion",
+                                       "IDEA",
+                                       "CONCEPT",
+                                       "Physicality"
+                                   ],
+                       "explanation":  "Academic context: The fundamental [TARGET] of quantum entanglement remains difficult to grasp.",
+                       "passage":  "The fundamental [TARGET] of quantum entanglement remains difficult to grasp.",
+                       "correctAnswer":  "CONCEPT"
                    },
                    {
+                       "word":  "JUSTICE",
+                       "interactionType":  "Thesis Thrust",
                        "id":  "VOC_ACADEMICWORD_L1_Q3",
-                       "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id2",
-                       "passage":  "A critical data in this academic stream 2 is required."
+                       "hint":  "DEFINITION: Just behavior or treatment.",
+                       "options":  [
+                                       "Iniquity",
+                                       "JUSTICE",
+                                       "Equity",
+                                       "FAIRNESS"
+                                   ],
+                       "explanation":  "Academic context: The legal system aims to provide [TARGET] for all citizens regardless of status.",
+                       "passage":  "The legal system aims to provide [TARGET] for all citizens regardless of status.",
+                       "correctAnswer":  "JUSTICE"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L2_Q1",
+                       "word":  "RESEARCH",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id3",
-                       "passage":  "Environmental evidence impacts the academic stream 3 significantly."
+                       "id":  "VOC_ACADEMICWORD_L1_Q4",
+                       "hint":  "DEFINITION: The systematic investigation into and study of materials.",
+                       "options":  [
+                                       "Guesswork",
+                                       "Inquiry",
+                                       "STUDY",
+                                       "RESEARCH"
+                                   ],
+                       "explanation":  "Academic context: Extensive [TARGET] is required before publishing a new scientific paper.",
+                       "passage":  "Extensive [TARGET] is required before publishing a new scientific paper.",
+                       "correctAnswer":  "RESEARCH"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L2_Q2",
+                       "word":  "DESIGN",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id4",
-                       "passage":  "The factor structure remains academic stream 4 throughout."
+                       "id":  "VOC_ACADEMICWORD_L1_Q5",
+                       "hint":  "DEFINITION: A plan or drawing produced to show the look and function.",
+                       "options":  [
+                                       "PLAN",
+                                       "Draft",
+                                       "DESIGN",
+                                       "Randomize"
+                                   ],
+                       "explanation":  "Academic context: The architect will [TARGET] the new library to be energy-efficient.",
+                       "passage":  "The architect will [TARGET] the new library to be energy-efficient.",
+                       "correctAnswer":  "DESIGN"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L2_Q3",
+                       "word":  "ANALYZE",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id5",
-                       "passage":  "Scientists global how academic stream 5 influences results."
+                       "id":  "VOC_ACADEMICWORD_L1_Q6",
+                       "hint":  "DEFINITION: Examine something methodically and in detail.",
+                       "options":  [
+                                       "BREAK DOWN",
+                                       "Examine",
+                                       "Synthesize",
+                                       "ANALYZE"
+                                   ],
+                       "explanation":  "Academic context: The researchers had to [TARGET] the complex results of the clinical trial.",
+                       "passage":  "The researchers had to [TARGET] the complex results of the clinical trial.",
+                       "correctAnswer":  "ANALYZE"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L3_Q1",
+                       "word":  "SOURCE",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id6",
-                       "passage":  "His hypothesis approach to academic stream 6 was impressive."
+                       "id":  "VOC_ACADEMICWORD_L1_Q7",
+                       "hint":  "DEFINITION: A place, person, or thing from which something comes or can be obtained.",
+                       "options":  [
+                                       "End",
+                                       "Reference",
+                                       "ORIGIN",
+                                       "SOURCE"
+                                   ],
+                       "explanation":  "Academic context: The historian meticulously verified every primary [TARGET] for the biography.",
+                       "passage":  "The historian meticulously verified every primary [TARGET] for the biography.",
+                       "correctAnswer":  "SOURCE"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L3_Q2",
+                       "word":  "INTERPRET",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id7",
-                       "passage":  "Without interpret, the academic stream 7 cannot be solved."
+                       "id":  "VOC_ACADEMICWORD_L1_Q8",
+                       "hint":  "DEFINITION: Explain the meaning of information, words, or actions.",
+                       "options":  [
+                                       "EXPLAIN",
+                                       "Decode",
+                                       "INTERPRET",
+                                       "Confuse"
+                                   ],
+                       "explanation":  "Academic context: Scholars often [TARGET] ancient texts in vastly different ways.",
+                       "passage":  "Scholars often [TARGET] ancient texts in vastly different ways.",
+                       "correctAnswer":  "INTERPRET"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L3_Q3",
+                       "word":  "APPROPRIATE",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id8",
-                       "passage":  "The justice framework supports the academic stream 8."
+                       "id":  "VOC_ACADEMICWORD_L1_Q9",
+                       "hint":  "DEFINITION: Suitable or proper in the circumstances.",
+                       "options":  [
+                                       "SUITABLE",
+                                       "APPROPRIATE",
+                                       "Improper",
+                                       "Fitting"
+                                   ],
+                       "explanation":  "Academic context: Wearing a suit is [TARGET] for a formal business meeting.",
+                       "passage":  "Wearing a suit is [TARGET] for a formal business meeting.",
+                       "correctAnswer":  "APPROPRIATE"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L4_Q1",
+                       "word":  "OBJECTIVE",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id9",
-                       "passage":  "Evaluating knowledge leads to better academic stream 9."
+                       "id":  "VOC_ACADEMICWORD_L1_Q10",
+                       "hint":  "DEFINITION: A thing aimed at or sought; a goal.",
+                       "options":  [
+                                       "GOAL",
+                                       "OBJECTIVE",
+                                       "Subjective",
+                                       "Aim"
+                                   ],
+                       "explanation":  "Academic context: The primary [TARGET] of the mission was to collect lunar soil samples.",
+                       "passage":  "The primary [TARGET] of the mission was to collect lunar soil samples.",
+                       "correctAnswer":  "OBJECTIVE"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L4_Q2",
+                       "word":  "NETWORK",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "LOGIC_id10",
-                       "passage":  "The primary logic of the study was academic stream 10."
+                       "id":  "VOC_ACADEMICWORD_L1_Q11",
+                       "hint":  "DEFINITION: A group or system of interconnected people or things.",
+                       "options":  [
+                                       "Isolation",
+                                       "SYSTEM",
+                                       "NETWORK",
+                                       "Web"
+                                   ],
+                       "explanation":  "Academic context: The social [TARGET] allowed ideas to spread across the continent rapidly.",
+                       "passage":  "The social [TARGET] allowed ideas to spread across the continent rapidly.",
+                       "correctAnswer":  "NETWORK"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L4_Q3",
+                       "word":  "HYPOTHESIS",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "METHOD_id11",
-                       "passage":  "We must method the underlying academic stream 11."
+                       "id":  "VOC_ACADEMICWORD_L1_Q12",
+                       "hint":  "DEFINITION: A proposed explanation made on the basis of limited evidence.",
+                       "options":  [
+                                       "Fact",
+                                       "HYPOTHESIS",
+                                       "Supposition",
+                                       "THEORY"
+                                   ],
+                       "explanation":  "Academic context: The scientist proposed a new [TARGET] to explain the observed phenomena.",
+                       "passage":  "The scientist proposed a new [TARGET] to explain the observed phenomena.",
+                       "correctAnswer":  "HYPOTHESIS"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L5_Q1",
+                       "word":  "CONSUME",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "NETWORK_id12",
-                       "passage":  "A critical network in this academic stream 12 is required."
+                       "id":  "VOC_ACADEMICWORD_L1_Q13",
+                       "hint":  "DEFINITION: Eat, drink, or ingest.",
+                       "options":  [
+                                       "USE",
+                                       "Save",
+                                       "Expend",
+                                       "CONSUME"
+                                   ],
+                       "explanation":  "Academic context: Modern lifestyles [TARGET] vast amounts of energy and resources.",
+                       "passage":  "Modern lifestyles [TARGET] vast amounts of energy and resources.",
+                       "correctAnswer":  "CONSUME"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L5_Q2",
+                       "word":  "FACTOR",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "OBJECTIVE_id13",
-                       "passage":  "Environmental objective impacts the academic stream 13 significantly."
+                       "id":  "VOC_ACADEMICWORD_L1_Q14",
+                       "hint":  "DEFINITION: A circumstance, fact, or influence that contributes to a result.",
+                       "options":  [
+                                       "ELEMENT",
+                                       "Result",
+                                       "FACTOR",
+                                       "Component"
+                                   ],
+                       "explanation":  "Academic context: Economic stability is a major [TARGET] in the growth of developing nations.",
+                       "passage":  "Economic stability is a major [TARGET] in the growth of developing nations.",
+                       "correctAnswer":  "FACTOR"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L5_Q3",
+                       "word":  "CONCLUSION",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "PERSPECTIVE_id14",
-                       "passage":  "The perspective structure remains academic stream 14 throughout."
+                       "id":  "VOC_ACADEMICWORD_L1_Q15",
+                       "hint":  "DEFINITION: The end or finish of an event or process.",
+                       "options":  [
+                                       "Finish",
+                                       "CONCLUSION",
+                                       "END",
+                                       "Beginning"
+                                   ],
+                       "explanation":  "Academic context: The [TARGET] of the study suggested that more research was needed.",
+                       "passage":  "The [TARGET] of the study suggested that more research was needed.",
+                       "correctAnswer":  "CONCLUSION"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L6_Q1",
+                       "word":  "GLOBAL",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "QUALITY_id15",
-                       "passage":  "Scientists quality how academic stream 15 influences results."
+                       "id":  "VOC_ACADEMICWORD_L1_Q16",
+                       "hint":  "DEFINITION: Relating to the whole world; worldwide.",
+                       "options":  [
+                                       "Universal",
+                                       "WORLDWIDE",
+                                       "GLOBAL",
+                                       "Local"
+                                   ],
+                       "explanation":  "Academic context: Plastic pollution has become a [TARGET] crisis affecting all oceans.",
+                       "passage":  "Plastic pollution has become a [TARGET] crisis affecting all oceans.",
+                       "correctAnswer":  "GLOBAL"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L6_Q2",
+                       "word":  "CULTURE",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "RESEARCH_id16",
-                       "passage":  "His research approach to academic stream 16 was impressive."
+                       "id":  "VOC_ACADEMICWORD_L1_Q17",
+                       "hint":  "DEFINITION: The arts and other manifestations of human intellectual achievement.",
+                       "options":  [
+                                       "CIVILIZATION",
+                                       "Society",
+                                       "Nature",
+                                       "CULTURE"
+                                   ],
+                       "explanation":  "Academic context: Ancient Roman [TARGET] heavily influenced modern Western civilization.",
+                       "passage":  "Ancient Roman [TARGET] heavily influenced modern Western civilization.",
+                       "correctAnswer":  "CULTURE"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L6_Q3",
+                       "word":  "ASPECT",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "SOURCE_id17",
-                       "passage":  "Without source, the academic stream 17 cannot be solved."
+                       "id":  "VOC_ACADEMICWORD_L1_Q18",
+                       "hint":  "DEFINITION: A particular part or feature of something.",
+                       "options":  [
+                                       "ASPECT",
+                                       "FEATURE",
+                                       "Whole",
+                                       "Part"
+                                   ],
+                       "explanation":  "Academic context: One [TARGET] of the problem is the lack of funding for local schools.",
+                       "passage":  "One [TARGET] of the problem is the lack of funding for local schools.",
+                       "correctAnswer":  "ASPECT"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L7_Q1",
+                       "word":  "COMPUTE",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "THEORY_id18",
-                       "passage":  "The theory framework supports the academic stream 18."
+                       "id":  "VOC_ACADEMICWORD_L1_Q19",
+                       "hint":  "DEFINITION: Calculate a figure or amount.",
+                       "options":  [
+                                       "COMPUTE",
+                                       "CALCULATE",
+                                       "Solve",
+                                       "Estimate"
+                                   ],
+                       "explanation":  "Academic context: Mathematicians use algorithms to [TARGET] the values of large numbers.",
+                       "passage":  "Mathematicians use algorithms to [TARGET] the values of large numbers.",
+                       "correctAnswer":  "COMPUTE"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L7_Q2",
+                       "word":  "CONSEQUENT",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "UNIQUE_id19",
-                       "passage":  "Evaluating unique leads to better academic stream 19."
+                       "id":  "VOC_ACADEMICWORD_L1_Q20",
+                       "hint":  "DEFINITION: Following as a result or effect.",
+                       "options":  [
+                                       "Prior",
+                                       "CONSEQUENT",
+                                       "RESULTING",
+                                       "Following"
+                                   ],
+                       "explanation":  "Academic context: The heavy rain and [TARGET] flooding caused significant damage.",
+                       "passage":  "The heavy rain and [TARGET] flooding caused significant damage.",
+                       "correctAnswer":  "CONSEQUENT"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L7_Q3",
+                       "word":  "COMPLEX",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id20",
-                       "passage":  "The primary analyze of the study was academic stream 20."
+                       "id":  "VOC_ACADEMICWORD_L1_Q21",
+                       "hint":  "DEFINITION: Consisting of many different and connected parts.",
+                       "options":  [
+                                       "INTRICATE",
+                                       "Complicated",
+                                       "Simple",
+                                       "COMPLEX"
+                                   ],
+                       "explanation":  "Academic context: The [TARGET] nature of the problem requires a multifaceted solution.",
+                       "passage":  "The [TARGET] nature of the problem requires a multifaceted solution.",
+                       "correctAnswer":  "COMPLEX"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L8_Q1",
+                       "word":  "UNIQUE",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id21",
-                       "passage":  "We must concept the underlying academic stream 21."
+                       "id":  "VOC_ACADEMICWORD_L1_Q22",
+                       "hint":  "DEFINITION: Being the only one of its kind; unlike anything else.",
+                       "options":  [
+                                       "DISTINCT",
+                                       "Common",
+                                       "Rare",
+                                       "UNIQUE"
+                                   ],
+                       "explanation":  "Academic context: Each individual has a [TARGET] genetic code that distinguishes them.",
+                       "passage":  "Each individual has a [TARGET] genetic code that distinguishes them.",
+                       "correctAnswer":  "UNIQUE"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L8_Q2",
+                       "word":  "CATEGORY",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id22",
-                       "passage":  "A critical data in this academic stream 22 is required."
+                       "id":  "VOC_ACADEMICWORD_L1_Q23",
+                       "hint":  "DEFINITION: A class or division of people or things.",
+                       "options":  [
+                                       "Group",
+                                       "CLASS",
+                                       "Individual",
+                                       "CATEGORY"
+                                   ],
+                       "explanation":  "Academic context: The library organizes books by [TARGET] to make them easier to find.",
+                       "passage":  "The library organizes books by [TARGET] to make them easier to find.",
+                       "correctAnswer":  "CATEGORY"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L8_Q3",
+                       "word":  "ASSESS",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id23",
-                       "passage":  "Environmental evidence impacts the academic stream 23 significantly."
+                       "id":  "VOC_ACADEMICWORD_L1_Q24",
+                       "hint":  "DEFINITION: Evaluate or estimate the nature, ability, or quality of.",
+                       "options":  [
+                                       "Ignore",
+                                       "EVALUATE",
+                                       "ASSESS",
+                                       "Judge"
+                                   ],
+                       "explanation":  "Academic context: The committee will [TARGET] the candidate\u0027s performance during the interview.",
+                       "passage":  "The committee will [TARGET] the candidate\u0027s performance during the interview.",
+                       "correctAnswer":  "ASSESS"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L9_Q1",
+                       "word":  "ADMINISTER",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id24",
-                       "passage":  "The factor structure remains academic stream 24 throughout."
+                       "id":  "VOC_ACADEMICWORD_L1_Q25",
+                       "hint":  "DEFINITION: Manage and be responsible for the running of.",
+                       "options":  [
+                                       "Neglect",
+                                       "ADMINISTER",
+                                       "Execute",
+                                       "MANAGE"
+                                   ],
+                       "explanation":  "Academic context: The healthcare workers will [TARGET] the vaccine to the local population.",
+                       "passage":  "The healthcare workers will [TARGET] the vaccine to the local population.",
+                       "correctAnswer":  "ADMINISTER"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L9_Q2",
+                       "word":  "DATA",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id25",
-                       "passage":  "Scientists global how academic stream 25 influences results."
+                       "id":  "VOC_ACADEMICWORD_L1_Q26",
+                       "hint":  "DEFINITION: Facts and statistics collected together for reference.",
+                       "options":  [
+                                       "Theory",
+                                       "DATA",
+                                       "Facts",
+                                       "INFORMATION"
+                                   ],
+                       "explanation":  "Academic context: Empirical [TARGET] collected from the satellite confirms the global warming trend.",
+                       "passage":  "Empirical [TARGET] collected from the satellite confirms the global warming trend.",
+                       "correctAnswer":  "DATA"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L9_Q3",
+                       "word":  "COMMUNITY",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id26",
-                       "passage":  "His hypothesis approach to academic stream 26 was impressive."
+                       "id":  "VOC_ACADEMICWORD_L1_Q27",
+                       "hint":  "DEFINITION: A group of people living in the same place.",
+                       "options":  [
+                                       "Group",
+                                       "SOCIETY",
+                                       "COMMUNITY",
+                                       "Individual"
+                                   ],
+                       "explanation":  "Academic context: The local [TARGET] came together to rebuild the park after the storm.",
+                       "passage":  "The local [TARGET] came together to rebuild the park after the storm.",
+                       "correctAnswer":  "COMMUNITY"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L10_Q1",
+                       "word":  "ACQUIRE",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id27",
-                       "passage":  "Without interpret, the academic stream 27 cannot be solved."
+                       "id":  "VOC_ACADEMICWORD_L1_Q28",
+                       "hint":  "DEFINITION: Buy or obtain for oneself.",
+                       "options":  [
+                                       "OBTAIN",
+                                       "ACQUIRE",
+                                       "Gain",
+                                       "Lose"
+                                   ],
+                       "explanation":  "Academic context: Students must [TARGET] specific skills before entering the workforce.",
+                       "passage":  "Students must [TARGET] specific skills before entering the workforce.",
+                       "correctAnswer":  "ACQUIRE"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L10_Q2",
+                       "word":  "CONSTRUCT",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id28",
-                       "passage":  "The justice framework supports the academic stream 28."
+                       "id":  "VOC_ACADEMICWORD_L1_Q29",
+                       "hint":  "DEFINITION: Build or erect something.",
+                       "options":  [
+                                       "Destroy",
+                                       "Create",
+                                       "BUILD",
+                                       "CONSTRUCT"
+                                   ],
+                       "explanation":  "Academic context: Engineers will [TARGET] a new bridge to replace the old one.",
+                       "passage":  "Engineers will [TARGET] a new bridge to replace the old one.",
+                       "correctAnswer":  "CONSTRUCT"
                    },
                    {
-                       "id":  "VOC_ACADEMICWORD_L10_Q3",
+                       "word":  "EVIDENCE",
                        "interactionType":  "Thesis Thrust",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id29",
-                       "passage":  "Evaluating knowledge leads to better academic stream 29."
+                       "id":  "VOC_ACADEMICWORD_L1_Q30",
+                       "hint":  "DEFINITION: The available body of facts or information indicating whether a belief is true.",
+                       "options":  [
+                                       "EVIDENCE",
+                                       "PROOF",
+                                       "Speculation",
+                                       "Clue"
+                                   ],
+                       "explanation":  "Academic context: The forensic team discovered crucial [TARGET] at the crime scene.",
+                       "passage":  "The forensic team discovered crucial [TARGET] at the crime scene.",
+                       "correctAnswer":  "EVIDENCE"
                    }
-               ]
+               ],
+    "gameType":  "academicWord",
+    "batchIndex":  1
 }

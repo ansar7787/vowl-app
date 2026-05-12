@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,16 +28,21 @@ class AcademicWordScreen extends StatefulWidget {
   State<AcademicWordScreen> createState() => _AcademicWordScreenState();
 }
 
-class _AcademicWordScreenState extends State<AcademicWordScreen> {
+class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
-  final List<String> _assembledModules = [];
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
+
+  // Thesis Thrust State
+  Offset _dragOffset = Offset.zero;
+  int? _activeShardIndex;
+  final GlobalKey _slotKey = GlobalKey();
+  BoxConstraints? _lastConstraints;
 
   @override
   void initState() {
@@ -44,24 +50,78 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
     context.read<VocabularyBloc>().add(FetchVocabularyQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onModuleSnap(String module, String fullWord) {
+  void _onShardDragStart(int index) {
     if (_isAnswered) return;
-    _hapticService.success();
-    setState(() => _assembledModules.add(module));
+    setState(() => _activeShardIndex = index);
+    _hapticService.light();
+  }
 
-    String assembled = _assembledModules.join('').toLowerCase();
-    String target = fullWord.trim().toLowerCase();
-
-    if (assembled == target) {
-      _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
-    } else if (assembled.length >= target.length) {
-       _hapticService.error();
-       _soundService.playWrong();
-       setState(() { _isAnswered = true; _isCorrect = false; });
-       context.read<VocabularyBloc>().add(SubmitAnswer(false));
+  void _onShardDragUpdate(int index, DragUpdateDetails details) {
+    if (_isAnswered || _activeShardIndex != index) return;
+    setState(() => _dragOffset += details.delta);
+    
+    // Proximity haptics to the central slot
+    if (_isNearSlot()) {
+      _hapticService.selection();
     }
+  }
+
+  bool _isNearSlot() {
+    if (_activeShardIndex == null || _lastConstraints == null) return false;
+    final currentPos = _getShardCurrentPosition(_activeShardIndex!);
+    return currentPos.distance < 100.r; // Proximity to center
+  }
+
+  void _onShardDragEnd(int index, VocabularyQuest quest) {
+    if (_isAnswered || _activeShardIndex != index) return;
+
+    if (_isNearSlot()) {
+      _attemptThrust(index, quest);
+    } else {
+      setState(() {
+        _dragOffset = Offset.zero;
+        _activeShardIndex = null;
+      });
+      _hapticService.light();
+    }
+  }
+
+  void _attemptThrust(int index, VocabularyQuest quest) {
+    final selected = quest.options![index].trim().toLowerCase();
+    final correct = quest.correctAnswer?.trim().toLowerCase() ?? "";
+
+    if (selected == correct) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+        _activeShardIndex = null;
+      });
+      context.read<VocabularyBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+        _activeShardIndex = null;
+        _dragOffset = Offset.zero;
+      });
+      context.read<VocabularyBloc>().add(SubmitAnswer(false));
+    }
+  }
+
+  Offset _getShardCurrentPosition(int index) {
+    final initial = _getShardInitialPosition(index, (_lastQuest?.options?.length ?? 4));
+    return initial + _dragOffset;
+  }
+
+  Offset _getShardInitialPosition(int index, int total) {
+    final vStep = 80.h;
+    final startY = 200.h; // Bottom tray start
+    final isLeft = index % 2 == 0;
+    return Offset(isLeft ? -100.w : 100.w, startY + (index ~/ 2) * vStep);
   }
 
   @override
@@ -72,29 +132,24 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
-
-          if (isNewQuestion || isRetry) {
+          if (state.currentIndex != _lastProcessedIndex || (_isAnswered && state.lastAnswerCorrect == null)) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _assembledModules.clear();
+              _dragOffset = Offset.zero;
+              _activeShardIndex = null;
             });
           }
         }
         if (state is VocabularyGameComplete) {
-          final xp = state.xpEarned;
-          final coins = state.coinsEarned;
           setState(() => _showConfetti = true);
-          if (!context.mounted) return;
           GameDialogHelper.showCompletion(
             context,
-            xp: xp,
-            coins: coins,
-            title: 'ACADEMIC SCHOLAR!',
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'THESIS COMPLETE!',
             enableDoubleUp: true,
           );
         } else if (state is VocabularyGameOver) {
@@ -104,26 +159,38 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
       builder: (context, state) {
         final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
         if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
-        final options = quest?.options ?? [];
-        final definition = quest?.passage ?? "???";
 
         return VocabularyBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 24.h),
-              _buildDefinitionCard(definition, theme.primaryColor, isDark),
-              SizedBox(height: 40.h),
-              _buildAssemblyRail(_assembledModules, theme.primaryColor, isDark),
-              const Spacer(),
-              _buildDraftingTray(options, (m) => _onModuleSnap(m, quest.word ?? ""), theme.primaryColor, isDark),
-              SizedBox(height: 20.h),
-            ],
+          child: quest == null ? const SizedBox() : LayoutBuilder(
+            builder: (context, constraints) {
+              _lastConstraints = constraints;
+              return Stack(
+                alignment: Alignment.center,
+                clipBehavior: Clip.none,
+                children: [
+                  // Reactor Grid
+                  Positioned.fill(child: RepaintBoundary(child: CustomPaint(painter: ReactorGridPainter(theme.primaryColor.withValues(alpha: 0.1))))),
+                  
+                  // Thesis Passage
+                  _buildThesisPaper(quest.passage ?? "", theme.primaryColor, isDark),
+
+                  // Floating Shards
+                  ...List.generate(quest.options?.length ?? 0, (i) {
+                    return _buildAcademicShard(i, quest.options![i], theme.primaryColor, isDark);
+                  }),
+
+                  // Thrust Instruction
+                  Positioned(top: 20.h, child: _buildInstruction(theme.primaryColor)),
+                ],
+              );
+            },
           ),
         );
       },
@@ -132,72 +199,142 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> {
 
   Widget _buildInstruction(Color color) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.2))),
-      child: Text("SNAP MODULES ONTO THE RAIL", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
-    );
-  }
-
-  Widget _buildDefinitionCard(String text, Color color, bool isDark) {
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      margin: EdgeInsets.symmetric(horizontal: 24.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
-      child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 16.sp, color: isDark ? Colors.white70 : Colors.black87, height: 1.5)),
-    );
-  }
-
-  Widget _buildAssemblyRail(List<String> modules, Color color, bool isDark) {
-    return Container(
-      height: 80.h, width: 340.w,
-      decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: color, width: 2),
-        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 20)],
-      ),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Magnetic track line
-          SizedBox(height: 2.h, width: 300.w, child: ColoredBox(color: color.withValues(alpha: 0.3))),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: modules.map((m) => Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-              margin: EdgeInsets.symmetric(horizontal: 4.w),
-              decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(4.r)),
-              child: Text(m.toUpperCase(), style: GoogleFonts.shareTechMono(fontSize: 14.sp, fontWeight: FontWeight.bold, color: Colors.white)),
-            ).animate().scale().shimmer()).toList(),
-          ),
-          if (modules.isEmpty)
-             Text("PLACE MODULES HERE", style: GoogleFonts.outfit(fontSize: 10.sp, color: color.withValues(alpha: 0.3), fontWeight: FontWeight.bold, letterSpacing: 2)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDraftingTray(List<String> options, Function(String) onSnap, Color color, bool isDark) {
-    return Wrap(
-      spacing: 12.w, runSpacing: 12.h,
-      alignment: WrapAlignment.center,
-      children: options.map((m) => GestureDetector(
-        onTap: () => onSnap(m),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-          decoration: BoxDecoration(
-            color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-          ),
-          child: Text(m.toUpperCase(), style: GoogleFonts.shareTechMono(fontSize: 14.sp, fontWeight: FontWeight.bold, color: color)),
+      child: Text(
+        "THRUST WORD INTO THE THESIS",
+        style: GoogleFonts.shareTechMono(
+          fontSize: 12.sp,
+          fontWeight: FontWeight.bold,
+          color: color,
+          letterSpacing: 1.5,
         ),
-      )).toList(),
-    ).animate().fadeIn().slideY(begin: 0.2, end: 0);
+      ),
+    ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 2.seconds);
+  }
+
+  Widget _buildThesisPaper(String passage, Color color, bool isDark) {
+    final parts = passage.split('[TARGET]');
+    
+    return Container(
+      width: 320.w,
+      padding: EdgeInsets.all(25.r),
+      decoration: BoxDecoration(
+        color: isDark ? const Color(0xFF1E293B) : const Color(0xFFFFFBEB),
+        borderRadius: BorderRadius.circular(2.r), // Sharp scholarly edges
+        boxShadow: [
+          BoxShadow(color: Colors.black45, blurRadius: 20, offset: const Offset(5, 5)),
+          BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 40),
+        ],
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 1),
+      ),
+      child: RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+          style: GoogleFonts.crimsonPro(
+            fontSize: 20.sp,
+            height: 1.6,
+            color: isDark ? Colors.white70 : Colors.black87,
+          ),
+          children: [
+            TextSpan(text: parts[0]),
+            WidgetSpan(
+              alignment: PlaceholderAlignment.middle,
+              child: Container(
+                key: _slotKey,
+                width: 140.w,
+                height: 35.h,
+                margin: EdgeInsets.symmetric(horizontal: 8.w),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.1),
+                  border: Border(bottom: BorderSide(color: color, width: 2)),
+                ),
+                child: Center(
+                  child: _isAnswered && _isCorrect == true
+                    ? Text(
+                        _lastQuest?.correctAnswer?.toUpperCase() ?? "",
+                        style: GoogleFonts.shareTechMono(color: color, fontWeight: FontWeight.bold, fontSize: 16.sp),
+                      ).animate().fadeIn().scale()
+                    : Text(
+                        "RUNES_PENDING",
+                        style: GoogleFonts.shareTechMono(color: color.withValues(alpha: 0.3), fontSize: 10.sp),
+                      ).animate(onPlay: (c) => c.repeat()).shimmer(),
+                ),
+              ),
+            ),
+            if (parts.length > 1) TextSpan(text: parts[1]),
+          ],
+        ),
+      ),
+    ).animate().fadeIn(duration: 1.seconds).slideY(begin: -0.1, end: 0);
+  }
+
+  Widget _buildAcademicShard(int index, String text, Color color, bool isDark) {
+    final initial = _getShardInitialPosition(index, (_lastQuest?.options?.length ?? 4));
+    final isDragging = _activeShardIndex == index;
+    final offset = isDragging ? _dragOffset : Offset.zero;
+    
+    return Positioned(
+      left: (_lastConstraints!.maxWidth / 2) + initial.dx + offset.dx - 60.w,
+      top: (_lastConstraints!.maxHeight / 2) + initial.dy + offset.dy - 30.h,
+      child: GestureDetector(
+        onPanStart: (_) => _onShardDragStart(index),
+        onPanUpdate: (d) => _onShardDragUpdate(index, d),
+        onPanEnd: (_) => _onShardDragEnd(index, _lastQuest!),
+        child: Container(
+          width: 120.w,
+          height: 50.h,
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF334155) : Colors.white,
+            borderRadius: BorderRadius.circular(4.r),
+            border: Border.all(color: isDragging ? color : color.withValues(alpha: 0.4), width: 2),
+            boxShadow: [
+              BoxShadow(color: Colors.black26, blurRadius: 10, offset: const Offset(0, 4)),
+            ],
+          ),
+          child: Center(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.w),
+                child: Text(
+                  text.toUpperCase(),
+                  style: GoogleFonts.shareTechMono(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black87,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -5, end: 5, duration: (2 + index).seconds);
   }
 }
 
+class ReactorGridPainter extends CustomPainter {
+  final Color color;
+  ReactorGridPainter(this.color);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color..strokeWidth = 0.5;
+    const step = 40.0;
+    
+    for (double i = 0; i < size.width; i += step) {
+      canvas.drawLine(Offset(i, 0), Offset(i, size.height), paint);
+    }
+    for (double i = 0; i < size.height; i += step) {
+      canvas.drawLine(Offset(0, i), Offset(size.width, i), paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}

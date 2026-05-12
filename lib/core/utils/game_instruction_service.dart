@@ -203,12 +203,12 @@ class GameInstructionService {
 
     if (type == GameSubtype.academicWord) {
       return const GameBriefing(
-        title: "Academic Radar",
-        icon: Icons.radar_rounded,
-        objective: "Isolate scholarly terms within the text.",
-        rules: ["Analyze the text", "Isolate the target word", "3 Hearts per mission"],
-        actionText: "Start Radar",
-        tip: "Scholarly words are precise—look for Latin/Greek roots! 🛰️",
+        title: "Thesis Thrust",
+        icon: Icons.auto_stories_rounded,
+        objective: "SCHOLARLY COMPLETION: Identify the high-level academic word and thrust it into the correct slot within the thesis passage.",
+        rules: ["Analyze the context", "Thrust the correct shard", "3 Hearts per mission"],
+        actionText: "Initiate Thrust",
+        tip: "PRO TIP: Academic words are precise! Look at the words surrounding the slot to determine the logical fit. 📜✒️",
       );
     }
     if (type == GameSubtype.contextClues) {
