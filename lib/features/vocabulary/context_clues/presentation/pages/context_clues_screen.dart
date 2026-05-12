@@ -161,7 +161,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
     return Positioned.fill(
       child: Container(
         decoration: BoxDecoration(
-          radialGradient: RadialGradient(
+          gradient: RadialGradient(
             center: Alignment.center,
             radius: 1.2,
             colors: [
@@ -242,7 +242,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
             border: Border.all(color: color, width: 6),
             boxShadow: [
               BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 40, spreadRadius: 10),
-              BoxShadow(color: Colors.black, blurRadius: 10, spreadRadius: 2, inset: true),
+              const BoxShadow(color: Colors.black, blurRadius: 10, spreadRadius: 2),
             ],
           ),
           child: ClipOval(
