@@ -1,487 +1,427 @@
-{
-    "gameType":  "antonymSearch",
-    "batchIndex":  2,
+﻿{
     "levels":  "11-20",
     "quests":  [
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L11_Q1",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q1",
+                       "word":  "BREVITY",
+                       "hint":  "Look for a word meaning tedious lengthiness.",
+                       "explanation":  "Brevity means concise use of words; prolixity means tedious length.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "LOGIC_id30",
+                       "correctAnswer":  "PROLIXITY",
                        "options":  [
-                                       "LOGIC",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "LOGIC"
+                                       "SHORTNESS",
+                                       "ECONOMY",
+                                       "PROLIXITY",
+                                       "CONCISION"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L11_Q2",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q2",
+                       "word":  "DIATRIBE",
+                       "hint":  "Look for a word meaning a speech or piece of writing that praises someone or something highly.",
+                       "explanation":  "Diatribe is a forceful and bitter verbal attack; eulogy is a speech that praises highly.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "METHOD_id31",
+                       "correctAnswer":  "EULOGY",
                        "options":  [
-                                       "METHOD",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "METHOD"
+                                       "TIRADE",
+                                       "CRITICISM",
+                                       "EULOGY",
+                                       "ATTACK"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L11_Q3",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q3",
+                       "word":  "ARCHAIC",
+                       "hint":  "Look for a word meaning current or contemporary.",
+                       "explanation":  "Archaic means very old; modern means current.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "NETWORK_id32",
+                       "correctAnswer":  "MODERN",
                        "options":  [
-                                       "NETWORK",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "NETWORK"
+                                       "OLD",
+                                       "ANCIENT",
+                                       "MODERN",
+                                       "OBSOLETE"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L12_Q1",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q4",
+                       "word":  "ATROPHY",
+                       "hint":  "Look for a word meaning to grow or develop successfully.",
+                       "explanation":  "Atrophy means to waste away; flourish means to grow successfully.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "OBJECTIVE_id33",
+                       "correctAnswer":  "FLOURISH",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "OBJECTIVE",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
+                                       "DECLINE",
+                                       "FLOURISH",
+                                       "WITHER",
+                                       "WASTE"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L12_Q2",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q5",
+                       "word":  "RESILIENCE",
+                       "hint":  "Think about the quality of being easily broken.",
+                       "explanation":  "Resilience is the ability to recover; fragility is the quality of being easily broken.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "PERSPECTIVE_id34",
+                       "correctAnswer":  "FRAGILITY",
                        "options":  [
-                                       "PERSPECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
+                                       "ENERGY",
+                                       "FRAGILITY",
+                                       "VIGOR",
+                                       "STRENGTH"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L12_Q3",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q6",
+                       "word":  "ACCURATE",
+                       "hint":  "Look for a word meaning incorrect.",
+                       "explanation":  "Accurate means correct; erroneous means containing errors.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "QUALITY_id35",
+                       "correctAnswer":  "ERRONEOUS",
                        "options":  [
-                                       "QUALITY",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "QUALITY"
+                                       "ERRONEOUS",
+                                       "PRECISE",
+                                       "LITERAL",
+                                       "EXACT"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L13_Q1",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q7",
+                       "word":  "DEPLORABLE",
+                       "hint":  "Look for a word meaning deserving respect and approval.",
+                       "explanation":  "Deplorable means deserving strong condemnation; admirable means deserving respect.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "RESEARCH_id36",
+                       "correctAnswer":  "ADMIRABLE",
                        "options":  [
-                                       "RESEARCH",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
+                                       "TERRIBLE",
+                                       "AWFUL",
+                                       "SHOCKING",
+                                       "ADMIRABLE"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L13_Q2",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q8",
+                       "word":  "DEARTH",
+                       "hint":  "Look for a word meaning a very large quantity.",
+                       "explanation":  "Dearth means a scarcity or lack of something; abundance means a large quantity.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "SOURCE_id37",
+                       "correctAnswer":  "ABUNDANCE",
                        "options":  [
-                                       "SOURCE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "SOURCE"
+                                       "SCARCITY",
+                                       "LACK",
+                                       "ABUNDANCE",
+                                       "SHORTAGE"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L13_Q3",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q9",
+                       "word":  "CRYPTIC",
+                       "hint":  "Look for a word meaning easily perceived or understood.",
+                       "explanation":  "Cryptic means having a meaning that is mysterious; obvious means easily understood.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "THEORY_id38",
+                       "correctAnswer":  "OBVIOUS",
                        "options":  [
-                                       "THEORY",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "THEORY"
+                                       "VAGUE",
+                                       "MYSTERIOUS",
+                                       "PUZZLING",
+                                       "OBVIOUS"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L14_Q1",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q10",
+                       "word":  "CONTEMPT",
+                       "hint":  "Think about a feeling of respect and approval.",
+                       "explanation":  "Contempt is the feeling that something is worthless; admiration is respect.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "UNIQUE_id39",
+                       "correctAnswer":  "ADMIRATION",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "UNIQUE"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
+                                       "ADMIRATION",
+                                       "HATRED",
+                                       "SCORN",
+                                       "DISDAIN"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L14_Q2",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q11",
+                       "word":  "BENIGN",
+                       "hint":  "Look for a word meaning very virulent or infectious.",
+                       "explanation":  "Benign means gentle and kindly; malignant means malevolent or harmful.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id40",
+                       "correctAnswer":  "MALIGNANT",
                        "options":  [
-                                       "ANALYZE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
+                                       "MALIGNANT",
+                                       "GENTLE",
+                                       "KIND",
+                                       "HARMLESS"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L14_Q3",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q12",
+                       "word":  "ASCETIC",
+                       "hint":  "Think about seeking pleasure above all else.",
+                       "explanation":  "Ascetic means practicing self-denial; hedonistic means pursuing pleasure.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id41",
+                       "correctAnswer":  "HEDONISTIC",
                        "options":  [
-                                       "CONCEPT",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
+                                       "HEDONISTIC",
+                                       "FRUGAL",
+                                       "AUSTERE",
+                                       "STERN"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L15_Q1",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q13",
+                       "word":  "GREGARIOUS",
+                       "hint":  "Look for a word meaning distant or unsociable.",
+                       "explanation":  "Gregarious means social; aloof means cool and distant.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id42",
+                       "correctAnswer":  "ALOOF",
                        "options":  [
-                                       "DATA",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "DATA"
+                                       "FRIENDLY",
+                                       "ALOOF",
+                                       "SOCIAL",
+                                       "WARM"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L15_Q2",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q14",
+                       "word":  "WANE",
+                       "hint":  "Look for a word meaning to increase in size or intensity.",
+                       "explanation":  "Wane means to decrease; wax means to increase.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id43",
+                       "correctAnswer":  "WAX",
                        "options":  [
-                                       "EVIDENCE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
+                                       "FALL",
+                                       "WAX",
+                                       "FADE",
+                                       "DROP"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L15_Q3",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q15",
+                       "word":  "DECORUM",
+                       "hint":  "Look for a word meaning failure to observe standards or show due honesty.",
+                       "explanation":  "Decorum is behavior in keeping with good taste; impropriety is failure to observe standards.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id44",
+                       "correctAnswer":  "IMPROPRIETY",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "FACTOR"
-                                   ],
-                       "correctAnswer":  "FACTOR"
+                                       "PROPRIETY",
+                                       "GRACE",
+                                       "IMPROPRIETY",
+                                       "DIGNITY"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L16_Q1",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q16",
+                       "word":  "BELITTLE",
+                       "hint":  "Think about praising or raising someone in rank.",
+                       "explanation":  "Belittle means to make seem unimportant; exalt means to praise highly.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id45",
+                       "correctAnswer":  "EXALT",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "GLOBAL",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
+                                       "EXALT",
+                                       "SCORN",
+                                       "DERIDE",
+                                       "DECRY"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L16_Q2",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q17",
+                       "word":  "BOISTEROUS",
+                       "hint":  "Think about a word meaning making little or no noise.",
+                       "explanation":  "Boistrous means noisy and energetic; quiet means making little noise.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id46",
+                       "correctAnswer":  "QUIET",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "HYPOTHESIS"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
+                                       "LOUD",
+                                       "QUIET",
+                                       "NOISY",
+                                       "ROWDY"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L16_Q3",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q18",
+                       "word":  "FORTUITOUS",
+                       "hint":  "Think about something done on purpose.",
+                       "explanation":  "Fortuitous means happening by chance; deliberate means done on purpose.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id47",
+                       "correctAnswer":  "DELIBERATE",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "INTERPRET",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
+                                       "DELIBERATE",
+                                       "LUCKY",
+                                       "RANDOM",
+                                       "CHANCE"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L17_Q1",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q19",
+                       "word":  "ADVERSITY",
+                       "hint":  "Focus on success and wealth.",
+                       "explanation":  "Adversity is a state of hardship; prosperity is a state of success.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id48",
+                       "correctAnswer":  "PROSPERITY",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "JUSTICE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
+                                       "HARDSHIP",
+                                       "MISHAP",
+                                       "PROSPERITY",
+                                       "MISFORTUNE"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L17_Q2",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q20",
+                       "word":  "DIGRESS",
+                       "hint":  "Look for a word meaning to believe in and follow the practices of.",
+                       "explanation":  "Digress means to leave the main subject temporarily in speech or writing; adhere means to follow practices.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id49",
+                       "correctAnswer":  "ADHERE",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "KNOWLEDGE"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
+                                       "DEVIATE",
+                                       "STRAY",
+                                       "ADHERE",
+                                       "DRIFT"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L17_Q3",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q21",
+                       "word":  "ALOOF",
+                       "hint":  "Look for a word meaning friendly and social.",
+                       "explanation":  "Aloof means cool and distant; sociable means friendly.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "LOGIC_id50",
+                       "correctAnswer":  "SOCIABLE",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "LOGIC",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "LOGIC"
+                                       "DETACHED",
+                                       "COOL",
+                                       "SOCIABLE",
+                                       "DISTANT"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L18_Q1",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q22",
+                       "word":  "DENIGRATE",
+                       "hint":  "Look for a word meaning to praise enthusiastically.",
+                       "explanation":  "Denigrate means to criticize unfairly; extol means to praise enthusiastically.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "METHOD_id51",
+                       "correctAnswer":  "EXTOL",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "METHOD"
-                                   ],
-                       "correctAnswer":  "METHOD"
+                                       "DECRY",
+                                       "BELITTLE",
+                                       "DERIDE",
+                                       "EXTOL"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L18_Q2",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q23",
+                       "word":  "DEVIOUS",
+                       "hint":  "Look for a word meaning free of deceit and untruthfulness; sincere.",
+                       "explanation":  "Devious means showing a skillful use of underhanded tactics; honest means sincere.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "NETWORK_id52",
+                       "correctAnswer":  "HONEST",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "NETWORK"
-                                   ],
-                       "correctAnswer":  "NETWORK"
+                                       "WILY",
+                                       "DECEPTIVE",
+                                       "DISHONEST",
+                                       "HONEST"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L18_Q3",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q24",
+                       "word":  "PENSIVE",
+                       "hint":  "Think about a word meaning without consideration.",
+                       "explanation":  "Pensive means deeply thoughtful; thoughtless means without consideration.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "OBJECTIVE_id53",
+                       "correctAnswer":  "THOUGHTLESS",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "OBJECTIVE"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
+                                       "SOLEMN",
+                                       "DREAMY",
+                                       "THOUGHTLESS",
+                                       "GRAVE"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L19_Q1",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q25",
+                       "word":  "CENSURE",
+                       "hint":  "Think about officially agreeing to something.",
+                       "explanation":  "Censure means to express severe disapproval; approve means to agree.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "PERSPECTIVE_id54",
+                       "correctAnswer":  "APPROVE",
                        "options":  [
-                                       "PERSPECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
+                                       "CONDEMN",
+                                       "CRITICIZE",
+                                       "SCOLD",
+                                       "APPROVE"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L19_Q2",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q26",
+                       "word":  "CORROBORATE",
+                       "hint":  "Think about denying the truth by asserting the opposite.",
+                       "explanation":  "Corroborate means to confirm; contradict means to deny by asserting the opposite.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "QUALITY_id55",
+                       "correctAnswer":  "CONTRADICT",
                        "options":  [
-                                       "QUALITY",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "QUALITY"
+                                       "SUPPORT",
+                                       "CONFIRM",
+                                       "VERIFY",
+                                       "CONTRADICT"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L19_Q3",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q27",
+                       "word":  "DAUNTLESS",
+                       "hint":  "Think about a word meaning lacking courage.",
+                       "explanation":  "Dauntless means showing fearlessness; cowardly means lacking courage.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "RESEARCH_id56",
+                       "correctAnswer":  "COWARDLY",
                        "options":  [
-                                       "RESEARCH",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
+                                       "COWARDLY",
+                                       "FEARLESS",
+                                       "BOLD",
+                                       "BRAVE"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L20_Q1",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q28",
+                       "word":  "BENEVOLENT",
+                       "hint":  "Think about a word meaning wishing evil to others.",
+                       "explanation":  "Benevolent means kind; malevolent means wishing evil to others.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "SOURCE_id57",
+                       "correctAnswer":  "MALEVOLENT",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "SOURCE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "SOURCE"
+                                       "GENTLE",
+                                       "KIND",
+                                       "MALEVOLENT",
+                                       "GENEROUS"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L20_Q2",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q29",
+                       "word":  "DEXTEROUS",
+                       "hint":  "Think about awkward in movement or in handling things.",
+                       "explanation":  "Dexterous means showing or having skill, especially with the hands; clumsy means awkward.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "THEORY_id58",
+                       "correctAnswer":  "CLUMSY",
                        "options":  [
-                                       "THEORY",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "THEORY"
+                                       "ADROIT",
+                                       "SKILLFUL",
+                                       "DEFT",
+                                       "CLUMSY"
+                                   ]
                    },
                    {
-                       "id":  "VOC_ANTONYMSEARCH_L20_Q3",
+                       "id":  "VOC_ANTONYMSEARCH_L2_Q30",
+                       "word":  "CONFLUENCE",
+                       "hint":  "Look for a word meaning the process of separating.",
+                       "explanation":  "Confluence is the act of flowing together; divergence is separating.",
                        "interactionType":  "Polarity Pull",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "UNIQUE_id59",
+                       "correctAnswer":  "DIVERGENCE",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "UNIQUE"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
+                                       "UNION",
+                                       "MEETING",
+                                       "DIVERGENCE",
+                                       "JUNCTION"
+                                   ]
                    }
-               ]
+               ],
+    "gameType":  "antonymSearch",
+    "batchIndex":  2
 }

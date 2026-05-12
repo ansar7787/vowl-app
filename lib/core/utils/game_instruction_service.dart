@@ -192,12 +192,12 @@ class GameInstructionService {
     }
     if (type == GameSubtype.antonymSearch) {
       return const GameBriefing(
-        title: "Bipolar Mirror",
-        icon: Icons.exposure_rounded,
-        objective: "Identify the exact linguistic opposite.",
-        rules: ["Analyze reflection", "Pick inverse signal", "3 Hearts per mission"],
-        actionText: "Enter Mirror",
-        tip: "True opposites are like mirror images—perfectly inverted! 🪞",
+        title: "Polarity Pull",
+        icon: Icons.electrical_services_rounded,
+        objective: "MAGNETIC INVERSION: Identify the antonym and pull it towards the opposite magnetic pole of the target word.",
+        rules: ["Target is (+) or (-)", "Opposites Attract", "3 Hearts per mission"],
+        actionText: "Initiate Pull",
+        tip: "PRO TIP: If the target is Positive (Blue), the antonym must be pulled to the Negative Pole (Red)! ⚡🧲",
       );
     }
 
