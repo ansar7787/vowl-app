@@ -1,487 +1,427 @@
-{
-    "gameType":  "prefixSuffix",
-    "batchIndex":  18,
+﻿{
     "levels":  "171-180",
     "quests":  [
                    {
                        "id":  "VOC_PREFIXSUFFIX_L171_Q1",
+                       "hint":  "Able to provide comfort.",
+                       "explanation":  "COMFORT + ABLE = COMFORTABLE.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "LOGIC",
+                       "correctAnswer":  "COMFORTABLE",
+                       "rootWord":  "COMFORT",
                        "options":  [
-                                       "LOGIC",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "LOGIC"
+                                       "-ANCE",
+                                       "-ABLE",
+                                       "-LY",
+                                       "PRE-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L171_Q2",
+                       "hint":  "To behave badly.",
+                       "explanation":  "MIS + BEHAVE = MISBEHAVE.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "METHOD",
+                       "correctAnswer":  "MISBEHAVE",
+                       "rootWord":  "BEHAVE",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "METHOD",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "METHOD"
+                                       "MIS-",
+                                       "UN-",
+                                       "-OUS",
+                                       "IN-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L171_Q3",
+                       "hint":  "Full of utility.",
+                       "explanation":  "USE + FUL = USEFUL.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "NETWORK",
+                       "correctAnswer":  "USEFUL",
+                       "rootWord":  "USE",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "NETWORK",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "NETWORK"
+                                       "-IVE",
+                                       "NON-",
+                                       "-FUL",
+                                       "-ARY"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L172_Q1",
+                       "hint":  "One who builds.",
+                       "explanation":  "BUILD + ER = BUILDER.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "OBJECTIVE",
+                       "correctAnswer":  "BUILDER",
+                       "rootWord":  "BUILD",
                        "options":  [
-                                       "OBJECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
+                                       "-IST",
+                                       "-ER",
+                                       "-ATE",
+                                       "-RY"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L172_Q2",
+                       "hint":  "In a fast way.",
+                       "explanation":  "-LY forms an adverb from an adjective. QUICK + LY = QUICKLY.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "PERSPECTIVE",
+                       "correctAnswer":  "QUICKLY",
+                       "rootWord":  "QUICK",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "PERSPECTIVE",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
+                                       "-ANCE",
+                                       "-IC",
+                                       "-LY",
+                                       "RE-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L172_Q3",
+                       "hint":  "Not straight or immediate.",
+                       "explanation":  "IN + DIRECT = INDIRECT.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "QUALITY",
+                       "correctAnswer":  "INDIRECT",
+                       "rootWord":  "DIRECT",
                        "options":  [
-                                       "QUALITY",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "QUALITY"
+                                       "-ARY",
+                                       "-ABLE",
+                                       "-IFY",
+                                       "IN-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L173_Q1",
+                       "hint":  "To fill something again.",
+                       "explanation":  "RE + FILL = REFILL.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "RESEARCH",
+                       "correctAnswer":  "REFILL",
+                       "rootWord":  "FILL",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "RESEARCH",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
+                                       "-OR",
+                                       "MIS-",
+                                       "RE-",
+                                       "-OUS"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L173_Q2",
+                       "hint":  "Able to be depended on.",
+                       "explanation":  "-ABLE means capable of. RELY + ABLE = RELIABLE.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "SOURCE",
+                       "correctAnswer":  "RELIABLE",
+                       "rootWord":  "RELY",
                        "options":  [
-                                       "SOURCE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "SOURCE"
+                                       "-ABLE",
+                                       "-ATE",
+                                       "-OUS",
+                                       "-ER"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L173_Q3",
+                       "hint":  "Opposite of agreeing.",
+                       "explanation":  "DIS + AGREE = DISAGREE.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "THEORY",
+                       "correctAnswer":  "DISAGREE",
+                       "rootWord":  "AGREE",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "THEORY"
-                                   ],
-                       "correctAnswer":  "THEORY"
+                                       "MIS-",
+                                       "RE-",
+                                       "-IC",
+                                       "DIS-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L174_Q1",
+                       "hint":  "In a low-speed way.",
+                       "explanation":  "SLOW + LY = SLOWLY.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "UNIQUE",
+                       "correctAnswer":  "SLOWLY",
+                       "rootWord":  "SLOW",
                        "options":  [
-                                       "UNIQUE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
+                                       "-ION",
+                                       "IN-",
+                                       "-LY",
+                                       "-NESS"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L174_Q2",
+                       "hint":  "Not able to wait.",
+                       "explanation":  "IM + PATIENT = IMPATIENT.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "ANALYZE",
+                       "correctAnswer":  "IMPATIENT",
+                       "rootWord":  "PATIENT",
                        "options":  [
-                                       "ANALYZE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
+                                       "MIS-",
+                                       "IM-",
+                                       "-IST",
+                                       "-ATE"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L174_Q3",
+                       "hint":  "To see before.",
+                       "explanation":  "PRE- means before. PRE + VIEW = PREVIEW.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "CONCEPT",
+                       "correctAnswer":  "PREVIEW",
+                       "rootWord":  "VIEW",
                        "options":  [
-                                       "CONCEPT",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
+                                       "PRE-",
+                                       "-IST",
+                                       "UN-",
+                                       "-ARY"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L175_Q1",
+                       "hint":  "One who builds.",
+                       "explanation":  "BUILD + ER = BUILDER.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "DATA",
+                       "correctAnswer":  "BUILDER",
+                       "rootWord":  "BUILD",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DATA"
-                                   ],
-                       "correctAnswer":  "DATA"
+                                       "DIS-",
+                                       "-IZE",
+                                       "-LY",
+                                       "-ER"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L175_Q2",
+                       "hint":  "Able to be depended on.",
+                       "explanation":  "-ABLE means capable of. RELY + ABLE = RELIABLE.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "EVIDENCE",
+                       "correctAnswer":  "RELIABLE",
+                       "rootWord":  "RELY",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "EVIDENCE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
+                                       "-TY",
+                                       "-NESS",
+                                       "-IFY",
+                                       "-ABLE"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L175_Q3",
+                       "hint":  "One who plays.",
+                       "explanation":  "PLAY + ER = PLAYER.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "FACTOR",
+                       "correctAnswer":  "PLAYER",
+                       "rootWord":  "PLAY",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "FACTOR"
-                                   ],
-                       "correctAnswer":  "FACTOR"
+                                       "RE-",
+                                       "-ION",
+                                       "IL-",
+                                       "-ER"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L176_Q1",
+                       "hint":  "To understand incorrectly.",
+                       "explanation":  "MIS- means wrongly. MIS + UNDERSTAND = MISUNDERSTAND.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "GLOBAL",
+                       "correctAnswer":  "MISUNDERSTAND",
+                       "rootWord":  "UNDERSTAND",
                        "options":  [
-                                       "GLOBAL",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
+                                       "MIS-",
+                                       "-ABLE",
+                                       "IN-",
+                                       "RE-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L176_Q2",
+                       "hint":  "The act of responding.",
+                       "explanation":  "REACT + ION = REACTION.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "HYPOTHESIS",
+                       "correctAnswer":  "REACTION",
+                       "rootWord":  "REACT",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "HYPOTHESIS"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
+                                       "-IST",
+                                       "-ORY",
+                                       "-ION",
+                                       "IR-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L176_Q3",
+                       "hint":  "To understand incorrectly.",
+                       "explanation":  "MIS- means wrongly. MIS + UNDERSTAND = MISUNDERSTAND.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "INTERPRET",
+                       "correctAnswer":  "MISUNDERSTAND",
+                       "rootWord":  "UNDERSTAND",
                        "options":  [
-                                       "INTERPRET",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
+                                       "-NESS",
+                                       "MIS-",
+                                       "-FUL",
+                                       "IN-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L177_Q1",
+                       "hint":  "Make it the opposite of covered.",
+                       "explanation":  "UN + WRAP = UNWRAP.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "JUSTICE",
+                       "correctAnswer":  "UNWRAP",
+                       "rootWord":  "WRAP",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "JUSTICE"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
+                                       "-ATE",
+                                       "-ANCE",
+                                       "MIS-",
+                                       "UN-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L177_Q2",
+                       "hint":  "Without optimism.",
+                       "explanation":  "HOPE + LESS = HOPELESS.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "KNOWLEDGE",
+                       "correctAnswer":  "HOPELESS",
+                       "rootWord":  "HOPE",
                        "options":  [
-                                       "KNOWLEDGE",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
+                                       "-LESS",
+                                       "-FUL",
+                                       "-OR",
+                                       "-ABLE"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L177_Q3",
+                       "hint":  "Make it the opposite of recognized.",
+                       "explanation":  "UN + KNOWN = UNKNOWN.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "LOGIC",
+                       "correctAnswer":  "UNKNOWN",
+                       "rootWord":  "KNOWN",
                        "options":  [
-                                       "LOGIC",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "LOGIC"
+                                       "-IST",
+                                       "IN-",
+                                       "MIS-",
+                                       "UN-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L178_Q1",
+                       "hint":  "Make it the opposite of normal.",
+                       "explanation":  "UN + USUAL = UNUSUAL.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "METHOD",
+                       "correctAnswer":  "UNUSUAL",
+                       "rootWord":  "USUAL",
                        "options":  [
-                                       "METHOD",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "METHOD"
+                                       "IL-",
+                                       "-OR",
+                                       "-IVE",
+                                       "UN-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L178_Q2",
+                       "hint":  "Full of caution.",
+                       "explanation":  "CARE + FUL = CAREFUL.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "NETWORK",
+                       "correctAnswer":  "CAREFUL",
+                       "rootWord":  "CARE",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "NETWORK"
-                                   ],
-                       "correctAnswer":  "NETWORK"
+                                       "-FUL",
+                                       "-IC",
+                                       "UN-",
+                                       "IR-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L178_Q3",
+                       "hint":  "Against the law.",
+                       "explanation":  "IL- means not before \u0027L\u0027. IL + LEGAL = ILLEGAL.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "OBJECTIVE",
+                       "correctAnswer":  "ILLEGAL",
+                       "rootWord":  "LEGAL",
                        "options":  [
-                                       "OBJECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
+                                       "DIS-",
+                                       "-FUL",
+                                       "-ER",
+                                       "IL-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L179_Q1",
+                       "hint":  "To build something again.",
+                       "explanation":  "RE + BUILD = REBUILD.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "PERSPECTIVE",
+                       "correctAnswer":  "REBUILD",
+                       "rootWord":  "BUILD",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "PERSPECTIVE",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
+                                       "-MENT",
+                                       "-ABLE",
+                                       "-OUS",
+                                       "RE-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L179_Q2",
+                       "hint":  "Something fixed before.",
+                       "explanation":  "PRE + FIX = PREFIX.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "QUALITY",
+                       "correctAnswer":  "PREFIX",
+                       "rootWord":  "FIX",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "QUALITY"
-                                   ],
-                       "correctAnswer":  "QUALITY"
+                                       "DIS-",
+                                       "PRE-",
+                                       "IN-",
+                                       "-ION"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L179_Q3",
+                       "hint":  "To put in the wrong place.",
+                       "explanation":  "MIS + PLACE = MISPLACE.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "RESEARCH",
+                       "correctAnswer":  "MISPLACE",
+                       "rootWord":  "PLACE",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "RESEARCH"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
+                                       "DIS-",
+                                       "PRE-",
+                                       "MIS-",
+                                       "-ER"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L180_Q1",
+                       "hint":  "Make it the opposite of joyful.",
+                       "explanation":  "UN- means not. UN + HAPPY = UNHAPPY.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "SOURCE",
+                       "correctAnswer":  "UNHAPPY",
+                       "rootWord":  "HAPPY",
                        "options":  [
-                                       "SOURCE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "SOURCE"
+                                       "-ORY",
+                                       "UN-",
+                                       "IM-",
+                                       "-TY"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L180_Q2",
+                       "hint":  "To vanish.",
+                       "explanation":  "DIS + APPEAR = DISAPPEAR.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "THEORY",
+                       "correctAnswer":  "DISAPPEAR",
+                       "rootWord":  "APPEAR",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "THEORY",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "THEORY"
+                                       "PRE-",
+                                       "-LESS",
+                                       "-ORY",
+                                       "DIS-"
+                                   ]
                    },
                    {
                        "id":  "VOC_PREFIXSUFFIX_L180_Q3",
+                       "hint":  "The state of being friendly.",
+                       "explanation":  "-NESS forms a noun from an adjective. KIND + NESS = KINDNESS.",
                        "interactionType":  "Root Rover",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "rootWord":  "UNIQUE",
+                       "correctAnswer":  "KINDNESS",
+                       "rootWord":  "KIND",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "UNIQUE"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
+                                       "UN-",
+                                       "-NESS",
+                                       "-ER",
+                                       "-IFY"
+                                   ]
                    }
-               ]
+               ],
+    "gameType":  "prefixSuffix",
+    "batchIndex":  18
 }
