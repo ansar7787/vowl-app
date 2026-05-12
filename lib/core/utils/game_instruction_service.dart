@@ -138,40 +138,32 @@ class GameInstructionService {
     // --- 4. VOCABULARY (Lexical Expansion) ---
     if (type == GameSubtype.flashcards) {
       return const GameBriefing(
-        title: "Flashcard Mastery",
+        title: "Flashcards",
         icon: Icons.style_rounded,
-        objective: "Test your memory! Recall meanings and master the word list.",
-        rules: [
-          "Tap the card to see the meaning",
-          "Swipe Right if you know it well",
-          "Swipe Left to review it again"
-        ],
-        actionText: "Ready to Master?",
-        tip: "Reviewing words you struggle with is the fastest way to learn! 🚀",
+        objective: "Master words by swiping through the deck.",
+        rules: ["Tap to flip", "Swipe Right = Known", "Swipe Left = Review"],
+        actionText: "Master Now",
+        tip: "Speed isn't the goal—mastery is! 🚀",
       );
     }
     if (type == GameSubtype.topicVocab) {
       return const GameBriefing(
         title: "Topic Nexus",
         icon: Icons.category_rounded,
-        objective: "CATEGORIZE & SORT: Swipe words into their matching thematic bins.",
-        rules: [
-          "Swipe to categorize",
-          "Flick words into bins",
-          "Sort the whole batch"
-        ],
-        actionText: "Ready to Sort?",
-        tip: "PRO TIP: Categorizing words helps you remember them 2x faster! 🚀",
+        objective: "Sort words into their thematic bins.",
+        rules: ["Analyze the word", "Swipe into matching bin", "Clear the queue"],
+        actionText: "Start Sorting",
+        tip: "Sorting by topic builds semantic memory 2x faster! 🧠",
       );
     }
     if (type == GameSubtype.prefixSuffix) {
       return const GameBriefing(
-        title: "Botanical Roots",
+        title: "Word Roots",
         icon: Icons.spa_rounded,
-        objective: "GRAFT & GROW: Master English morphology by attaching prefixes and suffixes to root words.",
-        rules: ["Analyze the root", "Select the affix", "Grow the tree", "3 Hearts per mission"],
-        actionText: "Start Grafting",
-        tip: "PRO TIP: Latin and Greek roots are the DNA of English. One root unlocks dozens of words! 🌱",
+        objective: "Build words by attaching affixes to roots.",
+        rules: ["Analyze root", "Attach correct prefix/suffix", "3 Hearts per mission"],
+        actionText: "Build Words",
+        tip: "Roots are the DNA of English. One root unlocks many words! 🌱",
       );
     }
     if (type == GameSubtype.wordFormation) {
@@ -190,22 +182,22 @@ class GameInstructionService {
     }
     if (type == GameSubtype.synonymSearch) {
       return const GameBriefing(
-        title: "Neural Lens",
-        icon: Icons.center_focus_strong_rounded,
-        objective: "SCAN & SYNC: Find the semantic twin using the high-frequency Neural Lens.",
-        rules: ["Focus the Lens", "Find the match", "Filter the noise", "3 Hearts per mission"],
-        actionText: "Initialize Scan",
-        tip: "PRO TIP: Use the lens to focus on core meanings while filtering out distractions. 🔍",
+        title: "Word Warp",
+        icon: Icons.cyclone,
+        objective: "Warp the synonym into the central gate.",
+        rules: ["Find the twin", "Drag into the Warp Gate", "Avoid distractions"],
+        actionText: "Start Warp",
+        tip: "Focus on the core meaning, filter the noise! 🌀",
       );
     }
     if (type == GameSubtype.antonymSearch) {
       return const GameBriefing(
         title: "Bipolar Mirror",
         icon: Icons.exposure_rounded,
-        objective: "REFLECT & INVERT: Peer through the Bipolar Mirror and identify the exact linguistic opposite.",
-        rules: ["Analyze reflection", "Pick inverse signal", "Spot false matches", "3 Hearts per mission"],
-        actionText: "Enter Mirror Chamber",
-        tip: "PRO TIP: True opposites are like mirror images—perfectly symmetrical but completely inverted! 🪞",
+        objective: "Identify the exact linguistic opposite.",
+        rules: ["Analyze reflection", "Pick inverse signal", "3 Hearts per mission"],
+        actionText: "Enter Mirror",
+        tip: "True opposites are like mirror images—perfectly inverted! 🪞",
       );
     }
 
@@ -213,60 +205,60 @@ class GameInstructionService {
       return const GameBriefing(
         title: "Academic Radar",
         icon: Icons.radar_rounded,
-        objective: "SCAN & LOCATE: Use the Academic Radar to highlight and isolate scholarly terminology within the passage.",
-        rules: ["Analyze the text", "Isolate the word", "3 Hearts per mission"],
-        actionText: "Start Radar Scan",
-        tip: "PRO TIP: Scholarly words are often precise and formal. Look for complex Latin or Greek roots! 🛰️",
+        objective: "Isolate scholarly terms within the text.",
+        rules: ["Analyze the text", "Isolate the target word", "3 Hearts per mission"],
+        actionText: "Start Radar",
+        tip: "Scholarly words are precise—look for Latin/Greek roots! 🛰️",
       );
     }
     if (type == GameSubtype.contextClues) {
       return const GameBriefing(
         title: "Ink Analysis",
         icon: Icons.brush_rounded,
-        objective: "RUB & REVEAL: Use the digital brush to rub away the masking ink and reveal hidden contextual clues.",
-        rules: ["Rub to reveal", "Analyze surrounding words", "3 Hearts per mission"],
+        objective: "Rub away the ink to reveal hidden clues.",
+        rules: ["Rub to reveal", "Analyze context", "3 Hearts per mission"],
         actionText: "Begin Analysis",
-        tip: "PRO TIP: Don't rub everything! Reveal just enough to understand the context and save your energy. 🖌️",
+        tip: "Reveal just enough to understand the context! 🖌️",
       );
     }
     if (type == GameSubtype.collocations) {
       return const GameBriefing(
         title: "Chain Linker",
         icon: Icons.link_rounded,
-        objective: "LINK & SYNC: Create semantic chains by connecting anchor words to their natural linguistic partners.",
+        objective: "Connect words to their natural partners.",
         rules: ["Find the partner", "Secure the link", "3 Hearts per mission"],
         actionText: "Secure Links",
-        tip: "PRO TIP: Collocations are words that 'just sound right' together. Trust your ear! 🔗",
+        tip: "Collocations are words that 'just sound right' together! 🔗",
       );
     }
     if (type == GameSubtype.phrasalVerbs) {
       return const GameBriefing(
         title: "Verb Magnet",
         icon: Icons.flash_on_rounded,
-        objective: "ATTRACT & BIND: Use the Verb Magnet to attract floating particles and synthesize complete phrasal verbs.",
+        objective: "Attract particles to form phrasal verbs.",
         rules: ["Select the particle", "Complete the verb", "3 Hearts per mission"],
         actionText: "Activate Magnet",
-        tip: "PRO TIP: Small changes in the particle (up vs. down) completely change the verb's meaning! 🧲",
+        tip: "Particles like 'up' or 'down' change everything! 🧲",
       );
     }
     if (type == GameSubtype.idioms) {
       return const GameBriefing(
         title: "Idiom Echo",
         icon: Icons.record_voice_over_rounded,
-        objective: "DECODE & ECHO: Analyze the visual emoji clues and echo back the true figurative meaning of the idiom.",
-        rules: ["Decode the visual", "Avoid literal traps", "3 Hearts per mission"],
+        objective: "Decode emojis to find figurative meanings.",
+        rules: ["Decode visual clues", "Avoid literal traps", "3 Hearts per mission"],
         actionText: "Echo Meaning",
-        tip: "PRO TIP: Idioms are the 'code' of English. Master them to sound exactly like a native! 🗣️",
+        tip: "Idioms are the 'code' of English. Master them to sound native! 🗣️",
       );
     }
     if (type == GameSubtype.contextualUsage) {
       return const GameBriefing(
         title: "Usage Expert",
         icon: Icons.fact_check_rounded,
-        objective: "SLOT & VALIDATE: Evaluate four different scenarios and slot the target word into the only grammatically correct sentence.",
-        rules: ["Analyze all slots", "Identify errors", "3 Hearts per mission"],
+        objective: "Slot the word into the correct sentence.",
+        rules: ["Analyze all slots", "Identify correct usage", "3 Hearts per mission"],
         actionText: "Validate Usage",
-        tip: "PRO TIP: Check the part of speech! A word might be a noun in one sentence and an incorrect verb in another. 📋",
+        tip: "Check the part of speech—it's the key to the correct slot! 📋",
       );
     }
 

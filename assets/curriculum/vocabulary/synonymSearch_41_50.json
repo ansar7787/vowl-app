@@ -1,487 +1,428 @@
-{
-    "gameType":  "synonymSearch",
-    "batchIndex":  5,
+﻿{
     "levels":  "41-50",
     "quests":  [
                    {
                        "id":  "VOC_SYNONYMSEARCH_L41_Q1",
+                       "word":  "Analyze",
+                       "hint":  "To examine something methodically and in detail.",
+                       "explanation":  "Both 'Analyze' and 'Examine' involve a systematic study to understand complex information.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id120",
+                       "correctAnswer":  "Examine",
                        "options":  [
-                                       "ANALYZE",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
+                                       "Destroy",
+                                       "Ignore",
+                                       "Create",
+                                       "Examine"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L41_Q2",
+                       "word":  "Concept",
+                       "hint":  "An abstract idea or a general notion.",
+                       "explanation":  "A 'Concept' is a mental 'Idea' that represents a category or an abstraction.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id121",
+                       "correctAnswer":  "Idea",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "CONCEPT"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
+                                       "Idea",
+                                       "Place",
+                                       "Action",
+                                       "Thing"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L41_Q3",
+                       "word":  "Evidence",
+                       "hint":  "Information used to support a claim or belief.",
+                       "explanation":  "'Proof' and 'Evidence' are facts that verify the truth of a statement.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id122",
+                       "correctAnswer":  "Proof",
                        "options":  [
-                                       "DATA",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "DATA"
+                                       "Guess",
+                                       "Doubt",
+                                       "Proof",
+                                       "Theory"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L42_Q1",
+                       "word":  "Factor",
+                       "hint":  "This word refers to the act of factor.",
+                       "explanation":  "'Element' and 'Factor' both describe the process of factor in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id123",
+                       "correctAnswer":  "Element",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "EVIDENCE"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
+                                       "Total",
+                                       "Result",
+                                       "Whole",
+                                       "Element"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L42_Q2",
+                       "word":  "Interpret",
+                       "hint":  "To explain or clarify the meaning of something.",
+                       "explanation":  "To 'Interpret' is to 'Explain' the significance of data, words, or actions.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id124",
+                       "correctAnswer":  "Explain",
                        "options":  [
-                                       "FACTOR",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "FACTOR"
+                                       "Confuse",
+                                       "Listen",
+                                       "Explain",
+                                       "Hide"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L42_Q3",
+                       "word":  "Logic",
+                       "hint":  "The process of sensible reasoning.",
+                       "explanation":  "Both 'Logic' and 'Reasoning' involve thinking through a problem in a valid way.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id125",
+                       "correctAnswer":  "Reasoning",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "GLOBAL"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
+                                       "Reasoning",
+                                       "Emotion",
+                                       "Chaos",
+                                       "Luck"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L43_Q1",
+                       "word":  "Method",
+                       "hint":  "Focus on the concept of method when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Procedure' is frequently used as a more precise way to say 'Method'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id126",
+                       "correctAnswer":  "Procedure",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "HYPOTHESIS",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
+                                       "Chaos",
+                                       "Error",
+                                       "Guess",
+                                       "Procedure"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L43_Q2",
+                       "word":  "Objective",
+                       "hint":  "This word refers to the act of objective.",
+                       "explanation":  "'Goal' and 'Objective' both describe the process of objective in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id127",
+                       "correctAnswer":  "Goal",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "INTERPRET",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
+                                       "Start",
+                                       "Goal",
+                                       "Past",
+                                       "Failure"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L43_Q3",
+                       "word":  "Perspective",
+                       "hint":  "This word refers to the act of perspective.",
+                       "explanation":  "'Viewpoint' and 'Perspective' both describe the process of perspective in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id128",
+                       "correctAnswer":  "Viewpoint",
                        "options":  [
-                                       "JUSTICE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
+                                       "Truth",
+                                       "Fact",
+                                       "Viewpoint",
+                                       "Blindness"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L44_Q1",
+                       "word":  "Theory",
+                       "hint":  "Focus on the concept of theory when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Hypothesis' is frequently used as a more precise way to say 'Theory'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id129",
+                       "correctAnswer":  "Hypothesis",
                        "options":  [
-                                       "KNOWLEDGE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
+                                       "Hypothesis",
+                                       "Proof",
+                                       "Fact",
+                                       "Law"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L44_Q2",
+                       "word":  "Vary",
+                       "hint":  "To undergo change or be different.",
+                       "explanation":  "To 'Vary' is to 'Change' or deviate from a baseline state.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "LOGIC_id130",
+                       "correctAnswer":  "Change",
                        "options":  [
-                                       "LOGIC",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "LOGIC"
+                                       "Hold",
+                                       "Fix",
+                                       "Change",
+                                       "Stay"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L44_Q3",
+                       "word":  "Acquire",
+                       "hint":  "Look for a term that represents 'acquire'.",
+                       "explanation":  "The words 'Obtain' and 'Acquire' are interchangeable when discussing acquire.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "METHOD_id131",
+                       "correctAnswer":  "Obtain",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "METHOD",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "METHOD"
+                                       "Obtain",
+                                       "Give",
+                                       "Lose",
+                                       "Sell"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L45_Q1",
+                       "word":  "Affect",
+                       "hint":  "To have an influence on something.",
+                       "explanation":  "To 'Affect' a situation is to 'Influence' its outcome or state.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "NETWORK_id132",
+                       "correctAnswer":  "Influence",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "NETWORK"
-                                   ],
-                       "correctAnswer":  "NETWORK"
+                                       "Result",
+                                       "Stop",
+                                       "End",
+                                       "Influence"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L45_Q2",
+                       "word":  "Aspect",
+                       "hint":  "Focus on the concept of aspect when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Feature' is frequently used as a more precise way to say 'Aspect'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "OBJECTIVE_id133",
+                       "correctAnswer":  "Feature",
                        "options":  [
-                                       "OBJECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
+                                       "Feature",
+                                       "Root",
+                                       "Whole",
+                                       "Core"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L45_Q3",
+                       "word":  "Assist",
+                       "hint":  "Focus on the concept of assist when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Help' is frequently used as a more precise way to say 'Assist'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "PERSPECTIVE_id134",
+                       "correctAnswer":  "Help",
                        "options":  [
-                                       "PERSPECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
+                                       "Block",
+                                       "Help",
+                                       "Hinder",
+                                       "Stop"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L46_Q1",
+                       "word":  "Category",
+                       "hint":  "A group or class of similar things.",
+                       "explanation":  "A 'Category' is a 'Group' defined by shared characteristics.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "QUALITY_id135",
+                       "correctAnswer":  "Group",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "QUALITY",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "QUALITY"
+                                       "Individual",
+                                       "Group",
+                                       "Unit",
+                                       "Single"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L46_Q2",
+                       "word":  "Complex",
+                       "hint":  "Complicated and consisting of many parts.",
+                       "explanation":  "Something 'Complex' is 'Intricate' and requires careful attention to understand.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "RESEARCH_id136",
+                       "correctAnswer":  "Intricate",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "RESEARCH"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
+                                       "Plain",
+                                       "Easy",
+                                       "Simple",
+                                       "Intricate"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L46_Q3",
+                       "word":  "Conclude",
+                       "hint":  "To bring something to an end or a finish.",
+                       "explanation":  "To 'Conclude' is to 'Finish' or reach a final decision or state.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "SOURCE_id137",
+                       "correctAnswer":  "Finish",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "SOURCE",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "SOURCE"
+                                       "Finish",
+                                       "Begin",
+                                       "Open",
+                                       "Start"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L47_Q1",
+                       "word":  "Conduct",
+                       "hint":  "The manner in which a person behaves or acts.",
+                       "explanation":  "To 'Conduct' an experiment is to 'Direct' or manage the process.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "THEORY_id138",
+                       "correctAnswer":  "Direct",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "THEORY"
-                                   ],
-                       "correctAnswer":  "THEORY"
+                                       "Direct",
+                                       "Stop",
+                                       "Follow",
+                                       "Wait"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L47_Q2",
+                       "word":  "Consequence",
+                       "hint":  "This word refers to the act of consequence.",
+                       "explanation":  "'Result' and 'Consequence' both describe the process of consequence in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "UNIQUE_id139",
+                       "correctAnswer":  "Result",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "UNIQUE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
+                                       "Result",
+                                       "Source",
+                                       "Cause",
+                                       "Origin"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L47_Q3",
+                       "word":  "Construct",
+                       "hint":  "To build or erect something complex.",
+                       "explanation":  "To 'Construct' a building is to 'Build' it from many different parts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id140",
+                       "correctAnswer":  "Build",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "ANALYZE",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
+                                       "Ruin",
+                                       "Destroy",
+                                       "Break",
+                                       "Build"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L48_Q1",
+                       "word":  "Consume",
+                       "hint":  "To use up a resource like fuel or time.",
+                       "explanation":  "To 'Consume' resources is to 'Use' them until they are exhausted.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id141",
+                       "correctAnswer":  "Use",
                        "options":  [
-                                       "CONCEPT",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
+                                       "Keep",
+                                       "Use",
+                                       "Save",
+                                       "Hold"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L48_Q2",
+                       "word":  "Credit",
+                       "hint":  "Public acknowledgment or praise for an achievement.",
+                       "explanation":  "'Credit' involves giving 'Recognition' for hard work or success.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id142",
+                       "correctAnswer":  "Recognition",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DATA"
-                                   ],
-                       "correctAnswer":  "DATA"
+                                       "Recognition",
+                                       "Loss",
+                                       "Debt",
+                                       "Blame"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L48_Q3",
+                       "word":  "Design",
+                       "hint":  "A plan produced to show the look and function of something.",
+                       "explanation":  "A 'Design' is a detailed 'Plan' for how something should be created.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id143",
+                       "correctAnswer":  "Plan",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "EVIDENCE"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
+                                       "Luck",
+                                       "Plan",
+                                       "Accident",
+                                       "Chance"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L49_Q1",
+                       "word":  "Distinct",
+                       "hint":  "Recognizably different in nature from something else.",
+                       "explanation":  "Something 'Distinct' is 'Clear' and easily distinguishable from others.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id144",
+                       "correctAnswer":  "Clear",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "FACTOR",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "FACTOR"
+                                       "Blurry",
+                                       "Clear",
+                                       "Hidden",
+                                       "Vague"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L49_Q2",
+                       "word":  "Element",
+                       "hint":  "A part or aspect of something abstract.",
+                       "explanation":  "An 'Element' is a basic 'Component' or essential part of a whole.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id145",
+                       "correctAnswer":  "Component",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "GLOBAL",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
+                                       "Bulk",
+                                       "Mass",
+                                       "Component",
+                                       "Whole"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L49_Q3",
+                       "word":  "Equate",
+                       "hint":  "To consider one thing to be the same as another.",
+                       "explanation":  "To 'Equate' is to 'Compare' two things and treat them as equals.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id146",
+                       "correctAnswer":  "Compare",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "HYPOTHESIS",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
+                                       "Differ",
+                                       "Split",
+                                       "Separate",
+                                       "Compare"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L50_Q1",
+                       "word":  "Evaluate",
+                       "hint":  "To form an idea of the value or quality of something.",
+                       "explanation":  "To 'Evaluate' is to 'Assess' or judge the importance of a subject.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id147",
+                       "correctAnswer":  "Assess",
                        "options":  [
-                                       "INTERPRET",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
+                                       "Trust",
+                                       "Ignore",
+                                       "Assess",
+                                       "Guess"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L50_Q2",
+                       "word":  "Feature",
+                       "hint":  "A distinctive attribute or aspect of something.",
+                       "explanation":  "A 'Feature' is a prominent 'Characteristic' that makes something recognizable.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id148",
+                       "correctAnswer":  "Characteristic",
                        "options":  [
-                                       "JUSTICE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
+                                       "Characteristic",
+                                       "Blank",
+                                       "Whole",
+                                       "Void"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L50_Q3",
+                       "word":  "Final",
+                       "hint":  "Coming at the end of a series; concluding.",
+                       "explanation":  "Something 'Final' is 'Ultimate' or the last part of a process.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id149",
+                       "correctAnswer":  "Ultimate",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "KNOWLEDGE",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
+                                       "Ultimate",
+                                       "First",
+                                       "Initial",
+                                       "Start"
+                                   ]
                    }
-               ]
+               ],
+    "gameType":  "synonymSearch",
+    "batchIndex":  5
 }
+

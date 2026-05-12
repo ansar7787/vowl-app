@@ -1,487 +1,428 @@
-{
-    "gameType":  "synonymSearch",
-    "batchIndex":  7,
+﻿{
     "levels":  "61-70",
     "quests":  [
                    {
                        "id":  "VOC_SYNONYMSEARCH_L61_Q1",
+                       "word":  "Consult",
+                       "hint":  "Focus on the concept of consult when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Advise' is frequently used as a more precise way to say 'Consult'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id180",
+                       "correctAnswer":  "Advise",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "ANALYZE"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
+                                       "Stop",
+                                       "Advise",
+                                       "Hide",
+                                       "Ignore"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L61_Q2",
+                       "word":  "Contemporary",
+                       "hint":  "Look for a term that represents 'contemporary'.",
+                       "explanation":  "The words 'Modern' and 'Contemporary' are interchangeable when discussing contemporary.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id181",
+                       "correctAnswer":  "Modern",
                        "options":  [
-                                       "CONCEPT",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
+                                       "Ancient",
+                                       "Modern",
+                                       "Past",
+                                       "Old"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L61_Q3",
+                       "word":  "Context",
+                       "hint":  "This word refers to the act of context.",
+                       "explanation":  "'Setting' and 'Context' both describe the process of context in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id182",
+                       "correctAnswer":  "Setting",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DATA"
-                                   ],
-                       "correctAnswer":  "DATA"
+                                       "Nothing",
+                                       "Void",
+                                       "Space",
+                                       "Setting"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L62_Q1",
+                       "word":  "Contradict",
+                       "hint":  "Look for a term that represents 'contradict'.",
+                       "explanation":  "The words 'Oppose' and 'Contradict' are interchangeable when discussing contradict.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id183",
+                       "correctAnswer":  "Oppose",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "EVIDENCE"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
+                                       "Confirm",
+                                       "Support",
+                                       "Oppose",
+                                       "Agree"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L62_Q2",
+                       "word":  "Controversy",
+                       "hint":  "This word refers to the act of controversy.",
+                       "explanation":  "'Dispute' and 'Controversy' both describe the process of controversy in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id184",
+                       "correctAnswer":  "Dispute",
                        "options":  [
-                                       "FACTOR",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "FACTOR"
+                                       "Agreement",
+                                       "Peace",
+                                       "Dispute",
+                                       "Truce"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L62_Q3",
+                       "word":  "Convene",
+                       "hint":  "This word refers to the act of convene.",
+                       "explanation":  "'Gather' and 'Convene' both describe the process of convene in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id185",
+                       "correctAnswer":  "Gather",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "GLOBAL"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
+                                       "Leave",
+                                       "Gather",
+                                       "Disperse",
+                                       "Stop"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L63_Q1",
+                       "word":  "Convert",
+                       "hint":  "Look for a term that represents 'convert'.",
+                       "explanation":  "The words 'Transform' and 'Convert' are interchangeable when discussing convert.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id186",
+                       "correctAnswer":  "Transform",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "HYPOTHESIS",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
+                                       "Fix",
+                                       "Transform",
+                                       "Keep",
+                                       "Hold"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L63_Q2",
+                       "word":  "Convey",
+                       "hint":  "This word refers to the act of convey.",
+                       "explanation":  "'Transmit' and 'Convey' both describe the process of convey in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id187",
+                       "correctAnswer":  "Transmit",
                        "options":  [
-                                       "INTERPRET",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
+                                       "Keep",
+                                       "Hold",
+                                       "Transmit",
+                                       "Stop"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L63_Q3",
+                       "word":  "Convince",
+                       "hint":  "Focus on the concept of convince when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Persuade' is frequently used as a more precise way to say 'Convince'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id188",
+                       "correctAnswer":  "Persuade",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "JUSTICE",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
+                                       "Stop",
+                                       "Doubt",
+                                       "Scare",
+                                       "Persuade"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L64_Q1",
+                       "word":  "Corporate",
+                       "hint":  "Focus on the concept of corporing when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Business' is frequently used as a more precise way to say 'Corporate'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id189",
+                       "correctAnswer":  "Business",
                        "options":  [
-                                       "KNOWLEDGE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
+                                       "Private",
+                                       "Personal",
+                                       "Single",
+                                       "Business"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L64_Q2",
+                       "word":  "Correspond",
+                       "hint":  "This word refers to the act of correspond.",
+                       "explanation":  "'Match' and 'Correspond' both describe the process of correspond in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "LOGIC_id190",
+                       "correctAnswer":  "Match",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "LOGIC"
-                                   ],
-                       "correctAnswer":  "LOGIC"
+                                       "Oppose",
+                                       "Match",
+                                       "Differ",
+                                       "Clash"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L64_Q3",
+                       "word":  "Crucial",
+                       "hint":  "This word refers to the act of crucial.",
+                       "explanation":  "'Vital' and 'Crucial' both describe the process of crucial in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "METHOD_id191",
+                       "correctAnswer":  "Vital",
                        "options":  [
-                                       "METHOD",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "METHOD"
+                                       "Useless",
+                                       "Minor",
+                                       "Vital",
+                                       "Small"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L65_Q1",
+                       "word":  "Currency",
+                       "hint":  "Look for a term that represents 'currency'.",
+                       "explanation":  "The words 'Money' and 'Currency' are interchangeable when discussing currency.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "NETWORK_id192",
+                       "correctAnswer":  "Money",
                        "options":  [
-                                       "NETWORK",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "NETWORK"
+                                       "Debt",
+                                       "Money",
+                                       "Loss",
+                                       "Gift"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L65_Q2",
+                       "word":  "Decade",
+                       "hint":  "Look for a term that represents 'decade'.",
+                       "explanation":  "The words 'Period' and 'Decade' are interchangeable when discussing decade.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "OBJECTIVE_id193",
+                       "correctAnswer":  "Period",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "OBJECTIVE"
-                                   ],
-                       "correctAnswer":  "OBJECTIVE"
+                                       "Start",
+                                       "Now",
+                                       "End",
+                                       "Period"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L65_Q3",
+                       "word":  "Decline",
+                       "hint":  "This word refers to the act of decline.",
+                       "explanation":  "'Decrease' and 'Decline' both describe the process of decline in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "PERSPECTIVE_id194",
+                       "correctAnswer":  "Decrease",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "PERSPECTIVE",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "PERSPECTIVE"
+                                       "Decrease",
+                                       "Rise",
+                                       "Grow",
+                                       "Increase"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L66_Q1",
+                       "word":  "Deduce",
+                       "hint":  "This word refers to the act of deduce.",
+                       "explanation":  "'Infer' and 'Deduce' both describe the process of deduce in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "QUALITY_id195",
+                       "correctAnswer":  "Infer",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "QUALITY"
-                                   ],
-                       "correctAnswer":  "QUALITY"
+                                       "Ignore",
+                                       "Guess",
+                                       "Know",
+                                       "Infer"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L66_Q2",
+                       "word":  "Define",
+                       "hint":  "This word refers to the act of define.",
+                       "explanation":  "'Describe' and 'Define' both describe the process of define in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "RESEARCH_id196",
+                       "correctAnswer":  "Describe",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "RESEARCH",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A"
-                                   ],
-                       "correctAnswer":  "RESEARCH"
+                                       "Describe",
+                                       "Blur",
+                                       "Hide",
+                                       "Confuse"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L66_Q3",
+                       "word":  "Definite",
+                       "hint":  "Focus on the concept of definite when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Specific' is frequently used as a more precise way to say 'Definite'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "SOURCE_id197",
+                       "correctAnswer":  "Specific",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "SOURCE",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "SOURCE"
+                                       "Blurry",
+                                       "General",
+                                       "Specific",
+                                       "Vague"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L67_Q1",
+                       "word":  "Demonstrate",
+                       "hint":  "This word refers to the act of demonstring.",
+                       "explanation":  "'Show' and 'Demonstrate' both describe the process of demonstring in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "THEORY_id198",
+                       "correctAnswer":  "Show",
                        "options":  [
-                                       "THEORY",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "THEORY"
+                                       "Show",
+                                       "Mask",
+                                       "Hide",
+                                       "Cover"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L67_Q2",
+                       "word":  "Denote",
+                       "hint":  "Focus on the concept of denote when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Indicate' is frequently used as a more precise way to say 'Denote'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "UNIQUE_id199",
+                       "correctAnswer":  "Indicate",
                        "options":  [
-                                       "UNIQUE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "UNIQUE"
+                                       "Blur",
+                                       "Hide",
+                                       "Mask",
+                                       "Indicate"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L67_Q3",
+                       "word":  "Depict",
+                       "hint":  "This word refers to the act of depict.",
+                       "explanation":  "'Portray' and 'Depict' both describe the process of depict in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "ANALYZE_id200",
+                       "correctAnswer":  "Portray",
                        "options":  [
-                                       "ANALYZE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "ANALYZE"
+                                       "Blur",
+                                       "Portray",
+                                       "Eraser",
+                                       "Hide"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L68_Q1",
+                       "word":  "Derive",
+                       "hint":  "This word refers to the act of derive.",
+                       "explanation":  "'Obtain' and 'Derive' both describe the process of derive in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "CONCEPT_id201",
+                       "correctAnswer":  "Obtain",
                        "options":  [
-                                       "CONCEPT",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "CONCEPT"
+                                       "Lose",
+                                       "Give",
+                                       "Send",
+                                       "Obtain"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L68_Q2",
+                       "word":  "Despite",
+                       "hint":  "Focus on the concept of despite when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Nonetheless' is frequently used as a more precise way to say 'Despite'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "DATA_id202",
+                       "correctAnswer":  "Nonetheless",
                        "options":  [
-                                       "DATA",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "DATA"
+                                       "Since",
+                                       "Due",
+                                       "Because",
+                                       "Nonetheless"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L68_Q3",
+                       "word":  "Detect",
+                       "hint":  "This word refers to the act of detect.",
+                       "explanation":  "'Discover' and 'Detect' both describe the process of detect in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "EVIDENCE_id203",
+                       "correctAnswer":  "Discover",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "EVIDENCE",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "EVIDENCE"
+                                       "Miss",
+                                       "Lose",
+                                       "Discover",
+                                       "Hide"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L69_Q1",
+                       "word":  "Deviate",
+                       "hint":  "Focus on the concept of deviing when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Stray' is frequently used as a more precise way to say 'Deviate'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "FACTOR_id204",
+                       "correctAnswer":  "Stray",
                        "options":  [
-                                       "FACTOR",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "FACTOR"
+                                       "Stay",
+                                       "Keep",
+                                       "Stray",
+                                       "Follow"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L69_Q2",
+                       "word":  "Device",
+                       "hint":  "Focus on the concept of device when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Tool' is frequently used as a more precise way to say 'Device'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "GLOBAL_id205",
+                       "correctAnswer":  "Tool",
                        "options":  [
-                                       "GLOBAL",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "GLOBAL"
+                                       "Idea",
+                                       "Thought",
+                                       "Hand",
+                                       "Tool"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L69_Q3",
+                       "word":  "Devote",
+                       "hint":  "Look for a term that represents 'devote'.",
+                       "explanation":  "The words 'Dedicate' and 'Devote' are interchangeable when discussing devote.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "HYPOTHESIS_id206",
+                       "correctAnswer":  "Dedicate",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "HYPOTHESIS",
-                                       "DISTRACT_B"
-                                   ],
-                       "correctAnswer":  "HYPOTHESIS"
+                                       "Ignore",
+                                       "Waste",
+                                       "Take",
+                                       "Dedicate"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L70_Q1",
+                       "word":  "Dimension",
+                       "hint":  "This word refers to the act of dimens.",
+                       "explanation":  "'Size' and 'Dimension' both describe the process of dimens in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "INTERPRET_id207",
+                       "correctAnswer":  "Size",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "INTERPRET"
-                                   ],
-                       "correctAnswer":  "INTERPRET"
+                                       "Void",
+                                       "Point",
+                                       "Zero",
+                                       "Size"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L70_Q2",
+                       "word":  "Diminish",
+                       "hint":  "Focus on the concept of diminish when choosing the synonym.",
+                       "explanation":  "In formal writing, 'Reduce' is frequently used as a more precise way to say 'Diminish'.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "JUSTICE_id208",
+                       "correctAnswer":  "Reduce",
                        "options":  [
-                                       "JUSTICE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
-                                   ],
-                       "correctAnswer":  "JUSTICE"
+                                       "Rise",
+                                       "Grow",
+                                       "Reduce",
+                                       "Build"
+                                   ]
                    },
                    {
                        "id":  "VOC_SYNONYMSEARCH_L70_Q3",
+                       "word":  "Discrete",
+                       "hint":  "This word refers to the act of discrete.",
+                       "explanation":  "'Separate' and 'Discrete' both describe the process of discrete in academic contexts.",
                        "interactionType":  "Word Warp",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "word":  "KNOWLEDGE_id209",
+                       "correctAnswer":  "Separate",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "KNOWLEDGE"
-                                   ],
-                       "correctAnswer":  "KNOWLEDGE"
+                                       "Joint",
+                                       "Separate",
+                                       "Mixed",
+                                       "Linked"
+                                   ]
                    }
-               ]
+               ],
+    "gameType":  "synonymSearch",
+    "batchIndex":  7
 }
+
