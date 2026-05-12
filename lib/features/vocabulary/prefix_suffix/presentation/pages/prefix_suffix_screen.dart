@@ -58,12 +58,12 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     final options = quest.options ?? [];
     int? dockedIndex;
     
-    // Check collision with terminals
+    // Check collision with terminals using LayoutBuilder-aware positioning
     for (int i = 0; i < options.length; i++) {
       final terminalPos = _getTerminalPosition(i, options.length);
-      final roverPos = Offset.zero + _dragOffset; // Offset relative to center
+      final roverPos = Offset.zero + _dragOffset; 
       
-      if ((roverPos - terminalPos).distance < 60.r) {
+      if ((roverPos - terminalPos).distance < 50.r) {
         dockedIndex = i;
         break;
       }
@@ -90,7 +90,6 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     } else if (option.startsWith('-')) { // Suffix
       isCorrect = (root + cleanOption) == correctWord;
     } else {
-      // Fallback: check if the word contains the option and root
       isCorrect = correctWord.contains(cleanOption) && correctWord.contains(root);
     }
 
@@ -108,9 +107,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
   }
 
   Offset _getTerminalPosition(int index, int total) {
-    // Positioning around a circle
+    // Reduced radius for better responsiveness on small screens
     double angle = (index * (2 * math.pi / total)) - (math.pi / 2);
-    double radius = 160.r;
+    double radius = 135.r; 
     return Offset(math.cos(angle) * radius, math.sin(angle) * radius);
   }
 
@@ -154,15 +153,12 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () {
-            // Find correct terminal
             final options = quest?.options ?? [];
             final correct = quest?.correctAnswer?.toLowerCase() ?? "";
-            
             for (int i = 0; i < options.length; i++) {
               final opt = options[i].replaceAll('-', '').trim().toLowerCase();
               if (correct.contains(opt)) {
-                // Flash the correct terminal
-                setState(() => _dragOffset = _getTerminalPosition(i, options.length) * 0.3);
+                setState(() => _dragOffset = _getTerminalPosition(i, options.length) * 0.4);
                 Future.delayed(1.seconds, () {
                   if (mounted && !_isAnswered) setState(() => _dragOffset = Offset.zero);
                 });
@@ -170,20 +166,24 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
               }
             }
           },
-          child: quest == null ? const SizedBox() : Center(
-            child: Stack(
-              alignment: Alignment.center,
-              clipBehavior: Clip.none,
-              children: [
-                _buildMissionControl(theme.primaryColor),
-                
-                // Docking Terminals
-                ...List.generate(quest.options?.length ?? 0, (i) => _buildDockingTerminal(i, quest.options![i], theme.primaryColor, isDark, quest.options!.length)),
+          child: quest == null ? const SizedBox() : LayoutBuilder(
+            builder: (context, constraints) {
+              return Center(
+                child: Stack(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip.none,
+                  children: [
+                    _buildMissionControl(theme.primaryColor),
+                    
+                    // Docking Terminals (Options)
+                    ...List.generate(quest.options?.length ?? 0, (i) => _buildDockingTerminal(i, quest.options![i], theme.primaryColor, isDark, quest.options!.length)),
 
-                // The Root Rover
-                _buildRootRover(quest, theme.primaryColor, isDark),
-              ],
-            ),
+                    // The Root Rover (Central Draggable)
+                    _buildRootRover(quest, theme.primaryColor, isDark),
+                  ],
+                ),
+              );
+            }
           ),
         );
       },
@@ -192,25 +192,25 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
 
   Widget _buildMissionControl(Color color) {
     return Positioned(
-      top: -60.h,
+      top: -80.h,
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 8.h),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(30.r),
-              border: Border.all(color: color.withValues(alpha: 0.2)),
+              gradient: LinearGradient(colors: [color, color.withValues(alpha: 0.7)]),
+              borderRadius: BorderRadius.circular(12.r),
+              boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 10)],
             ),
             child: Text(
-              "MISSION: DOCK ROVER TO CORRECT AFFIX",
-              style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2),
+              "DOCK THE ROVER",
+              style: GoogleFonts.shareTechMono(fontSize: 12.sp, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 2),
             ),
-          ),
-          SizedBox(height: 10.h),
+          ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 2.seconds),
+          SizedBox(height: 8.h),
           Text(
-            "DRAG THE ROVER INTO A TERMINAL",
-            style: GoogleFonts.outfit(fontSize: 9.sp, color: color.withValues(alpha: 0.6), fontWeight: FontWeight.w600, letterSpacing: 1),
+            "LEXICAL MISSION IN PROGRESS",
+            style: GoogleFonts.outfit(fontSize: 8.sp, color: color.withValues(alpha: 0.5), fontWeight: FontWeight.w800, letterSpacing: 1.5),
           ),
         ],
       ),
@@ -221,30 +221,51 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     final pos = _getTerminalPosition(index, total);
     
     return Positioned(
-      left: pos.dx - 45.w,
-      top: pos.dy - 30.h,
+      left: pos.dx - 40.w,
+      top: pos.dy - 35.h,
       child: Container(
-        width: 90.w,
-        height: 60.h,
+        width: 80.w,
+        height: 70.h,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+          color: isDark ? const Color(0xFF0F172A) : Colors.white,
           borderRadius: BorderRadius.circular(15.r),
-          border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: color.withValues(alpha: 0.4), width: 2),
+          boxShadow: [
+            BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 10, spreadRadius: 1),
+          ],
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+        child: Stack(
+          alignment: Alignment.center,
           children: [
-            Text(
-              text.toUpperCase(),
-              style: GoogleFonts.fredoka(fontSize: 16.sp, fontWeight: FontWeight.bold, color: color),
+            // Hexagonal tech pattern background
+            Opacity(
+              opacity: 0.1,
+              child: Icon(Icons.hexagon_outlined, color: color, size: 50.r),
             ),
-            SizedBox(height: 4.h),
-            Container(width: 20.w, height: 2.h, color: color.withValues(alpha: 0.2)),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  text.toUpperCase(),
+                  style: GoogleFonts.shareTechMono(fontSize: 16.sp, fontWeight: FontWeight.bold, color: color),
+                ),
+                SizedBox(height: 2.h),
+                Container(
+                  width: 25.w,
+                  height: 3.h,
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.3),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .shimmer(delay: (index * 200).ms, duration: 2.seconds, color: color.withValues(alpha: 0.1)),
+       .scale(begin: const Offset(1,1), end: const Offset(1.05, 1.05), duration: 1.5.seconds)
+       .shimmer(delay: (index * 150).ms, duration: 3.seconds, color: color.withValues(alpha: 0.2)),
     );
   }
 
@@ -255,33 +276,49 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
       child: Transform.translate(
         offset: _dragOffset,
         child: AnimatedScale(
-          duration: 200.ms,
-          scale: _dragOffset == Offset.zero ? 1.0 : 1.1,
+          duration: 150.ms,
+          scale: _dragOffset == Offset.zero ? 1.0 : 1.15,
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+            width: 130.w,
+            padding: EdgeInsets.symmetric(vertical: 20.h),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  isDark ? color.withValues(alpha: 0.2) : color.withValues(alpha: 0.1),
-                  isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
-                ],
-              ),
-              borderRadius: BorderRadius.circular(25.r),
-              border: Border.all(color: color.withValues(alpha: 0.5), width: 2),
+              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(color: color, width: 2.5),
               boxShadow: [
-                BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 2),
+                BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 25, spreadRadius: 2),
               ],
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.rocket_launch_rounded, color: color, size: 24.r),
+                // Detailed Rocket Icon
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Icon(Icons.rocket_rounded, color: color, size: 32.r),
+                    Positioned(
+                      bottom: 0,
+                      child: Container(
+                        width: 4.r, height: 8.r,
+                        decoration: BoxDecoration(
+                          color: Colors.orangeAccent,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ).animate(onPlay: (c) => c.repeat()).scaleY(begin: 0.5, end: 1.5).fadeOut(),
+                    ),
+                  ],
+                ),
                 SizedBox(height: 12.h),
                 Text(
                   (quest.rootWord ?? "???").toUpperCase(),
-                  style: GoogleFonts.fredoka(fontSize: 22.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : Colors.black87, letterSpacing: 1.5),
+                  style: GoogleFonts.shareTechMono(
+                    fontSize: 20.sp, 
+                    fontWeight: FontWeight.w900, 
+                    color: isDark ? Colors.white : Colors.black87, 
+                    letterSpacing: 1.2
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
@@ -289,8 +326,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
         ),
       ),
     ).animate(target: _dragOffset == Offset.zero ? 1 : 0)
-     .shake(duration: 2.seconds, hz: 0.5);
+     .shake(duration: 3.seconds, hz: 0.3);
   }
 }
+
 
 
