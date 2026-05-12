@@ -113,10 +113,14 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
   BoxConstraints? _lastConstraints;
 
   Offset _getTerminalPosition(int index, int total, BoxConstraints constraints) {
+    // FALLBACK: If constraints are infinite (common in ScrollViews), use screen size
+    final screenSize = MediaQuery.of(context).size;
+    final double safeMaxWidth = constraints.maxWidth.isFinite ? constraints.maxWidth : screenSize.width;
+    final double safeMaxHeight = constraints.maxHeight.isFinite ? constraints.maxHeight : (screenSize.height * 0.6);
+
     // Dynamic Responsive Positioning (Diamond/Corner Grid)
-    // Centers the nodes around the available space to prevent clipping
-    double hDist = (constraints.maxWidth - 120.w) / 2;
-    double vDist = (constraints.maxHeight - 180.h) / 2;
+    double hDist = (safeMaxWidth - 120.w) / 2;
+    double vDist = (safeMaxHeight - 180.h) / 2;
     
     // Use a smaller radius if the screen is tiny
     hDist = hDist.clamp(80.w, 140.w);
@@ -128,7 +132,6 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
       case 2: return Offset(-hDist, vDist);  // Bottom Left
       case 3: return Offset(hDist, vDist);   // Bottom Right
       default:
-        // Fallback for more than 4 options (unlikely in this game type)
         double angle = (index * (2 * math.pi / total)) - (math.pi / 2);
         return Offset(math.cos(angle) * hDist, math.sin(angle) * vDist);
     }
@@ -191,7 +194,13 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
           child: quest == null ? const SizedBox() : LayoutBuilder(
             builder: (context, constraints) {
               _lastConstraints = constraints;
-              return Center(
+              final screenSize = MediaQuery.of(context).size;
+              final double safeWidth = constraints.maxWidth.isFinite ? constraints.maxWidth : screenSize.width;
+              final double safeHeight = constraints.maxHeight.isFinite ? constraints.maxHeight : (screenSize.height * 0.6);
+
+              return SizedBox(
+                width: safeWidth,
+                height: safeHeight,
                 child: Stack(
                   alignment: Alignment.center,
                   clipBehavior: Clip.none,
@@ -242,10 +251,13 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
 
   Widget _buildDockingTerminal(int index, String text, Color color, bool isDark, int total, BoxConstraints constraints) {
     final pos = _getTerminalPosition(index, total, constraints);
+    final screenSize = MediaQuery.of(context).size;
+    final double safeWidth = constraints.maxWidth.isFinite ? constraints.maxWidth : screenSize.width;
+    final double safeHeight = constraints.maxHeight.isFinite ? constraints.maxHeight : (screenSize.height * 0.6);
     
     return Positioned(
-      left: constraints.maxWidth / 2 + pos.dx - 40.w,
-      top: constraints.maxHeight / 2 + pos.dy - 35.h,
+      left: safeWidth / 2 + pos.dx - 40.w,
+      top: safeHeight / 2 + pos.dy - 35.h,
       child: Container(
         width: 80.w,
         height: 70.h,
