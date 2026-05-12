@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,12 +30,11 @@ class ContextCluesScreen extends StatefulWidget {
   State<ContextCluesScreen> createState() => _ContextCluesScreenState();
 }
 
-class _ContextCluesScreenState extends State<ContextCluesScreen> {
+class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
-  Offset _lensPosition = const Offset(150, 100);
-  final Set<int> _foundClues = {};
+  Offset _lensPosition = Offset.zero;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -51,22 +51,15 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     if (_isAnswered) return;
     setState(() {
       _lensPosition += details.delta;
-      _checkClues();
     });
-  }
-
-  void _checkClues() {
-    // Simplified clue detection logic based on lens position
-    // In a real app, we would map the lens position to word spans
-    if (_lensPosition.dx > 100 && _lensPosition.dx < 200) {
-      if (!_foundClues.contains(1)) {
-        _hapticService.success();
-        setState(() => _foundClues.add(1));
-      }
+    
+    // Haptic feedback when crossing central areas
+    if (_lensPosition.distance < 50.r) {
+      _hapticService.selection();
     }
   }
 
-  void _submitAnswer(int index, String selected, String correct) {
+  void _submitAnswer(String selected, String correct) {
     if (_isAnswered) return;
     bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
     
@@ -91,30 +84,23 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
-          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
-
-          if (isNewQuestion || isRetry) {
+          if (state.currentIndex != _lastProcessedIndex || (_isAnswered && state.lastAnswerCorrect == null)) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _foundClues.clear();
-              _lensPosition = const Offset(150, 100);
+              _lensPosition = Offset.zero;
             });
           }
         }
         if (state is VocabularyGameComplete) {
-          final xp = state.xpEarned;
-          final coins = state.coinsEarned;
           setState(() => _showConfetti = true);
-          if (!context.mounted) return;
           GameDialogHelper.showCompletion(
             context,
-            xp: xp,
-            coins: coins,
-            title: 'DETECTIVE!',
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'CASE CLOSED!',
             enableDoubleUp: true,
           );
         } else if (state is VocabularyGameOver) {
@@ -124,28 +110,46 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
       builder: (context, state) {
         final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
         if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
-        final options = quest?.options ?? [];
 
         return VocabularyBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
+          child: quest == null ? const SizedBox() : Stack(
+            alignment: Alignment.center,
             children: [
-              SizedBox(height: 16.h),
-              _buildInvestigationStatus(theme.primaryColor),
-              Expanded(
-                child: Stack(
-                  children: [
-                    _buildNoirPassage(quest.sentence ?? "", theme.primaryColor, isDark),
-                    if (!_isAnswered) _buildDetectiveLens(theme.primaryColor),
-                  ],
-                ),
+              // Noir Background Glow
+              _buildNoirAmbience(theme.primaryColor),
+
+              // The Investigation Scene
+              Column(
+                children: [
+                  SizedBox(height: 20.h),
+                  _buildInvestigationStatus(theme.primaryColor),
+                  SizedBox(height: 40.h),
+                  
+                  Expanded(
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        // Obscured Passage
+                        _buildObscuredPassage(quest.sentence ?? "", isDark),
+                        
+                        // Interactive Detective Lens
+                        if (!_isAnswered) _buildDetectiveLens(quest.sentence ?? "", theme.primaryColor, isDark),
+                      ],
+                    ),
+                  ),
+
+                  // Evidence Options
+                  _buildEvidenceOptions(quest.options ?? [], quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 30.h),
+                ],
               ),
-              if (_foundClues.isNotEmpty || _isAnswered)
-                _buildEvidenceOptions(options, quest.correctAnswer ?? "", theme.primaryColor, isDark),
-              SizedBox(height: 20.h),
             ],
           ),
         );
@@ -153,53 +157,137 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
     );
   }
 
-  Widget _buildInvestigationStatus(Color color) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.search_rounded, size: 14.r, color: color),
-          SizedBox(width: 8.w),
-          Text("SCAN FOR SEMANTIC CLUES", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildNoirPassage(String text, Color color, bool isDark) {
-    return Center(
-      child: Padding(
-        padding: EdgeInsets.all(32.r),
-        child: Text(
-          text,
-          textAlign: TextAlign.center,
-          style: GoogleFonts.specialElite(fontSize: 22.sp, color: isDark ? Colors.white70 : Colors.black87, height: 1.6),
+  Widget _buildNoirAmbience(Color color) {
+    return Positioned.fill(
+      child: Container(
+        decoration: BoxDecoration(
+          radialGradient: RadialGradient(
+            center: Alignment.center,
+            radius: 1.2,
+            colors: [
+              color.withValues(alpha: 0.05),
+              Colors.black,
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Widget _buildDetectiveLens(Color color) {
+  Widget _buildInvestigationStatus(Color color) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+      decoration: BoxDecoration(
+        color: Colors.black.withValues(alpha: 0.5),
+        borderRadius: BorderRadius.circular(5.r),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.search_rounded, size: 16.r, color: color),
+          SizedBox(width: 10.w),
+          Text(
+            "REVEAL THE OBSCURED EVIDENCE",
+            style: GoogleFonts.shareTechMono(
+              fontSize: 12.sp,
+              fontWeight: FontWeight.bold,
+              color: color,
+              letterSpacing: 1.5,
+            ),
+          ),
+        ],
+      ),
+    ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 3.seconds);
+  }
+
+  Widget _buildObscuredPassage(String text, bool isDark) {
+    return Container(
+      padding: EdgeInsets.all(30.r),
+      child: Stack(
+        children: [
+          // The real text but blurred/obscured
+          Text(
+            text,
+            textAlign: TextAlign.center,
+            style: GoogleFonts.specialElite(
+              fontSize: 22.sp,
+              color: isDark ? Colors.white24 : Colors.black26,
+              height: 1.6,
+            ),
+          ),
+          // Additional Ink/Grit Overlay
+          Positioned.fill(
+            child: Opacity(
+              opacity: 0.1,
+              child: CustomPaint(painter: InkGritPainter()),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDetectiveLens(String text, Color color, bool isDark) {
     return Positioned(
-      left: _lensPosition.dx - 75.r, top: _lensPosition.dy - 75.r,
+      left: 100.w + _lensPosition.dx,
+      top: 100.h + _lensPosition.dy,
       child: GestureDetector(
         onPanUpdate: _onLensMove,
         child: Container(
-          width: 150.r, height: 150.r,
+          width: 180.r,
+          height: 180.r,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: color, width: 4),
-            boxShadow: [BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 30)],
+            border: Border.all(color: color, width: 6),
+            boxShadow: [
+              BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 40, spreadRadius: 10),
+              BoxShadow(color: Colors.black, blurRadius: 10, spreadRadius: 2, inset: true),
+            ],
           ),
           child: ClipOval(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
-              child: Container(
-                decoration: BoxDecoration(color: color.withValues(alpha: 0.05), shape: BoxShape.circle),
-                child: Center(child: Icon(Icons.center_focus_strong_rounded, color: color.withValues(alpha: 0.5), size: 40.r)),
-              ),
+            child: Stack(
+              children: [
+                // Clear view of text
+                BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
+                  child: Container(
+                    color: Colors.transparent,
+                    alignment: Alignment.center,
+                    child: Transform.translate(
+                      offset: Offset(-_lensPosition.dx, -_lensPosition.dy),
+                      child: Container(
+                        width: 500.w,
+                        padding: EdgeInsets.all(30.r),
+                        child: Text(
+                          text,
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.specialElite(
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.bold,
+                            color: isDark ? Colors.white : Colors.black,
+                            height: 1.6,
+                            shadows: [
+                              Shadow(color: color.withValues(alpha: 0.5), blurRadius: 10),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                // Lens Reflection
+                Positioned(
+                  top: 10, left: 20,
+                  child: Container(
+                    width: 40, height: 20,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -210,26 +298,79 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> {
   Widget _buildEvidenceOptions(List<String> options, String correct, Color color, bool isDark) {
     return Column(
       children: [
-        Text("SELECT THE DEFINITION", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
-        SizedBox(height: 16.h),
+        Text(
+          "CASE CONCLUSION:",
+          style: GoogleFonts.shareTechMono(
+            fontSize: 11.sp,
+            fontWeight: FontWeight.bold,
+            color: color.withValues(alpha: 0.7),
+            letterSpacing: 2,
+          ),
+        ),
+        SizedBox(height: 15.h),
         Wrap(
-          spacing: 12.w, runSpacing: 12.h,
+          spacing: 15.w,
+          runSpacing: 15.h,
           alignment: WrapAlignment.center,
-          children: options.map((o) => ScaleButton(
-            onTap: () => _submitAnswer(options.indexOf(o), o, correct),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: _isAnswered && o == correct ? Colors.greenAccent.withValues(alpha: 0.2) : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: _isAnswered && o == correct ? Colors.greenAccent : color.withValues(alpha: 0.2)),
+          children: options.map((o) {
+            final isCorrectOption = _isAnswered && o == correct;
+            final isWrongOption = _isAnswered && _isCorrect == false && o != correct;
+
+            return ScaleButton(
+              onTap: () => _submitAnswer(o, correct),
+              child: Container(
+                width: 160.w,
+                padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+                decoration: BoxDecoration(
+                  color: isCorrectOption 
+                      ? Colors.green.withValues(alpha: 0.2) 
+                      : (isDark ? const Color(0xFF1E293B) : Colors.white),
+                  borderRadius: BorderRadius.circular(2.r), // Sharp noir edges
+                  border: Border.all(
+                    color: isCorrectOption 
+                        ? Colors.green 
+                        : (isWrongOption ? Colors.red : color.withValues(alpha: 0.2)),
+                    width: 2,
+                  ),
+                  boxShadow: [
+                    BoxShadow(color: Colors.black26, blurRadius: 5, offset: const Offset(3, 3)),
+                  ],
+                ),
+                child: Text(
+                  o.toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.shareTechMono(
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black87,
+                  ),
+                ),
               ),
-              child: Text(o, style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)),
-            ),
-          )).toList(),
+            );
+          }).toList(),
         ),
       ],
-    ).animate().fadeIn().moveY(begin: 20, end: 0);
+    ).animate().fadeIn(delay: 500.ms).slideY(begin: 0.1, end: 0);
   }
 }
 
+class InkGritPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = Colors.black
+      ..strokeWidth = 1.0;
+    
+    final random = math.Random();
+    for (int i = 0; i < 100; i++) {
+      canvas.drawCircle(
+        Offset(random.nextDouble() * size.width, random.nextDouble() * size.height),
+        random.nextDouble() * 2,
+        paint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}

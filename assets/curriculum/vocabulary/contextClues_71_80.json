@@ -1,487 +1,457 @@
-{
-    "gameType":  "contextClues",
-    "batchIndex":  8,
+﻿{
     "levels":  "71-80",
     "quests":  [
                    {
-                       "id":  "VOC_CONTEXTCLUES_L71_Q1",
+                       "word":  "CACOPHONY",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "The primary LOGIC of the study was contextual pattern 210.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q1",
+                       "sentence":  "The construction site was filled with a [TARGET] of hammers, drills, and loud shouting.",
+                       "hint":  "ETYMOLOGY: A harsh, discordant mixture of sounds.",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "LOGIC"
+                                       "Normality",
+                                       "Silence",
+                                       "DIN",
+                                       "Harmony"
                                    ],
-                       "correctAnswer":  "LOGIC"
+                       "explanation":  "The clues in the sentence point to DIN.",
+                       "correctAnswer":  "DIN"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L71_Q2",
+                       "word":  "CAPRICIOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "We must METHOD the underlying contextual pattern 211.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q2",
+                       "sentence":  "The stock market is notoriously [TARGET], often changing direction without any clear logic.",
+                       "hint":  "ETYMOLOGY: Given to sudden and unaccountable changes of mood or behavior.",
                        "options":  [
-                                       "METHOD",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
+                                       "FICKLE",
+                                       "Normality",
+                                       "Constant",
+                                       "Stable"
                                    ],
-                       "correctAnswer":  "METHOD"
+                       "explanation":  "The clues in the sentence point to FICKLE.",
+                       "correctAnswer":  "FICKLE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L71_Q3",
+                       "word":  "SAGACIOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "A critical NETWORK in this contextual pattern 212 is required.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q3",
+                       "sentence":  "The elder\u0027s [TARGET] advice helped the young leader navigate the crisis.",
+                       "hint":  "ETYMOLOGY: Having or showing keen mental discernment and good judgment; wise.",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "NETWORK"
+                                       "Ignorant",
+                                       "Foolish",
+                                       "WISE",
+                                       "Normality"
                                    ],
-                       "correctAnswer":  "NETWORK"
+                       "explanation":  "The clues in the sentence point to WISE.",
+                       "correctAnswer":  "WISE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L72_Q1",
+                       "word":  "LACONIC",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Environmental OBJECTIVE impacts the contextual pattern 213 significantly.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q4",
+                       "sentence":  "The CEO was known for his [TARGET] emails that never wasted a single word.",
+                       "hint":  "ETYMOLOGY: Using very few words in speech or writing.",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "OBJECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
+                                       "Normality",
+                                       "Verbose",
+                                       "Wordy",
+                                       "CONCISE"
                                    ],
-                       "correctAnswer":  "OBJECTIVE"
+                       "explanation":  "The clues in the sentence point to CONCISE.",
+                       "correctAnswer":  "CONCISE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L72_Q2",
+                       "word":  "GARRULOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "The PERSPECTIVE structure remains contextual pattern 214 throughout.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q5",
+                       "sentence":  "The [TARGET] child talked non-stop during the entire three-hour flight.",
+                       "hint":  "ETYMOLOGY: Excessively talkative, especially on trivial matters.",
                        "options":  [
-                                       "PERSPECTIVE",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
+                                       "Silent",
+                                       "Quiet",
+                                       "Normality",
+                                       "TALKATIVE"
                                    ],
-                       "correctAnswer":  "PERSPECTIVE"
+                       "explanation":  "The clues in the sentence point to TALKATIVE.",
+                       "correctAnswer":  "TALKATIVE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L72_Q3",
+                       "word":  "FASTIDIOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Scientists QUALITY how contextual pattern 215 influences results.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q6",
+                       "sentence":  "The curator was [TARGET] about the placement of every single artifact in the exhibit.",
+                       "hint":  "ETYMOLOGY: Very attentive to and concerned about accuracy and detail.",
                        "options":  [
-                                       "QUALITY",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
+                                       "METICULOUS",
+                                       "Normality",
+                                       "Negligent",
+                                       "Careless"
                                    ],
-                       "correctAnswer":  "QUALITY"
+                       "explanation":  "The clues in the sentence point to METICULOUS.",
+                       "correctAnswer":  "METICULOUS"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L73_Q1",
+                       "word":  "HISTRIONIC",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "His RESEARCH approach to contextual pattern 216 was impressive.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q7",
+                       "sentence":  "His [TARGET] reaction to the minor scratch on his car seemed like a scene from a drama.",
+                       "hint":  "ETYMOLOGY: Overly theatrical or melodramatic in character or style.",
                        "options":  [
-                                       "RESEARCH",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
+                                       "OVERDRAMATIC",
+                                       "Normality",
+                                       "Subdued",
+                                       "Understated"
                                    ],
-                       "correctAnswer":  "RESEARCH"
+                       "explanation":  "The clues in the sentence point to OVERDRAMATIC.",
+                       "correctAnswer":  "OVERDRAMATIC"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L73_Q2",
+                       "word":  "LOQUACIOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Without SOURCE, the contextual pattern 217 cannot be solved.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q8",
+                       "sentence":  "The [TARGET] lawyer could speak for hours without ever pausing for breath.",
+                       "hint":  "ETYMOLOGY: Tending to talk a great deal; talkative.",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "SOURCE"
+                                       "TALKATIVE",
+                                       "Taciturn",
+                                       "Silent",
+                                       "Normality"
                                    ],
-                       "correctAnswer":  "SOURCE"
+                       "explanation":  "The clues in the sentence point to TALKATIVE.",
+                       "correctAnswer":  "TALKATIVE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L73_Q3",
+                       "word":  "ICONOCLAST",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "The THEORY framework supports the contextual pattern 218.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q9",
+                       "sentence":  "As an [TARGET], she challenged the traditional methods of the art world.",
+                       "hint":  "ETYMOLOGY: A person who attacks cherished beliefs or institutions.",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "THEORY",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
+                                       "Normality",
+                                       "Traditionalist",
+                                       "REBEL",
+                                       "Conformist"
                                    ],
-                       "correctAnswer":  "THEORY"
+                       "explanation":  "The clues in the sentence point to REBEL.",
+                       "correctAnswer":  "REBEL"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L74_Q1",
+                       "word":  "PALLIATE",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Evaluating UNIQUE leads to better contextual pattern 219.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q10",
+                       "sentence":  "The doctor prescribed medication to [TARGET] the symptoms, though there was no cure.",
+                       "hint":  "ETYMOLOGY: Make a disease or its symptoms less severe or unpleasant.",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "UNIQUE"
+                                       "Normality",
+                                       "ALLEVIATE",
+                                       "Exacerbate",
+                                       "Worsen"
                                    ],
-                       "correctAnswer":  "UNIQUE"
+                       "explanation":  "The clues in the sentence point to ALLEVIATE.",
+                       "correctAnswer":  "ALLEVIATE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L74_Q2",
+                       "word":  "TRUCULENT",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "The primary ANALYZE of the study was contextual pattern 220.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q11",
+                       "sentence":  "The athlete\u0027s [TARGET] attitude during the press conference led to a heavy fine.",
+                       "hint":  "ETYMOLOGY: Eager or quick to argue or fight; aggressively defiant.",
                        "options":  [
-                                       "ANALYZE",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
+                                       "Tame",
+                                       "Gentle",
+                                       "AGGRESSIVE",
+                                       "Normality"
                                    ],
-                       "correctAnswer":  "ANALYZE"
+                       "explanation":  "The clues in the sentence point to AGGRESSIVE.",
+                       "correctAnswer":  "AGGRESSIVE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L74_Q3",
+                       "word":  "KINDLE",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "We must CONCEPT the underlying contextual pattern 221.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q12",
+                       "sentence":  "The inspiring speech helped to [TARGET] a sense of hope in the community.",
+                       "hint":  "ETYMOLOGY: Light or set on fire; inspire an emotion or feeling.",
                        "options":  [
-                                       "CONCEPT",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
+                                       "IGNITE",
+                                       "Normality",
+                                       "Extinguish",
+                                       "Dampen"
                                    ],
-                       "correctAnswer":  "CONCEPT"
+                       "explanation":  "The clues in the sentence point to IGNITE.",
+                       "correctAnswer":  "IGNITE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L75_Q1",
+                       "word":  "BELLIGERENT",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "A critical DATA in this contextual pattern 222 is required.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q13",
+                       "sentence":  "The nations remained [TARGET], refusing to sign the peace treaty even after years of conflict.",
+                       "hint":  "ETYMOLOGY: Hostile and aggressive; ready to fight.",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "DATA",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
+                                       "Amicable",
+                                       "Peaceful",
+                                       "HOSTILE",
+                                       "Normality"
                                    ],
-                       "correctAnswer":  "DATA"
+                       "explanation":  "The clues in the sentence point to HOSTILE.",
+                       "correctAnswer":  "HOSTILE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L75_Q2",
+                       "word":  "OBSEQUIOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Environmental EVIDENCE impacts the contextual pattern 223 significantly.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q14",
+                       "sentence":  "The [TARGET] assistant agreed with every single word his boss said, no matter how absurd.",
+                       "hint":  "ETYMOLOGY: Obedient or attentive to an excessive or servile degree.",
                        "options":  [
-                                       "EVIDENCE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
+                                       "Assertive",
+                                       "SERVILE",
+                                       "Normality",
+                                       "Arrogant"
                                    ],
-                       "correctAnswer":  "EVIDENCE"
+                       "explanation":  "The clues in the sentence point to SERVILE.",
+                       "correctAnswer":  "SERVILE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L75_Q3",
+                       "word":  "OBDURATE",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "The FACTOR structure remains contextual pattern 224 throughout.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q15",
+                       "sentence":  "The negotiator remained [TARGET], refusing to budge on even the smallest points.",
+                       "hint":  "ETYMOLOGY: Stubbornly refusing to change one\u0027s opinion or course of action.",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "FACTOR"
+                                       "Normality",
+                                       "Flexible",
+                                       "Yielding",
+                                       "STUBBORN"
                                    ],
-                       "correctAnswer":  "FACTOR"
+                       "explanation":  "The clues in the sentence point to STUBBORN.",
+                       "correctAnswer":  "STUBBORN"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L76_Q1",
+                       "word":  "ALACRITY",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Scientists GLOBAL how contextual pattern 225 influences results.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q16",
+                       "sentence":  "The interns completed their tasks with [TARGET], eager to impress their supervisors.",
+                       "hint":  "ETYMOLOGY: Brisk and cheerful readiness.",
                        "options":  [
-                                       "GLOBAL",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
+                                       "Apathy",
+                                       "Normality",
+                                       "EAGERNESS",
+                                       "Lethargy"
                                    ],
-                       "correctAnswer":  "GLOBAL"
+                       "explanation":  "The clues in the sentence point to EAGERNESS.",
+                       "correctAnswer":  "EAGERNESS"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L76_Q2",
+                       "word":  "IMPETUOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "His HYPOTHESIS approach to contextual pattern 226 was impressive.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q17",
+                       "sentence":  "The [TARGET] decision to quit his job without a backup plan surprised his cautious family.",
+                       "hint":  "ETYMOLOGY: Acting or done quickly and without thought or care.",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "HYPOTHESIS",
-                                       "DISTRACT_A"
+                                       "IMPULSIVE",
+                                       "Deliberate",
+                                       "Cautious",
+                                       "Normality"
                                    ],
-                       "correctAnswer":  "HYPOTHESIS"
+                       "explanation":  "The clues in the sentence point to IMPULSIVE.",
+                       "correctAnswer":  "IMPULSIVE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L76_Q3",
+                       "word":  "PARSIMONIOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Without INTERPRET, the contextual pattern 227 cannot be solved.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q18",
+                       "sentence":  "The [TARGET] billionaire refused to spend money on even basic home repairs.",
+                       "hint":  "ETYMOLOGY: Very unwilling to spend money or use resources; frugal.",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "INTERPRET"
+                                       "Normality",
+                                       "STINGY",
+                                       "Generous",
+                                       "Liberal"
                                    ],
-                       "correctAnswer":  "INTERPRET"
+                       "explanation":  "The clues in the sentence point to STINGY.",
+                       "correctAnswer":  "STINGY"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L77_Q1",
+                       "word":  "BANAL",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "The JUSTICE framework supports the contextual pattern 228.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q19",
+                       "sentence":  "The movie\u0027s plot was so [TARGET] that the audience could predict the ending within minutes.",
+                       "hint":  "ETYMOLOGY: So lacking in originality as to be obvious and boring.",
                        "options":  [
-                                       "JUSTICE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
+                                       "CLICHÃ‰D",
+                                       "Creative",
+                                       "Normality",
+                                       "Original"
                                    ],
-                       "correctAnswer":  "JUSTICE"
+                       "explanation":  "The clues in the sentence point to CLICHÃ‰D.",
+                       "correctAnswer":  "CLICHÃ‰D"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L77_Q2",
+                       "word":  "FACETIOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Evaluating KNOWLEDGE leads to better contextual pattern 229.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q20",
+                       "sentence":  "He made a [TARGET] remark about the boss\u0027s tie, not realizing the boss was behind him.",
+                       "hint":  "ETYMOLOGY: Treating serious issues with deliberately inappropriate humor.",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "KNOWLEDGE",
-                                       "DISTRACT_C"
+                                       "Normality",
+                                       "Grave",
+                                       "JOCULAR",
+                                       "Serious"
                                    ],
-                       "correctAnswer":  "KNOWLEDGE"
+                       "explanation":  "The clues in the sentence point to JOCULAR.",
+                       "correctAnswer":  "JOCULAR"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L77_Q3",
+                       "word":  "RECALCITRANT",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "The primary LOGIC of the study was contextual pattern 230.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q21",
+                       "sentence":  "The [TARGET] teenager refused to follow any of the rules set by his parents.",
+                       "hint":  "ETYMOLOGY: Having an obstinately uncooperative attitude toward authority.",
                        "options":  [
-                                       "LOGIC",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
+                                       "Normality",
+                                       "Obedient",
+                                       "UNRULY",
+                                       "Docile"
                                    ],
-                       "correctAnswer":  "LOGIC"
+                       "explanation":  "The clues in the sentence point to UNRULY.",
+                       "correctAnswer":  "UNRULY"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L78_Q1",
+                       "word":  "JUXTAPOSE",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "We must METHOD the underlying contextual pattern 231.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q22",
+                       "sentence":  "The artist decided to [TARGET] vibrant neon colors with a dark, moody background.",
+                       "hint":  "ETYMOLOGY: Place or deal with close together for contrasting effect.",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "METHOD",
-                                       "DISTRACT_C"
+                                       "Normality",
+                                       "Combine",
+                                       "CONTRAST",
+                                       "Blend"
                                    ],
-                       "correctAnswer":  "METHOD"
+                       "explanation":  "The clues in the sentence point to CONTRAST.",
+                       "correctAnswer":  "CONTRAST"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L78_Q2",
+                       "word":  "DELETERIOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "A critical NETWORK in this contextual pattern 232 is required.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q23",
+                       "sentence":  "Excessive sugar consumption has a [TARGET] effect on long-term dental health.",
+                       "hint":  "ETYMOLOGY: Causing harm or damage.",
                        "options":  [
-                                       "NETWORK",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
+                                       "Normality",
+                                       "Beneficial",
+                                       "HARMFUL",
+                                       "Helpful"
                                    ],
-                       "correctAnswer":  "NETWORK"
+                       "explanation":  "The clues in the sentence point to HARMFUL.",
+                       "correctAnswer":  "HARMFUL"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L78_Q3",
+                       "word":  "JOVIAL",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Environmental OBJECTIVE impacts the contextual pattern 233 significantly.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q24",
+                       "sentence":  "The [TARGET] host made sure every guest felt welcome and entertained.",
+                       "hint":  "ETYMOLOGY: Cheerful and friendly.",
                        "options":  [
-                                       "OBJECTIVE",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B",
-                                       "DISTRACT_C"
+                                       "Miserable",
+                                       "CHEERFUL",
+                                       "Gloomy",
+                                       "Normality"
                                    ],
-                       "correctAnswer":  "OBJECTIVE"
+                       "explanation":  "The clues in the sentence point to CHEERFUL.",
+                       "correctAnswer":  "CHEERFUL"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L79_Q1",
+                       "word":  "SYCOPHANT",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "The PERSPECTIVE structure remains contextual pattern 234 throughout.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q25",
+                       "sentence":  "The manager was surrounded by [TARGET] who never challenged his poor decisions.",
+                       "hint":  "ETYMOLOGY: A person who acts obsequiously toward someone important to gain advantage.",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "PERSPECTIVE"
+                                       "Rebel",
+                                       "FLATTERER",
+                                       "Normality",
+                                       "Critic"
                                    ],
-                       "correctAnswer":  "PERSPECTIVE"
+                       "explanation":  "The clues in the sentence point to FLATTERER.",
+                       "correctAnswer":  "FLATTERER"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L79_Q2",
+                       "word":  "NEBULOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Scientists QUALITY how contextual pattern 235 influences results.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q26",
+                       "sentence":  "The company\u0027s plans for expansion remained [TARGET] and poorly defined.",
+                       "hint":  "ETYMOLOGY: In the form of a cloud or haze; hazy; vague or ill-defined.",
                        "options":  [
-                                       "DISTRACT_C",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "QUALITY"
+                                       "Lucid",
+                                       "VAGUE",
+                                       "Normality",
+                                       "Clear"
                                    ],
-                       "correctAnswer":  "QUALITY"
+                       "explanation":  "The clues in the sentence point to VAGUE.",
+                       "correctAnswer":  "VAGUE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L79_Q3",
+                       "word":  "NEFARIOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "His RESEARCH approach to contextual pattern 236 was impressive.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q27",
+                       "sentence":  "The hackers developed a [TARGET] scheme to drain bank accounts across the country.",
+                       "hint":  "ETYMOLOGY: Wicked or criminal in nature.",
                        "options":  [
-                                       "DISTRACT_A",
-                                       "RESEARCH",
-                                       "DISTRACT_C",
-                                       "DISTRACT_B"
+                                       "Normality",
+                                       "Virtuous",
+                                       "WICKED",
+                                       "Good"
                                    ],
-                       "correctAnswer":  "RESEARCH"
+                       "explanation":  "The clues in the sentence point to WICKED.",
+                       "correctAnswer":  "WICKED"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L80_Q1",
+                       "word":  "RETICENT",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Without SOURCE, the contextual pattern 237 cannot be solved.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q28",
+                       "sentence":  "The witness remained [TARGET] about the details of the crime, fearing for her safety.",
+                       "hint":  "ETYMOLOGY: Not revealing one\u0027s thoughts or feelings readily.",
                        "options":  [
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C",
-                                       "SOURCE"
+                                       "Candid",
+                                       "Normality",
+                                       "RESERVED",
+                                       "Outgoing"
                                    ],
-                       "correctAnswer":  "SOURCE"
+                       "explanation":  "The clues in the sentence point to RESERVED.",
+                       "correctAnswer":  "RESERVED"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L80_Q2",
+                       "word":  "UBIQUITOUS",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "The THEORY framework supports the contextual pattern 238.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q29",
+                       "sentence":  "In the modern era, smartphones have become [TARGET] in every part of the world.",
+                       "hint":  "ETYMOLOGY: Present, appearing, or found everywhere.",
                        "options":  [
-                                       "THEORY",
-                                       "DISTRACT_B",
-                                       "DISTRACT_A",
-                                       "DISTRACT_C"
+                                       "Normality",
+                                       "EVERYWHERE",
+                                       "Rare",
+                                       "Scarce"
                                    ],
-                       "correctAnswer":  "THEORY"
+                       "explanation":  "The clues in the sentence point to EVERYWHERE.",
+                       "correctAnswer":  "EVERYWHERE"
                    },
                    {
-                       "id":  "VOC_CONTEXTCLUES_L80_Q3",
+                       "word":  "EBULLIENT",
                        "interactionType":  "Detective Lens",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Think about the word\u0027s meaning.",
-                       "explanation":  "Review the vocabulary rule.",
-                       "sentence":  "Evaluating UNIQUE leads to better contextual pattern 239.",
+                       "id":  "VOC_CONTEXTCLUES_L8_Q30",
+                       "sentence":  "The team was [TARGET] after winning the championship against all odds.",
+                       "hint":  "ETYMOLOGY: Cheerful and full of energy.",
                        "options":  [
-                                       "UNIQUE",
-                                       "DISTRACT_C",
-                                       "DISTRACT_A",
-                                       "DISTRACT_B"
+                                       "Depressed",
+                                       "EXUBERANT",
+                                       "Gloomy",
+                                       "Normality"
                                    ],
-                       "correctAnswer":  "UNIQUE"
+                       "explanation":  "The clues in the sentence point to EXUBERANT.",
+                       "correctAnswer":  "EXUBERANT"
                    }
-               ]
+               ],
+    "gameType":  "contextClues",
+    "batchIndex":  8
 }

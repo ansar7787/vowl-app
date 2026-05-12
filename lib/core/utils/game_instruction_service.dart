@@ -213,12 +213,12 @@ class GameInstructionService {
     }
     if (type == GameSubtype.contextClues) {
       return const GameBriefing(
-        title: "Ink Analysis",
-        icon: Icons.brush_rounded,
-        objective: "Rub away the ink to reveal hidden clues.",
-        rules: ["Rub to reveal", "Analyze context", "3 Hearts per mission"],
-        actionText: "Begin Analysis",
-        tip: "Reveal just enough to understand the context! 🖌️",
+        title: "Detective Lens",
+        icon: Icons.search_rounded,
+        objective: "REVEAL EVIDENCE: Use the Detective Lens to uncover obscured clues within the sentence and identify the hidden meaning.",
+        rules: ["Scan for clues", "Identify the definition", "3 Hearts per mission"],
+        actionText: "Begin Investigation",
+        tip: "PRO TIP: Clues are often found near the target word. Look for synonyms, antonyms, or descriptions in the surrounding text! 🕵️‍♂️🔍",
       );
     }
     if (type == GameSubtype.collocations) {
