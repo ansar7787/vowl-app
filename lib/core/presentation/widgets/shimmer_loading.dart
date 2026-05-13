@@ -57,8 +57,35 @@ class GameShimmerLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final baseColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey[200]!;
-    final highlightColor = isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[50]!;
+    final accent = primaryColor ?? Colors.grey;
+    final baseColor = isDark
+        ? accent.withValues(alpha: 0.08)
+        : accent.withValues(alpha: 0.06);
+    final highlightColor = isDark
+        ? accent.withValues(alpha: 0.18)
+        : accent.withValues(alpha: 0.12);
+
+    Widget shimmerBox({
+      double? width,
+      required double height,
+      double radius = 12,
+      BoxShape shape = BoxShape.rectangle,
+    }) {
+      return Shimmer.fromColors(
+        baseColor: baseColor,
+        highlightColor: highlightColor,
+        period: const Duration(milliseconds: 1800),
+        child: Container(
+          width: width,
+          height: height,
+          decoration: BoxDecoration(
+            color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[200],
+            borderRadius: shape == BoxShape.circle ? null : BorderRadius.circular(radius.r),
+            shape: shape,
+          ),
+        ),
+      );
+    }
 
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
@@ -70,68 +97,38 @@ class GameShimmerLoading extends StatelessWidget {
             // Header Shimmer
             Row(
               children: [
-                Shimmer.fromColors(
-                  baseColor: baseColor,
-                  highlightColor: highlightColor,
-                  child: Container(
-                    width: 45.r, height: 45.r,
-                    decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-                  ),
-                ),
+                shimmerBox(width: 45.r, height: 45.r, shape: BoxShape.circle),
                 SizedBox(width: 16.w),
-                Expanded(
-                  child: Shimmer.fromColors(
-                    baseColor: baseColor,
-                    highlightColor: highlightColor,
-                    child: Container(
-                      height: 12.h,
-                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6.r)),
-                    ),
-                  ),
-                ),
+                Expanded(child: shimmerBox(height: 12.h, radius: 6)),
                 SizedBox(width: 40.w),
-                Shimmer.fromColors(
-                  baseColor: baseColor,
-                  highlightColor: highlightColor,
-                  child: Container(
-                    width: 80.w, height: 35.h,
-                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20.r)),
-                  ),
-                ),
+                shimmerBox(width: 80.w, height: 35.h, radius: 20),
               ],
             ),
             SizedBox(height: 50.h),
             // Question Area Shimmer
-            Shimmer.fromColors(
-              baseColor: baseColor,
-              highlightColor: highlightColor,
-              child: Container(
-                width: 250.w, height: 25.h,
-                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12.r)),
-              ),
-            ),
+            shimmerBox(width: 250.w, height: 25.h, radius: 12),
             SizedBox(height: 16.h),
-            Shimmer.fromColors(
-              baseColor: baseColor,
-              highlightColor: highlightColor,
-              child: Container(
-                width: 180.w, height: 20.h,
-                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.r)),
-              ),
-            ),
+            shimmerBox(width: 180.w, height: 20.h, radius: 10),
             SizedBox(height: 60.h),
             // Main Content Card Shimmer
-            Shimmer.fromColors(
-              baseColor: baseColor,
-              highlightColor: highlightColor,
-              child: Container(
-                width: double.infinity, height: 320.h,
-                decoration: BoxDecoration(
-                  color: Colors.white, 
-                  borderRadius: BorderRadius.circular(32.r),
-                  border: Border.all(
-                    color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[200]!, 
-                    width: 2,
+            Container(
+              width: double.infinity,
+              height: 320.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(32.r),
+                border: Border.all(
+                  color: accent.withValues(alpha: isDark ? 0.15 : 0.08),
+                  width: 2,
+                ),
+              ),
+              child: Shimmer.fromColors(
+                baseColor: baseColor,
+                highlightColor: highlightColor,
+                period: const Duration(milliseconds: 2200),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey[100],
+                    borderRadius: BorderRadius.circular(32.r),
                   ),
                 ),
               ),
@@ -140,27 +137,9 @@ class GameShimmerLoading extends StatelessWidget {
             // Footer Buttons Shimmer
             Row(
               children: [
-                Expanded(
-                  child: Shimmer.fromColors(
-                    baseColor: baseColor,
-                    highlightColor: highlightColor,
-                    child: Container(
-                      height: 60.h,
-                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20.r)),
-                    ),
-                  ),
-                ),
+                Expanded(child: shimmerBox(height: 60.h, radius: 20)),
                 SizedBox(width: 20.w),
-                Expanded(
-                  child: Shimmer.fromColors(
-                    baseColor: baseColor,
-                    highlightColor: highlightColor,
-                    child: Container(
-                      height: 60.h,
-                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20.r)),
-                    ),
-                  ),
-                ),
+                Expanded(child: shimmerBox(height: 60.h, radius: 20)),
               ],
             ),
           ],
