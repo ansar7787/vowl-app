@@ -1,457 +1,457 @@
-﻿{
-    "levels":  "1-10",
-    "quests":  [
-                   {
-                       "word":  "QUERULOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q1",
-                       "sentence":  "The [TARGET] customer complained about everything from the temperature to the lighting.",
-                       "hint":  "ETYMOLOGY: Complaining in a petulant or whining manner.",
-                       "options":  [
-                                       "Satisfied",
-                                       "Normality",
-                                       "COMPLAINING",
-                                       "Content"
-                                   ],
-                       "explanation":  "The clues in the sentence point to COMPLAINING.",
-                       "correctAnswer":  "COMPLAINING"
-                   },
-                   {
-                       "word":  "MAGNANIMOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q2",
-                       "sentence":  "Despite the bitter rivalry, the winner was [TARGET] in his victory speech.",
-                       "hint":  "ETYMOLOGY: Very generous or forgiving, especially toward a rival.",
-                       "options":  [
-                                       "Normality",
-                                       "Mean",
-                                       "GENEROUS",
-                                       "Vindictive"
-                                   ],
-                       "explanation":  "The clues in the sentence point to GENEROUS.",
-                       "correctAnswer":  "GENEROUS"
-                   },
-                   {
-                       "word":  "ABERRATION",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q3",
-                       "sentence":  "In a region known for its stability, the sudden earthquake was a geological [TARGET].",
-                       "hint":  "ETYMOLOGY: A departure from what is normal or expected.",
-                       "options":  [
-                                       "Normality",
-                                       "ANOMALY",
-                                       "Normality",
-                                       "Regularity"
-                                   ],
-                       "explanation":  "The clues in the sentence point to ANOMALY.",
-                       "correctAnswer":  "ANOMALY"
-                   },
-                   {
-                       "word":  "HAPLESS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q4",
-                       "sentence":  "The [TARGET] traveler lost his passport, wallet, and luggage all in one day.",
-                       "hint":  "ETYMOLOGY: Unfortunate; unlucky.",
-                       "options":  [
-                                       "Normality",
-                                       "UNLUCKY",
-                                       "Lucky",
-                                       "Fortunate"
-                                   ],
-                       "explanation":  "The clues in the sentence point to UNLUCKY.",
-                       "correctAnswer":  "UNLUCKY"
-                   },
-                   {
-                       "word":  "DEBILITATE",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q5",
-                       "sentence":  "The severe flu can [TARGET] even the healthiest individuals for several weeks.",
-                       "hint":  "ETYMOLOGY: Make someone very weak and infirm.",
-                       "options":  [
-                                       "Heal",
-                                       "Normality",
-                                       "WEAKEN",
-                                       "Strengthen"
-                                   ],
-                       "explanation":  "The clues in the sentence point to WEAKEN.",
-                       "correctAnswer":  "WEAKEN"
-                   },
-                   {
-                       "word":  "METICULOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q6",
-                       "sentence":  "The restoration of the ancient mural required [TARGET] attention to detail.",
-                       "hint":  "ETYMOLOGY: Showing great attention to detail; very careful and precise.",
-                       "options":  [
-                                       "Careless",
-                                       "FASTIDIOUS",
-                                       "Sloppy",
-                                       "Normality"
-                                   ],
-                       "explanation":  "The clues in the sentence point to FASTIDIOUS.",
-                       "correctAnswer":  "FASTIDIOUS"
-                   },
-                   {
-                       "word":  "ENERVATE",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q7",
-                       "sentence":  "The extreme humidity of the tropical jungle tended to [TARGET] the hikers quickly.",
-                       "hint":  "ETYMOLOGY: Cause someone to feel drained of energy or vitality.",
-                       "options":  [
-                                       "Energize",
-                                       "WEAKEN",
-                                       "Strengthen",
-                                       "Normality"
-                                   ],
-                       "explanation":  "The clues in the sentence point to WEAKEN.",
-                       "correctAnswer":  "WEAKEN"
-                   },
-                   {
-                       "word":  "QUINTESSENTIAL",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q8",
-                       "sentence":  "The local pub was the [TARGET] example of a cozy English village tavern.",
-                       "hint":  "ETYMOLOGY: Representing the most perfect or typical example of a quality or class.",
-                       "options":  [
-                                       "Atypical",
-                                       "TYPICAL",
-                                       "Normality",
-                                       "Unique"
-                                   ],
-                       "explanation":  "The clues in the sentence point to TYPICAL.",
-                       "correctAnswer":  "TYPICAL"
-                   },
-                   {
-                       "word":  "ANACHRONISM",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q9",
-                       "sentence":  "A typewriter in a modern high-tech office would be considered a strange [TARGET].",
-                       "hint":  "ETYMOLOGY: A thing belonging or appropriate to a period other than that in which it exists.",
-                       "options":  [
-                                       "MISPLACEMENT",
-                                       "Contemporary",
-                                       "Classic",
-                                       "Normality"
-                                   ],
-                       "explanation":  "The clues in the sentence point to MISPLACEMENT.",
-                       "correctAnswer":  "MISPLACEMENT"
-                   },
-                   {
-                       "word":  "GARRULOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q10",
-                       "sentence":  "The [TARGET] neighbor talked for hours about her garden, barely letting anyone else speak.",
-                       "hint":  "ETYMOLOGY: Excessively talkative, especially on trivial matters.",
-                       "options":  [
-                                       "Silent",
-                                       "TALKATIVE",
-                                       "Taciturn",
-                                       "Normality"
-                                   ],
-                       "explanation":  "The clues in the sentence point to TALKATIVE.",
-                       "correctAnswer":  "TALKATIVE"
-                   },
-                   {
-                       "word":  "CACOPHONY",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q11",
-                       "sentence":  "The construction site was filled with a [TARGET] of hammers, drills, and loud shouting.",
-                       "hint":  "ETYMOLOGY: A harsh, discordant mixture of sounds.",
-                       "options":  [
-                                       "Silence",
-                                       "Normality",
-                                       "DIN",
-                                       "Harmony"
-                                   ],
-                       "explanation":  "The clues in the sentence point to DIN.",
-                       "correctAnswer":  "DIN"
-                   },
-                   {
-                       "word":  "CAPRICIOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q12",
-                       "sentence":  "The stock market is notoriously [TARGET], often changing direction without any clear logic.",
-                       "hint":  "ETYMOLOGY: Given to sudden and unaccountable changes of mood or behavior.",
-                       "options":  [
-                                       "Constant",
-                                       "Stable",
-                                       "FICKLE",
-                                       "Normality"
-                                   ],
-                       "explanation":  "The clues in the sentence point to FICKLE.",
-                       "correctAnswer":  "FICKLE"
-                   },
-                   {
-                       "word":  "SAGACIOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q13",
-                       "sentence":  "The elder\u0027s [TARGET] advice helped the young leader navigate the crisis.",
-                       "hint":  "ETYMOLOGY: Having or showing keen mental discernment and good judgment; wise.",
-                       "options":  [
-                                       "Normality",
-                                       "Ignorant",
-                                       "Foolish",
-                                       "WISE"
-                                   ],
-                       "explanation":  "The clues in the sentence point to WISE.",
-                       "correctAnswer":  "WISE"
-                   },
-                   {
-                       "word":  "LACONIC",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q14",
-                       "sentence":  "The CEO was known for his [TARGET] emails that never wasted a single word.",
-                       "hint":  "ETYMOLOGY: Using very few words in speech or writing.",
-                       "options":  [
-                                       "Verbose",
-                                       "Normality",
-                                       "CONCISE",
-                                       "Wordy"
-                                   ],
-                       "explanation":  "The clues in the sentence point to CONCISE.",
-                       "correctAnswer":  "CONCISE"
-                   },
-                   {
-                       "word":  "GARRULOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q15",
-                       "sentence":  "The [TARGET] child talked non-stop during the entire three-hour flight.",
-                       "hint":  "ETYMOLOGY: Excessively talkative, especially on trivial matters.",
-                       "options":  [
-                                       "Normality",
-                                       "TALKATIVE",
-                                       "Quiet",
-                                       "Silent"
-                                   ],
-                       "explanation":  "The clues in the sentence point to TALKATIVE.",
-                       "correctAnswer":  "TALKATIVE"
-                   },
-                   {
-                       "word":  "FASTIDIOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q16",
-                       "sentence":  "The curator was [TARGET] about the placement of every single artifact in the exhibit.",
-                       "hint":  "ETYMOLOGY: Very attentive to and concerned about accuracy and detail.",
-                       "options":  [
-                                       "Careless",
-                                       "METICULOUS",
-                                       "Negligent",
-                                       "Normality"
-                                   ],
-                       "explanation":  "The clues in the sentence point to METICULOUS.",
-                       "correctAnswer":  "METICULOUS"
-                   },
-                   {
-                       "word":  "HISTRIONIC",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q17",
-                       "sentence":  "His [TARGET] reaction to the minor scratch on his car seemed like a scene from a drama.",
-                       "hint":  "ETYMOLOGY: Overly theatrical or melodramatic in character or style.",
-                       "options":  [
-                                       "Understated",
-                                       "Subdued",
-                                       "Normality",
-                                       "OVERDRAMATIC"
-                                   ],
-                       "explanation":  "The clues in the sentence point to OVERDRAMATIC.",
-                       "correctAnswer":  "OVERDRAMATIC"
-                   },
-                   {
-                       "word":  "LOQUACIOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q18",
-                       "sentence":  "The [TARGET] lawyer could speak for hours without ever pausing for breath.",
-                       "hint":  "ETYMOLOGY: Tending to talk a great deal; talkative.",
-                       "options":  [
-                                       "Taciturn",
-                                       "TALKATIVE",
-                                       "Silent",
-                                       "Normality"
-                                   ],
-                       "explanation":  "The clues in the sentence point to TALKATIVE.",
-                       "correctAnswer":  "TALKATIVE"
-                   },
-                   {
-                       "word":  "ICONOCLAST",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q19",
-                       "sentence":  "As an [TARGET], she challenged the traditional methods of the art world.",
-                       "hint":  "ETYMOLOGY: A person who attacks cherished beliefs or institutions.",
-                       "options":  [
-                                       "REBEL",
-                                       "Normality",
-                                       "Traditionalist",
-                                       "Conformist"
-                                   ],
-                       "explanation":  "The clues in the sentence point to REBEL.",
-                       "correctAnswer":  "REBEL"
-                   },
-                   {
-                       "word":  "PALLIATE",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q20",
-                       "sentence":  "The doctor prescribed medication to [TARGET] the symptoms, though there was no cure.",
-                       "hint":  "ETYMOLOGY: Make a disease or its symptoms less severe or unpleasant.",
-                       "options":  [
-                                       "Worsen",
-                                       "Normality",
-                                       "Exacerbate",
-                                       "ALLEVIATE"
-                                   ],
-                       "explanation":  "The clues in the sentence point to ALLEVIATE.",
-                       "correctAnswer":  "ALLEVIATE"
-                   },
-                   {
-                       "word":  "TRUCULENT",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q21",
-                       "sentence":  "The athlete\u0027s [TARGET] attitude during the press conference led to a heavy fine.",
-                       "hint":  "ETYMOLOGY: Eager or quick to argue or fight; aggressively defiant.",
-                       "options":  [
-                                       "AGGRESSIVE",
-                                       "Tame",
-                                       "Gentle",
-                                       "Normality"
-                                   ],
-                       "explanation":  "The clues in the sentence point to AGGRESSIVE.",
-                       "correctAnswer":  "AGGRESSIVE"
-                   },
-                   {
-                       "word":  "KINDLE",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q22",
-                       "sentence":  "The inspiring speech helped to [TARGET] a sense of hope in the community.",
-                       "hint":  "ETYMOLOGY: Light or set on fire; inspire an emotion or feeling.",
-                       "options":  [
-                                       "Extinguish",
-                                       "IGNITE",
-                                       "Normality",
-                                       "Dampen"
-                                   ],
-                       "explanation":  "The clues in the sentence point to IGNITE.",
-                       "correctAnswer":  "IGNITE"
-                   },
-                   {
-                       "word":  "BELLIGERENT",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q23",
-                       "sentence":  "The nations remained [TARGET], refusing to sign the peace treaty even after years of conflict.",
-                       "hint":  "ETYMOLOGY: Hostile and aggressive; ready to fight.",
-                       "options":  [
-                                       "HOSTILE",
-                                       "Amicable",
-                                       "Normality",
-                                       "Peaceful"
-                                   ],
-                       "explanation":  "The clues in the sentence point to HOSTILE.",
-                       "correctAnswer":  "HOSTILE"
-                   },
-                   {
-                       "word":  "OBSEQUIOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q24",
-                       "sentence":  "The [TARGET] assistant agreed with every single word his boss said, no matter how absurd.",
-                       "hint":  "ETYMOLOGY: Obedient or attentive to an excessive or servile degree.",
-                       "options":  [
-                                       "Assertive",
-                                       "Normality",
-                                       "SERVILE",
-                                       "Arrogant"
-                                   ],
-                       "explanation":  "The clues in the sentence point to SERVILE.",
-                       "correctAnswer":  "SERVILE"
-                   },
-                   {
-                       "word":  "OBDURATE",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q25",
-                       "sentence":  "The negotiator remained [TARGET], refusing to budge on even the smallest points.",
-                       "hint":  "ETYMOLOGY: Stubbornly refusing to change one\u0027s opinion or course of action.",
-                       "options":  [
-                                       "Flexible",
-                                       "Normality",
-                                       "STUBBORN",
-                                       "Yielding"
-                                   ],
-                       "explanation":  "The clues in the sentence point to STUBBORN.",
-                       "correctAnswer":  "STUBBORN"
-                   },
-                   {
-                       "word":  "ALACRITY",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q26",
-                       "sentence":  "The interns completed their tasks with [TARGET], eager to impress their supervisors.",
-                       "hint":  "ETYMOLOGY: Brisk and cheerful readiness.",
-                       "options":  [
-                                       "Normality",
-                                       "EAGERNESS",
-                                       "Apathy",
-                                       "Lethargy"
-                                   ],
-                       "explanation":  "The clues in the sentence point to EAGERNESS.",
-                       "correctAnswer":  "EAGERNESS"
-                   },
-                   {
-                       "word":  "IMPETUOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q27",
-                       "sentence":  "The [TARGET] decision to quit his job without a backup plan surprised his cautious family.",
-                       "hint":  "ETYMOLOGY: Acting or done quickly and without thought or care.",
-                       "options":  [
-                                       "IMPULSIVE",
-                                       "Cautious",
-                                       "Normality",
-                                       "Deliberate"
-                                   ],
-                       "explanation":  "The clues in the sentence point to IMPULSIVE.",
-                       "correctAnswer":  "IMPULSIVE"
-                   },
-                   {
-                       "word":  "PARSIMONIOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q28",
-                       "sentence":  "The [TARGET] billionaire refused to spend money on even basic home repairs.",
-                       "hint":  "ETYMOLOGY: Very unwilling to spend money or use resources; frugal.",
-                       "options":  [
-                                       "Liberal",
-                                       "Normality",
-                                       "Generous",
-                                       "STINGY"
-                                   ],
-                       "explanation":  "The clues in the sentence point to STINGY.",
-                       "correctAnswer":  "STINGY"
-                   },
-                   {
-                       "word":  "BANAL",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q29",
-                       "sentence":  "The movie\u0027s plot was so [TARGET] that the audience could predict the ending within minutes.",
-                       "hint":  "ETYMOLOGY: So lacking in originality as to be obvious and boring.",
-                       "options":  [
-                                       "Original",
-                                       "Normality",
-                                       "Creative",
-                                       "CLICHÃ‰D"
-                                   ],
-                       "explanation":  "The clues in the sentence point to CLICHÃ‰D.",
-                       "correctAnswer":  "CLICHÃ‰D"
-                   },
-                   {
-                       "word":  "FACETIOUS",
-                       "interactionType":  "Detective Lens",
-                       "id":  "VOC_CONTEXTCLUES_L1_Q30",
-                       "sentence":  "He made a [TARGET] remark about the boss\u0027s tie, not realizing the boss was behind him.",
-                       "hint":  "ETYMOLOGY: Treating serious issues with deliberately inappropriate humor.",
-                       "options":  [
-                                       "JOCULAR",
-                                       "Grave",
-                                       "Normality",
-                                       "Serious"
-                                   ],
-                       "explanation":  "The clues in the sentence point to JOCULAR.",
-                       "correctAnswer":  "JOCULAR"
-                   }
-               ],
-    "gameType":  "contextClues",
-    "batchIndex":  1
+{
+    "levels": "1-10",
+    "quests": [
+        {
+            "word": "QUERULOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L1_Q1",
+            "sentence": "The [TARGET] customer complained about everything from the temperature to the lighting.",
+            "hint": "ETYMOLOGY: Complaining in a petulant or whining manner.",
+            "options": [
+                "Satisfied",
+                "Normality",
+                "COMPLAINING",
+                "Content"
+            ],
+            "explanation": "The clues in the sentence point to COMPLAINING.",
+            "correctAnswer": "COMPLAINING"
+        },
+        {
+            "word": "MAGNANIMOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L1_Q2",
+            "sentence": "Despite the bitter rivalry, the winner was [TARGET] in his victory speech.",
+            "hint": "ETYMOLOGY: Very generous or forgiving, especially toward a rival.",
+            "options": [
+                "Normality",
+                "Mean",
+                "GENEROUS",
+                "Vindictive"
+            ],
+            "explanation": "The clues in the sentence point to GENEROUS.",
+            "correctAnswer": "GENEROUS"
+        },
+        {
+            "word": "ABERRATION",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L1_Q3",
+            "sentence": "In a region known for its stability, the sudden earthquake was a geological [TARGET].",
+            "hint": "ETYMOLOGY: A departure from what is normal or expected.",
+            "options": [
+                "Normality",
+                "ANOMALY",
+                "Normality",
+                "Regularity"
+            ],
+            "explanation": "The clues in the sentence point to ANOMALY.",
+            "correctAnswer": "ANOMALY"
+        },
+        {
+            "word": "HAPLESS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L2_Q1",
+            "sentence": "The [TARGET] traveler lost his passport, wallet, and luggage all in one day.",
+            "hint": "ETYMOLOGY: Unfortunate; unlucky.",
+            "options": [
+                "Normality",
+                "UNLUCKY",
+                "Lucky",
+                "Fortunate"
+            ],
+            "explanation": "The clues in the sentence point to UNLUCKY.",
+            "correctAnswer": "UNLUCKY"
+        },
+        {
+            "word": "DEBILITATE",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L2_Q2",
+            "sentence": "The severe flu can [TARGET] even the healthiest individuals for several weeks.",
+            "hint": "ETYMOLOGY: Make someone very weak and infirm.",
+            "options": [
+                "Heal",
+                "Normality",
+                "WEAKEN",
+                "Strengthen"
+            ],
+            "explanation": "The clues in the sentence point to WEAKEN.",
+            "correctAnswer": "WEAKEN"
+        },
+        {
+            "word": "METICULOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L2_Q3",
+            "sentence": "The restoration of the ancient mural required [TARGET] attention to detail.",
+            "hint": "ETYMOLOGY: Showing great attention to detail; very careful and precise.",
+            "options": [
+                "Careless",
+                "FASTIDIOUS",
+                "Sloppy",
+                "Normality"
+            ],
+            "explanation": "The clues in the sentence point to FASTIDIOUS.",
+            "correctAnswer": "FASTIDIOUS"
+        },
+        {
+            "word": "ENERVATE",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L3_Q1",
+            "sentence": "The extreme humidity of the tropical jungle tended to [TARGET] the hikers quickly.",
+            "hint": "ETYMOLOGY: Cause someone to feel drained of energy or vitality.",
+            "options": [
+                "Energize",
+                "WEAKEN",
+                "Strengthen",
+                "Normality"
+            ],
+            "explanation": "The clues in the sentence point to WEAKEN.",
+            "correctAnswer": "WEAKEN"
+        },
+        {
+            "word": "QUINTESSENTIAL",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L3_Q2",
+            "sentence": "The local pub was the [TARGET] example of a cozy English village tavern.",
+            "hint": "ETYMOLOGY: Representing the most perfect or typical example of a quality or class.",
+            "options": [
+                "Atypical",
+                "TYPICAL",
+                "Normality",
+                "Unique"
+            ],
+            "explanation": "The clues in the sentence point to TYPICAL.",
+            "correctAnswer": "TYPICAL"
+        },
+        {
+            "word": "ANACHRONISM",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L3_Q3",
+            "sentence": "A typewriter in a modern high-tech office would be considered a strange [TARGET].",
+            "hint": "ETYMOLOGY: A thing belonging or appropriate to a period other than that in which it exists.",
+            "options": [
+                "MISPLACEMENT",
+                "Contemporary",
+                "Classic",
+                "Normality"
+            ],
+            "explanation": "The clues in the sentence point to MISPLACEMENT.",
+            "correctAnswer": "MISPLACEMENT"
+        },
+        {
+            "word": "GARRULOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L4_Q1",
+            "sentence": "The [TARGET] neighbor talked for hours about her garden, barely letting anyone else speak.",
+            "hint": "ETYMOLOGY: Excessively talkative, especially on trivial matters.",
+            "options": [
+                "Silent",
+                "TALKATIVE",
+                "Taciturn",
+                "Normality"
+            ],
+            "explanation": "The clues in the sentence point to TALKATIVE.",
+            "correctAnswer": "TALKATIVE"
+        },
+        {
+            "word": "CACOPHONY",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L4_Q2",
+            "sentence": "The construction site was filled with a [TARGET] of hammers, drills, and loud shouting.",
+            "hint": "ETYMOLOGY: A harsh, discordant mixture of sounds.",
+            "options": [
+                "Silence",
+                "Normality",
+                "DIN",
+                "Harmony"
+            ],
+            "explanation": "The clues in the sentence point to DIN.",
+            "correctAnswer": "DIN"
+        },
+        {
+            "word": "CAPRICIOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L4_Q3",
+            "sentence": "The stock market is notoriously [TARGET], often changing direction without any clear logic.",
+            "hint": "ETYMOLOGY: Given to sudden and unaccountable changes of mood or behavior.",
+            "options": [
+                "Constant",
+                "Stable",
+                "FICKLE",
+                "Normality"
+            ],
+            "explanation": "The clues in the sentence point to FICKLE.",
+            "correctAnswer": "FICKLE"
+        },
+        {
+            "word": "SAGACIOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L5_Q1",
+            "sentence": "The elder's [TARGET] advice helped the young leader navigate the crisis.",
+            "hint": "ETYMOLOGY: Having or showing keen mental discernment and good judgment; wise.",
+            "options": [
+                "Normality",
+                "Ignorant",
+                "Foolish",
+                "WISE"
+            ],
+            "explanation": "The clues in the sentence point to WISE.",
+            "correctAnswer": "WISE"
+        },
+        {
+            "word": "LACONIC",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L5_Q2",
+            "sentence": "The CEO was known for his [TARGET] emails that never wasted a single word.",
+            "hint": "ETYMOLOGY: Using very few words in speech or writing.",
+            "options": [
+                "Verbose",
+                "Normality",
+                "CONCISE",
+                "Wordy"
+            ],
+            "explanation": "The clues in the sentence point to CONCISE.",
+            "correctAnswer": "CONCISE"
+        },
+        {
+            "word": "GARRULOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L5_Q3",
+            "sentence": "The [TARGET] child talked non-stop during the entire three-hour flight.",
+            "hint": "ETYMOLOGY: Excessively talkative, especially on trivial matters.",
+            "options": [
+                "Normality",
+                "TALKATIVE",
+                "Quiet",
+                "Silent"
+            ],
+            "explanation": "The clues in the sentence point to TALKATIVE.",
+            "correctAnswer": "TALKATIVE"
+        },
+        {
+            "word": "FASTIDIOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L6_Q1",
+            "sentence": "The curator was [TARGET] about the placement of every single artifact in the exhibit.",
+            "hint": "ETYMOLOGY: Very attentive to and concerned about accuracy and detail.",
+            "options": [
+                "Careless",
+                "METICULOUS",
+                "Negligent",
+                "Normality"
+            ],
+            "explanation": "The clues in the sentence point to METICULOUS.",
+            "correctAnswer": "METICULOUS"
+        },
+        {
+            "word": "HISTRIONIC",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L6_Q2",
+            "sentence": "His [TARGET] reaction to the minor scratch on his car seemed like a scene from a drama.",
+            "hint": "ETYMOLOGY: Overly theatrical or melodramatic in character or style.",
+            "options": [
+                "Understated",
+                "Subdued",
+                "Normality",
+                "OVERDRAMATIC"
+            ],
+            "explanation": "The clues in the sentence point to OVERDRAMATIC.",
+            "correctAnswer": "OVERDRAMATIC"
+        },
+        {
+            "word": "LOQUACIOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L6_Q3",
+            "sentence": "The [TARGET] lawyer could speak for hours without ever pausing for breath.",
+            "hint": "ETYMOLOGY: Tending to talk a great deal; talkative.",
+            "options": [
+                "Taciturn",
+                "TALKATIVE",
+                "Silent",
+                "Normality"
+            ],
+            "explanation": "The clues in the sentence point to TALKATIVE.",
+            "correctAnswer": "TALKATIVE"
+        },
+        {
+            "word": "ICONOCLAST",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L7_Q1",
+            "sentence": "As an [TARGET], she challenged the traditional methods of the art world.",
+            "hint": "ETYMOLOGY: A person who attacks cherished beliefs or institutions.",
+            "options": [
+                "REBEL",
+                "Normality",
+                "Traditionalist",
+                "Conformist"
+            ],
+            "explanation": "The clues in the sentence point to REBEL.",
+            "correctAnswer": "REBEL"
+        },
+        {
+            "word": "PALLIATE",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L7_Q2",
+            "sentence": "The doctor prescribed medication to [TARGET] the symptoms, though there was no cure.",
+            "hint": "ETYMOLOGY: Make a disease or its symptoms less severe or unpleasant.",
+            "options": [
+                "Worsen",
+                "Normality",
+                "Exacerbate",
+                "ALLEVIATE"
+            ],
+            "explanation": "The clues in the sentence point to ALLEVIATE.",
+            "correctAnswer": "ALLEVIATE"
+        },
+        {
+            "word": "TRUCULENT",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L7_Q3",
+            "sentence": "The athlete's [TARGET] attitude during the press conference led to a heavy fine.",
+            "hint": "ETYMOLOGY: Eager or quick to argue or fight; aggressively defiant.",
+            "options": [
+                "AGGRESSIVE",
+                "Tame",
+                "Gentle",
+                "Normality"
+            ],
+            "explanation": "The clues in the sentence point to AGGRESSIVE.",
+            "correctAnswer": "AGGRESSIVE"
+        },
+        {
+            "word": "KINDLE",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L8_Q1",
+            "sentence": "The inspiring speech helped to [TARGET] a sense of hope in the community.",
+            "hint": "ETYMOLOGY: Light or set on fire; inspire an emotion or feeling.",
+            "options": [
+                "Extinguish",
+                "IGNITE",
+                "Normality",
+                "Dampen"
+            ],
+            "explanation": "The clues in the sentence point to IGNITE.",
+            "correctAnswer": "IGNITE"
+        },
+        {
+            "word": "BELLIGERENT",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L8_Q2",
+            "sentence": "The nations remained [TARGET], refusing to sign the peace treaty even after years of conflict.",
+            "hint": "ETYMOLOGY: Hostile and aggressive; ready to fight.",
+            "options": [
+                "HOSTILE",
+                "Amicable",
+                "Normality",
+                "Peaceful"
+            ],
+            "explanation": "The clues in the sentence point to HOSTILE.",
+            "correctAnswer": "HOSTILE"
+        },
+        {
+            "word": "OBSEQUIOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L8_Q3",
+            "sentence": "The [TARGET] assistant agreed with every single word his boss said, no matter how absurd.",
+            "hint": "ETYMOLOGY: Obedient or attentive to an excessive or servile degree.",
+            "options": [
+                "Assertive",
+                "Normality",
+                "SERVILE",
+                "Arrogant"
+            ],
+            "explanation": "The clues in the sentence point to SERVILE.",
+            "correctAnswer": "SERVILE"
+        },
+        {
+            "word": "OBDURATE",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L9_Q1",
+            "sentence": "The negotiator remained [TARGET], refusing to budge on even the smallest points.",
+            "hint": "ETYMOLOGY: Stubbornly refusing to change one's opinion or course of action.",
+            "options": [
+                "Flexible",
+                "Normality",
+                "STUBBORN",
+                "Yielding"
+            ],
+            "explanation": "The clues in the sentence point to STUBBORN.",
+            "correctAnswer": "STUBBORN"
+        },
+        {
+            "word": "ALACRITY",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L9_Q2",
+            "sentence": "The interns completed their tasks with [TARGET], eager to impress their supervisors.",
+            "hint": "ETYMOLOGY: Brisk and cheerful readiness.",
+            "options": [
+                "Normality",
+                "EAGERNESS",
+                "Apathy",
+                "Lethargy"
+            ],
+            "explanation": "The clues in the sentence point to EAGERNESS.",
+            "correctAnswer": "EAGERNESS"
+        },
+        {
+            "word": "IMPETUOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L9_Q3",
+            "sentence": "The [TARGET] decision to quit his job without a backup plan surprised his cautious family.",
+            "hint": "ETYMOLOGY: Acting or done quickly and without thought or care.",
+            "options": [
+                "IMPULSIVE",
+                "Cautious",
+                "Normality",
+                "Deliberate"
+            ],
+            "explanation": "The clues in the sentence point to IMPULSIVE.",
+            "correctAnswer": "IMPULSIVE"
+        },
+        {
+            "word": "PARSIMONIOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L10_Q1",
+            "sentence": "The [TARGET] billionaire refused to spend money on even basic home repairs.",
+            "hint": "ETYMOLOGY: Very unwilling to spend money or use resources; frugal.",
+            "options": [
+                "Liberal",
+                "Normality",
+                "Generous",
+                "STINGY"
+            ],
+            "explanation": "The clues in the sentence point to STINGY.",
+            "correctAnswer": "STINGY"
+        },
+        {
+            "word": "BANAL",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L10_Q2",
+            "sentence": "The movie's plot was so [TARGET] that the audience could predict the ending within minutes.",
+            "hint": "ETYMOLOGY: So lacking in originality as to be obvious and boring.",
+            "options": [
+                "Original",
+                "Normality",
+                "Creative",
+                "CLICHÉD"
+            ],
+            "explanation": "The clues in the sentence point to CLICHÉD.",
+            "correctAnswer": "CLICHÉD"
+        },
+        {
+            "word": "FACETIOUS",
+            "interactionType": "Detective Lens",
+            "id": "VOC_CONTEXTCLUES_L10_Q3",
+            "sentence": "He made a [TARGET] remark about the boss's tie, not realizing the boss was behind him.",
+            "hint": "ETYMOLOGY: Treating serious issues with deliberately inappropriate humor.",
+            "options": [
+                "JOCULAR",
+                "Grave",
+                "Normality",
+                "Serious"
+            ],
+            "explanation": "The clues in the sentence point to JOCULAR.",
+            "correctAnswer": "JOCULAR"
+        }
+    ],
+    "gameType": "contextClues",
+    "batchIndex": 1
 }

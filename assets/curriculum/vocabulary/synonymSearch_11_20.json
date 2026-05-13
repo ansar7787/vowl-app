@@ -1,428 +1,427 @@
-﻿{
-    "levels":  "11-20",
-    "quests":  [
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L11_Q1",
-                       "word":  "Abundant",
-                       "hint":  "Look for a term that represents 'abundant'.",
-                       "explanation":  "The words 'Plentiful' and 'Abundant' are interchangeable when discussing abundant.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Plentiful",
-                       "options":  [
-                                       "Rare",
-                                       "Scarce",
-                                       "Plentiful",
-                                       "Empty"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L11_Q2",
-                       "word":  "Accurate",
-                       "hint":  "This word refers to the act of accuring.",
-                       "explanation":  "'Precise' and 'Accurate' both describe the process of accuring in academic contexts.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Precise",
-                       "options":  [
-                                       "Wrong",
-                                       "Vague",
-                                       "False",
-                                       "Precise"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L11_Q3",
-                       "word":  "Adjacent",
-                       "hint":  "Focus on the concept of adjacent when choosing the synonym.",
-                       "explanation":  "In formal writing, 'Nearby' is frequently used as a more precise way to say 'Adjacent'.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Nearby",
-                       "options":  [
-                                       "Remote",
-                                       "Far",
-                                       "Distant",
-                                       "Nearby"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L12_Q1",
-                       "word":  "Aggregate",
-                       "hint":  "Look for a term that represents 'aggreging'.",
-                       "explanation":  "The words 'Total' and 'Aggregate' are interchangeable when discussing aggreging.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Total",
-                       "options":  [
-                                       "Part",
-                                       "Fraction",
-                                       "Total",
-                                       "Single"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L12_Q2",
-                       "word":  "Allocate",
-                       "hint":  "This word refers to the act of allocing.",
-                       "explanation":  "'Assign' and 'Allocate' both describe the process of allocing in academic contexts.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Assign",
-                       "options":  [
-                                       "Take",
-                                       "Keep",
-                                       "Hold",
-                                       "Assign"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L12_Q3",
-                       "word":  "Amend",
-                       "hint":  "Focus on the concept of amend when choosing the synonym.",
-                       "explanation":  "In formal writing, 'Modify' is frequently used as a more precise way to say 'Amend'.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Modify",
-                       "options":  [
-                                       "Worsen",
-                                       "Keep",
-                                       "Modify",
-                                       "Break"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L13_Q1",
-                       "word":  "Analogous",
-                       "hint":  "Look for a term that represents 'analogous'.",
-                       "explanation":  "The words 'Comparable' and 'Analogous' are interchangeable when discussing analogous.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Comparable",
-                       "options":  [
-                                       "Different",
-                                       "Opposite",
-                                       "Unique",
-                                       "Comparable"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L13_Q2",
-                       "word":  "Apparent",
-                       "hint":  "Focus on the concept of apparent when choosing the synonym.",
-                       "explanation":  "In formal writing, 'Obvious' is frequently used as a more precise way to say 'Apparent'.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Obvious",
-                       "options":  [
-                                       "Vague",
-                                       "Hidden",
-                                       "Secret",
-                                       "Obvious"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L13_Q3",
-                       "word":  "Arbitrary",
-                       "hint":  "Focus on the concept of arbitrary when choosing the synonym.",
-                       "explanation":  "In formal writing, 'Random' is frequently used as a more precise way to say 'Arbitrary'.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Random",
-                       "options":  [
-                                       "Planned",
-                                       "Logical",
-                                       "Random",
-                                       "Fixed"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L14_Q1",
-                       "word":  "Attribute",
-                       "hint":  "This word refers to the act of attribute.",
-                       "explanation":  "'Quality' and 'Attribute' both describe the process of attribute in academic contexts.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Quality",
-                       "options":  [
-                                       "Blank",
-                                       "Nothing",
-                                       "Quality",
-                                       "Void"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L14_Q2",
-                       "word":  "Coherent",
-                       "hint":  "This word refers to the act of coherent.",
-                       "explanation":  "'Logical' and 'Coherent' both describe the process of coherent in academic contexts.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Logical",
-                       "options":  [
-                                       "Messy",
-                                       "Logical",
-                                       "Confused",
-                                       "Random"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L14_Q3",
-                       "word":  "Coincide",
-                       "hint":  "Focus on the concept of coincide when choosing the synonym.",
-                       "explanation":  "In formal writing, 'Concur' is frequently used as a more precise way to say 'Coincide'.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Concur",
-                       "options":  [
-                                       "Concur",
-                                       "Differ",
-                                       "Oppose",
-                                       "Clash"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L15_Q1",
-                       "word":  "Collapse",
-                       "hint":  "Look for a term that represents 'collapse'.",
-                       "explanation":  "The words 'Fail' and 'Collapse' are interchangeable when discussing collapse.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Fail",
-                       "options":  [
-                                       "Succeed",
-                                       "Rise",
-                                       "Grow",
-                                       "Fail"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L15_Q2",
-                       "word":  "Compile",
-                       "hint":  "This word refers to the act of compile.",
-                       "explanation":  "'Gather' and 'Compile' both describe the process of compile in academic contexts.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Gather",
-                       "options":  [
-                                       "Gather",
-                                       "Spread",
-                                       "Lose",
-                                       "Scatter"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L15_Q3",
-                       "word":  "Complement",
-                       "hint":  "Look for a term that represents 'complement'.",
-                       "explanation":  "The words 'Enhance' and 'Complement' are interchangeable when discussing complement.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Enhance",
-                       "options":  [
-                                       "Damage",
-                                       "Enhance",
-                                       "Hurt",
-                                       "Reduce"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L16_Q1",
-                       "word":  "Comprehensive",
-                       "hint":  "Focus on the concept of comprehensive when choosing the synonym.",
-                       "explanation":  "In formal writing, 'In-depth' is frequently used as a more precise way to say 'Comprehensive'.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "In-depth",
-                       "options":  [
-                                       "Brief",
-                                       "Short",
-                                       "In-depth",
-                                       "Partial"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L16_Q2",
-                       "word":  "Comprise",
-                       "hint":  "This word refers to the act of comprise.",
-                       "explanation":  "'Include' and 'Comprise' both describe the process of comprise in academic contexts.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Include",
-                       "options":  [
-                                       "Include",
-                                       "Lack",
-                                       "Exclude",
-                                       "Miss"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L16_Q3",
-                       "word":  "Concede",
-                       "hint":  "This word refers to the act of concede.",
-                       "explanation":  "'Admit' and 'Concede' both describe the process of concede in academic contexts.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Admit",
-                       "options":  [
-                                       "Deny",
-                                       "Reject",
-                                       "Refuse",
-                                       "Admit"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L17_Q1",
-                       "word":  "Conceive",
-                       "hint":  "Look for a term that represents 'conceive'.",
-                       "explanation":  "The words 'Imagine' and 'Conceive' are interchangeable when discussing conceive.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Imagine",
-                       "options":  [
-                                       "Hear",
-                                       "Imagine",
-                                       "See",
-                                       "Know"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L17_Q2",
-                       "word":  "Concise",
-                       "hint":  "Look for a term that represents 'concise'.",
-                       "explanation":  "The words 'Brief' and 'Concise' are interchangeable when discussing concise.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Brief",
-                       "options":  [
-                                       "Brief",
-                                       "Wordy",
-                                       "Vast",
-                                       "Long"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L17_Q3",
-                       "word":  "Concrete",
-                       "hint":  "Focus on the concept of concrete when choosing the synonym.",
-                       "explanation":  "In formal writing, 'Solid' is frequently used as a more precise way to say 'Concrete'.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Solid",
-                       "options":  [
-                                       "Solid",
-                                       "Soft",
-                                       "Vague",
-                                       "Liquid"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L18_Q1",
-                       "word":  "Confine",
-                       "hint":  "Focus on the concept of confine when choosing the synonym.",
-                       "explanation":  "In formal writing, 'Limit' is frequently used as a more precise way to say 'Confine'.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Limit",
-                       "options":  [
-                                       "Limit",
-                                       "Release",
-                                       "Free",
-                                       "Open"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L18_Q2",
-                       "word":  "Confirm",
-                       "hint":  "Look for a term that represents 'confirm'.",
-                       "explanation":  "The words 'Verify' and 'Confirm' are interchangeable when discussing confirm.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Verify",
-                       "options":  [
-                                       "Reject",
-                                       "Doubt",
-                                       "Deny",
-                                       "Verify"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L18_Q3",
-                       "word":  "Conflict",
-                       "hint":  "Look for a term that represents 'conflict'.",
-                       "explanation":  "The words 'Dispute' and 'Conflict' are interchangeable when discussing conflict.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Dispute",
-                       "options":  [
-                                       "Dispute",
-                                       "Truce",
-                                       "Peace",
-                                       "Accord"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L19_Q1",
-                       "word":  "Conform",
-                       "hint":  "This word refers to the act of conform.",
-                       "explanation":  "'Adapt' and 'Conform' both describe the process of conform in academic contexts.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Adapt",
-                       "options":  [
-                                       "Fight",
-                                       "Change",
-                                       "Resist",
-                                       "Adapt"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L19_Q2",
-                       "word":  "Consent",
-                       "hint":  "Look for a term that represents 'consent'.",
-                       "explanation":  "The words 'Agreement' and 'Consent' are interchangeable when discussing consent.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Agreement",
-                       "options":  [
-                                       "Denial",
-                                       "Refusal",
-                                       "Protest",
-                                       "Agreement"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L19_Q3",
-                       "word":  "Consistent",
-                       "hint":  "Focus on the concept of consistent when choosing the synonym.",
-                       "explanation":  "In formal writing, 'Steady' is frequently used as a more precise way to say 'Consistent'.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Steady",
-                       "options":  [
-                                       "Steady",
-                                       "Changing",
-                                       "Vague",
-                                       "Random"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L20_Q1",
-                       "word":  "Consolidate",
-                       "hint":  "This word refers to the act of consoliding.",
-                       "explanation":  "'Combine' and 'Consolidate' both describe the process of consoliding in academic contexts.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Combine",
-                       "options":  [
-                                       "Split",
-                                       "Break",
-                                       "Combine",
-                                       "Divide"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L20_Q2",
-                       "word":  "Constitute",
-                       "hint":  "Look for a term that represents 'constitute'.",
-                       "explanation":  "The words 'Form' and 'Constitute' are interchangeable when discussing constitute.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Form",
-                       "options":  [
-                                       "Break",
-                                       "Destroy",
-                                       "Form",
-                                       "End"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_SYNONYMSEARCH_L20_Q3",
-                       "word":  "Constrain",
-                       "hint":  "Look for a term that represents 'constrain'.",
-                       "explanation":  "The words 'Restrict' and 'Constrain' are interchangeable when discussing constrain.",
-                       "interactionType":  "Word Warp",
-                       "correctAnswer":  "Restrict",
-                       "options":  [
-                                       "Allow",
-                                       "Open",
-                                       "Free",
-                                       "Restrict"
-                                   ]
-                   }
-               ],
-    "gameType":  "synonymSearch",
-    "batchIndex":  2
+{
+    "levels": "11-20",
+    "quests": [
+        {
+            "id": "VOC_SYNONYMSEARCH_L11_Q1",
+            "word": "Abundant",
+            "hint": "Look for a term that represents 'abundant'.",
+            "explanation": "The words 'Plentiful' and 'Abundant' are interchangeable when discussing abundant.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Plentiful",
+            "options": [
+                "Rare",
+                "Scarce",
+                "Plentiful",
+                "Empty"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L11_Q2",
+            "word": "Accurate",
+            "hint": "This word refers to the act of accuring.",
+            "explanation": "'Precise' and 'Accurate' both describe the process of accuring in academic contexts.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Precise",
+            "options": [
+                "Wrong",
+                "Vague",
+                "False",
+                "Precise"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L11_Q3",
+            "word": "Adjacent",
+            "hint": "Focus on the concept of adjacent when choosing the synonym.",
+            "explanation": "In formal writing, 'Nearby' is frequently used as a more precise way to say 'Adjacent'.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Nearby",
+            "options": [
+                "Remote",
+                "Far",
+                "Distant",
+                "Nearby"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L12_Q1",
+            "word": "Aggregate",
+            "hint": "Look for a term that represents 'aggreging'.",
+            "explanation": "The words 'Total' and 'Aggregate' are interchangeable when discussing aggreging.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Total",
+            "options": [
+                "Part",
+                "Fraction",
+                "Total",
+                "Single"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L12_Q2",
+            "word": "Allocate",
+            "hint": "This word refers to the act of allocing.",
+            "explanation": "'Assign' and 'Allocate' both describe the process of allocing in academic contexts.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Assign",
+            "options": [
+                "Take",
+                "Keep",
+                "Hold",
+                "Assign"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L12_Q3",
+            "word": "Amend",
+            "hint": "Focus on the concept of amend when choosing the synonym.",
+            "explanation": "In formal writing, 'Modify' is frequently used as a more precise way to say 'Amend'.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Modify",
+            "options": [
+                "Worsen",
+                "Keep",
+                "Modify",
+                "Break"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L13_Q1",
+            "word": "Analogous",
+            "hint": "Look for a term that represents 'analogous'.",
+            "explanation": "The words 'Comparable' and 'Analogous' are interchangeable when discussing analogous.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Comparable",
+            "options": [
+                "Different",
+                "Opposite",
+                "Unique",
+                "Comparable"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L13_Q2",
+            "word": "Apparent",
+            "hint": "Focus on the concept of apparent when choosing the synonym.",
+            "explanation": "In formal writing, 'Obvious' is frequently used as a more precise way to say 'Apparent'.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Obvious",
+            "options": [
+                "Vague",
+                "Hidden",
+                "Secret",
+                "Obvious"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L13_Q3",
+            "word": "Arbitrary",
+            "hint": "Focus on the concept of arbitrary when choosing the synonym.",
+            "explanation": "In formal writing, 'Random' is frequently used as a more precise way to say 'Arbitrary'.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Random",
+            "options": [
+                "Planned",
+                "Logical",
+                "Random",
+                "Fixed"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L14_Q1",
+            "word": "Attribute",
+            "hint": "This word refers to the act of attribute.",
+            "explanation": "'Quality' and 'Attribute' both describe the process of attribute in academic contexts.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Quality",
+            "options": [
+                "Blank",
+                "Nothing",
+                "Quality",
+                "Void"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L14_Q2",
+            "word": "Coherent",
+            "hint": "This word refers to the act of coherent.",
+            "explanation": "'Logical' and 'Coherent' both describe the process of coherent in academic contexts.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Logical",
+            "options": [
+                "Messy",
+                "Logical",
+                "Confused",
+                "Random"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L14_Q3",
+            "word": "Coincide",
+            "hint": "Focus on the concept of coincide when choosing the synonym.",
+            "explanation": "In formal writing, 'Concur' is frequently used as a more precise way to say 'Coincide'.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Concur",
+            "options": [
+                "Concur",
+                "Differ",
+                "Oppose",
+                "Clash"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L15_Q1",
+            "word": "Collapse",
+            "hint": "Look for a term that represents 'collapse'.",
+            "explanation": "The words 'Fail' and 'Collapse' are interchangeable when discussing collapse.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Fail",
+            "options": [
+                "Succeed",
+                "Rise",
+                "Grow",
+                "Fail"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L15_Q2",
+            "word": "Compile",
+            "hint": "This word refers to the act of compile.",
+            "explanation": "'Gather' and 'Compile' both describe the process of compile in academic contexts.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Gather",
+            "options": [
+                "Gather",
+                "Spread",
+                "Lose",
+                "Scatter"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L15_Q3",
+            "word": "Complement",
+            "hint": "Look for a term that represents 'complement'.",
+            "explanation": "The words 'Enhance' and 'Complement' are interchangeable when discussing complement.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Enhance",
+            "options": [
+                "Damage",
+                "Enhance",
+                "Hurt",
+                "Reduce"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L16_Q1",
+            "word": "Comprehensive",
+            "hint": "Focus on the concept of comprehensive when choosing the synonym.",
+            "explanation": "In formal writing, 'In-depth' is frequently used as a more precise way to say 'Comprehensive'.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "In-depth",
+            "options": [
+                "Brief",
+                "Short",
+                "In-depth",
+                "Partial"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L16_Q2",
+            "word": "Comprise",
+            "hint": "This word refers to the act of comprise.",
+            "explanation": "'Include' and 'Comprise' both describe the process of comprise in academic contexts.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Include",
+            "options": [
+                "Include",
+                "Lack",
+                "Exclude",
+                "Miss"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L16_Q3",
+            "word": "Concede",
+            "hint": "This word refers to the act of concede.",
+            "explanation": "'Admit' and 'Concede' both describe the process of concede in academic contexts.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Admit",
+            "options": [
+                "Deny",
+                "Reject",
+                "Refuse",
+                "Admit"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L17_Q1",
+            "word": "Conceive",
+            "hint": "Look for a term that represents 'conceive'.",
+            "explanation": "The words 'Imagine' and 'Conceive' are interchangeable when discussing conceive.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Imagine",
+            "options": [
+                "Hear",
+                "Imagine",
+                "See",
+                "Know"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L17_Q2",
+            "word": "Concise",
+            "hint": "Look for a term that represents 'concise'.",
+            "explanation": "The words 'Brief' and 'Concise' are interchangeable when discussing concise.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Brief",
+            "options": [
+                "Brief",
+                "Wordy",
+                "Vast",
+                "Long"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L17_Q3",
+            "word": "Concrete",
+            "hint": "Focus on the concept of concrete when choosing the synonym.",
+            "explanation": "In formal writing, 'Solid' is frequently used as a more precise way to say 'Concrete'.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Solid",
+            "options": [
+                "Solid",
+                "Soft",
+                "Vague",
+                "Liquid"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L18_Q1",
+            "word": "Confine",
+            "hint": "Focus on the concept of confine when choosing the synonym.",
+            "explanation": "In formal writing, 'Limit' is frequently used as a more precise way to say 'Confine'.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Limit",
+            "options": [
+                "Limit",
+                "Release",
+                "Free",
+                "Open"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L18_Q2",
+            "word": "Confirm",
+            "hint": "Look for a term that represents 'confirm'.",
+            "explanation": "The words 'Verify' and 'Confirm' are interchangeable when discussing confirm.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Verify",
+            "options": [
+                "Reject",
+                "Doubt",
+                "Deny",
+                "Verify"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L18_Q3",
+            "word": "Conflict",
+            "hint": "Look for a term that represents 'conflict'.",
+            "explanation": "The words 'Dispute' and 'Conflict' are interchangeable when discussing conflict.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Dispute",
+            "options": [
+                "Dispute",
+                "Truce",
+                "Peace",
+                "Accord"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L19_Q1",
+            "word": "Conform",
+            "hint": "This word refers to the act of conform.",
+            "explanation": "'Adapt' and 'Conform' both describe the process of conform in academic contexts.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Adapt",
+            "options": [
+                "Fight",
+                "Change",
+                "Resist",
+                "Adapt"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L19_Q2",
+            "word": "Consent",
+            "hint": "Look for a term that represents 'consent'.",
+            "explanation": "The words 'Agreement' and 'Consent' are interchangeable when discussing consent.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Agreement",
+            "options": [
+                "Denial",
+                "Refusal",
+                "Protest",
+                "Agreement"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L19_Q3",
+            "word": "Consistent",
+            "hint": "Focus on the concept of consistent when choosing the synonym.",
+            "explanation": "In formal writing, 'Steady' is frequently used as a more precise way to say 'Consistent'.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Steady",
+            "options": [
+                "Steady",
+                "Changing",
+                "Vague",
+                "Random"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L20_Q1",
+            "word": "Consolidate",
+            "hint": "This word refers to the act of consoliding.",
+            "explanation": "'Combine' and 'Consolidate' both describe the process of consoliding in academic contexts.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Combine",
+            "options": [
+                "Split",
+                "Break",
+                "Combine",
+                "Divide"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L20_Q2",
+            "word": "Constitute",
+            "hint": "Look for a term that represents 'constitute'.",
+            "explanation": "The words 'Form' and 'Constitute' are interchangeable when discussing constitute.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Form",
+            "options": [
+                "Break",
+                "Destroy",
+                "Form",
+                "End"
+            ]
+        },
+        {
+            "id": "VOC_SYNONYMSEARCH_L20_Q3",
+            "word": "Constrain",
+            "hint": "Look for a term that represents 'constrain'.",
+            "explanation": "The words 'Restrict' and 'Constrain' are interchangeable when discussing constrain.",
+            "interactionType": "Word Warp",
+            "correctAnswer": "Restrict",
+            "options": [
+                "Allow",
+                "Open",
+                "Free",
+                "Restrict"
+            ]
+        }
+    ],
+    "gameType": "synonymSearch",
+    "batchIndex": 2
 }
-
