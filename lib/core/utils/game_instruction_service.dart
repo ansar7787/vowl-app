@@ -194,10 +194,10 @@ class GameInstructionService {
       return const GameBriefing(
         title: "Polarity Pull",
         icon: Icons.electrical_services_rounded,
-        objective: "MAGNETIC INVERSION: Identify the antonym and pull it towards the opposite magnetic pole of the target word.",
-        rules: ["Target is (+) or (-)", "Opposites Attract", "3 Hearts per mission"],
-        actionText: "Initiate Pull",
-        tip: "PRO TIP: If the target is Positive (Blue), the antonym must be pulled to the Negative Pole (Red)! ⚡🧲",
+        objective: "Drag the antonym into the opposite pole.",
+        rules: ["Find the Antonym", "Opposites Attract", "3 Hearts left"],
+        actionText: "Start Pull",
+        tip: "Opposite meaning = Opposite pole! ⚡🧲",
       );
     }
 

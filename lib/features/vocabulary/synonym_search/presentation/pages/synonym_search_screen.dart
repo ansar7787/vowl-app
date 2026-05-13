@@ -176,13 +176,13 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 
     switch (index) {
       case 0:
-        return Offset(-hDist, -vDist); // Top Left (Perfect)
+        return Offset(-hDist, -vDist);
       case 1:
-        return Offset(hDist, -vDist); // Top Right (Perfect)
+        return Offset(hDist, -vDist);
       case 2:
-        return Offset(-hDist, vDist + 90.h); // Bottom Left (Increased Space)
+        return Offset(-hDist, vDist + 90.h);
       case 3:
-        return Offset(hDist, vDist + 90.h); // Bottom Right (Increased Space)
+        return Offset(hDist, vDist + 90.h);
       default:
         double angle = (index * (2 * math.pi / total)) - (math.pi / 2);
         return Offset(math.cos(angle) * hDist, math.sin(angle) * vDist);
@@ -247,16 +247,13 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
             final correct = quest?.correctAnswer?.toLowerCase() ?? "";
             for (int i = 0; i < options.length; i++) {
               if (options[i].toLowerCase() == correct) {
-                // Pulse the correct shard
-                setState(
-                  () => _shardOffsets[i] =
-                      _getShardInitialPosition(
-                        i,
-                        options.length,
-                        _lastConstraints!,
-                      ) *
-                      -0.2,
-                );
+                setState(() {
+                  _shardOffsets[i] = _getShardInitialPosition(
+                    i,
+                    options.length,
+                    _lastConstraints!,
+                  ) * -0.2;
+                });
                 Future.delayed(1.seconds, () {
                   if (mounted && !_isAnswered) {
                     setState(() => _shardOffsets[i] = Offset.zero);
@@ -286,7 +283,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                         alignment: Alignment.center,
                         clipBehavior: Clip.none,
                         children: [
-                          // Cosmic Grid Background
                           Positioned.fill(
                             child: RepaintBoundary(
                               child: CustomPaint(
@@ -296,14 +292,11 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                               ),
                             ),
                           ),
-
                           _buildWarpGate(
                             quest.word ?? "",
                             theme.primaryColor,
                             isDark,
                           ),
-
-                          // Optimized Shard Trails (Drawn on main stack)
                           ...List.generate(quest.options?.length ?? 0, (i) {
                             if (_activeShardIndex == i &&
                                 _shardTrails[i] != null) {
@@ -312,7 +305,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                                 quest.options!.length,
                                 constraints,
                               );
-                              // Convert relative trail points to absolute screen points
                               final absoluteTrail = _shardTrails[i]!
                                   .map(
                                     (offset) => Offset(
@@ -339,7 +331,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                             }
                             return const SizedBox.shrink();
                           }),
-
                           ...List.generate(quest.options?.length ?? 0, (i) {
                             return _buildWordShard(
                               i,
@@ -351,7 +342,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                               quest,
                             );
                           }),
-
                           Positioned(
                             top: 10.h,
                             child: _buildInstruction(theme.primaryColor),
@@ -420,7 +410,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         child: Stack(
           alignment: Alignment.center,
           children: [
-            // Outer Nebula
             Container(
                   width: 220.r,
                   height: 220.r,
@@ -443,8 +432,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                   curve: Curves.easeInOut,
                 )
                 .fadeOut(),
-
-            // The Portal Core
             Container(
                   width: 180.r,
                   height: 180.r,
@@ -471,7 +458,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        // Swirling Vortex Effect
                         Positioned.fill(
                               child: RepaintBoundary(
                                 child: CustomPaint(
@@ -481,7 +467,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                             )
                             .animate(onPlay: (c) => c.repeat())
                             .rotate(duration: 10.seconds),
-
                         Center(
                           child: Padding(
                             padding: EdgeInsets.all(25.r),
@@ -520,8 +505,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                   end: const Offset(1.05, 1.05),
                   duration: 2.seconds,
                 ),
-
-            // Orbital Shards (Visual Decor)
             ...List.generate(4, (i) => _buildOrbitalParticle(i, color)),
           ],
         ),
@@ -567,7 +550,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     final offset = _shardOffsets[index] ?? Offset.zero;
     final isWarping = _isWarping[index] ?? false;
     final isActive = _activeShardIndex == index;
-
     final screenSize = MediaQuery.of(context).size;
     final double safeWidth = constraints.maxWidth.isFinite
         ? constraints.maxWidth
@@ -576,97 +558,90 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         ? constraints.maxHeight
         : (screenSize.height * 0.6);
 
-    return Stack(
-      children: [
-        // The Shard Body
-        Positioned(
-              left: safeWidth / 2 + initialPos.dx + offset.dx - 45.w,
-              top: safeHeight / 2 + initialPos.dy + offset.dy - 35.h,
-              child: GestureDetector(
-                onPanStart: (d) => _onShardDragStart(index, d),
-                onPanUpdate: (d) => _onShardDragUpdate(index, d),
-                onPanEnd: (d) => _onShardDragEnd(index, quest),
-                child: TweenAnimationBuilder<double>(
-                  duration: 400.ms,
-                  curve: Curves.easeOutBack,
-                  tween: Tween(
-                    begin: 1.0,
-                    end: isWarping ? 0.0 : (isActive ? 1.15 : 1.0),
-                  ),
-                  builder: (context, scale, child) => Transform.scale(
-                    scale: scale,
-                    child: Opacity(
-                      opacity: isWarping ? 0.0 : 1.0,
-                      child: child,
-                    ),
-                  ),
-                  child: Container(
-                    width: 90.w,
-                    height: 70.h,
-                    decoration: BoxDecoration(
-                      color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                      borderRadius: BorderRadius.circular(18.r),
-                      border: Border.all(
-                        color: isActive ? color : color.withValues(alpha: 0.4),
-                        width: isActive ? 3 : 2,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: color.withValues(alpha: isActive ? 0.5 : 0.15),
-                          blurRadius: isActive ? 25 : 15,
-                          spreadRadius: isActive ? 2 : 0,
-                          offset: const Offset(0, 8),
-                        ),
-                      ],
-                    ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        // Tech Glow Pattern (Optimized)
-                        Opacity(
-                          opacity: 0.15,
-                          child: RepaintBoundary(
-                            child: CustomPaint(
-                              size: Size(90.w, 70.h),
-                              painter: TechPatternPainter(color),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.r),
-                          child: Text(
-                            text.toUpperCase(),
-                            textAlign: TextAlign.center,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.shareTechMono(
-                              fontSize: 12.sp,
-                              color: isDark ? Colors.white : Colors.black87,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 1,
-                            ),
-                          ),
-                        ),
-                      ],
+    return Positioned(
+      left: safeWidth / 2 + initialPos.dx + offset.dx - 45.w,
+      top: safeHeight / 2 + initialPos.dy + offset.dy - 35.h,
+      child: GestureDetector(
+        onPanStart: (d) => _onShardDragStart(index, d),
+        onPanUpdate: (d) => _onShardDragUpdate(index, d),
+        onPanEnd: (d) => _onShardDragEnd(index, quest),
+        child: TweenAnimationBuilder<double>(
+          duration: 400.ms,
+          curve: Curves.easeOutBack,
+          tween: Tween(
+            begin: 1.0,
+            end: isWarping ? 0.0 : (isActive ? 1.15 : 1.0),
+          ),
+          builder: (context, scale, child) => Transform.scale(
+            scale: scale,
+            child: Opacity(
+              opacity: isWarping ? 0.0 : 1.0,
+              child: child,
+            ),
+          ),
+          child: Container(
+            width: 90.w,
+            height: 70.h,
+            decoration: BoxDecoration(
+              color: isDark ? const Color(0xFF1E293B) : Colors.white,
+              borderRadius: BorderRadius.circular(18.r),
+              border: Border.all(
+                color: isActive ? color : color.withValues(alpha: 0.4),
+                width: isActive ? 3 : 2,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: color.withValues(alpha: isActive ? 0.5 : 0.15),
+                  blurRadius: isActive ? 25 : 15,
+                  spreadRadius: isActive ? 2 : 0,
+                  offset: const Offset(0, 8),
+                ),
+              ],
+            ),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Opacity(
+                  opacity: 0.15,
+                  child: RepaintBoundary(
+                    child: CustomPaint(
+                      size: Size(90.w, 70.h),
+                      painter: TechPatternPainter(color),
                     ),
                   ),
                 ),
-              ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .moveY(
-              begin: -8,
-              end: 8,
-              duration: (2 + index * 0.5).seconds,
-              curve: Curves.easeInOut,
-            )
-            .rotate(
-              begin: -0.02,
-              end: 0.02,
-              duration: (3 + index).seconds,
-              curve: Curves.easeInOut,
+                Padding(
+                  padding: EdgeInsets.all(8.r),
+                  child: Text(
+                    text.toUpperCase(),
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: GoogleFonts.shareTechMono(
+                      fontSize: 12.sp,
+                      color: isDark ? Colors.white : Colors.black87,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+              ],
             ),
-      ],
+          ),
+        ).animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(
+            begin: -8,
+            end: 8,
+            duration: (2 + index * 0.5).seconds,
+            curve: Curves.easeInOut,
+          )
+          .rotate(
+            begin: -0.02,
+            end: 0.02,
+            duration: (3 + index).seconds,
+            curve: Curves.easeInOut,
+          ),
+      ),
     );
   }
 }
@@ -674,13 +649,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
 class CosmicGridPainter extends CustomPainter {
   final Color color;
   CosmicGridPainter(this.color);
-
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = 1.0;
-
+    final paint = Paint()..color = color..strokeWidth = 1.0;
     const spacing = 40.0;
     for (double i = 0; i < size.width; i += spacing) {
       canvas.drawLine(Offset(i, 0), Offset(i, size.height), paint);
@@ -689,37 +660,27 @@ class CosmicGridPainter extends CustomPainter {
       canvas.drawLine(Offset(0, i), Offset(size.width, i), paint);
     }
   }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
 class TrailPainter extends CustomPainter {
   final List<Offset> points;
   final Color color;
-
   TrailPainter(this.points, this.color);
-
   @override
   void paint(Canvas canvas, Size size) {
     if (points.length < 2) return;
-
     final paint = Paint()
       ..color = color.withValues(alpha: 0.3)
       ..strokeWidth = 3.0
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
-
     final path = Path();
     path.moveTo(points.first.dx, points.first.dy);
-
     for (int i = 1; i < points.length; i++) {
       path.lineTo(points[i].dx, points[i].dy);
     }
-
     canvas.drawPath(path, paint);
-
-    // Draw glowing points for the trail
     final dotPaint = Paint()..style = PaintingStyle.fill;
     for (int i = 0; i < points.length; i++) {
       final double progress = i / points.length;
@@ -727,9 +688,7 @@ class TrailPainter extends CustomPainter {
       canvas.drawCircle(points[i], (2 + progress * 3).r, dotPaint);
     }
   }
-
-  @override
-  bool shouldRepaint(TrailPainter oldDelegate) => true;
+  @override bool shouldRepaint(TrailPainter oldDelegate) => true;
 }
 
 class VortexPainter extends CustomPainter {
@@ -745,22 +704,15 @@ class VortexPainter extends CustomPainter {
     for (int i = 0; i < 5; i++) {
       double radius = (i + 1) * 15.0;
       canvas.drawCircle(center, radius, paint);
-      // Add spiral segments
       double angle = i * math.pi / 2;
       canvas.drawLine(
         center + Offset(math.cos(angle) * radius, math.sin(angle) * radius),
-        center +
-            Offset(
-              math.cos(angle + 0.5) * (radius + 10),
-              math.sin(angle + 0.5) * (radius + 10),
-            ),
+        center + Offset(math.cos(angle + 0.5) * (radius + 10), math.sin(angle + 0.5) * (radius + 10)),
         paint,
       );
     }
   }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }
 
 class TechPatternPainter extends CustomPainter {
@@ -768,29 +720,12 @@ class TechPatternPainter extends CustomPainter {
   TechPatternPainter(this.color);
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = 1.5
-      ..style = PaintingStyle.stroke;
-    canvas.drawLine(
-      Offset(0, size.height * 0.2),
-      Offset(size.width * 0.3, size.height * 0.2),
-      paint,
-    );
-    canvas.drawLine(
-      Offset(size.width * 0.3, size.height * 0.2),
-      Offset(size.width * 0.5, size.height * 0.5),
-      paint,
-    );
-    canvas.drawLine(
-      Offset(size.width * 0.7, size.height * 0.8),
-      Offset(size.width, size.height * 0.8),
-      paint,
-    );
+    final paint = Paint()..color = color..strokeWidth = 1.5..style = PaintingStyle.stroke;
+    canvas.drawLine(Offset(0, size.height * 0.2), Offset(size.width * 0.3, size.height * 0.2), paint);
+    canvas.drawLine(Offset(size.width * 0.3, size.height * 0.2), Offset(size.width * 0.5, size.height * 0.5), paint);
+    canvas.drawLine(Offset(size.width * 0.7, size.height * 0.8), Offset(size.width, size.height * 0.8), paint);
     canvas.drawCircle(Offset(size.width * 0.1, size.height * 0.8), 3, paint);
     canvas.drawCircle(Offset(size.width * 0.9, size.height * 0.2), 3, paint);
   }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

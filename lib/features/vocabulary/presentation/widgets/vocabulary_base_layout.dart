@@ -35,6 +35,7 @@ class VocabularyBaseLayout extends StatefulWidget {
   final VoidCallback onContinue;
   final VoidCallback onHint;
   final bool showConfetti;
+  final bool useScrolling;
 
   const VocabularyBaseLayout({
     super.key,
@@ -47,6 +48,7 @@ class VocabularyBaseLayout extends StatefulWidget {
     required this.onContinue,
     required this.onHint,
     this.showConfetti = false,
+    this.useScrolling = true,
   });
 
   @override
@@ -150,22 +152,24 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                                      AnimatedOpacity(
                                       duration: const Duration(milliseconds: 400),
                                       opacity: widget.isAnswered ? 0.6 : 1.0,
-                                      child: AbsorbPointer(
+                                       child: AbsorbPointer(
                                         absorbing: widget.isAnswered,
-                                        child: LayoutBuilder(
-                                          builder: (context, constraints) {
-                                            return SingleChildScrollView(
-                                              physics: const BouncingScrollPhysics(),
-                                              child: ConstrainedBox(
-                                                constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                                                child: Padding(
-                                                  padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 40.h, bottom: widget.isAnswered ? 200.h : 40.h),
-                                                  child: widget.child,
-                                                ),
-                                              ),
-                                            );
-                                          },
-                                        ),
+                                        child: widget.useScrolling 
+                                          ? LayoutBuilder(
+                                              builder: (context, constraints) {
+                                                return SingleChildScrollView(
+                                                  physics: const BouncingScrollPhysics(),
+                                                  child: ConstrainedBox(
+                                                    constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                                                    child: Padding(
+                                                      padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 40.h, bottom: widget.isAnswered ? 200.h : 40.h),
+                                                      child: widget.child,
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            )
+                                          : widget.child,
                                       ),
                                     ),
                                     Positioned(
