@@ -161,23 +161,19 @@ class GameInstructionService {
         title: "Word Roots",
         icon: Icons.spa_rounded,
         objective: "Build words by attaching affixes to roots.",
-        rules: ["Analyze root", "Attach correct prefix/suffix", "3 Hearts per mission"],
+        rules: ["Analyze root", "Attach correct affix", "3 Hearts"],
         actionText: "Build Words",
-        tip: "Roots are the DNA of English. One root unlocks many words! 🌱",
+        tip: "Roots are the DNA of English! 🌱",
       );
     }
     if (type == GameSubtype.wordFormation) {
       return const GameBriefing(
         title: "Morpheme Mixer",
         icon: Icons.science_rounded,
-        objective: "SYNTHESIZE & FORM: Slide the correct suffix into the core to transform the word.",
-        rules: [
-          "Analyze the root word",
-          "Tap or slide a suffix",
-          "Form the target word"
-        ],
+        objective: "Slide the correct suffix into the core to transform the word.",
+        rules: ["Analyze root", "Slide suffix", "Form word"],
         actionText: "Ready to Mix?",
-        tip: "PRO TIP: Suffixes instantly change words from verbs to nouns or adjectives! 🧪🚀",
+        tip: "Suffixes change words from verbs to nouns or adjectives! 🧪🚀",
       );
     }
     if (type == GameSubtype.synonymSearch) {
@@ -205,60 +201,60 @@ class GameInstructionService {
       return const GameBriefing(
         title: "Thesis Thrust",
         icon: Icons.auto_stories_rounded,
-        objective: "SCHOLARLY COMPLETION: Identify the high-level academic word and thrust it into the correct slot within the thesis passage.",
-        rules: ["Analyze the context", "Thrust the correct shard", "3 Hearts per mission"],
+        objective: "Identify academic words and thrust them into the thesis.",
+        rules: ["Analyze context", "Thrust the correct shard", "3 Hearts"],
         actionText: "Initiate Thrust",
-        tip: "PRO TIP: Academic words are precise! Look at the words surrounding the slot to determine the logical fit. 📜✒️",
+        tip: "Academic words are precise—look at the logic! 📜✒️",
       );
     }
     if (type == GameSubtype.contextClues) {
       return const GameBriefing(
         title: "Detective Lens",
         icon: Icons.search_rounded,
-        objective: "SCAN EVIDENCE: Use the Lens to reveal hidden contextual clues and identify the redacted word.",
-        rules: ["Drag to reveal clues", "Analyze context", "3 Hearts per case"],
+        objective: "Use the Lens to reveal hidden clues and identify the word.",
+        rules: ["Drag to reveal clues", "Analyze context", "3 Hearts"],
         actionText: "Start Scan",
-        tip: "DETECTIVE TIP: Clues often hide right next to the redacted word! 🔍",
+        tip: "Clues often hide right next to the redacted word! 🔍",
       );
     }
     if (type == GameSubtype.collocations) {
       return const GameBriefing(
         title: "Pair Pop",
         icon: Icons.bubble_chart_rounded,
-        objective: "ENERGY FUSION: Find the word that naturally pairs with the top anchor to trigger a Pair Pop.",
-        rules: ["Analyze anchor word", "Select partner bubble", "Fuse the pair"],
+        objective: "Find the word that naturally pairs with the top anchor.",
+        rules: ["Analyze anchor", "Select partner bubble", "Fuse the pair"],
         actionText: "Initiate Fusion",
-        tip: "PRO TIP: Collocations are words that naturally go together, like 'Fast Food' instead of 'Quick Food'. Trust your ear! 🫧⚡",
+        tip: "Collocations are words that naturally go together! 🫧⚡",
       );
     }
     if (type == GameSubtype.phrasalVerbs) {
       return const GameBriefing(
         title: "Verb Vault",
         icon: Icons.vpn_key_rounded,
-        objective: "DECRYPT: Match the correct particle to the base verb to unlock the vault.",
+        objective: "Match the correct particle to the verb to unlock the vault.",
         rules: ["Read Definition", "Select Particle", "Crack Vault"],
         actionText: "Start Hack",
-        tip: "PRO TIP: Particles change everything! 'Turn UP' is not 'Turn DOWN'. ⚙️",
+        tip: "Particles change everything! 'Turn UP' is not 'Turn DOWN'. ⚙️",
       );
     }
     if (type == GameSubtype.idioms) {
       return const GameBriefing(
         title: "Emojify",
         icon: Icons.forum_rounded,
-        objective: "Decode cryptic emoji transmissions into idioms.",
-        rules: ["Interpret emoji sequences", "Select the matching idiom", "3 Hearts per mission"],
+        objective: "Decode emoji transmissions into idioms.",
+        rules: ["Interpret emojis", "Select matching idiom", "3 Hearts"],
         actionText: "Send Message",
-        tip: "Idioms are like secret codes. Learn them to decode culture! 💬",
+        tip: "Idioms are secret codes for culture! 💬",
       );
     }
     if (type == GameSubtype.contextualUsage) {
       return const GameBriefing(
         title: "Usage Unfold",
         icon: Icons.auto_stories_rounded,
-        objective: "UNFOLD MEANING: Analyze the context and unfold the perfect word to complete the document structure.",
-        rules: ["Evaluate context", "Unfold the correct fit", "3 Hearts per mission"],
+        objective: "Analyze context and unfold the perfect word.",
+        rules: ["Evaluate context", "Unfold the correct fit", "3 Hearts"],
         actionText: "Unfold Truth",
-        tip: "PRO TIP: Nuance is everything. Choose the word that belongs in the specific sentence structure! 📖✨",
+        tip: "Nuance is key! Choose the word that belongs. 📖✨",
       );
     }
 
