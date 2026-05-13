@@ -9,7 +9,6 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
@@ -24,6 +23,7 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/painters/visual_config_background.dart';
+import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_error_view.dart';
 
 class VocabularyBaseLayout extends StatefulWidget {
   final GameSubtype gameType;
@@ -138,7 +138,19 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                             child: VisualConfigBackground(config: currentQuest.visualConfig!),
                           ),
                         ),
-                      if (state is VocabularyLoading) const GameShimmerLoading()
+                      if (state is VocabularyError)
+                        VocabularyErrorView(
+                          message: state.message,
+                          primaryColor: theme.primaryColor,
+                          onRetry: () {
+                            context.read<VocabularyBloc>().add(
+                              FetchVocabularyQuests(
+                                gameType: widget.gameType,
+                                level: widget.level,
+                              ),
+                            );
+                          },
+                        )
                       else ...[
                         SafeArea(
                           child: Column(
@@ -149,27 +161,44 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                                 child: Stack(
                                   clipBehavior: Clip.none,
                                   children: [
-                                     AnimatedOpacity(
+                                    AnimatedOpacity(
                                       duration: const Duration(milliseconds: 400),
                                       opacity: widget.isAnswered ? 0.6 : 1.0,
-                                       child: AbsorbPointer(
+                                      child: AbsorbPointer(
                                         absorbing: widget.isAnswered,
-                                        child: widget.useScrolling 
-                                          ? LayoutBuilder(
-                                              builder: (context, constraints) {
-                                                return SingleChildScrollView(
-                                                  physics: const BouncingScrollPhysics(),
-                                                  child: ConstrainedBox(
-                                                    constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                                                    child: Padding(
-                                                      padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 40.h, bottom: widget.isAnswered ? 200.h : 40.h),
-                                                      child: widget.child,
+                                        child: widget.useScrolling
+                                            ? LayoutBuilder(
+                                                key: const ValueKey('vocab_layout_scroller'),
+                                                builder: (context, constraints) {
+                                                  return SingleChildScrollView(
+                                                    physics: const BouncingScrollPhysics(),
+                                                    child: ConstrainedBox(
+                                                      constraints: BoxConstraints(
+                                                        minHeight: constraints.maxHeight,
+                                                        maxWidth: constraints.maxWidth,
+                                                      ),
+                                                      child: Padding(
+                                                        padding: EdgeInsets.only(
+                                                          left: 24.w,
+                                                          right: 24.w,
+                                                          top: 40.h,
+                                                          bottom: widget.isAnswered ? 200.h : 40.h,
+                                                        ),
+                                                        child: widget.child,
+                                                      ),
                                                     ),
-                                                  ),
-                                                );
-                                              },
-                                            )
-                                          : widget.child,
+                                                  );
+                                                },
+                                              )
+                                            : Padding(
+                                                padding: EdgeInsets.only(
+                                                  left: 24.w,
+                                                  right: 24.w,
+                                                  top: 40.h,
+                                                  bottom: widget.isAnswered ? 200.h : 40.h,
+                                                ),
+                                                child: widget.child,
+                                              ),
                                       ),
                                     ),
                                     Positioned(
@@ -183,7 +212,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                           ),
                         ),
                       ],
-                      if (widget.isAnswered && state is! VocabularyGameOver && state is! VocabularyGameComplete)
+                      if (widget.isAnswered && widget.isCorrect != null && state is! VocabularyGameOver && state is! VocabularyGameComplete)
                         Positioned(
                           bottom: 0, left: 0, right: 0,
                           child: _buildModernFeedbackCard(context, state, theme, isDark),

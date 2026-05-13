@@ -27,86 +27,73 @@ class CollocationsScreen extends StatefulWidget {
   State<CollocationsScreen> createState() => _CollocationsScreenState();
 }
 
-class _CollocationsScreenState extends State<CollocationsScreen> with TickerProviderStateMixin {
+class _CollocationsScreenState extends State<CollocationsScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   VocabularyQuest? _lastQuest;
 
-  // Pair Pop State
-  int? _selectedLeftIndex;
-  int? _selectedRightIndex;
-  bool _isProcessing = false;
+  String? _selectedOption;
 
   @override
   void initState() {
     super.initState();
-    context.read<VocabularyBloc>().add(FetchVocabularyQuests(gameType: widget.gameType, level: widget.level));
+    context.read<VocabularyBloc>().add(
+      FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
-  void _onLeftTap(int index) {
-    if (_isAnswered || _isProcessing) return;
-    _hapticService.light();
-    setState(() {
-      _selectedLeftIndex = index;
-    });
-  }
+  void _submitAnswer(String selected, String correct) {
+    if (_isAnswered) return;
 
-  void _onRightTap(int index, String selected, String correct) async {
-    if (_isAnswered || _isProcessing || _selectedLeftIndex == null) return;
-    
     setState(() {
-      _selectedRightIndex = index;
-      _isProcessing = true;
+      _selectedOption = selected;
+      _isAnswered = true;
     });
 
-    bool isMatch = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+    bool isCorrect =
+        selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
-    if (isMatch) {
-      _hapticService.success();
-      _soundService.playCorrect();
-      await Future.delayed(500.ms);
-      setState(() {
-        _isAnswered = true;
-        _isCorrect = true;
-        _isProcessing = false;
-      });
+    Future.delayed(400.ms, () {
       if (!mounted) return;
-      context.read<VocabularyBloc>().add(SubmitAnswer(true));
-    } else {
-      _hapticService.error();
-      _soundService.playWrong();
-      await Future.delayed(500.ms);
-      setState(() {
-        _selectedLeftIndex = null;
-        _selectedRightIndex = null;
-        _isProcessing = false;
-      });
-    }
+
+      if (isCorrect) {
+        _hapticService.success();
+        _soundService.playCorrect();
+      } else {
+        _hapticService.error();
+        _soundService.playWrong();
+      }
+
+      setState(() => _isCorrect = isCorrect);
+      context.read<VocabularyBloc>().add(SubmitAnswer(isCorrect));
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          if (state.currentIndex != _lastProcessedIndex || (_isAnswered && state.lastAnswerCorrect == null)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              (_isAnswered && state.lastAnswerCorrect == null)) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _selectedLeftIndex = null;
-              _selectedRightIndex = null;
-              _isProcessing = false;
+              _selectedOption = null;
             });
+          }
+          if (state.lastAnswerCorrect != null && _isCorrect == null) {
+            setState(() => _isCorrect = state.lastAnswerCorrect);
           }
         }
         if (state is VocabularyGameComplete) {
@@ -119,12 +106,31 @@ class _CollocationsScreenState extends State<CollocationsScreen> with TickerProv
             enableDoubleUp: true,
           );
         } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
-        if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
+        final theme = LevelThemeHelper.getTheme(
+          'vocabulary',
+          level: widget.level,
+        );
+
+        if (state is VocabularyLoading ||
+            (state is! VocabularyGameComplete &&
+                state is! VocabularyLoaded &&
+                state is! VocabularyError)) {
+          return Scaffold(
+            backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+            body: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
+
+        final quest = (state is VocabularyLoaded)
+            ? state.currentQuest
+            : _lastQuest;
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
@@ -132,163 +138,232 @@ class _CollocationsScreenState extends State<CollocationsScreen> with TickerProv
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-          onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
-          child: quest == null ? const SizedBox() : Stack(
-            alignment: Alignment.center,
-            children: [
-              // Chamber Background
-              Positioned.fill(child: CustomPaint(painter: EnergyChamberPainter(theme.primaryColor.withValues(alpha: 0.1)))),
-
-              Column(
-                children: [
-                  SizedBox(height: 30.h),
-                  _buildInstruction(theme.primaryColor),
-                  const Spacer(),
-                  
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        // Left Column (Anchor Word)
-                        Column(
-                          children: [
-                            _buildEnergyBubble(
-                              0, 
-                              quest.word ?? "", 
-                              true, 
-                              theme.primaryColor, 
-                              isDark,
-                              () => _onLeftTap(0)
-                            ),
-                          ],
-                        ),
-
-                        // Right Column (Options)
-                        Column(
-                          children: List.generate(quest.options?.length ?? 0, (i) {
-                            return _buildEnergyBubble(
-                              i, 
-                              quest.options![i], 
-                              false, 
-                              theme.primaryColor, 
-                              isDark,
-                              () => _onRightTap(i, quest.options![i], quest.correctAnswer ?? "")
-                            );
-                          }),
-                        ),
-                      ],
-                    ),
-                  ),
-                  
-                  const Spacer(),
-                  _buildStatusText(theme.primaryColor),
-                  SizedBox(height: 40.h),
-                ],
-              ),
-            ],
-          ),
+          onContinue: () {
+            final currentState = context.read<VocabularyBloc>().state;
+            if (currentState is VocabularyLoaded &&
+                !currentState.isFinalFailure &&
+                _isCorrect == false) {
+              setState(() {
+                _isAnswered = false;
+                _isCorrect = null;
+                _selectedOption = null;
+              });
+            } else {
+              context.read<VocabularyBloc>().add(NextQuestion());
+            }
+          },
+          onHint: () =>
+              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+          useScrolling: true,
+          child: quest == null
+              ? const SizedBox()
+              : _buildPairPopGame(
+                  quest,
+                  theme.primaryColor,
+                  isDark,
+                  (state is VocabularyLoaded) ? state.isFinalFailure : false,
+                ),
         );
       },
     );
   }
 
-  Widget _buildInstruction(Color color) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.3)),
-      ),
-      child: Text(
-        "FUSE THE COLLOCATION PAIR",
-        style: GoogleFonts.shareTechMono(
-          fontSize: 12.sp,
-          fontWeight: FontWeight.bold,
-          color: color,
-          letterSpacing: 1.5,
+  Widget _buildPairPopGame(
+    VocabularyQuest quest,
+    Color color,
+    bool isDark,
+    bool isFinalFailure,
+  ) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        SizedBox(height: 10.h),
+        _buildInstruction(color, isDark),
+        SizedBox(height: 30.h),
+
+        // Anchor Word Bubble
+        Center(child: _buildAnchorBubble(quest.word ?? "", color, isDark)),
+
+        SizedBox(height: 40.h),
+
+        // Options Bubbles
+        Wrap(
+          spacing: 20.w,
+          runSpacing: 40.h,
+          alignment: WrapAlignment.center,
+          children: (quest.options ?? []).asMap().entries.map((entry) {
+            return _buildOptionBubble(
+              entry.value,
+              quest.correctAnswer ?? "",
+              color,
+              isDark,
+              isFinalFailure,
+              entry.key,
+            );
+          }).toList(),
         ),
-      ),
-    ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 2.seconds);
+        SizedBox(height: 60.h),
+      ],
+    );
   }
 
-  Widget _buildStatusText(Color color) {
-    if (_selectedLeftIndex != null && _selectedRightIndex == null) {
-      return Text(
-        "AWAITING PARTNER...",
-        style: GoogleFonts.shareTechMono(fontSize: 14.sp, color: color, fontWeight: FontWeight.bold, letterSpacing: 3),
-      ).animate(onPlay: (c) => c.repeat(reverse: true)).fadeIn();
-    }
-    return const SizedBox();
-  }
-
-  Widget _buildEnergyBubble(int index, String text, bool isLeft, Color color, bool isDark, VoidCallback onTap) {
-    bool isSelected = isLeft ? (_selectedLeftIndex == index) : (_selectedRightIndex == index);
-    bool isPopped = _isAnswered && _isCorrect == true && (isLeft || (index == _selectedRightIndex));
-    
-    Color bubbleColor = isLeft ? const Color(0xFF00D2FF) : const Color(0xFFAD00FF);
-    if (isSelected) bubbleColor = Colors.white;
-
-    return Opacity(
-      opacity: isPopped ? 0 : 1,
-      child: GestureDetector(
-        onTap: onTap,
-        child: Container(
-          width: 140.w,
-          height: 140.w,
-          margin: EdgeInsets.symmetric(vertical: 15.h),
+  Widget _buildInstruction(Color color, bool isDark) {
+    return Container(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            gradient: RadialGradient(
-              colors: [
-                bubbleColor.withValues(alpha: 0.4),
-                bubbleColor.withValues(alpha: 0.1),
-              ],
+            color: isDark
+                ? color.withValues(alpha: 0.1)
+                : color.withValues(alpha: 0.05),
+            borderRadius: BorderRadius.circular(30.r),
+            border: Border.all(color: color.withValues(alpha: 0.3)),
+          ),
+          child: Text(
+            "FUSE THE COLLOCATION PAIR",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.shareTechMono(
+              fontSize: 12.sp,
+              fontWeight: FontWeight.bold,
+              color: color,
+              letterSpacing: 1.5,
             ),
-            border: Border.all(color: bubbleColor.withValues(alpha: isSelected ? 1 : 0.4), width: isSelected ? 4 : 2),
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .shimmer(duration: 2.seconds);
+  }
+
+  Widget _buildAnchorBubble(String text, Color color, bool isDark) {
+    return Container(
+          padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 25.h),
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(40.r),
             boxShadow: [
-              BoxShadow(color: bubbleColor.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 5),
+              BoxShadow(
+                color: color.withValues(alpha: 0.4),
+                blurRadius: 25,
+                spreadRadius: 2,
+                offset: const Offset(0, 10),
+              ),
             ],
           ),
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(10.r),
-              child: FittedBox(
-                fit: BoxFit.scaleDown,
+          child: Text(
+            text.toUpperCase(),
+            style: GoogleFonts.outfit(
+              fontSize: 28.sp,
+              fontWeight: FontWeight.w900,
+              color: Colors.white,
+              letterSpacing: 2,
+            ),
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut);
+  }
+
+  Widget _buildOptionBubble(
+    String text,
+    String correct,
+    Color color,
+    bool isDark,
+    bool isFinalFailure,
+    int index,
+  ) {
+    final isSelected = _selectedOption == text;
+    final showCorrect =
+        (_isAnswered && _isCorrect == true && text == correct) ||
+        (_isAnswered && isFinalFailure && text == correct);
+    final showWrong = _isAnswered && isSelected && _isCorrect == false;
+
+    Color bubbleColor = isDark
+        ? Colors.white.withValues(alpha: 0.05)
+        : Colors.black.withValues(alpha: 0.03);
+    Color borderColor = color.withValues(alpha: 0.3);
+    Color textColor = isDark ? Colors.white : Colors.black87;
+
+    if (showCorrect) {
+      bubbleColor = Colors.green.withValues(alpha: 0.2);
+      borderColor = Colors.green;
+      textColor = Colors.green;
+    } else if (showWrong) {
+      bubbleColor = Colors.red.withValues(alpha: 0.2);
+      borderColor = Colors.red;
+      textColor = Colors.red;
+    } else if (isSelected) {
+      bubbleColor = color.withValues(alpha: 0.2);
+      borderColor = color;
+      textColor = color;
+    }
+
+    Widget bubble = GestureDetector(
+          onTap: () {
+            if (!_isAnswered) {
+              _hapticService.light();
+              _submitAnswer(text, correct);
+            }
+          },
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeOutCubic,
+            width: 130.w,
+            height: 130.w,
+            decoration: BoxDecoration(
+              color: bubbleColor,
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: borderColor,
+                width: isSelected || showCorrect || showWrong ? 3 : 1,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: showCorrect || isSelected 
+                      ? borderColor.withValues(alpha: 0.3) 
+                      : Colors.transparent,
+                  blurRadius: showCorrect || isSelected ? 15 : 0,
+                  spreadRadius: showCorrect || isSelected ? 2 : 0,
+                ),
+              ],
+            ),
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.all(15.r),
                 child: Text(
                   text.toUpperCase(),
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.shareTechMono(
+                  style: GoogleFonts.outfit(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.bold,
-                    color: isSelected ? bubbleColor : (isDark ? Colors.white : Colors.black87),
+                    color: textColor,
+                    letterSpacing: 1,
                   ),
                 ),
               ),
             ),
           ),
-        ),
-      ),
-    ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -10, end: 10, duration: (2 + index).seconds)
-     .scale(begin: const Offset(1,1), end: const Offset(1.05, 1.05), duration: (3 + index).seconds);
-  }
-}
+        );
 
-class EnergyChamberPainter extends CustomPainter {
-  final Color color;
-  EnergyChamberPainter(this.color);
+    // Apply the "Selected" bump
+    Widget animatedBubble = bubble.animate(target: isSelected && !showCorrect ? 1 : 0)
+        .scale(end: const Offset(1.05, 1.05), duration: 200.ms);
 
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color..strokeWidth = 1.0..style = PaintingStyle.stroke;
+    // Apply the massive "Pop Fusion" explosion if correct
+    animatedBubble = animatedBubble.animate(target: showCorrect ? 1 : 0)
+        .scale(end: const Offset(1.8, 1.8), duration: 600.ms, curve: Curves.easeOutBack)
+        .fadeOut(duration: 500.ms);
+
+    // Apply the staggered vertical offset and continuous floating
+    double staggeredOffset = index % 2 == 0 ? -20.0 : 20.0;
     
-    for (int i = 0; i < 5; i++) {
-      canvas.drawCircle(Offset(size.width / 2, size.height / 2), 100.r + (i * 50), paint);
-    }
+    return Transform.translate(
+      offset: Offset(0, staggeredOffset),
+      child: animatedBubble
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .moveY(
+            begin: -6,
+            end: 6,
+            duration: (1500 + (index * 300)).ms,
+            curve: Curves.easeInOut,
+          ),
+    );
   }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

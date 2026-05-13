@@ -215,20 +215,20 @@ class GameInstructionService {
       return const GameBriefing(
         title: "Detective Lens",
         icon: Icons.search_rounded,
-        objective: "REVEAL EVIDENCE: Use the Detective Lens to uncover obscured clues within the sentence and identify the hidden meaning.",
-        rules: ["Scan for clues", "Identify the definition", "3 Hearts per mission"],
-        actionText: "Begin Investigation",
-        tip: "PRO TIP: Clues are often found near the target word. Look for synonyms, antonyms, or descriptions in the surrounding text! 🕵️‍♂️🔍",
+        objective: "SCAN EVIDENCE: Use the Lens to reveal hidden contextual clues and identify the redacted word.",
+        rules: ["Drag to reveal clues", "Analyze context", "3 Hearts per case"],
+        actionText: "Start Scan",
+        tip: "DETECTIVE TIP: Clues often hide right next to the redacted word! 🔍",
       );
     }
     if (type == GameSubtype.collocations) {
       return const GameBriefing(
         title: "Pair Pop",
         icon: Icons.bubble_chart_rounded,
-        objective: "ENERGY FUSION: Match the anchor word with its natural partner. Select both bubbles to trigger a Pair Pop.",
-        rules: ["Tap Left Anchor", "Find Right Partner", "Fuse all pairs"],
+        objective: "ENERGY FUSION: Find the word that naturally pairs with the top anchor to trigger a Pair Pop.",
+        rules: ["Analyze anchor word", "Select partner bubble", "Fuse the pair"],
         actionText: "Initiate Fusion",
-        tip: "PRO TIP: Collocations are words that 'just sound right' together! Trust your ear for natural English phrasing. 🫧⚡",
+        tip: "PRO TIP: Collocations are words that naturally go together, like 'Fast Food' instead of 'Quick Food'. Trust your ear! 🫧⚡",
       );
     }
     if (type == GameSubtype.phrasalVerbs) {

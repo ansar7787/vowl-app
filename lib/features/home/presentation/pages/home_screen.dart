@@ -82,6 +82,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
+    // Note: homeScrollController is global (used by MainWrapper for scroll-to-top)
+    // StatefulShellRoute keeps HomeScreen alive, so this dispose rarely fires
     super.dispose();
   }
 

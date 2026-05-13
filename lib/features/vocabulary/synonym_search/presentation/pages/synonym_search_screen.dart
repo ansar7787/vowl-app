@@ -192,7 +192,6 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
@@ -225,12 +224,18 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         }
       },
       builder: (context, state) {
+        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+
+        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+          return Scaffold(
+            backgroundColor: const Color(0xFF0F172A),
+            body: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
+
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
             : _lastQuest;
-        if (quest == null && state is! VocabularyGameComplete) {
-          return const GameShimmerLoading();
-        }
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
@@ -242,6 +247,7 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
               : false,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
+          useScrolling: false,
           onHint: () {
             final options = quest?.options ?? [];
             final correct = quest?.correctAnswer?.toLowerCase() ?? "";

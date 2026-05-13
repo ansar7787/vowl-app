@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/features/vocabulary/data/models/vocabulary_quest_model.dart';
 
@@ -51,7 +52,9 @@ class VocabularyRemoteDataSourceImpl implements VocabularyRemoteDataSource {
         }).toList();
       }
       return [];
-    } catch (e) {
+    } catch (e, stackTrace) {
+      debugPrint('VocabularyRemoteDataSource Error: $e');
+      debugPrint('Stacktrace: $stackTrace');
       return [];
     }
   }

@@ -7,6 +7,9 @@ import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
 
 @pragma('vm:entry-point')
@@ -19,6 +22,12 @@ class NotificationService {
   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
   final FlutterLocalNotificationsPlugin _localNotifications = FlutterLocalNotificationsPlugin();
   bool _timezoneInitialized = false;
+
+  /// Check if notifications are enabled via user preferences
+  Future<bool> get _areNotificationsEnabled async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool('notifications_enabled') ?? true;
+  }
 
   Future<void> init() async {
     // 1. Initialize Timezones
@@ -85,9 +94,11 @@ class NotificationService {
       }
     }
 
-    // 2. Handle Foreground Messages
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    // 4. Handle Foreground Messages
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
       if (message.notification != null) {
+        final enabled = await _areNotificationsEnabled;
+        if (!enabled) return;
         showNotification(
           message.notification!.title ?? 'Vowl Update',
           message.notification!.body ?? 'Check out what\'s new!',
@@ -95,23 +106,64 @@ class NotificationService {
       }
     });
 
-    // 3. Get FCM Token (Log this for testing)
-    String? token = await _fcm.getToken();
-    if (kDebugMode) {
-      debugPrint('FCM_TOKEN_INITIALIZED: $token');
-    }
+    // 5. Get FCM Token and SAVE it to Firestore
+    await _saveFCMTokenToFirestore();
 
-    // 4. Handle Notification Clicks (When app is in background/terminated)
+    // 6. Listen for token refresh events (token can rotate at any time)
+    _fcm.onTokenRefresh.listen((newToken) {
+      _updateTokenInFirestore(newToken);
+    });
+
+    // 7. Handle Notification Clicks (When app is in background/terminated)
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       debugPrint('Notification clicked! Path: ${message.data['path']}');
       // If we have a deep link or specific route in data, we could navigate here.
       // For production, we usually use a stream or a global navigator key.
     });
 
-    // Check for initial message (if app was terminated and opened by notification)
+    // 8. Check for initial message (if app was terminated and opened by notification)
     RemoteMessage? initialMessage = await FirebaseMessaging.instance.getInitialMessage();
     if (initialMessage != null) {
       debugPrint('App opened from terminated state by notification');
+    }
+  }
+
+  /// Saves the current FCM token to the authenticated user's Firestore document.
+  Future<void> _saveFCMTokenToFirestore() async {
+    try {
+      final token = await _fcm.getToken();
+      if (token == null) {
+        debugPrint('NotificationService: FCM token is null, skipping save.');
+        return;
+      }
+      if (kDebugMode) {
+        debugPrint('FCM_TOKEN_INITIALIZED: $token');
+      }
+      await _updateTokenInFirestore(token);
+    } catch (e) {
+      debugPrint('NotificationService: Error saving FCM token: $e');
+    }
+  }
+
+  /// Updates the FCM token in Firestore for the current user.
+  Future<void> _updateTokenInFirestore(String token) async {
+    try {
+      final user = FirebaseAuth.instance.currentUser;
+      if (user == null) {
+        debugPrint('NotificationService: No authenticated user, FCM token not saved.');
+        return;
+      }
+
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(user.uid)
+          .update({'fcmToken': token});
+
+      if (kDebugMode) {
+        debugPrint('NotificationService: FCM token saved to Firestore for user ${user.uid}');
+      }
+    } catch (e) {
+      debugPrint('NotificationService: Error updating FCM token in Firestore: $e');
     }
   }
 
@@ -129,6 +181,8 @@ class NotificationService {
         
         if (settings.authorizationStatus == AuthorizationStatus.authorized) {
           debugPrint('User granted Firebase notification permission');
+          // Re-save token after permission is granted (in case it wasn't available before)
+          await _saveFCMTokenToFirestore();
         }
 
         // Request Local Notification permission for Android 13+
@@ -150,6 +204,10 @@ class NotificationService {
   }
 
   Future<void> showNotification(String title, String body) async {
+    // Respect user's notification preference
+    final enabled = await _areNotificationsEnabled;
+    if (!enabled) return;
+
     const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
       'vowl_main_channel',
       'Main Notifications',
@@ -174,6 +232,13 @@ class NotificationService {
   /// SCHEDULES A STREAK REMINDER
   /// This will notify the user in 22 hours to come back and play!
   Future<void> scheduleStreakReminder(int currentStreak) async {
+    // Respect user's notification preference
+    final enabled = await _areNotificationsEnabled;
+    if (!enabled) {
+      await _localNotifications.cancel(101);
+      return;
+    }
+
     // 1. Cancel existing reminders to avoid double-messages
     await _localNotifications.cancel(101); // ID 101 reserved for streak reminders
 
@@ -227,6 +292,13 @@ class NotificationService {
   /// SCHEDULES WEEKLY MOTIVATION
   /// Notifies the user every Sunday morning to review their progress.
   Future<void> scheduleWeeklyMotivation() async {
+    // Respect user's notification preference
+    final enabled = await _areNotificationsEnabled;
+    if (!enabled) {
+      await _localNotifications.cancel(202);
+      return;
+    }
+
     const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
       'vowl_weekly_channel',
       'Weekly Goals',
@@ -281,6 +353,23 @@ class NotificationService {
     await _localNotifications.cancelAll();
     if (kDebugMode) {
       debugPrint('All notifications cancelled.');
+    }
+  }
+
+  /// Called when user toggles notifications in settings.
+  /// Cancels all scheduled local notifications if disabled.
+  Future<void> onNotificationPreferenceChanged(bool enabled) async {
+    if (!enabled) {
+      await cancelAllReminders();
+      if (kDebugMode) {
+        debugPrint('NotificationService: Notifications disabled by user. All reminders cancelled.');
+      }
+    } else {
+      // Re-schedule recurring notifications
+      await scheduleWeeklyMotivation();
+      if (kDebugMode) {
+        debugPrint('NotificationService: Notifications re-enabled by user.');
+      }
     }
   }
 }

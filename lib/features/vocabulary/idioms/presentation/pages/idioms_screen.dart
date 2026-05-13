@@ -72,7 +72,6 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
@@ -101,8 +100,16 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
         }
       },
       builder: (context, state) {
+        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+
+        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+          return Scaffold(
+            backgroundColor: const Color(0xFF0F172A),
+            body: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
+
         final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
-        if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
@@ -112,6 +119,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+          useScrolling: false,
           child: quest == null ? const SizedBox() : _buildChatInterface(quest, theme.primaryColor),
         );
       },

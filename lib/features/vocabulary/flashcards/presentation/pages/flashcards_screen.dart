@@ -100,7 +100,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
@@ -143,8 +142,16 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         }
       },
       builder: (context, state) {
+        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+
+        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+          return Scaffold(
+            backgroundColor: const Color(0xFF0F172A),
+            body: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
+
         final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
-        if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
@@ -153,7 +160,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
-        onHint: () {
+          useScrolling: false,
+          onHint: () {
           if (!_isFlipped) {
             setState(() {
               _isFlipped = true;

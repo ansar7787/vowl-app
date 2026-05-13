@@ -15,6 +15,8 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_widgets.dart';
 import 'package:vowl/features/settings/presentation/widgets/legal_constants.dart';
+import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -48,6 +50,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('notifications_enabled', value);
     setState(() => _notificationsEnabled = value);
+    // Actually enable/disable notifications in the service
+    di.sl<NotificationService>().onNotificationPreferenceChanged(value);
   }
 
   @override

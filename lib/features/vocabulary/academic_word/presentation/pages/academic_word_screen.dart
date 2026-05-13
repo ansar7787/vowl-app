@@ -126,7 +126,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
@@ -156,8 +155,19 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
         }
       },
       builder: (context, state) {
+        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
         final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
-        if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
+        final loadedState = state is VocabularyLoaded ? state : null;
+
+        if (state is VocabularyLoading || (quest == null && state is! VocabularyGameComplete && state is! VocabularyError)) {
+          return Scaffold(
+            backgroundColor: const Color(0xFF0F172A),
+            body: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
+
+        _isAnswered = loadedState?.lastAnswerCorrect != null;
+        _isCorrect = loadedState?.lastAnswerCorrect;
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
@@ -167,6 +177,7 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+          useScrolling: false,
           child: quest == null ? const SizedBox() : LayoutBuilder(
             builder: (context, constraints) {
               _lastConstraints = constraints;

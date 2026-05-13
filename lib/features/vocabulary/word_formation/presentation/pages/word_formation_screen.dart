@@ -122,11 +122,17 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
         }
       },
       builder: (context, state) {
+        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+
+        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+          return Scaffold(
+            backgroundColor: const Color(0xFF0F172A),
+            body: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
+
         final isDark = Theme.of(context).brightness == Brightness.dark;
 
-        if (state is! VocabularyLoaded && state is! VocabularyGameComplete) {
-          return const Scaffold(body: GameShimmerLoading());
-        }
 
         final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
         final options = quest?.options ?? [];
@@ -137,10 +143,6 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
         _isAnswered = loadedState?.lastAnswerCorrect != null;
         _isCorrect = loadedState?.lastAnswerCorrect;
 
-        final theme = LevelThemeHelper.getTheme(
-          widget.gameType.name,
-          isDark: isDark,
-        );
 
         // Use hovering suffix if dragging, otherwise use active selection
         final displaySuffixIndex = _hoveringSuffixIndex ?? _activeSuffixIndex;
@@ -155,6 +157,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
+          useScrolling: false,
           onHint: () {
             // Find correct suffix index
             final correct = quest?.correctAnswer ?? "";

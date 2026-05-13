@@ -144,3 +144,76 @@ exports.sendWeeklyRankings = onSchedule("59 23 * * 0", async (event) => {
         }
     }
 });
+
+// 🔥 STREAK-AT-RISK REMINDER (v2)
+// Runs daily at 8:00 PM — nudges users who haven't logged in today
+exports.sendStreakReminders = onSchedule("0 20 * * *", async (event) => {
+    const db = admin.firestore();
+    
+    // Get start of today (UTC)
+    const now = new Date();
+    const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    // Find users with active streaks who haven't logged in today
+    const usersAtRisk = await db.collection('users')
+        .where('currentStreak', '>', 0)
+        .where('lastLoginDate', '<', admin.firestore.Timestamp.fromDate(startOfDay))
+        .limit(500)
+        .get();
+
+    if (usersAtRisk.empty) {
+        console.log('No streak-at-risk users found.');
+        return;
+    }
+
+    const messages = [];
+    usersAtRisk.forEach(doc => {
+        const user = doc.data();
+        const token = user.fcmToken;
+        if (token) {
+            const streak = user.currentStreak || 0;
+            messages.push({
+                token: token,
+                notification: {
+                    title: 'Your Streak is in Danger! 🔥',
+                    body: `Don't lose your ${streak}-day streak! Open Vowl and play a quick quest.`
+                },
+                android: {
+                    priority: "high",
+                    notification: {
+                        clickAction: "FLUTTER_NOTIFICATION_CLICK",
+                        channelId: "vowl_streak_channel"
+                    }
+                }
+            });
+        }
+    });
+
+    if (messages.length > 0) {
+        try {
+            const response = await admin.messaging().sendEach(messages);
+            console.log(`Sent ${response.successCount} streak reminders. Failed: ${response.failureCount}`);
+            
+            // Clean up invalid tokens
+            response.responses.forEach((resp, idx) => {
+                if (resp.error && (
+                    resp.error.code === 'messaging/registration-token-not-registered' ||
+                    resp.error.code === 'messaging/invalid-registration-token'
+                )) {
+                    const failedToken = messages[idx].token;
+                    // Remove stale token from Firestore
+                    db.collection('users')
+                        .where('fcmToken', '==', failedToken)
+                        .get()
+                        .then(snapshot => {
+                            snapshot.forEach(doc => {
+                                doc.ref.update({ fcmToken: admin.firestore.FieldValue.delete() });
+                            });
+                        });
+                }
+            });
+        } catch (error) {
+            console.error("Error sending streak reminders:", error);
+        }
+    }
+});

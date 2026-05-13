@@ -54,7 +54,6 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
     final targetColor = _targetIsPositive
         ? const Color(0xFF00E5FF)
         : const Color(0xFFFF4D00);
@@ -93,12 +92,18 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
         }
       },
       builder: (context, state) {
+        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+
+        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+          return Scaffold(
+            backgroundColor: const Color(0xFF0F172A),
+            body: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
+
         final quest = (state is VocabularyLoaded)
             ? state.currentQuest
             : _lastQuest;
-        if (quest == null && state is! VocabularyGameComplete) {
-          return const GameShimmerLoading();
-        }
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,

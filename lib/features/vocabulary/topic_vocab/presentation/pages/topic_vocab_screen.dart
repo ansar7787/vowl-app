@@ -138,7 +138,6 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final theme = LevelThemeHelper.getTheme(widget.gameType.name, isDark: isDark);
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
@@ -176,8 +175,16 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
         }
       },
       builder: (context, state) {
+        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+
+        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+          return Scaffold(
+            backgroundColor: const Color(0xFF0F172A),
+            body: GameShimmerLoading(primaryColor: theme.primaryColor),
+          );
+        }
+
         final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
-        if (quest == null && state is! VocabularyGameComplete) return const GameShimmerLoading();
 
         final options = quest?.options ?? [];
         final buckets = quest?.topicBuckets ?? ["A", "B"];
@@ -196,6 +203,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
           isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
+          useScrolling: false,
           onHint: () {
             setState(() => _isHintActive = true);
           },

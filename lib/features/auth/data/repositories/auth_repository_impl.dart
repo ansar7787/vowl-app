@@ -606,6 +606,7 @@ class AuthRepositoryImpl implements AuthRepository {
         email: user.email,
         displayName: user.displayName,
         photoUrl: user.photoUrl,
+        fcmToken: user.fcmToken,
         coins: user.coins,
         totalExp: user.totalExp,
         isAdmin: user.isAdmin,
@@ -636,6 +637,17 @@ class AuthRepositoryImpl implements AuthRepository {
         kidsEquippedAccessory: user.kidsEquippedAccessory,
         kidsOwnedFurniture: user.kidsOwnedFurniture,
         kidsEquippedFurniture: user.kidsEquippedFurniture,
+        vowlMascot: user.vowlMascot,
+        vowlEquippedAccessory: user.vowlEquippedAccessory,
+        vowlOwnedAccessories: user.vowlOwnedAccessories,
+        vowlOwnedMascots: user.vowlOwnedMascots,
+        claimedStreakMilestones: user.claimedStreakMilestones,
+        claimedLevelMilestones: user.claimedLevelMilestones,
+        coinHistory: user.coinHistory,
+        hasPermanentXPBoost: user.hasPermanentXPBoost,
+        lastFreeSpinDate: user.lastFreeSpinDate,
+        lastAdSpinDate: user.lastAdSpinDate,
+        adSpinsUsedToday: user.adSpinsUsedToday,
       );
 
       await docRef.set(userModel.toMap(), SetOptions(merge: true));

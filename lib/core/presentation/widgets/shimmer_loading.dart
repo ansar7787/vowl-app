@@ -51,41 +51,115 @@ class ShimmerLoading extends StatelessWidget {
 }
 
 class GameShimmerLoading extends StatelessWidget {
-  const GameShimmerLoading({super.key});
+  final Color? primaryColor;
+  const GameShimmerLoading({super.key, this.primaryColor});
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final baseColor = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey[200]!;
+    final highlightColor = isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[50]!;
+
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Padding(
         padding: EdgeInsets.all(24.r),
         child: Column(
           children: [
-            SizedBox(height: 40.h),
+            SizedBox(height: 20.h),
+            // Header Shimmer
             Row(
               children: [
-                const ShimmerLoading.circular(width: 40, height: 40),
+                Shimmer.fromColors(
+                  baseColor: baseColor,
+                  highlightColor: highlightColor,
+                  child: Container(
+                    width: 45.r, height: 45.r,
+                    decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                  ),
+                ),
                 SizedBox(width: 16.w),
-                ShimmerLoading.rounded(height: 12),
-                SizedBox(width: 16.w),
-                ShimmerLoading.rounded(width: 60, height: 30, borderRadius: 20),
+                Expanded(
+                  child: Shimmer.fromColors(
+                    baseColor: baseColor,
+                    highlightColor: highlightColor,
+                    child: Container(
+                      height: 12.h,
+                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6.r)),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 40.w),
+                Shimmer.fromColors(
+                  baseColor: baseColor,
+                  highlightColor: highlightColor,
+                  child: Container(
+                    width: 80.w, height: 35.h,
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20.r)),
+                  ),
+                ),
               ],
             ),
-            SizedBox(height: 40.h),
-            ShimmerLoading.rounded(height: 20, width: 200),
-            SizedBox(height: 12.h),
-            ShimmerLoading.rounded(height: 20, width: 150),
+            SizedBox(height: 50.h),
+            // Question Area Shimmer
+            Shimmer.fromColors(
+              baseColor: baseColor,
+              highlightColor: highlightColor,
+              child: Container(
+                width: 250.w, height: 25.h,
+                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12.r)),
+              ),
+            ),
+            SizedBox(height: 16.h),
+            Shimmer.fromColors(
+              baseColor: baseColor,
+              highlightColor: highlightColor,
+              child: Container(
+                width: 180.w, height: 20.h,
+                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10.r)),
+              ),
+            ),
             SizedBox(height: 60.h),
-            ShimmerLoading.rounded(height: 300, borderRadius: 30),
-            SizedBox(height: 60.h),
+            // Main Content Card Shimmer
+            Shimmer.fromColors(
+              baseColor: baseColor,
+              highlightColor: highlightColor,
+              child: Container(
+                width: double.infinity, height: 320.h,
+                decoration: BoxDecoration(
+                  color: Colors.white, 
+                  borderRadius: BorderRadius.circular(32.r),
+                  border: Border.all(
+                    color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[200]!, 
+                    width: 2,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 50.h),
+            // Footer Buttons Shimmer
             Row(
               children: [
                 Expanded(
-                  child: ShimmerLoading.rounded(height: 56, borderRadius: 20),
+                  child: Shimmer.fromColors(
+                    baseColor: baseColor,
+                    highlightColor: highlightColor,
+                    child: Container(
+                      height: 60.h,
+                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20.r)),
+                    ),
+                  ),
                 ),
                 SizedBox(width: 20.w),
                 Expanded(
-                  child: ShimmerLoading.rounded(height: 56, borderRadius: 20),
+                  child: Shimmer.fromColors(
+                    baseColor: baseColor,
+                    highlightColor: highlightColor,
+                    child: Container(
+                      height: 60.h,
+                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20.r)),
+                    ),
+                  ),
                 ),
               ],
             ),
