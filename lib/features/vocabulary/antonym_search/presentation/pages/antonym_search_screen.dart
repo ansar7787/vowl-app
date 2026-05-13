@@ -92,9 +92,15 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
         }
       },
       builder: (context, state) {
-        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+        final theme = LevelThemeHelper.getTheme(
+          'vocabulary',
+          level: widget.level,
+        );
 
-        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+        if (state is VocabularyLoading ||
+            (state is! VocabularyGameComplete &&
+                state is! VocabularyLoaded &&
+                state is! VocabularyError)) {
           return Scaffold(
             backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
@@ -294,7 +300,7 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
     double yPos;
     if (total <= 4) {
       // 2 at top, 2 at bottom
-      yPos = isBottomHalf ? 530.h : 175.h;
+      yPos = isBottomHalf ? 460.h : 175.h;
     } else {
       // Standard grid for 6 or 8 cards
       if (index < 2) {
@@ -302,9 +308,9 @@ class _AntonymSearchScreenState extends State<AntonymSearchScreen> {
       } else if (index < 4) {
         yPos = 210.h;
       } else if (index < 6) {
-        yPos = 520.h;
+        yPos = 480.h;
       } else {
-        yPos = 620.h;
+        yPos = 580.h;
       }
     }
 
