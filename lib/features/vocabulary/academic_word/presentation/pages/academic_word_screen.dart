@@ -126,10 +126,13 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
                           ),
                         ),
 
-                        _buildThesisPaper(
-                          quest.passage ?? "",
-                          theme.primaryColor,
-                          isDark,
+                        Positioned(
+                          top: 130.h,
+                          child: _buildThesisPaper(
+                            quest.passage ?? "",
+                            theme.primaryColor,
+                            isDark,
+                          ),
                         ),
 
                         ...List.generate(quest.options?.length ?? 0, (i) {
@@ -267,6 +270,8 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
       left: (_lastConstraints!.maxWidth / 2) + initial.dx + offset.dx - 70.w,
       top: (_lastConstraints!.maxHeight / 2) + initial.dy + offset.dy - 35.h,
       child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => _attemptThrust(index, _lastQuest!),
         onPanStart: (_) => _onShardDragStart(index),
         onPanUpdate: (d) => _onShardDragUpdate(index, d),
         onPanEnd: (_) => _onShardDragEnd(index, _lastQuest!),
@@ -331,8 +336,22 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
 
   bool _isNearSlot() {
     if (_activeShardIndex == null || _lastConstraints == null) return false;
+    
+    final RenderBox? slotBox = _slotKey.currentContext?.findRenderObject() as RenderBox?;
+    final RenderBox? stackBox = context.findRenderObject() as RenderBox?;
+    
+    if (slotBox == null || stackBox == null) return false;
+    
+    // Get target position relative to the Stack's center
+    final slotPos = slotBox.localToGlobal(Offset.zero, ancestor: stackBox);
+    final stackCenter = stackBox.size.center(Offset.zero);
+    final targetCenter = slotPos + slotBox.size.center(Offset.zero);
+    final targetOffsetFromCenter = targetCenter - stackCenter;
+    
     final currentPos = _getShardCurrentPosition(_activeShardIndex!);
-    return currentPos.distance < 100.r;
+    
+    // Check distance between shard center and slot center
+    return (currentPos - targetOffsetFromCenter).distance < 80.r;
   }
 
   void _onShardDragEnd(int index, VocabularyQuest quest) {
@@ -380,10 +399,18 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
   }
 
   Offset _getShardInitialPosition(int index, int total) {
-    final vStep = 80.h;
-    final startY = 200.h;
-    final isLeft = index % 2 == 0;
-    return Offset(isLeft ? -100.w : 100.w, startY + (index ~/ 2) * vStep);
+    final vStep = 90.h;
+    final hStep = 160.w;
+    final startY = 160.h; // Relative to center
+    
+    // 2x2 Grid Layout
+    final row = index ~/ 2;
+    final col = index % 2;
+    
+    final x = (col == 0) ? -hStep / 2 : hStep / 2;
+    final y = startY + (row * vStep);
+    
+    return Offset(x, y);
   }
 }
 
