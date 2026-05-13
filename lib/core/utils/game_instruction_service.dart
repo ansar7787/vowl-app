@@ -235,10 +235,10 @@ class GameInstructionService {
       return const GameBriefing(
         title: "Verb Vault",
         icon: Icons.vpn_key_rounded,
-        objective: "VAULT CRACKING: Identify the correct particle to complete the phrasal verb and unlock the vault.",
-        rules: ["Analyze the definition", "Select the correct key", "Unlock the vault"],
-        actionText: "Crack the Vault",
-        tip: "PRO TIP: Phrasal verbs change meaning based on the particle! 'Look up' is very different from 'Look after'. 🔐⚙️",
+        objective: "DECRYPT: Match the correct particle to the base verb to unlock the vault.",
+        rules: ["Read Definition", "Select Particle", "Crack Vault"],
+        actionText: "Start Hack",
+        tip: "PRO TIP: Particles change everything! 'Turn UP' is not 'Turn DOWN'. ⚙️",
       );
     }
     if (type == GameSubtype.idioms) {

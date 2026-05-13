@@ -36,6 +36,7 @@ class VocabularyBaseLayout extends StatefulWidget {
   final VoidCallback onHint;
   final bool showConfetti;
   final bool useScrolling;
+  final bool disablePadding;
 
   const VocabularyBaseLayout({
     super.key,
@@ -49,6 +50,7 @@ class VocabularyBaseLayout extends StatefulWidget {
     required this.onHint,
     this.showConfetti = false,
     this.useScrolling = true,
+    this.disablePadding = false,
   });
 
   @override
@@ -179,10 +181,10 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                                                       ),
                                                       child: Padding(
                                                         padding: EdgeInsets.only(
-                                                          left: 24.w,
-                                                          right: 24.w,
-                                                          top: 40.h,
-                                                          bottom: widget.isAnswered ? 200.h : 40.h,
+                                                          left: widget.disablePadding ? 0 : 24.w,
+                                                          right: widget.disablePadding ? 0 : 24.w,
+                                                          top: widget.disablePadding ? 0 : 40.h,
+                                                          bottom: widget.isAnswered ? 200.h : (widget.disablePadding ? 0 : 40.h),
                                                         ),
                                                         child: widget.child,
                                                       ),
@@ -192,10 +194,10 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                                               )
                                             : Padding(
                                                 padding: EdgeInsets.only(
-                                                  left: 24.w,
-                                                  right: 24.w,
-                                                  top: 40.h,
-                                                  bottom: widget.isAnswered ? 200.h : 40.h,
+                                                  left: widget.disablePadding ? 0 : 24.w,
+                                                  right: widget.disablePadding ? 0 : 24.w,
+                                                  top: widget.disablePadding ? 0 : 40.h,
+                                                  bottom: widget.isAnswered ? 200.h : (widget.disablePadding ? 0 : 40.h),
                                                 ),
                                                 child: widget.child,
                                               ),
