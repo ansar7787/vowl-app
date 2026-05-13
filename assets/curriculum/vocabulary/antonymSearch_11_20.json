@@ -1,427 +1,427 @@
-﻿{
-    "levels":  "11-20",
-    "quests":  [
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q1",
-                       "word":  "BREVITY",
-                       "hint":  "Look for a word meaning tedious lengthiness.",
-                       "explanation":  "Brevity means concise use of words; prolixity means tedious length.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "PROLIXITY",
-                       "options":  [
-                                       "SHORTNESS",
-                                       "ECONOMY",
-                                       "PROLIXITY",
-                                       "CONCISION"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q2",
-                       "word":  "DIATRIBE",
-                       "hint":  "Look for a word meaning a speech or piece of writing that praises someone or something highly.",
-                       "explanation":  "Diatribe is a forceful and bitter verbal attack; eulogy is a speech that praises highly.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "EULOGY",
-                       "options":  [
-                                       "TIRADE",
-                                       "CRITICISM",
-                                       "EULOGY",
-                                       "ATTACK"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q3",
-                       "word":  "ARCHAIC",
-                       "hint":  "Look for a word meaning current or contemporary.",
-                       "explanation":  "Archaic means very old; modern means current.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "MODERN",
-                       "options":  [
-                                       "OLD",
-                                       "ANCIENT",
-                                       "MODERN",
-                                       "OBSOLETE"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q4",
-                       "word":  "ATROPHY",
-                       "hint":  "Look for a word meaning to grow or develop successfully.",
-                       "explanation":  "Atrophy means to waste away; flourish means to grow successfully.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "FLOURISH",
-                       "options":  [
-                                       "DECLINE",
-                                       "FLOURISH",
-                                       "WITHER",
-                                       "WASTE"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q5",
-                       "word":  "RESILIENCE",
-                       "hint":  "Think about the quality of being easily broken.",
-                       "explanation":  "Resilience is the ability to recover; fragility is the quality of being easily broken.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "FRAGILITY",
-                       "options":  [
-                                       "ENERGY",
-                                       "FRAGILITY",
-                                       "VIGOR",
-                                       "STRENGTH"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q6",
-                       "word":  "ACCURATE",
-                       "hint":  "Look for a word meaning incorrect.",
-                       "explanation":  "Accurate means correct; erroneous means containing errors.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "ERRONEOUS",
-                       "options":  [
-                                       "ERRONEOUS",
-                                       "PRECISE",
-                                       "LITERAL",
-                                       "EXACT"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q7",
-                       "word":  "DEPLORABLE",
-                       "hint":  "Look for a word meaning deserving respect and approval.",
-                       "explanation":  "Deplorable means deserving strong condemnation; admirable means deserving respect.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "ADMIRABLE",
-                       "options":  [
-                                       "TERRIBLE",
-                                       "AWFUL",
-                                       "SHOCKING",
-                                       "ADMIRABLE"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q8",
-                       "word":  "DEARTH",
-                       "hint":  "Look for a word meaning a very large quantity.",
-                       "explanation":  "Dearth means a scarcity or lack of something; abundance means a large quantity.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "ABUNDANCE",
-                       "options":  [
-                                       "SCARCITY",
-                                       "LACK",
-                                       "ABUNDANCE",
-                                       "SHORTAGE"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q9",
-                       "word":  "CRYPTIC",
-                       "hint":  "Look for a word meaning easily perceived or understood.",
-                       "explanation":  "Cryptic means having a meaning that is mysterious; obvious means easily understood.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "OBVIOUS",
-                       "options":  [
-                                       "VAGUE",
-                                       "MYSTERIOUS",
-                                       "PUZZLING",
-                                       "OBVIOUS"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q10",
-                       "word":  "CONTEMPT",
-                       "hint":  "Think about a feeling of respect and approval.",
-                       "explanation":  "Contempt is the feeling that something is worthless; admiration is respect.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "ADMIRATION",
-                       "options":  [
-                                       "ADMIRATION",
-                                       "HATRED",
-                                       "SCORN",
-                                       "DISDAIN"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q11",
-                       "word":  "BENIGN",
-                       "hint":  "Look for a word meaning very virulent or infectious.",
-                       "explanation":  "Benign means gentle and kindly; malignant means malevolent or harmful.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "MALIGNANT",
-                       "options":  [
-                                       "MALIGNANT",
-                                       "GENTLE",
-                                       "KIND",
-                                       "HARMLESS"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q12",
-                       "word":  "ASCETIC",
-                       "hint":  "Think about seeking pleasure above all else.",
-                       "explanation":  "Ascetic means practicing self-denial; hedonistic means pursuing pleasure.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "HEDONISTIC",
-                       "options":  [
-                                       "HEDONISTIC",
-                                       "FRUGAL",
-                                       "AUSTERE",
-                                       "STERN"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q13",
-                       "word":  "GREGARIOUS",
-                       "hint":  "Look for a word meaning distant or unsociable.",
-                       "explanation":  "Gregarious means social; aloof means cool and distant.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "ALOOF",
-                       "options":  [
-                                       "FRIENDLY",
-                                       "ALOOF",
-                                       "SOCIAL",
-                                       "WARM"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q14",
-                       "word":  "WANE",
-                       "hint":  "Look for a word meaning to increase in size or intensity.",
-                       "explanation":  "Wane means to decrease; wax means to increase.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "WAX",
-                       "options":  [
-                                       "FALL",
-                                       "WAX",
-                                       "FADE",
-                                       "DROP"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q15",
-                       "word":  "DECORUM",
-                       "hint":  "Look for a word meaning failure to observe standards or show due honesty.",
-                       "explanation":  "Decorum is behavior in keeping with good taste; impropriety is failure to observe standards.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "IMPROPRIETY",
-                       "options":  [
-                                       "PROPRIETY",
-                                       "GRACE",
-                                       "IMPROPRIETY",
-                                       "DIGNITY"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q16",
-                       "word":  "BELITTLE",
-                       "hint":  "Think about praising or raising someone in rank.",
-                       "explanation":  "Belittle means to make seem unimportant; exalt means to praise highly.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "EXALT",
-                       "options":  [
-                                       "EXALT",
-                                       "SCORN",
-                                       "DERIDE",
-                                       "DECRY"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q17",
-                       "word":  "BOISTEROUS",
-                       "hint":  "Think about a word meaning making little or no noise.",
-                       "explanation":  "Boistrous means noisy and energetic; quiet means making little noise.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "QUIET",
-                       "options":  [
-                                       "LOUD",
-                                       "QUIET",
-                                       "NOISY",
-                                       "ROWDY"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q18",
-                       "word":  "FORTUITOUS",
-                       "hint":  "Think about something done on purpose.",
-                       "explanation":  "Fortuitous means happening by chance; deliberate means done on purpose.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "DELIBERATE",
-                       "options":  [
-                                       "DELIBERATE",
-                                       "LUCKY",
-                                       "RANDOM",
-                                       "CHANCE"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q19",
-                       "word":  "ADVERSITY",
-                       "hint":  "Focus on success and wealth.",
-                       "explanation":  "Adversity is a state of hardship; prosperity is a state of success.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "PROSPERITY",
-                       "options":  [
-                                       "HARDSHIP",
-                                       "MISHAP",
-                                       "PROSPERITY",
-                                       "MISFORTUNE"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q20",
-                       "word":  "DIGRESS",
-                       "hint":  "Look for a word meaning to believe in and follow the practices of.",
-                       "explanation":  "Digress means to leave the main subject temporarily in speech or writing; adhere means to follow practices.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "ADHERE",
-                       "options":  [
-                                       "DEVIATE",
-                                       "STRAY",
-                                       "ADHERE",
-                                       "DRIFT"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q21",
-                       "word":  "ALOOF",
-                       "hint":  "Look for a word meaning friendly and social.",
-                       "explanation":  "Aloof means cool and distant; sociable means friendly.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "SOCIABLE",
-                       "options":  [
-                                       "DETACHED",
-                                       "COOL",
-                                       "SOCIABLE",
-                                       "DISTANT"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q22",
-                       "word":  "DENIGRATE",
-                       "hint":  "Look for a word meaning to praise enthusiastically.",
-                       "explanation":  "Denigrate means to criticize unfairly; extol means to praise enthusiastically.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "EXTOL",
-                       "options":  [
-                                       "DECRY",
-                                       "BELITTLE",
-                                       "DERIDE",
-                                       "EXTOL"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q23",
-                       "word":  "DEVIOUS",
-                       "hint":  "Look for a word meaning free of deceit and untruthfulness; sincere.",
-                       "explanation":  "Devious means showing a skillful use of underhanded tactics; honest means sincere.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "HONEST",
-                       "options":  [
-                                       "WILY",
-                                       "DECEPTIVE",
-                                       "DISHONEST",
-                                       "HONEST"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q24",
-                       "word":  "PENSIVE",
-                       "hint":  "Think about a word meaning without consideration.",
-                       "explanation":  "Pensive means deeply thoughtful; thoughtless means without consideration.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "THOUGHTLESS",
-                       "options":  [
-                                       "SOLEMN",
-                                       "DREAMY",
-                                       "THOUGHTLESS",
-                                       "GRAVE"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q25",
-                       "word":  "CENSURE",
-                       "hint":  "Think about officially agreeing to something.",
-                       "explanation":  "Censure means to express severe disapproval; approve means to agree.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "APPROVE",
-                       "options":  [
-                                       "CONDEMN",
-                                       "CRITICIZE",
-                                       "SCOLD",
-                                       "APPROVE"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q26",
-                       "word":  "CORROBORATE",
-                       "hint":  "Think about denying the truth by asserting the opposite.",
-                       "explanation":  "Corroborate means to confirm; contradict means to deny by asserting the opposite.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "CONTRADICT",
-                       "options":  [
-                                       "SUPPORT",
-                                       "CONFIRM",
-                                       "VERIFY",
-                                       "CONTRADICT"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q27",
-                       "word":  "DAUNTLESS",
-                       "hint":  "Think about a word meaning lacking courage.",
-                       "explanation":  "Dauntless means showing fearlessness; cowardly means lacking courage.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "COWARDLY",
-                       "options":  [
-                                       "COWARDLY",
-                                       "FEARLESS",
-                                       "BOLD",
-                                       "BRAVE"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q28",
-                       "word":  "BENEVOLENT",
-                       "hint":  "Think about a word meaning wishing evil to others.",
-                       "explanation":  "Benevolent means kind; malevolent means wishing evil to others.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "MALEVOLENT",
-                       "options":  [
-                                       "GENTLE",
-                                       "KIND",
-                                       "MALEVOLENT",
-                                       "GENEROUS"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q29",
-                       "word":  "DEXTEROUS",
-                       "hint":  "Think about awkward in movement or in handling things.",
-                       "explanation":  "Dexterous means showing or having skill, especially with the hands; clumsy means awkward.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "CLUMSY",
-                       "options":  [
-                                       "ADROIT",
-                                       "SKILLFUL",
-                                       "DEFT",
-                                       "CLUMSY"
-                                   ]
-                   },
-                   {
-                       "id":  "VOC_ANTONYMSEARCH_L2_Q30",
-                       "word":  "CONFLUENCE",
-                       "hint":  "Look for a word meaning the process of separating.",
-                       "explanation":  "Confluence is the act of flowing together; divergence is separating.",
-                       "interactionType":  "Polarity Pull",
-                       "correctAnswer":  "DIVERGENCE",
-                       "options":  [
-                                       "UNION",
-                                       "MEETING",
-                                       "DIVERGENCE",
-                                       "JUNCTION"
-                                   ]
-                   }
-               ],
-    "gameType":  "antonymSearch",
-    "batchIndex":  2
+{
+    "levels": "11-20",
+    "quests": [
+        {
+            "id": "VOC_ANTONYMSEARCH_L11_Q1",
+            "word": "BREVITY",
+            "hint": "Look for a word meaning tedious lengthiness.",
+            "explanation": "Brevity means concise use of words; prolixity means tedious length.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "PROLIXITY",
+            "options": [
+                "SHORTNESS",
+                "ECONOMY",
+                "PROLIXITY",
+                "CONCISION"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L11_Q2",
+            "word": "DIATRIBE",
+            "hint": "Look for a word meaning a speech or piece of writing that praises someone or something highly.",
+            "explanation": "Diatribe is a forceful and bitter verbal attack; eulogy is a speech that praises highly.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "EULOGY",
+            "options": [
+                "TIRADE",
+                "CRITICISM",
+                "EULOGY",
+                "ATTACK"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L11_Q3",
+            "word": "ARCHAIC",
+            "hint": "Look for a word meaning current or contemporary.",
+            "explanation": "Archaic means very old; modern means current.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "MODERN",
+            "options": [
+                "OLD",
+                "ANCIENT",
+                "MODERN",
+                "OBSOLETE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L12_Q1",
+            "word": "ATROPHY",
+            "hint": "Look for a word meaning to grow or develop successfully.",
+            "explanation": "Atrophy means to waste away; flourish means to grow successfully.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "FLOURISH",
+            "options": [
+                "DECLINE",
+                "FLOURISH",
+                "WITHER",
+                "WASTE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L12_Q2",
+            "word": "RESILIENCE",
+            "hint": "Think about the quality of being easily broken.",
+            "explanation": "Resilience is the ability to recover; fragility is the quality of being easily broken.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "FRAGILITY",
+            "options": [
+                "ENERGY",
+                "FRAGILITY",
+                "VIGOR",
+                "STRENGTH"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L12_Q3",
+            "word": "ACCURATE",
+            "hint": "Look for a word meaning incorrect.",
+            "explanation": "Accurate means correct; erroneous means containing errors.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "ERRONEOUS",
+            "options": [
+                "ERRONEOUS",
+                "PRECISE",
+                "LITERAL",
+                "EXACT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L13_Q1",
+            "word": "DEPLORABLE",
+            "hint": "Look for a word meaning deserving respect and approval.",
+            "explanation": "Deplorable means deserving strong condemnation; admirable means deserving respect.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "ADMIRABLE",
+            "options": [
+                "TERRIBLE",
+                "AWFUL",
+                "SHOCKING",
+                "ADMIRABLE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L13_Q2",
+            "word": "DEARTH",
+            "hint": "Look for a word meaning a very large quantity.",
+            "explanation": "Dearth means a scarcity or lack of something; abundance means a large quantity.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "ABUNDANCE",
+            "options": [
+                "SCARCITY",
+                "LACK",
+                "ABUNDANCE",
+                "SHORTAGE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L13_Q3",
+            "word": "CRYPTIC",
+            "hint": "Look for a word meaning easily perceived or understood.",
+            "explanation": "Cryptic means having a meaning that is mysterious; obvious means easily understood.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "OBVIOUS",
+            "options": [
+                "VAGUE",
+                "MYSTERIOUS",
+                "PUZZLING",
+                "OBVIOUS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L14_Q1",
+            "word": "CONTEMPT",
+            "hint": "Think about a feeling of respect and approval.",
+            "explanation": "Contempt is the feeling that something is worthless; admiration is respect.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "ADMIRATION",
+            "options": [
+                "ADMIRATION",
+                "HATRED",
+                "SCORN",
+                "DISDAIN"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L14_Q2",
+            "word": "BENIGN",
+            "hint": "Look for a word meaning very virulent or infectious.",
+            "explanation": "Benign means gentle and kindly; malignant means malevolent or harmful.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "MALIGNANT",
+            "options": [
+                "MALIGNANT",
+                "GENTLE",
+                "KIND",
+                "HARMLESS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L14_Q3",
+            "word": "ASCETIC",
+            "hint": "Think about seeking pleasure above all else.",
+            "explanation": "Ascetic means practicing self-denial; hedonistic means pursuing pleasure.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "HEDONISTIC",
+            "options": [
+                "HEDONISTIC",
+                "FRUGAL",
+                "AUSTERE",
+                "STERN"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L15_Q1",
+            "word": "GREGARIOUS",
+            "hint": "Look for a word meaning distant or unsociable.",
+            "explanation": "Gregarious means social; aloof means cool and distant.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "ALOOF",
+            "options": [
+                "FRIENDLY",
+                "ALOOF",
+                "SOCIAL",
+                "WARM"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L15_Q2",
+            "word": "WANE",
+            "hint": "Look for a word meaning to increase in size or intensity.",
+            "explanation": "Wane means to decrease; wax means to increase.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "WAX",
+            "options": [
+                "FALL",
+                "WAX",
+                "FADE",
+                "DROP"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L15_Q3",
+            "word": "DECORUM",
+            "hint": "Look for a word meaning failure to observe standards or show due honesty.",
+            "explanation": "Decorum is behavior in keeping with good taste; impropriety is failure to observe standards.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "IMPROPRIETY",
+            "options": [
+                "PROPRIETY",
+                "GRACE",
+                "IMPROPRIETY",
+                "DIGNITY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L16_Q1",
+            "word": "BELITTLE",
+            "hint": "Think about praising or raising someone in rank.",
+            "explanation": "Belittle means to make seem unimportant; exalt means to praise highly.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "EXALT",
+            "options": [
+                "EXALT",
+                "SCORN",
+                "DERIDE",
+                "DECRY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L16_Q2",
+            "word": "BOISTEROUS",
+            "hint": "Think about a word meaning making little or no noise.",
+            "explanation": "Boistrous means noisy and energetic; quiet means making little noise.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "QUIET",
+            "options": [
+                "LOUD",
+                "QUIET",
+                "NOISY",
+                "ROWDY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L16_Q3",
+            "word": "FORTUITOUS",
+            "hint": "Think about something done on purpose.",
+            "explanation": "Fortuitous means happening by chance; deliberate means done on purpose.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "DELIBERATE",
+            "options": [
+                "DELIBERATE",
+                "LUCKY",
+                "RANDOM",
+                "CHANCE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L17_Q1",
+            "word": "ADVERSITY",
+            "hint": "Focus on success and wealth.",
+            "explanation": "Adversity is a state of hardship; prosperity is a state of success.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "PROSPERITY",
+            "options": [
+                "HARDSHIP",
+                "MISHAP",
+                "PROSPERITY",
+                "MISFORTUNE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L17_Q2",
+            "word": "DIGRESS",
+            "hint": "Look for a word meaning to believe in and follow the practices of.",
+            "explanation": "Digress means to leave the main subject temporarily in speech or writing; adhere means to follow practices.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "ADHERE",
+            "options": [
+                "DEVIATE",
+                "STRAY",
+                "ADHERE",
+                "DRIFT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L17_Q3",
+            "word": "ALOOF",
+            "hint": "Look for a word meaning friendly and social.",
+            "explanation": "Aloof means cool and distant; sociable means friendly.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "SOCIABLE",
+            "options": [
+                "DETACHED",
+                "COOL",
+                "SOCIABLE",
+                "DISTANT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L18_Q1",
+            "word": "DENIGRATE",
+            "hint": "Look for a word meaning to praise enthusiastically.",
+            "explanation": "Denigrate means to criticize unfairly; extol means to praise enthusiastically.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "EXTOL",
+            "options": [
+                "DECRY",
+                "BELITTLE",
+                "DERIDE",
+                "EXTOL"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L18_Q2",
+            "word": "DEVIOUS",
+            "hint": "Look for a word meaning free of deceit and untruthfulness; sincere.",
+            "explanation": "Devious means showing a skillful use of underhanded tactics; honest means sincere.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "HONEST",
+            "options": [
+                "WILY",
+                "DECEPTIVE",
+                "DISHONEST",
+                "HONEST"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L18_Q3",
+            "word": "PENSIVE",
+            "hint": "Think about a word meaning without consideration.",
+            "explanation": "Pensive means deeply thoughtful; thoughtless means without consideration.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "THOUGHTLESS",
+            "options": [
+                "SOLEMN",
+                "DREAMY",
+                "THOUGHTLESS",
+                "GRAVE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L19_Q1",
+            "word": "CENSURE",
+            "hint": "Think about officially agreeing to something.",
+            "explanation": "Censure means to express severe disapproval; approve means to agree.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "APPROVE",
+            "options": [
+                "CONDEMN",
+                "CRITICIZE",
+                "SCOLD",
+                "APPROVE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L19_Q2",
+            "word": "CORROBORATE",
+            "hint": "Think about denying the truth by asserting the opposite.",
+            "explanation": "Corroborate means to confirm; contradict means to deny by asserting the opposite.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "CONTRADICT",
+            "options": [
+                "SUPPORT",
+                "CONFIRM",
+                "VERIFY",
+                "CONTRADICT"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L19_Q3",
+            "word": "DAUNTLESS",
+            "hint": "Think about a word meaning lacking courage.",
+            "explanation": "Dauntless means showing fearlessness; cowardly means lacking courage.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "COWARDLY",
+            "options": [
+                "COWARDLY",
+                "FEARLESS",
+                "BOLD",
+                "BRAVE"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L20_Q1",
+            "word": "BENEVOLENT",
+            "hint": "Think about a word meaning wishing evil to others.",
+            "explanation": "Benevolent means kind; malevolent means wishing evil to others.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "MALEVOLENT",
+            "options": [
+                "GENTLE",
+                "KIND",
+                "MALEVOLENT",
+                "GENEROUS"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L20_Q2",
+            "word": "DEXTEROUS",
+            "hint": "Think about awkward in movement or in handling things.",
+            "explanation": "Dexterous means showing or having skill, especially with the hands; clumsy means awkward.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "CLUMSY",
+            "options": [
+                "ADROIT",
+                "SKILLFUL",
+                "DEFT",
+                "CLUMSY"
+            ]
+        },
+        {
+            "id": "VOC_ANTONYMSEARCH_L20_Q3",
+            "word": "CONFLUENCE",
+            "hint": "Look for a word meaning the process of separating.",
+            "explanation": "Confluence is the act of flowing together; divergence is separating.",
+            "interactionType": "Polarity Pull",
+            "correctAnswer": "DIVERGENCE",
+            "options": [
+                "UNION",
+                "MEETING",
+                "DIVERGENCE",
+                "JUNCTION"
+            ]
+        }
+    ],
+    "gameType": "antonymSearch",
+    "batchIndex": 2
 }
