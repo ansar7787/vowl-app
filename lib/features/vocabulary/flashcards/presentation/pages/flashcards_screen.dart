@@ -180,7 +180,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
           }
         },
           child: quest == null
-              ? const GameShimmerLoading()
+              ? GameShimmerLoading(primaryColor: theme.primaryColor)
               : LayoutBuilder(
                   builder: (context, constraints) {
                     // Calculate dynamic card height based on available space

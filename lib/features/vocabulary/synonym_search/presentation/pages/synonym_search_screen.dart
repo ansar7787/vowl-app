@@ -718,7 +718,7 @@ class VortexPainter extends CustomPainter {
       );
     }
   }
-  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
 class TechPatternPainter extends CustomPainter {
