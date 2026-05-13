@@ -18,7 +18,11 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 class ContextualUsageScreen extends StatefulWidget {
   final int level;
   final GameSubtype gameType;
-  const ContextualUsageScreen({super.key, required this.level, this.gameType = GameSubtype.contextualUsage});
+  const ContextualUsageScreen({
+    super.key, 
+    required this.level, 
+    this.gameType = GameSubtype.contextualUsage
+  });
 
   @override
   State<ContextualUsageScreen> createState() => _ContextualUsageScreenState();
@@ -43,17 +47,22 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
 
   void _submitAnswer(String selected, String correct) {
     if (_isAnswered) return;
-    setState(() { _selectedOption = selected; _isAnswered = true; });
+    setState(() {
+      _selectedOption = selected;
+      _isAnswered = true;
+    });
 
     bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
     Future.delayed(600.ms, () {
       if (!mounted) return;
       if (isCorrect) {
-        _hapticService.success(); _soundService.playCorrect();
+        _hapticService.success();
+        _soundService.playCorrect();
         setState(() => _isCorrect = true);
         context.read<VocabularyBloc>().add(SubmitAnswer(true));
       } else {
-        _hapticService.error(); _soundService.playWrong();
+        _hapticService.error();
+        _soundService.playWrong();
         setState(() => _isCorrect = false);
         context.read<VocabularyBloc>().add(SubmitAnswer(false));
       }
@@ -84,49 +93,74 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
       },
       builder: (context, state) {
         final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        final loadedState = state is VocabularyLoaded ? state : null;
 
-        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+        if (state is VocabularyLoading || (quest == null && state is! VocabularyGameComplete && state is! VocabularyError)) {
           return Scaffold(
             backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
           );
         }
 
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        _isAnswered = loadedState?.lastAnswerCorrect != null;
+        _isCorrect = loadedState?.lastAnswerCorrect;
+        final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
         return VocabularyBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, showConfetti: _showConfetti,
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
+          showConfetti: _showConfetti,
           onContinue: () => context.read<VocabularyBloc>().add(NextQuestion()),
           onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           useScrolling: false,
-          child: quest == null ? const SizedBox() : _buildUnfoldContent(quest, theme.primaryColor),
+          disablePadding: true,
+          child: quest == null
+              ? const SizedBox()
+              : Stack(
+                  children: [
+                    Positioned.fill(
+                      child: CustomPaint(
+                        painter: GridPainter(
+                          theme.primaryColor.withValues(
+                            alpha: isDarkMode ? 0.05 : 0.03,
+                          ),
+                        ),
+                      ),
+                    ),
+                    _buildUnfoldContent(quest, theme.primaryColor, isDarkMode),
+                  ],
+                ),
         );
       },
     );
   }
 
-  Widget _buildUnfoldContent(VocabularyQuest quest, Color color) {
+  Widget _buildUnfoldContent(VocabularyQuest quest, Color color, bool isDark) {
     String baseSentence = quest.question ?? "";
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("USAGE UNFOLD", 
+        SizedBox(height: 60.h),
+        Text(
+          "USAGE UNFOLD",
           style: GoogleFonts.shareTechMono(
-            fontSize: 12.sp, 
-            color: color.withValues(alpha: 0.8), 
-            letterSpacing: 6,
+            fontSize: 11.sp,
+            color: color,
+            letterSpacing: 8,
             fontWeight: FontWeight.bold,
-          )
-        ).animate().fadeIn(duration: 800.ms),
+          ),
+        ).animate().fadeIn(duration: 800.ms).shimmer(duration: 2.seconds),
+
+        SizedBox(height: 40.h),
         
-        SizedBox(height: 50.h),
-        
-        // --- THE FOLDED DOCUMENT ---
         Center(
           child: Stack(
             alignment: Alignment.center,
             children: [
-              // Background Glow
               Container(
                 width: 0.8.sw,
                 height: 180.h,
@@ -136,46 +170,43 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
                 ),
               ).animate(target: _isAnswered ? 1 : 0).scale(begin: const Offset(0.5, 0.5), end: const Offset(1.5, 1.5), curve: Curves.easeOutBack),
 
-              // The Unfolding Card
               AnimatedContainer(
                 duration: 600.ms,
                 curve: Curves.elasticOut,
-                width: 0.85.sw,
-                padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 40.h),
+                width: 0.88.sw,
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 40.h),
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.05),
-                  borderRadius: BorderRadius.circular(4.r), // Sharp paper-like edges
-                  border: Border.all(color: color.withValues(alpha: _isAnswered ? 0.6 : 0.2), width: 1.5),
+                  color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                  borderRadius: BorderRadius.circular(4.r),
+                  border: Border.all(
+                    color: color.withValues(alpha: _isAnswered ? 0.6 : 0.2),
+                    width: 1.5,
+                  ),
                   boxShadow: [
                     BoxShadow(
                       color: color.withValues(alpha: _isAnswered ? 0.3 : 0.05),
-                      blurRadius: _isAnswered ? 30 : 10,
-                      spreadRadius: _isAnswered ? 5 : 0,
+                      blurRadius: _isAnswered ? 40 : 15,
+                      offset: Offset(0, _isAnswered ? 15 : 5),
                     )
                   ],
                 ),
                 child: Column(
                   children: [
-                    // Top Paper Crease
                     Container(
                       height: 1,
                       width: double.infinity,
                       color: color.withValues(alpha: 0.1),
                     ),
                     SizedBox(height: 20.h),
-                    
-                    // The Sentence with Dynamic Blank
                     RichText(
                       textAlign: TextAlign.center,
                       text: TextSpan(
-                        children: _buildSentenceSpans(baseSentence, color),
+                        children: _buildSentenceSpans(baseSentence, color, isDark),
                       ),
                     ).animate(target: _isAnswered ? 1 : 0)
                      .shimmer(duration: 1.5.seconds, color: color.withValues(alpha: 0.2))
                      .scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05)),
-                    
                     SizedBox(height: 20.h),
-                    // Bottom Paper Crease
                     Container(
                       height: 1,
                       width: double.infinity,
@@ -199,7 +230,6 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
 
         SizedBox(height: 80.h),
 
-        // --- INTERACTIVE TILES ---
         Wrap(
           spacing: 16.w, 
           runSpacing: 16.h,
@@ -207,39 +237,51 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
           children: (quest.options ?? []).map((o) {
             final isSelected = _selectedOption == o;
             
-            Color tileColor = Colors.white.withValues(alpha: 0.03);
-            Color borderColor = color.withValues(alpha: 0.2);
-            
+            Color tileColor = isDark ? color.withValues(alpha: 0.1) : Colors.white;
+            Color borderColor = color.withValues(alpha: 0.3);
+            Color textColor = isDark ? Colors.white70 : Colors.black87;
+
             if (isSelected) {
               if (_isCorrect == true) {
                 tileColor = Colors.green.withValues(alpha: 0.2);
                 borderColor = Colors.green;
+                textColor = isDark ? Colors.white : Colors.green.shade700;
               } else if (_isCorrect == false) {
                 tileColor = Colors.red.withValues(alpha: 0.2);
                 borderColor = Colors.red;
+                textColor = isDark ? Colors.white : Colors.red.shade700;
               } else {
-                tileColor = color.withValues(alpha: 0.1);
+                tileColor = color.withValues(alpha: 0.3);
                 borderColor = color;
+                textColor = isDark ? Colors.white : color;
               }
             }
 
             return ScaleButton(
               onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
-              child: Container(
-                constraints: BoxConstraints(minWidth: 120.w),
+              child: AnimatedContainer(
+                duration: 300.ms,
+                constraints: BoxConstraints(minWidth: 140.w),
                 padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
                 decoration: BoxDecoration(
                   color: tileColor,
-                  borderRadius: BorderRadius.circular(2.r), // Blocky paper-tile feel
-                  border: Border.all(color: borderColor, width: 1.2),
+                  borderRadius: BorderRadius.circular(8.r),
+                  border: Border.all(color: borderColor, width: 1.5),
+                  boxShadow: [
+                    if (isSelected)
+                      BoxShadow(
+                        color: borderColor.withValues(alpha: 0.3),
+                        blurRadius: 15,
+                      ),
+                  ],
                 ),
                 child: Text(
                   o.toUpperCase(),
                   textAlign: TextAlign.center,
                   style: GoogleFonts.outfit(
-                    fontSize: 15.sp, 
-                    fontWeight: FontWeight.w700, 
-                    color: isSelected ? Colors.white : Colors.white70,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w800,
+                    color: textColor,
                     letterSpacing: 1,
                   ),
                 ),
@@ -247,34 +289,35 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
             );
           }).toList(),
         ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.2, curve: Curves.easeOutCubic),
+        SizedBox(height: 40.h),
       ],
     );
   }
 
-  List<TextSpan> _buildSentenceSpans(String sentence, Color color) {
+  List<TextSpan> _buildSentenceSpans(String sentence, Color color, bool isDark) {
     final parts = sentence.split("_____");
     List<TextSpan> spans = [];
-    
+
     for (int i = 0; i < parts.length; i++) {
       spans.add(TextSpan(
         text: parts[i],
         style: GoogleFonts.outfit(
-          fontSize: 19.sp, 
-          fontWeight: FontWeight.w400, 
-          color: Colors.white.withValues(alpha: 0.9),
+          fontSize: 19.sp,
+          fontWeight: FontWeight.w400,
+          color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
           height: 1.5,
         ),
       ));
-      
+
       if (i < parts.length - 1) {
         spans.add(TextSpan(
           text: _selectedOption ?? " ________ ",
           style: GoogleFonts.outfit(
-            fontSize: 20.sp, 
-            fontWeight: FontWeight.w900, 
-            color: _isAnswered 
-              ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent) 
-              : color,
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w900,
+            color: _isAnswered
+                ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent)
+                : color,
             decoration: _isAnswered ? TextDecoration.none : TextDecoration.underline,
           ),
         ));
@@ -282,4 +325,24 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
     }
     return spans;
   }
+}
+
+class GridPainter extends CustomPainter {
+  final Color color;
+  GridPainter(this.color);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color..strokeWidth = 0.5;
+    const step = 40.0;
+    for (double i = 0; i < size.width; i += step) {
+      canvas.drawLine(Offset(i, 0), Offset(i, size.height), paint);
+    }
+    for (double i = 0; i < size.height; i += step) {
+      canvas.drawLine(Offset(0, i), Offset(size.width, i), paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
