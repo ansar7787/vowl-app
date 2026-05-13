@@ -180,29 +180,32 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
               });
             }
           },
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(height: 10.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 25.h),
-              _buildReactionCore(
-                quest,
-                root,
-                activeSuffix,
-                theme.primaryColor,
-                isDark,
-              ),
-              SizedBox(height: 30.h),
-              _buildInjectionRails(
-                options,
-                root,
-                quest?.correctAnswer ?? "",
-                theme.primaryColor,
-                isDark,
-              ),
-              SizedBox(height: 20.h),
-            ],
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(height: 10.h),
+                _buildInstruction(theme.primaryColor),
+                SizedBox(height: 25.h),
+                _buildReactionCore(
+                  quest,
+                  root,
+                  activeSuffix,
+                  theme.primaryColor,
+                  isDark,
+                ),
+                SizedBox(height: 30.h),
+                _buildInjectionRails(
+                  options,
+                  root,
+                  quest?.correctAnswer ?? "",
+                  theme.primaryColor,
+                  isDark,
+                ),
+                SizedBox(height: 20.h),
+              ],
+            ),
           ),
         );
       },

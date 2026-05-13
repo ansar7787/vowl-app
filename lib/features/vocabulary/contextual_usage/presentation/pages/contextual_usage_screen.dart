@@ -141,8 +141,10 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
   Widget _buildUnfoldContent(VocabularyQuest quest, Color color, bool isDark) {
     String baseSentence = quest.question ?? "";
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(height: 60.h),
         Text(
@@ -291,7 +293,7 @@ class _ContextualUsageScreenState extends State<ContextualUsageScreen> {
         ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.2, curve: Curves.easeOutCubic),
         SizedBox(height: 40.h),
       ],
-    );
+    ),);
   }
 
   List<TextSpan> _buildSentenceSpans(String sentence, Color color, bool isDark) {

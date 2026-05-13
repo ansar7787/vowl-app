@@ -193,23 +193,29 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                         .clamp(280.0, 320.0)
                         .w;
 
-                    return Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SizedBox(height: 12.h),
-                        _buildInstruction(theme.primaryColor),
-                        SizedBox(height: 24.h),
-                        _buildCardStack(
-                          quest,
-                          theme.primaryColor,
-                          isDark,
-                          cardWidth,
-                          cardHeight,
+                    return SingleChildScrollView(
+                      physics: const NeverScrollableScrollPhysics(), // Keep swipe gestures clean
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: 8.h),
+                            _buildInstruction(theme.primaryColor),
+                            SizedBox(height: 16.h),
+                            _buildCardStack(
+                              quest,
+                              theme.primaryColor,
+                              isDark,
+                              cardWidth,
+                              cardHeight * 0.95, // Slight reduction to safely fit
+                            ),
+                            SizedBox(height: 20.h),
+                            _buildSwipeHints(theme.primaryColor),
+                            SizedBox(height: 12.h),
+                          ],
                         ),
-                        SizedBox(height: 32.h),
-                        _buildSwipeHints(theme.primaryColor),
-                        SizedBox(height: 20.h),
-                      ],
+                      ),
                     );
                   },
                 ),
