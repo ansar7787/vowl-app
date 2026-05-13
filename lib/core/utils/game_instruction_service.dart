@@ -258,6 +258,108 @@ class GameInstructionService {
       );
     }
 
+    // --- 5. LISTENING (Auditory Precision) ---
+    if (type == GameSubtype.ambientId) {
+      return const GameBriefing(
+        title: "Spatial Anchor",
+        icon: Icons.radar_rounded,
+        objective: "Identify the environment by analyzing spatial audio cues.",
+        rules: ["Listen to the background", "Scan the radar", "Anchor the location"],
+        actionText: "Anchor Location",
+        tip: "Focus on the 'texture' of the sound—echoes and hums tell a story! 📻",
+      );
+    }
+    if (type == GameSubtype.audioFillBlanks) {
+      return const GameBriefing(
+        title: "Ink Decoder",
+        icon: Icons.water_drop_rounded,
+        objective: "Transcribe missing words from the audio feed.",
+        rules: ["Smear the ink to see", "Listen for the gap", "Type exactly what you hear"],
+        actionText: "Start Decoding",
+        tip: "Typing what you hear builds a strong brain-ear connection! ✍️👂",
+      );
+    }
+    if (type == GameSubtype.audioMultipleChoice) {
+      return const GameBriefing(
+        title: "Sonic Satellites",
+        icon: Icons.track_changes_rounded,
+        objective: "Filter the audio signal and select the correct interpretation.",
+        rules: ["Spin satellites to lock", "Listen to the central core", "Choose the data match"],
+        actionText: "Lock Signal",
+        tip: "Filter out the noise—focus only on the speaker's core message! 🛰️",
+      );
+    }
+    if (type == GameSubtype.audioSentenceOrder) {
+      return const GameBriefing(
+        title: "Timeline Scrubber",
+        icon: Icons.waves_rounded,
+        objective: "Reconstruct the sequence of spoken segments.",
+        rules: ["Listen to the full stream", "Snap segments to timeline", "Calibrate the signal"],
+        actionText: "Calibrate Signal",
+        tip: "Logical flow is everything! Look for connectors like 'then' or 'so'. 🌊",
+      );
+    }
+    if (type == GameSubtype.audioTrueFalse) {
+      return const GameBriefing(
+        title: "Signal Validator",
+        icon: Icons.verified_user_rounded,
+        objective: "Verify the accuracy of a statement based on the audio feed.",
+        rules: ["Analyze the claim", "Compare to audio data", "Validate or Nullify"],
+        actionText: "Begin Validation",
+        tip: "Don't be fooled by similar words—the meaning must match exactly! ✅",
+      );
+    }
+    if (type == GameSubtype.detailSpotlight) {
+      return const GameBriefing(
+        title: "Spotlight Search",
+        icon: Icons.flashlight_on_rounded,
+        objective: "Locate specific details hidden within a complex audio passage.",
+        rules: ["Scan the shadows", "Listen for specific evidence", "Locate the target"],
+        actionText: "Start Search",
+        tip: "Details are like gold—listen for numbers, names, and dates! 🔦",
+      );
+    }
+    if (type == GameSubtype.emotionRecognition) {
+      return const GameBriefing(
+        title: "Sentiment Prober",
+        icon: Icons.psychology_rounded,
+        objective: "Decode the speaker's emotional state through tone and pitch.",
+        rules: ["Navigate the neural core", "Analyze pitch & rhythm", "Match the sentiment"],
+        actionText: "Probe Sentiment",
+        tip: "It's not what they say, it's how they say it! Listen for the 'song'. 🎭",
+      );
+    }
+    if (type == GameSubtype.fastSpeechDecoder) {
+      return const GameBriefing(
+        title: "Nuance Calibrator",
+        icon: Icons.settings_input_composite_rounded,
+        objective: "Decode rapid-fire speech by calibrating playback speed.",
+        rules: ["Rotate gears to change speed", "Listen for clarity", "Unfold the meaning"],
+        actionText: "Calibrate Gears",
+        tip: "Slow it down first, then try at full speed once you've got it! ⚙️",
+      );
+    }
+    if (type == GameSubtype.listeningInference) {
+      return const GameBriefing(
+        title: "Inference Lens",
+        icon: Icons.biotech_rounded,
+        objective: "Understand what was implied, not just what was said.",
+        rules: ["Read between the waves", "Deduce the subtext", "Choose logical conclusion"],
+        actionText: "Focus Lens",
+        tip: "The speaker often hides their true meaning behind their tone. 🔍",
+      );
+    }
+    if (type == GameSubtype.soundImageMatch) {
+      return const GameBriefing(
+        title: "Thematic Linker",
+        icon: Icons.category_rounded,
+        objective: "Link auditory data to its visual/categorical equivalent.",
+        rules: ["Scan encrypted tiles", "Match sound to symbol", "Confirm the thematic link"],
+        actionText: "Confirm Link",
+        tip: "Visualizing the sound helps solidify it in your long-term memory! 🖼️",
+      );
+    }
+
     // --- CATEGORY FALLBACKS ---
     final category = type.category;
     switch (category) {

@@ -138,7 +138,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
               children: [
                 Container(color: theme.backgroundColors[1]), // Prevent white splash
                 MeshGradientBackground(colors: theme.backgroundColors),
-                if (state is ListeningLoading) const GameShimmerLoading()
+                if (state is ListeningLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
                 else ...[
                   SafeArea(
                     child: Column(
