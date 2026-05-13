@@ -17,7 +17,7 @@ class ConnectivityWrapper extends StatelessWidget {
           return NoInternetPage(
             onRetry: () async {
               await Future.delayed(const Duration(seconds: 1)); // UX delay
-              await InternetConnection().hasInternetAccess;
+              await di.sl<InternetConnection>().hasInternetAccess;
             },
           );
         }

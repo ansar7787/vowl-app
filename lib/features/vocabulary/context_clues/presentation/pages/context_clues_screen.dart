@@ -16,7 +16,6 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_error_view.dart';
 
 class ContextCluesScreen extends StatefulWidget {
   final int level;
@@ -31,10 +30,11 @@ class ContextCluesScreen extends StatefulWidget {
   State<ContextCluesScreen> createState() => _ContextCluesScreenState();
 }
 
-class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProviderStateMixin {
+class _ContextCluesScreenState extends State<ContextCluesScreen>
+    with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   final ValueNotifier<Offset> _lensPosition = ValueNotifier(Offset.zero);
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -62,13 +62,19 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
 
   void _onLensMove(DragUpdateDetails details, BoxConstraints constraints) {
     if (_isAnswered) return;
-    
+
     // Update position within constraints
-    double newX = (_lensPosition.value.dx + details.delta.dx).clamp(-constraints.maxWidth / 2, constraints.maxWidth / 2);
-    double newY = (_lensPosition.value.dy + details.delta.dy).clamp(-constraints.maxHeight / 2, constraints.maxHeight / 2);
-    
+    double newX = (_lensPosition.value.dx + details.delta.dx).clamp(
+      -constraints.maxWidth / 2,
+      constraints.maxWidth / 2,
+    );
+    double newY = (_lensPosition.value.dy + details.delta.dy).clamp(
+      -constraints.maxHeight / 2,
+      constraints.maxHeight / 2,
+    );
+
     _lensPosition.value = Offset(newX, newY);
-    
+
     // Simulate finding a clue (simple probability for effect, or based on position)
     if (_lensPosition.value.distance % 40 < 5) {
       _hapticService.selection();
@@ -77,18 +83,19 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
 
   void _submitAnswer(String selected, String correct) {
     if (_isAnswered) return;
-    
+
     setState(() {
       _selectedOption = selected;
       _isAnswered = true;
     });
 
-    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
-    
+    bool isCorrect =
+        selected.trim().toLowerCase() == correct.trim().toLowerCase();
+
     // Delay feedback to allow user to see their selection
     Future.delayed(400.ms, () {
       if (!mounted) return;
-      
+
       if (isCorrect) {
         _hapticService.success();
         _soundService.playCorrect();
@@ -108,7 +115,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
       listener: (context, state) {
         if (state is VocabularyLoaded) {
           // 1. Handle new question or explicit reset from bloc
-          if (state.currentIndex != _lastProcessedIndex || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
@@ -121,7 +129,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
           }
           // 2. Sync isCorrect for UI highlights if we didn't set it locally yet
           if (state.lastAnswerCorrect != null && _isCorrect == null) {
-             setState(() => _isCorrect = state.lastAnswerCorrect);
+            setState(() => _isCorrect = state.lastAnswerCorrect);
           }
         }
         if (state is VocabularyGameComplete) {
@@ -134,33 +142,31 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
             enableDoubleUp: true,
           );
         } else if (state is VocabularyGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<VocabularyBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
-        final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
+        final theme = LevelThemeHelper.getTheme(
+          'vocabulary',
+          level: widget.level,
+        );
 
-        if (state is VocabularyLoading || (state is! VocabularyGameComplete && state is! VocabularyLoaded && state is! VocabularyError)) {
+        if (state is VocabularyLoading ||
+            (state is! VocabularyGameComplete &&
+                state is! VocabularyLoaded &&
+                state is! VocabularyError)) {
           return Scaffold(
             backgroundColor: const Color(0xFF0F172A),
             body: GameShimmerLoading(primaryColor: theme.primaryColor),
           );
         }
 
-        if (state is VocabularyError) {
-          return Scaffold(
-            backgroundColor: const Color(0xFF0F172A),
-            body: VocabularyErrorView(
-              message: state.message,
-              primaryColor: theme.primaryColor,
-              onRetry: () => context.read<VocabularyBloc>().add(
-                FetchVocabularyQuests(gameType: widget.gameType, level: widget.level),
-              ),
-            ),
-          );
-        }
-
-        final quest = (state is VocabularyLoaded) ? state.currentQuest : _lastQuest;
+        final quest = (state is VocabularyLoaded)
+            ? state.currentQuest
+            : _lastQuest;
 
         return VocabularyBaseLayout(
           gameType: widget.gameType,
@@ -170,7 +176,9 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
           showConfetti: _showConfetti,
           onContinue: () {
             final currentState = context.read<VocabularyBloc>().state;
-            if (currentState is VocabularyLoaded && !currentState.isFinalFailure && _isCorrect == false) {
+            if (currentState is VocabularyLoaded &&
+                !currentState.isFinalFailure &&
+                _isCorrect == false) {
               // Mastery Loop: Retry the same question
               setState(() {
                 _isAnswered = false;
@@ -182,15 +190,26 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
               context.read<VocabularyBloc>().add(NextQuestion());
             }
           },
-          onHint: () => context.read<VocabularyBloc>().add(VocabularyHintUsed()),
+          onHint: () =>
+              context.read<VocabularyBloc>().add(VocabularyHintUsed()),
           useScrolling: false,
-          child: quest == null ? const SizedBox() : _buildForensicScene(quest, theme.primaryColor, (state is VocabularyLoaded) ? state.isFinalFailure : false),
+          child: quest == null
+              ? const SizedBox()
+              : _buildForensicScene(
+                  quest,
+                  theme.primaryColor,
+                  (state is VocabularyLoaded) ? state.isFinalFailure : false,
+                ),
         );
       },
     );
   }
 
-  Widget _buildForensicScene(VocabularyQuest quest, Color color, bool isFinalFailure) {
+  Widget _buildForensicScene(
+    VocabularyQuest quest,
+    Color color,
+    bool isFinalFailure,
+  ) {
     return Column(
       children: [
         // Header
@@ -219,7 +238,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
                   _buildEvidenceSentence(quest.sentence ?? "", color),
 
                   // 3. The Interactive Scanner
-                  if (!_isAnswered) 
+                  if (!_isAnswered)
                     ValueListenableBuilder<Offset>(
                       valueListenable: _lensPosition,
                       builder: (context, pos, _) {
@@ -235,12 +254,17 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
                     ),
                 ],
               );
-            }
+            },
           ),
         ),
 
         // 4. Evidence Tags (Options)
-        _buildEvidenceTags(quest.options ?? [], quest.correctAnswer ?? "", color, isFinalFailure),
+        _buildEvidenceTags(
+          quest.options ?? [],
+          quest.correctAnswer ?? "",
+          color,
+          isFinalFailure,
+        ),
         SizedBox(height: 30.h),
       ],
     );
@@ -264,7 +288,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(width: 40.w, height: 1, color: color.withValues(alpha: 0.2)),
+              Container(
+                width: 40.w,
+                height: 1,
+                color: color.withValues(alpha: 0.2),
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: Text(
@@ -276,7 +304,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
                   ),
                 ),
               ),
-              Container(width: 40.w, height: 1, color: color.withValues(alpha: 0.2)),
+              Container(
+                width: 40.w,
+                height: 1,
+                color: color.withValues(alpha: 0.2),
+              ),
             ],
           ),
         ],
@@ -291,7 +323,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
         color: Colors.white,
         borderRadius: BorderRadius.circular(4.r),
         boxShadow: [
-          BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 20, offset: const Offset(0, 10)),
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 20,
+            offset: const Offset(0, 10),
+          ),
         ],
       ),
       child: CustomPaint(painter: PaperGridPainter()),
@@ -302,7 +338,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
 
   Widget _buildEvidenceSentence(String sentence, Color color) {
     final parts = sentence.split("[TARGET]");
-    
+
     return Container(
       key: _sentenceKey,
       padding: EdgeInsets.symmetric(horizontal: 30.w),
@@ -318,7 +354,8 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
                   child: _buildRedactedBlock(color),
                   alignment: PlaceholderAlignment.middle,
                 ),
-                if (parts.length > 1) _buildTextSpan(parts[1], pos, color, _sentenceKey),
+                if (parts.length > 1)
+                  _buildTextSpan(parts[1], pos, color, _sentenceKey),
               ],
             ),
           );
@@ -327,7 +364,12 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
     );
   }
 
-  TextSpan _buildTextSpan(String text, Offset lensPos, Color color, GlobalKey parentKey) {
+  TextSpan _buildTextSpan(
+    String text,
+    Offset lensPos,
+    Color color,
+    GlobalKey parentKey,
+  ) {
     final words = text.split(" ");
     return TextSpan(
       children: words.map((word) {
@@ -349,8 +391,13 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
       return Container(
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 2.h),
         decoration: BoxDecoration(
-          color: _isCorrect == true ? Colors.green.withValues(alpha: 0.1) : Colors.red.withValues(alpha: 0.1),
-          border: Border.all(color: _isCorrect == true ? Colors.green : Colors.red, width: 1),
+          color: _isCorrect == true
+              ? Colors.green.withValues(alpha: 0.1)
+              : Colors.red.withValues(alpha: 0.1),
+          border: Border.all(
+            color: _isCorrect == true ? Colors.green : Colors.red,
+            width: 1,
+          ),
         ),
         child: Text(
           _selectedOption?.toUpperCase() ?? "???",
@@ -364,14 +411,15 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
     }
 
     return Container(
-      width: 100.w,
-      height: 24.h,
-      decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
-        borderRadius: BorderRadius.circular(2.r),
-      ),
-    ).animate(onPlay: (c) => c.repeat(reverse: true))
-     .shimmer(duration: 2.seconds, color: Colors.white10);
+          width: 100.w,
+          height: 24.h,
+          decoration: BoxDecoration(
+            color: const Color(0xFF1A1A1A),
+            borderRadius: BorderRadius.circular(2.r),
+          ),
+        )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
+        .shimmer(duration: 2.seconds, color: Colors.white10);
   }
 
   Widget _buildMagnifyingScanner(Color color) {
@@ -386,7 +434,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
             shape: BoxShape.circle,
             border: Border.all(color: color, width: 8),
             boxShadow: [
-              BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 30, spreadRadius: 5),
+              BoxShadow(
+                color: color.withValues(alpha: 0.2),
+                blurRadius: 30,
+                spreadRadius: 5,
+              ),
             ],
           ),
         ),
@@ -432,7 +484,12 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
     );
   }
 
-  Widget _buildEvidenceTags(List<String> options, String correct, Color color, bool isFinalFailure) {
+  Widget _buildEvidenceTags(
+    List<String> options,
+    String correct,
+    Color color,
+    bool isFinalFailure,
+  ) {
     return Column(
       children: [
         Padding(
@@ -460,8 +517,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
           child: Row(
             children: options.map((o) {
               final isSelected = _selectedOption == o;
-              final showCorrect = (_isAnswered && _isCorrect == true && o == correct) || (_isAnswered && isFinalFailure && o == correct);
-              final showWrong = _isAnswered && isSelected && _isCorrect == false;
+              final showCorrect =
+                  (_isAnswered && _isCorrect == true && o == correct) ||
+                  (_isAnswered && isFinalFailure && o == correct);
+              final showWrong =
+                  _isAnswered && isSelected && _isCorrect == false;
 
               return Padding(
                 padding: EdgeInsets.only(right: 15.w),
@@ -480,16 +540,29 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
                           Container(
                             width: 10.r,
                             height: 10.r,
-                            decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.white,
+                            ),
                           ),
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 20.w,
+                              vertical: 15.h,
+                            ),
                             decoration: BoxDecoration(
-                              color: showCorrect 
-                                  ? Colors.green.withValues(alpha: 0.2) 
-                                  : (showWrong ? Colors.red.withValues(alpha: 0.2) : (isSelected ? color.withValues(alpha: 0.2) : Colors.white)),
+                              color: showCorrect
+                                  ? Colors.green.withValues(alpha: 0.2)
+                                  : (showWrong
+                                        ? Colors.red.withValues(alpha: 0.2)
+                                        : (isSelected
+                                              ? color.withValues(alpha: 0.2)
+                                              : Colors.white)),
                               border: Border(
-                                left: BorderSide(color: color.withValues(alpha: 0.2), width: 1),
+                                left: BorderSide(
+                                  color: color.withValues(alpha: 0.2),
+                                  width: 1,
+                                ),
                               ),
                             ),
                             child: Text(
@@ -497,7 +570,13 @@ class _ContextCluesScreenState extends State<ContextCluesScreen> with TickerProv
                               style: GoogleFonts.shareTechMono(
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.bold,
-                                color: showCorrect ? Colors.green : (showWrong ? Colors.red : (isSelected ? color : Colors.black87)),
+                                color: showCorrect
+                                    ? Colors.green
+                                    : (showWrong
+                                          ? Colors.red
+                                          : (isSelected
+                                                ? color
+                                                : Colors.black87)),
                               ),
                             ),
                           ),
@@ -529,7 +608,7 @@ class PaperGridPainter extends CustomPainter {
     for (double i = 0; i < size.height; i += step) {
       canvas.drawLine(Offset(0, i), Offset(size.width, i), paint);
     }
-    
+
     // "CONFIDENTIAL" Stamp
     final textPainter = TextPainter(
       text: TextSpan(
@@ -546,7 +625,10 @@ class PaperGridPainter extends CustomPainter {
     canvas.save();
     canvas.translate(size.width / 2, size.height / 2);
     canvas.rotate(-math.pi / 6);
-    textPainter.paint(canvas, Offset(-textPainter.width / 2, -textPainter.height / 2));
+    textPainter.paint(
+      canvas,
+      Offset(-textPainter.width / 2, -textPainter.height / 2),
+    );
     canvas.restore();
   }
 
@@ -569,10 +651,34 @@ class ScannerCrosshairPainter extends CustomPainter {
 
     // Corner brackets
     const len = 20.0;
-    canvas.drawPath(Path()..moveTo(0, len)..lineTo(0, 0)..lineTo(len, 0), paint);
-    canvas.drawPath(Path()..moveTo(size.width - len, 0)..lineTo(size.width, 0)..lineTo(size.width, len), paint);
-    canvas.drawPath(Path()..moveTo(size.width, size.height - len)..lineTo(size.width, size.height)..lineTo(size.width - len, size.height), paint);
-    canvas.drawPath(Path()..moveTo(len, size.height)..lineTo(0, size.height)..lineTo(0, size.height - len), paint);
+    canvas.drawPath(
+      Path()
+        ..moveTo(0, len)
+        ..lineTo(0, 0)
+        ..lineTo(len, 0),
+      paint,
+    );
+    canvas.drawPath(
+      Path()
+        ..moveTo(size.width - len, 0)
+        ..lineTo(size.width, 0)
+        ..lineTo(size.width, len),
+      paint,
+    );
+    canvas.drawPath(
+      Path()
+        ..moveTo(size.width, size.height - len)
+        ..lineTo(size.width, size.height)
+        ..lineTo(size.width - len, size.height),
+      paint,
+    );
+    canvas.drawPath(
+      Path()
+        ..moveTo(len, size.height)
+        ..lineTo(0, size.height)
+        ..lineTo(0, size.height - len),
+      paint,
+    );
 
     // Center dot
     canvas.drawCircle(center, 2, paint..style = PaintingStyle.fill);
