@@ -105,18 +105,21 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
+          useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 16.h),
+              const Spacer(flex: 1),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 24.h),
+              const Spacer(flex: 2),
               _buildQuestionDisplay(quest.question ?? "", theme.primaryColor, isDark),
+              const Spacer(flex: 2),
               Expanded(
+                flex: 12,
                 child: _buildOrbitalSpinner(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, quest.textToSpeak ?? ""),
               ),
-              SizedBox(height: 24.h),
+              const Spacer(flex: 1),
             ],
           ),
         );
@@ -175,7 +178,7 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
               child: Container(
                 width: 100.r, height: 100.r,
                 decoration: BoxDecoration(shape: BoxShape.circle, color: color, boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 20)]),
-                child: Icon(Icons.play_arrow_rounded, color: Colors.white, size: 50.r),
+                child: Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 50.r),
               ),
             ),
             
