@@ -12,6 +12,7 @@ import 'package:vowl/features/listening/presentation/widgets/listening_base_layo
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class SoundImageMatchScreen extends StatefulWidget {
   final int level;
@@ -36,6 +37,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  int? _selectedIndex;
 
   @override
   void initState() {
@@ -58,12 +60,12 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
+      setState(() { _isAnswered = true; _isCorrect = true; _selectedIndex = index; });
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { _isAnswered = true; _isCorrect = false; });
+      setState(() { _isAnswered = true; _isCorrect = false; _selectedIndex = index; });
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
@@ -82,6 +84,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _selectedIndex = null;
               _lensPosition = const Offset(150, 150);
             });
           }
@@ -127,7 +130,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
         children: [
           Icon(Icons.biotech_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("SCAN ENCRYPTED DATA TO MATCH THE SOUND", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text("DRAG LENS TO SCAN • DOUBLE-TAP TO SELECT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
@@ -176,7 +179,11 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
                   border: Border.all(color: Colors.cyanAccent, width: 3),
                   boxShadow: [BoxShadow(color: Colors.cyanAccent.withValues(alpha: 0.3), blurRadius: 15, spreadRadius: 5)],
                 ),
-                child: Center(child: Icon(Icons.filter_center_focus_rounded, color: Colors.cyanAccent, size: 24.r)),
+                child: Center(
+                  child: Icon(Icons.filter_center_focus_rounded, color: Colors.cyanAccent, size: 24.r)
+                    .animate(onPlay: (c) => c.repeat(reverse: true))
+                    .scale(begin: const Offset(0.8, 0.8), end: const Offset(1.2, 1.2), duration: 800.ms),
+                ),
               ),
             ),
           ),
@@ -188,12 +195,15 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   Widget _buildEncryptedTile(int index, String text, int correct, Color color, bool isDark) {
     double dist = (Offset(_lensPosition.dx, _lensPosition.dy) - Offset((index % 2 == 0 ? 80.w : 240.w), (index < 2 ? 60.h : 200.h))).distance;
     bool isRevealed = dist < 60.r;
+    bool isSelected = _isAnswered && _selectedIndex == index;
+    bool showResult = isSelected;
+    Color tileColor = showResult ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent) : Colors.white.withValues(alpha: 0.05);
 
     return GestureDetector(
       onDoubleTap: () => _submitAnswer(index, correct),
       child: GlassTile(
         padding: EdgeInsets.all(16.r), borderRadius: BorderRadius.circular(20.r),
-        color: Colors.white.withValues(alpha: 0.05),
+        color: tileColor,
         child: Stack(
           alignment: Alignment.center,
           children: [
@@ -201,9 +211,9 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(_getCategoryIcon(text), color: color, size: 32.r),
+                  Icon(_getCategoryIcon(text), color: isSelected ? Colors.white : color, size: 32.r),
                   SizedBox(height: 8.h),
-                  Text(text.toUpperCase(), style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, color: color)),
+                  Text(text.toUpperCase(), style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, color: isSelected ? Colors.white : color)),
                 ],
               ),
             if (!isRevealed && !_isAnswered)
