@@ -93,20 +93,23 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
-          useScrolling: true,
+          useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 16.h),
+              const Spacer(flex: 1),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 40.h),
+              const Spacer(flex: 2),
               _buildAudioTuner(quest.textToSpeak ?? "", theme.primaryColor),
-              SizedBox(height: 40.h),
-              _buildSignalScreen(quest.statement ?? "", theme.primaryColor, isDark),
-              SizedBox(height: 48.h),
+              const Spacer(flex: 2),
+              Expanded(
+                flex: 8,
+                child: _buildSignalScreen(quest.statement ?? "", theme.primaryColor, isDark),
+              ),
+              const Spacer(flex: 2),
               _buildPolarizedFilters(quest.correctAnswer ?? "", theme.primaryColor),
-              SizedBox(height: 32.h),
+              const Spacer(flex: 1),
             ],
           ),
         );
@@ -138,9 +141,9 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
         _hapticService.selection();
       },
       child: Container(
-        width: 80.r, height: 80.r,
-        decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color, width: 2)),
-        child: Icon(Icons.record_voice_over_rounded, color: color, size: 32.r),
+        padding: EdgeInsets.all(20.r),
+        decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color.withValues(alpha: 0.3))),
+        child: Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
       ),
     );
   }
