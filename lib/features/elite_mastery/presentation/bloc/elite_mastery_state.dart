@@ -70,10 +70,15 @@ class EliteMasteryError extends EliteMasteryState {
 class EliteMasteryGameComplete extends EliteMasteryState {
   final int xpEarned;
   final int coinsEarned;
-  EliteMasteryGameComplete({required this.xpEarned, required this.coinsEarned});
+  final int questCount;
+  EliteMasteryGameComplete({
+    required this.xpEarned,
+    required this.coinsEarned,
+    required this.questCount,
+  });
 
   @override
-  List<Object?> get props => [xpEarned, coinsEarned];
+  List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
 class EliteMasteryGameOver extends EliteMasteryState {

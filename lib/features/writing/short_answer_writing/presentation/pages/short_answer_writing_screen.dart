@@ -88,7 +88,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
       listener: (context, state) {
         if (state is WritingLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;

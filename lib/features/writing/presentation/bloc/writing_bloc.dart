@@ -42,6 +42,8 @@ class RestartLevel extends WritingEvent {}
 
 class WritingHintUsed extends WritingEvent {}
 
+class RetryCurrentQuestion extends WritingEvent {}
+
 class RestoreLife extends WritingEvent {}
 
 // --- STATES ---
@@ -111,10 +113,15 @@ class WritingError extends WritingState {
 class WritingGameComplete extends WritingState {
   final int xpEarned;
   final int coinsEarned;
-  WritingGameComplete({required this.xpEarned, required this.coinsEarned});
+  final int questCount;
+  WritingGameComplete({
+    required this.xpEarned,
+    required this.coinsEarned,
+    required this.questCount,
+  });
 
   @override
-  List<Object?> get props => [xpEarned, coinsEarned];
+  List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
 class WritingGameOver extends WritingState {
@@ -154,6 +161,13 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
     required this.awardBadge,
   }) : super(WritingInitial()) {
     on<FetchWritingQuests>(_onFetchQuests);
+
+    on<RetryCurrentQuestion>((event, emit) {
+      if (state is WritingLoaded) {
+        final s = state as WritingLoaded;
+        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      }
+    });
 
     on<SubmitAnswer>((event, emit) async {
       final currentState = state;
@@ -225,14 +239,21 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
         }
       } else if (currentState.lastAnswerCorrect == true) {
         // We only complete the level if the LAST question in the queue was answered correctly
-        await soundService.playLevelComplete();
+        soundService.playLevelComplete();
         
         // Calculate rewards
         const int totalXp = 10;
         const int totalCoins = 10;
 
+        // 1. Immediate UI Feedback
+        emit(WritingGameComplete(
+          xpEarned: totalXp,
+          coinsEarned: totalCoins,
+          questCount: currentState.quests.length,
+        ));
+
+        // 2. Background Save
         if (currentGameType != null && currentLevel != null) {
-          // 1. Atomic Save: Await all updates to the user's progress and wallet
           await Future.wait([
             updateUserRewards(
               UpdateUserRewardsParams(
@@ -257,9 +278,6 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
             awardBadge('writing_master'),
           ]);
         }
-
-        // 2. Only show the success UI once the server has confirmed the data
-        emit(WritingGameComplete(xpEarned: totalXp, coinsEarned: totalCoins));
       } else {
         // Wrong answer on the very last quest
         emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));

@@ -83,7 +83,7 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
       listener: (context, state) {
         if (state is AccentLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;

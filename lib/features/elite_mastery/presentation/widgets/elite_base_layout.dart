@@ -22,6 +22,8 @@ import 'package:vowl/core/utils/game_instruction_service.dart';
 import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/game_error_widget.dart';
 
 class EliteBaseLayout extends StatefulWidget {
   final GameSubtype gameType;
@@ -110,7 +112,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
             Future.delayed(const Duration(milliseconds: 1200), () {
               if (mounted) {
                 _ttsService.speak(
-                  "Owww hint consume save your life",
+                  "Focus! Use a hint if you need help saving your last life.",
                 );
                 di.sl<HapticService>().warning();
               }
@@ -128,13 +130,24 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
             onQuit: () => Navigator.of(this.context).pop(),
           );
         },
-        child: Builder(
-          builder: (context) {
+        child: BlocBuilder<EliteMasteryBloc, EliteMasteryState>(
+          builder: (context, state) {
+            if (state is EliteMasteryError) {
+              return Scaffold(
+              resizeToAvoidBottomInset: false,
+                backgroundColor: theme.backgroundColors[1],
+                body: GameErrorWidget(
+                  message: state.message,
+                  onRetry: () => context.read<EliteMasteryBloc>().add(FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level)),
+                  onBack: () => Navigator.pop(context),
+                  primaryColor: theme.primaryColor,
+                ),
+              );
+            }
             final progress = (state is EliteMasteryLoaded)
                 ? (state.currentIndex + 1) / state.quests.length
                 : (state is EliteMasteryGameComplete ? 1.0 : 0.0);
-            final lives =
-                (state is EliteMasteryLoaded) ? state.livesRemaining : 3;
+            final lives = (state is EliteMasteryLoaded) ? state.livesRemaining : 3;
 
             return Scaffold(
               backgroundColor: theme.backgroundColors[1],
@@ -153,7 +166,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                     ),
 
                   if (state is EliteMasteryLoading)
-                    const GameShimmerLoading()
+                    GameShimmerLoading(primaryColor: theme.primaryColor)
                   else ...[
                   SafeArea(
                     child: Column(
@@ -184,7 +197,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                                       left: 24.w,
                                       right: 24.w,
                                       top: 20.h,
-                                      bottom: widget.isAnswered ? 200.h : 40.h,
+                                      bottom: (widget.isAnswered ? 200.h : 40.h) + MediaQuery.of(context).viewInsets.bottom,
                                     ),
                                     child: Center(
                                       child: ConstrainedBox(
@@ -276,14 +289,14 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                       );
                     },
                   ),
-              ],
-            ),
-          );
-        },
+                ],
+              ),
+            );
+          },
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   Widget _buildHeader(
     BuildContext context,
@@ -315,7 +328,29 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
               ),
             ),
           ),
-          if (quest != null && !widget.isAnswered)
+          if (quest != null && !widget.isAnswered) ...[
+            // MANUAL BRIEFING TRIGGER (Help Icon)
+            Padding(
+              padding: EdgeInsets.only(left: 8.w),
+              child: ScaleButton(
+                onTap: () => setState(() => _showBriefing = true),
+                child: Container(
+                  padding: EdgeInsets.all(6.r),
+                  decoration: BoxDecoration(
+                    color: theme.primaryColor.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: theme.primaryColor.withValues(alpha: 0.2),
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.info_outline_rounded,
+                    size: 16.r,
+                    color: theme.primaryColor,
+                  ),
+                ),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.only(left: 8.w),
               child:
@@ -341,18 +376,18 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                         end: const Offset(1.1, 1.1),
                       ),
             ),
+          ],
         ],
       ),
     );
   }
 
-  Widget _buildPeekingMascot(
-    EliteMasteryState state,
-    int lives,
-    bool isAnswered,
-    bool? isCorrect,
-  ) {
+  Widget _buildPeekingMascot(EliteMasteryState state, int lives, bool isAnswered, bool? isCorrect) {
     final mascotState = _getMascotState(state, lives, isAnswered, isCorrect);
+    final authState = context.read<AuthBloc>().state;
+    final mascotId = authState.user?.vowlMascot ?? 'vowl_prime';
+    final mascotName = mascotId.split('_').map((e) => e[0].toUpperCase() + e.substring(1)).join(' ');
+
     String message = "Focus on the goal!";
     if (isCorrect == true) {
       message = "Legendary insight! ✨";
@@ -362,42 +397,23 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
       message = "Almost there! 🔍";
     } else if (state is EliteMasteryGameComplete) {
       message = "Mastery Achieved! 🏆";
+    } else {
+      message = "$mascotName is watching! 🦉";
     }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.1),
-                    blurRadius: 10,
-                  ),
-                ],
-              ),
-              child: Text(
-                message,
-                style: GoogleFonts.outfit(
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFFF59E0B), // Amber-600 for better visibility
-                ),
-              ),
-            )
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .scale(
-              begin: const Offset(1, 1),
-              end: const Offset(1.05, 1.05),
-              duration: 2.seconds,
-            ),
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12.r), boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10)]),
+          child: Text(message, style: GoogleFonts.outfit(fontSize: 11.sp, fontWeight: FontWeight.bold, color: const Color(0xFFF59E0B))),
+        ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05), duration: 2.seconds),
         SizedBox(height: 0.h),
-        VowlMascot(state: mascotState, size: 45.r),
+        VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId).animate(onPlay: (c) => c.repeat(reverse: true))
+         .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut),
       ],
-    );
+    ).animate().fadeIn().slideX(begin: -0.1, end: 0);
   }
 
   Widget _buildModernFeedbackCard(
@@ -510,24 +526,15 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "CORRECT ANSWER:",
-                        style: GoogleFonts.outfit(
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w800,
-                          color: shadowColor,
-                          letterSpacing: 1,
-                        ),
+                      Row(
+                        children: [
+                          Icon(Icons.info_outline_rounded, color: shadowColor, size: 14.r),
+                          SizedBox(width: 8.w),
+                          Text("EXPLANATION:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
+                        ],
                       ),
                       SizedBox(height: 4.h),
-                      Text(
-                        correctAnswerText,
-                        style: GoogleFonts.fredoka(
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w600,
-                          color: isDark ? Colors.white : Colors.black87,
-                        ),
-                      ),
+                      Text(correctAnswerText, style: GoogleFonts.fredoka(fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
                     ],
                   ),
                 )

@@ -51,6 +51,8 @@ class RestartLevel extends RoleplayEvent {}
 
 class RoleplayHintUsed extends RoleplayEvent {}
 
+class RetryCurrentQuestion extends RoleplayEvent {}
+
 class RestoreLife extends RoleplayEvent {}
 
 class PreloadNextBatch extends RoleplayEvent {
@@ -159,11 +161,17 @@ class RoleplayError extends RoleplayState {
 class RoleplayGameComplete extends RoleplayState {
   final int xpEarned;
   final int coinsEarned;
+  final int questCount;
   final RoleplayLoaded lastState;
-  RoleplayGameComplete({required this.xpEarned, required this.coinsEarned, required this.lastState});
+  RoleplayGameComplete({
+    required this.xpEarned,
+    required this.coinsEarned,
+    required this.questCount,
+    required this.lastState,
+  });
 
   @override
-  List<Object?> get props => [xpEarned, coinsEarned, lastState];
+  List<Object?> get props => [xpEarned, coinsEarned, questCount, lastState];
 }
 
 class RoleplayGameOver extends RoleplayState {
@@ -228,6 +236,13 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           }
         },
       );
+    });
+
+    on<RetryCurrentQuestion>((event, emit) {
+      if (state is RoleplayLoaded) {
+        final s = state as RoleplayLoaded;
+        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      }
     });
 
     on<SelectDialogueChoice>((event, emit) async {
@@ -341,7 +356,12 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
         const int totalXp = 10;
         const int totalCoins = 10;
 
-        emit(RoleplayGameComplete(xpEarned: totalXp, coinsEarned: totalCoins, lastState: currentState));
+        emit(RoleplayGameComplete(
+          xpEarned: totalXp,
+          coinsEarned: totalCoins,
+          questCount: currentState.quests.length,
+          lastState: currentState,
+        ));
 
         if (currentGameType != null && currentLevel != null) {
           await updateUserRewards(UpdateUserRewardsParams(gameType: currentGameType!, level: currentLevel!, xpIncrease: totalXp, coinIncrease: totalCoins));

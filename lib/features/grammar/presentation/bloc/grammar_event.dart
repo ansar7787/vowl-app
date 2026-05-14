@@ -25,6 +25,8 @@ class SubmitAnswer extends GrammarEvent {
 
 class NextQuestion extends GrammarEvent {}
 
+class RetryCurrentQuestion extends GrammarEvent {}
+
 class RestartLevel extends GrammarEvent {}
 
 class GrammarHintUsed extends GrammarEvent {}

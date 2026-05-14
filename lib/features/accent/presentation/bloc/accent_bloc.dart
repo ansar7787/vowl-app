@@ -45,6 +45,8 @@ class RestartLevel extends AccentEvent {}
 
 class AccentHintUsed extends AccentEvent {}
 
+class RetryCurrentQuestion extends AccentEvent {}
+
 class RestoreLife extends AccentEvent {}
 
 class PreloadBatch extends AccentEvent {
@@ -133,11 +135,17 @@ class AccentError extends AccentState {
 class AccentGameComplete extends AccentState {
   final int xpEarned;
   final int coinsEarned;
+  final int questCount;
   final AccentLoaded lastState;
-  AccentGameComplete({required this.xpEarned, required this.coinsEarned, required this.lastState});
+  AccentGameComplete({
+    required this.xpEarned,
+    required this.coinsEarned,
+    required this.questCount,
+    required this.lastState,
+  });
 
   @override
-  List<Object?> get props => [xpEarned, coinsEarned, lastState];
+  List<Object?> get props => [xpEarned, coinsEarned, questCount, lastState];
 }
 
 class AccentGameOver extends AccentState {
@@ -215,6 +223,13 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
       );
     });
 
+    on<RetryCurrentQuestion>((event, emit) {
+      if (state is AccentLoaded) {
+        final s = state as AccentLoaded;
+        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      }
+    });
+
     on<SubmitAnswer>((event, emit) async {
       final currentState = state;
       if (currentState is! AccentLoaded || currentState.livesRemaining <= 0) return;
@@ -290,7 +305,12 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
         const int totalXp = 10;
         const int totalCoins = 10;
 
-        emit(AccentGameComplete(xpEarned: totalXp, coinsEarned: totalCoins, lastState: currentState));
+        emit(AccentGameComplete(
+          xpEarned: totalXp,
+          coinsEarned: totalCoins,
+          questCount: currentState.quests.length,
+          lastState: currentState,
+        ));
 
         if (currentGameType != null && currentLevel != null) {
           await updateUserRewards(

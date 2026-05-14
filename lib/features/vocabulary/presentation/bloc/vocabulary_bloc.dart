@@ -283,7 +283,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
       }
       if (s.currentIndex >= s.quests.length - 1) {
         if (s.lastAnswerCorrect == true) {
-          await soundService.playLevelComplete();
+          soundService.playLevelComplete();
           
           // REWARD LOGIC: Fixed 10 XP and 10 Coins base as per Global App Logic
           const int totalXp = 10; 

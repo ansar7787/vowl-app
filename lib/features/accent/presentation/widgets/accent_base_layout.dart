@@ -21,6 +21,8 @@ import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/game_error_widget.dart';
 
 class AccentBaseLayout extends StatefulWidget {
   final GameSubtype gameType;
@@ -34,6 +36,8 @@ class AccentBaseLayout extends StatefulWidget {
   final bool showConfetti;
   final String title;
   final String subtitle;
+  final bool useScrolling;
+  final bool disablePadding;
 
   const AccentBaseLayout({
     super.key,
@@ -48,6 +52,8 @@ class AccentBaseLayout extends StatefulWidget {
     this.showConfetti = false,
     this.title = "ACCENT TRAINING",
     this.subtitle = "Master the Sound",
+    this.useScrolling = true,
+    this.disablePadding = false,
   });
 
   @override
@@ -97,7 +103,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
             Future.delayed(const Duration(milliseconds: 1200), () {
               if (mounted) {
                 _ttsService.speak(
-                  "Owww hint consume save your life",
+                  "Focus! Use a hint if you need help saving your last life.",
                 );
                 di.sl<HapticService>().warning();
               }
@@ -109,6 +115,18 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
       child: BlocBuilder<AccentBloc, AccentState>(
         builder: (context, state) {
           final isComplete = state is AccentGameComplete;
+          if (state is AccentError) {
+            return Scaffold(
+            resizeToAvoidBottomInset: false,
+              backgroundColor: theme.backgroundColors[1],
+              body: GameErrorWidget(
+                message: state.message,
+                onRetry: () => context.read<AccentBloc>().add(FetchAccentQuests(gameType: widget.gameType, level: widget.level)),
+                onBack: () => Navigator.pop(context),
+                primaryColor: theme.primaryColor,
+              ),
+            );
+          }
           return PopScope(
             canPop: isComplete,
             onPopInvokedWithResult: (didPop, result) {
@@ -127,13 +145,14 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
                 final currentQuest = (state is AccentLoaded) ? state.currentQuest : null;
 
                 return Scaffold(
+            resizeToAvoidBottomInset: false,
             backgroundColor: theme.backgroundColors[1],
             body: Stack(
               children: [
                 Container(color: theme.backgroundColors[1]), // Prevent white splash
                 MeshGradientBackground(colors: theme.backgroundColors),
                 HarmonicWaves(color: theme.primaryColor.withValues(alpha: 0.3), height: 150.h),
-                if (state is AccentLoading) const GameShimmerLoading()
+                if (state is AccentLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
                 else ...[
                   SafeArea(
                     child: Column(
@@ -150,15 +169,20 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
                                 opacity: widget.isAnswered ? 0.6 : 1.0,
                                 child: AbsorbPointer(
                                   absorbing: widget.isAnswered,
-                                  child: LayoutBuilder(
-                                    builder: (context, constraints) {
-                                      return SingleChildScrollView(
-                                        physics: const BouncingScrollPhysics(),
-                                        child: ConstrainedBox(
-                                          constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                                          child: IntrinsicHeight(
+                                child: widget.useScrolling
+                                  ? LayoutBuilder(
+                                      builder: (context, constraints) {
+                                        return SingleChildScrollView(
+                                          physics: const BouncingScrollPhysics(),
+                                          child: ConstrainedBox(
+                                            constraints: BoxConstraints(minHeight: constraints.maxHeight),
                                             child: Padding(
-                                              padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 20.h, bottom: widget.isAnswered ? 200.h : 40.h),
+                                              padding: EdgeInsets.only(
+                                                left: widget.disablePadding ? 0 : 24.w,
+                                                right: widget.disablePadding ? 0 : 24.w,
+                                                top: widget.disablePadding ? 0 : 20.h,
+                                                bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
+                                              ),
                                               child: Column(
                                                 children: [
                                                   Text(widget.title, style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, letterSpacing: 4, color: theme.primaryColor)).animate().fadeIn(),
@@ -170,10 +194,26 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      );
-                                    },
-                                  ),
+                                        );
+                                      },
+                                    )
+                                  : Padding(
+                                      padding: EdgeInsets.only(
+                                        left: widget.disablePadding ? 0 : 24.w,
+                                        right: widget.disablePadding ? 0 : 24.w,
+                                        top: widget.disablePadding ? 0 : 20.h,
+                                        bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Text(widget.title, style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, letterSpacing: 4, color: theme.primaryColor)).animate().fadeIn(),
+                                          SizedBox(height: 8.h),
+                                          Text(widget.subtitle, textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 24.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : const Color(0xFF0F172A))).animate().fadeIn().slideY(begin: 0.1),
+                                          SizedBox(height: 32.h),
+                                          widget.child,
+                                        ],
+                                      ),
+                                    ),
                                 ),
                               ),
                               if (state is! AccentLoading)
@@ -236,7 +276,29 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
               onBack: () => GameDialogHelper.showExitConfirmation(this.context, onQuit: () => Navigator.pop(this.context)),
             ),
           ),
-          if (quest != null && !widget.isAnswered)
+          if (quest != null && !widget.isAnswered) ...[
+            // MANUAL BRIEFING TRIGGER (Help Icon)
+            Padding(
+              padding: EdgeInsets.only(left: 8.w),
+              child: ScaleButton(
+                onTap: () => setState(() => _showBriefing = true),
+                child: Container(
+                  padding: EdgeInsets.all(6.r),
+                  decoration: BoxDecoration(
+                    color: theme.primaryColor.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: theme.primaryColor.withValues(alpha: 0.2),
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.info_outline_rounded,
+                    size: 16.r,
+                    color: theme.primaryColor,
+                  ),
+                ),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.only(left: 8.w),
               child: QuestHintButton(
@@ -252,6 +314,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
                .shimmer(color: Colors.white.withValues(alpha: 0.5), duration: 1.seconds)
                .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
             ),
+          ],
         ],
       ),
     );
@@ -259,6 +322,10 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
 
   Widget _buildPeekingMascot(AccentState state, int lives) {
     final mascotState = _getMascotState(state, lives);
+    final authState = context.read<AuthBloc>().state;
+    final mascotId = authState.user?.vowlMascot ?? 'vowl_prime';
+    final mascotName = mascotId.split('_').map((e) => e[0].toUpperCase() + e.substring(1)).join(' ');
+
     String message = "Listen carefully! 🎙️";
     if (widget.isCorrect == true) {
       message = "Perfect Accent! ✨";
@@ -268,6 +335,8 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
       message = "Try once more! 🎤";
     } else if (state is AccentGameComplete) {
       message = "Pronunciation Pro! 🏆";
+    } else {
+      message = "$mascotName is watching! 🦉";
     }
 
     return Column(
@@ -282,7 +351,7 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
           child: Text(message, style: GoogleFonts.outfit(fontSize: 11.sp, fontWeight: FontWeight.bold, color: Colors.orangeAccent)),
         ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05), duration: 2.seconds),
         SizedBox(height: 0.h),
-        VowlMascot(state: mascotState, size: 45.r).animate(onPlay: (c) => c.repeat(reverse: true))
+        VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId).animate(onPlay: (c) => c.repeat(reverse: true))
          .moveY(begin: 0, end: 5, duration: 1500.ms, curve: Curves.easeInOut),
       ],
     ).animate().fadeIn().slideX(begin: 0.1, end: 0);
@@ -336,9 +405,15 @@ class _AccentBaseLayoutState extends State<AccentBaseLayout> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("CORRECT ANSWER:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
+                  Row(
+                    children: [
+                      Icon(Icons.info_outline_rounded, color: shadowColor, size: 14.r),
+                      SizedBox(width: 8.w),
+                      Text("EXPLANATION:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
+                    ],
+                  ),
                   SizedBox(height: 4.h),
-                  Text(explanation, style: GoogleFonts.fredoka(fontSize: 20.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
+                  Text(explanation, style: GoogleFonts.fredoka(fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
                 ],
               ),
             ).animate().fadeIn(delay: 300.ms).scale(duration: 400.ms, curve: Curves.easeOutBack),

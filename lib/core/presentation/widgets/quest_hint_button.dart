@@ -1,3 +1,5 @@
+import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,6 +39,9 @@ class QuestHintButton extends StatelessWidget {
               soundService.playHint();
               onTap();
               if (hintText != null) {
+                // Speak the hint text
+                di.sl<TtsService>().speak(hintText!);
+                
                 ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(

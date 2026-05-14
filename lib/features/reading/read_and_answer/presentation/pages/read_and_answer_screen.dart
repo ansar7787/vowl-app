@@ -84,7 +84,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
       listener: (context, state) {
         if (state is ReadingLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -108,6 +108,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         return ReadingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
+          useScrolling: false,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null ? const SizedBox() : Stack(

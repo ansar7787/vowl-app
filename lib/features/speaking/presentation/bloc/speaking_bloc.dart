@@ -43,6 +43,8 @@ class RestartLevel extends SpeakingEvent {}
 
 class SpeakingHintUsed extends SpeakingEvent {}
 
+class RetryCurrentQuestion extends SpeakingEvent {}
+
 class RestoreLife extends SpeakingEvent {}
 
 class AddHint extends SpeakingEvent {
@@ -122,10 +124,15 @@ class SpeakingError extends SpeakingState {
 class SpeakingGameComplete extends SpeakingState {
   final int xpEarned;
   final int coinsEarned;
-  SpeakingGameComplete({required this.xpEarned, required this.coinsEarned});
+  final int questCount;
+  SpeakingGameComplete({
+    required this.xpEarned,
+    required this.coinsEarned,
+    required this.questCount,
+  });
 
   @override
-  List<Object?> get props => [xpEarned, coinsEarned];
+  List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
 class SpeakingGameOver extends SpeakingState {
@@ -212,6 +219,13 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       emit(SpeakingInitial());
     });
 
+    on<RetryCurrentQuestion>((event, emit) {
+      if (state is SpeakingLoaded) {
+        final s = state as SpeakingLoaded;
+        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      }
+    });
+
     on<SpeakingHintUsed>(_onUseHint);
     on<RestoreLife>(_onRestoreLife);
     on<AddHint>(_onAddHint);
@@ -286,14 +300,21 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
         }
       } else if (currentState.lastAnswerCorrect == true) {
         // We only complete the level if the LAST question in the queue was answered correctly
-        await soundService.playLevelComplete();
+        soundService.playLevelComplete();
         
         // Calculate rewards
         const int totalXp = 10;
         const int totalCoins = 10;
 
+        // 1. Immediate UI Feedback
+        emit(SpeakingGameComplete(
+          xpEarned: totalXp,
+          coinsEarned: totalCoins,
+          questCount: currentState.quests.length,
+        ));
+
+        // 2. Background Save
         if (currentGameType != null && currentLevel != null) {
-          // 1. Atomic Save: Wait for all background updates to finish
           await Future.wait([
             updateUserRewards(
               UpdateUserRewardsParams(
@@ -318,9 +339,6 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
             awardBadge('speaking_master'),
           ]);
         }
-
-        // 2. Transition UI only after data is safe
-        emit(SpeakingGameComplete(xpEarned: totalXp, coinsEarned: totalCoins));
       } else {
         // Wrong answer on the very last quest
         emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));

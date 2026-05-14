@@ -75,7 +75,7 @@ class _PrepositionChoiceScreenState extends State<PrepositionChoiceScreen> {
       listener: (context, state) {
         if (state is GrammarLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;

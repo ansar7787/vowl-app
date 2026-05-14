@@ -78,7 +78,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -142,7 +142,18 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
         children: [
           Icon(Icons.water_drop_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("SMEAR THE INK TO REVEAL TRANSCRIPTION", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Flexible(
+            child: Text(
+              "SMEAR THE INK TO REVEAL TRANSCRIPTION",
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.2,
+              ),
+              overflow: TextOverflow.visible,
+            ),
+          ),
         ],
       ),
     );

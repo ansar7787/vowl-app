@@ -16,6 +16,7 @@ class KidsGameHeader extends StatelessWidget {
   final Color primaryColor;
   final String? hintText;
   final KidsState state;
+  final VoidCallback? onInfoTap;
 
   const KidsGameHeader({
     super.key,
@@ -24,6 +25,7 @@ class KidsGameHeader extends StatelessWidget {
     required this.primaryColor,
     required this.state,
     this.hintText,
+    this.onInfoTap,
   });
 
   @override
@@ -126,6 +128,27 @@ class KidsGameHeader extends StatelessWidget {
                   ),
                 ),
                 _buildLives(),
+                if (onInfoTap != null) ...[
+                  SizedBox(width: 8.w),
+                  ScaleButton(
+                    onTap: onInfoTap!,
+                    child: Container(
+                      padding: EdgeInsets.all(6.r),
+                      decoration: BoxDecoration(
+                        color: primaryColor.withValues(alpha: 0.1),
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: primaryColor.withValues(alpha: 0.2),
+                        ),
+                      ),
+                      child: Icon(
+                        Icons.info_outline_rounded,
+                        size: 16.r,
+                        color: primaryColor,
+                      ),
+                    ),
+                  ),
+                ],
                 SizedBox(width: 8.w),
               ],
             ),

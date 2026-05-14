@@ -67,10 +67,15 @@ class GrammarError extends GrammarState {
 class GrammarGameComplete extends GrammarState {
   final int xpEarned;
   final int coinsEarned;
-  GrammarGameComplete({required this.xpEarned, required this.coinsEarned});
+  final int questCount;
+  GrammarGameComplete({
+    required this.xpEarned,
+    required this.coinsEarned,
+    required this.questCount,
+  });
 
   @override
-  List<Object?> get props => [xpEarned, coinsEarned];
+  List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
 class GrammarGameOver extends GrammarState {

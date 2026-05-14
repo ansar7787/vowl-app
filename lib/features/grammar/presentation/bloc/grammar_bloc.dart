@@ -50,6 +50,7 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     on<FetchGrammarQuests>(_onFetchGrammarQuests);
     on<SubmitAnswer>(_onSubmitAnswer);
     on<NextQuestion>(_onNextQuestion);
+    on<RetryCurrentQuestion>(_onRetryQuestion);
     on<GrammarHintUsed>(_onHintUsed);
     on<RestoreLife>(_onRestoreLife);
     on<RestartLevel>(_onRestartLevel);
@@ -176,14 +177,18 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
       }
     } else if (currentState.lastAnswerCorrect == true) {
       // We only complete the level if the LAST question in the queue was answered correctly
-      await soundService.playLevelComplete();
+      soundService.playLevelComplete();
 
       const totalXp = 10;
       const totalCoins = 10;
 
-      emit(GrammarGameComplete(xpEarned: totalXp, coinsEarned: totalCoins));
+      emit(GrammarGameComplete(
+        xpEarned: totalXp,
+        coinsEarned: totalCoins,
+        questCount: currentState.quests.length,
+      ));
 
-      // Persistence
+      // Standardized Persistence Logic (Atomic)
       if (currentGameType != null && currentLevel != null) {
         await updateUserRewards(
           UpdateUserRewardsParams(
@@ -210,6 +215,16 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     } else {
       // Wrong answer on the very last quest
       emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
+    }
+  }
+
+  void _onRetryQuestion(
+    RetryCurrentQuestion event,
+    Emitter<GrammarState> emit,
+  ) {
+    if (state is GrammarLoaded) {
+      final s = state as GrammarLoaded;
+      emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
     }
   }
 

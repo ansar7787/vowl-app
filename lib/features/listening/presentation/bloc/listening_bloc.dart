@@ -43,6 +43,8 @@ class RestartLevel extends ListeningEvent {}
 
 class ListeningHintUsed extends ListeningEvent {}
 
+class RetryCurrentQuestion extends ListeningEvent {}
+
 class RestoreLife extends ListeningEvent {}
 
 // --- STATES ---
@@ -112,10 +114,15 @@ class ListeningError extends ListeningState {
 class ListeningGameComplete extends ListeningState {
   final int xpEarned;
   final int coinsEarned;
-  ListeningGameComplete({required this.xpEarned, required this.coinsEarned});
+  final int questCount;
+  ListeningGameComplete({
+    required this.xpEarned,
+    required this.coinsEarned,
+    required this.questCount,
+  });
 
   @override
-  List<Object?> get props => [xpEarned, coinsEarned];
+  List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
 class ListeningGameOver extends ListeningState {
@@ -155,6 +162,13 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     required this.useHint,
     required this.networkInfo,
   }) : super(ListeningInitial()) {
+    on<RetryCurrentQuestion>((event, emit) {
+      if (state is ListeningLoaded) {
+        final s = state as ListeningLoaded;
+        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      }
+    });
+
     on<FetchListeningQuests>((event, emit) async {
       currentGameType = event.gameType is GameSubtype
           ? (event.gameType as GameSubtype).name
@@ -256,13 +270,20 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
           emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
         }
       } else if (currentState.lastAnswerCorrect == true) {
-        await soundService.playLevelComplete();
+        soundService.playLevelComplete();
         // REWARDS: Standardized to match Vocabulary (5 XP, 10 Coins)
         const int totalXp = 10;
         const int totalCoins = 10;
 
+        // 1. Emit completion immediately for UI responsiveness
+        emit(ListeningGameComplete(
+          xpEarned: totalXp,
+          coinsEarned: totalCoins,
+          questCount: currentState.quests.length,
+        ));
+
+        // 2. Background Save: Update data without blocking the UI celebration
         if (currentGameType != null && currentLevel != null) {
-          // 1. Atomic Save: Wait for all background updates to finish
           await Future.wait([
             updateUserRewards(UpdateUserRewardsParams(
               gameType: currentGameType!,
@@ -281,9 +302,6 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
             awardBadge('listening_master'),
           ]);
         }
-
-        // 2. Only emit completion after data is safe on the server
-        emit(ListeningGameComplete(xpEarned: totalXp, coinsEarned: totalCoins));
       } else {
         // Wrong answer on the very last quest
         emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));

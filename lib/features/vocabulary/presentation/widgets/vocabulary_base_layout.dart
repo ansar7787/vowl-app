@@ -102,7 +102,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
             // Delay to allow the "Wrong" sound effect to finish
             Future.delayed(const Duration(milliseconds: 1200), () {
               if (!context.mounted) return;
-              _ttsService.speak("Oh no! Use a hint to save your life!");
+              _ttsService.speak("Focus! Use a hint if you need help saving your last life.");
               di.sl<HapticService>().warning();
             });
           }
@@ -135,6 +135,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                     : null;
 
                 return Scaffold(
+                  resizeToAvoidBottomInset: false, // Keep background static
                   backgroundColor: theme.backgroundColors[1],
                   body: Stack(
                     children: [
@@ -218,13 +219,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                                                                 .disablePadding
                                                             ? 0
                                                             : 40.h,
-                                                        bottom:
-                                                            widget
-                                                                .disablePadding
-                                                            ? 0
-                                                            : (widget.isAnswered
-                                                                  ? 200.h
-                                                                  : 40.h),
+                                                        bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
                                                       ),
                                                       child: widget.child,
                                                     ),
@@ -243,11 +238,11 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                                                 top: widget.disablePadding
                                                     ? 0
                                                     : 40.h,
-                                                bottom: widget.disablePadding
+                                                bottom: (widget.disablePadding
                                                     ? 0
                                                     : (widget.isAnswered
                                                           ? 200.h
-                                                          : 40.h),
+                                                          : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
                                               ),
                                               child: widget.child,
                                             ),
@@ -415,17 +410,17 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
         .map((e) => e[0].toUpperCase() + e.substring(1))
         .join(' ');
 
-    String message = "Look closely!";
+    String message = "Unlock the meaning! 🗝️";
     if (widget.isCorrect == true) {
-      message = "Brilliant! ✨";
+      message = "Lexical Master! ✨";
     } else if (lives < 3 && !widget.isAnswered) {
-      message = "Help! Use a hint! 💡";
+      message = "Hint for help! 💡";
     } else if (widget.isCorrect == false) {
-      message = "Try again! 💡";
+      message = "Check the definition! 📖";
     } else if (state is VocabularyGameComplete) {
-      message = "Mastered! 🏆";
+      message = "Vocabulary King! 🏆";
     } else {
-      message = "$mascotName is watching! 🦉";
+      message = "$mascotName is learning! 🦉";
     }
 
     return Column(

@@ -24,6 +24,8 @@ class SubmitEliteAnswer extends EliteMasteryEvent {
 
 class NextEliteQuestion extends EliteMasteryEvent {}
 
+class RetryEliteQuestion extends EliteMasteryEvent {}
+
 class RestoreEliteLife extends EliteMasteryEvent {}
 
 class ShowEliteHint extends EliteMasteryEvent {}

@@ -87,7 +87,7 @@ class _DialogueRoleplayScreenState extends State<DialogueRoleplayScreen> {
       listener: (context, state) {
         if (state is SpeakingLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;

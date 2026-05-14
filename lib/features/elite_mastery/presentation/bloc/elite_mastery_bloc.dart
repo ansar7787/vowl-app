@@ -35,6 +35,13 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     required this.soundService,
     required this.hapticService,
   }) : super(EliteMasteryInitial()) {
+    on<RetryEliteQuestion>((event, emit) {
+      if (state is EliteMasteryLoaded) {
+        final s = state as EliteMasteryLoaded;
+        emit(s.copyWith(resetLastAnswer: true, isHintUsed: false));
+      }
+    });
+
     on<FetchEliteMasteryQuests>((event, emit) async {
       currentGameType = event.gameType;
       currentLevel = event.level;
@@ -130,7 +137,11 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
           const int finalXp = 10;
           const int finalCoins = 10;
 
-          emit(EliteMasteryGameComplete(xpEarned: finalXp, coinsEarned: finalCoins));
+          emit(EliteMasteryGameComplete(
+            xpEarned: finalXp,
+            coinsEarned: finalCoins,
+            questCount: currentState.quests.length,
+          ));
 
           if (currentGameType != null && currentLevel != null) {
             await updateUserRewards(UpdateUserRewardsParams(

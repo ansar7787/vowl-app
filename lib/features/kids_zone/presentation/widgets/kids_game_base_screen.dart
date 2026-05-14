@@ -15,6 +15,8 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_header.da
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_dialogs.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/animated_kids_asset.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
+import 'package:vowl/core/utils/game_instruction_service.dart';
 
 class KidsGameBaseScreen extends StatefulWidget {
   final String title;
@@ -46,6 +48,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
   String? _hintText;
   bool _completionDialogShown = false;
   bool _hasSpokenNudge = false;
+  bool _showBriefing = false;
   int _lastLives = 3;
 
   @override
@@ -53,7 +56,10 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) {
-        setState(() => _completionDialogShown = false);
+        setState(() {
+          _completionDialogShown = false;
+          _showBriefing = widget.level == 1;
+        });
         context.read<KidsBloc>().add(FetchKidsQuests(widget.gameType, widget.level));
       }
     });
@@ -131,7 +137,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 final tts = di.sl<KidsTTSService>();
                 if (await tts.isNarrationEnabled()) {
                   await tts.speak(
-                    "Owww hint consume save your life",
+                    "Focus! Use a hint if you need help saving your last life.",
                   );
                 }
                 di.sl<HapticService>().warning();
@@ -161,11 +167,35 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                 SafeArea(
                   child: Column(
                     children: [
-                      KidsGameHeader(title: widget.title, level: widget.level, primaryColor: widget.primaryColor, state: state, hintText: _hintText),
+                      KidsGameHeader(
+                        title: widget.title,
+                        level: widget.level,
+                        primaryColor: widget.primaryColor,
+                        state: state,
+                        hintText: _hintText,
+                        onInfoTap: () => setState(() => _showBriefing = true),
+                      ),
                       Expanded(child: _buildBody(context, state)),
                     ],
                   ),
                 ),
+                if (_showBriefing)
+                  Builder(
+                    builder: (context) {
+                      // Get briefing using the gameType (category) as the fallback title
+                      final briefing = GameInstructionService.getBriefing(null, widget.gameType, level: widget.level);
+                      return QuestBriefingOverlay(
+                        title: briefing.title,
+                        objective: briefing.objective,
+                        rules: briefing.rules,
+                        actionText: briefing.actionText,
+                        tip: briefing.tip,
+                        icon: briefing.icon,
+                        primaryColor: widget.primaryColor,
+                        onStart: () => setState(() => _showBriefing = false),
+                      );
+                    },
+                  ),
               ],
             ),
           ),
@@ -221,15 +251,80 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
     }
     if (state is KidsError) {
       return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const AnimatedKidsAsset(emoji: '\u{1F388}', size: 150, animation: KidsAssetAnimation.hover),
-            SizedBox(height: 20.h),
-            Text("NICE TRY!", style: GoogleFonts.poppins(fontSize: 24.sp, fontWeight: FontWeight.w900, color: widget.primaryColor)),
-            SizedBox(height: 10.h),
-            Text("This level is taking a nap. \nCheck back soon! \u{1F388}", textAlign: TextAlign.center, style: GoogleFonts.poppins(fontSize: 16.sp, fontWeight: FontWeight.w600, color: Colors.blueGrey)),
-          ],
+        child: Padding(
+          padding: EdgeInsets.all(32.r),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.all(24.r),
+                decoration: BoxDecoration(
+                  color: widget.primaryColor.withValues(alpha: 0.1),
+                  shape: BoxShape.circle,
+                ),
+                child: const AnimatedKidsAsset(
+                  emoji: '\u{1F388}',
+                  size: 120,
+                  animation: KidsAssetAnimation.hover,
+                ),
+              ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+              SizedBox(height: 32.h),
+              Text(
+                "NICE TRY!",
+                style: GoogleFonts.outfit(
+                  fontSize: 28.sp,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  letterSpacing: 1,
+                ),
+              ).animate().fadeIn().slideY(begin: 0.2),
+              SizedBox(height: 12.h),
+              Text(
+                "This level is taking a nap.\nCheck back soon! \u{1F388}",
+                textAlign: TextAlign.center,
+                style: GoogleFonts.outfit(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white.withValues(alpha: 0.7),
+                  height: 1.5,
+                ),
+              ).animate().fadeIn(delay: 200.ms),
+              SizedBox(height: 48.h),
+              ScaleButton(
+                onTap: () => context.read<KidsBloc>().add(FetchKidsQuests(widget.gameType, widget.level)),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 16.h),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.1),
+                        blurRadius: 20,
+                        offset: const Offset(0, 10),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.refresh_rounded, color: widget.primaryColor, size: 24.r),
+                      SizedBox(width: 12.w),
+                      Text(
+                        "TRY AGAIN",
+                        style: GoogleFonts.outfit(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w900,
+                          color: widget.primaryColor,
+                          letterSpacing: 1,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ).animate().fadeIn(delay: 400.ms).scale(begin: const Offset(0.8, 0.8)),
+            ],
+          ),
         ),
       );
     }

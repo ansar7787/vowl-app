@@ -1,307 +1,247 @@
 {
-    "gameType":  "voiceSwap",
-    "batchIndex":  11,
-    "levels":  "101-110",
-    "quests":  [
-                   {
-                       "id":  "GRM_VOICESWAP_L101_Q1",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The commander built the system quickly.",
-                       "correctAnswer":  "The system was built by the commander quickly."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L101_Q2",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The droid analyzed the module silently.",
-                       "correctAnswer":  "The module was analyzed by the droid silently."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L101_Q3",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The analyst created the archive efficiently.",
-                       "correctAnswer":  "The archive was created by the analyst efficiently."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L102_Q1",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The engineer protected the data carefully.",
-                       "correctAnswer":  "The data was protected by the engineer carefully."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L102_Q2",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The technician sent the circuit immediately.",
-                       "correctAnswer":  "The circuit was sent by the technician immediately."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L102_Q3",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The explorer received the portal successfully.",
-                       "correctAnswer":  "The portal was received by the explorer successfully."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L103_Q1",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The pilot observed the reactor quickly.",
-                       "correctAnswer":  "The reactor was observed by the pilot quickly."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L103_Q2",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The scientist repaired the signal silently.",
-                       "correctAnswer":  "The signal was repaired by the scientist silently."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L103_Q3",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The commander activated the system efficiently.",
-                       "correctAnswer":  "The system was activated by the commander efficiently."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L104_Q1",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The droid monitored the module carefully.",
-                       "correctAnswer":  "The module was monitored by the droid carefully."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L104_Q2",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The analyst built the archive immediately.",
-                       "correctAnswer":  "The archive was built by the analyst immediately."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L104_Q3",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The engineer analyzed the data successfully.",
-                       "correctAnswer":  "The data was analyzed by the engineer successfully."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L105_Q1",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The technician created the circuit quickly.",
-                       "correctAnswer":  "The circuit was created by the technician quickly."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L105_Q2",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The explorer protected the portal silently.",
-                       "correctAnswer":  "The portal was protected by the explorer silently."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L105_Q3",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The pilot sent the reactor efficiently.",
-                       "correctAnswer":  "The reactor was sent by the pilot efficiently."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L106_Q1",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The scientist received the signal carefully.",
-                       "correctAnswer":  "The signal was received by the scientist carefully."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L106_Q2",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The commander observed the system immediately.",
-                       "correctAnswer":  "The system was observed by the commander immediately."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L106_Q3",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The droid repaired the module successfully.",
-                       "correctAnswer":  "The module was repaired by the droid successfully."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L107_Q1",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The analyst activated the archive quickly.",
-                       "correctAnswer":  "The archive was activated by the analyst quickly."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L107_Q2",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The engineer monitored the data silently.",
-                       "correctAnswer":  "The data was monitored by the engineer silently."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L107_Q3",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The technician built the circuit efficiently.",
-                       "correctAnswer":  "The circuit was built by the technician efficiently."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L108_Q1",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The explorer analyzed the portal carefully.",
-                       "correctAnswer":  "The portal was analyzed by the explorer carefully."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L108_Q2",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The pilot created the reactor immediately.",
-                       "correctAnswer":  "The reactor was created by the pilot immediately."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L108_Q3",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The scientist protected the signal successfully.",
-                       "correctAnswer":  "The signal was protected by the scientist successfully."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L109_Q1",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The commander sent the system quickly.",
-                       "correctAnswer":  "The system was sent by the commander quickly."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L109_Q2",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The droid received the module silently.",
-                       "correctAnswer":  "The module was received by the droid silently."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L109_Q3",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The analyst observed the archive efficiently.",
-                       "correctAnswer":  "The archive was observed by the analyst efficiently."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L110_Q1",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The engineer repaired the data carefully.",
-                       "correctAnswer":  "The data was repaired by the engineer carefully."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L110_Q2",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The technician activated the circuit immediately.",
-                       "correctAnswer":  "The circuit was activated by the technician immediately."
-                   },
-                   {
-                       "id":  "GRM_VOICESWAP_L110_Q3",
-                       "interactionType":  "Voice Toggle",
-                       "xp":  10,
-                       "coins":  10,
-                       "hint":  "Focus on who or what receives the action.",
-                       "explanation":  "In passive voice, the object of the active sentence becomes the subject.",
-                       "sentence":  "The explorer monitored the portal successfully.",
-                       "correctAnswer":  "The portal was monitored by the explorer successfully."
-                   }
-               ]
+    "gameType": "voiceSwap",
+    "batchIndex": 11,
+    "levels": "101-110",
+    "quests": [
+        {
+            "id": "GRM_VOICESWAP_L101_Q1",
+            "interactionType": "Voice Toggle",
+            "hint": "Look at who receives the action to switch voices.",
+            "explanation": "Practicing verb forms strengthens flexibility.",
+            "sentence": "The commander built the system quickly.",
+            "correctAnswer": "The system was built by the commander quickly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L101_Q2",
+            "interactionType": "Voice Toggle",
+            "hint": "Examine the sentence structure to find the correct form.",
+            "explanation": "Learning active and passive voice builds sentence variety.",
+            "sentence": "A pilot builds the network cleverly.",
+            "correctAnswer": "The network is built by a pilot cleverly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L101_Q3",
+            "interactionType": "Voice Toggle",
+            "hint": "Check the subject to choose the right answer.",
+            "explanation": "Recognizing sentence structure improves fluency.",
+            "sentence": "The technician builds the network cleverly.",
+            "correctAnswer": "The network is built by the technician cleverly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L102_Q1",
+            "interactionType": "Voice Toggle",
+            "hint": "Examine the sentence structure to understand the context.",
+            "explanation": "Learning grammar rules enhances writing skills.",
+            "sentence": "A doctor sends a drone quickly.",
+            "correctAnswer": "A drone is sent by a doctor quickly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L102_Q2",
+            "interactionType": "Voice Toggle",
+            "hint": "Check the subject to switch voices.",
+            "explanation": "Recognizing verb forms strengthens flexibility.",
+            "sentence": "The teacher sends a drone quickly.",
+            "correctAnswer": "A drone is sent by the teacher quickly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L102_Q3",
+            "interactionType": "Voice Toggle",
+            "hint": "Focus on the verb to find the correct form.",
+            "explanation": "Mastering active and passive voice builds sentence variety.",
+            "sentence": "A researcher sends a drone quickly.",
+            "correctAnswer": "A drone is sent by a researcher quickly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L103_Q1",
+            "interactionType": "Voice Toggle",
+            "hint": "Check the subject to choose the right answer.",
+            "explanation": "Recognizing sentence structure improves fluency.",
+            "sentence": "The technician tests the data successfully.",
+            "correctAnswer": "The data is tested by the technician successfully."
+        },
+        {
+            "id": "GRM_VOICESWAP_L103_Q2",
+            "interactionType": "Voice Toggle",
+            "hint": "Focus on the verb to understand the context.",
+            "explanation": "Mastering grammar rules enhances writing skills.",
+            "sentence": "An explorer tests the data successfully.",
+            "correctAnswer": "The data is tested by an explorer successfully."
+        },
+        {
+            "id": "GRM_VOICESWAP_L103_Q3",
+            "interactionType": "Voice Toggle",
+            "hint": "Pay attention to the action to switch voices.",
+            "explanation": "Understanding verb forms strengthens flexibility.",
+            "sentence": "The droid tests the data successfully.",
+            "correctAnswer": "The data is tested by the droid successfully."
+        },
+        {
+            "id": "GRM_VOICESWAP_L104_Q1",
+            "interactionType": "Voice Toggle",
+            "hint": "Focus on the verb to find the correct form.",
+            "explanation": "Mastering active and passive voice builds sentence variety.",
+            "sentence": "A researcher receives the sensor cautiously.",
+            "correctAnswer": "The sensor is received by a researcher cautiously."
+        },
+        {
+            "id": "GRM_VOICESWAP_L104_Q2",
+            "interactionType": "Voice Toggle",
+            "hint": "Pay attention to the action to choose the right answer.",
+            "explanation": "Understanding sentence structure improves fluency.",
+            "sentence": "The detective receives the sensor cautiously.",
+            "correctAnswer": "The sensor is received by the detective cautiously."
+        },
+        {
+            "id": "GRM_VOICESWAP_L104_Q3",
+            "interactionType": "Voice Toggle",
+            "hint": "Look at who receives the action to understand the context.",
+            "explanation": "Practicing grammar rules enhances writing skills.",
+            "sentence": "A spy receives the sensor cautiously.",
+            "correctAnswer": "The sensor is received by a spy cautiously."
+        },
+        {
+            "id": "GRM_VOICESWAP_L105_Q1",
+            "interactionType": "Voice Toggle",
+            "hint": "Pay attention to the action to switch voices.",
+            "explanation": "Understanding verb forms strengthens flexibility.",
+            "sentence": "The droid configures a spaceship quietly.",
+            "correctAnswer": "A spaceship is configured by the droid quietly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L105_Q2",
+            "interactionType": "Voice Toggle",
+            "hint": "Look at who receives the action to find the correct form.",
+            "explanation": "Practicing active and passive voice builds sentence variety.",
+            "sentence": "A student configures a spaceship quietly.",
+            "correctAnswer": "A spaceship is configured by a student quietly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L105_Q3",
+            "interactionType": "Voice Toggle",
+            "hint": "Examine the sentence structure to choose the right answer.",
+            "explanation": "Learning sentence structure improves fluency.",
+            "sentence": "The analyst configures a spaceship quietly.",
+            "correctAnswer": "A spaceship is configured by the analyst quietly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L106_Q1",
+            "interactionType": "Voice Toggle",
+            "hint": "Look at who receives the action to understand the context.",
+            "explanation": "Practicing grammar rules enhances writing skills.",
+            "sentence": "A spy protects the signal safely.",
+            "correctAnswer": "The signal is protected by a spy safely."
+        },
+        {
+            "id": "GRM_VOICESWAP_L106_Q2",
+            "interactionType": "Voice Toggle",
+            "hint": "Examine the sentence structure to switch voices.",
+            "explanation": "Learning verb forms strengthens flexibility.",
+            "sentence": "The driver protects the signal safely.",
+            "correctAnswer": "The signal is protected by the driver safely."
+        },
+        {
+            "id": "GRM_VOICESWAP_L106_Q3",
+            "interactionType": "Voice Toggle",
+            "hint": "Check the subject to find the correct form.",
+            "explanation": "Recognizing active and passive voice builds sentence variety.",
+            "sentence": "A chef protects the signal safely.",
+            "correctAnswer": "The signal is protected by a chef safely."
+        },
+        {
+            "id": "GRM_VOICESWAP_L107_Q1",
+            "interactionType": "Voice Toggle",
+            "hint": "Examine the sentence structure to choose the right answer.",
+            "explanation": "Learning sentence structure improves fluency.",
+            "sentence": "The analyst launches the circuit gently.",
+            "correctAnswer": "The circuit is launched by the analyst gently."
+        },
+        {
+            "id": "GRM_VOICESWAP_L107_Q2",
+            "interactionType": "Voice Toggle",
+            "hint": "Check the subject to understand the context.",
+            "explanation": "Recognizing grammar rules enhances writing skills.",
+            "sentence": "A manager launches the circuit gently.",
+            "correctAnswer": "The circuit is launched by a manager gently."
+        },
+        {
+            "id": "GRM_VOICESWAP_L107_Q3",
+            "interactionType": "Voice Toggle",
+            "hint": "Focus on the verb to switch voices.",
+            "explanation": "Mastering verb forms strengthens flexibility.",
+            "sentence": "The hero launches the circuit gently.",
+            "correctAnswer": "The circuit is launched by the hero gently."
+        },
+        {
+            "id": "GRM_VOICESWAP_L108_Q1",
+            "interactionType": "Voice Toggle",
+            "hint": "Check the subject to find the correct form.",
+            "explanation": "Recognizing active and passive voice builds sentence variety.",
+            "sentence": "A chef observes the shield efficiently.",
+            "correctAnswer": "The shield is observed by a chef efficiently."
+        },
+        {
+            "id": "GRM_VOICESWAP_L108_Q2",
+            "interactionType": "Voice Toggle",
+            "hint": "Focus on the verb to choose the right answer.",
+            "explanation": "Mastering sentence structure improves fluency.",
+            "sentence": "The engineer protects the shield efficiently.",
+            "correctAnswer": "The shield is protected by the engineer efficiently."
+        },
+        {
+            "id": "GRM_VOICESWAP_L108_Q3",
+            "interactionType": "Voice Toggle",
+            "hint": "Pay attention to the action to understand the context.",
+            "explanation": "Understanding grammar rules enhances writing skills.",
+            "sentence": "A scientist protects the shield efficiently.",
+            "correctAnswer": "The shield is protected by a scientist efficiently."
+        },
+        {
+            "id": "GRM_VOICESWAP_L109_Q1",
+            "interactionType": "Voice Toggle",
+            "hint": "Focus on the verb to switch voices.",
+            "explanation": "Mastering verb forms strengthens flexibility.",
+            "sentence": "The hero assembles the database accurately.",
+            "correctAnswer": "The database is assembled by the hero accurately."
+        },
+        {
+            "id": "GRM_VOICESWAP_L109_Q2",
+            "interactionType": "Voice Toggle",
+            "hint": "Pay attention to the action to find the correct form.",
+            "explanation": "Understanding active and passive voice builds sentence variety.",
+            "sentence": "A robot assembles the database accurately.",
+            "correctAnswer": "The database is assembled by a robot accurately."
+        },
+        {
+            "id": "GRM_VOICESWAP_L109_Q3",
+            "interactionType": "Voice Toggle",
+            "hint": "Look at who receives the action to choose the right answer.",
+            "explanation": "Practicing sentence structure improves fluency.",
+            "sentence": "The traveler assembles the database accurately.",
+            "correctAnswer": "The database is assembled by the traveler accurately."
+        },
+        {
+            "id": "GRM_VOICESWAP_L110_Q1",
+            "interactionType": "Voice Toggle",
+            "hint": "Look at who receives the action to choose the right answer.",
+            "explanation": "Practicing sentence structure improves fluency.",
+            "sentence": "The traveler observes a drone perfectly.",
+            "correctAnswer": "A drone is observed by the traveler perfectly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L110_Q2",
+            "interactionType": "Voice Toggle",
+            "hint": "Examine the sentence structure to understand the context.",
+            "explanation": "Learning grammar rules enhances writing skills.",
+            "sentence": "A doctor observes a drone perfectly.",
+            "correctAnswer": "A drone is observed by a doctor perfectly."
+        },
+        {
+            "id": "GRM_VOICESWAP_L110_Q3",
+            "interactionType": "Voice Toggle",
+            "hint": "Check the subject to switch voices.",
+            "explanation": "Recognizing verb forms strengthens flexibility.",
+            "sentence": "The teacher observes a drone perfectly.",
+            "correctAnswer": "A drone is observed by the teacher perfectly."
+        }
+    ]
 }

@@ -44,6 +44,8 @@ class RestartLevel extends ReadingEvent {}
 
 class ReadingHintUsed extends ReadingEvent {}
 
+class RetryCurrentQuestion extends ReadingEvent {}
+
 class RestoreLife extends ReadingEvent {}
 
 // --- STATES ---
@@ -113,10 +115,15 @@ class ReadingError extends ReadingState {
 class ReadingGameComplete extends ReadingState {
   final int xpEarned;
   final int coinsEarned;
-  ReadingGameComplete({required this.xpEarned, required this.coinsEarned});
+  final int questCount;
+  ReadingGameComplete({
+    required this.xpEarned,
+    required this.coinsEarned,
+    required this.questCount,
+  });
 
   @override
-  List<Object?> get props => [xpEarned, coinsEarned];
+  List<Object?> get props => [xpEarned, coinsEarned, questCount];
 }
 
 class ReadingGameOver extends ReadingState {
@@ -156,6 +163,13 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
     required this.useHint,
     required this.networkInfo,
   }) : super(ReadingInitial()) {
+    on<RetryCurrentQuestion>((event, emit) {
+      if (state is ReadingLoaded) {
+        final s = state as ReadingLoaded;
+        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      }
+    });
+
     on<FetchReadingQuests>((event, emit) async {
       currentGameType = event.gameType is GameSubtype ? (event.gameType as GameSubtype).name : event.gameType.toString();
       currentLevel = event.level;
@@ -237,11 +251,18 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
           emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
         }
       } else if (currentState.lastAnswerCorrect == true) {
-        await soundService.playLevelComplete();
+        soundService.playLevelComplete();
         const int totalXp = 10;
         const int totalCoins = 10;
+        // 1. Immediate UI Feedback
+        emit(ReadingGameComplete(
+          xpEarned: totalXp,
+          coinsEarned: totalCoins,
+          questCount: currentState.quests.length,
+        ));
+
+        // 2. Background Save
         if (currentGameType != null && currentLevel != null) {
-          // 1. First, save everything to the server and await completion
           await Future.wait([
             updateUserRewards(UpdateUserRewardsParams(
               gameType: currentGameType!,
@@ -260,9 +281,6 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
             awardBadge('reading_master'),
           ]);
         }
-
-        // 2. Only after all saves are confirmed, emit the completion state
-        emit(ReadingGameComplete(xpEarned: totalXp, coinsEarned: totalCoins));
       } else {
         // Wrong answer on the very last quest
         emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));

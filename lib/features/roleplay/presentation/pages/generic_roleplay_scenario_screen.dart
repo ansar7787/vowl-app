@@ -127,7 +127,7 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
         if (state is RoleplayLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           
-          if (state.currentIndex != _lastProcessedIndex || livesChanged) {
+          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
