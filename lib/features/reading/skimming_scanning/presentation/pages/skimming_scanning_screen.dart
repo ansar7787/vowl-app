@@ -11,6 +11,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class SkimmingScanningScreen extends StatefulWidget {
@@ -207,14 +208,7 @@ class _ScanlineEffect extends StatelessWidget {
   const _ScanlineEffect();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: const NetworkImage('https://www.transparenttextures.com/patterns/carbon-fibre.png'),
-          opacity: 0.05, repeat: ImageRepeat.repeat,
-        ),
-      ),
-    ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 3.seconds, color: Colors.white10);
+    return const TechPatternOverlay(opacity: 0.05);
   }
 }
 

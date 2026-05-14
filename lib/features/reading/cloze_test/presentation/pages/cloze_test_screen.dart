@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class ClozeTestScreen extends StatefulWidget {
@@ -139,37 +140,44 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
         color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: Colors.white10),
-        image: DecorationImage(image: const NetworkImage('https://www.transparenttextures.com/patterns/carbon-fibre.png'), opacity: 0.1, repeat: ImageRepeat.repeat),
       ),
-      child: RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(
-          style: GoogleFonts.fredoka(fontSize: 20.sp, color: Colors.white70),
-          children: [
-            TextSpan(text: parts[0]),
-            WidgetSpan(
-              child: DragTarget<String>(
-                onAcceptWithDetails: (details) => _onDock(details.data, correct),
-                builder: (context, candidateData, rejectedData) {
-                  return Container(
-                    margin: EdgeInsets.symmetric(horizontal: 8.w),
-                    width: 120.w, height: 40.h,
-                    decoration: BoxDecoration(
-                      color: _dockedOption != null ? color.withValues(alpha: 0.3) : Colors.black45,
-                      borderRadius: BorderRadius.circular(8.r),
-                      border: Border.all(color: _dockedOption != null ? color : Colors.white24, width: 2),
-                      boxShadow: [if (_dockedOption != null) BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 15)],
+      child: Stack(
+        children: [
+          const TechPatternOverlay(opacity: 0.1),
+          Padding(
+            padding: EdgeInsets.all(24.r),
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: GoogleFonts.fredoka(fontSize: 20.sp, color: Colors.white70),
+                children: [
+                  TextSpan(text: parts[0]),
+                  WidgetSpan(
+                    child: DragTarget<String>(
+                      onAcceptWithDetails: (details) => _onDock(details.data, correct),
+                      builder: (context, candidateData, rejectedData) {
+                        return Container(
+                          margin: EdgeInsets.symmetric(horizontal: 8.w),
+                          width: 120.w, height: 40.h,
+                          decoration: BoxDecoration(
+                            color: _dockedOption != null ? color.withValues(alpha: 0.3) : Colors.black45,
+                            borderRadius: BorderRadius.circular(8.r),
+                            border: Border.all(color: _dockedOption != null ? color : Colors.white24, width: 2),
+                            boxShadow: [if (_dockedOption != null) BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 15)],
+                          ),
+                          child: Center(
+                            child: Text(_dockedOption?.toUpperCase() ?? "VACUUM", style: GoogleFonts.shareTechMono(fontSize: 14.sp, color: _dockedOption != null ? Colors.white : Colors.white24, fontWeight: FontWeight.w900)),
+                          ),
+                        ).animate(target: _dockedOption != null ? 1 : 0).shimmer(duration: 1.seconds);
+                      },
                     ),
-                    child: Center(
-                      child: Text(_dockedOption?.toUpperCase() ?? "VACUUM", style: GoogleFonts.shareTechMono(fontSize: 14.sp, color: _dockedOption != null ? Colors.white : Colors.white24, fontWeight: FontWeight.w900)),
-                    ),
-                  ).animate(target: _dockedOption != null ? 1 : 0).shimmer(duration: 1.seconds);
-                },
+                  ),
+                  if (parts.length > 1) TextSpan(text: parts[1]),
+                ],
               ),
             ),
-            if (parts.length > 1) TextSpan(text: parts[1]),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

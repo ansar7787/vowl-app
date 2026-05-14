@@ -130,7 +130,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
               children: [
                 Container(color: theme.backgroundColors[1]), // Prevent white splash
                 MeshGradientBackground(colors: theme.backgroundColors),
-                if (state is ReadingLoading) const GameShimmerLoading()
+                if (state is ReadingLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
                 else ...[
                   SafeArea(
                     child: Column(

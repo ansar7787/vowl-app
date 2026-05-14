@@ -134,6 +134,106 @@ class GameInstructionService {
         tip: "PRO TIP: Read the whole sentence first! The word after the gap often dictates what part of speech you need.",
       );
     }
+    if (type == GameSubtype.findWordMeaning) {
+      return const GameBriefing(
+        title: "Lexical Linker",
+        icon: Icons.menu_book_rounded,
+        objective: "Locate and match word definitions within the context of the text.",
+        rules: ["Analyze the context", "Match word to meaning", "Build vocabulary"],
+        actionText: "Link Words",
+        tip: "Context is your best friend! The surrounding words often reveal the hidden meaning. 📚",
+      );
+    }
+    if (type == GameSubtype.guessTitle) {
+      return const GameBriefing(
+        title: "Title Tactician",
+        icon: Icons.title_rounded,
+        objective: "Deduce the most appropriate title for the given passage.",
+        rules: ["Identify main theme", "Check all options", "Summarize the core"],
+        actionText: "Deduce Title",
+        tip: "A great title captures the 'big picture'. Look for the most repeated themes! 🏷️",
+      );
+    }
+    if (type == GameSubtype.paragraphSummary) {
+      return const GameBriefing(
+        title: "Summary Sieve",
+        icon: Icons.short_text_rounded,
+        objective: "Select the sentence that best captures the essence of the paragraph.",
+        rules: ["Filter out details", "Find the main point", "Stay objective"],
+        actionText: "Summarize Now",
+        tip: "Avoid sentences that only mention one small detail; look for the overarching idea! 📋",
+      );
+    }
+    if (type == GameSubtype.readAndAnswer) {
+      return const GameBriefing(
+        title: "Insight Analyst",
+        icon: Icons.fact_check_rounded,
+        objective: "Answer specific comprehension questions about the text.",
+        rules: ["Refer back to text", "Verify every detail", "Think critically"],
+        actionText: "Analyze Text",
+        tip: "Don't guess! The answer is ALWAYS in the text—you just have to find it. 🕵️",
+      );
+    }
+    if (type == GameSubtype.readAndMatch) {
+      return const GameBriefing(
+        title: "Semantic Bridge",
+        icon: Icons.bolt_rounded,
+        objective: "Connect related concepts and facts from the reading passage.",
+        rules: ["Bridge the gaps", "Use lasers to link", "Confirm relationships"],
+        actionText: "Bridge Gaps",
+        tip: "Think about how concepts relate—is it cause and effect, or part and whole? 🌉",
+      );
+    }
+    if (type == GameSubtype.readingConclusion) {
+      return const GameBriefing(
+        title: "Logical Finisher",
+        icon: Icons.last_page_rounded,
+        objective: "Predict the logical conclusion or next step based on the text.",
+        rules: ["Follow the logic", "Predict outcome", "Verify with evidence"],
+        actionText: "Predict Final",
+        tip: "Follow the clues the author left! Where does the logic naturally lead? 🏁",
+      );
+    }
+    if (type == GameSubtype.readingInference) {
+      return const GameBriefing(
+        title: "Subtext Sleuth",
+        icon: Icons.biotech_rounded,
+        objective: "Identify what is implied but not explicitly stated.",
+        rules: ["Read between lines", "Detect subtext", "Infer correctly"],
+        actionText: "Deduce Subtext",
+        tip: "The author's tone and choice of words often hide a deeper meaning. 🔍",
+      );
+    }
+    if (type == GameSubtype.readingSpeedCheck) {
+      return const GameBriefing(
+        title: "Velocity Reader",
+        icon: Icons.speed_rounded,
+        objective: "Test your comprehension while reading at high velocity.",
+        rules: ["Read fast", "Maintain accuracy", "Beat the timer"],
+        actionText: "Race Timer",
+        tip: "Don't subvocalize (read out loud in your head)! Let your eyes glide over the text. ⚡",
+      );
+    }
+    if (type == GameSubtype.sentenceOrderReading) {
+      return const GameBriefing(
+        title: "Structure Architect",
+        icon: Icons.architecture_rounded,
+        objective: "Reorganize scrambled sentences to restore logical flow.",
+        rules: ["Find the logic", "Check transitions", "Rebuild the system"],
+        actionText: "Rebuild Flow",
+        tip: "Look for transition words like 'however', 'moreover', and 'finally'. 🏗️",
+      );
+    }
+    if (type == GameSubtype.trueFalseReading) {
+      return const GameBriefing(
+        title: "Truth Verifier",
+        icon: Icons.verified_user_rounded,
+        objective: "Determine the factual accuracy of statements against the text.",
+        rules: ["Locate the evidence", "Check for nuances", "Validate truth"],
+        actionText: "Verify Truth",
+        tip: "Be careful of 'absolute' words like 'always', 'never', or 'only'! ⚖️",
+      );
+    }
 
     // --- 4. VOCABULARY (Lexical Expansion) ---
     if (type == GameSubtype.flashcards) {
