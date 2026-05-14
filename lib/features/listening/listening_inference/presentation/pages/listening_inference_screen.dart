@@ -10,7 +10,6 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class ListeningInferenceScreen extends StatefulWidget {
@@ -41,7 +40,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> wit
   @override
   void initState() {
     super.initState();
-    _pulseController = AnimationController(vsync: this, duration: 2.seconds)..repeat();
+    _pulseController = AnimationController(vsync: this, duration: const Duration(seconds: 2))..repeat();
     context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
@@ -101,26 +100,27 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> wit
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
-          useScrolling: false,
+          useScrolling: true,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              const Spacer(flex: 1),
-              _buildRadarCore(quest.textToSpeak ?? "", theme.primaryColor),
-              const Spacer(flex: 1),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Text(
-                  quest.question?.toUpperCase() ?? "INFER THE ACTOR",
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.2),
-                ),
-              ),
-              const Spacer(flex: 1),
-              _buildInferenceGrid(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+                    SizedBox(height: 10.h),
+                    _buildRadarCore(quest.textToSpeak ?? "", theme.primaryColor),
+                    SizedBox(height: 30.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: Text(
+                        quest.question?.toUpperCase() ?? "INFER THE ACTOR",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.2),
+                      ),
+                    ),
+                    SizedBox(height: 30.h),
+                    _buildInferenceGrid(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
               SizedBox(height: 30.h),
             ],
           ),
@@ -188,47 +188,68 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> wit
 
   Widget _buildInferenceGrid(List<String> options, int correct, Color color, bool isDark) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Wrap(
-        spacing: 12.w,
-        runSpacing: 12.h,
+        spacing: 16.w,
+        runSpacing: 16.h,
         alignment: WrapAlignment.center,
         children: List.generate(options.length, (index) {
           bool isSelected = _selectedIndex == index;
-          bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
-          bool isWrong = _isAnswered && isSelected && _isCorrect == false;
+          bool isChoiceCorrect = _isAnswered && index == correct && _isCorrect == true;
+          bool isChoiceWrong = _isAnswered && isSelected && _isCorrect == false;
           
-          Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isSelected ? color : Colors.white24));
-
           return ScaleButton(
             onTap: () => _submitAnswer(index, correct),
             child: Container(
-              width: 150.w,
-              child: GlassTile(
-                padding: EdgeInsets.all(16.r),
-                borderRadius: BorderRadius.circular(20.r),
-                color: tileColor.withValues(alpha: 0.1),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      isCorrect ? Icons.verified_user_rounded : (isWrong ? Icons.report_problem_rounded : Icons.bubble_chart_rounded),
-                      color: tileColor,
-                      size: 20.r
-                    ),
-                    SizedBox(height: 8.h),
-                    Text(
-                      options[index].toUpperCase(),
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isSelected ? Colors.white : Colors.white70,
-                        letterSpacing: 1,
-                      ),
-                    ),
-                  ],
+              width: 135.w,
+              padding: EdgeInsets.all(12.r),
+              decoration: BoxDecoration(
+                color: isChoiceCorrect 
+                    ? Colors.greenAccent 
+                    : (isChoiceWrong 
+                        ? Colors.redAccent 
+                        : (isSelected ? color : const Color(0xFF1E1E24))),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: isChoiceCorrect || isChoiceWrong || isSelected 
+                      ? Colors.white.withValues(alpha: 0.5) 
+                      : color.withValues(alpha: 0.2),
+                  width: 1.5,
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.4),
+                    offset: Offset(0, 4.h),
+                    blurRadius: 8,
+                  ),
+                  if (isSelected || isChoiceCorrect || isChoiceWrong)
+                    BoxShadow(
+                      color: (isChoiceCorrect ? Colors.greenAccent : (isChoiceWrong ? Colors.redAccent : color)).withValues(alpha: 0.3),
+                      blurRadius: 15,
+                      spreadRadius: 2,
+                    ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    isChoiceCorrect ? Icons.verified_user_rounded : (isChoiceWrong ? Icons.report_problem_rounded : Icons.bubble_chart_rounded),
+                    color: Colors.white,
+                    size: 18.r
+                  ),
+                  SizedBox(height: 6.h),
+                  Text(
+                    options[index].toUpperCase(),
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.outfit(
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ],
               ),
             ),
           );

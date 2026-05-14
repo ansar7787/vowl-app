@@ -11,6 +11,7 @@ import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'dart:math';
 
 class AmbientIdScreen extends StatefulWidget {
   final int level;
@@ -25,11 +26,11 @@ class AmbientIdScreen extends StatefulWidget {
   State<AmbientIdScreen> createState() => _AmbientIdScreenState();
 }
 
-class _AmbientIdScreenState extends State<AmbientIdScreen> {
+class _AmbientIdScreenState extends State<AmbientIdScreen> with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
-  double _radarAngle = 0.0;
+  late AnimationController _radarController;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -40,15 +41,14 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> {
   @override
   void initState() {
     super.initState();
+    _radarController = AnimationController(vsync: this, duration: const Duration(seconds: 4))..repeat();
     context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onSweep(double delta) {
-    if (_isAnswered) return;
-    setState(() {
-      _radarAngle = (_radarAngle + delta / 200) % 6.28;
-      _hapticService.selection();
-    });
+  @override
+  void dispose() {
+    _radarController.dispose();
+    super.dispose();
   }
 
   void _submitAnswer(int index, int correct) {
@@ -83,7 +83,6 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
-              _radarAngle = 0.0;
             });
           }
           _lastLives = state.livesRemaining;
@@ -101,17 +100,19 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> {
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
+          useScrolling: true,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(height: 16.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 40.h),
+              SizedBox(height: 20.h),
               _buildSonarField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor),
-              const Spacer(),
+              SizedBox(height: 20.h),
               _buildEmitterNode(quest.textToSpeak ?? "", theme.primaryColor),
-              SizedBox(height: 40.h),
+              SizedBox(height: 30.h),
             ],
           ),
         );
@@ -128,82 +129,114 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> {
         children: [
           Icon(Icons.radar_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("SCAN THE SPATIAL RADAR TO ANCHOR CONTEXT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text("ANCHOR THE AUDITORY CONTEXT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
   Widget _buildSonarField(List<String> options, int correct, Color color) {
-    return GestureDetector(
-      onPanUpdate: (details) => _onSweep(details.delta.dx),
-      child: Container(
-        height: 380.h, width: double.infinity,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(color: color.withValues(alpha: 0.1), width: 2),
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            // Radar Sweep
-            Transform.rotate(
-              angle: _radarAngle,
-              child: Container(
-                width: 380.r, height: 380.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: SweepGradient(
-                    colors: [color.withValues(alpha: 0.4), Colors.transparent],
-                    stops: const [0.1, 0.2],
+    return SizedBox(
+      height: 380.h, width: double.infinity,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Radar Sweep Animation
+          AnimatedBuilder(
+            animation: _radarController,
+            builder: (context, child) {
+              return Transform.rotate(
+                angle: _radarController.value * 6.28,
+                child: Container(
+                  width: 380.r, height: 380.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: SweepGradient(
+                      colors: [color.withValues(alpha: 0.2), Colors.transparent],
+                      stops: const [0.1, 0.25],
+                    ),
                   ),
                 ),
-              ),
-            ),
-            
-            // Grid Lines
-            ...List.generate(3, (i) => Container(
-              width: (i + 1) * 120.r, height: (i + 1) * 120.r,
-              decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: color.withValues(alpha: 0.05))),
-            )),
-            
-            // Location Hubs
-            ...List.generate(options.length, (index) {
-              double dist = 140.r;
-              return Transform.translate(
-                offset: Offset(dist * 1.2 * (index % 2 == 0 ? 1 : -1), dist * (index < 2 ? 1 : -1)),
-                child: _buildLocationHub(index, options[index], correct, color),
               );
-            }),
-          ],
-        ),
+            },
+          ),
+          
+          // Spatial Rings
+          ...List.generate(3, (i) => Container(
+            width: (i + 1) * 120.r, height: (i + 1) * 120.r,
+            decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: color.withValues(alpha: 0.1))),
+          )),
+          
+          // Location Hubs
+          ...List.generate(options.length, (index) {
+            double angle = (index * 6.28 / options.length) - 1.57;
+            double dist = 135.r;
+            return Transform.translate(
+              offset: Offset(dist * cos(angle), dist * sin(angle)),
+              child: _buildLocationHub(index, options[index], correct, color),
+            );
+          }),
+        ],
       ),
     );
   }
 
   Widget _buildLocationHub(int index, String text, int correct, Color color) {
     bool isSelected = _selectedIndex == index;
+    // Loophole fix: Don't reveal correct answer early if they failed
     bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
     bool isWrong = _isAnswered && isSelected && _isCorrect == false;
-    Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color);
+    
+    Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isSelected ? color : color.withValues(alpha: 0.6)));
 
     return ScaleButton(
       onTap: () => _submitAnswer(index, correct),
       child: Container(
-        width: 100.r, height: 100.r,
+        width: 90.r, height: 90.r,
         decoration: BoxDecoration(
-          color: tileColor.withValues(alpha: 0.1),
+          color: isCorrect 
+              ? Colors.greenAccent 
+              : (isWrong ? Colors.redAccent : (isSelected ? color : const Color(0xFF1E1E24))),
           shape: BoxShape.circle,
-          border: Border.all(color: tileColor.withValues(alpha: 0.3), width: 2),
-          boxShadow: [if (isSelected) BoxShadow(color: tileColor.withValues(alpha: 0.4), blurRadius: 20)],
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(_getLocationIcon(text), color: tileColor, size: 24.r),
-            SizedBox(height: 4.h),
-            Text(text.toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.shareTechMono(fontSize: 8.sp, fontWeight: FontWeight.w900, color: tileColor)),
+          border: Border.all(
+            color: isCorrect || isWrong || isSelected 
+                ? Colors.white.withValues(alpha: 0.5) 
+                : color.withValues(alpha: 0.3), 
+            width: 2,
+          ),
+          boxShadow: [
+            if (isSelected || isCorrect || isWrong) 
+              BoxShadow(
+                color: (isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color)).withValues(alpha: 0.4), 
+                blurRadius: 15, 
+                spreadRadius: 2,
+              ),
+            // Permanent subtle base shadow
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.3),
+              offset: const Offset(0, 4),
+              blurRadius: 10,
+            ),
           ],
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(_getLocationIcon(text), color: Colors.white, size: 22.r),
+              SizedBox(height: 4.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: FittedBox(
+                  child: Text(
+                    text.toUpperCase(), 
+                    textAlign: TextAlign.center, 
+                    style: GoogleFonts.shareTechMono(fontSize: 8.sp, fontWeight: FontWeight.w900, color: Colors.white)
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -216,23 +249,39 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> {
         _hapticService.selection();
       },
       child: Container(
-        padding: EdgeInsets.all(24.r),
-        decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color, width: 2)),
-        child: Icon(Icons.location_city_rounded, size: 48.r, color: color),
+        padding: EdgeInsets.all(28.r),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle, 
+          color: color, 
+          border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 2.5),
+          boxShadow: [
+            BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 25),
+            BoxShadow(color: Colors.black.withValues(alpha: 0.4), offset: const Offset(0, 4), blurRadius: 10),
+          ],
+        ),
+        child: Icon(Icons.settings_input_antenna_rounded, size: 52.r, color: Colors.white),
       ),
     );
   }
 
-  IconData _getLocationIcon(String location) {
-    switch (location.toLowerCase()) {
-      case 'airport': return Icons.local_airport_rounded;
-      case 'train station': return Icons.train_rounded;
-      case 'library': return Icons.local_library_rounded;
-      case 'shopping mall': return Icons.local_mall_rounded;
-      case 'restaurant': return Icons.restaurant_rounded;
-      case 'park': return Icons.park_rounded;
-      default: return Icons.place_rounded;
-    }
+  IconData _getLocationIcon(String loc) {
+    final l = loc.toLowerCase();
+    if (l.contains('forest')) return Icons.forest_rounded;
+    if (l.contains('cyber') || l.contains('city')) return Icons.location_city_rounded;
+    if (l.contains('space')) return Icons.rocket_launch_rounded;
+    if (l.contains('ocean') || l.contains('deep')) return Icons.waves_rounded;
+    if (l.contains('base') || l.contains('military')) return Icons.security_rounded;
+    if (l.contains('lab')) return Icons.science_rounded;
+    if (l.contains('temple')) return Icons.temple_hindu_rounded;
+    if (l.contains('vault')) return Icons.lock_rounded;
+    if (l.contains('station')) return Icons.settings_input_antenna_rounded;
+    if (l.contains('airport')) return Icons.local_airport_rounded;
+    if (l.contains('train')) return Icons.train_rounded;
+    if (l.contains('library')) return Icons.local_library_rounded;
+    if (l.contains('mall')) return Icons.local_mall_rounded;
+    if (l.contains('restaurant')) return Icons.restaurant_rounded;
+    if (l.contains('park')) return Icons.park_rounded;
+    return Icons.place_rounded;
   }
 }
 

@@ -101,23 +101,24 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
         
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
-          showConfetti: _showConfetti, useScrolling: false,
+          showConfetti: _showConfetti, useScrolling: true,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              const Spacer(flex: 1),
+              SizedBox(height: 20.h),
               _buildInstruction(theme.primaryColor),
-              const Spacer(flex: 2),
+              SizedBox(height: 40.h),
               _buildInkJar(quest.textToSpeak ?? "", theme.primaryColor),
-              const Spacer(flex: 2),
-              Expanded(
-                flex: 6,
+              SizedBox(height: 40.h),
+              SizedBox(
+                height: 220.h,
                 child: _buildInkCanvas(quest.textWithBlanks ?? "", theme.primaryColor, isDark),
               ),
-              const Spacer(flex: 2),
+              SizedBox(height: 40.h),
               _buildInputTerminal(theme.primaryColor, isDark),
-              const Spacer(flex: 2),
+              SizedBox(height: 40.h),
               if (!_isAnswered)
                 ScaleButton(
                   onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
@@ -127,7 +128,7 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
                     child: Center(child: Text("SUBMIT TRANSCRIPTION", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
                   ),
                 ),
-              const Spacer(flex: 1),
+              SizedBox(height: 20.h),
             ],
           ),
         );
@@ -224,4 +225,3 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     );
   }
 }
-
