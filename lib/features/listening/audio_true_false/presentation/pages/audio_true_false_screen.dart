@@ -43,13 +43,6 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
     context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onTune(double delta) {
-    if (_isAnswered) return;
-    setState(() {
-      _tuningValue = (_tuningValue + delta / 300).clamp(0.0, 1.0);
-      _hapticService.selection();
-    });
-  }
 
   void _submitAnswer(bool verdict, String correct) {
     if (_isAnswered) return;
@@ -100,19 +93,20 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
+          useScrolling: true,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
               SizedBox(height: 16.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 48.h),
+              SizedBox(height: 40.h),
               _buildAudioTuner(quest.textToSpeak ?? "", theme.primaryColor),
               SizedBox(height: 40.h),
               _buildSignalScreen(quest.statement ?? "", theme.primaryColor, isDark),
-              const Spacer(),
+              SizedBox(height: 48.h),
               _buildPolarizedFilters(quest.correctAnswer ?? "", theme.primaryColor),
-              SizedBox(height: 40.h),
+              SizedBox(height: 32.h),
             ],
           ),
         );
@@ -129,7 +123,9 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
         children: [
           Icon(Icons.radio_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("TUNE THE SIGNAL TO CATEGORIZE VERDICT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Flexible(
+            child: Text("TUNE THE SIGNAL TO CATEGORIZE VERDICT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          ),
         ],
       ),
     );
@@ -181,42 +177,48 @@ class _AudioTrueFalseScreenState extends State<AudioTrueFalseScreen> {
   }
 
   Widget _buildPolarizedFilters(String correct, Color color) {
-    return GestureDetector(
-      onHorizontalDragUpdate: (details) => _onTune(details.delta.dx),
-      onHorizontalDragEnd: (_) {
-        if (_tuningValue > 0.9) _submitAnswer(true, correct);
-        if (_tuningValue < 0.1) _submitAnswer(false, correct);
-      },
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              _buildFilterZone("FALSE", Colors.redAccent, _tuningValue < 0.2),
-              _buildFilterZone("TRUE", Colors.greenAccent, _tuningValue > 0.8),
-            ],
-          ),
-          SizedBox(height: 20.h),
-          Slider(
-            value: _tuningValue,
-            onChanged: (v) => _onTune((v - _tuningValue) * 300),
-            activeColor: color,
-            inactiveColor: color.withValues(alpha: 0.2),
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            _buildFilterZone("FALSE", Colors.redAccent, _tuningValue < 0.2, false),
+            _buildFilterZone("TRUE", Colors.greenAccent, _tuningValue > 0.8, true),
+          ],
+        ),
+        SizedBox(height: 20.h),
+        Slider(
+          value: _tuningValue,
+          onChanged: _isAnswered ? null : (v) {
+            setState(() => _tuningValue = v);
+            _hapticService.selection();
+          },
+          onChangeEnd: (v) {
+            if (v > 0.9) _submitAnswer(true, correct);
+            if (v < 0.1) _submitAnswer(false, correct);
+          },
+          activeColor: color,
+          inactiveColor: color.withValues(alpha: 0.2),
+        ),
+      ],
     );
   }
 
-  Widget _buildFilterZone(String label, Color color, bool isActive) {
+  Widget _buildFilterZone(String label, Color color, bool isActive, bool isTrueZone) {
+    bool isSelected = _isAnswered && ((isTrueZone && _tuningValue > 0.8) || (!isTrueZone && _tuningValue < 0.2));
+    bool isCorrect = _isAnswered && isSelected && _isCorrect == true;
+    bool isWrong = _isAnswered && isSelected && _isCorrect == false;
+    
+    Color zoneColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isActive ? color : color.withValues(alpha: 0.2)));
+
     return Container(
       width: 120.w, height: 60.h,
       decoration: BoxDecoration(
-        color: isActive ? color.withValues(alpha: 0.3) : color.withValues(alpha: 0.05),
+        color: zoneColor.withValues(alpha: isActive || _isAnswered ? 0.3 : 0.05),
         borderRadius: BorderRadius.circular(15.r),
-        border: Border.all(color: isActive ? color : color.withValues(alpha: 0.2), width: 2),
+        border: Border.all(color: zoneColor, width: 2),
       ),
-      child: Center(child: Text(label, style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: color))),
+      child: Center(child: Text(label, style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: zoneColor))),
     );
   }
 }
