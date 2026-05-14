@@ -143,25 +143,31 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
           isAnswered: _isAnswered,
           isCorrect: _isCorrect,
           showConfetti: _showConfetti,
-          useScrolling: true,
+          useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null
               ? const SizedBox()
               : Column(
                   children: [
-                    SizedBox(height: 16.h),
+                    const Spacer(flex: 1),
                     _buildInstruction(theme.primaryColor),
-                    SizedBox(height: 32.h),
+                    const Spacer(flex: 2),
                     _buildOscilloscope(
                       quest.textToSpeak ?? "",
                       theme.primaryColor,
                     ),
-                    SizedBox(height: 40.h),
-                    _buildTimeline(theme.primaryColor, isDark),
-                    SizedBox(height: 40.h),
-                    _buildSegmentsField(theme.primaryColor, isDark),
-                    SizedBox(height: 40.h),
+                    const Spacer(flex: 2),
+                    Expanded(
+                      flex: 4,
+                      child: SingleChildScrollView(child: _buildTimeline(theme.primaryColor, isDark)),
+                    ),
+                    const Spacer(flex: 2),
+                    Expanded(
+                      flex: 6,
+                      child: SingleChildScrollView(child: _buildSegmentsField(theme.primaryColor, isDark)),
+                    ),
+                    const Spacer(flex: 2),
                     if (!_isAnswered)
                       ScaleButton(
                         onTap: () => _submitAnswer(quest.textToSpeak ?? ""),
@@ -267,9 +273,9 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                       ),
             ),
             Icon(
-              Icons.play_circle_filled_rounded,
+              Icons.graphic_eq_rounded,
               color: Colors.white,
-              size: 40.r,
+              size: 48.r,
             ),
           ],
         ),
