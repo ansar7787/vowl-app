@@ -103,18 +103,21 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
-          useScrolling: true,
+          useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 16.h),
+              const Spacer(flex: 1),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
+              const Spacer(flex: 2),
               _buildEmitter(quest.textToSpeak ?? "", theme.primaryColor),
-              SizedBox(height: 40.h),
-              _buildScannerField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
-              SizedBox(height: 48.h),
+              const Spacer(flex: 2),
+              Expanded(
+                flex: 12,
+                child: _buildScannerField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+              ),
+              const Spacer(flex: 1),
             ],
           ),
         );
@@ -154,20 +157,20 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
   }
 
   Widget _buildScannerField(List<String> options, int correct, Color color, bool isDark) {
-    return SizedBox(
-      height: 400.h, width: double.infinity,
-      child: Stack(
-        children: [
-          // The Options Grid
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 16.w, mainAxisSpacing: 16.h, childAspectRatio: 1.2
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Stack(
+          children: [
+            // The Options Grid
+            GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, crossAxisSpacing: 16.w, mainAxisSpacing: 16.h, childAspectRatio: constraints.maxWidth / (constraints.maxHeight / 2 * 1.8)
+              ),
+              itemCount: options.length,
+              itemBuilder: (context, index) => _buildEncryptedTile(index, options[index], correct, color, isDark, constraints),
             ),
-            itemCount: options.length,
-            itemBuilder: (context, index) => _buildEncryptedTile(index, options[index], correct, color, isDark),
-          ),
           
           // The Scanning Lens
           Positioned(
@@ -195,8 +198,14 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     );
   }
 
-  Widget _buildEncryptedTile(int index, String text, int correct, Color color, bool isDark) {
-    double dist = (Offset(_lensPosition.dx, _lensPosition.dy) - Offset((index % 2 == 0 ? 80.w : 240.w), (index < 2 ? 60.h : 200.h))).distance;
+  Widget _buildEncryptedTile(int index, String text, int correct, Color color, bool isDark, BoxConstraints fieldConstraints) {
+    double tileWidth = fieldConstraints.maxWidth / 2;
+    double tileHeight = tileWidth / (fieldConstraints.maxWidth / (fieldConstraints.maxHeight / 2 * 1.8)); // derived from childAspectRatio
+    
+    double centerX = (index % 2 == 0) ? tileWidth / 2 : tileWidth * 1.5;
+    double centerY = (index < 2) ? tileHeight / 2 : tileHeight * 1.5;
+    
+    double dist = (Offset(_lensPosition.dx, _lensPosition.dy) - Offset(centerX, centerY)).distance;
     bool isRevealed = dist < 60.r;
     bool isSelected = _isAnswered && _selectedIndex == index;
     bool showResult = isSelected;
@@ -205,19 +214,21 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     return GestureDetector(
       onDoubleTap: () => _submitAnswer(index, correct),
       child: GlassTile(
-        padding: EdgeInsets.all(16.r), borderRadius: BorderRadius.circular(20.r),
+        padding: EdgeInsets.all(12.r), borderRadius: BorderRadius.circular(20.r),
         color: tileColor,
         child: Stack(
           alignment: Alignment.center,
           children: [
             if (isRevealed || _isAnswered)
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(_getCategoryIcon(text), color: isSelected ? Colors.white : color, size: 32.r),
-                  SizedBox(height: 8.h),
-                  Text(text.toUpperCase(), style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, color: isSelected ? Colors.white : color)),
-                ],
+              FittedBox(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(_getCategoryIcon(text), color: isSelected ? Colors.white : color, size: 32.r),
+                    SizedBox(height: 8.h),
+                    Text(text.toUpperCase(), style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, color: isSelected ? Colors.white : color)),
+                  ],
+                ),
               ),
             if (!isRevealed && !_isAnswered)
               Icon(Icons.security_rounded, color: Colors.white24, size: 32.r),
