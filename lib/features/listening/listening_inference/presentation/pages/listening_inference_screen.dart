@@ -103,17 +103,21 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
+          useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 16.h),
+              const Spacer(flex: 1),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 40.h),
+              const Spacer(flex: 2),
               _buildDecoderCore(quest.textToSpeak ?? "", theme.primaryColor),
-              const Spacer(),
-              _buildCryptexField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
-              SizedBox(height: 40.h),
+              const Spacer(flex: 2),
+              Expanded(
+                flex: 12,
+                child: _buildCryptexField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+              ),
+              const Spacer(flex: 1),
             ],
           ),
         );
@@ -144,8 +148,8 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
       },
       child: Container(
         padding: EdgeInsets.all(24.r),
-        decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.cyanAccent.withValues(alpha: 0.1), border: Border.all(color: Colors.cyanAccent, width: 2)),
-        child: Icon(Icons.radar_rounded, size: 56.r, color: Colors.cyanAccent),
+        decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color.withValues(alpha: 0.3))),
+        child: Icon(Icons.graphic_eq_rounded, size: 56.r, color: color),
       ),
     );
   }
