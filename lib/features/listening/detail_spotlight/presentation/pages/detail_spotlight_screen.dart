@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -103,19 +104,23 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
+          useScrolling: false,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 16.h),
+              const Spacer(flex: 1),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
+              const Spacer(flex: 2),
               _buildAudioEmitter(quest.textToSpeak ?? "", theme.primaryColor),
-              SizedBox(height: 32.h),
+              const Spacer(flex: 2),
               _buildTargetPrompt(quest.targetDetail ?? "Detail", theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildDarkField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
-              const Spacer(),
+              const Spacer(flex: 2),
+              Expanded(
+                flex: 12,
+                child: _buildDarkField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+              ),
+              const Spacer(flex: 1),
             ],
           ),
         );
@@ -125,14 +130,20 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
 
   Widget _buildInstruction(Color primaryColor) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
       decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.flashlight_on_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("SEARCH THE SHADOWS FOR AUDITORY EVIDENCE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Flexible(
+            child: Text(
+              "SEARCH THE SHADOWS FOR AUDITORY EVIDENCE", 
+              style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5),
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
         ],
       ),
     );
@@ -145,9 +156,9 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
         _hapticService.selection();
       },
       child: Container(
-        width: 80.r, height: 80.r,
-        decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.yellowAccent.withValues(alpha: 0.1), border: Border.all(color: Colors.yellowAccent.withValues(alpha: 0.4))),
-        child: Icon(Icons.spatial_audio_off_rounded, color: Colors.yellowAccent, size: 32.r),
+        padding: EdgeInsets.all(20.r),
+        decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color.withValues(alpha: 0.3))),
+        child: Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
       ),
     );
   }
@@ -160,69 +171,93 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
   }
 
   Widget _buildDarkField(List<String> options, int correct, Color color, bool isDark) {
-    return SizedBox(
-      height: 400.h, width: double.infinity,
-      child: Stack(
-        children: [
-          // The Shadow Layer
-          Container(
-            width: double.infinity, height: 400.h,
-            decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(20.r)),
-          ),
-          
-          // Hidden Options
-          ...List.generate(options.length, (index) {
-            double x = (index % 2 == 0) ? 40.w : 200.w;
-            double y = (index < 2) ? 40.h : 180.h;
-            double dist = (_spotlightPos - Offset(x + 60.w, y + 40.h)).distance;
-            bool isLit = dist < 80.r;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Stack(
+          children: [
+            // The Shadow Layer
+            Container(
+              width: double.infinity, height: constraints.maxHeight,
+              decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(24.r), border: Border.all(color: color.withValues(alpha: 0.1))),
+            ),
             
-            return Positioned(
-              left: x, top: y,
-              child: GestureDetector(
-                onTap: () => _submitAnswer(index, correct),
-                child: Builder(builder: (context) {
-                  bool isSelected = _selectedIndex == index;
-                  bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
-                  bool isWrong = _isAnswered && isSelected && _isCorrect == false;
-                  Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : Colors.white);
-                  
-                  return Opacity(
-                    opacity: isLit || isCorrect || isWrong ? 1.0 : 0.05,
-                    child: Container(
-                      width: 120.w, height: 80.h,
-                      decoration: BoxDecoration(
-                        color: (isLit || isCorrect || isWrong) ? tileColor.withValues(alpha: 0.1) : Colors.transparent,
-                        borderRadius: BorderRadius.circular(15.r),
-                        border: Border.all(color: (isLit || isCorrect || isWrong) ? tileColor.withValues(alpha: 0.3) : Colors.transparent),
+            // Hidden Options
+            ...List.generate(options.length, (index) {
+              double tileW = (constraints.maxWidth - 48.w) / 2;
+              double tileH = 80.h;
+              
+              double x = (index % 2 == 0) ? 16.w : (constraints.maxWidth / 2 + 8.w);
+              double y = (index < 2) ? 40.h : (constraints.maxHeight - 120.h);
+              
+              double dist = (_spotlightPos - Offset(x + tileW / 2, y + tileH / 2)).distance;
+              bool isLit = dist < 80.r;
+              
+              return Positioned(
+                left: x, top: y,
+                child: GestureDetector(
+                  onTap: () => _submitAnswer(index, correct),
+                  child: Builder(builder: (context) {
+                    bool isSelected = _selectedIndex == index;
+                    bool isCorrect = _isAnswered && index == correct && _selectedIndex == index;
+                    bool isWrong = _isAnswered && isSelected && _isCorrect == false;
+                    Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : Colors.white);
+                    
+                    return Opacity(
+                      opacity: isLit || isCorrect || isWrong ? 1.0 : 0.05,
+                      child: AnimatedContainer(
+                        duration: 300.ms,
+                        width: tileW, height: tileH,
+                        decoration: BoxDecoration(
+                          color: (isLit || isCorrect || isWrong) ? tileColor.withValues(alpha: 0.1) : Colors.transparent,
+                          borderRadius: BorderRadius.circular(20.r),
+                          border: Border.all(color: (isLit || isCorrect || isWrong) ? tileColor.withValues(alpha: 0.4) : Colors.transparent, width: (isCorrect || isWrong) ? 2 : 1),
+                        ),
+                        child: Center(
+                          child: FittedBox(
+                            child: Padding(
+                              padding: EdgeInsets.all(8.r),
+                              child: Text(options[index], textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w700, color: tileColor)),
+                            ),
+                          ),
+                        ),
                       ),
-                      child: Center(child: Text(options[index], textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w600, color: tileColor))),
-                    ),
-                  );
-                }),
-              ),
-            );
-          }),
-          
-          // The Spotlight Handle
-          Positioned(
-            left: _spotlightPos.dx - 40.r,
-            top: _spotlightPos.dy - 40.r,
-            child: GestureDetector(
-              onPanUpdate: (details) => _onSearch(_spotlightPos + details.delta),
-              child: Container(
-                width: 80.r, height: 80.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Colors.yellowAccent, width: 2),
-                  boxShadow: [BoxShadow(color: Colors.yellowAccent.withValues(alpha: 0.2), blurRadius: 30, spreadRadius: 10)],
+                    );
+                  }),
                 ),
-                child: Icon(Icons.search_rounded, color: Colors.yellowAccent, size: 24.r),
+              );
+            }),
+            
+            // The Spotlight Handle
+            Positioned(
+              left: _spotlightPos.dx - 40.r,
+              top: _spotlightPos.dy - 40.r,
+              child: GestureDetector(
+                onPanUpdate: (details) {
+                  double nextX = (_spotlightPos.dx + details.delta.dx).clamp(40.r, constraints.maxWidth - 40.r);
+                  double nextY = (_spotlightPos.dy + details.delta.dy).clamp(40.r, constraints.maxHeight - 40.r);
+                  _onSearch(Offset(nextX, nextY));
+                },
+                child: Container(
+                  width: 80.r, height: 80.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Colors.yellowAccent, width: 3),
+                    boxShadow: [
+                      BoxShadow(color: Colors.yellowAccent.withValues(alpha: 0.4), blurRadius: 40, spreadRadius: 10),
+                      BoxShadow(color: Colors.yellowAccent.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 5),
+                    ],
+                  ),
+                  child: Center(
+                    child: Icon(Icons.flash_on_rounded, color: Colors.yellowAccent, size: 24.r)
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scale(begin: const Offset(0.8, 0.8), end: const Offset(1.1, 1.1), duration: 1000.ms),
+                  ),
+                ),
               ),
             ),
-          ),
-        ],
-      ),
+          ],
+        );
+      },
     );
   }
 }
