@@ -26,11 +26,11 @@ class ListeningInferenceScreen extends StatefulWidget {
   State<ListeningInferenceScreen> createState() => _ListeningInferenceScreenState();
 }
 
-class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
+class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
-  double _dialAngle = 0.0;
+  late AnimationController _pulseController;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -41,15 +41,14 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
   @override
   void initState() {
     super.initState();
+    _pulseController = AnimationController(vsync: this, duration: 2.seconds)..repeat();
     context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onRotate(double delta) {
-    if (_isAnswered) return;
-    setState(() {
-      _dialAngle += delta / 200;
-      _hapticService.selection();
-    });
+  @override
+  void dispose() {
+    _pulseController.dispose();
+    super.dispose();
   }
 
   void _submitAnswer(int index, int correct) {
@@ -85,14 +84,13 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
-              _dialAngle = 0.0;
             });
           }
           _lastLives = state.livesRemaining;
         }
         if (state is ListeningGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'SUBTEXT RADAR!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'INFERENCE MASTER!', enableDoubleUp: true);
         } else if (state is ListeningGameOver) {
           GameDialogHelper.showGameOver(context, onRestore: () => context.read<ListeningBloc>().add(RestoreLife()));
         }
@@ -108,16 +106,22 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              const Spacer(flex: 1),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              const Spacer(flex: 2),
-              _buildDecoderCore(quest.textToSpeak ?? "", theme.primaryColor),
-              const Spacer(flex: 2),
-              Expanded(
-                flex: 12,
-                child: _buildCryptexField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+              const Spacer(flex: 1),
+              _buildRadarCore(quest.textToSpeak ?? "", theme.primaryColor),
+              const Spacer(flex: 1),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Text(
+                  quest.question?.toUpperCase() ?? "INFER THE ACTOR",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.2),
+                ),
               ),
               const Spacer(flex: 1),
+              _buildInferenceGrid(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+              SizedBox(height: 30.h),
             ],
           ),
         );
@@ -132,84 +136,103 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.vpn_key_rounded, size: 14.r, color: primaryColor),
+          Icon(Icons.radar_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("ALIGN THE CRYPTEX TO DECODE SUBTEXT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text("PROBE SUBTEXT TO INFER INTENT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildDecoderCore(String tts, Color color) {
+  Widget _buildRadarCore(String tts, Color color) {
     return ScaleButton(
       onTap: () {
         _soundService.playTts(tts);
         _hapticService.selection();
       },
-      child: Container(
-        padding: EdgeInsets.all(24.r),
-        decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color.withValues(alpha: 0.3))),
-        child: Icon(Icons.graphic_eq_rounded, size: 56.r, color: color),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Pulse Rings
+          ...List.generate(3, (i) {
+            return AnimatedBuilder(
+              animation: _pulseController,
+              builder: (context, child) {
+                double progress = (_pulseController.value + (i * 0.33)) % 1.0;
+                return Container(
+                  width: (100 + (progress * 150)).r,
+                  height: (100 + (progress * 150)).r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: color.withValues(alpha: (1.0 - progress) * 0.3), width: 2.r),
+                  ),
+                );
+              },
+            );
+          }),
+          
+          // Central Core
+          Container(
+            padding: EdgeInsets.all(32.r),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle, 
+              gradient: RadialGradient(colors: [color, color.withValues(alpha: 0.7)]),
+              boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 30, spreadRadius: 5)],
+            ),
+            child: Icon(Icons.psychology_rounded, size: 64.r, color: Colors.white),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildCryptexField(List<String> options, int correct, Color color, bool isDark) {
-    return SizedBox(
-      height: 420.h,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // The Rotating Cypher
-          GestureDetector(
-            onPanUpdate: (details) => _onRotate(details.delta.dx + details.delta.dy),
-            child: Transform.rotate(
-              angle: _dialAngle,
-              child: Container(
-                width: 320.r, height: 320.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Colors.white10, width: 40.r),
-                ),
-                child: Stack(
-                  children: List.generate(options.length, (i) {
-                    double angle = (i * 6.28 / options.length);
-                    return Transform.rotate(
-                      angle: angle,
-                      child: Align(
-                        alignment: Alignment.topCenter,
-                        child: Icon(Icons.auto_fix_normal_rounded, color: Colors.white24, size: 24.r),
+  Widget _buildInferenceGrid(List<String> options, int correct, Color color, bool isDark) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
+      child: Wrap(
+        spacing: 12.w,
+        runSpacing: 12.h,
+        alignment: WrapAlignment.center,
+        children: List.generate(options.length, (index) {
+          bool isSelected = _selectedIndex == index;
+          bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
+          bool isWrong = _isAnswered && isSelected && _isCorrect == false;
+          
+          Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isSelected ? color : Colors.white24));
+
+          return ScaleButton(
+            onTap: () => _submitAnswer(index, correct),
+            child: Container(
+              width: 150.w,
+              child: GlassTile(
+                padding: EdgeInsets.all(16.r),
+                borderRadius: BorderRadius.circular(20.r),
+                color: tileColor.withValues(alpha: 0.1),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      isCorrect ? Icons.verified_user_rounded : (isWrong ? Icons.report_problem_rounded : Icons.bubble_chart_rounded),
+                      color: tileColor,
+                      size: 20.r
+                    ),
+                    SizedBox(height: 8.h),
+                    Text(
+                      options[index].toUpperCase(),
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.outfit(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isSelected ? Colors.white : Colors.white70,
+                        letterSpacing: 1,
                       ),
-                    );
-                  }),
+                    ),
+                  ],
                 ),
               ),
             ),
-          ),
-          
-          // The Decrypted Options
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(options.length, (index) {
-              bool isSelected = _selectedIndex == index;
-              bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
-              bool isWrong = _isAnswered && isSelected && _isCorrect == false;
-              Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isSelected ? Colors.white : Colors.white70));
-
-              return Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.h),
-                child: ScaleButton(
-                  onTap: () => _submitAnswer(index, correct),
-                  child: GlassTile(
-                    padding: EdgeInsets.all(16.r), borderRadius: BorderRadius.circular(15.r),
-                    color: tileColor.withValues(alpha: 0.1),
-                    child: Text(options[index], style: GoogleFonts.outfit(fontSize: 12.sp, color: isSelected ? Colors.white : Colors.white70)),
-                  ),
-                ),
-              );
-            }),
-          ),
-        ],
+          );
+        }),
       ),
     );
   }
