@@ -31,7 +31,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
-  Offset _spotlightPos = const Offset(200, 300);
+  Offset? _spotlightPos;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -86,7 +86,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
-              _spotlightPos = const Offset(200, 300);
+              _spotlightPos = null; // Reset to center for next quest
             });
           }
           _lastLives = state.livesRemaining;
@@ -139,9 +139,10 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
           SizedBox(width: 12.w),
           Flexible(
             child: Text(
-              "SEARCH THE SHADOWS FOR AUDITORY EVIDENCE", 
-              style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5),
+              _isAnswered ? "EVIDENCE SECURED" : "DRAG TO SEARCH THE SHADOWS", 
+              style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 0.5),
               overflow: TextOverflow.ellipsis,
+              maxLines: 1,
             ),
           ),
         ],
@@ -166,19 +167,31 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
   Widget _buildTargetPrompt(String detail, Color color) {
     return GlassTile(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h), borderRadius: BorderRadius.circular(30.r),
-      child: Text("LOCATE: ${detail.toUpperCase()}", style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 1)),
+      child: Text(_isAnswered ? "TARGET: ${detail.toUpperCase()}" : "SCAN FOR AUDITORY TARGET", style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 1)),
     );
   }
 
   Widget _buildDarkField(List<String> options, int correct, Color color, bool isDark) {
     return LayoutBuilder(
       builder: (context, constraints) {
+        // Initialize position to center on first build
+        _spotlightPos ??= Offset(constraints.maxWidth / 2, constraints.maxHeight / 2);
+        
+        final currentPos = _spotlightPos!;
+
         return Stack(
           children: [
-            // The Shadow Layer
-            Container(
-              width: double.infinity, height: constraints.maxHeight,
-              decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(24.r), border: Border.all(color: color.withValues(alpha: 0.1))),
+            // The Shadow Layer (Captures Drags Everywhere)
+            GestureDetector(
+              onPanUpdate: (details) {
+                double nextX = (currentPos.dx + details.delta.dx).clamp(40.r, constraints.maxWidth - 40.r);
+                double nextY = (currentPos.dy + details.delta.dy).clamp(40.r, constraints.maxHeight - 40.r);
+                _onSearch(Offset(nextX, nextY));
+              },
+              child: Container(
+                width: double.infinity, height: constraints.maxHeight,
+                decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(24.r), border: Border.all(color: color.withValues(alpha: 0.1))),
+              ),
             ),
             
             // Hidden Options
@@ -189,7 +202,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               double x = (index % 2 == 0) ? 16.w : (constraints.maxWidth / 2 + 8.w);
               double y = (index < 2) ? 40.h : (constraints.maxHeight - 120.h);
               
-              double dist = (_spotlightPos - Offset(x + tileW / 2, y + tileH / 2)).distance;
+              double dist = (currentPos - Offset(x + tileW / 2, y + tileH / 2)).distance;
               bool isLit = dist < 80.r;
               
               return Positioned(
@@ -227,20 +240,15 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               );
             }),
             
-            // The Spotlight Handle
             Positioned(
-              left: _spotlightPos.dx - 40.r,
-              top: _spotlightPos.dy - 40.r,
-              child: GestureDetector(
-                onPanUpdate: (details) {
-                  double nextX = (_spotlightPos.dx + details.delta.dx).clamp(40.r, constraints.maxWidth - 40.r);
-                  double nextY = (_spotlightPos.dy + details.delta.dy).clamp(40.r, constraints.maxHeight - 40.r);
-                  _onSearch(Offset(nextX, nextY));
-                },
+              left: currentPos.dx - 40.r,
+              top: currentPos.dy - 40.r,
+              child: IgnorePointer(
                 child: Container(
                   width: 80.r, height: 80.r,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
+                    color: Colors.transparent, // Ensures it doesn't block but looks solid
                     border: Border.all(color: Colors.yellowAccent, width: 3),
                     boxShadow: [
                       BoxShadow(color: Colors.yellowAccent.withValues(alpha: 0.4), blurRadius: 40, spreadRadius: 10),
