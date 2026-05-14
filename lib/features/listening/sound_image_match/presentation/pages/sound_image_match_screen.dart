@@ -194,9 +194,10 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
             ),
           ),
         ],
-      ),
-    );
-  }
+      );
+    },
+  );
+}
 
   Widget _buildEncryptedTile(int index, String text, int correct, Color color, bool isDark, BoxConstraints fieldConstraints) {
     double tileWidth = fieldConstraints.maxWidth / 2;
