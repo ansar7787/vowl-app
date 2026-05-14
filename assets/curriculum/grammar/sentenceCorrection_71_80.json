@@ -1,247 +1,877 @@
 {
-    "gameType": "sentenceCorrection",
-    "batchIndex": 8,
-    "levels": "71-80",
-    "quests": [
-        {
-            "id": "GRM_SENTENCECORRECTION_L71_Q1",
-            "interactionType": "Zapper",
-            "hint": "Review the details carefully.",
-            "explanation": "Practicing your reading speed boosts overall fluency.",
-            "sentence": "The hero operates the circuit swiftly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L71_Q2",
-            "interactionType": "Zapper",
-            "hint": "Analyze the provided text to determine the best answer.",
-            "explanation": "Mastering this specific skill helps with daily communication.",
-            "sentence": "A robot operates the circuit swiftly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L71_Q3",
-            "interactionType": "Zapper",
-            "hint": "Check the sentence to find the correct option.",
-            "explanation": "Improving your comprehension reinforces language accuracy.",
-            "sentence": "The traveler operates the circuit swiftly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L72_Q1",
-            "interactionType": "Zapper",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary helps with daily communication.",
-            "sentence": "A scientist repairs the shield boldly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L72_Q2",
-            "interactionType": "Zapper",
-            "hint": "Check the sentence carefully.",
-            "explanation": "Improving your reading speed reinforces language accuracy.",
-            "sentence": "The commander repairs the shield boldly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L72_Q3",
-            "interactionType": "Zapper",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill boosts overall fluency.",
-            "sentence": "A pilot repairs the shield boldly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L73_Q1",
-            "interactionType": "Zapper",
-            "hint": "Check the sentence to find the correct option.",
-            "explanation": "Improving your comprehension reinforces language accuracy.",
-            "sentence": "The traveler investigates the database carefully.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L73_Q2",
-            "interactionType": "Zapper",
-            "hint": "Read the words closely.",
-            "explanation": "Developing your vocabulary boosts overall fluency.",
-            "sentence": "A doctor investigates the database carefully.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L73_Q3",
-            "interactionType": "Zapper",
-            "hint": "Examine the context carefully.",
-            "explanation": "Refining your reading speed helps with daily communication.",
-            "sentence": "The teacher investigates the database carefully.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L74_Q1",
-            "interactionType": "Zapper",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill boosts overall fluency.",
-            "sentence": "A pilot monitors the module immediately.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L74_Q2",
-            "interactionType": "Zapper",
-            "hint": "Examine the context to find the correct option.",
-            "explanation": "Refining your comprehension helps with daily communication.",
-            "sentence": "The technician monitors the module immediately.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L74_Q3",
-            "interactionType": "Zapper",
-            "hint": "Review the details closely.",
-            "explanation": "Practicing your vocabulary reinforces language accuracy.",
-            "sentence": "An explorer monitors the module immediately.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L75_Q1",
-            "interactionType": "Zapper",
-            "hint": "Examine the context carefully.",
-            "explanation": "Refining your reading speed helps with daily communication.",
-            "sentence": "The teacher discovers a laser perfectly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L75_Q2",
-            "interactionType": "Zapper",
-            "hint": "Review the details to determine the best answer.",
-            "explanation": "Practicing this specific skill reinforces language accuracy.",
-            "sentence": "A researcher discovers a laser perfectly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L75_Q3",
-            "interactionType": "Zapper",
-            "hint": "Analyze the provided text to find the correct option.",
-            "explanation": "Mastering your comprehension boosts overall fluency.",
-            "sentence": "The detective discovers a laser perfectly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L76_Q1",
-            "interactionType": "Zapper",
-            "hint": "Review the details closely.",
-            "explanation": "Practicing your vocabulary reinforces language accuracy.",
-            "sentence": "An explorer builds a machine smoothly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L76_Q2",
-            "interactionType": "Zapper",
-            "hint": "Analyze the provided text carefully.",
-            "explanation": "Mastering your reading speed boosts overall fluency.",
-            "sentence": "The droid builds a machine smoothly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L76_Q3",
-            "interactionType": "Zapper",
-            "hint": "Check the sentence to determine the best answer.",
-            "explanation": "Improving this specific skill helps with daily communication.",
-            "sentence": "A student builds a machine smoothly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L77_Q1",
-            "interactionType": "Zapper",
-            "hint": "Analyze the provided text to find the correct option.",
-            "explanation": "Mastering your comprehension boosts overall fluency.",
-            "sentence": "The detective sends the archive cleverly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L77_Q2",
-            "interactionType": "Zapper",
-            "hint": "Check the sentence closely.",
-            "explanation": "Improving your vocabulary helps with daily communication.",
-            "sentence": "A spy sends the archive cleverly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L77_Q3",
-            "interactionType": "Zapper",
-            "hint": "Read the words carefully.",
-            "explanation": "Developing your reading speed reinforces language accuracy.",
-            "sentence": "The driver sends the archive cleverly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L78_Q1",
-            "interactionType": "Zapper",
-            "hint": "Check the sentence to determine the best answer.",
-            "explanation": "Improving this specific skill helps with daily communication.",
-            "sentence": "A student tests a system quickly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L78_Q2",
-            "interactionType": "Zapper",
-            "hint": "Read the words to find the correct option.",
-            "explanation": "Developing your comprehension reinforces language accuracy.",
-            "sentence": "The analyst tests a system quickly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L78_Q3",
-            "interactionType": "Zapper",
-            "hint": "Examine the context closely.",
-            "explanation": "Refining your vocabulary boosts overall fluency.",
-            "sentence": "A manager tests a system quickly.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L79_Q1",
-            "interactionType": "Zapper",
-            "hint": "Read the words carefully.",
-            "explanation": "Developing your reading speed reinforces language accuracy.",
-            "sentence": "The driver receives a satellite silently.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L79_Q2",
-            "interactionType": "Zapper",
-            "hint": "Examine the context to determine the best answer.",
-            "explanation": "Refining this specific skill boosts overall fluency.",
-            "sentence": "A chef receives a satellite silently.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L79_Q3",
-            "interactionType": "Zapper",
-            "hint": "Review the details to find the correct option.",
-            "explanation": "Practicing your comprehension helps with daily communication.",
-            "sentence": "The engineer sends a satellite silently.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L80_Q1",
-            "interactionType": "Zapper",
-            "hint": "Review the details to find the correct option.",
-            "explanation": "Practicing your comprehension boosts overall fluency.",
-            "sentence": "The engineer tests the network immediately.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L80_Q2",
-            "interactionType": "Zapper",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary helps with daily communication.",
-            "sentence": "A scientist tests the network immediately.",
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_SENTENCECORRECTION_L80_Q3",
-            "interactionType": "Zapper",
-            "hint": "Check the sentence carefully.",
-            "explanation": "Improving your reading speed reinforces language accuracy.",
-            "sentence": "The commander tests the network immediately.",
-            "correctAnswerIndex": 1
-        }
-    ]
+  "gameType": "sentenceCorrection",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "quests": [
+    {
+      "id": "sc_l71_q1",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"He don't know the answer.\"",
+      "sentence": "He don't know the answer.",
+      "incorrectPart": "don't",
+      "correctedPart": "doesn't",
+      "options": [
+        "doesn't",
+        "don't",
+        "don'ts",
+        "very don't"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "doesn't",
+      "hint": "Third person singular needs 'doesn't'.",
+      "explanation": "\"don't\" should be \"doesn't\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l71_q2",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"She have been waiting for hours.\"",
+      "sentence": "She have been waiting for hours.",
+      "incorrectPart": "have",
+      "correctedPart": "has",
+      "options": [
+        "has",
+        "have",
+        "haves",
+        "very have"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "has",
+      "hint": "Subject-verb agreement.",
+      "explanation": "\"have\" should be \"has\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l71_q3",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"They was playing outside.\"",
+      "sentence": "They was playing outside.",
+      "incorrectPart": "was",
+      "correctedPart": "were",
+      "options": [
+        "were",
+        "was",
+        "wass",
+        "very was"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "were",
+      "hint": "Plural subject needs 'were'.",
+      "explanation": "\"was\" should be \"were\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l72_q1",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"I seen that movie before.\"",
+      "sentence": "I seen that movie before.",
+      "incorrectPart": "seen",
+      "correctedPart": "have seen",
+      "options": [
+        "have seen",
+        "seen",
+        "seens",
+        "very seen"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "have seen",
+      "hint": "Past participle needs an auxiliary.",
+      "explanation": "\"seen\" should be \"have seen\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l72_q2",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"He goed to the store.\"",
+      "sentence": "He goed to the store.",
+      "incorrectPart": "goed",
+      "correctedPart": "went",
+      "options": [
+        "went",
+        "goed",
+        "goeds",
+        "very goed"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "went",
+      "hint": "Irregular past tense.",
+      "explanation": "\"goed\" should be \"went\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l72_q3",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"The dogs is barking loudly.\"",
+      "sentence": "The dogs is barking loudly.",
+      "incorrectPart": "is",
+      "correctedPart": "are",
+      "options": [
+        "are",
+        "is",
+        "iss",
+        "very is"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "are",
+      "hint": "Plural subject.",
+      "explanation": "\"is\" should be \"are\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l73_q1",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"Me and him went home.\"",
+      "sentence": "Me and him went home.",
+      "incorrectPart": "Me and him",
+      "correctedPart": "He and I",
+      "options": [
+        "He and I",
+        "Me and him",
+        "Me and hims",
+        "very Me and him"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "He and I",
+      "hint": "Subject pronouns.",
+      "explanation": "\"Me and him\" should be \"He and I\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l73_q2",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"There is many problems here.\"",
+      "sentence": "There is many problems here.",
+      "incorrectPart": "is",
+      "correctedPart": "are",
+      "options": [
+        "are",
+        "is",
+        "iss",
+        "very is"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "are",
+      "hint": "Plural noun needs 'are'.",
+      "explanation": "\"is\" should be \"are\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l73_q3",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"She can sings beautifully.\"",
+      "sentence": "She can sings beautifully.",
+      "incorrectPart": "sings",
+      "correctedPart": "sing",
+      "options": [
+        "sing",
+        "sings",
+        "singss",
+        "very sings"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "sing",
+      "hint": "Base form after modals.",
+      "explanation": "\"sings\" should be \"sing\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l74_q1",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"I have went there twice.\"",
+      "sentence": "I have went there twice.",
+      "incorrectPart": "went",
+      "correctedPart": "gone",
+      "options": [
+        "gone",
+        "went",
+        "wents",
+        "very went"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "gone",
+      "hint": "Past participle of 'go' is 'gone'.",
+      "explanation": "\"went\" should be \"gone\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l74_q2",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"Each students must register.\"",
+      "sentence": "Each students must register.",
+      "incorrectPart": "students",
+      "correctedPart": "student",
+      "options": [
+        "student",
+        "students",
+        "studentss",
+        "very students"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "student",
+      "hint": "'Each' is followed by a singular noun.",
+      "explanation": "\"students\" should be \"student\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l74_q3",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"I am more taller than him.\"",
+      "sentence": "I am more taller than him.",
+      "incorrectPart": "more taller",
+      "correctedPart": "taller",
+      "options": [
+        "taller",
+        "more taller",
+        "more tallers",
+        "very more taller"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "taller",
+      "hint": "Avoid double comparatives.",
+      "explanation": "\"more taller\" should be \"taller\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l75_q1",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"The informations is incorrect.\"",
+      "sentence": "The informations is incorrect.",
+      "incorrectPart": "informations",
+      "correctedPart": "information",
+      "options": [
+        "information",
+        "informations",
+        "informationss",
+        "very informations"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "information",
+      "hint": "Uncountable noun.",
+      "explanation": "\"informations\" should be \"information\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l75_q2",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"If I was you, I'd go.\"",
+      "sentence": "If I was you, I'd go.",
+      "incorrectPart": "was",
+      "correctedPart": "were",
+      "options": [
+        "were",
+        "was",
+        "wass",
+        "very was"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "were",
+      "hint": "Subjunctive mood for imaginary states.",
+      "explanation": "\"was\" should be \"were\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l75_q3",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"He said he will come tomorrow.\"",
+      "sentence": "He said he will come tomorrow.",
+      "incorrectPart": "will",
+      "correctedPart": "would",
+      "options": [
+        "would",
+        "will",
+        "wills",
+        "very will"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "would",
+      "hint": "Tense shift in reported speech.",
+      "explanation": "\"will\" should be \"would\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l76_q1",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"He don't know the answer.\"",
+      "sentence": "He don't know the answer.",
+      "incorrectPart": "don't",
+      "correctedPart": "doesn't",
+      "options": [
+        "doesn't",
+        "don't",
+        "don'ts",
+        "very don't"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "doesn't",
+      "hint": "Third person singular needs 'doesn't'.",
+      "explanation": "\"don't\" should be \"doesn't\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l76_q2",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"She have been waiting for hours.\"",
+      "sentence": "She have been waiting for hours.",
+      "incorrectPart": "have",
+      "correctedPart": "has",
+      "options": [
+        "has",
+        "have",
+        "haves",
+        "very have"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "has",
+      "hint": "Subject-verb agreement.",
+      "explanation": "\"have\" should be \"has\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l76_q3",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"They was playing outside.\"",
+      "sentence": "They was playing outside.",
+      "incorrectPart": "was",
+      "correctedPart": "were",
+      "options": [
+        "were",
+        "was",
+        "wass",
+        "very was"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "were",
+      "hint": "Plural subject needs 'were'.",
+      "explanation": "\"was\" should be \"were\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l77_q1",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"I seen that movie before.\"",
+      "sentence": "I seen that movie before.",
+      "incorrectPart": "seen",
+      "correctedPart": "have seen",
+      "options": [
+        "have seen",
+        "seen",
+        "seens",
+        "very seen"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "have seen",
+      "hint": "Past participle needs an auxiliary.",
+      "explanation": "\"seen\" should be \"have seen\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l77_q2",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"He goed to the store.\"",
+      "sentence": "He goed to the store.",
+      "incorrectPart": "goed",
+      "correctedPart": "went",
+      "options": [
+        "went",
+        "goed",
+        "goeds",
+        "very goed"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "went",
+      "hint": "Irregular past tense.",
+      "explanation": "\"goed\" should be \"went\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l77_q3",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"The dogs is barking loudly.\"",
+      "sentence": "The dogs is barking loudly.",
+      "incorrectPart": "is",
+      "correctedPart": "are",
+      "options": [
+        "are",
+        "is",
+        "iss",
+        "very is"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "are",
+      "hint": "Plural subject.",
+      "explanation": "\"is\" should be \"are\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l78_q1",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"Me and him went home.\"",
+      "sentence": "Me and him went home.",
+      "incorrectPart": "Me and him",
+      "correctedPart": "He and I",
+      "options": [
+        "He and I",
+        "Me and him",
+        "Me and hims",
+        "very Me and him"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "He and I",
+      "hint": "Subject pronouns.",
+      "explanation": "\"Me and him\" should be \"He and I\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l78_q2",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"There is many problems here.\"",
+      "sentence": "There is many problems here.",
+      "incorrectPart": "is",
+      "correctedPart": "are",
+      "options": [
+        "are",
+        "is",
+        "iss",
+        "very is"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "are",
+      "hint": "Plural noun needs 'are'.",
+      "explanation": "\"is\" should be \"are\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l78_q3",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"She can sings beautifully.\"",
+      "sentence": "She can sings beautifully.",
+      "incorrectPart": "sings",
+      "correctedPart": "sing",
+      "options": [
+        "sing",
+        "sings",
+        "singss",
+        "very sings"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "sing",
+      "hint": "Base form after modals.",
+      "explanation": "\"sings\" should be \"sing\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l79_q1",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"I have went there twice.\"",
+      "sentence": "I have went there twice.",
+      "incorrectPart": "went",
+      "correctedPart": "gone",
+      "options": [
+        "gone",
+        "went",
+        "wents",
+        "very went"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "gone",
+      "hint": "Past participle of 'go' is 'gone'.",
+      "explanation": "\"went\" should be \"gone\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l79_q2",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"Each students must register.\"",
+      "sentence": "Each students must register.",
+      "incorrectPart": "students",
+      "correctedPart": "student",
+      "options": [
+        "student",
+        "students",
+        "studentss",
+        "very students"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "student",
+      "hint": "'Each' is followed by a singular noun.",
+      "explanation": "\"students\" should be \"student\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l79_q3",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"I am more taller than him.\"",
+      "sentence": "I am more taller than him.",
+      "incorrectPart": "more taller",
+      "correctedPart": "taller",
+      "options": [
+        "taller",
+        "more taller",
+        "more tallers",
+        "very more taller"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "taller",
+      "hint": "Avoid double comparatives.",
+      "explanation": "\"more taller\" should be \"taller\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l80_q1",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"The informations is incorrect.\"",
+      "sentence": "The informations is incorrect.",
+      "incorrectPart": "informations",
+      "correctedPart": "information",
+      "options": [
+        "information",
+        "informations",
+        "informationss",
+        "very informations"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "information",
+      "hint": "Uncountable noun.",
+      "explanation": "\"informations\" should be \"information\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l80_q2",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"If I was you, I'd go.\"",
+      "sentence": "If I was you, I'd go.",
+      "incorrectPart": "was",
+      "correctedPart": "were",
+      "options": [
+        "were",
+        "was",
+        "wass",
+        "very was"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "were",
+      "hint": "Subjunctive mood for imaginary states.",
+      "explanation": "\"was\" should be \"were\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    },
+    {
+      "id": "sc_l80_q3",
+      "instruction": "ZAP THE ERROR",
+      "difficulty": 2,
+      "subtype": "sentenceCorrection",
+      "interactionType": "Zapper Grid",
+      "question": "Fix: \"He said he will come tomorrow.\"",
+      "sentence": "He said he will come tomorrow.",
+      "incorrectPart": "will",
+      "correctedPart": "would",
+      "options": [
+        "would",
+        "will",
+        "wills",
+        "very will"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "would",
+      "hint": "Tense shift in reported speech.",
+      "explanation": "\"will\" should be \"would\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "PurgeGridSync",
+        "primary_color": "0xFFF44336",
+        "pulse_intensity": 0.8,
+        "shader_effect": "matrix_scan"
+      }
+    }
+  ]
 }

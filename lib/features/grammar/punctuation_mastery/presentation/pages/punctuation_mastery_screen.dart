@@ -50,16 +50,22 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     setState(() => _placedStickers[index] = mark);
   }
 
-  void _submitAnswer(String correctAnswer) {
+  void _submitAnswer(GameQuest quest) {
     if (_isAnswered) return;
     
-    // Construct the result sentence (simplified logic for this refactor)
-    // In a real scenario, we'd need to reconstruct the string with marks at specific positions.
-    // For this refactor, we'll assume the interaction is the goal.
-    // We'll check if any marks were placed.
-    bool hasPlaced = _placedStickers.isNotEmpty;
+    final words = (quest.sentence ?? "").split(" ");
+    String result = "";
+    for (int i = 0; i < words.length; i++) {
+      result += words[i];
+      if (_placedStickers.containsKey(i)) {
+        result += _placedStickers[i]!;
+      }
+      if (i < words.length - 1) result += " ";
+    }
 
-    if (hasPlaced) {
+    bool isCorrect = result.trim().toLowerCase() == (quest.correctAnswer ?? "").trim().toLowerCase();
+
+    if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
       setState(() { _isAnswered = true; _isCorrect = true; });
@@ -121,7 +127,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
               _buildStickerSheet(marks, theme.primaryColor),
               const Spacer(),
               if (!_isAnswered)
-                _buildSubmitButton(theme.primaryColor),
+                _buildSubmitButton(theme.primaryColor, quest),
               SizedBox(height: 40.h),
             ],
           ),
@@ -155,7 +161,7 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
         crossAxisAlignment: WrapCrossAlignment.center,
         spacing: 8.w,
         runSpacing: 12.h,
-        children: List.generate(words.length * 2 - 1, (index) {
+        children: List.generate(words.length * 2, (index) {
           if (index % 2 == 0) {
             return Text(words[index ~/ 2], style: GoogleFonts.fredoka(fontSize: 20.sp, color: isDark ? Colors.white70 : Colors.black87));
           } else {
@@ -226,9 +232,9 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     ).animate(onPlay: (c) => c.repeat(reverse: true)).rotate(begin: -0.05, end: 0.05, duration: 2.seconds);
   }
 
-  Widget _buildSubmitButton(Color primaryColor) {
+  Widget _buildSubmitButton(Color primaryColor, GameQuest quest) {
     return ScaleButton(
-      onTap: () => _submitAnswer(""),
+      onTap: () => _submitAnswer(quest),
       child: Container(
         width: double.infinity, height: 60.h,
         decoration: BoxDecoration(

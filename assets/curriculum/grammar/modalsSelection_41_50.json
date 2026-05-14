@@ -1,427 +1,787 @@
 {
-    "gameType": "modalsSelection",
-    "batchIndex": 5,
-    "levels": "41-50",
-    "quests": [
-        {
-            "id": "GRM_MODALSSELECTION_L41_Q1",
-            "interactionType": "Mood Dial",
-            "hint": "Analyze the provided text to find the correct option.",
-            "explanation": "Mastering your comprehension helps with daily communication.",
-            "question": "The ____ echo watches the shield within the sector.",
-            "options": [
-                "sharp task",
-                "smooth job",
-                "rough mission",
-                "soft quest"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L41_Q2",
-            "interactionType": "Mood Dial",
-            "hint": "Review the details to determine the best answer.",
-            "explanation": "Practicing this specific skill boosts overall fluency.",
-            "question": "The ____ crystal tracks the portal under the stars.",
-            "options": [
-                "quiet goal",
-                "sharp task",
-                "smooth job",
-                "rough mission"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L41_Q3",
-            "interactionType": "Mood Dial",
-            "hint": "Examine the context carefully.",
-            "explanation": "Refining your reading speed reinforces language accuracy.",
-            "question": "The ____ hull locks the code across the bridge.",
-            "options": [
-                "loud plan",
-                "quiet goal",
-                "sharp task",
-                "smooth job"
-            ],
-            "correctAnswerIndex": 3
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L42_Q1",
-            "interactionType": "Mood Dial",
-            "hint": "Review the details closely.",
-            "explanation": "Practicing your vocabulary boosts overall fluency.",
-            "question": "The ____ satellite routes the battery inside the station.",
-            "options": [
-                "light switch",
-                "fast cable",
-                "slow lens",
-                "bright gear"
-            ],
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L42_Q2",
-            "interactionType": "Mood Dial",
-            "hint": "Examine the context to find the correct option.",
-            "explanation": "Refining your comprehension reinforces language accuracy.",
-            "question": "The ____ merchant measures the console in the Hub.",
-            "options": [
-                "heavy lever",
-                "light switch",
-                "fast cable",
-                "slow lens"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L42_Q3",
-            "interactionType": "Mood Dial",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill helps with daily communication.",
-            "question": "The ____ ghost chooses the battery near the Void.",
-            "options": [
-                "small button",
-                "heavy lever",
-                "light switch",
-                "fast cable"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L43_Q1",
-            "interactionType": "Mood Dial",
-            "hint": "Examine the context carefully.",
-            "explanation": "Refining your reading speed reinforces language accuracy.",
-            "question": "The ____ soldier monitors the drone through the portal.",
-            "options": [
-                "loud plan",
-                "quiet goal",
-                "sharp task",
-                "smooth job"
-            ],
-            "correctAnswerIndex": 3
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L43_Q2",
-            "interactionType": "Mood Dial",
-            "hint": "Read the words closely.",
-            "explanation": "Developing your vocabulary helps with daily communication.",
-            "question": "The ____ droid measures the log by the reactor.",
-            "options": [
-                "cold map",
-                "loud plan",
-                "quiet goal",
-                "sharp task"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L43_Q3",
-            "interactionType": "Mood Dial",
-            "hint": "Check the sentence to find the correct option.",
-            "explanation": "Improving your comprehension boosts overall fluency.",
-            "question": "Lex ____ signals the report against the wind.",
-            "options": [
-                "hot code",
-                "cold map",
-                "loud plan",
-                "quiet goal"
-            ],
-            "correctAnswerIndex": 3
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L44_Q1",
-            "interactionType": "Mood Dial",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill helps with daily communication.",
-            "question": "The ____ cable builds the platform near the Void.",
-            "options": [
-                "small button",
-                "heavy lever",
-                "light switch",
-                "fast cable"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L44_Q2",
-            "interactionType": "Mood Dial",
-            "hint": "Check the sentence carefully.",
-            "explanation": "Improving your reading speed boosts overall fluency.",
-            "question": "The ____ mainframe repairs the log at the foundry.",
-            "options": [
-                "large screen",
-                "small button",
-                "heavy lever",
-                "light switch"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L44_Q3",
-            "interactionType": "Mood Dial",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary reinforces language accuracy.",
-            "question": "Each ____ scout calibrates the sensor across the bridge.",
-            "options": [
-                "blue tool",
-                "large screen",
-                "small button",
-                "heavy lever"
-            ],
-            "correctAnswerIndex": 3
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L45_Q1",
-            "interactionType": "Mood Dial",
-            "hint": "Check the sentence to find the correct option.",
-            "explanation": "Improving your comprehension boosts overall fluency.",
-            "question": "The ____ mainframe boots the relic during the storm.",
-            "options": [
-                "hot code",
-                "cold map",
-                "loud plan",
-                "quiet goal"
-            ],
-            "correctAnswerIndex": 3
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L45_Q2",
-            "interactionType": "Mood Dial",
-            "hint": "Analyze the provided text to determine the best answer.",
-            "explanation": "Mastering this specific skill reinforces language accuracy.",
-            "question": "Neither ____ droid signals the key at the foundry.",
-            "options": [
-                "dull lock",
-                "hot code",
-                "cold map",
-                "loud plan"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L45_Q3",
-            "interactionType": "Mood Dial",
-            "hint": "Review the details carefully.",
-            "explanation": "Practicing your reading speed helps with daily communication.",
-            "question": "The ____ valley signals the battery out of the shadows.",
-            "options": [
-                "shiny key",
-                "dull lock",
-                "hot code",
-                "cold map"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L46_Q1",
-            "interactionType": "Mood Dial",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary reinforces language accuracy.",
-            "question": "The ____ keeper locates the console through the portal.",
-            "options": [
-                "blue tool",
-                "large screen",
-                "small button",
-                "heavy lever"
-            ],
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L46_Q2",
-            "interactionType": "Mood Dial",
-            "hint": "Review the details to find the correct option.",
-            "explanation": "Practicing your comprehension helps with daily communication.",
-            "question": "No ____ one tunes the pulse between the cores.",
-            "options": [
-                "red device",
-                "blue tool",
-                "large screen",
-                "small button"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L46_Q3",
-            "interactionType": "Mood Dial",
-            "hint": "Examine the context to determine the best answer.",
-            "explanation": "Refining this specific skill boosts overall fluency.",
-            "question": "The ____ bot processes the module inside the station.",
-            "options": [
-                "soft quest",
-                "red device",
-                "blue tool",
-                "large screen"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L47_Q1",
-            "interactionType": "Mood Dial",
-            "hint": "Review the details carefully.",
-            "explanation": "Practicing your reading speed helps with daily communication.",
-            "question": "The ____ Hub opens the blueprint at the foundry.",
-            "options": [
-                "shiny key",
-                "dull lock",
-                "hot code",
-                "cold map"
-            ],
-            "correctAnswerIndex": 3
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L47_Q2",
-            "interactionType": "Mood Dial",
-            "hint": "Examine the context closely.",
-            "explanation": "Refining your vocabulary boosts overall fluency.",
-            "question": "The ____ circuit monitors the console near the Void.",
-            "options": [
-                "dark wheel",
-                "shiny key",
-                "dull lock",
-                "hot code"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L47_Q3",
-            "interactionType": "Mood Dial",
-            "hint": "Read the words to find the correct option.",
-            "explanation": "Developing your comprehension reinforces language accuracy.",
-            "question": "The ____ button protects the system between the cores.",
-            "options": [
-                "bright gear",
-                "dark wheel",
-                "shiny key",
-                "dull lock"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L48_Q1",
-            "interactionType": "Mood Dial",
-            "hint": "Examine the context to determine the best answer.",
-            "explanation": "Refining this specific skill boosts overall fluency.",
-            "question": "The ____ commander powers the key under the stars.",
-            "options": [
-                "soft quest",
-                "red device",
-                "blue tool",
-                "large screen"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L48_Q2",
-            "interactionType": "Mood Dial",
-            "hint": "Read the words carefully.",
-            "explanation": "Developing your reading speed reinforces language accuracy.",
-            "question": "The ____ river secures the key against the wind.",
-            "options": [
-                "rough mission",
-                "soft quest",
-                "red device",
-                "blue tool"
-            ],
-            "correctAnswerIndex": 3
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L48_Q3",
-            "interactionType": "Mood Dial",
-            "hint": "Check the sentence closely.",
-            "explanation": "Improving your vocabulary helps with daily communication.",
-            "question": "The ____ sand watches the engine during the storm.",
-            "options": [
-                "smooth job",
-                "rough mission",
-                "soft quest",
-                "red device"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L49_Q1",
-            "interactionType": "Mood Dial",
-            "hint": "Read the words to find the correct option.",
-            "explanation": "Developing your comprehension reinforces language accuracy.",
-            "question": "The ____ gas receives the data by the reactor.",
-            "options": [
-                "bright gear",
-                "dark wheel",
-                "shiny key",
-                "dull lock"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L49_Q2",
-            "interactionType": "Mood Dial",
-            "hint": "Check the sentence to determine the best answer.",
-            "explanation": "Improving this specific skill helps with daily communication.",
-            "question": "The ____ Archivist calibrates the relay by the reactor.",
-            "options": [
-                "slow lens",
-                "bright gear",
-                "dark wheel",
-                "shiny key"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L49_Q3",
-            "interactionType": "Mood Dial",
-            "hint": "Analyze the provided text carefully.",
-            "explanation": "Mastering your reading speed boosts overall fluency.",
-            "question": "The ____ cockpit collects the beam past the gate.",
-            "options": [
-                "fast cable",
-                "slow lens",
-                "bright gear",
-                "dark wheel"
-            ],
-            "correctAnswerIndex": 3
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L50_Q1",
-            "interactionType": "Mood Dial",
-            "hint": "Analyze the provided text carefully.",
-            "explanation": "Mastering your reading speed helps with daily communication.",
-            "question": "The ____ wrench heats the map by the reactor.",
-            "options": [
-                "fast cable",
-                "slow lens",
-                "bright gear",
-                "dark wheel"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L50_Q2",
-            "interactionType": "Mood Dial",
-            "hint": "Review the details closely.",
-            "explanation": "Practicing your vocabulary boosts overall fluency.",
-            "question": "The ____ gear opens the chamber through the portal.",
-            "options": [
-                "light switch",
-                "fast cable",
-                "slow lens",
-                "bright gear"
-            ],
-            "correctAnswerIndex": 3
-        },
-        {
-            "id": "GRM_MODALSSELECTION_L50_Q3",
-            "interactionType": "Mood Dial",
-            "hint": "Examine the context to find the correct option.",
-            "explanation": "Refining your comprehension reinforces language accuracy.",
-            "question": "The ____ weapon explores the code inside the station.",
-            "options": [
-                "heavy lever",
-                "light switch",
-                "fast cable",
-                "slow lens"
-            ],
-            "correctAnswerIndex": 0
-        }
-    ]
+  "gameType": "modalsSelection",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "ms_l41_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ wear a helmet while riding a bike.",
+      "options": [
+        "must",
+        "shall",
+        "should",
+        "could"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "must",
+      "hint": "It's a strong obligation or law.",
+      "explanation": "The correct modal is \"must\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l41_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ I borrow your pen for a moment?",
+      "options": [
+        "should",
+        "could",
+        "can",
+        "would"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Can",
+      "hint": "Asking for permission.",
+      "explanation": "The correct modal is \"Can\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l41_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "It ___ rain later, so take an umbrella.",
+      "options": [
+        "should",
+        "can",
+        "might",
+        "could"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "might",
+      "hint": "Expressing possibility.",
+      "explanation": "The correct modal is \"might\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l42_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ see a doctor about that cough.",
+      "options": [
+        "might",
+        "would",
+        "should",
+        "can"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "should",
+      "hint": "Giving advice.",
+      "explanation": "The correct modal is \"should\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l42_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "I ___ swim when I was five years old.",
+      "options": [
+        "could",
+        "should",
+        "must",
+        "had"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "could",
+      "hint": "Past ability.",
+      "explanation": "The correct modal is \"could\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l42_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "He ___ be at home; his car is in the driveway.",
+      "options": [
+        "should",
+        "shall",
+        "can",
+        "must"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "must",
+      "hint": "Strong logical deduction.",
+      "explanation": "The correct modal is \"must\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l43_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ you like some coffee?",
+      "options": [
+        "can",
+        "should",
+        "must",
+        "would"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Would",
+      "hint": "Polite offer.",
+      "explanation": "The correct modal is \"Would\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l43_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ not enter this restricted area.",
+      "options": [
+        "can",
+        "should",
+        "must",
+        "had"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "must",
+      "hint": "Prohibition.",
+      "explanation": "The correct modal is \"must\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l43_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "I ___ love to visit Japan one day.",
+      "options": [
+        "should",
+        "would",
+        "could",
+        "might"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "would",
+      "hint": "Expressing a desire.",
+      "explanation": "The correct modal is \"would\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l44_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "They ___ have arrived by now, but they're late.",
+      "options": [
+        "should",
+        "must",
+        "can",
+        "could"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "should",
+      "hint": "Expectation.",
+      "explanation": "The correct modal is \"should\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l44_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ we go for a walk?",
+      "options": [
+        "shall",
+        "can",
+        "might",
+        "would"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Shall",
+      "hint": "Suggestion (formal).",
+      "explanation": "The correct modal is \"Shall\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l44_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "I ___ help you with your bags.",
+      "options": [
+        "could",
+        "shall",
+        "must",
+        "can"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "can",
+      "hint": "Offering help.",
+      "explanation": "The correct modal is \"can\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l45_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "It ___ be true, but I doubt it.",
+      "options": [
+        "had",
+        "must",
+        "could",
+        "might"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "might",
+      "hint": "Weak possibility.",
+      "explanation": "The correct modal is \"might\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l45_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ better hurry if you want to be on time.",
+      "options": [
+        "must",
+        "had",
+        "could",
+        "shall"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "had",
+      "hint": "Idiomatic: 'had better'.",
+      "explanation": "The correct modal is \"had\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l45_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ you please pass the salt?",
+      "options": [
+        "shall",
+        "should",
+        "must",
+        "could"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Could",
+      "hint": "Polite request.",
+      "explanation": "The correct modal is \"Could\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l46_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ wear a helmet while riding a bike.",
+      "options": [
+        "should",
+        "might",
+        "must",
+        "would"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "must",
+      "hint": "It's a strong obligation or law.",
+      "explanation": "The correct modal is \"must\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l46_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ I borrow your pen for a moment?",
+      "options": [
+        "can",
+        "could",
+        "had",
+        "would"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Can",
+      "hint": "Asking for permission.",
+      "explanation": "The correct modal is \"Can\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l46_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "It ___ rain later, so take an umbrella.",
+      "options": [
+        "would",
+        "can",
+        "had",
+        "might"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "might",
+      "hint": "Expressing possibility.",
+      "explanation": "The correct modal is \"might\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l47_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ see a doctor about that cough.",
+      "options": [
+        "might",
+        "should",
+        "had",
+        "shall"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "should",
+      "hint": "Giving advice.",
+      "explanation": "The correct modal is \"should\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l47_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "I ___ swim when I was five years old.",
+      "options": [
+        "shall",
+        "could",
+        "should",
+        "can"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "could",
+      "hint": "Past ability.",
+      "explanation": "The correct modal is \"could\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l47_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "He ___ be at home; his car is in the driveway.",
+      "options": [
+        "would",
+        "must",
+        "might",
+        "could"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "must",
+      "hint": "Strong logical deduction.",
+      "explanation": "The correct modal is \"must\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l48_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ you like some coffee?",
+      "options": [
+        "would",
+        "must",
+        "shall",
+        "might"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Would",
+      "hint": "Polite offer.",
+      "explanation": "The correct modal is \"Would\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l48_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ not enter this restricted area.",
+      "options": [
+        "must",
+        "might",
+        "could",
+        "shall"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "must",
+      "hint": "Prohibition.",
+      "explanation": "The correct modal is \"must\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l48_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "I ___ love to visit Japan one day.",
+      "options": [
+        "could",
+        "should",
+        "must",
+        "would"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "would",
+      "hint": "Expressing a desire.",
+      "explanation": "The correct modal is \"would\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l49_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "They ___ have arrived by now, but they're late.",
+      "options": [
+        "might",
+        "could",
+        "can",
+        "should"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "should",
+      "hint": "Expectation.",
+      "explanation": "The correct modal is \"should\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l49_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ we go for a walk?",
+      "options": [
+        "would",
+        "must",
+        "shall",
+        "should"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Shall",
+      "hint": "Suggestion (formal).",
+      "explanation": "The correct modal is \"Shall\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l49_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "I ___ help you with your bags.",
+      "options": [
+        "can",
+        "would",
+        "should",
+        "could"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "can",
+      "hint": "Offering help.",
+      "explanation": "The correct modal is \"can\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l50_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "It ___ be true, but I doubt it.",
+      "options": [
+        "must",
+        "had",
+        "might",
+        "should"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "might",
+      "hint": "Weak possibility.",
+      "explanation": "The correct modal is \"might\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l50_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ better hurry if you want to be on time.",
+      "options": [
+        "had",
+        "would",
+        "could",
+        "might"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "had",
+      "hint": "Idiomatic: 'had better'.",
+      "explanation": "The correct modal is \"had\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    },
+    {
+      "id": "ms_l50_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 2,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ you please pass the salt?",
+      "options": [
+        "shall",
+        "could",
+        "had",
+        "can"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Could",
+      "hint": "Polite request.",
+      "explanation": "The correct modal is \"Could\".",
+      "xpReward": 10,
+      "coinReward": 10,
+      "visual_config": {
+        "painter_type": "NeuralNegotiationSync",
+        "primary_color": "0xFFFFD700",
+        "pulse_intensity": 0.6,
+        "shader_effect": "victory_sweep"
+      }
+    }
+  ]
 }

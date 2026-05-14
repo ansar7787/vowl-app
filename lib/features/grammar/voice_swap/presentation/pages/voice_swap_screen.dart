@@ -49,7 +49,8 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
     if (_isAnswered) return;
     
     final selectedVoice = _isPassive ? "Passive" : "Active";
-    bool isCorrect = selectedVoice.toLowerCase() == correctAnswer.toLowerCase();
+    // Check if the correct answer matches the selected voice category
+    bool isCorrect = selectedVoice.toLowerCase() == (quest?.correctAnswerCategory?.toLowerCase() ?? quest?.correctAnswer?.toLowerCase());
 
     if (isCorrect) {
       _hapticService.success();

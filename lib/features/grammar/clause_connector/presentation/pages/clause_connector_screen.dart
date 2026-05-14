@@ -147,9 +147,15 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
             border: Border.all(color: primaryColor.withValues(alpha: 0.2), width: 2.r),
           ),
           child: Center(
-            child: _isAnswered 
-              ? _buildConnector(_draggingConnector ?? "", primaryColor, isDark).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
-              : Text("INSERT COUPLER", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor.withValues(alpha: 0.4), letterSpacing: 2)),
+            child: DragTarget<String>(
+              onWillAcceptWithDetails: (details) => !_isAnswered,
+              onAcceptWithDetails: (details) => _onSnap(details.data, correctIndex, options),
+              builder: (context, candidateData, rejectedData) {
+                return _isAnswered 
+                  ? _buildConnector(_draggingConnector ?? "", primaryColor, isDark).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
+                  : Text("INSERT COUPLER", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor.withValues(alpha: 0.4), letterSpacing: 2));
+              },
+            ),
           ),
         ),
         _buildMetalPlate(b, primaryColor, isDark, isTop: false),
@@ -182,13 +188,6 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         feedback: Material(color: Colors.transparent, child: _buildConnector(opt, primaryColor, isDark, isDragging: true)),
         childWhenDragging: Opacity(opacity: 0.3, child: _buildConnector(opt, primaryColor, isDark)),
         onDragCompleted: () {},
-        onDragEnd: (details) {
-          // Check if dropped in the center area
-                final dropY = details.offset.dy;
-          if (dropY > 200.h && dropY < 500.h) {
-            _onSnap(opt, correctIndex, options);
-          }
-        },
         child: _buildConnector(opt, primaryColor, isDark),
       )).toList(),
     );

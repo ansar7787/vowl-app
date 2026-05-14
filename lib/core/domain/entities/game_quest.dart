@@ -318,6 +318,7 @@ class GameQuest extends Equatable {
   final List<String>? options;
   final int? correctAnswerIndex;
   final String? correctAnswer;
+  final String? correctAnswerCategory;
   final String? hint;
   final String? textToSpeak;
   final VisualConfig? visualConfig;
@@ -335,6 +336,7 @@ class GameQuest extends Equatable {
     this.options,
     this.correctAnswerIndex,
     this.correctAnswer,
+    this.correctAnswerCategory,
     this.hint,
     this.textToSpeak,
     this.visualConfig,
@@ -354,6 +356,7 @@ class GameQuest extends Equatable {
     options,
     correctAnswerIndex,
     correctAnswer,
+    correctAnswerCategory,
     hint,
     textToSpeak,
     visualConfig,

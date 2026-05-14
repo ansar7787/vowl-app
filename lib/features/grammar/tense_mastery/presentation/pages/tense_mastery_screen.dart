@@ -53,10 +53,11 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
     context.read<GrammarBloc>().add(FetchGrammarQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _submitAnswer(String correctAnswer) {
+  void _submitAnswer(GameQuest quest) {
     if (_isAnswered) return;
     
-    bool isCorrect = _currentTense.toLowerCase() == correctAnswer.toLowerCase();
+    final selectedTense = _currentTense;
+    bool isCorrect = selectedTense.toLowerCase() == (quest.correctAnswerCategory?.toLowerCase() ?? quest.correctAnswer?.toLowerCase());
 
     if (isCorrect) {
       _hapticService.success();
@@ -124,7 +125,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
               const Spacer(),
               if (!_isAnswered)
                 ScaleButton(
-                  onTap: () => _submitAnswer(quest.correctAnswer ?? "Present"),
+                  onTap: () => _submitAnswer(quest),
                   child: Container(
                     width: double.infinity, height: 60.h,
                     decoration: BoxDecoration(

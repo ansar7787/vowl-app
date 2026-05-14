@@ -117,9 +117,7 @@ class SoundService {
     if (_isMuted) return;
     try {
       final tts = di.sl<TtsService>();
-      // We can't set speed easily without modifying TtsService, 
-      // but let's assume TtsService handles the core logic.
-      await tts.speak(text);
+      await tts.speak(text, rate: speed);
     } catch (e) {
       debugPrint('Error playing TTS: $e');
     }
