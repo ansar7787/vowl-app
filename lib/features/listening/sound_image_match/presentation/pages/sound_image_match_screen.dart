@@ -114,7 +114,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
               _buildEmitter(quest.textToSpeak ?? "", theme.primaryColor),
               SizedBox(height: 40.h),
               _buildScannerField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
-              const Spacer(),
+              SizedBox(height: 48.h),
             ],
           ),
         );
@@ -148,7 +148,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
       child: Container(
         padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color.withValues(alpha: 0.3))),
-        child: Icon(Icons.stream_rounded, color: color, size: 48.r),
+        child: Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
       ),
     );
   }
