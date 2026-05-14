@@ -21,39 +21,36 @@ class MainWrapper extends StatelessWidget {
       extendBody: true,
       body: navigationShell,
       bottomNavigationBar: Container(
-        height: 90.h,
-        padding: EdgeInsets.only(bottom: 20.h),
+        height: 82.h,
+        margin: EdgeInsets.fromLTRB(12.w, 0, 12.w, 12.h),
         child: Stack(
           alignment: Alignment.bottomCenter,
           children: [
             // 1. Premium Glass Background
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(30.r),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-                  child: Container(
-                    height: 65.h,
-                    decoration: BoxDecoration(
+            ClipRRect(
+              borderRadius: BorderRadius.circular(24.r),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                child: Container(
+                  height: 65.h,
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? Colors.white.withValues(alpha: 0.08)
+                        : Colors.white.withValues(alpha: 0.7),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(
                       color: isDark
-                          ? Colors.white.withValues(alpha: 0.08)
-                          : Colors.white.withValues(alpha: 0.7),
-                      borderRadius: BorderRadius.circular(30.r),
-                      border: Border.all(
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.12)
-                            : Colors.white.withValues(alpha: 0.4),
-                        width: 1.5,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.1),
-                          blurRadius: 40,
-                          offset: const Offset(0, 15),
-                        ),
-                      ],
+                          ? Colors.white.withValues(alpha: 0.12)
+                          : Colors.white.withValues(alpha: 0.4),
+                      width: 1.5,
                     ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.1),
+                        blurRadius: 40,
+                        offset: const Offset(0, 15),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -67,10 +64,10 @@ class MainWrapper extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _buildNavItem(context, 0, Icons.home_outlined, Icons.home_rounded, 'Home'),
-                    _buildNavItem(context, 1, Icons.sports_esports_outlined, Icons.sports_esports_rounded, 'Games'),
-                    _buildNavItem(context, 2, Icons.leaderboard_outlined, Icons.leaderboard_rounded, 'Ranks'),
-                    _buildNavItem(context, 3, Icons.person_outline_rounded, Icons.person_rounded, 'Profile'),
+                    Expanded(child: _buildNavItem(context, 0, Icons.home_outlined, Icons.home_rounded, 'Home')),
+                    Expanded(child: _buildNavItem(context, 1, Icons.sports_esports_outlined, Icons.sports_esports_rounded, 'Games')),
+                    Expanded(child: _buildNavItem(context, 2, Icons.leaderboard_outlined, Icons.leaderboard_rounded, 'Ranks')),
+                    Expanded(child: _buildNavItem(context, 3, Icons.person_outline_rounded, Icons.person_rounded, 'Profile')),
                   ],
                 ),
               ),
@@ -104,7 +101,7 @@ class MainWrapper extends StatelessWidget {
         duration: const Duration(milliseconds: 400),
         curve: Curves.easeOutBack,
         padding: EdgeInsets.symmetric(
-          horizontal: isSelected ? 16.w : 12.w,
+          horizontal: isSelected ? 10.w : 6.w,
           vertical: 8.h,
         ),
         decoration: BoxDecoration(
@@ -127,16 +124,21 @@ class MainWrapper extends StatelessWidget {
              .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1)),
             
             if (isSelected) ...[
-              SizedBox(width: 8.w),
-              Text(
-                label,
-                style: GoogleFonts.outfit(
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w900,
-                  color: accentColor,
-                  letterSpacing: 0.5,
+              SizedBox(width: 4.w),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    label,
+                    style: GoogleFonts.outfit(
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w900,
+                      color: accentColor,
+                      letterSpacing: 0.5,
+                    ),
+                  ).animate().fadeIn().slideX(begin: -0.2),
                 ),
-              ).animate().fadeIn().slideX(begin: -0.2),
+              ),
             ],
           ],
         ),

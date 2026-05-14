@@ -109,13 +109,14 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 24.h),
+              SizedBox(height: 16.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 40.h),
+              SizedBox(height: 24.h),
               _buildQuestionDisplay(quest.question ?? "", theme.primaryColor, isDark),
-              const Spacer(),
-              _buildOrbitalSpinner(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, quest.textToSpeak ?? ""),
-              const Spacer(),
+              Expanded(
+                child: _buildOrbitalSpinner(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, quest.textToSpeak ?? ""),
+              ),
+              SizedBox(height: 24.h),
             ],
           ),
         );
@@ -132,7 +133,12 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
         children: [
           Icon(Icons.track_changes_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("SPIN SATELLITES TO LOCK IN CORRECT DATA", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Flexible(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text("SPIN SATELLITES TO LOCK IN CORRECT DATA", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+            ),
+          ),
         ],
       ),
     );
@@ -148,8 +154,9 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
   Widget _buildOrbitalSpinner(List<String> options, int correct, Color color, String tts) {
     return GestureDetector(
       onPanUpdate: (details) => _onSpin(details.delta.dx),
-      child: SizedBox(
-        height: 400.h, width: double.infinity,
+      child: Container(
+        width: double.infinity,
+        color: Colors.transparent, // Ensures the entire area is draggable
         child: Stack(
           alignment: Alignment.center,
           children: [
@@ -175,11 +182,13 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
             // Satellite Options
             ...List.generate(options.length, (index) {
               double angle = (index * (2 * 3.14159 / options.length)) + _rotation;
-              double radius = 140.r;
-              return Positioned(
-                left: (MediaQuery.of(context).size.width / 2 - 40.r) + radius * math.cos(angle),
-                top: (200.h - 40.r) + radius * math.sin(angle),
-                child: _buildSatellite(index, options[index], correct, color),
+              double radius = 130.r;
+              return Align(
+                alignment: Alignment.center,
+                child: Transform.translate(
+                  offset: Offset(radius * math.cos(angle), radius * math.sin(angle)),
+                  child: _buildSatellite(index, options[index], correct, color),
+                ),
               );
             }),
             
@@ -199,8 +208,8 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
 
   Widget _buildSatellite(int index, String text, int correct, Color color) {
     bool isSelected = _selectedIndex == index;
-    bool isCorrect = _isAnswered && index == correct;
-    bool isWrong = _isAnswered && isSelected && index != correct;
+    bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
+    bool isWrong = _isAnswered && isSelected && _isCorrect == false;
     Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isSelected ? Colors.white : color));
 
     return ScaleButton(

@@ -101,32 +101,30 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
         
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
-          showConfetti: _showConfetti,
+          showConfetti: _showConfetti, useScrolling: true,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null ? const SizedBox() : SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: 16.h),
-                _buildInstruction(theme.primaryColor),
-                SizedBox(height: 48.h),
-                _buildInkJar(quest.textToSpeak ?? "", theme.primaryColor),
-                SizedBox(height: 48.h),
-                _buildInkCanvas(quest.textWithBlanks ?? "", theme.primaryColor, isDark),
-                SizedBox(height: 48.h),
-                _buildInputTerminal(theme.primaryColor, isDark),
-                SizedBox(height: 40.h),
-                if (!_isAnswered)
-                  ScaleButton(
-                    onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
-                    child: Container(
-                      width: double.infinity, height: 60.h,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: theme.primaryColor),
-                      child: Center(child: Text("SUBMIT TRANSCRIPTION", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
-                    ),
+          child: quest == null ? const SizedBox() : Column(
+            children: [
+              SizedBox(height: 16.h),
+              _buildInstruction(theme.primaryColor),
+              SizedBox(height: 48.h),
+              _buildInkJar(quest.textToSpeak ?? "", theme.primaryColor),
+              SizedBox(height: 48.h),
+              _buildInkCanvas(quest.textWithBlanks ?? "", theme.primaryColor, isDark),
+              SizedBox(height: 48.h),
+              _buildInputTerminal(theme.primaryColor, isDark),
+              SizedBox(height: 40.h),
+              if (!_isAnswered)
+                ScaleButton(
+                  onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
+                  child: Container(
+                    width: double.infinity, height: 60.h,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: theme.primaryColor),
+                    child: Center(child: Text("SUBMIT TRANSCRIPTION", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
                   ),
-              ],
-            ),
+                ),
+            ],
           ),
         );
       },

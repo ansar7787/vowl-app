@@ -183,8 +183,8 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> {
 
   Widget _buildLocationHub(int index, String text, int correct, Color color) {
     bool isSelected = _selectedIndex == index;
-    bool isCorrect = _isAnswered && index == correct;
-    bool isWrong = _isAnswered && isSelected && index != correct;
+    bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
+    bool isWrong = _isAnswered && isSelected && _isCorrect == false;
     Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color);
 
     return ScaleButton(

@@ -36,6 +36,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  int? _selectedIndex;
 
   @override
   void initState() {
@@ -53,6 +54,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
 
   void _submitAnswer(int index, int correct) {
     if (_isAnswered) return;
+    setState(() => _selectedIndex = index);
     bool isCorrect = index == correct;
 
     if (isCorrect) {
@@ -82,6 +84,7 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _selectedIndex = null;
               _spotlightPos = const Offset(200, 300);
             });
           }
@@ -178,18 +181,25 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
               left: x, top: y,
               child: GestureDetector(
                 onTap: () => _submitAnswer(index, correct),
-                child: Opacity(
-                  opacity: isLit || _isAnswered ? 1.0 : 0.05,
-                  child: Container(
-                    width: 120.w, height: 80.h,
-                    decoration: BoxDecoration(
-                      color: isLit ? Colors.white.withValues(alpha: 0.1) : Colors.transparent,
-                      borderRadius: BorderRadius.circular(15.r),
-                      border: Border.all(color: isLit ? Colors.white24 : Colors.transparent),
+                child: Builder(builder: (context) {
+                  bool isSelected = _selectedIndex == index;
+                  bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
+                  bool isWrong = _isAnswered && isSelected && _isCorrect == false;
+                  Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : Colors.white);
+                  
+                  return Opacity(
+                    opacity: isLit || isCorrect || isWrong ? 1.0 : 0.05,
+                    child: Container(
+                      width: 120.w, height: 80.h,
+                      decoration: BoxDecoration(
+                        color: (isLit || isCorrect || isWrong) ? tileColor.withValues(alpha: 0.1) : Colors.transparent,
+                        borderRadius: BorderRadius.circular(15.r),
+                        border: Border.all(color: (isLit || isCorrect || isWrong) ? tileColor.withValues(alpha: 0.3) : Colors.transparent),
+                      ),
+                      child: Center(child: Text(options[index], textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w600, color: tileColor))),
                     ),
-                    child: Center(child: Text(options[index], textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w600, color: Colors.white))),
-                  ),
-                ),
+                  );
+                }),
               ),
             );
           }),

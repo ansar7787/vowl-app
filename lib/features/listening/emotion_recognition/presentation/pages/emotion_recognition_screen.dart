@@ -36,6 +36,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  int? _selectedIndex;
 
   @override
   void initState() {
@@ -53,6 +54,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
 
   void _submitAnswer(int index, int correct) {
     if (_isAnswered) return;
+    setState(() => _selectedIndex = index);
     bool isCorrect = index == correct;
 
     if (isCorrect) {
@@ -82,6 +84,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _selectedIndex = null;
               _coreOffset = Offset.zero;
             });
           }
@@ -195,8 +198,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
   }
 
   Widget _buildReservoir(int index, String text, int correct, Color color) {
-    bool isCorrect = _isAnswered && index == correct;
-    bool isWrong = _isAnswered && !isCorrect;
+    bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
+    bool isWrong = _isAnswered && index == _selectedIndex && _isCorrect == false;
     Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color);
 
     return Container(

@@ -5,453 +5,423 @@
     "quests": [
         {
             "id": "LIS_AMBIENTID_L121_Q1",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for order or food.",
-            "explanation": "Identifying restaurant sounds builds spatial awareness.",
-            "textToSpeak": "Order number 94 is ready for pickup.",
-            "location": "Restaurant",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Dense Forest.",
+            "textToSpeak": "[Ambient Sound of Dense Forest]",
             "options": [
-                "Library",
-                "Restaurant",
-                "School",
-                "Hospital"
-            ],
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "LIS_AMBIENTID_L121_Q2",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for game or sports.",
-            "explanation": "Identifying stadium sounds builds spatial awareness.",
-            "textToSpeak": "Welcome to sector 95 for the big game!",
-            "location": "Stadium",
-            "options": [
-                "School",
-                "Hospital",
-                "Stadium",
-                "Restaurant"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "LIS_AMBIENTID_L121_Q3",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for gate or flight.",
-            "explanation": "Identifying airport sounds builds spatial awareness.",
-            "textToSpeak": "Attention passengers, boarding at gate 96.",
-            "location": "Airport",
-            "options": [
-                "Stadium",
-                "Train Station",
-                "Restaurant",
-                "Airport"
+                "Underground Vault",
+                "Outer Space",
+                "Orbital Station",
+                "Dense Forest"
             ],
             "correctAnswerIndex": 3
         },
         {
-            "id": "LIS_AMBIENTID_L122_Q1",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for students or class.",
-            "explanation": "Identifying school sounds builds spatial awareness.",
-            "textToSpeak": "Students, please report to class 85.",
-            "location": "School",
+            "id": "LIS_AMBIENTID_L121_Q2",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Cyber City.",
+            "textToSpeak": "[Ambient Sound of Cyber City]",
             "options": [
-                "Library",
-                "Hospital",
-                "School",
-                "Supermarket"
+                "Desert Oasis",
+                "Cyber City",
+                "Laboratory",
+                "Deep Ocean"
             ],
-            "correctAnswerIndex": 2
+            "correctAnswerIndex": 1
+        },
+        {
+            "id": "LIS_AMBIENTID_L121_Q3",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Outer Space.",
+            "textToSpeak": "[Ambient Sound of Outer Space]",
+            "options": [
+                "Outer Space",
+                "Ancient Temple",
+                "Dense Forest",
+                "Laboratory"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "id": "LIS_AMBIENTID_L122_Q1",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Dense Forest.",
+            "textToSpeak": "[Ambient Sound of Dense Forest]",
+            "options": [
+                "Orbital Station",
+                "Deep Ocean",
+                "Outer Space",
+                "Dense Forest"
+            ],
+            "correctAnswerIndex": 3
         },
         {
             "id": "LIS_AMBIENTID_L122_Q2",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for order or food.",
-            "explanation": "Identifying restaurant sounds builds spatial awareness.",
-            "textToSpeak": "Order number 86 is ready for pickup.",
-            "location": "Restaurant",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Cyber City.",
+            "textToSpeak": "[Ambient Sound of Cyber City]",
             "options": [
-                "School",
-                "Restaurant",
-                "Library",
-                "Hospital"
+                "Desert Oasis",
+                "Cyber City",
+                "Underground Vault",
+                "Ancient Temple"
             ],
             "correctAnswerIndex": 1
         },
         {
             "id": "LIS_AMBIENTID_L122_Q3",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for game or sports.",
-            "explanation": "Identifying stadium sounds builds spatial awareness.",
-            "textToSpeak": "Welcome to sector 87 for the big game!",
-            "location": "Stadium",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Outer Space.",
+            "textToSpeak": "[Ambient Sound of Outer Space]",
             "options": [
-                "Stadium",
-                "Hospital",
-                "School",
-                "Restaurant"
+                "Orbital Station",
+                "Outer Space",
+                "Military Base",
+                "Deep Ocean"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 1
         },
         {
             "id": "LIS_AMBIENTID_L123_Q1",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for doctor or room.",
-            "explanation": "Identifying hospital sounds builds spatial awareness.",
-            "textToSpeak": "Doctor to room 76 immediately.",
-            "location": "Hospital",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Dense Forest.",
+            "textToSpeak": "[Ambient Sound of Dense Forest]",
             "options": [
-                "Supermarket",
-                "Library",
-                "Train Station",
-                "Hospital"
+                "Outer Space",
+                "Cyber City",
+                "Dense Forest",
+                "Laboratory"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 2
         },
         {
             "id": "LIS_AMBIENTID_L123_Q2",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for students or class.",
-            "explanation": "Identifying school sounds builds spatial awareness.",
-            "textToSpeak": "Students, please report to class 77.",
-            "location": "School",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Cyber City.",
+            "textToSpeak": "[Ambient Sound of Cyber City]",
             "options": [
-                "School",
-                "Hospital",
-                "Library",
-                "Supermarket"
+                "Cyber City",
+                "Desert Oasis",
+                "Military Base",
+                "Laboratory"
             ],
             "correctAnswerIndex": 0
         },
         {
             "id": "LIS_AMBIENTID_L123_Q3",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for order or food.",
-            "explanation": "Identifying restaurant sounds builds spatial awareness.",
-            "textToSpeak": "Order number 78 is ready for pickup.",
-            "location": "Restaurant",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Outer Space.",
+            "textToSpeak": "[Ambient Sound of Outer Space]",
             "options": [
-                "Library",
-                "School",
-                "Restaurant",
-                "Hospital"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "LIS_AMBIENTID_L124_Q1",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for reading or quiet.",
-            "explanation": "Identifying library sounds builds spatial awareness.",
-            "textToSpeak": "Please keep your voices down in section 67.",
-            "location": "Library",
-            "options": [
-                "Library",
-                "Airport",
-                "Train Station",
-                "Supermarket"
+                "Outer Space",
+                "Desert Oasis",
+                "Orbital Station",
+                "Underground Vault"
             ],
             "correctAnswerIndex": 0
         },
         {
-            "id": "LIS_AMBIENTID_L124_Q2",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for doctor or room.",
-            "explanation": "Identifying hospital sounds builds spatial awareness.",
-            "textToSpeak": "Doctor to room 68 immediately.",
-            "location": "Hospital",
+            "id": "LIS_AMBIENTID_L124_Q1",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Dense Forest.",
+            "textToSpeak": "[Ambient Sound of Dense Forest]",
             "options": [
-                "Train Station",
-                "Supermarket",
-                "Library",
-                "Hospital"
+                "Laboratory",
+                "Ancient Temple",
+                "Cyber City",
+                "Dense Forest"
             ],
             "correctAnswerIndex": 3
         },
         {
-            "id": "LIS_AMBIENTID_L124_Q3",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for students or class.",
-            "explanation": "Identifying school sounds builds spatial awareness.",
-            "textToSpeak": "Students, please report to class 69.",
-            "location": "School",
+            "id": "LIS_AMBIENTID_L124_Q2",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Cyber City.",
+            "textToSpeak": "[Ambient Sound of Cyber City]",
             "options": [
-                "School",
-                "Library",
-                "Hospital",
-                "Supermarket"
+                "Cyber City",
+                "Orbital Station",
+                "Desert Oasis",
+                "Dense Forest"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "id": "LIS_AMBIENTID_L124_Q3",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Outer Space.",
+            "textToSpeak": "[Ambient Sound of Outer Space]",
+            "options": [
+                "Outer Space",
+                "Orbital Station",
+                "Deep Ocean",
+                "Ancient Temple"
             ],
             "correctAnswerIndex": 0
         },
         {
             "id": "LIS_AMBIENTID_L125_Q1",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for aisle or produce.",
-            "explanation": "Identifying supermarket sounds builds spatial awareness.",
-            "textToSpeak": "Clean up on aisle 58. Fresh produce on sale.",
-            "location": "Supermarket",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Dense Forest.",
+            "textToSpeak": "[Ambient Sound of Dense Forest]",
             "options": [
-                "Stadium",
-                "Train Station",
-                "Supermarket",
-                "Airport"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
-            "id": "LIS_AMBIENTID_L125_Q2",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for reading or quiet.",
-            "explanation": "Identifying library sounds builds spatial awareness.",
-            "textToSpeak": "Please keep your voices down in section 59.",
-            "location": "Library",
-            "options": [
-                "Library",
-                "Train Station",
-                "Airport",
-                "Supermarket"
+                "Dense Forest",
+                "Cyber City",
+                "Ancient Temple",
+                "Deep Ocean"
             ],
             "correctAnswerIndex": 0
         },
         {
-            "id": "LIS_AMBIENTID_L125_Q3",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for doctor or room.",
-            "explanation": "Identifying hospital sounds builds spatial awareness.",
-            "textToSpeak": "Doctor to room 60 immediately.",
-            "location": "Hospital",
+            "id": "LIS_AMBIENTID_L125_Q2",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Cyber City.",
+            "textToSpeak": "[Ambient Sound of Cyber City]",
             "options": [
-                "Train Station",
-                "Library",
-                "Supermarket",
-                "Hospital"
+                "Laboratory",
+                "Deep Ocean",
+                "Cyber City",
+                "Outer Space"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 2
+        },
+        {
+            "id": "LIS_AMBIENTID_L125_Q3",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Outer Space.",
+            "textToSpeak": "[Ambient Sound of Outer Space]",
+            "options": [
+                "Outer Space",
+                "Laboratory",
+                "Cyber City",
+                "Dense Forest"
+            ],
+            "correctAnswerIndex": 0
         },
         {
             "id": "LIS_AMBIENTID_L126_Q1",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for train or platform.",
-            "explanation": "Identifying train station sounds builds spatial awareness.",
-            "textToSpeak": "The express train is arriving at platform 49.",
-            "location": "Train Station",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Dense Forest.",
+            "textToSpeak": "[Ambient Sound of Dense Forest]",
             "options": [
-                "Train Station",
-                "Stadium",
-                "Airport",
-                "Restaurant"
+                "Dense Forest",
+                "Desert Oasis",
+                "Outer Space",
+                "Cyber City"
             ],
             "correctAnswerIndex": 0
         },
         {
             "id": "LIS_AMBIENTID_L126_Q2",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for aisle or produce.",
-            "explanation": "Identifying supermarket sounds builds spatial awareness.",
-            "textToSpeak": "Clean up on aisle 50. Fresh produce on sale.",
-            "location": "Supermarket",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Cyber City.",
+            "textToSpeak": "[Ambient Sound of Cyber City]",
             "options": [
-                "Stadium",
-                "Supermarket",
-                "Train Station",
-                "Airport"
-            ],
-            "correctAnswerIndex": 1
-        },
-        {
-            "id": "LIS_AMBIENTID_L126_Q3",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for reading or quiet.",
-            "explanation": "Identifying library sounds builds spatial awareness.",
-            "textToSpeak": "Please keep your voices down in section 51.",
-            "location": "Library",
-            "options": [
-                "Train Station",
-                "Airport",
-                "Library",
-                "Supermarket"
+                "Ancient Temple",
+                "Underground Vault",
+                "Cyber City",
+                "Military Base"
             ],
             "correctAnswerIndex": 2
         },
         {
-            "id": "LIS_AMBIENTID_L127_Q1",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for gate or flight.",
-            "explanation": "Identifying airport sounds builds spatial awareness.",
-            "textToSpeak": "Attention passengers, boarding at gate 40.",
-            "location": "Airport",
+            "id": "LIS_AMBIENTID_L126_Q3",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Outer Space.",
+            "textToSpeak": "[Ambient Sound of Outer Space]",
             "options": [
-                "School",
-                "Stadium",
-                "Restaurant",
-                "Airport"
+                "Laboratory",
+                "Deep Ocean",
+                "Desert Oasis",
+                "Outer Space"
             ],
             "correctAnswerIndex": 3
         },
         {
-            "id": "LIS_AMBIENTID_L127_Q2",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for train or platform.",
-            "explanation": "Identifying train station sounds builds spatial awareness.",
-            "textToSpeak": "The express train is arriving at platform 41.",
-            "location": "Train Station",
+            "id": "LIS_AMBIENTID_L127_Q1",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Dense Forest.",
+            "textToSpeak": "[Ambient Sound of Dense Forest]",
             "options": [
-                "Stadium",
-                "Airport",
-                "Train Station",
-                "Restaurant"
+                "Dense Forest",
+                "Desert Oasis",
+                "Laboratory",
+                "Deep Ocean"
             ],
-            "correctAnswerIndex": 2
+            "correctAnswerIndex": 0
         },
         {
-            "id": "LIS_AMBIENTID_L127_Q3",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for aisle or produce.",
-            "explanation": "Identifying supermarket sounds builds spatial awareness.",
-            "textToSpeak": "Clean up on aisle 42. Fresh produce on sale.",
-            "location": "Supermarket",
+            "id": "LIS_AMBIENTID_L127_Q2",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Cyber City.",
+            "textToSpeak": "[Ambient Sound of Cyber City]",
             "options": [
-                "Train Station",
-                "Supermarket",
-                "Stadium",
-                "Airport"
+                "Military Base",
+                "Cyber City",
+                "Deep Ocean",
+                "Ancient Temple"
             ],
             "correctAnswerIndex": 1
         },
         {
-            "id": "LIS_AMBIENTID_L128_Q1",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for game or sports.",
-            "explanation": "Identifying stadium sounds builds spatial awareness.",
-            "textToSpeak": "Welcome to sector 31 for the big game!",
-            "location": "Stadium",
+            "id": "LIS_AMBIENTID_L127_Q3",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Outer Space.",
+            "textToSpeak": "[Ambient Sound of Outer Space]",
             "options": [
-                "Hospital",
-                "Library",
-                "Stadium",
-                "School"
+                "Laboratory",
+                "Dense Forest",
+                "Military Base",
+                "Outer Space"
             ],
-            "correctAnswerIndex": 2
+            "correctAnswerIndex": 3
+        },
+        {
+            "id": "LIS_AMBIENTID_L128_Q1",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Dense Forest.",
+            "textToSpeak": "[Ambient Sound of Dense Forest]",
+            "options": [
+                "Dense Forest",
+                "Desert Oasis",
+                "Cyber City",
+                "Laboratory"
+            ],
+            "correctAnswerIndex": 0
         },
         {
             "id": "LIS_AMBIENTID_L128_Q2",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for gate or flight.",
-            "explanation": "Identifying airport sounds builds spatial awareness.",
-            "textToSpeak": "Attention passengers, boarding at gate 32.",
-            "location": "Airport",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Cyber City.",
+            "textToSpeak": "[Ambient Sound of Cyber City]",
             "options": [
-                "Restaurant",
-                "Stadium",
-                "School",
-                "Airport"
+                "Underground Vault",
+                "Desert Oasis",
+                "Orbital Station",
+                "Cyber City"
             ],
             "correctAnswerIndex": 3
         },
         {
             "id": "LIS_AMBIENTID_L128_Q3",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for train or platform.",
-            "explanation": "Identifying train station sounds builds spatial awareness.",
-            "textToSpeak": "The express train is arriving at platform 33.",
-            "location": "Train Station",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Outer Space.",
+            "textToSpeak": "[Ambient Sound of Outer Space]",
             "options": [
-                "Train Station",
-                "Airport",
-                "Stadium",
-                "Restaurant"
+                "Outer Space",
+                "Deep Ocean",
+                "Laboratory",
+                "Ancient Temple"
             ],
             "correctAnswerIndex": 0
         },
         {
             "id": "LIS_AMBIENTID_L129_Q1",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for order or food.",
-            "explanation": "Identifying restaurant sounds builds spatial awareness.",
-            "textToSpeak": "Order number 22 is ready for pickup.",
-            "location": "Restaurant",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Dense Forest.",
+            "textToSpeak": "[Ambient Sound of Dense Forest]",
             "options": [
-                "Hospital",
-                "Restaurant",
-                "Supermarket",
-                "Library"
+                "Dense Forest",
+                "Outer Space",
+                "Deep Ocean",
+                "Military Base"
             ],
-            "correctAnswerIndex": 1
+            "correctAnswerIndex": 0
         },
         {
             "id": "LIS_AMBIENTID_L129_Q2",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for game or sports.",
-            "explanation": "Identifying stadium sounds builds spatial awareness.",
-            "textToSpeak": "Welcome to sector 23 for the big game!",
-            "location": "Stadium",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Cyber City.",
+            "textToSpeak": "[Ambient Sound of Cyber City]",
             "options": [
-                "Stadium",
-                "Library",
-                "Hospital",
-                "School"
+                "Cyber City",
+                "Orbital Station",
+                "Laboratory",
+                "Dense Forest"
             ],
             "correctAnswerIndex": 0
         },
         {
             "id": "LIS_AMBIENTID_L129_Q3",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for gate or flight.",
-            "explanation": "Identifying airport sounds builds spatial awareness.",
-            "textToSpeak": "Attention passengers, boarding at gate 24.",
-            "location": "Airport",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Outer Space.",
+            "textToSpeak": "[Ambient Sound of Outer Space]",
             "options": [
-                "School",
-                "Restaurant",
-                "Stadium",
-                "Airport"
+                "Ancient Temple",
+                "Military Base",
+                "Desert Oasis",
+                "Outer Space"
             ],
             "correctAnswerIndex": 3
         },
         {
             "id": "LIS_AMBIENTID_L130_Q1",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for gate or flight.",
-            "explanation": "Identifying airport sounds builds spatial awareness.",
-            "textToSpeak": "Attention passengers, boarding at gate 24.",
-            "location": "Airport",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Dense Forest.",
+            "textToSpeak": "[Ambient Sound of Dense Forest]",
             "options": [
-                "Supermarket",
-                "Hospital",
-                "Library",
-                "Airport"
+                "Dense Forest",
+                "Laboratory",
+                "Cyber City",
+                "Orbital Station"
+            ],
+            "correctAnswerIndex": 0
+        },
+        {
+            "id": "LIS_AMBIENTID_L130_Q2",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Cyber City.",
+            "textToSpeak": "[Ambient Sound of Cyber City]",
+            "options": [
+                "Military Base",
+                "Underground Vault",
+                "Orbital Station",
+                "Cyber City"
             ],
             "correctAnswerIndex": 3
         },
         {
-            "id": "LIS_AMBIENTID_L130_Q2",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for train or platform.",
-            "explanation": "Identifying train station sounds builds spatial awareness.",
-            "textToSpeak": "The express train is arriving at platform 25.",
-            "location": "Train Station",
-            "options": [
-                "Hospital",
-                "School",
-                "Train Station",
-                "Library"
-            ],
-            "correctAnswerIndex": 2
-        },
-        {
             "id": "LIS_AMBIENTID_L130_Q3",
-            "interactionType": "Spatial Radar",
-            "hint": "Listen for aisle or produce.",
-            "explanation": "Identifying supermarket sounds builds spatial awareness.",
-            "textToSpeak": "Clean up on aisle 26. Fresh produce on sale.",
-            "location": "Supermarket",
+            "interactionType": "Echo Locator",
+            "hint": "Identify the environment.",
+            "explanation": "Signature of Outer Space.",
+            "textToSpeak": "[Ambient Sound of Outer Space]",
             "options": [
-                "Restaurant",
-                "Supermarket",
-                "Hospital",
-                "School"
+                "Deep Ocean",
+                "Ancient Temple",
+                "Underground Vault",
+                "Outer Space"
             ],
-            "correctAnswerIndex": 1
+            "correctAnswerIndex": 3
         }
     ]
 }

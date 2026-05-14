@@ -50,7 +50,7 @@ class ListeningBaseLayout extends StatefulWidget {
     required this.onHint,
     this.showConfetti = false,
     this.audioUrl,
-    this.useScrolling = true,
+    this.useScrolling = false,
     this.disablePadding = false,
   });
 

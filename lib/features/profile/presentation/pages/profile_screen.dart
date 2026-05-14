@@ -154,7 +154,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           borderRadius: BorderRadius.circular(20.r),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFF2563EB).withValues(alpha: 0.3),
+                              color: const Color(
+                                0xFF2563EB,
+                              ).withValues(alpha: 0.3),
                               blurRadius: 15,
                               offset: const Offset(0, 8),
                             ),
@@ -202,8 +204,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
-    final bgColor = isMidnight 
-        ? Colors.black 
+    final bgColor = isMidnight
+        ? Colors.black
         : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
 
     return Scaffold(
@@ -238,12 +240,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       elevation: 0,
                       leading: const SizedBox.shrink(),
                       flexibleSpace: FlexibleSpaceBar(
-                        background: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(height: 40.h),
-                            _buildProfileHeader(context, user),
-                          ],
+                        background: Center(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(height: 20.h),
+                                _buildProfileHeader(context, user),
+                              ],
+                            ),
+                          ),
                         ),
                         collapseMode: CollapseMode.pin,
                       ),
@@ -256,16 +263,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             if (!user.isPremium) ...[
-                              SizedBox(height: 24.h),
                               _buildPremiumBanner(context),
                             ],
 
-                            SizedBox(height: 24.h),
+                            SizedBox(height: 12.h),
                             const AdRewardCard(margin: EdgeInsets.zero),
 
-                            SizedBox(height: 40.h),
-                            _buildSectionHeader(context, 'Adventure Stats'),
                             SizedBox(height: 20.h),
+                            _buildSectionHeader(context, 'Adventure Stats'),
+                            SizedBox(height: 12.h),
                             _buildBentoStats(context, user),
 
                             SizedBox(height: 40.h),
@@ -392,7 +398,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ],
           ),
         ),
-        SizedBox(height: 20.h),
+        SizedBox(height: 10.h),
         Center(
           child: ScaleButton(
             onTap: () {
@@ -573,21 +579,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: Stack(
                 children: [
                   Center(
-                    child: Transform(
-                      transform: Matrix4.identity()
-                        ..setEntry(3, 2, 0.001)
-                        ..rotateY(0.1),
-                      alignment: FractionalOffset.center,
-                      child: Image.asset(
-                        'assets/images/mascot/gold_trophy.webp',
-                        height: 140.h,
-                        color: badge.color.withValues(alpha: 0.9),
-                        colorBlendMode: BlendMode.screen,
-                      ),
-                    ),
-                  ).animate(onPlay: (c) => c.repeat(reverse: true))
+                        child: Transform(
+                          transform: Matrix4.identity()
+                            ..setEntry(3, 2, 0.001)
+                            ..rotateY(0.1),
+                          alignment: FractionalOffset.center,
+                          child: Image.asset(
+                            'assets/images/mascot/gold_trophy.webp',
+                            height: 140.h,
+                            color: badge.color.withValues(alpha: 0.9),
+                            colorBlendMode: BlendMode.screen,
+                          ),
+                        ),
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
                       .moveY(begin: -5, end: 5, duration: 2000.ms),
-                  
+
                   Positioned(
                     bottom: 20.h,
                     left: 0,
@@ -906,7 +913,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: GoogleFonts.outfit(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : const Color(0xFF0F172A),
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
                         ),
                       ),
                     ],
@@ -963,7 +972,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     AnimatedContainer(
                       duration: 800.ms,
                       height: 10.h,
-                      width: (MediaQuery.of(context).size.width - 96.w) * xpProgress,
+                      width:
+                          (MediaQuery.of(context).size.width - 96.w) *
+                          xpProgress,
                       decoration: BoxDecoration(
                         gradient: const LinearGradient(
                           colors: [Color(0xFF3B82F6), Color(0xFF60A5FA)],
@@ -1268,7 +1279,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 activeThumbColor: color,
                 activeTrackColor: color.withValues(alpha: 0.2),
                 inactiveThumbColor: isDark ? Colors.white60 : Colors.white,
-                inactiveTrackColor: isDark ? Colors.white24 : const Color(0xFFE2E8F0),
+                inactiveTrackColor: isDark
+                    ? Colors.white24
+                    : const Color(0xFFE2E8F0),
                 trackOutlineColor: WidgetStateProperty.all(Colors.transparent),
               ),
             ),
@@ -1279,7 +1292,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 
   void _showEditNameSheet(BuildContext context, String currentName) {
-    final TextEditingController nameController = TextEditingController(text: currentName);
+    final TextEditingController nameController = TextEditingController(
+      text: currentName,
+    );
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     showModalBottomSheet(
@@ -1289,12 +1304,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
       builder: (context) => BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
-          padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+          padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF1E293B).withValues(alpha: 0.8) : Colors.white.withValues(alpha: 0.8),
+            color: isDark
+                ? const Color(0xFF1E293B).withValues(alpha: 0.8)
+                : Colors.white.withValues(alpha: 0.8),
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
             border: Border.all(
-              color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.1)
+                  : Colors.black.withValues(alpha: 0.05),
             ),
           ),
           child: Column(
@@ -1334,10 +1355,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(height: 32.h),
                     Container(
                       decoration: BoxDecoration(
-                        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.05)
+                            : Colors.black.withValues(alpha: 0.05),
                         borderRadius: BorderRadius.circular(24.r),
                         border: Border.all(
-                          color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.transparent,
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.1)
+                              : Colors.transparent,
                         ),
                       ),
                       child: TextField(
@@ -1346,13 +1371,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: GoogleFonts.outfit(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w600,
-                          color: isDark ? Colors.white : const Color(0xFF0F172A),
+                          color: isDark
+                              ? Colors.white
+                              : const Color(0xFF0F172A),
                         ),
                         decoration: InputDecoration(
                           hintText: 'Enter new name',
                           hintStyle: GoogleFonts.outfit(color: Colors.grey),
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+                          contentPadding: EdgeInsets.symmetric(
+                            horizontal: 24.w,
+                            vertical: 20.h,
+                          ),
                         ),
                       ),
                     ),
@@ -1361,7 +1391,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       onTap: () {
                         final newName = nameController.text.trim();
                         if (newName.isNotEmpty && newName != currentName) {
-                          context.read<ProfileBloc>().add(ProfileUpdateDisplayNameRequested(newName));
+                          context.read<ProfileBloc>().add(
+                            ProfileUpdateDisplayNameRequested(newName),
+                          );
                         }
                         Navigator.pop(context);
                       },
@@ -1369,11 +1401,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         width: double.infinity,
                         padding: EdgeInsets.symmetric(vertical: 20.h),
                         decoration: BoxDecoration(
-                          gradient: const LinearGradient(colors: [Color(0xFF2563EB), Color(0xFF4F46E5)]),
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
+                          ),
                           borderRadius: BorderRadius.circular(24.r),
                           boxShadow: [
                             BoxShadow(
-                              color: const Color(0xFF2563EB).withValues(alpha: 0.3),
+                              color: const Color(
+                                0xFF2563EB,
+                              ).withValues(alpha: 0.3),
                               blurRadius: 20,
                               offset: const Offset(0, 10),
                             ),
@@ -1414,7 +1450,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       );
 
       if (pickedFile != null && mounted) {
-        context.read<ProfileBloc>().add(ProfileUpdatePictureRequested(pickedFile.path));
+        context.read<ProfileBloc>().add(
+          ProfileUpdatePictureRequested(pickedFile.path),
+        );
       }
     } catch (e) {
       debugPrint('Error picking image: $e');
@@ -1431,10 +1469,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Container(
           padding: EdgeInsets.all(32.w),
           decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF1E293B).withValues(alpha: 0.8) : Colors.white.withValues(alpha: 0.8),
+            color: isDark
+                ? const Color(0xFF1E293B).withValues(alpha: 0.8)
+                : Colors.white.withValues(alpha: 0.8),
             borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
             border: Border.all(
-              color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05),
+              color: isDark
+                  ? Colors.white.withValues(alpha: 0.1)
+                  : Colors.black.withValues(alpha: 0.05),
             ),
           ),
           child: Column(
@@ -1533,7 +1575,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               style: GoogleFonts.outfit(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w800,
-                color: Theme.of(context).brightness == Brightness.dark ? Colors.white : const Color(0xFF1E293B),
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white
+                    : const Color(0xFF1E293B),
               ),
             ),
             SizedBox(height: 4.h),
@@ -1542,7 +1586,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               style: GoogleFonts.outfit(
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w500,
-                color: Theme.of(context).brightness == Brightness.dark ? Colors.white38 : Colors.black38,
+                color: Theme.of(context).brightness == Brightness.dark
+                    ? Colors.white38
+                    : Colors.black38,
               ),
             ),
           ],

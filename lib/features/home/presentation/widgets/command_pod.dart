@@ -241,7 +241,7 @@ class CommandPod extends StatelessWidget {
     return ScaleButton(
       onTap: () => context.push(AppRouter.kidsZoneRoute),
       child: Container(
-        height: 160.h,
+        constraints: BoxConstraints(minHeight: 160.h),
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(32.r),

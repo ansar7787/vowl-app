@@ -199,19 +199,24 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
     return Column(
       children: List.generate(options.length, (index) {
         bool isSelected = _selectedIndex == index;
+        bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
+        bool isWrong = _isAnswered && isSelected && _isCorrect == false;
+        Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isSelected ? Colors.orangeAccent : Colors.white24));
+
         return Padding(
           padding: EdgeInsets.only(bottom: 12.h),
           child: ScaleButton(
             onTap: () => _submitAnswer(index, correct),
             child: GlassTile(
               padding: EdgeInsets.all(16.r), borderRadius: BorderRadius.circular(15.r),
-              color: isSelected ? Colors.orangeAccent.withValues(alpha: 0.2) : Colors.white10,
+              color: tileColor.withValues(alpha: 0.1),
               child: Row(
                 children: [
-                  Icon(Icons.air_rounded, color: isSelected ? Colors.orangeAccent : Colors.white24),
+                  Icon(Icons.air_rounded, color: tileColor),
                   SizedBox(width: 16.w),
-                  Expanded(child: Text(options[index], style: GoogleFonts.outfit(fontSize: 14.sp, color: Colors.white70))),
-                  if (_isAnswered && index == correct) Icon(Icons.check_circle_rounded, color: Colors.greenAccent),
+                  Expanded(child: Text(options[index], style: GoogleFonts.outfit(fontSize: 14.sp, color: isSelected ? Colors.white : Colors.white70))),
+                  if (isCorrect) Icon(Icons.check_circle_rounded, color: Colors.greenAccent),
+                  if (isWrong) Icon(Icons.error_outline_rounded, color: Colors.redAccent),
                 ],
               ),
             ),

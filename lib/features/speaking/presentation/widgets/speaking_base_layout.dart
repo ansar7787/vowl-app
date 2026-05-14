@@ -48,7 +48,7 @@ class SpeakingBaseLayout extends StatefulWidget {
     required this.onContinue,
     required this.onHint,
     this.showConfetti = false,
-    this.useScrolling = true,
+    this.useScrolling = false,
     this.disablePadding = false,
   });
 

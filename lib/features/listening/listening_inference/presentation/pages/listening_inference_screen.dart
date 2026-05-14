@@ -36,6 +36,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  int? _selectedIndex;
 
   @override
   void initState() {
@@ -53,6 +54,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
 
   void _submitAnswer(int index, int correct) {
     if (_isAnswered) return;
+    setState(() => _selectedIndex = index);
     bool isCorrect = index == correct;
 
     if (isCorrect) {
@@ -82,6 +84,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _selectedIndex = null;
               _dialAngle = 0.0;
             });
           }
@@ -184,14 +187,19 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(options.length, (index) {
+              bool isSelected = _selectedIndex == index;
+              bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
+              bool isWrong = _isAnswered && isSelected && _isCorrect == false;
+              Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isSelected ? Colors.white : Colors.white70));
+
               return Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.h),
                 child: ScaleButton(
                   onTap: () => _submitAnswer(index, correct),
                   child: GlassTile(
                     padding: EdgeInsets.all(16.r), borderRadius: BorderRadius.circular(15.r),
-                    color: Colors.white.withValues(alpha: 0.05),
-                    child: Text(options[index], style: GoogleFonts.outfit(fontSize: 12.sp, color: Colors.white70)),
+                    color: tileColor.withValues(alpha: 0.1),
+                    child: Text(options[index], style: GoogleFonts.outfit(fontSize: 12.sp, color: isSelected ? Colors.white : Colors.white70)),
                   ),
                 ),
               );

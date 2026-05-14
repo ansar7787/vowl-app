@@ -52,7 +52,7 @@ class AccentBaseLayout extends StatefulWidget {
     this.showConfetti = false,
     this.title = "ACCENT TRAINING",
     this.subtitle = "Master the Sound",
-    this.useScrolling = true,
+    this.useScrolling = false,
     this.disablePadding = false,
   });
 

@@ -50,7 +50,7 @@ class ReadingBaseLayout extends StatefulWidget {
     required this.onHint,
     this.showConfetti = false,
     this.passage,
-    this.useScrolling = true,
+    this.useScrolling = false,
     this.disablePadding = false,
   });
 

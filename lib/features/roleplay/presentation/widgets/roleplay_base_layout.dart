@@ -54,7 +54,7 @@ class RoleplayBaseLayout extends StatefulWidget {
     this.title = "SOCIAL SCENARIO",
     this.subtitle = "Master the Scene",
     this.scrollController,
-    this.useScrolling = true,
+    this.useScrolling = false,
     this.disablePadding = false,
   });
 
