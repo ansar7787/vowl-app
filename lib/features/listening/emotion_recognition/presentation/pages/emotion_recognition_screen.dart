@@ -44,9 +44,11 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
     context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onCoreMove(Offset delta) {
+  void _onCoreMove(Offset delta, BoxConstraints constraints) {
     if (_isAnswered) return;
-    _coreOffset.value += delta;
+    double nextX = (_coreOffset.value.dx + delta.dx).clamp(-constraints.maxWidth / 2 + 40.r, constraints.maxWidth / 2 - 40.r);
+    double nextY = (_coreOffset.value.dy + delta.dy).clamp(-constraints.maxHeight / 2 + 40.r, constraints.maxHeight / 2 - 40.r);
+    _coreOffset.value = Offset(nextX, nextY);
   }
 
   void _submitAnswer(int index, int correct) {
@@ -111,7 +113,8 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
               const Spacer(flex: 3),
               Expanded(
                 flex: 12,
-                child: RepaintBoundary(
+                child: ClipRect(
+                  clipBehavior: Clip.none,
                   child: _buildNeuralField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
                 ),
               ),
@@ -166,77 +169,84 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
         return ValueListenableBuilder<Offset>(
           valueListenable: _coreOffset,
           builder: (context, offset, _) {
-            return Stack(
+            return OverflowBox(
               alignment: Alignment.center,
-              children: [
-                // Neural Grid Background Lines
-                CustomPaint(
-                  size: Size(constraints.maxWidth, constraints.maxHeight),
-                  painter: NeuralGridPainter(color.withValues(alpha: 0.1)),
-                ),
-
-                // The Neural Grid Targets
-                ...List.generate(options.length, (index) {
-                  double xDist = 110.w;
-                  double yDist = 130.h;
-                  double x = (index % 2 == 0) ? -xDist : xDist;
-                  double y = (index < 2) ? -yDist : yDist;
-                  
-                  return Transform.translate(
-                    offset: Offset(x, y),
-                    child: _buildReservoir(index, options[index], correct, color),
-                  );
-                }),
-                
-                // The Psychology Core (Draggable Orb)
-                Transform.translate(
-                  offset: offset,
-                  child: GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onPanUpdate: (details) => _onCoreMove(details.delta),
-                    onPanEnd: (_) {
-                      for (int i = 0; i < options.length; i++) {
-                        double xDist = 110.w;
-                        double yDist = 130.h;
-                        double x = (i % 2 == 0) ? -xDist : xDist;
-                        double y = (i < 2) ? -yDist : yDist;
-                        if ((offset - Offset(x, y)).distance < 60.r) {
-                          _submitAnswer(i, correct);
-                          return;
-                        }
-                      }
-                      // Snap back to center if not dropped in a reservoir
-                      _coreOffset.value = Offset.zero;
-                    },
-                    child: Container(
-                      width: 70.r, height: 70.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: RadialGradient(
-                          colors: [Colors.white, color, color.withValues(alpha: 0.8)],
-                          stops: const [0.1, 0.4, 1.0],
-                        ),
-                        boxShadow: [
-                          BoxShadow(color: color.withValues(alpha: 0.6), blurRadius: 20, spreadRadius: 5),
-                          BoxShadow(color: Colors.white.withValues(alpha: 0.4), blurRadius: 10, spreadRadius: 2),
-                        ],
+              maxWidth: constraints.maxWidth * 1.5,
+              maxHeight: constraints.maxHeight * 1.5,
+              child: Stack(
+                alignment: Alignment.center,
+                clipBehavior: Clip.none,
+                children: [
+                    // Neural Grid Background Lines
+                    CustomPaint(
+                      size: Size(constraints.maxWidth, constraints.maxHeight),
+                      painter: NeuralGridPainter(color.withValues(alpha: 0.1)),
+                    ),
+    
+                    // The Neural Grid Targets
+                    ...List.generate(options.length, (index) {
+                      double xDist = 110.w;
+                      double yDist = 130.h;
+                      double x = (index % 2 == 0) ? -xDist : xDist;
+                      double y = (index < 2) ? -yDist : yDist;
+                      
+                      return Transform.translate(
+                        offset: Offset(x, y),
+                        child: _buildReservoir(index, options[index], correct, color),
+                      );
+                    }),
+                    
+                    // The Psychology Core (Draggable Orb)
+                    Transform.translate(
+                      offset: offset,
+                      child: GestureDetector(
+                        behavior: HitTestBehavior.opaque,
+                        onPanUpdate: (details) => _onCoreMove(details.delta, constraints),
+                        onPanEnd: (_) {
+                          for (int i = 0; i < options.length; i++) {
+                            double xDist = 110.w;
+                            double yDist = 130.h;
+                            double x = (i % 2 == 0) ? -xDist : xDist;
+                            double y = (i < 2) ? -yDist : yDist;
+                            if ((offset - Offset(x, y)).distance < 60.r) {
+                              _submitAnswer(i, correct);
+                              return;
+                            }
+                          }
+                          _coreOffset.value = Offset.zero;
+                        },
+                        child: Container(
+                          width: 70.r, height: 70.r,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: RadialGradient(
+                              colors: [Colors.white, color, color.withValues(alpha: 0.8)],
+                              stops: const [0.1, 0.4, 1.0],
+                            ),
+                            boxShadow: [
+                              BoxShadow(color: color.withValues(alpha: 0.6), blurRadius: 20, spreadRadius: 5),
+                              BoxShadow(color: Colors.white.withValues(alpha: 0.4), blurRadius: 10, spreadRadius: 2),
+                            ],
+                          ),
+                          child: Icon(Icons.blur_on_rounded, color: Colors.white.withValues(alpha: 0.9), size: 35.r),
+                        ).animate(onPlay: (c) => c.repeat()).shimmer(color: Colors.white30, duration: 2.seconds),
                       ),
-                      child: Icon(Icons.blur_on_rounded, color: Colors.white.withValues(alpha: 0.9), size: 35.r),
-                    ).animate(onPlay: (c) => c.repeat()).shimmer(color: Colors.white30, duration: 2.seconds),
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            );
-          },
-        );
-      },
-    );
-  }
+              );
+            },
+          );
+        },
+      );
+    }
 
   Widget _buildReservoir(int index, String text, int correct, Color color) {
     bool isSelected = _selectedIndex == index;
-    bool isCorrect = _isAnswered && index == correct;
-    bool isWrong = _isAnswered && isSelected && index != correct;
+    // Only show Green if they actually got it right. 
+    // If they got it wrong, don't reveal the correct answer in the grid (Loophole fix).
+    bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
+    bool isWrong = _isAnswered && isSelected && _isCorrect == false;
     
     Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color);
 
@@ -306,17 +316,31 @@ class NeuralGridPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color..strokeWidth = 1..style = PaintingStyle.stroke;
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = 1.5
+      ..style = PaintingStyle.stroke;
+      
     double centerX = size.width / 2;
     double centerY = size.height / 2;
     
-    // Draw crosshair or grid lines
-    canvas.drawLine(Offset(centerX, 0), Offset(centerX, size.height), paint);
-    canvas.drawLine(Offset(0, centerY), Offset(size.width, centerY), paint);
+    // Draw Faded Crosshair (Fade at edges to avoid 'square container' feel)
+    final lineGradient = RadialGradient(
+      colors: [color.withValues(alpha: 0.5), color.withValues(alpha: 0.0)],
+      stops: const [0.5, 1.0],
+    ).createShader(Rect.fromLTWH(0, 0, size.width, size.height));
     
-    // Draw circles
-    canvas.drawCircle(Offset(centerX, centerY), 60.r, paint);
-    canvas.drawCircle(Offset(centerX, centerY), 120.r, paint);
+    final linePaint = Paint()
+      ..shader = lineGradient
+      ..strokeWidth = 1;
+      
+    canvas.drawLine(Offset(centerX, 0), Offset(centerX, size.height), linePaint);
+    canvas.drawLine(Offset(0, centerY), Offset(size.width, centerY), linePaint);
+    
+    // Draw Multi-layered Neural Circles
+    canvas.drawCircle(Offset(centerX, centerY), 50.r, paint);
+    canvas.drawCircle(Offset(centerX, centerY), 100.r, Paint()..color = color.withAlpha(40)..style = PaintingStyle.stroke..strokeWidth = 1.5);
+    canvas.drawCircle(Offset(centerX, centerY), 150.r, Paint()..color = color.withAlpha(20)..style = PaintingStyle.stroke..strokeWidth = 1.5);
   }
 
   @override
