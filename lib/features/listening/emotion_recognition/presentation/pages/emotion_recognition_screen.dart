@@ -30,7 +30,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
-  Offset _coreOffset = Offset.zero;
+  final ValueNotifier<Offset> _coreOffset = ValueNotifier(Offset.zero);
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -46,10 +46,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
 
   void _onCoreMove(Offset delta) {
     if (_isAnswered) return;
-    setState(() {
-      _coreOffset += delta;
-      _hapticService.selection();
-    });
+    _coreOffset.value += delta;
   }
 
   void _submitAnswer(int index, int correct) {
@@ -85,7 +82,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
-              _coreOffset = Offset.zero;
+              _coreOffset.value = Offset.zero;
             });
           }
           _lastLives = state.livesRemaining;
@@ -109,11 +106,16 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
             children: [
               SizedBox(height: 16.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 40.h),
+              const Spacer(flex: 2),
               _buildEmitterNode(quest.textToSpeak ?? "", theme.primaryColor),
-              const Spacer(),
-              _buildNeuralField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
-              const Spacer(),
+              const Spacer(flex: 3),
+              Expanded(
+                flex: 12,
+                child: RepaintBoundary(
+                  child: _buildNeuralField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+                ),
+              ),
+              const Spacer(flex: 1),
             ],
           ),
         );
@@ -130,7 +132,10 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
         children: [
           Icon(Icons.psychology_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("NAVIGATE THE CORE TO MATCH EMOTION", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            _isAnswered ? "ANALYSIS COMPLETE" : "PROBE THE EMOTIONAL FREQUENCY", 
+            style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5),
+          ),
         ],
       ),
     );
@@ -143,94 +148,178 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
         _hapticService.selection();
       },
       child: Container(
-        width: 80.r, height: 80.r,
-        decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color.withValues(alpha: 0.3))),
-        child: Icon(Icons.waves_rounded, color: color, size: 32.r),
+        padding: EdgeInsets.all(20.r),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle, 
+          color: color.withValues(alpha: 0.1), 
+          border: Border.all(color: color.withValues(alpha: 0.3)),
+          boxShadow: [BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 20, spreadRadius: 5)],
+        ),
+        child: Icon(Icons.graphic_eq_rounded, color: color, size: 40.r),
       ),
     );
   }
 
   Widget _buildNeuralField(List<String> options, int correct, Color color, bool isDark) {
-    return SizedBox(
-      height: 400.h, width: double.infinity,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // The Neural Grid
-          ...List.generate(options.length, (index) {
-            double x = (index % 2 == 0) ? -120.w : 120.w;
-            double y = (index < 2) ? -140.h : 140.h;
-            return Transform.translate(
-              offset: Offset(x, y),
-              child: _buildReservoir(index, options[index], correct, color),
-            );
-          }),
-          
-          // The Psychology Core
-          Transform.translate(
-            offset: _coreOffset,
-            child: GestureDetector(
-              onPanUpdate: (details) => _onCoreMove(details.delta),
-              onPanEnd: (_) {
-                for (int i = 0; i < options.length; i++) {
-                  double x = (i % 2 == 0) ? -120.w : 120.w;
-                  double y = (i < 2) ? -140.h : 140.h;
-                  if ((_coreOffset - Offset(x, y)).distance < 60.r) {
-                    _submitAnswer(i, correct);
-                    break;
-                  }
-                }
-              },
-              child: Container(
-                width: 80.r, height: 80.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: color,
-                  boxShadow: [BoxShadow(color: color.withValues(alpha: 0.5), blurRadius: 20)],
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return ValueListenableBuilder<Offset>(
+          valueListenable: _coreOffset,
+          builder: (context, offset, _) {
+            return Stack(
+              alignment: Alignment.center,
+              children: [
+                // Neural Grid Background Lines
+                CustomPaint(
+                  size: Size(constraints.maxWidth, constraints.maxHeight),
+                  painter: NeuralGridPainter(color.withValues(alpha: 0.1)),
                 ),
-                child: Icon(Icons.bolt_rounded, color: Colors.white, size: 40.r),
-              ).animate(onPlay: (c) => c.repeat()).shimmer(color: Colors.white24, duration: 2.seconds),
-            ),
-          ),
-        ],
-      ),
+
+                // The Neural Grid Targets
+                ...List.generate(options.length, (index) {
+                  double xDist = 110.w;
+                  double yDist = 130.h;
+                  double x = (index % 2 == 0) ? -xDist : xDist;
+                  double y = (index < 2) ? -yDist : yDist;
+                  
+                  return Transform.translate(
+                    offset: Offset(x, y),
+                    child: _buildReservoir(index, options[index], correct, color),
+                  );
+                }),
+                
+                // The Psychology Core (Draggable Orb)
+                Transform.translate(
+                  offset: offset,
+                  child: GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onPanUpdate: (details) => _onCoreMove(details.delta),
+                    onPanEnd: (_) {
+                      for (int i = 0; i < options.length; i++) {
+                        double xDist = 110.w;
+                        double yDist = 130.h;
+                        double x = (i % 2 == 0) ? -xDist : xDist;
+                        double y = (i < 2) ? -yDist : yDist;
+                        if ((offset - Offset(x, y)).distance < 60.r) {
+                          _submitAnswer(i, correct);
+                          return;
+                        }
+                      }
+                      // Snap back to center if not dropped in a reservoir
+                      _coreOffset.value = Offset.zero;
+                    },
+                    child: Container(
+                      width: 70.r, height: 70.r,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: RadialGradient(
+                          colors: [Colors.white, color, color.withValues(alpha: 0.8)],
+                          stops: const [0.1, 0.4, 1.0],
+                        ),
+                        boxShadow: [
+                          BoxShadow(color: color.withValues(alpha: 0.6), blurRadius: 20, spreadRadius: 5),
+                          BoxShadow(color: Colors.white.withValues(alpha: 0.4), blurRadius: 10, spreadRadius: 2),
+                        ],
+                      ),
+                      child: Icon(Icons.blur_on_rounded, color: Colors.white.withValues(alpha: 0.9), size: 35.r),
+                    ).animate(onPlay: (c) => c.repeat()).shimmer(color: Colors.white30, duration: 2.seconds),
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 
   Widget _buildReservoir(int index, String text, int correct, Color color) {
-    bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
-    bool isWrong = _isAnswered && index == _selectedIndex && _isCorrect == false;
+    bool isSelected = _selectedIndex == index;
+    bool isCorrect = _isAnswered && index == correct;
+    bool isWrong = _isAnswered && isSelected && index != correct;
+    
     Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color);
 
-    return Container(
-      width: 100.r, height: 100.r,
-      padding: EdgeInsets.all(8.r),
+    return AnimatedContainer(
+      duration: 300.ms,
+      width: 90.r, height: 90.r,
+      padding: EdgeInsets.all(4.r),
       decoration: BoxDecoration(
-        color: tileColor.withValues(alpha: 0.1),
+        color: tileColor.withValues(alpha: 0.05),
         shape: BoxShape.circle,
-        border: Border.all(color: tileColor.withValues(alpha: 0.3), width: 2),
+        border: Border.all(
+          color: tileColor.withValues(alpha: (isCorrect || isWrong) ? 0.8 : 0.2), 
+          width: (isCorrect || isWrong) ? 3 : 1.5
+        ),
+        boxShadow: (isCorrect || isWrong) 
+            ? [BoxShadow(color: tileColor.withValues(alpha: 0.3), blurRadius: 15, spreadRadius: 2)]
+            : [],
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(_getEmotionEmoji(text), style: TextStyle(fontSize: 24.sp)),
-          SizedBox(height: 4.h),
-          Text(text.toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 8.sp, fontWeight: FontWeight.w900, color: tileColor)),
-        ],
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(_getEmotionEmoji(text), style: TextStyle(fontSize: 22.sp))
+              .animate(target: (isCorrect || isWrong) ? 1 : 0)
+              .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2), curve: Curves.elasticOut),
+            SizedBox(height: 2.h),
+            FittedBox(
+              child: Text(
+                text.toUpperCase(), 
+                textAlign: TextAlign.center, 
+                style: GoogleFonts.outfit(fontSize: 8.sp, fontWeight: FontWeight.w900, color: tileColor, letterSpacing: 0.5)
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   String _getEmotionEmoji(String emotion) {
     switch (emotion.toLowerCase()) {
+      case 'angry':
       case 'anger': return '😡';
+      case 'excited':
       case 'excitement': return '🤩';
+      case 'sad':
       case 'sadness': return '😢';
+      case 'bored':
       case 'boredom': return '😑';
+      case 'happy':
       case 'happiness': return '😊';
+      case 'surprised':
       case 'surprise': return '😲';
+      case 'curious': return '🤔';
+      case 'neutral': return '😐';
+      case 'fear':
+      case 'afraid': return '😨';
+      case 'confident': return '😎';
       default: return '🎭';
     }
   }
+}
+
+class NeuralGridPainter extends CustomPainter {
+  final Color color;
+  NeuralGridPainter(this.color);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = color..strokeWidth = 1..style = PaintingStyle.stroke;
+    double centerX = size.width / 2;
+    double centerY = size.height / 2;
+    
+    // Draw crosshair or grid lines
+    canvas.drawLine(Offset(centerX, 0), Offset(centerX, size.height), paint);
+    canvas.drawLine(Offset(0, centerY), Offset(size.width, centerY), paint);
+    
+    // Draw circles
+    canvas.drawCircle(Offset(centerX, centerY), 60.r, paint);
+    canvas.drawCircle(Offset(centerX, centerY), 120.r, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 

@@ -160,12 +160,20 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                     const Spacer(flex: 2),
                     Expanded(
                       flex: 4,
-                      child: SingleChildScrollView(child: _buildTimeline(theme.primaryColor, isDark)),
+                      child: SingleChildScrollView(
+                        clipBehavior: Clip.none,
+                        physics: const BouncingScrollPhysics(),
+                        child: _buildTimeline(theme.primaryColor, isDark),
+                      ),
                     ),
                     const Spacer(flex: 2),
                     Expanded(
                       flex: 6,
-                      child: SingleChildScrollView(child: _buildSegmentsField(theme.primaryColor, isDark)),
+                      child: SingleChildScrollView(
+                        clipBehavior: Clip.none,
+                        physics: const BouncingScrollPhysics(),
+                        child: _buildSegmentsField(theme.primaryColor, isDark),
+                      ),
                     ),
                     const Spacer(flex: 2),
                     if (!_isAnswered)
@@ -272,11 +280,7 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                         delay: (i * 50).ms,
                       ),
             ),
-            Icon(
-              Icons.graphic_eq_rounded,
-              color: Colors.white,
-              size: 48.r,
-            ),
+            Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 48.r),
           ],
         ),
       ),
@@ -311,7 +315,10 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                 _slots[index].isEmpty ? "???" : _slots[index],
                 style: GoogleFonts.shareTechMono(
                   fontSize: 14.sp,
-                  color: _slots[index].isEmpty ? Colors.grey : color,
+                  fontWeight: FontWeight.bold,
+                  color: _slots[index].isEmpty
+                      ? color.withValues(alpha: 0.4)
+                      : color,
                 ),
               ),
             ),
@@ -358,12 +365,16 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
       decoration: BoxDecoration(
-        color: isFeedback ? color : Colors.white10,
+        color: isFeedback ? color : color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.5)),
-        boxShadow: isFeedback
-            ? [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 10)]
-            : [],
+        border: Border.all(color: color.withValues(alpha: 0.4)),
+        boxShadow: [
+          BoxShadow(
+            color: color.withValues(alpha: isFeedback ? 0.4 : 0.1),
+            blurRadius: isFeedback ? 10 : 5,
+            offset: Offset(0, isFeedback ? 4 : 2),
+          ),
+        ],
       ),
       child: Text(
         text,
