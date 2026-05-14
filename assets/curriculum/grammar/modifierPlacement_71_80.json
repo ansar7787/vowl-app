@@ -1,787 +1,548 @@
 {
-  "gameType": "modifierPlacement",
-  "batchIndex": 8,
-  "levels": "71-80",
-  "quests": [
-    {
-      "id": "mp_l71_q1",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "Fast the car red is.",
-        "Red the car is fast.",
-        "The car red is fast.",
-        "The red car is fast."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "The red car is fast.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"The red car is fast.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l71_q2",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "She has a beautiful voice.",
-        "She has a voice beautiful.",
-        "She voice a beautiful has.",
-        "Beautiful she has a voice."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "She has a beautiful voice.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"She has a beautiful voice.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l71_q3",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "Very he runs quickly.",
-        "He runs quickly very.",
-        "He runs very quickly.",
-        "He quickly runs very."
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "He runs very quickly.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"He runs very quickly.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l72_q1",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "A box small wooden.",
-        "Small a box wooden.",
-        "A wooden small box.",
-        "A small wooden box."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "A small wooden box.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"A small wooden box.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l72_q2",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "Expensive a ring gold.",
-        "A ring expensive gold.",
-        "A gold expensive ring.",
-        "An expensive gold ring."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "An expensive gold ring.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"An expensive gold ring.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l72_q3",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "She is always happy.",
-        "Always she is happy.",
-        "She always is happy.",
-        "She is happy always."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "She is always happy.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"She is always happy.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l73_q1",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "Enough he is old.",
-        "He enough is old.",
-        "He is enough old.",
-        "He is old enough."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "He is old enough.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"He is old enough.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l73_q2",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "We have enough time.",
-        "We have time enough.",
-        "Enough we have time.",
-        "We enough have time."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "We have enough time.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"We have enough time.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l73_q3",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "A big round metal table.",
-        "A round big metal table.",
-        "A big metal round table.",
-        "A metal big round table."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "A big round metal table.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"A big round metal table.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l74_q1",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "He almost always wins.",
-        "He always almost wins.",
-        "Almost he always wins.",
-        "He wins almost always."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "He almost always wins.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"He almost always wins.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l74_q2",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "It very is cold tonight.",
-        "Very it's cold tonight.",
-        "It's cold very tonight.",
-        "It's very cold tonight."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "It's very cold tonight.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"It's very cold tonight.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l74_q3",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "She sang beautifully.",
-        "She beautifully sang.",
-        "Beautifully she sang.",
-        "She sang beautiful."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "She sang beautifully.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"She sang beautifully.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l75_q1",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "Old an Italian man.",
-        "An old Italian man.",
-        "An Italian old man.",
-        "A man old Italian."
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "An old Italian man.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"An old Italian man.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l75_q2",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "I haven't saw him yet.",
-        "Yet I haven't seen him.",
-        "I haven't yet seen him.",
-        "I haven't seen him yet."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "I haven't seen him yet.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"I haven't seen him yet.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l75_q3",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "Only she eats vegetables.",
-        "She only eats vegetables.",
-        "She eats vegetables only.",
-        "She eats only vegetables."
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "She only eats vegetables.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"She only eats vegetables.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l76_q1",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "The car red is fast.",
-        "The red car is fast.",
-        "Red the car is fast.",
-        "Fast the car red is."
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The red car is fast.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"The red car is fast.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l76_q2",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "She has a voice beautiful.",
-        "She has a beautiful voice.",
-        "She voice a beautiful has.",
-        "Beautiful she has a voice."
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "She has a beautiful voice.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"She has a beautiful voice.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l76_q3",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "He runs very quickly.",
-        "He quickly runs very.",
-        "He runs quickly very.",
-        "Very he runs quickly."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "He runs very quickly.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"He runs very quickly.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l77_q1",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "Small a box wooden.",
-        "A small wooden box.",
-        "A wooden small box.",
-        "A box small wooden."
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "A small wooden box.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"A small wooden box.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l77_q2",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "A gold expensive ring.",
-        "Expensive a ring gold.",
-        "An expensive gold ring.",
-        "A ring expensive gold."
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "An expensive gold ring.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"An expensive gold ring.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l77_q3",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "Always she is happy.",
-        "She always is happy.",
-        "She is happy always.",
-        "She is always happy."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "She is always happy.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"She is always happy.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l78_q1",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "He is enough old.",
-        "Enough he is old.",
-        "He enough is old.",
-        "He is old enough."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "He is old enough.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"He is old enough.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l78_q2",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "We have enough time.",
-        "We have time enough.",
-        "We enough have time.",
-        "Enough we have time."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "We have enough time.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"We have enough time.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l78_q3",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "A metal big round table.",
-        "A big metal round table.",
-        "A round big metal table.",
-        "A big round metal table."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "A big round metal table.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"A big round metal table.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l79_q1",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "He almost always wins.",
-        "He always almost wins.",
-        "Almost he always wins.",
-        "He wins almost always."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "He almost always wins.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"He almost always wins.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l79_q2",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "It's very cold tonight.",
-        "It's cold very tonight.",
-        "It very is cold tonight.",
-        "Very it's cold tonight."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "It's very cold tonight.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"It's very cold tonight.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l79_q3",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "She sang beautifully.",
-        "She beautifully sang.",
-        "Beautifully she sang.",
-        "She sang beautiful."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "She sang beautifully.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"She sang beautifully.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l80_q1",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "A man old Italian.",
-        "Old an Italian man.",
-        "An Italian old man.",
-        "An old Italian man."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "An old Italian man.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"An old Italian man.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l80_q2",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "Yet I haven't seen him.",
-        "I haven't yet seen him.",
-        "I haven't saw him yet.",
-        "I haven't seen him yet."
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "I haven't seen him yet.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"I haven't seen him yet.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "mp_l80_q3",
-      "instruction": "PLACE THE MODIFIER",
-      "difficulty": 2,
-      "subtype": "modifierPlacement",
-      "interactionType": "Map Placement",
-      "question": "Choose the grammatically correct sentence:",
-      "options": [
-        "She only eats vegetables.",
-        "She eats only vegetables.",
-        "Only she eats vegetables.",
-        "She eats vegetables only."
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "She only eats vegetables.",
-      "hint": "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
-      "explanation": "The correct sentence is: \"She only eats vegetables.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    }
-  ]
+    "gameType":  "modifierPlacement",
+    "batchIndex":  8,
+    "levels":  "71-80",
+    "quests":  [
+                   {
+                       "id":  "mp_l71_q1",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "Fast the car red is.",
+                                       "Red the car is fast.",
+                                       "The car red is fast.",
+                                       "The red car is fast."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "The red car is fast.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'The red car is fast.'"
+                   },
+                   {
+                       "id":  "mp_l71_q2",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "She has a beautiful voice.",
+                                       "She has a voice beautiful.",
+                                       "She voice a beautiful has.",
+                                       "Beautiful she has a voice."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "She has a beautiful voice.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'She has a beautiful voice.'"
+                   },
+                   {
+                       "id":  "mp_l71_q3",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "Very he runs quickly.",
+                                       "He runs quickly very.",
+                                       "He runs very quickly.",
+                                       "He quickly runs very."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "He runs very quickly.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'He runs very quickly.'"
+                   },
+                   {
+                       "id":  "mp_l72_q1",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "A box small wooden.",
+                                       "Small a box wooden.",
+                                       "A wooden small box.",
+                                       "A small wooden box."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "A small wooden box.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'A small wooden box.'"
+                   },
+                   {
+                       "id":  "mp_l72_q2",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "Expensive a ring gold.",
+                                       "A ring expensive gold.",
+                                       "A gold expensive ring.",
+                                       "An expensive gold ring."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "An expensive gold ring.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'An expensive gold ring.'"
+                   },
+                   {
+                       "id":  "mp_l72_q3",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "She is always happy.",
+                                       "Always she is happy.",
+                                       "She always is happy.",
+                                       "She is happy always."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "She is always happy.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'She is always happy.'"
+                   },
+                   {
+                       "id":  "mp_l73_q1",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "Enough he is old.",
+                                       "He enough is old.",
+                                       "He is enough old.",
+                                       "He is old enough."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "He is old enough.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'He is old enough.'"
+                   },
+                   {
+                       "id":  "mp_l73_q2",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "We have enough time.",
+                                       "We have time enough.",
+                                       "Enough we have time.",
+                                       "We enough have time."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "We have enough time.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'We have enough time.'"
+                   },
+                   {
+                       "id":  "mp_l73_q3",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "A big round metal table.",
+                                       "A round big metal table.",
+                                       "A big metal round table.",
+                                       "A metal big round table."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "A big round metal table.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'A big round metal table.'"
+                   },
+                   {
+                       "id":  "mp_l74_q1",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "He almost always wins.",
+                                       "He always almost wins.",
+                                       "Almost he always wins.",
+                                       "He wins almost always."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "He almost always wins.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'He almost always wins.'"
+                   },
+                   {
+                       "id":  "mp_l74_q2",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "It very is cold tonight.",
+                                       "Very it\u0027s cold tonight.",
+                                       "It\u0027s cold very tonight.",
+                                       "It\u0027s very cold tonight."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "It\u0027s very cold tonight.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'It\u0027s very cold tonight.'"
+                   },
+                   {
+                       "id":  "mp_l74_q3",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "She sang beautifully.",
+                                       "She beautifully sang.",
+                                       "Beautifully she sang.",
+                                       "She sang beautiful."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "She sang beautifully.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'She sang beautifully.'"
+                   },
+                   {
+                       "id":  "mp_l75_q1",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "Old an Italian man.",
+                                       "An old Italian man.",
+                                       "An Italian old man.",
+                                       "A man old Italian."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "An old Italian man.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'An old Italian man.'"
+                   },
+                   {
+                       "id":  "mp_l75_q2",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "I haven\u0027t saw him yet.",
+                                       "Yet I haven\u0027t seen him.",
+                                       "I haven\u0027t yet seen him.",
+                                       "I haven\u0027t seen him yet."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "I haven\u0027t seen him yet.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'I haven\u0027t seen him yet.'"
+                   },
+                   {
+                       "id":  "mp_l75_q3",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "Only she eats vegetables.",
+                                       "She only eats vegetables.",
+                                       "She eats vegetables only.",
+                                       "She eats only vegetables."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "She only eats vegetables.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'She only eats vegetables.'"
+                   },
+                   {
+                       "id":  "mp_l76_q1",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "The car red is fast.",
+                                       "The red car is fast.",
+                                       "Red the car is fast.",
+                                       "Fast the car red is."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "The red car is fast.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'The red car is fast.'"
+                   },
+                   {
+                       "id":  "mp_l76_q2",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "She has a voice beautiful.",
+                                       "She has a beautiful voice.",
+                                       "She voice a beautiful has.",
+                                       "Beautiful she has a voice."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "She has a beautiful voice.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'She has a beautiful voice.'"
+                   },
+                   {
+                       "id":  "mp_l76_q3",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "He runs very quickly.",
+                                       "He quickly runs very.",
+                                       "He runs quickly very.",
+                                       "Very he runs quickly."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "He runs very quickly.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'He runs very quickly.'"
+                   },
+                   {
+                       "id":  "mp_l77_q1",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "Small a box wooden.",
+                                       "A small wooden box.",
+                                       "A wooden small box.",
+                                       "A box small wooden."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "A small wooden box.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'A small wooden box.'"
+                   },
+                   {
+                       "id":  "mp_l77_q2",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "A gold expensive ring.",
+                                       "Expensive a ring gold.",
+                                       "An expensive gold ring.",
+                                       "A ring expensive gold."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "An expensive gold ring.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'An expensive gold ring.'"
+                   },
+                   {
+                       "id":  "mp_l77_q3",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "Always she is happy.",
+                                       "She always is happy.",
+                                       "She is happy always.",
+                                       "She is always happy."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "She is always happy.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'She is always happy.'"
+                   },
+                   {
+                       "id":  "mp_l78_q1",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "He is enough old.",
+                                       "Enough he is old.",
+                                       "He enough is old.",
+                                       "He is old enough."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "He is old enough.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'He is old enough.'"
+                   },
+                   {
+                       "id":  "mp_l78_q2",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "We have enough time.",
+                                       "We have time enough.",
+                                       "We enough have time.",
+                                       "Enough we have time."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "We have enough time.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'We have enough time.'"
+                   },
+                   {
+                       "id":  "mp_l78_q3",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "A metal big round table.",
+                                       "A big metal round table.",
+                                       "A round big metal table.",
+                                       "A big round metal table."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "A big round metal table.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'A big round metal table.'"
+                   },
+                   {
+                       "id":  "mp_l79_q1",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "He almost always wins.",
+                                       "He always almost wins.",
+                                       "Almost he always wins.",
+                                       "He wins almost always."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "He almost always wins.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'He almost always wins.'"
+                   },
+                   {
+                       "id":  "mp_l79_q2",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "It\u0027s very cold tonight.",
+                                       "It\u0027s cold very tonight.",
+                                       "It very is cold tonight.",
+                                       "Very it\u0027s cold tonight."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "It\u0027s very cold tonight.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'It\u0027s very cold tonight.'"
+                   },
+                   {
+                       "id":  "mp_l79_q3",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "She sang beautifully.",
+                                       "She beautifully sang.",
+                                       "Beautifully she sang.",
+                                       "She sang beautiful."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "She sang beautifully.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'She sang beautifully.'"
+                   },
+                   {
+                       "id":  "mp_l80_q1",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "A man old Italian.",
+                                       "Old an Italian man.",
+                                       "An Italian old man.",
+                                       "An old Italian man."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "An old Italian man.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'An old Italian man.'"
+                   },
+                   {
+                       "id":  "mp_l80_q2",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "Yet I haven\u0027t seen him.",
+                                       "I haven\u0027t yet seen him.",
+                                       "I haven\u0027t saw him yet.",
+                                       "I haven\u0027t seen him yet."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "I haven\u0027t seen him yet.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'I haven\u0027t seen him yet.'"
+                   },
+                   {
+                       "id":  "mp_l80_q3",
+                       "instruction":  "PLACE THE MODIFIER",
+                       "difficulty":  2,
+                       "subtype":  "modifierPlacement",
+                       "interactionType":  "Map Placement",
+                       "question":  "Choose the grammatically correct sentence:",
+                       "options":  [
+                                       "She only eats vegetables.",
+                                       "She eats only vegetables.",
+                                       "Only she eats vegetables.",
+                                       "She eats vegetables only."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "She only eats vegetables.",
+                       "hint":  "Adjectives usually come before nouns, and adverbs follow verbs or modify adjectives.",
+                       "explanation":  "The correct sentence is: 'She only eats vegetables.'"
+                   }
+               ]
 }
+

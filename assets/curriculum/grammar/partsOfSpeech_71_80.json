@@ -1,847 +1,608 @@
 {
-  "gameType": "partsOfSpeech",
-  "batchIndex": 8,
-  "levels": "71-80",
-  "quests": [
-    {
-      "id": "pos_l71_q1",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"technician\"",
-      "targetWord": "technician",
-      "sentence": "The technician repairs the circuit.",
-      "options": [
-        "Preposition",
-        "Adverb",
-        "Noun",
-        "Pronoun"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Noun",
-      "hint": "Think about what role \"technician\" plays in the sentence.",
-      "explanation": "\"technician\" is a noun because it names something.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l71_q2",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"repairs\"",
-      "targetWord": "repairs",
-      "sentence": "The technician repairs the circuit.",
-      "options": [
-        "Verb",
-        "Pronoun",
-        "Adverb",
-        "Preposition"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Verb",
-      "hint": "Think about what role \"repairs\" plays in the sentence.",
-      "explanation": "\"repairs\" is a verb because it describes an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l71_q3",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"quickly\"",
-      "targetWord": "quickly",
-      "sentence": "He runs very quickly.",
-      "options": [
-        "Adverb",
-        "Conjunction",
-        "Preposition",
-        "Noun"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Adverb",
-      "hint": "Think about what role \"quickly\" plays in the sentence.",
-      "explanation": "\"quickly\" is a adverb because it modifies an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l72_q1",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"beautiful\"",
-      "targetWord": "beautiful",
-      "sentence": "A beautiful sunset painted the sky.",
-      "options": [
-        "Adjective",
-        "Verb",
-        "Noun",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Adjective",
-      "hint": "Think about what role \"beautiful\" plays in the sentence.",
-      "explanation": "\"beautiful\" is a adjective because it describes a noun.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l72_q2",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"She\"",
-      "targetWord": "She",
-      "sentence": "She is waiting for you.",
-      "options": [
-        "Adjective",
-        "Pronoun",
-        "Adverb",
-        "Conjunction"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Pronoun",
-      "hint": "Think about what role \"She\" plays in the sentence.",
-      "explanation": "\"She\" is a pronoun because it modifies an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l72_q3",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"under\"",
-      "targetWord": "under",
-      "sentence": "The cat is under the table.",
-      "options": [
-        "Preposition",
-        "Pronoun",
-        "Adjective",
-        "Verb"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Preposition",
-      "hint": "Think about what role \"under\" plays in the sentence.",
-      "explanation": "\"under\" is a preposition because it modifies an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l73_q1",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"and\"",
-      "targetWord": "and",
-      "sentence": "I like coffee and tea.",
-      "options": [
-        "Verb",
-        "Adverb",
-        "Conjunction",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Conjunction",
-      "hint": "Think about what role \"and\" plays in the sentence.",
-      "explanation": "\"and\" is a conjunction because it modifies an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l73_q2",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"runs\"",
-      "targetWord": "runs",
-      "sentence": "The system runs smoothly.",
-      "options": [
-        "Noun",
-        "Verb",
-        "Adverb",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Verb",
-      "hint": "Think about what role \"runs\" plays in the sentence.",
-      "explanation": "\"runs\" is a verb because it describes an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l73_q3",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"remote\"",
-      "targetWord": "remote",
-      "sentence": "They scanned the remote sector.",
-      "options": [
-        "Pronoun",
-        "Noun",
-        "Adverb",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Adjective",
-      "hint": "Think about what role \"remote\" plays in the sentence.",
-      "explanation": "\"remote\" is a adjective because it describes a noun.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l74_q1",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"optimized\"",
-      "targetWord": "optimized",
-      "sentence": "The AI optimized the power grid.",
-      "options": [
-        "Verb",
-        "Adverb",
-        "Pronoun",
-        "Conjunction"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Verb",
-      "hint": "Think about what role \"optimized\" plays in the sentence.",
-      "explanation": "\"optimized\" is a verb because it describes an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l74_q2",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"clearly\"",
-      "targetWord": "clearly",
-      "sentence": "He spoke clearly into the mic.",
-      "options": [
-        "Verb",
-        "Pronoun",
-        "Preposition",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Adverb",
-      "hint": "Think about what role \"clearly\" plays in the sentence.",
-      "explanation": "\"clearly\" is a adverb because it modifies an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l74_q3",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"powerful\"",
-      "targetWord": "powerful",
-      "sentence": "A powerful signal was detected.",
-      "options": [
-        "Adjective",
-        "Noun",
-        "Verb",
-        "Preposition"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Adjective",
-      "hint": "Think about what role \"powerful\" plays in the sentence.",
-      "explanation": "\"powerful\" is a adjective because it describes a noun.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l75_q1",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"link\"",
-      "targetWord": "link",
-      "sentence": "We established a link between nodes.",
-      "options": [
-        "Noun",
-        "Pronoun",
-        "Preposition",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Noun",
-      "hint": "Think about what role \"link\" plays in the sentence.",
-      "explanation": "\"link\" is a noun because it names something.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l75_q2",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"hidden\"",
-      "targetWord": "hidden",
-      "sentence": "The explorer discovered a hidden path.",
-      "options": [
-        "Noun",
-        "Conjunction",
-        "Pronoun",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Adjective",
-      "hint": "Think about what role \"hidden\" plays in the sentence.",
-      "explanation": "\"hidden\" is a adjective because it describes a noun.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l75_q3",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"protect\"",
-      "targetWord": "protect",
-      "sentence": "You must protect the secret core.",
-      "options": [
-        "Adjective",
-        "Verb",
-        "Conjunction",
-        "Noun"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Verb",
-      "hint": "Think about what role \"protect\" plays in the sentence.",
-      "explanation": "\"protect\" is a verb because it describes an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l76_q1",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"technician\"",
-      "targetWord": "technician",
-      "sentence": "The technician repairs the circuit.",
-      "options": [
-        "Adverb",
-        "Conjunction",
-        "Preposition",
-        "Noun"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Noun",
-      "hint": "Think about what role \"technician\" plays in the sentence.",
-      "explanation": "\"technician\" is a noun because it names something.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l76_q2",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"repairs\"",
-      "targetWord": "repairs",
-      "sentence": "The technician repairs the circuit.",
-      "options": [
-        "Conjunction",
-        "Verb",
-        "Adverb",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Verb",
-      "hint": "Think about what role \"repairs\" plays in the sentence.",
-      "explanation": "\"repairs\" is a verb because it describes an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l76_q3",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"quickly\"",
-      "targetWord": "quickly",
-      "sentence": "He runs very quickly.",
-      "options": [
-        "Pronoun",
-        "Verb",
-        "Conjunction",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Adverb",
-      "hint": "Think about what role \"quickly\" plays in the sentence.",
-      "explanation": "\"quickly\" is a adverb because it modifies an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l77_q1",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"beautiful\"",
-      "targetWord": "beautiful",
-      "sentence": "A beautiful sunset painted the sky.",
-      "options": [
-        "Pronoun",
-        "Adjective",
-        "Verb",
-        "Noun"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Adjective",
-      "hint": "Think about what role \"beautiful\" plays in the sentence.",
-      "explanation": "\"beautiful\" is a adjective because it describes a noun.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l77_q2",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"She\"",
-      "targetWord": "She",
-      "sentence": "She is waiting for you.",
-      "options": [
-        "Adjective",
-        "Pronoun",
-        "Verb",
-        "Noun"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Pronoun",
-      "hint": "Think about what role \"She\" plays in the sentence.",
-      "explanation": "\"She\" is a pronoun because it modifies an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l77_q3",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"under\"",
-      "targetWord": "under",
-      "sentence": "The cat is under the table.",
-      "options": [
-        "Adjective",
-        "Conjunction",
-        "Adverb",
-        "Preposition"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Preposition",
-      "hint": "Think about what role \"under\" plays in the sentence.",
-      "explanation": "\"under\" is a preposition because it modifies an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l78_q1",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"and\"",
-      "targetWord": "and",
-      "sentence": "I like coffee and tea.",
-      "options": [
-        "Conjunction",
-        "Adjective",
-        "Preposition",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Conjunction",
-      "hint": "Think about what role \"and\" plays in the sentence.",
-      "explanation": "\"and\" is a conjunction because it modifies an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l78_q2",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"runs\"",
-      "targetWord": "runs",
-      "sentence": "The system runs smoothly.",
-      "options": [
-        "Pronoun",
-        "Verb",
-        "Conjunction",
-        "Adverb"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Verb",
-      "hint": "Think about what role \"runs\" plays in the sentence.",
-      "explanation": "\"runs\" is a verb because it describes an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l78_q3",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"remote\"",
-      "targetWord": "remote",
-      "sentence": "They scanned the remote sector.",
-      "options": [
-        "Pronoun",
-        "Adverb",
-        "Conjunction",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Adjective",
-      "hint": "Think about what role \"remote\" plays in the sentence.",
-      "explanation": "\"remote\" is a adjective because it describes a noun.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l79_q1",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"optimized\"",
-      "targetWord": "optimized",
-      "sentence": "The AI optimized the power grid.",
-      "options": [
-        "Conjunction",
-        "Adverb",
-        "Pronoun",
-        "Verb"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Verb",
-      "hint": "Think about what role \"optimized\" plays in the sentence.",
-      "explanation": "\"optimized\" is a verb because it describes an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l79_q2",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"clearly\"",
-      "targetWord": "clearly",
-      "sentence": "He spoke clearly into the mic.",
-      "options": [
-        "Pronoun",
-        "Verb",
-        "Adverb",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Adverb",
-      "hint": "Think about what role \"clearly\" plays in the sentence.",
-      "explanation": "\"clearly\" is a adverb because it modifies an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l79_q3",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"powerful\"",
-      "targetWord": "powerful",
-      "sentence": "A powerful signal was detected.",
-      "options": [
-        "Verb",
-        "Pronoun",
-        "Adverb",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Adjective",
-      "hint": "Think about what role \"powerful\" plays in the sentence.",
-      "explanation": "\"powerful\" is a adjective because it describes a noun.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l80_q1",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"link\"",
-      "targetWord": "link",
-      "sentence": "We established a link between nodes.",
-      "options": [
-        "Noun",
-        "Adverb",
-        "Pronoun",
-        "Verb"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Noun",
-      "hint": "Think about what role \"link\" plays in the sentence.",
-      "explanation": "\"link\" is a noun because it names something.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l80_q2",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"hidden\"",
-      "targetWord": "hidden",
-      "sentence": "The explorer discovered a hidden path.",
-      "options": [
-        "Conjunction",
-        "Pronoun",
-        "Preposition",
-        "Adjective"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Adjective",
-      "hint": "Think about what role \"hidden\" plays in the sentence.",
-      "explanation": "\"hidden\" is a adjective because it describes a noun.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    },
-    {
-      "id": "pos_l80_q3",
-      "instruction": "IDENTIFY THE FUNCTION",
-      "difficulty": 2,
-      "subtype": "partsOfSpeech",
-      "interactionType": "Flick Vortex",
-      "question": "Identify the part of speech for: \"protect\"",
-      "targetWord": "protect",
-      "sentence": "You must protect the secret core.",
-      "options": [
-        "Adverb",
-        "Pronoun",
-        "Preposition",
-        "Verb"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Verb",
-      "hint": "Think about what role \"protect\" plays in the sentence.",
-      "explanation": "\"protect\" is a verb because it describes an action.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "brain_bloom"
-      }
-    }
-  ]
+    "gameType":  "partsOfSpeech",
+    "batchIndex":  8,
+    "levels":  "71-80",
+    "quests":  [
+                   {
+                       "id":  "pos_l71_q1",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'technician'",
+                       "targetWord":  "technician",
+                       "sentence":  "The technician repairs the circuit.",
+                       "options":  [
+                                       "Preposition",
+                                       "Adverb",
+                                       "Noun",
+                                       "Pronoun"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "Noun",
+                       "hint":  "Think about what role 'technician' plays in the sentence.",
+                       "explanation":  "'technician' is a noun because it names something."
+                   },
+                   {
+                       "id":  "pos_l71_q2",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'repairs'",
+                       "targetWord":  "repairs",
+                       "sentence":  "The technician repairs the circuit.",
+                       "options":  [
+                                       "Verb",
+                                       "Pronoun",
+                                       "Adverb",
+                                       "Preposition"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Verb",
+                       "hint":  "Think about what role 'repairs' plays in the sentence.",
+                       "explanation":  "'repairs' is a verb because it describes an action."
+                   },
+                   {
+                       "id":  "pos_l71_q3",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'quickly'",
+                       "targetWord":  "quickly",
+                       "sentence":  "He runs very quickly.",
+                       "options":  [
+                                       "Adverb",
+                                       "Conjunction",
+                                       "Preposition",
+                                       "Noun"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Adverb",
+                       "hint":  "Think about what role 'quickly' plays in the sentence.",
+                       "explanation":  "'quickly' is a adverb because it modifies an action."
+                   },
+                   {
+                       "id":  "pos_l72_q1",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'beautiful'",
+                       "targetWord":  "beautiful",
+                       "sentence":  "A beautiful sunset painted the sky.",
+                       "options":  [
+                                       "Adjective",
+                                       "Verb",
+                                       "Noun",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Adjective",
+                       "hint":  "Think about what role 'beautiful' plays in the sentence.",
+                       "explanation":  "'beautiful' is a adjective because it describes a noun."
+                   },
+                   {
+                       "id":  "pos_l72_q2",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'She'",
+                       "targetWord":  "She",
+                       "sentence":  "She is waiting for you.",
+                       "options":  [
+                                       "Adjective",
+                                       "Pronoun",
+                                       "Adverb",
+                                       "Conjunction"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "Pronoun",
+                       "hint":  "Think about what role 'She' plays in the sentence.",
+                       "explanation":  "'She' is a pronoun because it modifies an action."
+                   },
+                   {
+                       "id":  "pos_l72_q3",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'under'",
+                       "targetWord":  "under",
+                       "sentence":  "The cat is under the table.",
+                       "options":  [
+                                       "Preposition",
+                                       "Pronoun",
+                                       "Adjective",
+                                       "Verb"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Preposition",
+                       "hint":  "Think about what role 'under' plays in the sentence.",
+                       "explanation":  "'under' is a preposition because it modifies an action."
+                   },
+                   {
+                       "id":  "pos_l73_q1",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'and'",
+                       "targetWord":  "and",
+                       "sentence":  "I like coffee and tea.",
+                       "options":  [
+                                       "Verb",
+                                       "Adverb",
+                                       "Conjunction",
+                                       "Adjective"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "Conjunction",
+                       "hint":  "Think about what role 'and' plays in the sentence.",
+                       "explanation":  "'and' is a conjunction because it modifies an action."
+                   },
+                   {
+                       "id":  "pos_l73_q2",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'runs'",
+                       "targetWord":  "runs",
+                       "sentence":  "The system runs smoothly.",
+                       "options":  [
+                                       "Noun",
+                                       "Verb",
+                                       "Adverb",
+                                       "Adjective"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "Verb",
+                       "hint":  "Think about what role 'runs' plays in the sentence.",
+                       "explanation":  "'runs' is a verb because it describes an action."
+                   },
+                   {
+                       "id":  "pos_l73_q3",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'remote'",
+                       "targetWord":  "remote",
+                       "sentence":  "They scanned the remote sector.",
+                       "options":  [
+                                       "Pronoun",
+                                       "Noun",
+                                       "Adverb",
+                                       "Adjective"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Adjective",
+                       "hint":  "Think about what role 'remote' plays in the sentence.",
+                       "explanation":  "'remote' is a adjective because it describes a noun."
+                   },
+                   {
+                       "id":  "pos_l74_q1",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'optimized'",
+                       "targetWord":  "optimized",
+                       "sentence":  "The AI optimized the power grid.",
+                       "options":  [
+                                       "Verb",
+                                       "Adverb",
+                                       "Pronoun",
+                                       "Conjunction"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Verb",
+                       "hint":  "Think about what role 'optimized' plays in the sentence.",
+                       "explanation":  "'optimized' is a verb because it describes an action."
+                   },
+                   {
+                       "id":  "pos_l74_q2",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'clearly'",
+                       "targetWord":  "clearly",
+                       "sentence":  "He spoke clearly into the mic.",
+                       "options":  [
+                                       "Verb",
+                                       "Pronoun",
+                                       "Preposition",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Adverb",
+                       "hint":  "Think about what role 'clearly' plays in the sentence.",
+                       "explanation":  "'clearly' is a adverb because it modifies an action."
+                   },
+                   {
+                       "id":  "pos_l74_q3",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'powerful'",
+                       "targetWord":  "powerful",
+                       "sentence":  "A powerful signal was detected.",
+                       "options":  [
+                                       "Adjective",
+                                       "Noun",
+                                       "Verb",
+                                       "Preposition"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Adjective",
+                       "hint":  "Think about what role 'powerful' plays in the sentence.",
+                       "explanation":  "'powerful' is a adjective because it describes a noun."
+                   },
+                   {
+                       "id":  "pos_l75_q1",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'link'",
+                       "targetWord":  "link",
+                       "sentence":  "We established a link between nodes.",
+                       "options":  [
+                                       "Noun",
+                                       "Pronoun",
+                                       "Preposition",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Noun",
+                       "hint":  "Think about what role 'link' plays in the sentence.",
+                       "explanation":  "'link' is a noun because it names something."
+                   },
+                   {
+                       "id":  "pos_l75_q2",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'hidden'",
+                       "targetWord":  "hidden",
+                       "sentence":  "The explorer discovered a hidden path.",
+                       "options":  [
+                                       "Noun",
+                                       "Conjunction",
+                                       "Pronoun",
+                                       "Adjective"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Adjective",
+                       "hint":  "Think about what role 'hidden' plays in the sentence.",
+                       "explanation":  "'hidden' is a adjective because it describes a noun."
+                   },
+                   {
+                       "id":  "pos_l75_q3",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'protect'",
+                       "targetWord":  "protect",
+                       "sentence":  "You must protect the secret core.",
+                       "options":  [
+                                       "Adjective",
+                                       "Verb",
+                                       "Conjunction",
+                                       "Noun"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "Verb",
+                       "hint":  "Think about what role 'protect' plays in the sentence.",
+                       "explanation":  "'protect' is a verb because it describes an action."
+                   },
+                   {
+                       "id":  "pos_l76_q1",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'technician'",
+                       "targetWord":  "technician",
+                       "sentence":  "The technician repairs the circuit.",
+                       "options":  [
+                                       "Adverb",
+                                       "Conjunction",
+                                       "Preposition",
+                                       "Noun"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Noun",
+                       "hint":  "Think about what role 'technician' plays in the sentence.",
+                       "explanation":  "'technician' is a noun because it names something."
+                   },
+                   {
+                       "id":  "pos_l76_q2",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'repairs'",
+                       "targetWord":  "repairs",
+                       "sentence":  "The technician repairs the circuit.",
+                       "options":  [
+                                       "Conjunction",
+                                       "Verb",
+                                       "Adverb",
+                                       "Adjective"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "Verb",
+                       "hint":  "Think about what role 'repairs' plays in the sentence.",
+                       "explanation":  "'repairs' is a verb because it describes an action."
+                   },
+                   {
+                       "id":  "pos_l76_q3",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'quickly'",
+                       "targetWord":  "quickly",
+                       "sentence":  "He runs very quickly.",
+                       "options":  [
+                                       "Pronoun",
+                                       "Verb",
+                                       "Conjunction",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Adverb",
+                       "hint":  "Think about what role 'quickly' plays in the sentence.",
+                       "explanation":  "'quickly' is a adverb because it modifies an action."
+                   },
+                   {
+                       "id":  "pos_l77_q1",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'beautiful'",
+                       "targetWord":  "beautiful",
+                       "sentence":  "A beautiful sunset painted the sky.",
+                       "options":  [
+                                       "Pronoun",
+                                       "Adjective",
+                                       "Verb",
+                                       "Noun"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "Adjective",
+                       "hint":  "Think about what role 'beautiful' plays in the sentence.",
+                       "explanation":  "'beautiful' is a adjective because it describes a noun."
+                   },
+                   {
+                       "id":  "pos_l77_q2",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'She'",
+                       "targetWord":  "She",
+                       "sentence":  "She is waiting for you.",
+                       "options":  [
+                                       "Adjective",
+                                       "Pronoun",
+                                       "Verb",
+                                       "Noun"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "Pronoun",
+                       "hint":  "Think about what role 'She' plays in the sentence.",
+                       "explanation":  "'She' is a pronoun because it modifies an action."
+                   },
+                   {
+                       "id":  "pos_l77_q3",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'under'",
+                       "targetWord":  "under",
+                       "sentence":  "The cat is under the table.",
+                       "options":  [
+                                       "Adjective",
+                                       "Conjunction",
+                                       "Adverb",
+                                       "Preposition"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Preposition",
+                       "hint":  "Think about what role 'under' plays in the sentence.",
+                       "explanation":  "'under' is a preposition because it modifies an action."
+                   },
+                   {
+                       "id":  "pos_l78_q1",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'and'",
+                       "targetWord":  "and",
+                       "sentence":  "I like coffee and tea.",
+                       "options":  [
+                                       "Conjunction",
+                                       "Adjective",
+                                       "Preposition",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Conjunction",
+                       "hint":  "Think about what role 'and' plays in the sentence.",
+                       "explanation":  "'and' is a conjunction because it modifies an action."
+                   },
+                   {
+                       "id":  "pos_l78_q2",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'runs'",
+                       "targetWord":  "runs",
+                       "sentence":  "The system runs smoothly.",
+                       "options":  [
+                                       "Pronoun",
+                                       "Verb",
+                                       "Conjunction",
+                                       "Adverb"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "Verb",
+                       "hint":  "Think about what role 'runs' plays in the sentence.",
+                       "explanation":  "'runs' is a verb because it describes an action."
+                   },
+                   {
+                       "id":  "pos_l78_q3",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'remote'",
+                       "targetWord":  "remote",
+                       "sentence":  "They scanned the remote sector.",
+                       "options":  [
+                                       "Pronoun",
+                                       "Adverb",
+                                       "Conjunction",
+                                       "Adjective"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Adjective",
+                       "hint":  "Think about what role 'remote' plays in the sentence.",
+                       "explanation":  "'remote' is a adjective because it describes a noun."
+                   },
+                   {
+                       "id":  "pos_l79_q1",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'optimized'",
+                       "targetWord":  "optimized",
+                       "sentence":  "The AI optimized the power grid.",
+                       "options":  [
+                                       "Conjunction",
+                                       "Adverb",
+                                       "Pronoun",
+                                       "Verb"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Verb",
+                       "hint":  "Think about what role 'optimized' plays in the sentence.",
+                       "explanation":  "'optimized' is a verb because it describes an action."
+                   },
+                   {
+                       "id":  "pos_l79_q2",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'clearly'",
+                       "targetWord":  "clearly",
+                       "sentence":  "He spoke clearly into the mic.",
+                       "options":  [
+                                       "Pronoun",
+                                       "Verb",
+                                       "Adverb",
+                                       "Adjective"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "Adverb",
+                       "hint":  "Think about what role 'clearly' plays in the sentence.",
+                       "explanation":  "'clearly' is a adverb because it modifies an action."
+                   },
+                   {
+                       "id":  "pos_l79_q3",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'powerful'",
+                       "targetWord":  "powerful",
+                       "sentence":  "A powerful signal was detected.",
+                       "options":  [
+                                       "Verb",
+                                       "Pronoun",
+                                       "Adverb",
+                                       "Adjective"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Adjective",
+                       "hint":  "Think about what role 'powerful' plays in the sentence.",
+                       "explanation":  "'powerful' is a adjective because it describes a noun."
+                   },
+                   {
+                       "id":  "pos_l80_q1",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'link'",
+                       "targetWord":  "link",
+                       "sentence":  "We established a link between nodes.",
+                       "options":  [
+                                       "Noun",
+                                       "Adverb",
+                                       "Pronoun",
+                                       "Verb"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Noun",
+                       "hint":  "Think about what role 'link' plays in the sentence.",
+                       "explanation":  "'link' is a noun because it names something."
+                   },
+                   {
+                       "id":  "pos_l80_q2",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'hidden'",
+                       "targetWord":  "hidden",
+                       "sentence":  "The explorer discovered a hidden path.",
+                       "options":  [
+                                       "Conjunction",
+                                       "Pronoun",
+                                       "Preposition",
+                                       "Adjective"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Adjective",
+                       "hint":  "Think about what role 'hidden' plays in the sentence.",
+                       "explanation":  "'hidden' is a adjective because it describes a noun."
+                   },
+                   {
+                       "id":  "pos_l80_q3",
+                       "instruction":  "IDENTIFY THE FUNCTION",
+                       "difficulty":  2,
+                       "subtype":  "partsOfSpeech",
+                       "interactionType":  "Flick Vortex",
+                       "question":  "Identify the part of speech for: 'protect'",
+                       "targetWord":  "protect",
+                       "sentence":  "You must protect the secret core.",
+                       "options":  [
+                                       "Adverb",
+                                       "Pronoun",
+                                       "Preposition",
+                                       "Verb"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Verb",
+                       "hint":  "Think about what role 'protect' plays in the sentence.",
+                       "explanation":  "'protect' is a verb because it describes an action."
+                   }
+               ]
 }
+

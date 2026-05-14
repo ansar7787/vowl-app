@@ -10,9 +10,8 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class VoiceSwapScreen extends StatefulWidget {
   final int level;
@@ -45,12 +44,12 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
     context.read<GrammarBloc>().add(FetchGrammarQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _submitAnswer(String correctAnswer) {
-    if (_isAnswered) return;
+  void _submitAnswer(GameQuest? quest) {
+    if (_isAnswered || quest == null) return;
     
     final selectedVoice = _isPassive ? "Passive" : "Active";
     // Check if the correct answer matches the selected voice category
-    bool isCorrect = selectedVoice.toLowerCase() == (quest?.correctAnswerCategory?.toLowerCase() ?? quest?.correctAnswer?.toLowerCase());
+    bool isCorrect = selectedVoice.toLowerCase() == (quest.correctAnswerCategory?.toLowerCase() ?? quest.correctAnswer?.toLowerCase());
 
     if (isCorrect) {
       _hapticService.success();
@@ -107,28 +106,73 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildSentenceDisplay(quest.sentence ?? "", theme.primaryColor, isDark),
-              SizedBox(height: 80.h),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Concise Context Card (The Diamond Standard)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Container(
+                  padding: EdgeInsets.all(22.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.15), width: 1.5),
+                  ),
+                  child: Text(
+                    quest.sentence ?? "",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.fredoka(
+                      fontSize: 20.sp,
+                      color: isDark ? Colors.white : Colors.black87,
+                      height: 1.5,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
+              SizedBox(height: 60.h),
+              
+              // The Transmuter (Kinetic Energy)
               _buildVoiceToggleSwitch(theme.primaryColor, isDark),
-              SizedBox(height: 48.h),
-              _buildCurrentModeDisplay(theme.primaryColor),
+              
               const Spacer(),
+              
               if (!_isAnswered)
                 ScaleButton(
-                  onTap: () => _submitAnswer(quest.correctAnswer ?? "Passive"),
+                  onTap: () => _submitAnswer(quest),
                   child: Container(
-                    width: double.infinity, height: 60.h,
+                    width: double.infinity, height: 65.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.r), 
-                      gradient: LinearGradient(colors: [theme.primaryColor, theme.primaryColor.withValues(alpha: 0.8)]),
-                      boxShadow: [BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 20, offset: const Offset(0, 8))]
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [theme.primaryColor, theme.primaryColor.withValues(alpha: 0.8)]
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: theme.primaryColor.withValues(alpha: 0.4), 
+                          blurRadius: 20, 
+                          offset: const Offset(0, 8)
+                        )
+                      ]
                     ),
-                    child: Center(child: Text("ENGAGE TRANSMUTER", style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
+                    child: Center(
+                      child: Text(
+                        "ENGAGE TRANSMUTER", 
+                        style: GoogleFonts.outfit(
+                          fontSize: 16.sp, 
+                          fontWeight: FontWeight.w900, 
+                          color: Colors.white, 
+                          letterSpacing: 3
+                        )
+                      )
+                    ),
                   ),
-                ).animate().fadeIn(delay: 500.ms).moveY(begin: 20, end: 0),
+                ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 2.seconds, color: Colors.white24),
               SizedBox(height: 40.h),
             ],
           ),
@@ -159,20 +203,6 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
     );
   }
 
-  Widget _buildSentenceDisplay(String text, Color primaryColor, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(28.r),
-      child: Column(
-        children: [
-          Text("VOICE FREQUENCY", style: GoogleFonts.outfit(fontSize: 9.sp, fontWeight: FontWeight.w900, color: primaryColor.withValues(alpha: 0.6), letterSpacing: 2)),
-          SizedBox(height: 12.h),
-          Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 20.sp, color: isDark ? Colors.white : Colors.black87, height: 1.4)),
-        ],
-      ),
-    );
-  }
-
   Widget _buildVoiceToggleSwitch(Color primaryColor, bool isDark) {
     return Column(
       children: [
@@ -186,36 +216,54 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
                 if (_isAnswered) return;
                 setState(() => _isPassive = !_isPassive);
                 _hapticService.heavy();
-                _soundService.playCorrect(); 
+                _soundService.playClick(); 
               },
               child: Container(
-                width: 120.w, height: 60.h,
+                width: 130.w, height: 65.h,
                 decoration: BoxDecoration(
-                  color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
-                  borderRadius: BorderRadius.circular(30.r),
-                  border: Border.all(color: primaryColor.withValues(alpha: 0.2), width: 2),
+                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
+                  borderRadius: BorderRadius.circular(35.r),
+                  border: Border.all(color: primaryColor.withValues(alpha: 0.15), width: 2),
                 ),
                 child: Stack(
                   children: [
+                    // Energy Pulse Track
+                    Center(
+                      child: Container(
+                        width: 100.w, height: 4.h,
+                        decoration: BoxDecoration(
+                          color: primaryColor.withValues(alpha: 0.1),
+                          borderRadius: BorderRadius.circular(10.r),
+                        ),
+                      ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+                    ),
                     AnimatedPositioned(
-                      duration: const Duration(milliseconds: 300),
+                      duration: const Duration(milliseconds: 400),
                       curve: Curves.elasticOut,
-                      left: _isPassive ? 60.w : 4.w,
+                      left: _isPassive ? 66.w : 4.w,
                       top: 4.h,
                       child: Container(
-                        width: 52.w, height: 48.h,
+                        width: 58.w, height: 53.h,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
                             colors: [primaryColor, primaryColor.withValues(alpha: 0.8)],
                             begin: Alignment.topLeft, end: Alignment.bottomRight,
                           ),
-                          borderRadius: BorderRadius.circular(24.r),
+                          borderRadius: BorderRadius.circular(30.r),
                           boxShadow: [
-                            BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 10, offset: const Offset(0, 4))
+                            BoxShadow(
+                              color: primaryColor.withValues(alpha: 0.4), 
+                              blurRadius: 15, 
+                              offset: const Offset(0, 5)
+                            )
                           ],
                         ),
-                        child: Icon(Icons.power_settings_new_rounded, color: Colors.white, size: 24.r),
-                      ),
+                        child: Icon(
+                          _isPassive ? Icons.waves_rounded : Icons.bolt_rounded, 
+                          color: Colors.white, 
+                          size: 26.r
+                        ),
+                      ).animate(key: ValueKey(_isPassive)).scale(begin: const Offset(0.8, 0.8), end: const Offset(1, 1)),
                     ),
                   ],
                 ),
@@ -226,13 +274,15 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
           ],
         ),
         SizedBox(height: 32.h),
-        Container(
-          width: 140.w, height: 10.h,
-          decoration: BoxDecoration(
-            color: Colors.black.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(10.r),
+        Text(
+          "MODE: ${(_isPassive ? "PASSIVE" : "ACTIVE")}",
+          style: GoogleFonts.outfit(
+            fontSize: 10.sp,
+            fontWeight: FontWeight.w900,
+            color: primaryColor.withValues(alpha: 0.6),
+            letterSpacing: 2,
           ),
-        ),
+        ).animate(key: ValueKey(_isPassive)).fadeIn().scale(begin: const Offset(0.9, 0.9)),
       ],
     );
   }
@@ -241,34 +291,12 @@ class _VoiceSwapScreenState extends State<VoiceSwapScreen> {
     return AnimatedDefaultTextStyle(
       duration: const Duration(milliseconds: 300),
       style: GoogleFonts.outfit(
-        fontSize: 12.sp,
+        fontSize: 14.sp,
         fontWeight: isActive ? FontWeight.w900 : FontWeight.w500,
-        color: isActive ? primaryColor : (isDark ? Colors.white38 : Colors.black26),
+        color: isActive ? primaryColor : (isDark ? Colors.white24 : Colors.black26),
         letterSpacing: 2,
       ),
       child: Text(label),
-    );
-  }
-
-  Widget _buildCurrentModeDisplay(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.1)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text("CURRENT STATE:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w700, color: primaryColor.withValues(alpha: 0.6), letterSpacing: 1)),
-          SizedBox(width: 12.w),
-          Text(
-            (_isPassive ? "PASSIVE" : "ACTIVE"), 
-            style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 2)
-          ).animate(key: ValueKey(_isPassive)).fadeIn().scale(),
-        ],
-      ),
     );
   }
 }

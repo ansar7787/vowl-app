@@ -4,7 +4,6 @@ class SpeakingQuest extends GameQuest {
   final String? missingWord;
   final String? prompt;
   final String? sampleAnswer;
-  final String? explanation;
   final String? translation;
   final String? situationText;
   final String? sceneText;
@@ -35,7 +34,7 @@ class SpeakingQuest extends GameQuest {
     this.missingWord,
     this.prompt,
     this.sampleAnswer,
-    this.explanation,
+    super.explanation,
     this.translation,
     this.situationText,
     this.sceneText,

@@ -1,787 +1,548 @@
 {
-  "gameType": "conjunctions",
-  "batchIndex": 12,
-  "levels": "111-120",
-  "quests": [
-    {
-      "id": "cj_l111_q1",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "I like tea ___ coffee.",
-      "options": [
-        "yet",
-        "and",
-        "because",
-        "or"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "and",
-      "hint": "Addition.",
-      "explanation": "The correct conjunction is \"and\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l111_q2",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "I wanted to go ___ it rained.",
-      "options": [
-        "because",
-        "until",
-        "When",
-        "but"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "but",
-      "hint": "Contrast.",
-      "explanation": "The correct conjunction is \"but\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l111_q3",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "Would you like tea ___ coffee?",
-      "options": [
-        "or",
-        "and",
-        "yet",
-        "When"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "or",
-      "hint": "Choice.",
-      "explanation": "The correct conjunction is \"or\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l112_q1",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "He was tired ___ he went to bed.",
-      "options": [
-        "Although",
-        "so",
-        "unless",
-        "yet"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "so",
-      "hint": "Result.",
-      "explanation": "The correct conjunction is \"so\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l112_q2",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "___ he is poor he is happy.",
-      "options": [
-        "Although",
-        "When",
-        "yet",
-        "unless"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Although",
-      "hint": "Concession.",
-      "explanation": "The correct conjunction is \"Although\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l112_q3",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "I'll wait ___ you arrive.",
-      "options": [
-        "until",
-        "or",
-        "so",
-        "but"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "until",
-      "hint": "Time.",
-      "explanation": "The correct conjunction is \"until\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l113_q1",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "I study ___ I want to learn.",
-      "options": [
-        "because",
-        "yet",
-        "so",
-        "unless"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "because",
-      "hint": "Reason.",
-      "explanation": "The correct conjunction is \"because\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l113_q2",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "Neither Tom ___ Jerry came.",
-      "options": [
-        "nor",
-        "When",
-        "yet",
-        "until"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "nor",
-      "hint": "Negative pair.",
-      "explanation": "The correct conjunction is \"nor\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l113_q3",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "Either stay ___ leave.",
-      "options": [
-        "in case",
-        "because",
-        "or",
-        "so"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "or",
-      "hint": "Alternative pair.",
-      "explanation": "The correct conjunction is \"or\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l114_q1",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "Not only smart ___ also kind.",
-      "options": [
-        "but",
-        "and",
-        "yet",
-        "in case"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "but",
-      "hint": "Correlative.",
-      "explanation": "The correct conjunction is \"but\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l114_q2",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "I'll call you ___ I get home.",
-      "options": [
-        "but",
-        "until",
-        "and",
-        "when"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "when",
-      "hint": "Time.",
-      "explanation": "The correct conjunction is \"when\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l114_q3",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "She is talented ___ modest.",
-      "options": [
-        "until",
-        "or",
-        "in case",
-        "yet"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "yet",
-      "hint": "Contrast.",
-      "explanation": "The correct conjunction is \"yet\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l115_q1",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "He ran fast ___ missed the bus.",
-      "options": [
-        "Although",
-        "but",
-        "in case",
-        "yet"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "but",
-      "hint": "Unexpected contrast.",
-      "explanation": "The correct conjunction is \"but\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l115_q2",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "Take an umbrella ___ it rains.",
-      "options": [
-        "until",
-        "so",
-        "in case",
-        "When"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "in case",
-      "hint": "Precaution.",
-      "explanation": "The correct conjunction is \"in case\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l115_q3",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "___ you finish call me.",
-      "options": [
-        "and",
-        "When",
-        "nor",
-        "but"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "When",
-      "hint": "Condition/Time.",
-      "explanation": "The correct conjunction is \"When\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l116_q1",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "I like tea ___ coffee.",
-      "options": [
-        "and",
-        "nor",
-        "until",
-        "yet"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "and",
-      "hint": "Addition.",
-      "explanation": "The correct conjunction is \"and\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l116_q2",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "I wanted to go ___ it rained.",
-      "options": [
-        "but",
-        "and",
-        "Although",
-        "until"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "but",
-      "hint": "Contrast.",
-      "explanation": "The correct conjunction is \"but\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l116_q3",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "Would you like tea ___ coffee?",
-      "options": [
-        "nor",
-        "When",
-        "yet",
-        "or"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "or",
-      "hint": "Choice.",
-      "explanation": "The correct conjunction is \"or\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l117_q1",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "He was tired ___ he went to bed.",
-      "options": [
-        "nor",
-        "so",
-        "until",
-        "Although"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "so",
-      "hint": "Result.",
-      "explanation": "The correct conjunction is \"so\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l117_q2",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "___ he is poor he is happy.",
-      "options": [
-        "because",
-        "nor",
-        "but",
-        "Although"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "Although",
-      "hint": "Concession.",
-      "explanation": "The correct conjunction is \"Although\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l117_q3",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "I'll wait ___ you arrive.",
-      "options": [
-        "so",
-        "but",
-        "unless",
-        "until"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "until",
-      "hint": "Time.",
-      "explanation": "The correct conjunction is \"until\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l118_q1",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "I study ___ I want to learn.",
-      "options": [
-        "unless",
-        "When",
-        "because",
-        "in case"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "because",
-      "hint": "Reason.",
-      "explanation": "The correct conjunction is \"because\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l118_q2",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "Neither Tom ___ Jerry came.",
-      "options": [
-        "or",
-        "Although",
-        "and",
-        "nor"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "nor",
-      "hint": "Negative pair.",
-      "explanation": "The correct conjunction is \"nor\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l118_q3",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "Either stay ___ leave.",
-      "options": [
-        "nor",
-        "and",
-        "because",
-        "or"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "or",
-      "hint": "Alternative pair.",
-      "explanation": "The correct conjunction is \"or\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l119_q1",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "Not only smart ___ also kind.",
-      "options": [
-        "but",
-        "When",
-        "until",
-        "in case"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "but",
-      "hint": "Correlative.",
-      "explanation": "The correct conjunction is \"but\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l119_q2",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "I'll call you ___ I get home.",
-      "options": [
-        "unless",
-        "so",
-        "Although",
-        "when"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "when",
-      "hint": "Time.",
-      "explanation": "The correct conjunction is \"when\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l119_q3",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "She is talented ___ modest.",
-      "options": [
-        "unless",
-        "yet",
-        "nor",
-        "and"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "yet",
-      "hint": "Contrast.",
-      "explanation": "The correct conjunction is \"yet\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l120_q1",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "He ran fast ___ missed the bus.",
-      "options": [
-        "and",
-        "but",
-        "because",
-        "Although"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "but",
-      "hint": "Unexpected contrast.",
-      "explanation": "The correct conjunction is \"but\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l120_q2",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "Take an umbrella ___ it rains.",
-      "options": [
-        "in case",
-        "When",
-        "so",
-        "until"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "in case",
-      "hint": "Precaution.",
-      "explanation": "The correct conjunction is \"in case\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "cj_l120_q3",
-      "instruction": "JOIN THE JUNCTION",
-      "difficulty": 3,
-      "subtype": "conjunctions",
-      "interactionType": "Brick Drag",
-      "question": "___ you finish call me.",
-      "options": [
-        "When",
-        "or",
-        "but",
-        "yet"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "When",
-      "hint": "Condition/Time.",
-      "explanation": "The correct conjunction is \"When\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.5,
-        "shader_effect": "glow_shimmer"
-      }
-    }
-  ]
+    "gameType":  "conjunctions",
+    "batchIndex":  12,
+    "levels":  "111-120",
+    "quests":  [
+                   {
+                       "id":  "cj_l111_q1",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "I like tea ___ coffee.",
+                       "options":  [
+                                       "yet",
+                                       "and",
+                                       "because",
+                                       "or"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "and",
+                       "hint":  "Addition.",
+                       "explanation":  "The correct conjunction is 'and'."
+                   },
+                   {
+                       "id":  "cj_l111_q2",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "I wanted to go ___ it rained.",
+                       "options":  [
+                                       "because",
+                                       "until",
+                                       "When",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "but",
+                       "hint":  "Contrast.",
+                       "explanation":  "The correct conjunction is 'but'."
+                   },
+                   {
+                       "id":  "cj_l111_q3",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "Would you like tea ___ coffee?",
+                       "options":  [
+                                       "or",
+                                       "and",
+                                       "yet",
+                                       "When"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "or",
+                       "hint":  "Choice.",
+                       "explanation":  "The correct conjunction is 'or'."
+                   },
+                   {
+                       "id":  "cj_l112_q1",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "He was tired ___ he went to bed.",
+                       "options":  [
+                                       "Although",
+                                       "so",
+                                       "unless",
+                                       "yet"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "so",
+                       "hint":  "Result.",
+                       "explanation":  "The correct conjunction is 'so'."
+                   },
+                   {
+                       "id":  "cj_l112_q2",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "___ he is poor he is happy.",
+                       "options":  [
+                                       "Although",
+                                       "When",
+                                       "yet",
+                                       "unless"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Although",
+                       "hint":  "Concession.",
+                       "explanation":  "The correct conjunction is 'Although'."
+                   },
+                   {
+                       "id":  "cj_l112_q3",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "I\u0027ll wait ___ you arrive.",
+                       "options":  [
+                                       "until",
+                                       "or",
+                                       "so",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "until",
+                       "hint":  "Time.",
+                       "explanation":  "The correct conjunction is 'until'."
+                   },
+                   {
+                       "id":  "cj_l113_q1",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "I study ___ I want to learn.",
+                       "options":  [
+                                       "because",
+                                       "yet",
+                                       "so",
+                                       "unless"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "because",
+                       "hint":  "Reason.",
+                       "explanation":  "The correct conjunction is 'because'."
+                   },
+                   {
+                       "id":  "cj_l113_q2",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "Neither Tom ___ Jerry came.",
+                       "options":  [
+                                       "nor",
+                                       "When",
+                                       "yet",
+                                       "until"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "nor",
+                       "hint":  "Negative pair.",
+                       "explanation":  "The correct conjunction is 'nor'."
+                   },
+                   {
+                       "id":  "cj_l113_q3",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "Either stay ___ leave.",
+                       "options":  [
+                                       "in case",
+                                       "because",
+                                       "or",
+                                       "so"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "or",
+                       "hint":  "Alternative pair.",
+                       "explanation":  "The correct conjunction is 'or'."
+                   },
+                   {
+                       "id":  "cj_l114_q1",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "Not only smart ___ also kind.",
+                       "options":  [
+                                       "but",
+                                       "and",
+                                       "yet",
+                                       "in case"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "but",
+                       "hint":  "Correlative.",
+                       "explanation":  "The correct conjunction is 'but'."
+                   },
+                   {
+                       "id":  "cj_l114_q2",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "I\u0027ll call you ___ I get home.",
+                       "options":  [
+                                       "but",
+                                       "until",
+                                       "and",
+                                       "when"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "when",
+                       "hint":  "Time.",
+                       "explanation":  "The correct conjunction is 'when'."
+                   },
+                   {
+                       "id":  "cj_l114_q3",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "She is talented ___ modest.",
+                       "options":  [
+                                       "until",
+                                       "or",
+                                       "in case",
+                                       "yet"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "yet",
+                       "hint":  "Contrast.",
+                       "explanation":  "The correct conjunction is 'yet'."
+                   },
+                   {
+                       "id":  "cj_l115_q1",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "He ran fast ___ missed the bus.",
+                       "options":  [
+                                       "Although",
+                                       "but",
+                                       "in case",
+                                       "yet"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "but",
+                       "hint":  "Unexpected contrast.",
+                       "explanation":  "The correct conjunction is 'but'."
+                   },
+                   {
+                       "id":  "cj_l115_q2",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "Take an umbrella ___ it rains.",
+                       "options":  [
+                                       "until",
+                                       "so",
+                                       "in case",
+                                       "When"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "in case",
+                       "hint":  "Precaution.",
+                       "explanation":  "The correct conjunction is 'in case'."
+                   },
+                   {
+                       "id":  "cj_l115_q3",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "___ you finish call me.",
+                       "options":  [
+                                       "and",
+                                       "When",
+                                       "nor",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "When",
+                       "hint":  "Condition/Time.",
+                       "explanation":  "The correct conjunction is 'When'."
+                   },
+                   {
+                       "id":  "cj_l116_q1",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "I like tea ___ coffee.",
+                       "options":  [
+                                       "and",
+                                       "nor",
+                                       "until",
+                                       "yet"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "and",
+                       "hint":  "Addition.",
+                       "explanation":  "The correct conjunction is 'and'."
+                   },
+                   {
+                       "id":  "cj_l116_q2",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "I wanted to go ___ it rained.",
+                       "options":  [
+                                       "but",
+                                       "and",
+                                       "Although",
+                                       "until"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "but",
+                       "hint":  "Contrast.",
+                       "explanation":  "The correct conjunction is 'but'."
+                   },
+                   {
+                       "id":  "cj_l116_q3",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "Would you like tea ___ coffee?",
+                       "options":  [
+                                       "nor",
+                                       "When",
+                                       "yet",
+                                       "or"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "or",
+                       "hint":  "Choice.",
+                       "explanation":  "The correct conjunction is 'or'."
+                   },
+                   {
+                       "id":  "cj_l117_q1",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "He was tired ___ he went to bed.",
+                       "options":  [
+                                       "nor",
+                                       "so",
+                                       "until",
+                                       "Although"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "so",
+                       "hint":  "Result.",
+                       "explanation":  "The correct conjunction is 'so'."
+                   },
+                   {
+                       "id":  "cj_l117_q2",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "___ he is poor he is happy.",
+                       "options":  [
+                                       "because",
+                                       "nor",
+                                       "but",
+                                       "Although"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "Although",
+                       "hint":  "Concession.",
+                       "explanation":  "The correct conjunction is 'Although'."
+                   },
+                   {
+                       "id":  "cj_l117_q3",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "I\u0027ll wait ___ you arrive.",
+                       "options":  [
+                                       "so",
+                                       "but",
+                                       "unless",
+                                       "until"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "until",
+                       "hint":  "Time.",
+                       "explanation":  "The correct conjunction is 'until'."
+                   },
+                   {
+                       "id":  "cj_l118_q1",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "I study ___ I want to learn.",
+                       "options":  [
+                                       "unless",
+                                       "When",
+                                       "because",
+                                       "in case"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "because",
+                       "hint":  "Reason.",
+                       "explanation":  "The correct conjunction is 'because'."
+                   },
+                   {
+                       "id":  "cj_l118_q2",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "Neither Tom ___ Jerry came.",
+                       "options":  [
+                                       "or",
+                                       "Although",
+                                       "and",
+                                       "nor"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "nor",
+                       "hint":  "Negative pair.",
+                       "explanation":  "The correct conjunction is 'nor'."
+                   },
+                   {
+                       "id":  "cj_l118_q3",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "Either stay ___ leave.",
+                       "options":  [
+                                       "nor",
+                                       "and",
+                                       "because",
+                                       "or"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "or",
+                       "hint":  "Alternative pair.",
+                       "explanation":  "The correct conjunction is 'or'."
+                   },
+                   {
+                       "id":  "cj_l119_q1",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "Not only smart ___ also kind.",
+                       "options":  [
+                                       "but",
+                                       "When",
+                                       "until",
+                                       "in case"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "but",
+                       "hint":  "Correlative.",
+                       "explanation":  "The correct conjunction is 'but'."
+                   },
+                   {
+                       "id":  "cj_l119_q2",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "I\u0027ll call you ___ I get home.",
+                       "options":  [
+                                       "unless",
+                                       "so",
+                                       "Although",
+                                       "when"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "when",
+                       "hint":  "Time.",
+                       "explanation":  "The correct conjunction is 'when'."
+                   },
+                   {
+                       "id":  "cj_l119_q3",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "She is talented ___ modest.",
+                       "options":  [
+                                       "unless",
+                                       "yet",
+                                       "nor",
+                                       "and"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "yet",
+                       "hint":  "Contrast.",
+                       "explanation":  "The correct conjunction is 'yet'."
+                   },
+                   {
+                       "id":  "cj_l120_q1",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "He ran fast ___ missed the bus.",
+                       "options":  [
+                                       "and",
+                                       "but",
+                                       "because",
+                                       "Although"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "but",
+                       "hint":  "Unexpected contrast.",
+                       "explanation":  "The correct conjunction is 'but'."
+                   },
+                   {
+                       "id":  "cj_l120_q2",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "Take an umbrella ___ it rains.",
+                       "options":  [
+                                       "in case",
+                                       "When",
+                                       "so",
+                                       "until"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "in case",
+                       "hint":  "Precaution.",
+                       "explanation":  "The correct conjunction is 'in case'."
+                   },
+                   {
+                       "id":  "cj_l120_q3",
+                       "instruction":  "JOIN THE JUNCTION",
+                       "difficulty":  3,
+                       "subtype":  "conjunctions",
+                       "interactionType":  "Brick Drag",
+                       "question":  "___ you finish call me.",
+                       "options":  [
+                                       "When",
+                                       "or",
+                                       "but",
+                                       "yet"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "When",
+                       "hint":  "Condition/Time.",
+                       "explanation":  "The correct conjunction is 'When'."
+                   }
+               ]
 }
+

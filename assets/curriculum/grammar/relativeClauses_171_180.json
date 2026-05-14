@@ -1,787 +1,548 @@
 {
-  "gameType": "relativeClauses",
-  "batchIndex": 18,
-  "levels": "171-180",
-  "quests": [
-    {
-      "id": "rc_l171_q1",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The man ___ lives next door is a scientist.",
-      "options": [
-        "who",
-        "whom",
-        "whose",
-        "why"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "who",
-      "hint": "Relative pronoun for people (subject).",
-      "explanation": "The correct relative pronoun is \"who\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l171_q2",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The book ___ I read was fascinating.",
-      "options": [
-        "when",
-        "which",
-        "who",
-        "whom"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "which",
-      "hint": "Relative pronoun for things.",
-      "explanation": "The correct relative pronoun is \"which\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l171_q3",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "This is the house ___ Jack built.",
-      "options": [
-        "where",
-        "when",
-        "whom",
-        "that"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "that",
-      "hint": "'That' for defining clauses.",
-      "explanation": "The correct relative pronoun is \"that\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l172_q1",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The girl ___ father is a doctor is my friend.",
-      "options": [
-        "whose",
-        "where",
-        "that",
-        "which"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "whose",
-      "hint": "Possessive relative pronoun.",
-      "explanation": "The correct relative pronoun is \"whose\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l172_q2",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The city ___ I was born is very old.",
-      "options": [
-        "where",
-        "who",
-        "that",
-        "which"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "where",
-      "hint": "Relative adverb for place.",
-      "explanation": "The correct relative pronoun is \"where\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l172_q3",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The year ___ the mission started was 2024.",
-      "options": [
-        "who",
-        "whom",
-        "when",
-        "whose"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "when",
-      "hint": "Relative adverb for time.",
-      "explanation": "The correct relative pronoun is \"when\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l173_q1",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The team ___ won the prize was happy.",
-      "options": [
-        "where",
-        "whom",
-        "who",
-        "which"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "which",
-      "hint": "Relative pronoun for groups/things.",
-      "explanation": "The correct relative pronoun is \"which\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l173_q2",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The technician ___ we met was very helpful.",
-      "options": [
-        "who",
-        "that",
-        "when",
-        "whom"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "whom",
-      "hint": "Object relative pronoun (formal).",
-      "explanation": "The correct relative pronoun is \"whom\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l173_q3",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The engine, ___ was newly repaired, failed again.",
-      "options": [
-        "whom",
-        "which",
-        "that",
-        "whose"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "which",
-      "hint": "Non-defining clause for things.",
-      "explanation": "The correct relative pronoun is \"which\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l174_q1",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "I know a person ___ can fix this circuit.",
-      "options": [
-        "why",
-        "who",
-        "that",
-        "whose"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "who",
-      "hint": "Subject for people.",
-      "explanation": "The correct relative pronoun is \"who\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l174_q2",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The reason ___ I called is a secret.",
-      "options": [
-        "who",
-        "whom",
-        "why",
-        "where"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "why",
-      "hint": "Relative adverb for reason.",
-      "explanation": "The correct relative pronoun is \"why\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l174_q3",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The tools ___ he used were high-tech.",
-      "options": [
-        "that",
-        "whose",
-        "which",
-        "why"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "that",
-      "hint": "Defining clause for things.",
-      "explanation": "The correct relative pronoun is \"that\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l175_q1",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The scientist ___ discovery changed the world.",
-      "options": [
-        "whose",
-        "when",
-        "that",
-        "who"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "whose",
-      "hint": "Possession.",
-      "explanation": "The correct relative pronoun is \"whose\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l175_q2",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The lab ___ the experiment took place.",
-      "options": [
-        "when",
-        "whose",
-        "where",
-        "who"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "where",
-      "hint": "Place.",
-      "explanation": "The correct relative pronoun is \"where\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l175_q3",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The day ___ the signal arrived.",
-      "options": [
-        "when",
-        "who",
-        "whom",
-        "which"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "when",
-      "hint": "Time.",
-      "explanation": "The correct relative pronoun is \"when\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l176_q1",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The man ___ lives next door is a scientist.",
-      "options": [
-        "who",
-        "whom",
-        "whose",
-        "when"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "who",
-      "hint": "Relative pronoun for people (subject).",
-      "explanation": "The correct relative pronoun is \"who\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l176_q2",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The book ___ I read was fascinating.",
-      "options": [
-        "which",
-        "who",
-        "whom",
-        "that"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "which",
-      "hint": "Relative pronoun for things.",
-      "explanation": "The correct relative pronoun is \"which\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l176_q3",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "This is the house ___ Jack built.",
-      "options": [
-        "that",
-        "who",
-        "why",
-        "where"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "that",
-      "hint": "'That' for defining clauses.",
-      "explanation": "The correct relative pronoun is \"that\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l177_q1",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The girl ___ father is a doctor is my friend.",
-      "options": [
-        "when",
-        "that",
-        "whom",
-        "whose"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "whose",
-      "hint": "Possessive relative pronoun.",
-      "explanation": "The correct relative pronoun is \"whose\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l177_q2",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The city ___ I was born is very old.",
-      "options": [
-        "whose",
-        "where",
-        "which",
-        "why"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "where",
-      "hint": "Relative adverb for place.",
-      "explanation": "The correct relative pronoun is \"where\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l177_q3",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The year ___ the mission started was 2024.",
-      "options": [
-        "whom",
-        "where",
-        "when",
-        "whose"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "when",
-      "hint": "Relative adverb for time.",
-      "explanation": "The correct relative pronoun is \"when\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l178_q1",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The team ___ won the prize was happy.",
-      "options": [
-        "whom",
-        "that",
-        "which",
-        "why"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "which",
-      "hint": "Relative pronoun for groups/things.",
-      "explanation": "The correct relative pronoun is \"which\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l178_q2",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The technician ___ we met was very helpful.",
-      "options": [
-        "whom",
-        "why",
-        "which",
-        "who"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "whom",
-      "hint": "Object relative pronoun (formal).",
-      "explanation": "The correct relative pronoun is \"whom\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l178_q3",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The engine, ___ was newly repaired, failed again.",
-      "options": [
-        "when",
-        "where",
-        "who",
-        "which"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "which",
-      "hint": "Non-defining clause for things.",
-      "explanation": "The correct relative pronoun is \"which\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l179_q1",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "I know a person ___ can fix this circuit.",
-      "options": [
-        "where",
-        "that",
-        "who",
-        "whom"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "who",
-      "hint": "Subject for people.",
-      "explanation": "The correct relative pronoun is \"who\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l179_q2",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The reason ___ I called is a secret.",
-      "options": [
-        "why",
-        "that",
-        "whom",
-        "who"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "why",
-      "hint": "Relative adverb for reason.",
-      "explanation": "The correct relative pronoun is \"why\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l179_q3",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The tools ___ he used were high-tech.",
-      "options": [
-        "when",
-        "which",
-        "whose",
-        "that"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "that",
-      "hint": "Defining clause for things.",
-      "explanation": "The correct relative pronoun is \"that\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l180_q1",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The scientist ___ discovery changed the world.",
-      "options": [
-        "where",
-        "whom",
-        "whose",
-        "who"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "whose",
-      "hint": "Possession.",
-      "explanation": "The correct relative pronoun is \"whose\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l180_q2",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The lab ___ the experiment took place.",
-      "options": [
-        "that",
-        "where",
-        "when",
-        "whose"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "where",
-      "hint": "Place.",
-      "explanation": "The correct relative pronoun is \"where\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "rc_l180_q3",
-      "instruction": "CAST THE RELATIVE LINK",
-      "difficulty": 5,
-      "subtype": "relativeClauses",
-      "interactionType": "Fishing Cast",
-      "question": "The day ___ the signal arrived.",
-      "options": [
-        "where",
-        "when",
-        "whose",
-        "who"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "when",
-      "hint": "Time.",
-      "explanation": "The correct relative pronoun is \"when\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    }
-  ]
+    "gameType":  "relativeClauses",
+    "batchIndex":  18,
+    "levels":  "171-180",
+    "quests":  [
+                   {
+                       "id":  "rc_l171_q1",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The man ___ lives next door is a scientist.",
+                       "options":  [
+                                       "who",
+                                       "whom",
+                                       "whose",
+                                       "why"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "who",
+                       "hint":  "Relative pronoun for people (subject).",
+                       "explanation":  "The correct relative pronoun is 'who'."
+                   },
+                   {
+                       "id":  "rc_l171_q2",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The book ___ I read was fascinating.",
+                       "options":  [
+                                       "when",
+                                       "which",
+                                       "who",
+                                       "whom"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "which",
+                       "hint":  "Relative pronoun for things.",
+                       "explanation":  "The correct relative pronoun is 'which'."
+                   },
+                   {
+                       "id":  "rc_l171_q3",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "This is the house ___ Jack built.",
+                       "options":  [
+                                       "where",
+                                       "when",
+                                       "whom",
+                                       "that"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "that",
+                       "hint":  "\u0027That\u0027 for defining clauses.",
+                       "explanation":  "The correct relative pronoun is 'that'."
+                   },
+                   {
+                       "id":  "rc_l172_q1",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The girl ___ father is a doctor is my friend.",
+                       "options":  [
+                                       "whose",
+                                       "where",
+                                       "that",
+                                       "which"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "whose",
+                       "hint":  "Possessive relative pronoun.",
+                       "explanation":  "The correct relative pronoun is 'whose'."
+                   },
+                   {
+                       "id":  "rc_l172_q2",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The city ___ I was born is very old.",
+                       "options":  [
+                                       "where",
+                                       "who",
+                                       "that",
+                                       "which"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "where",
+                       "hint":  "Relative adverb for place.",
+                       "explanation":  "The correct relative pronoun is 'where'."
+                   },
+                   {
+                       "id":  "rc_l172_q3",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The year ___ the mission started was 2024.",
+                       "options":  [
+                                       "who",
+                                       "whom",
+                                       "when",
+                                       "whose"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "when",
+                       "hint":  "Relative adverb for time.",
+                       "explanation":  "The correct relative pronoun is 'when'."
+                   },
+                   {
+                       "id":  "rc_l173_q1",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The team ___ won the prize was happy.",
+                       "options":  [
+                                       "where",
+                                       "whom",
+                                       "who",
+                                       "which"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "which",
+                       "hint":  "Relative pronoun for groups/things.",
+                       "explanation":  "The correct relative pronoun is 'which'."
+                   },
+                   {
+                       "id":  "rc_l173_q2",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The technician ___ we met was very helpful.",
+                       "options":  [
+                                       "who",
+                                       "that",
+                                       "when",
+                                       "whom"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "whom",
+                       "hint":  "Object relative pronoun (formal).",
+                       "explanation":  "The correct relative pronoun is 'whom'."
+                   },
+                   {
+                       "id":  "rc_l173_q3",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The engine, ___ was newly repaired, failed again.",
+                       "options":  [
+                                       "whom",
+                                       "which",
+                                       "that",
+                                       "whose"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "which",
+                       "hint":  "Non-defining clause for things.",
+                       "explanation":  "The correct relative pronoun is 'which'."
+                   },
+                   {
+                       "id":  "rc_l174_q1",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "I know a person ___ can fix this circuit.",
+                       "options":  [
+                                       "why",
+                                       "who",
+                                       "that",
+                                       "whose"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "who",
+                       "hint":  "Subject for people.",
+                       "explanation":  "The correct relative pronoun is 'who'."
+                   },
+                   {
+                       "id":  "rc_l174_q2",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The reason ___ I called is a secret.",
+                       "options":  [
+                                       "who",
+                                       "whom",
+                                       "why",
+                                       "where"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "why",
+                       "hint":  "Relative adverb for reason.",
+                       "explanation":  "The correct relative pronoun is 'why'."
+                   },
+                   {
+                       "id":  "rc_l174_q3",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The tools ___ he used were high-tech.",
+                       "options":  [
+                                       "that",
+                                       "whose",
+                                       "which",
+                                       "why"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "that",
+                       "hint":  "Defining clause for things.",
+                       "explanation":  "The correct relative pronoun is 'that'."
+                   },
+                   {
+                       "id":  "rc_l175_q1",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The scientist ___ discovery changed the world.",
+                       "options":  [
+                                       "whose",
+                                       "when",
+                                       "that",
+                                       "who"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "whose",
+                       "hint":  "Possession.",
+                       "explanation":  "The correct relative pronoun is 'whose'."
+                   },
+                   {
+                       "id":  "rc_l175_q2",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The lab ___ the experiment took place.",
+                       "options":  [
+                                       "when",
+                                       "whose",
+                                       "where",
+                                       "who"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "where",
+                       "hint":  "Place.",
+                       "explanation":  "The correct relative pronoun is 'where'."
+                   },
+                   {
+                       "id":  "rc_l175_q3",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The day ___ the signal arrived.",
+                       "options":  [
+                                       "when",
+                                       "who",
+                                       "whom",
+                                       "which"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "when",
+                       "hint":  "Time.",
+                       "explanation":  "The correct relative pronoun is 'when'."
+                   },
+                   {
+                       "id":  "rc_l176_q1",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The man ___ lives next door is a scientist.",
+                       "options":  [
+                                       "who",
+                                       "whom",
+                                       "whose",
+                                       "when"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "who",
+                       "hint":  "Relative pronoun for people (subject).",
+                       "explanation":  "The correct relative pronoun is 'who'."
+                   },
+                   {
+                       "id":  "rc_l176_q2",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The book ___ I read was fascinating.",
+                       "options":  [
+                                       "which",
+                                       "who",
+                                       "whom",
+                                       "that"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "which",
+                       "hint":  "Relative pronoun for things.",
+                       "explanation":  "The correct relative pronoun is 'which'."
+                   },
+                   {
+                       "id":  "rc_l176_q3",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "This is the house ___ Jack built.",
+                       "options":  [
+                                       "that",
+                                       "who",
+                                       "why",
+                                       "where"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "that",
+                       "hint":  "\u0027That\u0027 for defining clauses.",
+                       "explanation":  "The correct relative pronoun is 'that'."
+                   },
+                   {
+                       "id":  "rc_l177_q1",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The girl ___ father is a doctor is my friend.",
+                       "options":  [
+                                       "when",
+                                       "that",
+                                       "whom",
+                                       "whose"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "whose",
+                       "hint":  "Possessive relative pronoun.",
+                       "explanation":  "The correct relative pronoun is 'whose'."
+                   },
+                   {
+                       "id":  "rc_l177_q2",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The city ___ I was born is very old.",
+                       "options":  [
+                                       "whose",
+                                       "where",
+                                       "which",
+                                       "why"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "where",
+                       "hint":  "Relative adverb for place.",
+                       "explanation":  "The correct relative pronoun is 'where'."
+                   },
+                   {
+                       "id":  "rc_l177_q3",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The year ___ the mission started was 2024.",
+                       "options":  [
+                                       "whom",
+                                       "where",
+                                       "when",
+                                       "whose"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "when",
+                       "hint":  "Relative adverb for time.",
+                       "explanation":  "The correct relative pronoun is 'when'."
+                   },
+                   {
+                       "id":  "rc_l178_q1",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The team ___ won the prize was happy.",
+                       "options":  [
+                                       "whom",
+                                       "that",
+                                       "which",
+                                       "why"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "which",
+                       "hint":  "Relative pronoun for groups/things.",
+                       "explanation":  "The correct relative pronoun is 'which'."
+                   },
+                   {
+                       "id":  "rc_l178_q2",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The technician ___ we met was very helpful.",
+                       "options":  [
+                                       "whom",
+                                       "why",
+                                       "which",
+                                       "who"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "whom",
+                       "hint":  "Object relative pronoun (formal).",
+                       "explanation":  "The correct relative pronoun is 'whom'."
+                   },
+                   {
+                       "id":  "rc_l178_q3",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The engine, ___ was newly repaired, failed again.",
+                       "options":  [
+                                       "when",
+                                       "where",
+                                       "who",
+                                       "which"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "which",
+                       "hint":  "Non-defining clause for things.",
+                       "explanation":  "The correct relative pronoun is 'which'."
+                   },
+                   {
+                       "id":  "rc_l179_q1",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "I know a person ___ can fix this circuit.",
+                       "options":  [
+                                       "where",
+                                       "that",
+                                       "who",
+                                       "whom"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "who",
+                       "hint":  "Subject for people.",
+                       "explanation":  "The correct relative pronoun is 'who'."
+                   },
+                   {
+                       "id":  "rc_l179_q2",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The reason ___ I called is a secret.",
+                       "options":  [
+                                       "why",
+                                       "that",
+                                       "whom",
+                                       "who"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "why",
+                       "hint":  "Relative adverb for reason.",
+                       "explanation":  "The correct relative pronoun is 'why'."
+                   },
+                   {
+                       "id":  "rc_l179_q3",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The tools ___ he used were high-tech.",
+                       "options":  [
+                                       "when",
+                                       "which",
+                                       "whose",
+                                       "that"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "that",
+                       "hint":  "Defining clause for things.",
+                       "explanation":  "The correct relative pronoun is 'that'."
+                   },
+                   {
+                       "id":  "rc_l180_q1",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The scientist ___ discovery changed the world.",
+                       "options":  [
+                                       "where",
+                                       "whom",
+                                       "whose",
+                                       "who"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "whose",
+                       "hint":  "Possession.",
+                       "explanation":  "The correct relative pronoun is 'whose'."
+                   },
+                   {
+                       "id":  "rc_l180_q2",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The lab ___ the experiment took place.",
+                       "options":  [
+                                       "that",
+                                       "where",
+                                       "when",
+                                       "whose"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "where",
+                       "hint":  "Place.",
+                       "explanation":  "The correct relative pronoun is 'where'."
+                   },
+                   {
+                       "id":  "rc_l180_q3",
+                       "instruction":  "CAST THE RELATIVE LINK",
+                       "difficulty":  5,
+                       "subtype":  "relativeClauses",
+                       "interactionType":  "Fishing Cast",
+                       "question":  "The day ___ the signal arrived.",
+                       "options":  [
+                                       "where",
+                                       "when",
+                                       "whose",
+                                       "who"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "when",
+                       "hint":  "Time.",
+                       "explanation":  "The correct relative pronoun is 'when'."
+                   }
+               ]
 }
+

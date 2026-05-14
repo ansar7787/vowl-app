@@ -3,18 +3,14 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 class AccentQuest extends GameQuest {
   final String? word;
   final String? phoneticHint;
-  final String? targetWord;
-  final String? question;
   final String? prompt;
   final String? sampleAnswer;
-  final String? explanation;
   final String? audioUrl;
   final List<String>? words;
   final List<int>? intonationMap;
   final List<String>? syllables;
   final double? targetSpeed;
   final List<int>? pitchPatterns;
-  final String? sentence;
   final String? stressPattern;
   final String? word1;
   final String? word2;
@@ -40,20 +36,17 @@ class AccentQuest extends GameQuest {
     super.hint,
     this.word,
     this.phoneticHint,
-    this.targetWord,
-    this.question,
     super.textToSpeak,
     super.visualConfig,
     this.prompt,
     this.sampleAnswer,
-    this.explanation,
+    super.explanation,
     this.audioUrl,
     this.words,
     this.intonationMap,
     this.syllables,
     this.targetSpeed,
     this.pitchPatterns,
-    this.sentence,
     this.stressPattern,
     this.word1,
     this.word2,
@@ -62,6 +55,9 @@ class AccentQuest extends GameQuest {
     this.mouthPosition,
     this.slowForm,
     this.accentName,
+    super.targetWord,
+    super.question,
+    super.sentence,
   });
 
   String? get phonetic => phoneticHint;
@@ -121,6 +117,7 @@ class AccentQuest extends GameQuest {
       phoneticHint: phoneticHint ?? this.phoneticHint,
       targetWord: targetWord ?? this.targetWord,
       question: question ?? this.question,
+      sentence: sentence ?? this.sentence,
       textToSpeak: textToSpeak ?? this.textToSpeak,
       prompt: prompt ?? this.prompt,
       sampleAnswer: sampleAnswer ?? this.sampleAnswer,
@@ -131,7 +128,6 @@ class AccentQuest extends GameQuest {
       syllables: syllables ?? this.syllables,
       targetSpeed: targetSpeed ?? this.targetSpeed,
       pitchPatterns: pitchPatterns ?? this.pitchPatterns,
-      sentence: sentence ?? this.sentence,
       stressPattern: stressPattern ?? this.stressPattern,
       word1: word1 ?? this.word1,
       word2: word2 ?? this.word2,
@@ -148,17 +144,14 @@ class AccentQuest extends GameQuest {
     word,
     phoneticHint,
     targetWord,
-    question,
     prompt,
     sampleAnswer,
-    explanation,
     audioUrl,
     words,
     intonationMap,
     syllables,
     targetSpeed,
     pitchPatterns,
-    sentence,
     stressPattern,
     word1,
     word2,

@@ -10,8 +10,6 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -119,10 +117,25 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildStickerSentence(quest.sentence ?? "The quick brown fox", theme.primaryColor, isDark),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Concise Context Card (The Diamond Standard)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(22.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(28.r),
+                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.15), width: 1.5),
+                  ),
+                  child: _buildStickerSentence(quest.sentence ?? "Missing sentence.", theme.primaryColor, isDark),
+                ),
+              ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
               SizedBox(height: 48.h),
               _buildStickerSheet(marks, theme.primaryColor),
               const Spacer(),
@@ -139,13 +152,25 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.style_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("PEEL AND STICK PUNCTUATION", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            "APPLY HOLOGRAPHIC DECALS", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
+          ),
         ],
       ),
     );
@@ -153,23 +178,25 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
 
   Widget _buildStickerSentence(String sentence, Color primaryColor, bool isDark) {
     final words = sentence.split(" ");
-    return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(24.r),
-      child: Wrap(
-        alignment: WrapAlignment.center,
-        crossAxisAlignment: WrapCrossAlignment.center,
-        spacing: 8.w,
-        runSpacing: 12.h,
-        children: List.generate(words.length * 2, (index) {
-          if (index % 2 == 0) {
-            return Text(words[index ~/ 2], style: GoogleFonts.fredoka(fontSize: 20.sp, color: isDark ? Colors.white70 : Colors.black87));
-          } else {
-            final slotIndex = index ~/ 2;
-            return _buildStickerSlot(slotIndex, primaryColor);
-          }
-        }),
-      ),
+    return Wrap(
+      alignment: WrapAlignment.center,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      spacing: 4.w,
+      runSpacing: 12.h,
+      children: List.generate(words.length * 2, (index) {
+        if (index % 2 == 0) {
+          return Text(
+            words[index ~/ 2], 
+            style: GoogleFonts.fredoka(
+              fontSize: 20.sp, 
+              color: isDark ? Colors.white : Colors.black87
+            )
+          );
+        } else {
+          final slotIndex = index ~/ 2;
+          return _buildStickerSlot(slotIndex, primaryColor);
+        }
+      }),
     );
   }
 
@@ -178,27 +205,44 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     return DragTarget<String>(
       onAcceptWithDetails: (details) => _onStick(index, details.data),
       builder: (context, candidateData, rejectedData) {
+        final isHighlight = candidateData.isNotEmpty;
         return Container(
-          width: 30.r, height: 30.r,
+          width: 34.r, height: 34.r,
           decoration: BoxDecoration(
-            color: mark != null ? primaryColor : (candidateData.isNotEmpty ? primaryColor.withValues(alpha: 0.3) : Colors.transparent),
+            color: mark != null ? primaryColor : (isHighlight ? primaryColor.withValues(alpha: 0.3) : Colors.transparent),
             shape: BoxShape.circle,
-            border: Border.all(color: primaryColor.withValues(alpha: 0.2), style: mark != null ? BorderStyle.none : BorderStyle.solid, width: 1),
+            border: Border.all(
+              color: isHighlight || mark != null ? primaryColor : primaryColor.withValues(alpha: 0.15), 
+              width: isHighlight ? 2 : 1.5,
+              style: mark != null ? BorderStyle.none : BorderStyle.solid
+            ),
+            boxShadow: [
+              if (mark != null)
+                BoxShadow(color: primaryColor.withValues(alpha: 0.3), blurRadius: 10, spreadRadius: 1)
+            ],
           ),
           child: Center(
             child: mark != null 
-              ? Text(mark, style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w900, color: Colors.white))
-              : (candidateData.isNotEmpty ? Icon(Icons.add, color: primaryColor, size: 16.r) : null),
+              ? Text(
+                  mark, 
+                  style: GoogleFonts.outfit(
+                    fontSize: 20.sp, 
+                    fontWeight: FontWeight.w900, 
+                    color: Colors.white
+                  )
+                ).animate().shimmer(duration: 2.seconds)
+              : (isHighlight ? Icon(Icons.add, color: primaryColor, size: 18.r) : null),
           ),
-        ).animate(target: mark != null ? 1 : 0).scale(duration: 200.ms);
+        ).animate(target: mark != null ? 1 : 0).scale(duration: 300.ms, curve: Curves.easeOutBack);
       },
     );
   }
 
   Widget _buildStickerSheet(List<String> marks, Color primaryColor) {
     return Wrap(
-      spacing: 20.w,
-      runSpacing: 20.h,
+      alignment: WrapAlignment.center,
+      spacing: 24.w,
+      runSpacing: 24.h,
       children: marks.map((m) => _buildPunctuationSticker(m, primaryColor)).toList(),
     );
   }
@@ -216,33 +260,62 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
     return Material(
       color: Colors.transparent,
       child: Container(
-        width: 50.r, height: 50.r,
+        width: 54.r, height: 54.r,
         decoration: BoxDecoration(
           color: Colors.white,
           shape: BoxShape.circle,
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.white, primaryColor.withValues(alpha: 0.1)],
+          ),
           boxShadow: [
-            BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: isDragging ? 15 : 5, offset: isDragging ? const Offset(5, 5) : const Offset(2, 2)),
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.15), 
+              blurRadius: isDragging ? 20 : 8, 
+              offset: isDragging ? const Offset(0, 10) : const Offset(0, 4)
+            ),
           ],
-          border: Border.all(color: primaryColor.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: primaryColor.withValues(alpha: 0.4), width: 2),
         ),
         child: Center(
-          child: Text(mark, style: GoogleFonts.outfit(fontSize: 24.sp, fontWeight: FontWeight.w900, color: primaryColor)),
+          child: Text(
+            mark, 
+            style: GoogleFonts.outfit(
+              fontSize: 26.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor
+            )
+          ),
         ),
       ),
     ).animate(onPlay: (c) => c.repeat(reverse: true)).rotate(begin: -0.05, end: 0.05, duration: 2.seconds);
   }
 
   Widget _buildSubmitButton(Color primaryColor, GameQuest quest) {
-    return ScaleButton(
-      onTap: () => _submitAnswer(quest),
-      child: Container(
-        width: double.infinity, height: 60.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
-          gradient: LinearGradient(colors: [primaryColor, primaryColor.withValues(alpha: 0.8)]),
-          boxShadow: [BoxShadow(color: primaryColor.withValues(alpha: 0.3), blurRadius: 20, offset: const Offset(0, 10))],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: ScaleButton(
+        onTap: () => _submitAnswer(quest),
+        child: Container(
+          width: double.infinity, height: 65.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(24.r),
+            gradient: LinearGradient(colors: [primaryColor, primaryColor.withValues(alpha: 0.8)]),
+            boxShadow: [BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 25, offset: const Offset(0, 12))],
+          ),
+          child: Center(
+            child: Text(
+              "FINALIZE ARCHITECTURE", 
+              style: GoogleFonts.outfit(
+                fontSize: 16.sp, 
+                fontWeight: FontWeight.w900, 
+                color: Colors.white, 
+                letterSpacing: 2
+              )
+            )
+          ),
         ),
-        child: Center(child: Text("APPLY STICKERS", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
       ),
     );
   }

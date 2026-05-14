@@ -11,7 +11,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class ModalsSelectionScreen extends StatefulWidget {
@@ -117,16 +117,49 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildSentenceBoard(quest.question ?? "??", theme.primaryColor, isDark),
-              SizedBox(height: 48.h),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Concise Context Card (The Diamond Standard)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(22.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(28.r),
+                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.15), width: 1.5),
+                  ),
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: GoogleFonts.fredoka(
+                        fontSize: 20.sp, 
+                        color: isDark ? Colors.white : Colors.black87,
+                        height: 1.5
+                      ),
+                      children: _buildSentenceWithBlank(
+                        quest.question ?? "___ sentence.", 
+                        _isAnswered ? options[_selectedIndex] : null, 
+                        theme.primaryColor, 
+                        isDark
+                      ),
+                    ),
+                  ),
+                ),
+              ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
               Expanded(
                 child: _buildRotaryDial(options, theme.primaryColor, isDark),
               ),
+
               if (!_isAnswered)
-                _buildSubmitButton(quest.correctAnswerIndex ?? 0, theme.primaryColor),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 40.w),
+                  child: _buildSubmitButton(quest.correctAnswerIndex ?? 0, theme.primaryColor),
+                ),
               SizedBox(height: 40.h),
             ],
           ),
@@ -138,93 +171,151 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.av_timer_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("ROTATE DIAL TO CHOOSE MOOD", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            "CALIBRATE THE MODAL DIAL", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildSentenceBoard(String text, Color primaryColor, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(24.r),
-      child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 20.sp, color: isDark ? Colors.white70 : Colors.black87)),
-    );
+  List<InlineSpan> _buildSentenceWithBlank(String template, String? selected, Color primaryColor, bool isDark) {
+    final parts = template.contains("____") ? template.split("____") : template.split("___");
+    List<InlineSpan> spans = [];
+    for (int i = 0; i < parts.length; i++) {
+      spans.add(TextSpan(text: parts[i]));
+      if (i < parts.length - 1) {
+        spans.add(WidgetSpan(
+          alignment: PlaceholderAlignment.middle,
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 8.w),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: selected != null ? primaryColor : (isDark ? Colors.white38 : Colors.black38), 
+                  width: 2
+                )
+              )
+            ),
+            child: Text(
+              selected ?? "      ", 
+              style: GoogleFonts.outfit(
+                fontSize: 22.sp, 
+                fontWeight: FontWeight.bold, 
+                color: primaryColor
+              )
+            ),
+          ).animate(target: selected != null ? 1 : 0).shimmer(duration: 2.seconds),
+        ));
+      }
+    }
+    return spans;
   }
 
   Widget _buildRotaryDial(List<String> options, Color primaryColor, bool isDark) {
     return Stack(
       alignment: Alignment.center,
       children: [
-        // Background Notch Circle
+        // Outer Halo
         Container(
-          width: 250.r, height: 250.r,
+          width: 280.r, height: 280.r,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: primaryColor.withValues(alpha: 0.1), width: 10.r),
+            border: Border.all(color: primaryColor.withValues(alpha: 0.05), width: 2.r),
           ),
         ),
-        // Words
+        // Dial Words (Holographic Ring)
         ...List.generate(options.length, (i) {
-          final angle = (i * (6.28 / options.length)) - 1.57;
+          final angle = (i * (2 * pi / options.length)) - (pi / 2);
           final isSelected = _selectedIndex == i;
           return Transform.translate(
-            offset: Offset(cos(angle) * 110.r, sin(angle) * 110.r),
-            child: Text(
-              options[i],
-              style: GoogleFonts.outfit(
-                fontSize: isSelected ? 18.sp : 14.sp,
-                fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
-                color: isSelected ? primaryColor : (isDark ? Colors.white38 : Colors.black38),
+            offset: Offset(cos(angle) * 125.r, sin(angle) * 125.r),
+            child: AnimatedScale(
+              duration: 300.ms,
+              scale: isSelected ? 1.2 : 0.9,
+              child: Text(
+                options[i],
+                style: GoogleFonts.outfit(
+                  fontSize: 16.sp,
+                  fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
+                  color: isSelected ? primaryColor : (isDark ? Colors.white30 : Colors.black26),
+                  letterSpacing: 1
+                ),
               ),
             ),
           );
         }),
-        // The Physical Dial
+        // The Physical Dial (Glass Morph)
         GestureDetector(
-          onPanUpdate: (details) => _onRotate(details.delta.dx + details.delta.dy, options.length),
+          onPanUpdate: (details) {
+            // Precise Rotation Logic
+            final center = Offset(140.r, 140.r);
+            final pos = details.localPosition;
+            final angle = atan2(pos.dy - center.dy, pos.dx - center.dx);
+            _onRotate(angle, options.length);
+          },
           child: Transform.rotate(
             angle: _rotation,
             child: Container(
-              width: 150.r, height: 150.r,
+              width: 170.r, height: 170.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: LinearGradient(
                   begin: Alignment.topLeft, end: Alignment.bottomRight,
-                  colors: [Colors.grey[800]!, Colors.grey[900]!, Colors.black],
+                  colors: isDark 
+                    ? [Colors.white.withValues(alpha: 0.1), Colors.white.withValues(alpha: 0.02)]
+                    : [Colors.black.withValues(alpha: 0.05), Colors.black.withValues(alpha: 0.01)],
                 ),
+                border: Border.all(color: primaryColor.withValues(alpha: 0.2), width: 1.5),
                 boxShadow: [
-                  BoxShadow(color: Colors.black54, blurRadius: 20, offset: const Offset(10, 10)),
-                  BoxShadow(color: Colors.white10, blurRadius: 2, offset: const Offset(-2, -2)),
+                  BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 20, offset: const Offset(5, 5)),
+                  BoxShadow(color: primaryColor.withValues(alpha: 0.1), blurRadius: 10, spreadRadius: 2),
                 ],
               ),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  // Indicators/Knurls
-                  ...List.generate(12, (i) => Transform.rotate(
-                    angle: i * (6.28 / 12),
+                  // Indicators (Glass Etchings)
+                  ...List.generate(24, (i) => Transform.rotate(
+                    angle: i * (2 * pi / 24),
                     child: Align(
                       alignment: Alignment.topCenter,
-                      child: Container(width: 4.r, height: 10.r, margin: EdgeInsets.only(top: 8.r), color: Colors.white12),
+                      child: Container(
+                        width: 2.r, height: 8.r, 
+                        margin: EdgeInsets.only(top: 10.r), 
+                        color: primaryColor.withValues(alpha: 0.2)
+                      ),
                     ),
                   )),
-                  // The Pointer
+                  // The Glowing Pointer
                   Align(
                     alignment: Alignment.topCenter,
                     child: Container(
-                      width: 8.r, height: 30.r,
+                      width: 6.r, height: 35.r,
                       margin: EdgeInsets.only(top: 15.r),
                       decoration: BoxDecoration(
                         color: primaryColor,
-                        borderRadius: BorderRadius.circular(4.r),
-                        boxShadow: [BoxShadow(color: primaryColor, blurRadius: 10)],
+                        borderRadius: BorderRadius.circular(3.r),
+                        boxShadow: [
+                          BoxShadow(color: primaryColor, blurRadius: 15, spreadRadius: 1)
+                        ],
                       ),
                     ),
                   ),
@@ -241,9 +332,23 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
     return ScaleButton(
       onTap: () => _submitAnswer(correctIndex),
       child: Container(
-        width: double.infinity, height: 60.h,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: primaryColor),
-        child: Center(child: Text("LOCK CHOICE", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
+        width: double.infinity, height: 65.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(22.r), 
+          gradient: LinearGradient(colors: [primaryColor, primaryColor.withValues(alpha: 0.8)]),
+          boxShadow: [BoxShadow(color: primaryColor.withValues(alpha: 0.3), blurRadius: 15, offset: const Offset(0, 5))]
+        ),
+        child: Center(
+          child: Text(
+            "LOCK CONFIGURATION", 
+            style: GoogleFonts.outfit(
+              fontSize: 14.sp, 
+              fontWeight: FontWeight.w900, 
+              color: Colors.white, 
+              letterSpacing: 2
+            )
+          )
+        ),
       ),
     );
   }

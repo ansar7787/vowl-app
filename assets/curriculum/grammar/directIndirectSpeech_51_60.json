@@ -1,727 +1,488 @@
 {
-  "gameType": "directIndirectSpeech",
-  "batchIndex": 6,
-  "levels": "51-60",
-  "quests": [
-    {
-      "id": "dis_l51_q1",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: He said, \"I am ready.\"",
-      "options": [
-        "He said that I was ready.",
-        "He said that he is ready.",
-        "He said that he was ready."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l51_q2",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: She told me, \"We will arrive soon.\"",
-      "options": [
-        "She told me that they would arrive soon.",
-        "She told me that they will arrive soon.",
-        "She told me that we would arrive soon."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l51_q3",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The commander announced, \"I have finished the test.\"",
-      "options": [
-        "The commander announced that he finished the test.",
-        "The commander announced that he has finished the test.",
-        "The commander announced that he had finished the test."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l52_q1",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The pilot stated, \"The system is failing.\"",
-      "options": [
-        "The pilot stated that the system was failing.",
-        "The pilot stated that the system has failed.",
-        "The pilot stated that the system is failing."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l52_q2",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The doctor reported, \"I can help you.\"",
-      "options": [
-        "The doctor reported that I could help you.",
-        "The doctor reported that he can help me.",
-        "The doctor reported that he could help me."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l52_q3",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The scientist explained, \"We saw the signal.\"",
-      "options": [
-        "The scientist explained that they had seen the signal.",
-        "The scientist explained that they saw the signal.",
-        "The scientist explained that they have seen the signal."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l53_q1",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: He said, \"I must leave now.\"",
-      "options": [
-        "He said that he had to leave then.",
-        "He said that he must leave then.",
-        "He said that he has to leave now."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l53_q2",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: She told me, \"The data is secure.\"",
-      "options": [
-        "She told me that the data is secure.",
-        "She told me that the data has been secure.",
-        "She told me that the data was secure."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l53_q3",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The commander announced, \"We are moving out.\"",
-      "options": [
-        "The commander announced that they were moving out.",
-        "The commander announced that they are moving out.",
-        "The commander announced that we were moving out."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l54_q1",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The pilot stated, \"I will call you later.\"",
-      "options": [
-        "The pilot stated that he calls me later.",
-        "The pilot stated that he will call me later.",
-        "The pilot stated that he would call me later."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l54_q2",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The doctor reported, \"I am ready.\"",
-      "options": [
-        "The doctor reported that he is ready.",
-        "The doctor reported that he was ready.",
-        "The doctor reported that I was ready."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l54_q3",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The scientist explained, \"We will arrive soon.\"",
-      "options": [
-        "The scientist explained that they will arrive soon.",
-        "The scientist explained that we would arrive soon.",
-        "The scientist explained that they would arrive soon."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l55_q1",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: He said, \"I have finished the test.\"",
-      "options": [
-        "He said that he had finished the test.",
-        "He said that he has finished the test.",
-        "He said that he finished the test."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l55_q2",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: She told me, \"The system is failing.\"",
-      "options": [
-        "She told me that the system was failing.",
-        "She told me that the system has failed.",
-        "She told me that the system is failing."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l55_q3",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The commander announced, \"I can help you.\"",
-      "options": [
-        "The commander announced that he could help me.",
-        "The commander announced that he can help me.",
-        "The commander announced that I could help you."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l56_q1",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The pilot stated, \"We saw the signal.\"",
-      "options": [
-        "The pilot stated that they had seen the signal.",
-        "The pilot stated that they saw the signal.",
-        "The pilot stated that they have seen the signal."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l56_q2",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The doctor reported, \"I must leave now.\"",
-      "options": [
-        "The doctor reported that he has to leave now.",
-        "The doctor reported that he must leave then.",
-        "The doctor reported that he had to leave then."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l56_q3",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The scientist explained, \"The data is secure.\"",
-      "options": [
-        "The scientist explained that the data has been secure.",
-        "The scientist explained that the data was secure.",
-        "The scientist explained that the data is secure."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l57_q1",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: He said, \"We are moving out.\"",
-      "options": [
-        "He said that they were moving out.",
-        "He said that we were moving out.",
-        "He said that they are moving out."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l57_q2",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: She told me, \"I will call you later.\"",
-      "options": [
-        "She told me that he calls me later.",
-        "She told me that he will call me later.",
-        "She told me that he would call me later."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l57_q3",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The commander announced, \"I am ready.\"",
-      "options": [
-        "The commander announced that I was ready.",
-        "The commander announced that he is ready.",
-        "The commander announced that he was ready."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l58_q1",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The pilot stated, \"We will arrive soon.\"",
-      "options": [
-        "The pilot stated that we would arrive soon.",
-        "The pilot stated that they will arrive soon.",
-        "The pilot stated that they would arrive soon."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l58_q2",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The doctor reported, \"I have finished the test.\"",
-      "options": [
-        "The doctor reported that he had finished the test.",
-        "The doctor reported that he has finished the test.",
-        "The doctor reported that he finished the test."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l58_q3",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The scientist explained, \"The system is failing.\"",
-      "options": [
-        "The scientist explained that the system has failed.",
-        "The scientist explained that the system is failing.",
-        "The scientist explained that the system was failing."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l59_q1",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: He said, \"I can help you.\"",
-      "options": [
-        "He said that I could help you.",
-        "He said that he can help me.",
-        "He said that he could help me."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l59_q2",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: She told me, \"We saw the signal.\"",
-      "options": [
-        "She told me that they had seen the signal.",
-        "She told me that they saw the signal.",
-        "She told me that they have seen the signal."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l59_q3",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The commander announced, \"I must leave now.\"",
-      "options": [
-        "The commander announced that he had to leave then.",
-        "The commander announced that he must leave then.",
-        "The commander announced that he has to leave now."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l60_q1",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The pilot stated, \"The data is secure.\"",
-      "options": [
-        "The pilot stated that the data is secure.",
-        "The pilot stated that the data was secure.",
-        "The pilot stated that the data has been secure."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l60_q2",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The doctor reported, \"We are moving out.\"",
-      "options": [
-        "The doctor reported that they are moving out.",
-        "The doctor reported that they were moving out.",
-        "The doctor reported that we were moving out."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    },
-    {
-      "id": "dis_l60_q3",
-      "instruction": "TRANSFORM THE SPEECH",
-      "difficulty": 2,
-      "subtype": "directIndirectSpeech",
-      "interactionType": "Mirror Flip",
-      "question": "Convert to reported speech: The scientist explained, \"I will call you later.\"",
-      "options": [
-        "The scientist explained that he would call me later.",
-        "The scientist explained that he calls me later.",
-        "The scientist explained that he will call me later."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "Remember to shift the tense backward (e.g., 'am' becomes 'was').",
-      "explanation": "In reported speech, we usually move the tense one step back into the past.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "ArchiveDecryptSync",
-        "primary_color": "0xFF9E9E9E",
-        "pulse_intensity": 0.8,
-        "shader_effect": "mist_drift"
-      }
-    }
-  ]
+    "gameType":  "directIndirectSpeech",
+    "batchIndex":  6,
+    "levels":  "51-60",
+    "quests":  [
+                   {
+                       "id":  "dis_l51_q1",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: He said, 'I am ready.'",
+                       "options":  [
+                                       "He said that I was ready.",
+                                       "He said that he is ready.",
+                                       "He said that he was ready."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l51_q2",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: She told me, 'We will arrive soon.'",
+                       "options":  [
+                                       "She told me that they would arrive soon.",
+                                       "She told me that they will arrive soon.",
+                                       "She told me that we would arrive soon."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l51_q3",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The commander announced, 'I have finished the test.'",
+                       "options":  [
+                                       "The commander announced that he finished the test.",
+                                       "The commander announced that he has finished the test.",
+                                       "The commander announced that he had finished the test."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l52_q1",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The pilot stated, 'The system is failing.'",
+                       "options":  [
+                                       "The pilot stated that the system was failing.",
+                                       "The pilot stated that the system has failed.",
+                                       "The pilot stated that the system is failing."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l52_q2",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The doctor reported, 'I can help you.'",
+                       "options":  [
+                                       "The doctor reported that I could help you.",
+                                       "The doctor reported that he can help me.",
+                                       "The doctor reported that he could help me."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l52_q3",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The scientist explained, 'We saw the signal.'",
+                       "options":  [
+                                       "The scientist explained that they had seen the signal.",
+                                       "The scientist explained that they saw the signal.",
+                                       "The scientist explained that they have seen the signal."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l53_q1",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: He said, 'I must leave now.'",
+                       "options":  [
+                                       "He said that he had to leave then.",
+                                       "He said that he must leave then.",
+                                       "He said that he has to leave now."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l53_q2",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: She told me, 'The data is secure.'",
+                       "options":  [
+                                       "She told me that the data is secure.",
+                                       "She told me that the data has been secure.",
+                                       "She told me that the data was secure."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l53_q3",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The commander announced, 'We are moving out.'",
+                       "options":  [
+                                       "The commander announced that they were moving out.",
+                                       "The commander announced that they are moving out.",
+                                       "The commander announced that we were moving out."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l54_q1",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The pilot stated, 'I will call you later.'",
+                       "options":  [
+                                       "The pilot stated that he calls me later.",
+                                       "The pilot stated that he will call me later.",
+                                       "The pilot stated that he would call me later."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l54_q2",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The doctor reported, 'I am ready.'",
+                       "options":  [
+                                       "The doctor reported that he is ready.",
+                                       "The doctor reported that he was ready.",
+                                       "The doctor reported that I was ready."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l54_q3",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The scientist explained, 'We will arrive soon.'",
+                       "options":  [
+                                       "The scientist explained that they will arrive soon.",
+                                       "The scientist explained that we would arrive soon.",
+                                       "The scientist explained that they would arrive soon."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l55_q1",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: He said, 'I have finished the test.'",
+                       "options":  [
+                                       "He said that he had finished the test.",
+                                       "He said that he has finished the test.",
+                                       "He said that he finished the test."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l55_q2",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: She told me, 'The system is failing.'",
+                       "options":  [
+                                       "She told me that the system was failing.",
+                                       "She told me that the system has failed.",
+                                       "She told me that the system is failing."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l55_q3",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The commander announced, 'I can help you.'",
+                       "options":  [
+                                       "The commander announced that he could help me.",
+                                       "The commander announced that he can help me.",
+                                       "The commander announced that I could help you."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l56_q1",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The pilot stated, 'We saw the signal.'",
+                       "options":  [
+                                       "The pilot stated that they had seen the signal.",
+                                       "The pilot stated that they saw the signal.",
+                                       "The pilot stated that they have seen the signal."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l56_q2",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The doctor reported, 'I must leave now.'",
+                       "options":  [
+                                       "The doctor reported that he has to leave now.",
+                                       "The doctor reported that he must leave then.",
+                                       "The doctor reported that he had to leave then."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l56_q3",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The scientist explained, 'The data is secure.'",
+                       "options":  [
+                                       "The scientist explained that the data has been secure.",
+                                       "The scientist explained that the data was secure.",
+                                       "The scientist explained that the data is secure."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l57_q1",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: He said, 'We are moving out.'",
+                       "options":  [
+                                       "He said that they were moving out.",
+                                       "He said that we were moving out.",
+                                       "He said that they are moving out."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l57_q2",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: She told me, 'I will call you later.'",
+                       "options":  [
+                                       "She told me that he calls me later.",
+                                       "She told me that he will call me later.",
+                                       "She told me that he would call me later."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l57_q3",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The commander announced, 'I am ready.'",
+                       "options":  [
+                                       "The commander announced that I was ready.",
+                                       "The commander announced that he is ready.",
+                                       "The commander announced that he was ready."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l58_q1",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The pilot stated, 'We will arrive soon.'",
+                       "options":  [
+                                       "The pilot stated that we would arrive soon.",
+                                       "The pilot stated that they will arrive soon.",
+                                       "The pilot stated that they would arrive soon."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l58_q2",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The doctor reported, 'I have finished the test.'",
+                       "options":  [
+                                       "The doctor reported that he had finished the test.",
+                                       "The doctor reported that he has finished the test.",
+                                       "The doctor reported that he finished the test."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l58_q3",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The scientist explained, 'The system is failing.'",
+                       "options":  [
+                                       "The scientist explained that the system has failed.",
+                                       "The scientist explained that the system is failing.",
+                                       "The scientist explained that the system was failing."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l59_q1",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: He said, 'I can help you.'",
+                       "options":  [
+                                       "He said that I could help you.",
+                                       "He said that he can help me.",
+                                       "He said that he could help me."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l59_q2",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: She told me, 'We saw the signal.'",
+                       "options":  [
+                                       "She told me that they had seen the signal.",
+                                       "She told me that they saw the signal.",
+                                       "She told me that they have seen the signal."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l59_q3",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The commander announced, 'I must leave now.'",
+                       "options":  [
+                                       "The commander announced that he had to leave then.",
+                                       "The commander announced that he must leave then.",
+                                       "The commander announced that he has to leave now."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l60_q1",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The pilot stated, 'The data is secure.'",
+                       "options":  [
+                                       "The pilot stated that the data is secure.",
+                                       "The pilot stated that the data was secure.",
+                                       "The pilot stated that the data has been secure."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l60_q2",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The doctor reported, 'We are moving out.'",
+                       "options":  [
+                                       "The doctor reported that they are moving out.",
+                                       "The doctor reported that they were moving out.",
+                                       "The doctor reported that we were moving out."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   },
+                   {
+                       "id":  "dis_l60_q3",
+                       "instruction":  "TRANSFORM THE SPEECH",
+                       "difficulty":  2,
+                       "subtype":  "directIndirectSpeech",
+                       "interactionType":  "Mirror Flip",
+                       "question":  "Convert to reported speech: The scientist explained, 'I will call you later.'",
+                       "options":  [
+                                       "The scientist explained that he would call me later.",
+                                       "The scientist explained that he calls me later.",
+                                       "The scientist explained that he will call me later."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "Remember to shift the tense backward (e.g., \u0027am\u0027 becomes \u0027was\u0027).",
+                       "explanation":  "In reported speech, we usually move the tense one step back into the past."
+                   }
+               ]
 }
+

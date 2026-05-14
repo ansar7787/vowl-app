@@ -10,9 +10,8 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class TenseMasteryScreen extends StatefulWidget {
   final int level;
@@ -114,28 +113,73 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildSentenceDisplay(quest.sentence ?? "", theme.primaryColor, isDark),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Concise Context Card (The Diamond Standard)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Container(
+                  padding: EdgeInsets.all(22.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.15), width: 1.5),
+                  ),
+                  child: Text(
+                    quest.sentence ?? "",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.fredoka(
+                      fontSize: 20.sp,
+                      color: isDark ? Colors.white : Colors.black87,
+                      height: 1.5,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
               SizedBox(height: 60.h),
+              
+              // The Cinematic Timeline
               _buildTimelineSlider(theme.primaryColor, isDark),
-              SizedBox(height: 40.h),
-              _buildTenseIndicator(theme.primaryColor),
+              
               const Spacer(),
+              
               if (!_isAnswered)
                 ScaleButton(
                   onTap: () => _submitAnswer(quest),
                   child: Container(
-                    width: double.infinity, height: 60.h,
+                    width: double.infinity, height: 65.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.r), 
-                      gradient: LinearGradient(colors: [theme.primaryColor, theme.primaryColor.withValues(alpha: 0.8)]),
-                      boxShadow: [BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 20, offset: const Offset(0, 8))]
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [theme.primaryColor, theme.primaryColor.withValues(alpha: 0.8)]
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: theme.primaryColor.withValues(alpha: 0.4), 
+                          blurRadius: 20, 
+                          offset: const Offset(0, 8)
+                        )
+                      ]
                     ),
-                    child: Center(child: Text("FREEZE TIMELINE", style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
+                    child: Center(
+                      child: Text(
+                        "FREEZE TIMELINE", 
+                        style: GoogleFonts.outfit(
+                          fontSize: 16.sp, 
+                          fontWeight: FontWeight.w900, 
+                          color: Colors.white, 
+                          letterSpacing: 3
+                        )
+                      )
+                    ),
                   ),
-                ).animate().fadeIn(delay: 500.ms).moveY(begin: 20, end: 0),
+                ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 2.seconds, color: Colors.white24),
               SizedBox(height: 40.h),
             ],
           ),
@@ -158,23 +202,14 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
           Icon(Icons.auto_awesome_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
           Text(
-            "DRAG TO SHIFT TIME", 
-            style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)
+            "SHIFT THROUGH TIME", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSentenceDisplay(String text, Color primaryColor, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(28.r),
-      child: Column(
-        children: [
-          Text("TEMPORAL FRAGMENT", style: GoogleFonts.outfit(fontSize: 9.sp, fontWeight: FontWeight.w900, color: primaryColor.withValues(alpha: 0.6), letterSpacing: 2)),
-          SizedBox(height: 12.h),
-          Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 20.sp, color: isDark ? Colors.white : Colors.black87, height: 1.4)),
         ],
       ),
     );
@@ -182,16 +217,23 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
 
   Widget _buildTimelineSlider(Color primaryColor, bool isDark) {
     return Container(
-      height: 100.h,
+      height: 120.h,
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      padding: EdgeInsets.symmetric(horizontal: 30.w),
       child: Stack(
         alignment: Alignment.center,
         children: [
+          // The Track
           Container(
-            height: 4.h, width: double.infinity,
-            decoration: BoxDecoration(color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(2.r)),
+            height: 6.h,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
+              borderRadius: BorderRadius.circular(3.r),
+            ),
           ),
+          
+          // The Timeline Nodes
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: _tenses.map((tense) {
@@ -200,25 +242,42 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    width: 12.r, height: 12.r,
-                    decoration: BoxDecoration(color: isCurrent ? primaryColor : (isDark ? Colors.white24 : Colors.black12), shape: BoxShape.circle, boxShadow: isCurrent ? [BoxShadow(color: primaryColor.withValues(alpha: 0.5), blurRadius: 10, spreadRadius: 2)] : []),
+                    width: 14.r, height: 14.r,
+                    decoration: BoxDecoration(
+                      color: isCurrent ? primaryColor : (isDark ? Colors.white10 : Colors.black12),
+                      shape: BoxShape.circle,
+                      boxShadow: isCurrent 
+                          ? [BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 15, spreadRadius: 4)] 
+                          : [],
+                    ),
                   ),
-                  SizedBox(height: 24.h),
-                  Text(tense.toUpperCase(), style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: isCurrent ? FontWeight.w900 : FontWeight.w500, color: isCurrent ? primaryColor : (isDark ? Colors.white38 : Colors.black26), letterSpacing: 1)),
+                  SizedBox(height: 28.h),
+                  Text(
+                    tense.toUpperCase(), 
+                    style: GoogleFonts.outfit(
+                      fontSize: 12.sp, 
+                      fontWeight: isCurrent ? FontWeight.w900 : FontWeight.w600, 
+                      color: isCurrent ? primaryColor : (isDark ? Colors.white24 : Colors.black26), 
+                      letterSpacing: 1.5
+                    )
+                  ),
                 ],
               );
             }).toList(),
           ),
+          
+          // The Draggable Chrono-Sphere
           Positioned(
-            left: _sliderValue * (MediaQuery.of(context).size.width - 88.w),
+            left: _sliderValue * (MediaQuery.of(context).size.width - 100.w),
             child: GestureDetector(
               onHorizontalDragUpdate: (details) {
                 if (_isAnswered) return;
                 setState(() {
-                  _sliderValue = (_sliderValue + details.delta.dx / (MediaQuery.of(context).size.width - 88.w)).clamp(0.0, 1.0);
-                  if ((_sliderValue - 0.0).abs() < 0.05 && _sliderValue != 0.0) { if (_currentTense != "Past") _hapticService.selection(); }
-                  else if ((_sliderValue - 0.5).abs() < 0.05 && _sliderValue != 0.5) { if (_currentTense != "Present") _hapticService.selection(); }
-                  else if ((_sliderValue - 1.0).abs() < 0.05 && _sliderValue != 1.0) { if (_currentTense != "Future") _hapticService.selection(); }
+                  _sliderValue = (_sliderValue + details.delta.dx / (MediaQuery.of(context).size.width - 100.w)).clamp(0.0, 1.0);
+                  // Dynamic Haptics
+                  if ((_sliderValue - 0.0).abs() < 0.02 || (_sliderValue - 0.5).abs() < 0.02 || (_sliderValue - 1.0).abs() < 0.02) {
+                    _hapticService.selection();
+                  }
                 });
               },
               onHorizontalDragEnd: (details) {
@@ -231,31 +290,26 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
                   } else {
                     _sliderValue = 0.5;
                   }
-                  _hapticService.light();
+                  _hapticService.heavy();
                 });
               },
               child: Container(
-                width: 48.r, height: 48.r,
-                decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle, boxShadow: [BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 15, spreadRadius: 2)], border: Border.all(color: primaryColor, width: 4.r)),
-                child: Center(child: Icon(Icons.drag_indicator_rounded, color: primaryColor, size: 24.r)),
-              ),
+                width: 60.r, height: 60.r,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 25, spreadRadius: 5)
+                  ],
+                  border: Border.all(color: primaryColor, width: 6.r),
+                ),
+                child: Center(
+                  child: Icon(Icons.timer_rounded, color: primaryColor, size: 28.r),
+                ),
+              ).animate(onPlay: (c) => c.repeat(reverse: true))
+               .shimmer(duration: 1500.ms, color: primaryColor.withValues(alpha: 0.2)),
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTenseIndicator(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(20.r), border: Border.all(color: primaryColor.withValues(alpha: 0.1))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text("SELECTED TENSE:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w700, color: primaryColor.withValues(alpha: 0.6), letterSpacing: 1)),
-          SizedBox(width: 12.w),
-          Text(_currentTense.toUpperCase(), style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 2)).animate(key: ValueKey(_currentTense)).fadeIn().scale(),
         ],
       ),
     );

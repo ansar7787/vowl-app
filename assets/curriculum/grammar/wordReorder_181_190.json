@@ -1,1139 +1,900 @@
 {
-  "gameType": "wordReorder",
-  "batchIndex": 19,
-  "levels": "181-190",
-  "quests": [
-    {
-      "id": "wr_l181_q1",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The quick brown fox jumps over the lazy dog.",
-      "shuffledWords": [
-        "dog",
-        "lazy",
-        "over",
-        "quick",
-        "brown",
-        "The",
-        "jumps",
-        "the",
-        "fox"
-      ],
-      "correctOrder": [
-        5,
-        3,
-        4,
-        8,
-        6,
-        2,
-        7,
-        1,
-        0
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The quick brown fox jumps over the lazy dog.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l181_q2",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "She sells seashells by the seashore.",
-      "shuffledWords": [
-        "seashells",
-        "by",
-        "seashore",
-        "the",
-        "She",
-        "sells"
-      ],
-      "correctOrder": [
-        4,
-        5,
-        0,
-        1,
-        3,
-        2
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"She sells seashells by the seashore.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l181_q3",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The technician repairs the broken circuit quickly.",
-      "shuffledWords": [
-        "the",
-        "repairs",
-        "broken",
-        "The",
-        "circuit",
-        "quickly",
-        "technician"
-      ],
-      "correctOrder": [
-        3,
-        6,
-        1,
-        0,
-        2,
-        4,
-        5
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The technician repairs the broken circuit quickly.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l182_q1",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "We must protect the secret core at all costs.",
-      "shuffledWords": [
-        "costs",
-        "We",
-        "protect",
-        "the",
-        "at",
-        "must",
-        "secret",
-        "core",
-        "all"
-      ],
-      "correctOrder": [
-        1,
-        5,
-        2,
-        3,
-        6,
-        7,
-        4,
-        8,
-        0
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"We must protect the secret core at all costs.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l182_q2",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "An engineer designed the new floating bridge.",
-      "shuffledWords": [
-        "bridge",
-        "designed",
-        "engineer",
-        "new",
-        "An",
-        "the",
-        "floating"
-      ],
-      "correctOrder": [
-        4,
-        2,
-        1,
-        5,
-        3,
-        6,
-        0
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"An engineer designed the new floating bridge.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l182_q3",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The signal was sent from the remote station.",
-      "shuffledWords": [
-        "signal",
-        "The",
-        "remote",
-        "sent",
-        "from",
-        "station",
-        "was",
-        "the"
-      ],
-      "correctOrder": [
-        1,
-        0,
-        6,
-        3,
-        4,
-        7,
-        2,
-        5
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The signal was sent from the remote station.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l183_q1",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "Data analysis revealed a strange anomaly in the matrix.",
-      "shuffledWords": [
-        "the",
-        "revealed",
-        "in",
-        "anomaly",
-        "Data",
-        "matrix",
-        "analysis",
-        "strange",
-        "a"
-      ],
-      "correctOrder": [
-        4,
-        6,
-        1,
-        8,
-        7,
-        3,
-        2,
-        0,
-        5
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"Data analysis revealed a strange anomaly in the matrix.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l183_q2",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The guardian stands watch over the ancient ruins.",
-      "shuffledWords": [
-        "over",
-        "stands",
-        "ancient",
-        "guardian",
-        "ruins",
-        "watch",
-        "the",
-        "The"
-      ],
-      "correctOrder": [
-        7,
-        3,
-        1,
-        5,
-        0,
-        6,
-        2,
-        4
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The guardian stands watch over the ancient ruins.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l183_q3",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "A powerful AI manages the city energy grid.",
-      "shuffledWords": [
-        "grid",
-        "AI",
-        "the",
-        "A",
-        "city",
-        "energy",
-        "manages",
-        "powerful"
-      ],
-      "correctOrder": [
-        3,
-        7,
-        1,
-        6,
-        2,
-        4,
-        5,
-        0
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"A powerful AI manages the city energy grid.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l184_q1",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "He mastered the ancient art of calligraphy.",
-      "shuffledWords": [
-        "He",
-        "mastered",
-        "ancient",
-        "art",
-        "the",
-        "calligraphy",
-        "of"
-      ],
-      "correctOrder": [
-        0,
-        1,
-        4,
-        2,
-        3,
-        6,
-        5
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"He mastered the ancient art of calligraphy.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l184_q2",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The spaceship entered the atmosphere at high speed.",
-      "shuffledWords": [
-        "entered",
-        "spaceship",
-        "The",
-        "at",
-        "high",
-        "speed",
-        "the",
-        "atmosphere"
-      ],
-      "correctOrder": [
-        2,
-        1,
-        0,
-        6,
-        7,
-        3,
-        4,
-        5
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The spaceship entered the atmosphere at high speed.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l184_q3",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "Scientists discovered a new planet in the distant galaxy.",
-      "shuffledWords": [
-        "discovered",
-        "in",
-        "the",
-        "Scientists",
-        "planet",
-        "a",
-        "distant",
-        "galaxy",
-        "new"
-      ],
-      "correctOrder": [
-        3,
-        0,
-        5,
-        8,
-        4,
-        1,
-        2,
-        6,
-        7
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"Scientists discovered a new planet in the distant galaxy.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l185_q1",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The team completed the mission ahead of schedule.",
-      "shuffledWords": [
-        "of",
-        "schedule",
-        "the",
-        "ahead",
-        "The",
-        "team",
-        "mission",
-        "completed"
-      ],
-      "correctOrder": [
-        4,
-        5,
-        7,
-        2,
-        6,
-        3,
-        0,
-        1
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The team completed the mission ahead of schedule.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l185_q2",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "A beautiful sunset painted the sky in orange hues.",
-      "shuffledWords": [
-        "hues",
-        "A",
-        "painted",
-        "orange",
-        "in",
-        "sunset",
-        "beautiful",
-        "the",
-        "sky"
-      ],
-      "correctOrder": [
-        1,
-        6,
-        5,
-        2,
-        7,
-        8,
-        4,
-        3,
-        0
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"A beautiful sunset painted the sky in orange hues.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l185_q3",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The robot navigated the complex obstacle course easily.",
-      "shuffledWords": [
-        "navigated",
-        "The",
-        "robot",
-        "easily",
-        "complex",
-        "obstacle",
-        "course",
-        "the"
-      ],
-      "correctOrder": [
-        1,
-        2,
-        0,
-        7,
-        4,
-        5,
-        6,
-        3
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The robot navigated the complex obstacle course easily.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l186_q1",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "Security protocols were activated during the breach.",
-      "shuffledWords": [
-        "protocols",
-        "breach",
-        "Security",
-        "were",
-        "the",
-        "during",
-        "activated"
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        6,
-        5,
-        4,
-        1
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"Security protocols were activated during the breach.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l186_q2",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The doctor successfully performed the delicate surgery.",
-      "shuffledWords": [
-        "delicate",
-        "performed",
-        "The",
-        "the",
-        "successfully",
-        "surgery",
-        "doctor"
-      ],
-      "correctOrder": [
-        2,
-        6,
-        4,
-        1,
-        3,
-        0,
-        5
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The doctor successfully performed the delicate surgery.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l186_q3",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "A lone explorer found the hidden valley in the mountains.",
-      "shuffledWords": [
-        "A",
-        "lone",
-        "in",
-        "the",
-        "found",
-        "hidden",
-        "explorer",
-        "mountains",
-        "the",
-        "valley"
-      ],
-      "correctOrder": [
-        0,
-        1,
-        6,
-        4,
-        3,
-        5,
-        9,
-        2,
-        3,
-        7
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"A lone explorer found the hidden valley in the mountains.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l187_q1",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The system optimizes power consumption automatically.",
-      "shuffledWords": [
-        "consumption",
-        "power",
-        "automatically",
-        "system",
-        "The",
-        "optimizes"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        5,
-        1,
-        0,
-        2
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The system optimizes power consumption automatically.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l187_q2",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "You should always double-check your work for errors.",
-      "shuffledWords": [
-        "doublecheck",
-        "your",
-        "You",
-        "work",
-        "always",
-        "should",
-        "for",
-        "errors"
-      ],
-      "correctOrder": [
-        2,
-        5,
-        4,
-        0,
-        1,
-        3,
-        6,
-        7
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"You should always double-check your work for errors.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l187_q3",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The quick brown fox jumps over the lazy dog.",
-      "shuffledWords": [
-        "over",
-        "quick",
-        "the",
-        "dog",
-        "fox",
-        "jumps",
-        "lazy",
-        "The",
-        "brown"
-      ],
-      "correctOrder": [
-        7,
-        1,
-        8,
-        4,
-        5,
-        0,
-        2,
-        6,
-        3
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The quick brown fox jumps over the lazy dog.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l188_q1",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "She sells seashells by the seashore.",
-      "shuffledWords": [
-        "seashore",
-        "She",
-        "seashells",
-        "sells",
-        "by",
-        "the"
-      ],
-      "correctOrder": [
-        1,
-        3,
-        2,
-        4,
-        5,
-        0
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"She sells seashells by the seashore.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l188_q2",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The technician repairs the broken circuit quickly.",
-      "shuffledWords": [
-        "the",
-        "quickly",
-        "broken",
-        "technician",
-        "The",
-        "repairs",
-        "circuit"
-      ],
-      "correctOrder": [
-        4,
-        3,
-        5,
-        0,
-        2,
-        6,
-        1
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The technician repairs the broken circuit quickly.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l188_q3",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "We must protect the secret core at all costs.",
-      "shuffledWords": [
-        "secret",
-        "all",
-        "We",
-        "protect",
-        "core",
-        "the",
-        "at",
-        "must",
-        "costs"
-      ],
-      "correctOrder": [
-        2,
-        7,
-        3,
-        5,
-        0,
-        4,
-        6,
-        1,
-        8
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"We must protect the secret core at all costs.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l189_q1",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "An engineer designed the new floating bridge.",
-      "shuffledWords": [
-        "An",
-        "new",
-        "floating",
-        "engineer",
-        "designed",
-        "bridge",
-        "the"
-      ],
-      "correctOrder": [
-        0,
-        3,
-        4,
-        6,
-        1,
-        2,
-        5
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"An engineer designed the new floating bridge.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l189_q2",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The signal was sent from the remote station.",
-      "shuffledWords": [
-        "from",
-        "station",
-        "sent",
-        "The",
-        "was",
-        "signal",
-        "the",
-        "remote"
-      ],
-      "correctOrder": [
-        3,
-        5,
-        4,
-        2,
-        0,
-        6,
-        7,
-        1
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The signal was sent from the remote station.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l189_q3",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "Data analysis revealed a strange anomaly in the matrix.",
-      "shuffledWords": [
-        "matrix",
-        "anomaly",
-        "Data",
-        "revealed",
-        "a",
-        "strange",
-        "in",
-        "analysis",
-        "the"
-      ],
-      "correctOrder": [
-        2,
-        7,
-        3,
-        4,
-        5,
-        1,
-        6,
-        8,
-        0
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"Data analysis revealed a strange anomaly in the matrix.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l190_q1",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "The guardian stands watch over the ancient ruins.",
-      "shuffledWords": [
-        "ancient",
-        "The",
-        "over",
-        "ruins",
-        "watch",
-        "the",
-        "guardian",
-        "stands"
-      ],
-      "correctOrder": [
-        1,
-        6,
-        7,
-        4,
-        2,
-        5,
-        0,
-        3
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"The guardian stands watch over the ancient ruins.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l190_q2",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "A powerful AI manages the city energy grid.",
-      "shuffledWords": [
-        "energy",
-        "AI",
-        "powerful",
-        "city",
-        "the",
-        "A",
-        "manages",
-        "grid"
-      ],
-      "correctOrder": [
-        5,
-        2,
-        1,
-        6,
-        4,
-        3,
-        0,
-        7
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"A powerful AI manages the city energy grid.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "wr_l190_q3",
-      "instruction": "REORDER WORDS",
-      "difficulty": 5,
-      "subtype": "wordReorder",
-      "interactionType": "Gravity Drop",
-      "sentence": "He mastered the ancient art of calligraphy.",
-      "shuffledWords": [
-        "mastered",
-        "calligraphy",
-        "art",
-        "He",
-        "the",
-        "of",
-        "ancient"
-      ],
-      "correctOrder": [
-        3,
-        0,
-        4,
-        6,
-        2,
-        5,
-        1
-      ],
-      "hint": "Start with the capitalized subject word.",
-      "explanation": "The correct syntax is: \"He mastered the ancient art of calligraphy.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    }
-  ]
+    "gameType":  "wordReorder",
+    "batchIndex":  19,
+    "levels":  "181-190",
+    "quests":  [
+                   {
+                       "id":  "wr_l181_q1",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The quick brown fox jumps over the lazy dog.",
+                       "shuffledWords":  [
+                                             "dog",
+                                             "lazy",
+                                             "over",
+                                             "quick",
+                                             "brown",
+                                             "The",
+                                             "jumps",
+                                             "the",
+                                             "fox"
+                                         ],
+                       "correctOrder":  [
+                                            5,
+                                            3,
+                                            4,
+                                            8,
+                                            6,
+                                            2,
+                                            7,
+                                            1,
+                                            0
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The quick brown fox jumps over the lazy dog.'"
+                   },
+                   {
+                       "id":  "wr_l181_q2",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "She sells seashells by the seashore.",
+                       "shuffledWords":  [
+                                             "seashells",
+                                             "by",
+                                             "seashore",
+                                             "the",
+                                             "She",
+                                             "sells"
+                                         ],
+                       "correctOrder":  [
+                                            4,
+                                            5,
+                                            0,
+                                            1,
+                                            3,
+                                            2
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'She sells seashells by the seashore.'"
+                   },
+                   {
+                       "id":  "wr_l181_q3",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The technician repairs the broken circuit quickly.",
+                       "shuffledWords":  [
+                                             "the",
+                                             "repairs",
+                                             "broken",
+                                             "The",
+                                             "circuit",
+                                             "quickly",
+                                             "technician"
+                                         ],
+                       "correctOrder":  [
+                                            3,
+                                            6,
+                                            1,
+                                            0,
+                                            2,
+                                            4,
+                                            5
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The technician repairs the broken circuit quickly.'"
+                   },
+                   {
+                       "id":  "wr_l182_q1",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "We must protect the secret core at all costs.",
+                       "shuffledWords":  [
+                                             "costs",
+                                             "We",
+                                             "protect",
+                                             "the",
+                                             "at",
+                                             "must",
+                                             "secret",
+                                             "core",
+                                             "all"
+                                         ],
+                       "correctOrder":  [
+                                            1,
+                                            5,
+                                            2,
+                                            3,
+                                            6,
+                                            7,
+                                            4,
+                                            8,
+                                            0
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'We must protect the secret core at all costs.'"
+                   },
+                   {
+                       "id":  "wr_l182_q2",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "An engineer designed the new floating bridge.",
+                       "shuffledWords":  [
+                                             "bridge",
+                                             "designed",
+                                             "engineer",
+                                             "new",
+                                             "An",
+                                             "the",
+                                             "floating"
+                                         ],
+                       "correctOrder":  [
+                                            4,
+                                            2,
+                                            1,
+                                            5,
+                                            3,
+                                            6,
+                                            0
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'An engineer designed the new floating bridge.'"
+                   },
+                   {
+                       "id":  "wr_l182_q3",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The signal was sent from the remote station.",
+                       "shuffledWords":  [
+                                             "signal",
+                                             "The",
+                                             "remote",
+                                             "sent",
+                                             "from",
+                                             "station",
+                                             "was",
+                                             "the"
+                                         ],
+                       "correctOrder":  [
+                                            1,
+                                            0,
+                                            6,
+                                            3,
+                                            4,
+                                            7,
+                                            2,
+                                            5
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The signal was sent from the remote station.'"
+                   },
+                   {
+                       "id":  "wr_l183_q1",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "Data analysis revealed a strange anomaly in the matrix.",
+                       "shuffledWords":  [
+                                             "the",
+                                             "revealed",
+                                             "in",
+                                             "anomaly",
+                                             "Data",
+                                             "matrix",
+                                             "analysis",
+                                             "strange",
+                                             "a"
+                                         ],
+                       "correctOrder":  [
+                                            4,
+                                            6,
+                                            1,
+                                            8,
+                                            7,
+                                            3,
+                                            2,
+                                            0,
+                                            5
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'Data analysis revealed a strange anomaly in the matrix.'"
+                   },
+                   {
+                       "id":  "wr_l183_q2",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The guardian stands watch over the ancient ruins.",
+                       "shuffledWords":  [
+                                             "over",
+                                             "stands",
+                                             "ancient",
+                                             "guardian",
+                                             "ruins",
+                                             "watch",
+                                             "the",
+                                             "The"
+                                         ],
+                       "correctOrder":  [
+                                            7,
+                                            3,
+                                            1,
+                                            5,
+                                            0,
+                                            6,
+                                            2,
+                                            4
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The guardian stands watch over the ancient ruins.'"
+                   },
+                   {
+                       "id":  "wr_l183_q3",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "A powerful AI manages the city energy grid.",
+                       "shuffledWords":  [
+                                             "grid",
+                                             "AI",
+                                             "the",
+                                             "A",
+                                             "city",
+                                             "energy",
+                                             "manages",
+                                             "powerful"
+                                         ],
+                       "correctOrder":  [
+                                            3,
+                                            7,
+                                            1,
+                                            6,
+                                            2,
+                                            4,
+                                            5,
+                                            0
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'A powerful AI manages the city energy grid.'"
+                   },
+                   {
+                       "id":  "wr_l184_q1",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "He mastered the ancient art of calligraphy.",
+                       "shuffledWords":  [
+                                             "He",
+                                             "mastered",
+                                             "ancient",
+                                             "art",
+                                             "the",
+                                             "calligraphy",
+                                             "of"
+                                         ],
+                       "correctOrder":  [
+                                            0,
+                                            1,
+                                            4,
+                                            2,
+                                            3,
+                                            6,
+                                            5
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'He mastered the ancient art of calligraphy.'"
+                   },
+                   {
+                       "id":  "wr_l184_q2",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The spaceship entered the atmosphere at high speed.",
+                       "shuffledWords":  [
+                                             "entered",
+                                             "spaceship",
+                                             "The",
+                                             "at",
+                                             "high",
+                                             "speed",
+                                             "the",
+                                             "atmosphere"
+                                         ],
+                       "correctOrder":  [
+                                            2,
+                                            1,
+                                            0,
+                                            6,
+                                            7,
+                                            3,
+                                            4,
+                                            5
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The spaceship entered the atmosphere at high speed.'"
+                   },
+                   {
+                       "id":  "wr_l184_q3",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "Scientists discovered a new planet in the distant galaxy.",
+                       "shuffledWords":  [
+                                             "discovered",
+                                             "in",
+                                             "the",
+                                             "Scientists",
+                                             "planet",
+                                             "a",
+                                             "distant",
+                                             "galaxy",
+                                             "new"
+                                         ],
+                       "correctOrder":  [
+                                            3,
+                                            0,
+                                            5,
+                                            8,
+                                            4,
+                                            1,
+                                            2,
+                                            6,
+                                            7
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'Scientists discovered a new planet in the distant galaxy.'"
+                   },
+                   {
+                       "id":  "wr_l185_q1",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The team completed the mission ahead of schedule.",
+                       "shuffledWords":  [
+                                             "of",
+                                             "schedule",
+                                             "the",
+                                             "ahead",
+                                             "The",
+                                             "team",
+                                             "mission",
+                                             "completed"
+                                         ],
+                       "correctOrder":  [
+                                            4,
+                                            5,
+                                            7,
+                                            2,
+                                            6,
+                                            3,
+                                            0,
+                                            1
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The team completed the mission ahead of schedule.'"
+                   },
+                   {
+                       "id":  "wr_l185_q2",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "A beautiful sunset painted the sky in orange hues.",
+                       "shuffledWords":  [
+                                             "hues",
+                                             "A",
+                                             "painted",
+                                             "orange",
+                                             "in",
+                                             "sunset",
+                                             "beautiful",
+                                             "the",
+                                             "sky"
+                                         ],
+                       "correctOrder":  [
+                                            1,
+                                            6,
+                                            5,
+                                            2,
+                                            7,
+                                            8,
+                                            4,
+                                            3,
+                                            0
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'A beautiful sunset painted the sky in orange hues.'"
+                   },
+                   {
+                       "id":  "wr_l185_q3",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The robot navigated the complex obstacle course easily.",
+                       "shuffledWords":  [
+                                             "navigated",
+                                             "The",
+                                             "robot",
+                                             "easily",
+                                             "complex",
+                                             "obstacle",
+                                             "course",
+                                             "the"
+                                         ],
+                       "correctOrder":  [
+                                            1,
+                                            2,
+                                            0,
+                                            7,
+                                            4,
+                                            5,
+                                            6,
+                                            3
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The robot navigated the complex obstacle course easily.'"
+                   },
+                   {
+                       "id":  "wr_l186_q1",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "Security protocols were activated during the breach.",
+                       "shuffledWords":  [
+                                             "protocols",
+                                             "breach",
+                                             "Security",
+                                             "were",
+                                             "the",
+                                             "during",
+                                             "activated"
+                                         ],
+                       "correctOrder":  [
+                                            2,
+                                            0,
+                                            3,
+                                            6,
+                                            5,
+                                            4,
+                                            1
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'Security protocols were activated during the breach.'"
+                   },
+                   {
+                       "id":  "wr_l186_q2",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The doctor successfully performed the delicate surgery.",
+                       "shuffledWords":  [
+                                             "delicate",
+                                             "performed",
+                                             "The",
+                                             "the",
+                                             "successfully",
+                                             "surgery",
+                                             "doctor"
+                                         ],
+                       "correctOrder":  [
+                                            2,
+                                            6,
+                                            4,
+                                            1,
+                                            3,
+                                            0,
+                                            5
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The doctor successfully performed the delicate surgery.'"
+                   },
+                   {
+                       "id":  "wr_l186_q3",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "A lone explorer found the hidden valley in the mountains.",
+                       "shuffledWords":  [
+                                             "A",
+                                             "lone",
+                                             "in",
+                                             "the",
+                                             "found",
+                                             "hidden",
+                                             "explorer",
+                                             "mountains",
+                                             "the",
+                                             "valley"
+                                         ],
+                       "correctOrder":  [
+                                            0,
+                                            1,
+                                            6,
+                                            4,
+                                            3,
+                                            5,
+                                            9,
+                                            2,
+                                            3,
+                                            7
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'A lone explorer found the hidden valley in the mountains.'"
+                   },
+                   {
+                       "id":  "wr_l187_q1",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The system optimizes power consumption automatically.",
+                       "shuffledWords":  [
+                                             "consumption",
+                                             "power",
+                                             "automatically",
+                                             "system",
+                                             "The",
+                                             "optimizes"
+                                         ],
+                       "correctOrder":  [
+                                            4,
+                                            3,
+                                            5,
+                                            1,
+                                            0,
+                                            2
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The system optimizes power consumption automatically.'"
+                   },
+                   {
+                       "id":  "wr_l187_q2",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "You should always double-check your work for errors.",
+                       "shuffledWords":  [
+                                             "doublecheck",
+                                             "your",
+                                             "You",
+                                             "work",
+                                             "always",
+                                             "should",
+                                             "for",
+                                             "errors"
+                                         ],
+                       "correctOrder":  [
+                                            2,
+                                            5,
+                                            4,
+                                            0,
+                                            1,
+                                            3,
+                                            6,
+                                            7
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'You should always double-check your work for errors.'"
+                   },
+                   {
+                       "id":  "wr_l187_q3",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The quick brown fox jumps over the lazy dog.",
+                       "shuffledWords":  [
+                                             "over",
+                                             "quick",
+                                             "the",
+                                             "dog",
+                                             "fox",
+                                             "jumps",
+                                             "lazy",
+                                             "The",
+                                             "brown"
+                                         ],
+                       "correctOrder":  [
+                                            7,
+                                            1,
+                                            8,
+                                            4,
+                                            5,
+                                            0,
+                                            2,
+                                            6,
+                                            3
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The quick brown fox jumps over the lazy dog.'"
+                   },
+                   {
+                       "id":  "wr_l188_q1",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "She sells seashells by the seashore.",
+                       "shuffledWords":  [
+                                             "seashore",
+                                             "She",
+                                             "seashells",
+                                             "sells",
+                                             "by",
+                                             "the"
+                                         ],
+                       "correctOrder":  [
+                                            1,
+                                            3,
+                                            2,
+                                            4,
+                                            5,
+                                            0
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'She sells seashells by the seashore.'"
+                   },
+                   {
+                       "id":  "wr_l188_q2",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The technician repairs the broken circuit quickly.",
+                       "shuffledWords":  [
+                                             "the",
+                                             "quickly",
+                                             "broken",
+                                             "technician",
+                                             "The",
+                                             "repairs",
+                                             "circuit"
+                                         ],
+                       "correctOrder":  [
+                                            4,
+                                            3,
+                                            5,
+                                            0,
+                                            2,
+                                            6,
+                                            1
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The technician repairs the broken circuit quickly.'"
+                   },
+                   {
+                       "id":  "wr_l188_q3",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "We must protect the secret core at all costs.",
+                       "shuffledWords":  [
+                                             "secret",
+                                             "all",
+                                             "We",
+                                             "protect",
+                                             "core",
+                                             "the",
+                                             "at",
+                                             "must",
+                                             "costs"
+                                         ],
+                       "correctOrder":  [
+                                            2,
+                                            7,
+                                            3,
+                                            5,
+                                            0,
+                                            4,
+                                            6,
+                                            1,
+                                            8
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'We must protect the secret core at all costs.'"
+                   },
+                   {
+                       "id":  "wr_l189_q1",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "An engineer designed the new floating bridge.",
+                       "shuffledWords":  [
+                                             "An",
+                                             "new",
+                                             "floating",
+                                             "engineer",
+                                             "designed",
+                                             "bridge",
+                                             "the"
+                                         ],
+                       "correctOrder":  [
+                                            0,
+                                            3,
+                                            4,
+                                            6,
+                                            1,
+                                            2,
+                                            5
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'An engineer designed the new floating bridge.'"
+                   },
+                   {
+                       "id":  "wr_l189_q2",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The signal was sent from the remote station.",
+                       "shuffledWords":  [
+                                             "from",
+                                             "station",
+                                             "sent",
+                                             "The",
+                                             "was",
+                                             "signal",
+                                             "the",
+                                             "remote"
+                                         ],
+                       "correctOrder":  [
+                                            3,
+                                            5,
+                                            4,
+                                            2,
+                                            0,
+                                            6,
+                                            7,
+                                            1
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The signal was sent from the remote station.'"
+                   },
+                   {
+                       "id":  "wr_l189_q3",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "Data analysis revealed a strange anomaly in the matrix.",
+                       "shuffledWords":  [
+                                             "matrix",
+                                             "anomaly",
+                                             "Data",
+                                             "revealed",
+                                             "a",
+                                             "strange",
+                                             "in",
+                                             "analysis",
+                                             "the"
+                                         ],
+                       "correctOrder":  [
+                                            2,
+                                            7,
+                                            3,
+                                            4,
+                                            5,
+                                            1,
+                                            6,
+                                            8,
+                                            0
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'Data analysis revealed a strange anomaly in the matrix.'"
+                   },
+                   {
+                       "id":  "wr_l190_q1",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "The guardian stands watch over the ancient ruins.",
+                       "shuffledWords":  [
+                                             "ancient",
+                                             "The",
+                                             "over",
+                                             "ruins",
+                                             "watch",
+                                             "the",
+                                             "guardian",
+                                             "stands"
+                                         ],
+                       "correctOrder":  [
+                                            1,
+                                            6,
+                                            7,
+                                            4,
+                                            2,
+                                            5,
+                                            0,
+                                            3
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'The guardian stands watch over the ancient ruins.'"
+                   },
+                   {
+                       "id":  "wr_l190_q2",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "A powerful AI manages the city energy grid.",
+                       "shuffledWords":  [
+                                             "energy",
+                                             "AI",
+                                             "powerful",
+                                             "city",
+                                             "the",
+                                             "A",
+                                             "manages",
+                                             "grid"
+                                         ],
+                       "correctOrder":  [
+                                            5,
+                                            2,
+                                            1,
+                                            6,
+                                            4,
+                                            3,
+                                            0,
+                                            7
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'A powerful AI manages the city energy grid.'"
+                   },
+                   {
+                       "id":  "wr_l190_q3",
+                       "instruction":  "REORDER WORDS",
+                       "difficulty":  5,
+                       "subtype":  "wordReorder",
+                       "interactionType":  "Gravity Drop",
+                       "sentence":  "He mastered the ancient art of calligraphy.",
+                       "shuffledWords":  [
+                                             "mastered",
+                                             "calligraphy",
+                                             "art",
+                                             "He",
+                                             "the",
+                                             "of",
+                                             "ancient"
+                                         ],
+                       "correctOrder":  [
+                                            3,
+                                            0,
+                                            4,
+                                            6,
+                                            2,
+                                            5,
+                                            1
+                                        ],
+                       "hint":  "Start with the capitalized subject word.",
+                       "explanation":  "The correct syntax is: 'He mastered the ancient art of calligraphy.'"
+                   }
+               ]
 }
+

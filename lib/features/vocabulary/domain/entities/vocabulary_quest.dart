@@ -7,7 +7,6 @@ class VocabularyQuest extends GameQuest {
   final String? antonym;
   final String? contextSentence;
   final String? prompt;
-  final String? explanation;
   final String? audioUrl;
   final String? passage;
   final List<String>? synonyms;
@@ -35,7 +34,7 @@ class VocabularyQuest extends GameQuest {
     this.prompt,
     super.textToSpeak,
     super.visualConfig,
-    this.explanation,
+    super.explanation,
     this.audioUrl,
     this.passage,
     this.synonyms,
@@ -55,8 +54,11 @@ class VocabularyQuest extends GameQuest {
   final String? topicEmoji;
   final String? topicFact;
 
+  @override
   String? get sentence => contextSentence ?? passage;
+  @override
   String? get question => instruction;
+  @override
   String? get targetWord => word;
   String? get example => contextSentence ?? explanation;
   String? get meaning => definition;

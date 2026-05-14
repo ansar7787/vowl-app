@@ -3,12 +3,10 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 class ListeningQuest extends GameQuest {
   final String? audioUrl;
   final String? transcription;
-  final String? question;
   final String? statement;
   final List<String>? shuffledSentences;
   final List<int>? correctOrder;
   final String? prompt;
-  final String? explanation;
   final String? textWithBlanks;
   final List<String>? audioOptions;
   final String? transcript;
@@ -35,12 +33,12 @@ class ListeningQuest extends GameQuest {
     super.textToSpeak,
     super.visualConfig,
     this.transcription,
-    this.question,
+    super.question,
     this.statement,
     this.shuffledSentences,
     this.correctOrder,
     this.prompt,
-    this.explanation,
+    super.explanation,
     this.textWithBlanks,
     this.audioOptions,
     this.transcript,

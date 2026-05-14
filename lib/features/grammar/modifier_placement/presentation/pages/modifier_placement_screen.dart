@@ -101,7 +101,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
         if (allWords.isEmpty) return const SizedBox();
         
         final modifier = allWords[0];
-        final sentenceWords = allWords.skip(1).toList();
+        final options = allWords.skip(1).toList();
         
         return GrammarBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
@@ -111,12 +111,39 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 48.h),
-              _buildModifierMagnet(modifier, theme.primaryColor),
-              SizedBox(height: 60.h),
-              _buildMagneticSentence(sentenceWords, quest.correctAnswer ?? "", allWords, theme.primaryColor, isDark),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Concise Context Card (The Diamond Standard)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(22.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(28.r),
+                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.15), width: 1.5),
+                  ),
+                  child: Text(
+                    "Insert the modifier '$modifier' into the correct position.",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.fredoka(
+                      fontSize: 18.sp, 
+                      color: isDark ? Colors.white70 : Colors.black87,
+                      height: 1.4
+                    ),
+                  ),
+                ),
+              ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
+              Expanded(
+                child: _buildMagneticArena(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+              ),
+
+              if (!_isAnswered)
+                _buildValidatorMagnet(theme.primaryColor),
               SizedBox(height: 40.h),
             ],
           ),
@@ -128,89 +155,143 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.adjust_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("DRAG MAGNET TO CORRECT POSITION", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            "PICK THE CORRECT CORE", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildModifierMagnet(String modifier, Color primaryColor) {
-    if (_isAnswered) return const SizedBox(height: 80);
-    return Draggable<String>(
-      data: modifier,
-      feedback: _buildMagnetChip(modifier, primaryColor, isDragging: true),
-      childWhenDragging: Opacity(opacity: 0.3, child: _buildMagnetChip(modifier, primaryColor)),
-      child: _buildMagnetChip(modifier, primaryColor),
+  Widget _buildValidatorMagnet(Color primaryColor) {
+    return Draggable<bool>(
+      data: true,
+      feedback: _buildMagnetCore(primaryColor, isDragging: true),
+      childWhenDragging: Opacity(opacity: 0.2, child: _buildMagnetCore(primaryColor)),
+      child: _buildMagnetCore(primaryColor),
     ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack);
   }
 
-  Widget _buildMagnetChip(String text, Color primaryColor, {bool isDragging = false}) {
+  Widget _buildMagnetCore(Color primaryColor, {bool isDragging = false}) {
     return Material(
       color: Colors.transparent,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 14.h),
+        padding: EdgeInsets.all(20.r),
         decoration: BoxDecoration(
           color: primaryColor,
-          borderRadius: BorderRadius.circular(20.r),
+          shape: BoxShape.circle,
           boxShadow: [
-            BoxShadow(color: primaryColor.withValues(alpha: 0.5), blurRadius: isDragging ? 30 : 15, spreadRadius: isDragging ? 5 : 0)
+            BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: isDragging ? 30 : 15, spreadRadius: isDragging ? 5 : 0)
           ],
         ),
-        child: Text(text.toUpperCase(), style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 1)),
+        child: Icon(Icons.flash_on_rounded, color: Colors.white, size: 28.r),
       ),
     );
   }
 
-  Widget _buildMagneticSentence(List<String> words, String correct, List<String> all, Color primaryColor, bool isDark) {
-    return Wrap(
-      alignment: WrapAlignment.center,
-      crossAxisAlignment: WrapCrossAlignment.center,
-      children: List.generate(words.length * 2 + 1, (index) {
-        if (index % 2 == 1) {
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 4.w),
-            child: Text(words[index ~/ 2], style: GoogleFonts.fredoka(fontSize: 18.sp, color: isDark ? Colors.white70 : Colors.black87)),
-          );
-        } else {
-          final slotIndex = index ~/ 2;
-          return _buildMagneticSlot(slotIndex, correct, all, primaryColor);
-        }
-      }),
+  Widget _buildMagneticArena(List<String> options, int correctIndex, Color primaryColor, bool isDark) {
+    return Stack(
+      children: options.asMap().entries.map((entry) {
+        final index = entry.key;
+        final text = entry.value;
+        return _SentenceCore(
+          text: text,
+          index: index,
+          isAnswered: _isAnswered,
+          isTarget: _targetIndex == index,
+          isCorrect: _isCorrect,
+          primaryColor: primaryColor,
+          isDark: isDark,
+          onDrop: () => _onDrop(index, options[correctIndex], options),
+        );
+      }).toList(),
     );
   }
+}
 
-  Widget _buildMagneticSlot(int index, String correct, List<String> all, Color primaryColor) {
-    final isFilled = _isAnswered && _targetIndex == index;
-    return DragTarget<String>(
-      onWillAcceptWithDetails: (details) {
-        _hapticService.selection();
-        return true;
-      },
-      onAcceptWithDetails: (details) => _onDrop(index, correct, all),
-      builder: (context, candidateData, rejectedData) {
-        return Container(
-          width: isFilled ? null : 30.w,
-          height: 40.h,
-          margin: EdgeInsets.symmetric(horizontal: 4.w),
-          decoration: BoxDecoration(
-            color: isFilled ? primaryColor.withValues(alpha: 0.2) : (candidateData.isNotEmpty ? primaryColor.withValues(alpha: 0.4) : Colors.transparent),
-            borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(color: candidateData.isNotEmpty ? primaryColor : Colors.transparent, width: 2),
-          ),
-          child: isFilled 
-            ? Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                child: Text(all[0].toUpperCase(), style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: primaryColor)),
-              ).animate().shimmer()
-            : (candidateData.isNotEmpty ? Icon(Icons.download_rounded, color: primaryColor, size: 16.r) : null),
-        );
-      },
+class _SentenceCore extends StatelessWidget {
+  final String text;
+  final int index;
+  final bool isAnswered;
+  final bool isTarget;
+  final bool? isCorrect;
+  final Color primaryColor;
+  final bool isDark;
+  final VoidCallback onDrop;
+
+  const _SentenceCore({
+    required this.text, 
+    required this.index, 
+    required this.isAnswered, 
+    required this.isTarget, 
+    this.isCorrect, 
+    required this.primaryColor, 
+    required this.isDark,
+    required this.onDrop,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final top = 20.h + (index * 85.h);
+    final left = (index % 2 == 0) ? 20.w : 60.w;
+
+    return AnimatedPositioned(
+      duration: 600.ms,
+      curve: Curves.easeOutBack,
+      top: isTarget ? 150.h : top,
+      left: isTarget ? 20.w : left,
+      right: isTarget ? 20.w : 20.w,
+      child: DragTarget<bool>(
+        onWillAcceptWithDetails: (_) => !isAnswered,
+        onAcceptWithDetails: (_) => onDrop(),
+        builder: (context, candidateData, rejectedData) {
+          final isHighlight = candidateData.isNotEmpty;
+          final coreColor = isTarget 
+              ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent) 
+              : (isHighlight ? primaryColor : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)));
+
+          return Container(
+            padding: EdgeInsets.all(18.r),
+            decoration: BoxDecoration(
+              color: coreColor.withValues(alpha: isTarget ? 0.2 : 0.05),
+              borderRadius: BorderRadius.circular(24.r),
+              border: Border.all(
+                color: coreColor.withValues(alpha: isHighlight || isTarget ? 0.6 : 0.15), 
+                width: isHighlight || isTarget ? 2.5 : 1.5
+              ),
+              boxShadow: [
+                if (isHighlight || isTarget)
+                  BoxShadow(color: coreColor.withValues(alpha: 0.15), blurRadius: 20, spreadRadius: 2)
+              ],
+            ),
+            child: Text(
+              text,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.fredoka(
+                fontSize: 16.sp,
+                fontWeight: isTarget ? FontWeight.w700 : FontWeight.w500,
+                color: isTarget ? coreColor : (isDark ? Colors.white70 : Colors.black87),
+              ),
+            ),
+          ).animate(target: isHighlight ? 1 : 0).scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05));
+        },
+      ),
     );
   }
 }

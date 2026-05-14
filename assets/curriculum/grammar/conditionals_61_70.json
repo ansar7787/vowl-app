@@ -1,757 +1,518 @@
 {
-  "gameType": "conditionals",
-  "batchIndex": 7,
-  "levels": "61-70",
-  "quests": [
-    {
-      "id": "cl_l61_q1",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If you heat ice",
-      "options": [
-        "it melts.",
-        "it would melt.",
-        "it had melted.",
-        "it will melt."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a Zero conditional challenge.",
-      "explanation": "In Zero conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l61_q2",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The pilot detects the storm",
-      "options": [
-        "None of the above",
-        "he changes course.",
-        "he would changes course.",
-        "he will changes course."
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "This is a 1st conditional challenge.",
-      "explanation": "In 1st conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l61_q3",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If I won the lottery",
-      "options": [
-        "I travel the world.",
-        "I will travel the world.",
-        "I would travel the world.",
-        "I would have traveled the world."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "This is a 2nd conditional challenge.",
-      "explanation": "In 2nd conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l62_q1",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If she had studied harder",
-      "options": [
-        "she passes.",
-        "she will pass.",
-        "she would have passed.",
-        "she would pass."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "This is a 3rd conditional challenge.",
-      "explanation": "In 3rd conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l62_q2",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The scientist discovers the cure",
-      "options": [
-        "humanity is saved.",
-        "humanity is saved soon.",
-        "humanity is saved yesterday.",
-        "not humanity is saved."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a Zero conditional challenge.",
-      "explanation": "In Zero conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l62_q3",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If you don't hurry",
-      "options": [
-        "you miss the train.",
-        "you will miss the train.",
-        "you would have missed.",
-        "you would miss the train."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "This is a 1st conditional challenge.",
-      "explanation": "In 1st conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l63_q1",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The coder fixes the bug",
-      "options": [
-        "the program runs yesterday.",
-        "the program runs soon.",
-        "the program runs.",
-        "not the program runs."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "This is a Zero conditional challenge.",
-      "explanation": "In Zero conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l63_q2",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The hero reaches the gate",
-      "options": [
-        "the world is protected.",
-        "the would world is protected.",
-        "the will world is protected.",
-        "None of the above"
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "This is a 1st conditional challenge.",
-      "explanation": "In 1st conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l63_q3",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If I won the lottery",
-      "options": [
-        "I would travel the world.",
-        "I would have traveled the world.",
-        "I will travel the world.",
-        "I travel the world."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a 2nd conditional challenge.",
-      "explanation": "In 2nd conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l64_q1",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If she had studied harder",
-      "options": [
-        "she will pass.",
-        "she would pass.",
-        "she passes.",
-        "she would have passed."
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "This is a 3rd conditional challenge.",
-      "explanation": "In 3rd conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l64_q2",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If you mix red and blue",
-      "options": [
-        "you would get purple.",
-        "you get purple.",
-        "you got purple.",
-        "you will get purple."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "This is a Zero conditional challenge.",
-      "explanation": "In Zero conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l64_q3",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The hero reaches the gate",
-      "options": [
-        "the would world is protected.",
-        "None of the above",
-        "the will world is protected.",
-        "the world is protected."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "This is a 1st conditional challenge.",
-      "explanation": "In 1st conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l65_q1",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The scientist discovers the cure",
-      "options": [
-        "humanity is saved.",
-        "humanity is saved soon.",
-        "humanity is saved yesterday.",
-        "not humanity is saved."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a Zero conditional challenge.",
-      "explanation": "In Zero conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l65_q2",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The pilot detects the storm",
-      "options": [
-        "None of the above",
-        "he changes course.",
-        "he would changes course.",
-        "he will changes course."
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "This is a 1st conditional challenge.",
-      "explanation": "In 1st conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l65_q3",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If I won the lottery",
-      "options": [
-        "I travel the world.",
-        "I will travel the world.",
-        "I would have traveled the world.",
-        "I would travel the world."
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "This is a 2nd conditional challenge.",
-      "explanation": "In 2nd conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l66_q1",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If she had studied harder",
-      "options": [
-        "she passes.",
-        "she would pass.",
-        "she will pass.",
-        "she would have passed."
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "This is a 3rd conditional challenge.",
-      "explanation": "In 3rd conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l66_q2",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The scientist discovers the cure",
-      "options": [
-        "not humanity is saved.",
-        "humanity is saved yesterday.",
-        "humanity is saved.",
-        "humanity is saved soon."
-      ],
-      "correctAnswerIndex": 2,
-      "hint": "This is a Zero conditional challenge.",
-      "explanation": "In Zero conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l66_q3",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The pilot detects the storm",
-      "options": [
-        "he will changes course.",
-        "he would changes course.",
-        "he changes course.",
-        "None of the above"
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a 1st conditional challenge.",
-      "explanation": "In 1st conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l67_q1",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The coder fixes the bug",
-      "options": [
-        "not the program runs.",
-        "the program runs.",
-        "the program runs yesterday.",
-        "the program runs soon."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "This is a Zero conditional challenge.",
-      "explanation": "In Zero conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l67_q2",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The hero reaches the gate",
-      "options": [
-        "the will world is protected.",
-        "the would world is protected.",
-        "None of the above",
-        "the world is protected."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a 1st conditional challenge.",
-      "explanation": "In 1st conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l67_q3",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If I won the lottery",
-      "options": [
-        "I travel the world.",
-        "I will travel the world.",
-        "I would have traveled the world.",
-        "I would travel the world."
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "This is a 2nd conditional challenge.",
-      "explanation": "In 2nd conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l68_q1",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If she had studied harder",
-      "options": [
-        "she would have passed.",
-        "she will pass.",
-        "she would pass.",
-        "she passes."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a 3rd conditional challenge.",
-      "explanation": "In 3rd conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l68_q2",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The coder fixes the bug",
-      "options": [
-        "the program runs.",
-        "not the program runs.",
-        "the program runs soon.",
-        "the program runs yesterday."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a Zero conditional challenge.",
-      "explanation": "In Zero conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l68_q3",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The hero reaches the gate",
-      "options": [
-        "the will world is protected.",
-        "the would world is protected.",
-        "None of the above",
-        "the world is protected."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a 1st conditional challenge.",
-      "explanation": "In 1st conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l69_q1",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The scientist discovers the cure",
-      "options": [
-        "humanity is saved.",
-        "humanity is saved soon.",
-        "not humanity is saved.",
-        "humanity is saved yesterday."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a Zero conditional challenge.",
-      "explanation": "In Zero conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l69_q2",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If it rains tomorrow",
-      "options": [
-        "we will stay home.",
-        "we would stay home.",
-        "we stay home.",
-        "we would have stayed home."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a 1st conditional challenge.",
-      "explanation": "In 1st conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l69_q3",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If I won the lottery",
-      "options": [
-        "I would travel the world.",
-        "I will travel the world.",
-        "I travel the world.",
-        "I would have traveled the world."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a 2nd conditional challenge.",
-      "explanation": "In 2nd conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l70_q1",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If she had studied harder",
-      "options": [
-        "she passes.",
-        "she would have passed.",
-        "she will pass.",
-        "she would pass."
-      ],
-      "correctAnswerIndex": 1,
-      "hint": "This is a 3rd conditional challenge.",
-      "explanation": "In 3rd conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l70_q2",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The scientist discovers the cure",
-      "options": [
-        "not humanity is saved.",
-        "humanity is saved yesterday.",
-        "humanity is saved soon.",
-        "humanity is saved."
-      ],
-      "correctAnswerIndex": 3,
-      "hint": "This is a Zero conditional challenge.",
-      "explanation": "In Zero conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    },
-    {
-      "id": "cl_l70_q3",
-      "instruction": "LINK THE CONSEQUENCE",
-      "difficulty": 2,
-      "subtype": "conditionals",
-      "interactionType": "Chain Link",
-      "question": "If The pilot detects the storm",
-      "options": [
-        "he will changes course.",
-        "None of the above",
-        "he would changes course.",
-        "he changes course."
-      ],
-      "correctAnswerIndex": 0,
-      "hint": "This is a 1st conditional challenge.",
-      "explanation": "In 1st conditionals, we use specific tense sequences.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.9,
-        "shader_effect": "void_ripple"
-      }
-    }
-  ]
+    "gameType":  "conditionals",
+    "batchIndex":  7,
+    "levels":  "61-70",
+    "quests":  [
+                   {
+                       "id":  "cl_l61_q1",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If you heat ice",
+                       "options":  [
+                                       "it melts.",
+                                       "it would melt.",
+                                       "it had melted.",
+                                       "it will melt."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a Zero conditional challenge.",
+                       "explanation":  "In Zero conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l61_q2",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The pilot detects the storm",
+                       "options":  [
+                                       "None of the above",
+                                       "he changes course.",
+                                       "he would change course.",
+                                       "he will change course."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "hint":  "This is a 1st conditional challenge.",
+                       "explanation":  "In 1st conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l61_q3",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If I won the lottery",
+                       "options":  [
+                                       "I travel the world.",
+                                       "I will travel the world.",
+                                       "I would travel the world.",
+                                       "I would have traveled the world."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "This is a 2nd conditional challenge.",
+                       "explanation":  "In 2nd conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l62_q1",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If she had studied harder",
+                       "options":  [
+                                       "she passes.",
+                                       "she will pass.",
+                                       "she would have passed.",
+                                       "she would pass."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "This is a 3rd conditional challenge.",
+                       "explanation":  "In 3rd conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l62_q2",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The scientist discovers the cure",
+                       "options":  [
+                                       "humanity is saved.",
+                                       "humanity is saved soon.",
+                                       "humanity is saved yesterday.",
+                                       "not humanity is saved."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a Zero conditional challenge.",
+                       "explanation":  "In Zero conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l62_q3",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If you don\u0027t hurry",
+                       "options":  [
+                                       "you miss the train.",
+                                       "you will miss the train.",
+                                       "you would have missed.",
+                                       "you would miss the train."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "hint":  "This is a 1st conditional challenge.",
+                       "explanation":  "In 1st conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l63_q1",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The coder fixes the bug",
+                       "options":  [
+                                       "the program runs yesterday.",
+                                       "the program runs soon.",
+                                       "the program runs.",
+                                       "not the program runs."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "This is a Zero conditional challenge.",
+                       "explanation":  "In Zero conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l63_q2",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The hero reaches the gate",
+                       "options":  [
+                                       "the world is protected.",
+                                       "the would world is protected.",
+                                       "the will world is protected.",
+                                       "None of the above"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "This is a 1st conditional challenge.",
+                       "explanation":  "In 1st conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l63_q3",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If I won the lottery",
+                       "options":  [
+                                       "I would travel the world.",
+                                       "I would have traveled the world.",
+                                       "I will travel the world.",
+                                       "I travel the world."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a 2nd conditional challenge.",
+                       "explanation":  "In 2nd conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l64_q1",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If she had studied harder",
+                       "options":  [
+                                       "she will pass.",
+                                       "she would pass.",
+                                       "she passes.",
+                                       "she would have passed."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "hint":  "This is a 3rd conditional challenge.",
+                       "explanation":  "In 3rd conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l64_q2",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If you mix red and blue",
+                       "options":  [
+                                       "you would get purple.",
+                                       "you get purple.",
+                                       "you got purple.",
+                                       "you will get purple."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "hint":  "This is a Zero conditional challenge.",
+                       "explanation":  "In Zero conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l64_q3",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The hero reaches the gate",
+                       "options":  [
+                                       "the would world is protected.",
+                                       "None of the above",
+                                       "the will world is protected.",
+                                       "the world is protected."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "This is a 1st conditional challenge.",
+                       "explanation":  "In 1st conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l65_q1",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The scientist discovers the cure",
+                       "options":  [
+                                       "humanity is saved.",
+                                       "humanity is saved soon.",
+                                       "humanity is saved yesterday.",
+                                       "not humanity is saved."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a Zero conditional challenge.",
+                       "explanation":  "In Zero conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l65_q2",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The pilot detects the storm",
+                       "options":  [
+                                       "None of the above",
+                                       "he changes course.",
+                                       "he would change course.",
+                                       "he will change course."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "hint":  "This is a 1st conditional challenge.",
+                       "explanation":  "In 1st conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l65_q3",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If I won the lottery",
+                       "options":  [
+                                       "I travel the world.",
+                                       "I will travel the world.",
+                                       "I would have traveled the world.",
+                                       "I would travel the world."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "hint":  "This is a 2nd conditional challenge.",
+                       "explanation":  "In 2nd conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l66_q1",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If she had studied harder",
+                       "options":  [
+                                       "she passes.",
+                                       "she would pass.",
+                                       "she will pass.",
+                                       "she would have passed."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "hint":  "This is a 3rd conditional challenge.",
+                       "explanation":  "In 3rd conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l66_q2",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The scientist discovers the cure",
+                       "options":  [
+                                       "not humanity is saved.",
+                                       "humanity is saved yesterday.",
+                                       "humanity is saved.",
+                                       "humanity is saved soon."
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "hint":  "This is a Zero conditional challenge.",
+                       "explanation":  "In Zero conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l66_q3",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The pilot detects the storm",
+                       "options":  [
+                                       "he will change course.",
+                                       "he would change course.",
+                                       "he changes course.",
+                                       "None of the above"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a 1st conditional challenge.",
+                       "explanation":  "In 1st conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l67_q1",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The coder fixes the bug",
+                       "options":  [
+                                       "not the program runs.",
+                                       "the program runs.",
+                                       "the program runs yesterday.",
+                                       "the program runs soon."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "hint":  "This is a Zero conditional challenge.",
+                       "explanation":  "In Zero conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l67_q2",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The hero reaches the gate",
+                       "options":  [
+                                       "the will world is protected.",
+                                       "the would world is protected.",
+                                       "None of the above",
+                                       "the world is protected."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a 1st conditional challenge.",
+                       "explanation":  "In 1st conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l67_q3",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If I won the lottery",
+                       "options":  [
+                                       "I travel the world.",
+                                       "I will travel the world.",
+                                       "I would have traveled the world.",
+                                       "I would travel the world."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "hint":  "This is a 2nd conditional challenge.",
+                       "explanation":  "In 2nd conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l68_q1",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If she had studied harder",
+                       "options":  [
+                                       "she would have passed.",
+                                       "she will pass.",
+                                       "she would pass.",
+                                       "she passes."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a 3rd conditional challenge.",
+                       "explanation":  "In 3rd conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l68_q2",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The coder fixes the bug",
+                       "options":  [
+                                       "the program runs.",
+                                       "not the program runs.",
+                                       "the program runs soon.",
+                                       "the program runs yesterday."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a Zero conditional challenge.",
+                       "explanation":  "In Zero conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l68_q3",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The hero reaches the gate",
+                       "options":  [
+                                       "the will world is protected.",
+                                       "the would world is protected.",
+                                       "None of the above",
+                                       "the world is protected."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a 1st conditional challenge.",
+                       "explanation":  "In 1st conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l69_q1",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The scientist discovers the cure",
+                       "options":  [
+                                       "humanity is saved.",
+                                       "humanity is saved soon.",
+                                       "not humanity is saved.",
+                                       "humanity is saved yesterday."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a Zero conditional challenge.",
+                       "explanation":  "In Zero conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l69_q2",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If it rains tomorrow",
+                       "options":  [
+                                       "we will stay home.",
+                                       "we would stay home.",
+                                       "we stay home.",
+                                       "we would have stayed home."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a 1st conditional challenge.",
+                       "explanation":  "In 1st conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l69_q3",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If I won the lottery",
+                       "options":  [
+                                       "I would travel the world.",
+                                       "I will travel the world.",
+                                       "I travel the world.",
+                                       "I would have traveled the world."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a 2nd conditional challenge.",
+                       "explanation":  "In 2nd conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l70_q1",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If she had studied harder",
+                       "options":  [
+                                       "she passes.",
+                                       "she would have passed.",
+                                       "she will pass.",
+                                       "she would pass."
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "hint":  "This is a 3rd conditional challenge.",
+                       "explanation":  "In 3rd conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l70_q2",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The scientist discovers the cure",
+                       "options":  [
+                                       "not humanity is saved.",
+                                       "humanity is saved yesterday.",
+                                       "humanity is saved soon.",
+                                       "humanity is saved."
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "hint":  "This is a Zero conditional challenge.",
+                       "explanation":  "In Zero conditionals, we use specific tense sequences."
+                   },
+                   {
+                       "id":  "cl_l70_q3",
+                       "instruction":  "LINK THE CONSEQUENCE",
+                       "difficulty":  2,
+                       "subtype":  "conditionals",
+                       "interactionType":  "Chain Link",
+                       "question":  "If The pilot detects the storm",
+                       "options":  [
+                                       "he will change course.",
+                                       "None of the above",
+                                       "he would change course.",
+                                       "he changes course."
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "hint":  "This is a 1st conditional challenge.",
+                       "explanation":  "In 1st conditionals, we use specific tense sequences."
+                   }
+               ]
 }
+

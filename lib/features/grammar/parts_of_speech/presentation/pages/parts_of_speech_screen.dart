@@ -94,16 +94,59 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
         final options = (quest?.options?.length ?? 0) >= 4 ? quest!.options!.sublist(0, 4) : ["Noun", "Verb", "Adj", "Adv"];
         
         return GrammarBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType, 
+          level: widget.level, 
+          isAnswered: _isAnswered, 
+          isCorrect: _isCorrect, 
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Concise Context Card
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Container(
+                  padding: EdgeInsets.all(22.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(24.r),
+                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.15), width: 1.5),
+                  ),
+                  child: Column(
+                    children: [
+                      if (quest.sentence != null) ...[
+                        Text(
+                          quest.sentence!,
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.fredoka(
+                            fontSize: 20.sp,
+                            color: isDark ? Colors.white : Colors.black87,
+                            height: 1.5,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ] else ...[
+                         Text(
+                          quest.question ?? "Identify the function",
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.outfit(
+                            fontSize: 16.sp,
+                            color: isDark ? Colors.white : Colors.black87,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
               Expanded(
                 child: Stack(
                   alignment: Alignment.center,
@@ -144,15 +187,21 @@ class _PartsOfSpeechScreenState extends State<PartsOfSpeechScreen> {
   }
 
   void _checkCollision(int correctIndex) {
-    final threshold = 120.r;
-    if (_dragOffset.dx < -threshold && _dragOffset.dy < -threshold) {
-      _onFlick(0, correctIndex);
-    } else if (_dragOffset.dx > threshold && _dragOffset.dy < -threshold) {
-      _onFlick(1, correctIndex);
-    } else if (_dragOffset.dx < -threshold && _dragOffset.dy > threshold) {
-      _onFlick(2, correctIndex);
-    } else if (_dragOffset.dx > threshold && _dragOffset.dy > threshold) {
-      _onFlick(3, correctIndex);
+    // Calculate the distance from the center (Radial Distance)
+    final double distance = _dragOffset.distance;
+    final double activationThreshold = 100.r;
+
+    if (distance > activationThreshold) {
+      // Determine which quadrant the word is in
+      if (_dragOffset.dx < 0 && _dragOffset.dy < 0) {
+        _onFlick(0, correctIndex); // Top-Left
+      } else if (_dragOffset.dx > 0 && _dragOffset.dy < 0) {
+        _onFlick(1, correctIndex); // Top-Right
+      } else if (_dragOffset.dx < 0 && _dragOffset.dy > 0) {
+        _onFlick(2, correctIndex); // Bottom-Left
+      } else if (_dragOffset.dx > 0 && _dragOffset.dy > 0) {
+        _onFlick(3, correctIndex); // Bottom-Right
+      }
     }
   }
 

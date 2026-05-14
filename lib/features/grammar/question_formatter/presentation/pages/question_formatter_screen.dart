@@ -10,7 +10,9 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'dart:math';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class QuestionFormatterScreen extends StatefulWidget {
   final int level;
@@ -119,17 +121,32 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildInverterBoard(quest.sentence ?? "STATEMENT", theme.primaryColor, isDark),
-              SizedBox(height: 60.h),
-              if (!_isAnswered && _crankRotation.abs() < 6.28)
-                _buildCrank(theme.primaryColor, isDark)
-              else if (!_isAnswered)
-                _buildQuestionOptions(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark)
-              else
-                _buildCorrectResult(quest.correctAnswer ?? "", theme.primaryColor, isDark),
+              SizedBox(height: 20.h),
+              
+              // Optimized: 3D Inverter Context Card (The Diamond Standard)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: _buildInverterCard(quest.sentence ?? "Missing statement.", theme.primaryColor, isDark),
+              ).animate().fadeIn(duration: 600.ms).scale(begin: const Offset(0.9, 0.9), end: const Offset(1, 1)),
+
+              SizedBox(height: 48.h),
+              
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      if (!_isAnswered && _crankRotation.abs() < 6.28)
+                        _buildCrank(theme.primaryColor, isDark)
+                      else if (!_isAnswered)
+                        _buildQuestionOptions(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark)
+                      else
+                        _buildCorrectResult(quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                    ],
+                  ),
+                ),
+              ),
               SizedBox(height: 40.h),
             ],
           ),
@@ -141,28 +158,56 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen> {
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.cached_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("CRANK TO INVERT STATEMENT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            "CRANK TO INVERT LOGIC", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildInverterBoard(String text, Color primaryColor, bool isDark) {
+  Widget _buildInverterCard(String text, Color primaryColor, bool isDark) {
     return Transform(
       transform: Matrix4.identity()
         ..setEntry(3, 2, 0.001)
         ..rotateX(_crankRotation),
       alignment: Alignment.center,
-      child: GlassTile(
-        padding: EdgeInsets.all(32.r),
-        borderRadius: BorderRadius.circular(24.r),
-        child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 22.sp, color: isDark ? Colors.white : Colors.black87)),
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(28.r),
+        decoration: BoxDecoration(
+          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+          borderRadius: BorderRadius.circular(28.r),
+          border: Border.all(color: primaryColor.withValues(alpha: 0.2), width: 1.5),
+          boxShadow: [
+            BoxShadow(color: primaryColor.withValues(alpha: 0.05), blurRadius: 30, spreadRadius: 5)
+          ],
+        ),
+        child: Text(
+          text, 
+          textAlign: TextAlign.center, 
+          style: GoogleFonts.fredoka(
+            fontSize: 22.sp, 
+            fontWeight: FontWeight.w600,
+            color: isDark ? Colors.white : Colors.black87
+          )
+        ),
       ),
     );
   }
@@ -170,28 +215,69 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen> {
   Widget _buildCrank(Color primaryColor, bool isDark) {
     return GestureDetector(
       onPanUpdate: (details) => _onCrankUpdate(details.delta.dx + details.delta.dy),
-      child: Container(
-        width: 150.r, height: 150.r,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05),
-          border: Border.all(color: primaryColor.withValues(alpha: 0.3), width: 8.r),
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Transform.rotate(
-              angle: _crankRotation,
-              child: Column(
-                children: [
-                  Container(width: 12.r, height: 40.r, decoration: BoxDecoration(color: primaryColor, borderRadius: BorderRadius.circular(6.r))),
-                  const Spacer(),
-                ],
-              ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // Outer Energy Ring
+          Container(
+            width: 180.r, height: 180.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: primaryColor.withValues(alpha: 0.1), width: 2),
             ),
-            Icon(Icons.bolt_rounded, color: primaryColor, size: 32.r),
-          ],
-        ),
+          ).animate(onPlay: (c) => c.repeat()).rotate(duration: 10.seconds),
+          
+          // The Mechanical Crank
+          Container(
+            width: 140.r, height: 140.r,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
+              border: Border.all(color: primaryColor.withValues(alpha: 0.3), width: 6.r),
+              boxShadow: [
+                BoxShadow(color: primaryColor.withValues(alpha: 0.1), blurRadius: 20)
+              ],
+            ),
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Transform.rotate(
+                  angle: _crankRotation,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      // Mechanical Arm
+                      Column(
+                        children: [
+                          Container(
+                            width: 14.r, height: 45.r, 
+                            decoration: BoxDecoration(
+                              color: primaryColor, 
+                              borderRadius: BorderRadius.circular(8.r),
+                              boxShadow: [BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 10)]
+                            )
+                          ),
+                          const Spacer(),
+                        ],
+                      ),
+                      // Gear Teeth
+                      ...List.generate(8, (i) => Transform.rotate(
+                        angle: i * (pi / 4),
+                        child: Column(
+                          children: [
+                            Container(width: 4.r, height: 10.r, color: primaryColor.withValues(alpha: 0.3)),
+                            const Spacer(),
+                          ],
+                        ),
+                      )),
+                    ],
+                  ),
+                ),
+                Icon(Icons.bolt_rounded, color: primaryColor, size: 36.r),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -199,32 +285,60 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen> {
   Widget _buildQuestionOptions(List<String> options, int correctIndex, Color primaryColor, bool isDark) {
     return Column(
       children: options.asMap().entries.map((entry) => Padding(
-        padding: EdgeInsets.only(bottom: 12.h),
-        child: GestureDetector(
+        padding: EdgeInsets.only(bottom: 16.h, left: 24.w, right: 24.w),
+        child: ScaleButton(
           onTap: () => _onOptionSelect(entry.key, correctIndex),
-          child: GlassTile(
-            padding: EdgeInsets.all(16.r),
-            borderRadius: BorderRadius.circular(16.r),
-            child: Center(child: Text(entry.value, style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.bold, color: primaryColor))),
+          child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(20.r),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(color: primaryColor.withValues(alpha: 0.2), width: 1.5),
+            ),
+            child: Center(
+              child: Text(
+                entry.value, 
+                style: GoogleFonts.outfit(
+                  fontSize: 18.sp, 
+                  fontWeight: FontWeight.bold, 
+                  color: primaryColor
+                )
+              )
+            ),
           ),
         ),
       )).toList(),
-    );
+    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.1, end: 0);
   }
 
   Widget _buildCorrectResult(String result, Color primaryColor, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(24.r),
-      color: Colors.greenAccent.withValues(alpha: 0.1),
-      child: Column(
-        children: [
-          Icon(Icons.check_circle_rounded, color: Colors.greenAccent, size: 32.r),
-          SizedBox(height: 12.h),
-          Text(result, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 20.sp, fontWeight: FontWeight.bold, color: Colors.greenAccent)),
-        ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Container(
+        padding: EdgeInsets.all(28.r),
+        decoration: BoxDecoration(
+          color: Colors.greenAccent.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(28.r),
+          border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.3), width: 2),
+        ),
+        child: Column(
+          children: [
+            Icon(Icons.check_circle_rounded, color: Colors.greenAccent, size: 40.r),
+            SizedBox(height: 16.h),
+            Text(
+              result, 
+              textAlign: TextAlign.center, 
+              style: GoogleFonts.fredoka(
+                fontSize: 22.sp, 
+                fontWeight: FontWeight.bold, 
+                color: Colors.greenAccent
+              )
+            ),
+          ],
+        ),
       ),
-    );
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 

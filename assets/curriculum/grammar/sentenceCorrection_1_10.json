@@ -1,877 +1,637 @@
 {
-  "gameType": "sentenceCorrection",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "sc_l1_q1",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"He don't know the answer.\"",
-      "sentence": "He don't know the answer.",
-      "incorrectPart": "don't",
-      "correctedPart": "doesn't",
-      "options": [
-        "doesn't",
-        "don't",
-        "don'ts",
-        "very don't"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "doesn't",
-      "hint": "Third person singular needs 'doesn't'.",
-      "explanation": "\"don't\" should be \"doesn't\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l1_q2",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"She have been waiting for hours.\"",
-      "sentence": "She have been waiting for hours.",
-      "incorrectPart": "have",
-      "correctedPart": "has",
-      "options": [
-        "has",
-        "have",
-        "haves",
-        "very have"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "has",
-      "hint": "Subject-verb agreement.",
-      "explanation": "\"have\" should be \"has\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l1_q3",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"They was playing outside.\"",
-      "sentence": "They was playing outside.",
-      "incorrectPart": "was",
-      "correctedPart": "were",
-      "options": [
-        "were",
-        "was",
-        "wass",
-        "very was"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "were",
-      "hint": "Plural subject needs 'were'.",
-      "explanation": "\"was\" should be \"were\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l2_q1",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"I seen that movie before.\"",
-      "sentence": "I seen that movie before.",
-      "incorrectPart": "seen",
-      "correctedPart": "have seen",
-      "options": [
-        "have seen",
-        "seen",
-        "seens",
-        "very seen"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "have seen",
-      "hint": "Past participle needs an auxiliary.",
-      "explanation": "\"seen\" should be \"have seen\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l2_q2",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"He goed to the store.\"",
-      "sentence": "He goed to the store.",
-      "incorrectPart": "goed",
-      "correctedPart": "went",
-      "options": [
-        "went",
-        "goed",
-        "goeds",
-        "very goed"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "went",
-      "hint": "Irregular past tense.",
-      "explanation": "\"goed\" should be \"went\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l2_q3",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"The dogs is barking loudly.\"",
-      "sentence": "The dogs is barking loudly.",
-      "incorrectPart": "is",
-      "correctedPart": "are",
-      "options": [
-        "are",
-        "is",
-        "iss",
-        "very is"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "are",
-      "hint": "Plural subject.",
-      "explanation": "\"is\" should be \"are\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l3_q1",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"Me and him went home.\"",
-      "sentence": "Me and him went home.",
-      "incorrectPart": "Me and him",
-      "correctedPart": "He and I",
-      "options": [
-        "He and I",
-        "Me and him",
-        "Me and hims",
-        "very Me and him"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "He and I",
-      "hint": "Subject pronouns.",
-      "explanation": "\"Me and him\" should be \"He and I\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l3_q2",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"There is many problems here.\"",
-      "sentence": "There is many problems here.",
-      "incorrectPart": "is",
-      "correctedPart": "are",
-      "options": [
-        "are",
-        "is",
-        "iss",
-        "very is"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "are",
-      "hint": "Plural noun needs 'are'.",
-      "explanation": "\"is\" should be \"are\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l3_q3",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"She can sings beautifully.\"",
-      "sentence": "She can sings beautifully.",
-      "incorrectPart": "sings",
-      "correctedPart": "sing",
-      "options": [
-        "sing",
-        "sings",
-        "singss",
-        "very sings"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "sing",
-      "hint": "Base form after modals.",
-      "explanation": "\"sings\" should be \"sing\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l4_q1",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"I have went there twice.\"",
-      "sentence": "I have went there twice.",
-      "incorrectPart": "went",
-      "correctedPart": "gone",
-      "options": [
-        "gone",
-        "went",
-        "wents",
-        "very went"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "gone",
-      "hint": "Past participle of 'go' is 'gone'.",
-      "explanation": "\"went\" should be \"gone\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l4_q2",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"Each students must register.\"",
-      "sentence": "Each students must register.",
-      "incorrectPart": "students",
-      "correctedPart": "student",
-      "options": [
-        "student",
-        "students",
-        "studentss",
-        "very students"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "student",
-      "hint": "'Each' is followed by a singular noun.",
-      "explanation": "\"students\" should be \"student\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l4_q3",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"I am more taller than him.\"",
-      "sentence": "I am more taller than him.",
-      "incorrectPart": "more taller",
-      "correctedPart": "taller",
-      "options": [
-        "taller",
-        "more taller",
-        "more tallers",
-        "very more taller"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "taller",
-      "hint": "Avoid double comparatives.",
-      "explanation": "\"more taller\" should be \"taller\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l5_q1",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"The informations is incorrect.\"",
-      "sentence": "The informations is incorrect.",
-      "incorrectPart": "informations",
-      "correctedPart": "information",
-      "options": [
-        "information",
-        "informations",
-        "informationss",
-        "very informations"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "information",
-      "hint": "Uncountable noun.",
-      "explanation": "\"informations\" should be \"information\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l5_q2",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"If I was you, I'd go.\"",
-      "sentence": "If I was you, I'd go.",
-      "incorrectPart": "was",
-      "correctedPart": "were",
-      "options": [
-        "were",
-        "was",
-        "wass",
-        "very was"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "were",
-      "hint": "Subjunctive mood for imaginary states.",
-      "explanation": "\"was\" should be \"were\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l5_q3",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"He said he will come tomorrow.\"",
-      "sentence": "He said he will come tomorrow.",
-      "incorrectPart": "will",
-      "correctedPart": "would",
-      "options": [
-        "would",
-        "will",
-        "wills",
-        "very will"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "would",
-      "hint": "Tense shift in reported speech.",
-      "explanation": "\"will\" should be \"would\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l6_q1",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"He don't know the answer.\"",
-      "sentence": "He don't know the answer.",
-      "incorrectPart": "don't",
-      "correctedPart": "doesn't",
-      "options": [
-        "doesn't",
-        "don't",
-        "don'ts",
-        "very don't"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "doesn't",
-      "hint": "Third person singular needs 'doesn't'.",
-      "explanation": "\"don't\" should be \"doesn't\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l6_q2",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"She have been waiting for hours.\"",
-      "sentence": "She have been waiting for hours.",
-      "incorrectPart": "have",
-      "correctedPart": "has",
-      "options": [
-        "has",
-        "have",
-        "haves",
-        "very have"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "has",
-      "hint": "Subject-verb agreement.",
-      "explanation": "\"have\" should be \"has\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l6_q3",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"They was playing outside.\"",
-      "sentence": "They was playing outside.",
-      "incorrectPart": "was",
-      "correctedPart": "were",
-      "options": [
-        "were",
-        "was",
-        "wass",
-        "very was"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "were",
-      "hint": "Plural subject needs 'were'.",
-      "explanation": "\"was\" should be \"were\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l7_q1",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"I seen that movie before.\"",
-      "sentence": "I seen that movie before.",
-      "incorrectPart": "seen",
-      "correctedPart": "have seen",
-      "options": [
-        "have seen",
-        "seen",
-        "seens",
-        "very seen"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "have seen",
-      "hint": "Past participle needs an auxiliary.",
-      "explanation": "\"seen\" should be \"have seen\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l7_q2",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"He goed to the store.\"",
-      "sentence": "He goed to the store.",
-      "incorrectPart": "goed",
-      "correctedPart": "went",
-      "options": [
-        "went",
-        "goed",
-        "goeds",
-        "very goed"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "went",
-      "hint": "Irregular past tense.",
-      "explanation": "\"goed\" should be \"went\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l7_q3",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"The dogs is barking loudly.\"",
-      "sentence": "The dogs is barking loudly.",
-      "incorrectPart": "is",
-      "correctedPart": "are",
-      "options": [
-        "are",
-        "is",
-        "iss",
-        "very is"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "are",
-      "hint": "Plural subject.",
-      "explanation": "\"is\" should be \"are\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l8_q1",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"Me and him went home.\"",
-      "sentence": "Me and him went home.",
-      "incorrectPart": "Me and him",
-      "correctedPart": "He and I",
-      "options": [
-        "He and I",
-        "Me and him",
-        "Me and hims",
-        "very Me and him"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "He and I",
-      "hint": "Subject pronouns.",
-      "explanation": "\"Me and him\" should be \"He and I\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l8_q2",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"There is many problems here.\"",
-      "sentence": "There is many problems here.",
-      "incorrectPart": "is",
-      "correctedPart": "are",
-      "options": [
-        "are",
-        "is",
-        "iss",
-        "very is"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "are",
-      "hint": "Plural noun needs 'are'.",
-      "explanation": "\"is\" should be \"are\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l8_q3",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"She can sings beautifully.\"",
-      "sentence": "She can sings beautifully.",
-      "incorrectPart": "sings",
-      "correctedPart": "sing",
-      "options": [
-        "sing",
-        "sings",
-        "singss",
-        "very sings"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "sing",
-      "hint": "Base form after modals.",
-      "explanation": "\"sings\" should be \"sing\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l9_q1",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"I have went there twice.\"",
-      "sentence": "I have went there twice.",
-      "incorrectPart": "went",
-      "correctedPart": "gone",
-      "options": [
-        "gone",
-        "went",
-        "wents",
-        "very went"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "gone",
-      "hint": "Past participle of 'go' is 'gone'.",
-      "explanation": "\"went\" should be \"gone\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l9_q2",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"Each students must register.\"",
-      "sentence": "Each students must register.",
-      "incorrectPart": "students",
-      "correctedPart": "student",
-      "options": [
-        "student",
-        "students",
-        "studentss",
-        "very students"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "student",
-      "hint": "'Each' is followed by a singular noun.",
-      "explanation": "\"students\" should be \"student\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l9_q3",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"I am more taller than him.\"",
-      "sentence": "I am more taller than him.",
-      "incorrectPart": "more taller",
-      "correctedPart": "taller",
-      "options": [
-        "taller",
-        "more taller",
-        "more tallers",
-        "very more taller"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "taller",
-      "hint": "Avoid double comparatives.",
-      "explanation": "\"more taller\" should be \"taller\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l10_q1",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"The informations is incorrect.\"",
-      "sentence": "The informations is incorrect.",
-      "incorrectPart": "informations",
-      "correctedPart": "information",
-      "options": [
-        "information",
-        "informations",
-        "informationss",
-        "very informations"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "information",
-      "hint": "Uncountable noun.",
-      "explanation": "\"informations\" should be \"information\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l10_q2",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"If I was you, I'd go.\"",
-      "sentence": "If I was you, I'd go.",
-      "incorrectPart": "was",
-      "correctedPart": "were",
-      "options": [
-        "were",
-        "was",
-        "wass",
-        "very was"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "were",
-      "hint": "Subjunctive mood for imaginary states.",
-      "explanation": "\"was\" should be \"were\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    },
-    {
-      "id": "sc_l10_q3",
-      "instruction": "ZAP THE ERROR",
-      "difficulty": 1,
-      "subtype": "sentenceCorrection",
-      "interactionType": "Zapper Grid",
-      "question": "Fix: \"He said he will come tomorrow.\"",
-      "sentence": "He said he will come tomorrow.",
-      "incorrectPart": "will",
-      "correctedPart": "would",
-      "options": [
-        "would",
-        "will",
-        "wills",
-        "very will"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "would",
-      "hint": "Tense shift in reported speech.",
-      "explanation": "\"will\" should be \"would\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "PurgeGridSync",
-        "primary_color": "0xFFF44336",
-        "pulse_intensity": 0.8,
-        "shader_effect": "matrix_scan"
-      }
-    }
-  ]
+    "gameType":  "sentenceCorrection",
+    "batchIndex":  1,
+    "levels":  "1-10",
+    "quests":  [
+                   {
+                       "id":  "sc_l1_q1",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'He don\u0027t know the answer.'",
+                       "sentence":  "He don\u0027t know the answer.",
+                       "incorrectPart":  "don\u0027t",
+                       "correctedPart":  "doesn\u0027t",
+                       "options":  [
+                                       "doesn\u0027t",
+                                       "don\u0027t",
+                                       "don\u0027ts",
+                                       "very don\u0027t"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "doesn\u0027t",
+                       "hint":  "Third person singular needs \u0027doesn\u0027t\u0027.",
+                       "explanation":  "'don\u0027t' should be 'doesn\u0027t'."
+                   },
+                   {
+                       "id":  "sc_l1_q2",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'She have been waiting for hours.'",
+                       "sentence":  "She have been waiting for hours.",
+                       "incorrectPart":  "have",
+                       "correctedPart":  "has",
+                       "options":  [
+                                       "has",
+                                       "have",
+                                       "haves",
+                                       "very have"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "has",
+                       "hint":  "Subject-verb agreement.",
+                       "explanation":  "'have' should be 'has'."
+                   },
+                   {
+                       "id":  "sc_l1_q3",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'They was playing outside.'",
+                       "sentence":  "They was playing outside.",
+                       "incorrectPart":  "was",
+                       "correctedPart":  "were",
+                       "options":  [
+                                       "were",
+                                       "was",
+                                       "wass",
+                                       "very was"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "were",
+                       "hint":  "Plural subject needs \u0027were\u0027.",
+                       "explanation":  "'was' should be 'were'."
+                   },
+                   {
+                       "id":  "sc_l2_q1",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'I seen that movie before.'",
+                       "sentence":  "I seen that movie before.",
+                       "incorrectPart":  "seen",
+                       "correctedPart":  "have seen",
+                       "options":  [
+                                       "have seen",
+                                       "seen",
+                                       "seens",
+                                       "very seen"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "have seen",
+                       "hint":  "Past participle needs an auxiliary.",
+                       "explanation":  "'seen' should be 'have seen'."
+                   },
+                   {
+                       "id":  "sc_l2_q2",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'He goed to the store.'",
+                       "sentence":  "He goed to the store.",
+                       "incorrectPart":  "goed",
+                       "correctedPart":  "went",
+                       "options":  [
+                                       "went",
+                                       "goed",
+                                       "goeds",
+                                       "very goed"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "went",
+                       "hint":  "Irregular past tense.",
+                       "explanation":  "'goed' should be 'went'."
+                   },
+                   {
+                       "id":  "sc_l2_q3",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'The dogs is barking loudly.'",
+                       "sentence":  "The dogs is barking loudly.",
+                       "incorrectPart":  "is",
+                       "correctedPart":  "are",
+                       "options":  [
+                                       "are",
+                                       "is",
+                                       "iss",
+                                       "very is"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "are",
+                       "hint":  "Plural subject.",
+                       "explanation":  "'is' should be 'are'."
+                   },
+                   {
+                       "id":  "sc_l3_q1",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'Me and him went home.'",
+                       "sentence":  "Me and him went home.",
+                       "incorrectPart":  "Me and him",
+                       "correctedPart":  "He and I",
+                       "options":  [
+                                       "He and I",
+                                       "Me and him",
+                                       "Me and hims",
+                                       "very Me and him"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "He and I",
+                       "hint":  "Subject pronouns.",
+                       "explanation":  "'Me and him' should be 'He and I'."
+                   },
+                   {
+                       "id":  "sc_l3_q2",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'There is many problems here.'",
+                       "sentence":  "There is many problems here.",
+                       "incorrectPart":  "is",
+                       "correctedPart":  "are",
+                       "options":  [
+                                       "are",
+                                       "is",
+                                       "iss",
+                                       "very is"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "are",
+                       "hint":  "Plural noun needs \u0027are\u0027.",
+                       "explanation":  "'is' should be 'are'."
+                   },
+                   {
+                       "id":  "sc_l3_q3",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'She can sings beautifully.'",
+                       "sentence":  "She can sings beautifully.",
+                       "incorrectPart":  "sings",
+                       "correctedPart":  "sing",
+                       "options":  [
+                                       "sing",
+                                       "sings",
+                                       "singss",
+                                       "very sings"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "sing",
+                       "hint":  "Base form after modals.",
+                       "explanation":  "'sings' should be 'sing'."
+                   },
+                   {
+                       "id":  "sc_l4_q1",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'I have went there twice.'",
+                       "sentence":  "I have went there twice.",
+                       "incorrectPart":  "went",
+                       "correctedPart":  "gone",
+                       "options":  [
+                                       "gone",
+                                       "went",
+                                       "wents",
+                                       "very went"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "gone",
+                       "hint":  "Past participle of \u0027go\u0027 is \u0027gone\u0027.",
+                       "explanation":  "'went' should be 'gone'."
+                   },
+                   {
+                       "id":  "sc_l4_q2",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'Each students must register.'",
+                       "sentence":  "Each students must register.",
+                       "incorrectPart":  "students",
+                       "correctedPart":  "student",
+                       "options":  [
+                                       "student",
+                                       "students",
+                                       "studentss",
+                                       "very students"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "student",
+                       "hint":  "\u0027Each\u0027 is followed by a singular noun.",
+                       "explanation":  "'students' should be 'student'."
+                   },
+                   {
+                       "id":  "sc_l4_q3",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'I am more taller than him.'",
+                       "sentence":  "I am more taller than him.",
+                       "incorrectPart":  "more taller",
+                       "correctedPart":  "taller",
+                       "options":  [
+                                       "taller",
+                                       "more taller",
+                                       "more tallers",
+                                       "very more taller"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "taller",
+                       "hint":  "Avoid double comparatives.",
+                       "explanation":  "'more taller' should be 'taller'."
+                   },
+                   {
+                       "id":  "sc_l5_q1",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'The informations is incorrect.'",
+                       "sentence":  "The informations is incorrect.",
+                       "incorrectPart":  "informations",
+                       "correctedPart":  "information",
+                       "options":  [
+                                       "information",
+                                       "informations",
+                                       "informationss",
+                                       "very informations"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "information",
+                       "hint":  "Uncountable noun.",
+                       "explanation":  "'informations' should be 'information'."
+                   },
+                   {
+                       "id":  "sc_l5_q2",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'If I was you, I\u0027d go.'",
+                       "sentence":  "If I was you, I\u0027d go.",
+                       "incorrectPart":  "was",
+                       "correctedPart":  "were",
+                       "options":  [
+                                       "were",
+                                       "was",
+                                       "wass",
+                                       "very was"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "were",
+                       "hint":  "Subjunctive mood for imaginary states.",
+                       "explanation":  "'was' should be 'were'."
+                   },
+                   {
+                       "id":  "sc_l5_q3",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  1,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'He said he will come tomorrow.'",
+                       "sentence":  "He said he will come tomorrow.",
+                       "incorrectPart":  "will",
+                       "correctedPart":  "would",
+                       "options":  [
+                                       "would",
+                                       "will",
+                                       "wills",
+                                       "very will"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "would",
+                       "hint":  "Tense shift in reported speech.",
+                       "explanation":  "'will' should be 'would'."
+                   },
+                   {
+                       "id":  "sc_l6_q1",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  2,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'To who should I address the letter?'",
+                       "sentence":  "To who should I address the letter?",
+                       "incorrectPart":  "who",
+                       "correctedPart":  "whom",
+                       "options":  [
+                                       "whom",
+                                       "who",
+                                       "whose",
+                                       "very who"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "whom",
+                       "hint":  "Use \u0027whom\u0027 as the object of a preposition.",
+                       "explanation":  "'who' should be 'whom' when used as an object."
+                   },
+                   {
+                       "id":  "sc_l6_q2",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  2,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'The team played good today.'",
+                       "sentence":  "The team played good today.",
+                       "incorrectPart":  "good",
+                       "correctedPart":  "well",
+                       "options":  [
+                                       "well",
+                                       "good",
+                                       "goods",
+                                       "very good"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "well",
+                       "hint":  "Use adverbs to modify verbs.",
+                       "explanation":  "'good' should be 'well' because it modifies the verb 'played'."
+                   },
+                   {
+                       "id":  "sc_l6_q3",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  2,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'This coffee is different than that one.'",
+                       "sentence":  "This coffee is different than that one.",
+                       "incorrectPart":  "than",
+                       "correctedPart":  "from",
+                       "options":  [
+                                       "from",
+                                       "than",
+                                       "thans",
+                                       "very than"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "from",
+                       "hint":  "Standard usage is \u0027different from\u0027.",
+                       "explanation":  "'than' should be 'from' in this comparison."
+                   },
+                   {
+                       "id":  "sc_l7_q1",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  2,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'He don\u0027t have no money.'",
+                       "sentence":  "He don\u0027t have no money.",
+                       "incorrectPart":  "don\u0027t have no",
+                       "correctedPart":  "doesn\u0027t have any",
+                       "options":  [
+                                       "doesn\u0027t have any",
+                                       "don\u0027t have no",
+                                       "doesn\u0027t have no",
+                                       "very don\u0027t have no"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "doesn\u0027t have any",
+                       "hint":  "Avoid double negatives.",
+                       "explanation":  "'don\u0027t have no' is a double negative; use 'doesn\u0027t have any'."
+                   },
+                   {
+                       "id":  "sc_l7_q2",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  2,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'The flowers smells sweet.'",
+                       "sentence":  "The flowers smells sweet.",
+                       "incorrectPart":  "smells",
+                       "correctedPart":  "smell",
+                       "options":  [
+                                       "smell",
+                                       "smells",
+                                       "smellss",
+                                       "very smells"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "smell",
+                       "hint":  "Plural subjects take base verbs.",
+                       "explanation":  "'smells' should be 'smell' for the plural subject 'flowers'."
+                   },
+                   {
+                       "id":  "sc_l7_q3",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  2,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'Between you and I, it\u0027s a secret.'",
+                       "sentence":  "Between you and I, it\u0027s a secret.",
+                       "incorrectPart":  "I",
+                       "correctedPart":  "me",
+                       "options":  [
+                                       "me",
+                                       "I",
+                                       "mine",
+                                       "very I"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "me",
+                       "hint":  "Prepositions are followed by object pronouns.",
+                       "explanation":  "'I' should be 'me' after the preposition 'Between'."
+                   },
+                   {
+                       "id":  "sc_l8_q1",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  2,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'Running to the bus, my bag fell.'",
+                       "sentence":  "Running to the bus, my bag fell.",
+                       "incorrectPart":  "Running to the bus",
+                       "correctedPart":  "While I was running to the bus",
+                       "options":  [
+                                       "While I was running to the bus",
+                                       "Running to the bus",
+                                       "By running to the bus",
+                                       "very Running to the bus"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "While I was running to the bus",
+                       "hint":  "Dangling modifier; the bag isn\u0027t running.",
+                       "explanation":  "The sentence has a dangling modifier; 'While I was running' clarifies who is acting."
+                   },
+                   {
+                       "id":  "sc_l8_q2",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  2,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'She likes hiking, swimming, and to dance.'",
+                       "sentence":  "She likes hiking, swimming, and to dance.",
+                       "incorrectPart":  "to dance",
+                       "correctedPart":  "dancing",
+                       "options":  [
+                                       "dancing",
+                                       "to dance",
+                                       "danced",
+                                       "very to dance"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "dancing",
+                       "hint":  "Keep list items parallel (all -ing).",
+                       "explanation":  "'to dance' should be 'dancing' to maintain parallel structure."
+                   },
+                   {
+                       "id":  "sc_l8_q3",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  2,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'He is more cleverer than his brother.'",
+                       "sentence":  "He is more cleverer than his brother.",
+                       "incorrectPart":  "more cleverer",
+                       "correctedPart":  "cleverer",
+                       "options":  [
+                                       "cleverer",
+                                       "more cleverer",
+                                       "most cleverer",
+                                       "very more cleverer"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "cleverer",
+                       "hint":  "Do not use \u0027more\u0027 with -er adjectives.",
+                       "explanation":  "'more cleverer' is a double comparative; use only 'cleverer'."
+                   },
+                   {
+                       "id":  "sc_l9_q1",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  3,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'Neither of the boys are here.'",
+                       "sentence":  "Neither of the boys are here.",
+                       "incorrectPart":  "are",
+                       "correctedPart":  "is",
+                       "options":  [
+                                       "is",
+                                       "are",
+                                       "were",
+                                       "very are"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "is",
+                       "hint":  "\u0027Neither\u0027 is a singular subject.",
+                       "explanation":  "'are' should be 'is' because 'Neither' is singular."
+                   },
+                   {
+                       "id":  "sc_l9_q2",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  3,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'The data is very interesting.'",
+                       "sentence":  "The data is very interesting.",
+                       "incorrectPart":  "is",
+                       "correctedPart":  "are",
+                       "options":  [
+                                       "are",
+                                       "is",
+                                       "was",
+                                       "very is"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "are",
+                       "hint":  "\u0027Data\u0027 is technically the plural of \u0027datum\u0027.",
+                       "explanation":  "In formal grammar, 'data' is plural and requires 'are'."
+                   },
+                   {
+                       "id":  "sc_l9_q3",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  3,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'He acted as if he was the boss.'",
+                       "sentence":  "He acted as if he was the boss.",
+                       "incorrectPart":  "was",
+                       "correctedPart":  "were",
+                       "options":  [
+                                       "were",
+                                       "was",
+                                       "is",
+                                       "very was"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "were",
+                       "hint":  "Subjunctive mood for counter-factuals.",
+                       "explanation":  "'was' should be 'were' for hypothetical or non-factual situations."
+                   },
+                   {
+                       "id":  "sc_l10_q1",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  3,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'Whom is calling at this hour?'",
+                       "sentence":  "Whom is calling at this hour?",
+                       "incorrectPart":  "Whom",
+                       "correctedPart":  "Who",
+                       "options":  [
+                                       "Who",
+                                       "Whom",
+                                       "Whose",
+                                       "very Whom"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Who",
+                       "hint":  "Use \u0027who\u0027 for the subject of the sentence.",
+                       "explanation":  "'Whom' is an object; use 'Who' as the subject of 'is calling'."
+                   },
+                   {
+                       "id":  "sc_l10_q2",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  3,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'The criteria for the award is strict.'",
+                       "sentence":  "The criteria for the award is strict.",
+                       "incorrectPart":  "is",
+                       "correctedPart":  "are",
+                       "options":  [
+                                       "are",
+                                       "is",
+                                       "was",
+                                       "very is"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "are",
+                       "hint":  "\u0027Criteria\u0027 is the plural of \u0027criterion\u0027.",
+                       "explanation":  "'is' should be 'are' because 'criteria' is a plural noun."
+                   },
+                   {
+                       "id":  "sc_l10_q3",
+                       "instruction":  "ZAP THE ERROR",
+                       "difficulty":  3,
+                       "subtype":  "sentenceCorrection",
+                       "interactionType":  "Zapper Grid",
+                       "question":  "Fix: 'I only have five dollar.'",
+                       "sentence":  "I only have five dollar.",
+                       "incorrectPart":  "dollar",
+                       "correctedPart":  "dollars",
+                       "options":  [
+                                       "dollars",
+                                       "dollar",
+                                       "dollars\u0027",
+                                       "very dollar"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "dollars",
+                       "hint":  "Pluralize nouns after numbers greater than one.",
+                       "explanation":  "'dollar' should be plural: 'dollars'."
+                   }
+               ]
 }

@@ -78,19 +78,24 @@ class MeshGradientBackground extends StatelessWidget {
         if (!isMidnight)
           ...[
             _StaticBlob(
-              alignment: const Alignment(-1.2, -0.8),
-              color: backgroundColors[1].withValues(alpha: isDark ? 0.25 : 0.45),
-              size: 500.w,
+              alignment: const Alignment(-1.5, -0.8),
+              color: backgroundColors[1].withValues(alpha: isDark ? 0.3 : 0.5),
+              size: 700.w,
             ),
             _StaticBlob(
-              alignment: const Alignment(1.2, -0.4),
-              color: backgroundColors[2].withValues(alpha: isDark ? 0.15 : 0.35),
+              alignment: const Alignment(1.5, -0.4),
+              color: backgroundColors[2].withValues(alpha: isDark ? 0.2 : 0.4),
+              size: 800.w,
+            ),
+            _StaticBlob(
+              alignment: const Alignment(-0.8, 1.5),
+              color: backgroundColors[3].withValues(alpha: isDark ? 0.15 : 0.3),
               size: 600.w,
             ),
             _StaticBlob(
-              alignment: const Alignment(-0.8, 1.2),
-              color: backgroundColors[3].withValues(alpha: isDark ? 0.12 : 0.25),
-              size: 450.w,
+              alignment: const Alignment(0, 0),
+              color: backgroundColors[0].withValues(alpha: isDark ? 0.05 : 0.1),
+              size: 1.sw,
             ),
             if (!isDark) // Extra depth for light mode
               _StaticBlob(

@@ -1,787 +1,548 @@
 {
-  "gameType": "grammarQuest",
-  "batchIndex": 5,
-  "levels": "41-50",
-  "quests": [
-    {
-      "id": "gq_l41_q1",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "She ___ two brothers.",
-      "options": [
-        "haves",
-        "have",
-        "having",
-        "has"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "has",
-      "hint": "'Has' for third person singular.",
-      "explanation": "The correct answer is \"has\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l41_q2",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "They ___ playing outside.",
-      "options": [
-        "is",
-        "are",
-        "am",
-        "be"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "are",
-      "hint": "Plural subject uses 'are'.",
-      "explanation": "The correct answer is \"are\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l41_q3",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "I ___ to school yesterday.",
-      "options": [
-        "go",
-        "wented",
-        "went",
-        "goed"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "went",
-      "hint": "Irregular past tense of 'go'.",
-      "explanation": "The correct answer is \"went\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l42_q1",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "She can ___ very well.",
-      "options": [
-        "swims",
-        "swam",
-        "swim",
-        "swimming"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "swim",
-      "hint": "Base form after modal verbs.",
-      "explanation": "The correct answer is \"swim\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l42_q2",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "The children ___ in the park.",
-      "options": [
-        "play",
-        "plays",
-        "playing",
-        "played"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "play",
-      "hint": "Plural subject.",
-      "explanation": "The correct answer is \"play\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l42_q3",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "This is the ___ movie ever.",
-      "options": [
-        "best",
-        "goodest",
-        "better",
-        "most best"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "best",
-      "hint": "Superlative of 'good' is 'best'.",
-      "explanation": "The correct answer is \"best\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l43_q1",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "I have ___ to London twice.",
-      "options": [
-        "been",
-        "going",
-        "go",
-        "went"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "been",
-      "hint": "Present perfect uses past participle.",
-      "explanation": "The correct answer is \"been\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l43_q2",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "She told me ___ wait.",
-      "options": [
-        "at",
-        "to",
-        "for",
-        "on"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "to",
-      "hint": "Tell someone to do something.",
-      "explanation": "The correct answer is \"to\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l43_q3",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "We need ___ buy some milk.",
-      "options": [
-        "to",
-        "on",
-        "for",
-        "at"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "to",
-      "hint": "Need to + base form.",
-      "explanation": "The correct answer is \"to\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l44_q1",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "He was ___ when I arrived.",
-      "options": [
-        "reader",
-        "reads",
-        "read",
-        "reading"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "reading",
-      "hint": "Past continuous: was + -ing.",
-      "explanation": "The correct answer is \"reading\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l44_q2",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "If I ___ rich, I would travel.",
-      "options": [
-        "was",
-        "be",
-        "were",
-        "am"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "were",
-      "hint": "Subjunctive mood uses 'were'.",
-      "explanation": "The correct answer is \"were\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l44_q3",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "Neither Tom nor Jane ___ here.",
-      "options": [
-        "is",
-        "are",
-        "be",
-        "am"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "is",
-      "hint": "'Neither...nor' with singular verb.",
-      "explanation": "The correct answer is \"is\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l45_q1",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "She speaks English ___.",
-      "options": [
-        "fluent",
-        "fluency",
-        "fluently",
-        "fluents"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "fluently",
-      "hint": "Adverb modifies the verb.",
-      "explanation": "The correct answer is \"fluently\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l45_q2",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "I wish I ___ more time.",
-      "options": [
-        "having",
-        "had",
-        "has",
-        "have"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "had",
-      "hint": "'Wish' + past tense for unreal present.",
-      "explanation": "The correct answer is \"had\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l45_q3",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "He suggested that we ___ early.",
-      "options": [
-        "leaving",
-        "leave",
-        "left",
-        "leaves"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "leave",
-      "hint": "Subjunctive after 'suggest'.",
-      "explanation": "The correct answer is \"leave\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l46_q1",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "She ___ two brothers.",
-      "options": [
-        "has",
-        "having",
-        "have",
-        "haves"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "has",
-      "hint": "'Has' for third person singular.",
-      "explanation": "The correct answer is \"has\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l46_q2",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "They ___ playing outside.",
-      "options": [
-        "are",
-        "is",
-        "am",
-        "be"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "are",
-      "hint": "Plural subject uses 'are'.",
-      "explanation": "The correct answer is \"are\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l46_q3",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "I ___ to school yesterday.",
-      "options": [
-        "wented",
-        "went",
-        "go",
-        "goed"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "went",
-      "hint": "Irregular past tense of 'go'.",
-      "explanation": "The correct answer is \"went\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l47_q1",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "She can ___ very well.",
-      "options": [
-        "swim",
-        "swims",
-        "swimming",
-        "swam"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "swim",
-      "hint": "Base form after modal verbs.",
-      "explanation": "The correct answer is \"swim\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l47_q2",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "The children ___ in the park.",
-      "options": [
-        "plays",
-        "play",
-        "played",
-        "playing"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "play",
-      "hint": "Plural subject.",
-      "explanation": "The correct answer is \"play\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l47_q3",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "This is the ___ movie ever.",
-      "options": [
-        "better",
-        "most best",
-        "goodest",
-        "best"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "best",
-      "hint": "Superlative of 'good' is 'best'.",
-      "explanation": "The correct answer is \"best\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l48_q1",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "I have ___ to London twice.",
-      "options": [
-        "go",
-        "been",
-        "going",
-        "went"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "been",
-      "hint": "Present perfect uses past participle.",
-      "explanation": "The correct answer is \"been\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l48_q2",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "She told me ___ wait.",
-      "options": [
-        "at",
-        "on",
-        "for",
-        "to"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "to",
-      "hint": "Tell someone to do something.",
-      "explanation": "The correct answer is \"to\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l48_q3",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "We need ___ buy some milk.",
-      "options": [
-        "on",
-        "at",
-        "for",
-        "to"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "to",
-      "hint": "Need to + base form.",
-      "explanation": "The correct answer is \"to\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l49_q1",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "He was ___ when I arrived.",
-      "options": [
-        "reader",
-        "read",
-        "reading",
-        "reads"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "reading",
-      "hint": "Past continuous: was + -ing.",
-      "explanation": "The correct answer is \"reading\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l49_q2",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "If I ___ rich, I would travel.",
-      "options": [
-        "were",
-        "was",
-        "am",
-        "be"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "were",
-      "hint": "Subjunctive mood uses 'were'.",
-      "explanation": "The correct answer is \"were\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l49_q3",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "Neither Tom nor Jane ___ here.",
-      "options": [
-        "be",
-        "is",
-        "are",
-        "am"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "is",
-      "hint": "'Neither...nor' with singular verb.",
-      "explanation": "The correct answer is \"is\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l50_q1",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "She speaks English ___.",
-      "options": [
-        "fluently",
-        "fluent",
-        "fluency",
-        "fluents"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "fluently",
-      "hint": "Adverb modifies the verb.",
-      "explanation": "The correct answer is \"fluently\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l50_q2",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "I wish I ___ more time.",
-      "options": [
-        "have",
-        "having",
-        "had",
-        "has"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "had",
-      "hint": "'Wish' + past tense for unreal present.",
-      "explanation": "The correct answer is \"had\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "gq_l50_q3",
-      "instruction": "RESOLVE THE PATTERN",
-      "difficulty": 2,
-      "subtype": "grammarQuest",
-      "interactionType": "Choice",
-      "question": "He suggested that we ___ early.",
-      "options": [
-        "leaves",
-        "left",
-        "leave",
-        "leaving"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "leave",
-      "hint": "Subjunctive after 'suggest'.",
-      "explanation": "The correct answer is \"leave\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.5,
-        "shader_effect": "victory_sweep"
-      }
-    }
-  ]
+    "gameType":  "grammarQuest",
+    "batchIndex":  5,
+    "levels":  "41-50",
+    "quests":  [
+                   {
+                       "id":  "gq_l41_q1",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "She ___ two brothers.",
+                       "options":  [
+                                       "haves",
+                                       "have",
+                                       "having",
+                                       "has"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "has",
+                       "hint":  "\u0027Has\u0027 for third person singular.",
+                       "explanation":  "The correct answer is 'has'."
+                   },
+                   {
+                       "id":  "gq_l41_q2",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "They ___ playing outside.",
+                       "options":  [
+                                       "is",
+                                       "are",
+                                       "am",
+                                       "be"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "are",
+                       "hint":  "Plural subject uses \u0027are\u0027.",
+                       "explanation":  "The correct answer is 'are'."
+                   },
+                   {
+                       "id":  "gq_l41_q3",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "I ___ to school yesterday.",
+                       "options":  [
+                                       "go",
+                                       "wented",
+                                       "went",
+                                       "goed"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "went",
+                       "hint":  "Irregular past tense of \u0027go\u0027.",
+                       "explanation":  "The correct answer is 'went'."
+                   },
+                   {
+                       "id":  "gq_l42_q1",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "She can ___ very well.",
+                       "options":  [
+                                       "swims",
+                                       "swam",
+                                       "swim",
+                                       "swimming"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "swim",
+                       "hint":  "Base form after modal verbs.",
+                       "explanation":  "The correct answer is 'swim'."
+                   },
+                   {
+                       "id":  "gq_l42_q2",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "The children ___ in the park.",
+                       "options":  [
+                                       "play",
+                                       "plays",
+                                       "playing",
+                                       "played"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "play",
+                       "hint":  "Plural subject.",
+                       "explanation":  "The correct answer is 'play'."
+                   },
+                   {
+                       "id":  "gq_l42_q3",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "This is the ___ movie ever.",
+                       "options":  [
+                                       "best",
+                                       "goodest",
+                                       "better",
+                                       "most best"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "best",
+                       "hint":  "Superlative of \u0027good\u0027 is \u0027best\u0027.",
+                       "explanation":  "The correct answer is 'best'."
+                   },
+                   {
+                       "id":  "gq_l43_q1",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "I have ___ to London twice.",
+                       "options":  [
+                                       "been",
+                                       "going",
+                                       "go",
+                                       "went"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "been",
+                       "hint":  "Present perfect uses past participle.",
+                       "explanation":  "The correct answer is 'been'."
+                   },
+                   {
+                       "id":  "gq_l43_q2",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "She told me ___ wait.",
+                       "options":  [
+                                       "at",
+                                       "to",
+                                       "for",
+                                       "on"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "to",
+                       "hint":  "Tell someone to do something.",
+                       "explanation":  "The correct answer is 'to'."
+                   },
+                   {
+                       "id":  "gq_l43_q3",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "We need ___ buy some milk.",
+                       "options":  [
+                                       "to",
+                                       "on",
+                                       "for",
+                                       "at"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "to",
+                       "hint":  "Need to + base form.",
+                       "explanation":  "The correct answer is 'to'."
+                   },
+                   {
+                       "id":  "gq_l44_q1",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "He was ___ when I arrived.",
+                       "options":  [
+                                       "reader",
+                                       "reads",
+                                       "read",
+                                       "reading"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "reading",
+                       "hint":  "Past continuous: was + -ing.",
+                       "explanation":  "The correct answer is 'reading'."
+                   },
+                   {
+                       "id":  "gq_l44_q2",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "If I ___ rich, I would travel.",
+                       "options":  [
+                                       "was",
+                                       "be",
+                                       "were",
+                                       "am"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "were",
+                       "hint":  "Subjunctive mood uses \u0027were\u0027.",
+                       "explanation":  "The correct answer is 'were'."
+                   },
+                   {
+                       "id":  "gq_l44_q3",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "Neither Tom nor Jane ___ here.",
+                       "options":  [
+                                       "is",
+                                       "are",
+                                       "be",
+                                       "am"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "is",
+                       "hint":  "\u0027Neither...nor\u0027 with singular verb.",
+                       "explanation":  "The correct answer is 'is'."
+                   },
+                   {
+                       "id":  "gq_l45_q1",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "She speaks English ___.",
+                       "options":  [
+                                       "fluent",
+                                       "fluency",
+                                       "fluently",
+                                       "fluents"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "fluently",
+                       "hint":  "Adverb modifies the verb.",
+                       "explanation":  "The correct answer is 'fluently'."
+                   },
+                   {
+                       "id":  "gq_l45_q2",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "I wish I ___ more time.",
+                       "options":  [
+                                       "having",
+                                       "had",
+                                       "has",
+                                       "have"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "had",
+                       "hint":  "\u0027Wish\u0027 + past tense for unreal present.",
+                       "explanation":  "The correct answer is 'had'."
+                   },
+                   {
+                       "id":  "gq_l45_q3",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "He suggested that we ___ early.",
+                       "options":  [
+                                       "leaving",
+                                       "leave",
+                                       "left",
+                                       "leaves"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "leave",
+                       "hint":  "Subjunctive after \u0027suggest\u0027.",
+                       "explanation":  "The correct answer is 'leave'."
+                   },
+                   {
+                       "id":  "gq_l46_q1",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "She ___ two brothers.",
+                       "options":  [
+                                       "has",
+                                       "having",
+                                       "have",
+                                       "haves"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "has",
+                       "hint":  "\u0027Has\u0027 for third person singular.",
+                       "explanation":  "The correct answer is 'has'."
+                   },
+                   {
+                       "id":  "gq_l46_q2",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "They ___ playing outside.",
+                       "options":  [
+                                       "are",
+                                       "is",
+                                       "am",
+                                       "be"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "are",
+                       "hint":  "Plural subject uses \u0027are\u0027.",
+                       "explanation":  "The correct answer is 'are'."
+                   },
+                   {
+                       "id":  "gq_l46_q3",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "I ___ to school yesterday.",
+                       "options":  [
+                                       "wented",
+                                       "went",
+                                       "go",
+                                       "goed"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "went",
+                       "hint":  "Irregular past tense of \u0027go\u0027.",
+                       "explanation":  "The correct answer is 'went'."
+                   },
+                   {
+                       "id":  "gq_l47_q1",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "She can ___ very well.",
+                       "options":  [
+                                       "swim",
+                                       "swims",
+                                       "swimming",
+                                       "swam"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "swim",
+                       "hint":  "Base form after modal verbs.",
+                       "explanation":  "The correct answer is 'swim'."
+                   },
+                   {
+                       "id":  "gq_l47_q2",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "The children ___ in the park.",
+                       "options":  [
+                                       "plays",
+                                       "play",
+                                       "played",
+                                       "playing"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "play",
+                       "hint":  "Plural subject.",
+                       "explanation":  "The correct answer is 'play'."
+                   },
+                   {
+                       "id":  "gq_l47_q3",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "This is the ___ movie ever.",
+                       "options":  [
+                                       "better",
+                                       "most best",
+                                       "goodest",
+                                       "best"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "best",
+                       "hint":  "Superlative of \u0027good\u0027 is \u0027best\u0027.",
+                       "explanation":  "The correct answer is 'best'."
+                   },
+                   {
+                       "id":  "gq_l48_q1",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "I have ___ to London twice.",
+                       "options":  [
+                                       "go",
+                                       "been",
+                                       "going",
+                                       "went"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "been",
+                       "hint":  "Present perfect uses past participle.",
+                       "explanation":  "The correct answer is 'been'."
+                   },
+                   {
+                       "id":  "gq_l48_q2",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "She told me ___ wait.",
+                       "options":  [
+                                       "at",
+                                       "on",
+                                       "for",
+                                       "to"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "to",
+                       "hint":  "Tell someone to do something.",
+                       "explanation":  "The correct answer is 'to'."
+                   },
+                   {
+                       "id":  "gq_l48_q3",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "We need ___ buy some milk.",
+                       "options":  [
+                                       "on",
+                                       "at",
+                                       "for",
+                                       "to"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "to",
+                       "hint":  "Need to + base form.",
+                       "explanation":  "The correct answer is 'to'."
+                   },
+                   {
+                       "id":  "gq_l49_q1",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "He was ___ when I arrived.",
+                       "options":  [
+                                       "reader",
+                                       "read",
+                                       "reading",
+                                       "reads"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "reading",
+                       "hint":  "Past continuous: was + -ing.",
+                       "explanation":  "The correct answer is 'reading'."
+                   },
+                   {
+                       "id":  "gq_l49_q2",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "If I ___ rich, I would travel.",
+                       "options":  [
+                                       "were",
+                                       "was",
+                                       "am",
+                                       "be"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "were",
+                       "hint":  "Subjunctive mood uses \u0027were\u0027.",
+                       "explanation":  "The correct answer is 'were'."
+                   },
+                   {
+                       "id":  "gq_l49_q3",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "Neither Tom nor Jane ___ here.",
+                       "options":  [
+                                       "be",
+                                       "is",
+                                       "are",
+                                       "am"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "is",
+                       "hint":  "\u0027Neither...nor\u0027 with singular verb.",
+                       "explanation":  "The correct answer is 'is'."
+                   },
+                   {
+                       "id":  "gq_l50_q1",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "She speaks English ___.",
+                       "options":  [
+                                       "fluently",
+                                       "fluent",
+                                       "fluency",
+                                       "fluents"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "fluently",
+                       "hint":  "Adverb modifies the verb.",
+                       "explanation":  "The correct answer is 'fluently'."
+                   },
+                   {
+                       "id":  "gq_l50_q2",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "I wish I ___ more time.",
+                       "options":  [
+                                       "have",
+                                       "having",
+                                       "had",
+                                       "has"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "had",
+                       "hint":  "\u0027Wish\u0027 + past tense for unreal present.",
+                       "explanation":  "The correct answer is 'had'."
+                   },
+                   {
+                       "id":  "gq_l50_q3",
+                       "instruction":  "RESOLVE THE PATTERN",
+                       "difficulty":  2,
+                       "subtype":  "grammarQuest",
+                       "interactionType":  "Choice",
+                       "question":  "He suggested that we ___ early.",
+                       "options":  [
+                                       "leaves",
+                                       "left",
+                                       "leave",
+                                       "leaving"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "leave",
+                       "hint":  "Subjunctive after \u0027suggest\u0027.",
+                       "explanation":  "The correct answer is 'leave'."
+                   }
+               ]
 }
+

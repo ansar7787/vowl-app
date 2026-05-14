@@ -146,8 +146,8 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
             body: Stack(
               children: [
                 Container(color: theme.backgroundColors[1]), // Prevent white splash
-                MeshGradientBackground(colors: theme.backgroundColors),
-                LogicCircuit(color: theme.primaryColor.withValues(alpha: 0.2)),
+                Positioned.fill(child: MeshGradientBackground(colors: theme.backgroundColors)),
+                Positioned.fill(child: LogicCircuit(color: theme.primaryColor.withValues(alpha: 0.2))),
                 if (state is GrammarLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
                 else ...[
                   SafeArea(
@@ -174,8 +174,8 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
                                             constraints: BoxConstraints(minHeight: constraints.maxHeight),
                                             child: Padding(
                                               padding: EdgeInsets.only(
-                                                left: widget.disablePadding ? 0 : 24.w,
-                                                right: widget.disablePadding ? 0 : 24.w,
+                                                left: widget.disablePadding ? 0 : 16.w,
+                                                right: widget.disablePadding ? 0 : 16.w,
                                                 top: widget.disablePadding ? 0 : 20.h,
                                                 bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
                                               ),
@@ -187,8 +187,8 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
                                     )
                                   : Padding(
                                       padding: EdgeInsets.only(
-                                        left: widget.disablePadding ? 0 : 24.w,
-                                        right: widget.disablePadding ? 0 : 24.w,
+                                        left: widget.disablePadding ? 0 : 16.w,
+                                        right: widget.disablePadding ? 0 : 16.w,
                                         top: widget.disablePadding ? 0 : 20.h,
                                         bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
                                       ),
@@ -244,7 +244,7 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
   Widget _buildHeader(BuildContext context, GrammarState state, int level, double progress, int lives, dynamic theme, bool isDark, dynamic quest) {
     final hintShouldGlow = lives < 3 && !widget.isAnswered;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
       child: Row(
         children: [
           Expanded(
@@ -337,22 +337,25 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
   }
 
   Widget _buildModernFeedbackCard(BuildContext context, GrammarState state, dynamic theme, bool isDark) {
+    if (state is! GrammarLoaded) return const SizedBox.shrink();
+    final loadedState = state;
+
     final success = widget.isCorrect ?? false;
-    final lives = (state is GrammarLoaded) ? state.livesRemaining : 3;
+    final lives = loadedState.livesRemaining;
     final primaryGradient = success ? [const Color(0xFF2DD4BF), const Color(0xFF10B981)] : [const Color(0xFFF43F5E), const Color(0xFFE11D48)];
     final shadowColor = success ? const Color(0xFF10B981) : const Color(0xFFE11D48);
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success ? "EXCELLENT!" : "NOT QUITE!";
-    final showCorrectAnswer = !success && (state as GrammarLoaded).isFinalFailure;
+    final showCorrectAnswer = !success && loadedState.isFinalFailure;
     final buttonText = success 
         ? "CONTINUE" 
-        : ((state as GrammarLoaded).isFinalFailure 
+        : (loadedState.isFinalFailure 
             ? (lives == 0 ? "SEE RESULTS" : "CONTINUE") 
             : "TRY AGAIN");
 
     String? explanation;
     if (showCorrectAnswer) {
-      final quest = state.currentQuest;
+      final quest = loadedState.currentQuest;
       explanation = quest.explanation ?? 
                    (quest.options != null && quest.correctAnswerIndex != null 
                     ? quest.options![quest.correctAnswerIndex!] 

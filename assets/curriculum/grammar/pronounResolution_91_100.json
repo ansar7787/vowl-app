@@ -1,817 +1,578 @@
 {
-  "gameType": "pronounResolution",
-  "batchIndex": 10,
-  "levels": "91-100",
-  "quests": [
-    {
-      "id": "pr_l91_q1",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Mary gave John his book.\nWho or what does \"his\" refer to?",
-      "targetWord": "his",
-      "sentence": "Mary gave John his book.",
-      "options": [
-        "John",
-        "book",
-        "gave"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "John",
-      "hint": "Who owns the book in this context?",
-      "explanation": "\"his\" refers to John in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l91_q2",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The technician checked the system; it was running.\nWho or what does \"it\" refer to?",
-      "targetWord": "it",
-      "sentence": "The technician checked the system; it was running.",
-      "options": [
-        "The system",
-        "checked",
-        "technician"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The system",
-      "hint": "What was running?",
-      "explanation": "\"it\" refers to The system in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l91_q3",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The researchers published their findings.\nWho or what does \"their\" refer to?",
-      "targetWord": "their",
-      "sentence": "The researchers published their findings.",
-      "options": [
-        "findings",
-        "The researchers",
-        "published"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The researchers",
-      "hint": "Whose findings?",
-      "explanation": "\"their\" refers to The researchers in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l92_q1",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The pilot told the navigator that he was ready.\nWho or what does \"he\" refer to?",
-      "targetWord": "he",
-      "sentence": "The pilot told the navigator that he was ready.",
-      "options": [
-        "The pilot",
-        "pilot",
-        "told"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The pilot",
-      "hint": "Who is speaking?",
-      "explanation": "\"he\" refers to The pilot in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l92_q2",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The dog wagged its tail happily.\nWho or what does \"its\" refer to?",
-      "targetWord": "its",
-      "sentence": "The dog wagged its tail happily.",
-      "options": [
-        "tail",
-        "wagged",
-        "The dog"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The dog",
-      "hint": "Whose tail?",
-      "explanation": "\"its\" refers to The dog in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l92_q3",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "She found the keys and put them away.\nWho or what does \"them\" refer to?",
-      "targetWord": "them",
-      "sentence": "She found the keys and put them away.",
-      "options": [
-        "away",
-        "keys",
-        "The keys"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The keys",
-      "hint": "What did she put away?",
-      "explanation": "\"them\" refers to The keys in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l93_q1",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The students love their new teacher.\nWho or what does \"their\" refer to?",
-      "targetWord": "their",
-      "sentence": "The students love their new teacher.",
-      "options": [
-        "love",
-        "teacher",
-        "The students"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The students",
-      "hint": "Who owns the love?",
-      "explanation": "\"their\" refers to The students in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l93_q2",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The AI warned the users that they were in danger.\nWho or what does \"they\" refer to?",
-      "targetWord": "they",
-      "sentence": "The AI warned the users that they were in danger.",
-      "options": [
-        "The users",
-        "users",
-        "warned"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The users",
-      "hint": "Who is in danger?",
-      "explanation": "\"they\" refers to The users in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l93_q3",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The robot repaired itself quickly.\nWho or what does \"itself\" refer to?",
-      "targetWord": "itself",
-      "sentence": "The robot repaired itself quickly.",
-      "options": [
-        "robot",
-        "repaired",
-        "The robot"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The robot",
-      "hint": "Who was repaired?",
-      "explanation": "\"itself\" refers to The robot in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l94_q1",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Sarah called Jane to tell her the news.\nWho or what does \"her\" refer to?",
-      "targetWord": "her",
-      "sentence": "Sarah called Jane to tell her the news.",
-      "options": [
-        "Sarah",
-        "news",
-        "Jane"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Jane",
-      "hint": "Who received the news?",
-      "explanation": "\"her\" refers to Jane in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l94_q2",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The team celebrated its victory.\nWho or what does \"its\" refer to?",
-      "targetWord": "its",
-      "sentence": "The team celebrated its victory.",
-      "options": [
-        "team",
-        "victory",
-        "The team"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The team",
-      "hint": "Whose victory?",
-      "explanation": "\"its\" refers to The team in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l94_q3",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The signal failed before it reached the station.\nWho or what does \"it\" refer to?",
-      "targetWord": "it",
-      "sentence": "The signal failed before it reached the station.",
-      "options": [
-        "failed",
-        "station",
-        "The signal"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The signal",
-      "hint": "What failed to reach the station?",
-      "explanation": "\"it\" refers to The signal in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l95_q1",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The explorers lost their map in the cave.\nWho or what does \"their\" refer to?",
-      "targetWord": "their",
-      "sentence": "The explorers lost their map in the cave.",
-      "options": [
-        "The explorers",
-        "explorers",
-        "lost"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The explorers",
-      "hint": "Whose map?",
-      "explanation": "\"their\" refers to The explorers in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l95_q2",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The engine stopped because it was overheated.\nWho or what does \"it\" refer to?",
-      "targetWord": "it",
-      "sentence": "The engine stopped because it was overheated.",
-      "options": [
-        "The engine",
-        "overheated",
-        "engine"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The engine",
-      "hint": "What was overheated?",
-      "explanation": "\"it\" refers to The engine in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l95_q3",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The architect showed the client his designs.\nWho or what does \"his\" refer to?",
-      "targetWord": "his",
-      "sentence": "The architect showed the client his designs.",
-      "options": [
-        "showed",
-        "The architect",
-        "designs"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The architect",
-      "hint": "Who made the designs?",
-      "explanation": "\"his\" refers to The architect in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l96_q1",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Mary gave John his book.\nWho or what does \"his\" refer to?",
-      "targetWord": "his",
-      "sentence": "Mary gave John his book.",
-      "options": [
-        "John",
-        "Mary",
-        "gave"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "John",
-      "hint": "Who owns the book in this context?",
-      "explanation": "\"his\" refers to John in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l96_q2",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The technician checked the system; it was running.\nWho or what does \"it\" refer to?",
-      "targetWord": "it",
-      "sentence": "The technician checked the system; it was running.",
-      "options": [
-        "The system",
-        "running",
-        "system"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The system",
-      "hint": "What was running?",
-      "explanation": "\"it\" refers to The system in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l96_q3",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The researchers published their findings.\nWho or what does \"their\" refer to?",
-      "targetWord": "their",
-      "sentence": "The researchers published their findings.",
-      "options": [
-        "The researchers",
-        "findings",
-        "published"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The researchers",
-      "hint": "Whose findings?",
-      "explanation": "\"their\" refers to The researchers in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l97_q1",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The pilot told the navigator that he was ready.\nWho or what does \"he\" refer to?",
-      "targetWord": "he",
-      "sentence": "The pilot told the navigator that he was ready.",
-      "options": [
-        "navigator",
-        "that",
-        "The pilot"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The pilot",
-      "hint": "Who is speaking?",
-      "explanation": "\"he\" refers to The pilot in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l97_q2",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The dog wagged its tail happily.\nWho or what does \"its\" refer to?",
-      "targetWord": "its",
-      "sentence": "The dog wagged its tail happily.",
-      "options": [
-        "The dog",
-        "wagged",
-        "happily"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The dog",
-      "hint": "Whose tail?",
-      "explanation": "\"its\" refers to The dog in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l97_q3",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "She found the keys and put them away.\nWho or what does \"them\" refer to?",
-      "targetWord": "them",
-      "sentence": "She found the keys and put them away.",
-      "options": [
-        "The keys",
-        "found",
-        "keys"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The keys",
-      "hint": "What did she put away?",
-      "explanation": "\"them\" refers to The keys in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l98_q1",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The students love their new teacher.\nWho or what does \"their\" refer to?",
-      "targetWord": "their",
-      "sentence": "The students love their new teacher.",
-      "options": [
-        "The students",
-        "love",
-        "students"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The students",
-      "hint": "Who owns the love?",
-      "explanation": "\"their\" refers to The students in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l98_q2",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The AI warned the users that they were in danger.\nWho or what does \"they\" refer to?",
-      "targetWord": "they",
-      "sentence": "The AI warned the users that they were in danger.",
-      "options": [
-        "were",
-        "The users",
-        "warned"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The users",
-      "hint": "Who is in danger?",
-      "explanation": "\"they\" refers to The users in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l98_q3",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The robot repaired itself quickly.\nWho or what does \"itself\" refer to?",
-      "targetWord": "itself",
-      "sentence": "The robot repaired itself quickly.",
-      "options": [
-        "The robot",
-        "robot",
-        "quickly"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "The robot",
-      "hint": "Who was repaired?",
-      "explanation": "\"itself\" refers to The robot in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l99_q1",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "Sarah called Jane to tell her the news.\nWho or what does \"her\" refer to?",
-      "targetWord": "her",
-      "sentence": "Sarah called Jane to tell her the news.",
-      "options": [
-        "called",
-        "Sarah",
-        "Jane"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "Jane",
-      "hint": "Who received the news?",
-      "explanation": "\"her\" refers to Jane in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l99_q2",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The team celebrated its victory.\nWho or what does \"its\" refer to?",
-      "targetWord": "its",
-      "sentence": "The team celebrated its victory.",
-      "options": [
-        "victory",
-        "team",
-        "The team"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The team",
-      "hint": "Whose victory?",
-      "explanation": "\"its\" refers to The team in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l99_q3",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The signal failed before it reached the station.\nWho or what does \"it\" refer to?",
-      "targetWord": "it",
-      "sentence": "The signal failed before it reached the station.",
-      "options": [
-        "failed",
-        "signal",
-        "The signal"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The signal",
-      "hint": "What failed to reach the station?",
-      "explanation": "\"it\" refers to The signal in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l100_q1",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The explorers lost their map in the cave.\nWho or what does \"their\" refer to?",
-      "targetWord": "their",
-      "sentence": "The explorers lost their map in the cave.",
-      "options": [
-        "lost",
-        "explorers",
-        "The explorers"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The explorers",
-      "hint": "Whose map?",
-      "explanation": "\"their\" refers to The explorers in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l100_q2",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The engine stopped because it was overheated.\nWho or what does \"it\" refer to?",
-      "targetWord": "it",
-      "sentence": "The engine stopped because it was overheated.",
-      "options": [
-        "overheated",
-        "engine",
-        "The engine"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "The engine",
-      "hint": "What was overheated?",
-      "explanation": "\"it\" refers to The engine in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pr_l100_q3",
-      "instruction": "RESOLVE THE PRONOUN",
-      "difficulty": 3,
-      "subtype": "pronounResolution",
-      "interactionType": "Laser Aim",
-      "question": "The architect showed the client his designs.\nWho or what does \"his\" refer to?",
-      "targetWord": "his",
-      "sentence": "The architect showed the client his designs.",
-      "options": [
-        "client",
-        "The architect",
-        "showed"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "The architect",
-      "hint": "Who made the designs?",
-      "explanation": "\"his\" refers to The architect in this sentence.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.8,
-        "shader_effect": "glow_shimmer"
-      }
-    }
-  ]
+    "gameType":  "pronounResolution",
+    "batchIndex":  10,
+    "levels":  "91-100",
+    "quests":  [
+                   {
+                       "id":  "pr_l91_q1",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "Mary gave John his book.\nWho or what does 'his' refer to?",
+                       "targetWord":  "his",
+                       "sentence":  "Mary gave John his book.",
+                       "options":  [
+                                       "John",
+                                       "book",
+                                       "gave"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "John",
+                       "hint":  "Who owns the book in this context?",
+                       "explanation":  "'his' refers to John in this sentence."
+                   },
+                   {
+                       "id":  "pr_l91_q2",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The technician checked the system; it was running.\nWho or what does 'it' refer to?",
+                       "targetWord":  "it",
+                       "sentence":  "The technician checked the system; it was running.",
+                       "options":  [
+                                       "The system",
+                                       "checked",
+                                       "technician"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The system",
+                       "hint":  "What was running?",
+                       "explanation":  "'it' refers to The system in this sentence."
+                   },
+                   {
+                       "id":  "pr_l91_q3",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The researchers published their findings.\nWho or what does 'their' refer to?",
+                       "targetWord":  "their",
+                       "sentence":  "The researchers published their findings.",
+                       "options":  [
+                                       "findings",
+                                       "The researchers",
+                                       "published"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "The researchers",
+                       "hint":  "Whose findings?",
+                       "explanation":  "'their' refers to The researchers in this sentence."
+                   },
+                   {
+                       "id":  "pr_l92_q1",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The pilot told the navigator that he was ready.\nWho or what does 'he' refer to?",
+                       "targetWord":  "he",
+                       "sentence":  "The pilot told the navigator that he was ready.",
+                       "options":  [
+                                       "The pilot",
+                                       "pilot",
+                                       "told"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The pilot",
+                       "hint":  "Who is speaking?",
+                       "explanation":  "'he' refers to The pilot in this sentence."
+                   },
+                   {
+                       "id":  "pr_l92_q2",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The dog wagged its tail happily.\nWho or what does 'its' refer to?",
+                       "targetWord":  "its",
+                       "sentence":  "The dog wagged its tail happily.",
+                       "options":  [
+                                       "tail",
+                                       "wagged",
+                                       "The dog"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The dog",
+                       "hint":  "Whose tail?",
+                       "explanation":  "'its' refers to The dog in this sentence."
+                   },
+                   {
+                       "id":  "pr_l92_q3",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "She found the keys and put them away.\nWho or what does 'them' refer to?",
+                       "targetWord":  "them",
+                       "sentence":  "She found the keys and put them away.",
+                       "options":  [
+                                       "away",
+                                       "keys",
+                                       "The keys"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The keys",
+                       "hint":  "What did she put away?",
+                       "explanation":  "'them' refers to The keys in this sentence."
+                   },
+                   {
+                       "id":  "pr_l93_q1",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The students love their new teacher.\nWho or what does 'their' refer to?",
+                       "targetWord":  "their",
+                       "sentence":  "The students love their new teacher.",
+                       "options":  [
+                                       "love",
+                                       "teacher",
+                                       "The students"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The students",
+                       "hint":  "Who owns the love?",
+                       "explanation":  "'their' refers to The students in this sentence."
+                   },
+                   {
+                       "id":  "pr_l93_q2",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The AI warned the users that they were in danger.\nWho or what does 'they' refer to?",
+                       "targetWord":  "they",
+                       "sentence":  "The AI warned the users that they were in danger.",
+                       "options":  [
+                                       "The users",
+                                       "users",
+                                       "warned"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The users",
+                       "hint":  "Who is in danger?",
+                       "explanation":  "'they' refers to The users in this sentence."
+                   },
+                   {
+                       "id":  "pr_l93_q3",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The robot repaired itself quickly.\nWho or what does 'itself' refer to?",
+                       "targetWord":  "itself",
+                       "sentence":  "The robot repaired itself quickly.",
+                       "options":  [
+                                       "robot",
+                                       "repaired",
+                                       "The robot"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The robot",
+                       "hint":  "Who was repaired?",
+                       "explanation":  "'itself' refers to The robot in this sentence."
+                   },
+                   {
+                       "id":  "pr_l94_q1",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "Sarah called Jane to tell her the news.\nWho or what does 'her' refer to?",
+                       "targetWord":  "her",
+                       "sentence":  "Sarah called Jane to tell her the news.",
+                       "options":  [
+                                       "Sarah",
+                                       "news",
+                                       "Jane"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "Jane",
+                       "hint":  "Who received the news?",
+                       "explanation":  "'her' refers to Jane in this sentence."
+                   },
+                   {
+                       "id":  "pr_l94_q2",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The team celebrated its victory.\nWho or what does 'its' refer to?",
+                       "targetWord":  "its",
+                       "sentence":  "The team celebrated its victory.",
+                       "options":  [
+                                       "team",
+                                       "victory",
+                                       "The team"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The team",
+                       "hint":  "Whose victory?",
+                       "explanation":  "'its' refers to The team in this sentence."
+                   },
+                   {
+                       "id":  "pr_l94_q3",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The signal failed before it reached the station.\nWho or what does 'it' refer to?",
+                       "targetWord":  "it",
+                       "sentence":  "The signal failed before it reached the station.",
+                       "options":  [
+                                       "failed",
+                                       "station",
+                                       "The signal"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The signal",
+                       "hint":  "What failed to reach the station?",
+                       "explanation":  "'it' refers to The signal in this sentence."
+                   },
+                   {
+                       "id":  "pr_l95_q1",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The explorers lost their map in the cave.\nWho or what does 'their' refer to?",
+                       "targetWord":  "their",
+                       "sentence":  "The explorers lost their map in the cave.",
+                       "options":  [
+                                       "The explorers",
+                                       "explorers",
+                                       "lost"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The explorers",
+                       "hint":  "Whose map?",
+                       "explanation":  "'their' refers to The explorers in this sentence."
+                   },
+                   {
+                       "id":  "pr_l95_q2",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The engine stopped because it was overheated.\nWho or what does 'it' refer to?",
+                       "targetWord":  "it",
+                       "sentence":  "The engine stopped because it was overheated.",
+                       "options":  [
+                                       "The engine",
+                                       "overheated",
+                                       "engine"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The engine",
+                       "hint":  "What was overheated?",
+                       "explanation":  "'it' refers to The engine in this sentence."
+                   },
+                   {
+                       "id":  "pr_l95_q3",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The architect showed the client his designs.\nWho or what does 'his' refer to?",
+                       "targetWord":  "his",
+                       "sentence":  "The architect showed the client his designs.",
+                       "options":  [
+                                       "showed",
+                                       "The architect",
+                                       "designs"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "The architect",
+                       "hint":  "Who made the designs?",
+                       "explanation":  "'his' refers to The architect in this sentence."
+                   },
+                   {
+                       "id":  "pr_l96_q1",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "Mary gave John his book.\nWho or what does 'his' refer to?",
+                       "targetWord":  "his",
+                       "sentence":  "Mary gave John his book.",
+                       "options":  [
+                                       "John",
+                                       "Mary",
+                                       "gave"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "John",
+                       "hint":  "Who owns the book in this context?",
+                       "explanation":  "'his' refers to John in this sentence."
+                   },
+                   {
+                       "id":  "pr_l96_q2",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The technician checked the system; it was running.\nWho or what does 'it' refer to?",
+                       "targetWord":  "it",
+                       "sentence":  "The technician checked the system; it was running.",
+                       "options":  [
+                                       "The system",
+                                       "running",
+                                       "system"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The system",
+                       "hint":  "What was running?",
+                       "explanation":  "'it' refers to The system in this sentence."
+                   },
+                   {
+                       "id":  "pr_l96_q3",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The researchers published their findings.\nWho or what does 'their' refer to?",
+                       "targetWord":  "their",
+                       "sentence":  "The researchers published their findings.",
+                       "options":  [
+                                       "The researchers",
+                                       "findings",
+                                       "published"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The researchers",
+                       "hint":  "Whose findings?",
+                       "explanation":  "'their' refers to The researchers in this sentence."
+                   },
+                   {
+                       "id":  "pr_l97_q1",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The pilot told the navigator that he was ready.\nWho or what does 'he' refer to?",
+                       "targetWord":  "he",
+                       "sentence":  "The pilot told the navigator that he was ready.",
+                       "options":  [
+                                       "navigator",
+                                       "that",
+                                       "The pilot"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The pilot",
+                       "hint":  "Who is speaking?",
+                       "explanation":  "'he' refers to The pilot in this sentence."
+                   },
+                   {
+                       "id":  "pr_l97_q2",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The dog wagged its tail happily.\nWho or what does 'its' refer to?",
+                       "targetWord":  "its",
+                       "sentence":  "The dog wagged its tail happily.",
+                       "options":  [
+                                       "The dog",
+                                       "wagged",
+                                       "happily"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The dog",
+                       "hint":  "Whose tail?",
+                       "explanation":  "'its' refers to The dog in this sentence."
+                   },
+                   {
+                       "id":  "pr_l97_q3",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "She found the keys and put them away.\nWho or what does 'them' refer to?",
+                       "targetWord":  "them",
+                       "sentence":  "She found the keys and put them away.",
+                       "options":  [
+                                       "The keys",
+                                       "found",
+                                       "keys"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The keys",
+                       "hint":  "What did she put away?",
+                       "explanation":  "'them' refers to The keys in this sentence."
+                   },
+                   {
+                       "id":  "pr_l98_q1",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The students love their new teacher.\nWho or what does 'their' refer to?",
+                       "targetWord":  "their",
+                       "sentence":  "The students love their new teacher.",
+                       "options":  [
+                                       "The students",
+                                       "love",
+                                       "students"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The students",
+                       "hint":  "Who owns the love?",
+                       "explanation":  "'their' refers to The students in this sentence."
+                   },
+                   {
+                       "id":  "pr_l98_q2",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The AI warned the users that they were in danger.\nWho or what does 'they' refer to?",
+                       "targetWord":  "they",
+                       "sentence":  "The AI warned the users that they were in danger.",
+                       "options":  [
+                                       "were",
+                                       "The users",
+                                       "warned"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "The users",
+                       "hint":  "Who is in danger?",
+                       "explanation":  "'they' refers to The users in this sentence."
+                   },
+                   {
+                       "id":  "pr_l98_q3",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The robot repaired itself quickly.\nWho or what does 'itself' refer to?",
+                       "targetWord":  "itself",
+                       "sentence":  "The robot repaired itself quickly.",
+                       "options":  [
+                                       "The robot",
+                                       "robot",
+                                       "quickly"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "The robot",
+                       "hint":  "Who was repaired?",
+                       "explanation":  "'itself' refers to The robot in this sentence."
+                   },
+                   {
+                       "id":  "pr_l99_q1",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "Sarah called Jane to tell her the news.\nWho or what does 'her' refer to?",
+                       "targetWord":  "her",
+                       "sentence":  "Sarah called Jane to tell her the news.",
+                       "options":  [
+                                       "called",
+                                       "Sarah",
+                                       "Jane"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "Jane",
+                       "hint":  "Who received the news?",
+                       "explanation":  "'her' refers to Jane in this sentence."
+                   },
+                   {
+                       "id":  "pr_l99_q2",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The team celebrated its victory.\nWho or what does 'its' refer to?",
+                       "targetWord":  "its",
+                       "sentence":  "The team celebrated its victory.",
+                       "options":  [
+                                       "victory",
+                                       "team",
+                                       "The team"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The team",
+                       "hint":  "Whose victory?",
+                       "explanation":  "'its' refers to The team in this sentence."
+                   },
+                   {
+                       "id":  "pr_l99_q3",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The signal failed before it reached the station.\nWho or what does 'it' refer to?",
+                       "targetWord":  "it",
+                       "sentence":  "The signal failed before it reached the station.",
+                       "options":  [
+                                       "failed",
+                                       "signal",
+                                       "The signal"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The signal",
+                       "hint":  "What failed to reach the station?",
+                       "explanation":  "'it' refers to The signal in this sentence."
+                   },
+                   {
+                       "id":  "pr_l100_q1",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The explorers lost their map in the cave.\nWho or what does 'their' refer to?",
+                       "targetWord":  "their",
+                       "sentence":  "The explorers lost their map in the cave.",
+                       "options":  [
+                                       "lost",
+                                       "explorers",
+                                       "The explorers"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The explorers",
+                       "hint":  "Whose map?",
+                       "explanation":  "'their' refers to The explorers in this sentence."
+                   },
+                   {
+                       "id":  "pr_l100_q2",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The engine stopped because it was overheated.\nWho or what does 'it' refer to?",
+                       "targetWord":  "it",
+                       "sentence":  "The engine stopped because it was overheated.",
+                       "options":  [
+                                       "overheated",
+                                       "engine",
+                                       "The engine"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "The engine",
+                       "hint":  "What was overheated?",
+                       "explanation":  "'it' refers to The engine in this sentence."
+                   },
+                   {
+                       "id":  "pr_l100_q3",
+                       "instruction":  "RESOLVE THE PRONOUN",
+                       "difficulty":  3,
+                       "subtype":  "pronounResolution",
+                       "interactionType":  "Laser Aim",
+                       "question":  "The architect showed the client his designs.\nWho or what does 'his' refer to?",
+                       "targetWord":  "his",
+                       "sentence":  "The architect showed the client his designs.",
+                       "options":  [
+                                       "client",
+                                       "The architect",
+                                       "showed"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "The architect",
+                       "hint":  "Who made the designs?",
+                       "explanation":  "'his' refers to The architect in this sentence."
+                   }
+               ]
 }
+

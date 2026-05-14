@@ -10,7 +10,6 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class ArticleInsertionScreen extends StatefulWidget {
@@ -104,11 +103,39 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildSentenceBoard(quest.sentenceWithBlank ?? quest.question ?? "____ sentence.", _selectedArticle, theme.primaryColor, isDark),
-              SizedBox(height: 40.h),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Concise Context Card (The Diamond Standard)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Container(
+                  padding: EdgeInsets.all(22.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(28.r),
+                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.15), width: 1.5),
+                  ),
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: GoogleFonts.fredoka(
+                        fontSize: 20.sp, 
+                        color: isDark ? Colors.white : Colors.black87,
+                        height: 1.5
+                      ),
+                      children: _buildSentenceWithBlank(
+                        quest.sentence ?? quest.question ?? "___ sentence.", 
+                        _selectedArticle, 
+                        theme.primaryColor, 
+                        isDark
+                      ),
+                    ),
+                  ),
+                ),
+              ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
               Expanded(
                 child: _isAnswered 
                   ? _buildResultView(theme.primaryColor)
@@ -125,34 +152,32 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.bubble_chart_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("POP THE CORRECT BUBBLE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            "POP THE CORRECT ARTICLE ORB", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildSentenceBoard(String template, String? selected, Color primaryColor, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(24.r),
-      child: RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(
-          style: GoogleFonts.fredoka(fontSize: 22.sp, color: isDark ? Colors.white70 : Colors.black87),
-          children: _buildSentenceWithBlank(template, selected, primaryColor, isDark),
-        ),
-      ),
-    );
-  }
-
   List<InlineSpan> _buildSentenceWithBlank(String template, String? selected, Color primaryColor, bool isDark) {
-    final parts = template.split("____");
+    final parts = template.contains("____") ? template.split("____") : template.split("___");
     List<InlineSpan> spans = [];
     for (int i = 0; i < parts.length; i++) {
       spans.add(TextSpan(text: parts[i]));
@@ -162,9 +187,23 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 8.w),
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
-            decoration: BoxDecoration(border: Border(bottom: BorderSide(color: selected != null ? primaryColor : (isDark ? Colors.white38 : Colors.black38), width: 2))),
-            child: Text(selected ?? "      ", style: GoogleFonts.outfit(fontSize: 22.sp, fontWeight: FontWeight.bold, color: primaryColor)),
-          ),
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: selected != null ? primaryColor : (isDark ? Colors.white38 : Colors.black38), 
+                  width: 2
+                )
+              )
+            ),
+            child: Text(
+              selected ?? "      ", 
+              style: GoogleFonts.outfit(
+                fontSize: 22.sp, 
+                fontWeight: FontWeight.bold, 
+                color: primaryColor
+              )
+            ),
+          ).animate(target: selected != null ? 1 : 0).shimmer(duration: 2.seconds),
         ));
       }
     }
@@ -176,7 +215,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
       children: options.asMap().entries.map((entry) {
         final index = entry.key;
         final article = entry.value;
-        return _FloatingBubble(
+        return _FloatingOrb(
           article: article,
           index: index,
           onTap: () => _onPop(article, correct),
@@ -189,29 +228,36 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
 
   Widget _buildResultView(Color primaryColor) {
     return Center(
-      child: Icon(
-        _isCorrect == true ? Icons.check_circle_rounded : Icons.cancel_rounded,
-        color: _isCorrect == true ? Colors.greenAccent : Colors.redAccent,
-        size: 80.r,
-      ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+      child: Container(
+        padding: EdgeInsets.all(32.r),
+        decoration: BoxDecoration(
+          color: (_isCorrect == true ? Colors.greenAccent : Colors.redAccent).withValues(alpha: 0.1),
+          shape: BoxShape.circle,
+        ),
+        child: Icon(
+          _isCorrect == true ? Icons.check_circle_rounded : Icons.cancel_rounded,
+          color: _isCorrect == true ? Colors.greenAccent : Colors.redAccent,
+          size: 80.r,
+        ),
+      ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
     );
   }
 }
 
-class _FloatingBubble extends StatefulWidget {
+class _FloatingOrb extends StatefulWidget {
   final String article;
   final int index;
   final VoidCallback onTap;
   final Color primaryColor;
   final bool isDark;
 
-  const _FloatingBubble({required this.article, required this.index, required this.onTap, required this.primaryColor, required this.isDark});
+  const _FloatingOrb({required this.article, required this.index, required this.onTap, required this.primaryColor, required this.isDark});
 
   @override
-  State<_FloatingBubble> createState() => _FloatingBubbleState();
+  State<_FloatingOrb> createState() => _FloatingOrbState();
 }
 
-class _FloatingBubbleState extends State<_FloatingBubble> with SingleTickerProviderStateMixin {
+class _FloatingOrbState extends State<_FloatingOrb> with SingleTickerProviderStateMixin {
   late AnimationController _driftController;
   late double _top;
   late double _left;
@@ -219,9 +265,9 @@ class _FloatingBubbleState extends State<_FloatingBubble> with SingleTickerProvi
   @override
   void initState() {
     super.initState();
-    _top = widget.index * 60.h + 20.h;
-    _left = (widget.index % 2 == 0) ? 40.w : 200.w;
-    _driftController = AnimationController(vsync: this, duration: Duration(seconds: 3 + widget.index))..repeat(reverse: true);
+    _top = widget.index * 70.h + 20.h;
+    _left = (widget.index % 2 == 0) ? 45.w : 210.w;
+    _driftController = AnimationController(vsync: this, duration: Duration(seconds: 4 + widget.index))..repeat(reverse: true);
   }
 
   @override
@@ -236,28 +282,43 @@ class _FloatingBubbleState extends State<_FloatingBubble> with SingleTickerProvi
       animation: _driftController,
       builder: (context, child) {
         return Positioned(
-          top: _top + (10.h * _driftController.value),
-          left: _left + (10.w * (1 - _driftController.value)),
+          top: _top + (15.h * _driftController.value),
+          left: _left + (12.w * (1 - _driftController.value)),
           child: GestureDetector(
             onTap: widget.onTap,
             child: Container(
-              width: 80.r, height: 80.r,
+              width: 90.r, height: 90.r,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
+                  center: const Alignment(-0.3, -0.3),
                   colors: [
-                    widget.primaryColor.withValues(alpha: 0.4),
+                    widget.primaryColor.withValues(alpha: 0.3),
                     widget.primaryColor.withValues(alpha: 0.1),
                     Colors.white.withValues(alpha: 0.05),
                   ],
                 ),
-                border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 2),
-                boxShadow: [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.1), blurRadius: 10, spreadRadius: 2)],
+                border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1.5),
+                boxShadow: [
+                  BoxShadow(
+                    color: widget.primaryColor.withValues(alpha: 0.1), 
+                    blurRadius: 15, 
+                    spreadRadius: 2
+                  )
+                ],
               ),
               child: Center(
-                child: Text(widget.article.toUpperCase(), style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white)),
+                child: Text(
+                  widget.article.toUpperCase(), 
+                  style: GoogleFonts.outfit(
+                    fontSize: 18.sp, 
+                    fontWeight: FontWeight.w900, 
+                    color: Colors.white
+                  )
+                ),
               ),
-            ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), duration: 2.seconds),
+            ).animate(onPlay: (c) => c.repeat(reverse: true))
+             .scale(begin: const Offset(1, 1), end: const Offset(1.08, 1.08), duration: 2500.ms, curve: Curves.easeInOutSine),
           ),
         );
       },

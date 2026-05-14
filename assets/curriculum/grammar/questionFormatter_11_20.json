@@ -1,787 +1,548 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 2,
-  "levels": "11-20",
-  "quests": [
-    {
-      "id": "qf_l11_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "She likes ice cream.",
-      "options": [
-        "Does she like ice cream?",
-        "She likes ice cream.?",
-        "Do she likes ice cream.",
-        "She likes ice cream?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Does she like ice cream?",
-      "hint": "Use 'Does' for third person singular.",
-      "explanation": "The correct interrogative form is: \"Does she like ice cream?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l11_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "They went to school.",
-      "options": [
-        "Did they go to school?",
-        "They went to school.?",
-        "Do they went to school.",
-        "They went to school?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did they go to school?",
-      "hint": "Use 'Did' for past tense questions.",
-      "explanation": "The correct interrogative form is: \"Did they go to school?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l11_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "He is a doctor.",
-      "options": [
-        "Is he a doctor?",
-        "He is a doctor.?",
-        "Do he is a doctor.",
-        "He is a doctor?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Is he a doctor?",
-      "hint": "Invert the 'be' verb.",
-      "explanation": "The correct interrogative form is: \"Is he a doctor?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l12_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "She can swim well.",
-      "options": [
-        "Can she swim well?",
-        "She can swim well.?",
-        "Do she can swim well.",
-        "She can swim well?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Can she swim well?",
-      "hint": "Invert the modal verb.",
-      "explanation": "The correct interrogative form is: \"Can she swim well?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l12_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "They have finished lunch.",
-      "options": [
-        "Have they finished lunch?",
-        "They have finished lunch.?",
-        "Do they have finished lunch.",
-        "They have finished lunch?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Have they finished lunch?",
-      "hint": "Invert the auxiliary verb.",
-      "explanation": "The correct interrogative form is: \"Have they finished lunch?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l12_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "The system is online.",
-      "options": [
-        "Is the system online?",
-        "The system is online.?",
-        "Do the system is online.",
-        "The system is online?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Is the system online?",
-      "hint": "Invert 'is'.",
-      "explanation": "The correct interrogative form is: \"Is the system online?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l13_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "We will arrive tomorrow.",
-      "options": [
-        "Will we arrive tomorrow?",
-        "We will arrive tomorrow.?",
-        "Do we will arrive tomorrow.",
-        "We will arrive tomorrow?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Will we arrive tomorrow?",
-      "hint": "Future question.",
-      "explanation": "The correct interrogative form is: \"Will we arrive tomorrow?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l13_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "The data revealed a bug.",
-      "options": [
-        "Did the data reveal a bug?",
-        "The data revealed a bug.?",
-        "Do the data revealed a bug.",
-        "The data revealed a bug?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did the data reveal a bug?",
-      "hint": "Past tense.",
-      "explanation": "The correct interrogative form is: \"Did the data reveal a bug?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l13_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "He lives in London.",
-      "options": [
-        "Does he live in London?",
-        "He lives in London.?",
-        "Do he lives in london.",
-        "He lives in London?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Does he live in London?",
-      "hint": "Present tense.",
-      "explanation": "The correct interrogative form is: \"Does he live in London?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l14_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "You are ready.",
-      "options": [
-        "Are you ready?",
-        "You are ready.?",
-        "Do you are ready.",
-        "You are ready?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Are you ready?",
-      "hint": "Invert 'are'.",
-      "explanation": "The correct interrogative form is: \"Are you ready?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l14_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "The technician fixed it.",
-      "options": [
-        "Did the technician fix it?",
-        "The technician fixed it.?",
-        "Do the technician fixed it.",
-        "The technician fixed it?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did the technician fix it?",
-      "hint": "Past tense.",
-      "explanation": "The correct interrogative form is: \"Did the technician fix it?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l14_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "They are monitoring the core.",
-      "options": [
-        "Are they monitoring the core?",
-        "They are monitoring the core.?",
-        "Do they are monitoring the core.",
-        "They are monitoring the core?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Are they monitoring the core?",
-      "hint": "Continuous tense.",
-      "explanation": "The correct interrogative form is: \"Are they monitoring the core?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l15_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "She has been working here.",
-      "options": [
-        "Has she been working here?",
-        "She has been working here.?",
-        "Do she has been working here.",
-        "She has been working here?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Has she been working here?",
-      "hint": "Perfect continuous.",
-      "explanation": "The correct interrogative form is: \"Has she been working here?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l15_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "The portal can be opened.",
-      "options": [
-        "Can the portal be opened?",
-        "The portal can be opened.?",
-        "Do the portal can be opened.",
-        "The portal can be opened?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Can the portal be opened?",
-      "hint": "Passive modal.",
-      "explanation": "The correct interrogative form is: \"Can the portal be opened?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l15_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "You should wait.",
-      "options": [
-        "Should you wait?",
-        "You should wait.?",
-        "Do you should wait.",
-        "You should wait?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Should you wait?",
-      "hint": "Modal question.",
-      "explanation": "The correct interrogative form is: \"Should you wait?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l16_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "She likes ice cream.",
-      "options": [
-        "Does she like ice cream?",
-        "She likes ice cream.?",
-        "Do she likes ice cream.",
-        "She likes ice cream?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Does she like ice cream?",
-      "hint": "Use 'Does' for third person singular.",
-      "explanation": "The correct interrogative form is: \"Does she like ice cream?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l16_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "They went to school.",
-      "options": [
-        "Did they go to school?",
-        "They went to school.?",
-        "Do they went to school.",
-        "They went to school?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did they go to school?",
-      "hint": "Use 'Did' for past tense questions.",
-      "explanation": "The correct interrogative form is: \"Did they go to school?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l16_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "He is a doctor.",
-      "options": [
-        "Is he a doctor?",
-        "He is a doctor.?",
-        "Do he is a doctor.",
-        "He is a doctor?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Is he a doctor?",
-      "hint": "Invert the 'be' verb.",
-      "explanation": "The correct interrogative form is: \"Is he a doctor?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l17_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "She can swim well.",
-      "options": [
-        "Can she swim well?",
-        "She can swim well.?",
-        "Do she can swim well.",
-        "She can swim well?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Can she swim well?",
-      "hint": "Invert the modal verb.",
-      "explanation": "The correct interrogative form is: \"Can she swim well?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l17_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "They have finished lunch.",
-      "options": [
-        "Have they finished lunch?",
-        "They have finished lunch.?",
-        "Do they have finished lunch.",
-        "They have finished lunch?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Have they finished lunch?",
-      "hint": "Invert the auxiliary verb.",
-      "explanation": "The correct interrogative form is: \"Have they finished lunch?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l17_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "The system is online.",
-      "options": [
-        "Is the system online?",
-        "The system is online.?",
-        "Do the system is online.",
-        "The system is online?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Is the system online?",
-      "hint": "Invert 'is'.",
-      "explanation": "The correct interrogative form is: \"Is the system online?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l18_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "We will arrive tomorrow.",
-      "options": [
-        "Will we arrive tomorrow?",
-        "We will arrive tomorrow.?",
-        "Do we will arrive tomorrow.",
-        "We will arrive tomorrow?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Will we arrive tomorrow?",
-      "hint": "Future question.",
-      "explanation": "The correct interrogative form is: \"Will we arrive tomorrow?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l18_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "The data revealed a bug.",
-      "options": [
-        "Did the data reveal a bug?",
-        "The data revealed a bug.?",
-        "Do the data revealed a bug.",
-        "The data revealed a bug?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did the data reveal a bug?",
-      "hint": "Past tense.",
-      "explanation": "The correct interrogative form is: \"Did the data reveal a bug?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l18_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "He lives in London.",
-      "options": [
-        "Does he live in London?",
-        "He lives in London.?",
-        "Do he lives in london.",
-        "He lives in London?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Does he live in London?",
-      "hint": "Present tense.",
-      "explanation": "The correct interrogative form is: \"Does he live in London?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l19_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "You are ready.",
-      "options": [
-        "Are you ready?",
-        "You are ready.?",
-        "Do you are ready.",
-        "You are ready?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Are you ready?",
-      "hint": "Invert 'are'.",
-      "explanation": "The correct interrogative form is: \"Are you ready?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l19_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "The technician fixed it.",
-      "options": [
-        "Did the technician fix it?",
-        "The technician fixed it.?",
-        "Do the technician fixed it.",
-        "The technician fixed it?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did the technician fix it?",
-      "hint": "Past tense.",
-      "explanation": "The correct interrogative form is: \"Did the technician fix it?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l19_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "They are monitoring the core.",
-      "options": [
-        "Are they monitoring the core?",
-        "They are monitoring the core.?",
-        "Do they are monitoring the core.",
-        "They are monitoring the core?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Are they monitoring the core?",
-      "hint": "Continuous tense.",
-      "explanation": "The correct interrogative form is: \"Are they monitoring the core?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l20_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "She has been working here.",
-      "options": [
-        "Has she been working here?",
-        "She has been working here.?",
-        "Do she has been working here.",
-        "She has been working here?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Has she been working here?",
-      "hint": "Perfect continuous.",
-      "explanation": "The correct interrogative form is: \"Has she been working here?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l20_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "The portal can be opened.",
-      "options": [
-        "Can the portal be opened?",
-        "The portal can be opened.?",
-        "Do the portal can be opened.",
-        "The portal can be opened?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Can the portal be opened?",
-      "hint": "Passive modal.",
-      "explanation": "The correct interrogative form is: \"Can the portal be opened?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    },
-    {
-      "id": "qf_l20_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "sentence": "You should wait.",
-      "options": [
-        "Should you wait?",
-        "You should wait.?",
-        "Do you should wait.",
-        "You should wait?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Should you wait?",
-      "hint": "Modal question.",
-      "explanation": "The correct interrogative form is: \"Should you wait?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFFFFD700",
-        "pulse_intensity": 0.7,
-        "shader_effect": "victory_sweep"
-      }
-    }
-  ]
+    "gameType":  "questionFormatter",
+    "batchIndex":  2,
+    "levels":  "11-20",
+    "quests":  [
+                   {
+                       "id":  "qf_l11_q1",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "She likes ice cream.",
+                       "options":  [
+                                       "Does she like ice cream?",
+                                       "She likes ice cream.?",
+                                       "Do she likes ice cream.",
+                                       "She likes ice cream?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Does she like ice cream?",
+                       "hint":  "Use \u0027Does\u0027 for third person singular.",
+                       "explanation":  "The correct interrogative form is: 'Does she like ice cream?'"
+                   },
+                   {
+                       "id":  "qf_l11_q2",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "They went to school.",
+                       "options":  [
+                                       "Did they go to school?",
+                                       "They went to school.?",
+                                       "Do they went to school.",
+                                       "They went to school?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Did they go to school?",
+                       "hint":  "Use \u0027Did\u0027 for past tense questions.",
+                       "explanation":  "The correct interrogative form is: 'Did they go to school?'"
+                   },
+                   {
+                       "id":  "qf_l11_q3",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "He is a doctor.",
+                       "options":  [
+                                       "Is he a doctor?",
+                                       "He is a doctor.?",
+                                       "Do he is a doctor.",
+                                       "He is a doctor?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Is he a doctor?",
+                       "hint":  "Invert the \u0027be\u0027 verb.",
+                       "explanation":  "The correct interrogative form is: 'Is he a doctor?'"
+                   },
+                   {
+                       "id":  "qf_l12_q1",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "She can swim well.",
+                       "options":  [
+                                       "Can she swim well?",
+                                       "She can swim well.?",
+                                       "Do she can swim well.",
+                                       "She can swim well?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Can she swim well?",
+                       "hint":  "Invert the modal verb.",
+                       "explanation":  "The correct interrogative form is: 'Can she swim well?'"
+                   },
+                   {
+                       "id":  "qf_l12_q2",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "They have finished lunch.",
+                       "options":  [
+                                       "Have they finished lunch?",
+                                       "They have finished lunch.?",
+                                       "Do they have finished lunch.",
+                                       "They have finished lunch?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Have they finished lunch?",
+                       "hint":  "Invert the auxiliary verb.",
+                       "explanation":  "The correct interrogative form is: 'Have they finished lunch?'"
+                   },
+                   {
+                       "id":  "qf_l12_q3",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "The system is online.",
+                       "options":  [
+                                       "Is the system online?",
+                                       "The system is online.?",
+                                       "Do the system is online.",
+                                       "The system is online?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Is the system online?",
+                       "hint":  "Invert \u0027is\u0027.",
+                       "explanation":  "The correct interrogative form is: 'Is the system online?'"
+                   },
+                   {
+                       "id":  "qf_l13_q1",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "We will arrive tomorrow.",
+                       "options":  [
+                                       "Will we arrive tomorrow?",
+                                       "We will arrive tomorrow.?",
+                                       "Do we will arrive tomorrow.",
+                                       "We will arrive tomorrow?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Will we arrive tomorrow?",
+                       "hint":  "Future question.",
+                       "explanation":  "The correct interrogative form is: 'Will we arrive tomorrow?'"
+                   },
+                   {
+                       "id":  "qf_l13_q2",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "The data revealed a bug.",
+                       "options":  [
+                                       "Did the data reveal a bug?",
+                                       "The data revealed a bug.?",
+                                       "Do the data revealed a bug.",
+                                       "The data revealed a bug?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Did the data reveal a bug?",
+                       "hint":  "Past tense.",
+                       "explanation":  "The correct interrogative form is: 'Did the data reveal a bug?'"
+                   },
+                   {
+                       "id":  "qf_l13_q3",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "He lives in London.",
+                       "options":  [
+                                       "Does he live in London?",
+                                       "He lives in London.?",
+                                       "Do he lives in london.",
+                                       "He lives in London?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Does he live in London?",
+                       "hint":  "Present tense.",
+                       "explanation":  "The correct interrogative form is: 'Does he live in London?'"
+                   },
+                   {
+                       "id":  "qf_l14_q1",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "You are ready.",
+                       "options":  [
+                                       "Are you ready?",
+                                       "You are ready.?",
+                                       "Do you are ready.",
+                                       "You are ready?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Are you ready?",
+                       "hint":  "Invert \u0027are\u0027.",
+                       "explanation":  "The correct interrogative form is: 'Are you ready?'"
+                   },
+                   {
+                       "id":  "qf_l14_q2",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "The technician fixed it.",
+                       "options":  [
+                                       "Did the technician fix it?",
+                                       "The technician fixed it.?",
+                                       "Do the technician fixed it.",
+                                       "The technician fixed it?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Did the technician fix it?",
+                       "hint":  "Past tense.",
+                       "explanation":  "The correct interrogative form is: 'Did the technician fix it?'"
+                   },
+                   {
+                       "id":  "qf_l14_q3",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "They are monitoring the core.",
+                       "options":  [
+                                       "Are they monitoring the core?",
+                                       "They are monitoring the core.?",
+                                       "Do they are monitoring the core.",
+                                       "They are monitoring the core?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Are they monitoring the core?",
+                       "hint":  "Continuous tense.",
+                       "explanation":  "The correct interrogative form is: 'Are they monitoring the core?'"
+                   },
+                   {
+                       "id":  "qf_l15_q1",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "She has been working here.",
+                       "options":  [
+                                       "Has she been working here?",
+                                       "She has been working here.?",
+                                       "Do she has been working here.",
+                                       "She has been working here?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Has she been working here?",
+                       "hint":  "Perfect continuous.",
+                       "explanation":  "The correct interrogative form is: 'Has she been working here?'"
+                   },
+                   {
+                       "id":  "qf_l15_q2",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "The portal can be opened.",
+                       "options":  [
+                                       "Can the portal be opened?",
+                                       "The portal can be opened.?",
+                                       "Do the portal can be opened.",
+                                       "The portal can be opened?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Can the portal be opened?",
+                       "hint":  "Passive modal.",
+                       "explanation":  "The correct interrogative form is: 'Can the portal be opened?'"
+                   },
+                   {
+                       "id":  "qf_l15_q3",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "You should wait.",
+                       "options":  [
+                                       "Should you wait?",
+                                       "You should wait.?",
+                                       "Do you should wait.",
+                                       "You should wait?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Should you wait?",
+                       "hint":  "Modal question.",
+                       "explanation":  "The correct interrogative form is: 'Should you wait?'"
+                   },
+                   {
+                       "id":  "qf_l16_q1",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "She likes ice cream.",
+                       "options":  [
+                                       "Does she like ice cream?",
+                                       "She likes ice cream.?",
+                                       "Do she likes ice cream.",
+                                       "She likes ice cream?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Does she like ice cream?",
+                       "hint":  "Use \u0027Does\u0027 for third person singular.",
+                       "explanation":  "The correct interrogative form is: 'Does she like ice cream?'"
+                   },
+                   {
+                       "id":  "qf_l16_q2",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "They went to school.",
+                       "options":  [
+                                       "Did they go to school?",
+                                       "They went to school.?",
+                                       "Do they went to school.",
+                                       "They went to school?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Did they go to school?",
+                       "hint":  "Use \u0027Did\u0027 for past tense questions.",
+                       "explanation":  "The correct interrogative form is: 'Did they go to school?'"
+                   },
+                   {
+                       "id":  "qf_l16_q3",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "He is a doctor.",
+                       "options":  [
+                                       "Is he a doctor?",
+                                       "He is a doctor.?",
+                                       "Do he is a doctor.",
+                                       "He is a doctor?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Is he a doctor?",
+                       "hint":  "Invert the \u0027be\u0027 verb.",
+                       "explanation":  "The correct interrogative form is: 'Is he a doctor?'"
+                   },
+                   {
+                       "id":  "qf_l17_q1",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "She can swim well.",
+                       "options":  [
+                                       "Can she swim well?",
+                                       "She can swim well.?",
+                                       "Do she can swim well.",
+                                       "She can swim well?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Can she swim well?",
+                       "hint":  "Invert the modal verb.",
+                       "explanation":  "The correct interrogative form is: 'Can she swim well?'"
+                   },
+                   {
+                       "id":  "qf_l17_q2",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "They have finished lunch.",
+                       "options":  [
+                                       "Have they finished lunch?",
+                                       "They have finished lunch.?",
+                                       "Do they have finished lunch.",
+                                       "They have finished lunch?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Have they finished lunch?",
+                       "hint":  "Invert the auxiliary verb.",
+                       "explanation":  "The correct interrogative form is: 'Have they finished lunch?'"
+                   },
+                   {
+                       "id":  "qf_l17_q3",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "The system is online.",
+                       "options":  [
+                                       "Is the system online?",
+                                       "The system is online.?",
+                                       "Do the system is online.",
+                                       "The system is online?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Is the system online?",
+                       "hint":  "Invert \u0027is\u0027.",
+                       "explanation":  "The correct interrogative form is: 'Is the system online?'"
+                   },
+                   {
+                       "id":  "qf_l18_q1",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "We will arrive tomorrow.",
+                       "options":  [
+                                       "Will we arrive tomorrow?",
+                                       "We will arrive tomorrow.?",
+                                       "Do we will arrive tomorrow.",
+                                       "We will arrive tomorrow?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Will we arrive tomorrow?",
+                       "hint":  "Future question.",
+                       "explanation":  "The correct interrogative form is: 'Will we arrive tomorrow?'"
+                   },
+                   {
+                       "id":  "qf_l18_q2",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "The data revealed a bug.",
+                       "options":  [
+                                       "Did the data reveal a bug?",
+                                       "The data revealed a bug.?",
+                                       "Do the data revealed a bug.",
+                                       "The data revealed a bug?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Did the data reveal a bug?",
+                       "hint":  "Past tense.",
+                       "explanation":  "The correct interrogative form is: 'Did the data reveal a bug?'"
+                   },
+                   {
+                       "id":  "qf_l18_q3",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "He lives in London.",
+                       "options":  [
+                                       "Does he live in London?",
+                                       "He lives in London.?",
+                                       "Do he lives in london.",
+                                       "He lives in London?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Does he live in London?",
+                       "hint":  "Present tense.",
+                       "explanation":  "The correct interrogative form is: 'Does he live in London?'"
+                   },
+                   {
+                       "id":  "qf_l19_q1",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "You are ready.",
+                       "options":  [
+                                       "Are you ready?",
+                                       "You are ready.?",
+                                       "Do you are ready.",
+                                       "You are ready?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Are you ready?",
+                       "hint":  "Invert \u0027are\u0027.",
+                       "explanation":  "The correct interrogative form is: 'Are you ready?'"
+                   },
+                   {
+                       "id":  "qf_l19_q2",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "The technician fixed it.",
+                       "options":  [
+                                       "Did the technician fix it?",
+                                       "The technician fixed it.?",
+                                       "Do the technician fixed it.",
+                                       "The technician fixed it?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Did the technician fix it?",
+                       "hint":  "Past tense.",
+                       "explanation":  "The correct interrogative form is: 'Did the technician fix it?'"
+                   },
+                   {
+                       "id":  "qf_l19_q3",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "They are monitoring the core.",
+                       "options":  [
+                                       "Are they monitoring the core?",
+                                       "They are monitoring the core.?",
+                                       "Do they are monitoring the core.",
+                                       "They are monitoring the core?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Are they monitoring the core?",
+                       "hint":  "Continuous tense.",
+                       "explanation":  "The correct interrogative form is: 'Are they monitoring the core?'"
+                   },
+                   {
+                       "id":  "qf_l20_q1",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "She has been working here.",
+                       "options":  [
+                                       "Has she been working here?",
+                                       "She has been working here.?",
+                                       "Do she has been working here.",
+                                       "She has been working here?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Has she been working here?",
+                       "hint":  "Perfect continuous.",
+                       "explanation":  "The correct interrogative form is: 'Has she been working here?'"
+                   },
+                   {
+                       "id":  "qf_l20_q2",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "The portal can be opened.",
+                       "options":  [
+                                       "Can the portal be opened?",
+                                       "The portal can be opened.?",
+                                       "Do the portal can be opened.",
+                                       "The portal can be opened?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Can the portal be opened?",
+                       "hint":  "Passive modal.",
+                       "explanation":  "The correct interrogative form is: 'Can the portal be opened?'"
+                   },
+                   {
+                       "id":  "qf_l20_q3",
+                       "instruction":  "CRANK THE INQUIRY",
+                       "difficulty":  1,
+                       "subtype":  "questionFormatter",
+                       "interactionType":  "Crank Logic",
+                       "sentence":  "You should wait.",
+                       "options":  [
+                                       "Should you wait?",
+                                       "You should wait.?",
+                                       "Do you should wait.",
+                                       "You should wait?"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "Should you wait?",
+                       "hint":  "Modal question.",
+                       "explanation":  "The correct interrogative form is: 'Should you wait?'"
+                   }
+               ]
 }
+

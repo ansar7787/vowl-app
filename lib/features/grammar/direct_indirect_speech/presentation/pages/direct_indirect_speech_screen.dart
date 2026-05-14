@@ -97,6 +97,23 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
       },
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final rawQuestion = quest?.question ?? "DIRECT SPEECH";
+        // Extract speech if it follows "Convert to reported speech: ..." or "Fix: ..."
+        String displayDirect = quest?.sentence ?? "";
+        if (displayDirect.isEmpty) {
+          if (rawQuestion.contains(':')) {
+            displayDirect = rawQuestion.split(':').last.replaceAll('"', '').trim();
+          } else {
+            displayDirect = rawQuestion;
+          }
+        }
+        
+        String displayIndirect = quest?.correctAnswer ?? "";
+        if (displayIndirect.isEmpty && quest != null && quest.options != null && (quest.correctAnswerIndex ?? 0) < quest.options!.length) {
+          displayIndirect = quest.options![quest.correctAnswerIndex!];
+        }
+        if (displayIndirect.isEmpty) displayIndirect = "INDIRECT SPEECH";
+
         final options = quest?.options ?? ["REF A", "REF B", "REF C"];
         
         return GrammarBaseLayout(
@@ -107,20 +124,35 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 48.h),
-              _build3DMirror(quest.sentence ?? "DIRECT SPEECH", quest.correctAnswer ?? "INDIRECT SPEECH", theme.primaryColor, isDark),
-              SizedBox(height: 60.h),
-              Text("SELECT THE CORRECT REFLECTION", style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 2)),
-              SizedBox(height: 24.h),
-              Wrap(
-                alignment: WrapAlignment.center,
-                spacing: 16.w,
-                runSpacing: 16.h,
-                children: List.generate(options.length, (i) => _buildReflectionChip(options[i], i, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark)),
+              SizedBox(height: 20.h),
+              
+              // Optimized: The Holographic Mirror (The Diamond Standard)
+              _build3DMirror(displayDirect, displayIndirect, theme.primaryColor, isDark),
+
+              SizedBox(height: 50.h),
+              
+              // Reflection Options
+              Expanded(
+                child: SingleChildScrollView(
+                  physics: const BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      Wrap(
+                        alignment: WrapAlignment.center,
+                        spacing: 12.w,
+                        runSpacing: 12.h,
+                        children: List.generate(
+                          options.length, 
+                          (i) => _buildReflectionChip(options[i], i, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark)
+                        ),
+                      ),
+                      SizedBox(height: 40.h),
+                    ],
+                  ),
+                ),
               ),
-              SizedBox(height: 40.h),
             ],
           ),
         );
@@ -131,13 +163,25 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.flip_to_back_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("CHOOSE REFLECTION AND FLIP MIRROR", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            "CHOOSE THE CORRECT REFLECTION", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
+          ),
         ],
       ),
     );
@@ -146,28 +190,69 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
   Widget _build3DMirror(String direct, String indirect, Color primaryColor, bool isDark) {
     return TweenAnimationBuilder(
       tween: Tween<double>(begin: 0, end: _rotation),
-      duration: 800.ms,
+      duration: 1000.ms,
+      curve: Curves.elasticOut,
       builder: (context, double value, child) {
         final isFront = value < 1.57;
         return Transform(
-          transform: Matrix4.identity()..setEntry(3, 2, 0.002)..rotateY(value),
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, 0.001) // Perspective
+            ..rotateY(value),
           alignment: Alignment.center,
-          child: GlassTile(
-            padding: EdgeInsets.all(32.r),
-            borderRadius: BorderRadius.circular(24.r),
-            color: (isFront ? primaryColor : Colors.greenAccent).withValues(alpha: 0.1),
-            child: Transform(
-              transform: Matrix4.identity()..rotateY(isFront ? 0 : 3.14),
-              alignment: Alignment.center,
-              child: Column(
-                children: [
-                  Text(isFront ? "DIRECT" : "REFLECTED", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: isFront ? primaryColor : Colors.greenAccent)),
-                  SizedBox(height: 12.h),
-                  Text(isFront ? direct : indirect, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 20.sp, color: Colors.white, fontWeight: FontWeight.bold)),
-                ],
+          child: Container(
+            width: 320.w,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(32.r),
+              boxShadow: [
+                BoxShadow(
+                  color: (isFront ? primaryColor : Colors.greenAccent).withValues(alpha: 0.2),
+                  blurRadius: 30,
+                  spreadRadius: 2,
+                )
+              ],
+            ),
+            child: GlassTile(
+              padding: EdgeInsets.all(32.r),
+              borderRadius: BorderRadius.circular(32.r),
+              color: (isFront ? primaryColor : Colors.greenAccent).withValues(alpha: 0.1),
+              child: Transform(
+                transform: Matrix4.identity()..rotateY(isFront ? 0 : 3.14),
+                alignment: Alignment.center,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
+                      decoration: BoxDecoration(
+                        color: (isFront ? primaryColor : Colors.greenAccent).withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(20.r),
+                      ),
+                      child: Text(
+                        isFront ? "DIRECT SPEECH" : "REPORTED SPEECH", 
+                        style: GoogleFonts.outfit(
+                          fontSize: 10.sp, 
+                          fontWeight: FontWeight.w900, 
+                          color: isFront ? primaryColor : Colors.greenAccent,
+                          letterSpacing: 1.5
+                        )
+                      ),
+                    ),
+                    SizedBox(height: 24.h),
+                    Text(
+                      isFront ? direct : indirect, 
+                      textAlign: TextAlign.center, 
+                      style: GoogleFonts.fredoka(
+                        fontSize: 22.sp, 
+                        color: isDark ? Colors.white : Colors.black87, 
+                        fontWeight: FontWeight.bold,
+                        height: 1.4
+                      )
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
+          ).animate(key: ValueKey(isFront)).shimmer(duration: 2.seconds, color: Colors.white10),
         );
       },
     );
@@ -180,11 +265,32 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
 
     return ScaleButton(
       onTap: () => _onReflectionSelect(index, correctIndex),
-      child: GlassTile(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-        borderRadius: BorderRadius.circular(16.r),
-        color: isCorrect ? Colors.greenAccent.withValues(alpha: 0.4) : (isWrong ? Colors.redAccent.withValues(alpha: 0.4) : (isSelected ? primaryColor.withValues(alpha: 0.2) : null)),
-        child: Text(text, style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.bold, color: (isSelected || isCorrect || isWrong) ? Colors.white : (isDark ? Colors.white70 : Colors.black87))),
+      child: Container(
+        width: double.infinity,
+        margin: EdgeInsets.symmetric(horizontal: 24.w),
+        child: GlassTile(
+          padding: EdgeInsets.all(20.r),
+          borderRadius: BorderRadius.circular(24.r),
+          color: isCorrect 
+              ? Colors.greenAccent.withValues(alpha: 0.2) 
+              : (isWrong ? Colors.redAccent.withValues(alpha: 0.2) : (isSelected ? primaryColor.withValues(alpha: 0.2) : null)),
+          border: Border.all(
+            color: isCorrect 
+                ? Colors.greenAccent 
+                : (isWrong ? Colors.redAccent : (isSelected ? primaryColor : Colors.white.withValues(alpha: 0.1))),
+            width: 2,
+          ),
+          child: Text(
+            text, 
+            textAlign: TextAlign.center,
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp, 
+              fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600, 
+              color: isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isDark ? Colors.white : Colors.black87)),
+              height: 1.4
+            )
+          ),
+        ),
       ),
     );
   }

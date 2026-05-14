@@ -1,787 +1,548 @@
 {
-  "gameType": "clauseConnector",
-  "batchIndex": 10,
-  "levels": "91-100",
-  "quests": [
-    {
-      "id": "cc_l91_q1",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "He analyzed the sample ____ he found a strange anomaly",
-      "options": [
-        "because",
-        "and",
-        "although",
-        "but"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "and",
-      "hint": "The relationship between the clauses is addition.",
-      "explanation": "We use \"and\" to show a addition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l91_q2",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The system is online ____ it is running at 100%",
-      "options": [
-        "but",
-        "because",
-        "and",
-        "although"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "and",
-      "hint": "The relationship between the clauses is addition.",
-      "explanation": "We use \"and\" to show a addition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l91_q3",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The alarm will sound ____ the perimeter is breached",
-      "options": [
-        "so",
-        "because",
-        "if",
-        "although"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "if",
-      "hint": "The relationship between the clauses is condition.",
-      "explanation": "We use \"if\" to show a condition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l92_q1",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The engine will overheat ____ you don't reduce the speed",
-      "options": [
-        "so",
-        "although",
-        "because",
-        "if"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "if",
-      "hint": "The relationship between the clauses is condition.",
-      "explanation": "We use \"if\" to show a condition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l92_q2",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The lights flickered ____ the earthquake began",
-      "options": [
-        "so",
-        "but",
-        "because",
-        "when"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "when",
-      "hint": "The relationship between the clauses is time.",
-      "explanation": "We use \"when\" to show a time relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l92_q3",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The sensors detected movement ____ we reached the inner core",
-      "options": [
-        "while",
-        "because",
-        "although",
-        "so"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "while",
-      "hint": "The relationship between the clauses is time.",
-      "explanation": "We use \"while\" to show a time relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l93_q1",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The mission failed ____ the pilot was distracted",
-      "options": [
-        "because",
-        "although",
-        "but",
-        "so"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "because",
-      "hint": "The relationship between the clauses is reason.",
-      "explanation": "We use \"because\" to show a reason relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l93_q2",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The portal opened ____ the code was entered",
-      "options": [
-        "so",
-        "but",
-        "although",
-        "because"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "because",
-      "hint": "The relationship between the clauses is reason.",
-      "explanation": "We use \"because\" to show a reason relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l93_q3",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The hero survived ____ the odds were against him",
-      "options": [
-        "so",
-        "and",
-        "because",
-        "although"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "although",
-      "hint": "The relationship between the clauses is contrast.",
-      "explanation": "We use \"although\" to show a contrast relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l94_q1",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The signal was weak ____ it was clear enough to read",
-      "options": [
-        "so",
-        "and",
-        "because",
-        "but"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "but",
-      "hint": "The relationship between the clauses is contrast.",
-      "explanation": "We use \"but\" to show a contrast relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l94_q2",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The data was corrupted ____ we had to restart the scan",
-      "options": [
-        "so",
-        "but",
-        "because",
-        "although"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "so",
-      "hint": "The relationship between the clauses is result.",
-      "explanation": "We use \"so\" to show a result relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l94_q3",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The power failed ____ the backup generator kicked in",
-      "options": [
-        "so",
-        "because",
-        "although",
-        "but"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "so",
-      "hint": "The relationship between the clauses is result.",
-      "explanation": "We use \"so\" to show a result relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l95_q1",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "He analyzed the sample ____ he found a strange anomaly",
-      "options": [
-        "and",
-        "but",
-        "although",
-        "because"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "and",
-      "hint": "The relationship between the clauses is addition.",
-      "explanation": "We use \"and\" to show a addition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l95_q2",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The system is online ____ it is running at 100%",
-      "options": [
-        "although",
-        "because",
-        "but",
-        "and"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "and",
-      "hint": "The relationship between the clauses is addition.",
-      "explanation": "We use \"and\" to show a addition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l95_q3",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The alarm will sound ____ the perimeter is breached",
-      "options": [
-        "if",
-        "so",
-        "because",
-        "although"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "if",
-      "hint": "The relationship between the clauses is condition.",
-      "explanation": "We use \"if\" to show a condition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l96_q1",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The engine will overheat ____ you don't reduce the speed",
-      "options": [
-        "if",
-        "because",
-        "so",
-        "although"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "if",
-      "hint": "The relationship between the clauses is condition.",
-      "explanation": "We use \"if\" to show a condition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l96_q2",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The lights flickered ____ the earthquake began",
-      "options": [
-        "when",
-        "because",
-        "but",
-        "so"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "when",
-      "hint": "The relationship between the clauses is time.",
-      "explanation": "We use \"when\" to show a time relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l96_q3",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The sensors detected movement ____ we reached the inner core",
-      "options": [
-        "so",
-        "while",
-        "because",
-        "although"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "while",
-      "hint": "The relationship between the clauses is time.",
-      "explanation": "We use \"while\" to show a time relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l97_q1",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The mission failed ____ the pilot was distracted",
-      "options": [
-        "so",
-        "but",
-        "although",
-        "because"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "because",
-      "hint": "The relationship between the clauses is reason.",
-      "explanation": "We use \"because\" to show a reason relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l97_q2",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The portal opened ____ the code was entered",
-      "options": [
-        "so",
-        "but",
-        "although",
-        "because"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "because",
-      "hint": "The relationship between the clauses is reason.",
-      "explanation": "We use \"because\" to show a reason relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l97_q3",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The hero survived ____ the odds were against him",
-      "options": [
-        "so",
-        "although",
-        "and",
-        "because"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "although",
-      "hint": "The relationship between the clauses is contrast.",
-      "explanation": "We use \"although\" to show a contrast relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l98_q1",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The signal was weak ____ it was clear enough to read",
-      "options": [
-        "but",
-        "because",
-        "and",
-        "so"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "but",
-      "hint": "The relationship between the clauses is contrast.",
-      "explanation": "We use \"but\" to show a contrast relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l98_q2",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The data was corrupted ____ we had to restart the scan",
-      "options": [
-        "but",
-        "so",
-        "because",
-        "although"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "so",
-      "hint": "The relationship between the clauses is result.",
-      "explanation": "We use \"so\" to show a result relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l98_q3",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The power failed ____ the backup generator kicked in",
-      "options": [
-        "but",
-        "although",
-        "because",
-        "so"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "so",
-      "hint": "The relationship between the clauses is result.",
-      "explanation": "We use \"so\" to show a result relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l99_q1",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "He analyzed the sample ____ he found a strange anomaly",
-      "options": [
-        "but",
-        "and",
-        "although",
-        "because"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "and",
-      "hint": "The relationship between the clauses is addition.",
-      "explanation": "We use \"and\" to show a addition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l99_q2",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The system is online ____ it is running at 100%",
-      "options": [
-        "although",
-        "because",
-        "but",
-        "and"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "and",
-      "hint": "The relationship between the clauses is addition.",
-      "explanation": "We use \"and\" to show a addition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l99_q3",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The alarm will sound ____ the perimeter is breached",
-      "options": [
-        "because",
-        "if",
-        "although",
-        "so"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "if",
-      "hint": "The relationship between the clauses is condition.",
-      "explanation": "We use \"if\" to show a condition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l100_q1",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The engine will overheat ____ you don't reduce the speed",
-      "options": [
-        "so",
-        "although",
-        "because",
-        "if"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "if",
-      "hint": "The relationship between the clauses is condition.",
-      "explanation": "We use \"if\" to show a condition relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l100_q2",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The lights flickered ____ the earthquake began",
-      "options": [
-        "because",
-        "so",
-        "but",
-        "when"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "when",
-      "hint": "The relationship between the clauses is time.",
-      "explanation": "We use \"when\" to show a time relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    },
-    {
-      "id": "cc_l100_q3",
-      "instruction": "SNAP THE COUPLER",
-      "difficulty": 3,
-      "subtype": "clauseConnector",
-      "interactionType": "Industrial Coupler",
-      "question": "The sensors detected movement ____ we reached the inner core",
-      "options": [
-        "while",
-        "because",
-        "so",
-        "although"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "while",
-      "hint": "The relationship between the clauses is time.",
-      "explanation": "We use \"while\" to show a time relationship.",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "CouncilHallSync",
-        "primary_color": "0xFFFFFFFF",
-        "pulse_intensity": 0.5,
-        "shader_effect": "binary_pulse"
-      }
-    }
-  ]
+    "gameType":  "clauseConnector",
+    "batchIndex":  10,
+    "levels":  "91-100",
+    "quests":  [
+                   {
+                       "id":  "cc_l91_q1",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "He analyzed the sample ____ he found a strange anomaly",
+                       "options":  [
+                                       "because",
+                                       "and",
+                                       "although",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "and",
+                       "hint":  "The relationship between the clauses is addition.",
+                       "explanation":  "We use 'and' to show a addition relationship."
+                   },
+                   {
+                       "id":  "cc_l91_q2",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The system is online ____ it is running at 100%",
+                       "options":  [
+                                       "but",
+                                       "because",
+                                       "and",
+                                       "although"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "and",
+                       "hint":  "The relationship between the clauses is addition.",
+                       "explanation":  "We use 'and' to show a addition relationship."
+                   },
+                   {
+                       "id":  "cc_l91_q3",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The alarm will sound ____ the perimeter is breached",
+                       "options":  [
+                                       "so",
+                                       "because",
+                                       "if",
+                                       "although"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "if",
+                       "hint":  "The relationship between the clauses is condition.",
+                       "explanation":  "We use 'if' to show a condition relationship."
+                   },
+                   {
+                       "id":  "cc_l92_q1",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The engine will overheat ____ you don\u0027t reduce the speed",
+                       "options":  [
+                                       "so",
+                                       "although",
+                                       "because",
+                                       "if"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "if",
+                       "hint":  "The relationship between the clauses is condition.",
+                       "explanation":  "We use 'if' to show a condition relationship."
+                   },
+                   {
+                       "id":  "cc_l92_q2",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The lights flickered ____ the earthquake began",
+                       "options":  [
+                                       "so",
+                                       "but",
+                                       "because",
+                                       "when"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "when",
+                       "hint":  "The relationship between the clauses is time.",
+                       "explanation":  "We use 'when' to show a time relationship."
+                   },
+                   {
+                       "id":  "cc_l92_q3",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The sensors detected movement ____ we reached the inner core",
+                       "options":  [
+                                       "while",
+                                       "because",
+                                       "although",
+                                       "so"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "while",
+                       "hint":  "The relationship between the clauses is time.",
+                       "explanation":  "We use 'while' to show a time relationship."
+                   },
+                   {
+                       "id":  "cc_l93_q1",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The mission failed ____ the pilot was distracted",
+                       "options":  [
+                                       "because",
+                                       "although",
+                                       "but",
+                                       "so"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "because",
+                       "hint":  "The relationship between the clauses is reason.",
+                       "explanation":  "We use 'because' to show a reason relationship."
+                   },
+                   {
+                       "id":  "cc_l93_q2",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The portal opened ____ the code was entered",
+                       "options":  [
+                                       "so",
+                                       "but",
+                                       "although",
+                                       "because"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "because",
+                       "hint":  "The relationship between the clauses is reason.",
+                       "explanation":  "We use 'because' to show a reason relationship."
+                   },
+                   {
+                       "id":  "cc_l93_q3",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The hero survived ____ the odds were against him",
+                       "options":  [
+                                       "so",
+                                       "and",
+                                       "because",
+                                       "although"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "although",
+                       "hint":  "The relationship between the clauses is contrast.",
+                       "explanation":  "We use 'although' to show a contrast relationship."
+                   },
+                   {
+                       "id":  "cc_l94_q1",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The signal was weak ____ it was clear enough to read",
+                       "options":  [
+                                       "so",
+                                       "and",
+                                       "because",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "but",
+                       "hint":  "The relationship between the clauses is contrast.",
+                       "explanation":  "We use 'but' to show a contrast relationship."
+                   },
+                   {
+                       "id":  "cc_l94_q2",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The data was corrupted ____ we had to restart the scan",
+                       "options":  [
+                                       "so",
+                                       "but",
+                                       "because",
+                                       "although"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "so",
+                       "hint":  "The relationship between the clauses is result.",
+                       "explanation":  "We use 'so' to show a result relationship."
+                   },
+                   {
+                       "id":  "cc_l94_q3",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The power failed ____ the backup generator kicked in",
+                       "options":  [
+                                       "so",
+                                       "because",
+                                       "although",
+                                       "but"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "so",
+                       "hint":  "The relationship between the clauses is result.",
+                       "explanation":  "We use 'so' to show a result relationship."
+                   },
+                   {
+                       "id":  "cc_l95_q1",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "He analyzed the sample ____ he found a strange anomaly",
+                       "options":  [
+                                       "and",
+                                       "but",
+                                       "although",
+                                       "because"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "and",
+                       "hint":  "The relationship between the clauses is addition.",
+                       "explanation":  "We use 'and' to show a addition relationship."
+                   },
+                   {
+                       "id":  "cc_l95_q2",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The system is online ____ it is running at 100%",
+                       "options":  [
+                                       "although",
+                                       "because",
+                                       "but",
+                                       "and"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "and",
+                       "hint":  "The relationship between the clauses is addition.",
+                       "explanation":  "We use 'and' to show a addition relationship."
+                   },
+                   {
+                       "id":  "cc_l95_q3",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The alarm will sound ____ the perimeter is breached",
+                       "options":  [
+                                       "if",
+                                       "so",
+                                       "because",
+                                       "although"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "if",
+                       "hint":  "The relationship between the clauses is condition.",
+                       "explanation":  "We use 'if' to show a condition relationship."
+                   },
+                   {
+                       "id":  "cc_l96_q1",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The engine will overheat ____ you don\u0027t reduce the speed",
+                       "options":  [
+                                       "if",
+                                       "because",
+                                       "so",
+                                       "although"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "if",
+                       "hint":  "The relationship between the clauses is condition.",
+                       "explanation":  "We use 'if' to show a condition relationship."
+                   },
+                   {
+                       "id":  "cc_l96_q2",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The lights flickered ____ the earthquake began",
+                       "options":  [
+                                       "when",
+                                       "because",
+                                       "but",
+                                       "so"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "when",
+                       "hint":  "The relationship between the clauses is time.",
+                       "explanation":  "We use 'when' to show a time relationship."
+                   },
+                   {
+                       "id":  "cc_l96_q3",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The sensors detected movement ____ we reached the inner core",
+                       "options":  [
+                                       "so",
+                                       "while",
+                                       "because",
+                                       "although"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "while",
+                       "hint":  "The relationship between the clauses is time.",
+                       "explanation":  "We use 'while' to show a time relationship."
+                   },
+                   {
+                       "id":  "cc_l97_q1",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The mission failed ____ the pilot was distracted",
+                       "options":  [
+                                       "so",
+                                       "but",
+                                       "although",
+                                       "because"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "because",
+                       "hint":  "The relationship between the clauses is reason.",
+                       "explanation":  "We use 'because' to show a reason relationship."
+                   },
+                   {
+                       "id":  "cc_l97_q2",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The portal opened ____ the code was entered",
+                       "options":  [
+                                       "so",
+                                       "but",
+                                       "although",
+                                       "because"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "because",
+                       "hint":  "The relationship between the clauses is reason.",
+                       "explanation":  "We use 'because' to show a reason relationship."
+                   },
+                   {
+                       "id":  "cc_l97_q3",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The hero survived ____ the odds were against him",
+                       "options":  [
+                                       "so",
+                                       "although",
+                                       "and",
+                                       "because"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "although",
+                       "hint":  "The relationship between the clauses is contrast.",
+                       "explanation":  "We use 'although' to show a contrast relationship."
+                   },
+                   {
+                       "id":  "cc_l98_q1",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The signal was weak ____ it was clear enough to read",
+                       "options":  [
+                                       "but",
+                                       "because",
+                                       "and",
+                                       "so"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "but",
+                       "hint":  "The relationship between the clauses is contrast.",
+                       "explanation":  "We use 'but' to show a contrast relationship."
+                   },
+                   {
+                       "id":  "cc_l98_q2",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The data was corrupted ____ we had to restart the scan",
+                       "options":  [
+                                       "but",
+                                       "so",
+                                       "because",
+                                       "although"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "so",
+                       "hint":  "The relationship between the clauses is result.",
+                       "explanation":  "We use 'so' to show a result relationship."
+                   },
+                   {
+                       "id":  "cc_l98_q3",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The power failed ____ the backup generator kicked in",
+                       "options":  [
+                                       "but",
+                                       "although",
+                                       "because",
+                                       "so"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "so",
+                       "hint":  "The relationship between the clauses is result.",
+                       "explanation":  "We use 'so' to show a result relationship."
+                   },
+                   {
+                       "id":  "cc_l99_q1",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "He analyzed the sample ____ he found a strange anomaly",
+                       "options":  [
+                                       "but",
+                                       "and",
+                                       "although",
+                                       "because"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "and",
+                       "hint":  "The relationship between the clauses is addition.",
+                       "explanation":  "We use 'and' to show a addition relationship."
+                   },
+                   {
+                       "id":  "cc_l99_q2",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The system is online ____ it is running at 100%",
+                       "options":  [
+                                       "although",
+                                       "because",
+                                       "but",
+                                       "and"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "and",
+                       "hint":  "The relationship between the clauses is addition.",
+                       "explanation":  "We use 'and' to show a addition relationship."
+                   },
+                   {
+                       "id":  "cc_l99_q3",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The alarm will sound ____ the perimeter is breached",
+                       "options":  [
+                                       "because",
+                                       "if",
+                                       "although",
+                                       "so"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "if",
+                       "hint":  "The relationship between the clauses is condition.",
+                       "explanation":  "We use 'if' to show a condition relationship."
+                   },
+                   {
+                       "id":  "cc_l100_q1",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The engine will overheat ____ you don\u0027t reduce the speed",
+                       "options":  [
+                                       "so",
+                                       "although",
+                                       "because",
+                                       "if"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "if",
+                       "hint":  "The relationship between the clauses is condition.",
+                       "explanation":  "We use 'if' to show a condition relationship."
+                   },
+                   {
+                       "id":  "cc_l100_q2",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The lights flickered ____ the earthquake began",
+                       "options":  [
+                                       "because",
+                                       "so",
+                                       "but",
+                                       "when"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "when",
+                       "hint":  "The relationship between the clauses is time.",
+                       "explanation":  "We use 'when' to show a time relationship."
+                   },
+                   {
+                       "id":  "cc_l100_q3",
+                       "instruction":  "SNAP THE COUPLER",
+                       "difficulty":  3,
+                       "subtype":  "clauseConnector",
+                       "interactionType":  "Industrial Coupler",
+                       "question":  "The sensors detected movement ____ we reached the inner core",
+                       "options":  [
+                                       "while",
+                                       "because",
+                                       "so",
+                                       "although"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "while",
+                       "hint":  "The relationship between the clauses is time.",
+                       "explanation":  "We use 'while' to show a time relationship."
+                   }
+               ]
 }
+

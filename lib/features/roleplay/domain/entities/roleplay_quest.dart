@@ -18,7 +18,6 @@ class RoleplayQuest extends GameQuest {
   final int? professionalismRating;
   final List<String>? symptoms;
   final List<String>? itinerary;
-  final String? explanation;
   final List<String>? shuffledWords;
 
   const RoleplayQuest({
@@ -52,7 +51,7 @@ class RoleplayQuest extends GameQuest {
     this.professionalismRating,
     this.symptoms,
     this.itinerary,
-    this.explanation,
+    super.explanation,
     this.shuffledWords,
   });
 
@@ -76,7 +75,6 @@ class RoleplayQuest extends GameQuest {
     professionalismRating,
     symptoms,
     itinerary,
-    explanation,
     shuffledWords,
   ];
 }

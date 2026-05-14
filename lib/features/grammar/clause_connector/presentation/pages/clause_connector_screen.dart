@@ -104,13 +104,29 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildIndustrialCoupler(clauseA, clauseB, theme.primaryColor, isDark),
-              SizedBox(height: 60.h),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Magnetic Energy Port (The Diamond Standard)
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _buildHolographicPlate(clauseA, theme.primaryColor, isDark),
+                      SizedBox(height: 16.h),
+                      _buildMagneticPort(quest, options, theme.primaryColor, isDark),
+                      SizedBox(height: 16.h),
+                      _buildHolographicPlate(clauseB, theme.primaryColor, isDark).animate().fadeIn(delay: 300.ms),
+                    ],
+                  ),
+                ),
+              ),
+
               if (!_isAnswered) 
-                _buildConnectorPalette(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+                _buildConnectorPalette(options, theme.primaryColor, isDark),
               SizedBox(height: 40.h),
             ],
           ),
@@ -122,72 +138,106 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.settings_input_component_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("SNAP THE COUPLER INTO PLACE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            "SNAP THE LINGUISTIC COUPLER", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildIndustrialCoupler(String a, String b, Color primaryColor, bool isDark) {
-    return Column(
-      children: [
-        _buildMetalPlate(a, primaryColor, isDark, isTop: true),
-        Container(
-          height: 100.h, width: 200.w,
-          margin: EdgeInsets.symmetric(vertical: 8.h),
+  Widget _buildMagneticPort(GameQuest? quest, List<String> options, Color primaryColor, bool isDark) {
+    return DragTarget<String>(
+      onWillAcceptWithDetails: (details) => !_isAnswered,
+      onAcceptWithDetails: (details) => _onSnap(details.data, quest?.correctAnswerIndex ?? 0, options),
+      builder: (context, candidateData, rejectedData) {
+        final isHighlight = candidateData.isNotEmpty;
+        final portColor = _isAnswered 
+            ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent) 
+            : (isHighlight ? primaryColor : primaryColor.withValues(alpha: 0.3));
+
+        return Container(
+          width: 220.w, 
+          height: 80.h,
           decoration: BoxDecoration(
-            color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
-            borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(color: primaryColor.withValues(alpha: 0.2), width: 2.r),
+            color: portColor.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: portColor.withValues(alpha: 0.4), 
+              width: 2,
+              style: _isAnswered ? BorderStyle.none : BorderStyle.solid
+            ),
+            boxShadow: [
+              if (isHighlight || _isAnswered)
+                BoxShadow(color: portColor.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 2)
+            ],
           ),
           child: Center(
-            child: DragTarget<String>(
-              onWillAcceptWithDetails: (details) => !_isAnswered,
-              onAcceptWithDetails: (details) => _onSnap(details.data, correctIndex, options),
-              builder: (context, candidateData, rejectedData) {
-                return _isAnswered 
-                  ? _buildConnector(_draggingConnector ?? "", primaryColor, isDark).animate().scale(duration: 400.ms, curve: Curves.easeOutBack)
-                  : Text("INSERT COUPLER", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor.withValues(alpha: 0.4), letterSpacing: 2));
-              },
-            ),
+            child: _isAnswered 
+              ? _buildConnector(_draggingConnector ?? "ERROR", primaryColor, isDark)
+                  .animate().scale(duration: 400.ms, curve: Curves.elasticOut)
+              : Text(
+                  isHighlight ? "RELEASE TO SNAP" : "ENERGY PORT", 
+                  style: GoogleFonts.outfit(
+                    fontSize: 10.sp, 
+                    fontWeight: FontWeight.w900, 
+                    color: portColor.withValues(alpha: 0.6), 
+                    letterSpacing: 2
+                  )
+                ),
           ),
-        ),
-        _buildMetalPlate(b, primaryColor, isDark, isTop: false),
-      ],
-    ).animate(target: _isAnswered ? 1 : 0).shimmer(duration: 1.seconds, color: Colors.white10);
-  }
-
-  Widget _buildMetalPlate(String text, Color primaryColor, bool isDark, {required bool isTop}) {
-    return Container(
-      padding: EdgeInsets.all(24.r),
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: isDark ? Colors.grey[900] : Colors.grey[200],
-        borderRadius: BorderRadius.vertical(
-          top: isTop ? Radius.circular(24.r) : Radius.zero,
-          bottom: !isTop ? Radius.circular(24.r) : Radius.zero,
-        ),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.3), width: 3.r),
-      ),
-      child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
+        );
+      },
     );
   }
 
-  Widget _buildConnectorPalette(List<String> options, int correctIndex, Color primaryColor, bool isDark) {
+  Widget _buildHolographicPlate(String text, Color primaryColor, bool isDark) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(22.r),
+      decoration: BoxDecoration(
+        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.15), width: 1.5),
+      ),
+      child: Text(
+        text.trim(), 
+        textAlign: TextAlign.center, 
+        style: GoogleFonts.fredoka(
+          fontSize: 18.sp, 
+          color: isDark ? Colors.white : Colors.black87,
+          height: 1.4,
+          fontWeight: FontWeight.w500
+        )
+      ),
+    );
+  }
+
+  Widget _buildConnectorPalette(List<String> options, Color primaryColor, bool isDark) {
     return Wrap(
       alignment: WrapAlignment.center,
-      spacing: 16.w, runSpacing: 16.h,
+      spacing: 16.w, 
+      runSpacing: 16.h,
       children: options.map((opt) => Draggable<String>(
         data: opt,
         feedback: Material(color: Colors.transparent, child: _buildConnector(opt, primaryColor, isDark, isDragging: true)),
-        childWhenDragging: Opacity(opacity: 0.3, child: _buildConnector(opt, primaryColor, isDark)),
-        onDragCompleted: () {},
+        childWhenDragging: Opacity(opacity: 0.2, child: _buildConnector(opt, primaryColor, isDark)),
         child: _buildConnector(opt, primaryColor, isDark),
       )).toList(),
     );
@@ -197,14 +247,23 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: primaryColor,
-        borderRadius: BorderRadius.circular(8.r),
+        color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.4), width: 2),
         boxShadow: [
-          BoxShadow(color: Colors.black45, blurRadius: isDragging ? 20 : 5, offset: Offset(0, isDragging ? 10 : 2)),
-          BoxShadow(color: Colors.white24, blurRadius: 2, offset: const Offset(0, -2)),
+          if (isDragging) 
+            BoxShadow(color: primaryColor.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 5)
         ],
       ),
-      child: Text(text.toUpperCase(), style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 1)),
+      child: Text(
+        text.toUpperCase(), 
+        style: GoogleFonts.outfit(
+          fontSize: 15.sp, 
+          fontWeight: FontWeight.w900, 
+          color: isDark ? Colors.white : Colors.black87, 
+          letterSpacing: 1.5
+        )
+      ),
     );
   }
 }

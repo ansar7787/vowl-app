@@ -10,7 +10,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class ConjunctionsScreen extends StatefulWidget {
   final int level;
@@ -94,7 +94,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? ["AND", "BUT", "OR"];
         final question = quest?.question ?? "I like apples... I like oranges.";
-        final parts = question.split("...");
+        final parts = question.contains("...") ? question.split("...") : question.split("___");
         
         return GrammarBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
@@ -104,11 +104,28 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 48.h),
-              _buildIslands(parts, theme.primaryColor, isDark, quest.correctAnswerIndex ?? 0, options),
-              const Spacer(),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Magnetic Junction Bridge (The Diamond Standard)
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _buildIslandPiece(parts.first, isDark, theme.primaryColor),
+                      SizedBox(height: 24.h),
+                      _buildMagneticJunction(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+                      SizedBox(height: 24.h),
+                      if (parts.length > 1 && parts.last.isNotEmpty) 
+                        _buildIslandPiece(parts.last, isDark, theme.primaryColor).animate().fadeIn(delay: 400.ms),
+                    ],
+                  ),
+                ),
+              ),
+
               _buildBrickSheet(options, theme.primaryColor, isDark),
               SizedBox(height: 40.h),
             ],
@@ -121,54 +138,100 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.architecture_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("DRAG THE CONJUNCTION BRICK TO LINK ISLANDS", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            "CONNECT THE LINGUISTIC BRIDGE", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildIslands(List<String> parts, Color primaryColor, bool isDark, int correctIndex, List<String> options) {
-    return Column(
-      children: [
-        _buildIslandPiece(parts.first, isDark),
-        SizedBox(height: 20.h),
-        DragTarget<String>(
-          onAcceptWithDetails: (details) => _onBridge(details.data, correctIndex, options),
-          builder: (context, candidateData, rejectedData) {
-            final isHighlight = candidateData.isNotEmpty;
-            return Container(
-              width: 150.w, height: 60.h,
-              decoration: BoxDecoration(
-                color: _placedBrick != null ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent) : (isHighlight ? primaryColor.withValues(alpha: 0.2) : Colors.transparent),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(color: primaryColor.withValues(alpha: 0.3), style: _placedBrick != null ? BorderStyle.none : BorderStyle.solid, width: 2),
-              ),
-              child: Center(
-                child: _placedBrick != null 
-                  ? Text(_placedBrick!.toUpperCase(), style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w900, color: Colors.white))
-                  : (isHighlight ? Icon(Icons.download_rounded, color: primaryColor, size: 24.r) : null),
-              ),
-            );
-          },
-        ),
-        SizedBox(height: 20.h),
-        if (parts.length > 1) _buildIslandPiece(parts.last, isDark),
-      ],
+  Widget _buildMagneticJunction(List<String> options, int correctIndex, Color primaryColor, bool isDark) {
+    return DragTarget<String>(
+      onAcceptWithDetails: (details) => _onBridge(details.data, correctIndex, options),
+      builder: (context, candidateData, rejectedData) {
+        final isHighlight = candidateData.isNotEmpty;
+        final nodeColor = _placedBrick != null 
+            ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent) 
+            : (isHighlight ? primaryColor : primaryColor.withValues(alpha: 0.3));
+
+        return Container(
+          width: 180.w, 
+          height: 70.h,
+          decoration: BoxDecoration(
+            color: nodeColor.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: nodeColor.withValues(alpha: 0.4), 
+              width: 2,
+              style: _placedBrick != null ? BorderStyle.none : BorderStyle.solid
+            ),
+            boxShadow: [
+              if (isHighlight || _placedBrick != null)
+                BoxShadow(color: nodeColor.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 2)
+            ],
+          ),
+          child: Center(
+            child: _placedBrick != null 
+              ? Text(
+                  _placedBrick!.toUpperCase(), 
+                  style: GoogleFonts.outfit(
+                    fontSize: 20.sp, 
+                    fontWeight: FontWeight.w900, 
+                    color: nodeColor
+                  )
+                ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
+              : (isHighlight 
+                  ? Icon(Icons.bolt_rounded, color: primaryColor, size: 28.r).animate().scale().shimmer() 
+                  : Text(
+                      "JUNCTION", 
+                      style: GoogleFonts.outfit(
+                        fontSize: 10.sp, 
+                        fontWeight: FontWeight.w900, 
+                        color: primaryColor.withValues(alpha: 0.4),
+                        letterSpacing: 2
+                      )
+                    )),
+          ),
+        );
+      },
     );
   }
 
-  Widget _buildIslandPiece(String text, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-      borderRadius: BorderRadius.circular(20.r),
-      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
-      child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 18.sp, color: isDark ? Colors.white70 : Colors.black87)),
+  Widget _buildIslandPiece(String text, bool isDark, Color primaryColor) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(22.r),
+      decoration: BoxDecoration(
+        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.1), width: 1.5),
+      ),
+      child: Text(
+        text.trim(), 
+        textAlign: TextAlign.center, 
+        style: GoogleFonts.fredoka(
+          fontSize: 18.sp, 
+          color: isDark ? Colors.white : Colors.black87,
+          height: 1.4
+        )
+      ),
     );
   }
 

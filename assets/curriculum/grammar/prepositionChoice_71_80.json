@@ -1,787 +1,548 @@
 {
-  "gameType": "prepositionChoice",
-  "batchIndex": 8,
-  "levels": "71-80",
-  "quests": [
-    {
-      "id": "pc_l71_q1",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "I am interested ___ learning new languages.",
-      "options": [
-        "on",
-        "in",
-        "from",
-        "at"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "in",
-      "hint": "We say 'interested in'.",
-      "explanation": "The correct preposition is \"in\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l71_q2",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "The keys are ___ the table.",
-      "options": [
-        "on",
-        "through",
-        "for",
-        "between"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "on",
-      "hint": "Surface location.",
-      "explanation": "The correct preposition is \"on\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l71_q3",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "She is good ___ solving puzzles.",
-      "options": [
-        "between",
-        "into",
-        "at",
-        "above"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "at",
-      "hint": "Ability preposition.",
-      "explanation": "The correct preposition is \"at\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l72_q1",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "We arrived ___ the airport early.",
-      "options": [
-        "to",
-        "into",
-        "above",
-        "at"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "at",
-      "hint": "Specific location.",
-      "explanation": "The correct preposition is \"at\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l72_q2",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "He is afraid ___ spiders.",
-      "options": [
-        "through",
-        "of",
-        "in",
-        "between"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "of",
-      "hint": "Fear of something.",
-      "explanation": "The correct preposition is \"of\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l72_q3",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "I'll see you ___ Monday.",
-      "options": [
-        "on",
-        "into",
-        "for",
-        "from"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "on",
-      "hint": "Days of the week.",
-      "explanation": "The correct preposition is \"on\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l73_q1",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "She lives ___ London.",
-      "options": [
-        "in",
-        "for",
-        "above",
-        "on"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "in",
-      "hint": "Cities and countries.",
-      "explanation": "The correct preposition is \"in\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l73_q2",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "The meeting is ___ 10 AM.",
-      "options": [
-        "at",
-        "to",
-        "from",
-        "on"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "at",
-      "hint": "Specific time.",
-      "explanation": "The correct preposition is \"at\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l73_q3",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "I'm looking ___ my lost keys.",
-      "options": [
-        "for",
-        "from",
-        "through",
-        "into"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "for",
-      "hint": "Phrasal verb: search.",
-      "explanation": "The correct preposition is \"for\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l74_q1",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "He is proud ___ his achievements.",
-      "options": [
-        "of",
-        "from",
-        "to",
-        "in"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "of",
-      "hint": "Pride of something.",
-      "explanation": "The correct preposition is \"of\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l74_q2",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "Translate this ___ English.",
-      "options": [
-        "in",
-        "between",
-        "into",
-        "of"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "into",
-      "hint": "Change of state.",
-      "explanation": "The correct preposition is \"into\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l74_q3",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "The plane flew ___ the clouds.",
-      "options": [
-        "above",
-        "to",
-        "in",
-        "into"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "above",
-      "hint": "Relative height.",
-      "explanation": "The correct preposition is \"above\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l75_q1",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "We walked ___ the tunnel.",
-      "options": [
-        "of",
-        "in",
-        "on",
-        "through"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "through",
-      "hint": "Movement across interior.",
-      "explanation": "The correct preposition is \"through\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l75_q2",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "It's a secret ___ you and me.",
-      "options": [
-        "to",
-        "in",
-        "for",
-        "between"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "between",
-      "hint": "Two parties.",
-      "explanation": "The correct preposition is \"between\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l75_q3",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "I am fond ___ classical music.",
-      "options": [
-        "through",
-        "at",
-        "of",
-        "to"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "of",
-      "hint": "Liking something.",
-      "explanation": "The correct preposition is \"of\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l76_q1",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "I am interested ___ learning new languages.",
-      "options": [
-        "of",
-        "from",
-        "in",
-        "to"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "in",
-      "hint": "We say 'interested in'.",
-      "explanation": "The correct preposition is \"in\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l76_q2",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "The keys are ___ the table.",
-      "options": [
-        "into",
-        "on",
-        "above",
-        "from"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "on",
-      "hint": "Surface location.",
-      "explanation": "The correct preposition is \"on\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l76_q3",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "She is good ___ solving puzzles.",
-      "options": [
-        "in",
-        "at",
-        "between",
-        "for"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "at",
-      "hint": "Ability preposition.",
-      "explanation": "The correct preposition is \"at\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l77_q1",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "We arrived ___ the airport early.",
-      "options": [
-        "for",
-        "from",
-        "of",
-        "at"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "at",
-      "hint": "Specific location.",
-      "explanation": "The correct preposition is \"at\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l77_q2",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "He is afraid ___ spiders.",
-      "options": [
-        "through",
-        "in",
-        "into",
-        "of"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "of",
-      "hint": "Fear of something.",
-      "explanation": "The correct preposition is \"of\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l77_q3",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "I'll see you ___ Monday.",
-      "options": [
-        "above",
-        "for",
-        "at",
-        "on"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "on",
-      "hint": "Days of the week.",
-      "explanation": "The correct preposition is \"on\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l78_q1",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "She lives ___ London.",
-      "options": [
-        "in",
-        "from",
-        "to",
-        "above"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "in",
-      "hint": "Cities and countries.",
-      "explanation": "The correct preposition is \"in\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l78_q2",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "The meeting is ___ 10 AM.",
-      "options": [
-        "at",
-        "on",
-        "for",
-        "above"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "at",
-      "hint": "Specific time.",
-      "explanation": "The correct preposition is \"at\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l78_q3",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "I'm looking ___ my lost keys.",
-      "options": [
-        "from",
-        "through",
-        "for",
-        "above"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "for",
-      "hint": "Phrasal verb: search.",
-      "explanation": "The correct preposition is \"for\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l79_q1",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "He is proud ___ his achievements.",
-      "options": [
-        "of",
-        "on",
-        "above",
-        "into"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "of",
-      "hint": "Pride of something.",
-      "explanation": "The correct preposition is \"of\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l79_q2",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "Translate this ___ English.",
-      "options": [
-        "above",
-        "on",
-        "between",
-        "into"
-      ],
-      "correctAnswerIndex": 3,
-      "correctAnswer": "into",
-      "hint": "Change of state.",
-      "explanation": "The correct preposition is \"into\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l79_q3",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "The plane flew ___ the clouds.",
-      "options": [
-        "above",
-        "to",
-        "of",
-        "between"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "above",
-      "hint": "Relative height.",
-      "explanation": "The correct preposition is \"above\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l80_q1",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "We walked ___ the tunnel.",
-      "options": [
-        "of",
-        "through",
-        "between",
-        "into"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "through",
-      "hint": "Movement across interior.",
-      "explanation": "The correct preposition is \"through\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l80_q2",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "It's a secret ___ you and me.",
-      "options": [
-        "between",
-        "above",
-        "for",
-        "in"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "between",
-      "hint": "Two parties.",
-      "explanation": "The correct preposition is \"between\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pc_l80_q3",
-      "instruction": "CHOOSE THE POSITION",
-      "difficulty": 2,
-      "subtype": "prepositionChoice",
-      "interactionType": "Spatial Path",
-      "question": "I am fond ___ classical music.",
-      "options": [
-        "for",
-        "through",
-        "of",
-        "between"
-      ],
-      "correctAnswerIndex": 2,
-      "correctAnswer": "of",
-      "hint": "Liking something.",
-      "explanation": "The correct preposition is \"of\".",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF03A9F4",
-        "pulse_intensity": 0.7,
-        "shader_effect": "glow_shimmer"
-      }
-    }
-  ]
+    "gameType":  "prepositionChoice",
+    "batchIndex":  8,
+    "levels":  "71-80",
+    "quests":  [
+                   {
+                       "id":  "pc_l71_q1",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "I am interested ___ learning new languages.",
+                       "options":  [
+                                       "on",
+                                       "in",
+                                       "from",
+                                       "at"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "in",
+                       "hint":  "We say \u0027interested in\u0027.",
+                       "explanation":  "The correct preposition is 'in'."
+                   },
+                   {
+                       "id":  "pc_l71_q2",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "The keys are ___ the table.",
+                       "options":  [
+                                       "on",
+                                       "through",
+                                       "for",
+                                       "between"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "on",
+                       "hint":  "Surface location.",
+                       "explanation":  "The correct preposition is 'on'."
+                   },
+                   {
+                       "id":  "pc_l71_q3",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "She is good ___ solving puzzles.",
+                       "options":  [
+                                       "between",
+                                       "into",
+                                       "at",
+                                       "above"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "at",
+                       "hint":  "Ability preposition.",
+                       "explanation":  "The correct preposition is 'at'."
+                   },
+                   {
+                       "id":  "pc_l72_q1",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "We arrived ___ the airport early.",
+                       "options":  [
+                                       "to",
+                                       "into",
+                                       "above",
+                                       "at"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "at",
+                       "hint":  "Specific location.",
+                       "explanation":  "The correct preposition is 'at'."
+                   },
+                   {
+                       "id":  "pc_l72_q2",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "He is afraid ___ spiders.",
+                       "options":  [
+                                       "through",
+                                       "of",
+                                       "in",
+                                       "between"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "of",
+                       "hint":  "Fear of something.",
+                       "explanation":  "The correct preposition is 'of'."
+                   },
+                   {
+                       "id":  "pc_l72_q3",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "I\u0027ll see you ___ Monday.",
+                       "options":  [
+                                       "on",
+                                       "into",
+                                       "for",
+                                       "from"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "on",
+                       "hint":  "Days of the week.",
+                       "explanation":  "The correct preposition is 'on'."
+                   },
+                   {
+                       "id":  "pc_l73_q1",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "She lives ___ London.",
+                       "options":  [
+                                       "in",
+                                       "for",
+                                       "above",
+                                       "on"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "in",
+                       "hint":  "Cities and countries.",
+                       "explanation":  "The correct preposition is 'in'."
+                   },
+                   {
+                       "id":  "pc_l73_q2",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "The meeting is ___ 10 AM.",
+                       "options":  [
+                                       "at",
+                                       "to",
+                                       "from",
+                                       "on"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "at",
+                       "hint":  "Specific time.",
+                       "explanation":  "The correct preposition is 'at'."
+                   },
+                   {
+                       "id":  "pc_l73_q3",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "I\u0027m looking ___ my lost keys.",
+                       "options":  [
+                                       "for",
+                                       "from",
+                                       "through",
+                                       "into"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "for",
+                       "hint":  "Phrasal verb: search.",
+                       "explanation":  "The correct preposition is 'for'."
+                   },
+                   {
+                       "id":  "pc_l74_q1",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "He is proud ___ his achievements.",
+                       "options":  [
+                                       "of",
+                                       "from",
+                                       "to",
+                                       "in"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "of",
+                       "hint":  "Pride of something.",
+                       "explanation":  "The correct preposition is 'of'."
+                   },
+                   {
+                       "id":  "pc_l74_q2",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "Translate this ___ English.",
+                       "options":  [
+                                       "in",
+                                       "between",
+                                       "into",
+                                       "of"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "into",
+                       "hint":  "Change of state.",
+                       "explanation":  "The correct preposition is 'into'."
+                   },
+                   {
+                       "id":  "pc_l74_q3",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "The plane flew ___ the clouds.",
+                       "options":  [
+                                       "above",
+                                       "to",
+                                       "in",
+                                       "into"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "above",
+                       "hint":  "Relative height.",
+                       "explanation":  "The correct preposition is 'above'."
+                   },
+                   {
+                       "id":  "pc_l75_q1",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "We walked ___ the tunnel.",
+                       "options":  [
+                                       "of",
+                                       "in",
+                                       "on",
+                                       "through"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "through",
+                       "hint":  "Movement across interior.",
+                       "explanation":  "The correct preposition is 'through'."
+                   },
+                   {
+                       "id":  "pc_l75_q2",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "It\u0027s a secret ___ you and me.",
+                       "options":  [
+                                       "to",
+                                       "in",
+                                       "for",
+                                       "between"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "between",
+                       "hint":  "Two parties.",
+                       "explanation":  "The correct preposition is 'between'."
+                   },
+                   {
+                       "id":  "pc_l75_q3",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "I am fond ___ classical music.",
+                       "options":  [
+                                       "through",
+                                       "at",
+                                       "of",
+                                       "to"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "of",
+                       "hint":  "Liking something.",
+                       "explanation":  "The correct preposition is 'of'."
+                   },
+                   {
+                       "id":  "pc_l76_q1",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "I am interested ___ learning new languages.",
+                       "options":  [
+                                       "of",
+                                       "from",
+                                       "in",
+                                       "to"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "in",
+                       "hint":  "We say \u0027interested in\u0027.",
+                       "explanation":  "The correct preposition is 'in'."
+                   },
+                   {
+                       "id":  "pc_l76_q2",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "The keys are ___ the table.",
+                       "options":  [
+                                       "into",
+                                       "on",
+                                       "above",
+                                       "from"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "on",
+                       "hint":  "Surface location.",
+                       "explanation":  "The correct preposition is 'on'."
+                   },
+                   {
+                       "id":  "pc_l76_q3",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "She is good ___ solving puzzles.",
+                       "options":  [
+                                       "in",
+                                       "at",
+                                       "between",
+                                       "for"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "at",
+                       "hint":  "Ability preposition.",
+                       "explanation":  "The correct preposition is 'at'."
+                   },
+                   {
+                       "id":  "pc_l77_q1",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "We arrived ___ the airport early.",
+                       "options":  [
+                                       "for",
+                                       "from",
+                                       "of",
+                                       "at"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "at",
+                       "hint":  "Specific location.",
+                       "explanation":  "The correct preposition is 'at'."
+                   },
+                   {
+                       "id":  "pc_l77_q2",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "He is afraid ___ spiders.",
+                       "options":  [
+                                       "through",
+                                       "in",
+                                       "into",
+                                       "of"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "of",
+                       "hint":  "Fear of something.",
+                       "explanation":  "The correct preposition is 'of'."
+                   },
+                   {
+                       "id":  "pc_l77_q3",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "I\u0027ll see you ___ Monday.",
+                       "options":  [
+                                       "above",
+                                       "for",
+                                       "at",
+                                       "on"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "on",
+                       "hint":  "Days of the week.",
+                       "explanation":  "The correct preposition is 'on'."
+                   },
+                   {
+                       "id":  "pc_l78_q1",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "She lives ___ London.",
+                       "options":  [
+                                       "in",
+                                       "from",
+                                       "to",
+                                       "above"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "in",
+                       "hint":  "Cities and countries.",
+                       "explanation":  "The correct preposition is 'in'."
+                   },
+                   {
+                       "id":  "pc_l78_q2",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "The meeting is ___ 10 AM.",
+                       "options":  [
+                                       "at",
+                                       "on",
+                                       "for",
+                                       "above"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "at",
+                       "hint":  "Specific time.",
+                       "explanation":  "The correct preposition is 'at'."
+                   },
+                   {
+                       "id":  "pc_l78_q3",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "I\u0027m looking ___ my lost keys.",
+                       "options":  [
+                                       "from",
+                                       "through",
+                                       "for",
+                                       "above"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "for",
+                       "hint":  "Phrasal verb: search.",
+                       "explanation":  "The correct preposition is 'for'."
+                   },
+                   {
+                       "id":  "pc_l79_q1",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "He is proud ___ his achievements.",
+                       "options":  [
+                                       "of",
+                                       "on",
+                                       "above",
+                                       "into"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "of",
+                       "hint":  "Pride of something.",
+                       "explanation":  "The correct preposition is 'of'."
+                   },
+                   {
+                       "id":  "pc_l79_q2",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "Translate this ___ English.",
+                       "options":  [
+                                       "above",
+                                       "on",
+                                       "between",
+                                       "into"
+                                   ],
+                       "correctAnswerIndex":  3,
+                       "correctAnswer":  "into",
+                       "hint":  "Change of state.",
+                       "explanation":  "The correct preposition is 'into'."
+                   },
+                   {
+                       "id":  "pc_l79_q3",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "The plane flew ___ the clouds.",
+                       "options":  [
+                                       "above",
+                                       "to",
+                                       "of",
+                                       "between"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "above",
+                       "hint":  "Relative height.",
+                       "explanation":  "The correct preposition is 'above'."
+                   },
+                   {
+                       "id":  "pc_l80_q1",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "We walked ___ the tunnel.",
+                       "options":  [
+                                       "of",
+                                       "through",
+                                       "between",
+                                       "into"
+                                   ],
+                       "correctAnswerIndex":  1,
+                       "correctAnswer":  "through",
+                       "hint":  "Movement across interior.",
+                       "explanation":  "The correct preposition is 'through'."
+                   },
+                   {
+                       "id":  "pc_l80_q2",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "It\u0027s a secret ___ you and me.",
+                       "options":  [
+                                       "between",
+                                       "above",
+                                       "for",
+                                       "in"
+                                   ],
+                       "correctAnswerIndex":  0,
+                       "correctAnswer":  "between",
+                       "hint":  "Two parties.",
+                       "explanation":  "The correct preposition is 'between'."
+                   },
+                   {
+                       "id":  "pc_l80_q3",
+                       "instruction":  "CHOOSE THE POSITION",
+                       "difficulty":  2,
+                       "subtype":  "prepositionChoice",
+                       "interactionType":  "Spatial Path",
+                       "question":  "I am fond ___ classical music.",
+                       "options":  [
+                                       "for",
+                                       "through",
+                                       "of",
+                                       "between"
+                                   ],
+                       "correctAnswerIndex":  2,
+                       "correctAnswer":  "of",
+                       "hint":  "Liking something.",
+                       "explanation":  "The correct preposition is 'of'."
+                   }
+               ]
 }
+

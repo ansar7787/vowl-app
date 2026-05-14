@@ -187,7 +187,6 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> with SingleTickerProv
     bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
     bool isWrong = _isAnswered && isSelected && _isCorrect == false;
     
-    Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isSelected ? color : color.withValues(alpha: 0.6)));
 
     return ScaleButton(
       onTap: () => _submitAnswer(index, correct),

@@ -2,11 +2,9 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class WritingQuest extends GameQuest {
   final String? passage;
-  final String? question;
   final String? missingWord;
   final String? prompt;
   final String? sampleAnswer;
-  final String? explanation;
   final List<String>? shuffledWords;
   final List<int>? correctOrder;
   final String? story;
@@ -38,13 +36,13 @@ class WritingQuest extends GameQuest {
     super.correctAnswer,
     super.hint,
     this.passage,
-    this.question,
+    super.question,
     super.textToSpeak,
     super.visualConfig,
     this.missingWord,
     this.prompt,
     this.sampleAnswer,
-    this.explanation,
+    super.explanation,
     this.shuffledWords,
     this.correctOrder,
     this.story,

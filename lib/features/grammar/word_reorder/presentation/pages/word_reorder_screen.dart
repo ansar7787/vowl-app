@@ -11,6 +11,7 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class WordReorderScreen extends StatefulWidget {
   final int level;
@@ -42,12 +43,17 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
   }
 
   void _onWordTap(String word, String correctAnswer) {
-    if (_isAnswered) return;
+    final cleanCorrectAnswer = correctAnswer.replaceAll(RegExp(r'[.!?,"\u0027]'), '').trim();
+    final correctWords = cleanCorrectAnswer.split(' ');
     
-    final correctWords = correctAnswer.split(' ');
+    if (_assembledWords.length >= correctWords.length) return;
+    
     final nextCorrectWord = correctWords[_assembledWords.length];
+    
+    // Strip punctuation from the tapped word too for comparison
+    final cleanTappedWord = word.replaceAll(RegExp(r'[.!?,"\u0027]'), '').trim();
 
-    if (word.toLowerCase() == nextCorrectWord.toLowerCase()) {
+    if (cleanTappedWord.toLowerCase() == nextCorrectWord.toLowerCase()) {
       _hapticService.selection();
       _soundService.playCorrect();
       setState(() {
@@ -61,7 +67,7 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      // Visual feedback handled by animation
+      context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
   }
 
@@ -110,12 +116,66 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildSentenceAssembly(theme.primaryColor, isDark),
-              SizedBox(height: 60.h),
-              _buildGravityFallArea(quest.correctAnswer ?? "", theme.primaryColor, isDark),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Concise Assembly Card (The Diamond Standard)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Container(
+                  width: double.infinity,
+                  constraints: BoxConstraints(minHeight: 120.h),
+                  padding: EdgeInsets.all(22.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(28.r),
+                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.15), width: 1.5),
+                  ),
+                  child: Center(
+                    child: Wrap(
+                      spacing: 8.w, 
+                      runSpacing: 10.h,
+                      alignment: WrapAlignment.center,
+                      children: _assembledWords.isEmpty 
+                        ? [
+                            Text(
+                              "WAITING FOR DATA...", 
+                              style: GoogleFonts.outfit(
+                                fontSize: 14.sp, 
+                                fontWeight: FontWeight.w700,
+                                color: theme.primaryColor.withValues(alpha: 0.3),
+                                letterSpacing: 2
+                              )
+                            ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 2.seconds)
+                          ]
+                        : _assembledWords.map((word) => Container(
+                            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+                            decoration: BoxDecoration(
+                              color: theme.primaryColor.withValues(alpha: 0.1),
+                              borderRadius: BorderRadius.circular(14.r),
+                              border: Border.all(color: theme.primaryColor.withValues(alpha: 0.3)),
+                            ),
+                            child: Text(
+                              word, 
+                              style: GoogleFonts.fredoka(
+                                fontSize: 18.sp, 
+                                fontWeight: FontWeight.w600, 
+                                color: theme.primaryColor
+                              )
+                            ),
+                          ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)).toList(),
+                    ),
+                  ),
+                ),
+              ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
+              SizedBox(height: 50.h),
+              
+              // The Magnetic Floating Field
+              Expanded(
+                child: _buildGravityFallArea(quest.sentence ?? "", theme.primaryColor, isDark),
+              ),
               SizedBox(height: 40.h),
             ],
           ),
@@ -139,42 +199,18 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
     );
   }
 
-  Widget _buildSentenceAssembly(Color primaryColor, bool isDark) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.white.withValues(alpha: 0.8),
-        borderRadius: BorderRadius.circular(28.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.1)),
-      ),
-      child: Wrap(
-        spacing: 8.w, runSpacing: 8.h,
-        alignment: WrapAlignment.center,
-        children: _assembledWords.isEmpty 
-          ? [Text("ASSEMBLING SENTENCE...", style: GoogleFonts.outfit(fontSize: 14.sp, color: primaryColor.withValues(alpha: 0.4), fontStyle: FontStyle.italic))]
-          : _assembledWords.map((word) => Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-              decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(12.r), border: Border.all(color: primaryColor.withValues(alpha: 0.3))),
-              child: Text(word, style: GoogleFonts.fredoka(fontSize: 18.sp, fontWeight: FontWeight.w600, color: primaryColor)),
-            ).animate().scale(duration: 300.ms, curve: Curves.easeOutBack)).toList(),
-      ),
-    );
-  }
-
   Widget _buildGravityFallArea(String correctAnswer, Color primaryColor, bool isDark) {
-    return SizedBox(
-      height: 300.h,
-      width: double.infinity,
-      child: Stack(
-        alignment: Alignment.topCenter,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      child: Wrap(
+        spacing: 12.w,
+        runSpacing: 16.h,
+        alignment: WrapAlignment.center,
         children: _availableWords!.asMap().entries.map((entry) {
-          final index = entry.key;
-          final word = entry.value;
-          return _FallingWord(
-            word: word,
-            index: index,
-            onTap: () => _onWordTap(word, correctAnswer),
+          return _FloatingWordTile(
+            word: entry.value,
+            index: entry.key,
+            onTap: () => _onWordTap(entry.value, correctAnswer),
             primaryColor: primaryColor,
             isDark: isDark,
           );
@@ -184,65 +220,51 @@ class _WordReorderScreenState extends State<WordReorderScreen> {
   }
 }
 
-class _FallingWord extends StatefulWidget {
+class _FloatingWordTile extends StatelessWidget {
   final String word;
   final int index;
   final VoidCallback onTap;
   final Color primaryColor;
   final bool isDark;
 
-  const _FallingWord({required this.word, required this.index, required this.onTap, required this.primaryColor, required this.isDark});
-
-  @override
-  State<_FallingWord> createState() => _FallingWordState();
-}
-
-class _FallingWordState extends State<_FallingWord> {
-  late double _top;
-  late double _left;
-  bool _isTapped = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _top = -50.h;
-    _left = (widget.index % 3) * 100.w + 20.w; // Simple distribution
-    _startFalling();
-  }
-
-  void _startFalling() async {
-    await Future.delayed(Duration(milliseconds: widget.index * 1500));
-    if (mounted) {
-      setState(() => _top = 300.h);
-    }
-  }
+  const _FloatingWordTile({
+    required this.word, 
+    required this.index, 
+    required this.onTap, 
+    required this.primaryColor, 
+    required this.isDark
+  });
 
   @override
   Widget build(BuildContext context) {
-    if (_isTapped) return const SizedBox();
-
-    return AnimatedPositioned(
-      duration: const Duration(seconds: 4),
-      curve: Curves.linear,
-      top: _top,
-      left: _left,
-      child: GestureDetector(
-        onTap: () {
-          setState(() => _isTapped = true);
-          widget.onTap();
-        },
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-          decoration: BoxDecoration(
-            color: widget.isDark ? Colors.white10 : Colors.white,
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(color: widget.primaryColor, width: 2),
-            boxShadow: [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.2), blurRadius: 10, offset: const Offset(0, 4))],
-          ),
-          child: Text(widget.word, style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w800, color: widget.isDark ? Colors.white : Colors.black87)),
-        ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 2.seconds, color: Colors.white24),
+    return ScaleButton(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+          borderRadius: BorderRadius.circular(18.r),
+          border: Border.all(color: primaryColor.withValues(alpha: 0.2), width: 1.5),
+          boxShadow: [
+            BoxShadow(
+              color: primaryColor.withValues(alpha: 0.05),
+              blurRadius: 10,
+              offset: const Offset(0, 4)
+            )
+          ],
+        ),
+        child: Text(
+          word, 
+          style: GoogleFonts.outfit(
+            fontSize: 16.sp, 
+            fontWeight: FontWeight.w700, 
+            color: isDark ? Colors.white : Colors.black87
+          )
+        ),
       ),
-    );
+    ).animate(onPlay: (c) => c.repeat(reverse: true))
+     .moveY(begin: -5, end: 5, duration: (2000 + (index * 200)).ms, curve: Curves.easeInOutSine)
+     .shimmer(delay: (index * 100).ms, duration: 2.seconds, color: Colors.white10);
   }
 }
 

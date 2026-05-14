@@ -1,577 +1,337 @@
 {
-  "gameType": "punctuationMastery",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "pm_l1_q1",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "I like apples oranges and bananas",
-      "correctAnswer": "I like apples, oranges, and bananas.",
-      "hint": "Use commas to separate items in a list.",
-      "explanation": "The correctly punctuated sentence is: \"I like apples, oranges, and bananas.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l1_q2",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "He said Hello to everyone",
-      "correctAnswer": "He said, \"Hello\" to everyone.",
-      "hint": "Use a comma and quotes for direct speech.",
-      "explanation": "The correctly punctuated sentence is: \"He said, \"Hello\" to everyone.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l1_q3",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "Its a beautiful day outside",
-      "correctAnswer": "It's a beautiful day outside.",
-      "hint": "Contraction of 'it is' needs an apostrophe.",
-      "explanation": "The correctly punctuated sentence is: \"It's a beautiful day outside.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l2_q1",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "Wait what are you doing",
-      "correctAnswer": "Wait, what are you doing?",
-      "hint": "Use a comma for pauses and a question mark for inquiries.",
-      "explanation": "The correctly punctuated sentence is: \"Wait, what are you doing?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l2_q2",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "The dogs bone was hidden",
-      "correctAnswer": "The dog's bone was hidden.",
-      "hint": "Possessive singular needs an apostrophe.",
-      "explanation": "The correctly punctuated sentence is: \"The dog's bone was hidden.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l2_q3",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "However we must proceed",
-      "correctAnswer": "However, we must proceed.",
-      "hint": "Introductory adverbs need a comma.",
-      "explanation": "The correctly punctuated sentence is: \"However, we must proceed.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l3_q1",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "She lives in Paris France",
-      "correctAnswer": "She lives in Paris, France.",
-      "hint": "Separate city and country with a comma.",
-      "explanation": "The correctly punctuated sentence is: \"She lives in Paris, France.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l3_q2",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "I am tired therefore I will sleep",
-      "correctAnswer": "I am tired; therefore, I will sleep.",
-      "hint": "Use a semicolon before conjunctive adverbs.",
-      "explanation": "The correctly punctuated sentence is: \"I am tired; therefore, I will sleep.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l3_q3",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "The results were excellent",
-      "correctAnswer": "The results were excellent.",
-      "hint": "Every sentence needs a period.",
-      "explanation": "The correctly punctuated sentence is: \"The results were excellent.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l4_q1",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "Are you ready to go",
-      "correctAnswer": "Are you ready to go?",
-      "hint": "Questions need question marks.",
-      "explanation": "The correctly punctuated sentence is: \"Are you ready to go?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l4_q2",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "Stop right there",
-      "correctAnswer": "Stop right there!",
-      "hint": "Exclamations need exclamation points.",
-      "explanation": "The correctly punctuated sentence is: \"Stop right there!\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l4_q3",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "He bought milk bread and eggs",
-      "correctAnswer": "He bought milk, bread, and eggs.",
-      "hint": "List items.",
-      "explanation": "The correctly punctuated sentence is: \"He bought milk, bread, and eggs.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l5_q1",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "This is Jacks car",
-      "correctAnswer": "This is Jack's car.",
-      "hint": "Possession.",
-      "explanation": "The correctly punctuated sentence is: \"This is Jack's car.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l5_q2",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "I dont know the answer",
-      "correctAnswer": "I don't know the answer.",
-      "hint": "Contraction.",
-      "explanation": "The correctly punctuated sentence is: \"I don't know the answer.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l5_q3",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "They visited London UK",
-      "correctAnswer": "They visited London, UK.",
-      "hint": "City, Country.",
-      "explanation": "The correctly punctuated sentence is: \"They visited London, UK.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l6_q1",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "I like apples oranges and bananas",
-      "correctAnswer": "I like apples, oranges, and bananas.",
-      "hint": "Use commas to separate items in a list.",
-      "explanation": "The correctly punctuated sentence is: \"I like apples, oranges, and bananas.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l6_q2",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "He said Hello to everyone",
-      "correctAnswer": "He said, \"Hello\" to everyone.",
-      "hint": "Use a comma and quotes for direct speech.",
-      "explanation": "The correctly punctuated sentence is: \"He said, \"Hello\" to everyone.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l6_q3",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "Its a beautiful day outside",
-      "correctAnswer": "It's a beautiful day outside.",
-      "hint": "Contraction of 'it is' needs an apostrophe.",
-      "explanation": "The correctly punctuated sentence is: \"It's a beautiful day outside.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l7_q1",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "Wait what are you doing",
-      "correctAnswer": "Wait, what are you doing?",
-      "hint": "Use a comma for pauses and a question mark for inquiries.",
-      "explanation": "The correctly punctuated sentence is: \"Wait, what are you doing?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l7_q2",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "The dogs bone was hidden",
-      "correctAnswer": "The dog's bone was hidden.",
-      "hint": "Possessive singular needs an apostrophe.",
-      "explanation": "The correctly punctuated sentence is: \"The dog's bone was hidden.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l7_q3",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "However we must proceed",
-      "correctAnswer": "However, we must proceed.",
-      "hint": "Introductory adverbs need a comma.",
-      "explanation": "The correctly punctuated sentence is: \"However, we must proceed.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l8_q1",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "She lives in Paris France",
-      "correctAnswer": "She lives in Paris, France.",
-      "hint": "Separate city and country with a comma.",
-      "explanation": "The correctly punctuated sentence is: \"She lives in Paris, France.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l8_q2",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "I am tired therefore I will sleep",
-      "correctAnswer": "I am tired; therefore, I will sleep.",
-      "hint": "Use a semicolon before conjunctive adverbs.",
-      "explanation": "The correctly punctuated sentence is: \"I am tired; therefore, I will sleep.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l8_q3",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "The results were excellent",
-      "correctAnswer": "The results were excellent.",
-      "hint": "Every sentence needs a period.",
-      "explanation": "The correctly punctuated sentence is: \"The results were excellent.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l9_q1",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "Are you ready to go",
-      "correctAnswer": "Are you ready to go?",
-      "hint": "Questions need question marks.",
-      "explanation": "The correctly punctuated sentence is: \"Are you ready to go?\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l9_q2",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "Stop right there",
-      "correctAnswer": "Stop right there!",
-      "hint": "Exclamations need exclamation points.",
-      "explanation": "The correctly punctuated sentence is: \"Stop right there!\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l9_q3",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "He bought milk bread and eggs",
-      "correctAnswer": "He bought milk, bread, and eggs.",
-      "hint": "List items.",
-      "explanation": "The correctly punctuated sentence is: \"He bought milk, bread, and eggs.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l10_q1",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "This is Jacks car",
-      "correctAnswer": "This is Jack's car.",
-      "hint": "Possession.",
-      "explanation": "The correctly punctuated sentence is: \"This is Jack's car.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l10_q2",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "I dont know the answer",
-      "correctAnswer": "I don't know the answer.",
-      "hint": "Contraction.",
-      "explanation": "The correctly punctuated sentence is: \"I don't know the answer.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    },
-    {
-      "id": "pm_l10_q3",
-      "instruction": "PLACE THE SYMBOLS",
-      "difficulty": 1,
-      "subtype": "punctuationMastery",
-      "interactionType": "Sticker Peel",
-      "sentence": "They visited London UK",
-      "correctAnswer": "They visited London, UK.",
-      "hint": "City, Country.",
-      "explanation": "The correctly punctuated sentence is: \"They visited London, UK.\"",
-      "xpReward": 10,
-      "coinReward": 10,
-      "visual_config": {
-        "painter_type": "NeuralNegotiationSync",
-        "primary_color": "0xFF00FFCC",
-        "pulse_intensity": 0.6,
-        "shader_effect": "glow_shimmer"
-      }
-    }
-  ]
+    "gameType":  "punctuationMastery",
+    "batchIndex":  1,
+    "levels":  "1-10",
+    "quests":  [
+                   {
+                       "id":  "pm_l1_q1",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "I like apples oranges and bananas",
+                       "correctAnswer":  "I like apples, oranges, and bananas.",
+                       "hint":  "Use commas to separate items in a list.",
+                       "explanation":  "The correctly punctuated sentence is: 'I like apples, oranges, and bananas.'"
+                   },
+                   {
+                       "id":  "pm_l1_q2",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "He said Hello to everyone",
+                       "correctAnswer":  "He said, 'Hello' to everyone.",
+                       "hint":  "Use a comma and quotes for direct speech.",
+                       "explanation":  "The correctly punctuated sentence is: 'He said, 'Hello' to everyone.'"
+                   },
+                   {
+                       "id":  "pm_l1_q3",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Its a beautiful day outside",
+                       "correctAnswer":  "It\u0027s a beautiful day outside.",
+                       "hint":  "Contraction of \u0027it is\u0027 needs an apostrophe.",
+                       "explanation":  "The correctly punctuated sentence is: 'It\u0027s a beautiful day outside.'"
+                   },
+                   {
+                       "id":  "pm_l2_q1",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Wait what are you doing",
+                       "correctAnswer":  "Wait, what are you doing?",
+                       "hint":  "Use a comma for pauses and a question mark for inquiries.",
+                       "explanation":  "The correctly punctuated sentence is: 'Wait, what are you doing?'"
+                   },
+                   {
+                       "id":  "pm_l2_q2",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "The dogs bone was hidden",
+                       "correctAnswer":  "The dog\u0027s bone was hidden.",
+                       "hint":  "Possessive singular needs an apostrophe.",
+                       "explanation":  "The correctly punctuated sentence is: 'The dog\u0027s bone was hidden.'"
+                   },
+                   {
+                       "id":  "pm_l2_q3",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "However we must proceed",
+                       "correctAnswer":  "However, we must proceed.",
+                       "hint":  "Introductory adverbs need a comma.",
+                       "explanation":  "The correctly punctuated sentence is: 'However, we must proceed.'"
+                   },
+                   {
+                       "id":  "pm_l3_q1",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "She lives in Paris France",
+                       "correctAnswer":  "She lives in Paris, France.",
+                       "hint":  "Separate city and country with a comma.",
+                       "explanation":  "The correctly punctuated sentence is: 'She lives in Paris, France.'"
+                   },
+                   {
+                       "id":  "pm_l3_q2",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "I am tired therefore I will sleep",
+                       "correctAnswer":  "I am tired; therefore, I will sleep.",
+                       "hint":  "Use a semicolon before conjunctive adverbs.",
+                       "explanation":  "The correctly punctuated sentence is: 'I am tired; therefore, I will sleep.'"
+                   },
+                   {
+                       "id":  "pm_l3_q3",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "The results were excellent",
+                       "correctAnswer":  "The results were excellent.",
+                       "hint":  "Every sentence needs a period.",
+                       "explanation":  "The correctly punctuated sentence is: 'The results were excellent.'"
+                   },
+                   {
+                       "id":  "pm_l4_q1",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Are you ready to go",
+                       "correctAnswer":  "Are you ready to go?",
+                       "hint":  "Questions need question marks.",
+                       "explanation":  "The correctly punctuated sentence is: 'Are you ready to go?'"
+                   },
+                   {
+                       "id":  "pm_l4_q2",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Stop right there",
+                       "correctAnswer":  "Stop right there!",
+                       "hint":  "Exclamations need exclamation points.",
+                       "explanation":  "The correctly punctuated sentence is: 'Stop right there!'"
+                   },
+                   {
+                       "id":  "pm_l4_q3",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "He bought milk bread and eggs",
+                       "correctAnswer":  "He bought milk, bread, and eggs.",
+                       "hint":  "List items.",
+                       "explanation":  "The correctly punctuated sentence is: 'He bought milk, bread, and eggs.'"
+                   },
+                   {
+                       "id":  "pm_l5_q1",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "This is Jacks car",
+                       "correctAnswer":  "This is Jack\u0027s car.",
+                       "hint":  "Possession.",
+                       "explanation":  "The correctly punctuated sentence is: 'This is Jack\u0027s car.'"
+                   },
+                   {
+                       "id":  "pm_l5_q2",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "I dont know the answer",
+                       "correctAnswer":  "I don\u0027t know the answer.",
+                       "hint":  "Contraction.",
+                       "explanation":  "The correctly punctuated sentence is: 'I don\u0027t know the answer.'"
+                   },
+                   {
+                       "id":  "pm_l5_q3",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  1,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "They visited London UK",
+                       "correctAnswer":  "They visited London, UK.",
+                       "hint":  "City, Country.",
+                       "explanation":  "The correctly punctuated sentence is: 'They visited London, UK.'"
+                   },
+                   {
+                       "id":  "pm_l6_q1",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  2,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "The blue red and green flags waved",
+                       "correctAnswer":  "The blue, red, and green flags waved.",
+                       "hint":  "Oxford commas ensure clarity in lists.",
+                       "explanation":  "The correctly punctuated sentence is: 'The blue, red, and green flags waved.'"
+                   },
+                   {
+                       "id":  "pm_l6_q2",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  2,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Finally the sun began to set",
+                       "correctAnswer":  "Finally, the sun began to set.",
+                       "hint":  "Introductory adverbs often require a following comma.",
+                       "explanation":  "The correctly punctuated sentence is: 'Finally, the sun began to set.'"
+                   },
+                   {
+                       "id":  "pm_l6_q3",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  2,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "The students books were on the desk",
+                       "correctAnswer":  "The students\u0027 books were on the desk.",
+                       "hint":  "Plural possessive for words ending in \u0027s\u0027 only needs an apostrophe.",
+                       "explanation":  "The correctly punctuated sentence is: 'The students\u0027 books were on the desk.'"
+                   },
+                   {
+                       "id":  "pm_l7_q1",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  2,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "I wanted to go but it rained",
+                       "correctAnswer":  "I wanted to go, but it rained.",
+                       "hint":  "Use a comma before coordinating conjunctions connecting independent clauses.",
+                       "explanation":  "The correctly punctuated sentence is: 'I wanted to go, but it rained.'"
+                   },
+                   {
+                       "id":  "pm_l7_q2",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  2,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Whose phone is ringing",
+                       "correctAnswer":  "Whose phone is ringing?",
+                       "hint":  "Interrogative sentences always end with a question mark.",
+                       "explanation":  "The correctly punctuated sentence is: 'Whose phone is ringing?'"
+                   },
+                   {
+                       "id":  "pm_l7_q3",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  2,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Wow that was an amazing performance",
+                       "correctAnswer":  "Wow, that was an amazing performance!",
+                       "hint":  "Interjections are often followed by a comma and end with an exclamation mark.",
+                       "explanation":  "The correctly punctuated sentence is: 'Wow, that was an amazing performance!'"
+                   },
+                   {
+                       "id":  "pm_l8_q1",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  2,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "The meeting is at 230 PM",
+                       "correctAnswer":  "The meeting is at 2:30 PM.",
+                       "hint":  "Use a colon to separate hours and minutes.",
+                       "explanation":  "The correctly punctuated sentence is: 'The meeting is at 2:30 PM.'"
+                   },
+                   {
+                       "id":  "pm_l8_q2",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  2,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Please bring the following pens paper and ink",
+                       "correctAnswer":  "Please bring the following: pens, paper, and ink.",
+                       "hint":  "Use a colon to introduce a list after a complete sentence.",
+                       "explanation":  "The correctly punctuated sentence is: 'Please bring the following: pens, paper, and ink.'"
+                   },
+                   {
+                       "id":  "pm_l8_q3",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  2,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Shes the best runner in the class",
+                       "correctAnswer":  "She\u0027s the best runner in the class.",
+                       "hint":  "Apostrophes mark omitted letters in contractions.",
+                       "explanation":  "The correctly punctuated sentence is: 'She\u0027s the best runner in the class.'"
+                   },
+                   {
+                       "id":  "pm_l9_q1",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  3,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "The wind blew strongly nevertheless the ship sailed",
+                       "correctAnswer":  "The wind blew strongly; nevertheless, the ship sailed.",
+                       "hint":  "Use a semicolon and comma with conjunctive adverbs.",
+                       "explanation":  "The correctly punctuated sentence is: 'The wind blew strongly; nevertheless, the ship sailed.'"
+                   },
+                   {
+                       "id":  "pm_l9_q2",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  3,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Paris the capital of France is beautiful",
+                       "correctAnswer":  "Paris, the capital of France, is beautiful.",
+                       "hint":  "Appositives (extra information about a noun) should be enclosed in commas.",
+                       "explanation":  "The correctly punctuated sentence is: 'Paris, the capital of France, is beautiful.'"
+                   },
+                   {
+                       "id":  "pm_l9_q3",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  3,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Did you see the movie The Matrix last night",
+                       "correctAnswer":  "Did you see the movie \u0027The Matrix\u0027 last night?",
+                       "hint":  "Title and question mark placement.",
+                       "explanation":  "The correctly punctuated sentence is: 'Did you see the movie \u0027The Matrix\u0027 last night?'"
+                   },
+                   {
+                       "id":  "pm_l10_q1",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  3,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Its never too late to learn he remarked",
+                       "correctAnswer":  "It\u0027s never too late to learn, he remarked.",
+                       "hint":  "Dialogue tags at the end of a sentence.",
+                       "explanation":  "The correctly punctuated sentence is: 'It\u0027s never too late to learn, he remarked.'"
+                   },
+                   {
+                       "id":  "pm_l10_q2",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  3,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "The cat whose tail was fluffy jumped high",
+                       "correctAnswer":  "The cat, whose tail was fluffy, jumped high.",
+                       "hint":  "Non-restrictive relative clauses need commas.",
+                       "explanation":  "The correctly punctuated sentence is: 'The cat, whose tail was fluffy, jumped high.'"
+                   },
+                   {
+                       "id":  "pm_l10_q3",
+                       "instruction":  "PLACE THE SYMBOLS",
+                       "difficulty":  3,
+                       "subtype":  "punctuationMastery",
+                       "interactionType":  "Sticker Peel",
+                       "sentence":  "Wait for me she shouted from the stairs",
+                       "correctAnswer":  "Wait for me! she shouted from the stairs.",
+                       "hint":  "Exclamatory dialogue.",
+                       "explanation":  "The correctly punctuated sentence is: 'Wait for me! she shouted from the stairs.'"
+                   }
+               ]
 }

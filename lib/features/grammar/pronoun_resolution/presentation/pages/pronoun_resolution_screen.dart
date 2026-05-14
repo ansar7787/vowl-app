@@ -11,7 +11,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class PronounResolutionScreen extends StatefulWidget {
   final int level;
@@ -105,12 +105,35 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 24.h),
-              _buildSentenceBoard(quest.sentence ?? "CONTEXT SENTENCE", theme.primaryColor, isDark),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Concise Context Card (The Diamond Standard)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(22.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(28.r),
+                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.15), width: 1.5),
+                  ),
+                  child: Text(
+                    quest.sentence ?? "The antecedent is missing from the gravity field.",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.fredoka(
+                      fontSize: 18.sp, 
+                      color: isDark ? Colors.white70 : Colors.black87,
+                      height: 1.4
+                    ),
+                  ),
+                ),
+              ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
               Expanded(
-                child: _buildLaserArena(options, quest.correctAnswerIndex ?? 0, quest.targetWord ?? "it", theme.primaryColor, isDark),
+                child: _buildGravityWell(options, quest.correctAnswerIndex ?? 0, quest.targetWord ?? "it", theme.primaryColor, isDark),
               ),
               SizedBox(height: 40.h),
             ],
@@ -123,35 +146,41 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.gps_fixed_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("AIM LASER AT THE ANTECEDENT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            "ALIGN THE GRAVITY WELL", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildSentenceBoard(String text, Color primaryColor, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(20.r),
-      borderRadius: BorderRadius.circular(16.r),
-      child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 16.sp, color: isDark ? Colors.white70 : Colors.black87)),
-    );
-  }
-
-  Widget _buildLaserArena(List<String> options, int correctIndex, String pronoun, Color primaryColor, bool isDark) {
+  Widget _buildGravityWell(List<String> options, int correctIndex, String pronoun, Color primaryColor, bool isDark) {
     return LayoutBuilder(builder: (context, constraints) {
-      final basePoint = Offset(constraints.maxWidth / 2, constraints.maxHeight - 60.h);
+      final centerPoint = Offset(constraints.maxWidth / 2, constraints.maxHeight / 2 + 20.h);
       final nodeCount = options.length;
+      
+      // Calculate Orbital Points
       final nodePoints = List.generate(nodeCount, (i) {
-        final angle = (i * (3.14 / (nodeCount - 1))) - 3.14;
+        final angle = (i * (2 * pi / nodeCount)) - (pi / 2);
         return Offset(
-          constraints.maxWidth / 2 + cos(angle) * 150.r,
-          basePoint.dy - 200.h + sin(angle) * 50.h,
+          centerPoint.dx + cos(angle) * 130.r,
+          centerPoint.dy + sin(angle) * 130.r,
         );
       });
 
@@ -160,73 +189,139 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
           if (_isAnswered) return;
           final localPos = details.localPosition;
           setState(() {
-            _rotation = atan2(localPos.dy - basePoint.dy, localPos.dx - basePoint.dx);
-            _hapticService.selection();
+            _rotation = atan2(localPos.dy - centerPoint.dy, localPos.dx - centerPoint.dx);
           });
-          // Check collision
+          // Check collision with nodes
           for (int i = 0; i < nodePoints.length; i++) {
-            final nodeAngle = atan2(nodePoints[i].dy - basePoint.dy, nodePoints[i].dx - basePoint.dx);
-            if ((_rotation - nodeAngle).abs() < 0.1) {
+            final nodeAngle = atan2(nodePoints[i].dy - centerPoint.dy, nodePoints[i].dx - centerPoint.dx);
+            if ((_rotation - nodeAngle).abs() < 0.15) {
               _onFire(i, correctIndex);
             }
           }
         },
         child: CustomPaint(
           size: Size.infinite,
-          painter: _LaserPainter(rotation: _rotation, basePoint: basePoint, nodes: nodePoints, options: options, primaryColor: primaryColor, isAnswered: _isAnswered, targetNode: _targetIndex, pronoun: pronoun),
+          painter: _GravityPainter(
+            rotation: _rotation, 
+            centerPoint: centerPoint, 
+            nodes: nodePoints, 
+            options: options, 
+            primaryColor: primaryColor, 
+            isAnswered: _isAnswered, 
+            isCorrect: _isCorrect ?? false,
+            targetNode: _targetIndex, 
+            pronoun: pronoun,
+            isDark: isDark
+          ),
         ),
       );
     });
   }
 }
 
-class _LaserPainter extends CustomPainter {
+class _GravityPainter extends CustomPainter {
   final double rotation;
-  final Offset basePoint;
+  final Offset centerPoint;
   final List<Offset> nodes;
   final List<String> options;
   final Color primaryColor;
   final bool isAnswered;
+  final bool isCorrect;
   final int targetNode;
   final String pronoun;
+  final bool isDark;
 
-  _LaserPainter({required this.rotation, required this.basePoint, required this.nodes, required this.options, required this.primaryColor, required this.isAnswered, required this.targetNode, required this.pronoun});
+  _GravityPainter({
+    required this.rotation, 
+    required this.centerPoint, 
+    required this.nodes, 
+    required this.options, 
+    required this.primaryColor, 
+    required this.isAnswered, 
+    required this.isCorrect,
+    required this.targetNode, 
+    required this.pronoun, 
+    required this.isDark
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
-    // Draw Nodes
+    // Draw Orbital Rings
+    canvas.drawCircle(
+      centerPoint, 130.r, 
+      Paint()..color = primaryColor.withValues(alpha: 0.05)..style = PaintingStyle.stroke..strokeWidth = 1.5.r
+    );
+
+    // Draw Antecedents (Orbiting Satellites)
     for (int i = 0; i < nodes.length; i++) {
       final isHit = isAnswered && targetNode == i;
-      final nodePaint = Paint()..color = (isHit ? Colors.greenAccent : primaryColor).withValues(alpha: 0.1)..style = PaintingStyle.fill;
-      canvas.drawRRect(RRect.fromRectAndRadius(Rect.fromCenter(center: nodes[i], width: 100.w, height: 40.h), Radius.circular(10.r)), nodePaint);
+      final isWrong = isAnswered && !isCorrect && targetNode == i;
+      final nodeColor = isHit ? Colors.greenAccent : (isWrong ? Colors.redAccent : primaryColor);
+      
+      // Node Container (Glass Morph)
+      final rect = Rect.fromCenter(center: nodes[i], width: 110.w, height: 45.h);
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(rect, Radius.circular(12.r)), 
+        Paint()..color = nodeColor.withValues(alpha: 0.1)..style = PaintingStyle.fill
+      );
+      canvas.drawRRect(
+        RRect.fromRectAndRadius(rect, Radius.circular(12.r)), 
+        Paint()..color = nodeColor.withValues(alpha: 0.3)..style = PaintingStyle.stroke..strokeWidth = 1
+      );
       
       final textPainter = TextPainter(
-        text: TextSpan(text: options[i], style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.bold, color: isHit ? Colors.greenAccent : primaryColor)),
+        text: TextSpan(
+          text: options[i].toUpperCase(), 
+          style: GoogleFonts.outfit(
+            fontSize: 14.sp, 
+            fontWeight: FontWeight.bold, 
+            color: isHit ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isDark ? Colors.white : Colors.black87))
+          )
+        ),
         textDirection: TextDirection.ltr,
       )..layout();
       textPainter.paint(canvas, nodes[i] - Offset(textPainter.width / 2, textPainter.height / 2));
     }
 
-    // Draw Laser Beam
+    // Draw Focal Beam
     if (!isAnswered || targetNode != -1) {
-      final beamPaint = Paint()..color = primaryColor..strokeWidth = 6.r..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10);
-      final beamCore = Paint()..color = Colors.white..strokeWidth = 2.r;
+      final beamColor = isAnswered ? (isCorrect ? Colors.greenAccent : Colors.redAccent) : primaryColor;
       
-      final beamEnd = Offset(basePoint.dx + cos(rotation) * 400.r, basePoint.dy + sin(rotation) * 400.r);
-      canvas.drawLine(basePoint, beamEnd, beamPaint);
-      canvas.drawLine(basePoint, beamEnd, beamCore);
+      final beamPaint = Paint()
+        ..color = beamColor.withValues(alpha: 0.3)
+        ..strokeWidth = 12.r
+        ..strokeCap = StrokeCap.round
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
+        
+      final beamCore = Paint()..color = Colors.white.withValues(alpha: 0.8)..strokeWidth = 2.r;
+      
+      final beamEnd = isAnswered ? nodes[targetNode] : Offset(centerPoint.dx + cos(rotation) * 160.r, centerPoint.dy + sin(rotation) * 160.r);
+      canvas.drawLine(centerPoint, beamEnd, beamPaint);
+      canvas.drawLine(centerPoint, beamEnd, beamCore);
     }
 
-    // Draw Base
-    canvas.drawCircle(basePoint, 30.r, Paint()..color = primaryColor);
+    // Draw Gravity Core (The Pronoun)
+    final coreColor = isAnswered ? (isCorrect ? Colors.greenAccent : Colors.redAccent) : primaryColor;
+    canvas.drawCircle(
+      centerPoint, 40.r, 
+      Paint()..color = coreColor..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10)
+    );
+    canvas.drawCircle(centerPoint, 35.r, Paint()..color = coreColor);
+    
     final pronounPainter = TextPainter(
-      text: TextSpan(text: pronoun.toUpperCase(), style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, color: Colors.white)),
+      text: TextSpan(
+        text: pronoun.toUpperCase(), 
+        style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: Colors.white)
+      ),
       textDirection: TextDirection.ltr,
     )..layout();
-    pronounPainter.paint(canvas, basePoint - Offset(pronounPainter.width / 2, pronounPainter.height / 2));
+    pronounPainter.paint(canvas, centerPoint - Offset(pronounPainter.width / 2, pronounPainter.height / 2));
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant _GravityPainter oldDelegate) => 
+    oldDelegate.rotation != rotation || 
+    oldDelegate.isAnswered != isAnswered || 
+    oldDelegate.targetNode != targetNode;
 }
 

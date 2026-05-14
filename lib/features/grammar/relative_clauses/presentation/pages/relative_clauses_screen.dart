@@ -10,7 +10,7 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class RelativeClausesScreen extends StatefulWidget {
   final int level;
@@ -105,12 +105,36 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
           child: quest == null ? const SizedBox() : Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildSentenceDeck(quest.sentence ?? "The boy", theme.primaryColor, isDark),
+              SizedBox(height: 20.h),
+              
+              // Optimized: Quantum Linker Hub (The Diamond Standard)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(22.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    borderRadius: BorderRadius.circular(28.r),
+                    border: Border.all(color: theme.primaryColor.withValues(alpha: 0.15), width: 1.5),
+                  ),
+                  child: Text(
+                    quest.question?.replaceAll('___', '_____') ?? "The data ____",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.fredoka(
+                      fontSize: 20.sp,
+                      color: isDark ? Colors.white : Colors.black87,
+                      height: 1.5,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
               Expanded(
-                child: _buildFishingArena(fishOptions, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+                child: _buildQuantumArena(fishOptions, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
               ),
               SizedBox(height: 40.h),
             ],
@@ -123,43 +147,37 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.phishing_rounded, size: 14.r, color: primaryColor),
+          Icon(Icons.hub_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("CAST HOOK TO CATCH CORRECT CLAUSE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSentenceDeck(String sentence, Color primaryColor, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(24.r),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(sentence, style: GoogleFonts.fredoka(fontSize: 22.sp, color: isDark ? Colors.white70 : Colors.black87)),
-          SizedBox(width: 10.w),
-          Container(
-            width: 40.w, height: 4.h,
-            decoration: BoxDecoration(color: primaryColor, borderRadius: BorderRadius.circular(2.r)),
+          Text(
+            "ESTABLISH QUANTUM LINK", 
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp, 
+              fontWeight: FontWeight.w900, 
+              color: primaryColor, 
+              letterSpacing: 1.5
+            )
           ),
         ],
       ),
     );
   }
 
-  Widget _buildFishingArena(List<String> fish, int correctIndex, Color primaryColor, bool isDark) {
+  Widget _buildQuantumArena(List<String> nodes, int correctIndex, Color primaryColor, bool isDark) {
     return LayoutBuilder(builder: (context, constraints) {
-      final startPoint = Offset(constraints.maxWidth / 2 + 50.w, 0); // Aligned with the sentence gap
-      final fishPoints = List.generate(fish.length, (i) {
+      final startPoint = Offset(constraints.maxWidth / 2, 40.h); 
+      final nodePoints = List.generate(nodes.length, (i) {
         return Offset(
-          40.w + (i * (constraints.maxWidth - 80.w) / (fish.length - 1)),
-          constraints.maxHeight - 100.h,
+          50.w + (i * (constraints.maxWidth - 100.w) / (nodes.length - 1)),
+          constraints.maxHeight - 140.h,
         );
       });
 
@@ -168,11 +186,11 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
           if (_isAnswered) return;
           setState(() {
             _hookPoint = details.localPosition;
-            _hapticService.selection();
+            if (details.localPosition.dy.toInt() % 10 == 0) _hapticService.selection();
           });
-          // Check collision with fish
-          for (int i = 0; i < fishPoints.length; i++) {
-            if ((details.localPosition - fishPoints[i]).distance < 40.r) {
+          // Check collision with node bubbles
+          for (int i = 0; i < nodePoints.length; i++) {
+            if ((details.localPosition - nodePoints[i]).distance < 55.r) {
               _onCatch(i, correctIndex);
             }
           }
@@ -180,53 +198,137 @@ class _RelativeClausesScreenState extends State<RelativeClausesScreen> {
         onPanEnd: (_) => setState(() => _hookPoint = null),
         child: CustomPaint(
           size: Size.infinite,
-          painter: _FishingPainter(hookPoint: _hookPoint, startPoint: startPoint, fishPoints: fishPoints, fishLabels: fish, primaryColor: primaryColor, isAnswered: _isAnswered, targetFish: _targetFish),
+          painter: _QuantumPainter(
+            hookPoint: _hookPoint, 
+            startPoint: startPoint, 
+            nodePoints: nodePoints, 
+            nodeLabels: nodes, 
+            primaryColor: primaryColor, 
+            isAnswered: _isAnswered, 
+            isCorrect: _isCorrect,
+            targetNode: _targetFish,
+            isDark: isDark,
+          ),
         ),
       );
     });
   }
 }
 
-class _FishingPainter extends CustomPainter {
+class _QuantumPainter extends CustomPainter {
   final Offset? hookPoint;
   final Offset startPoint;
-  final List<Offset> fishPoints;
-  final List<String> fishLabels;
+  final List<Offset> nodePoints;
+  final List<String> nodeLabels;
   final Color primaryColor;
   final bool isAnswered;
-  final int targetFish;
+  final bool? isCorrect;
+  final int targetNode;
+  final bool isDark;
 
-  _FishingPainter({required this.hookPoint, required this.startPoint, required this.fishPoints, required this.fishLabels, required this.primaryColor, required this.isAnswered, required this.targetFish});
+  _QuantumPainter({
+    required this.hookPoint, 
+    required this.startPoint, 
+    required this.nodePoints, 
+    required this.nodeLabels, 
+    required this.primaryColor, 
+    required this.isAnswered, 
+    this.isCorrect,
+    required this.targetNode,
+    required this.isDark,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
-    final linePaint = Paint()..color = primaryColor..strokeWidth = 2.r..style = PaintingStyle.stroke;
-    final fishPaint = Paint()..style = PaintingStyle.fill;
+    final linePaint = Paint()
+      ..color = primaryColor.withValues(alpha: 0.6)
+      ..strokeWidth = 3.r
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
 
-    // Draw Fish
-    for (int i = 0; i < fishPoints.length; i++) {
-      final isCaught = isAnswered && targetFish == i;
-      fishPaint.color = (isCaught ? Colors.greenAccent : primaryColor).withValues(alpha: 0.1);
-      canvas.drawCircle(fishPoints[i], 45.r, fishPaint);
-      canvas.drawCircle(fishPoints[i], 45.r, Paint()..color = (isCaught ? Colors.greenAccent : primaryColor)..style = PaintingStyle.stroke..strokeWidth = 2);
+    final nodePaint = Paint()..style = PaintingStyle.fill;
+
+    // Draw Holographic Node Bubbles
+    for (int i = 0; i < nodePoints.length; i++) {
+      final isCaught = isAnswered && targetNode == i;
+      final isWrong = isAnswered && isCorrect == false && targetNode == i;
+      final nodeColor = isCaught 
+          ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent) 
+          : (isWrong ? Colors.redAccent : primaryColor);
       
+      // Outer Plasma Glow
+      canvas.drawCircle(
+        nodePoints[i], 
+        58.r, 
+        Paint()..color = nodeColor.withValues(alpha: 0.1)..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12)
+      );
+
+      // Glass Body
+      nodePaint.color = isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02);
+      canvas.drawCircle(nodePoints[i], 52.r, nodePaint);
+      
+      // Border
+      canvas.drawCircle(
+        nodePoints[i], 
+        52.r, 
+        Paint()..color = nodeColor.withValues(alpha: 0.3)..style = PaintingStyle.stroke..strokeWidth = 2
+      );
+      
+      // Label
       final textPainter = TextPainter(
-        text: TextSpan(text: fishLabels[i], style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: isCaught ? Colors.greenAccent : primaryColor)),
+        text: TextSpan(
+          text: nodeLabels[i].toUpperCase(), 
+          style: GoogleFonts.outfit(
+            fontSize: 14.sp, 
+            fontWeight: FontWeight.w900, 
+            color: isCaught 
+                ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent) 
+                : (isDark ? Colors.white70 : Colors.black87),
+            letterSpacing: 1.5
+          )
+        ),
         textDirection: TextDirection.ltr,
-      )..layout(maxWidth: 80.w);
-      textPainter.paint(canvas, fishPoints[i] - Offset(textPainter.width / 2, textPainter.height / 2));
+      )..layout(maxWidth: 100.w);
+      textPainter.paint(canvas, nodePoints[i] - Offset(textPainter.width / 2, textPainter.height / 2));
     }
 
-    // Draw Line
+    // Draw Kinetic Data Stream
     if (hookPoint != null || isAnswered) {
-      final end = isAnswered ? fishPoints[targetFish] : hookPoint!;
-      final path = Path()..moveTo(startPoint.dx, startPoint.dy)..quadraticBezierTo(startPoint.dx, (startPoint.dy + end.dy) / 2, end.dx, end.dy);
-      canvas.drawPath(path, linePaint..strokeWidth = 3.r..color = primaryColor.withValues(alpha: 0.5));
-      canvas.drawCircle(end, 8.r, Paint()..color = primaryColor);
+      final end = isAnswered && targetNode != -1 ? nodePoints[targetNode] : hookPoint!;
+      final path = Path()
+        ..moveTo(startPoint.dx, startPoint.dy)
+        ..cubicTo(
+          startPoint.dx, (startPoint.dy + end.dy) / 2,
+          end.dx, (startPoint.dy + end.dy) / 2,
+          end.dx, end.dy
+        );
+      
+      final beamColor = isAnswered 
+          ? (isCorrect == true ? Colors.greenAccent : Colors.redAccent) 
+          : primaryColor;
+
+      // Neon Data Glow
+      canvas.drawPath(
+        path, 
+        linePaint..color = beamColor.withValues(alpha: 0.2)..strokeWidth = 10.r..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8)
+      );
+      canvas.drawPath(
+        path, 
+        linePaint..color = beamColor.withValues(alpha: 0.4)..strokeWidth = 4.r..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3)
+      );
+      canvas.drawPath(path, linePaint..color = beamColor..strokeWidth = 2.r..maskFilter = null);
+      
+      // Terminals
+      canvas.drawCircle(startPoint, 8.r, Paint()..color = primaryColor);
+      canvas.drawCircle(end, 10.r, Paint()..color = beamColor);
     }
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant _QuantumPainter oldDelegate) => 
+    oldDelegate.hookPoint != hookPoint || 
+    oldDelegate.isAnswered != isAnswered || 
+    oldDelegate.isCorrect != isCorrect ||
+    oldDelegate.targetNode != targetNode;
 }
 
