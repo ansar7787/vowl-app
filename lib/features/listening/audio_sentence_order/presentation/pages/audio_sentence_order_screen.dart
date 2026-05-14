@@ -23,13 +23,14 @@ class AudioSentenceOrderScreen extends StatefulWidget {
   });
 
   @override
-  State<AudioSentenceOrderScreen> createState() => _AudioSentenceOrderScreenState();
+  State<AudioSentenceOrderScreen> createState() =>
+      _AudioSentenceOrderScreenState();
 }
 
 class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   List<String> _slots = [];
   List<String> _segments = [];
   bool _isAnswered = false;
@@ -41,7 +42,9 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
+    context.read<ListeningBloc>().add(
+      FetchListeningQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   void _onSnap(String segment, int slotIndex) {
@@ -67,18 +70,28 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
 
   void _submitAnswer(String correctFull) {
     if (_isAnswered) return;
-    String current = _slots.join(" ").trim();
-    bool isCorrect = current == correctFull.trim();
+    String current = _slots.join(" ").trim().toLowerCase();
+    String target = correctFull
+        .replaceAll(RegExp(r'[^\w\s]'), '')
+        .trim()
+        .toLowerCase();
+    bool isCorrect = current == target;
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+      });
       context.read<ListeningBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { _isAnswered = true; _isCorrect = false; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = false;
+      });
       context.read<ListeningBloc>().add(SubmitAnswer(false));
     }
   }
@@ -92,7 +105,9 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
       listener: (context, state) {
         if (state is ListeningLoaded) {
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          if (state.currentIndex != _lastProcessedIndex ||
+              livesChanged ||
+              (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -105,42 +120,83 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
         }
         if (state is ListeningGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'SEQUENCE MASTER!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'SEQUENCE MASTER!',
+            enableDoubleUp: true,
+          );
         } else if (state is ListeningGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<ListeningBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<ListeningBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
         final quest = (state is ListeningLoaded) ? state.currentQuest : null;
-        
+
         return ListeningBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           showConfetti: _showConfetti,
+          useScrolling: true,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildOscilloscope(quest.textToSpeak ?? "", theme.primaryColor),
-              SizedBox(height: 40.h),
-              _buildTimeline(theme.primaryColor, isDark),
-              SizedBox(height: 40.h),
-              _buildSegmentsField(theme.primaryColor, isDark),
-              const Spacer(),
-              if (!_isAnswered)
-                ScaleButton(
-                  onTap: () => _submitAnswer(quest.textToSpeak ?? ""),
-                  child: Container(
-                    width: double.infinity, height: 60.h,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: theme.primaryColor),
-                    child: Center(child: Text("CALIBRATE SIGNAL", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
-                  ),
+          child: quest == null
+              ? const SizedBox()
+              : Column(
+                  children: [
+                    SizedBox(height: 16.h),
+                    _buildInstruction(theme.primaryColor),
+                    SizedBox(height: 32.h),
+                    _buildOscilloscope(
+                      quest.textToSpeak ?? "",
+                      theme.primaryColor,
+                    ),
+                    SizedBox(height: 40.h),
+                    _buildTimeline(theme.primaryColor, isDark),
+                    SizedBox(height: 40.h),
+                    _buildSegmentsField(theme.primaryColor, isDark),
+                    SizedBox(height: 40.h),
+                    if (!_isAnswered)
+                      ScaleButton(
+                        onTap: () => _submitAnswer(quest.textToSpeak ?? ""),
+                        child: Container(
+                          width: double.infinity,
+                          height: 65.h,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.r),
+                            color: theme.primaryColor,
+                            boxShadow: [
+                              BoxShadow(
+                                color: theme.primaryColor.withValues(
+                                  alpha: 0.3,
+                                ),
+                                blurRadius: 15,
+                                offset: const Offset(0, 5),
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
+                              "CALIBRATE SIGNAL",
+                              style: GoogleFonts.outfit(
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                                letterSpacing: 2,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    SizedBox(height: 24.h),
+                  ],
                 ),
-              SizedBox(height: 20.h),
-            ],
-          ),
         );
       },
     );
@@ -149,13 +205,25 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
   Widget _buildInstruction(Color primaryColor) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
+      decoration: BoxDecoration(
+        color: primaryColor.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(Icons.waves_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("SNAP SEGMENTS TO TIMELINE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(
+            "SNAP SEGMENTS TO TIMELINE",
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w900,
+              color: primaryColor,
+              letterSpacing: 1.5,
+            ),
+          ),
         ],
       ),
     );
@@ -168,17 +236,41 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
         _hapticService.selection();
       },
       child: Container(
-        height: 100.h, width: double.infinity,
-        decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(16.r), border: Border.all(color: color.withValues(alpha: 0.3))),
+        height: 100.h,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
+        ),
         child: Stack(
           alignment: Alignment.center,
           children: [
-            ...List.generate(20, (i) => Container(
-              width: 4.w, height: 20.h + (i % 5 * 10).h,
-              margin: EdgeInsets.symmetric(horizontal: 2.w),
-              decoration: BoxDecoration(color: color.withValues(alpha: 0.4), borderRadius: BorderRadius.circular(2.r)),
-            ).animate(onPlay: (c) => c.repeat(reverse: true)).scaleY(begin: 0.5, end: 1.5, duration: 500.ms, delay: (i * 50).ms)),
-            Icon(Icons.play_circle_filled_rounded, color: Colors.white, size: 40.r),
+            ...List.generate(
+              20,
+              (i) =>
+                  Container(
+                        width: 4.w,
+                        height: 20.h + (i % 5 * 10).h,
+                        margin: EdgeInsets.symmetric(horizontal: 2.w),
+                        decoration: BoxDecoration(
+                          color: color.withValues(alpha: 0.4),
+                          borderRadius: BorderRadius.circular(2.r),
+                        ),
+                      )
+                      .animate(onPlay: (c) => c.repeat(reverse: true))
+                      .scaleY(
+                        begin: 0.5,
+                        end: 1.5,
+                        duration: 500.ms,
+                        delay: (i * 50).ms,
+                      ),
+            ),
+            Icon(
+              Icons.play_circle_filled_rounded,
+              color: Colors.white,
+              size: 40.r,
+            ),
           ],
         ),
       ),
@@ -187,36 +279,72 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
 
   Widget _buildTimeline(Color color, bool isDark) {
     return Wrap(
-      spacing: 8.w, runSpacing: 8.h,
+      spacing: 8.w,
+      runSpacing: 8.h,
       alignment: WrapAlignment.center,
-      children: List.generate(_slots.length, (index) => DragTarget<String>(
-        onAcceptWithDetails: (details) => _onSnap(details.data, index),
-        builder: (context, candidateData, rejectedData) => GestureDetector(
-          onTap: () => _onUnsnap(index),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            decoration: BoxDecoration(
-              color: _slots[index].isEmpty ? color.withValues(alpha: 0.05) : color.withValues(alpha: 0.2),
-              borderRadius: BorderRadius.circular(12.r),
-              border: Border.all(color: _slots[index].isEmpty ? color.withValues(alpha: 0.2) : color),
+      children: List.generate(
+        _slots.length,
+        (index) => DragTarget<String>(
+          onAcceptWithDetails: (details) => _onSnap(details.data, index),
+          builder: (context, candidateData, rejectedData) => GestureDetector(
+            onTap: () => _onUnsnap(index),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              decoration: BoxDecoration(
+                color: _slots[index].isEmpty
+                    ? color.withValues(alpha: 0.05)
+                    : color.withValues(alpha: 0.2),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(
+                  color: _slots[index].isEmpty
+                      ? color.withValues(alpha: 0.2)
+                      : color,
+                ),
+              ),
+              child: Text(
+                _slots[index].isEmpty ? "???" : _slots[index],
+                style: GoogleFonts.shareTechMono(
+                  fontSize: 14.sp,
+                  color: _slots[index].isEmpty ? Colors.grey : color,
+                ),
+              ),
             ),
-            child: Text(_slots[index].isEmpty ? "???" : _slots[index], style: GoogleFonts.shareTechMono(fontSize: 14.sp, color: _slots[index].isEmpty ? Colors.grey : Colors.white)),
           ),
         ),
-      )),
+      ),
     );
   }
 
   Widget _buildSegmentsField(Color color, bool isDark) {
     return Wrap(
-      spacing: 12.w, runSpacing: 12.h,
+      spacing: 12.w,
+      runSpacing: 12.h,
       alignment: WrapAlignment.center,
-      children: _segments.map((s) => Draggable<String>(
-        data: s,
-        feedback: Material(color: Colors.transparent, child: _buildSegmentChip(s, color, true)),
-        childWhenDragging: Opacity(opacity: 0.3, child: _buildSegmentChip(s, color, false)),
-        child: _buildSegmentChip(s, color, false),
-      )).toList(),
+      children: _segments
+          .map(
+            (s) => Draggable<String>(
+              data: s,
+              feedback: Material(
+                color: Colors.transparent,
+                child: _buildSegmentChip(s, color, true),
+              ),
+              childWhenDragging: Opacity(
+                opacity: 0.3,
+                child: _buildSegmentChip(s, color, false),
+              ),
+              child: GestureDetector(
+                onTap: () {
+                  if (_isAnswered) return;
+                  int firstEmptyIndex = _slots.indexOf("");
+                  if (firstEmptyIndex != -1) {
+                    _onSnap(s, firstEmptyIndex);
+                  }
+                },
+                child: _buildSegmentChip(s, color, false),
+              ),
+            ),
+          )
+          .toList(),
     );
   }
 
@@ -227,10 +355,18 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
         color: isFeedback ? color : Colors.white10,
         borderRadius: BorderRadius.circular(20.r),
         border: Border.all(color: color.withValues(alpha: 0.5)),
-        boxShadow: isFeedback ? [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 10)] : [],
+        boxShadow: isFeedback
+            ? [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 10)]
+            : [],
       ),
-      child: Text(text, style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w600, color: Colors.white)),
+      child: Text(
+        text,
+        style: GoogleFonts.outfit(
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w600,
+          color: isFeedback ? Colors.white : color,
+        ),
+      ),
     );
   }
 }
-

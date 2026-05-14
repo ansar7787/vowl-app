@@ -29,6 +29,8 @@ class ListeningQuestModel extends ListeningQuest {
     super.targetDetail,
     super.impliedMeaning,
     super.location,
+    super.shuffledSentences,
+    super.correctOrder,
   });
 
   factory ListeningQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -70,6 +72,8 @@ class ListeningQuestModel extends ListeningQuest {
       targetDetail: map['targetDetail'],
       impliedMeaning: map['impliedMeaning'],
       location: map['location'],
+      shuffledSentences: map['shuffledSentences'] != null ? List<String>.from(map['shuffledSentences']) : null,
+      correctOrder: map['correctOrder'] != null ? List<int>.from(map['correctOrder']) : null,
     );
   }
 
@@ -96,6 +100,8 @@ class ListeningQuestModel extends ListeningQuest {
       'targetDetail': targetDetail,
       'impliedMeaning': impliedMeaning,
       'location': location,
+      'shuffledSentences': shuffledSentences,
+      'correctOrder': correctOrder,
     };
   }
 }
