@@ -103,6 +103,7 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
         return ListeningBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
+          useScrolling: true,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
           child: quest == null ? const SizedBox() : Column(
@@ -130,7 +131,9 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
         children: [
           Icon(Icons.biotech_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("DRAG LENS TO SCAN • DOUBLE-TAP TO SELECT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Flexible(
+            child: Text("DRAG LENS TO SCAN • DOUBLE-TAP TO SELECT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          ),
         ],
       ),
     );
