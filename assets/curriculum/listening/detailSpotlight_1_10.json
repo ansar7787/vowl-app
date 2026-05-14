@@ -9,14 +9,15 @@
             "hint": "Find the detail.",
             "explanation": "'detective' was mentioned.",
             "textToSpeak": "The detective encrypts the device silently.",
-            "targetDetail": "The detective encrypts the device silently.",
+            "targetDetail": "detective",
             "options": [
                 "technician",
                 "analyst",
                 "scout",
                 "detective"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L1_Q2",
@@ -24,14 +25,15 @@
             "hint": "Find the detail.",
             "explanation": "'restores' was mentioned.",
             "textToSpeak": "The pilot restores the database efficiently.",
-            "targetDetail": "The pilot restores the database efficiently.",
+            "targetDetail": "restores",
             "options": [
                 "restores",
                 "encrypts",
                 "locates",
                 "transfers"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L1_Q3",
@@ -39,14 +41,15 @@
             "hint": "Find the detail.",
             "explanation": "'archive' was mentioned.",
             "textToSpeak": "The engineer restores the archive immediately.",
-            "targetDetail": "The engineer restores the archive immediately.",
+            "targetDetail": "archive",
             "options": [
                 "node",
                 "drone",
                 "archive",
                 "signal"
             ],
-            "correctAnswerIndex": 2
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q1",
@@ -54,14 +57,15 @@
             "hint": "Find the detail.",
             "explanation": "'scout' was mentioned.",
             "textToSpeak": "The scout validates the device immediately.",
-            "targetDetail": "The scout validates the device immediately.",
+            "targetDetail": "scout",
             "options": [
                 "commander",
                 "artist",
                 "scout",
                 "hero"
             ],
-            "correctAnswerIndex": 2
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q2",
@@ -69,14 +73,15 @@
             "hint": "Find the detail.",
             "explanation": "'analyzes' was mentioned.",
             "textToSpeak": "The artist analyzes the database steadily.",
-            "targetDetail": "The artist analyzes the database steadily.",
+            "targetDetail": "analyzes",
             "options": [
                 "repairs",
                 "restores",
                 "analyzes",
                 "observes"
             ],
-            "correctAnswerIndex": 2
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L2_Q3",
@@ -84,14 +89,15 @@
             "hint": "Find the detail.",
             "explanation": "'circuit' was mentioned.",
             "textToSpeak": "The pilot creates the circuit carefully.",
-            "targetDetail": "The pilot creates the circuit carefully.",
+            "targetDetail": "circuit",
             "options": [
                 "circuit",
                 "module",
                 "terminal",
                 "signal"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q1",
@@ -99,14 +105,15 @@
             "hint": "Find the detail.",
             "explanation": "'technician' was mentioned.",
             "textToSpeak": "The technician analyzes the data efficiently.",
-            "targetDetail": "The technician analyzes the data efficiently.",
+            "targetDetail": "technician",
             "options": [
                 "student",
                 "researcher",
                 "droid",
                 "technician"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q2",
@@ -114,14 +121,15 @@
             "hint": "Find the detail.",
             "explanation": "'measures' was mentioned.",
             "textToSpeak": "The technician measures the circuit securely.",
-            "targetDetail": "The technician measures the circuit securely.",
+            "targetDetail": "measures",
             "options": [
                 "creates",
                 "transfers",
                 "builds",
                 "measures"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L3_Q3",
@@ -129,14 +137,15 @@
             "hint": "Find the detail.",
             "explanation": "'device' was mentioned.",
             "textToSpeak": "The robot repairs the device rapidly.",
-            "targetDetail": "The robot repairs the device rapidly.",
+            "targetDetail": "device",
             "options": [
                 "archive",
                 "system",
                 "database",
                 "device"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q1",
@@ -144,14 +153,15 @@
             "hint": "Find the detail.",
             "explanation": "'technician' was mentioned.",
             "textToSpeak": "The technician observes the network securely.",
-            "targetDetail": "The technician observes the network securely.",
+            "targetDetail": "technician",
             "options": [
                 "teacher",
                 "scout",
                 "artist",
                 "technician"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q2",
@@ -159,14 +169,15 @@
             "hint": "Find the detail.",
             "explanation": "'restores' was mentioned.",
             "textToSpeak": "The traveler restores the chip instantly.",
-            "targetDetail": "The traveler restores the chip instantly.",
+            "targetDetail": "restores",
             "options": [
                 "restores",
                 "launches",
                 "transfers",
                 "evaluates"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L4_Q3",
@@ -174,14 +185,15 @@
             "hint": "Find the detail.",
             "explanation": "'software' was mentioned.",
             "textToSpeak": "The commander secures the software effectively.",
-            "targetDetail": "The commander secures the software effectively.",
+            "targetDetail": "software",
             "options": [
                 "software",
                 "code",
                 "system",
                 "circuit"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q1",
@@ -189,14 +201,15 @@
             "hint": "Find the detail.",
             "explanation": "'engineer' was mentioned.",
             "textToSpeak": "The engineer monitors the archive effectively.",
-            "targetDetail": "The engineer monitors the archive effectively.",
+            "targetDetail": "engineer",
             "options": [
                 "student",
                 "hacker",
                 "researcher",
                 "engineer"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q2",
@@ -204,14 +217,15 @@
             "hint": "Find the detail.",
             "explanation": "'activates' was mentioned.",
             "textToSpeak": "The pilot activates the module automatically.",
-            "targetDetail": "The pilot activates the module automatically.",
+            "targetDetail": "activates",
             "options": [
                 "encrypts",
                 "creates",
                 "secures",
                 "activates"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L5_Q3",
@@ -219,14 +233,15 @@
             "hint": "Find the detail.",
             "explanation": "'circuit' was mentioned.",
             "textToSpeak": "The artist locates the circuit expertly.",
-            "targetDetail": "The artist locates the circuit expertly.",
+            "targetDetail": "circuit",
             "options": [
                 "protocol",
                 "circuit",
                 "device",
                 "portal"
             ],
-            "correctAnswerIndex": 1
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L6_Q1",
@@ -234,14 +249,15 @@
             "hint": "Find the detail.",
             "explanation": "'technician' was mentioned.",
             "textToSpeak": "The technician builds the network instantly.",
-            "targetDetail": "The technician builds the network instantly.",
+            "targetDetail": "technician",
             "options": [
                 "student",
                 "artist",
                 "robot",
                 "technician"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L6_Q2",
@@ -249,14 +265,15 @@
             "hint": "Find the detail.",
             "explanation": "'updates' was mentioned.",
             "textToSpeak": "The expert updates the drone consistently.",
-            "targetDetail": "The expert updates the drone consistently.",
+            "targetDetail": "updates",
             "options": [
                 "updates",
                 "transfers",
                 "observes",
                 "evaluates"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L6_Q3",
@@ -264,14 +281,15 @@
             "hint": "Find the detail.",
             "explanation": "'circuit' was mentioned.",
             "textToSpeak": "The hacker creates the circuit smoothly.",
-            "targetDetail": "The hacker creates the circuit smoothly.",
+            "targetDetail": "circuit",
             "options": [
                 "portal",
                 "circuit",
                 "node",
                 "system"
             ],
-            "correctAnswerIndex": 1
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L7_Q1",
@@ -279,14 +297,15 @@
             "hint": "Find the detail.",
             "explanation": "'detective' was mentioned.",
             "textToSpeak": "The detective measures the portal instantly.",
-            "targetDetail": "The detective measures the portal instantly.",
+            "targetDetail": "detective",
             "options": [
                 "detective",
                 "student",
                 "teacher",
                 "pilot"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L7_Q2",
@@ -294,14 +313,15 @@
             "hint": "Find the detail.",
             "explanation": "'sends' was mentioned.",
             "textToSpeak": "The technician sends the code swiftly.",
-            "targetDetail": "The technician sends the code swiftly.",
+            "targetDetail": "sends",
             "options": [
                 "sends",
                 "updates",
                 "deploys",
                 "secures"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L7_Q3",
@@ -309,14 +329,15 @@
             "hint": "Find the detail.",
             "explanation": "'system' was mentioned.",
             "textToSpeak": "The commander monitors the system swiftly.",
-            "targetDetail": "The commander monitors the system swiftly.",
+            "targetDetail": "system",
             "options": [
                 "satellite",
                 "software",
                 "system",
                 "code"
             ],
-            "correctAnswerIndex": 2
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q1",
@@ -324,14 +345,15 @@
             "hint": "Find the detail.",
             "explanation": "'hacker' was mentioned.",
             "textToSpeak": "The hacker repairs the network silently.",
-            "targetDetail": "The hacker repairs the network silently.",
+            "targetDetail": "hacker",
             "options": [
                 "traveler",
                 "teacher",
                 "expert",
                 "hacker"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q2",
@@ -339,14 +361,15 @@
             "hint": "Find the detail.",
             "explanation": "'transfers' was mentioned.",
             "textToSpeak": "The scientist transfers the node automatically.",
-            "targetDetail": "The scientist transfers the node automatically.",
+            "targetDetail": "transfers",
             "options": [
                 "analyzes",
                 "updates",
                 "transfers",
                 "creates"
             ],
-            "correctAnswerIndex": 2
+            "correctAnswerIndex": 2,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L8_Q3",
@@ -354,14 +377,15 @@
             "hint": "Find the detail.",
             "explanation": "'node' was mentioned.",
             "textToSpeak": "The hacker locates the node expertly.",
-            "targetDetail": "The hacker locates the node expertly.",
+            "targetDetail": "node",
             "options": [
                 "database",
                 "system",
                 "drone",
                 "node"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q1",
@@ -369,14 +393,15 @@
             "hint": "Find the detail.",
             "explanation": "'analyst' was mentioned.",
             "textToSpeak": "The analyst locates the satellite successfully.",
-            "targetDetail": "The analyst locates the satellite successfully.",
+            "targetDetail": "analyst",
             "options": [
                 "scout",
                 "analyst",
                 "researcher",
                 "engineer"
             ],
-            "correctAnswerIndex": 1
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q2",
@@ -384,14 +409,15 @@
             "hint": "Find the detail.",
             "explanation": "'encrypts' was mentioned.",
             "textToSpeak": "The commander encrypts the database steadily.",
-            "targetDetail": "The commander encrypts the database steadily.",
+            "targetDetail": "encrypts",
             "options": [
                 "encrypts",
                 "scans",
                 "repairs",
                 "activates"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L9_Q3",
@@ -399,14 +425,15 @@
             "hint": "Find the detail.",
             "explanation": "'protocol' was mentioned.",
             "textToSpeak": "The droid activates the protocol reliably.",
-            "targetDetail": "The droid activates the protocol reliably.",
+            "targetDetail": "protocol",
             "options": [
                 "circuit",
                 "code",
                 "archive",
                 "protocol"
             ],
-            "correctAnswerIndex": 3
+            "correctAnswerIndex": 3,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q1",
@@ -414,14 +441,15 @@
             "hint": "Find the detail.",
             "explanation": "'hacker' was mentioned.",
             "textToSpeak": "The hacker sends the chip precisely.",
-            "targetDetail": "The hacker sends the chip precisely.",
+            "targetDetail": "hacker",
             "options": [
                 "hacker",
                 "detective",
                 "scientist",
                 "hero"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q2",
@@ -429,14 +457,15 @@
             "hint": "Find the detail.",
             "explanation": "'builds' was mentioned.",
             "textToSpeak": "The analyst builds the circuit instantly.",
-            "targetDetail": "The analyst builds the circuit instantly.",
+            "targetDetail": "builds",
             "options": [
                 "builds",
                 "analyzes",
                 "repairs",
                 "measures"
             ],
-            "correctAnswerIndex": 0
+            "correctAnswerIndex": 0,
+            "subtype": "detailSpotlight"
         },
         {
             "id": "LIS_DETAILSPOTLIGHT_L10_Q3",
@@ -444,14 +473,15 @@
             "hint": "Find the detail.",
             "explanation": "'data' was mentioned.",
             "textToSpeak": "The robot transfers the data successfully.",
-            "targetDetail": "The robot transfers the data successfully.",
+            "targetDetail": "data",
             "options": [
                 "protocol",
                 "data",
                 "chip",
                 "software"
             ],
-            "correctAnswerIndex": 1
+            "correctAnswerIndex": 1,
+            "subtype": "detailSpotlight"
         }
     ]
 }
