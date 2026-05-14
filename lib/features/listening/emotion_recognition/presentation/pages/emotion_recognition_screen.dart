@@ -104,21 +104,23 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
           showConfetti: _showConfetti,
           onContinue: () => context.read<ListeningBloc>().add(NextQuestion()),
           onHint: () => context.read<ListeningBloc>().add(ListeningHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
+          child: quest == null ? const SizedBox() : Stack(
+            clipBehavior: Clip.none,
             children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              const Spacer(flex: 2),
-              _buildEmitterNode(quest.textToSpeak ?? "", theme.primaryColor),
-              const Spacer(flex: 3),
-              Expanded(
-                flex: 12,
-                child: ClipRect(
-                  clipBehavior: Clip.none,
-                  child: _buildNeuralField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
-                ),
+              Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  const Spacer(flex: 2),
+                  _buildEmitterNode(quest.textToSpeak ?? "", theme.primaryColor),
+                  const Spacer(flex: 3),
+                  Expanded(
+                    flex: 12,
+                    child: _buildNeuralField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+                  ),
+                  const Spacer(flex: 1),
+                ],
               ),
-              const Spacer(flex: 1),
             ],
           ),
         );
@@ -171,11 +173,11 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
           builder: (context, offset, _) {
             return OverflowBox(
               alignment: Alignment.center,
-              maxWidth: constraints.maxWidth * 1.5,
-              maxHeight: constraints.maxHeight * 1.5,
+              maxWidth: constraints.maxWidth * 2.0, // Aggressive overflow expansion
+              maxHeight: constraints.maxHeight * 2.0,
               child: Stack(
                 alignment: Alignment.center,
-                clipBehavior: Clip.none,
+                clipBehavior: Clip.none, // Absolute prevention of clipping
                 children: [
                     // Neural Grid Background Lines
                     CustomPaint(
@@ -229,7 +231,7 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
                             ],
                           ),
                           child: Icon(Icons.blur_on_rounded, color: Colors.white.withValues(alpha: 0.9), size: 35.r),
-                        ).animate(onPlay: (c) => c.repeat()).shimmer(color: Colors.white30, duration: 2.seconds),
+                        ),
                       ),
                     ),
                   ],
