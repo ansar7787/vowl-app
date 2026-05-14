@@ -129,7 +129,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
                 Container(color: theme.backgroundColors[1]), // Prevent white splash
                 MeshGradientBackground(colors: theme.backgroundColors),
                 _VoicePulseBackground(color: theme.primaryColor.withValues(alpha: 0.15)),
-                if (state is SpeakingLoading) const GameShimmerLoading()
+                if (state is SpeakingLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
                 else ...[
                   SafeArea(
                     child: Column(

@@ -460,6 +460,108 @@ class GameInstructionService {
       );
     }
 
+    // --- 2. SPEAKING (Oral Proficiency) ---
+    if (type == GameSubtype.repeatSentence) {
+      return const GameBriefing(
+        title: "Echo Master",
+        icon: Icons.graphic_eq_rounded,
+        objective: "Accurately repeat the given sentence while maintaining rhythm.",
+        rules: ["Hold the mic to record", "Trace the sound wave", "Master the cadence"],
+        actionText: "Start Echo",
+        tip: "Rhythm is as important as pronunciation! Try to match the 'beat' of the speaker. 🥁",
+      );
+    }
+    if (type == GameSubtype.pronunciationFocus) {
+      return const GameBriefing(
+        title: "Phonetic Precision",
+        icon: Icons.record_voice_over_rounded,
+        objective: "Perfect your pronunciation of challenging phonemes and clusters.",
+        rules: ["Focus on mouth position", "Repeat the target sound", "Analyze your waves"],
+        actionText: "Practice Sound",
+        tip: "Watch the mouth position in your mind! Small changes in tongue placement make a huge difference. 👄",
+      );
+    }
+    if (type == GameSubtype.dailyExpression) {
+      return const GameBriefing(
+        title: "Social Fluent",
+        icon: Icons.chat_bubble_rounded,
+        objective: "Master common daily phrases by matching native intonation.",
+        rules: ["Listen to the model", "Record your voice", "Match the social tone"],
+        actionText: "Speak Now",
+        tip: "Imagine you're talking to a friend! Social context changes how we stress certain words. 🤝",
+      );
+    }
+    if (type == GameSubtype.dialogueRoleplay) {
+      return const GameBriefing(
+        title: "Scene Architect",
+        icon: Icons.theater_comedy_rounded,
+        objective: "Participate in a simulated conversation by speaking your lines.",
+        rules: ["Follow the script", "Speak with emotion", "Keep the flow going"],
+        actionText: "Enter Scene",
+        tip: "Don't just read—ACT! Expressive speaking helps with long-term memory. 🎭",
+      );
+    }
+    if (type == GameSubtype.sceneDescriptionSpeaking) {
+      return const GameBriefing(
+        title: "Visual Narrator",
+        icon: Icons.image_search_rounded,
+        objective: "Describe the visual scene using appropriate vocabulary and structure.",
+        rules: ["Analyze the image", "Speak descriptive details", "Build a narrative"],
+        actionText: "Describe Scene",
+        tip: "Start with the biggest objects and then focus on the small details! 🖼️",
+      );
+    }
+    if (type == GameSubtype.situationSpeaking) {
+      return const GameBriefing(
+        title: "Crisis Communicator",
+        icon: Icons.emergency_rounded,
+        objective: "Respond to a specific real-world situation using spoken English.",
+        rules: ["Understand the context", "Speak your solution", "Be clear and direct"],
+        actionText: "Resolve Now",
+        tip: "In real situations, clarity is key! Focus on getting your main point across quickly. 🆘",
+      );
+    }
+    if (type == GameSubtype.speakMissingWord) {
+      return const GameBriefing(
+        title: "Vocal Decoder",
+        icon: Icons.find_in_page_rounded,
+        objective: "Complete the sentence orally by speaking the missing term.",
+        rules: ["Identify the gap", "Speak the word clearly", "Verify the context"],
+        actionText: "Speak Word",
+        tip: "Say the whole sentence in your head first to find the missing piece. 🧩",
+      );
+    }
+    if (type == GameSubtype.speakOpposite) {
+      return const GameBriefing(
+        title: "Antonym Orator",
+        icon: Icons.compare_arrows_rounded,
+        objective: "Orally state the opposite of the given word or phrase.",
+        rules: ["Analyze the target", "Speak the antonym", "Maintain accuracy"],
+        actionText: "Vocalize Opposite",
+        tip: "Think of the 'flip side'! If it's hot, the antonym is cold. 🔄",
+      );
+    }
+    if (type == GameSubtype.speakSynonym) {
+      return const GameBriefing(
+        title: "Lexical Speaker",
+        icon: Icons.library_books_rounded,
+        objective: "Provide a spoken synonym for the target word.",
+        rules: ["Find similar meaning", "Speak the synonym", "Expand your voice"],
+        actionText: "Vocalize Synonym",
+        tip: "There's always more than one way to say something! Expand your word bank. 📖",
+      );
+    }
+    if (type == GameSubtype.yesNoSpeaking) {
+      return const GameBriefing(
+        title: "Voice Validator",
+        icon: Icons.fact_check_rounded,
+        objective: "Answer factual questions with a spoken 'Yes' or 'No'.",
+        rules: ["Listen to the question", "Speak your confirmation", "Be quick and clear"],
+        actionText: "Validate Voice",
+        tip: "Confidence is key! Speak your answer firmly. ⚖️",
+      );
+    }
+
     // --- CATEGORY FALLBACKS ---
     final category = type.category;
     switch (category) {
