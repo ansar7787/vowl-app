@@ -45,6 +45,12 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   void _onSmear(double delta) {
     if (_isAnswered) return;
     setState(() {

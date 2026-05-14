@@ -45,6 +45,12 @@ class _DetailSpotlightScreenState extends State<DetailSpotlightScreen> {
     context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
+  @override
+  void dispose() {
+    _spotlightPos.dispose();
+    super.dispose();
+  }
+
   void _onSearch(Offset position) {
     if (_isAnswered) return;
     _spotlightPos.value = position;

@@ -44,6 +44,12 @@ class _EmotionRecognitionScreenState extends State<EmotionRecognitionScreen> {
     context.read<ListeningBloc>().add(FetchListeningQuests(gameType: widget.gameType, level: widget.level));
   }
 
+  @override
+  void dispose() {
+    _coreOffset.dispose();
+    super.dispose();
+  }
+
   void _onCoreMove(Offset delta, BoxConstraints constraints) {
     if (_isAnswered) return;
     double nextX = (_coreOffset.value.dx + delta.dx).clamp(-constraints.maxWidth / 2 + 40.r, constraints.maxWidth / 2 - 40.r);

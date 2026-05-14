@@ -49,6 +49,12 @@ class _FastSpeechDecoderScreenState extends State<FastSpeechDecoderScreen> {
     );
   }
 
+  @override
+  void dispose() {
+    _dialRotation.dispose();
+    super.dispose();
+  }
+
   void _onRotate(double delta) {
     if (_isAnswered) return;
     double oldVal = _dialRotation.value;
