@@ -49,7 +49,12 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+        // Snap the quantum core completely to the correct terminal
+        _ringOffset = Offset(targetIndex == 0 ? -120.w : 120.w, 0.0);
+      });
       context.read<GrammarBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
@@ -57,7 +62,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false;
-        _ringOffset = Offset.zero;
+        // Snap the quantum core completely to the selected wrong terminal
+        _ringOffset = Offset(targetIndex == 0 ? -120.w : 120.w, 0.0);
       });
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
@@ -154,24 +160,32 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                       ),
 
                       // Verb Terminals
-                      _buildVerbTerminal(0, options[0], theme.primaryColor, Alignment.centerLeft, quest.correctAnswerIndex ?? 0),
-                      _buildVerbTerminal(1, options[1], theme.primaryColor, Alignment.centerRight, quest.correctAnswerIndex ?? 0),
+                      GestureDetector(
+                        onTap: () => _onConnect(0, quest.correctAnswerIndex ?? 0),
+                        child: _buildVerbTerminal(0, options[0], theme.primaryColor, Alignment.centerLeft, quest.correctAnswerIndex ?? 0),
+                      ),
+                      GestureDetector(
+                        onTap: () => _onConnect(1, quest.correctAnswerIndex ?? 0),
+                        child: _buildVerbTerminal(1, options[1], theme.primaryColor, Alignment.centerRight, quest.correctAnswerIndex ?? 0),
+                      ),
                       
                       // The Quantum Core (Harmony Slider)
-                      if (!_isAnswered)
-                        GestureDetector(
-                          onPanUpdate: (details) {
-                            setState(() => _ringOffset += details.delta);
-                            _checkHarmony(quest.correctAnswerIndex ?? 0);
-                          },
-                          onPanEnd: (details) {
-                            setState(() => _ringOffset = Offset.zero);
-                          },
-                          child: Transform.translate(
-                            offset: _ringOffset,
-                            child: _buildQuantumCore(theme.primaryColor),
-                          ),
-                        ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
+                      GestureDetector(
+                        onPanUpdate: _isAnswered ? null : (details) {
+                          final double newDx = (_ringOffset.dx + details.delta.dx).clamp(-130.w, 130.w);
+                          setState(() {
+                            _ringOffset = Offset(newDx, 0.0);
+                          });
+                          _checkHarmony(quest.correctAnswerIndex ?? 0);
+                        },
+                        onPanEnd: _isAnswered ? null : (details) {
+                          setState(() => _ringOffset = Offset.zero);
+                        },
+                        child: Transform.translate(
+                          offset: _ringOffset,
+                          child: _buildQuantumCore(theme.primaryColor),
+                        ),
+                      ).animate().scale(duration: 400.ms, curve: Curves.easeOutBack),
                     ],
                   ),
                 ),
@@ -248,12 +262,16 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
   }
 
   Widget _buildQuantumCore(Color primaryColor) {
+    final Color coreColor = _isAnswered
+        ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent)
+        : primaryColor;
+
     return Container(
       width: 70.r, height: 70.r,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: primaryColor,
-        boxShadow: [BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 20, spreadRadius: 2)],
+        color: coreColor,
+        boxShadow: [BoxShadow(color: coreColor.withValues(alpha: 0.4), blurRadius: 20, spreadRadius: 2)],
       ),
       child: Center(
         child: Container(

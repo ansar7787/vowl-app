@@ -1,548 +1,577 @@
 {
-    "gameType":  "articleInsertion",
-    "batchIndex":  20,
-    "levels":  "191-200",
-    "quests":  [
-                   {
-                       "id":  "ai_l191_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I saw ___ elephant at the zoo.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Use \u0027an\u0027 before vowel sounds.",
-                       "explanation":  "The correct sentence is: 'I saw an elephant at the zoo.'"
-                   },
-                   {
-                       "id":  "ai_l191_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ sun is very bright today.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Use \u0027the\u0027 for unique objects.",
-                       "explanation":  "The correct sentence is: 'The sun is very bright today.'"
-                   },
-                   {
-                       "id":  "ai_l191_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He is ___ honest man.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Silent \u0027h\u0027 in honest starts with a vowel sound.",
-                       "explanation":  "The correct sentence is: 'He is an honest man.'"
-                   },
-                   {
-                       "id":  "ai_l192_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She wants to buy ___ new car.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "Use \u0027a\u0027 before consonant sounds.",
-                       "explanation":  "The correct sentence is: 'She wants to buy a new car.'"
-                   },
-                   {
-                       "id":  "ai_l192_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "We visited ___ Eiffel Tower in Paris.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Use \u0027the\u0027 for famous landmarks.",
-                       "explanation":  "The correct sentence is: 'We visited the Eiffel Tower in Paris.'"
-                   },
-                   {
-                       "id":  "ai_l192_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ water in this bottle is cold.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Specific water we are talking about.",
-                       "explanation":  "The correct sentence is: 'The water in this bottle is cold.'"
-                   },
-                   {
-                       "id":  "ai_l193_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I need ___ hour to finish.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Silent \u0027h\u0027 in hour.",
-                       "explanation":  "The correct sentence is: 'I need an hour to finish.'"
-                   },
-                   {
-                       "id":  "ai_l193_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He is ___ engineer.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Vowel sound.",
-                       "explanation":  "The correct sentence is: 'He is an engineer.'"
-                   },
-                   {
-                       "id":  "ai_l193_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She plays ___ piano beautifully.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Musical instruments use \u0027the\u0027.",
-                       "explanation":  "The correct sentence is: 'She plays the piano beautifully.'"
-                   },
-                   {
-                       "id":  "ai_l194_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ honesty is important.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "None",
-                       "hint":  "Abstract nouns often don\u0027t need articles.",
-                       "explanation":  "The correct sentence is: 'None honesty is important.'"
-                   },
-                   {
-                       "id":  "ai_l194_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I have ___ dog and a cat.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "Consonant sound.",
-                       "explanation":  "The correct sentence is: 'I have a dog and a cat.'"
-                   },
-                   {
-                       "id":  "ai_l194_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "We saw ___ movie last night.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "First time mentioning it.",
-                       "explanation":  "The correct sentence is: 'We saw a movie last night.'"
-                   },
-                   {
-                       "id":  "ai_l195_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ moon revolves around the Earth.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Unique object.",
-                       "explanation":  "The correct sentence is: 'The moon revolves around the Earth.'"
-                   },
-                   {
-                       "id":  "ai_l195_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He lives in ___ United Kingdom.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Countries with \u0027United\u0027 use \u0027the\u0027.",
-                       "explanation":  "The correct sentence is: 'He lives in the United Kingdom.'"
-                   },
-                   {
-                       "id":  "ai_l195_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She ate ___ apple for lunch.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Vowel sound.",
-                       "explanation":  "The correct sentence is: 'She ate an apple for lunch.'"
-                   },
-                   {
-                       "id":  "ai_l196_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I saw ___ elephant at the zoo.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Use \u0027an\u0027 before vowel sounds.",
-                       "explanation":  "The correct sentence is: 'I saw an elephant at the zoo.'"
-                   },
-                   {
-                       "id":  "ai_l196_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ sun is very bright today.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Use \u0027the\u0027 for unique objects.",
-                       "explanation":  "The correct sentence is: 'The sun is very bright today.'"
-                   },
-                   {
-                       "id":  "ai_l196_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He is ___ honest man.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Silent \u0027h\u0027 in honest starts with a vowel sound.",
-                       "explanation":  "The correct sentence is: 'He is an honest man.'"
-                   },
-                   {
-                       "id":  "ai_l197_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She wants to buy ___ new car.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "Use \u0027a\u0027 before consonant sounds.",
-                       "explanation":  "The correct sentence is: 'She wants to buy a new car.'"
-                   },
-                   {
-                       "id":  "ai_l197_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "We visited ___ Eiffel Tower in Paris.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Use \u0027the\u0027 for famous landmarks.",
-                       "explanation":  "The correct sentence is: 'We visited the Eiffel Tower in Paris.'"
-                   },
-                   {
-                       "id":  "ai_l197_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ water in this bottle is cold.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Specific water we are talking about.",
-                       "explanation":  "The correct sentence is: 'The water in this bottle is cold.'"
-                   },
-                   {
-                       "id":  "ai_l198_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I need ___ hour to finish.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Silent \u0027h\u0027 in hour.",
-                       "explanation":  "The correct sentence is: 'I need an hour to finish.'"
-                   },
-                   {
-                       "id":  "ai_l198_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He is ___ engineer.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Vowel sound.",
-                       "explanation":  "The correct sentence is: 'He is an engineer.'"
-                   },
-                   {
-                       "id":  "ai_l198_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She plays ___ piano beautifully.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Musical instruments use \u0027the\u0027.",
-                       "explanation":  "The correct sentence is: 'She plays the piano beautifully.'"
-                   },
-                   {
-                       "id":  "ai_l199_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ honesty is important.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "None",
-                       "hint":  "Abstract nouns often don\u0027t need articles.",
-                       "explanation":  "The correct sentence is: 'None honesty is important.'"
-                   },
-                   {
-                       "id":  "ai_l199_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I have ___ dog and a cat.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "Consonant sound.",
-                       "explanation":  "The correct sentence is: 'I have a dog and a cat.'"
-                   },
-                   {
-                       "id":  "ai_l199_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "We saw ___ movie last night.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "First time mentioning it.",
-                       "explanation":  "The correct sentence is: 'We saw a movie last night.'"
-                   },
-                   {
-                       "id":  "ai_l200_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ moon revolves around the Earth.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Unique object.",
-                       "explanation":  "The correct sentence is: 'The moon revolves around the Earth.'"
-                   },
-                   {
-                       "id":  "ai_l200_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He lives in ___ United Kingdom.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Countries with \u0027United\u0027 use \u0027the\u0027.",
-                       "explanation":  "The correct sentence is: 'He lives in the United Kingdom.'"
-                   },
-                   {
-                       "id":  "ai_l200_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  5,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She ate ___ apple for lunch.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Vowel sound.",
-                       "explanation":  "The correct sentence is: 'She ate an apple for lunch.'"
-                   }
-               ]
+  "gameType": "articleInsertion",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "ai_l191_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "She ordered ___ elegant dinner in sector 17.",
+      "sentence": "She ordered ___ elegant dinner in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Vowel sound 'e' in elegant. (Sector 17 calibration)",
+      "explanation": "'an' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l191_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "I really enjoyed ___ lunch they prepared in sector 17.",
+      "sentence": "I really enjoyed ___ lunch they prepared in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific meal that was prepared. (Sector 17 calibration)",
+      "explanation": "Points to a particular meal. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l191_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They speak ___ English fluently in sector 17.",
+      "sentence": "They speak ___ English fluently in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Languages alone do not take articles. (Sector 17 calibration)",
+      "explanation": "Zero article for languages without 'language'. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l192_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They prepared ___ fast lunch in sector 17.",
+      "sentence": "They prepared ___ fast lunch in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Consonant sound 'f'. (Sector 17 calibration)",
+      "explanation": "'a' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l192_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ English language is expressive in sector 17.",
+      "sentence": "___ English language is expressive in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific language followed by the word 'language'. (Sector 17 calibration)",
+      "explanation": "The word 'language' triggers 'the'. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l192_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "We usually have ___ breakfast at dawn in sector 17.",
+      "sentence": "We usually have ___ breakfast at dawn in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Standard meals have no article. (Sector 17 calibration)",
+      "explanation": "Zero article for general meals. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l193_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "He wanted ___ apple juice in sector 17.",
+      "sentence": "He wanted ___ apple juice in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Vowel sound 'a' in apple. (Sector 17 calibration)",
+      "explanation": "'an' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l193_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "He watched ___ game last night in sector 17.",
+      "sentence": "He watched ___ game last night in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific match they discussed. (Sector 17 calibration)",
+      "explanation": "Points to the specific game. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l193_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "She plays ___ tennis every morning in sector 17.",
+      "sentence": "She plays ___ tennis every morning in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Sports do not take articles. (Sector 17 calibration)",
+      "explanation": "Zero article for sports. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l194_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "It was ___ delicious breakfast in sector 17.",
+      "sentence": "It was ___ delicious breakfast in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Consonant sound 'd'. (Sector 17 calibration)",
+      "explanation": "'a' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l194_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ French they speak is fluent in sector 17.",
+      "sentence": "___ French they speak is fluent in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific variety of language. (Sector 17 calibration)",
+      "explanation": "Points to the specific French spoken. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l194_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "He studied ___ Spanish in school in sector 17.",
+      "sentence": "He studied ___ Spanish in school in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Language name alone. (Sector 17 calibration)",
+      "explanation": "Zero article is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l195_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "She played ___ intensive match in sector 17.",
+      "sentence": "She played ___ intensive match in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Vowel sound 'i'. (Sector 17 calibration)",
+      "explanation": "'an' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l195_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They won ___ final match in sector 17.",
+      "sentence": "They won ___ final match in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific unique match. (Sector 17 calibration)",
+      "explanation": "'the' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l195_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They serves ___ dinner at eight in sector 17.",
+      "sentence": "They serves ___ dinner at eight in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Meal name alone. (Sector 17 calibration)",
+      "explanation": "Zero article is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l196_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "He joined ___ football club in sector 17.",
+      "sentence": "He joined ___ football club in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Consonant sound 'f'. (Sector 17 calibration)",
+      "explanation": "'a' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l196_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ breakfast at the academy is free in sector 17.",
+      "sentence": "___ breakfast at the academy is free in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific breakfast at the academy. (Sector 17 calibration)",
+      "explanation": "'the' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l196_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "I enjoy playing ___ chess in sector 17.",
+      "sentence": "I enjoy playing ___ chess in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Games have no article. (Sector 17 calibration)",
+      "explanation": "Zero article is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l197_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "This is ___ English textbook in sector 17.",
+      "sentence": "This is ___ English textbook in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Vowel sound 'e'. (Sector 17 calibration)",
+      "explanation": "'an' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l197_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "She plays ___ violin beautifully in sector 17.",
+      "sentence": "She plays ___ violin beautifully in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Musical instruments take 'the' in general usage. (Sector 17 calibration)",
+      "explanation": "'the' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l197_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "She teaches ___ Russian in sector 17.",
+      "sentence": "She teaches ___ Russian in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Language alone. (Sector 17 calibration)",
+      "explanation": "Zero article is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l198_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They built ___ sports stadium in sector 17.",
+      "sentence": "They built ___ sports stadium in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Consonant sound 's'. (Sector 17 calibration)",
+      "explanation": "'a' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l198_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They translate ___ ancient text in sector 17.",
+      "sentence": "They translate ___ ancient text in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific text they are looking at. (Sector 17 calibration)",
+      "explanation": "'the' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l198_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "We love ___ lunch in the open in sector 17.",
+      "sentence": "We love ___ lunch in the open in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "General meal category. (Sector 17 calibration)",
+      "explanation": "Zero article is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l199_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "She wants ___ orange beverage in sector 17.",
+      "sentence": "She wants ___ orange beverage in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Vowel sound 'o'. (Sector 17 calibration)",
+      "explanation": "'an' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l199_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ dinner was delicious in sector 17.",
+      "sentence": "___ dinner was delicious in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific meal they just ate. (Sector 17 calibration)",
+      "explanation": "'the' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l199_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They practice ___ soccer daily in sector 17.",
+      "sentence": "They practice ___ soccer daily in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Sport alone. (Sector 17 calibration)",
+      "explanation": "Zero article is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l200_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "It was ___ long game in sector 17.",
+      "sentence": "It was ___ long game in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Consonant sound 'l'. (Sector 17 calibration)",
+      "explanation": "'a' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l200_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "We supported ___ local team in sector 17.",
+      "sentence": "We supported ___ local team in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific local team. (Sector 17 calibration)",
+      "explanation": "'the' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "ai_l200_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 5,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "He plays ___ golf on weekends in sector 17.",
+      "sentence": "He plays ___ golf on weekends in sector 17.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Sport alone. (Sector 17 calibration)",
+      "explanation": "Zero article is correct. [Verified in sector 17]."
+    }
+  ]
 }
-

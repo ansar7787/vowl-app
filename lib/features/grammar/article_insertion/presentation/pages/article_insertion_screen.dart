@@ -137,9 +137,7 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
               ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
 
               Expanded(
-                child: _isAnswered 
-                  ? _buildResultView(theme.primaryColor)
-                  : _buildBubbleArea(options, quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                child: _buildBubbleArea(options, quest.correctAnswer ?? "", theme.primaryColor, isDark),
               ),
               SizedBox(height: 40.h),
             ],
@@ -215,31 +213,20 @@ class _ArticleInsertionScreenState extends State<ArticleInsertionScreen> {
       children: options.asMap().entries.map((entry) {
         final index = entry.key;
         final article = entry.value;
+        final isSelected = _selectedArticle == article;
+        final isCorrectAnswer = article.toLowerCase() == correct.toLowerCase();
+
         return _FloatingOrb(
           article: article,
           index: index,
           onTap: () => _onPop(article, correct),
           primaryColor: primaryColor,
           isDark: isDark,
+          isAnswered: _isAnswered,
+          isSelected: isSelected,
+          isCorrectAnswer: isCorrectAnswer,
         );
       }).toList(),
-    );
-  }
-
-  Widget _buildResultView(Color primaryColor) {
-    return Center(
-      child: Container(
-        padding: EdgeInsets.all(32.r),
-        decoration: BoxDecoration(
-          color: (_isCorrect == true ? Colors.greenAccent : Colors.redAccent).withValues(alpha: 0.1),
-          shape: BoxShape.circle,
-        ),
-        child: Icon(
-          _isCorrect == true ? Icons.check_circle_rounded : Icons.cancel_rounded,
-          color: _isCorrect == true ? Colors.greenAccent : Colors.redAccent,
-          size: 80.r,
-        ),
-      ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
     );
   }
 }
@@ -250,8 +237,20 @@ class _FloatingOrb extends StatefulWidget {
   final VoidCallback onTap;
   final Color primaryColor;
   final bool isDark;
+  final bool isAnswered;
+  final bool isSelected;
+  final bool isCorrectAnswer;
 
-  const _FloatingOrb({required this.article, required this.index, required this.onTap, required this.primaryColor, required this.isDark});
+  const _FloatingOrb({
+    required this.article, 
+    required this.index, 
+    required this.onTap, 
+    required this.primaryColor, 
+    required this.isDark,
+    required this.isAnswered,
+    required this.isSelected,
+    required this.isCorrectAnswer,
+  });
 
   @override
   State<_FloatingOrb> createState() => _FloatingOrbState();
@@ -278,47 +277,127 @@ class _FloatingOrbState extends State<_FloatingOrb> with SingleTickerProviderSta
 
   @override
   Widget build(BuildContext context) {
+    final bool isAnswered = widget.isAnswered;
+    final bool isSelected = widget.isSelected;
+    final bool isCorrectAnswer = widget.isCorrectAnswer;
+
+    Color textColor;
+    Color borderColor;
+    List<Color> gradientColors;
+    double opacity = 1.0;
+    List<BoxShadow> shadows = [];
+
+    if (!isAnswered) {
+      textColor = widget.isDark ? Colors.white : Colors.black87;
+      borderColor = widget.isDark ? Colors.white30 : Colors.black26;
+      gradientColors = [
+        widget.primaryColor.withValues(alpha: 0.25),
+        widget.primaryColor.withValues(alpha: 0.1),
+        Colors.white.withValues(alpha: 0.05),
+      ];
+      shadows = [
+        BoxShadow(
+          color: widget.primaryColor.withValues(alpha: 0.08),
+          blurRadius: 15,
+          spreadRadius: 2,
+        )
+      ];
+    } else {
+      // Game is answered
+      if (isSelected) {
+        if (isCorrectAnswer) {
+          textColor = Colors.greenAccent;
+          borderColor = Colors.greenAccent;
+          gradientColors = [
+            Colors.greenAccent.withValues(alpha: 0.3),
+            Colors.greenAccent.withValues(alpha: 0.1),
+            Colors.white.withValues(alpha: 0.05),
+          ];
+          shadows = [
+            BoxShadow(
+              color: Colors.greenAccent.withValues(alpha: 0.3),
+              blurRadius: 25,
+              spreadRadius: 4,
+            )
+          ];
+        } else {
+          textColor = Colors.redAccent;
+          borderColor = Colors.redAccent;
+          gradientColors = [
+            Colors.redAccent.withValues(alpha: 0.3),
+            Colors.redAccent.withValues(alpha: 0.1),
+            Colors.white.withValues(alpha: 0.05),
+          ];
+          shadows = [
+            BoxShadow(
+              color: Colors.redAccent.withValues(alpha: 0.3),
+              blurRadius: 25,
+              spreadRadius: 4,
+            )
+          ];
+        }
+      } else if (isCorrectAnswer) {
+        // Highlight correct answer if player selected wrong
+        textColor = Colors.greenAccent;
+        borderColor = Colors.greenAccent.withValues(alpha: 0.6);
+        gradientColors = [
+          Colors.greenAccent.withValues(alpha: 0.15),
+          Colors.greenAccent.withValues(alpha: 0.05),
+          Colors.transparent,
+        ];
+        shadows = [
+          BoxShadow(
+            color: Colors.greenAccent.withValues(alpha: 0.15),
+            blurRadius: 15,
+            spreadRadius: 2,
+          )
+        ];
+      } else {
+        // Dim unselected incorrect bubbles
+        opacity = 0.25;
+        textColor = widget.isDark ? Colors.white30 : Colors.black38;
+        borderColor = Colors.transparent;
+        gradientColors = [
+          widget.primaryColor.withValues(alpha: 0.05),
+          Colors.transparent,
+        ];
+      }
+    }
+
     return AnimatedBuilder(
       animation: _driftController,
       builder: (context, child) {
         return Positioned(
           top: _top + (15.h * _driftController.value),
           left: _left + (12.w * (1 - _driftController.value)),
-          child: GestureDetector(
-            onTap: widget.onTap,
-            child: Container(
-              width: 90.r, height: 90.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: RadialGradient(
-                  center: const Alignment(-0.3, -0.3),
-                  colors: [
-                    widget.primaryColor.withValues(alpha: 0.3),
-                    widget.primaryColor.withValues(alpha: 0.1),
-                    Colors.white.withValues(alpha: 0.05),
-                  ],
+          child: Opacity(
+            opacity: opacity,
+            child: GestureDetector(
+              onTap: widget.onTap,
+              child: Container(
+                width: 90.r, height: 90.r,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: RadialGradient(
+                    center: const Alignment(-0.3, -0.3),
+                    colors: gradientColors,
+                  ),
+                  border: Border.all(color: borderColor, width: 1.5),
+                  boxShadow: shadows,
                 ),
-                border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1.5),
-                boxShadow: [
-                  BoxShadow(
-                    color: widget.primaryColor.withValues(alpha: 0.1), 
-                    blurRadius: 15, 
-                    spreadRadius: 2
-                  )
-                ],
-              ),
-              child: Center(
-                child: Text(
-                  widget.article.toUpperCase(), 
-                  style: GoogleFonts.outfit(
-                    fontSize: 18.sp, 
-                    fontWeight: FontWeight.w900, 
-                    color: Colors.white
-                  )
+                child: Center(
+                  child: Text(
+                    widget.article.toUpperCase(), 
+                    style: GoogleFonts.outfit(
+                      fontSize: 18.sp, 
+                      fontWeight: FontWeight.w900, 
+                      color: textColor,
+                    )
+                  ),
                 ),
-              ),
-            ).animate(onPlay: (c) => c.repeat(reverse: true))
-             .scale(begin: const Offset(1, 1), end: const Offset(1.08, 1.08), duration: 2500.ms, curve: Curves.easeInOutSine),
+              ).animate(onPlay: (c) => c.repeat(reverse: true))
+               .scale(begin: const Offset(1, 1), end: const Offset(1.08, 1.08), duration: 2500.ms, curve: Curves.easeInOutSine),
+            ),
           ),
         );
       },

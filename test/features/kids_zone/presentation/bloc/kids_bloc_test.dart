@@ -80,7 +80,7 @@ void main() {
         tLoadedState.copyWith(
           livesRemaining: 2,
           lastAnswerCorrect: false,
-          attempts: 1,
+          wrongCount: 1,
           isFinalFailure: false,
         ),
       ],
@@ -93,13 +93,13 @@ void main() {
         when(() => mockHapticService.error()).thenAnswer((_) async => {});
         return bloc;
       },
-      seed: () => tLoadedState.copyWith(attempts: 1, livesRemaining: 2),
+      seed: () => tLoadedState.copyWith(wrongCount: 1, livesRemaining: 2),
       act: (bloc) => bloc.add(const SubmitKidsAnswer(false)),
       expect: () => [
         tLoadedState.copyWith(
           livesRemaining: 1,
           lastAnswerCorrect: false,
-          attempts: 0, // Reset after re-queue
+          wrongCount: 0, // Reset after re-queue
           isFinalFailure: true,
           quests: [...tQuests, tQuests[0]], // Re-queued
         ),

@@ -1,427 +1,697 @@
 {
-    "gameType": "branchingDialogue",
-    "batchIndex": 7,
-    "levels": "61-70",
-    "quests": [
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L61_Q1",
-            "interactionType": "Path Split",
-            "hint": "Check the sentence to find the correct option.",
-            "explanation": "Improving your comprehension helps with daily communication.",
-            "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
-            "options": [
-                "hot code",
-                "cold map",
-                "loud plan"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L61_Q2",
-            "interactionType": "Path Split",
-            "hint": "Read the words closely.",
-            "explanation": "Developing your vocabulary reinforces language accuracy.",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "cold map",
-                "loud plan",
-                "quiet goal"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L61_Q3",
-            "interactionType": "Path Split",
-            "hint": "Examine the context carefully.",
-            "explanation": "Refining your reading speed boosts overall fluency.",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "loud plan",
-                "quiet goal",
-                "sharp task"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L62_Q1",
-            "interactionType": "Path Split",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill reinforces language accuracy.",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "small button",
-                "heavy lever",
-                "light switch"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L62_Q2",
-            "interactionType": "Path Split",
-            "hint": "Examine the context to find the correct option.",
-            "explanation": "Refining your comprehension boosts overall fluency.",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "heavy lever",
-                "light switch",
-                "fast cable"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L62_Q3",
-            "interactionType": "Path Split",
-            "hint": "Review the details closely.",
-            "explanation": "Practicing your vocabulary helps with daily communication.",
-            "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
-            "options": [
-                "light switch",
-                "fast cable",
-                "slow lens"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L63_Q1",
-            "interactionType": "Path Split",
-            "hint": "Examine the context carefully.",
-            "explanation": "Refining your reading speed boosts overall fluency.",
-            "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
-            "options": [
-                "loud plan",
-                "quiet goal",
-                "sharp task"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L63_Q2",
-            "interactionType": "Path Split",
-            "hint": "Review the details to determine the best answer.",
-            "explanation": "Practicing this specific skill helps with daily communication.",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "quiet goal",
-                "sharp task",
-                "smooth job"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L63_Q3",
-            "interactionType": "Path Split",
-            "hint": "Analyze the provided text to find the correct option.",
-            "explanation": "Mastering your comprehension reinforces language accuracy.",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "sharp task",
-                "smooth job",
-                "rough mission"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L64_Q1",
-            "interactionType": "Path Split",
-            "hint": "Review the details closely.",
-            "explanation": "Practicing your vocabulary helps with daily communication.",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "light switch",
-                "fast cable",
-                "slow lens"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L64_Q2",
-            "interactionType": "Path Split",
-            "hint": "Analyze the provided text carefully.",
-            "explanation": "Mastering your reading speed reinforces language accuracy.",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "fast cable",
-                "slow lens",
-                "bright gear"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L64_Q3",
-            "interactionType": "Path Split",
-            "hint": "Check the sentence to determine the best answer.",
-            "explanation": "Improving this specific skill boosts overall fluency.",
-            "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
-            "options": [
-                "slow lens",
-                "bright gear",
-                "dark wheel"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L65_Q1",
-            "interactionType": "Path Split",
-            "hint": "Analyze the provided text to find the correct option.",
-            "explanation": "Mastering your comprehension reinforces language accuracy.",
-            "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
-            "options": [
-                "sharp task",
-                "smooth job",
-                "rough mission"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L65_Q2",
-            "interactionType": "Path Split",
-            "hint": "Check the sentence closely.",
-            "explanation": "Improving your vocabulary boosts overall fluency.",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "smooth job",
-                "rough mission",
-                "soft quest"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L65_Q3",
-            "interactionType": "Path Split",
-            "hint": "Read the words carefully.",
-            "explanation": "Developing your reading speed helps with daily communication.",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "rough mission",
-                "soft quest",
-                "red device"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L66_Q1",
-            "interactionType": "Path Split",
-            "hint": "Check the sentence to determine the best answer.",
-            "explanation": "Improving this specific skill boosts overall fluency.",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "slow lens",
-                "bright gear",
-                "dark wheel"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L66_Q2",
-            "interactionType": "Path Split",
-            "hint": "Read the words to find the correct option.",
-            "explanation": "Developing your comprehension helps with daily communication.",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "bright gear",
-                "dark wheel",
-                "shiny key"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L66_Q3",
-            "interactionType": "Path Split",
-            "hint": "Examine the context closely.",
-            "explanation": "Refining your vocabulary reinforces language accuracy.",
-            "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
-            "options": [
-                "dark wheel",
-                "shiny key",
-                "dull lock"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L67_Q1",
-            "interactionType": "Path Split",
-            "hint": "Read the words carefully.",
-            "explanation": "Developing your reading speed helps with daily communication.",
-            "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
-            "options": [
-                "rough mission",
-                "soft quest",
-                "red device"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L67_Q2",
-            "interactionType": "Path Split",
-            "hint": "Examine the context to determine the best answer.",
-            "explanation": "Refining this specific skill reinforces language accuracy.",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "soft quest",
-                "red device",
-                "blue tool"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L67_Q3",
-            "interactionType": "Path Split",
-            "hint": "Review the details to find the correct option.",
-            "explanation": "Practicing your comprehension boosts overall fluency.",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "red device",
-                "blue tool",
-                "large screen"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L68_Q1",
-            "interactionType": "Path Split",
-            "hint": "Examine the context closely.",
-            "explanation": "Refining your vocabulary reinforces language accuracy.",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "dark wheel",
-                "shiny key",
-                "dull lock"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L68_Q2",
-            "interactionType": "Path Split",
-            "hint": "Review the details carefully.",
-            "explanation": "Practicing your reading speed boosts overall fluency.",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "shiny key",
-                "dull lock",
-                "hot code"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L68_Q3",
-            "interactionType": "Path Split",
-            "hint": "Analyze the provided text to determine the best answer.",
-            "explanation": "Mastering this specific skill helps with daily communication.",
-            "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
-            "options": [
-                "dull lock",
-                "hot code",
-                "cold map"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L69_Q1",
-            "interactionType": "Path Split",
-            "hint": "Review the details to find the correct option.",
-            "explanation": "Practicing your comprehension boosts overall fluency.",
-            "persona": "Captain Hektor",
-            "scene": "Location: The Command Bridge",
-            "options": [
-                "red device",
-                "blue tool",
-                "large screen"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L69_Q2",
-            "interactionType": "Path Split",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary helps with daily communication.",
-            "persona": "Dr. Elara",
-            "scene": "Location: The Bio-Dome",
-            "options": [
-                "blue tool",
-                "large screen",
-                "small button"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L69_Q3",
-            "interactionType": "Path Split",
-            "hint": "Check the sentence carefully.",
-            "explanation": "Improving your reading speed reinforces language accuracy.",
-            "persona": "Chef O-Ring",
-            "scene": "Location: The Lower Foundry",
-            "options": [
-                "large screen",
-                "small button",
-                "heavy lever"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L70_Q1",
-            "interactionType": "Path Split",
-            "hint": "Check the sentence carefully.",
-            "explanation": "Improving your reading speed helps with daily communication.",
-            "persona": "Pilot Jax",
-            "scene": "Location: The Sky-Dock",
-            "options": [
-                "large screen",
-                "small button",
-                "heavy lever"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L70_Q2",
-            "interactionType": "Path Split",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill reinforces language accuracy.",
-            "persona": "Merchant Kael",
-            "scene": "Location: The Trade District",
-            "options": [
-                "small button",
-                "heavy lever",
-                "light switch"
-            ],
-            "correctAnswerIndex": 0
-        },
-        {
-            "id": "RLP_BRANCHINGDIALOGUE_L70_Q3",
-            "interactionType": "Path Split",
-            "hint": "Examine the context to find the correct option.",
-            "explanation": "Refining your comprehension boosts overall fluency.",
-            "persona": "Agent Nyx",
-            "scene": "Location: The Med-Bay",
-            "options": [
-                "heavy lever",
-                "light switch",
-                "fast cable"
-            ],
-            "correctAnswerIndex": 0
-        }
-    ]
+  "gameType": "branchingDialogue",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Captain Hektor",
+      "scene": "Location: The Command Bridge",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l61_q1",
+      "xpReward": 183,
+      "coinReward": 305,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Dr. Elara",
+      "scene": "Location: The Bio-Dome",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l61_q2",
+      "xpReward": 183,
+      "coinReward": 305,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Chef O-Ring",
+      "scene": "Location: The Lower Foundry",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l61_q3",
+      "xpReward": 183,
+      "coinReward": 305,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Pilot Jax",
+      "scene": "Location: The Sky-Dock",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l62_q1",
+      "xpReward": 186,
+      "coinReward": 310,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Merchant Kael",
+      "scene": "Location: The Trade District",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l62_q2",
+      "xpReward": 186,
+      "coinReward": 310,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Agent Nyx",
+      "scene": "Location: The Med-Bay",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l62_q3",
+      "xpReward": 186,
+      "coinReward": 310,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Captain Hektor",
+      "scene": "Location: The Command Bridge",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l63_q1",
+      "xpReward": 189,
+      "coinReward": 315,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Dr. Elara",
+      "scene": "Location: The Bio-Dome",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l63_q2",
+      "xpReward": 189,
+      "coinReward": 315,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Chef O-Ring",
+      "scene": "Location: The Lower Foundry",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l63_q3",
+      "xpReward": 189,
+      "coinReward": 315,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Pilot Jax",
+      "scene": "Location: The Sky-Dock",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l64_q1",
+      "xpReward": 192,
+      "coinReward": 320,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Merchant Kael",
+      "scene": "Location: The Trade District",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l64_q2",
+      "xpReward": 192,
+      "coinReward": 320,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Agent Nyx",
+      "scene": "Location: The Med-Bay",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l64_q3",
+      "xpReward": 192,
+      "coinReward": 320,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Captain Hektor",
+      "scene": "Location: The Command Bridge",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l65_q1",
+      "xpReward": 195,
+      "coinReward": 325,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Dr. Elara",
+      "scene": "Location: The Bio-Dome",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l65_q2",
+      "xpReward": 195,
+      "coinReward": 325,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Chef O-Ring",
+      "scene": "Location: The Lower Foundry",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l65_q3",
+      "xpReward": 195,
+      "coinReward": 325,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Pilot Jax",
+      "scene": "Location: The Sky-Dock",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l66_q1",
+      "xpReward": 198,
+      "coinReward": 330,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Merchant Kael",
+      "scene": "Location: The Trade District",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l66_q2",
+      "xpReward": 198,
+      "coinReward": 330,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Agent Nyx",
+      "scene": "Location: The Med-Bay",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l66_q3",
+      "xpReward": 198,
+      "coinReward": 330,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Captain Hektor",
+      "scene": "Location: The Command Bridge",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l67_q1",
+      "xpReward": 201,
+      "coinReward": 335,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Dr. Elara",
+      "scene": "Location: The Bio-Dome",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l67_q2",
+      "xpReward": 201,
+      "coinReward": 335,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Chef O-Ring",
+      "scene": "Location: The Lower Foundry",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l67_q3",
+      "xpReward": 201,
+      "coinReward": 335,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Pilot Jax",
+      "scene": "Location: The Sky-Dock",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l68_q1",
+      "xpReward": 204,
+      "coinReward": 340,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Merchant Kael",
+      "scene": "Location: The Trade District",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l68_q2",
+      "xpReward": 204,
+      "coinReward": 340,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Agent Nyx",
+      "scene": "Location: The Med-Bay",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l68_q3",
+      "xpReward": 204,
+      "coinReward": 340,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Captain Hektor",
+      "scene": "Location: The Command Bridge",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l69_q1",
+      "xpReward": 207,
+      "coinReward": 345,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Dr. Elara",
+      "scene": "Location: The Bio-Dome",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l69_q2",
+      "xpReward": 207,
+      "coinReward": 345,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Chef O-Ring",
+      "scene": "Location: The Lower Foundry",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l69_q3",
+      "xpReward": 207,
+      "coinReward": 345,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Pilot Jax",
+      "scene": "Location: The Sky-Dock",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l70_q1",
+      "xpReward": 210,
+      "coinReward": 350,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Merchant Kael",
+      "scene": "Location: The Trade District",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l70_q2",
+      "xpReward": 210,
+      "coinReward": 350,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    },
+    {
+      "instruction": "Navigate the social protocol.",
+      "difficulty": 1,
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "Agent Nyx",
+      "scene": "Location: The Med-Bay",
+      "options": [
+        "Request assistance",
+        "Maintain silence",
+        "Scan for data"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Cooperation is key.",
+      "explanation": "Dialogue shapes the story.",
+      "id": "bd_l70_q3",
+      "xpReward": 210,
+      "coinReward": 350,
+      "visual_config": {
+        "painter_type": "RoleplayPulseSync",
+        "primary_color": "0xFF00D2FF"
+      }
+    }
+  ]
 }

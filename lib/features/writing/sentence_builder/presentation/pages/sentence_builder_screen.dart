@@ -59,7 +59,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     if (_isAnswered || _assembledPieces.isEmpty) return;
     
     String built = _assembledPieces.join(' ').trim().toLowerCase();
-    String normalizedCorrect = correct.trim().toLowerCase().replaceAll(RegExp(r'[.!?]'), '');
+    String normalizedCorrect = correct.trim().toLowerCase();
     
     bool isCorrect = built == normalizedCorrect;
 
@@ -73,7 +73,15 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
       _soundService.playWrong();
       setState(() { _isAnswered = true; _isCorrect = false; });
       context.read<WritingBloc>().add(SubmitAnswer(false));
-      Future.delayed(1.seconds, () => setState(() => _assembledPieces.clear()));
+      Future.delayed(1.seconds, () {
+        if (mounted) {
+          setState(() {
+            _assembledPieces.clear();
+            _isAnswered = false;
+            _isCorrect = null;
+          });
+        }
+      });
     }
   }
 
@@ -112,26 +120,56 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 48.h),
-              _buildWorkbench(theme.primaryColor, isDark),
-              SizedBox(height: 48.h),
-              _buildPiecePool(pool, theme.primaryColor, isDark),
-              const Spacer(),
-              if (!_isAnswered)
-                ScaleButton(
-                  onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
-                  child: Container(
-                    width: double.infinity, height: 60.h,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: theme.primaryColor, boxShadow: [BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)]),
-                    child: Center(child: Text("POLISH SENTENCE", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
-                  ),
-                ),
-              SizedBox(height: 20.h),
-            ],
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 32.h),
+                  
+                  _buildWorkbench(theme.primaryColor, isDark),
+                  SizedBox(height: 32.h),
+                  
+                  _buildPiecePool(pool, theme.primaryColor, isDark),
+                  
+                  if (_isAnswered) ...[
+                    SizedBox(height: 30.h),
+                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                  ],
+                  
+                  SizedBox(height: 40.h),
+                  if (!_isAnswered)
+                    ScaleButton(
+                      onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
+                      child: Container(
+                        width: double.infinity, height: 56.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.r), 
+                          color: theme.primaryColor, 
+                          boxShadow: [
+                            BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)
+                          ]
+                        ),
+                        child: Center(
+                          child: Text(
+                            "POLISH SENTENCE", 
+                            style: GoogleFonts.outfit(
+                              fontSize: 14.sp, 
+                              fontWeight: FontWeight.w900, 
+                              color: Colors.white, 
+                              letterSpacing: 2
+                            )
+                          )
+                        ),
+                      ),
+                    ),
+                  SizedBox(height: 60.h),
+                ],
+              ),
+            ),
           ),
         );
       },
@@ -159,17 +197,16 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
       builder: (context, candidateData, rejectedData) {
         return Container(
           width: double.infinity,
-          constraints: BoxConstraints(minHeight: 100.h),
-          padding: EdgeInsets.all(24.r),
+          constraints: BoxConstraints(minHeight: 110.h),
+          padding: EdgeInsets.all(20.r),
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.05),
+            color: color.withValues(alpha: isDark ? 0.05 : 0.08),
             borderRadius: BorderRadius.circular(24.r),
-            border: Border.all(color: candidateData.isNotEmpty ? color : Colors.white10, width: 2),
-            image: DecorationImage(image: const NetworkImage('https://www.transparenttextures.com/patterns/wood-pattern.png'), opacity: 0.1, repeat: ImageRepeat.repeat),
+            border: Border.all(color: candidateData.isNotEmpty ? color : (isDark ? Colors.white10 : Colors.black12), width: 2),
           ),
           child: Wrap(
             spacing: 8.w, runSpacing: 8.h,
-            children: _assembledPieces.asMap().entries.map((e) => _buildJigsawPiece(e.value, true, () => _onRemovePiece(e.key), color)).toList(),
+            children: _assembledPieces.asMap().entries.map((e) => _buildJigsawPiece(e.value, true, () => _onRemovePiece(e.key), color, isDark)).toList(),
           ),
         );
       },
@@ -184,44 +221,104 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     }).toList();
 
     return Wrap(
-      spacing: 12.w, runSpacing: 12.h, alignment: WrapAlignment.center,
+      spacing: 10.w, runSpacing: 10.h, alignment: WrapAlignment.center,
       children: available.map((p) => Draggable<String>(
         data: p,
-        feedback: Material(color: Colors.transparent, child: _buildJigsawPiece(p, false, null, color, isDragging: true)),
-        childWhenDragging: Opacity(opacity: 0.3, child: _buildJigsawPiece(p, false, null, color)),
-        child: _buildJigsawPiece(p, false, null, color),
+        feedback: Material(color: Colors.transparent, child: _buildJigsawPiece(p, false, null, color, isDark, isDragging: true)),
+        childWhenDragging: Opacity(opacity: 0.3, child: _buildJigsawPiece(p, false, null, color, isDark)),
+        child: _buildJigsawPiece(p, false, null, color, isDark),
       )).toList(),
     );
   }
 
-  Widget _buildJigsawPiece(String text, bool isAssembled, VoidCallback? onTap, Color color, {bool isDragging = false}) {
+  Widget _buildJigsawPiece(String text, bool isAssembled, VoidCallback? onTap, Color color, bool isDark, {bool isDragging = false}) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
         decoration: BoxDecoration(
-          color: isAssembled ? color.withValues(alpha: 0.2) : Colors.black45,
-          border: Border.all(color: isAssembled ? color : Colors.white24, width: 2),
+          color: isAssembled 
+              ? color.withValues(alpha: 0.25) 
+              : (isDark ? Colors.black45 : Colors.white),
+          border: Border.all(
+            color: isAssembled 
+                ? color 
+                : (isDark ? Colors.white24 : Colors.black12), 
+            width: 2
+          ),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(8.r),
             bottomLeft: Radius.circular(8.r),
             topRight: Radius.circular(20.r),
             bottomRight: Radius.circular(20.r),
           ),
-          boxShadow: [if (isDragging || isAssembled) BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 10)],
+          boxShadow: [
+            if (isDragging || isAssembled) 
+              BoxShadow(color: color.withValues(alpha: 0.35), blurRadius: 10)
+          ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(text, style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.bold, color: Colors.white)),
+            Text(
+              text, 
+              style: GoogleFonts.outfit(
+                fontSize: 14.sp, 
+                fontWeight: FontWeight.bold, 
+                color: isDark ? Colors.white : Colors.black87
+              )
+            ),
             if (!isAssembled) ...[
               SizedBox(width: 8.w),
-              Icon(Icons.extension_rounded, size: 14.r, color: Colors.white24),
+              Icon(
+                Icons.extension_rounded, 
+                size: 14.r, 
+                color: isDark ? Colors.white24 : Colors.black26
+              ),
             ],
           ],
         ),
       ),
     ).animate(target: isAssembled ? 1 : 0).shimmer(duration: 1.seconds);
   }
-}
 
+  Widget _buildCorrectResult(dynamic quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
+  }
+}

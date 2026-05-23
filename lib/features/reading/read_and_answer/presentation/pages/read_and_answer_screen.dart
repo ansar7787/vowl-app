@@ -13,6 +13,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
 class ReadAndAnswerScreen extends StatefulWidget {
   final int level;
@@ -103,7 +104,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
         
         return ReadingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
@@ -114,7 +115,7 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
           child: quest == null ? const SizedBox() : Stack(
             children: [
               // The Deep Sea Abyss
-              _buildAbyssBackground(theme.primaryColor),
+              _buildAbyssBackground(theme.primaryColor, isDark),
               
               // The Diving Scroll
               ListView(
@@ -125,11 +126,15 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
                   SizedBox(height: 100.h),
                   _buildInstruction(theme.primaryColor),
                   SizedBox(height: 60.h),
-                  _buildFloatingPassage(quest.passage ?? "", theme.primaryColor),
+                  _buildFloatingPassage(quest.passage ?? "", theme.primaryColor, isDark),
                   SizedBox(height: 100.h),
-                  _buildAnchorPoint(quest.question ?? "", theme.primaryColor),
+                  _buildAnchorPoint(quest.question ?? "", theme.primaryColor, isDark),
                   SizedBox(height: 40.h),
                   ...List.generate(quest.options?.length ?? 0, (index) => _buildBuoyOption(index, quest.options![index], quest.correctAnswer ?? "", theme.primaryColor, isDark)),
+                  if (_isAnswered) ...[
+                    SizedBox(height: 20.h),
+                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                  ],
                   SizedBox(height: 200.h),
                 ],
               ),
@@ -143,12 +148,14 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
     );
   }
 
-  Widget _buildAbyssBackground(Color color) {
+  Widget _buildAbyssBackground(Color color, bool isDark) {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter, end: Alignment.bottomCenter,
-          colors: [color.withValues(alpha: 0.2), color.withValues(alpha: 0.05), Colors.black],
+          colors: isDark 
+              ? [color.withValues(alpha: 0.2), color.withValues(alpha: 0.05), Colors.black]
+              : [color.withValues(alpha: 0.1), color.withValues(alpha: 0.02), Colors.white],
           stops: const [0.0, 0.4, 1.0],
         ),
       ),
@@ -172,20 +179,36 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
     );
   }
 
-  Widget _buildFloatingPassage(String text, Color color) {
+  Widget _buildFloatingPassage(String text, Color color, bool isDark) {
     return GlassTile(
       padding: EdgeInsets.all(32.r), borderRadius: BorderRadius.circular(30.r),
-      color: color.withValues(alpha: 0.05),
-      child: Text(text, style: GoogleFonts.fredoka(fontSize: 20.sp, height: 1.8, color: Colors.white.withValues(alpha: 0.9), fontWeight: FontWeight.w400)),
-    ).animate(onPlay: (c) => c.repeat()).shimmer(color: Colors.white10, duration: 3.seconds);
+      color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+      child: Text(
+        text, 
+        style: GoogleFonts.fredoka(
+          fontSize: 20.sp, 
+          height: 1.8, 
+          color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87, 
+          fontWeight: FontWeight.w500
+        )
+      ),
+    ).animate(onPlay: (c) => c.repeat()).shimmer(color: isDark ? Colors.white10 : Colors.black12, duration: 3.seconds);
   }
 
-  Widget _buildAnchorPoint(String question, Color color) {
+  Widget _buildAnchorPoint(String question, Color color, bool isDark) {
     return Column(
       children: [
         Icon(Icons.anchor_rounded, color: color, size: 48.r),
         SizedBox(height: 16.h),
-        Text(question, textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 24.sp, fontWeight: FontWeight.w900, color: Colors.white)),
+        Text(
+          question, 
+          textAlign: TextAlign.center, 
+          style: GoogleFonts.outfit(
+            fontSize: 24.sp, 
+            fontWeight: FontWeight.w900, 
+            color: isDark ? Colors.white : Colors.black87
+          )
+        ),
       ],
     );
   }
@@ -201,13 +224,36 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         onTap: () => _onChoiceTap(index, text, correct),
         child: GlassTile(
           padding: EdgeInsets.all(24.r), borderRadius: BorderRadius.circular(20.r),
-          color: isCorrect ? Colors.greenAccent.withValues(alpha: 0.3) : (isWrong ? Colors.redAccent.withValues(alpha: 0.3) : (isSelected ? color.withValues(alpha: 0.2) : Colors.white10)),
-          border: Border.all(color: isSelected ? color : Colors.white24, width: 2),
+          color: isCorrect 
+              ? Colors.greenAccent.withValues(alpha: isDark ? 0.3 : 0.2) 
+              : (isWrong ? Colors.redAccent.withValues(alpha: isDark ? 0.3 : 0.2) : (isSelected ? color.withValues(alpha: 0.2) : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.03)))),
+          border: Border.all(
+            color: isCorrect 
+                ? (isDark ? Colors.greenAccent : Colors.green) 
+                : (isWrong ? (isDark ? Colors.redAccent : Colors.red) : (isSelected ? color : (isDark ? Colors.white24 : Colors.black12))),
+            width: 2,
+          ),
           child: Row(
             children: [
-              Icon(Icons.radio_button_checked_rounded, color: isSelected ? color : Colors.white24),
+              Icon(
+                isCorrect 
+                    ? Icons.check_circle_outline_rounded 
+                    : (isWrong ? Icons.cancel_outlined : Icons.radio_button_checked_rounded),
+                color: isCorrect 
+                    ? (isDark ? Colors.greenAccent : Colors.green) 
+                    : (isWrong ? (isDark ? Colors.redAccent : Colors.red) : (isSelected ? color : (isDark ? Colors.white24 : Colors.black26))),
+              ),
               SizedBox(width: 16.w),
-              Expanded(child: Text(text, style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w600, color: Colors.white))),
+              Expanded(
+                child: Text(
+                  text, 
+                  style: GoogleFonts.outfit(
+                    fontSize: 16.sp, 
+                    fontWeight: FontWeight.w600, 
+                    color: isDark ? Colors.white : Colors.black87
+                  )
+                )
+              ),
             ],
           ),
         ),
@@ -241,6 +287,46 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         ],
       ),
     );
+  }
+
+  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 

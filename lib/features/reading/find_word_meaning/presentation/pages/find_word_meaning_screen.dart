@@ -12,6 +12,8 @@ import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
 class FindWordMeaningScreen extends StatefulWidget {
   final int level;
@@ -96,23 +98,33 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
         
         return ReadingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 24.h),
-              _buildQuestionHeader(quest.question ?? "", theme.primaryColor, isDark),
-              SizedBox(height: 32.h),
-              _buildMagnifierField(quest.passage ?? "", quest.targetWord ?? "", theme.primaryColor, isDark),
-              const Spacer(),
-            ],
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 24.h),
+                  _buildQuestionHeader(quest.question ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 32.h),
+                  _buildMagnifierField(quest.passage ?? "", quest.targetWord ?? "", theme.primaryColor, isDark),
+                  if (_isAnswered) ...[
+                    SizedBox(height: 30.h),
+                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                  ],
+                  SizedBox(height: 40.h),
+                ],
+              ),
+            ),
           ),
         );
       },
@@ -137,12 +149,22 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
   Widget _buildQuestionHeader(String text, Color color, bool isDark) {
     return GlassTile(
       padding: EdgeInsets.all(20.r), borderRadius: BorderRadius.circular(20.r),
-      color: color.withValues(alpha: 0.1),
+      color: color.withValues(alpha: isDark ? 0.1 : 0.08),
       child: Row(
         children: [
           Icon(Icons.lightbulb_outline_rounded, color: color, size: 24.r),
           SizedBox(width: 16.w),
-          Expanded(child: Text("LOCATE THE WORD MEANING: $text", style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w700, color: color, letterSpacing: 0.5))),
+          Expanded(
+            child: Text(
+              "LOCATE THE WORD MEANING: $text", 
+              style: GoogleFonts.outfit(
+                fontSize: 14.sp, 
+                fontWeight: FontWeight.w700, 
+                color: isDark ? color : color.withValues(alpha: 0.9), 
+                letterSpacing: 0.5
+              )
+            )
+          ),
         ],
       ),
     );
@@ -157,21 +179,47 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
           // The Blurred Manuscript
           Container(
             padding: EdgeInsets.all(24.r),
+            width: double.infinity,
+            height: double.infinity,
             decoration: BoxDecoration(color: isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.02), borderRadius: BorderRadius.circular(24.r)),
             child: Wrap(
               spacing: 6.w, runSpacing: 8.h,
               children: words.map((w) {
-                final cleanWord = w.replaceAll(RegExp(r'[.!?]'), '').trim();
+                final cleanWord = w.replaceAll(RegExp(r'[.,\/#!$%\^&\*;:{}=\-_`~()!?]'), '').trim();
                 double x = (words.indexOf(w) % 5) * 60.w;
                 double y = (words.indexOf(w) ~/ 5) * 30.h;
                 double dist = (_lensPos - Offset(x + 100.w, y + 100.h)).distance;
                 bool isFocused = dist < 80.r;
                 
+                final bool isThisTarget = cleanWord.toLowerCase() == correct.toLowerCase();
+                final bool showAsCorrect = _isAnswered && isThisTarget;
+                
                 return GestureDetector(
                   onTap: () => _onWordTap(cleanWord, correct),
                   child: Opacity(
-                    opacity: isFocused || _isAnswered ? 1.0 : 0.3,
-                    child: Text(w, style: GoogleFonts.fredoka(fontSize: 18.sp, color: isFocused ? Colors.white : (isDark ? Colors.white54 : Colors.black54), fontWeight: isFocused ? FontWeight.bold : FontWeight.normal)),
+                    opacity: isFocused || _isAnswered ? 1.0 : (isDark ? 0.3 : 0.15),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+                      decoration: BoxDecoration(
+                        color: showAsCorrect 
+                            ? Colors.greenAccent.withValues(alpha: isDark ? 0.3 : 0.2) 
+                            : (isFocused ? color.withValues(alpha: 0.1) : null),
+                        borderRadius: BorderRadius.circular(6.r),
+                        border: showAsCorrect 
+                            ? Border.all(color: Colors.greenAccent, width: 1.5) 
+                            : null,
+                      ),
+                      child: Text(
+                        w, 
+                        style: GoogleFonts.fredoka(
+                          fontSize: 18.sp, 
+                          color: showAsCorrect 
+                              ? (isDark ? Colors.greenAccent : Colors.green) 
+                              : (isFocused ? (isDark ? Colors.white : Colors.black87) : (isDark ? Colors.white54 : Colors.black54)), 
+                          fontWeight: isFocused || showAsCorrect ? FontWeight.bold : FontWeight.normal
+                        )
+                      ),
+                    ),
                   ),
                 );
               }).toList(),
@@ -188,8 +236,8 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                 width: 120.r, height: 120.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: Colors.white24, width: 2),
-                  boxShadow: [BoxShadow(color: Colors.black54, blurRadius: 20, spreadRadius: 5)],
+                  border: Border.all(color: isDark ? Colors.white24 : Colors.black12, width: 2),
+                  boxShadow: [BoxShadow(color: isDark ? Colors.black54 : Colors.black12, blurRadius: 20, spreadRadius: 5)],
                 ),
                 child: ClipOval(
                   child: BackdropFilter(
@@ -198,7 +246,7 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: RadialGradient(
-                          colors: [Colors.white.withValues(alpha: 0.1), Colors.transparent],
+                          colors: [isDark ? Colors.white.withValues(alpha: 0.1) : Colors.black.withValues(alpha: 0.05), Colors.transparent],
                           stops: const [0.0, 1.0],
                         ),
                       ),
@@ -212,6 +260,46 @@ class _FindWordMeaningScreenState extends State<FindWordMeaningScreen> {
         ],
       ),
     );
+  }
+
+  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 

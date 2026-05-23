@@ -70,7 +70,7 @@ class KidsLoaded extends KidsState {
   final String gameType;
   final int level;
   final bool hintUsed;
-  final int attempts;
+  final int wrongCount;
   final bool isFinalFailure;
 
   const KidsLoaded({
@@ -81,7 +81,7 @@ class KidsLoaded extends KidsState {
     this.livesRemaining = 3,
     this.lastAnswerCorrect,
     this.hintUsed = false,
-    this.attempts = 0,
+    this.wrongCount = 0,
     this.isFinalFailure = false,
   });
 
@@ -95,7 +95,7 @@ class KidsLoaded extends KidsState {
     String? gameType,
     int? level,
     bool? hintUsed,
-    int? attempts,
+    int? wrongCount,
     bool? isFinalFailure,
   }) {
     return KidsLoaded(
@@ -106,7 +106,7 @@ class KidsLoaded extends KidsState {
       gameType: gameType ?? this.gameType,
       level: level ?? this.level,
       hintUsed: hintUsed ?? this.hintUsed,
-      attempts: attempts ?? this.attempts,
+      wrongCount: wrongCount ?? this.wrongCount,
       isFinalFailure: isFinalFailure ?? this.isFinalFailure,
     );
   }
@@ -120,7 +120,7 @@ class KidsLoaded extends KidsState {
     gameType,
     level,
     hintUsed,
-    attempts,
+    wrongCount,
     isFinalFailure,
   ];
 }
@@ -276,7 +276,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
 
       int newLives = event.isCorrect ? s.livesRemaining : s.livesRemaining - 1;
 
-      bool isFinal = s.attempts >= 1;
+      bool isFinal = s.wrongCount >= 1;
 
       if (newLives <= 0) {
         emit(
@@ -299,7 +299,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
               quests: updatedQuests,
               livesRemaining: newLives,
               lastAnswerCorrect: false,
-              attempts: 0, // Reset attempts after re-queue
+              wrongCount: 0, // Reset wrongCount after re-queue
               isFinalFailure: true,
             ),
           );
@@ -308,8 +308,8 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
             s.copyWith(
               livesRemaining: newLives,
               lastAnswerCorrect: event.isCorrect,
-              attempts: event.isCorrect ? 0 : s.attempts + 1,
-              isFinalFailure: !event.isCorrect && (s.attempts + 1 >= 2), // 2nd strike
+              wrongCount: event.isCorrect ? 0 : s.wrongCount + 1,
+              isFinalFailure: !event.isCorrect && (s.wrongCount + 1 >= 2), // 2nd strike
             ),
           );
         }
@@ -361,14 +361,14 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
           );
         } else {
           // Wrong answer on the very last quest
-          emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false, attempts: 0));
+          emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false, wrongCount: 0));
         }
       } else if (s.lastAnswerCorrect == true || s.isFinalFailure) {
         emit(s.copyWith(
           currentIndex: nextIndex, 
           lastAnswerCorrect: null,
           hintUsed: false,
-          attempts: 0,
+          wrongCount: 0,
           isFinalFailure: false,
         ));
       } else {
@@ -418,16 +418,15 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
     if (state is KidsLoaded) {
       final s = state as KidsLoaded;
       
-      // If hint already used for this question, just emit state again to trigger UI refresh if needed
+      // If hint already used for this question, don't consume again
       if (s.hintUsed) return;
 
       final result = await useHint(NoParams());
-      result.fold(
-        (failure) => emit(const KidsHintError("No hints left! Visit the shop to get more.")),
-        (_) {
-          emit(s.copyWith(hintUsed: true));
-        },
-      );
+      if (result.isRight()) {
+        emit(s.copyWith(hintUsed: true));
+      } else {
+        emit(const KidsHintError("No hints left! Visit the shop to get more."));
+      }
     }
   }
 }

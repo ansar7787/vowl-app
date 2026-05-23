@@ -13,6 +13,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
 class ReadingInferenceScreen extends StatefulWidget {
   final int level;
@@ -51,7 +52,9 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
     setState(() {
       _rubPoints.add(point);
       _clarity = (_rubPoints.length / 100).clamp(0.0, 1.0);
-      if (_rubPoints.length % 5 == 0) _hapticService.selection();
+      if (_rubPoints.length % 5 == 0) {
+        _hapticService.selection();
+      }
     });
   }
 
@@ -103,25 +106,48 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
         
         return ReadingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              _buildFoggyMirror(quest.passage ?? "", theme.primaryColor, isDark),
-              SizedBox(height: 32.h),
-              Text(quest.question?.toUpperCase() ?? "INFER THE HIDDEN TRUTH", style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.5)),
-              SizedBox(height: 24.h),
-              ...List.generate(quest.options?.length ?? 0, (index) => _buildInferenceOption(index, quest.options![index], quest.correctAnswer ?? "", theme.primaryColor, isDark)),
-              SizedBox(height: 40.h),
-            ],
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 32.h),
+                  
+                  _buildFoggyMirror(quest.passage ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 32.h),
+                  
+                  Text(
+                    quest.question?.toUpperCase() ?? "INFER THE HIDDEN TRUTH", 
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.outfit(
+                      fontSize: 14.sp, 
+                      fontWeight: FontWeight.w900, 
+                      color: theme.primaryColor, 
+                      letterSpacing: 1.5
+                    )
+                  ),
+                  SizedBox(height: 24.h),
+                  
+                  ...List.generate(quest.options?.length ?? 0, (index) => _buildInferenceOption(index, quest.options![index], quest.correctAnswer ?? "", theme.primaryColor, isDark)),
+                  
+                  if (_isAnswered) ...[
+                    SizedBox(height: 30.h),
+                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                  ],
+                  SizedBox(height: 60.h),
+                ],
+              ),
+            ),
           ),
         );
       },
@@ -137,7 +163,7 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
         children: [
           Icon(Icons.auto_awesome_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("RUB THE MIRROR TO REVEAL CLUES", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text("RUB THE MIRROR TO REVEAL SCIENTIFIC CLUES", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
@@ -148,29 +174,46 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
       onPanUpdate: (details) => _onRub(details.localPosition),
       child: Stack(
         children: [
-          // Clear Text
+          // Clear Passage Text
           GlassTile(
-            padding: EdgeInsets.all(24.r), borderRadius: BorderRadius.circular(24.r),
-            color: color.withValues(alpha: 0.1),
-            child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 18.sp, color: Colors.white, fontWeight: FontWeight.w500)),
+            padding: EdgeInsets.all(26.r), borderRadius: BorderRadius.circular(24.r),
+            color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+            child: Text(
+              text, 
+              textAlign: TextAlign.center, 
+              style: GoogleFonts.fredoka(
+                fontSize: 16.sp, 
+                height: 1.4,
+                color: isDark ? Colors.white : Colors.black87, 
+                fontWeight: FontWeight.w500
+              )
+            ),
           ),
           
-          // Fog Layer
+          // Fog Cover Layer
           if (!_isAnswered)
             Positioned.fill(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(24.r),
                 child: CustomPaint(
-                  painter: FogPainter(points: _rubPoints, clarity: _clarity, color: isDark ? Colors.white24 : Colors.black26),
+                  painter: FogPainter(
+                    points: _rubPoints, 
+                    clarity: _clarity, 
+                    color: isDark ? Colors.grey.shade800 : Colors.blueGrey.shade100
+                  ),
                 ),
               ),
             ),
           
-          // Glowing Clues (Overlays)
-          if (_clarity > 0.5)
+          // Glowing clues overlay
+          if (_clarity > 0.5 && !_isAnswered)
             Positioned.fill(
               child: Center(
-                child: Icon(Icons.lightbulb_outline_rounded, color: Colors.amber.withValues(alpha: 0.3), size: 100.r).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+                child: Icon(
+                  Icons.lightbulb_outline_rounded, 
+                  color: Colors.amber.withValues(alpha: 0.35), 
+                  size: 80.r
+                ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
               ),
             ),
         ],
@@ -190,15 +233,69 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
         onTap: () => _onChoiceTap(index, text, correct),
         child: AnimatedOpacity(
           duration: 300.milliseconds,
-          opacity: isDisabled ? 0.4 : 1.0,
+          opacity: isDisabled ? 0.35 : 1.0,
           child: GlassTile(
             padding: EdgeInsets.all(20.r), borderRadius: BorderRadius.circular(20.r),
-            color: isCorrect ? Colors.greenAccent.withValues(alpha: 0.3) : (isWrong ? Colors.redAccent.withValues(alpha: 0.3) : (isSelected ? color.withValues(alpha: 0.2) : Colors.white10)),
-            child: Center(child: Text(text, style: GoogleFonts.outfit(fontSize: 15.sp, fontWeight: FontWeight.bold, color: Colors.white))),
+            color: isCorrect 
+                ? Colors.greenAccent.withValues(alpha: 0.25) 
+                : (isWrong 
+                    ? Colors.redAccent.withValues(alpha: 0.25) 
+                    : (isSelected ? color.withValues(alpha: 0.15) : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.04)))),
+            child: Center(
+              child: Text(
+                text, 
+                textAlign: TextAlign.center,
+                style: GoogleFonts.outfit(
+                  fontSize: 14.sp, 
+                  fontWeight: FontWeight.bold, 
+                  color: isDark ? Colors.white : Colors.black87
+                )
+              )
+            ),
           ),
         ),
       ),
     );
+  }
+
+  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 
@@ -209,10 +306,18 @@ class FogPainter extends CustomPainter {
   FogPainter({required this.points, required this.clarity, required this.color});
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color.withValues(alpha: 0.9 - (clarity * 0.5))..style = PaintingStyle.fill;
+    final paint = Paint()
+      ..color = color.withValues(alpha: 0.95 - (clarity * 0.4))
+      ..style = PaintingStyle.fill;
     canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
     
-    final clearPaint = Paint()..blendMode = BlendMode.clear..strokeWidth = 40..strokeCap = StrokeCap.round..style = PaintingStyle.stroke..maskFilter = const MaskFilter.blur(BlurStyle.normal, 15);
+    final clearPaint = Paint()
+      ..blendMode = BlendMode.clear
+      ..strokeWidth = 35.r
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
+      
     for (int i = 0; i < points.length - 1; i++) {
       canvas.drawLine(points[i], points[i + 1], clearPaint);
     }
@@ -220,4 +325,3 @@ class FogPainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
-

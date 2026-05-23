@@ -237,13 +237,10 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
       if (s.hintUsed) return;
 
       final result = await useHint(NoParams());
-      result.fold(
-        (failure) {}, // Handle failure if needed
-        (_) {
-          emit(s.copyWith(hintUsed: true));
-          hapticService.selection();
-        },
-      );
+      if (result.isRight()) {
+        emit(s.copyWith(hintUsed: true));
+        hapticService.selection();
+      }
     }
   }
 

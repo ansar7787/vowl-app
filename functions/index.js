@@ -217,3 +217,43 @@ exports.sendStreakReminders = onSchedule("0 20 * * *", async (event) => {
         }
     }
 });
+
+// ─── LEADERBOARD CACHE UPDATER (Runs Every 4 Hours) ─────────────────────────
+// Calculates top 50 users server-side to prevent Cache Stampedes on mobile clients.
+exports.updateLeaderboardCache = onSchedule("0 */4 * * *", async (event) => {
+    const db = admin.firestore();
+    console.log('Starting scheduled leaderboard update...');
+
+    try {
+      const snapshot = await db.collection('users')
+        .orderBy('totalExp', 'desc')
+        .limit(50)
+        .get();
+
+      const usersData = [];
+
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        usersData.push({
+          id: doc.id,
+          displayName: data.displayName || 'Unknown User',
+          photoUrl: data.photoUrl || null,
+          totalExp: data.totalExp || 0,
+          currentStreak: data.currentStreak || 0,
+          completedLevels: data.completedLevels || {},
+          isPremium: data.isPremium || false,
+        });
+      });
+
+      const cacheRef = db.collection('metadata').doc('leaderboard_cache');
+      
+      await cacheRef.set({
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+        users: usersData,
+      }, { merge: true });
+
+      console.log(`Successfully updated leaderboard cache with top ${usersData.length} users.`);
+    } catch (error) {
+      console.error('Error updating leaderboard cache:', error);
+    }
+});

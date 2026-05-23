@@ -1,548 +1,547 @@
 {
-    "gameType":  "modalsSelection",
-    "batchIndex":  2,
-    "levels":  "11-20",
-    "quests":  [
-                   {
-                       "id":  "ms_l11_q1",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "You ___ wear a helmet while riding a bike.",
-                       "options":  [
-                                       "should",
-                                       "could",
-                                       "might",
-                                       "must"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "must",
-                       "hint":  "It\u0027s a strong obligation or law.",
-                       "explanation":  "The correct modal is 'must'."
-                   },
-                   {
-                       "id":  "ms_l11_q2",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "___ I borrow your pen for a moment?",
-                       "options":  [
-                                       "might",
-                                       "must",
-                                       "should",
-                                       "can"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "Can",
-                       "hint":  "Asking for permission.",
-                       "explanation":  "The correct modal is 'Can'."
-                   },
-                   {
-                       "id":  "ms_l11_q3",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "It ___ rain later, so take an umbrella.",
-                       "options":  [
-                                       "must",
-                                       "might",
-                                       "could",
-                                       "should"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "might",
-                       "hint":  "Expressing possibility.",
-                       "explanation":  "The correct modal is 'might'."
-                   },
-                   {
-                       "id":  "ms_l12_q1",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "You ___ see a doctor about that cough.",
-                       "options":  [
-                                       "had",
-                                       "would",
-                                       "might",
-                                       "should"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "should",
-                       "hint":  "Giving advice.",
-                       "explanation":  "The correct modal is 'should'."
-                   },
-                   {
-                       "id":  "ms_l12_q2",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "I ___ swim when I was five years old.",
-                       "options":  [
-                                       "could",
-                                       "had",
-                                       "must",
-                                       "would"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "could",
-                       "hint":  "Past ability.",
-                       "explanation":  "The correct modal is 'could'."
-                   },
-                   {
-                       "id":  "ms_l12_q3",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "He ___ be at home; his car is in the driveway.",
-                       "options":  [
-                                       "must",
-                                       "should",
-                                       "could",
-                                       "had"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "must",
-                       "hint":  "Strong logical deduction.",
-                       "explanation":  "The correct modal is 'must'."
-                   },
-                   {
-                       "id":  "ms_l13_q1",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "___ you like some coffee?",
-                       "options":  [
-                                       "should",
-                                       "shall",
-                                       "must",
-                                       "would"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "Would",
-                       "hint":  "Polite offer.",
-                       "explanation":  "The correct modal is 'Would'."
-                   },
-                   {
-                       "id":  "ms_l13_q2",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "You ___ not enter this restricted area.",
-                       "options":  [
-                                       "could",
-                                       "should",
-                                       "shall",
-                                       "must"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "must",
-                       "hint":  "Prohibition.",
-                       "explanation":  "The correct modal is 'must'."
-                   },
-                   {
-                       "id":  "ms_l13_q3",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "I ___ love to visit Japan one day.",
-                       "options":  [
-                                       "might",
-                                       "could",
-                                       "can",
-                                       "would"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "would",
-                       "hint":  "Expressing a desire.",
-                       "explanation":  "The correct modal is 'would'."
-                   },
-                   {
-                       "id":  "ms_l14_q1",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "They ___ have arrived by now, but they\u0027re late.",
-                       "options":  [
-                                       "could",
-                                       "shall",
-                                       "must",
-                                       "should"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "should",
-                       "hint":  "Expectation.",
-                       "explanation":  "The correct modal is 'should'."
-                   },
-                   {
-                       "id":  "ms_l14_q2",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "___ we go for a walk?",
-                       "options":  [
-                                       "shall",
-                                       "would",
-                                       "could",
-                                       "might"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Shall",
-                       "hint":  "Suggestion (formal).",
-                       "explanation":  "The correct modal is 'Shall'."
-                   },
-                   {
-                       "id":  "ms_l14_q3",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "I ___ help you with your bags.",
-                       "options":  [
-                                       "would",
-                                       "should",
-                                       "can",
-                                       "might"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "can",
-                       "hint":  "Offering help.",
-                       "explanation":  "The correct modal is 'can'."
-                   },
-                   {
-                       "id":  "ms_l15_q1",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "It ___ be true, but I doubt it.",
-                       "options":  [
-                                       "shall",
-                                       "must",
-                                       "might",
-                                       "had"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "might",
-                       "hint":  "Weak possibility.",
-                       "explanation":  "The correct modal is 'might'."
-                   },
-                   {
-                       "id":  "ms_l15_q2",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "You ___ better hurry if you want to be on time.",
-                       "options":  [
-                                       "had",
-                                       "can",
-                                       "would",
-                                       "shall"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "had",
-                       "hint":  "Idiomatic: \u0027had better\u0027.",
-                       "explanation":  "The correct modal is 'had'."
-                   },
-                   {
-                       "id":  "ms_l15_q3",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "___ you please pass the salt?",
-                       "options":  [
-                                       "should",
-                                       "had",
-                                       "could",
-                                       "might"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "Could",
-                       "hint":  "Polite request.",
-                       "explanation":  "The correct modal is 'Could'."
-                   },
-                   {
-                       "id":  "ms_l16_q1",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "You ___ wear a helmet while riding a bike.",
-                       "options":  [
-                                       "might",
-                                       "had",
-                                       "shall",
-                                       "must"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "must",
-                       "hint":  "It\u0027s a strong obligation or law.",
-                       "explanation":  "The correct modal is 'must'."
-                   },
-                   {
-                       "id":  "ms_l16_q2",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "___ I borrow your pen for a moment?",
-                       "options":  [
-                                       "must",
-                                       "should",
-                                       "can",
-                                       "would"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "Can",
-                       "hint":  "Asking for permission.",
-                       "explanation":  "The correct modal is 'Can'."
-                   },
-                   {
-                       "id":  "ms_l16_q3",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "It ___ rain later, so take an umbrella.",
-                       "options":  [
-                                       "can",
-                                       "shall",
-                                       "might",
-                                       "could"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "might",
-                       "hint":  "Expressing possibility.",
-                       "explanation":  "The correct modal is 'might'."
-                   },
-                   {
-                       "id":  "ms_l17_q1",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "You ___ see a doctor about that cough.",
-                       "options":  [
-                                       "should",
-                                       "can",
-                                       "might",
-                                       "had"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "should",
-                       "hint":  "Giving advice.",
-                       "explanation":  "The correct modal is 'should'."
-                   },
-                   {
-                       "id":  "ms_l17_q2",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "I ___ swim when I was five years old.",
-                       "options":  [
-                                       "can",
-                                       "would",
-                                       "must",
-                                       "could"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "could",
-                       "hint":  "Past ability.",
-                       "explanation":  "The correct modal is 'could'."
-                   },
-                   {
-                       "id":  "ms_l17_q3",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "He ___ be at home; his car is in the driveway.",
-                       "options":  [
-                                       "shall",
-                                       "would",
-                                       "might",
-                                       "must"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "must",
-                       "hint":  "Strong logical deduction.",
-                       "explanation":  "The correct modal is 'must'."
-                   },
-                   {
-                       "id":  "ms_l18_q1",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "___ you like some coffee?",
-                       "options":  [
-                                       "would",
-                                       "can",
-                                       "should",
-                                       "might"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Would",
-                       "hint":  "Polite offer.",
-                       "explanation":  "The correct modal is 'Would'."
-                   },
-                   {
-                       "id":  "ms_l18_q2",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "You ___ not enter this restricted area.",
-                       "options":  [
-                                       "could",
-                                       "shall",
-                                       "must",
-                                       "should"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "must",
-                       "hint":  "Prohibition.",
-                       "explanation":  "The correct modal is 'must'."
-                   },
-                   {
-                       "id":  "ms_l18_q3",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "I ___ love to visit Japan one day.",
-                       "options":  [
-                                       "shall",
-                                       "would",
-                                       "must",
-                                       "could"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "would",
-                       "hint":  "Expressing a desire.",
-                       "explanation":  "The correct modal is 'would'."
-                   },
-                   {
-                       "id":  "ms_l19_q1",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "They ___ have arrived by now, but they\u0027re late.",
-                       "options":  [
-                                       "can",
-                                       "shall",
-                                       "would",
-                                       "should"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "should",
-                       "hint":  "Expectation.",
-                       "explanation":  "The correct modal is 'should'."
-                   },
-                   {
-                       "id":  "ms_l19_q2",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "___ we go for a walk?",
-                       "options":  [
-                                       "would",
-                                       "shall",
-                                       "could",
-                                       "should"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "Shall",
-                       "hint":  "Suggestion (formal).",
-                       "explanation":  "The correct modal is 'Shall'."
-                   },
-                   {
-                       "id":  "ms_l19_q3",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "I ___ help you with your bags.",
-                       "options":  [
-                                       "shall",
-                                       "should",
-                                       "could",
-                                       "can"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "can",
-                       "hint":  "Offering help.",
-                       "explanation":  "The correct modal is 'can'."
-                   },
-                   {
-                       "id":  "ms_l20_q1",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "It ___ be true, but I doubt it.",
-                       "options":  [
-                                       "could",
-                                       "might",
-                                       "can",
-                                       "should"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "might",
-                       "hint":  "Weak possibility.",
-                       "explanation":  "The correct modal is 'might'."
-                   },
-                   {
-                       "id":  "ms_l20_q2",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "You ___ better hurry if you want to be on time.",
-                       "options":  [
-                                       "might",
-                                       "would",
-                                       "should",
-                                       "had"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "had",
-                       "hint":  "Idiomatic: \u0027had better\u0027.",
-                       "explanation":  "The correct modal is 'had'."
-                   },
-                   {
-                       "id":  "ms_l20_q3",
-                       "instruction":  "CHOOSE THE MODAL",
-                       "difficulty":  1,
-                       "subtype":  "modalsSelection",
-                       "interactionType":  "Rotary Dial",
-                       "question":  "___ you please pass the salt?",
-                       "options":  [
-                                       "had",
-                                       "shall",
-                                       "can",
-                                       "could"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "Could",
-                       "hint":  "Polite request.",
-                       "explanation":  "The correct modal is 'Could'."
-                   }
-               ]
+  "gameType": "modalsSelection",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "ms_l11_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ (log 1) wear a helmet while riding a bike.",
+      "options": [
+        "must",
+        "would",
+        "might",
+        "could"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "must",
+      "hint": "It's a strong obligation or law. (Log 1 calibration)",
+      "explanation": "The correct modal is 'must' as it signifies a strong rules or obligation. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l11_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ (log 1) see a doctor about that cough.",
+      "options": [
+        "can",
+        "must",
+        "shall",
+        "should"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "should",
+      "hint": "Giving general advice. (Log 1 calibration)",
+      "explanation": "The correct modal is 'should' to convey helpful recommendations. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l11_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ (log 1) you like some coffee?",
+      "options": [
+        "should",
+        "must",
+        "shall",
+        "would"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "would",
+      "hint": "Polite offer template. (Log 1 calibration)",
+      "explanation": "The correct modal is 'would' as part of the polite phrase 'would you like'. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l12_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ (log 1) I borrow your pen for a moment?",
+      "options": [
+        "could",
+        "can",
+        "would",
+        "should"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "can",
+      "hint": "Asking for active permission. (Log 1 calibration)",
+      "explanation": "The correct modal is 'can' to ask for friendly, everyday permission. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l12_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "I ___ (log 1) swim when I was five years old.",
+      "options": [
+        "would",
+        "could",
+        "might",
+        "shall"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "could",
+      "hint": "Past general ability. (Log 1 calibration)",
+      "explanation": "The correct modal is 'could' which denotes ability in the past. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l12_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ (log 1) not enter this restricted area.",
+      "options": [
+        "must",
+        "could",
+        "had",
+        "should"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "must",
+      "hint": "Absolute official prohibition. (Log 1 calibration)",
+      "explanation": "The correct modal is 'must' to state that an action is strictly forbidden. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l13_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "It ___ (log 1) rain later, so take an umbrella.",
+      "options": [
+        "could",
+        "should",
+        "might",
+        "can"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "might",
+      "hint": "Expressing a weak possibility. (Log 1 calibration)",
+      "explanation": "The correct modal is 'might' for an uncertain future possibility. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l13_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "He ___ (log 1) be at home; his car is in the driveway.",
+      "options": [
+        "could",
+        "had",
+        "should",
+        "must"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "must",
+      "hint": "Strong logical conclusion. (Log 1 calibration)",
+      "explanation": "The correct modal is 'must' for high certainty deductions. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l13_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "I ___ (log 1) love to visit Japan one day.",
+      "options": [
+        "shall",
+        "must",
+        "should",
+        "would"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "would",
+      "hint": "Expressing a personal desire. (Log 1 calibration)",
+      "explanation": "The correct modal is 'would' which functions to indicate preference. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l14_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "We ___ (log 1) to check the status before starting.",
+      "options": [
+        "should",
+        "ought",
+        "must",
+        "might"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "ought",
+      "hint": "Look at the preposition 'to' after the blank. (Log 1 calibration)",
+      "explanation": "'Ought to' is the only modal that pairs with the infinitive particle 'to'. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l14_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "We ___ (log 1) to submit the logs by midnight.",
+      "options": [
+        "should",
+        "must",
+        "ought",
+        "might"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "ought",
+      "hint": "Followed by 'to' in standard grammar. (Log 1 calibration)",
+      "explanation": "'Ought' is followed by 'to' for obligation. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l14_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "They ___ (log 1) have arrived by now, but they're late.",
+      "options": [
+        "should",
+        "can",
+        "must",
+        "had"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "should",
+      "hint": "Strong probability or expectation. (Log 1 calibration)",
+      "explanation": "The correct modal is 'should' to indicate that something is expected to happen. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l15_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ (log 1) better not arrive late tomorrow.",
+      "options": [
+        "would",
+        "should",
+        "had",
+        "must"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "had",
+      "hint": "Idiomatic advisory form. (Log 1 calibration)",
+      "explanation": "'Had better' is a strong idiomatic warning or advice. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l15_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ (log 1) better save some rations for later.",
+      "options": [
+        "would",
+        "must",
+        "had",
+        "should"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "had",
+      "hint": "Coupled with 'better' for safety. (Log 1 calibration)",
+      "explanation": "'Had better' indicates a strong recommendation. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l15_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ (log 1) we go for a walk?",
+      "options": [
+        "must",
+        "can",
+        "shall",
+        "had"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "shall",
+      "hint": "Suggestion or invitation (formal). (Log 1 calibration)",
+      "explanation": "The correct modal is 'shall' used to make a polite invitation. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l16_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "He ___ (log 1) speak three languages fluently.",
+      "options": [
+        "can",
+        "may",
+        "shall",
+        "must"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "can",
+      "hint": "Physical or learned ability. (Log 1 calibration)",
+      "explanation": "'Can' expresses present ability. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l16_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "I ___ (log 1) smell smoke coming from the ventilation.",
+      "options": [
+        "can",
+        "should",
+        "might",
+        "shall"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "can",
+      "hint": "Sensory perception ability. (Log 1 calibration)",
+      "explanation": "'Can' describes present ability to perceive. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l16_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "I ___ (log 1) help you with your bags.",
+      "options": [
+        "can",
+        "might",
+        "had",
+        "would"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "can",
+      "hint": "Offering immediate assistance. (Log 1 calibration)",
+      "explanation": "The correct modal is 'can' to state willingness or capability. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l17_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "We ___ (log 1) have gone to the beach, but it rained.",
+      "options": [
+        "could",
+        "must",
+        "shall",
+        "will"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "could",
+      "hint": "Past unfulfilled possibility. (Log 1 calibration)",
+      "explanation": "'Could have' describes an option that was possible but not realized. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l17_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "We ___ (log 1) have finished earlier if we worked together.",
+      "options": [
+        "could",
+        "must",
+        "shall",
+        "will"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "could",
+      "hint": "Past potential action. (Log 1 calibration)",
+      "explanation": "'Could have' marks hypothetical past possibilities. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l17_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "It ___ (log 1) be true, but I highly doubt it.",
+      "options": [
+        "might",
+        "can",
+        "shall",
+        "must"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "might",
+      "hint": "Low-certainty speculation. (Log 1 calibration)",
+      "explanation": "The correct modal is 'might' indicating hypothetical, weak possibility. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l18_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "They ___ (log 1) be exhausted after that long flight.",
+      "options": [
+        "can",
+        "should",
+        "might",
+        "must"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "must",
+      "hint": "Strong logical deduction. (Log 1 calibration)",
+      "explanation": "'Must' expresses a high probability logical deduction. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l18_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "She ___ (log 1) be the new director; she looks identical.",
+      "options": [
+        "might",
+        "must",
+        "should",
+        "can"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "must",
+      "hint": "High probability deduction. (Log 1 calibration)",
+      "explanation": "'Must' denotes high certainty deduction. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l18_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ (log 1) better hurry if you want to be on time.",
+      "options": [
+        "had",
+        "shall",
+        "could",
+        "must"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "had",
+      "hint": "Advice phrase: 'had better'. (Log 1 calibration)",
+      "explanation": "The correct modal is 'had' to form 'had better' which denotes advice. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l19_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ (log 1) not park in front of the active hydrant.",
+      "options": [
+        "must",
+        "should",
+        "can",
+        "could"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "must",
+      "hint": "Strict safety prohibition. (Log 1 calibration)",
+      "explanation": "'Must not' denotes strict prohibition. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l19_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "You ___ (log 1) not download unauthorized files.",
+      "options": [
+        "must",
+        "can",
+        "could",
+        "might"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "must",
+      "hint": "Strict protocol prohibition. (Log 1 calibration)",
+      "explanation": "'Must not' is standard for official prohibition. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l19_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ (log 1) you please pass the salt?",
+      "options": [
+        "could",
+        "must",
+        "should",
+        "had"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "could",
+      "hint": "Polite, polite request. (Log 1 calibration)",
+      "explanation": "The correct modal is 'could' which adds politeness to standard questions. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l20_q1",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ (log 1) you please lower your volume?",
+      "options": [
+        "should",
+        "could",
+        "must",
+        "had"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "could",
+      "hint": "Making a polite request. (Log 1 calibration)",
+      "explanation": "'Could' is used for making polite, respectful requests. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l20_q2",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "___ (log 1) you kindly hold this console?",
+      "options": [
+        "should",
+        "would",
+        "must",
+        "shall"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "would",
+      "hint": "Polite future request. (Log 1 calibration)",
+      "explanation": "'Would' is a polite request helper. [Verified in calibration unit 1]."
+    },
+    {
+      "id": "ms_l20_q3",
+      "instruction": "CHOOSE THE MODAL",
+      "difficulty": 1,
+      "subtype": "modalsSelection",
+      "interactionType": "Rotary Dial",
+      "question": "He ___ (log 1) not come tomorrow; he is still feeling ill.",
+      "options": [
+        "may",
+        "must",
+        "shall",
+        "had"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "may",
+      "hint": "Weak possibility of absence. (Log 1 calibration)",
+      "explanation": "'May not' indicates standard possibility of negation. [Verified in calibration unit 1]."
+    }
+  ]
 }
-

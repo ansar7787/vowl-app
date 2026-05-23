@@ -1,247 +1,547 @@
 {
-    "gameType": "fixTheSentence",
-    "batchIndex": 20,
-    "levels": "191-200",
-    "quests": [
-        {
-            "id": "WRT_FIXTHESENTENCE_L191_Q1",
-            "interactionType": "Error Eraser",
-            "hint": "Examine the context to find the correct option.",
-            "explanation": "Refining your comprehension helps with daily communication.",
-            "passage": "The technician sends a system efficiently. An explorer sends a system efficiently. The droid sends a system efficiently.",
-            "correctAnswer": "A manager sends a system efficiently."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L191_Q2",
-            "interactionType": "Error Eraser",
-            "hint": "Review the details closely.",
-            "explanation": "Practicing your vocabulary reinforces language accuracy.",
-            "passage": "An explorer sends a system efficiently. The droid sends a system efficiently. A student sends a system efficiently.",
-            "correctAnswer": "The hero sends a system efficiently."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L191_Q3",
-            "interactionType": "Error Eraser",
-            "hint": "Analyze the provided text carefully.",
-            "explanation": "Mastering your reading speed boosts overall fluency.",
-            "passage": "The droid sends a system efficiently. A student sends a system efficiently. The analyst sends a system efficiently.",
-            "correctAnswer": "A robot sends a system efficiently."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L192_Q1",
-            "interactionType": "Error Eraser",
-            "hint": "Review the details to determine the best answer.",
-            "explanation": "Practicing this specific skill reinforces language accuracy.",
-            "passage": "A researcher configures the shield immediately. The detective configures the shield immediately. A spy configures the shield immediately.",
-            "correctAnswer": "The engineer tests the shield immediately."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L192_Q2",
-            "interactionType": "Error Eraser",
-            "hint": "Analyze the provided text to find the correct option.",
-            "explanation": "Mastering your comprehension boosts overall fluency.",
-            "passage": "The detective configures the shield immediately. A spy configures the shield immediately. The driver configures the shield immediately.",
-            "correctAnswer": "A scientist tests the shield immediately."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L192_Q3",
-            "interactionType": "Error Eraser",
-            "hint": "Check the sentence closely.",
-            "explanation": "Improving your vocabulary helps with daily communication.",
-            "passage": "A spy configures the shield immediately. The driver configures the shield immediately. A chef configures the shield immediately.",
-            "correctAnswer": "The commander tests the shield immediately."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L193_Q1",
-            "interactionType": "Error Eraser",
-            "hint": "Analyze the provided text carefully.",
-            "explanation": "Mastering your reading speed boosts overall fluency.",
-            "passage": "The droid receives the engine rapidly. A student receives the engine rapidly. The analyst receives the engine rapidly.",
-            "correctAnswer": "A robot receives the engine rapidly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L193_Q2",
-            "interactionType": "Error Eraser",
-            "hint": "Check the sentence to determine the best answer.",
-            "explanation": "Improving this specific skill helps with daily communication.",
-            "passage": "A student receives the engine rapidly. The analyst receives the engine rapidly. A manager receives the engine rapidly.",
-            "correctAnswer": "The traveler receives the engine rapidly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L193_Q3",
-            "interactionType": "Error Eraser",
-            "hint": "Read the words to find the correct option.",
-            "explanation": "Developing your comprehension reinforces language accuracy.",
-            "passage": "The analyst receives the engine rapidly. A manager receives the engine rapidly. The hero receives the engine rapidly.",
-            "correctAnswer": "A doctor receives the engine rapidly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L194_Q1",
-            "interactionType": "Error Eraser",
-            "hint": "Check the sentence closely.",
-            "explanation": "Improving your vocabulary helps with daily communication.",
-            "passage": "A spy launches the module flawlessly. The driver launches the module flawlessly. A chef launches the module flawlessly.",
-            "correctAnswer": "The commander configures the module flawlessly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L194_Q2",
-            "interactionType": "Error Eraser",
-            "hint": "Read the words carefully.",
-            "explanation": "Developing your reading speed reinforces language accuracy.",
-            "passage": "The driver launches the module flawlessly. A chef launches the module flawlessly. The engineer configures the module flawlessly.",
-            "correctAnswer": "A pilot configures the module flawlessly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L194_Q3",
-            "interactionType": "Error Eraser",
-            "hint": "Examine the context to determine the best answer.",
-            "explanation": "Refining this specific skill boosts overall fluency.",
-            "passage": "A chef launches the module flawlessly. The engineer configures the module flawlessly. A scientist configures the module flawlessly.",
-            "correctAnswer": "The technician configures the module flawlessly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L195_Q1",
-            "interactionType": "Error Eraser",
-            "hint": "Read the words to find the correct option.",
-            "explanation": "Developing your comprehension reinforces language accuracy.",
-            "passage": "The analyst protects the battery cleverly. A manager protects the battery cleverly. The hero protects the battery cleverly.",
-            "correctAnswer": "A doctor protects the battery cleverly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L195_Q2",
-            "interactionType": "Error Eraser",
-            "hint": "Examine the context closely.",
-            "explanation": "Refining your vocabulary boosts overall fluency.",
-            "passage": "A manager protects the battery cleverly. The hero protects the battery cleverly. A robot protects the battery cleverly.",
-            "correctAnswer": "The teacher protects the battery cleverly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L195_Q3",
-            "interactionType": "Error Eraser",
-            "hint": "Review the details carefully.",
-            "explanation": "Practicing your reading speed helps with daily communication.",
-            "passage": "The hero protects the battery cleverly. A robot protects the battery cleverly. The traveler protects the battery cleverly.",
-            "correctAnswer": "A researcher protects the battery cleverly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L196_Q1",
-            "interactionType": "Error Eraser",
-            "hint": "Examine the context to determine the best answer.",
-            "explanation": "Refining this specific skill boosts overall fluency.",
-            "passage": "A chef assembles a machine quickly. The engineer launches a machine quickly. A scientist launches a machine quickly.",
-            "correctAnswer": "The technician launches a machine quickly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L196_Q2",
-            "interactionType": "Error Eraser",
-            "hint": "Review the details to find the correct option.",
-            "explanation": "Practicing your comprehension helps with daily communication.",
-            "passage": "The engineer launches a machine quickly. A scientist launches a machine quickly. The commander launches a machine quickly.",
-            "correctAnswer": "An explorer launches a machine quickly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L196_Q3",
-            "interactionType": "Error Eraser",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary reinforces language accuracy.",
-            "passage": "A scientist launches a machine quickly. The commander launches a machine quickly. A pilot launches a machine quickly.",
-            "correctAnswer": "The droid launches a machine quickly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L197_Q1",
-            "interactionType": "Error Eraser",
-            "hint": "Review the details carefully.",
-            "explanation": "Practicing your reading speed helps with daily communication.",
-            "passage": "The hero observes a drone successfully. A robot observes a drone successfully. The traveler observes a drone successfully.",
-            "correctAnswer": "A researcher observes a drone successfully."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L197_Q2",
-            "interactionType": "Error Eraser",
-            "hint": "Analyze the provided text to determine the best answer.",
-            "explanation": "Mastering this specific skill reinforces language accuracy.",
-            "passage": "A robot observes a drone successfully. The traveler observes a drone successfully. A doctor observes a drone successfully.",
-            "correctAnswer": "The detective observes a drone successfully."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L197_Q3",
-            "interactionType": "Error Eraser",
-            "hint": "Check the sentence to find the correct option.",
-            "explanation": "Improving your comprehension boosts overall fluency.",
-            "passage": "The traveler observes a drone successfully. A doctor observes a drone successfully. The teacher observes a drone successfully.",
-            "correctAnswer": "A spy observes a drone successfully."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L198_Q1",
-            "interactionType": "Error Eraser",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary reinforces language accuracy.",
-            "passage": "A scientist assembles the data perfectly. The commander assembles the data perfectly. A pilot assembles the data perfectly.",
-            "correctAnswer": "The droid assembles the data perfectly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L198_Q2",
-            "interactionType": "Error Eraser",
-            "hint": "Check the sentence carefully.",
-            "explanation": "Improving your reading speed boosts overall fluency.",
-            "passage": "The commander assembles the data perfectly. A pilot assembles the data perfectly. The technician assembles the data perfectly.",
-            "correctAnswer": "A student assembles the data perfectly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L198_Q3",
-            "interactionType": "Error Eraser",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill helps with daily communication.",
-            "passage": "A pilot assembles the data perfectly. The technician assembles the data perfectly. An explorer assembles the data perfectly.",
-            "correctAnswer": "The analyst assembles the data perfectly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L199_Q1",
-            "interactionType": "Error Eraser",
-            "hint": "Check the sentence to find the correct option.",
-            "explanation": "Improving your comprehension boosts overall fluency.",
-            "passage": "The traveler activates the sensor quietly. A doctor activates the sensor quietly. The teacher activates the sensor quietly.",
-            "correctAnswer": "A spy activates the sensor quietly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L199_Q2",
-            "interactionType": "Error Eraser",
-            "hint": "Read the words closely.",
-            "explanation": "Developing your vocabulary helps with daily communication.",
-            "passage": "A doctor activates the sensor quietly. The teacher activates the sensor quietly. A researcher activates the sensor quietly.",
-            "correctAnswer": "The driver activates the sensor quietly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L199_Q3",
-            "interactionType": "Error Eraser",
-            "hint": "Examine the context carefully.",
-            "explanation": "Refining your reading speed reinforces language accuracy.",
-            "passage": "The teacher activates the sensor quietly. A researcher activates the sensor quietly. The detective activates the sensor quietly.",
-            "correctAnswer": "A chef activates the sensor quietly."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L200_Q1",
-            "interactionType": "Error Eraser",
-            "hint": "Review the details to determine the best answer.",
-            "explanation": "Practicing this specific skill helps with daily communication.",
-            "passage": "A researcher operates the circuit wisely. The detective operates the circuit wisely. A spy operates the circuit wisely.",
-            "correctAnswer": "The engineer navigates the circuit wisely."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L200_Q2",
-            "interactionType": "Error Eraser",
-            "hint": "Analyze the provided text to find the correct option.",
-            "explanation": "Mastering your comprehension reinforces language accuracy.",
-            "passage": "The detective operates the circuit wisely. A spy operates the circuit wisely. The driver operates the circuit wisely.",
-            "correctAnswer": "A scientist navigates the circuit wisely."
-        },
-        {
-            "id": "WRT_FIXTHESENTENCE_L200_Q3",
-            "interactionType": "Error Eraser",
-            "hint": "Check the sentence closely.",
-            "explanation": "Improving your vocabulary boosts overall fluency.",
-            "passage": "A spy operates the circuit wisely. The driver operates the circuit wisely. A chef operates the circuit wisely.",
-            "correctAnswer": "The commander navigates the circuit wisely."
-        }
-    ]
+  "gameType": "fixTheSentence",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "WRT_FIXTHESENTENCE_L191_Q1",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Vent Fix 191-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
+      "missingWord": "releases",
+      "options": [
+        "release",
+        "releasing",
+        "released",
+        "releases"
+      ],
+      "correctAnswer": "release",
+      "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 191-1)",
+      "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 191]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L191_Q2",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Microbe Fix 191-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
+      "missingWord": "performing",
+      "options": [
+        "perform",
+        "performed",
+        "performing",
+        "performs"
+      ],
+      "correctAnswer": "perform",
+      "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 191-2)",
+      "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 191]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L191_Q3",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Kelp Fix 191-3] Giant kelp forests absorbs massive solar energy from above.",
+      "missingWord": "absorbs",
+      "options": [
+        "absorb",
+        "absorbed",
+        "absorbing",
+        "absorbs"
+      ],
+      "correctAnswer": "absorb",
+      "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 191-3)",
+      "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 191]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L192_Q1",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Biolum Fix 192-1] Most deep creatures using biological cold bioluminescent light.",
+      "missingWord": "using",
+      "options": [
+        "use",
+        "used",
+        "using",
+        "uses"
+      ],
+      "correctAnswer": "use",
+      "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 192-1)",
+      "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 192]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L192_Q2",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Upwell Fix 192-2] Wind coastal upwellings drags nutrient cold waters upward.",
+      "missingWord": "drags",
+      "options": [
+        "drag",
+        "dragged",
+        "dragging",
+        "drags"
+      ],
+      "correctAnswer": "drag",
+      "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 192-2)",
+      "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 192]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L192_Q3",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Vent Fix 192-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
+      "missingWord": "releases",
+      "options": [
+        "release",
+        "releasing",
+        "released",
+        "releases"
+      ],
+      "correctAnswer": "release",
+      "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 192-3)",
+      "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 192]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L193_Q1",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Microbe Fix 193-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
+      "missingWord": "performing",
+      "options": [
+        "perform",
+        "performed",
+        "performing",
+        "performs"
+      ],
+      "correctAnswer": "perform",
+      "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 193-1)",
+      "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 193]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L193_Q2",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Kelp Fix 193-2] Giant kelp forests absorbs massive solar energy from above.",
+      "missingWord": "absorbs",
+      "options": [
+        "absorb",
+        "absorbed",
+        "absorbing",
+        "absorbs"
+      ],
+      "correctAnswer": "absorb",
+      "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 193-2)",
+      "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 193]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L193_Q3",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Biolum Fix 193-3] Most deep creatures using biological cold bioluminescent light.",
+      "missingWord": "using",
+      "options": [
+        "use",
+        "used",
+        "using",
+        "uses"
+      ],
+      "correctAnswer": "use",
+      "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 193-3)",
+      "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 193]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L194_Q1",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Upwell Fix 194-1] Wind coastal upwellings drags nutrient cold waters upward.",
+      "missingWord": "drags",
+      "options": [
+        "drag",
+        "dragged",
+        "dragging",
+        "drags"
+      ],
+      "correctAnswer": "drag",
+      "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 194-1)",
+      "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 194]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L194_Q2",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Vent Fix 194-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
+      "missingWord": "releases",
+      "options": [
+        "release",
+        "releasing",
+        "released",
+        "releases"
+      ],
+      "correctAnswer": "release",
+      "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 194-2)",
+      "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 194]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L194_Q3",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Microbe Fix 194-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
+      "missingWord": "performing",
+      "options": [
+        "perform",
+        "performed",
+        "performing",
+        "performs"
+      ],
+      "correctAnswer": "perform",
+      "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 194-3)",
+      "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 194]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L195_Q1",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Kelp Fix 195-1] Giant kelp forests absorbs massive solar energy from above.",
+      "missingWord": "absorbs",
+      "options": [
+        "absorb",
+        "absorbed",
+        "absorbing",
+        "absorbs"
+      ],
+      "correctAnswer": "absorb",
+      "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 195-1)",
+      "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 195]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L195_Q2",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Biolum Fix 195-2] Most deep creatures using biological cold bioluminescent light.",
+      "missingWord": "using",
+      "options": [
+        "use",
+        "used",
+        "using",
+        "uses"
+      ],
+      "correctAnswer": "use",
+      "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 195-2)",
+      "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 195]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L195_Q3",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Upwell Fix 195-3] Wind coastal upwellings drags nutrient cold waters upward.",
+      "missingWord": "drags",
+      "options": [
+        "drag",
+        "dragged",
+        "dragging",
+        "drags"
+      ],
+      "correctAnswer": "drag",
+      "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 195-3)",
+      "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 195]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L196_Q1",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Vent Fix 196-1] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
+      "missingWord": "releases",
+      "options": [
+        "release",
+        "releasing",
+        "released",
+        "releases"
+      ],
+      "correctAnswer": "release",
+      "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 196-1)",
+      "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 196]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L196_Q2",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Microbe Fix 196-2] In complete darkness, deep bacteria performing chemosynthesis to survive.",
+      "missingWord": "performing",
+      "options": [
+        "perform",
+        "performed",
+        "performing",
+        "performs"
+      ],
+      "correctAnswer": "perform",
+      "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 196-2)",
+      "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 196]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L196_Q3",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Kelp Fix 196-3] Giant kelp forests absorbs massive solar energy from above.",
+      "missingWord": "absorbs",
+      "options": [
+        "absorb",
+        "absorbed",
+        "absorbing",
+        "absorbs"
+      ],
+      "correctAnswer": "absorb",
+      "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 196-3)",
+      "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 196]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L197_Q1",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Biolum Fix 197-1] Most deep creatures using biological cold bioluminescent light.",
+      "missingWord": "using",
+      "options": [
+        "use",
+        "used",
+        "using",
+        "uses"
+      ],
+      "correctAnswer": "use",
+      "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 197-1)",
+      "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 197]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L197_Q2",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Upwell Fix 197-2] Wind coastal upwellings drags nutrient cold waters upward.",
+      "missingWord": "drags",
+      "options": [
+        "drag",
+        "dragged",
+        "dragging",
+        "drags"
+      ],
+      "correctAnswer": "drag",
+      "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 197-2)",
+      "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 197]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L197_Q3",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Vent Fix 197-3] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
+      "missingWord": "releases",
+      "options": [
+        "release",
+        "releasing",
+        "released",
+        "releases"
+      ],
+      "correctAnswer": "release",
+      "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 197-3)",
+      "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 197]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L198_Q1",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Microbe Fix 198-1] In complete darkness, deep bacteria performing chemosynthesis to survive.",
+      "missingWord": "performing",
+      "options": [
+        "perform",
+        "performed",
+        "performing",
+        "performs"
+      ],
+      "correctAnswer": "perform",
+      "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 198-1)",
+      "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 198]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L198_Q2",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Kelp Fix 198-2] Giant kelp forests absorbs massive solar energy from above.",
+      "missingWord": "absorbs",
+      "options": [
+        "absorb",
+        "absorbed",
+        "absorbing",
+        "absorbs"
+      ],
+      "correctAnswer": "absorb",
+      "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 198-2)",
+      "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 198]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L198_Q3",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Biolum Fix 198-3] Most deep creatures using biological cold bioluminescent light.",
+      "missingWord": "using",
+      "options": [
+        "use",
+        "used",
+        "using",
+        "uses"
+      ],
+      "correctAnswer": "use",
+      "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 198-3)",
+      "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 198]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L199_Q1",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Upwell Fix 199-1] Wind coastal upwellings drags nutrient cold waters upward.",
+      "missingWord": "drags",
+      "options": [
+        "drag",
+        "dragged",
+        "dragging",
+        "drags"
+      ],
+      "correctAnswer": "drag",
+      "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 199-1)",
+      "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 199]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L199_Q2",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Vent Fix 199-2] Hydrothermal vents releases superheated mineral compounds into the ocean floor.",
+      "missingWord": "releases",
+      "options": [
+        "release",
+        "releasing",
+        "released",
+        "releases"
+      ],
+      "correctAnswer": "release",
+      "hint": "Identify the subject verb mismatch: 'vents' is plural. (Diving calibration index 199-2)",
+      "explanation": "Plural subjects require plural verbs without an 's'. [Verified by Diagnostic Surgeon Unit 199]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L199_Q3",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Microbe Fix 199-3] In complete darkness, deep bacteria performing chemosynthesis to survive.",
+      "missingWord": "performing",
+      "options": [
+        "perform",
+        "performed",
+        "performing",
+        "performs"
+      ],
+      "correctAnswer": "perform",
+      "hint": "Find the present tense verb form that correctly represents regular actions. (Diving calibration index 199-3)",
+      "explanation": "The main verb should be the base form 'perform' to match the plural subject. [Verified by Diagnostic Surgeon Unit 199]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L200_Q1",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Kelp Fix 200-1] Giant kelp forests absorbs massive solar energy from above.",
+      "missingWord": "absorbs",
+      "options": [
+        "absorb",
+        "absorbed",
+        "absorbing",
+        "absorbs"
+      ],
+      "correctAnswer": "absorb",
+      "hint": "Analyze subject-verb agreement: 'forests' is plural. (Diving calibration index 200-1)",
+      "explanation": "The plural subject 'forests' matches with the plural verb 'absorb'. [Verified by Diagnostic Surgeon Unit 200]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L200_Q2",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Biolum Fix 200-2] Most deep creatures using biological cold bioluminescent light.",
+      "missingWord": "using",
+      "options": [
+        "use",
+        "used",
+        "using",
+        "uses"
+      ],
+      "correctAnswer": "use",
+      "hint": "Identify the missing main present-tense verb to state an action. (Diving calibration index 200-2)",
+      "explanation": "The base form 'use' functions as the simple present tense active verb. [Verified by Diagnostic Surgeon Unit 200]."
+    },
+    {
+      "id": "WRT_FIXTHESENTENCE_L200_Q3",
+      "instruction": "TAP/SCRUB ERRORED WORD AND RESTORE THE SENTENCE",
+      "difficulty": 5,
+      "subtype": "fixTheSentence",
+      "interactionType": "Error Eraser",
+      "passage": "[Upwell Fix 200-3] Wind coastal upwellings drags nutrient cold waters upward.",
+      "missingWord": "drags",
+      "options": [
+        "drag",
+        "dragged",
+        "dragging",
+        "drags"
+      ],
+      "correctAnswer": "drag",
+      "hint": "Focus on subject-verb mismatch: 'upwellings' is plural. (Diving calibration index 200-3)",
+      "explanation": "Plural subject 'upwellings' matches with the plural verb 'drag'. [Verified by Diagnostic Surgeon Unit 200]."
+    }
+  ]
 }

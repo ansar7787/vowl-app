@@ -5,10 +5,10 @@ class VowlAssets {
   static const Map<String, String> mascotMap = {
     'vowl_prime': '🦉',
     'silver_wing': '🦅',
-    'night_oracle': '🌙',
-    'phantom_hoot': '👻',
-    'golden_talon': '✨',
-    'moss_feather': '🌿',
+    'night_oracle': '🔮',
+    'phantom_hoot': '🪶',
+    'golden_talon': '🏅',
+    'moss_feather': '🍃',
   };
 
   // Vowlbot Assets (Dynamic Branding)

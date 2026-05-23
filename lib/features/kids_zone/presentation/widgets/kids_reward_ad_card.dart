@@ -36,7 +36,7 @@ class KidsRewardAdCard extends StatelessWidget {
                     border: Border.all(color: kidsPrimaryColor.withValues(alpha: 0.2)),
                   ),
                   child: Icon(
-                    Icons.directions_car_rounded, // Red toy car style icon
+                    Icons.star_rounded, // Star coin icon for Kids Zone
                     color: kidsPrimaryColor,
                     size: 18.r,
                   ),
@@ -145,10 +145,10 @@ class KidsRewardAdCard extends StatelessWidget {
             SnackBar(
               content: Row(
                 children: [
-                  const Icon(Icons.directions_car_rounded, color: Colors.white),
+                  const Icon(Icons.star_rounded, color: Colors.white),
                   SizedBox(width: 12.w),
                   Text(
-                    'Great! You earned 10 Kids Coins! 🏎️',
+                    'Great! You earned 10 Kids Coins! ⭐',
                     style: GoogleFonts.outfit(fontWeight: FontWeight.w700),
                   ),
                 ],

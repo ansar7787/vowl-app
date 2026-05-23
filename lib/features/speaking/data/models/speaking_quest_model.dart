@@ -29,6 +29,8 @@ class SpeakingQuestModel extends SpeakingQuest {
     super.targetPhoneme,
     super.expression,
     super.explanation,
+    super.prompt,
+    super.sampleAnswer,
   });
 
   factory SpeakingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -66,6 +68,8 @@ class SpeakingQuestModel extends SpeakingQuest {
           ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config']))
           : null,
       textToSpeak: getString(map['textToSpeak'] ?? map['text'] ?? map['sentence'] ?? map['question']),
+      prompt: getString(map['prompt']),
+      sampleAnswer: getString(map['sampleAnswer']),
       situationText: map['situationText'] ?? map['situation'],
       sceneText: map['sceneText'] ?? map['scene'],
       acceptedSynonyms: map['acceptedSynonyms'] != null

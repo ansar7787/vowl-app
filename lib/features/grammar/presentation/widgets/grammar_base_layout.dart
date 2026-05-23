@@ -1,3 +1,4 @@
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -361,72 +362,103 @@ class _GrammarBaseLayoutState extends State<GrammarBaseLayout> {
                     ? quest.options![quest.correctAnswerIndex!] 
                     : null);
     }
-    return Container(
-      width: double.infinity, padding: EdgeInsets.all(28.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F172A) : Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
-        boxShadow: [BoxShadow(color: shadowColor.withValues(alpha: 0.2), blurRadius: 40, offset: const Offset(0, -10))],
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Row(
-            children: [
-              Container(
-                padding: EdgeInsets.all(8.r),
-                decoration: BoxDecoration(gradient: LinearGradient(colors: primaryGradient), shape: BoxShape.circle),
-                child: Icon(icon, color: Colors.white, size: 28.r),
-              ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
-              SizedBox(width: 16.w),
-              Expanded(child: Text(title, style: GoogleFonts.outfit(fontSize: 24.sp, fontWeight: FontWeight.w900, foreground: Paint()..shader = LinearGradient(colors: primaryGradient).createShader(const Rect.fromLTWH(0, 0, 200, 70)), letterSpacing: 1.5))),
+    return ClipRRect(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+      child: BackdropFilter(
+        filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+        child: Container(
+          width: double.infinity,
+          padding: EdgeInsets.all(28.r),
+          decoration: BoxDecoration(
+            color: isDark ? Colors.black.withValues(alpha: 0.6) : Colors.white.withValues(alpha: 0.8),
+            borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.1), width: 1.5),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.2), 
+                blurRadius: 40, 
+                offset: const Offset(0, -10)
+              )
             ],
           ),
-          if (explanation != null) ...[
-            SizedBox(height: 16.h),
-            Container(
-              width: double.infinity, padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-              decoration: BoxDecoration(color: shadowColor.withValues(alpha: 0.08), borderRadius: BorderRadius.circular(20.r), border: Border.all(color: shadowColor.withValues(alpha: 0.2), width: 1.5)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.info_outline_rounded, color: shadowColor, size: 14.r),
-                      SizedBox(width: 8.w),
-                      Text("EXPLANATION:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
-                    ],
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(explanation, style: GoogleFonts.fredoka(fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
-                ],
-              ),
-            ).animate().fadeIn(delay: 300.ms).scale(duration: 400.ms, curve: Curves.easeOutBack),
-          ],
-          SizedBox(height: 28.h),
-          ScaleButton(
-            onTap: widget.onContinue,
-            child: Container(
-              width: double.infinity, height: 65.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.r),
-                gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: primaryGradient),
-                boxShadow: [BoxShadow(color: shadowColor.withValues(alpha: 0.4), blurRadius: 15, offset: const Offset(0, 8))],
-              ),
-              child: Center(
-                child: Text(
-                  buttonText,
-                  style: GoogleFonts.outfit(
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    letterSpacing: 3,
-                  ),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(8.r),
+                      decoration: BoxDecoration(gradient: LinearGradient(colors: primaryGradient), shape: BoxShape.circle),
+                      child: Icon(icon, color: Colors.white, size: 28.r),
+                    ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
+                    SizedBox(width: 16.w),
+                    Expanded(
+                      child: Text(
+                        title, 
+                        style: GoogleFonts.outfit(
+                          fontSize: 24.sp, 
+                          fontWeight: FontWeight.w900, 
+                          foreground: Paint()..shader = LinearGradient(colors: primaryGradient).createShader(const Rect.fromLTWH(0, 0, 200, 70)), 
+                          letterSpacing: 1.5
+                        )
+                      )
+                    ),
+                  ],
                 ),
-              ),
+                if (explanation != null) ...[
+                  SizedBox(height: 16.h),
+                  Container(
+                    width: double.infinity, padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+                    decoration: BoxDecoration(
+                      color: shadowColor.withValues(alpha: 0.1), 
+                      borderRadius: BorderRadius.circular(20.r), 
+                      border: Border.all(color: shadowColor.withValues(alpha: 0.2), width: 1.5)
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.info_outline_rounded, color: shadowColor, size: 14.r),
+                            SizedBox(width: 8.w),
+                            Text("EXPLANATION:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
+                          ],
+                        ),
+                        SizedBox(height: 4.h),
+                        Text(explanation, style: GoogleFonts.fredoka(fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
+                      ],
+                    ),
+                  ).animate().fadeIn(delay: 300.ms).scale(duration: 400.ms, curve: Curves.easeOutBack),
+                ],
+                SizedBox(height: 28.h),
+                ScaleButton(
+                  onTap: widget.onContinue,
+                  child: Container(
+                    width: double.infinity, height: 65.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20.r),
+                      gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: primaryGradient),
+                      boxShadow: [BoxShadow(color: shadowColor.withValues(alpha: 0.4), blurRadius: 15, offset: const Offset(0, 8))],
+                    ),
+                    child: Center(
+                      child: Text(
+                        buttonText,
+                        style: GoogleFonts.outfit(
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          letterSpacing: 3,
+                        ),
+                      ),
+                    ),
+                  ),
+                ).animate().scale(delay: 500.ms, duration: 400.ms, curve: Curves.elasticOut),
+              ],
             ),
-          ).animate().scale(delay: 500.ms, duration: 400.ms, curve: Curves.elasticOut),
-        ],
+          ),
+        ),
       ),
     ).animate().slideY(begin: 1, end: 0, curve: Curves.easeOutCubic, duration: 500.ms);
   }

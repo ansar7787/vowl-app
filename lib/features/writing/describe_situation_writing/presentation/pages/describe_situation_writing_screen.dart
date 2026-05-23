@@ -12,6 +12,8 @@ import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.d
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
+import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 
 class DescribeSituationScreen extends StatefulWidget {
   final int level;
@@ -29,18 +31,36 @@ class DescribeSituationScreen extends StatefulWidget {
 class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final List<String> _storyKeywords = [];
+  final _textController = TextEditingController();
+  
+  final List<String> _usedKeywords = [];
   int? _expandedEmojiIndex;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  int _wordCount = 0;
 
   @override
   void initState() {
     super.initState();
     context.read<WritingBloc>().add(FetchWritingQuests(gameType: widget.gameType, level: widget.level));
+    _textController.addListener(_onTextChanged);
+  }
+
+  @override
+  void dispose() {
+    _textController.dispose();
+    super.dispose();
+  }
+
+  void _onTextChanged() {
+    final text = _textController.text.trim();
+    final words = text.isEmpty ? 0 : text.split(RegExp(r'\s+')).length;
+    setState(() {
+      _wordCount = words;
+    });
   }
 
   void _onEmojiTap(int index) {
@@ -49,28 +69,78 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     setState(() => _expandedEmojiIndex = (_expandedEmojiIndex == index ? null : index));
   }
 
-  void _addKeyword(String keyword) {
+  void _injectKeyword(String keyword) {
     if (_isAnswered) return;
     _hapticService.success();
+    
+    final text = _textController.text;
+    final selection = _textController.selection;
+    
+    String newText;
+    int newCursorPosition;
+    
+    if (selection.isValid) {
+      newText = text.replaceRange(selection.start, selection.end, keyword);
+      newCursorPosition = selection.start + keyword.length;
+    } else {
+      newText = text.isEmpty ? keyword : "$text $keyword";
+      newCursorPosition = newText.length;
+    }
+    
+    _textController.text = newText;
+    _textController.selection = TextSelection.collapsed(offset: newCursorPosition);
+    
     setState(() {
-      _storyKeywords.add(keyword);
+      if (!_usedKeywords.contains(keyword)) {
+        _usedKeywords.add(keyword);
+      }
       _expandedEmojiIndex = null;
     });
   }
 
-  void _removeKeyword(int index) {
+  void _submitAnswer(int minWords, List<String> availableKeywords) {
     if (_isAnswered) return;
-    _hapticService.selection();
-    setState(() => _storyKeywords.removeAt(index));
-  }
-
-  void _submitAnswer(int minKeywords) {
-    if (_isAnswered || _storyKeywords.length < minKeywords) return;
     
-    _hapticService.success();
-    _soundService.playCorrect();
-    setState(() { _isAnswered = true; _isCorrect = true; });
-    context.read<WritingBloc>().add(SubmitAnswer(true));
+    final composedText = _textController.text.trim().toLowerCase();
+    
+    // Validate keywords present in text
+    int matchedCount = 0;
+    for (var kw in availableKeywords) {
+      if (composedText.contains(kw.toLowerCase())) {
+        matchedCount++;
+      }
+    }
+    
+    bool isMinWordsMet = _wordCount >= minWords;
+    bool isKeywordsMet = matchedCount >= 2; // Require at least 2 keywords inside the story
+    
+    if (isMinWordsMet && isKeywordsMet) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { 
+        _isAnswered = true; 
+        _isCorrect = true; 
+      });
+      context.read<WritingBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { 
+        _isAnswered = true; 
+        _isCorrect = false; 
+      });
+      context.read<WritingBloc>().add(SubmitAnswer(false));
+      
+      // Let them retry
+      Future.delayed(1.5.seconds, () {
+        if (mounted) {
+          setState(() {
+            _isAnswered = false;
+            _isCorrect = null;
+          });
+        }
+      });
+    }
   }
 
   @override
@@ -87,7 +157,8 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _storyKeywords.clear();
+              _usedKeywords.clear();
+              _textController.clear();
               _expandedEmojiIndex = null;
             });
           }
@@ -101,42 +172,73 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is WritingLoaded) ? state.currentQuest : null;
-        // Mock emojis/keywords for the constellation
-        final emojiPrompt = ["🌟", "🎭", "🚀", "🔥"];
-        final keywordMap = {
-          0: ["GLOWING", "RADIANT", "CELESTIAL"],
-          1: ["DRAMATIC", "STORY", "MOMENT"],
-          2: ["JOURNEY", "FLIGHT", "ESCAPE"],
-          3: ["PASSION", "INTENSE", "HEAT"],
+        final WritingQuest? quest = (state is WritingLoaded) ? state.currentQuest as WritingQuest? : null;
+        
+        final emojis = quest?.emojis ?? ["🌋", "💧", "🔬", "🐠"];
+        final rawKeywords = quest?.keywords ?? {
+          "0": ["VENTING", "MAGMA", "PLUME"],
+          "1": ["OCEANIC", "THERMAL", "PRESSURE"],
+          "2": ["MINERAL", "CHEMICAL", "HYDROUS"],
+          "3": ["CREATURE", "BENTHIC", "ABYSSAL"]
         };
+        
+        final allKeywordPool = rawKeywords.values.expand((element) => element).toList();
+        final minWords = quest?.minWords ?? 15;
 
         return WritingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 40.h),
-              _buildNarrativeScroll(_storyKeywords, theme.primaryColor, isDark),
-              SizedBox(height: 40.h),
-              Expanded(
-                child: _buildMentalMap(emojiPrompt, keywordMap, theme.primaryColor),
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 24.h),
+                  
+                  _buildPromptCard(quest.situation ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 24.h),
+                  
+                  _buildWritingArea(minWords, theme.primaryColor, isDark),
+                  SizedBox(height: 24.h),
+                  
+                  _buildConstellationMap(emojis, rawKeywords, theme.primaryColor, isDark),
+                  SizedBox(height: 30.h),
+                  
+                  if (!_isAnswered)
+                    ScaleButton(
+                      onTap: () => _submitAnswer(minWords, allKeywordPool),
+                      child: Container(
+                        width: double.infinity, height: 60.h,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.r), 
+                          color: _wordCount >= minWords ? theme.primaryColor : Colors.grey, 
+                          boxShadow: [
+                            if (_wordCount >= minWords) 
+                              BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)
+                          ]
+                        ),
+                        child: Center(
+                          child: Text(
+                            "SEAL NARRATIVE", 
+                            style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2)
+                          )
+                        ),
+                      ),
+                    ),
+                  
+                  if (_isAnswered) ...[
+                    SizedBox(height: 30.h),
+                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                  ],
+                  SizedBox(height: 60.h),
+                ],
               ),
-              if (!_isAnswered)
-                ScaleButton(
-                  onTap: () => _submitAnswer(3), // Min 3 keywords for demo
-                  child: Container(
-                    width: double.infinity, height: 60.h,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: _storyKeywords.length >= 3 ? theme.primaryColor : Colors.grey, boxShadow: [if (_storyKeywords.length >= 3) BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)]),
-                    child: Center(child: Text("SEAL NARRATIVE", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
-                  ),
-                ),
-              SizedBox(height: 20.h),
-            ],
+            ),
           ),
         );
       },
@@ -152,79 +254,202 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         children: [
           Icon(Icons.auto_fix_high_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("EXPAND THE CONSTELLATION TO REVEAL THE STORY", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text("EXPAND EMOJIS TO INJECT NARRATIVE KEYWORDS", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildNarrativeScroll(List<String> keywords, Color color, bool isDark) {
+  Widget _buildPromptCard(String prompt, Color color, bool isDark) {
     return Container(
       width: double.infinity,
-      constraints: BoxConstraints(minHeight: 100.h),
       padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: Colors.white10),
-        image: DecorationImage(image: const NetworkImage('https://www.transparenttextures.com/patterns/old-map.png'), opacity: 0.1, repeat: ImageRepeat.repeat),
+        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
       ),
-      child: Wrap(
-        spacing: 10.w, runSpacing: 10.h,
-        children: keywords.asMap().entries.map((e) => GestureDetector(
-          onTap: () => _removeKeyword(e.key),
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-            decoration: BoxDecoration(color: color.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(8.r), border: Border.all(color: color)),
-            child: Text(e.value, style: GoogleFonts.shareTechMono(color: Colors.white, fontSize: 12.sp, fontWeight: FontWeight.bold)),
+      child: Stack(
+        children: [
+          const TechPatternOverlay(opacity: 0.05),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "SITUATION PROMPT",
+                style: GoogleFonts.shareTechMono(fontSize: 11.sp, color: color, fontWeight: FontWeight.bold, letterSpacing: 1.5)
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                prompt,
+                style: GoogleFonts.fredoka(fontSize: 16.sp, color: isDark ? Colors.white70 : Colors.black87, fontWeight: FontWeight.bold, height: 1.4)
+              ),
+            ],
           ),
-        )).toList(),
+        ],
       ),
-    ).animate(target: keywords.isNotEmpty ? 1 : 0).fadeIn().slideY(begin: 0.1, end: 0);
+    );
   }
 
-  Widget _buildMentalMap(List<String> emojis, Map<int, List<String>> keywords, Color color) {
-    return Center(
+  Widget _buildWritingArea(int minWords, Color color, bool isDark) {
+    return Container(
+      decoration: BoxDecoration(
+        color: isDark ? Colors.black87 : Colors.white,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: isDark ? Colors.white10 : Colors.black12, width: 2),
+      ),
+      padding: EdgeInsets.all(16.r),
+      child: Column(
+        children: [
+          TextField(
+            controller: _textController,
+            maxLines: 4,
+            style: GoogleFonts.shareTechMono(color: isDark ? Colors.white : Colors.black87, fontSize: 14.sp),
+            decoration: InputDecoration(
+              hintText: "Type description here... (Tap floating emoji cells to inject keyword boosters directly!)",
+              hintStyle: GoogleFonts.outfit(color: isDark ? Colors.white30 : Colors.black38, fontSize: 12.sp),
+              border: InputBorder.none,
+            ),
+          ),
+          const Divider(color: Colors.white10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Booster words used: ${_usedKeywords.length}",
+                style: GoogleFonts.shareTechMono(fontSize: 10.sp, color: color, fontWeight: FontWeight.bold)
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                decoration: BoxDecoration(
+                  color: _wordCount >= minWords ? Colors.greenAccent.withValues(alpha: 0.15) : Colors.redAccent.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                child: Text(
+                  "$_wordCount / $minWords words",
+                  style: GoogleFonts.shareTechMono(
+                    fontSize: 10.sp, 
+                    color: _wordCount >= minWords ? Colors.greenAccent : Colors.redAccent,
+                    fontWeight: FontWeight.bold
+                  )
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildConstellationMap(List<String> emojis, Map<String, List<String>> keywords, Color color, bool isDark) {
+    return Container(
+      height: 180.h,
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: isDark ? 0.03 : 0.05),
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: isDark ? Colors.white10 : Colors.black12),
+      ),
       child: Stack(
-        alignment: Alignment.center,
         children: List.generate(emojis.length, (index) {
-          bool isExpanded = _expandedEmojiIndex == index;
-          return AnimatedPositioned(
-            duration: 500.milliseconds,
-            curve: Curves.elasticOut,
-            top: 100.h + (index % 2 == 0 ? -60.h : 60.h),
-            left: 40.w + (index * 80.w),
-            child: Column(
+          final isExpanded = _expandedEmojiIndex == index;
+          
+          final double leftPos = 20.w + (index * 70.w);
+          final double topPos = (index % 2 == 0) ? 25.h : 95.h;
+
+          return Positioned(
+            left: leftPos,
+            top: topPos,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 GestureDetector(
                   onTap: () => _onEmojiTap(index),
                   child: Container(
-                    width: 60.r, height: 60.r,
+                    width: 50.r, height: 50.r,
                     decoration: BoxDecoration(
-                      color: isExpanded ? color : Colors.white10,
+                      color: isExpanded ? color : (isDark ? Colors.white10 : Colors.black12),
                       shape: BoxShape.circle,
-                      boxShadow: [if (isExpanded) BoxShadow(color: color.withValues(alpha: 0.5), blurRadius: 20)],
+                      boxShadow: [
+                        if (isExpanded) 
+                          BoxShadow(color: color.withValues(alpha: 0.5), blurRadius: 15)
+                      ],
                     ),
-                    child: Center(child: Text(emojis[index], style: TextStyle(fontSize: 24.sp))),
+                    child: Center(
+                      child: Text(emojis[index], style: TextStyle(fontSize: 22.sp))
+                    ),
                   ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
                 ),
-                if (isExpanded)
+                if (isExpanded) ...[
+                  SizedBox(width: 8.w),
                   Container(
-                    margin: EdgeInsets.only(top: 10.h),
-                    padding: EdgeInsets.all(8.r),
-                    decoration: BoxDecoration(color: Colors.black87, borderRadius: BorderRadius.circular(12.r), border: Border.all(color: color)),
+                    padding: EdgeInsets.all(6.r),
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.black87 : Colors.white,
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(color: color),
+                      boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 10)]
+                    ),
                     child: Column(
-                      children: keywords[index]!.map((k) => TextButton(
-                        onPressed: () => _addKeyword(k),
-                        child: Text(k, style: GoogleFonts.shareTechMono(color: Colors.white, fontSize: 12.sp)),
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: (keywords[index.toString()] ?? []).map((k) => TextButton(
+                        onPressed: () => _injectKeyword(k),
+                        style: TextButton.styleFrom(
+                          minimumSize: Size.zero,
+                          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                        ),
+                        child: Text(
+                          k, 
+                          style: GoogleFonts.shareTechMono(color: isDark ? Colors.white : Colors.black87, fontSize: 11.sp, fontWeight: FontWeight.bold)
+                        ),
                       )).toList(),
                     ),
-                  ).animate().scale(alignment: Alignment.topCenter).fadeIn(),
+                  ).animate().scale(alignment: Alignment.centerLeft).fadeIn(),
+                ],
               ],
             ),
           );
         }),
       ),
     );
+  }
+
+  Widget _buildCorrectResult(dynamic quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }

@@ -507,7 +507,7 @@ Future<void> init() async {
       awardBadge: sl<AwardBadge>(),
       soundService: sl<SoundService>(),
       hapticService: sl(),
-      useHint: sl<UseWritingHint>(),
+      useHint: sl<UseHint>(),
     ),
   );
   sl.registerFactory<SpeakingBloc>(

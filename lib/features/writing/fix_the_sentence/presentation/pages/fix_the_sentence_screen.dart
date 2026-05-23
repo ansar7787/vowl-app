@@ -11,6 +11,9 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
+import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 
 class FixTheSentenceScreen extends StatefulWidget {
   final int level;
@@ -28,7 +31,10 @@ class FixTheSentenceScreen extends StatefulWidget {
 class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
+  
   final List<Offset> _erasePoints = [];
+  bool _isWiped = false;
+  String? _selectedOption;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -43,30 +49,58 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
   }
 
   void _onErase(Offset localPosition) {
-    if (_isAnswered) return;
+    if (_isAnswered || _isWiped) return;
     setState(() {
       _erasePoints.add(localPosition);
       _erasedAmount++;
-      if (_erasedAmount % 10 == 0) _hapticService.selection();
+      if (_erasedAmount % 6 == 0) _hapticService.selection();
     });
     
-    if (_erasedAmount > 100) {
+    if (_erasedAmount > 35) {
       _hapticService.success();
-      // Auto-fix for demo, normally would show options
+      _soundService.playCorrect();
+      setState(() => _isWiped = true);
     }
   }
 
-  void _submitAnswer(String correct) {
-    if (_isAnswered || _erasedAmount < 50) return;
+  void _selectReplacement(String selected, String correct) {
+    if (_isAnswered) return;
     
-    _hapticService.success();
-    _soundService.playCorrect();
-    setState(() { _isAnswered = true; _isCorrect = true; });
-    context.read<WritingBloc>().add(SubmitAnswer(true));
+    bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { 
+        _isAnswered = true; 
+        _isCorrect = true; 
+        _selectedOption = selected; 
+      });
+      context.read<WritingBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { 
+        _isAnswered = true; 
+        _isCorrect = false; 
+        _selectedOption = selected;
+      });
+      context.read<WritingBloc>().add(SubmitAnswer(false));
+      Future.delayed(1.seconds, () {
+        if (mounted) {
+          setState(() {
+            _isAnswered = false;
+            _isCorrect = null;
+            _selectedOption = null;
+          });
+        }
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('writing', level: widget.level);
 
     return BlocConsumer<WritingBloc, WritingState>(
@@ -78,6 +112,8 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
+              _isWiped = false;
+              _selectedOption = null;
               _erasePoints.clear();
               _erasedAmount = 0;
             });
@@ -92,32 +128,46 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is WritingLoaded) ? state.currentQuest : null;
+        final WritingQuest? quest = (state is WritingLoaded) ? state.currentQuest as WritingQuest? : null;
         
         return WritingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<WritingBloc>().add(NextQuestion()),
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 48.h),
-              Expanded(
-                child: _buildDigitalBlackboard(quest.passage ?? "", theme.primaryColor),
-              ),
-              if (!_isAnswered)
-                ScaleButton(
-                  onTap: () => _submitAnswer(quest.correctAnswer ?? ""),
-                  child: Container(
-                    width: double.infinity, height: 60.h,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.r), color: _erasedAmount > 50 ? theme.primaryColor : Colors.grey, boxShadow: [if (_erasedAmount > 50) BoxShadow(color: theme.primaryColor.withValues(alpha: 0.3), blurRadius: 15)]),
-                    child: Center(child: Text("VERIFY RESTORATION", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2))),
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 32.h),
+                  
+                  _buildDigitalBlackboard(
+                    quest.passage ?? "", 
+                    quest.missingWord ?? "", 
+                    _selectedOption,
+                    theme.primaryColor, 
+                    isDark
                   ),
-                ),
-              SizedBox(height: 20.h),
-            ],
+                  SizedBox(height: 32.h),
+                  
+                  if (_isWiped && !_isAnswered) ...[
+                    _buildWipedAlert(theme.primaryColor),
+                    SizedBox(height: 20.h),
+                    _buildCorrectionOptions(quest.options ?? [], quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                  ],
+                  
+                  if (_isAnswered) ...[
+                    SizedBox(height: 30.h),
+                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                  ],
+                  SizedBox(height: 60.h),
+                ],
+              ),
+            ),
           ),
         );
       },
@@ -133,60 +183,213 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
         children: [
           Icon(Icons.auto_fix_normal_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text("SCRUB AWAY THE LOGICAL DECAY", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
+          Text(_isWiped ? "SELECT THE CORRECT REPLACEMENT WORD" : "SCRUB AWAY THE LOGICAL DECAY", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildDigitalBlackboard(String text, Color color) {
+  Widget _buildDigitalBlackboard(String fullText, String targetWord, String? selectedReplacement, Color color, bool isDark) {
+    final parts = fullText.split(targetWord);
+    
     return Container(
       width: double.infinity,
+      padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: Colors.white10, width: 4),
-        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 40)],
+        border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
       ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20.r),
-        child: GestureDetector(
-          onPanUpdate: (details) => _onErase(details.localPosition),
-          child: CustomPaint(
-            painter: EraserPainter(points: _erasePoints, text: text, color: color, isCorrected: _isAnswered),
-            size: Size.infinite,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          const TechPatternOverlay(opacity: 0.05),
+          Padding(
+            padding: EdgeInsets.all(16.r),
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: GoogleFonts.fredoka(fontSize: 18.sp, color: isDark ? Colors.white70 : Colors.black87, height: 1.5),
+                children: [
+                  if (parts.isNotEmpty) TextSpan(text: parts[0]),
+                  WidgetSpan(
+                    alignment: PlaceholderAlignment.middle,
+                    child: _isWiped 
+                        ? Container(
+                            margin: EdgeInsets.symmetric(horizontal: 8.w),
+                            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                            decoration: BoxDecoration(
+                              color: selectedReplacement != null 
+                                  ? Colors.greenAccent.withValues(alpha: 0.25)
+                                  : (isDark ? Colors.white12 : Colors.black12),
+                              borderRadius: BorderRadius.circular(10.r),
+                              border: Border.all(color: selectedReplacement != null ? Colors.greenAccent : (isDark ? Colors.white30 : Colors.black26), width: 2),
+                            ),
+                            child: Text(
+                              selectedReplacement?.toUpperCase() ?? "____",
+                              style: GoogleFonts.shareTechMono(
+                                fontSize: 13.sp, 
+                                fontWeight: FontWeight.w900,
+                                color: selectedReplacement != null 
+                                    ? (isDark ? Colors.white : Colors.black87)
+                                    : (isDark ? Colors.white30 : Colors.black38)
+                              )
+                            ),
+                          )
+                        : GestureDetector(
+                            onPanUpdate: (details) => _onErase(details.localPosition),
+                            child: Container(
+                              margin: EdgeInsets.symmetric(horizontal: 8.w),
+                              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                              decoration: BoxDecoration(
+                                color: color.withValues(alpha: 0.15),
+                                borderRadius: BorderRadius.circular(10.r),
+                                border: Border.all(color: color, width: 2),
+                              ),
+                              child: Stack(
+                                children: [
+                                  Text(
+                                    targetWord.toUpperCase(),
+                                    style: GoogleFonts.shareTechMono(fontSize: 13.sp, fontWeight: FontWeight.w900, color: Colors.redAccent)
+                                  ),
+                                  if (_erasePoints.isNotEmpty)
+                                    Positioned.fill(
+                                      child: CustomPaint(
+                                        painter: ScratchOverlayPainter(points: _erasePoints),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                          ),
+                  ),
+                  if (parts.length > 1) TextSpan(text: parts[1]),
+                ],
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
+
+  Widget _buildWipedAlert(Color primaryColor) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(
+        color: Colors.greenAccent.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.3)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.check_circle_outline_rounded, color: Colors.greenAccent, size: 16.r),
+          SizedBox(width: 8.w),
+          Text(
+            "DECAY WIPED! CHOOSE REPLACEMENT CELL",
+            style: GoogleFonts.shareTechMono(fontSize: 10.sp, fontWeight: FontWeight.bold, color: Colors.greenAccent)
+          ),
+        ],
+      ),
+    ).animate().shimmer(duration: 1.5.seconds);
+  }
+
+  Widget _buildCorrectionOptions(List<String> options, String correct, Color color, bool isDark) {
+    return Wrap(
+      spacing: 12.w, runSpacing: 12.h,
+      alignment: WrapAlignment.center,
+      children: options.map((o) {
+        return ScaleButton(
+          onTap: () => _selectReplacement(o, correct),
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+            decoration: BoxDecoration(
+              color: isDark ? Colors.black87 : Colors.white,
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(color: color, width: 2),
+              boxShadow: [
+                BoxShadow(color: color.withValues(alpha: isDark ? 0.35 : 0.15), blurRadius: 8)
+              ],
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.bolt_rounded, size: 14.r, color: color),
+                SizedBox(width: 8.w),
+                Text(
+                  o.toUpperCase(),
+                  style: GoogleFonts.shareTechMono(fontSize: 12.sp, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)
+                ),
+              ],
+            ),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildCorrectResult(dynamic quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
+  }
 }
 
-class EraserPainter extends CustomPainter {
+class ScratchOverlayPainter extends CustomPainter {
   final List<Offset> points;
-  final String text;
-  final Color color;
-  final bool isCorrected;
-  EraserPainter({required this.points, required this.text, required this.color, required this.isCorrected});
+  ScratchOverlayPainter({required this.points});
   @override
   void paint(Canvas canvas, Size size) {
-    final textPainter = TextPainter(
-      text: TextSpan(text: text, style: GoogleFonts.shareTechMono(fontSize: 24.sp, color: isCorrected ? Colors.greenAccent : Colors.redAccent.withValues(alpha: 0.7), fontWeight: FontWeight.bold)),
-      textAlign: TextAlign.center,
-      textDirection: TextDirection.ltr,
-    );
-    textPainter.layout(maxWidth: size.width - 40);
-    textPainter.paint(canvas, Offset(20, size.height / 2 - textPainter.height / 2));
-
-    // Draw erasure paths
-    final paint = Paint()..color = Colors.black..strokeWidth = 30..strokeCap = StrokeCap.round..blendMode = BlendMode.clear;
-    if (!isCorrected) {
-      for (var point in points) {
-        canvas.drawCircle(point, 20.r, paint);
+    final paint = Paint()
+      ..color = Colors.black.withValues(alpha: 0.85)
+      ..strokeWidth = 14
+      ..strokeCap = StrokeCap.round
+      ..style = PaintingStyle.stroke;
+      
+    final path = Path();
+    if (points.isNotEmpty) {
+      path.moveTo(points.first.dx, points.first.dy);
+      for (var p in points) {
+        path.lineTo(p.dx, p.dy);
       }
     }
+    canvas.drawPath(path, paint);
   }
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
-

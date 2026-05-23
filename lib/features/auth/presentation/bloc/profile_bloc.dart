@@ -192,7 +192,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await updateKidsMascot(event.mascotId);
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => null,
+      (_) {
+        authBloc.add(const AuthReloadUser());
+      },
     );
   }
 
@@ -203,7 +205,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     ));
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => null,
+      (_) {
+        authBloc.add(const AuthReloadUser());
+      },
     );
   }
 
@@ -211,7 +215,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await equipKidsAccessory(event.accessoryId);
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => null,
+      (_) {
+        authBloc.add(const AuthReloadUser());
+      },
     );
   }
 
@@ -226,7 +232,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => null,
+      (_) {
+        authBloc.add(const AuthReloadUser());
+      },
     );
   }
 
@@ -252,7 +260,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => null,
+      (_) {
+        authBloc.add(const AuthReloadUser());
+      },
     );
   }
 
@@ -264,7 +274,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => null,
+      (_) {
+        // Reload user so the AuthBloc session state reflects the change
+        authBloc.add(const AuthReloadUser());
+      },
     );
   }
 
@@ -291,10 +304,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         lastPurchaseType: 'vowl_accessory',
         lastPurchaseSuccess: false,
       )),
-      (_) => emit(state.copyWith(
-        lastPurchaseType: 'vowl_accessory',
-        lastPurchaseSuccess: true,
-      )),
+      (_) {
+        authBloc.add(const AuthReloadUser());
+        emit(state.copyWith(
+          lastPurchaseType: 'vowl_accessory',
+          lastPurchaseSuccess: true,
+        ));
+      },
     );
   }
 
@@ -306,7 +322,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => null,
+      (_) {
+        authBloc.add(const AuthReloadUser());
+      },
     );
   }
 
@@ -318,7 +336,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => null,
+      (_) {
+        authBloc.add(const AuthReloadUser());
+      },
     );
   }
 }

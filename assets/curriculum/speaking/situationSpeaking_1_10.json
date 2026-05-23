@@ -6,242 +6,454 @@
         {
             "id": "SPK_SITUATIONSPEAKING_L1_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Reflect on the relationship to select the appropriate answer.",
-            "explanation": "Picking the best reply enhances conversational abilities.",
-            "situationText": "An explorer creates the module cautiously.",
-            "sampleAnswer": "A researcher investigates a reactor smoothly."
+            "hint": "Request a warm drink with sweetening added.",
+            "explanation": "Requesting a warm drink politely with extra sugar ensures clear hospitality service.",
+            "situationText": "You are ordering a latte at a coffee shop and want to ask for extra sugar.",
+            "sampleAnswer": "Could I please get a latte with some extra sugar?",
+            "acceptedSynonyms": [
+                "extra sugar",
+                "some sugar",
+                "sugar please",
+                "add sugar"
+            ],
+            "correctAnswer": "extra sugar"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L1_Q2",
             "interactionType": "Scene Scrubber",
-            "hint": "Analyze the speaker's intent before responding.",
-            "explanation": "Identifying the right words builds communication skills.",
-            "situationText": "The droid creates the module cautiously.",
-            "sampleAnswer": "The detective investigates a reactor smoothly."
+            "hint": "Express congratulations and highlight their demo quality.",
+            "explanation": "Congratulating peers on key milestones fosters team trust and bonding.",
+            "situationText": "You want to congratulate your coworker on an outstanding product demo.",
+            "sampleAnswer": "Congratulations on the demo, you did an amazing job!",
+            "acceptedSynonyms": [
+                "congratulations",
+                "great job",
+                "amazing work",
+                "well done",
+                "awesome demo"
+            ],
+            "correctAnswer": "congratulations"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L1_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Evaluate the tone to choose the best reply.",
-            "explanation": "Finding the correct tone improves practical fluency.",
-            "situationText": "A student creates the module cautiously.",
-            "sampleAnswer": "A spy investigates a reactor smoothly."
+            "hint": "Approach a stranger with 'Excuse me' and query the hour.",
+            "explanation": "Standard polite request opening with 'Excuse me' before asking the time.",
+            "situationText": "You need to ask a stranger politely for the current time because your phone died.",
+            "sampleAnswer": "Excuse me, do you happen to have the time?",
+            "acceptedSynonyms": [
+                "excuse me",
+                "have the time",
+                "what time",
+                "what time is it"
+            ],
+            "correctAnswer": "excuse me"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L2_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Analyze the speaker's intent before responding.",
-            "explanation": "Identifying the appropriate response builds communication skills.",
-            "situationText": "The droid analyzes the data cautiously.",
-            "sampleAnswer": "The droid monitors a laser safely."
+            "hint": "State your request for a slice of cocoa dessert.",
+            "explanation": "Clear and direct ordering statements are essential for bakery retail interaction.",
+            "situationText": "You want to order a slice of chocolate cake at a bakery.",
+            "sampleAnswer": "I would like to have a slice of chocolate cake, please.",
+            "acceptedSynonyms": [
+                "chocolate cake",
+                "slice of cake",
+                "cake please",
+                "have a slice"
+            ],
+            "correctAnswer": "chocolate cake"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L2_Q2",
             "interactionType": "Scene Scrubber",
-            "hint": "Evaluate the tone to choose the best reply.",
-            "explanation": "Finding the best reply improves practical fluency.",
-            "situationText": "A student analyzes the data cautiously.",
-            "sampleAnswer": "A student monitors a laser safely."
+            "hint": "Ask the clerk about fitting or changing booths.",
+            "explanation": "Fitting rooms are standard vocabulary for fashion retail navigation.",
+            "situationText": "You are at a clothing store and need to ask the clerk where the fitting rooms are.",
+            "sampleAnswer": "Excuse me, could you tell me where the fitting rooms are?",
+            "acceptedSynonyms": [
+                "fitting rooms",
+                "changing rooms",
+                "try this on",
+                "where are"
+            ],
+            "correctAnswer": "fitting rooms"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L2_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Consider the context to select the appropriate answer.",
-            "explanation": "Selecting the right words enhances conversational abilities.",
-            "situationText": "The analyst analyzes the data cautiously.",
-            "sampleAnswer": "The analyst monitors a laser safely."
+            "hint": "Ask if they are free to grab a bite or lunch.",
+            "explanation": "Friendly casual invitations typically use phrases like 'grab a bite' or 'have lunch'.",
+            "situationText": "You want to invite a friend to have lunch with you this weekend.",
+            "sampleAnswer": "Are you free to grab some lunch together this weekend?",
+            "acceptedSynonyms": [
+                "have lunch",
+                "lunch this weekend",
+                "grab a bite",
+                "grab lunch"
+            ],
+            "correctAnswer": "have lunch"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L3_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Evaluate the tone to choose the best reply.",
-            "explanation": "Finding the correct tone improves practical fluency.",
-            "situationText": "A student repairs the circuit cautiously.",
-            "sampleAnswer": "A spy discovers the software gently."
+            "hint": "Query if morning meal service is included in your stay.",
+            "explanation": "Checking breakfast inclusion is a standard request during hospitality check-ins.",
+            "situationText": "You are checking in at a hotel and want to ask if breakfast is included.",
+            "sampleAnswer": "Hi, I'm checking in. Is breakfast included in my stay?",
+            "acceptedSynonyms": [
+                "breakfast included",
+                "is breakfast",
+                "free breakfast",
+                "morning breakfast"
+            ],
+            "correctAnswer": "breakfast included"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L3_Q2",
             "interactionType": "Scene Scrubber",
-            "hint": "Consider the context to select the appropriate answer.",
-            "explanation": "Selecting the appropriate response enhances conversational abilities.",
-            "situationText": "The analyst repairs the circuit cautiously.",
-            "sampleAnswer": "The driver discovers the software gently."
+            "hint": "Express regret for delayed entry.",
+            "explanation": "Polite meeting apologies help diffuse tension from delay.",
+            "situationText": "You want to apologize politely to your team for arriving late to the meeting.",
+            "sampleAnswer": "I sincerely apologize for being late to the meeting.",
+            "acceptedSynonyms": [
+                "sorry for being late",
+                "sorry i am late",
+                "apologize for the delay"
+            ],
+            "correctAnswer": "sorry for being late"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L3_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Think about the situation before responding.",
-            "explanation": "Choosing the best reply builds communication skills.",
-            "situationText": "A manager repairs the circuit cautiously.",
-            "sampleAnswer": "A chef discovers the software gently."
+            "hint": "Signal the server and ask for the final check or bill.",
+            "explanation": "Asking for the check or bill completes dining transactions.",
+            "situationText": "You need to ask a server at a restaurant for the bill.",
+            "sampleAnswer": "Excuse me, could we please get the bill when you have a moment?",
+            "acceptedSynonyms": [
+                "the bill please",
+                "check please",
+                "can we get the bill",
+                "bring the check"
+            ],
+            "correctAnswer": "the bill please"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L4_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Consider the context to select the appropriate answer.",
-            "explanation": "Selecting the right words enhances conversational abilities.",
-            "situationText": "The analyst monitors a drone accurately.",
-            "sampleAnswer": "The analyst builds the archive silently."
+            "hint": "Introduce yourself by name and say nice to meet you.",
+            "explanation": "First-day introductions establishing warm connection set up future collaboration.",
+            "situationText": "You are introducing yourself to a new colleague on your first day of work.",
+            "sampleAnswer": "Hi there! I'm the new developer, it's a pleasure meeting you.",
+            "acceptedSynonyms": [
+                "nice to meet you",
+                "pleasure meeting you",
+                "glad to meet you",
+                "my name is"
+            ],
+            "correctAnswer": "nice to meet you"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L4_Q2",
             "interactionType": "Scene Scrubber",
-            "hint": "Think about the situation before responding.",
-            "explanation": "Choosing the correct tone builds communication skills.",
-            "situationText": "A manager monitors a drone accurately.",
-            "sampleAnswer": "A manager builds the archive silently."
+            "hint": "Ask for a cold cup or glass of water.",
+            "explanation": "Polite hydration requests are useful travel expressions.",
+            "situationText": "You are requesting a glass of water from a flight attendant.",
+            "sampleAnswer": "Excuse me, could I please have a glass of water?",
+            "acceptedSynonyms": [
+                "glass of water",
+                "some water",
+                "cup of water",
+                "water please"
+            ],
+            "correctAnswer": "glass of water"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L4_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Reflect on the relationship to choose the best reply.",
-            "explanation": "Picking the appropriate response improves practical fluency.",
-            "situationText": "The engineer repairs a drone accurately.",
-            "sampleAnswer": "The hero builds the archive silently."
+            "hint": "Ask if they can repeat or say the last part again.",
+            "explanation": "Requesting explanations gracefully ensures optimal learning progress.",
+            "situationText": "You want to ask your teacher to repeat the last explanation because you didn't hear it.",
+            "sampleAnswer": "Could you please repeat that last part one more time?",
+            "acceptedSynonyms": [
+                "repeat that",
+                "say that again",
+                "missed that",
+                "one more time"
+            ],
+            "correctAnswer": "repeat that"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L5_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Think about the situation before responding.",
-            "explanation": "Choosing the best reply builds communication skills.",
-            "situationText": "A manager builds the signal accurately.",
-            "sampleAnswer": "A chef sends a system cautiously."
+            "hint": "Express gratitude for their moving assistance.",
+            "explanation": "Gratitude reinforcement strengthens friendship connections.",
+            "situationText": "You want to thank a friend who helped you move all your boxes to your new apartment.",
+            "sampleAnswer": "Thank you so much for helping me move, I really appreciate it.",
+            "acceptedSynonyms": [
+                "thank you",
+                "thanks for helping",
+                "appreciate your help",
+                "so grateful"
+            ],
+            "correctAnswer": "thank you"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L5_Q2",
             "interactionType": "Scene Scrubber",
-            "hint": "Reflect on the relationship to choose the best reply.",
-            "explanation": "Picking the right words improves practical fluency.",
-            "situationText": "The engineer monitors the signal accurately.",
-            "sampleAnswer": "The engineer discovers a system cautiously."
+            "hint": "Inquire about scientific astronomy literature.",
+            "explanation": "Astronomy search is a standard educational query in libraries.",
+            "situationText": "You want to ask a library receptionist if they have books on astronomy.",
+            "sampleAnswer": "Excuse me, do you have any books on astronomy in this section?",
+            "acceptedSynonyms": [
+                "astronomy",
+                "books on space",
+                "study space",
+                "astronomy books"
+            ],
+            "correctAnswer": "astronomy"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L5_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Analyze the speaker's intent to select the appropriate answer.",
-            "explanation": "Identifying the correct tone enhances conversational abilities.",
-            "situationText": "A scientist monitors the signal accurately.",
-            "sampleAnswer": "A scientist discovers a system cautiously."
+            "hint": "Request pizza dough made without gluten content.",
+            "explanation": "Dietary restrictions vocabulary is essential for healthy dining out.",
+            "situationText": "You are ordering a pizza and want to ask for gluten-free crust.",
+            "sampleAnswer": "Could I order a vegetarian pizza with a gluten-free crust?",
+            "acceptedSynonyms": [
+                "gluten free",
+                "gluten-free",
+                "without gluten",
+                "no gluten"
+            ],
+            "correctAnswer": "gluten free"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L6_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Reflect on the relationship to choose the best reply.",
-            "explanation": "Picking the appropriate response improves practical fluency.",
-            "situationText": "The engineer builds the module accurately.",
-            "sampleAnswer": "The hero tests the shield steadily."
+            "hint": "Query the coordinates to a subway or transit depot.",
+            "explanation": "Transit directions queries are essential survival expressions in foreign cities.",
+            "situationText": "You want to ask a passerby for directions to the nearest subway station.",
+            "sampleAnswer": "Excuse me, could you point me toward the nearest subway station?",
+            "acceptedSynonyms": [
+                "subway station",
+                "subway please",
+                "nearest station",
+                "how to get to"
+            ],
+            "correctAnswer": "subway station"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L6_Q2",
             "interactionType": "Scene Scrubber",
-            "hint": "Analyze the speaker's intent to select the appropriate answer.",
-            "explanation": "Identifying the best reply enhances conversational abilities.",
-            "situationText": "A scientist builds the module accurately.",
-            "sampleAnswer": "A robot tests the shield steadily."
+            "hint": "Politely decline and state you are full.",
+            "explanation": "Decline food offerings gracefully using polite negatives.",
+            "situationText": "You are declining a slice of pizza politely because you are already completely full.",
+            "sampleAnswer": "No thank you, it looks delicious but I'm completely full.",
+            "acceptedSynonyms": [
+                "no thank you",
+                "no thanks",
+                "full",
+                "already ate",
+                "good for now"
+            ],
+            "correctAnswer": "no thank you"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L6_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Evaluate the tone before responding.",
-            "explanation": "Finding the right words builds communication skills.",
-            "situationText": "The commander builds the module accurately.",
-            "sampleAnswer": "The traveler tests the shield steadily."
+            "hint": "Mention scheduling an appointment for next Tuesday.",
+            "explanation": "Booking calendar events requires concrete day and time parameters.",
+            "situationText": "You need to schedule an appointment with your dentist next Tuesday morning.",
+            "sampleAnswer": "I would like to schedule a dental checkup for next Tuesday morning.",
+            "acceptedSynonyms": [
+                "tuesday morning",
+                "schedule appointment",
+                "dentist appointment",
+                "next tuesday"
+            ],
+            "correctAnswer": "tuesday morning"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L7_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Analyze the speaker's intent to select the appropriate answer.",
-            "explanation": "Identifying the correct tone enhances conversational abilities.",
-            "situationText": "A scientist sends a system accurately.",
-            "sampleAnswer": "A scientist sends the engine swiftly."
+            "hint": "Query size availability of the apparel.",
+            "explanation": "Size queries form the backbone of fashion retail transactions.",
+            "situationText": "You are asking a store assistant if a particular jacket comes in a larger size.",
+            "sampleAnswer": "Excuse me, does this brown jacket come in a larger size?",
+            "acceptedSynonyms": [
+                "larger size",
+                "bigger size",
+                "size medium",
+                "size large"
+            ],
+            "correctAnswer": "larger size"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L7_Q2",
             "interactionType": "Scene Scrubber",
-            "hint": "Evaluate the tone before responding.",
-            "explanation": "Finding the appropriate response builds communication skills.",
-            "situationText": "The commander sends a system accurately.",
-            "sampleAnswer": "The commander sends the engine swiftly."
+            "hint": "Suggest a lighthearted funny or comedy film.",
+            "explanation": "Shared entertainment suggestions use warm casual structures.",
+            "situationText": "You want to suggest watching a comedy movie to your friend tonight.",
+            "sampleAnswer": "How about we watch a lighthearted comedy movie tonight?",
+            "acceptedSynonyms": [
+                "comedy movie",
+                "watch a comedy",
+                "funny movie",
+                "comedy tonight"
+            ],
+            "correctAnswer": "comedy movie"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L7_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Consider the context to choose the best reply.",
-            "explanation": "Selecting the best reply improves practical fluency.",
-            "situationText": "A pilot sends a system accurately.",
-            "sampleAnswer": "A pilot sends the engine swiftly."
+            "hint": "Politely request laptop borrowing for a chat.",
+            "explanation": "Requesting personal property requires highly respectful phrasing.",
+            "situationText": "You want to borrow your sibling's laptop for a quick video call.",
+            "sampleAnswer": "Is it okay if I borrow your laptop for a quick video call?",
+            "acceptedSynonyms": [
+                "borrow your laptop",
+                "use your laptop",
+                "use your computer",
+                "borrow your computer"
+            ],
+            "correctAnswer": "borrow your laptop"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L8_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Evaluate the tone before responding.",
-            "explanation": "Finding the right words builds communication skills.",
-            "situationText": "The commander receives the database immediately.",
-            "sampleAnswer": "The traveler configures the module wisely."
+            "hint": "Suggest Italian dining spots down the lane.",
+            "explanation": "Touristic culinary recommendations use descriptive positive modifiers.",
+            "situationText": "You are recommending a great Italian restaurant to a visiting tourist.",
+            "sampleAnswer": "You should absolutely try the Italian restaurant down the street.",
+            "acceptedSynonyms": [
+                "italian restaurant",
+                "italian food",
+                "try this place",
+                "pasta place"
+            ],
+            "correctAnswer": "italian restaurant"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L8_Q2",
             "interactionType": "Scene Scrubber",
-            "hint": "Consider the context to choose the best reply.",
-            "explanation": "Selecting the correct tone improves practical fluency.",
-            "situationText": "A pilot receives the database immediately.",
-            "sampleAnswer": "A doctor configures the module wisely."
+            "hint": "Ask for a quarterly review or feedback session.",
+            "explanation": "Feedback requests show proactive professional development initiative.",
+            "situationText": "You want to ask your boss for feedback on your quarterly performance.",
+            "sampleAnswer": "Could we schedule a brief chat to discuss my performance feedback?",
+            "acceptedSynonyms": [
+                "feedback",
+                "performance review",
+                "my performance",
+                "how am i doing"
+            ],
+            "correctAnswer": "feedback"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L8_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Think about the situation to select the appropriate answer.",
-            "explanation": "Choosing the appropriate response enhances conversational abilities.",
-            "situationText": "The technician receives the database immediately.",
-            "sampleAnswer": "The teacher configures the module wisely."
+            "hint": "Ask about product coverage or warranty details.",
+            "explanation": "Device protection inquiry is critical for electronic retail purchases.",
+            "situationText": "You want to ask a salesperson if a smartphone comes with a warranty.",
+            "sampleAnswer": "Does this new smartphone model come with a manufacturer's warranty?",
+            "acceptedSynonyms": [
+                "warranty",
+                "guarantee",
+                "covered",
+                "insured"
+            ],
+            "correctAnswer": "warranty"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L9_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Consider the context to choose the best reply.",
-            "explanation": "Selecting the best reply improves practical fluency.",
-            "situationText": "A pilot protects the archive immediately.",
-            "sampleAnswer": "A pilot receives the battery carefully."
+            "hint": "Compliment their haircut structure and style.",
+            "explanation": "Cosmetic compliments build positive social rapport.",
+            "situationText": "You are complimenting a friend's stylish new haircut.",
+            "sampleAnswer": "Wow, I absolutely love your new haircut! It looks so stylish.",
+            "acceptedSynonyms": [
+                "haircut",
+                "hair looks",
+                "great hair",
+                "love your hair",
+                "stylish haircut"
+            ],
+            "correctAnswer": "haircut"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L9_Q2",
             "interactionType": "Scene Scrubber",
-            "hint": "Think about the situation to select the appropriate answer.",
-            "explanation": "Choosing the right words enhances conversational abilities.",
-            "situationText": "The technician protects the archive immediately.",
-            "sampleAnswer": "The technician receives the battery carefully."
+            "hint": "Politely request reducing music volume for studying.",
+            "explanation": "Domestic cohabitation requires polite requests for noise reduction.",
+            "situationText": "You want to ask your roommate to turn down the music volume because you are studying.",
+            "sampleAnswer": "Could you please turn down the music a bit? I'm trying to study.",
+            "acceptedSynonyms": [
+                "turn down",
+                "music down",
+                "volume down",
+                "a bit quieter"
+            ],
+            "correctAnswer": "turn down"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L9_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Reflect on the relationship before responding.",
-            "explanation": "Picking the correct tone builds communication skills.",
-            "situationText": "An explorer protects the archive immediately.",
-            "sampleAnswer": "An explorer receives the battery carefully."
+            "hint": "Request airline ticket assignment next to a window pane.",
+            "explanation": "Window seating is high-priority vocabulary for comfortable air travel.",
+            "situationText": "You are booking a window seat for a flight to Tokyo.",
+            "sampleAnswer": "I would like to request a window seat for my flight to Tokyo, please.",
+            "acceptedSynonyms": [
+                "window seat",
+                "next to window",
+                "by the window",
+                "seat window"
+            ],
+            "correctAnswer": "window seat"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L10_Q1",
             "interactionType": "Scene Scrubber",
-            "hint": "Evaluate the tone to choose the best reply.",
-            "explanation": "Finding the correct tone improves practical fluency.",
-            "situationText": "A student repairs the module cautiously.",
-            "sampleAnswer": "A spy discovers a drone flawlessly."
+            "hint": "Ask if they can water your foliage while you are away.",
+            "explanation": "Neighborly favor requests are vital social competence indicators.",
+            "situationText": "You want to ask your neighbor politely to water your plants while you are on vacation.",
+            "sampleAnswer": "Could you do me a huge favor and water my plants while I'm on vacation?",
+            "acceptedSynonyms": [
+                "water my plants",
+                "water the plants",
+                "plants please",
+                "my garden"
+            ],
+            "correctAnswer": "water my plants"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L10_Q2",
             "interactionType": "Scene Scrubber",
-            "hint": "Consider the context to select the appropriate answer.",
-            "explanation": "Selecting the appropriate response enhances conversational abilities.",
-            "situationText": "The analyst repairs the module cautiously.",
-            "sampleAnswer": "The driver discovers a drone flawlessly."
+            "hint": "Inquire about size ten athletic sneakers.",
+            "explanation": "Buying sportswear necessitates footwear measurements vocabulary.",
+            "situationText": "You are asking a shoe salesman if they have sneakers in size ten.",
+            "sampleAnswer": "Excuse me, do you have these blue sneakers in a size ten?",
+            "acceptedSynonyms": [
+                "size ten",
+                "size 10",
+                "shoes ten",
+                "sneakers ten"
+            ],
+            "correctAnswer": "size ten"
         },
         {
             "id": "SPK_SITUATIONSPEAKING_L10_Q3",
             "interactionType": "Scene Scrubber",
-            "hint": "Think about the situation before responding.",
-            "explanation": "Choosing the best reply builds communication skills.",
-            "situationText": "A manager repairs the module cautiously.",
-            "sampleAnswer": "A chef discovers a drone flawlessly."
+            "hint": "Wish them a relaxing or great weekend.",
+            "explanation": "Weekend warm wishes are positive conversational closers.",
+            "situationText": "You are wishing your friend a relaxing and peaceful weekend.",
+            "sampleAnswer": "I hope you have an incredibly relaxing and peaceful weekend!",
+            "acceptedSynonyms": [
+                "relaxing weekend",
+                "have a great weekend",
+                "good weekend",
+                "nice weekend"
+            ],
+            "correctAnswer": "relaxing weekend"
         }
     ]
 }

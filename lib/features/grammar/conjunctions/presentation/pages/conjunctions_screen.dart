@@ -11,6 +11,7 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 
 class ConjunctionsScreen extends StatefulWidget {
   final int level;
@@ -91,7 +92,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final GrammarQuest? quest = (state is GrammarLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? ["AND", "BUT", "OR"];
         final question = quest?.question ?? "I like apples... I like oranges.";
         final parts = question.contains("...") ? question.split("...") : question.split("___");
@@ -121,6 +122,10 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
                       SizedBox(height: 24.h),
                       if (parts.length > 1 && parts.last.isNotEmpty) 
                         _buildIslandPiece(parts.last, isDark, theme.primaryColor).animate().fadeIn(delay: 400.ms),
+                      if (_isAnswered) ...[
+                        SizedBox(height: 20.h),
+                        _buildCorrectResult(quest, theme.primaryColor, isDark),
+                      ],
                     ],
                   ),
                 ),
@@ -270,6 +275,46 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
         child: Text(text.toUpperCase(), style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: primaryColor)),
       ),
     );
+  }
+
+  Widget _buildCorrectResult(GrammarQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 

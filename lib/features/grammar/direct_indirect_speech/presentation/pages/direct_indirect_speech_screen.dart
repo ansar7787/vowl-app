@@ -13,6 +13,7 @@ import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 
 class DirectIndirectSpeechScreen extends StatefulWidget {
   final int level;
@@ -62,7 +63,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false;
-        _rotation = 0.0;
+        _rotation = 3.14;
       });
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
@@ -96,7 +97,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final GrammarQuest? quest = (state is GrammarLoaded) ? state.currentQuest : null;
         final rawQuestion = quest?.question ?? "DIRECT SPEECH";
         // Extract speech if it follows "Convert to reported speech: ..." or "Fix: ..."
         String displayDirect = quest?.sentence ?? "";
@@ -148,6 +149,13 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                           (i) => _buildReflectionChip(options[i], i, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark)
                         ),
                       ),
+                      if (_isAnswered) ...[
+                        SizedBox(height: 30.h),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          child: _buildCorrectResult(quest, theme.primaryColor, isDark),
+                        ),
+                      ],
                       SizedBox(height: 40.h),
                     ],
                   ),
@@ -188,6 +196,8 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
   }
 
   Widget _build3DMirror(String direct, String indirect, Color primaryColor, bool isDark) {
+    final backColor = (_isCorrect == false) ? Colors.redAccent : Colors.greenAccent;
+
     return TweenAnimationBuilder(
       tween: Tween<double>(begin: 0, end: _rotation),
       duration: 1000.ms,
@@ -205,7 +215,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
               borderRadius: BorderRadius.circular(32.r),
               boxShadow: [
                 BoxShadow(
-                  color: (isFront ? primaryColor : Colors.greenAccent).withValues(alpha: 0.2),
+                  color: (isFront ? primaryColor : backColor).withValues(alpha: 0.2),
                   blurRadius: 30,
                   spreadRadius: 2,
                 )
@@ -214,7 +224,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
             child: GlassTile(
               padding: EdgeInsets.all(32.r),
               borderRadius: BorderRadius.circular(32.r),
-              color: (isFront ? primaryColor : Colors.greenAccent).withValues(alpha: 0.1),
+              color: (isFront ? primaryColor : backColor).withValues(alpha: 0.1),
               child: Transform(
                 transform: Matrix4.identity()..rotateY(isFront ? 0 : 3.14),
                 alignment: Alignment.center,
@@ -224,7 +234,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                     Container(
                       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
                       decoration: BoxDecoration(
-                        color: (isFront ? primaryColor : Colors.greenAccent).withValues(alpha: 0.1),
+                        color: (isFront ? primaryColor : backColor).withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(20.r),
                       ),
                       child: Text(
@@ -232,7 +242,7 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
                         style: GoogleFonts.outfit(
                           fontSize: 10.sp, 
                           fontWeight: FontWeight.w900, 
-                          color: isFront ? primaryColor : Colors.greenAccent,
+                          color: isFront ? primaryColor : backColor,
                           letterSpacing: 1.5
                         )
                       ),
@@ -293,6 +303,46 @@ class _DirectIndirectSpeechScreenState extends State<DirectIndirectSpeechScreen>
         ),
       ),
     );
+  }
+
+  Widget _buildCorrectResult(GrammarQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 

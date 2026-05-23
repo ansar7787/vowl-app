@@ -26,7 +26,7 @@ class QuestionFormatterScreen extends StatefulWidget {
   @override
   State<QuestionFormatterScreen> createState() => _QuestionFormatterScreenState();
 }
-class _QuestionFormatterScreenState extends State<QuestionFormatterScreen> {
+class _QuestionFormatterScreenState extends State<QuestionFormatterScreen> with TickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
@@ -41,6 +41,30 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen> {
   void initState() {
     super.initState();
     context.read<GrammarBloc>().add(FetchGrammarQuests(gameType: widget.gameType, level: widget.level));
+  }
+
+  void _autoSpin() {
+    if (_isAnswered || _crankRotation.abs() >= 6.28) return;
+    _hapticService.success();
+    final controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 1000),
+    );
+    late final Animation<double> animation;
+    animation = Tween<double>(begin: _crankRotation, end: 6.28).animate(
+      CurvedAnimation(parent: controller, curve: Curves.easeInOutBack),
+    );
+    animation.addListener(() {
+      setState(() {
+        _crankRotation = animation.value;
+      });
+    });
+    animation.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        controller.dispose();
+      }
+    });
+    controller.forward();
   }
 
   void _onCrankUpdate(double delta) {
@@ -273,7 +297,17 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen> {
                     ],
                   ),
                 ),
-                Icon(Icons.bolt_rounded, color: primaryColor, size: 36.r),
+                GestureDetector(
+                  onTap: _autoSpin,
+                  child: Container(
+                    padding: EdgeInsets.all(12.r),
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.transparent,
+                    ),
+                    child: Icon(Icons.bolt_rounded, color: primaryColor, size: 36.r),
+                  ),
+                ),
               ],
             ),
           ),
@@ -313,26 +347,38 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen> {
   }
 
   Widget _buildCorrectResult(String result, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Container(
         padding: EdgeInsets.all(28.r),
         decoration: BoxDecoration(
-          color: Colors.greenAccent.withValues(alpha: 0.05),
+          color: displayColor.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(28.r),
-          border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.3), width: 2),
+          border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
         ),
         child: Column(
           children: [
-            Icon(Icons.check_circle_rounded, color: Colors.greenAccent, size: 40.r),
+            Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 40.r),
             SizedBox(height: 16.h),
+            Text(
+              correct ? "CORRECT!" : "INCORRECT",
+              style: GoogleFonts.outfit(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w900,
+                color: displayColor,
+                letterSpacing: 2,
+              ),
+            ),
+            SizedBox(height: 8.h),
             Text(
               result, 
               textAlign: TextAlign.center, 
               style: GoogleFonts.fredoka(
                 fontSize: 22.sp, 
                 fontWeight: FontWeight.bold, 
-                color: Colors.greenAccent
+                color: displayColor
               )
             ),
           ],

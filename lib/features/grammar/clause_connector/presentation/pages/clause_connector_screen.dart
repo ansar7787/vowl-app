@@ -58,6 +58,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false;
+        _draggingConnector = connector;
       });
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
@@ -126,7 +127,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
               ),
 
               if (!_isAnswered) 
-                _buildConnectorPalette(options, theme.primaryColor, isDark),
+                _buildConnectorPalette(options, theme.primaryColor, isDark, quest.correctAnswerIndex ?? 0),
               SizedBox(height: 40.h),
             ],
           ),
@@ -190,7 +191,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
           ),
           child: Center(
             child: _isAnswered 
-              ? _buildConnector(_draggingConnector ?? "ERROR", primaryColor, isDark)
+              ? _buildConnector(_draggingConnector ?? "---", primaryColor, isDark, isCorrect: _isCorrect)
                   .animate().scale(duration: 400.ms, curve: Curves.elasticOut)
               : Text(
                   isHighlight ? "RELEASE TO SNAP" : "ENERGY PORT", 
@@ -229,7 +230,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
     );
   }
 
-  Widget _buildConnectorPalette(List<String> options, Color primaryColor, bool isDark) {
+  Widget _buildConnectorPalette(List<String> options, Color primaryColor, bool isDark, int correctIndex) {
     return Wrap(
       alignment: WrapAlignment.center,
       spacing: 16.w, 
@@ -238,21 +239,31 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         data: opt,
         feedback: Material(color: Colors.transparent, child: _buildConnector(opt, primaryColor, isDark, isDragging: true)),
         childWhenDragging: Opacity(opacity: 0.2, child: _buildConnector(opt, primaryColor, isDark)),
-        child: _buildConnector(opt, primaryColor, isDark),
+        child: GestureDetector(
+          onTap: () => _onSnap(opt, correctIndex, options),
+          child: _buildConnector(opt, primaryColor, isDark),
+        ),
       )).toList(),
     );
   }
 
-  Widget _buildConnector(String text, Color primaryColor, bool isDark, {bool isDragging = false}) {
+  Widget _buildConnector(String text, Color primaryColor, bool isDark, {bool isDragging = false, bool? isCorrect}) {
+    Color borderColor = primaryColor.withValues(alpha: 0.4);
+    if (isCorrect == true) {
+      borderColor = Colors.greenAccent;
+    } else if (isCorrect == false) {
+      borderColor = Colors.redAccent;
+    }
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 14.h),
       decoration: BoxDecoration(
         color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.4), width: 2),
+        border: Border.all(color: borderColor, width: 2),
         boxShadow: [
-          if (isDragging) 
-            BoxShadow(color: primaryColor.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 5)
+          if (isDragging || isCorrect != null) 
+            BoxShadow(color: borderColor.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 5)
         ],
       ),
       child: Text(
@@ -260,7 +271,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
         style: GoogleFonts.outfit(
           fontSize: 15.sp, 
           fontWeight: FontWeight.w900, 
-          color: isDark ? Colors.white : Colors.black87, 
+          color: isCorrect == true ? Colors.greenAccent : (isCorrect == false ? Colors.redAccent : (isDark ? Colors.white : Colors.black87)), 
           letterSpacing: 1.5
         )
       ),

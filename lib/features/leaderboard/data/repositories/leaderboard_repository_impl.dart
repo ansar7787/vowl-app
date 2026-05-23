@@ -18,17 +18,23 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
       
       final cacheSnapshot = await cacheDocRef.get();
       
-      if (cacheSnapshot.exists) {
+      if (cacheSnapshot.exists && cacheSnapshot.data() != null) {
+        // PRODUCTION LOGIC: Always return the cache if it exists.
+        // We no longer check if it's 4 hours old on the client side.
+        // The backend Firebase Cloud Function is now 100% responsible for updating this document.
+        // This completely eliminates the "Cache Stampede / Thundering Herd" problem.
         final data = cacheSnapshot.data()!;
-        final lastUpdated = (data['lastUpdated'] as Timestamp).toDate();
+        final lastUpdated = (data['lastUpdated'] as Timestamp?)?.toDate() ?? DateTime.now();
         
-        if (DateTime.now().difference(lastUpdated) < const Duration(hours: 4)) {
-          final List<dynamic> usersJson = data['users'] ?? [];
-          final users = usersJson.map((json) => UserModel.fromMap(Map<String, dynamic>.from(json))).toList();
-          return Right(LeaderboardResult(users: users, lastUpdated: lastUpdated));
-        }
+        final List<dynamic> usersJson = data['users'] ?? [];
+        final users = usersJson.map((json) => UserModel.fromMap(Map<String, dynamic>.from(json))).toList();
+        return Right(LeaderboardResult(users: users, lastUpdated: lastUpdated));
       }
 
+      // ======================================================================
+      // ONE-TIME FALLBACK: Only runs if the cache document doesn't exist at all
+      // (e.g. before the Cloud Function runs for the very first time).
+      // ======================================================================
       final snapshot = await firestore
           .collection('users')
           .orderBy('totalExp', descending: true)
@@ -54,10 +60,11 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
             'isPremium': data['isPremium'] ?? false,
           });
         } catch (e) {
-          if (kDebugMode) print('Corrupted user in fetch: $e');
+          if (kDebugMode) debugPrint('Corrupted user in fetch: $e');
         }
       }
 
+      // Initialize the cache so future reads use the O(1) fetch
       await cacheDocRef.set({
         'lastUpdated': FieldValue.serverTimestamp(),
         'users': usersData,

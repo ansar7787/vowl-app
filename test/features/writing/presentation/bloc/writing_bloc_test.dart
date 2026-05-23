@@ -13,7 +13,7 @@ import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
 import 'package:vowl/features/speaking/domain/usecases/get_speaking_quest.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 import 'package:vowl/features/writing/domain/usecases/get_writing_quest.dart';
-import 'package:vowl/features/writing/domain/usecases/use_writing_hint.dart';
+import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 
 class MockGetWritingQuest extends Mock implements GetWritingQuest {}
@@ -24,7 +24,7 @@ class MockUpdateUnlockedLevel extends Mock implements UpdateUnlockedLevel {}
 class MockAwardBadge extends Mock implements AwardBadge {}
 class MockSoundService extends Mock implements SoundService {}
 class MockHapticService extends Mock implements HapticService {}
-class MockUseWritingHint extends Mock implements UseWritingHint {}
+class MockUseHint extends Mock implements UseHint {}
 
 class FakeQuestParams extends Fake implements QuestParams {}
 class FakeUpdateUserRewardsParams extends Fake implements UpdateUserRewardsParams {}
@@ -41,7 +41,7 @@ void main() {
   late MockAwardBadge mockAwardBadge;
   late MockSoundService mockSoundService;
   late MockHapticService mockHapticService;
-  late MockUseWritingHint mockUseHint;
+  late MockUseHint mockUseHint;
 
   setUpAll(() {
     registerFallbackValue(FakeQuestParams());
@@ -60,7 +60,7 @@ void main() {
     mockAwardBadge = MockAwardBadge();
     mockSoundService = MockSoundService();
     mockHapticService = MockHapticService();
-    mockUseHint = MockUseWritingHint();
+    mockUseHint = MockUseHint();
 
     bloc = WritingBloc(
       getQuest: mockGetQuest,

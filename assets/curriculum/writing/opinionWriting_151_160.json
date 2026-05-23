@@ -1,247 +1,607 @@
 {
-    "gameType": "opinionWriting",
-    "batchIndex": 16,
-    "levels": "151-160",
-    "quests": [
-        {
-            "id": "WRT_OPINIONWRITING_L151_Q1",
-            "interactionType": "Balance Scale",
-            "hint": "Analyze the provided text to determine the best answer.",
-            "explanation": "Mastering this specific skill reinforces language accuracy.",
-            "prompt": "A robot navigates a spaceship smoothly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L151_Q2",
-            "interactionType": "Balance Scale",
-            "hint": "Check the sentence to find the correct option.",
-            "explanation": "Improving your comprehension boosts overall fluency.",
-            "prompt": "The traveler navigates a spaceship smoothly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L151_Q3",
-            "interactionType": "Balance Scale",
-            "hint": "Read the words closely.",
-            "explanation": "Developing your vocabulary helps with daily communication.",
-            "prompt": "A doctor navigates a spaceship smoothly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L152_Q1",
-            "interactionType": "Balance Scale",
-            "hint": "Check the sentence carefully.",
-            "explanation": "Improving your reading speed boosts overall fluency.",
-            "prompt": "The commander analyzes the signal cleverly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L152_Q2",
-            "interactionType": "Balance Scale",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill helps with daily communication.",
-            "prompt": "A pilot analyzes the signal cleverly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L152_Q3",
-            "interactionType": "Balance Scale",
-            "hint": "Examine the context to find the correct option.",
-            "explanation": "Refining your comprehension reinforces language accuracy.",
-            "prompt": "The technician analyzes the signal cleverly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L153_Q1",
-            "interactionType": "Balance Scale",
-            "hint": "Read the words closely.",
-            "explanation": "Developing your vocabulary helps with daily communication.",
-            "prompt": "A doctor operates the circuit quickly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L153_Q2",
-            "interactionType": "Balance Scale",
-            "hint": "Examine the context carefully.",
-            "explanation": "Refining your reading speed reinforces language accuracy.",
-            "prompt": "The teacher operates the circuit quickly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L153_Q3",
-            "interactionType": "Balance Scale",
-            "hint": "Review the details to determine the best answer.",
-            "explanation": "Practicing this specific skill boosts overall fluency.",
-            "prompt": "A researcher operates the circuit quickly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L154_Q1",
-            "interactionType": "Balance Scale",
-            "hint": "Examine the context to find the correct option.",
-            "explanation": "Refining your comprehension reinforces language accuracy.",
-            "prompt": "The technician repairs the shield silently.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L154_Q2",
-            "interactionType": "Balance Scale",
-            "hint": "Review the details closely.",
-            "explanation": "Practicing your vocabulary boosts overall fluency.",
-            "prompt": "An explorer repairs the shield silently.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L154_Q3",
-            "interactionType": "Balance Scale",
-            "hint": "Analyze the provided text carefully.",
-            "explanation": "Mastering your reading speed helps with daily communication.",
-            "prompt": "The droid repairs the shield silently.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L155_Q1",
-            "interactionType": "Balance Scale",
-            "hint": "Review the details to determine the best answer.",
-            "explanation": "Practicing this specific skill boosts overall fluency.",
-            "prompt": "A researcher investigates the database cautiously.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L155_Q2",
-            "interactionType": "Balance Scale",
-            "hint": "Analyze the provided text to find the correct option.",
-            "explanation": "Mastering your comprehension helps with daily communication.",
-            "prompt": "The detective investigates the database cautiously.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L155_Q3",
-            "interactionType": "Balance Scale",
-            "hint": "Check the sentence closely.",
-            "explanation": "Improving your vocabulary reinforces language accuracy.",
-            "prompt": "A spy investigates the database cautiously.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L156_Q1",
-            "interactionType": "Balance Scale",
-            "hint": "Analyze the provided text carefully.",
-            "explanation": "Mastering your reading speed helps with daily communication.",
-            "prompt": "The droid monitors the module quietly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L156_Q2",
-            "interactionType": "Balance Scale",
-            "hint": "Check the sentence to determine the best answer.",
-            "explanation": "Improving this specific skill reinforces language accuracy.",
-            "prompt": "A student monitors the module quietly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L156_Q3",
-            "interactionType": "Balance Scale",
-            "hint": "Read the words to find the correct option.",
-            "explanation": "Developing your comprehension boosts overall fluency.",
-            "prompt": "The analyst monitors the module quietly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L157_Q1",
-            "interactionType": "Balance Scale",
-            "hint": "Check the sentence closely.",
-            "explanation": "Improving your vocabulary reinforces language accuracy.",
-            "prompt": "A spy discovers a laser swiftly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L157_Q2",
-            "interactionType": "Balance Scale",
-            "hint": "Read the words carefully.",
-            "explanation": "Developing your reading speed boosts overall fluency.",
-            "prompt": "The driver discovers a laser swiftly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L157_Q3",
-            "interactionType": "Balance Scale",
-            "hint": "Examine the context to determine the best answer.",
-            "explanation": "Refining this specific skill helps with daily communication.",
-            "prompt": "A chef discovers a laser swiftly.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L158_Q1",
-            "interactionType": "Balance Scale",
-            "hint": "Read the words to find the correct option.",
-            "explanation": "Developing your comprehension boosts overall fluency.",
-            "prompt": "The analyst builds a machine wisely.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L158_Q2",
-            "interactionType": "Balance Scale",
-            "hint": "Examine the context closely.",
-            "explanation": "Refining your vocabulary helps with daily communication.",
-            "prompt": "A manager builds a machine wisely.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L158_Q3",
-            "interactionType": "Balance Scale",
-            "hint": "Review the details carefully.",
-            "explanation": "Practicing your reading speed reinforces language accuracy.",
-            "prompt": "The hero builds a machine wisely.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L159_Q1",
-            "interactionType": "Balance Scale",
-            "hint": "Examine the context to determine the best answer.",
-            "explanation": "Refining this specific skill helps with daily communication.",
-            "prompt": "A chef sends the archive efficiently.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L159_Q2",
-            "interactionType": "Balance Scale",
-            "hint": "Review the details to find the correct option.",
-            "explanation": "Practicing your comprehension reinforces language accuracy.",
-            "prompt": "The engineer discovers the archive efficiently.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L159_Q3",
-            "interactionType": "Balance Scale",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary boosts overall fluency.",
-            "prompt": "A scientist discovers the archive efficiently.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L160_Q1",
-            "interactionType": "Balance Scale",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary reinforces language accuracy.",
-            "prompt": "A scientist builds the signal successfully.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L160_Q2",
-            "interactionType": "Balance Scale",
-            "hint": "Check the sentence carefully.",
-            "explanation": "Improving your reading speed boosts overall fluency.",
-            "prompt": "The commander builds the signal successfully.",
-            "minWords": 30
-        },
-        {
-            "id": "WRT_OPINIONWRITING_L160_Q3",
-            "interactionType": "Balance Scale",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill helps with daily communication.",
-            "prompt": "A pilot builds the signal successfully.",
-            "minWords": 30
-        }
-    ]
+  "gameType": "opinionWriting",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L151_Q1",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 151-1] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+      "options": [
+        "Vents provide consistent heat and rich chemical gradients.",
+        "Mineral walls form natural catalytic micro-compartments.",
+        "Extreme temperatures could destroy delicate genetic precursors.",
+        "Ocean currents might dilute vital organic chemical molecules."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 151-1)",
+      "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 151]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L151_Q2",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 151-2] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+      "options": [
+        "Chemosynthetic bacteria produce organic carbon from sulfur.",
+        "Vents sustain life indefinitely without solar rays.",
+        "Sinking surface organic marine snow feeds many species.",
+        "Migrating deep creatures rely on sun-fed surface plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 151-2)",
+      "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 151]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L151_Q3",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 151-3] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+      "options": [
+        "Winds continuously drag nutrient-rich deep currents up.",
+        "Upwellings fuel extensive trophic chains and fisheries.",
+        "Seasonal wind variations cause unpredictable bloom crashes.",
+        "Excessive turbulence can scatter delicate larval plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 151-3)",
+      "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 151]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L152_Q1",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 152-1] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+      "options": [
+        "Glowing lures attract prey in absolute sunless voids.",
+        "Light emissions act as silent warning signals.",
+        "Sudden flashes can attract dangerous apex predators.",
+        "High chemical energy cost drains body metabolic reserves."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 152-1)",
+      "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 152]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L152_Q2",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 152-2] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+      "options": [
+        "Dense kelp canopies absorb solar energy, cooling under-layers.",
+        "Massive kelp biomass sequesters carbon dioxide rapidly.",
+        "High thermal waves easily trigger destructive canopy die-offs.",
+        "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 152-2)",
+      "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 152]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L152_Q3",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 152-3] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+      "options": [
+        "Vents provide consistent heat and rich chemical gradients.",
+        "Mineral walls form natural catalytic micro-compartments.",
+        "Extreme temperatures could destroy delicate genetic precursors.",
+        "Ocean currents might dilute vital organic chemical molecules."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 152-3)",
+      "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 152]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L153_Q1",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 153-1] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+      "options": [
+        "Chemosynthetic bacteria produce organic carbon from sulfur.",
+        "Vents sustain life indefinitely without solar rays.",
+        "Sinking surface organic marine snow feeds many species.",
+        "Migrating deep creatures rely on sun-fed surface plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 153-1)",
+      "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 153]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L153_Q2",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 153-2] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+      "options": [
+        "Winds continuously drag nutrient-rich deep currents up.",
+        "Upwellings fuel extensive trophic chains and fisheries.",
+        "Seasonal wind variations cause unpredictable bloom crashes.",
+        "Excessive turbulence can scatter delicate larval plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 153-2)",
+      "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 153]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L153_Q3",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 153-3] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+      "options": [
+        "Glowing lures attract prey in absolute sunless voids.",
+        "Light emissions act as silent warning signals.",
+        "Sudden flashes can attract dangerous apex predators.",
+        "High chemical energy cost drains body metabolic reserves."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 153-3)",
+      "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 153]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L154_Q1",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 154-1] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+      "options": [
+        "Dense kelp canopies absorb solar energy, cooling under-layers.",
+        "Massive kelp biomass sequesters carbon dioxide rapidly.",
+        "High thermal waves easily trigger destructive canopy die-offs.",
+        "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 154-1)",
+      "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 154]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L154_Q2",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 154-2] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+      "options": [
+        "Vents provide consistent heat and rich chemical gradients.",
+        "Mineral walls form natural catalytic micro-compartments.",
+        "Extreme temperatures could destroy delicate genetic precursors.",
+        "Ocean currents might dilute vital organic chemical molecules."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 154-2)",
+      "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 154]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L154_Q3",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 154-3] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+      "options": [
+        "Chemosynthetic bacteria produce organic carbon from sulfur.",
+        "Vents sustain life indefinitely without solar rays.",
+        "Sinking surface organic marine snow feeds many species.",
+        "Migrating deep creatures rely on sun-fed surface plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 154-3)",
+      "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 154]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L155_Q1",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 155-1] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+      "options": [
+        "Winds continuously drag nutrient-rich deep currents up.",
+        "Upwellings fuel extensive trophic chains and fisheries.",
+        "Seasonal wind variations cause unpredictable bloom crashes.",
+        "Excessive turbulence can scatter delicate larval plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 155-1)",
+      "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 155]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L155_Q2",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 155-2] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+      "options": [
+        "Glowing lures attract prey in absolute sunless voids.",
+        "Light emissions act as silent warning signals.",
+        "Sudden flashes can attract dangerous apex predators.",
+        "High chemical energy cost drains body metabolic reserves."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 155-2)",
+      "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 155]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L155_Q3",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 155-3] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+      "options": [
+        "Dense kelp canopies absorb solar energy, cooling under-layers.",
+        "Massive kelp biomass sequesters carbon dioxide rapidly.",
+        "High thermal waves easily trigger destructive canopy die-offs.",
+        "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 155-3)",
+      "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 155]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L156_Q1",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 156-1] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+      "options": [
+        "Vents provide consistent heat and rich chemical gradients.",
+        "Mineral walls form natural catalytic micro-compartments.",
+        "Extreme temperatures could destroy delicate genetic precursors.",
+        "Ocean currents might dilute vital organic chemical molecules."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 156-1)",
+      "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 156]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L156_Q2",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 156-2] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+      "options": [
+        "Chemosynthetic bacteria produce organic carbon from sulfur.",
+        "Vents sustain life indefinitely without solar rays.",
+        "Sinking surface organic marine snow feeds many species.",
+        "Migrating deep creatures rely on sun-fed surface plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 156-2)",
+      "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 156]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L156_Q3",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 156-3] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+      "options": [
+        "Winds continuously drag nutrient-rich deep currents up.",
+        "Upwellings fuel extensive trophic chains and fisheries.",
+        "Seasonal wind variations cause unpredictable bloom crashes.",
+        "Excessive turbulence can scatter delicate larval plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 156-3)",
+      "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 156]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L157_Q1",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 157-1] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+      "options": [
+        "Glowing lures attract prey in absolute sunless voids.",
+        "Light emissions act as silent warning signals.",
+        "Sudden flashes can attract dangerous apex predators.",
+        "High chemical energy cost drains body metabolic reserves."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 157-1)",
+      "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 157]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L157_Q2",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 157-2] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+      "options": [
+        "Dense kelp canopies absorb solar energy, cooling under-layers.",
+        "Massive kelp biomass sequesters carbon dioxide rapidly.",
+        "High thermal waves easily trigger destructive canopy die-offs.",
+        "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 157-2)",
+      "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 157]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L157_Q3",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 157-3] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+      "options": [
+        "Vents provide consistent heat and rich chemical gradients.",
+        "Mineral walls form natural catalytic micro-compartments.",
+        "Extreme temperatures could destroy delicate genetic precursors.",
+        "Ocean currents might dilute vital organic chemical molecules."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 157-3)",
+      "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 157]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L158_Q1",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 158-1] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+      "options": [
+        "Chemosynthetic bacteria produce organic carbon from sulfur.",
+        "Vents sustain life indefinitely without solar rays.",
+        "Sinking surface organic marine snow feeds many species.",
+        "Migrating deep creatures rely on sun-fed surface plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 158-1)",
+      "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 158]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L158_Q2",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 158-2] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+      "options": [
+        "Winds continuously drag nutrient-rich deep currents up.",
+        "Upwellings fuel extensive trophic chains and fisheries.",
+        "Seasonal wind variations cause unpredictable bloom crashes.",
+        "Excessive turbulence can scatter delicate larval plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 158-2)",
+      "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 158]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L158_Q3",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 158-3] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+      "options": [
+        "Glowing lures attract prey in absolute sunless voids.",
+        "Light emissions act as silent warning signals.",
+        "Sudden flashes can attract dangerous apex predators.",
+        "High chemical energy cost drains body metabolic reserves."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 158-3)",
+      "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 158]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L159_Q1",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 159-1] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+      "options": [
+        "Dense kelp canopies absorb solar energy, cooling under-layers.",
+        "Massive kelp biomass sequesters carbon dioxide rapidly.",
+        "High thermal waves easily trigger destructive canopy die-offs.",
+        "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 159-1)",
+      "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 159]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L159_Q2",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 159-2] Evaluate the theory that deep-sea hydrothermal vents served as the cradle for Earth's earliest life forms.",
+      "options": [
+        "Vents provide consistent heat and rich chemical gradients.",
+        "Mineral walls form natural catalytic micro-compartments.",
+        "Extreme temperatures could destroy delicate genetic precursors.",
+        "Ocean currents might dilute vital organic chemical molecules."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify benefits like rich thermal gradients as Pros, and dilutive currents as Cons. (Diving calibration index 159-2)",
+      "explanation": "Vents offer rich mineral catalysis (Pro) but extreme heat and oceanic dilution pose barriers (Con). [Verified by Scientific Logic Unit 159]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L159_Q3",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 159-3] Assess the claim that deep sunless benthic ecosystems are entirely independent of surface solar food sources.",
+      "options": [
+        "Chemosynthetic bacteria produce organic carbon from sulfur.",
+        "Vents sustain life indefinitely without solar rays.",
+        "Sinking surface organic marine snow feeds many species.",
+        "Migrating deep creatures rely on sun-fed surface plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify microbial sulfur conversion as Pros, and dependence on surface marine snow as Cons. (Diving calibration index 159-3)",
+      "explanation": "Microbes build energy purely from chemical hydrogen sulfide (Pro), but deep species still ingest falling debris (Con). [Verified by Scientific Logic Unit 159]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L160_Q1",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 160-1] Evaluate if offshore wind upwellings are the most critical driver of coastal biological productivity.",
+      "options": [
+        "Winds continuously drag nutrient-rich deep currents up.",
+        "Upwellings fuel extensive trophic chains and fisheries.",
+        "Seasonal wind variations cause unpredictable bloom crashes.",
+        "Excessive turbulence can scatter delicate larval plankton."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify nutrient uprise and fishery fueling as Pros, and scattered plankton as Cons. (Diving calibration index 160-1)",
+      "explanation": "Winds bring vital cold nutrients upward (Pro), but turbulent currents can scatter biological eggs (Con). [Verified by Scientific Logic Unit 160]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L160_Q2",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 160-2] Assess the viability of biological bioluminescence as the supreme survival adaptation in the deep ocean.",
+      "options": [
+        "Glowing lures attract prey in absolute sunless voids.",
+        "Light emissions act as silent warning signals.",
+        "Sudden flashes can attract dangerous apex predators.",
+        "High chemical energy cost drains body metabolic reserves."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify glowing lures and warning flashes as Pros, and predator attraction or energy drain as Cons. (Diving calibration index 160-2)",
+      "explanation": "Bioluminescence enables hunting and mating in darkness (Pro) but costs massive body energy (Con). [Verified by Scientific Logic Unit 160]."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L160_Q3",
+      "instruction": "WEIGH THE SCIENTIFIC ARGUMENTS AS PROS (SUPPORT) OR CONS (COUNTER)",
+      "difficulty": 4,
+      "subtype": "opinionWriting",
+      "interactionType": "Balance Scale",
+      "prompt": "[Calibration Thesis 160-3] Evaluate the effectiveness of giant kelp canopy ecosystems in mitigating regional ocean warming impacts.",
+      "options": [
+        "Dense kelp canopies absorb solar energy, cooling under-layers.",
+        "Massive kelp biomass sequesters carbon dioxide rapidly.",
+        "High thermal waves easily trigger destructive canopy die-offs.",
+        "Kelp cannot grow in deep water lacking direct seafloor anchorage."
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Classify water cooling and rapid carbon capture as Pros, and warm thermal die-offs as Cons. (Diving calibration index 160-3)",
+      "explanation": "Kelp mitigates localized heat by shading water (Pro) but is highly sensitive to rising base temperatures (Con). [Verified by Scientific Logic Unit 160]."
+    }
+  ]
 }

@@ -38,6 +38,8 @@ class WritingQuestModel extends WritingQuest {
     super.subject,
     super.recipient,
     super.essayTopic,
+    super.emojis,
+    super.keywords,
   });
 
   factory WritingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -106,6 +108,12 @@ class WritingQuestModel extends WritingQuest {
       subject: map['subject'],
       recipient: map['recipient'],
       essayTopic: map['essayTopic'],
+      emojis: map['emojis'] != null ? List<String>.from(map['emojis']) : null,
+      keywords: map['keywords'] != null
+          ? (map['keywords'] as Map).map(
+              (k, v) => MapEntry(k.toString(), List<String>.from(v)),
+            )
+          : null,
     );
   }
 
@@ -143,6 +151,8 @@ class WritingQuestModel extends WritingQuest {
       'subject': subject,
       'recipient': recipient,
       'essayTopic': essayTopic,
+      'emojis': emojis,
+      'keywords': keywords,
     };
   }
 }

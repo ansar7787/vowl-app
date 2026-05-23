@@ -113,11 +113,11 @@ class SoundService {
     }
   }
 
-  Future<void> playTts(String text, {double speed = 0.4}) async {
+  Future<void> playTts(String text, {double speed = 0.4, String? locale}) async {
     if (_isMuted) return;
     try {
       final tts = di.sl<TtsService>();
-      await tts.speak(text, rate: speed);
+      await tts.speak(text, rate: speed, locale: locale);
     } catch (e) {
       debugPrint('Error playing TTS: $e');
     }

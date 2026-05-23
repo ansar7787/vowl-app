@@ -11,6 +11,7 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class CompleteSentenceScreen extends StatefulWidget {
   final int level;
@@ -44,6 +45,29 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
     context.read<WritingBloc>().add(FetchWritingQuests(gameType: widget.gameType, level: widget.level));
   }
 
+  void _onBridgeStart(Offset globalPosition) {
+    if (_isAnswered) return;
+    final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
+    if (renderBox != null) {
+      final localPos = renderBox.globalToLocal(globalPosition);
+      setState(() {
+        _dragStart = localPos;
+        _dragCurrent = localPos;
+        _hapticService.selection();
+      });
+    }
+  }
+
+  void _onBridgeUpdate(Offset globalPosition) {
+    if (_isAnswered || _dragStart == null) return;
+    final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
+    if (renderBox != null) {
+      setState(() {
+        _dragCurrent = renderBox.globalToLocal(globalPosition);
+      });
+    }
+  }
+
   void _onFire(String selected, String correct) {
     if (_isAnswered) return;
     bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
@@ -58,11 +82,17 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
       _soundService.playWrong();
       setState(() { _isAnswered = true; _isCorrect = false; });
       context.read<WritingBloc>().add(SubmitAnswer(false));
-      Future.delayed(1.seconds, () => setState(() {
-        _dragStart = null;
-        _dragCurrent = null;
-        _selectedProjectile = null;
-      }));
+      Future.delayed(1.seconds, () {
+        if (mounted) {
+          setState(() {
+            _dragStart = null;
+            _dragCurrent = null;
+            _selectedProjectile = null;
+            _isAnswered = false;
+            _isCorrect = null;
+          });
+        }
+      });
     }
   }
 
@@ -105,21 +135,36 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
           onHint: () => context.read<WritingBloc>().add(WritingHintUsed()),
           child: quest == null ? const SizedBox() : Stack(
             children: [
-              Column(
-                children: [
-                  SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
-                  SizedBox(height: 48.h),
-                  _buildTargetWall(quest.partialSentence ?? "", _selectedProjectile, theme.primaryColor, isDark),
-                  const Spacer(),
-                  _buildBallistaAmmo(options, quest.correctAnswer ?? "", theme.primaryColor),
-                  SizedBox(height: 40.h),
-                ],
+              SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 16.h),
+                      _buildInstruction(theme.primaryColor),
+                      SizedBox(height: 32.h),
+                      
+                      _buildTargetWall(quest.partialSentence ?? "", _selectedProjectile, theme.primaryColor, isDark),
+                      SizedBox(height: 32.h),
+                      
+                      _buildBallistaAmmo(options, quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                      
+                      if (_isAnswered) ...[
+                        SizedBox(height: 30.h),
+                        _buildCorrectResult(quest, theme.primaryColor, isDark),
+                      ],
+                      SizedBox(height: 60.h),
+                    ],
+                  ),
+                ),
               ),
               if (_dragStart != null && _dragCurrent != null)
-                CustomPaint(
-                  painter: TrajectoryPainter(start: _dragStart!, end: _dragCurrent!, color: theme.primaryColor),
-                  size: Size.infinite,
+                IgnorePointer(
+                  child: CustomPaint(
+                    painter: TrajectoryPainter(start: _dragStart!, end: _dragCurrent!, color: theme.primaryColor),
+                    size: Size.infinite,
+                  ),
                 ),
             ],
           ),
@@ -145,46 +190,107 @@ class _CompleteSentenceScreenState extends State<CompleteSentenceScreen> {
 
   Widget _buildTargetWall(String text, String? injected, Color color, bool isDark) {
     return Container(
-      padding: EdgeInsets.all(32.r),
+      padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
+        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: Colors.white10),
-        image: DecorationImage(image: const NetworkImage('https://www.transparenttextures.com/patterns/brick-wall.png'), opacity: 0.1, repeat: ImageRepeat.repeat),
+        border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
       ),
-      child: DragTarget<String>(
-        onAcceptWithDetails: (details) => _onFire(details.data, details.data), // In a real app, this would be from the projectile logic
-        builder: (context, candidateData, rejectedData) {
-          return Text(
-            text.replaceAll('____', injected?.toUpperCase() ?? "____"),
-            textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(fontSize: 22.sp, color: injected != null ? color : Colors.white70, fontWeight: FontWeight.bold),
-          );
-        },
+      child: Stack(
+        children: [
+          const TechPatternOverlay(opacity: 0.05),
+          Padding(
+            padding: EdgeInsets.all(16.r),
+            child: DragTarget<String>(
+              onAcceptWithDetails: (details) => _onFire(details.data, details.data),
+              builder: (context, candidateData, rejectedData) {
+                return Text(
+                  text.replaceAll('____', injected?.toUpperCase() ?? "____"),
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.fredoka(
+                    fontSize: 20.sp, 
+                    color: injected != null ? color : (isDark ? Colors.white70 : Colors.black87), 
+                    fontWeight: FontWeight.bold,
+                    height: 1.4
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildBallistaAmmo(List<String> options, String correct, Color color) {
+  Widget _buildBallistaAmmo(List<String> options, String correct, Color color, bool isDark) {
     return Wrap(
-      spacing: 16.w, runSpacing: 16.h,
+      spacing: 12.w, runSpacing: 12.h,
       alignment: WrapAlignment.center,
       children: options.map((o) => GestureDetector(
-        onPanStart: (details) => setState(() => _dragStart = details.globalPosition),
-        onPanUpdate: (details) => setState(() => _dragCurrent = details.globalPosition),
+        onPanStart: (details) => _onBridgeStart(details.globalPosition),
+        onPanUpdate: (details) => _onBridgeUpdate(details.globalPosition),
         onPanEnd: (details) => _onFire(o, correct),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+          padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
           decoration: BoxDecoration(
-            color: Colors.black87,
+            color: isDark ? Colors.black87 : Colors.white,
             borderRadius: BorderRadius.circular(30.r),
             border: Border.all(color: color, width: 2),
-            boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 10)],
+            boxShadow: [
+              BoxShadow(color: color.withValues(alpha: isDark ? 0.35 : 0.15), blurRadius: 10)
+            ],
           ),
-          child: Text(o.toUpperCase(), style: GoogleFonts.shareTechMono(fontSize: 14.sp, fontWeight: FontWeight.bold, color: Colors.white)),
+          child: Text(
+            o.toUpperCase(), 
+            style: GoogleFonts.shareTechMono(
+              fontSize: 12.sp, 
+              fontWeight: FontWeight.bold, 
+              color: isDark ? Colors.white : Colors.black87
+            )
+          ),
         ),
       )).toList(),
     );
+  }
+
+  Widget _buildCorrectResult(dynamic quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 
@@ -211,4 +317,3 @@ class TrajectoryPainter extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
-

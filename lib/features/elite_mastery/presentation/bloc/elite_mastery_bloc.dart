@@ -177,8 +177,10 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     on<MarkEliteHintUsed>((event, emit) async {
       final currentState = state;
       if (currentState is EliteMasteryLoaded) {
-        await useHint(NoParams());
-        emit(currentState.copyWith(isHintUsed: true));
+        final result = await useHint(NoParams());
+        if (result.isRight()) {
+          emit(currentState.copyWith(isHintUsed: true));
+        }
       }
     });
 

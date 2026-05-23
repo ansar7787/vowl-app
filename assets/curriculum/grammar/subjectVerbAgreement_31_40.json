@@ -1,488 +1,487 @@
 {
-    "gameType":  "subjectVerbAgreement",
-    "batchIndex":  4,
-    "levels":  "31-40",
-    "quests":  [
-                   {
-                       "id":  "sva_l31_q1",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The team ___ playing well tonight.",
-                       "options":  [
-                                       "is",
-                                       "are"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "is",
-                       "hint":  "Collective nouns like \u0027team\u0027 are singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l31_q2",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The students ___ studying in the library.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "are",
-                       "hint":  "Plural subject needs a plural verb.",
-                       "explanation":  "The correct verb is 'are'."
-                   },
-                   {
-                       "id":  "sva_l31_q3",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "Each of the boys ___ a gift.",
-                       "options":  [
-                                       "have",
-                                       "has"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "has",
-                       "hint":  "\u0027Each\u0027 is always singular.",
-                       "explanation":  "The correct verb is 'has'."
-                   },
-                   {
-                       "id":  "sva_l32_q1",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "Mathematics ___ my favorite subject.",
-                       "options":  [
-                                       "is",
-                                       "are"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "is",
-                       "hint":  "Subject names are usually singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l32_q2",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The news ___ very surprising.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "\u0027News\u0027 is uncountable and singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l32_q3",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "One of the cars ___ broken down.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "The subject is \u0027one\u0027, not \u0027cars\u0027.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l33_q1",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "Neither of them ___ ready yet.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "\u0027Neither\u0027 is singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l33_q2",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The police ___ investigating the case.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "are",
-                       "hint":  "\u0027Police\u0027 is a plural noun.",
-                       "explanation":  "The correct verb is 'are'."
-                   },
-                   {
-                       "id":  "sva_l33_q3",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "There ___ a pen and a book on the table.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "are",
-                       "hint":  "Compound subjects need plural verbs.",
-                       "explanation":  "The correct verb is 'are'."
-                   },
-                   {
-                       "id":  "sva_l34_q1",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The committee ___ decided on the plan.",
-                       "options":  [
-                                       "has",
-                                       "have"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "has",
-                       "hint":  "Collective noun unit.",
-                       "explanation":  "The correct verb is 'has'."
-                   },
-                   {
-                       "id":  "sva_l34_q2",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "Economics ___ an interesting field.",
-                       "options":  [
-                                       "is",
-                                       "are"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "is",
-                       "hint":  "Subject names ending in \u0027s\u0027 are singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l34_q3",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "A number of people ___ waiting outside.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "are",
-                       "hint":  "\u0027A number of\u0027 is plural.",
-                       "explanation":  "The correct verb is 'are'."
-                   },
-                   {
-                       "id":  "sva_l35_q1",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The number of students ___ increasing.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "\u0027The number of\u0027 is singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l35_q2",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "Either he or they ___ responsible.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "are",
-                       "hint":  "The verb matches the nearest subject.",
-                       "explanation":  "The correct verb is 'are'."
-                   },
-                   {
-                       "id":  "sva_l35_q3",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The furniture ___ very old and dusty.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "\u0027Furniture\u0027 is uncountable.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l36_q1",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The team ___ playing well tonight.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "Collective nouns like \u0027team\u0027 are singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l36_q2",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The students ___ studying in the library.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "are",
-                       "hint":  "Plural subject needs a plural verb.",
-                       "explanation":  "The correct verb is 'are'."
-                   },
-                   {
-                       "id":  "sva_l36_q3",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "Each of the boys ___ a gift.",
-                       "options":  [
-                                       "have",
-                                       "has"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "has",
-                       "hint":  "\u0027Each\u0027 is always singular.",
-                       "explanation":  "The correct verb is 'has'."
-                   },
-                   {
-                       "id":  "sva_l37_q1",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "Mathematics ___ my favorite subject.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "Subject names are usually singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l37_q2",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The news ___ very surprising.",
-                       "options":  [
-                                       "is",
-                                       "are"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "is",
-                       "hint":  "\u0027News\u0027 is uncountable and singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l37_q3",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "One of the cars ___ broken down.",
-                       "options":  [
-                                       "is",
-                                       "are"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "is",
-                       "hint":  "The subject is \u0027one\u0027, not \u0027cars\u0027.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l38_q1",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "Neither of them ___ ready yet.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "\u0027Neither\u0027 is singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l38_q2",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The police ___ investigating the case.",
-                       "options":  [
-                                       "is",
-                                       "are"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "are",
-                       "hint":  "\u0027Police\u0027 is a plural noun.",
-                       "explanation":  "The correct verb is 'are'."
-                   },
-                   {
-                       "id":  "sva_l38_q3",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "There ___ a pen and a book on the table.",
-                       "options":  [
-                                       "is",
-                                       "are"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "are",
-                       "hint":  "Compound subjects need plural verbs.",
-                       "explanation":  "The correct verb is 'are'."
-                   },
-                   {
-                       "id":  "sva_l39_q1",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The committee ___ decided on the plan.",
-                       "options":  [
-                                       "have",
-                                       "has"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "has",
-                       "hint":  "Collective noun unit.",
-                       "explanation":  "The correct verb is 'has'."
-                   },
-                   {
-                       "id":  "sva_l39_q2",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "Economics ___ an interesting field.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "Subject names ending in \u0027s\u0027 are singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l39_q3",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "A number of people ___ waiting outside.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "are",
-                       "hint":  "\u0027A number of\u0027 is plural.",
-                       "explanation":  "The correct verb is 'are'."
-                   },
-                   {
-                       "id":  "sva_l40_q1",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The number of students ___ increasing.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "\u0027The number of\u0027 is singular.",
-                       "explanation":  "The correct verb is 'is'."
-                   },
-                   {
-                       "id":  "sva_l40_q2",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "Either he or they ___ responsible.",
-                       "options":  [
-                                       "is",
-                                       "are"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "are",
-                       "hint":  "The verb matches the nearest subject.",
-                       "explanation":  "The correct verb is 'are'."
-                   },
-                   {
-                       "id":  "sva_l40_q3",
-                       "instruction":  "SYNC THE AGREEMENT",
-                       "difficulty":  1,
-                       "subtype":  "subjectVerbAgreement",
-                       "interactionType":  "Marriage Ring",
-                       "question":  "The furniture ___ very old and dusty.",
-                       "options":  [
-                                       "are",
-                                       "is"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "is",
-                       "hint":  "\u0027Furniture\u0027 is uncountable.",
-                       "explanation":  "The correct verb is 'is'."
-                   }
-               ]
+  "gameType": "subjectVerbAgreement",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "sva_l31_q1",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Either John or Mary ___ the beacon.",
+      "options": [
+        "has",
+        "have"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "has",
+      "hint": "Singular nouns with 'either/or' take a singular verb.",
+      "explanation": "'has' agrees with the singular alternatives."
+    },
+    {
+      "id": "sva_l31_q2",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Both John and Mary ___ the beacon.",
+      "options": [
+        "have",
+        "has"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "have",
+      "hint": "Compound subjects joined by 'and' are plural.",
+      "explanation": "'have' is plural."
+    },
+    {
+      "id": "sva_l31_q3",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Neither the teacher nor the students ___ the answer.",
+      "options": [
+        "know",
+        "knows"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "know",
+      "hint": "Verb agrees with the nearest subject ('students').",
+      "explanation": "Plural 'students' is closer, so we use 'know'."
+    },
+    {
+      "id": "sva_l32_q1",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Neither the scout nor the cruiser ___ here.",
+      "options": [
+        "is",
+        "are"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "is",
+      "hint": "Singular alternative nouns take 'is'.",
+      "explanation": "'is' is correct."
+    },
+    {
+      "id": "sva_l32_q2",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "The scout and the cruiser ___ here.",
+      "options": [
+        "are",
+        "is"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "are",
+      "hint": "'and' creates plural compound.",
+      "explanation": "'are' is correct."
+    },
+    {
+      "id": "sva_l32_q3",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Either the monitors or the core ___ checked.",
+      "options": [
+        "is",
+        "are"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "is",
+      "hint": "Verb agrees with the nearest subject ('core').",
+      "explanation": "'is' agrees with singular 'core'."
+    },
+    {
+      "id": "sva_l33_q1",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Either the captain or the pilot ___ the shuttle.",
+      "options": [
+        "flies",
+        "fly"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "flies",
+      "hint": "Singular subject alternatives take singular.",
+      "explanation": "'flies' is correct."
+    },
+    {
+      "id": "sva_l33_q2",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "The captain and the pilot ___ the shuttle.",
+      "options": [
+        "fly",
+        "flies"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "fly",
+      "hint": "Plural compound subject takes 'fly'.",
+      "explanation": "'fly' is correct."
+    },
+    {
+      "id": "sva_l33_q3",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Neither the droids nor the captain ___ ready.",
+      "options": [
+        "is",
+        "are"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "is",
+      "hint": "Nearest subject is singular 'captain'.",
+      "explanation": "'is' agrees with 'captain'."
+    },
+    {
+      "id": "sva_l34_q1",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Neither the battery nor the generator ___.",
+      "options": [
+        "works",
+        "work"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "works",
+      "hint": "Singular nouns with 'neither/nor' take singular.",
+      "explanation": "'works' is correct."
+    },
+    {
+      "id": "sva_l34_q2",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "The battery and the generator ___.",
+      "options": [
+        "work",
+        "works"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "work",
+      "hint": "Plural compound subject.",
+      "explanation": "'work' is correct."
+    },
+    {
+      "id": "sva_l34_q3",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Either the pilot or the droids ___ the lock.",
+      "options": [
+        "bypass",
+        "bypasses"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "bypass",
+      "hint": "Nearest subject is plural 'droids'.",
+      "explanation": "'bypass' matches 'droids'."
+    },
+    {
+      "id": "sva_l35_q1",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Either the core or the shell ___ unstable.",
+      "options": [
+        "is",
+        "are"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "is",
+      "hint": "'is' is correct for singular alternatives.",
+      "explanation": "'is' matches."
+    },
+    {
+      "id": "sva_l35_q2",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "The core and the shell ___ unstable.",
+      "options": [
+        "are",
+        "is"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "are",
+      "hint": "'are' is correct.",
+      "explanation": "'are' is correct."
+    },
+    {
+      "id": "sva_l35_q3",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Neither the coordinates nor the map ___ right.",
+      "options": [
+        "is",
+        "are"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "is",
+      "hint": "Nearest subject is singular 'map'.",
+      "explanation": "'is' is correct."
+    },
+    {
+      "id": "sva_l36_q1",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Neither the map nor the ledger ___ found.",
+      "options": [
+        "was",
+        "were"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "was",
+      "hint": "'was' is correct.",
+      "explanation": "'was' is singular."
+    },
+    {
+      "id": "sva_l36_q2",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "The map and the ledger ___ found.",
+      "options": [
+        "were",
+        "was"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "were",
+      "hint": "'were' is correct.",
+      "explanation": "'were' is correct."
+    },
+    {
+      "id": "sva_l36_q3",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Either the battery or the thrusters ___ fuel.",
+      "options": [
+        "need",
+        "needs"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "need",
+      "hint": "Nearest subject is plural 'thrusters'.",
+      "explanation": "'need' matches 'thrusters'."
+    },
+    {
+      "id": "sva_l37_q1",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Either the alarm or the backup ___.",
+      "options": [
+        "triggers",
+        "trigger"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "triggers",
+      "hint": "'triggers' is singular.",
+      "explanation": "'triggers' is correct."
+    },
+    {
+      "id": "sva_l37_q2",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "The alarm and the backup ___.",
+      "options": [
+        "trigger",
+        "triggers"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "trigger",
+      "hint": "Plural compound subject.",
+      "explanation": "'trigger' is correct."
+    },
+    {
+      "id": "sva_l37_q3",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Neither the hull nor the shields ___ repaired.",
+      "options": [
+        "are",
+        "is"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "are",
+      "hint": "Nearest subject is plural 'shields'.",
+      "explanation": "'are' matches."
+    },
+    {
+      "id": "sva_l38_q1",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Neither the pilot nor the sensor ___ ready.",
+      "options": [
+        "is",
+        "are"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "is",
+      "hint": "'is' is correct.",
+      "explanation": "'is' is correct."
+    },
+    {
+      "id": "sva_l38_q2",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "The pilot and the sensor ___ ready.",
+      "options": [
+        "are",
+        "is"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "are",
+      "hint": "'are' is correct.",
+      "explanation": "'are' is correct."
+    },
+    {
+      "id": "sva_l38_q3",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Either the portals or the wormhole ___ unstable.",
+      "options": [
+        "is",
+        "are"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "is",
+      "hint": "Nearest subject is singular 'wormhole'.",
+      "explanation": "'is' is correct."
+    },
+    {
+      "id": "sva_l39_q1",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Either the shield or the hull ___.",
+      "options": [
+        "fails",
+        "fail"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "fails",
+      "hint": "'fails' is singular.",
+      "explanation": "'fails' is correct."
+    },
+    {
+      "id": "sva_l39_q2",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "The shield and the hull ___.",
+      "options": [
+        "fail",
+        "fails"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "fail",
+      "hint": "Plural compound subject.",
+      "explanation": "'fail' is correct."
+    },
+    {
+      "id": "sva_l39_q3",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Neither the droids nor the pilot ___.",
+      "options": [
+        "knows",
+        "know"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "knows",
+      "hint": "Nearest subject is singular 'pilot'.",
+      "explanation": "'knows' is correct."
+    },
+    {
+      "id": "sva_l40_q1",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Neither the hatch nor the lock ___ open.",
+      "options": [
+        "is",
+        "are"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "is",
+      "hint": "'is' is correct.",
+      "explanation": "'is' is correct."
+    },
+    {
+      "id": "sva_l40_q2",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "The hatch and the lock ___ open.",
+      "options": [
+        "are",
+        "is"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "are",
+      "hint": "'are' is correct.",
+      "explanation": "'are' is correct."
+    },
+    {
+      "id": "sva_l40_q3",
+      "instruction": "SYNC THE AGREEMENT",
+      "difficulty": 1,
+      "subtype": "subjectVerbAgreement",
+      "interactionType": "Marriage Ring",
+      "question": "Either the stars or the planet ___ light.",
+      "options": [
+        "emits",
+        "emit"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "emits",
+      "hint": "Nearest subject is singular 'planet'.",
+      "explanation": "'emits' is correct."
+    }
+  ]
 }
-

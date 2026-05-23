@@ -32,7 +32,10 @@ class GrammarQuestModel extends GrammarQuest {
     super.passiveSentence,
     super.activeSentence,
     super.shuffledWords,
+    super.correctOrder,
     super.explanation,
+    super.incorrectPart,
+    super.correctedPart,
   });
 
   factory GrammarQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -75,7 +78,10 @@ class GrammarQuestModel extends GrammarQuest {
       passiveSentence: map['passiveSentence'],
       activeSentence: map['activeSentence'],
       shuffledWords: map['shuffledWords'] != null ? List<String>.from(map['shuffledWords']) : null,
+      correctOrder: map['correctOrder'] != null ? List<int>.from(map['correctOrder']) : null,
       explanation: map['explanation'],
+      incorrectPart: map['incorrectPart'],
+      correctedPart: map['correctedPart'],
     );
   }
 
@@ -107,7 +113,10 @@ class GrammarQuestModel extends GrammarQuest {
       'passiveSentence': passiveSentence,
       'activeSentence': activeSentence,
       'shuffledWords': shuffledWords,
+      'correctOrder': correctOrder,
       'explanation': explanation,
+      'incorrectPart': incorrectPart,
+      'correctedPart': correctedPart,
     };
   }
 }

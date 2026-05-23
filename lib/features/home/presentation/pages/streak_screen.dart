@@ -251,7 +251,11 @@ class _StreakScreenState extends State<StreakScreen> {
                 Icon(LucideIcons.sparkles, color: color, size: 14.r),
                 SizedBox(width: 8.w),
                 Text(
-                  "YOU'RE ON FIRE!",
+                  streak > 7
+                      ? "YOU'RE ON FIRE!"
+                      : (streak > 0
+                          ? "KEEP GOING!"
+                          : "START YOUR STREAK!"),
                   style: GoogleFonts.outfit(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w800,
@@ -317,6 +321,7 @@ class _StreakScreenState extends State<StreakScreen> {
   }
 
   Widget _buildModernCalendar(BuildContext context, UserEntity user) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final now = DateTime.now();
     // Activity Heatmap Logic: Show the last 7 days ending today
     final startOfHeatmap = now.subtract(const Duration(days: 6));
@@ -353,7 +358,9 @@ class _StreakScreenState extends State<StreakScreen> {
                   fontSize: 11.sp,
                   color: isToday
                       ? Colors.blueAccent
-                      : Colors.white.withValues(alpha: 0.3),
+                      : (isDark
+                          ? Colors.white.withValues(alpha: 0.3)
+                          : Colors.black.withValues(alpha: 0.35)),
                   letterSpacing: 1,
                 ),
               ),

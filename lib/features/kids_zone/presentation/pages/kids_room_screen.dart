@@ -389,7 +389,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       borderRadius: BorderRadius.circular(20.r),
       child: Row(
         children: [
-          Icon(Icons.directions_car_filled_rounded, color: const Color(0xFFEF4444), size: 16.sp),
+          Icon(Icons.star_rounded, color: const Color(0xFFF59E0B), size: 16.sp),
           SizedBox(width: 8.w),
           Text(
             "${user.kidsCoins}",
@@ -490,7 +490,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           if (isHidingCoin)
             Positioned(
               top: -10,
-              child: Icon(Icons.directions_car_filled_rounded, color: Colors.redAccent, size: 24.sp)
+              child: Icon(Icons.star_rounded, color: Colors.amber, size: 24.sp)
                   .animate(onPlay: (c) => c.repeat(reverse: true))
                   .scale(begin: const Offset(0.8, 0.8), end: const Offset(1.2, 1.2), duration: 1.seconds)
                   .shimmer(),
@@ -519,9 +519,9 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     Haptics.vibrate(HapticsType.success);
     
     context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(15));
-    _speak("WOW! You found a hidden treasure! 🚗💎");
+    _speak("WOW! You found a hidden treasure! ⭐💎");
     
-    _showModernNotification(context, "FOUND 15 KIDS COINS! 🚗✨");
+    _showModernNotification(context, "FOUND 15 KIDS COINS! ⭐✨");
   }
 
   Widget _buildMascotSection(UserEntity user) {
@@ -774,7 +774,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                 Text(item['name'], style: GoogleFonts.outfit(fontSize: 11.sp, fontWeight: FontWeight.bold)),
                  if (!isOwned) Row(mainAxisSize: MainAxisSize.min, children: [
                   Text("${item['price']} ", style: GoogleFonts.outfit(fontSize: 9.sp, fontWeight: FontWeight.w900, color: Colors.black54)),
-                  Icon(Icons.directions_car_filled_rounded, size: 9.sp, color: const Color(0xFFEF4444)),
+                  Icon(Icons.star_rounded, size: 9.sp, color: const Color(0xFFF59E0B)),
                 ]),
               ],
             ),
@@ -794,7 +794,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       Navigator.pop(context);
     } else {
       di.sl<SoundService>().playWrong();
-      _showModernNotification(context, "NOT ENOUGH COINS! 🚗", isError: true);
+      _showModernNotification(context, "NOT ENOUGH COINS! ⭐", isError: true);
     }
   }
 
@@ -842,7 +842,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         } else {
           di.sl<SoundService>().playWrong();
           Navigator.pop(context);
-          _showModernNotification(context, "NOT ENOUGH COINS! 🚗", isError: true);
+          _showModernNotification(context, "NOT ENOUGH COINS! ⭐", isError: true);
         }
       },
       child: Column(
@@ -851,7 +851,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           Text(f['name'], style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.bold)),
           if (f['price'] > 0) Row(mainAxisSize: MainAxisSize.min, children: [
             Text("${f['price']} ", style: GoogleFonts.outfit(fontSize: 9.sp, fontWeight: FontWeight.w900, color: Colors.black54)),
-            Icon(Icons.directions_car_filled_rounded, size: 9.sp, color: const Color(0xFFEF4444)),
+            Icon(Icons.star_rounded, size: 9.sp, color: const Color(0xFFF59E0B)),
           ]),
         ],
       ),

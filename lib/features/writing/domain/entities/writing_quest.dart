@@ -20,6 +20,8 @@ class WritingQuest extends GameQuest {
   final String? subject;
   final String? recipient;
   final String? essayTopic;
+  final List<String>? emojis;
+  final Map<String, List<String>>? keywords;
 
   const WritingQuest({
     required super.id,
@@ -58,6 +60,8 @@ class WritingQuest extends GameQuest {
     this.subject,
     this.recipient,
     this.essayTopic,
+    this.emojis,
+    this.keywords,
   });
 
   String? get incorrectSentence => passage;

@@ -1,0 +1,517 @@
+{
+  "gameType": "connectedSpeech",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "ACC_CONNECTEDSPEECH_L11_Q1",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "next door",
+      "textToSpeak": "next door",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ becomes /d/)"
+      ],
+      "correctAnswer": "Elision (/t/ disappears)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to the /t/ sound at the end of 'next' - in natural connected speech, is it fully pronounced or does it disappear? (Calibration 11-1)",
+      "explanation": "The phrase \"next door\" demonstrates \"Elision (/t/ disappears)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L11_Q2",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "ten cards",
+      "textToSpeak": "ten cards",
+      "options": [
+        "Elision (/n/ disappears)",
+        "Assimilation (/n/ changes to /ŋ/)"
+      ],
+      "correctAnswer": "Assimilation (/n/ changes to /ŋ/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the /n/ at the end of 'ten' - because it is followed by the velar consonant /k/, does it change to /ŋ/? (Calibration 11-2)",
+      "explanation": "The phrase \"ten cards\" demonstrates \"Assimilation (/n/ changes to /ŋ/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L11_Q3",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "must be",
+      "textToSpeak": "must be",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ becomes /p/)"
+      ],
+      "correctAnswer": "Elision (/t/ disappears)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to the /t/ at the end of 'must' followed by 'be' - does it completely vanish? (Calibration 11-3)",
+      "explanation": "The phrase \"must be\" demonstrates \"Elision (/t/ disappears)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L12_Q1",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "good boy",
+      "textToSpeak": "good boy",
+      "options": [
+        "Elision (/d/ disappears)",
+        "Assimilation (/d/ changes to /b/)"
+      ],
+      "correctAnswer": "Assimilation (/d/ changes to /b/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the /d/ sound in 'good' - does it transform into the bilabial /b/ sound before 'boy'? (Calibration 12-1)",
+      "explanation": "The phrase \"good boy\" demonstrates \"Assimilation (/d/ changes to /b/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L12_Q2",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "did you",
+      "textToSpeak": "did you",
+      "options": [
+        "Intrusion (extra /r/)",
+        "Coalescence (/d/ + /j/ becomes /dʒ/)"
+      ],
+      "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the merging of the final /d/ in 'did' and initial /j/ in 'you' - does it sound like 'didge-you'? (Calibration 12-2)",
+      "explanation": "The phrase \"did you\" demonstrates \"Coalescence (/d/ + /j/ becomes /dʒ/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L12_Q3",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "media event",
+      "textToSpeak": "media event",
+      "options": [
+        "Intrusion (gliding /r/)",
+        "Elision (/a/ disappears)"
+      ],
+      "correctAnswer": "Intrusion (gliding /r/)",
+      "correctAnswerIndex": 0,
+      "hint": "In non-rhotic accents, listen to the gap between 'media' and 'event' - is a subtle /r/ sound introduced? (Calibration 12-3)",
+      "explanation": "The phrase \"media event\" demonstrates \"Intrusion (gliding /r/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L13_Q1",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "law and order",
+      "textToSpeak": "law and order",
+      "options": [
+        "Intrusion (gliding /r/)",
+        "Assimilation (/d/ becomes /n/)"
+      ],
+      "correctAnswer": "Intrusion (gliding /r/)",
+      "correctAnswerIndex": 0,
+      "hint": "In non-rhotic accents, listen to the transition between 'law' and 'and' - is a subtle /r/ sound inserted? (Calibration 13-1)",
+      "explanation": "The phrase \"law and order\" demonstrates \"Intrusion (gliding /r/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L13_Q2",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "don't you",
+      "textToSpeak": "don't you",
+      "options": [
+        "Coalescence (/t/ + /j/ becomes /tʃ/)",
+        "Elision (/t/ disappears)"
+      ],
+      "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to the merging of final /t/ in 'don't' and initial /j/ in 'you' - does it sound like 'doan-chew'? (Calibration 13-2)",
+      "explanation": "The phrase \"don't you\" demonstrates \"Coalescence (/t/ + /j/ becomes /tʃ/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L13_Q3",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "white paper",
+      "textToSpeak": "white paper",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ changes to /p/)"
+      ],
+      "correctAnswer": "Assimilation (/t/ changes to /p/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the final /t/ in 'white' before 'paper' - does it assimilate to /p/ sounding like 'whipe paper'? (Calibration 13-3)",
+      "explanation": "The phrase \"white paper\" demonstrates \"Assimilation (/t/ changes to /p/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L14_Q1",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "last night",
+      "textToSpeak": "last night",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ becomes /n/)"
+      ],
+      "correctAnswer": "Elision (/t/ disappears)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to 'last night' in fast speech - does the /t/ sound completely drop out? (Calibration 14-1)",
+      "explanation": "The phrase \"last night\" demonstrates \"Elision (/t/ disappears)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L14_Q2",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "next door",
+      "textToSpeak": "next door",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ becomes /d/)"
+      ],
+      "correctAnswer": "Elision (/t/ disappears)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to the /t/ sound at the end of 'next' - in natural connected speech, is it fully pronounced or does it disappear? (Calibration 14-2)",
+      "explanation": "The phrase \"next door\" demonstrates \"Elision (/t/ disappears)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L14_Q3",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "ten cards",
+      "textToSpeak": "ten cards",
+      "options": [
+        "Elision (/n/ disappears)",
+        "Assimilation (/n/ changes to /ŋ/)"
+      ],
+      "correctAnswer": "Assimilation (/n/ changes to /ŋ/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the /n/ at the end of 'ten' - because it is followed by the velar consonant /k/, does it change to /ŋ/? (Calibration 14-3)",
+      "explanation": "The phrase \"ten cards\" demonstrates \"Assimilation (/n/ changes to /ŋ/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L15_Q1",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "must be",
+      "textToSpeak": "must be",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ becomes /p/)"
+      ],
+      "correctAnswer": "Elision (/t/ disappears)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to the /t/ at the end of 'must' followed by 'be' - does it completely vanish? (Calibration 15-1)",
+      "explanation": "The phrase \"must be\" demonstrates \"Elision (/t/ disappears)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L15_Q2",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "good boy",
+      "textToSpeak": "good boy",
+      "options": [
+        "Elision (/d/ disappears)",
+        "Assimilation (/d/ changes to /b/)"
+      ],
+      "correctAnswer": "Assimilation (/d/ changes to /b/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the /d/ sound in 'good' - does it transform into the bilabial /b/ sound before 'boy'? (Calibration 15-2)",
+      "explanation": "The phrase \"good boy\" demonstrates \"Assimilation (/d/ changes to /b/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L15_Q3",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "did you",
+      "textToSpeak": "did you",
+      "options": [
+        "Intrusion (extra /r/)",
+        "Coalescence (/d/ + /j/ becomes /dʒ/)"
+      ],
+      "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the merging of the final /d/ in 'did' and initial /j/ in 'you' - does it sound like 'didge-you'? (Calibration 15-3)",
+      "explanation": "The phrase \"did you\" demonstrates \"Coalescence (/d/ + /j/ becomes /dʒ/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L16_Q1",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "media event",
+      "textToSpeak": "media event",
+      "options": [
+        "Intrusion (gliding /r/)",
+        "Elision (/a/ disappears)"
+      ],
+      "correctAnswer": "Intrusion (gliding /r/)",
+      "correctAnswerIndex": 0,
+      "hint": "In non-rhotic accents, listen to the gap between 'media' and 'event' - is a subtle /r/ sound introduced? (Calibration 16-1)",
+      "explanation": "The phrase \"media event\" demonstrates \"Intrusion (gliding /r/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L16_Q2",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "law and order",
+      "textToSpeak": "law and order",
+      "options": [
+        "Intrusion (gliding /r/)",
+        "Assimilation (/d/ becomes /n/)"
+      ],
+      "correctAnswer": "Intrusion (gliding /r/)",
+      "correctAnswerIndex": 0,
+      "hint": "In non-rhotic accents, listen to the transition between 'law' and 'and' - is a subtle /r/ sound inserted? (Calibration 16-2)",
+      "explanation": "The phrase \"law and order\" demonstrates \"Intrusion (gliding /r/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L16_Q3",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "don't you",
+      "textToSpeak": "don't you",
+      "options": [
+        "Coalescence (/t/ + /j/ becomes /tʃ/)",
+        "Elision (/t/ disappears)"
+      ],
+      "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to the merging of final /t/ in 'don't' and initial /j/ in 'you' - does it sound like 'doan-chew'? (Calibration 16-3)",
+      "explanation": "The phrase \"don't you\" demonstrates \"Coalescence (/t/ + /j/ becomes /tʃ/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L17_Q1",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "white paper",
+      "textToSpeak": "white paper",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ changes to /p/)"
+      ],
+      "correctAnswer": "Assimilation (/t/ changes to /p/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the final /t/ in 'white' before 'paper' - does it assimilate to /p/ sounding like 'whipe paper'? (Calibration 17-1)",
+      "explanation": "The phrase \"white paper\" demonstrates \"Assimilation (/t/ changes to /p/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L17_Q2",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "last night",
+      "textToSpeak": "last night",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ becomes /n/)"
+      ],
+      "correctAnswer": "Elision (/t/ disappears)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to 'last night' in fast speech - does the /t/ sound completely drop out? (Calibration 17-2)",
+      "explanation": "The phrase \"last night\" demonstrates \"Elision (/t/ disappears)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L17_Q3",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "next door",
+      "textToSpeak": "next door",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ becomes /d/)"
+      ],
+      "correctAnswer": "Elision (/t/ disappears)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to the /t/ sound at the end of 'next' - in natural connected speech, is it fully pronounced or does it disappear? (Calibration 17-3)",
+      "explanation": "The phrase \"next door\" demonstrates \"Elision (/t/ disappears)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L18_Q1",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "ten cards",
+      "textToSpeak": "ten cards",
+      "options": [
+        "Elision (/n/ disappears)",
+        "Assimilation (/n/ changes to /ŋ/)"
+      ],
+      "correctAnswer": "Assimilation (/n/ changes to /ŋ/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the /n/ at the end of 'ten' - because it is followed by the velar consonant /k/, does it change to /ŋ/? (Calibration 18-1)",
+      "explanation": "The phrase \"ten cards\" demonstrates \"Assimilation (/n/ changes to /ŋ/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L18_Q2",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "must be",
+      "textToSpeak": "must be",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ becomes /p/)"
+      ],
+      "correctAnswer": "Elision (/t/ disappears)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to the /t/ at the end of 'must' followed by 'be' - does it completely vanish? (Calibration 18-2)",
+      "explanation": "The phrase \"must be\" demonstrates \"Elision (/t/ disappears)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L18_Q3",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "good boy",
+      "textToSpeak": "good boy",
+      "options": [
+        "Elision (/d/ disappears)",
+        "Assimilation (/d/ changes to /b/)"
+      ],
+      "correctAnswer": "Assimilation (/d/ changes to /b/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the /d/ sound in 'good' - does it transform into the bilabial /b/ sound before 'boy'? (Calibration 18-3)",
+      "explanation": "The phrase \"good boy\" demonstrates \"Assimilation (/d/ changes to /b/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L19_Q1",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "did you",
+      "textToSpeak": "did you",
+      "options": [
+        "Intrusion (extra /r/)",
+        "Coalescence (/d/ + /j/ becomes /dʒ/)"
+      ],
+      "correctAnswer": "Coalescence (/d/ + /j/ becomes /dʒ/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the merging of the final /d/ in 'did' and initial /j/ in 'you' - does it sound like 'didge-you'? (Calibration 19-1)",
+      "explanation": "The phrase \"did you\" demonstrates \"Coalescence (/d/ + /j/ becomes /dʒ/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L19_Q2",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "media event",
+      "textToSpeak": "media event",
+      "options": [
+        "Intrusion (gliding /r/)",
+        "Elision (/a/ disappears)"
+      ],
+      "correctAnswer": "Intrusion (gliding /r/)",
+      "correctAnswerIndex": 0,
+      "hint": "In non-rhotic accents, listen to the gap between 'media' and 'event' - is a subtle /r/ sound introduced? (Calibration 19-2)",
+      "explanation": "The phrase \"media event\" demonstrates \"Intrusion (gliding /r/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L19_Q3",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "law and order",
+      "textToSpeak": "law and order",
+      "options": [
+        "Intrusion (gliding /r/)",
+        "Assimilation (/d/ becomes /n/)"
+      ],
+      "correctAnswer": "Intrusion (gliding /r/)",
+      "correctAnswerIndex": 0,
+      "hint": "In non-rhotic accents, listen to the transition between 'law' and 'and' - is a subtle /r/ sound inserted? (Calibration 19-3)",
+      "explanation": "The phrase \"law and order\" demonstrates \"Intrusion (gliding /r/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L20_Q1",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "don't you",
+      "textToSpeak": "don't you",
+      "options": [
+        "Coalescence (/t/ + /j/ becomes /tʃ/)",
+        "Elision (/t/ disappears)"
+      ],
+      "correctAnswer": "Coalescence (/t/ + /j/ becomes /tʃ/)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to the merging of final /t/ in 'don't' and initial /j/ in 'you' - does it sound like 'doan-chew'? (Calibration 20-1)",
+      "explanation": "The phrase \"don't you\" demonstrates \"Coalescence (/t/ + /j/ becomes /tʃ/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L20_Q2",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "white paper",
+      "textToSpeak": "white paper",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ changes to /p/)"
+      ],
+      "correctAnswer": "Assimilation (/t/ changes to /p/)",
+      "correctAnswerIndex": 1,
+      "hint": "Listen to the final /t/ in 'white' before 'paper' - does it assimilate to /p/ sounding like 'whipe paper'? (Calibration 20-2)",
+      "explanation": "The phrase \"white paper\" demonstrates \"Assimilation (/t/ changes to /p/)\". "
+    },
+    {
+      "id": "ACC_CONNECTEDSPEECH_L20_Q3",
+      "instruction": "IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED IN THE PHRASE",
+      "difficulty": 1,
+      "subtype": "connectedSpeech",
+      "interactionType": "clarity",
+      "word": "last night",
+      "textToSpeak": "last night",
+      "options": [
+        "Elision (/t/ disappears)",
+        "Assimilation (/t/ becomes /n/)"
+      ],
+      "correctAnswer": "Elision (/t/ disappears)",
+      "correctAnswerIndex": 0,
+      "hint": "Listen to 'last night' in fast speech - does the /t/ sound completely drop out? (Calibration 20-3)",
+      "explanation": "The phrase \"last night\" demonstrates \"Elision (/t/ disappears)\". "
+    }
+  ]
+}

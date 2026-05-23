@@ -37,6 +37,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
   bool _showConfetti = false;
   int _lastProcessedIndex = -1;
   int? _lastLives;
+  bool _isDragging = false;
 
   final List<String> _tenses = ["Past", "Present", "Future"];
 
@@ -91,6 +92,7 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
               _isCorrect = null;
               _isFinalFailure = state.isFinalFailure;
               _sliderValue = 0.5;
+              _isDragging = false;
             });
           }
           _lastLives = state.livesRemaining;
@@ -216,101 +218,143 @@ class _TenseMasteryScreenState extends State<TenseMasteryScreen> {
   }
 
   Widget _buildTimelineSlider(Color primaryColor, bool isDark) {
+    final sphereWidth = 60.r;
+
     return Container(
       height: 120.h,
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 30.w),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // The Track
-          Container(
-            height: 6.h,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
-              borderRadius: BorderRadius.circular(3.r),
-            ),
-          ),
-          
-          // The Timeline Nodes
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: _tenses.map((tense) {
-              final isCurrent = _currentTense == tense;
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    width: 14.r, height: 14.r,
-                    decoration: BoxDecoration(
-                      color: isCurrent ? primaryColor : (isDark ? Colors.white10 : Colors.black12),
-                      shape: BoxShape.circle,
-                      boxShadow: isCurrent 
-                          ? [BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 15, spreadRadius: 4)] 
-                          : [],
-                    ),
-                  ),
-                  SizedBox(height: 28.h),
-                  Text(
-                    tense.toUpperCase(), 
-                    style: GoogleFonts.outfit(
-                      fontSize: 12.sp, 
-                      fontWeight: isCurrent ? FontWeight.w900 : FontWeight.w600, 
-                      color: isCurrent ? primaryColor : (isDark ? Colors.white24 : Colors.black26), 
-                      letterSpacing: 1.5
-                    )
-                  ),
-                ],
-              );
-            }).toList(),
-          ),
-          
-          // The Draggable Chrono-Sphere
-          Positioned(
-            left: _sliderValue * (MediaQuery.of(context).size.width - 100.w),
-            child: GestureDetector(
-              onHorizontalDragUpdate: (details) {
-                if (_isAnswered) return;
-                setState(() {
-                  _sliderValue = (_sliderValue + details.delta.dx / (MediaQuery.of(context).size.width - 100.w)).clamp(0.0, 1.0);
-                  // Dynamic Haptics
-                  if ((_sliderValue - 0.0).abs() < 0.02 || (_sliderValue - 0.5).abs() < 0.02 || (_sliderValue - 1.0).abs() < 0.02) {
-                    _hapticService.selection();
-                  }
-                });
-              },
-              onHorizontalDragEnd: (details) {
-                if (_isAnswered) return;
-                setState(() {
-                  if (_sliderValue < 0.25) {
-                    _sliderValue = 0.0;
-                  } else if (_sliderValue > 0.75) {
-                    _sliderValue = 1.0;
-                  } else {
-                    _sliderValue = 0.5;
-                  }
-                  _hapticService.heavy();
-                });
-              },
-              child: Container(
-                width: 60.r, height: 60.r,
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final trackWidth = constraints.maxWidth;
+          final maxLeft = trackWidth - sphereWidth;
+          final leftPos = _sliderValue * maxLeft;
+
+          return Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
+            children: [
+              // The Track
+              Container(
+                height: 6.h,
+                width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 25, spreadRadius: 5)
-                  ],
-                  border: Border.all(color: primaryColor, width: 6.r),
+                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
+                  borderRadius: BorderRadius.circular(3.r),
                 ),
-                child: Center(
-                  child: Icon(Icons.timer_rounded, color: primaryColor, size: 28.r),
+              ),
+              
+              // The Timeline Nodes
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: _tenses.map((tense) {
+                  final isCurrent = _currentTense == tense;
+                  return GestureDetector(
+                    behavior: HitTestBehavior.opaque,
+                    onTap: () {
+                      if (_isAnswered) return;
+                      _hapticService.selection();
+                      setState(() {
+                        _isDragging = false;
+                        if (tense == "Past") {
+                          _sliderValue = 0.0;
+                        } else if (tense == "Future") {
+                          _sliderValue = 1.0;
+                        } else {
+                          _sliderValue = 0.5;
+                        }
+                      });
+                    },
+                    child: SizedBox(
+                      width: sphereWidth,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 14.r, height: 14.r,
+                            decoration: BoxDecoration(
+                              color: isCurrent ? primaryColor : (isDark ? Colors.white10 : Colors.black12),
+                              shape: BoxShape.circle,
+                              boxShadow: isCurrent 
+                                  ? [BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 15, spreadRadius: 4)] 
+                                  : [],
+                            ),
+                          ),
+                          SizedBox(height: 28.h),
+                          Text(
+                            tense.toUpperCase(), 
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.outfit(
+                              fontSize: 12.sp, 
+                              fontWeight: isCurrent ? FontWeight.w900 : FontWeight.w600, 
+                              color: isCurrent ? primaryColor : (isDark ? Colors.white24 : Colors.black26), 
+                              letterSpacing: 1.5
+                            )
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+              
+              // The Draggable Chrono-Sphere with spring animations
+              AnimatedPositioned(
+                duration: _isDragging ? Duration.zero : const Duration(milliseconds: 300),
+                curve: Curves.easeOutBack,
+                left: leftPos,
+                child: GestureDetector(
+                  onHorizontalDragStart: (_) {
+                    if (_isAnswered) return;
+                    setState(() {
+                      _isDragging = true;
+                    });
+                  },
+                  onHorizontalDragUpdate: (details) {
+                    if (_isAnswered) return;
+                    setState(() {
+                      _isDragging = true;
+                      _sliderValue = (_sliderValue + details.delta.dx / maxLeft).clamp(0.0, 1.0);
+                      // Dynamic Haptics
+                      if ((_sliderValue - 0.0).abs() < 0.02 || (_sliderValue - 0.5).abs() < 0.02 || (_sliderValue - 1.0).abs() < 0.02) {
+                        _hapticService.selection();
+                      }
+                    });
+                  },
+                  onHorizontalDragEnd: (details) {
+                    if (_isAnswered) return;
+                    setState(() {
+                      _isDragging = false;
+                      if (_sliderValue < 0.25) {
+                        _sliderValue = 0.0;
+                      } else if (_sliderValue > 0.75) {
+                        _sliderValue = 1.0;
+                      } else {
+                        _sliderValue = 0.5;
+                      }
+                      _hapticService.heavy();
+                    });
+                  },
+                  child: Container(
+                    width: sphereWidth, height: sphereWidth,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(color: primaryColor.withValues(alpha: 0.4), blurRadius: 25, spreadRadius: 5)
+                      ],
+                      border: Border.all(color: primaryColor, width: 6.r),
+                    ),
+                    child: Center(
+                      child: Icon(Icons.timer_rounded, color: primaryColor, size: 28.r),
+                    ),
+                  ).animate(onPlay: (c) => c.repeat(reverse: true))
+                   .shimmer(duration: 1500.ms, color: primaryColor.withValues(alpha: 0.2)),
                 ),
-              ).animate(onPlay: (c) => c.repeat(reverse: true))
-               .shimmer(duration: 1500.ms, color: primaryColor.withValues(alpha: 0.2)),
-            ),
-          ),
-        ],
+              ),
+            ],
+          );
+        },
       ),
     );
   }

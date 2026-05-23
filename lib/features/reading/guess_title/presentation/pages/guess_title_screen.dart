@@ -11,6 +11,7 @@ import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
 class GuessTitleScreen extends StatefulWidget {
   final int level;
@@ -29,8 +30,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
-  Offset _dragOffset = Offset.zero;
-  int? _draggingIndex;
+  String? _selectedTitle;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -43,55 +43,24 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
     context.read<ReadingBloc>().add(FetchReadingQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onLabelDrag(int index, Offset delta) {
-    if (_isAnswered) {
-      return;
-    }
-    setState(() {
-      _draggingIndex = index;
-      _dragOffset += delta;
-      _hapticService.selection();
-    });
-  }
-
-  void _onLabelEnd(int index, String selected, String correct) {
-    if (_isAnswered) {
-      return;
-    }
-    
-    // Check if snapped into pocket zone (middle-bottom of screen)
-    if (_dragOffset.dy > 150.h && _dragOffset.dx.abs() < 100.w) {
-      _submitAnswer(index, selected, correct);
-    } else {
-      setState(() {
-        _dragOffset = Offset.zero;
-        _draggingIndex = null;
-      });
-    }
-  }
-
-  void _submitAnswer(int index, String selected, String correct) {
+  void _submitAnswer(String selected, String correct) {
+    if (_isAnswered) return;
     bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
+
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = isCorrect;
+      _selectedTitle = selected;
+    });
 
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
       context.read<ReadingBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { _isAnswered = true; _isCorrect = false; });
       context.read<ReadingBloc>().add(SubmitAnswer(false));
-      // Reset after wrong
-      Future.delayed(1.seconds, () {
-        if (mounted) {
-          setState(() {
-            _dragOffset = Offset.zero;
-            _draggingIndex = null;
-          });
-        }
-      });
     }
   }
 
@@ -109,8 +78,7 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _dragOffset = Offset.zero;
-              _draggingIndex = null;
+              _selectedTitle = null;
             });
           }
           _lastLives = state.livesRemaining;
@@ -123,23 +91,33 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
         
         return ReadingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 24.h),
-              _buildCargoCrate(quest.passage ?? "", theme.primaryColor, isDark),
-              const Spacer(),
-              _buildLabelRack(quest.options ?? [], quest.correctAnswer ?? "", theme.primaryColor),
-              SizedBox(height: 40.h),
-            ],
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 24.h),
+                  _buildCargoCrate(quest.passage ?? "", quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 32.h),
+                  _buildLabelRack(quest.options ?? [], quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                  if (_isAnswered) ...[
+                    SizedBox(height: 30.h),
+                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                  ],
+                  SizedBox(height: 60.h),
+                ],
+              ),
+            ),
           ),
         );
       },
@@ -161,88 +139,173 @@ class _GuessTitleScreenState extends State<GuessTitleScreen> {
     );
   }
 
-  Widget _buildCargoCrate(String passage, Color color, bool isDark) {
+  Widget _buildCargoCrate(String passage, String correct, Color color, bool isDark) {
     return Container(
       padding: EdgeInsets.all(24.r),
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(20.r),
+        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+        borderRadius: BorderRadius.circular(24.r),
         border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
       ),
       child: Column(
         children: [
-          Text(passage, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 16.sp, height: 1.5, color: isDark ? Colors.white70 : Colors.black87)),
+          Text(
+            passage, 
+            style: GoogleFonts.fredoka(
+              fontSize: 16.sp, 
+              height: 1.5, 
+              color: isDark ? Colors.white70 : Colors.black87
+            )
+          ),
           SizedBox(height: 32.h),
-          // The Pocket
-          Container(
-            height: 60.h, width: 240.w,
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(10.r),
-              border: Border.all(color: color.withValues(alpha: 0.5), width: 2, style: BorderStyle.none),
-            ),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                if (_isAnswered)
-                  Text( (context.read<ReadingBloc>().state as ReadingLoaded).currentQuest.correctAnswer?.toUpperCase() ?? "", style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: color))
-                else
-                  Text("INSERT LABEL HERE", style: GoogleFonts.shareTechMono(color: color.withValues(alpha: 0.4), fontSize: 12.sp)),
-                
-                // Dash border
-                CustomPaint(
-                  size: Size(240.w, 60.h),
-                  painter: DashPainter(color: color.withValues(alpha: 0.5)),
+          DragTarget<String>(
+            onWillAcceptWithDetails: (details) => !_isAnswered,
+            onAcceptWithDetails: (details) {
+              _submitAnswer(details.data, correct);
+            },
+            builder: (context, candidateData, rejectedData) {
+              final isHovered = candidateData.isNotEmpty;
+              final Color borderClr = _isAnswered 
+                  ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent) 
+                  : (isHovered ? color : color.withValues(alpha: 0.4));
+              
+              return Container(
+                height: 70.h, width: double.infinity,
+                decoration: BoxDecoration(
+                  color: borderClr.withValues(alpha: isHovered ? 0.15 : 0.05),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(color: borderClr, width: 2, style: BorderStyle.solid),
                 ),
-              ],
-            ),
+                child: Center(
+                  child: AnimatedSwitcher(
+                    duration: 300.milliseconds,
+                    child: _selectedTitle != null
+                        ? Text(
+                            _selectedTitle!.toUpperCase(), 
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.outfit(
+                              fontSize: 13.sp, 
+                              fontWeight: FontWeight.w900, 
+                              color: _isCorrect == true ? Colors.greenAccent : Colors.redAccent
+                            )
+                          )
+                        : Text(
+                            "DRAG & DROP TITLE HERE", 
+                            style: GoogleFonts.shareTechMono(
+                              color: color.withValues(alpha: isHovered ? 0.8 : 0.4), 
+                              fontSize: 13.sp,
+                              letterSpacing: 1.5
+                            )
+                          ),
+                  ),
+                ),
+              );
+            },
           ),
         ],
       ),
     );
   }
 
-  Widget _buildLabelRack(List<String> labels, String correct, Color color) {
+  Widget _buildLabelRack(List<String> labels, String correct, Color color, bool isDark) {
     return Wrap(
       spacing: 12.w, runSpacing: 12.h,
       alignment: WrapAlignment.center,
       children: List.generate(labels.length, (index) {
-        bool isDragging = _draggingIndex == index;
-        return Transform.translate(
-          offset: isDragging ? _dragOffset : Offset.zero,
-          child: GestureDetector(
-            onPanUpdate: (details) => _onLabelDrag(index, details.delta),
-            onPanEnd: (details) => _onLabelEnd(index, labels[index], correct),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(4.r),
-                boxShadow: [BoxShadow(color: Colors.black26, blurRadius: 5, offset: const Offset(2, 2))],
-                border: Border.all(color: Colors.grey.shade300),
-              ),
-              child: Text(labels[index].toUpperCase(), style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, color: Colors.black87)),
-            ),
+        final label = labels[index];
+        final isSelected = _selectedTitle == label;
+        
+        if (_isAnswered && !isSelected) {
+          return Opacity(
+            opacity: 0.2,
+            child: _buildLabelCard(label, color, isDark, enabled: false),
+          );
+        }
+        
+        return Draggable<String>(
+          data: label,
+          maxSimultaneousDrags: _isAnswered ? 0 : 1,
+          feedback: Material(
+            color: Colors.transparent,
+            child: _buildLabelCard(label, color, isDark, isFeedback: true),
           ),
+          childWhenDragging: Opacity(
+            opacity: 0.4,
+            child: _buildLabelCard(label, color, isDark),
+          ),
+          child: _buildLabelCard(label, color, isDark),
         );
       }),
     );
   }
-}
 
-class DashPainter extends CustomPainter {
-  final Color color;
-  DashPainter({required this.color});
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color..strokeWidth = 2..style = PaintingStyle.stroke;
-    double dashWidth = 5, dashSpace = 3, startX = 0;
-    while (startX < size.width) { canvas.drawLine(Offset(startX, 0), Offset(startX + dashWidth, 0), paint); startX += dashWidth + dashSpace; }
-    startX = 0; while (startX < size.width) { canvas.drawLine(Offset(startX, size.height), Offset(startX + dashWidth, size.height), paint); startX += dashWidth + dashSpace; }
-    double startY = 0; while (startY < size.height) { canvas.drawLine(Offset(0, startY), Offset(0, startY + dashWidth), paint); startY += dashWidth + dashSpace; }
-    startY = 0; while (startY < size.height) { canvas.drawLine(Offset(size.width, startY), Offset(size.width, startY + dashWidth), paint); startY += dashWidth + dashSpace; }
+  Widget _buildLabelCard(String label, Color color, bool isDark, {bool isFeedback = false, bool enabled = true}) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+      decoration: BoxDecoration(
+        color: isDark ? Colors.grey.shade900 : Colors.white,
+        borderRadius: BorderRadius.circular(12.r),
+        boxShadow: [
+          BoxShadow(
+            color: isDark ? Colors.black45 : Colors.black12, 
+            blurRadius: isFeedback ? 15 : 6, 
+            offset: Offset(0, isFeedback ? 8 : 2)
+          )
+        ],
+        border: Border.all(
+          color: isFeedback ? color : (isDark ? Colors.white10 : Colors.grey.shade300),
+          width: 2
+        ),
+      ),
+      child: Text(
+        label.toUpperCase(), 
+        textAlign: TextAlign.center,
+        style: GoogleFonts.outfit(
+          fontSize: 12.sp, 
+          fontWeight: FontWeight.w900, 
+          color: isDark ? Colors.white70 : Colors.black87
+        )
+      ),
+    );
   }
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
-}
 
+  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
+  }
+}

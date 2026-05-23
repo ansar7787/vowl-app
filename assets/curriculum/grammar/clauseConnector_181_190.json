@@ -1,548 +1,577 @@
 {
-    "gameType":  "clauseConnector",
-    "batchIndex":  19,
-    "levels":  "181-190",
-    "quests":  [
-                   {
-                       "id":  "cc_l181_q1",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The mission failed ____ the pilot was distracted",
-                       "options":  [
-                                       "so",
-                                       "although",
-                                       "because",
-                                       "but"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "because",
-                       "hint":  "The relationship between the clauses is reason.",
-                       "explanation":  "We use 'because' to show a reason relationship."
-                   },
-                   {
-                       "id":  "cc_l181_q2",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The portal opened ____ the code was entered",
-                       "options":  [
-                                       "because",
-                                       "although",
-                                       "but",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "because",
-                       "hint":  "The relationship between the clauses is reason.",
-                       "explanation":  "We use 'because' to show a reason relationship."
-                   },
-                   {
-                       "id":  "cc_l181_q3",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The hero survived ____ the odds were against him",
-                       "options":  [
-                                       "so",
-                                       "and",
-                                       "because",
-                                       "although"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "although",
-                       "hint":  "The relationship between the clauses is contrast.",
-                       "explanation":  "We use 'although' to show a contrast relationship."
-                   },
-                   {
-                       "id":  "cc_l182_q1",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The signal was weak ____ it was clear enough to read",
-                       "options":  [
-                                       "so",
-                                       "because",
-                                       "but",
-                                       "and"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "but",
-                       "hint":  "The relationship between the clauses is contrast.",
-                       "explanation":  "We use 'but' to show a contrast relationship."
-                   },
-                   {
-                       "id":  "cc_l182_q2",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The data was corrupted ____ we had to restart the scan",
-                       "options":  [
-                                       "but",
-                                       "because",
-                                       "so",
-                                       "although"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "so",
-                       "hint":  "The relationship between the clauses is result.",
-                       "explanation":  "We use 'so' to show a result relationship."
-                   },
-                   {
-                       "id":  "cc_l182_q3",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The power failed ____ the backup generator kicked in",
-                       "options":  [
-                                       "because",
-                                       "but",
-                                       "although",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "so",
-                       "hint":  "The relationship between the clauses is result.",
-                       "explanation":  "We use 'so' to show a result relationship."
-                   },
-                   {
-                       "id":  "cc_l183_q1",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "He analyzed the sample ____ he found a strange anomaly",
-                       "options":  [
-                                       "because",
-                                       "although",
-                                       "but",
-                                       "and"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "and",
-                       "hint":  "The relationship between the clauses is addition.",
-                       "explanation":  "We use 'and' to show a addition relationship."
-                   },
-                   {
-                       "id":  "cc_l183_q2",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The system is online ____ it is running at 100%",
-                       "options":  [
-                                       "and",
-                                       "but",
-                                       "although",
-                                       "because"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "and",
-                       "hint":  "The relationship between the clauses is addition.",
-                       "explanation":  "We use 'and' to show a addition relationship."
-                   },
-                   {
-                       "id":  "cc_l183_q3",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The alarm will sound ____ the perimeter is breached",
-                       "options":  [
-                                       "if",
-                                       "because",
-                                       "although",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "if",
-                       "hint":  "The relationship between the clauses is condition.",
-                       "explanation":  "We use 'if' to show a condition relationship."
-                   },
-                   {
-                       "id":  "cc_l184_q1",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The engine will overheat ____ you don\u0027t reduce the speed",
-                       "options":  [
-                                       "so",
-                                       "although",
-                                       "because",
-                                       "if"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "if",
-                       "hint":  "The relationship between the clauses is condition.",
-                       "explanation":  "We use 'if' to show a condition relationship."
-                   },
-                   {
-                       "id":  "cc_l184_q2",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The lights flickered ____ the earthquake began",
-                       "options":  [
-                                       "when",
-                                       "but",
-                                       "so",
-                                       "because"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "when",
-                       "hint":  "The relationship between the clauses is time.",
-                       "explanation":  "We use 'when' to show a time relationship."
-                   },
-                   {
-                       "id":  "cc_l184_q3",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The sensors detected movement ____ we reached the inner core",
-                       "options":  [
-                                       "while",
-                                       "because",
-                                       "although",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "while",
-                       "hint":  "The relationship between the clauses is time.",
-                       "explanation":  "We use 'while' to show a time relationship."
-                   },
-                   {
-                       "id":  "cc_l185_q1",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The mission failed ____ the pilot was distracted",
-                       "options":  [
-                                       "because",
-                                       "although",
-                                       "but",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "because",
-                       "hint":  "The relationship between the clauses is reason.",
-                       "explanation":  "We use 'because' to show a reason relationship."
-                   },
-                   {
-                       "id":  "cc_l185_q2",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The portal opened ____ the code was entered",
-                       "options":  [
-                                       "although",
-                                       "but",
-                                       "because",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "because",
-                       "hint":  "The relationship between the clauses is reason.",
-                       "explanation":  "We use 'because' to show a reason relationship."
-                   },
-                   {
-                       "id":  "cc_l185_q3",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The hero survived ____ the odds were against him",
-                       "options":  [
-                                       "although",
-                                       "because",
-                                       "and",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "although",
-                       "hint":  "The relationship between the clauses is contrast.",
-                       "explanation":  "We use 'although' to show a contrast relationship."
-                   },
-                   {
-                       "id":  "cc_l186_q1",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The signal was weak ____ it was clear enough to read",
-                       "options":  [
-                                       "but",
-                                       "because",
-                                       "and",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "but",
-                       "hint":  "The relationship between the clauses is contrast.",
-                       "explanation":  "We use 'but' to show a contrast relationship."
-                   },
-                   {
-                       "id":  "cc_l186_q2",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The data was corrupted ____ we had to restart the scan",
-                       "options":  [
-                                       "but",
-                                       "so",
-                                       "although",
-                                       "because"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "so",
-                       "hint":  "The relationship between the clauses is result.",
-                       "explanation":  "We use 'so' to show a result relationship."
-                   },
-                   {
-                       "id":  "cc_l186_q3",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The power failed ____ the backup generator kicked in",
-                       "options":  [
-                                       "although",
-                                       "but",
-                                       "because",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "so",
-                       "hint":  "The relationship between the clauses is result.",
-                       "explanation":  "We use 'so' to show a result relationship."
-                   },
-                   {
-                       "id":  "cc_l187_q1",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "He analyzed the sample ____ he found a strange anomaly",
-                       "options":  [
-                                       "but",
-                                       "and",
-                                       "although",
-                                       "because"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "and",
-                       "hint":  "The relationship between the clauses is addition.",
-                       "explanation":  "We use 'and' to show a addition relationship."
-                   },
-                   {
-                       "id":  "cc_l187_q2",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The system is online ____ it is running at 100%",
-                       "options":  [
-                                       "and",
-                                       "but",
-                                       "although",
-                                       "because"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "and",
-                       "hint":  "The relationship between the clauses is addition.",
-                       "explanation":  "We use 'and' to show a addition relationship."
-                   },
-                   {
-                       "id":  "cc_l187_q3",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The alarm will sound ____ the perimeter is breached",
-                       "options":  [
-                                       "although",
-                                       "because",
-                                       "so",
-                                       "if"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "if",
-                       "hint":  "The relationship between the clauses is condition.",
-                       "explanation":  "We use 'if' to show a condition relationship."
-                   },
-                   {
-                       "id":  "cc_l188_q1",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The engine will overheat ____ you don\u0027t reduce the speed",
-                       "options":  [
-                                       "if",
-                                       "because",
-                                       "so",
-                                       "although"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "if",
-                       "hint":  "The relationship between the clauses is condition.",
-                       "explanation":  "We use 'if' to show a condition relationship."
-                   },
-                   {
-                       "id":  "cc_l188_q2",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The lights flickered ____ the earthquake began",
-                       "options":  [
-                                       "when",
-                                       "because",
-                                       "but",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "when",
-                       "hint":  "The relationship between the clauses is time.",
-                       "explanation":  "We use 'when' to show a time relationship."
-                   },
-                   {
-                       "id":  "cc_l188_q3",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The sensors detected movement ____ we reached the inner core",
-                       "options":  [
-                                       "while",
-                                       "because",
-                                       "although",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "while",
-                       "hint":  "The relationship between the clauses is time.",
-                       "explanation":  "We use 'while' to show a time relationship."
-                   },
-                   {
-                       "id":  "cc_l189_q1",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The mission failed ____ the pilot was distracted",
-                       "options":  [
-                                       "because",
-                                       "although",
-                                       "so",
-                                       "but"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "because",
-                       "hint":  "The relationship between the clauses is reason.",
-                       "explanation":  "We use 'because' to show a reason relationship."
-                   },
-                   {
-                       "id":  "cc_l189_q2",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The portal opened ____ the code was entered",
-                       "options":  [
-                                       "although",
-                                       "so",
-                                       "because",
-                                       "but"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "because",
-                       "hint":  "The relationship between the clauses is reason.",
-                       "explanation":  "We use 'because' to show a reason relationship."
-                   },
-                   {
-                       "id":  "cc_l189_q3",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The hero survived ____ the odds were against him",
-                       "options":  [
-                                       "because",
-                                       "although",
-                                       "and",
-                                       "so"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "although",
-                       "hint":  "The relationship between the clauses is contrast.",
-                       "explanation":  "We use 'although' to show a contrast relationship."
-                   },
-                   {
-                       "id":  "cc_l190_q1",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The signal was weak ____ it was clear enough to read",
-                       "options":  [
-                                       "so",
-                                       "but",
-                                       "because",
-                                       "and"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "but",
-                       "hint":  "The relationship between the clauses is contrast.",
-                       "explanation":  "We use 'but' to show a contrast relationship."
-                   },
-                   {
-                       "id":  "cc_l190_q2",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The data was corrupted ____ we had to restart the scan",
-                       "options":  [
-                                       "so",
-                                       "because",
-                                       "although",
-                                       "but"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "so",
-                       "hint":  "The relationship between the clauses is result.",
-                       "explanation":  "We use 'so' to show a result relationship."
-                   },
-                   {
-                       "id":  "cc_l190_q3",
-                       "instruction":  "SNAP THE COUPLER",
-                       "difficulty":  5,
-                       "subtype":  "clauseConnector",
-                       "interactionType":  "Industrial Coupler",
-                       "question":  "The power failed ____ the backup generator kicked in",
-                       "options":  [
-                                       "so",
-                                       "but",
-                                       "although",
-                                       "because"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "so",
-                       "hint":  "The relationship between the clauses is result.",
-                       "explanation":  "We use 'so' to show a result relationship."
-                   }
-               ]
+  "gameType": "clauseConnector",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "id": "cc_l181_q1",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The stars are bright ____ the night is clear in sector 17.",
+      "sentence": "The stars are bright ____ the night is clear in sector 17.",
+      "options": [
+        "and",
+        "but",
+        "or",
+        "so"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "and",
+      "hint": "Join two related positive thoughts. (Sector 17 calibration)",
+      "explanation": "'And' connects related independent clauses. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l181_q2",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The colony needs food ____ the transport is delayed in sector 17.",
+      "sentence": "The colony needs food ____ the transport is delayed in sector 17.",
+      "options": [
+        "but",
+        "and",
+        "so",
+        "or"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "but",
+      "hint": "Contrast demand with lack of supply. (Sector 17 calibration)",
+      "explanation": "'But' shows contrast. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l181_q3",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The scanner detected iron ____ it also found copper in sector 17.",
+      "sentence": "The scanner detected iron ____ it also found copper in sector 17.",
+      "options": [
+        "and",
+        "but",
+        "so",
+        "nor"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "and",
+      "hint": "Add a similar metal type. (Sector 17 calibration)",
+      "explanation": "'And' is additive. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l182_q1",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "We wanted to launch ____ the fuel was low in sector 17.",
+      "sentence": "We wanted to launch ____ the fuel was low in sector 17.",
+      "options": [
+        "but",
+        "and",
+        "so",
+        "or"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "but",
+      "hint": "Show a contrast or obstacle. (Sector 17 calibration)",
+      "explanation": "'But' shows contrast between two clauses. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l182_q2",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The main grid went dark ____ we flipped the auxiliary switch in sector 17.",
+      "sentence": "The main grid went dark ____ we flipped the auxiliary switch in sector 17.",
+      "options": [
+        "so",
+        "but",
+        "yet",
+        "nor"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "so",
+      "hint": "Cause and immediate action. (Sector 17 calibration)",
+      "explanation": "'So' shows cause-effect relationship. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l182_q3",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "We can orbit the moon ____ we can land on the plain in sector 17.",
+      "sentence": "We can orbit the moon ____ we can land on the plain in sector 17.",
+      "options": [
+        "or",
+        "but",
+        "yet",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "or",
+      "hint": "Two choices. (Sector 17 calibration)",
+      "explanation": "'Or' expresses alternative choice. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l183_q1",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "You can adjust the valves ____ you can let the core vent in sector 17.",
+      "sentence": "You can adjust the valves ____ you can let the core vent in sector 17.",
+      "options": [
+        "or",
+        "but",
+        "and",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "or",
+      "hint": "Present two alternative actions. (Sector 17 calibration)",
+      "explanation": "'Or' presents choices or alternatives. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l183_q2",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "They must secure the dome ____ the oxygen will escape in sector 17.",
+      "sentence": "They must secure the dome ____ the oxygen will escape in sector 17.",
+      "options": [
+        "or",
+        "but",
+        "so",
+        "yet"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "or",
+      "hint": "Express alternative danger. (Sector 17 calibration)",
+      "explanation": "'Or' shows alternative consequence. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l183_q3",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The crew worked hard ____ they completed the bridge in sector 17.",
+      "sentence": "The crew worked hard ____ they completed the bridge in sector 17.",
+      "options": [
+        "so",
+        "but",
+        "nor",
+        "yet"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "so",
+      "hint": "Result of working hard. (Sector 17 calibration)",
+      "explanation": "'So' shows result. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l184_q1",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The reactor overheated ____ the alarm sounded in sector 17.",
+      "sentence": "The reactor overheated ____ the alarm sounded in sector 17.",
+      "options": [
+        "so",
+        "but",
+        "yet",
+        "nor"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "so",
+      "hint": "Show a cause-and-effect relationship. (Sector 17 calibration)",
+      "explanation": "'So' connects cause to effect. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l184_q2",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The explorer found ruins ____ he took several scans in sector 17.",
+      "sentence": "The explorer found ruins ____ he took several scans in sector 17.",
+      "options": [
+        "and",
+        "but",
+        "nor",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "and",
+      "hint": "Add a natural subsequent action. (Sector 17 calibration)",
+      "explanation": "'And' adds subsequent details. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l184_q3",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The target was far ____ the sniper hit it in sector 17.",
+      "sentence": "The target was far ____ the sniper hit it in sector 17.",
+      "options": [
+        "yet",
+        "so",
+        "or",
+        "nor"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "yet",
+      "hint": "Concession. (Sector 17 calibration)",
+      "explanation": "'Yet' shows contrast. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l185_q1",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "He checked the data thrice ____ he still missed the error in sector 17.",
+      "sentence": "He checked the data thrice ____ he still missed the error in sector 17.",
+      "options": [
+        "yet",
+        "so",
+        "or",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "yet",
+      "hint": "Express an unexpected contrast. (Sector 17 calibration)",
+      "explanation": "'Yet' shows concession or unexpected contrast. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l185_q2",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "We didn't see the asteroid ____ did we hear the impact in sector 17.",
+      "sentence": "We didn't see the asteroid ____ did we hear the impact in sector 17.",
+      "options": [
+        "nor",
+        "yet",
+        "so",
+        "but"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "nor",
+      "hint": "Negative connection requiring subject-auxiliary inversion. (Sector 17 calibration)",
+      "explanation": "'Nor' is used for negative addition with inversion. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l185_q3",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "He was not hungry ____ was he thirsty in sector 17.",
+      "sentence": "He was not hungry ____ was he thirsty in sector 17.",
+      "options": [
+        "nor",
+        "but",
+        "yet",
+        "so"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "nor",
+      "hint": "Add negative condition. (Sector 17 calibration)",
+      "explanation": "'Nor' requires inversion. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l186_q1",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The sensors were offline ____ the shield was down in sector 17.",
+      "sentence": "The sensors were offline ____ the shield was down in sector 17.",
+      "options": [
+        "and",
+        "but",
+        "or",
+        "nor"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "and",
+      "hint": "Add similar negative or neutral facts. (Sector 17 calibration)",
+      "explanation": "'And' adds similar information. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l186_q2",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The oxygen levels dropped ____ we wore our masks in sector 17.",
+      "sentence": "The oxygen levels dropped ____ we wore our masks in sector 17.",
+      "options": [
+        "so",
+        "but",
+        "yet",
+        "or"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "so",
+      "hint": "Express action taken as a result. (Sector 17 calibration)",
+      "explanation": "'So' shows result. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l186_q3",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The map is old ____ it is still accurate in sector 17.",
+      "sentence": "The map is old ____ it is still accurate in sector 17.",
+      "options": [
+        "but",
+        "so",
+        "or",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "but",
+      "hint": "Contrast age with accuracy. (Sector 17 calibration)",
+      "explanation": "'But' shows contrast. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l187_q1",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "We must repair the engine ____ we will drift forever in sector 17.",
+      "sentence": "We must repair the engine ____ we will drift forever in sector 17.",
+      "options": [
+        "or",
+        "and",
+        "yet",
+        "so"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "or",
+      "hint": "Show a consequence of not acting. (Sector 17 calibration)",
+      "explanation": "'Or' presents the alternative outcome. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l187_q2",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "She is a top researcher ____ she lacks field experience in sector 17.",
+      "sentence": "She is a top researcher ____ she lacks field experience in sector 17.",
+      "options": [
+        "but",
+        "and",
+        "so",
+        "or"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "but",
+      "hint": "Contrast skill with lack of experience. (Sector 17 calibration)",
+      "explanation": "'But' shows contrast. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l187_q3",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "We should study the stars ____ they hold many secrets in sector 17.",
+      "sentence": "We should study the stars ____ they hold many secrets in sector 17.",
+      "options": [
+        "for",
+        "but",
+        "or",
+        "so"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "for",
+      "hint": "Provide a reason (archaic/formal FANBOYS). (Sector 17 calibration)",
+      "explanation": "'For' is coordinate reason. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l188_q1",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The probe reached Mars ____ it found no liquid water in sector 17.",
+      "sentence": "The probe reached Mars ____ it found no liquid water in sector 17.",
+      "options": [
+        "but",
+        "so",
+        "for",
+        "nor"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "but",
+      "hint": "Contrast success with a limitation. (Sector 17 calibration)",
+      "explanation": "'But' introduces contrasting information. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l188_q2",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The thruster fired perfectly ____ the capsule stabilized in sector 17.",
+      "sentence": "The thruster fired perfectly ____ the capsule stabilized in sector 17.",
+      "options": [
+        "and",
+        "but",
+        "or",
+        "nor"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "and",
+      "hint": "Add a positive outcome of firing. (Sector 17 calibration)",
+      "explanation": "'And' adds corresponding clauses. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l188_q3",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "They ran out of fuel ____ they landed on an asteroid in sector 17.",
+      "sentence": "They ran out of fuel ____ they landed on an asteroid in sector 17.",
+      "options": [
+        "so",
+        "but",
+        "yet",
+        "or"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "so",
+      "hint": "Immediate consequence. (Sector 17 calibration)",
+      "explanation": "'So' shows consequence. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l189_q1",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The hull is double-layered ____ it can withstand debris in sector 17.",
+      "sentence": "The hull is double-layered ____ it can withstand debris in sector 17.",
+      "options": [
+        "so",
+        "but",
+        "yet",
+        "or"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "so",
+      "hint": "Show a result of the structural design. (Sector 17 calibration)",
+      "explanation": "'So' introduces the consequence. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l189_q2",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "He did not sleep ____ did he leave his post in sector 17.",
+      "sentence": "He did not sleep ____ did he leave his post in sector 17.",
+      "options": [
+        "nor",
+        "but",
+        "yet",
+        "so"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "nor",
+      "hint": "Connect negative clauses. (Sector 17 calibration)",
+      "explanation": "'Nor' connects negative independent clauses. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l189_q3",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "She did not speak ____ did she look at him in sector 17.",
+      "sentence": "She did not speak ____ did she look at him in sector 17.",
+      "options": [
+        "nor",
+        "but",
+        "yet",
+        "so"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "nor",
+      "hint": "Inversion of negative. (Sector 17 calibration)",
+      "explanation": "'Nor' is correct. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l190_q1",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "She was tired from the orbit ____ she kept monitoring in sector 17.",
+      "sentence": "She was tired from the orbit ____ she kept monitoring in sector 17.",
+      "options": [
+        "yet",
+        "so",
+        "or",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "yet",
+      "hint": "Contrast exhaustion with continuation. (Sector 17 calibration)",
+      "explanation": "'Yet' expresses concession. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l190_q2",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The weather was bad ____ the shuttle landed safely in sector 17.",
+      "sentence": "The weather was bad ____ the shuttle landed safely in sector 17.",
+      "options": [
+        "yet",
+        "so",
+        "or",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "yet",
+      "hint": "Concession or surprise. (Sector 17 calibration)",
+      "explanation": "'Yet' introduces unexpected result. [Verified in sector 17]."
+    },
+    {
+      "id": "cc_l190_q3",
+      "instruction": "SNAP THE LINGUISTIC COUPLER",
+      "difficulty": 5,
+      "subtype": "clauseConnector",
+      "interactionType": "Magnetic Snapping",
+      "question": "The storm was fierce ____ the shields held in sector 17.",
+      "sentence": "The storm was fierce ____ the shields held in sector 17.",
+      "options": [
+        "yet",
+        "so",
+        "or",
+        "for"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "yet",
+      "hint": "Unexpected positive result. (Sector 17 calibration)",
+      "explanation": "'Yet' shows contrast. [Verified in sector 17]."
+    }
+  ]
 }
-

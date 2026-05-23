@@ -13,6 +13,8 @@ import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.d
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
 class SentenceOrderReadingScreen extends StatefulWidget {
   final int level;
@@ -105,33 +107,41 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
         }
       },
       builder: (context, state) {
-        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
         
         return ReadingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 32.h),
-              Expanded(
-                child: ReorderableListView(
-                  physics: const BouncingScrollPhysics(),
-                  proxyDecorator: (child, index, animation) => _buildProxy(child, animation, theme.primaryColor),
-                  onReorder: _onReorder,
-                  children: List.generate(_currentOrder.length, (index) => _buildStoneSlab(_currentOrder[index], index, theme.primaryColor, isDark)),
-                ),
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 24.h),
+                  ReorderableListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    proxyDecorator: (child, index, animation) => _buildProxy(child, animation, theme.primaryColor),
+                    onReorder: _onReorder,
+                    children: List.generate(_currentOrder.length, (index) => _buildStoneSlab(_currentOrder[index], index, theme.primaryColor, isDark)),
+                  ),
+                  if (!_isAnswered) ...[
+                    SizedBox(height: 24.h),
+                    _buildCapstone(quest.correctOrder ?? [], quest.shuffledSentences ?? [], theme.primaryColor),
+                  ],
+                  if (_isAnswered) ...[
+                    SizedBox(height: 30.h),
+                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                  ],
+                  SizedBox(height: 50.h),
+                ],
               ),
-              if (!_isAnswered)
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 24.h),
-                  child: _buildCapstone(quest.correctOrder ?? [], quest.shuffledSentences ?? [], theme.primaryColor),
-                ),
-              SizedBox(height: 20.h),
-            ],
+            ),
           ),
         );
       },
@@ -159,8 +169,8 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
       margin: EdgeInsets.only(bottom: 12.h),
       child: GlassTile(
         padding: EdgeInsets.all(24.r), borderRadius: BorderRadius.circular(15.r),
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
-        border: Border.all(color: Colors.white10, width: 2),
+        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.04),
+        border: Border.all(color: isDark ? Colors.white10 : Colors.black12, width: 2),
         child: Row(
           children: [
             Container(
@@ -169,8 +179,17 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
               child: Center(child: Text("${index + 1}", style: GoogleFonts.shareTechMono(color: color, fontSize: 14.sp, fontWeight: FontWeight.bold))),
             ),
             SizedBox(width: 16.w),
-            Expanded(child: Text(text, style: GoogleFonts.fredoka(fontSize: 15.sp, height: 1.4, color: Colors.white.withValues(alpha: 0.8)))),
-            Icon(Icons.drag_handle_rounded, color: Colors.white24, size: 24.r),
+            Expanded(
+              child: Text(
+                text, 
+                style: GoogleFonts.fredoka(
+                  fontSize: 15.sp, 
+                  height: 1.4, 
+                  color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87
+                )
+              )
+            ),
+            Icon(Icons.drag_handle_rounded, color: isDark ? Colors.white24 : Colors.black26, size: 24.r),
           ],
         ),
       ),
@@ -224,6 +243,46 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
         ),
       ),
     );
+  }
+
+  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 

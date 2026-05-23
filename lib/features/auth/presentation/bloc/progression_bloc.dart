@@ -190,22 +190,27 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
         }
 
         final result = await updateUser(UpdateUserParams(user: updatedUser));
-        result.fold(
-          (failure) => null, // Silently fail or retry
-          (_) {
-            notificationService.scheduleStreakReminder(updatedUser.currentStreak);
-            emit(state.copyWith(streakUpdatedToday: true));
-          },
-        );
+        if (result.isRight()) {
+          notificationService.scheduleStreakReminder(updatedUser.currentStreak);
+          emit(state.copyWith(streakUpdatedToday: true));
+        }
       } else if (dayDifference > 1) {
-        // Lost streak - check for shield
-        if (user.streakFreezes > 0 || user.level >= 50) {
+        // Lost streak - check for protection
+        final hasShield = user.streakFreezes > 0;
+        final hasAutoShield = user.level >= 50; // Legendary players get automatic protection
+        
+        if (hasShield || hasAutoShield) {
+          // Preserve streak with shield — only consume freeze if not auto-shielded
           final updatedUser = user.copyWith(
-            streakFreezes: user.level >= 50 ? user.streakFreezes : user.streakFreezes - 1,
+            streakFreezes: hasAutoShield ? user.streakFreezes : user.streakFreezes - 1,
             lastLoginDate: now,
           );
           await updateUser(UpdateUserParams(user: updatedUser));
           notificationService.scheduleStreakReminder(updatedUser.currentStreak);
+          emit(state.copyWith(
+            streakUpdatedToday: true,
+            message: hasAutoShield ? 'Elite Shield Protected Your Streak!' : 'Streak Shield Activated!',
+          ));
         } else {
           // Reset streak
           final updatedUser = user.copyWith(
@@ -214,6 +219,10 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
           );
           await updateUser(UpdateUserParams(user: updatedUser));
           notificationService.scheduleStreakReminder(1);
+          emit(state.copyWith(
+            streakUpdatedToday: true,
+            message: 'Streak Lost! Starting Fresh at 1.',
+          ));
         }
       }
     } else {
@@ -358,7 +367,9 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => null,
+      (_) {
+        authBloc.add(const AuthRefreshUser());
+      },
     );
   }
 

@@ -1,548 +1,577 @@
 {
-    "gameType":  "articleInsertion",
-    "batchIndex":  1,
-    "levels":  "1-10",
-    "quests":  [
-                   {
-                       "id":  "ai_l1_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I saw ___ elephant at the zoo.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Use \u0027an\u0027 before vowel sounds.",
-                       "explanation":  "The correct sentence is: 'I saw an elephant at the zoo.'"
-                   },
-                   {
-                       "id":  "ai_l1_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ sun is very bright today.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Use \u0027the\u0027 for unique objects.",
-                       "explanation":  "The correct sentence is: 'The sun is very bright today.'"
-                   },
-                   {
-                       "id":  "ai_l1_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He is ___ honest man.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Silent \u0027h\u0027 in honest starts with a vowel sound.",
-                       "explanation":  "The correct sentence is: 'He is an honest man.'"
-                   },
-                   {
-                       "id":  "ai_l2_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She wants to buy ___ new car.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "Use \u0027a\u0027 before consonant sounds.",
-                       "explanation":  "The correct sentence is: 'She wants to buy a new car.'"
-                   },
-                   {
-                       "id":  "ai_l2_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "We visited ___ Eiffel Tower in Paris.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Use \u0027the\u0027 for famous landmarks.",
-                       "explanation":  "The correct sentence is: 'We visited the Eiffel Tower in Paris.'"
-                   },
-                   {
-                       "id":  "ai_l2_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ water in this bottle is cold.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Specific water we are talking about.",
-                       "explanation":  "The correct sentence is: 'The water in this bottle is cold.'"
-                   },
-                   {
-                       "id":  "ai_l3_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I need ___ hour to finish.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Silent \u0027h\u0027 in hour.",
-                       "explanation":  "The correct sentence is: 'I need an hour to finish.'"
-                   },
-                   {
-                       "id":  "ai_l3_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He is ___ engineer.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Vowel sound.",
-                       "explanation":  "The correct sentence is: 'He is an engineer.'"
-                   },
-                   {
-                       "id":  "ai_l3_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She plays ___ piano beautifully.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Musical instruments use \u0027the\u0027.",
-                       "explanation":  "The correct sentence is: 'She plays the piano beautifully.'"
-                   },
-                   {
-                       "id":  "ai_l4_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ honesty is important.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "None",
-                       "hint":  "Abstract nouns often don\u0027t need articles.",
-                       "explanation":  "The correct sentence is: 'None honesty is important.'"
-                   },
-                   {
-                       "id":  "ai_l4_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I have ___ dog and a cat.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "Consonant sound.",
-                       "explanation":  "The correct sentence is: 'I have a dog and a cat.'"
-                   },
-                   {
-                       "id":  "ai_l4_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "We saw ___ movie last night.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "First time mentioning it.",
-                       "explanation":  "The correct sentence is: 'We saw a movie last night.'"
-                   },
-                   {
-                       "id":  "ai_l5_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ moon revolves around the Earth.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Unique object.",
-                       "explanation":  "The correct sentence is: 'The moon revolves around the Earth.'"
-                   },
-                   {
-                       "id":  "ai_l5_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He lives in ___ United Kingdom.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Countries with \u0027United\u0027 use \u0027the\u0027.",
-                       "explanation":  "The correct sentence is: 'He lives in the United Kingdom.'"
-                   },
-                   {
-                       "id":  "ai_l5_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She ate ___ apple for lunch.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Vowel sound.",
-                       "explanation":  "The correct sentence is: 'She ate an apple for lunch.'"
-                   },
-                   {
-                       "id":  "ai_l6_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I saw ___ elephant at the zoo.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Use \u0027an\u0027 before vowel sounds.",
-                       "explanation":  "The correct sentence is: 'I saw an elephant at the zoo.'"
-                   },
-                   {
-                       "id":  "ai_l6_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ sun is very bright today.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Use \u0027the\u0027 for unique objects.",
-                       "explanation":  "The correct sentence is: 'The sun is very bright today.'"
-                   },
-                   {
-                       "id":  "ai_l6_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He is ___ honest man.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Silent \u0027h\u0027 in honest starts with a vowel sound.",
-                       "explanation":  "The correct sentence is: 'He is an honest man.'"
-                   },
-                   {
-                       "id":  "ai_l7_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She wants to buy ___ new car.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "Use \u0027a\u0027 before consonant sounds.",
-                       "explanation":  "The correct sentence is: 'She wants to buy a new car.'"
-                   },
-                   {
-                       "id":  "ai_l7_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "We visited ___ Eiffel Tower in Paris.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Use \u0027the\u0027 for famous landmarks.",
-                       "explanation":  "The correct sentence is: 'We visited the Eiffel Tower in Paris.'"
-                   },
-                   {
-                       "id":  "ai_l7_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ water in this bottle is cold.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Specific water we are talking about.",
-                       "explanation":  "The correct sentence is: 'The water in this bottle is cold.'"
-                   },
-                   {
-                       "id":  "ai_l8_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I need ___ hour to finish.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Silent \u0027h\u0027 in hour.",
-                       "explanation":  "The correct sentence is: 'I need an hour to finish.'"
-                   },
-                   {
-                       "id":  "ai_l8_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He is ___ engineer.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Vowel sound.",
-                       "explanation":  "The correct sentence is: 'He is an engineer.'"
-                   },
-                   {
-                       "id":  "ai_l8_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She plays ___ piano beautifully.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Musical instruments use \u0027the\u0027.",
-                       "explanation":  "The correct sentence is: 'She plays the piano beautifully.'"
-                   },
-                   {
-                       "id":  "ai_l9_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ honesty is important.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  3,
-                       "correctAnswer":  "None",
-                       "hint":  "Abstract nouns often don\u0027t need articles.",
-                       "explanation":  "The correct sentence is: 'None honesty is important.'"
-                   },
-                   {
-                       "id":  "ai_l9_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "I have ___ dog and a cat.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "Consonant sound.",
-                       "explanation":  "The correct sentence is: 'I have a dog and a cat.'"
-                   },
-                   {
-                       "id":  "ai_l9_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "We saw ___ movie last night.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "a",
-                       "hint":  "First time mentioning it.",
-                       "explanation":  "The correct sentence is: 'We saw a movie last night.'"
-                   },
-                   {
-                       "id":  "ai_l10_q1",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "___ moon revolves around the Earth.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "The",
-                       "hint":  "Unique object.",
-                       "explanation":  "The correct sentence is: 'The moon revolves around the Earth.'"
-                   },
-                   {
-                       "id":  "ai_l10_q2",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "He lives in ___ United Kingdom.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  2,
-                       "correctAnswer":  "the",
-                       "hint":  "Countries with \u0027United\u0027 use \u0027the\u0027.",
-                       "explanation":  "The correct sentence is: 'He lives in the United Kingdom.'"
-                   },
-                   {
-                       "id":  "ai_l10_q3",
-                       "instruction":  "INSERT THE CORRECT ARTICLE",
-                       "difficulty":  1,
-                       "subtype":  "articleInsertion",
-                       "interactionType":  "Bubble Pop",
-                       "sentence":  "She ate ___ apple for lunch.",
-                       "options":  [
-                                       "a",
-                                       "an",
-                                       "the",
-                                       "None"
-                                   ],
-                       "correctAnswerIndex":  1,
-                       "correctAnswer":  "an",
-                       "hint":  "Vowel sound.",
-                       "explanation":  "The correct sentence is: 'She ate an apple for lunch.'"
-                   }
-               ]
+  "gameType": "articleInsertion",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "ai_l1_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "I saw ___ asteroid flying past.",
+      "sentence": "I saw ___ asteroid flying past.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Vowel sound 'a' in asteroid requires 'an'.",
+      "explanation": "Use 'an' before vowel sounds."
+    },
+    {
+      "id": "ai_l1_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ sun is blazing fiercely today.",
+      "sentence": "___ sun is blazing fiercely today.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Use 'the' for unique singular entities.",
+      "explanation": "The sun is unique in this context."
+    },
+    {
+      "id": "ai_l1_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ titanium is a vital metal.",
+      "sentence": "___ titanium is a vital metal.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Uncountable mass noun in general.",
+      "explanation": "Mass nouns in general require zero article."
+    },
+    {
+      "id": "ai_l2_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "The scout pilot bought ___ new helm.",
+      "sentence": "The scout pilot bought ___ new helm.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Consonant sound 'n' in new requires 'a'.",
+      "explanation": "Use 'a' before consonant sounds."
+    },
+    {
+      "id": "ai_l2_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "Look at ___ moon revolving.",
+      "sentence": "Look at ___ moon revolving.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Unique astronomical object.",
+      "explanation": "'the' is used for unique celestial bodies."
+    },
+    {
+      "id": "ai_l2_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ hydrogen fuels the reactor.",
+      "sentence": "___ hydrogen fuels the reactor.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Chemical elements in general use zero article.",
+      "explanation": "Zero article 'Ø' is correct for general elements."
+    },
+    {
+      "id": "ai_l3_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They deployed ___ auxiliary probe.",
+      "sentence": "They deployed ___ auxiliary probe.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Vowel sound 'a' in auxiliary.",
+      "explanation": "Vowel sounds take 'an'."
+    },
+    {
+      "id": "ai_l3_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They docked at ___ primary station.",
+      "sentence": "They docked at ___ primary station.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific, unique station.",
+      "explanation": "'the' points to a specific unique station."
+    },
+    {
+      "id": "ai_l3_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "We breath ___ oxygen here.",
+      "sentence": "We breath ___ oxygen here.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Uncountable general gas.",
+      "explanation": "Zero article is used for gases in general."
+    },
+    {
+      "id": "ai_l4_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "We need ___ battery replacement.",
+      "sentence": "We need ___ battery replacement.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Consonant sound 'b'.",
+      "explanation": "Consonant sounds take 'a'."
+    },
+    {
+      "id": "ai_l4_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ captain ordered a silent run.",
+      "sentence": "___ captain ordered a silent run.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific known person in charge.",
+      "explanation": "'the' identifies the specific captain."
+    },
+    {
+      "id": "ai_l4_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ space is vast and endless.",
+      "sentence": "___ space is vast and endless.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "'Space' in general has no article.",
+      "explanation": "Zero article is correct."
+    },
+    {
+      "id": "ai_l5_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "She wants ___ upgrade for her suit.",
+      "sentence": "She wants ___ upgrade for her suit.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Vowel sound 'u' in upgrade.",
+      "explanation": "Vowel sounds take 'an'."
+    },
+    {
+      "id": "ai_l5_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "Turn on ___ hyperdrive system.",
+      "sentence": "Turn on ___ hyperdrive system.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific ship component.",
+      "explanation": "'the' matches the specific system."
+    },
+    {
+      "id": "ai_l5_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "He studies ___ stellar physics.",
+      "sentence": "He studies ___ stellar physics.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Academic subjects have no article.",
+      "explanation": "Zero article 'Ø' is correct for disciplines."
+    },
+    {
+      "id": "ai_l6_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "A droid found ___ capsule in the sand.",
+      "sentence": "A droid found ___ capsule in the sand.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Consonant sound 'c'.",
+      "explanation": "Consonant sounds take 'a'."
+    },
+    {
+      "id": "ai_l6_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "He verified ___ launch coordinates.",
+      "sentence": "He verified ___ launch coordinates.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific parameters.",
+      "explanation": "'the' refers to specific coordinates."
+    },
+    {
+      "id": "ai_l6_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ data flows through the node.",
+      "sentence": "___ data flows through the node.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Uncountable data in general.",
+      "explanation": "General uncountable nouns take no article."
+    },
+    {
+      "id": "ai_l7_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "He received ___ encrypted alert.",
+      "sentence": "He received ___ encrypted alert.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Vowel sound 'e' in encrypted.",
+      "explanation": "Vowel sounds take 'an'."
+    },
+    {
+      "id": "ai_l7_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They entered ___ galaxy center.",
+      "sentence": "They entered ___ galaxy center.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Unique spatial destination.",
+      "explanation": "'the' refers to a specific geographic/astral region."
+    },
+    {
+      "id": "ai_l7_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They trade ___ quantum dust.",
+      "sentence": "They trade ___ quantum dust.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "Uncountable general trade item.",
+      "explanation": "Zero article is correct."
+    },
+    {
+      "id": "ai_l8_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "They established ___ frontier base.",
+      "sentence": "They established ___ frontier base.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Consonant sound 'f'.",
+      "explanation": "Consonant sounds take 'a'."
+    },
+    {
+      "id": "ai_l8_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ shield is holding up.",
+      "sentence": "___ shield is holding up.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific shield on our vessel.",
+      "explanation": "Refers to the specific active shield."
+    },
+    {
+      "id": "ai_l8_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ code is hard to read.",
+      "sentence": "___ code is hard to read.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "General code concept.",
+      "explanation": "Zero article is correct."
+    },
+    {
+      "id": "ai_l9_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "She wore ___ thermal layer.",
+      "sentence": "She wore ___ thermal layer.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "a",
+      "hint": "Consonant sound 't'.",
+      "explanation": "Consonant sounds take 'a'."
+    },
+    {
+      "id": "ai_l9_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "Check ___ lock code on the terminal.",
+      "sentence": "Check ___ lock code on the terminal.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific lock code.",
+      "explanation": "Points to a particular unique lock code."
+    },
+    {
+      "id": "ai_l9_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "She loves ___ engineering.",
+      "sentence": "She loves ___ engineering.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "General abstract field.",
+      "explanation": "Zero article is correct."
+    },
+    {
+      "id": "ai_l10_q1",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "It was ___ unexpected trajectory.",
+      "sentence": "It was ___ unexpected trajectory.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "an",
+      "hint": "Vowel sound 'u' in unexpected.",
+      "explanation": "Vowel sounds take 'an'."
+    },
+    {
+      "id": "ai_l10_q2",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ command deck is fully crewed.",
+      "sentence": "___ command deck is fully crewed.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "the",
+      "hint": "Specific command deck.",
+      "explanation": "Identifies the particular command deck."
+    },
+    {
+      "id": "ai_l10_q3",
+      "instruction": "INSERT THE CORRECT ARTICLE",
+      "difficulty": 1,
+      "subtype": "articleInsertion",
+      "interactionType": "Bubble Pop",
+      "question": "___ gravity here is standard.",
+      "sentence": "___ gravity here is standard.",
+      "options": [
+        "a",
+        "an",
+        "the",
+        "Ø"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ø",
+      "hint": "General physical property.",
+      "explanation": "Zero article is correct."
+    }
+  ]
 }
-

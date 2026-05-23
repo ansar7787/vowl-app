@@ -279,14 +279,14 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                 Container(
                   padding: EdgeInsets.all(16.r),
                   decoration: BoxDecoration(color: Colors.redAccent.withValues(alpha: 0.1), shape: BoxShape.circle),
-                  child: const Icon(Icons.directions_car_filled_rounded, color: Colors.redAccent, size: 32),
+                  child: const Icon(Icons.star_rounded, color: Colors.amber, size: 32),
                 ),
                 SizedBox(width: 18.w),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("KIDS COINS", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.redAccent, letterSpacing: 2)),
+                      Text("KIDS COINS", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.amber, letterSpacing: 2)),
                       Text("$coins", style: GoogleFonts.outfit(fontSize: 28.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : const Color(0xFF0F172A))),
                     ],
                   ),
@@ -424,7 +424,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(Icons.directions_car_filled_rounded, color: Color(0xFFEF4444), size: 14),
+          const Icon(Icons.star_rounded, color: Color(0xFFF59E0B), size: 14),
           SizedBox(width: 4.w),
           Text(
             "$price",
@@ -463,7 +463,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
 
     if (user.kidsCoins < (item['price'] as int)) {
       di.sl<SoundService>().playWrong();
-      _showModernNotification(context, "NOT ENOUGH COINS! 🚗", isError: true);
+      _showModernNotification(context, "NOT ENOUGH COINS! ⭐", isError: true);
       return;
     }
 
@@ -494,7 +494,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
               onUserEarnedReward: (reward) {
                 di.sl<SoundService>().playCorrect();
                 context.read<EconomyBloc>().add(const EconomyAddKidsCoinsRequested(10));
-                _showModernNotification(context, "AWARDED 10 KIDS COINS! 🚗✨");
+                _showModernNotification(context, "AWARDED 10 KIDS COINS! ⭐✨");
               },
               onDismissed: () {},
             );

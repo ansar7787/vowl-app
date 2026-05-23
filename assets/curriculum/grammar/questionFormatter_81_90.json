@@ -1,548 +1,577 @@
 {
-    "gameType":  "questionFormatter",
-    "batchIndex":  9,
-    "levels":  "81-90",
-    "quests":  [
-                   {
-                       "id":  "qf_l81_q1",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "She likes ice cream.",
-                       "options":  [
-                                       "Does she like ice cream?",
-                                       "She likes ice cream.?",
-                                       "Do she likes ice cream.",
-                                       "She likes ice cream?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Does she like ice cream?",
-                       "hint":  "Use \u0027Does\u0027 for third person singular.",
-                       "explanation":  "The correct interrogative form is: 'Does she like ice cream?'"
-                   },
-                   {
-                       "id":  "qf_l81_q2",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "They went to school.",
-                       "options":  [
-                                       "Did they go to school?",
-                                       "They went to school.?",
-                                       "Do they went to school.",
-                                       "They went to school?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Did they go to school?",
-                       "hint":  "Use \u0027Did\u0027 for past tense questions.",
-                       "explanation":  "The correct interrogative form is: 'Did they go to school?'"
-                   },
-                   {
-                       "id":  "qf_l81_q3",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "He is a doctor.",
-                       "options":  [
-                                       "Is he a doctor?",
-                                       "He is a doctor.?",
-                                       "Do he is a doctor.",
-                                       "He is a doctor?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Is he a doctor?",
-                       "hint":  "Invert the \u0027be\u0027 verb.",
-                       "explanation":  "The correct interrogative form is: 'Is he a doctor?'"
-                   },
-                   {
-                       "id":  "qf_l82_q1",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "She can swim well.",
-                       "options":  [
-                                       "Can she swim well?",
-                                       "She can swim well.?",
-                                       "Do she can swim well.",
-                                       "She can swim well?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Can she swim well?",
-                       "hint":  "Invert the modal verb.",
-                       "explanation":  "The correct interrogative form is: 'Can she swim well?'"
-                   },
-                   {
-                       "id":  "qf_l82_q2",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "They have finished lunch.",
-                       "options":  [
-                                       "Have they finished lunch?",
-                                       "They have finished lunch.?",
-                                       "Do they have finished lunch.",
-                                       "They have finished lunch?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Have they finished lunch?",
-                       "hint":  "Invert the auxiliary verb.",
-                       "explanation":  "The correct interrogative form is: 'Have they finished lunch?'"
-                   },
-                   {
-                       "id":  "qf_l82_q3",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "The system is online.",
-                       "options":  [
-                                       "Is the system online?",
-                                       "The system is online.?",
-                                       "Do the system is online.",
-                                       "The system is online?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Is the system online?",
-                       "hint":  "Invert \u0027is\u0027.",
-                       "explanation":  "The correct interrogative form is: 'Is the system online?'"
-                   },
-                   {
-                       "id":  "qf_l83_q1",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "We will arrive tomorrow.",
-                       "options":  [
-                                       "Will we arrive tomorrow?",
-                                       "We will arrive tomorrow.?",
-                                       "Do we will arrive tomorrow.",
-                                       "We will arrive tomorrow?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Will we arrive tomorrow?",
-                       "hint":  "Future question.",
-                       "explanation":  "The correct interrogative form is: 'Will we arrive tomorrow?'"
-                   },
-                   {
-                       "id":  "qf_l83_q2",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "The data revealed a bug.",
-                       "options":  [
-                                       "Did the data reveal a bug?",
-                                       "The data revealed a bug.?",
-                                       "Do the data revealed a bug.",
-                                       "The data revealed a bug?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Did the data reveal a bug?",
-                       "hint":  "Past tense.",
-                       "explanation":  "The correct interrogative form is: 'Did the data reveal a bug?'"
-                   },
-                   {
-                       "id":  "qf_l83_q3",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "He lives in London.",
-                       "options":  [
-                                       "Does he live in London?",
-                                       "He lives in London.?",
-                                       "Do he lives in london.",
-                                       "He lives in London?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Does he live in London?",
-                       "hint":  "Present tense.",
-                       "explanation":  "The correct interrogative form is: 'Does he live in London?'"
-                   },
-                   {
-                       "id":  "qf_l84_q1",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "You are ready.",
-                       "options":  [
-                                       "Are you ready?",
-                                       "You are ready.?",
-                                       "Do you are ready.",
-                                       "You are ready?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Are you ready?",
-                       "hint":  "Invert \u0027are\u0027.",
-                       "explanation":  "The correct interrogative form is: 'Are you ready?'"
-                   },
-                   {
-                       "id":  "qf_l84_q2",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "The technician fixed it.",
-                       "options":  [
-                                       "Did the technician fix it?",
-                                       "The technician fixed it.?",
-                                       "Do the technician fixed it.",
-                                       "The technician fixed it?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Did the technician fix it?",
-                       "hint":  "Past tense.",
-                       "explanation":  "The correct interrogative form is: 'Did the technician fix it?'"
-                   },
-                   {
-                       "id":  "qf_l84_q3",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "They are monitoring the core.",
-                       "options":  [
-                                       "Are they monitoring the core?",
-                                       "They are monitoring the core.?",
-                                       "Do they are monitoring the core.",
-                                       "They are monitoring the core?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Are they monitoring the core?",
-                       "hint":  "Continuous tense.",
-                       "explanation":  "The correct interrogative form is: 'Are they monitoring the core?'"
-                   },
-                   {
-                       "id":  "qf_l85_q1",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "She has been working here.",
-                       "options":  [
-                                       "Has she been working here?",
-                                       "She has been working here.?",
-                                       "Do she has been working here.",
-                                       "She has been working here?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Has she been working here?",
-                       "hint":  "Perfect continuous.",
-                       "explanation":  "The correct interrogative form is: 'Has she been working here?'"
-                   },
-                   {
-                       "id":  "qf_l85_q2",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "The portal can be opened.",
-                       "options":  [
-                                       "Can the portal be opened?",
-                                       "The portal can be opened.?",
-                                       "Do the portal can be opened.",
-                                       "The portal can be opened?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Can the portal be opened?",
-                       "hint":  "Passive modal.",
-                       "explanation":  "The correct interrogative form is: 'Can the portal be opened?'"
-                   },
-                   {
-                       "id":  "qf_l85_q3",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "You should wait.",
-                       "options":  [
-                                       "Should you wait?",
-                                       "You should wait.?",
-                                       "Do you should wait.",
-                                       "You should wait?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Should you wait?",
-                       "hint":  "Modal question.",
-                       "explanation":  "The correct interrogative form is: 'Should you wait?'"
-                   },
-                   {
-                       "id":  "qf_l86_q1",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "She likes ice cream.",
-                       "options":  [
-                                       "Does she like ice cream?",
-                                       "She likes ice cream.?",
-                                       "Do she likes ice cream.",
-                                       "She likes ice cream?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Does she like ice cream?",
-                       "hint":  "Use \u0027Does\u0027 for third person singular.",
-                       "explanation":  "The correct interrogative form is: 'Does she like ice cream?'"
-                   },
-                   {
-                       "id":  "qf_l86_q2",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "They went to school.",
-                       "options":  [
-                                       "Did they go to school?",
-                                       "They went to school.?",
-                                       "Do they went to school.",
-                                       "They went to school?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Did they go to school?",
-                       "hint":  "Use \u0027Did\u0027 for past tense questions.",
-                       "explanation":  "The correct interrogative form is: 'Did they go to school?'"
-                   },
-                   {
-                       "id":  "qf_l86_q3",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "He is a doctor.",
-                       "options":  [
-                                       "Is he a doctor?",
-                                       "He is a doctor.?",
-                                       "Do he is a doctor.",
-                                       "He is a doctor?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Is he a doctor?",
-                       "hint":  "Invert the \u0027be\u0027 verb.",
-                       "explanation":  "The correct interrogative form is: 'Is he a doctor?'"
-                   },
-                   {
-                       "id":  "qf_l87_q1",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "She can swim well.",
-                       "options":  [
-                                       "Can she swim well?",
-                                       "She can swim well.?",
-                                       "Do she can swim well.",
-                                       "She can swim well?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Can she swim well?",
-                       "hint":  "Invert the modal verb.",
-                       "explanation":  "The correct interrogative form is: 'Can she swim well?'"
-                   },
-                   {
-                       "id":  "qf_l87_q2",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "They have finished lunch.",
-                       "options":  [
-                                       "Have they finished lunch?",
-                                       "They have finished lunch.?",
-                                       "Do they have finished lunch.",
-                                       "They have finished lunch?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Have they finished lunch?",
-                       "hint":  "Invert the auxiliary verb.",
-                       "explanation":  "The correct interrogative form is: 'Have they finished lunch?'"
-                   },
-                   {
-                       "id":  "qf_l87_q3",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "The system is online.",
-                       "options":  [
-                                       "Is the system online?",
-                                       "The system is online.?",
-                                       "Do the system is online.",
-                                       "The system is online?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Is the system online?",
-                       "hint":  "Invert \u0027is\u0027.",
-                       "explanation":  "The correct interrogative form is: 'Is the system online?'"
-                   },
-                   {
-                       "id":  "qf_l88_q1",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "We will arrive tomorrow.",
-                       "options":  [
-                                       "Will we arrive tomorrow?",
-                                       "We will arrive tomorrow.?",
-                                       "Do we will arrive tomorrow.",
-                                       "We will arrive tomorrow?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Will we arrive tomorrow?",
-                       "hint":  "Future question.",
-                       "explanation":  "The correct interrogative form is: 'Will we arrive tomorrow?'"
-                   },
-                   {
-                       "id":  "qf_l88_q2",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "The data revealed a bug.",
-                       "options":  [
-                                       "Did the data reveal a bug?",
-                                       "The data revealed a bug.?",
-                                       "Do the data revealed a bug.",
-                                       "The data revealed a bug?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Did the data reveal a bug?",
-                       "hint":  "Past tense.",
-                       "explanation":  "The correct interrogative form is: 'Did the data reveal a bug?'"
-                   },
-                   {
-                       "id":  "qf_l88_q3",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "He lives in London.",
-                       "options":  [
-                                       "Does he live in London?",
-                                       "He lives in London.?",
-                                       "Do he lives in london.",
-                                       "He lives in London?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Does he live in London?",
-                       "hint":  "Present tense.",
-                       "explanation":  "The correct interrogative form is: 'Does he live in London?'"
-                   },
-                   {
-                       "id":  "qf_l89_q1",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "You are ready.",
-                       "options":  [
-                                       "Are you ready?",
-                                       "You are ready.?",
-                                       "Do you are ready.",
-                                       "You are ready?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Are you ready?",
-                       "hint":  "Invert \u0027are\u0027.",
-                       "explanation":  "The correct interrogative form is: 'Are you ready?'"
-                   },
-                   {
-                       "id":  "qf_l89_q2",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "The technician fixed it.",
-                       "options":  [
-                                       "Did the technician fix it?",
-                                       "The technician fixed it.?",
-                                       "Do the technician fixed it.",
-                                       "The technician fixed it?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Did the technician fix it?",
-                       "hint":  "Past tense.",
-                       "explanation":  "The correct interrogative form is: 'Did the technician fix it?'"
-                   },
-                   {
-                       "id":  "qf_l89_q3",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "They are monitoring the core.",
-                       "options":  [
-                                       "Are they monitoring the core?",
-                                       "They are monitoring the core.?",
-                                       "Do they are monitoring the core.",
-                                       "They are monitoring the core?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Are they monitoring the core?",
-                       "hint":  "Continuous tense.",
-                       "explanation":  "The correct interrogative form is: 'Are they monitoring the core?'"
-                   },
-                   {
-                       "id":  "qf_l90_q1",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "She has been working here.",
-                       "options":  [
-                                       "Has she been working here?",
-                                       "She has been working here.?",
-                                       "Do she has been working here.",
-                                       "She has been working here?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Has she been working here?",
-                       "hint":  "Perfect continuous.",
-                       "explanation":  "The correct interrogative form is: 'Has she been working here?'"
-                   },
-                   {
-                       "id":  "qf_l90_q2",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "The portal can be opened.",
-                       "options":  [
-                                       "Can the portal be opened?",
-                                       "The portal can be opened.?",
-                                       "Do the portal can be opened.",
-                                       "The portal can be opened?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Can the portal be opened?",
-                       "hint":  "Passive modal.",
-                       "explanation":  "The correct interrogative form is: 'Can the portal be opened?'"
-                   },
-                   {
-                       "id":  "qf_l90_q3",
-                       "instruction":  "CRANK THE INQUIRY",
-                       "difficulty":  3,
-                       "subtype":  "questionFormatter",
-                       "interactionType":  "Crank Logic",
-                       "sentence":  "You should wait.",
-                       "options":  [
-                                       "Should you wait?",
-                                       "You should wait.?",
-                                       "Do you should wait.",
-                                       "You should wait?"
-                                   ],
-                       "correctAnswerIndex":  0,
-                       "correctAnswer":  "Should you wait?",
-                       "hint":  "Modal question.",
-                       "explanation":  "The correct interrogative form is: 'Should you wait?'"
-                   }
-               ]
+  "gameType": "questionFormatter",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "qf_l81_q1",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "He is the manager in sector 7.",
+      "sentence": "He is the manager in sector 7.",
+      "options": [
+        "He is the manager, isn't he in sector 7?",
+        "Is he the manager in sector 7?",
+        "He is the manager, is he in sector 7?",
+        "He is the manager, does he in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "He is the manager, isn't he in sector 7?",
+      "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'. (Sector 7 calibration)",
+      "explanation": "Positive statement requires a negative tag. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l81_q2",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She could have won the race in sector 7.",
+      "sentence": "She could have won the race in sector 7.",
+      "options": [
+        "Could she have won the race in sector 7?",
+        "Could have she won the race in sector 7?",
+        "Should she have won the race in sector 7?",
+        "She could have won the race in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Could she have won the race in sector 7?",
+      "hint": "Invert the first auxiliary 'could'. (Sector 7 calibration)",
+      "explanation": "Invert the primary modal in a perfect modal construction. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l81_q3",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The project was finished in sector 7.",
+      "sentence": "The project was finished in sector 7.",
+      "options": [
+        "Was the project finished in sector 7?",
+        "Did the project finish in sector 7?",
+        "Is the project finished in sector 7?",
+        "The project was finished in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Was the project finished in sector 7?",
+      "hint": "Invert 'was' in passive voice. (Sector 7 calibration)",
+      "explanation": "Invert auxiliary 'was' and subject. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l82_q1",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You haven't seen him lately in sector 7.",
+      "sentence": "You haven't seen him lately in sector 7.",
+      "options": [
+        "You haven't seen him lately, have you in sector 7?",
+        "You haven't seen him lately, haven't you in sector 7?",
+        "Have you seen him lately in sector 7?",
+        "You haven't seen him lately, did you in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "You haven't seen him lately, have you in sector 7?",
+      "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'. (Sector 7 calibration)",
+      "explanation": "Negative statement requires a positive tag. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l82_q2",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They should have reported this in sector 7.",
+      "sentence": "They should have reported this in sector 7.",
+      "options": [
+        "Should they have reported this in sector 7?",
+        "Should have they reported this in sector 7?",
+        "Would they have reported this in sector 7?",
+        "They should have reported this in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Should they have reported this in sector 7?",
+      "hint": "Invert the first modal 'should'. (Sector 7 calibration)",
+      "explanation": "Invert the primary modal. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l82_q3",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They are being monitored in sector 7.",
+      "sentence": "They are being monitored in sector 7.",
+      "options": [
+        "Are they being monitored in sector 7?",
+        "Do they being monitored in sector 7?",
+        "Are they monitoring in sector 7?",
+        "They are being monitored in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Are they being monitored in sector 7?",
+      "hint": "Invert the first auxiliary 'are'. (Sector 7 calibration)",
+      "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l83_q1",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They will arrive on time in sector 7.",
+      "sentence": "They will arrive on time in sector 7.",
+      "options": [
+        "They will arrive on time, won't they in sector 7?",
+        "They will arrive on time, will they in sector 7?",
+        "Will they arrive on time in sector 7?",
+        "They will arrive on time, don't they in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "They will arrive on time, won't they in sector 7?",
+      "hint": "A positive future statement with 'will' takes 'won't they?'. (Sector 7 calibration)",
+      "explanation": "Will shifts to won't in the tag. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l83_q2",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "He would have helped us in sector 7.",
+      "sentence": "He would have helped us in sector 7.",
+      "options": [
+        "Would he have helped us in sector 7?",
+        "Would have he helped us in sector 7?",
+        "Could he have helped us in sector 7?",
+        "He would have helped us in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Would he have helped us in sector 7?",
+      "hint": "Invert the first auxiliary 'would'. (Sector 7 calibration)",
+      "explanation": "Invert the primary modal. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l83_q3",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "He has been arrested in sector 7.",
+      "sentence": "He has been arrested in sector 7.",
+      "options": [
+        "Has he been arrested in sector 7?",
+        "Did he been arrested in sector 7?",
+        "Have he been arrested in sector 7?",
+        "He has been arrested in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Has he been arrested in sector 7?",
+      "hint": "Invert 'has'. (Sector 7 calibration)",
+      "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l84_q1",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She doesn't like coffee in sector 7.",
+      "sentence": "She doesn't like coffee in sector 7.",
+      "options": [
+        "She doesn't like coffee, does she in sector 7?",
+        "She doesn't like coffee, doesn't she in sector 7?",
+        "Does she like coffee in sector 7?",
+        "She doesn't like coffee, is she in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "She doesn't like coffee, does she in sector 7?",
+      "hint": "A negative present statement with 'doesn't' takes 'does she?'. (Sector 7 calibration)",
+      "explanation": "Doesn't shifts to does in the tag. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l84_q2",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You must have seen the sign in sector 7.",
+      "sentence": "You must have seen the sign in sector 7.",
+      "options": [
+        "Must you have seen the sign in sector 7?",
+        "Must have you seen the sign in sector 7?",
+        "Did you have seen the sign in sector 7?",
+        "You must have seen the sign in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Must you have seen the sign in sector 7?",
+      "hint": "Invert 'must'. (Sector 7 calibration)",
+      "explanation": "Invert the primary modal. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l84_q3",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She was being interviewed in sector 7.",
+      "sentence": "She was being interviewed in sector 7.",
+      "options": [
+        "Was she being interviewed in sector 7?",
+        "Did she being interviewed in sector 7?",
+        "Was she interviewing in sector 7?",
+        "She was being interviewed in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Was she being interviewed in sector 7?",
+      "hint": "Invert 'was'. (Sector 7 calibration)",
+      "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l85_q1",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You can drive a shuttle in sector 7.",
+      "sentence": "You can drive a shuttle in sector 7.",
+      "options": [
+        "You can drive a shuttle, can't you in sector 7?",
+        "You can drive a shuttle, can you in sector 7?",
+        "Can you drive a shuttle in sector 7?",
+        "You can drive a shuttle, don't you in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "You can drive a shuttle, can't you in sector 7?",
+      "hint": "Positive 'can' takes negative 'can't you?'. (Sector 7 calibration)",
+      "explanation": "Can shifts to can't in the tag. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l85_q2",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "We might have missed them in sector 7.",
+      "sentence": "We might have missed them in sector 7.",
+      "options": [
+        "Might we have missed them in sector 7?",
+        "Might have we missed them in sector 7?",
+        "Did we might have missed them in sector 7?",
+        "We might have missed them in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Might we have missed them in sector 7?",
+      "hint": "Invert 'might'. (Sector 7 calibration)",
+      "explanation": "Invert the primary modal. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l85_q3",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "We have been invited in sector 7.",
+      "sentence": "We have been invited in sector 7.",
+      "options": [
+        "Have we been invited in sector 7?",
+        "Has we been invited in sector 7?",
+        "Do we been invited in sector 7?",
+        "We have been invited in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Have we been invited in sector 7?",
+      "hint": "Invert 'have'. (Sector 7 calibration)",
+      "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l86_q1",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "He didn't finish the task in sector 7.",
+      "sentence": "He didn't finish the task in sector 7.",
+      "options": [
+        "He didn't finish the task, did he in sector 7?",
+        "He didn't finish the task, didn't he in sector 7?",
+        "Did he finish the task in sector 7?",
+        "He didn't finish the task, was he in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "He didn't finish the task, did he in sector 7?",
+      "hint": "Negative past 'didn't' takes positive 'did he?'. (Sector 7 calibration)",
+      "explanation": "Didn't shifts to did in the tag. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l86_q2",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She ought to have apologized in sector 7.",
+      "sentence": "She ought to have apologized in sector 7.",
+      "options": [
+        "Ought she to have apologized in sector 7?",
+        "Ought to she have apologized in sector 7?",
+        "Should she to have apologized in sector 7?",
+        "She ought to have apologized in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Ought she to have apologized in sector 7?",
+      "hint": "Invert 'ought' with the subject. (Sector 7 calibration)",
+      "explanation": "Invert the first element of 'ought to'. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l86_q3",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "The temple is being restored in sector 7.",
+      "sentence": "The temple is being restored in sector 7.",
+      "options": [
+        "Is the temple being restored in sector 7?",
+        "Does the temple being restored in sector 7?",
+        "Is the temple restoring in sector 7?",
+        "The temple is being restored in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Is the temple being restored in sector 7?",
+      "hint": "Invert 'is'. (Sector 7 calibration)",
+      "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l87_q1",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They are ready in sector 7.",
+      "sentence": "They are ready in sector 7.",
+      "options": [
+        "They are ready, aren't they in sector 7?",
+        "They are ready, are they in sector 7?",
+        "Are they ready in sector 7?",
+        "They are ready, don't they in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "They are ready, aren't they in sector 7?",
+      "hint": "Positive 'are' takes negative 'aren't they?'. (Sector 7 calibration)",
+      "explanation": "Are shifts to aren't in the tag. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l87_q2",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They can't have forgotten in sector 7.",
+      "sentence": "They can't have forgotten in sector 7.",
+      "options": [
+        "Can they have forgotten in sector 7?",
+        "Can't they have forgotten in sector 7?",
+        "Have they can't forgotten in sector 7?",
+        "They can't have forgotten in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Can they have forgotten in sector 7?",
+      "hint": "Invert modal 'can' (or negative 'can't'). (Sector 7 calibration)",
+      "explanation": "Invert the modal auxiliary. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l87_q3",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "They had been warned in sector 7.",
+      "sentence": "They had been warned in sector 7.",
+      "options": [
+        "Had they been warned in sector 7?",
+        "Did they had been warned in sector 7?",
+        "Have they been warned in sector 7?",
+        "They had been warned in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Had they been warned in sector 7?",
+      "hint": "Invert 'had'. (Sector 7 calibration)",
+      "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l88_q1",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She has been working hard in sector 7.",
+      "sentence": "She has been working hard in sector 7.",
+      "options": [
+        "She has been working hard, hasn't she in sector 7?",
+        "She has been working hard, has she in sector 7?",
+        "Has she been working hard in sector 7?",
+        "She has been working hard, doesn't she in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "She has been working hard, hasn't she in sector 7?",
+      "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'. (Sector 7 calibration)",
+      "explanation": "Has shifts to hasn't in the tag. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l88_q2",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You shouldn't have done that in sector 7.",
+      "sentence": "You shouldn't have done that in sector 7.",
+      "options": [
+        "Should you have done that in sector 7?",
+        "Shouldn't you have done that in sector 7?",
+        "Did you shouldn't have done that in sector 7?",
+        "You shouldn't have done that in sector 7?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Shouldn't you have done that in sector 7?",
+      "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'. (Sector 7 calibration)",
+      "explanation": "Negative inversion is correct. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l88_q3",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "She will be promoted in sector 7.",
+      "sentence": "She will be promoted in sector 7.",
+      "options": [
+        "Will she be promoted in sector 7?",
+        "Does she will be promoted in sector 7?",
+        "Will she promoting in sector 7?",
+        "She will be promoted in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Will she be promoted in sector 7?",
+      "hint": "Invert 'will'. (Sector 7 calibration)",
+      "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l89_q1",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You wouldn't do that in sector 7.",
+      "sentence": "You wouldn't do that in sector 7.",
+      "options": [
+        "You wouldn't do that, would you in sector 7?",
+        "You wouldn't do that, wouldn't you in sector 7?",
+        "Would you do that in sector 7?",
+        "You wouldn't do that, did you in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "You wouldn't do that, would you in sector 7?",
+      "hint": "Negative 'wouldn't' takes positive 'would you?'. (Sector 7 calibration)",
+      "explanation": "Wouldn't shifts to would in the tag. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l89_q2",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "He wouldn't have agreed in sector 7.",
+      "sentence": "He wouldn't have agreed in sector 7.",
+      "options": [
+        "Would he have agreed in sector 7?",
+        "Wouldn't he have agreed in sector 7?",
+        "Did he wouldn't have agreed in sector 7?",
+        "He wouldn't have agreed in sector 7?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Wouldn't he have agreed in sector 7?",
+      "hint": "Keep the negative force for inverted negative modal. (Sector 7 calibration)",
+      "explanation": "Wouldn't he have agreed is correct. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l89_q3",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "He should be informed in sector 7.",
+      "sentence": "He should be informed in sector 7.",
+      "options": [
+        "Should he be informed in sector 7?",
+        "Do he should be informed in sector 7?",
+        "Should he informing in sector 7?",
+        "He should be informed in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Should he be informed in sector 7?",
+      "hint": "Invert 'should'. (Sector 7 calibration)",
+      "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l90_q1",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "We should go now in sector 7.",
+      "sentence": "We should go now in sector 7.",
+      "options": [
+        "We should go now, shouldn't we in sector 7?",
+        "We should go now, should we in sector 7?",
+        "Should we go now in sector 7?",
+        "We should go now, don't we in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "We should go now, shouldn't we in sector 7?",
+      "hint": "Positive 'should' takes negative 'shouldn't we?'. (Sector 7 calibration)",
+      "explanation": "Should shifts to shouldn't in the tag. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l90_q2",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "We couldn't have known in sector 7.",
+      "sentence": "We couldn't have known in sector 7.",
+      "options": [
+        "Could we have known in sector 7?",
+        "Couldn't we have known in sector 7?",
+        "Did we couldn't have known in sector 7?",
+        "We couldn't have known in sector 7?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Couldn't we have known in sector 7?",
+      "hint": "Negative modal inversion. (Sector 7 calibration)",
+      "explanation": "Couldn't we have known is correct. [Verified in sector 7]."
+    },
+    {
+      "id": "qf_l90_q3",
+      "instruction": "CRANK THE INQUIRY",
+      "difficulty": 3,
+      "subtype": "questionFormatter",
+      "interactionType": "Crank Logic",
+      "question": "You would be surprised in sector 7.",
+      "sentence": "You would be surprised in sector 7.",
+      "options": [
+        "Would you be surprised in sector 7?",
+        "Do you would be surprised in sector 7?",
+        "Would you surprising in sector 7?",
+        "You would be surprised in sector 7?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Would you be surprised in sector 7?",
+      "hint": "Invert 'would'. (Sector 7 calibration)",
+      "explanation": "Invert primary auxiliary. [Verified in sector 7]."
+    }
+  ]
 }
-

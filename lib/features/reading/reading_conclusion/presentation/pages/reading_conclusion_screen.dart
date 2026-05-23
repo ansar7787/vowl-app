@@ -11,6 +11,7 @@ import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
 class ReadingConclusionScreen extends StatefulWidget {
   final int level;
@@ -44,20 +45,27 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
     context.read<ReadingBloc>().add(FetchReadingQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onBridgeStart(Offset position) {
+  void _onBridgeStart(Offset globalPosition) {
     if (_isAnswered) return;
-    setState(() {
-      _dragStart = position;
-      _dragCurrent = position;
-      _hapticService.selection();
-    });
+    final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
+    if (renderBox != null) {
+      final localPos = renderBox.globalToLocal(globalPosition);
+      setState(() {
+        _dragStart = localPos;
+        _dragCurrent = localPos;
+        _hapticService.selection();
+      });
+    }
   }
 
-  void _onBridgeUpdate(Offset delta) {
+  void _onBridgeUpdate(Offset globalPosition) {
     if (_isAnswered || _dragStart == null) return;
-    setState(() {
-      _dragCurrent = (_dragCurrent ?? Offset.zero) + delta;
-    });
+    final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
+    if (renderBox != null) {
+      setState(() {
+        _dragCurrent = renderBox.globalToLocal(globalPosition);
+      });
+    }
   }
 
   void _onBridgeEnd(int index, String selected, String correct) {
@@ -79,11 +87,15 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
       _soundService.playWrong();
       setState(() { _isAnswered = true; _isCorrect = false; });
       context.read<ReadingBloc>().add(SubmitAnswer(false));
-      Future.delayed(1.seconds, () => setState(() {
-        _dragStart = null;
-        _dragCurrent = null;
-        _selectedIndex = null;
-      }));
+      Future.delayed(1.seconds, () {
+        if (mounted) {
+          setState(() {
+            _dragStart = null;
+            _dragCurrent = null;
+            _selectedIndex = null;
+          });
+        }
+      });
     }
   }
 
@@ -116,7 +128,7 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
         
         return ReadingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
@@ -125,21 +137,36 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
           child: quest == null ? const SizedBox() : Stack(
             children: [
-              Column(
-                children: [
-                  SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
-                  SizedBox(height: 48.h),
-                  _buildCentralPassage(quest.passage ?? "", theme.primaryColor, isDark),
-                  const Spacer(),
-                  _buildConclusionTerminals(quest.options ?? [], quest.correctAnswer ?? "", theme.primaryColor, isDark),
-                  SizedBox(height: 40.h),
-                ],
+              SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 16.h),
+                      _buildInstruction(theme.primaryColor),
+                      SizedBox(height: 32.h),
+                      
+                      _buildCentralPassage(quest.passage ?? "", theme.primaryColor, isDark),
+                      SizedBox(height: 32.h),
+                      
+                      _buildConclusionTerminals(quest.options ?? [], quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                      
+                      if (_isAnswered) ...[
+                        SizedBox(height: 30.h),
+                        _buildCorrectResult(quest, theme.primaryColor, isDark),
+                      ],
+                      SizedBox(height: 60.h),
+                    ],
+                  ),
+                ),
               ),
               if (_dragStart != null && _dragCurrent != null)
-                CustomPaint(
-                  painter: BridgePainter(start: _dragStart!, end: _dragCurrent!, color: theme.primaryColor),
-                  size: Size.infinite,
+                IgnorePointer(
+                  child: CustomPaint(
+                    painter: BridgePainter(start: _dragStart!, end: _dragCurrent!, color: theme.primaryColor),
+                    size: Size.infinite,
+                  ),
                 ),
             ],
           ),
@@ -166,23 +193,33 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
   Widget _buildCentralPassage(String text, Color color, bool isDark) {
     return GestureDetector(
       onPanStart: (details) => _onBridgeStart(details.globalPosition),
-      onPanUpdate: (details) => _onBridgeUpdate(details.delta),
+      onPanUpdate: (details) => _onBridgeUpdate(details.globalPosition),
       child: Container(
         padding: EdgeInsets.all(24.r),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(20.r),
+          color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+          borderRadius: BorderRadius.circular(24.r),
           border: Border.all(color: color, width: 2),
-          boxShadow: [BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 30)],
+          boxShadow: [
+            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 30)
+          ],
         ),
         child: Column(
           children: [
             Icon(Icons.auto_awesome_motion_rounded, color: color, size: 32.r),
             SizedBox(height: 16.h),
-            Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 16.sp, height: 1.5, color: Colors.white70)),
+            Text(
+              text, 
+              textAlign: TextAlign.center, 
+              style: GoogleFonts.fredoka(
+                fontSize: 15.sp, 
+                height: 1.4, 
+                color: isDark ? Colors.white70 : Colors.black87
+              )
+            ),
           ],
         ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -5, end: 5, duration: 2.seconds),
+      ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -4, end: 4, duration: 2.seconds),
     );
   }
 
@@ -197,21 +234,81 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
             bool isCorrect = _isAnswered && options[index].trim().toLowerCase() == correct.trim().toLowerCase();
             bool isWrong = _isAnswered && isSelected && !isCorrect;
 
-            return AnimatedContainer(
-              duration: 300.milliseconds,
-              width: double.infinity,
-              padding: EdgeInsets.all(16.r),
-              decoration: BoxDecoration(
-                color: isCorrect ? Colors.greenAccent.withValues(alpha: 0.2) : (isWrong ? Colors.redAccent.withValues(alpha: 0.2) : (isSelected ? color.withValues(alpha: 0.2) : Colors.white10)),
-                borderRadius: BorderRadius.circular(15.r),
-                border: Border.all(color: isCorrect || isWrong || isSelected ? (isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color)) : Colors.white24, width: 2),
+            return GestureDetector(
+              onTap: () => _submitAnswer(index, options[index], correct),
+              child: AnimatedContainer(
+                duration: 300.milliseconds,
+                width: double.infinity,
+                padding: EdgeInsets.all(18.r),
+                decoration: BoxDecoration(
+                  color: isCorrect 
+                      ? Colors.greenAccent.withValues(alpha: 0.25) 
+                      : (isWrong 
+                          ? Colors.redAccent.withValues(alpha: 0.25) 
+                          : (isSelected ? color.withValues(alpha: 0.15) : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.04)))),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: isCorrect || isWrong || isSelected 
+                        ? (isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color)) 
+                        : (isDark ? Colors.white24 : Colors.black12), 
+                    width: 2
+                  ),
+                ),
+                child: Text(
+                  options[index].toUpperCase(), 
+                  textAlign: TextAlign.center, 
+                  style: GoogleFonts.shareTechMono(
+                    fontSize: 12.sp, 
+                    fontWeight: FontWeight.bold, 
+                    color: isDark ? Colors.white : Colors.black87
+                  )
+                ),
               ),
-              child: Text(options[index].toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.shareTechMono(fontSize: 14.sp, fontWeight: FontWeight.bold, color: Colors.white)),
             );
           },
         ),
       )),
     );
+  }
+
+  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 
@@ -223,7 +320,7 @@ class BridgePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()..color = color..strokeWidth = 3..style = PaintingStyle.stroke;
-    final glow = Paint()..color = color.withValues(alpha: 0.3)..strokeWidth = 10..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
+    final glow = Paint()..color = color.withValues(alpha: 0.35)..strokeWidth = 10..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
     
     final path = Path();
     path.moveTo(start.dx, start.dy);
@@ -232,11 +329,9 @@ class BridgePainter extends CustomPainter {
     canvas.drawPath(path, glow);
     canvas.drawPath(path, paint);
     
-    // Draw crystal joints
-    canvas.drawCircle(start, 5.r, Paint()..color = color);
-    canvas.drawCircle(end, 5.r, Paint()..color = color);
+    canvas.drawCircle(start, 6.r, Paint()..color = color);
+    canvas.drawCircle(end, 6.r, Paint()..color = color);
   }
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
-

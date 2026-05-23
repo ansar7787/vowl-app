@@ -12,6 +12,7 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 
 class PronounResolutionScreen extends StatefulWidget {
   final int level;
@@ -60,7 +61,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false;
-        _rotation = 0.0;
+        _targetIndex = nodeIndex;
       });
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
@@ -94,7 +95,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is GrammarLoaded) ? state.currentQuest : null;
+        final GrammarQuest? quest = (state is GrammarLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? ["NOUN A", "NOUN B", "NOUN C"];
         
         return GrammarBaseLayout(
@@ -131,6 +132,11 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                   ),
                 ),
               ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
+              if (_isAnswered) ...[
+                SizedBox(height: 20.h),
+                _buildCorrectResult(quest, theme.primaryColor, isDark),
+              ],
 
               Expanded(
                 child: _buildGravityWell(options, quest.correctAnswerIndex ?? 0, quest.targetWord ?? "it", theme.primaryColor, isDark),
@@ -216,6 +222,49 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
         ),
       );
     });
+  }
+
+  Widget _buildCorrectResult(GrammarQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Container(
+        padding: EdgeInsets.all(24.r),
+        decoration: BoxDecoration(
+          color: displayColor.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+        ),
+        child: Column(
+          children: [
+            Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 40.r),
+            SizedBox(height: 12.h),
+            Text(
+              correct ? "CORRECT!" : "INCORRECT",
+              style: GoogleFonts.outfit(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w900,
+                color: displayColor,
+                letterSpacing: 2,
+              ),
+            ),
+            if (quest.explanation != null) ...[
+              SizedBox(height: 12.h),
+              Text(
+                quest.explanation!,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.outfit(
+                  fontSize: 13.sp,
+                  color: isDark ? Colors.white60 : Colors.black54,
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 

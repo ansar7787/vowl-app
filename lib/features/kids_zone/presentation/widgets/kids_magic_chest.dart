@@ -35,6 +35,8 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
   void initState() {
     super.initState();
     _startTimer();
+    // Update immediately so the countdown shows on first render
+    WidgetsBinding.instance.addPostFrameCallback((_) => _updateCountdown());
   }
 
   @override
@@ -120,7 +122,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                     context.read<EconomyBloc>().add(EconomyClaimKidsDailyRewardRequested(amount));
                     widget.showNotification(
                       context,
-                      "🎁 HOORAY! YOU FOUND $amount 🚗!",
+                      "🎁 HOORAY! YOU FOUND $amount ⭐!",
                     );
                     di.sl<SoundService>().playCorrect();
                   }

@@ -32,6 +32,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
   final _soundService = di.sl<SoundService>();
   
   double _rotation = 0.0;
+  double _panStartAngle = 0.0;
   int _selectedIndex = 0;
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -43,16 +44,6 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
   void initState() {
     super.initState();
     context.read<GrammarBloc>().add(FetchGrammarQuests(gameType: widget.gameType, level: widget.level));
-  }
-
-  void _onRotate(double delta, int count) {
-    if (_isAnswered) return;
-    setState(() {
-      _rotation += delta * 0.01;
-      _selectedIndex = ((_rotation * (count / 6.28)).round() % count).abs();
-      // Tick haptic
-      _hapticService.selection();
-    });
   }
 
   void _submitAnswer(int correctIndex) {
@@ -71,8 +62,6 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false;
-        _rotation = 0.0;
-        _selectedIndex = 0;
       });
       context.read<GrammarBloc>().add(SubmitAnswer(false));
     }
@@ -142,7 +131,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                       ),
                       children: _buildSentenceWithBlank(
                         quest.question ?? "___ sentence.", 
-                        _isAnswered ? options[_selectedIndex] : null, 
+                        options[_selectedIndex], 
                         theme.primaryColor, 
                         isDark
                       ),
@@ -150,6 +139,11 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                   ),
                 ),
               ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
+
+              if (_isAnswered) ...[
+                SizedBox(height: 24.h),
+                _buildCorrectResult(quest, theme.primaryColor, isDark),
+              ],
 
               Expanded(
                 child: _buildRotaryDial(options, theme.primaryColor, isDark),
@@ -249,27 +243,48 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
             offset: Offset(cos(angle) * 125.r, sin(angle) * 125.r),
             child: AnimatedScale(
               duration: 300.ms,
-              scale: isSelected ? 1.2 : 0.9,
-              child: Text(
-                options[i],
+              scale: isSelected ? 1.25 : 0.9,
+              child: AnimatedDefaultTextStyle(
+                duration: 300.ms,
                 style: GoogleFonts.outfit(
                   fontSize: 16.sp,
                   fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
                   color: isSelected ? primaryColor : (isDark ? Colors.white30 : Colors.black26),
                   letterSpacing: 1
                 ),
+                child: Text(options[i]),
               ),
             ),
           );
         }),
         // The Physical Dial (Glass Morph)
         GestureDetector(
-          onPanUpdate: (details) {
-            // Precise Rotation Logic
-            final center = Offset(140.r, 140.r);
+          onPanStart: (details) {
+            if (_isAnswered) return;
+            final center = Offset(85.r, 85.r);
             final pos = details.localPosition;
-            final angle = atan2(pos.dy - center.dy, pos.dx - center.dx);
-            _onRotate(angle, options.length);
+            _panStartAngle = atan2(pos.dy - center.dy, pos.dx - center.dx) - _rotation;
+          },
+          onPanUpdate: (details) {
+            if (_isAnswered) return;
+            final center = Offset(85.r, 85.r);
+            final pos = details.localPosition;
+            final currentAngle = atan2(pos.dy - center.dy, pos.dx - center.dx);
+            final newRotation = currentAngle - _panStartAngle;
+            
+            final count = options.length;
+            final normalizedRot = (newRotation + pi / 2) % (2 * pi);
+            final rawIndex = (count - (normalizedRot / (2 * pi) * count).round()) % count;
+            final selected = rawIndex.clamp(0, count - 1);
+            
+            if (selected != _selectedIndex) {
+              _hapticService.selection();
+            }
+            
+            setState(() {
+              _rotation = newRotation;
+              _selectedIndex = selected;
+            });
           },
           child: Transform.rotate(
             angle: _rotation,
@@ -351,6 +366,49 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
         ),
       ),
     );
+  }
+
+  Widget _buildCorrectResult(GameQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Container(
+        padding: EdgeInsets.all(24.r),
+        decoration: BoxDecoration(
+          color: displayColor.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+        ),
+        child: Column(
+          children: [
+            Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 40.r),
+            SizedBox(height: 12.h),
+            Text(
+              correct ? "CORRECT!" : "INCORRECT",
+              style: GoogleFonts.outfit(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w900,
+                color: displayColor,
+                letterSpacing: 2,
+              ),
+            ),
+            if (quest.explanation != null) ...[
+              SizedBox(height: 12.h),
+              Text(
+                quest.explanation!,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.outfit(
+                  fontSize: 13.sp,
+                  color: isDark ? Colors.white60 : Colors.black54,
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 

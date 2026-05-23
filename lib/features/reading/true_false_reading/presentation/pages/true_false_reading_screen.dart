@@ -11,6 +11,8 @@ import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
 class TrueFalseReadingScreen extends StatefulWidget {
   final int level;
@@ -62,15 +64,20 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     if (_isAnswered) return;
     bool isCorrect = (val ? "true" : "false") == correct.trim().toLowerCase();
 
+    setState(() {
+      _isAnswered = true;
+      _isCorrect = isCorrect;
+      _coinX = val ? 120.w : -120.w;
+      _coinY = 0.0;
+    });
+
     if (isCorrect) {
       _hapticService.success();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; });
       context.read<ReadingBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { _isAnswered = true; _isCorrect = false; });
       context.read<ReadingBloc>().add(SubmitAnswer(false));
     }
   }
@@ -104,25 +111,35 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
         
         return ReadingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 24.h),
-              _buildPassageViewer(quest.passage ?? "", theme.primaryColor, isDark),
-              SizedBox(height: 32.h),
-              _buildStatementBanner(quest.question ?? "", theme.primaryColor),
-              const Spacer(),
-              _buildCoinFlipZone(theme.primaryColor, isDark),
-              const Spacer(),
-            ],
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 24.h),
+                  _buildPassageViewer(quest.passage ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 32.h),
+                  _buildStatementBanner(quest.question ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 40.h),
+                  _buildCoinFlipZone(theme.primaryColor, isDark),
+                  if (_isAnswered) ...[
+                    SizedBox(height: 30.h),
+                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                  ],
+                  SizedBox(height: 60.h),
+                ],
+              ),
+            ),
           ),
         );
       },
@@ -147,16 +164,36 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
   Widget _buildPassageViewer(String passage, Color color, bool isDark) {
     return GlassTile(
       padding: EdgeInsets.all(20.r), borderRadius: BorderRadius.circular(20.r),
-      color: color.withValues(alpha: 0.05),
-      child: Text(passage, style: GoogleFonts.fredoka(fontSize: 16.sp, height: 1.5, color: isDark ? Colors.white70 : Colors.black87)),
+      color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+      child: Text(
+        passage, 
+        style: GoogleFonts.fredoka(
+          fontSize: 16.sp, 
+          height: 1.5, 
+          color: isDark ? Colors.white70 : Colors.black87
+        )
+      ),
     );
   }
 
-  Widget _buildStatementBanner(String statement, Color color) {
+  Widget _buildStatementBanner(String statement, Color color, bool isDark) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-      decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(15.r), border: Border.all(color: color.withValues(alpha: 0.3))),
-      child: Text('"$statement"', textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w800, color: color, fontStyle: FontStyle.italic)),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: isDark ? 0.1 : 0.06), 
+        borderRadius: BorderRadius.circular(15.r), 
+        border: Border.all(color: color.withValues(alpha: 0.3))
+      ),
+      child: Text(
+        '"$statement"', 
+        textAlign: TextAlign.center, 
+        style: GoogleFonts.outfit(
+          fontSize: 18.sp, 
+          fontWeight: FontWeight.w800, 
+          color: isDark ? color : color.withValues(alpha: 0.95), 
+          fontStyle: FontStyle.italic
+        )
+      ),
     );
   }
 
@@ -185,8 +222,8 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
                       colors: [Colors.amberAccent, Colors.orangeAccent],
                       begin: Alignment.topLeft, end: Alignment.bottomRight,
                     ),
-                    boxShadow: [BoxShadow(color: Colors.black45, blurRadius: 15, offset: const Offset(0, 5))],
-                    border: Border.all(color: Colors.white24, width: 2),
+                    boxShadow: [BoxShadow(color: isDark ? Colors.black45 : Colors.black12, blurRadius: 15, offset: const Offset(0, 5))],
+                    border: Border.all(color: Colors.white30, width: 2),
                   ),
                   child: Center(child: Icon(Icons.stars_rounded, color: Colors.white, size: 48.r)),
                 ),
@@ -201,13 +238,16 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
   Widget _buildSlot(String label, Color color, bool isDark) {
     bool isTargeted = (_coinX > 0 && label == "TRUE") || (_coinX < 0 && label == "FALSE");
     return Opacity(
-      opacity: isTargeted ? 1.0 : 0.3,
+      opacity: isTargeted ? 1.0 : (isDark ? 0.3 : 0.15),
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.1),
+          color: color.withValues(alpha: isDark ? 0.1 : 0.05),
           borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(color: color.withValues(alpha: 0.4), width: 2),
+          border: Border.all(
+            color: isTargeted ? color : color.withValues(alpha: isDark ? 0.4 : 0.2), 
+            width: 2
+          ),
         ),
         child: RotatedBox(
           quarterTurns: 3,
@@ -215,6 +255,46 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
         ),
       ),
     );
+  }
+
+  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 

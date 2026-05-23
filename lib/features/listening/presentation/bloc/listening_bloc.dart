@@ -314,13 +314,10 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
         if (s.hintUsed) return;
 
         final result = await useHint(NoParams());
-        result.fold(
-          (failure) => null,
-          (_) {
-            emit(s.copyWith(hintUsed: true));
-            hapticService.selection();
-          },
-        );
+        if (result.isRight()) {
+          emit(s.copyWith(hintUsed: true));
+          hapticService.selection();
+        }
       }
     });
 

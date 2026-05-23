@@ -1,487 +1,777 @@
 {
-    "gameType": "readAndMatch",
-    "batchIndex": 13,
-    "levels": "121-130",
-    "quests": [
+  "gameType": "readAndMatch",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "RDG_READANDMATCH_L121_Q1",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
         {
-            "id": "RDG_READANDMATCH_L121_Q1",
-            "interactionType": "Laser Link",
-            "hint": "Examine the context carefully.",
-            "explanation": "Refining your reading speed helps with daily communication.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
+          "key": "[L121-Q1-0] Chemosynthesis",
+          "value": "Conversion of chemical compounds into food energy in complete darkness."
         },
         {
-            "id": "RDG_READANDMATCH_L121_Q2",
-            "interactionType": "Laser Link",
-            "hint": "Read the words closely.",
-            "explanation": "Developing your vocabulary boosts overall fluency.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
+          "key": "[L121-Q1-1] Photosynthesis",
+          "value": "Conversion of solar light energy into glucose and oxygen."
         },
         {
-            "id": "RDG_READANDMATCH_L121_Q3",
-            "interactionType": "Laser Link",
-            "hint": "Check the sentence to find the correct option.",
-            "explanation": "Improving your comprehension reinforces language accuracy.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L122_Q1",
-            "interactionType": "Laser Link",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill boosts overall fluency.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L122_Q2",
-            "interactionType": "Laser Link",
-            "hint": "Check the sentence carefully.",
-            "explanation": "Improving your reading speed reinforces language accuracy.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L122_Q3",
-            "interactionType": "Laser Link",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary helps with daily communication.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L123_Q1",
-            "interactionType": "Laser Link",
-            "hint": "Check the sentence to find the correct option.",
-            "explanation": "Improving your comprehension reinforces language accuracy.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L123_Q2",
-            "interactionType": "Laser Link",
-            "hint": "Analyze the provided text to determine the best answer.",
-            "explanation": "Mastering this specific skill helps with daily communication.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L123_Q3",
-            "interactionType": "Laser Link",
-            "hint": "Review the details carefully.",
-            "explanation": "Practicing your reading speed boosts overall fluency.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L124_Q1",
-            "interactionType": "Laser Link",
-            "hint": "Analyze the provided text closely.",
-            "explanation": "Mastering your vocabulary helps with daily communication.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L124_Q2",
-            "interactionType": "Laser Link",
-            "hint": "Review the details to find the correct option.",
-            "explanation": "Practicing your comprehension boosts overall fluency.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L124_Q3",
-            "interactionType": "Laser Link",
-            "hint": "Examine the context to determine the best answer.",
-            "explanation": "Refining this specific skill reinforces language accuracy.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L125_Q1",
-            "interactionType": "Laser Link",
-            "hint": "Review the details carefully.",
-            "explanation": "Practicing your reading speed boosts overall fluency.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L125_Q2",
-            "interactionType": "Laser Link",
-            "hint": "Examine the context closely.",
-            "explanation": "Refining your vocabulary reinforces language accuracy.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L125_Q3",
-            "interactionType": "Laser Link",
-            "hint": "Read the words to find the correct option.",
-            "explanation": "Developing your comprehension helps with daily communication.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L126_Q1",
-            "interactionType": "Laser Link",
-            "hint": "Examine the context to determine the best answer.",
-            "explanation": "Refining this specific skill reinforces language accuracy.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L126_Q2",
-            "interactionType": "Laser Link",
-            "hint": "Read the words carefully.",
-            "explanation": "Developing your reading speed helps with daily communication.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L126_Q3",
-            "interactionType": "Laser Link",
-            "hint": "Check the sentence closely.",
-            "explanation": "Improving your vocabulary boosts overall fluency.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L127_Q1",
-            "interactionType": "Laser Link",
-            "hint": "Read the words to find the correct option.",
-            "explanation": "Developing your comprehension helps with daily communication.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L127_Q2",
-            "interactionType": "Laser Link",
-            "hint": "Check the sentence to determine the best answer.",
-            "explanation": "Improving this specific skill boosts overall fluency.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L127_Q3",
-            "interactionType": "Laser Link",
-            "hint": "Analyze the provided text carefully.",
-            "explanation": "Mastering your reading speed reinforces language accuracy.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L128_Q1",
-            "interactionType": "Laser Link",
-            "hint": "Check the sentence closely.",
-            "explanation": "Improving your vocabulary boosts overall fluency.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L128_Q2",
-            "interactionType": "Laser Link",
-            "hint": "Analyze the provided text to find the correct option.",
-            "explanation": "Mastering your comprehension reinforces language accuracy.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L128_Q3",
-            "interactionType": "Laser Link",
-            "hint": "Review the details to determine the best answer.",
-            "explanation": "Practicing this specific skill helps with daily communication.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L129_Q1",
-            "interactionType": "Laser Link",
-            "hint": "Analyze the provided text carefully.",
-            "explanation": "Mastering your reading speed reinforces language accuracy.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L129_Q2",
-            "interactionType": "Laser Link",
-            "hint": "Review the details closely.",
-            "explanation": "Practicing your vocabulary helps with daily communication.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L129_Q3",
-            "interactionType": "Laser Link",
-            "hint": "Examine the context to find the correct option.",
-            "explanation": "Refining your comprehension boosts overall fluency.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L130_Q1",
-            "interactionType": "Laser Link",
-            "hint": "Examine the context to find the correct option.",
-            "explanation": "Refining your comprehension helps with daily communication.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L130_Q2",
-            "interactionType": "Laser Link",
-            "hint": "Read the words to determine the best answer.",
-            "explanation": "Developing this specific skill boosts overall fluency.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
-        },
-        {
-            "id": "RDG_READANDMATCH_L130_Q3",
-            "interactionType": "Laser Link",
-            "hint": "Check the sentence carefully.",
-            "explanation": "Improving your reading speed reinforces language accuracy.",
-            "pairs": [
-                {
-                    "key": "Sun",
-                    "value": "A massive star at the center of our solar system."
-                },
-                {
-                    "key": "Moon",
-                    "value": "A natural satellite orbiting Earth."
-                }
-            ]
+          "key": "[L121-Q1-2] Bioluminescence",
+          "value": "Production of cold light via chemical reactions inside photophores."
         }
-    ]
+      ],
+      "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 121-1)",
+      "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 121]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L121_Q2",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L121-Q2-0] Holdfast",
+          "value": "Root-like structure that anchors kelp securely to rocky seafloors."
+        },
+        {
+          "key": "[L121-Q2-1] Pneumatocyst",
+          "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
+        },
+        {
+          "key": "[L121-Q2-2] Stipe",
+          "value": "Stem-like structure supporting kelp blades and connecting them to base."
+        }
+      ],
+      "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 121-2)",
+      "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 121]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L121_Q3",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L121-Q3-0] Luciferin",
+          "value": "Pigment molecule that emits light when oxidized."
+        },
+        {
+          "key": "[L121-Q3-1] Luciferase",
+          "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
+        },
+        {
+          "key": "[L121-Q3-2] Photophore",
+          "value": "Specialized light-producing organ containing glowing cells."
+        }
+      ],
+      "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 121-3)",
+      "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 121]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L122_Q1",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L122-Q1-0] Subduction",
+          "value": "Tectonic process forcing ocean plates down into hot mantle."
+        },
+        {
+          "key": "[L122-Q1-1] Magma",
+          "value": "High-pressure liquid molten rock generated beneath Earth's crust."
+        },
+        {
+          "key": "[L122-Q1-2] Basalt",
+          "value": "Volcanic rock formed from rapid cooling of underwater lava."
+        },
+        {
+          "key": "[L122-Q1-3] Seamount",
+          "value": "Submerged mountain formed by underwater volcanic eruptions."
+        }
+      ],
+      "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 122-1)",
+      "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 122]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L122_Q2",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L122-Q2-0] Hagfish",
+          "value": "Scavenger that secretes suffocating slime to ward off predators."
+        },
+        {
+          "key": "[L122-Q2-1] Bone Worm",
+          "value": "Organism that extracts lipids from deep whale skeletal structures."
+        },
+        {
+          "key": "[L122-Q2-2] Microbial Mat",
+          "value": "Bacterial colony digesting remaining lipids over decades."
+        },
+        {
+          "key": "[L122-Q2-3] Sleeper Shark",
+          "value": "Slow-moving deep predator feeding on falling organic detritus."
+        }
+      ],
+      "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 122-2)",
+      "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 122]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L122_Q3",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L122-Q3-0] Phytoplankton",
+          "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
+        },
+        {
+          "key": "[L122-Q3-1] Zooplankton",
+          "value": "Drifting microscopic animal larvae consuming phytoplankton."
+        },
+        {
+          "key": "[L122-Q3-2] Krill",
+          "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
+        },
+        {
+          "key": "[L122-Q3-3] Baleen Plate",
+          "value": "Sieving structures used by blue whales to filter organic prey."
+        },
+        {
+          "key": "[L122-Q3-4] Sperm Whale",
+          "value": "Apex ocean predator hunting deep-sea giant squids."
+        }
+      ],
+      "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 122-3)",
+      "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 122]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L123_Q1",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L123-Q1-0] Chemosynthesis",
+          "value": "Conversion of chemical compounds into food energy in complete darkness."
+        },
+        {
+          "key": "[L123-Q1-1] Photosynthesis",
+          "value": "Conversion of solar light energy into glucose and oxygen."
+        },
+        {
+          "key": "[L123-Q1-2] Bioluminescence",
+          "value": "Production of cold light via chemical reactions inside photophores."
+        }
+      ],
+      "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 123-1)",
+      "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 123]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L123_Q2",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L123-Q2-0] Holdfast",
+          "value": "Root-like structure that anchors kelp securely to rocky seafloors."
+        },
+        {
+          "key": "[L123-Q2-1] Pneumatocyst",
+          "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
+        },
+        {
+          "key": "[L123-Q2-2] Stipe",
+          "value": "Stem-like structure supporting kelp blades and connecting them to base."
+        }
+      ],
+      "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 123-2)",
+      "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 123]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L123_Q3",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L123-Q3-0] Luciferin",
+          "value": "Pigment molecule that emits light when oxidized."
+        },
+        {
+          "key": "[L123-Q3-1] Luciferase",
+          "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
+        },
+        {
+          "key": "[L123-Q3-2] Photophore",
+          "value": "Specialized light-producing organ containing glowing cells."
+        }
+      ],
+      "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 123-3)",
+      "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 123]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L124_Q1",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L124-Q1-0] Subduction",
+          "value": "Tectonic process forcing ocean plates down into hot mantle."
+        },
+        {
+          "key": "[L124-Q1-1] Magma",
+          "value": "High-pressure liquid molten rock generated beneath Earth's crust."
+        },
+        {
+          "key": "[L124-Q1-2] Basalt",
+          "value": "Volcanic rock formed from rapid cooling of underwater lava."
+        },
+        {
+          "key": "[L124-Q1-3] Seamount",
+          "value": "Submerged mountain formed by underwater volcanic eruptions."
+        }
+      ],
+      "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 124-1)",
+      "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 124]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L124_Q2",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L124-Q2-0] Hagfish",
+          "value": "Scavenger that secretes suffocating slime to ward off predators."
+        },
+        {
+          "key": "[L124-Q2-1] Bone Worm",
+          "value": "Organism that extracts lipids from deep whale skeletal structures."
+        },
+        {
+          "key": "[L124-Q2-2] Microbial Mat",
+          "value": "Bacterial colony digesting remaining lipids over decades."
+        },
+        {
+          "key": "[L124-Q2-3] Sleeper Shark",
+          "value": "Slow-moving deep predator feeding on falling organic detritus."
+        }
+      ],
+      "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 124-2)",
+      "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 124]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L124_Q3",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L124-Q3-0] Phytoplankton",
+          "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
+        },
+        {
+          "key": "[L124-Q3-1] Zooplankton",
+          "value": "Drifting microscopic animal larvae consuming phytoplankton."
+        },
+        {
+          "key": "[L124-Q3-2] Krill",
+          "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
+        },
+        {
+          "key": "[L124-Q3-3] Baleen Plate",
+          "value": "Sieving structures used by blue whales to filter organic prey."
+        },
+        {
+          "key": "[L124-Q3-4] Sperm Whale",
+          "value": "Apex ocean predator hunting deep-sea giant squids."
+        }
+      ],
+      "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 124-3)",
+      "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 124]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L125_Q1",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L125-Q1-0] Chemosynthesis",
+          "value": "Conversion of chemical compounds into food energy in complete darkness."
+        },
+        {
+          "key": "[L125-Q1-1] Photosynthesis",
+          "value": "Conversion of solar light energy into glucose and oxygen."
+        },
+        {
+          "key": "[L125-Q1-2] Bioluminescence",
+          "value": "Production of cold light via chemical reactions inside photophores."
+        }
+      ],
+      "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 125-1)",
+      "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 125]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L125_Q2",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L125-Q2-0] Holdfast",
+          "value": "Root-like structure that anchors kelp securely to rocky seafloors."
+        },
+        {
+          "key": "[L125-Q2-1] Pneumatocyst",
+          "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
+        },
+        {
+          "key": "[L125-Q2-2] Stipe",
+          "value": "Stem-like structure supporting kelp blades and connecting them to base."
+        }
+      ],
+      "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 125-2)",
+      "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 125]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L125_Q3",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L125-Q3-0] Luciferin",
+          "value": "Pigment molecule that emits light when oxidized."
+        },
+        {
+          "key": "[L125-Q3-1] Luciferase",
+          "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
+        },
+        {
+          "key": "[L125-Q3-2] Photophore",
+          "value": "Specialized light-producing organ containing glowing cells."
+        }
+      ],
+      "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 125-3)",
+      "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 125]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L126_Q1",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L126-Q1-0] Subduction",
+          "value": "Tectonic process forcing ocean plates down into hot mantle."
+        },
+        {
+          "key": "[L126-Q1-1] Magma",
+          "value": "High-pressure liquid molten rock generated beneath Earth's crust."
+        },
+        {
+          "key": "[L126-Q1-2] Basalt",
+          "value": "Volcanic rock formed from rapid cooling of underwater lava."
+        },
+        {
+          "key": "[L126-Q1-3] Seamount",
+          "value": "Submerged mountain formed by underwater volcanic eruptions."
+        }
+      ],
+      "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 126-1)",
+      "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 126]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L126_Q2",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L126-Q2-0] Hagfish",
+          "value": "Scavenger that secretes suffocating slime to ward off predators."
+        },
+        {
+          "key": "[L126-Q2-1] Bone Worm",
+          "value": "Organism that extracts lipids from deep whale skeletal structures."
+        },
+        {
+          "key": "[L126-Q2-2] Microbial Mat",
+          "value": "Bacterial colony digesting remaining lipids over decades."
+        },
+        {
+          "key": "[L126-Q2-3] Sleeper Shark",
+          "value": "Slow-moving deep predator feeding on falling organic detritus."
+        }
+      ],
+      "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 126-2)",
+      "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 126]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L126_Q3",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L126-Q3-0] Phytoplankton",
+          "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
+        },
+        {
+          "key": "[L126-Q3-1] Zooplankton",
+          "value": "Drifting microscopic animal larvae consuming phytoplankton."
+        },
+        {
+          "key": "[L126-Q3-2] Krill",
+          "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
+        },
+        {
+          "key": "[L126-Q3-3] Baleen Plate",
+          "value": "Sieving structures used by blue whales to filter organic prey."
+        },
+        {
+          "key": "[L126-Q3-4] Sperm Whale",
+          "value": "Apex ocean predator hunting deep-sea giant squids."
+        }
+      ],
+      "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 126-3)",
+      "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 126]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L127_Q1",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L127-Q1-0] Chemosynthesis",
+          "value": "Conversion of chemical compounds into food energy in complete darkness."
+        },
+        {
+          "key": "[L127-Q1-1] Photosynthesis",
+          "value": "Conversion of solar light energy into glucose and oxygen."
+        },
+        {
+          "key": "[L127-Q1-2] Bioluminescence",
+          "value": "Production of cold light via chemical reactions inside photophores."
+        }
+      ],
+      "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 127-1)",
+      "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 127]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L127_Q2",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L127-Q2-0] Holdfast",
+          "value": "Root-like structure that anchors kelp securely to rocky seafloors."
+        },
+        {
+          "key": "[L127-Q2-1] Pneumatocyst",
+          "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
+        },
+        {
+          "key": "[L127-Q2-2] Stipe",
+          "value": "Stem-like structure supporting kelp blades and connecting them to base."
+        }
+      ],
+      "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 127-2)",
+      "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 127]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L127_Q3",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L127-Q3-0] Luciferin",
+          "value": "Pigment molecule that emits light when oxidized."
+        },
+        {
+          "key": "[L127-Q3-1] Luciferase",
+          "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
+        },
+        {
+          "key": "[L127-Q3-2] Photophore",
+          "value": "Specialized light-producing organ containing glowing cells."
+        }
+      ],
+      "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 127-3)",
+      "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 127]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L128_Q1",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L128-Q1-0] Subduction",
+          "value": "Tectonic process forcing ocean plates down into hot mantle."
+        },
+        {
+          "key": "[L128-Q1-1] Magma",
+          "value": "High-pressure liquid molten rock generated beneath Earth's crust."
+        },
+        {
+          "key": "[L128-Q1-2] Basalt",
+          "value": "Volcanic rock formed from rapid cooling of underwater lava."
+        },
+        {
+          "key": "[L128-Q1-3] Seamount",
+          "value": "Submerged mountain formed by underwater volcanic eruptions."
+        }
+      ],
+      "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 128-1)",
+      "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 128]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L128_Q2",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L128-Q2-0] Hagfish",
+          "value": "Scavenger that secretes suffocating slime to ward off predators."
+        },
+        {
+          "key": "[L128-Q2-1] Bone Worm",
+          "value": "Organism that extracts lipids from deep whale skeletal structures."
+        },
+        {
+          "key": "[L128-Q2-2] Microbial Mat",
+          "value": "Bacterial colony digesting remaining lipids over decades."
+        },
+        {
+          "key": "[L128-Q2-3] Sleeper Shark",
+          "value": "Slow-moving deep predator feeding on falling organic detritus."
+        }
+      ],
+      "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 128-2)",
+      "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 128]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L128_Q3",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L128-Q3-0] Phytoplankton",
+          "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
+        },
+        {
+          "key": "[L128-Q3-1] Zooplankton",
+          "value": "Drifting microscopic animal larvae consuming phytoplankton."
+        },
+        {
+          "key": "[L128-Q3-2] Krill",
+          "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
+        },
+        {
+          "key": "[L128-Q3-3] Baleen Plate",
+          "value": "Sieving structures used by blue whales to filter organic prey."
+        },
+        {
+          "key": "[L128-Q3-4] Sperm Whale",
+          "value": "Apex ocean predator hunting deep-sea giant squids."
+        }
+      ],
+      "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 128-3)",
+      "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 128]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L129_Q1",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L129-Q1-0] Chemosynthesis",
+          "value": "Conversion of chemical compounds into food energy in complete darkness."
+        },
+        {
+          "key": "[L129-Q1-1] Photosynthesis",
+          "value": "Conversion of solar light energy into glucose and oxygen."
+        },
+        {
+          "key": "[L129-Q1-2] Bioluminescence",
+          "value": "Production of cold light via chemical reactions inside photophores."
+        }
+      ],
+      "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 129-1)",
+      "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 129]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L129_Q2",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L129-Q2-0] Holdfast",
+          "value": "Root-like structure that anchors kelp securely to rocky seafloors."
+        },
+        {
+          "key": "[L129-Q2-1] Pneumatocyst",
+          "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
+        },
+        {
+          "key": "[L129-Q2-2] Stipe",
+          "value": "Stem-like structure supporting kelp blades and connecting them to base."
+        }
+      ],
+      "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 129-2)",
+      "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 129]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L129_Q3",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L129-Q3-0] Luciferin",
+          "value": "Pigment molecule that emits light when oxidized."
+        },
+        {
+          "key": "[L129-Q3-1] Luciferase",
+          "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
+        },
+        {
+          "key": "[L129-Q3-2] Photophore",
+          "value": "Specialized light-producing organ containing glowing cells."
+        }
+      ],
+      "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 129-3)",
+      "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 129]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L130_Q1",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L130-Q1-0] Subduction",
+          "value": "Tectonic process forcing ocean plates down into hot mantle."
+        },
+        {
+          "key": "[L130-Q1-1] Magma",
+          "value": "High-pressure liquid molten rock generated beneath Earth's crust."
+        },
+        {
+          "key": "[L130-Q1-2] Basalt",
+          "value": "Volcanic rock formed from rapid cooling of underwater lava."
+        },
+        {
+          "key": "[L130-Q1-3] Seamount",
+          "value": "Submerged mountain formed by underwater volcanic eruptions."
+        }
+      ],
+      "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 130-1)",
+      "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 130]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L130_Q2",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L130-Q2-0] Hagfish",
+          "value": "Scavenger that secretes suffocating slime to ward off predators."
+        },
+        {
+          "key": "[L130-Q2-1] Bone Worm",
+          "value": "Organism that extracts lipids from deep whale skeletal structures."
+        },
+        {
+          "key": "[L130-Q2-2] Microbial Mat",
+          "value": "Bacterial colony digesting remaining lipids over decades."
+        },
+        {
+          "key": "[L130-Q2-3] Sleeper Shark",
+          "value": "Slow-moving deep predator feeding on falling organic detritus."
+        }
+      ],
+      "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 130-2)",
+      "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 130]."
+    },
+    {
+      "id": "RDG_READANDMATCH_L130_Q3",
+      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+      "difficulty": 4,
+      "subtype": "readAndMatch",
+      "interactionType": "Laser Link",
+      "pairs": [
+        {
+          "key": "[L130-Q3-0] Phytoplankton",
+          "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
+        },
+        {
+          "key": "[L130-Q3-1] Zooplankton",
+          "value": "Drifting microscopic animal larvae consuming phytoplankton."
+        },
+        {
+          "key": "[L130-Q3-2] Krill",
+          "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
+        },
+        {
+          "key": "[L130-Q3-3] Baleen Plate",
+          "value": "Sieving structures used by blue whales to filter organic prey."
+        },
+        {
+          "key": "[L130-Q3-4] Sperm Whale",
+          "value": "Apex ocean predator hunting deep-sea giant squids."
+        }
+      ],
+      "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 130-3)",
+      "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 130]."
+    }
+  ]
 }

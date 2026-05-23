@@ -4,16 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_base_layout.dart';
-
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
+import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
 class ConnectedSpeechScreen extends StatefulWidget {
   final int level;
@@ -31,14 +31,14 @@ class ConnectedSpeechScreen extends StatefulWidget {
 class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  final _speechService = di.sl<SpeechService>();
 
   int _lastProcessedIndex = -1;
+  int? _lastLives;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
-  double _flowProgress = 0.0;
-  bool _isFlowing = false;
+  double _sliderValue = 0.5;
+  int? _selectedIndex;
 
   @override
   void initState() {
@@ -46,34 +46,54 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     context.read<AccentBloc>().add(FetchAccentQuests(gameType: widget.gameType, level: widget.level));
   }
 
-  void _onFlowUpdate(DragUpdateDetails details) {
-    if (_isAnswered || !_isFlowing) return;
-    setState(() {
-      _flowProgress = (_flowProgress + (details.delta.dx / 1.sw)).clamp(0.0, 1.0);
-    });
+  void _playTts(String text) {
     _hapticService.selection();
+    _soundService.playTts(text);
   }
 
-  void _onFlowStart() {
+  void _onSliderUpdate(double value, int correct) {
     if (_isAnswered) return;
-    _hapticService.selection();
+    setState(() => _sliderValue = value);
+    
+    // Auto-lock when reaching ends
+    if (value < 0.1) {
+      _submitChoice(0, correct);
+    } else if (value > 0.9) {
+      _submitChoice(1, correct);
+    }
+  }
+
+  void _submitChoice(int index, int correct) {
+    if (_isAnswered) return;
     setState(() {
-      _isFlowing = true;
-      _flowProgress = 0.0;
+      _selectedIndex = index;
+      _sliderValue = index == 0 ? 0.0 : 1.0;
     });
-  }
+    
+    bool isCorrect = index == correct;
 
-  void _onFlowEnd() {
-    if (_isAnswered || !_isFlowing) return;
-    setState(() => _isFlowing = false);
-    _submitAnswer();
-  }
-
-  void _submitAnswer() {
-    _soundService.playCorrect();
-    _hapticService.success();
-    setState(() { _isAnswered = true; _isCorrect = true; });
-    context.read<AccentBloc>().add(SubmitAnswer(true));
+    if (isCorrect) {
+      _hapticService.success();
+      _soundService.playCorrect();
+      setState(() { _isAnswered = true; _isCorrect = true; });
+      context.read<AccentBloc>().add(SubmitAnswer(true));
+    } else {
+      _hapticService.error();
+      _soundService.playWrong();
+      setState(() { _isAnswered = true; _isCorrect = false; });
+      context.read<AccentBloc>().add(SubmitAnswer(false));
+      
+      Future.delayed(2.seconds, () {
+        if (mounted) {
+          setState(() {
+            _isAnswered = false;
+            _isCorrect = null;
+            _selectedIndex = null;
+            _sliderValue = 0.5;
+          });
+        }
+      });
+    }
   }
 
   @override
@@ -84,15 +104,26 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     return BlocConsumer<AccentBloc, AccentState>(
       listener: (context, state) {
         if (state is AccentLoaded) {
-          if (state.currentIndex != _lastProcessedIndex) {
+          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
+          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
-              _flowProgress = 0.0;
-              _isFlowing = false;
+              _sliderValue = 0.5;
+              _selectedIndex = null;
             });
+            // Proactively auto-play sound on question load
+            final quest = state.currentQuest as AccentQuest?;
+            if (quest != null && quest.textToSpeak != null) {
+              Future.delayed(500.milliseconds, () {
+                if (mounted) {
+                  _soundService.playTts(quest.textToSpeak!);
+                }
+              });
+            }
           }
+          _lastLives = state.livesRemaining;
         }
         if (state is AccentGameComplete) {
           setState(() => _showConfetti = true);
@@ -102,21 +133,40 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is AccentLoaded) ? state.currentQuest : null;
+        final AccentQuest? quest = (state is AccentLoaded) ? state.currentQuest as AccentQuest? : null;
+        final options = quest?.options ?? ["A", "B"];
 
         return AccentBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<AccentBloc>().add(NextQuestion()),
           onHint: () => context.read<AccentBloc>().add(AccentHintUsed()),
-          child: quest == null ? const SizedBox() : Stack(
-            alignment: Alignment.center,
-            children: [
-              _buildInstruction(theme.primaryColor),
-              _buildFlowDisplay(quest.textToSpeak ?? "", theme.primaryColor, isDark),
-              _buildLiquidStream(theme.primaryColor, isDark),
-              _buildFlowAction(theme.primaryColor),
-            ],
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 24.h),
+                  
+                  _buildPromptCard(quest.word ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 32.h),
+                  
+                  _buildPulseSpeaker(quest.textToSpeak ?? "", theme.primaryColor),
+                  SizedBox(height: 48.h),
+                  
+                  _buildSpectralSlider(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+                  
+                  if (_isAnswered) ...[
+                    SizedBox(height: 40.h),
+                    _buildResultExplanation(quest, theme.primaryColor, isDark),
+                  ],
+                  SizedBox(height: 60.h),
+                ],
+              ),
+            ),
           ),
         );
       },
@@ -124,68 +174,87 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
   }
 
   Widget _buildInstruction(Color color) {
-    return Positioned(
-      top: 20.h,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-        decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.2))),
-        child: Text("TRACE THE LIQUID FLOW WHILE LINKING WORDS", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
-      ),
-    );
-  }
-
-  Widget _buildFlowDisplay(String text, Color color, bool isDark) {
-    return Positioned(
-      top: 100.h,
-      child: Column(
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+      decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.2))),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          ScaleButton(
-            onTap: () => _speechService.speak(text),
-            child: Icon(Icons.waves_rounded, color: color, size: 40.r),
-          ),
-          SizedBox(height: 20.h),
-          Text(text.toUpperCase(), textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 24.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : Colors.black87, letterSpacing: 4)),
+          Icon(Icons.waves_rounded, size: 14.r, color: color),
+          SizedBox(width: 12.w),
+          Text("IDENTIFY THE CONNECTED SPEECH PHENOMENON ENUNCIATED", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 1.5)),
         ],
       ),
     );
   }
 
-  Widget _buildLiquidStream(Color color, bool isDark) {
-    return Center(
-      child: GestureDetector(
-        onPanUpdate: _onFlowUpdate,
-        onPanStart: (_) => _onFlowStart(),
-        onPanEnd: (_) => _onFlowEnd(),
-        child: Container(
-          width: 0.8.sw, height: 120.h,
-          decoration: BoxDecoration(
-            color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
-            borderRadius: BorderRadius.circular(60.r),
-            border: Border.all(color: color.withValues(alpha: 0.1), width: 2),
-          ),
-          child: Stack(
-            alignment: Alignment.centerLeft,
-            children: [
-              // Liquid Trace
-              Container(
-                width: 0.8.sw * _flowProgress,
-                height: 80.h,
-                margin: EdgeInsets.symmetric(horizontal: 20.w),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: [color.withValues(alpha: 0.8), color.withValues(alpha: 0.2)]),
-                  borderRadius: BorderRadius.circular(40.r),
-                  boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 20)],
+  Widget _buildPromptCard(String word, Color color, bool isDark) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: isDark ? Colors.white12 : Colors.black12, width: 2),
+      ),
+      child: Stack(
+        children: [
+          const TechPatternOverlay(opacity: 0.05),
+          Center(
+            child: Column(
+              children: [
+                Text(
+                  "TARGET PHRASE", 
+                  style: GoogleFonts.shareTechMono(
+                    fontSize: 10.sp, 
+                    fontWeight: FontWeight.bold, 
+                    color: color, 
+                    letterSpacing: 2
+                  )
                 ),
-              ),
-              // Flow Needle
-              Positioned(
-                left: (0.8.sw * _flowProgress) - 10.w,
-                child: Container(
-                  width: 40.r, height: 40.r,
-                  decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white, boxShadow: [BoxShadow(color: color, blurRadius: 15)]),
-                  child: Icon(Icons.blur_on_rounded, color: color, size: 24.r),
-                ).animate(onPlay: (c) => c.repeat()).rotate(duration: 2.seconds),
-              ),
+                SizedBox(height: 8.h),
+                Text(
+                  word.toUpperCase(), 
+                  style: GoogleFonts.outfit(
+                    fontSize: 28.sp, 
+                    fontWeight: FontWeight.w900, 
+                    color: isDark ? Colors.white : Colors.black87, 
+                    letterSpacing: 4
+                  )
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPulseSpeaker(String text, Color color) {
+    return ScaleButton(
+      onTap: () => _playTts(text),
+      child: Container(
+        width: 110.r, height: 110.r,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: color.withValues(alpha: 0.1),
+          border: Border.all(color: color, width: 3),
+          boxShadow: [
+            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20)
+          ],
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.graphic_eq_rounded, color: color, size: 36.r)
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2)),
+              SizedBox(height: 6.h),
+              Text(
+                "HEAR PHRASE",
+                style: GoogleFonts.shareTechMono(color: color, fontSize: 8.sp, fontWeight: FontWeight.bold, letterSpacing: 1)
+              )
             ],
           ),
         ),
@@ -193,17 +262,131 @@ class _ConnectedSpeechScreenState extends State<ConnectedSpeechScreen> {
     );
   }
 
-  Widget _buildFlowAction(Color color) {
-    return Positioned(
-      bottom: 80.h,
-      child: Column(
-        children: [
-          Icon(_isFlowing ? Icons.opacity_rounded : Icons.water_drop_rounded, color: color, size: 48.r),
-          SizedBox(height: 12.h),
-          Text(_isFlowing ? "LIQUID FLOWING..." : "GRAB NEEDLE AND TRACE", style: GoogleFonts.shareTechMono(fontSize: 14.sp, fontWeight: FontWeight.bold, color: color)),
-        ],
+  Widget _buildSpectralSlider(List<String> options, int correct, Color color, bool isDark) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(child: _buildConnectedSpeechOrb(options[0], 0, correct, color, isDark)),
+            SizedBox(width: 16.w),
+            Expanded(child: _buildConnectedSpeechOrb(options[1], 1, correct, color, isDark)),
+          ],
+        ),
+        SizedBox(height: 32.h),
+        _buildSliderBar(correct, color),
+      ],
+    );
+  }
+
+  Widget _buildConnectedSpeechOrb(String text, int index, int correctIndex, Color color, bool isDark) {
+    final bool isSelected = _selectedIndex == index;
+    final bool correct = index == correctIndex;
+    
+    Color orbColor = color.withValues(alpha: 0.1);
+    Color textColor = color;
+    if (_isAnswered && isSelected) {
+      orbColor = correct ? Colors.greenAccent.withValues(alpha: 0.2) : Colors.redAccent.withValues(alpha: 0.2);
+      textColor = correct ? Colors.greenAccent : Colors.redAccent;
+    } else if (isSelected) {
+      orbColor = color;
+      textColor = Colors.white;
+    }
+
+    return ScaleButton(
+      onTap: () => _submitChoice(index, correctIndex),
+      child: Container(
+        height: 100.h,
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+        decoration: BoxDecoration(
+          color: orbColor,
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: _isAnswered && isSelected 
+              ? textColor 
+              : color.withValues(alpha: isSelected ? 1.0 : 0.3), 
+            width: 3
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: isSelected 
+                ? (correct ? Colors.greenAccent.withValues(alpha: 0.3) : color.withValues(alpha: 0.3)) 
+                : Colors.transparent, 
+              blurRadius: 15
+            )
+          ],
+        ),
+        child: Center(
+          child: Text(
+            text, 
+            textAlign: TextAlign.center,
+            style: GoogleFonts.shareTechMono(
+              fontSize: 12.sp, 
+              fontWeight: FontWeight.bold, 
+              color: textColor,
+              height: 1.2
+            )
+          ),
+        ),
+      ).animate(onPlay: (c) => c.repeat(reverse: true))
+       .scale(begin: const Offset(1,1), end: const Offset(1.05, 1.05), duration: (2 + index).seconds),
+    );
+  }
+
+  Widget _buildSliderBar(int correct, Color color) {
+    return SliderTheme(
+      data: SliderThemeData(
+        activeTrackColor: color,
+        inactiveTrackColor: color.withValues(alpha: 0.1),
+        thumbColor: color,
+        overlayColor: color.withValues(alpha: 0.2),
+        trackHeight: 10.h,
+        thumbShape: RoundSliderThumbShape(enabledThumbRadius: 16.r),
+      ),
+      child: Slider(
+        value: _sliderValue,
+        onChanged: (v) => _onSliderUpdate(v, correct),
       ),
     );
   }
-}
 
+  Widget _buildResultExplanation(AccentQuest quest, Color color, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT SPEECH FLOW!" : "INCORRECT SPEECH FLOW",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
+  }
+}

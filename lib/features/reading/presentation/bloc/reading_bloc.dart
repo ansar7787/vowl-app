@@ -292,10 +292,10 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
         final s = state as ReadingLoaded;
         if (s.hintUsed) return;
         final result = await useHint(NoParams());
-        result.fold((failure) => null, (_) {
+        if (result.isRight()) {
           emit(s.copyWith(hintUsed: true));
           hapticService.selection();
-        });
+        }
       }
     });
 

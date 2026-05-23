@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/features/writing/domain/usecases/use_writing_hint.dart';
+import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
+import 'package:vowl/core/usecases/usecase.dart';
 import '../../domain/entities/writing_quest.dart';
 import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
 import '../../../../features/auth/domain/usecases/update_unlocked_level.dart';
@@ -144,7 +145,7 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
   final AwardBadge awardBadge;
   final SoundService soundService;
   final HapticService hapticService;
-  final UseWritingHint useHint;
+  final UseHint useHint;
 
   GameSubtype? currentGameType;
   int? currentLevel;
@@ -289,8 +290,8 @@ class WritingBloc extends Bloc<WritingEvent, WritingState> {
         final s = state as WritingLoaded;
         if (s.hintUsed) return;
 
-        final success = await useHint();
-        if (success) {
+        final result = await useHint(NoParams());
+        if (result.isRight()) {
           emit(s.copyWith(hintUsed: true));
           hapticService.selection();
         }

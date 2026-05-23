@@ -12,6 +12,7 @@ import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.d
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
 class ClozeTestScreen extends StatefulWidget {
   final int level;
@@ -63,7 +64,15 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
       _soundService.playWrong();
       setState(() { _isAnswered = true; _isCorrect = false; });
       context.read<ReadingBloc>().add(SubmitAnswer(false));
-      Future.delayed(1.seconds, () => setState(() => _dockedOption = null));
+      Future.delayed(1.seconds, () {
+        if (mounted) {
+          setState(() {
+            _dockedOption = null;
+            _isAnswered = false;
+            _isCorrect = null;
+          });
+        }
+      });
     }
   }
 
@@ -94,23 +103,36 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
         }
       },
       builder: (context, state) {
-        final quest = (state is ReadingLoaded) ? state.currentQuest : null;
+        final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
         
         return ReadingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 16.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 48.h),
-              _buildPneumaticPort(quest.passage ?? "", quest.correctAnswer ?? "", theme.primaryColor, isDark),
-              const Spacer(),
-              _buildFuelCells(quest.options ?? [], theme.primaryColor, isDark),
-              SizedBox(height: 40.h),
-            ],
+          child: quest == null ? const SizedBox() : SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 16.h),
+                  _buildInstruction(theme.primaryColor),
+                  SizedBox(height: 32.h),
+                  
+                  _buildPneumaticPort(quest.passage ?? "", quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                  SizedBox(height: 40.h),
+                  
+                  _buildFuelCells(quest.options ?? [], theme.primaryColor, isDark),
+                  
+                  if (_isAnswered) ...[
+                    SizedBox(height: 30.h),
+                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                  ],
+                  SizedBox(height: 60.h),
+                ],
+              ),
+            ),
           ),
         );
       },
@@ -135,38 +157,63 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
   Widget _buildPneumaticPort(String text, String correct, Color color, bool isDark) {
     final parts = text.split('____');
     return Container(
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.all(20.r),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.05),
+        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: Colors.white10),
+        border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
       ),
       child: Stack(
         children: [
-          const TechPatternOverlay(opacity: 0.1),
+          const TechPatternOverlay(opacity: 0.05),
           Padding(
-            padding: EdgeInsets.all(24.r),
+            padding: EdgeInsets.all(16.r),
             child: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                style: GoogleFonts.fredoka(fontSize: 20.sp, color: Colors.white70),
+                style: GoogleFonts.fredoka(fontSize: 18.sp, color: isDark ? Colors.white70 : Colors.black87, height: 1.5),
                 children: [
                   TextSpan(text: parts[0]),
                   WidgetSpan(
+                    alignment: PlaceholderAlignment.middle,
                     child: DragTarget<String>(
                       onAcceptWithDetails: (details) => _onDock(details.data, correct),
                       builder: (context, candidateData, rejectedData) {
+                        final bool correctDocked = _isAnswered && _dockedOption?.trim().toLowerCase() == correct.trim().toLowerCase();
+                        final bool wrongDocked = _isAnswered && !correctDocked;
+
                         return Container(
                           margin: EdgeInsets.symmetric(horizontal: 8.w),
-                          width: 120.w, height: 40.h,
+                          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
                           decoration: BoxDecoration(
-                            color: _dockedOption != null ? color.withValues(alpha: 0.3) : Colors.black45,
-                            borderRadius: BorderRadius.circular(8.r),
-                            border: Border.all(color: _dockedOption != null ? color : Colors.white24, width: 2),
-                            boxShadow: [if (_dockedOption != null) BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 15)],
+                            color: correctDocked 
+                                ? Colors.greenAccent.withValues(alpha: 0.25)
+                                : (wrongDocked 
+                                    ? Colors.redAccent.withValues(alpha: 0.25)
+                                    : (_dockedOption != null ? color.withValues(alpha: 0.2) : (isDark ? Colors.black45 : Colors.grey.shade200))),
+                            borderRadius: BorderRadius.circular(10.r),
+                            border: Border.all(
+                              color: correctDocked 
+                                  ? Colors.greenAccent 
+                                  : (wrongDocked 
+                                      ? Colors.redAccent 
+                                      : (_dockedOption != null ? color : (isDark ? Colors.white24 : Colors.black12))), 
+                              width: 2
+                            ),
+                            boxShadow: [
+                              if (_dockedOption != null) 
+                                BoxShadow(color: (correctDocked ? Colors.greenAccent : (wrongDocked ? Colors.redAccent : color)).withValues(alpha: 0.3), blurRadius: 15)
+                            ],
                           ),
-                          child: Center(
-                            child: Text(_dockedOption?.toUpperCase() ?? "VACUUM", style: GoogleFonts.shareTechMono(fontSize: 14.sp, color: _dockedOption != null ? Colors.white : Colors.white24, fontWeight: FontWeight.w900)),
+                          child: Text(
+                            _dockedOption?.toUpperCase() ?? "DRAG HERE", 
+                            style: GoogleFonts.shareTechMono(
+                              fontSize: 12.sp, 
+                              color: _dockedOption != null 
+                                  ? (isDark ? Colors.white : Colors.black87) 
+                                  : (isDark ? Colors.white30 : Colors.black38), 
+                              fontWeight: FontWeight.w900
+                            )
                           ),
                         ).animate(target: _dockedOption != null ? 1 : 0).shimmer(duration: 1.seconds);
                       },
@@ -184,30 +231,39 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
 
   Widget _buildFuelCells(List<String> options, Color color, bool isDark) {
     return Wrap(
-      spacing: 16.w, runSpacing: 16.h,
+      spacing: 12.w, runSpacing: 12.h,
       alignment: WrapAlignment.center,
-      children: options.map((o) => Draggable<String>(
-        data: o,
-        feedback: Material(
-          color: Colors.transparent,
-          child: _buildCellWidget(o, color, true),
-        ),
-        childWhenDragging: Opacity(opacity: 0.3, child: _buildCellWidget(o, color, false)),
-        child: _buildCellWidget(o, color, false),
-      )).toList(),
+      children: options.map((o) {
+        final bool isAlreadyDocked = _dockedOption == o;
+        return Opacity(
+          opacity: isAlreadyDocked ? 0.35 : 1.0,
+          child: IgnorePointer(
+            ignoring: isAlreadyDocked,
+            child: Draggable<String>(
+              data: o,
+              feedback: Material(
+                color: Colors.transparent,
+                child: _buildCellWidget(o, color, isDark, true),
+              ),
+              childWhenDragging: Opacity(opacity: 0.3, child: _buildCellWidget(o, color, isDark, false)),
+              child: _buildCellWidget(o, color, isDark, false),
+            ),
+          ),
+        );
+      }).toList(),
     );
   }
 
-  Widget _buildCellWidget(String text, Color color, bool isFeedback) {
+  Widget _buildCellWidget(String text, Color color, bool isDark, bool isFeedback) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
       decoration: BoxDecoration(
-        color: Colors.black87,
-        borderRadius: BorderRadius.circular(12.r),
+        color: isDark ? Colors.black87 : Colors.white,
+        borderRadius: BorderRadius.circular(14.r),
         border: Border.all(color: color, width: 2),
         boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: isFeedback ? 20 : 10),
-          if (isFeedback) BoxShadow(color: Colors.white.withValues(alpha: 0.2), blurRadius: 40),
+          BoxShadow(color: color.withValues(alpha: isDark ? 0.4 : 0.15), blurRadius: isFeedback ? 20 : 10),
+          if (isFeedback) BoxShadow(color: Colors.white.withValues(alpha: 0.25), blurRadius: 40),
         ],
       ),
       child: Row(
@@ -215,10 +271,56 @@ class _ClozeTestScreenState extends State<ClozeTestScreen> {
         children: [
           Icon(Icons.bolt_rounded, size: 16.r, color: color),
           SizedBox(width: 8.w),
-          Text(text.toUpperCase(), style: GoogleFonts.shareTechMono(fontSize: 14.sp, fontWeight: FontWeight.bold, color: Colors.white)),
+          Text(
+            text.toUpperCase(), 
+            style: GoogleFonts.shareTechMono(
+              fontSize: 12.sp, 
+              fontWeight: FontWeight.bold, 
+              color: isDark ? Colors.white : Colors.black87
+            )
+          ),
         ],
       ),
     );
   }
-}
 
+  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            correct ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.explanation != null) ...[
+            SizedBox(height: 10.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
+  }
+}

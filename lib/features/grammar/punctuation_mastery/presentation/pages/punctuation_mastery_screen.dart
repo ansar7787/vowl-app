@@ -136,8 +136,14 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
                 ),
               ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
 
+              if (_isAnswered) ...[
+                SizedBox(height: 32.h),
+                _buildCorrectResult(quest, theme.primaryColor, isDark),
+              ],
+
               SizedBox(height: 48.h),
-              _buildStickerSheet(marks, theme.primaryColor),
+              if (!_isAnswered)
+                _buildStickerSheet(marks, theme.primaryColor),
               const Spacer(),
               if (!_isAnswered)
                 _buildSubmitButton(theme.primaryColor, quest),
@@ -223,14 +229,21 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
           ),
           child: Center(
             child: mark != null 
-              ? Text(
-                  mark, 
-                  style: GoogleFonts.outfit(
-                    fontSize: 20.sp, 
-                    fontWeight: FontWeight.w900, 
-                    color: Colors.white
-                  )
-                ).animate().shimmer(duration: 2.seconds)
+              ? GestureDetector(
+                  onTap: () {
+                    if (_isAnswered) return;
+                    _hapticService.selection();
+                    setState(() => _placedStickers.remove(index));
+                  },
+                  child: Text(
+                    mark, 
+                    style: GoogleFonts.outfit(
+                      fontSize: 20.sp, 
+                      fontWeight: FontWeight.w900, 
+                      color: Colors.white
+                    )
+                  ).animate().shimmer(duration: 2.seconds),
+                )
               : (isHighlight ? Icon(Icons.add, color: primaryColor, size: 18.r) : null),
           ),
         ).animate(target: mark != null ? 1 : 0).scale(duration: 300.ms, curve: Curves.easeOutBack);
@@ -318,6 +331,69 @@ class _PunctuationMasteryScreenState extends State<PunctuationMasteryScreen> {
         ),
       ),
     );
+  }
+
+  Widget _buildCorrectResult(GameQuest quest, Color primaryColor, bool isDark) {
+    final bool correct = _isCorrect == true;
+    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
+
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Container(
+        padding: EdgeInsets.all(24.r),
+        decoration: BoxDecoration(
+          color: displayColor.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+        ),
+        child: Column(
+          children: [
+            Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 40.r),
+            SizedBox(height: 12.h),
+            Text(
+              correct ? "CORRECT!" : "INCORRECT",
+              style: GoogleFonts.outfit(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w900,
+                color: displayColor,
+                letterSpacing: 2,
+              ),
+            ),
+            SizedBox(height: 12.h),
+            Text(
+              "CORRECT SENTENCE:",
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white60 : Colors.black54,
+                letterSpacing: 1,
+              ),
+            ),
+            SizedBox(height: 6.h),
+            Text(
+              quest.correctAnswer ?? "",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.fredoka(
+                fontSize: 20.sp,
+                fontWeight: FontWeight.w600,
+                color: displayColor,
+              ),
+            ),
+            if (quest.explanation != null) ...[
+              SizedBox(height: 12.h),
+              Text(
+                quest.explanation!,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.outfit(
+                  fontSize: 13.sp,
+                  color: isDark ? Colors.white60 : Colors.black54,
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
+    ).animate().shimmer(duration: 2.seconds);
   }
 }
 
