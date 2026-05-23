@@ -1,532 +1,742 @@
 [
   {
+    "level": 161,
     "quests": [
       {
-        "shader": "sparkle_dust",
+        "id": "KIDS_CLOTHING_L161_Q1",
+        "gameType": "clothing",
+        "level": 161,
+        "instruction": "What item do we wear on our feet when we walk outside?",
+        "question": "Shoes",
+        "correctAnswer": "Shoes",
         "options": [
-          "Sandals",
-          "Pajamas",
-          "Swimsuit"
+          "Shoes",
+          "Gloves",
+          "Jacket"
         ],
-        "id": "KID_CLOTHING_L161_Q1",
-        "instruction": "Which is Sandals?",
-        "correctAnswer": "Sandals",
-        "question": "🩴",
-        "interactionType": "choice",
-        "hint": "Open shoes for a sunny beach day.",
-        "painter": "SunnyMeadow",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose the shoes for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "leaf_flutter",
+        "id": "KIDS_CLOTHING_L161_Q2",
+        "gameType": "clothing",
+        "level": 161,
+        "instruction": "What item do we wear on our neck to keep cozy and warm?",
+        "question": "Scarf",
+        "correctAnswer": "Scarf",
         "options": [
-          "Necklace",
-          "Ring",
-          "Shirt"
-        ],
-        "id": "KID_CLOTHING_L161_Q2",
-        "instruction": "Identify: 📿",
-        "correctAnswer": "Necklace",
-        "question": "Necklace",
-        "interactionType": "choice",
-        "hint": "Jewelry for your neck.",
-        "painter": "ForestFriend",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sand_swirl",
-        "options": [
-          "Umbrella",
-          "Belt",
-          "Tie"
-        ],
-        "id": "KID_CLOTHING_L161_Q3",
-        "instruction": "Tap on ☂",
-        "correctAnswer": "Umbrella",
-        "question": "☂",
-        "interactionType": "choice",
-        "hint": "You hold an umbrella to stay dry.",
-        "painter": "DinoDesert",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 161
-  },
-  {
-    "quests": [
-      {
-        "shader": "water_ripples",
-        "options": [
-          "Dress",
-          "Hat",
+          "Gloves",
+          "Scarf",
           "Socks"
         ],
-        "id": "KID_CLOTHING_L162_Q1",
-        "instruction": "Choose the Dress",
-        "correctAnswer": "Dress",
-        "question": "Dress",
-        "interactionType": "choice",
-        "hint": "A one-piece outfit that can spin.",
-        "painter": "OceanWave",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose the scarf for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "magic_twinkle",
-        "options": [
-          "Sweater",
-          "Watch",
-          "Backpack"
-        ],
-        "id": "KID_CLOTHING_L162_Q2",
-        "instruction": "Pick the Sweater",
-        "correctAnswer": "Sweater",
-        "question": "🧶",
-        "interactionType": "choice",
-        "hint": "A warm, knitted top.",
-        "painter": "StarryNight",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "bubble_pop",
+        "id": "KIDS_CLOTHING_L161_Q3",
+        "gameType": "clothing",
+        "level": 161,
+        "instruction": "What item do we wear on our body to protect from chilly wind?",
+        "question": "Jacket",
+        "correctAnswer": "Jacket",
         "options": [
           "Jacket",
+          "Shoes",
+          "Socks"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose the jacket for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 162,
+    "quests": [
+      {
+        "id": "KIDS_CLOTHING_L162_Q1",
+        "gameType": "clothing",
+        "level": 162,
+        "instruction": "What item do we wear on our head on a sunny day?",
+        "question": "Hat",
+        "correctAnswer": "Hat",
+        "options": [
+          "Hat",
+          "Shoes",
+          "Socks"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose the hat for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L162_Q2",
+        "gameType": "clothing",
+        "level": 162,
+        "instruction": "What item do we wear on our feet under our shoes?",
+        "question": "Socks",
+        "correctAnswer": "Socks",
+        "options": [
+          "Hat",
+          "Scarf",
+          "Socks"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose the socks for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L162_Q3",
+        "gameType": "clothing",
+        "level": 162,
+        "instruction": "What item do we wear on our hands when it is cold?",
+        "question": "Gloves",
+        "correctAnswer": "Gloves",
+        "options": [
+          "Gloves",
+          "Scarf",
+          "Shoes"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose the gloves for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 163,
+    "quests": [
+      {
+        "id": "KIDS_CLOTHING_L163_Q1",
+        "gameType": "clothing",
+        "level": 163,
+        "instruction": "What item do we wear on our feet when we walk outside?",
+        "question": "Shoes",
+        "correctAnswer": "Shoes",
+        "options": [
+          "Socks",
+          "Hat",
+          "Shoes"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose the shoes for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L163_Q2",
+        "gameType": "clothing",
+        "level": 163,
+        "instruction": "What item do we wear on our neck to keep cozy and warm?",
+        "question": "Scarf",
+        "correctAnswer": "Scarf",
+        "options": [
+          "Hat",
+          "Socks",
+          "Scarf"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose the scarf for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L163_Q3",
+        "gameType": "clothing",
+        "level": 163,
+        "instruction": "What item do we wear on our body to protect from chilly wind?",
+        "question": "Jacket",
+        "correctAnswer": "Jacket",
+        "options": [
+          "Jacket",
+          "Shoes",
+          "Gloves"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose the jacket for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 164,
+    "quests": [
+      {
+        "id": "KIDS_CLOTHING_L164_Q1",
+        "gameType": "clothing",
+        "level": 164,
+        "instruction": "What item do we wear on our head on a sunny day?",
+        "question": "Hat",
+        "correctAnswer": "Hat",
+        "options": [
+          "Jacket",
+          "Scarf",
+          "Hat"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose the hat for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L164_Q2",
+        "gameType": "clothing",
+        "level": 164,
+        "instruction": "What item do we wear on our feet under our shoes?",
+        "question": "Socks",
+        "correctAnswer": "Socks",
+        "options": [
+          "Hat",
+          "Scarf",
+          "Socks"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose the socks for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L164_Q3",
+        "gameType": "clothing",
+        "level": 164,
+        "instruction": "What item do we wear on our hands when it is cold?",
+        "question": "Gloves",
+        "correctAnswer": "Gloves",
+        "options": [
+          "Shoes",
           "Scarf",
           "Gloves"
         ],
-        "id": "KID_CLOTHING_L162_Q3",
-        "instruction": "Where is Jacket?",
-        "correctAnswer": "Jacket",
-        "question": "Jacket",
-        "interactionType": "choice",
-        "hint": "A jacket keeps you warm when it is cold.",
-        "painter": "RainbowSwirl",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose the gloves for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
-    ],
-    "level": 162
+    ]
   },
   {
+    "level": 165,
     "quests": [
       {
-        "shader": "sugar_glow",
-        "options": [
-          "Bowtie",
-          "Crown",
-          "Cape"
-        ],
-        "id": "KID_CLOTHING_L163_Q1",
-        "instruction": "Point to 🥀",
-        "correctAnswer": "Bowtie",
-        "question": "🥀",
-        "interactionType": "choice",
-        "hint": "A small, cute tie.",
-        "painter": "CandyCloud",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "pastel_dream",
-        "options": [
-          "Boots",
-          "Sandals",
-          "Pajamas"
-        ],
-        "id": "KID_CLOTHING_L163_Q2",
-        "instruction": "Look for 👢",
-        "correctAnswer": "Boots",
-        "question": "Boots",
-        "interactionType": "choice",
-        "hint": "Heavy shoes for rain or snow.",
-        "painter": "UnicornMist",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sparkle_dust",
-        "options": [
-          "Earrings",
-          "Necklace",
-          "Ring"
-        ],
-        "id": "KID_CLOTHING_L163_Q3",
-        "instruction": "Find the Earrings",
-        "correctAnswer": "Earrings",
-        "question": "✨",
-        "interactionType": "choice",
-        "hint": "Jewelry for your ears.",
-        "painter": "SunnyMeadow",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 163
-  },
-  {
-    "quests": [
-      {
-        "shader": "leaf_flutter",
-        "options": [
-          "Raincoat",
-          "Umbrella",
-          "Belt"
-        ],
-        "id": "KID_CLOTHING_L164_Q1",
-        "instruction": "Select the Raincoat",
-        "correctAnswer": "Raincoat",
-        "question": "Raincoat",
-        "interactionType": "choice",
-        "hint": "A coat that keeps you dry in the rain.",
-        "painter": "ForestFriend",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sand_swirl",
-        "options": [
-          "Pants",
-          "Dress",
-          "Hat"
-        ],
-        "id": "KID_CLOTHING_L164_Q2",
-        "instruction": "Which is Pants?",
-        "correctAnswer": "Pants",
-        "question": "👖",
-        "interactionType": "choice",
-        "hint": "Pants cover your legs.",
-        "painter": "DinoDesert",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "water_ripples",
-        "options": [
-          "Skirt",
-          "Sweater",
-          "Watch"
-        ],
-        "id": "KID_CLOTHING_L164_Q3",
-        "instruction": "Identify: 👘",
-        "correctAnswer": "Skirt",
-        "question": "Skirt",
-        "interactionType": "choice",
-        "hint": "A twirly garment for your bottom half.",
-        "painter": "OceanWave",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 164
-  },
-  {
-    "quests": [
-      {
-        "shader": "magic_twinkle",
-        "options": [
-          "Shoes",
-          "Jacket",
-          "Scarf"
-        ],
-        "id": "KID_CLOTHING_L165_Q1",
-        "instruction": "Tap on 👟",
+        "id": "KIDS_CLOTHING_L165_Q1",
+        "gameType": "clothing",
+        "level": 165,
+        "instruction": "What item do we wear on our feet when we walk outside?",
+        "question": "Shoes",
         "correctAnswer": "Shoes",
-        "question": "👟",
-        "interactionType": "choice",
-        "hint": "You wear shoes to walk outside.",
-        "painter": "StarryNight",
-        "gameType": "choice_multi"
+        "options": [
+          "Hat",
+          "Jacket",
+          "Shoes"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose the shoes for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "bubble_pop",
-        "options": [
-          "Vest",
-          "Bowtie",
-          "Crown"
-        ],
-        "id": "KID_CLOTHING_L165_Q2",
-        "instruction": "Choose the Vest",
-        "correctAnswer": "Vest",
-        "question": "Vest",
-        "interactionType": "choice",
-        "hint": "A shirt with no sleeves.",
-        "painter": "RainbowSwirl",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sugar_glow",
-        "options": [
-          "Sunglasses",
-          "Boots",
-          "Sandals"
-        ],
-        "id": "KID_CLOTHING_L165_Q3",
-        "instruction": "Pick the Sunglasses",
-        "correctAnswer": "Sunglasses",
-        "question": "🕶",
-        "interactionType": "choice",
-        "hint": "Sunglasses protect your eyes from the sun.",
-        "painter": "CandyCloud",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 165
-  },
-  {
-    "quests": [
-      {
-        "shader": "pastel_dream",
-        "options": [
-          "Mittens",
-          "Earrings",
-          "Necklace"
-        ],
-        "id": "KID_CLOTHING_L166_Q1",
-        "instruction": "Where is Mittens?",
-        "correctAnswer": "Mittens",
-        "question": "Mittens",
-        "interactionType": "choice",
-        "hint": "Gloves that keep fingers together.",
-        "painter": "UnicornMist",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sparkle_dust",
-        "options": [
-          "Swimsuit",
-          "Raincoat",
-          "Umbrella"
-        ],
-        "id": "KID_CLOTHING_L166_Q2",
-        "instruction": "Point to 🩱",
-        "correctAnswer": "Swimsuit",
-        "question": "🩱",
-        "interactionType": "choice",
-        "hint": "What you wear to the swimming pool.",
-        "painter": "SunnyMeadow",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "leaf_flutter",
-        "options": [
-          "Shirt",
-          "Pants",
-          "Dress"
-        ],
-        "id": "KID_CLOTHING_L166_Q3",
-        "instruction": "Look for 👕",
-        "correctAnswer": "Shirt",
-        "question": "Shirt",
-        "interactionType": "choice",
-        "hint": "You wear a shirt on your top.",
-        "painter": "ForestFriend",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 166
-  },
-  {
-    "quests": [
-      {
-        "shader": "sand_swirl",
-        "options": [
-          "Tie",
-          "Skirt",
-          "Sweater"
-        ],
-        "id": "KID_CLOTHING_L167_Q1",
-        "instruction": "Find the Tie",
-        "correctAnswer": "Tie",
-        "question": "👔",
-        "interactionType": "choice",
-        "hint": "A long cloth worn around a shirt collar.",
-        "painter": "DinoDesert",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "water_ripples",
-        "options": [
-          "Socks",
-          "Shoes",
-          "Jacket"
-        ],
-        "id": "KID_CLOTHING_L167_Q2",
-        "instruction": "Select the Socks",
-        "correctAnswer": "Socks",
-        "question": "Socks",
-        "interactionType": "choice",
-        "hint": "Socks keep your feet warm inside shoes.",
-        "painter": "OceanWave",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "magic_twinkle",
-        "options": [
-          "Backpack",
-          "Vest",
-          "Bowtie"
-        ],
-        "id": "KID_CLOTHING_L167_Q3",
-        "instruction": "Which is Backpack?",
-        "correctAnswer": "Backpack",
-        "question": "🎒",
-        "interactionType": "choice",
-        "hint": "A bag you carry on your back.",
-        "painter": "StarryNight",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 167
-  },
-  {
-    "quests": [
-      {
-        "shader": "bubble_pop",
+        "id": "KIDS_CLOTHING_L165_Q2",
+        "gameType": "clothing",
+        "level": 165,
+        "instruction": "What item do we wear on our neck to keep cozy and warm?",
+        "question": "Scarf",
+        "correctAnswer": "Scarf",
         "options": [
           "Gloves",
-          "Sunglasses",
-          "Boots"
+          "Scarf",
+          "Shoes"
         ],
-        "id": "KID_CLOTHING_L168_Q1",
-        "instruction": "Identify: 🧤",
-        "correctAnswer": "Gloves",
-        "question": "Gloves",
-        "interactionType": "choice",
-        "hint": "Gloves keep your fingers warm.",
-        "painter": "RainbowSwirl",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose the scarf for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "sugar_glow",
+        "id": "KIDS_CLOTHING_L165_Q3",
+        "gameType": "clothing",
+        "level": 165,
+        "instruction": "What item do we wear on our body to protect from chilly wind?",
+        "question": "Jacket",
+        "correctAnswer": "Jacket",
         "options": [
-          "Cape",
-          "Mittens",
-          "Earrings"
+          "Socks",
+          "Gloves",
+          "Jacket"
         ],
-        "id": "KID_CLOTHING_L168_Q2",
-        "instruction": "Tap on 🦸",
-        "correctAnswer": "Cape",
-        "question": "🦸",
-        "interactionType": "choice",
-        "hint": "Superheroes wear capes!",
-        "painter": "CandyCloud",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "pastel_dream",
-        "options": [
-          "Pajamas",
-          "Swimsuit",
-          "Raincoat"
-        ],
-        "id": "KID_CLOTHING_L168_Q3",
-        "instruction": "Choose the Pajamas",
-        "correctAnswer": "Pajamas",
-        "question": "Pajamas",
-        "interactionType": "choice",
-        "hint": "Soft clothes for sleeping.",
-        "painter": "UnicornMist",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose the jacket for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
-    ],
-    "level": 168
+    ]
   },
   {
+    "level": 166,
     "quests": [
       {
-        "shader": "sparkle_dust",
-        "options": [
-          "Ring",
-          "Shirt",
-          "Pants"
-        ],
-        "id": "KID_CLOTHING_L169_Q1",
-        "instruction": "Pick the Ring",
-        "correctAnswer": "Ring",
-        "question": "💄",
-        "interactionType": "choice",
-        "hint": "Jewelry for your finger.",
-        "painter": "SunnyMeadow",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "leaf_flutter",
-        "options": [
-          "Belt",
-          "Tie",
-          "Skirt"
-        ],
-        "id": "KID_CLOTHING_L169_Q2",
-        "instruction": "Where is Belt?",
-        "correctAnswer": "Belt",
-        "question": "Belt",
-        "interactionType": "choice",
-        "hint": "A belt holds your pants up.",
-        "painter": "ForestFriend",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sand_swirl",
+        "id": "KIDS_CLOTHING_L166_Q1",
+        "gameType": "clothing",
+        "level": 166,
+        "instruction": "What item do we wear on our head on a sunny day?",
+        "question": "Hat",
+        "correctAnswer": "Hat",
         "options": [
           "Hat",
           "Socks",
-          "Shoes"
+          "Gloves"
         ],
-        "id": "KID_CLOTHING_L169_Q3",
-        "instruction": "Point to 👒",
-        "correctAnswer": "Hat",
-        "question": "👒",
-        "interactionType": "choice",
-        "hint": "You put a hat on your head.",
-        "painter": "DinoDesert",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose the hat for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L166_Q2",
+        "gameType": "clothing",
+        "level": 166,
+        "instruction": "What item do we wear on our feet under our shoes?",
+        "question": "Socks",
+        "correctAnswer": "Socks",
+        "options": [
+          "Jacket",
+          "Scarf",
+          "Socks"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose the socks for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L166_Q3",
+        "gameType": "clothing",
+        "level": 166,
+        "instruction": "What item do we wear on our hands when it is cold?",
+        "question": "Gloves",
+        "correctAnswer": "Gloves",
+        "options": [
+          "Jacket",
+          "Gloves",
+          "Socks"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose the gloves for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
-    ],
-    "level": 169
+    ]
   },
   {
+    "level": 167,
     "quests": [
       {
-        "shader": "water_ripples",
+        "id": "KIDS_CLOTHING_L167_Q1",
+        "gameType": "clothing",
+        "level": 167,
+        "instruction": "What item do we wear on our feet when we walk outside?",
+        "question": "Shoes",
+        "correctAnswer": "Shoes",
         "options": [
-          "Watch",
-          "Backpack",
-          "Vest"
+          "Shoes",
+          "Socks",
+          "Gloves"
         ],
-        "id": "KID_CLOTHING_L170_Q1",
-        "instruction": "Look for ⌚",
-        "correctAnswer": "Watch",
-        "question": "Watch",
-        "interactionType": "choice",
-        "hint": "A small clock on your wrist.",
-        "painter": "OceanWave",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose the shoes for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "magic_twinkle",
+        "id": "KIDS_CLOTHING_L167_Q2",
+        "gameType": "clothing",
+        "level": 167,
+        "instruction": "What item do we wear on our neck to keep cozy and warm?",
+        "question": "Scarf",
+        "correctAnswer": "Scarf",
         "options": [
           "Scarf",
-          "Gloves",
-          "Sunglasses"
+          "Shoes",
+          "Socks"
         ],
-        "id": "KID_CLOTHING_L170_Q2",
-        "instruction": "Find the Scarf",
-        "correctAnswer": "Scarf",
-        "question": "🧣",
-        "interactionType": "choice",
-        "hint": "A scarf goes around your neck in winter.",
-        "painter": "StarryNight",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose the scarf for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "bubble_pop",
+        "id": "KIDS_CLOTHING_L167_Q3",
+        "gameType": "clothing",
+        "level": 167,
+        "instruction": "What item do we wear on our body to protect from chilly wind?",
+        "question": "Jacket",
+        "correctAnswer": "Jacket",
         "options": [
-          "Crown",
-          "Cape",
-          "Mittens"
+          "Socks",
+          "Jacket",
+          "Hat"
         ],
-        "id": "KID_CLOTHING_L170_Q3",
-        "instruction": "Select the Crown",
-        "correctAnswer": "Crown",
-        "question": "Crown",
-        "interactionType": "choice",
-        "hint": "A gold hat for a king or queen.",
-        "painter": "RainbowSwirl",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose the jacket for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
-    ],
-    "level": 170
+    ]
+  },
+  {
+    "level": 168,
+    "quests": [
+      {
+        "id": "KIDS_CLOTHING_L168_Q1",
+        "gameType": "clothing",
+        "level": 168,
+        "instruction": "What item do we wear on our head on a sunny day?",
+        "question": "Hat",
+        "correctAnswer": "Hat",
+        "options": [
+          "Jacket",
+          "Scarf",
+          "Hat"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose the hat for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L168_Q2",
+        "gameType": "clothing",
+        "level": 168,
+        "instruction": "What item do we wear on our feet under our shoes?",
+        "question": "Socks",
+        "correctAnswer": "Socks",
+        "options": [
+          "Gloves",
+          "Hat",
+          "Socks"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose the socks for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L168_Q3",
+        "gameType": "clothing",
+        "level": 168,
+        "instruction": "What item do we wear on our hands when it is cold?",
+        "question": "Gloves",
+        "correctAnswer": "Gloves",
+        "options": [
+          "Shoes",
+          "Gloves",
+          "Scarf"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose the gloves for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 169,
+    "quests": [
+      {
+        "id": "KIDS_CLOTHING_L169_Q1",
+        "gameType": "clothing",
+        "level": 169,
+        "instruction": "What item do we wear on our feet when we walk outside?",
+        "question": "Shoes",
+        "correctAnswer": "Shoes",
+        "options": [
+          "Gloves",
+          "Jacket",
+          "Shoes"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose the shoes for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L169_Q2",
+        "gameType": "clothing",
+        "level": 169,
+        "instruction": "What item do we wear on our neck to keep cozy and warm?",
+        "question": "Scarf",
+        "correctAnswer": "Scarf",
+        "options": [
+          "Socks",
+          "Hat",
+          "Scarf"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose the scarf for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L169_Q3",
+        "gameType": "clothing",
+        "level": 169,
+        "instruction": "What item do we wear on our body to protect from chilly wind?",
+        "question": "Jacket",
+        "correctAnswer": "Jacket",
+        "options": [
+          "Socks",
+          "Gloves",
+          "Jacket"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose the jacket for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 170,
+    "quests": [
+      {
+        "id": "KIDS_CLOTHING_L170_Q1",
+        "gameType": "clothing",
+        "level": 170,
+        "instruction": "What item do we wear on our head on a sunny day?",
+        "question": "Hat",
+        "correctAnswer": "Hat",
+        "options": [
+          "Scarf",
+          "Jacket",
+          "Hat"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose the hat for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L170_Q2",
+        "gameType": "clothing",
+        "level": 170,
+        "instruction": "What item do we wear on our feet under our shoes?",
+        "question": "Socks",
+        "correctAnswer": "Socks",
+        "options": [
+          "Jacket",
+          "Shoes",
+          "Socks"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose the socks for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_CLOTHING_L170_Q3",
+        "gameType": "clothing",
+        "level": 170,
+        "instruction": "What item do we wear on our hands when it is cold?",
+        "question": "Gloves",
+        "correctAnswer": "Gloves",
+        "options": [
+          "Socks",
+          "Hat",
+          "Gloves"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose the gloves for protection.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
   }
 ]

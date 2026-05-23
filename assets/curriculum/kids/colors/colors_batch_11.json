@@ -3,50 +3,73 @@
     "level": 101,
     "quests": [
       {
-        "id": "KID_COLORS_L101_Q1",
-        "instruction": "Tints: Mix ⚪ + 🔴 = ?",
-        "question": "Light Red is...?",
+        "id": "KIDS_COLORS_L101_Q1",
+        "gameType": "colors",
+        "level": 101,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
+          "Blue",
+          "Red",
+          "Purple"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L101_Q2",
+        "gameType": "colors",
+        "level": 101,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
+        "options": [
+          "Green",
           "Pink",
-          "Maroon",
           "Orange"
         ],
-        "correctAnswer": "Pink",
-        "hint": "White makes red soft and pink!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L101_Q2",
-        "instruction": "Tints: Which is the tint of Red?",
-        "question": "Choice",
+        "id": "KIDS_COLORS_L101_Q3",
+        "gameType": "colors",
+        "level": 101,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "💗 Pink",
-          "🍷 Maroon"
+          "Blue",
+          "Green",
+          "Orange"
         ],
-        "correctAnswer": "💗 Pink",
-        "hint": "Tints are lighter versions of a color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_COLORS_L101_Q3",
-        "instruction": "Is Pink a light color?",
-        "question": "💗",
-        "options": [
-          "Yes",
-          "No"
-        ],
-        "correctAnswer": "Yes",
-        "hint": "Pink is very light and bright!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 102,
     "quests": [
       {
-        "id": "KID_COLORS_L102_Q1",
-        "instruction": "Tints: Mix ⚪ + 🔵 = ?",
-        "question": "Light Blue is...?",
+        "id": "KIDS_COLORS_L102_Q1",
+        "gameType": "colors",
+        "level": 102,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Sky Blue",
-          "Navy Blue",
+          "Red",
+          "Yellow",
           "Purple"
         ],
-        "correctAnswer": "Sky Blue",
-        "hint": "White makes blue look like the clear sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L102_Q2",
-        "instruction": "Tints: Which is the tint of Blue?",
-        "question": "Choice",
+        "id": "KIDS_COLORS_L102_Q2",
+        "gameType": "colors",
+        "level": 102,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "❄️ Sky Blue",
-          "⚓ Navy Blue"
+          "Pink",
+          "Red",
+          "Blue"
         ],
-        "correctAnswer": "❄️ Sky Blue",
-        "hint": "The lighter one is the tint!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L102_Q3",
-        "instruction": "Does ⚪ make colors lighter?",
-        "question": "Magic White",
+        "id": "KIDS_COLORS_L102_Q3",
+        "gameType": "colors",
+        "level": 102,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Yes",
-          "No"
+          "Orange",
+          "Pink",
+          "Red"
         ],
-        "correctAnswer": "Yes",
-        "hint": "White is the color of light!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 103,
     "quests": [
       {
-        "id": "KID_COLORS_L103_Q1",
-        "instruction": "Tints: Mix ⚪ + 🟡 = ?",
-        "question": "Light Yellow is...?",
+        "id": "KIDS_COLORS_L103_Q1",
+        "gameType": "colors",
+        "level": 103,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Cream/Lemon",
-          "Gold",
+          "Yellow",
+          "Red",
           "Orange"
         ],
-        "correctAnswer": "Cream/Lemon",
-        "hint": "White makes yellow look like yummy cream!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L103_Q2",
-        "instruction": "Tints: Which is a Tint of Yellow?",
-        "question": "Choice",
+        "id": "KIDS_COLORS_L103_Q2",
+        "gameType": "colors",
+        "level": 103,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "🍦 Cream",
-          "🟤 Brown"
+          "Blue",
+          "Orange",
+          "Green"
         ],
-        "correctAnswer": "🍦 Cream",
-        "hint": "Cream is a very light yellow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L103_Q3",
-        "instruction": "Is 🍦 lighter than 🟡?",
-        "question": "Comparison",
+        "id": "KIDS_COLORS_L103_Q3",
+        "gameType": "colors",
+        "level": 103,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Yes",
-          "No"
+          "Purple",
+          "Red",
+          "Green"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Cream has white in it, so it's lighter!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 104,
     "quests": [
       {
-        "id": "KID_COLORS_L104_Q1",
-        "instruction": "Tints: Mix ⚪ + 🟢 = ?",
-        "question": "Light Green is...?",
+        "id": "KIDS_COLORS_L104_Q1",
+        "gameType": "colors",
+        "level": 104,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Mint/Lime",
-          "Forest Green",
-          "Brown"
+          "Green",
+          "Yellow",
+          "Orange"
         ],
-        "correctAnswer": "Mint/Lime",
-        "hint": "White makes green look like a fresh mint leaf!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L104_Q2",
-        "instruction": "Tints: Which is a Tint of Green?",
-        "question": "Choice",
+        "id": "KIDS_COLORS_L104_Q2",
+        "gameType": "colors",
+        "level": 104,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "🍃 Mint",
-          "🌲 Forest Green"
+          "Blue",
+          "Purple",
+          "Orange"
         ],
-        "correctAnswer": "🍃 Mint",
-        "hint": "The pale green is the tint!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L104_Q3",
-        "instruction": "Can we call a tint a 'Pastel' color?",
-        "question": "🎨 Word",
+        "id": "KIDS_COLORS_L104_Q3",
+        "gameType": "colors",
+        "level": 104,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Yes",
-          "No"
+          "Yellow",
+          "Pink",
+          "Purple"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Pastel colors are light tints with lots of white!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,50 +299,73 @@
     "level": 105,
     "quests": [
       {
-        "id": "KID_COLORS_L105_Q1",
-        "instruction": "Shades: Mix ⚫ + 🔴 = ?",
-        "question": "Dark Red is...?",
+        "id": "KIDS_COLORS_L105_Q1",
+        "gameType": "colors",
+        "level": 105,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Maroon",
-          "Pink",
-          "Black"
+          "Red",
+          "Yellow",
+          "Blue"
         ],
-        "correctAnswer": "Maroon",
-        "hint": "Black makes red deep and dark like a cherry!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L105_Q2",
-        "instruction": "Shades: Which is a Shade of Red?",
-        "question": "Choice",
+        "id": "KIDS_COLORS_L105_Q2",
+        "gameType": "colors",
+        "level": 105,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "🍷 Maroon",
-          "💗 Pink"
+          "Orange",
+          "Blue",
+          "Yellow"
         ],
-        "correctAnswer": "🍷 Maroon",
-        "hint": "Shades are darker versions of a color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L105_Q3",
-        "instruction": "Is Maroon a dark color?",
-        "question": "🍷",
+        "id": "KIDS_COLORS_L105_Q3",
+        "gameType": "colors",
+        "level": 105,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Yes",
-          "No"
+          "Blue",
+          "Red",
+          "Yellow"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Maroon is very deep and dark!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -258,50 +373,73 @@
     "level": 106,
     "quests": [
       {
-        "id": "KID_COLORS_L106_Q1",
-        "instruction": "Shades: Mix ⚫ + 🔵 = ?",
-        "question": "Dark Blue is...?",
+        "id": "KIDS_COLORS_L106_Q1",
+        "gameType": "colors",
+        "level": 106,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Navy Blue",
-          "Sky Blue",
-          "Black"
+          "Green",
+          "Pink",
+          "Purple"
         ],
-        "correctAnswer": "Navy Blue",
-        "hint": "Black makes blue look like the midnight sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L106_Q2",
-        "instruction": "Shades: Which is a Shade of Blue?",
-        "question": "Choice",
+        "id": "KIDS_COLORS_L106_Q2",
+        "gameType": "colors",
+        "level": 106,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "⚓ Navy Blue",
-          "❄️ Sky Blue"
+          "Red",
+          "Purple",
+          "Orange"
         ],
-        "correctAnswer": "⚓ Navy Blue",
-        "hint": "The darker blue is the shade!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L106_Q3",
-        "instruction": "Does ⚫ make colors darker?",
-        "question": "Magic Black",
+        "id": "KIDS_COLORS_L106_Q3",
+        "gameType": "colors",
+        "level": 106,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Yes",
-          "No"
+          "Pink",
+          "Red",
+          "Purple"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Black adds shadow to colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -309,50 +447,73 @@
     "level": 107,
     "quests": [
       {
-        "id": "KID_COLORS_L107_Q1",
-        "instruction": "Shades: Mix ⚫ + 🟢 = ?",
-        "question": "Dark Green is...?",
+        "id": "KIDS_COLORS_L107_Q1",
+        "gameType": "colors",
+        "level": 107,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Forest Green",
-          "Mint",
-          "Yellow"
+          "Pink",
+          "Green",
+          "Blue"
         ],
-        "correctAnswer": "Forest Green",
-        "hint": "Black makes green look like a deep, dark forest!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L107_Q2",
-        "instruction": "Shades: Which is a Shade of Green?",
-        "question": "Choice",
+        "id": "KIDS_COLORS_L107_Q2",
+        "gameType": "colors",
+        "level": 107,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "🌲 Forest Green",
-          "🍃 Lime Green"
+          "Purple",
+          "Yellow",
+          "Red"
         ],
-        "correctAnswer": "🌲 Forest Green",
-        "hint": "The dark, deep green is the shade!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L107_Q3",
-        "instruction": "Is Forest Green darker than Lime?",
-        "question": "🌲 vs 🍃",
+        "id": "KIDS_COLORS_L107_Q3",
+        "gameType": "colors",
+        "level": 107,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Yes",
-          "No"
+          "Yellow",
+          "Orange",
+          "Red"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Forest green has black added to it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -360,50 +521,73 @@
     "level": 108,
     "quests": [
       {
-        "id": "KID_COLORS_L108_Q1",
-        "instruction": "Shades: Mix ⚫ + 🟠 = ?",
-        "question": "Dark Orange is...?",
+        "id": "KIDS_COLORS_L108_Q1",
+        "gameType": "colors",
+        "level": 108,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Burnt Orange/Brown",
-          "Pink",
+          "Red",
+          "Blue",
           "Yellow"
         ],
-        "correctAnswer": "Burnt Orange/Brown",
-        "hint": "Black makes orange deep and earthy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L108_Q2",
-        "instruction": "Identify: The shade of Orange is...?",
-        "question": "🍂",
+        "id": "KIDS_COLORS_L108_Q2",
+        "gameType": "colors",
+        "level": 108,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Burnt Orange",
-          "Bright Peach"
+          "Green",
+          "Pink",
+          "Purple"
         ],
-        "correctAnswer": "Burnt Orange",
-        "hint": "Fall leaves are often burnt orange!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L108_Q3",
-        "instruction": "Is a shade darker than the primary color?",
-        "question": "🎨 Logic",
+        "id": "KIDS_COLORS_L108_Q3",
+        "gameType": "colors",
+        "level": 108,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Yes",
-          "No"
+          "Orange",
+          "Blue",
+          "Purple"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Adding black always makes the color darker!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -411,51 +595,73 @@
     "level": 109,
     "quests": [
       {
-        "id": "KID_COLORS_L109_Q1",
-        "instruction": "Value: Which is the DARKEST?",
-        "question": "❄️ 🔵 ⚓",
+        "id": "KIDS_COLORS_L109_Q1",
+        "gameType": "colors",
+        "level": 109,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Navy Blue",
-          "Blue",
-          "Sky Blue"
+          "Purple",
+          "Pink",
+          "Yellow"
         ],
-        "correctAnswer": "Navy Blue",
-        "hint": "Navy is the darkest blue shade!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L109_Q2",
-        "instruction": "Value: Which is the LIGHTEST?",
-        "question": "⚓ 🔵 ❄️",
+        "id": "KIDS_COLORS_L109_Q2",
+        "gameType": "colors",
+        "level": 109,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Sky Blue",
-          "Blue",
-          "Navy Blue"
+          "Pink",
+          "Green",
+          "Blue"
         ],
-        "correctAnswer": "Sky Blue",
-        "hint": "Sky blue is the lightest blue tint!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L109_Q3",
-        "instruction": "Logic: Tint + Shade + Primary = ?",
-        "question": "A Color Family",
+        "id": "KIDS_COLORS_L109_Q3",
+        "gameType": "colors",
+        "level": 109,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Yes",
-          "No"
+          "Red",
+          "Pink",
+          "Yellow"
         ],
-        "correctAnswer": "Yes",
-        "hint": "They all belong to the same color family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -463,51 +669,73 @@
     "level": 110,
     "quests": [
       {
-        "id": "KID_COLORS_L110_Q1",
-        "instruction": "Level 110 Challenge: Values!",
-        "question": "Pink is a tint of...?",
+        "id": "KIDS_COLORS_L110_Q1",
+        "gameType": "colors",
+        "level": 110,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Red",
-          "Blue",
-          "Yellow"
-        ],
-        "correctAnswer": "Red",
-        "hint": "Red and white make pink!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_COLORS_L110_Q2",
-        "instruction": "Level 110 Challenge: Values!",
-        "question": "Navy is a shade of...?",
-        "options": [
-          "Blue",
-          "Green",
+          "Pink",
+          "Yellow",
           "Purple"
         ],
-        "correctAnswer": "Blue",
-        "hint": "Blue and black make navy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L110_Q3",
-        "instruction": "Level 110 Challenge: Mastery!",
-        "question": "Do you know your values?",
+        "id": "KIDS_COLORS_L110_Q2",
+        "gameType": "colors",
+        "level": 110,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "YES!",
-          "No"
+          "Orange",
+          "Red",
+          "Blue"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You are a master of tints and shades!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L110_Q3",
+        "gameType": "colors",
+        "level": 110,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
+        "options": [
+          "Orange",
+          "Pink",
+          "Green"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

@@ -3,50 +3,73 @@
     "level": 101,
     "quests": [
       {
-        "id": "KID_SCHOOL_L101_Q1",
-        "instruction": "What has many pages and tells us a story?",
-        "question": "📖📖✨",
+        "id": "KIDS_SCHOOL_L101_Q1",
+        "gameType": "school",
+        "level": 101,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Book",
-          "Rug",
-          "Spoon"
+          "Pencil",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Book",
-        "hint": "We open it to see pictures and read words about dragons or space! It's a book!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L101_Q2",
-        "instruction": "Find the BOOK",
-        "question": "📖✨🧒",
+        "id": "KIDS_SCHOOL_L101_Q2",
+        "gameType": "school",
+        "level": 101,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Found it!",
-          "Not here"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the colorful cover with a title and pictures on the front!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L101_Q3",
-        "instruction": "Is it EXCITING?",
-        "question": "📖 = Exciting?",
+        "id": "KIDS_SCHOOL_L101_Q3",
+        "gameType": "school",
+        "level": 101,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Yes, new world!",
-          "No, just paper"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, new world!",
-        "hint": "Every book we open is a chance to go on a brand new adventure!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 102,
     "quests": [
       {
-        "id": "KID_SCHOOL_L102_Q1",
-        "instruction": "Where do we keep all the books in the library?",
-        "question": "📚🏢✨",
+        "id": "KIDS_SCHOOL_L102_Q1",
+        "gameType": "school",
+        "level": 102,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Shelf",
-          "Floor",
-          "Ceiling"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Shelf",
-        "hint": "It's tall and wooden and has rows for all the books to stand on! It's a shelf!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L102_Q2",
-        "instruction": "Find the BOOKSHELF",
-        "question": "📚✨🏫",
+        "id": "KIDS_SCHOOL_L102_Q2",
+        "gameType": "school",
+        "level": 102,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Ruler",
+          "Backpack"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the long rows of colorful book spines standing neatly together!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L102_Q3",
-        "instruction": "Is it FULL?",
-        "question": "📚 = Full shelf?",
+        "id": "KIDS_SCHOOL_L102_Q3",
+        "gameType": "school",
+        "level": 102,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Yes, many stories!",
-          "No, empty"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, many stories!",
-        "hint": "A full bookshelf means there are hundreds of stories waiting for us to read!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 103,
     "quests": [
       {
-        "id": "KID_SCHOOL_L103_Q1",
-        "instruction": "What do some people wear to see the words clearly?",
-        "question": "👓✨👀",
+        "id": "KIDS_SCHOOL_L103_Q1",
+        "gameType": "school",
+        "level": 103,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Glasses",
-          "Hat",
-          "Shoes"
+          "Pencil",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Glasses",
-        "hint": "They sit on the nose and help the eyes see the tiny letters in the book! They are glasses!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L103_Q2",
-        "instruction": "Find the GLASSES",
-        "question": "👓✨📖",
+        "id": "KIDS_SCHOOL_L103_Q2",
+        "gameType": "school",
+        "level": 103,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Ruler",
+          "Backpack"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the two round windows for the eyes that help with reading!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L103_Q3",
-        "instruction": "Is it CLEAR?",
-        "question": "👓 = Clear vision?",
+        "id": "KIDS_SCHOOL_L103_Q3",
+        "gameType": "school",
+        "level": 103,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Yes, see everything!",
-          "No, blurry"
+          "Backpack",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, see everything!",
-        "hint": "Glasses are like tiny windows that help our eyes do their best reading!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 104,
     "quests": [
       {
-        "id": "KID_SCHOOL_L104_Q1",
-        "instruction": "What do we put in a book so we don't lose our place?",
-        "question": "🔖✨📖",
+        "id": "KIDS_SCHOOL_L104_Q1",
+        "gameType": "school",
+        "level": 104,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Bookmark",
-          "Sticker",
-          "Crayon"
+          "Ruler",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "Bookmark",
-        "hint": "It's a thin slip of paper that peeks out from the top of the book! It's a bookmark!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L104_Q2",
-        "instruction": "Find the BOOKMARK",
-        "question": "🔖✨📚",
+        "id": "KIDS_SCHOOL_L104_Q2",
+        "gameType": "school",
+        "level": 104,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the colorful ribbon or paper sticking out of the closed book!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L104_Q3",
-        "instruction": "Is it HELPFUL?",
-        "question": "🔖 = Helpful?",
+        "id": "KIDS_SCHOOL_L104_Q3",
+        "gameType": "school",
+        "level": 104,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Yes, find page!",
-          "No, messy"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, find page!",
-        "hint": "A bookmark helps us go right back to where the story was getting good!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 105,
     "quests": [
       {
-        "id": "KID_SCHOOL_L105_Q1",
-        "instruction": "Library Logic: BOOK is for...",
-        "question": "📖 -> ?",
+        "id": "KIDS_SCHOOL_L105_Q1",
+        "gameType": "school",
+        "level": 105,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Reading",
-          "Kicking"
+          "Backpack",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Reading",
-        "hint": "We treat our books with care and read them quietly in the library!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L105_Q2",
-        "instruction": "Library Logic: SHELF is for...",
-        "question": "📚 -> ?",
+        "id": "KIDS_SCHOOL_L105_Q2",
+        "gameType": "school",
+        "level": 105,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Storing",
-          "Dancing"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Storing",
-        "hint": "We put books back on the shelf so the next person can find them easily!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L105_Q3",
-        "instruction": "Logic: Do we talk LOUD in the library?",
-        "question": "🤫 -> 📖?",
+        "id": "KIDS_SCHOOL_L105_Q3",
+        "gameType": "school",
+        "level": 105,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "No, quiet voices!",
-          "Yes, shout out"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "No, quiet voices!",
-        "hint": "The library is a peaceful place where everyone uses their whisper voices!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 106,
     "quests": [
       {
-        "id": "KID_SCHOOL_L106_Q1",
-        "instruction": "Search: Find the child READING",
-        "question": "📖🧒✨",
+        "id": "KIDS_SCHOOL_L106_Q1",
+        "gameType": "school",
+        "level": 106,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person sitting on the beanbag with a big open book!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L106_Q2",
-        "instruction": "Search: Find the GLASSES",
-        "question": "👓✨📚",
+        "id": "KIDS_SCHOOL_L106_Q2",
+        "gameType": "school",
+        "level": 106,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the reading glasses sitting on top of the stack of books!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L106_Q3",
-        "instruction": "Search: Find the BOOKSHELF",
-        "question": "📚✨🏢",
+        "id": "KIDS_SCHOOL_L106_Q3",
+        "gameType": "school",
+        "level": 106,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the tall furniture that holds all the different stories!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 107,
     "quests": [
       {
-        "id": "KID_SCHOOL_L107_Q1",
-        "instruction": "Action: Open BOOK!",
-        "question": "📖🧒✨",
+        "id": "KIDS_SCHOOL_L107_Q1",
+        "gameType": "school",
+        "level": 107,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Look at pictures!",
-          "Close it fast"
+          "Eraser",
+          "Ruler",
+          "Pencil"
         ],
-        "correctAnswer": "Look at pictures!",
-        "hint": "Turn the pages gently and see what wonderful world is inside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L107_Q2",
-        "instruction": "Action: Use BOOKMARK!",
-        "question": "🔖🧒📖",
+        "id": "KIDS_SCHOOL_L107_Q2",
+        "gameType": "school",
+        "level": 107,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Slide it in!",
-          "Tear it up"
+          "Backpack",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Slide it in!",
-        "hint": "Put the bookmark between the pages so you know where to start tomorrow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L107_Q3",
-        "instruction": "Action: Whisper QUIET!",
-        "question": "🤫🧒🏢",
+        "id": "KIDS_SCHOOL_L107_Q3",
+        "gameType": "school",
+        "level": 107,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Use tiny voice!",
-          "Shout hello"
+          "Pencil",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Use tiny voice!",
-        "hint": "Speak very softly so you don't disturb the other people reading!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 108,
     "quests": [
       {
-        "id": "KID_SCHOOL_L108_Q1",
-        "instruction": "Match: What is for the LIBRARY?",
-        "question": "📖 + ?",
+        "id": "KIDS_SCHOOL_L108_Q1",
+        "gameType": "school",
+        "level": 108,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Books",
-          "Drums"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Books",
-        "hint": "Books are the stars of the library, and we have so many of them to choose from!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L108_Q2",
-        "instruction": "Match: What is for the PAGES?",
-        "question": "🔖 + ?",
+        "id": "KIDS_SCHOOL_L108_Q2",
+        "gameType": "school",
+        "level": 108,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Bookmark",
-          "Shoe"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Bookmark",
-        "hint": "A bookmark is the perfect friend for the pages of your favorite book!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L108_Q3",
-        "instruction": "Match: What is for the EYES?",
-        "question": "👓 + ?",
+        "id": "KIDS_SCHOOL_L108_Q3",
+        "gameType": "school",
+        "level": 108,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Glasses",
-          "Gloves"
+          "Ruler",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Glasses",
-        "hint": "Glasses are special tools that help our eyes see every word and picture!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 109,
     "quests": [
       {
-        "id": "KID_SCHOOL_L109_Q1",
-        "instruction": "School: Turn pages GENTLY?",
-        "question": "📖🤲✨❓",
+        "id": "KIDS_SCHOOL_L109_Q1",
+        "gameType": "school",
+        "level": 109,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Yes, be soft!",
-          "No, rip them"
+          "Pencil",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, be soft!",
-        "hint": "We always use our gentle hands to turn the pages so the book stays beautiful!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L109_Q2",
-        "instruction": "School: Are you a BOOK WORM?",
-        "question": "📖📚✨❓",
+        "id": "KIDS_SCHOOL_L109_Q2",
+        "gameType": "school",
+        "level": 109,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Yes, I am!",
-          "No"
+          "Backpack",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "A book worm loves to spend time in the library and read as many stories as they can!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L109_Q3",
-        "instruction": "School: Ready for the challenge?",
-        "question": "🏆✨❓",
+        "id": "KIDS_SCHOOL_L109_Q3",
+        "gameType": "school",
+        "level": 109,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "YES!",
-          "No"
+          "Eraser",
+          "Ruler",
+          "Pencil"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Level 110 is coming! Show us how well you know the library!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 110,
     "quests": [
       {
-        "id": "KID_SCHOOL_L110_Q1",
-        "instruction": "Level 110 Challenge: Book Worm!",
-        "question": "Where are books kept? 📚🏢",
+        "id": "KIDS_SCHOOL_L110_Q1",
+        "gameType": "school",
+        "level": 110,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Shelf",
-          "Bucket",
-          "Pool"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Shelf",
-        "hint": "Tall rows!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L110_Q2",
-        "instruction": "Level 110 Challenge: Book Worm!",
-        "question": "What marks the page? 🔖📖",
+        "id": "KIDS_SCHOOL_L110_Q2",
+        "gameType": "school",
+        "level": 110,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Bookmark",
-          "Cookie",
-          "Sock"
+          "Eraser",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "Bookmark",
-        "hint": "Paper slip!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L110_Q3",
-        "instruction": "Level 110 Challenge: Mastery!",
-        "question": "Are you a Book Worm?",
+        "id": "KIDS_SCHOOL_L110_Q3",
+        "gameType": "school",
+        "level": 110,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "YES!",
-          "No"
+          "Backpack",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 110!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

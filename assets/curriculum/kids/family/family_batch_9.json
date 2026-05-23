@@ -3,50 +3,73 @@
     "level": 81,
     "quests": [
       {
-        "id": "KID_FAMILY_L81_Q1",
-        "instruction": "Find the soft PAJAMAS",
-        "question": "👘🛌✨",
+        "id": "KIDS_FAMILY_L81_Q1",
+        "gameType": "family",
+        "level": 81,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Pajamas",
-          "Coat",
-          "Dress"
+          "Grandmother",
+          "Brother",
+          "Father"
         ],
-        "correctAnswer": "Pajamas",
-        "hint": "Pajamas are the soft clothes you wear to bed so you feel cozy and warm all night!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L81_Q2",
-        "instruction": "Which one is for SLEEPING?",
-        "question": "👘 vs 👟",
+        "id": "KIDS_FAMILY_L81_Q2",
+        "gameType": "family",
+        "level": 81,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Pajamas",
-          "Outdoor Shoes"
+          "Sister",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Pajamas",
-        "hint": "We change out of our day clothes and into our pajamas when it's time to rest!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L81_Q3",
-        "instruction": "Do pajamas feel SOFT?",
-        "question": "👘☁️❓",
+        "id": "KIDS_FAMILY_L81_Q3",
+        "gameType": "family",
+        "level": 81,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, very fuzzy!",
-          "No, like a rock"
+          "Grandmother",
+          "Brother",
+          "Sister"
         ],
-        "correctAnswer": "Yes, very fuzzy!",
-        "hint": "Soft pajamas help you relax and get ready for sweet dreams!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 82,
     "quests": [
       {
-        "id": "KID_FAMILY_L82_Q1",
-        "instruction": "Find the warm BLANKET",
-        "question": "🛌✨",
+        "id": "KIDS_FAMILY_L82_Q1",
+        "gameType": "family",
+        "level": 82,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Blanket",
-          "Rug",
-          "Towel"
+          "Grandmother",
+          "Brother",
+          "Mother"
         ],
-        "correctAnswer": "Blanket",
-        "hint": "A blanket is a big soft cloth that mommy or daddy pulls up to your chin to keep you toasty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L82_Q2",
-        "instruction": "Which one is for TUCKING IN?",
-        "question": "🛌 vs 🛁",
+        "id": "KIDS_FAMILY_L82_Q2",
+        "gameType": "family",
+        "level": 82,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Blanket",
-          "Bathtub"
+          "Father",
+          "Grandmother",
+          "Mother"
         ],
-        "correctAnswer": "Blanket",
-        "hint": "When you are tucked in with your blanket, you feel safe and loved!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L82_Q3",
-        "instruction": "Does daddy TUCK you in?",
-        "question": "👨🛌❓",
+        "id": "KIDS_FAMILY_L82_Q3",
+        "gameType": "family",
+        "level": 82,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, goodnight!",
-          "No, only cats"
+          "Grandfather",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Yes, goodnight!",
-        "hint": "Daddy loves to make sure you are cozy and covered before he turns out the light!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 83,
     "quests": [
       {
-        "id": "KID_FAMILY_L83_Q1",
-        "instruction": "Find the GOODNIGHT KISS",
-        "question": "💋✨",
+        "id": "KIDS_FAMILY_L83_Q1",
+        "gameType": "family",
+        "level": 83,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Kiss",
-          "Handshake",
-          "Wave"
+          "Grandmother",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Kiss",
-        "hint": "A goodnight kiss on the forehead is a magic way for mommy or daddy to say 'I love you'!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L83_Q2",
-        "instruction": "Which one is for LOVE?",
-        "question": "💋 vs 👊",
+        "id": "KIDS_FAMILY_L83_Q2",
+        "gameType": "family",
+        "level": 83,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Kiss",
-          "Push"
+          "Grandmother",
+          "Brother",
+          "Father"
         ],
-        "correctAnswer": "Kiss",
-        "hint": "Kisses are soft and sweet, and they make us feel very special in our family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L83_Q3",
-        "instruction": "Does it give SWEET dreams?",
-        "question": "💋💭🍭❓",
+        "id": "KIDS_FAMILY_L83_Q3",
+        "gameType": "family",
+        "level": 83,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, very sweet!",
-          "No, only salty"
+          "Sister",
+          "Grandmother",
+          "Mother"
         ],
-        "correctAnswer": "Yes, very sweet!",
-        "hint": "A final kiss from mommy or daddy helps you have the happiest dreams all night long!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 84,
     "quests": [
       {
-        "id": "KID_FAMILY_L84_Q1",
-        "instruction": "Find the PILLOW",
-        "question": "☁️🛏️✨",
+        "id": "KIDS_FAMILY_L84_Q1",
+        "gameType": "family",
+        "level": 84,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Pillow",
-          "Cushion",
-          "Box"
+          "Mother",
+          "Grandfather",
+          "Father"
         ],
-        "correctAnswer": "Pillow",
-        "hint": "A pillow is like a soft cloud where you rest your head while you sleep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L84_Q2",
-        "instruction": "Which one is for your HEAD?",
-        "question": "🛏️☁️ vs 🪑",
+        "id": "KIDS_FAMILY_L84_Q2",
+        "gameType": "family",
+        "level": 84,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Pillow",
-          "Hard Chair"
+          "Sister",
+          "Grandmother",
+          "Father"
         ],
-        "correctAnswer": "Pillow",
-        "hint": "We lay our head on the soft pillow so our neck feels comfortable while we dream!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L84_Q3",
-        "instruction": "Is it soft like a CLOUD?",
-        "question": "☁️❓",
+        "id": "KIDS_FAMILY_L84_Q3",
+        "gameType": "family",
+        "level": 84,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, so fluffy!",
-          "No, it's sticky"
+          "Mother",
+          "Father",
+          "Grandfather"
         ],
-        "correctAnswer": "Yes, so fluffy!",
-        "hint": "A fluffy pillow is the best place to rest after a busy day of family fun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,50 +299,73 @@
     "level": 85,
     "quests": [
       {
-        "id": "KID_FAMILY_L85_Q1",
-        "instruction": "Logic: Why do we SNUGGLE?",
-        "question": "🫂🛌❓",
+        "id": "KIDS_FAMILY_L85_Q1",
+        "gameType": "family",
+        "level": 85,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Feel safe and loved!",
-          "To get cold",
-          "To find a shoe"
+          "Grandmother",
+          "Mother",
+          "Brother"
         ],
-        "correctAnswer": "Feel safe and loved!",
-        "hint": "Snuggling with your family before bed helps you feel warm and happy inside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L85_Q2",
-        "instruction": "Logic: Do we say GOODNIGHT?",
-        "question": "🗣️🌙❓",
+        "id": "KIDS_FAMILY_L85_Q2",
+        "gameType": "family",
+        "level": 85,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Yes, sleep tight!",
-          "No, just scream"
+          "Grandmother",
+          "Father",
+          "Brother"
         ],
-        "correctAnswer": "Yes, sleep tight!",
-        "hint": "Saying 'Goodnight' to your family is a kind way to end the day together!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L85_Q3",
-        "instruction": "Logic: Does a hug make you SLEEPY?",
-        "question": "🫂🥱❓",
+        "id": "KIDS_FAMILY_L85_Q3",
+        "gameType": "family",
+        "level": 85,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, very relaxing!",
-          "No, makes you run"
+          "Grandmother",
+          "Sister",
+          "Father"
         ],
-        "correctAnswer": "Yes, very relaxing!",
-        "hint": "A big family hug tells your body that it's finally time to close your eyes and rest!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -258,49 +373,73 @@
     "level": 86,
     "quests": [
       {
-        "id": "KID_FAMILY_L86_Q1",
-        "instruction": "Search: Find the pajama STARS",
-        "question": "👘⭐ vs 🧥",
+        "id": "KIDS_FAMILY_L86_Q1",
+        "gameType": "family",
+        "level": 86,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Starry Pajamas",
-          "Plain Coat"
+          "Grandmother",
+          "Brother",
+          "Mother"
         ],
-        "correctAnswer": "Starry Pajamas",
-        "hint": "Look for the soft blue pajamas with the little yellow stars on them!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L86_Q2",
-        "instruction": "Search: Find the striped BLANKET",
-        "question": "🛌🦓 vs 🧖‍♂️",
+        "id": "KIDS_FAMILY_L86_Q2",
+        "gameType": "family",
+        "level": 86,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Striped Blanket",
-          "White Towel"
+          "Father",
+          "Grandfather",
+          "Brother"
         ],
-        "correctAnswer": "Striped Blanket",
-        "hint": "Look for the warm blanket with the red and white lines!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L86_Q3",
-        "instruction": "Search: Find the goodnight SMILE",
-        "question": "💋😊 vs 😡",
+        "id": "KIDS_FAMILY_L86_Q3",
+        "gameType": "family",
+        "level": 86,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Happy Goodnight",
-          "Angry Face"
+          "Grandfather",
+          "Sister",
+          "Brother"
         ],
-        "correctAnswer": "Happy Goodnight",
-        "hint": "Look for the mommy with a big loving smile as she gives a kiss!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -308,52 +447,73 @@
     "level": 87,
     "quests": [
       {
-        "id": "KID_FAMILY_L87_Q1",
-        "instruction": "Review: Who has the fuzz?",
-        "question": "👘 Review",
+        "id": "KIDS_FAMILY_L87_Q1",
+        "gameType": "family",
+        "level": 87,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Pajamas",
-          "Suit",
-          "Boots"
+          "Father",
+          "Grandmother",
+          "Brother"
         ],
-        "correctAnswer": "Pajamas",
-        "hint": "The ones you wear to bed!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L87_Q2",
-        "instruction": "Review: Who is the warm wrap?",
-        "question": "🛌 Review",
+        "id": "KIDS_FAMILY_L87_Q2",
+        "gameType": "family",
+        "level": 87,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Blanket",
-          "Rug",
-          "Curtain"
+          "Brother",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Blanket",
-        "hint": "The one daddy tucks around you!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L87_Q3",
-        "instruction": "Review: Who is the soft rest?",
-        "question": "☁️ Review",
+        "id": "KIDS_FAMILY_L87_Q3",
+        "gameType": "family",
+        "level": 87,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Pillow",
-          "Table",
-          "Wall"
+          "Brother",
+          "Grandfather",
+          "Sister"
         ],
-        "correctAnswer": "Pillow",
-        "hint": "The one for your head!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -361,49 +521,73 @@
     "level": 88,
     "quests": [
       {
-        "id": "KID_FAMILY_L88_Q1",
-        "instruction": "Which one is for bedtime snuggle?",
-        "question": "🫂🛌💋 vs ⚽🏃‍♂️",
+        "id": "KIDS_FAMILY_L88_Q1",
+        "gameType": "family",
+        "level": 88,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Family Snuggle",
-          "Soccer Game"
+          "Grandmother",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Family Snuggle",
-        "hint": "It's time to be quiet and close to the people we love!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L88_Q2",
-        "instruction": "Which one is for a sweet kiss?",
-        "question": "💋🌙 vs 🍲",
+        "id": "KIDS_FAMILY_L88_Q2",
+        "gameType": "family",
+        "level": 88,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Goodnight Kiss",
-          "Hot Soup"
+          "Mother",
+          "Father",
+          "Grandfather"
         ],
-        "correctAnswer": "Goodnight Kiss",
-        "hint": "A kiss is the best way to say goodnight to your mommy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L88_Q3",
-        "instruction": "Is your family your SAFEST place?",
-        "question": "👨‍👩‍👧‍👦🛡️🏠❓",
+        "id": "KIDS_FAMILY_L88_Q3",
+        "gameType": "family",
+        "level": 88,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, very safe!",
-          "No, only stores"
+          "Father",
+          "Grandmother",
+          "Grandfather"
         ],
-        "correctAnswer": "Yes, very safe!",
-        "hint": "In your family's arms, you are always protected and safe!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -411,49 +595,73 @@
     "level": 89,
     "quests": [
       {
-        "id": "KID_FAMILY_L89_Q1",
-        "instruction": "Logic: Do we hug TEDDY too?",
-        "question": "🧸🫂❓",
+        "id": "KIDS_FAMILY_L89_Q1",
+        "gameType": "family",
+        "level": 89,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Yes, soft friend!",
-          "No, only rocks"
+          "Grandmother",
+          "Mother",
+          "Grandfather"
         ],
-        "correctAnswer": "Yes, soft friend!",
-        "hint": "Hugging your teddy bear while mommy tucks you in makes everything extra cozy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L89_Q2",
-        "instruction": "Logic: Is the BED for sleeping?",
-        "question": "🛏️😴❓",
+        "id": "KIDS_FAMILY_L89_Q2",
+        "gameType": "family",
+        "level": 89,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Yes, for rest!",
-          "No, for swimming"
+          "Grandmother",
+          "Sister",
+          "Brother"
         ],
-        "correctAnswer": "Yes, for rest!",
-        "hint": "Your bed is your special place to dream after a day of family fun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L89_Q3",
-        "instruction": "Logic: Do we love EVERY member?",
-        "question": "👨‍👩‍👧‍👦❤️💯❓",
+        "id": "KIDS_FAMILY_L89_Q3",
+        "gameType": "family",
+        "level": 89,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, all of them!",
-          "No, only one"
+          "Brother",
+          "Grandfather",
+          "Sister"
         ],
-        "correctAnswer": "Yes, all of them!",
-        "hint": "From the tiniest baby to the oldest grandpa, we love everyone in our big family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -461,51 +669,73 @@
     "level": 90,
     "quests": [
       {
-        "id": "KID_FAMILY_L90_Q1",
-        "instruction": "Level 90 Challenge: Warm Heart!",
-        "question": "Find soft PAJAMAS",
+        "id": "KIDS_FAMILY_L90_Q1",
+        "gameType": "family",
+        "level": 90,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "👘",
-          "👞",
-          "🧢"
+          "Father",
+          "Brother",
+          "Mother"
         ],
-        "correctAnswer": "👘",
-        "hint": "The ones for bed!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L90_Q2",
-        "instruction": "Level 90 Challenge: Warm Heart!",
-        "question": "Find goodnight KISS",
+        "id": "KIDS_FAMILY_L90_Q2",
+        "gameType": "family",
+        "level": 90,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "💋",
-          "👋",
-          "👊"
+          "Grandmother",
+          "Father",
+          "Grandfather"
         ],
-        "correctAnswer": "💋",
-        "hint": "The sweet one from mommy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L90_Q3",
-        "instruction": "Level 90 Challenge: Mastery!",
-        "question": "Are you a Warm Heart?",
+        "id": "KIDS_FAMILY_L90_Q3",
+        "gameType": "family",
+        "level": 90,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "YES!",
-          "No"
+          "Grandfather",
+          "Father",
+          "Grandmother"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 90!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

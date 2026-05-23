@@ -3,52 +3,73 @@
     "level": 21,
     "quests": [
       {
-        "id": "KID_FRUITS_L21_Q1",
-        "instruction": "Find the GRAPES",
-        "question": "🍇",
-        "options": [
-          "Grapes",
-          "Apple",
-          "Orange"
-        ],
-        "correctAnswer": "Grapes",
-        "hint": "Grapes are tiny, round, and grow in a big group called a bunch!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_FRUITS_L21_Q2",
-        "instruction": "Which one is a BUNCH of grapes?",
-        "question": "🍇🍇",
+        "id": "KIDS_FRUITS_L21_Q1",
+        "gameType": "fruits",
+        "level": 21,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
           "Banana",
-          "Grapes",
-          "Strawberry"
+          "Lemon",
+          "Grapes"
         ],
-        "correctAnswer": "Grapes",
-        "hint": "Grapes love to hang out together on a vine!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L21_Q3",
-        "instruction": "Find the PURPLE fruit",
-        "question": "🍇",
+        "id": "KIDS_FRUITS_L21_Q2",
+        "gameType": "fruits",
+        "level": 21,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
           "Grapes",
           "Lemon",
-          "Banana"
+          "Apple"
         ],
-        "correctAnswer": "Grapes",
-        "hint": "Many grapes are a beautiful dark purple color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L21_Q3",
+        "gameType": "fruits",
+        "level": 21,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
+        "options": [
+          "Apple",
+          "Lemon",
+          "Orange"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 22,
     "quests": [
       {
-        "id": "KID_FRUITS_L22_Q1",
-        "instruction": "Find the BLUEBERRY",
-        "question": "🫐",
+        "id": "KIDS_FRUITS_L22_Q1",
+        "gameType": "fruits",
+        "level": 22,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Blueberry",
-          "Cherry",
+          "Orange",
+          "Banana",
           "Apple"
         ],
-        "correctAnswer": "Blueberry",
-        "hint": "A blueberry is a tiny blue ball that is very sweet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L22_Q2",
-        "instruction": "Which one is a BLUEBERRY?",
-        "question": "🥣🫐",
+        "id": "KIDS_FRUITS_L22_Q2",
+        "gameType": "fruits",
+        "level": 22,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Banana",
-          "Blueberry",
-          "Pear"
+          "Grapes",
+          "Apple",
+          "Orange"
         ],
-        "correctAnswer": "Blueberry",
-        "hint": "Blueberries are perfect for putting into muffins and pancakes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L22_Q3",
-        "instruction": "Find the TINY sphere",
-        "question": "🫐",
+        "id": "KIDS_FRUITS_L22_Q3",
+        "gameType": "fruits",
+        "level": 22,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Blueberry",
           "Orange",
-          "Watermelon"
+          "Lemon",
+          "Grapes"
         ],
-        "correctAnswer": "Blueberry",
-        "hint": "The smallest round fruit in the kitchen!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 23,
     "quests": [
       {
-        "id": "KID_FRUITS_L23_Q1",
-        "instruction": "Find the CHERRY",
-        "question": "🍒",
+        "id": "KIDS_FRUITS_L23_Q1",
+        "gameType": "fruits",
+        "level": 23,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "Cherry",
-          "Grape",
-          "Banana"
-        ],
-        "correctAnswer": "Cherry",
-        "hint": "Cherries are small, red, and often come in pairs with long stems!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_FRUITS_L23_Q2",
-        "instruction": "Which one is a pair of CHERRIES?",
-        "question": "🍒🍒",
-        "options": [
-          "Apple",
-          "Cherry",
+          "Grapes",
+          "Orange",
           "Lemon"
         ],
-        "correctAnswer": "Cherry",
-        "hint": "Look for the two red fruits joined together at the top!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L23_Q3",
-        "instruction": "Find the fruit with a PIT",
-        "question": "🍒",
+        "id": "KIDS_FRUITS_L23_Q2",
+        "gameType": "fruits",
+        "level": 23,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "Cherry",
-          "Blueberry",
-          "Strawberry"
+          "Apple",
+          "Lemon",
+          "Banana"
         ],
-        "correctAnswer": "Cherry",
-        "hint": "Be careful! Cherries have a hard little stone or pit inside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L23_Q3",
+        "gameType": "fruits",
+        "level": 23,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
+        "options": [
+          "Orange",
+          "Banana",
+          "Lemon"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 24,
     "quests": [
       {
-        "id": "KID_FRUITS_L24_Q1",
-        "instruction": "Mix: Find the BLUE friends",
-        "question": "🫐",
+        "id": "KIDS_FRUITS_L24_Q1",
+        "gameType": "fruits",
+        "level": 24,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Blueberry",
-          "Cherry",
+          "Apple",
+          "Orange",
+          "Banana"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L24_Q2",
+        "gameType": "fruits",
+        "level": 24,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
+        "options": [
+          "Lemon",
+          "Banana",
           "Apple"
         ],
-        "correctAnswer": "Blueberry",
-        "hint": "The only fruit here that is the same color as the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L24_Q2",
-        "instruction": "Mix: Find the PURPLE bunch",
-        "question": "🍇",
+        "id": "KIDS_FRUITS_L24_Q3",
+        "gameType": "fruits",
+        "level": 24,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
           "Grapes",
-          "Orange",
-          "Strawberry"
-        ],
-        "correctAnswer": "Grapes",
-        "hint": "A group of purple spheres hanging together!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_FRUITS_L24_Q3",
-        "instruction": "Mix: Find the RED twins",
-        "question": "🍒",
-        "options": [
-          "Cherry",
           "Banana",
           "Lemon"
         ],
-        "correctAnswer": "Cherry",
-        "hint": "The two red fruits that share a stem!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 25,
     "quests": [
       {
-        "id": "KID_FRUITS_L25_Q1",
-        "instruction": "Identify: Who has a long stem?",
-        "question": "Selection",
+        "id": "KIDS_FRUITS_L25_Q1",
+        "gameType": "fruits",
+        "level": 25,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "Cherry",
-          "Blueberry",
-          "Grape"
-        ],
-        "correctAnswer": "Cherry",
-        "hint": "You can pick up a cherry by its long green handle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
-      },
-      {
-        "id": "KID_FRUITS_L25_Q2",
-        "instruction": "Identify: Who makes raisins?",
-        "question": "Selection",
-        "options": [
-          "Grapes",
           "Apple",
-          "Banana"
+          "Orange",
+          "Grapes"
         ],
-        "correctAnswer": "Grapes",
-        "hint": "When grapes get dried up in the sun, they turn into sweet raisins!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L25_Q3",
-        "instruction": "Identify: Who is the smallest?",
-        "question": "Selection",
+        "id": "KIDS_FRUITS_L25_Q2",
+        "gameType": "fruits",
+        "level": 25,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Blueberry",
           "Orange",
-          "Watermelon"
+          "Banana",
+          "Apple"
         ],
-        "correctAnswer": "Blueberry",
-        "hint": "A blueberry is even smaller than a grape!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L25_Q3",
+        "gameType": "fruits",
+        "level": 25,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
+        "options": [
+          "Orange",
+          "Banana",
+          "Apple"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,49 +373,73 @@
     "level": 26,
     "quests": [
       {
-        "id": "KID_FRUITS_L26_Q1",
-        "instruction": "Logic: Do grapes grow on a vine?",
-        "question": "🍇 Check",
+        "id": "KIDS_FRUITS_L26_Q1",
+        "gameType": "fruits",
+        "level": 26,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Yes!",
-          "No, on a tree"
+          "Lemon",
+          "Banana",
+          "Orange"
         ],
-        "correctAnswer": "Yes!",
-        "hint": "Grapes climb up vines to reach the sun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L26_Q2",
-        "instruction": "Logic: Are blueberries really blue?",
-        "question": "🫐 Check",
+        "id": "KIDS_FRUITS_L26_Q2",
+        "gameType": "fruits",
+        "level": 26,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "Yes!",
-          "No, they are pink"
+          "Grapes",
+          "Lemon",
+          "Apple"
         ],
-        "correctAnswer": "Yes!",
-        "hint": "They are one of the only truly blue foods in the world!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L26_Q3",
-        "instruction": "Logic: Do cherries have a bone inside?",
-        "question": "🍒 Check",
+        "id": "KIDS_FRUITS_L26_Q3",
+        "gameType": "fruits",
+        "level": 26,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "No, it's a seed pit!",
-          "Yes"
+          "Grapes",
+          "Banana",
+          "Apple"
         ],
-        "correctAnswer": "No, it's a seed pit!",
-        "hint": "It's called a pit, and it's where the new cherry tree starts!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -318,52 +447,73 @@
     "level": 27,
     "quests": [
       {
-        "id": "KID_FRUITS_L27_Q1",
-        "instruction": "Search: Find the MUFFIN fruit",
-        "question": "🧁🫐",
+        "id": "KIDS_FRUITS_L27_Q1",
+        "gameType": "fruits",
+        "level": 27,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Blueberry",
-          "Onion",
-          "Tomato"
+          "Banana",
+          "Lemon",
+          "Grapes"
         ],
-        "correctAnswer": "Blueberry",
-        "hint": "Blueberry muffins are a favorite snack!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L27_Q2",
-        "instruction": "Search: Find the juice fruit",
-        "question": "🧃🍇",
+        "id": "KIDS_FRUITS_L27_Q2",
+        "gameType": "fruits",
+        "level": 27,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Grape",
+          "Orange",
           "Apple",
           "Banana"
         ],
-        "correctAnswer": "Grape",
-        "hint": "Purple grape juice is sweet and yummy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L27_Q3",
-        "instruction": "Search: Find the ice cream topper",
-        "question": "🍦🍒",
+        "id": "KIDS_FRUITS_L27_Q3",
+        "gameType": "fruits",
+        "level": 27,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Cherry",
+          "Apple",
           "Lemon",
-          "Carrot"
+          "Banana"
         ],
-        "correctAnswer": "Cherry",
-        "hint": "A bright red cherry on top of a sundae!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -371,52 +521,73 @@
     "level": 28,
     "quests": [
       {
-        "id": "KID_FRUITS_L28_Q1",
-        "instruction": "Actions: How do you eat GRAPES?",
-        "question": "🍇 Choice",
+        "id": "KIDS_FRUITS_L28_Q1",
+        "gameType": "fruits",
+        "level": 28,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "One by one",
-          "Peel them like a banana",
-          "Cut with a knife"
+          "Grapes",
+          "Lemon",
+          "Orange"
         ],
-        "correctAnswer": "One by one",
-        "hint": "Pop the tiny spheres into your mouth one at a time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L28_Q2",
-        "instruction": "Actions: How do you find BLUEBERRIES?",
-        "question": "🫐 Choice",
+        "id": "KIDS_FRUITS_L28_Q2",
+        "gameType": "fruits",
+        "level": 28,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "Pick from a bush",
-          "Dig in the dirt",
-          "Fish in the sea"
+          "Apple",
+          "Grapes",
+          "Lemon"
         ],
-        "correctAnswer": "Pick from a bush",
-        "hint": "Blueberries grow on short bushes in the summer!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L28_Q3",
-        "instruction": "Actions: What do you do with the CHERRY pit?",
-        "question": "🍒 Choice",
+        "id": "KIDS_FRUITS_L28_Q3",
+        "gameType": "fruits",
+        "level": 28,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Spit it out!",
-          "Eat it",
-          "Hide it"
+          "Apple",
+          "Grapes",
+          "Banana"
         ],
-        "correctAnswer": "Spit it out!",
-        "hint": "Don't eat the hard pit! We only eat the soft red fruit!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -424,52 +595,73 @@
     "level": 29,
     "quests": [
       {
-        "id": "KID_FRUITS_L29_Q1",
-        "instruction": "Review: Who is PURPLE?",
-        "question": "🍇 Review",
+        "id": "KIDS_FRUITS_L29_Q1",
+        "gameType": "fruits",
+        "level": 29,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
+        "options": [
+          "Orange",
+          "Banana",
+          "Grapes"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L29_Q2",
+        "gameType": "fruits",
+        "level": 29,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
+        "options": [
+          "Apple",
+          "Lemon",
+          "Grapes"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L29_Q3",
+        "gameType": "fruits",
+        "level": 29,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
           "Grapes",
-          "Banana",
-          "Lemon"
-        ],
-        "correctAnswer": "Grapes",
-        "hint": "The bunch friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_FRUITS_L29_Q2",
-        "instruction": "Review: Who is BLUE?",
-        "question": "🫐 Review",
-        "options": [
-          "Blueberry",
-          "Cherry",
+          "Lemon",
           "Apple"
         ],
-        "correctAnswer": "Blueberry",
-        "hint": "The tiny sphere friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_FRUITS_L29_Q3",
-        "instruction": "Review: Who is RED with a stem?",
-        "question": "🍒 Review",
-        "options": [
-          "Cherry",
-          "Grape",
-          "Orange"
-        ],
-        "correctAnswer": "Cherry",
-        "hint": "The twin friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -477,51 +669,73 @@
     "level": 30,
     "quests": [
       {
-        "id": "KID_FRUITS_L30_Q1",
-        "instruction": "Level 30 Challenge: Berries!",
-        "question": "Which fruit comes in a bunch?",
+        "id": "KIDS_FRUITS_L30_Q1",
+        "gameType": "fruits",
+        "level": 30,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
           "Grapes",
-          "Blueberry",
-          "Cherry"
+          "Apple",
+          "Lemon"
         ],
-        "correctAnswer": "Grapes",
-        "hint": "The group of purple spheres!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L30_Q2",
-        "instruction": "Level 30 Challenge: Pits!",
-        "question": "Which fruit has a hard pit inside?",
+        "id": "KIDS_FRUITS_L30_Q2",
+        "gameType": "fruits",
+        "level": 30,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Cherry",
-          "Blueberry",
-          "Grape"
+          "Banana",
+          "Grapes",
+          "Lemon"
         ],
-        "correctAnswer": "Cherry",
-        "hint": "The one you have to spit out!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L30_Q3",
-        "instruction": "Level 30 Challenge: Mastery!",
-        "question": "Are you Berry Brave?",
+        "id": "KIDS_FRUITS_L30_Q3",
+        "gameType": "fruits",
+        "level": 30,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "YES!",
-          "No"
+          "Orange",
+          "Lemon",
+          "Grapes"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 30!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

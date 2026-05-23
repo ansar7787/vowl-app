@@ -3,52 +3,73 @@
     "level": 151,
     "quests": [
       {
-        "id": "KID_FRUITS_L151_Q1",
-        "instruction": "Find the PERSIMMON",
-        "question": "🍅✨",
+        "id": "KIDS_FRUITS_L151_Q1",
+        "gameType": "fruits",
+        "level": 151,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Persimmon",
+          "Lemon",
+          "Orange",
+          "Banana"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L151_Q2",
+        "gameType": "fruits",
+        "level": 151,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
+        "options": [
+          "Grapes",
+          "Orange",
+          "Apple"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L151_Q3",
+        "gameType": "fruits",
+        "level": 151,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
+        "options": [
+          "Grapes",
           "Apple",
           "Banana"
         ],
-        "correctAnswer": "Persimmon",
-        "hint": "A persimmon looks like a shiny orange tomato and is very sweet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_FRUITS_L151_Q2",
-        "instruction": "Which one is a PERSIMMON?",
-        "question": "🍅🍊",
-        "options": [
-          "Lemon",
-          "Persimmon",
-          "Grape"
-        ],
-        "correctAnswer": "Persimmon",
-        "hint": "This fruit has a pretty green leaf cap on top that looks like a flower!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_FRUITS_L151_Q3",
-        "instruction": "Find the fruit that looks like a TOMATO",
-        "question": "🍅",
-        "options": [
-          "Persimmon",
-          "Orange",
-          "Cherry"
-        ],
-        "correctAnswer": "Persimmon",
-        "hint": "Don't be fooled! It looks like a tomato, but it's a sweet winter fruit!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 152,
     "quests": [
       {
-        "id": "KID_FRUITS_L152_Q1",
-        "instruction": "Find the SHARON FRUIT",
-        "question": "🍅🧡",
-        "options": [
-          "Sharon Fruit",
-          "Apple",
-          "Pear"
-        ],
-        "correctAnswer": "Sharon Fruit",
-        "hint": "Sharon fruit is a type of persimmon that you can eat while it's still firm!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_FRUITS_L152_Q2",
-        "instruction": "Which one is a SHARON FRUIT?",
-        "question": "🍅✨",
+        "id": "KIDS_FRUITS_L152_Q1",
+        "gameType": "fruits",
+        "level": 152,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
           "Banana",
-          "Sharon Fruit",
-          "Blueberry"
+          "Apple",
+          "Orange"
         ],
-        "correctAnswer": "Sharon Fruit",
-        "hint": "It is named after a beautiful valley where it grows!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L152_Q3",
-        "instruction": "Find the SEEDLESS friend",
-        "question": "🍅🚫🌑",
+        "id": "KIDS_FRUITS_L152_Q2",
+        "gameType": "fruits",
+        "level": 152,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Sharon Fruit",
-          "Watermelon",
-          "Grapes"
+          "Apple",
+          "Grapes",
+          "Orange"
         ],
-        "correctAnswer": "Sharon Fruit",
-        "hint": "Most Sharon fruits don't have any seeds at all, making them easy to eat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L152_Q3",
+        "gameType": "fruits",
+        "level": 152,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
+        "options": [
+          "Grapes",
+          "Lemon",
+          "Banana"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 153,
     "quests": [
       {
-        "id": "KID_FRUITS_L153_Q1",
-        "instruction": "Detective: Find the honey taste",
-        "question": "🍯🍅",
+        "id": "KIDS_FRUITS_L153_Q1",
+        "gameType": "fruits",
+        "level": 153,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "Ripe Persimmon",
-          "Sour Lemon",
-          "Bitter Gourd"
+          "Grapes",
+          "Lemon",
+          "Orange"
         ],
-        "correctAnswer": "Ripe Persimmon",
-        "hint": "A very ripe persimmon is so sweet it tastes like liquid honey!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L153_Q2",
-        "instruction": "Detective: Find the jelly fruit",
-        "question": "🍮✨",
+        "id": "KIDS_FRUITS_L153_Q2",
+        "gameType": "fruits",
+        "level": 153,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "Persimmon",
+          "Grapes",
           "Apple",
           "Banana"
         ],
-        "correctAnswer": "Persimmon",
-        "hint": "When you open a soft persimmon, the inside looks like orange jelly!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L153_Q3",
-        "instruction": "Detective: Find the winter harvest",
-        "question": "❄️🍅",
+        "id": "KIDS_FRUITS_L153_Q3",
+        "gameType": "fruits",
+        "level": 153,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Persimmon",
-          "Strawberry",
-          "Watermelon"
+          "Apple",
+          "Banana",
+          "Grapes"
         ],
-        "correctAnswer": "Persimmon",
-        "hint": "While other fruits sleep in winter, persimmons are ready to be picked!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,51 +225,73 @@
     "level": 154,
     "quests": [
       {
-        "id": "KID_FRUITS_L154_Q1",
-        "instruction": "Mix: Find the ORANGE lookalikes",
-        "question": "🍅🍊",
+        "id": "KIDS_FRUITS_L154_Q1",
+        "gameType": "fruits",
+        "level": 154,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Persimmon & Orange",
-          "Banana & Kiwi",
-          "Cherry"
+          "Orange",
+          "Grapes",
+          "Lemon"
         ],
-        "correctAnswer": "Persimmon & Orange",
-        "hint": "Both of these fruits are bright orange and full of vitamins!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L154_Q2",
-        "instruction": "Mix: Find the leaf cap",
-        "question": "🧢🍃",
+        "id": "KIDS_FRUITS_L154_Q2",
+        "gameType": "fruits",
+        "level": 154,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Persimmon",
+          "Lemon",
           "Apple",
           "Orange"
         ],
-        "correctAnswer": "Persimmon",
-        "hint": "Look for the fruit with four stiff green leaves on its head!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L154_Q3",
-        "instruction": "Mix: Which is SWEETER?",
-        "question": "🍅✨ vs 🍋",
+        "id": "KIDS_FRUITS_L154_Q3",
+        "gameType": "fruits",
+        "level": 154,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "Persimmon",
-          "Lemon"
+          "Banana",
+          "Apple",
+          "Grapes"
         ],
-        "correctAnswer": "Persimmon",
-        "hint": "The persimmon is sugary sweet, while the lemon is very sour!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -214,52 +299,73 @@
     "level": 155,
     "quests": [
       {
-        "id": "KID_FRUITS_L155_Q1",
-        "instruction": "Identify: Who has 'Tannins'?",
-        "question": "Selection",
+        "id": "KIDS_FRUITS_L155_Q1",
+        "gameType": "fruits",
+        "level": 155,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "Unripe Persimmon",
+          "Grapes",
+          "Apple",
+          "Banana"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L155_Q2",
+        "gameType": "fruits",
+        "level": 155,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
+        "options": [
+          "Orange",
+          "Grapes",
+          "Banana"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L155_Q3",
+        "gameType": "fruits",
+        "level": 155,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
+        "options": [
           "Banana",
+          "Orange",
           "Grapes"
         ],
-        "correctAnswer": "Unripe Persimmon",
-        "hint": "If you eat an unripe persimmon, it makes your mouth feel dry and fuzzy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_FRUITS_L155_Q2",
-        "instruction": "Identify: Who is the Hachiya?",
-        "question": "Selection",
-        "options": [
-          "Pointy Persimmon",
-          "Round Apple",
-          "Long Banana"
-        ],
-        "correctAnswer": "Pointy Persimmon",
-        "hint": "Hachiya persimmons are shaped like a heart or an acorn!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_FRUITS_L155_Q3",
-        "instruction": "Identify: Who is the Fuyu?",
-        "question": "Selection",
-        "options": [
-          "Flat Persimmon",
-          "Big Watermelon",
-          "Tiny Berry"
-        ],
-        "correctAnswer": "Flat Persimmon",
-        "hint": "Fuyu persimmons are flat and can be eaten crunchy like an apple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -267,49 +373,73 @@
     "level": 156,
     "quests": [
       {
-        "id": "KID_FRUITS_L156_Q1",
-        "instruction": "Logic: Do persimmons grow on trees?",
-        "question": "🌳 Check",
+        "id": "KIDS_FRUITS_L156_Q1",
+        "gameType": "fruits",
+        "level": 156,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Yes!",
-          "No, in the sea"
+          "Orange",
+          "Grapes",
+          "Lemon"
         ],
-        "correctAnswer": "Yes!",
-        "hint": "Persimmon trees lose their leaves in winter, leaving just the bright orange fruit!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L156_Q2",
-        "instruction": "Logic: Can you eat the skin?",
-        "question": "🍅 Check",
+        "id": "KIDS_FRUITS_L156_Q2",
+        "gameType": "fruits",
+        "level": 156,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "Yes, it's very thin!",
-          "No"
+          "Grapes",
+          "Apple",
+          "Banana"
         ],
-        "correctAnswer": "Yes, it's very thin!",
-        "hint": "Just like an apple, you can wash and bite right into a Sharon fruit!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L156_Q3",
-        "instruction": "Logic: Is it a vegetable?",
-        "question": "🥦 vs 🍅✨",
+        "id": "KIDS_FRUITS_L156_Q3",
+        "gameType": "fruits",
+        "level": 156,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "No, it's a sweet fruit!",
-          "Yes"
+          "Apple",
+          "Grapes",
+          "Banana"
         ],
-        "correctAnswer": "No, it's a sweet fruit!",
-        "hint": "Even if it looks like a tomato, it is sugary and grows on a fruit tree!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -317,52 +447,73 @@
     "level": 157,
     "quests": [
       {
-        "id": "KID_FRUITS_L157_Q1",
-        "instruction": "Search: Find the acorn shape",
-        "question": "🌰🍅",
+        "id": "KIDS_FRUITS_L157_Q1",
+        "gameType": "fruits",
+        "level": 157,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Hachiya Persimmon",
-          "Round Orange",
-          "Square Box"
+          "Banana",
+          "Lemon",
+          "Grapes"
         ],
-        "correctAnswer": "Hachiya Persimmon",
-        "hint": "This type of persimmon is pointy at the bottom like a giant orange acorn!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L157_Q2",
-        "instruction": "Search: Find the honey jelly",
-        "question": "🍮🍯",
+        "id": "KIDS_FRUITS_L157_Q2",
+        "gameType": "fruits",
+        "level": 157,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Ripe Persimmon",
-          "Cold Ice",
-          "Dry Bread"
+          "Orange",
+          "Apple",
+          "Lemon"
         ],
-        "correctAnswer": "Ripe Persimmon",
-        "hint": "The inside becomes so soft you can eat it with a spoon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L157_Q3",
-        "instruction": "Search: Find the winter sun",
-        "question": "☀️❄️",
+        "id": "KIDS_FRUITS_L157_Q3",
+        "gameType": "fruits",
+        "level": 157,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Persimmon",
-          "Moon",
-          "Cloud"
+          "Orange",
+          "Lemon",
+          "Grapes"
         ],
-        "correctAnswer": "Persimmon",
-        "hint": "People call persimmons 'the sun of winter' because they are so bright!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -370,51 +521,73 @@
     "level": 158,
     "quests": [
       {
-        "id": "KID_FRUITS_L158_Q1",
-        "instruction": "Actions: How do you eat a soft PERSIMMON?",
-        "question": "🥄 Choice",
+        "id": "KIDS_FRUITS_L158_Q1",
+        "gameType": "fruits",
+        "level": 158,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "With a spoon!",
-          "With a straw",
-          "With a fork"
+          "Grapes",
+          "Apple",
+          "Lemon"
         ],
-        "correctAnswer": "With a spoon!",
-        "hint": "Scoop out the sweet jelly-like fruit from inside the skin!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L158_Q2",
-        "instruction": "Actions: What color is the flesh?",
-        "question": "🍅 Choice",
+        "id": "KIDS_FRUITS_L158_Q2",
+        "gameType": "fruits",
+        "level": 158,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "Bright Orange",
-          "Blue",
-          "Black"
+          "Orange",
+          "Banana",
+          "Apple"
         ],
-        "correctAnswer": "Bright Orange",
-        "hint": "Both the skin and the fruit inside are beautiful shades of orange!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L158_Q3",
-        "instruction": "Actions: Which one is crunchy?",
-        "question": "🍎 vs 🍅",
+        "id": "KIDS_FRUITS_L158_Q3",
+        "gameType": "fruits",
+        "level": 158,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Fuyu Persimmon",
-          "Hachiya Persimmon"
+          "Orange",
+          "Banana",
+          "Apple"
         ],
-        "correctAnswer": "Fuyu Persimmon",
-        "hint": "The flat Fuyu can be eaten like a crunchy apple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -422,52 +595,73 @@
     "level": 159,
     "quests": [
       {
-        "id": "KID_FRUITS_L159_Q1",
-        "instruction": "Review: Who looks like a TOMATO?",
-        "question": "🍅 Review",
+        "id": "KIDS_FRUITS_L159_Q1",
+        "gameType": "fruits",
+        "level": 159,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Persimmon",
           "Banana",
-          "Cherry"
-        ],
-        "correctAnswer": "Persimmon",
-        "hint": "The orange winter friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_FRUITS_L159_Q2",
-        "instruction": "Review: Who is the honey fruit?",
-        "question": "🍯 Review",
-        "options": [
-          "Persimmon",
-          "Lemon",
-          "Kiwi"
-        ],
-        "correctAnswer": "Persimmon",
-        "hint": "The sweet jelly-inside friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_FRUITS_L159_Q3",
-        "instruction": "Review: Who has a green leaf cap?",
-        "question": "🍃 Review",
-        "options": [
-          "Persimmon",
           "Orange",
           "Apple"
         ],
-        "correctAnswer": "Persimmon",
-        "hint": "Look at the four leaves on its head!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L159_Q2",
+        "gameType": "fruits",
+        "level": 159,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
+        "options": [
+          "Banana",
+          "Apple",
+          "Lemon"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L159_Q3",
+        "gameType": "fruits",
+        "level": 159,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
+        "options": [
+          "Banana",
+          "Orange",
+          "Grapes"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -475,51 +669,73 @@
     "level": 160,
     "quests": [
       {
-        "id": "KID_FRUITS_L160_Q1",
-        "instruction": "Level 160 Challenge: Seasons!",
-        "question": "Which fruit ripens in the winter?",
+        "id": "KIDS_FRUITS_L160_Q1",
+        "gameType": "fruits",
+        "level": 160,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "Persimmon",
-          "Watermelon",
-          "Strawberry"
+          "Grapes",
+          "Lemon",
+          "Apple"
         ],
-        "correctAnswer": "Persimmon",
-        "hint": "The bright orange sun friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L160_Q2",
-        "instruction": "Level 160 Challenge: Lookalikes!",
-        "question": "What vegetable does a persimmon look like?",
+        "id": "KIDS_FRUITS_L160_Q2",
+        "gameType": "fruits",
+        "level": 160,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Tomato",
-          "Potato",
-          "Carrot"
+          "Orange",
+          "Apple",
+          "Banana"
         ],
-        "correctAnswer": "Tomato",
-        "hint": "It's round and shiny and has a leaf on top!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L160_Q3",
-        "instruction": "Level 160 Challenge: Mastery!",
-        "question": "Do you have a Honey Heart?",
+        "id": "KIDS_FRUITS_L160_Q3",
+        "gameType": "fruits",
+        "level": 160,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "YES!",
-          "No"
+          "Grapes",
+          "Orange",
+          "Apple"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 160!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

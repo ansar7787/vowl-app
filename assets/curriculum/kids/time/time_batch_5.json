@@ -3,50 +3,73 @@
     "level": 41,
     "quests": [
       {
-        "id": "KID_TIME_L41_Q1",
-        "instruction": "What comes out in the night sky when the sun is gone?",
-        "question": "🌙🌙✨",
+        "id": "KIDS_TIME_L41_Q1",
+        "gameType": "time",
+        "level": 41,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Moon",
-          "Fire",
-          "Ball"
+          "8:00 AM",
+          "12:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Moon",
-        "hint": "It's white or silver and glows in the dark sky! It looks like a crescent or a circle! It's the moon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L41_Q2",
-        "instruction": "Find the MOON",
-        "question": "🌙✨🌑",
+        "id": "KIDS_TIME_L41_Q2",
+        "gameType": "time",
+        "level": 41,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Found it!",
-          "Not here"
+          "8:00 AM",
+          "9:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the bright crescent shape shining high above the sleeping houses!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L41_Q3",
-        "instruction": "Is it NIGHT?",
-        "question": "🌙 = Night time?",
+        "id": "KIDS_TIME_L41_Q3",
+        "gameType": "time",
+        "level": 41,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Yes, time for rest!",
-          "No, morning sun"
+          "8:00 AM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, time for rest!",
-        "hint": "When the moon is high and the sky is dark, it's the time for everyone to sleep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 42,
     "quests": [
       {
-        "id": "KID_TIME_L42_Q1",
-        "instruction": "What small light keeps our room cozy while we sleep?",
-        "question": "💡💡✨",
+        "id": "KIDS_TIME_L42_Q1",
+        "gameType": "time",
+        "level": 42,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Night Light",
-          "Flashlight",
-          "Candle"
+          "9:00 PM",
+          "12:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Night Light",
-        "hint": "It's a soft little light that stays on all night so we aren't in the dark! It's a night light!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L42_Q2",
-        "instruction": "Find the NIGHT LIGHT",
-        "question": "💡✨🛏️",
+        "id": "KIDS_TIME_L42_Q2",
+        "gameType": "time",
+        "level": 42,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "8:00 AM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the small glowing star plugged into the wall next to the dresser!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L42_Q3",
-        "instruction": "Is it SOFT?",
-        "question": "💡 = Soft glow?",
+        "id": "KIDS_TIME_L42_Q3",
+        "gameType": "time",
+        "level": 42,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Yes, very peaceful!",
-          "No, super bright"
+          "4:00 PM",
+          "12:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Yes, very peaceful!",
-        "hint": "A night light helps us feel safe and happy as we drift off to dreamland!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 43,
     "quests": [
       {
-        "id": "KID_TIME_L43_Q1",
-        "instruction": "Who do we cuddle with when we go to sleep?",
-        "question": "🧸🧸✨",
+        "id": "KIDS_TIME_L43_Q1",
+        "gameType": "time",
+        "level": 43,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Teddy Bear",
-          "Tractor",
-          "Bucket"
+          "12:00 PM",
+          "4:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Teddy Bear",
-        "hint": "He's fuzzy and soft and loves to hear our bedtime stories! It's our teddy bear!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L43_Q2",
-        "instruction": "Find the TEDDY BEAR",
-        "question": "🧸✨🧒",
+        "id": "KIDS_TIME_L43_Q2",
+        "gameType": "time",
+        "level": 43,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "9:00 PM",
+          "12:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the brown fuzzy bear tucked under the covers with the student!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L43_Q3",
-        "instruction": "Is it BEDTIME?",
-        "question": "🧸 = Sleepy time?",
+        "id": "KIDS_TIME_L43_Q3",
+        "gameType": "time",
+        "level": 43,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Yes, night-night!",
-          "No, play all day"
+          "9:00 PM",
+          "12:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Yes, night-night!",
-        "hint": "Holding our teddy bear helps us stay warm and cozy all through the night!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 44,
     "quests": [
       {
-        "id": "KID_TIME_L44_Q1",
-        "instruction": "What is it called when we have adventures in our sleep?",
-        "question": "💭✨💤",
+        "id": "KIDS_TIME_L44_Q1",
+        "gameType": "time",
+        "level": 44,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Dreaming",
-          "Eating",
-          "Running"
+          "8:00 AM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Dreaming",
-        "hint": "Our brain makes up wonderful stories and pictures while we are fast asleep! It's dreaming!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L44_Q2",
-        "instruction": "Find the DREAM cloud",
-        "question": "💭✨🌙",
+        "id": "KIDS_TIME_L44_Q2",
+        "gameType": "time",
+        "level": 44,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the fluffy white cloud floating above the sleeping child's head!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L44_Q3",
-        "instruction": "Is it SLEEPY?",
-        "question": "💤 = Zzzzz sleep?",
+        "id": "KIDS_TIME_L44_Q3",
+        "gameType": "time",
+        "level": 44,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Yes, very tired!",
-          "No, full of energy"
+          "4:00 PM",
+          "12:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Yes, very tired!",
-        "hint": "Sleeping and dreaming helps our bodies and brains grow big and strong for tomorrow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 45,
     "quests": [
       {
-        "id": "KID_TIME_L45_Q1",
-        "instruction": "Night Logic: MOON is for...",
-        "question": "🌙 -> ?",
+        "id": "KIDS_TIME_L45_Q1",
+        "gameType": "time",
+        "level": 45,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Night Sky",
-          "Morning Sky"
+          "9:00 PM",
+          "12:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Night Sky",
-        "hint": "The moon is the queen of the night sky, appearing when the sun goes to rest!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L45_Q2",
-        "instruction": "Night Logic: TEDDY is for...",
-        "question": "🧸 -> ?",
+        "id": "KIDS_TIME_L45_Q2",
+        "gameType": "time",
+        "level": 45,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Cuddling in Bed",
-          "Playing Outside"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Cuddling in Bed",
-        "hint": "We take our teddy bear to bed to help us feel safe and cozy while we sleep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L45_Q3",
-        "instruction": "Logic: Do we sleep in NIGHT?",
-        "question": "🌙🧸🛌 -> ✨?",
+        "id": "KIDS_TIME_L45_Q3",
+        "gameType": "time",
+        "level": 45,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Yes, sweet dreams!",
-          "No, dance now"
+          "8:00 AM",
+          "12:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Yes, sweet dreams!",
-        "hint": "Night time is the quietest part of our day, perfect for resting and dreaming big adventures!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 46,
     "quests": [
       {
-        "id": "KID_TIME_L46_Q1",
-        "instruction": "Search: Find the child SLEEPING",
-        "question": "💤🧒🛌",
+        "id": "KIDS_TIME_L46_Q1",
+        "gameType": "time",
+        "level": 46,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "9:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person with their eyes closed, tucked in with their blanket!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L46_Q2",
-        "instruction": "Search: Find the NIGHT light",
-        "question": "💡✨🌑",
+        "id": "KIDS_TIME_L46_Q2",
+        "gameType": "time",
+        "level": 46,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "8:00 AM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the small glowing star on the wall that is keeping the room from being dark!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L46_Q3",
-        "instruction": "Search: Find the MOON",
-        "question": "🌙✨🌲",
+        "id": "KIDS_TIME_L46_Q3",
+        "gameType": "time",
+        "level": 46,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Found it!",
-          "Not here"
+          "4:00 PM",
+          "8:00 AM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the silver crescent moon hanging high above the tall pine trees!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 47,
     "quests": [
       {
-        "id": "KID_TIME_L47_Q1",
-        "instruction": "Action: Cuddle TEDDY!",
-        "question": "🧸🧒✨",
+        "id": "KIDS_TIME_L47_Q1",
+        "gameType": "time",
+        "level": 47,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Hug him tight!",
-          "Throw him out"
+          "12:00 PM",
+          "8:00 AM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Hug him tight!",
-        "hint": "Give your fuzzy teddy bear a big bedtime hug so you both feel safe and happy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L47_Q2",
-        "instruction": "Action: Start DREAMING!",
-        "question": "💭🧒✨",
+        "id": "KIDS_TIME_L47_Q2",
+        "gameType": "time",
+        "level": 47,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Think of rocket!",
-          "Think of mud"
+          "12:00 PM",
+          "4:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Think of rocket!",
-        "hint": "Close your eyes and imagine you are flying to the stars in a shiny silver rocket!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L47_Q3",
-        "instruction": "Action: Sleep QUIETLY!",
-        "question": "💤🧒🤫",
+        "id": "KIDS_TIME_L47_Q3",
+        "gameType": "time",
+        "level": 47,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Zzzzzzz...",
-          "Jump and shout"
+          "9:00 PM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Zzzzzzz...",
-        "hint": "Be very quiet and take slow deep breaths as you fall fast asleep for the night!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 48,
     "quests": [
       {
-        "id": "KID_TIME_L48_Q1",
-        "instruction": "Match: What is for the NIGHT?",
-        "question": "🌙 + ?",
+        "id": "KIDS_TIME_L48_Q1",
+        "gameType": "time",
+        "level": 48,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Moon",
-          "Toaster"
+          "4:00 PM",
+          "9:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Moon",
-        "hint": "The moon is the bright light that tells us it's time for the world to rest!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L48_Q2",
-        "instruction": "Match: What is for the DREAM?",
-        "question": "💭 + ?",
+        "id": "KIDS_TIME_L48_Q2",
+        "gameType": "time",
+        "level": 48,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Dreaming",
-          "Shoe"
+          "12:00 PM",
+          "8:00 AM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Dreaming",
-        "hint": "Dreaming is the wonderful adventure we have when we are sleeping in our bed!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L48_Q3",
-        "instruction": "Match: What is for the COZY?",
-        "question": "🧸 + ?",
+        "id": "KIDS_TIME_L48_Q3",
+        "gameType": "time",
+        "level": 48,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Teddy Bear",
-          "Ruler"
+          "4:00 PM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Teddy Bear",
-        "hint": "A teddy bear is the best friend for a cozy and safe night of sleep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 49,
     "quests": [
       {
-        "id": "KID_TIME_L49_Q1",
-        "instruction": "Milestone: Are you ready for Level 50?",
-        "question": "5️⃣0️⃣✨❓",
+        "id": "KIDS_TIME_L49_Q1",
+        "gameType": "time",
+        "level": 49,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "YES!",
-          "No"
+          "4:00 PM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You have learned so much about the day and night! You are almost a Night Master!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L49_Q2",
-        "instruction": "Milestone: Are you a NIGHT MASTER?",
-        "question": "🌙🧸💤✨❓",
+        "id": "KIDS_TIME_L49_Q2",
+        "gameType": "time",
+        "level": 49,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Yes, I am!",
-          "No"
+          "8:00 AM",
+          "9:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "A night master knows their stars, their moon, and how to have the best dreams!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L49_Q3",
-        "instruction": "Milestone: The night test starts now!",
-        "question": "🏆✨🥇❓",
+        "id": "KIDS_TIME_L49_Q3",
+        "gameType": "time",
+        "level": 49,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "I AM READY!",
-          "No"
+          "12:00 PM",
+          "4:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "I AM READY!",
-        "hint": "Show us your amazing time skills! You can do it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 50,
     "quests": [
       {
-        "id": "KID_TIME_L50_Q1",
-        "instruction": "LEVEL 50 MILESTONE: NIGHT MASTER!",
-        "question": "What is in the night sky? 🌙✨",
+        "id": "KIDS_TIME_L50_Q1",
+        "gameType": "time",
+        "level": 50,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Moon & Stars",
-          "Sun & Rain",
-          "Apples"
+          "4:00 PM",
+          "12:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Moon & Stars",
-        "hint": "Night lights!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L50_Q2",
-        "instruction": "LEVEL 50 MILESTONE: NIGHT MASTER!",
-        "question": "What do we do at night? 💤🛌",
+        "id": "KIDS_TIME_L50_Q2",
+        "gameType": "time",
+        "level": 50,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Sleep & Dream",
-          "Run & Shout",
-          "Eat Lunch"
+          "8:00 AM",
+          "4:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Sleep & Dream",
-        "hint": "Rest time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L50_Q3",
-        "instruction": "LEVEL 50: NIGHT MASTERY!",
-        "question": "ARE YOU THE NIGHT MASTER?",
+        "id": "KIDS_TIME_L50_Q3",
+        "gameType": "time",
+        "level": 50,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "I AM THE MASTER! 🏆✨🥇",
-          "No"
+          "8:00 AM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "I AM THE MASTER! 🏆✨🥇",
-        "hint": "CONGRATULATIONS! YOU HAVE REACHED LEVEL 50!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

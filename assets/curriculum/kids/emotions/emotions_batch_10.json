@@ -3,52 +3,73 @@
     "level": 91,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L91_Q1",
-        "instruction": "Review: Find the HAPPY face",
-        "question": "😊 Review",
+        "id": "KIDS_EMOTIONS_L91_Q1",
+        "gameType": "emotions",
+        "level": 91,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
+        "options": [
+          "Excited",
+          "Angry",
+          "Scared"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_EMOTIONS_L91_Q2",
+        "gameType": "emotions",
+        "level": 91,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
         "options": [
           "Happy",
-          "Sad",
+          "Scared",
           "Angry"
         ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_EMOTIONS_L91_Q3",
+        "gameType": "emotions",
+        "level": 91,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
         "correctAnswer": "Happy",
-        "hint": "The big smiling face friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_EMOTIONS_L91_Q2",
-        "instruction": "Review: Find the SAD face",
-        "question": "😢 Review",
         "options": [
-          "Sad",
           "Happy",
-          "Surprised"
+          "Excited",
+          "Angry"
         ],
-        "correctAnswer": "Sad",
-        "hint": "The blue frowning face friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_EMOTIONS_L91_Q3",
-        "instruction": "Review: Find the ANGRY face",
-        "question": "😡 Review",
-        "options": [
-          "Angry",
-          "Happy",
-          "Silly"
-        ],
-        "correctAnswer": "Angry",
-        "hint": "The red mad face friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 92,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L92_Q1",
-        "instruction": "Review: Find the SCARED face",
-        "question": "😨 Review",
+        "id": "KIDS_EMOTIONS_L92_Q1",
+        "gameType": "emotions",
+        "level": 92,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
-          "Scared",
-          "Silly",
-          "Tired"
+          "Sad",
+          "Happy",
+          "Scared"
         ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_EMOTIONS_L92_Q2",
+        "gameType": "emotions",
+        "level": 92,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
         "correctAnswer": "Scared",
-        "hint": "The shaking face friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_EMOTIONS_L92_Q2",
-        "instruction": "Review: Find the SILLY face",
-        "question": "🤪 Review",
         "options": [
-          "Silly",
+          "Sad",
           "Scared",
-          "Angry"
+          "Excited"
         ],
-        "correctAnswer": "Silly",
-        "hint": "The funny face friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L92_Q3",
-        "instruction": "Review: Find the EXCITED face",
-        "question": "🤩 Review",
-        "options": [
-          "Excited",
-          "Sleepy",
-          "Sad"
-        ],
+        "id": "KIDS_EMOTIONS_L92_Q3",
+        "gameType": "emotions",
+        "level": 92,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
         "correctAnswer": "Excited",
-        "hint": "The starry-eyed face friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "options": [
+          "Sad",
+          "Happy",
+          "Excited"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 93,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L93_Q1",
-        "instruction": "Review: Find the PROUD face",
-        "question": "🎖️ Review",
+        "id": "KIDS_EMOTIONS_L93_Q1",
+        "gameType": "emotions",
+        "level": 93,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
         "options": [
-          "Proud",
-          "Shy",
-          "Lonely"
+          "Angry",
+          "Excited",
+          "Scared"
         ],
-        "correctAnswer": "Proud",
-        "hint": "The standing tall friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L93_Q2",
-        "instruction": "Review: Find the FRIENDLY face",
-        "question": "👫 Review",
+        "id": "KIDS_EMOTIONS_L93_Q2",
+        "gameType": "emotions",
+        "level": 93,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
+        "correctAnswer": "Happy",
         "options": [
-          "Friendly",
-          "Lonely",
-          "Angry"
-        ],
-        "correctAnswer": "Friendly",
-        "hint": "The playing together friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_EMOTIONS_L93_Q3",
-        "instruction": "Review: Find the SHY face",
-        "question": "🫣 Review",
-        "options": [
-          "Shy",
-          "Proud",
+          "Excited",
+          "Sad",
           "Happy"
         ],
-        "correctAnswer": "Shy",
-        "hint": "The peeking face friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_EMOTIONS_L93_Q3",
+        "gameType": "emotions",
+        "level": 93,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
+        "options": [
+          "Sad",
+          "Happy",
+          "Scared"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 94,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L94_Q1",
-        "instruction": "Review: Find the BORED face",
-        "question": "🥱 Review",
+        "id": "KIDS_EMOTIONS_L94_Q1",
+        "gameType": "emotions",
+        "level": 94,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "Bored",
-          "Curious",
-          "Calm"
+          "Scared",
+          "Angry",
+          "Excited"
         ],
-        "correctAnswer": "Bored",
-        "hint": "The sighing face friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L94_Q2",
-        "instruction": "Review: Find the CURIOUS face",
-        "question": "🧐 Review",
+        "id": "KIDS_EMOTIONS_L94_Q2",
+        "gameType": "emotions",
+        "level": 94,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
         "options": [
-          "Curious",
-          "Confused",
-          "Angry"
+          "Happy",
+          "Excited",
+          "Sad"
         ],
-        "correctAnswer": "Curious",
-        "hint": "The searching face friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L94_Q3",
-        "instruction": "Review: Find the CALM face",
-        "question": "😌 Review",
+        "id": "KIDS_EMOTIONS_L94_Q3",
+        "gameType": "emotions",
+        "level": 94,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
         "options": [
-          "Calm",
-          "Worried",
+          "Angry",
+          "Excited",
           "Scared"
         ],
-        "correctAnswer": "Calm",
-        "hint": "The peaceful face friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 95,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L95_Q1",
-        "instruction": "Master Sorting: Find the HAPPY opposites",
-        "question": "😊 vs 😢",
+        "id": "KIDS_EMOTIONS_L95_Q1",
+        "gameType": "emotions",
+        "level": 95,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
+        "correctAnswer": "Happy",
         "options": [
-          "Happy & Sad",
-          "Hot & Cold",
-          "Fast & Slow"
+          "Angry",
+          "Sad",
+          "Happy"
         ],
-        "correctAnswer": "Happy & Sad",
-        "hint": "Smile is the opposite of a frown!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L95_Q2",
-        "instruction": "Master Sorting: Find the ENERGY opposites",
-        "question": "🤩 vs 😴",
+        "id": "KIDS_EMOTIONS_L95_Q2",
+        "gameType": "emotions",
+        "level": 95,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
-          "Excited & Sleepy",
-          "Big & Small",
-          "Up & Down"
+          "Angry",
+          "Scared",
+          "Sad"
         ],
-        "correctAnswer": "Excited & Sleepy",
-        "hint": "Jumping is the opposite of napping!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L95_Q3",
-        "instruction": "Master Sorting: Find the TRUTH opposites",
-        "question": "🕯️ vs ⚠️",
+        "id": "KIDS_EMOTIONS_L95_Q3",
+        "gameType": "emotions",
+        "level": 95,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "Safe & Unsafe",
-          "Open & Closed",
-          "First & Last"
+          "Scared",
+          "Angry",
+          "Happy"
         ],
-        "correctAnswer": "Safe & Unsafe",
-        "hint": "Home is safe, a hot stove is unsafe!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,52 +373,73 @@
     "level": 96,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L96_Q1",
-        "instruction": "Logic: Which face needs help with a BOO-BOO?",
-        "question": "🩹❓",
+        "id": "KIDS_EMOTIONS_L96_Q1",
+        "gameType": "emotions",
+        "level": 96,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
         "options": [
-          "Hurt Face",
-          "Happy Face",
-          "Silly Face"
+          "Excited",
+          "Sad",
+          "Angry"
         ],
-        "correctAnswer": "Hurt Face",
-        "hint": "Think of the friend who took a tumble!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L96_Q2",
-        "instruction": "Logic: Which face needs a healthy SNACK?",
-        "question": "🍎❓",
+        "id": "KIDS_EMOTIONS_L96_Q2",
+        "gameType": "emotions",
+        "level": 96,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
         "options": [
-          "Hungry Face",
-          "Sleepy Face",
-          "Calm Face"
+          "Sad",
+          "Happy",
+          "Angry"
         ],
-        "correctAnswer": "Hungry Face",
-        "hint": "Think of the friend with the empty tummy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L96_Q3",
-        "instruction": "Logic: Which face needs a cozy BED?",
-        "question": "🛌❓",
+        "id": "KIDS_EMOTIONS_L96_Q3",
+        "gameType": "emotions",
+        "level": 96,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
+        "correctAnswer": "Happy",
         "options": [
-          "Sleepy Face",
-          "Brave Face",
-          "Curious Face"
+          "Happy",
+          "Sad",
+          "Excited"
         ],
-        "correctAnswer": "Sleepy Face",
-        "hint": "Think of the friend who is yawning!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -321,52 +447,73 @@
     "level": 97,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L97_Q1",
-        "instruction": "Logic: What helps a WORRIED friend?",
-        "question": "😟❓",
+        "id": "KIDS_EMOTIONS_L97_Q1",
+        "gameType": "emotions",
+        "level": 97,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
-          "Kind Words!",
-          "Shouting",
-          "Running"
+          "Angry",
+          "Excited",
+          "Sad"
         ],
-        "correctAnswer": "Kind Words!",
-        "hint": "Telling a friend 'It's okay' helps them feel safe!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L97_Q2",
-        "instruction": "Logic: What helps an ANGRY friend?",
-        "question": "😡❓",
+        "id": "KIDS_EMOTIONS_L97_Q2",
+        "gameType": "emotions",
+        "level": 97,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "Space and Breaths!",
-          "Kicking",
-          "Crying"
+          "Sad",
+          "Happy",
+          "Scared"
         ],
-        "correctAnswer": "Space and Breaths!",
-        "hint": "Giving a mad friend some quiet time helps them cool down!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L97_Q3",
-        "instruction": "Logic: What helps a SHY friend?",
-        "question": "🫣❓",
+        "id": "KIDS_EMOTIONS_L97_Q3",
+        "gameType": "emotions",
+        "level": 97,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
         "options": [
-          "Gentle Smiles!",
-          "Loud Noises",
-          "Hiding Toys"
+          "Excited",
+          "Sad",
+          "Angry"
         ],
-        "correctAnswer": "Gentle Smiles!",
-        "hint": "Being quiet and kind helps a shy friend feel ready to play!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -374,49 +521,73 @@
     "level": 98,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L98_Q1",
-        "instruction": "Master Review: Is a gift for SURPRISE?",
-        "question": "🎁❓",
+        "id": "KIDS_EMOTIONS_L98_Q1",
+        "gameType": "emotions",
+        "level": 98,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
         "options": [
-          "Yes, WOW!",
-          "No, it's for Sleepy"
+          "Angry",
+          "Happy",
+          "Sad"
         ],
-        "correctAnswer": "Yes, WOW!",
-        "hint": "Opening a box with a toy inside is a wonderful surprise!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L98_Q2",
-        "instruction": "Master Review: Is a star for PROUD?",
-        "question": "⭐❓",
+        "id": "KIDS_EMOTIONS_L98_Q2",
+        "gameType": "emotions",
+        "level": 98,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
+        "correctAnswer": "Happy",
         "options": [
-          "Yes, I did it!",
-          "No, it's for Sad"
+          "Happy",
+          "Excited",
+          "Angry"
         ],
-        "correctAnswer": "Yes, I did it!",
-        "hint": "Getting a gold star for good work makes you feel proud!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L98_Q3",
-        "instruction": "Master Review: Is a hug for LOVE?",
-        "question": "🫂❓",
+        "id": "KIDS_EMOTIONS_L98_Q3",
+        "gameType": "emotions",
+        "level": 98,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
-          "Yes, Happy!",
-          "No, it's for Angry"
+          "Angry",
+          "Happy",
+          "Sad"
         ],
-        "correctAnswer": "Yes, Happy!",
-        "hint": "A big warm hug makes everyone feel happy and loved!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -424,49 +595,73 @@
     "level": 99,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L99_Q1",
-        "instruction": "Graduation Challenge: Your Heart!",
-        "question": "Are your feelings IMPORTANT?",
+        "id": "KIDS_EMOTIONS_L99_Q1",
+        "gameType": "emotions",
+        "level": 99,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "YES, very!",
-          "No"
+          "Sad",
+          "Happy",
+          "Scared"
         ],
-        "correctAnswer": "YES, very!",
-        "hint": "How you feel matters to everyone who loves you!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L99_Q2",
-        "instruction": "Graduation Challenge: Kindness!",
-        "question": "Should we be KIND to others?",
+        "id": "KIDS_EMOTIONS_L99_Q2",
+        "gameType": "emotions",
+        "level": 99,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
         "options": [
-          "YES, always!",
-          "No"
+          "Angry",
+          "Excited",
+          "Scared"
         ],
-        "correctAnswer": "YES, always!",
-        "hint": "Kindness makes the world a happy place!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L99_Q3",
-        "instruction": "Graduation Challenge: Mastery!",
-        "question": "Are you ready to be a Scout?",
+        "id": "KIDS_EMOTIONS_L99_Q3",
+        "gameType": "emotions",
+        "level": 99,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
         "options": [
-          "YES!",
-          "No"
+          "Angry",
+          "Happy",
+          "Sad"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You have completed the first 100 levels!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -474,51 +669,73 @@
     "level": 100,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L100_Q1",
-        "instruction": "LEVEL 100: MILESTONE!",
-        "question": "What face has a big SMILE?",
-        "options": [
-          "Happy",
-          "Angry",
-          "Sad"
-        ],
+        "id": "KIDS_EMOTIONS_L100_Q1",
+        "gameType": "emotions",
+        "level": 100,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
         "correctAnswer": "Happy",
-        "hint": "Think of the joyful friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "options": [
+          "Excited",
+          "Happy",
+          "Scared"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L100_Q2",
-        "instruction": "LEVEL 100: MILESTONE!",
-        "question": "What face has a big FROWN?",
+        "id": "KIDS_EMOTIONS_L100_Q2",
+        "gameType": "emotions",
+        "level": 100,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
           "Sad",
-          "Happy",
-          "Silly"
+          "Scared",
+          "Happy"
         ],
-        "correctAnswer": "Sad",
-        "hint": "Think of the blue friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L100_Q3",
-        "instruction": "CONGRATULATIONS SCOUT!",
-        "question": "CLICK TO GRADUATE AS EMOTION SCOUT!",
+        "id": "KIDS_EMOTIONS_L100_Q3",
+        "gameType": "emotions",
+        "level": 100,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "🏆 CLAIM SCOUT DIPLOMA! 🏆",
-          "Wait"
+          "Scared",
+          "Happy",
+          "Excited"
         ],
-        "correctAnswer": "🏆 CLAIM SCOUT DIPLOMA! 🏆",
-        "hint": "YOU HAVE COMPLETED 100 LEVELS OF EMOTIONS!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

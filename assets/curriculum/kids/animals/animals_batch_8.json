@@ -3,52 +3,73 @@
     "level": 71,
     "quests": [
       {
-        "id": "KID_ANIMALS_L71_Q1",
-        "instruction": "Arctic: Who is the BIGGEST bear?",
-        "question": "🐻‍❄️",
+        "id": "KIDS_ANIMALS_L71_Q1",
+        "gameType": "animals",
+        "level": 71,
+        "instruction": "Which animal says \"Baa\"?",
+        "question": "Baa",
+        "correctAnswer": "Sheep",
         "options": [
-          "Polar Bear",
-          "Brown Bear",
-          "Panda"
+          "Lion",
+          "Elephant",
+          "Sheep"
         ],
-        "correctAnswer": "Polar Bear",
-        "hint": "Polar bears have white fur to hide in the snow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly sheep!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L71_Q2",
-        "instruction": "Arctic: Who has big TUSKS?",
-        "question": "🦭 Big",
+        "id": "KIDS_ANIMALS_L71_Q2",
+        "gameType": "animals",
+        "level": 71,
+        "instruction": "Which animal is the king of the jungle?",
+        "question": "Lion",
+        "correctAnswer": "Lion",
         "options": [
-          "Walrus",
-          "Seal",
-          "Penguin"
+          "Cow",
+          "Frog",
+          "Lion"
         ],
-        "correctAnswer": "Walrus",
-        "hint": "Walruses use their long tusks to pull themselves onto the ice!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly lion!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L71_Q3",
-        "instruction": "Arctic: Find the SNOWY OWL",
-        "question": "🦉❄️",
+        "id": "KIDS_ANIMALS_L71_Q3",
+        "gameType": "animals",
+        "level": 71,
+        "instruction": "Which animal says \"Quack\"?",
+        "question": "Quack",
+        "correctAnswer": "Duck",
         "options": [
-          "Snowy Owl",
-          "Eagle",
-          "Parrot"
+          "Cat",
+          "Dog",
+          "Duck"
         ],
-        "correctAnswer": "Snowy Owl",
-        "hint": "Snowy owls are white to match the snow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly duck!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 72,
     "quests": [
       {
-        "id": "KID_ANIMALS_L72_Q1",
-        "instruction": "Ice: Who slides on their BELLY?",
-        "question": "🐧",
+        "id": "KIDS_ANIMALS_L72_Q1",
+        "gameType": "animals",
+        "level": 72,
+        "instruction": "Which animal says \"Trumpet\"?",
+        "question": "Trumpet",
+        "correctAnswer": "Elephant",
         "options": [
-          "Penguin",
-          "Seal",
-          "Polar Bear"
+          "Elephant",
+          "Rooster",
+          "Duck"
         ],
-        "correctAnswer": "Penguin",
-        "hint": "Penguins love to slide across the ice into the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly elephant!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L72_Q2",
-        "instruction": "Ice: Who claps with FLIPPERS?",
-        "question": "🦭",
+        "id": "KIDS_ANIMALS_L72_Q2",
+        "gameType": "animals",
+        "level": 72,
+        "instruction": "Which animal loves to climb and eat bananas?",
+        "question": "Monkey",
+        "correctAnswer": "Monkey",
         "options": [
-          "Seal",
-          "Polar Bear",
-          "Wolf"
+          "Elephant",
+          "Frog",
+          "Monkey"
         ],
-        "correctAnswer": "Seal",
-        "hint": "Seals have smooth fur and use flippers to swim!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly monkey!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L72_Q3",
-        "instruction": "Ice: Find the REINDEER",
-        "question": "🦌❄️",
+        "id": "KIDS_ANIMALS_L72_Q3",
+        "gameType": "animals",
+        "level": 72,
+        "instruction": "Which animal says \"Ribbit\"?",
+        "question": "Ribbit",
+        "correctAnswer": "Frog",
         "options": [
-          "Reindeer",
-          "Moose",
-          "Horse"
+          "Frog",
+          "Duck",
+          "Elephant"
         ],
-        "correctAnswer": "Reindeer",
-        "hint": "Reindeer (or Caribou) live in very cold places!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly frog!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 73,
     "quests": [
       {
-        "id": "KID_ANIMALS_L73_Q1",
-        "instruction": "Snow: Find the ARCTIC FOX",
-        "question": "🦊❄️",
+        "id": "KIDS_ANIMALS_L73_Q1",
+        "gameType": "animals",
+        "level": 73,
+        "instruction": "Which animal says \"Cock-a-doodle-doo\"?",
+        "question": "Cock-a-doodle-doo",
+        "correctAnswer": "Rooster",
         "options": [
-          "Arctic Fox",
-          "Red Fox",
-          "Wolf"
+          "Rooster",
+          "Sheep",
+          "Dog"
         ],
-        "correctAnswer": "Arctic Fox",
-        "hint": "The Arctic Fox has thick white fur for the winter!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly rooster!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L73_Q2",
-        "instruction": "Snow: Find the SNOW LEOPARD",
-        "question": "🐆❄️",
+        "id": "KIDS_ANIMALS_L73_Q2",
+        "gameType": "animals",
+        "level": 73,
+        "instruction": "Which animal keeps your home safe?",
+        "question": "Dog",
+        "correctAnswer": "Dog",
         "options": [
-          "Snow Leopard",
-          "Tiger",
-          "Lion"
+          "Monkey",
+          "Frog",
+          "Dog"
         ],
-        "correctAnswer": "Snow Leopard",
-        "hint": "Snow Leopards live high in the cold mountains!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly dog!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L73_Q3",
-        "instruction": "Snow: Find the HUSKY",
-        "question": "🐕‍🦺❄️",
+        "id": "KIDS_ANIMALS_L73_Q3",
+        "gameType": "animals",
+        "level": 73,
+        "instruction": "Which animal says \"Meow\"?",
+        "question": "Meow",
+        "correctAnswer": "Cat",
         "options": [
-          "Husky Dog",
           "Cat",
-          "Rabbit"
+          "Sheep",
+          "Cow"
         ],
-        "correctAnswer": "Husky Dog",
-        "hint": "Huskies are strong dogs that love the snow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly cat!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 74,
     "quests": [
       {
-        "id": "KID_ANIMALS_L74_Q1",
-        "instruction": "Science: What is BLUBBER?",
-        "question": "🦭 Science",
+        "id": "KIDS_ANIMALS_L74_Q1",
+        "gameType": "animals",
+        "level": 74,
+        "instruction": "Which animal says \"Moo\"?",
+        "question": "Moo",
+        "correctAnswer": "Cow",
         "options": [
-          "Warm Fat",
-          "Cool Water",
-          "White Fur"
+          "Duck",
+          "Sheep",
+          "Cow"
         ],
-        "correctAnswer": "Warm Fat",
-        "hint": "Blubber is a thick layer of fat that keeps animals warm!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly cow!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L74_Q2",
-        "instruction": "Science: Why is fur WHITE?",
-        "question": "🐻‍❄️ Science",
+        "id": "KIDS_ANIMALS_L74_Q2",
+        "gameType": "animals",
+        "level": 74,
+        "instruction": "Which animal gives us warm wool?",
+        "question": "Sheep",
+        "correctAnswer": "Sheep",
         "options": [
-          "To Hide in Snow",
-          "To Look Cool",
-          "To Stay Hot"
+          "Sheep",
+          "Elephant",
+          "Frog"
         ],
-        "correctAnswer": "To Hide in Snow",
-        "hint": "White fur helps animals hide from others in the snow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly sheep!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L74_Q3",
-        "instruction": "Science: Where do they sleep?",
-        "question": "🐻‍❄️ Science",
+        "id": "KIDS_ANIMALS_L74_Q3",
+        "gameType": "animals",
+        "level": 74,
+        "instruction": "Which animal says \"Roar\"?",
+        "question": "Roar",
+        "correctAnswer": "Lion",
         "options": [
-          "Snow Dens",
-          "In Trees",
-          "In Houses"
+          "Cow",
+          "Lion",
+          "Rooster"
         ],
-        "correctAnswer": "Snow Dens",
-        "hint": "Arctic animals often dig dens in the snow to stay safe!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly lion!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 75,
     "quests": [
       {
-        "id": "KID_ANIMALS_L75_Q1",
-        "instruction": "Identify: Who has no fur?",
-        "question": "Selection",
+        "id": "KIDS_ANIMALS_L75_Q1",
+        "gameType": "animals",
+        "level": 75,
+        "instruction": "Which animal says \"Quack\"?",
+        "question": "Quack",
+        "correctAnswer": "Duck",
         "options": [
-          "Fish",
-          "Polar Bear",
-          "Arctic Fox"
+          "Rooster",
+          "Duck",
+          "Frog"
         ],
-        "correctAnswer": "Fish",
-        "hint": "Fish have scales, not fur!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly duck!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L75_Q2",
-        "instruction": "Identify: Who is a swimmer?",
-        "question": "Selection",
+        "id": "KIDS_ANIMALS_L75_Q2",
+        "gameType": "animals",
+        "level": 75,
+        "instruction": "Which animal has a very long trunk?",
+        "question": "Elephant",
+        "correctAnswer": "Elephant",
         "options": [
-          "Orca/Whale",
-          "Reindeer",
-          "Wolf"
+          "Frog",
+          "Sheep",
+          "Elephant"
         ],
-        "correctAnswer": "Orca/Whale",
-        "hint": "Orcas (Killer Whales) live in the cold arctic oceans!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly elephant!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L75_Q3",
-        "instruction": "Identify: Who has the biggest antlers?",
-        "question": "Selection",
+        "id": "KIDS_ANIMALS_L75_Q3",
+        "gameType": "animals",
+        "level": 75,
+        "instruction": "Which animal says \"Chatter\"?",
+        "question": "Chatter",
+        "correctAnswer": "Monkey",
         "options": [
-          "Caribou",
-          "Fox",
-          "Seal"
+          "Monkey",
+          "Rooster",
+          "Dog"
         ],
-        "correctAnswer": "Caribou",
-        "hint": "Caribou (Reindeer) have amazing antlers!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly monkey!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,49 +373,73 @@
     "level": 76,
     "quests": [
       {
-        "id": "KID_ANIMALS_L76_Q1",
-        "instruction": "Logic: Do Polar Bears live in Africa?",
-        "question": "🌍 Check",
+        "id": "KIDS_ANIMALS_L76_Q1",
+        "gameType": "animals",
+        "level": 76,
+        "instruction": "Which animal says \"Ribbit\"?",
+        "question": "Ribbit",
+        "correctAnswer": "Frog",
         "options": [
-          "No",
-          "Yes"
+          "Cat",
+          "Elephant",
+          "Frog"
         ],
-        "correctAnswer": "No",
-        "hint": "Polar bears only live in the cold Arctic!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly frog!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L76_Q2",
-        "instruction": "Logic: Do Penguins fly?",
-        "question": "🐧 Check",
+        "id": "KIDS_ANIMALS_L76_Q2",
+        "gameType": "animals",
+        "level": 76,
+        "instruction": "Which animal wakes us up in the morning?",
+        "question": "Rooster",
+        "correctAnswer": "Rooster",
         "options": [
-          "No, they swim!",
-          "Yes"
+          "Lion",
+          "Elephant",
+          "Rooster"
         ],
-        "correctAnswer": "No, they swim!",
-        "hint": "Penguins are birds that use their wings like flippers!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly rooster!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L76_Q3",
-        "instruction": "Logic: Is the Arctic cold?",
-        "question": "❄️ Check",
+        "id": "KIDS_ANIMALS_L76_Q3",
+        "gameType": "animals",
+        "level": 76,
+        "instruction": "Which animal says \"Woof Woof\"?",
+        "question": "Woof Woof",
+        "correctAnswer": "Dog",
         "options": [
-          "Yes",
-          "No"
+          "Dog",
+          "Duck",
+          "Monkey"
         ],
-        "correctAnswer": "Yes",
-        "hint": "It is one of the coldest places on Earth!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly dog!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -318,52 +447,73 @@
     "level": 77,
     "quests": [
       {
-        "id": "KID_ANIMALS_L77_Q1",
-        "instruction": "Search: Find the NARWHAL",
-        "question": "🦄🌊",
+        "id": "KIDS_ANIMALS_L77_Q1",
+        "gameType": "animals",
+        "level": 77,
+        "instruction": "Which animal says \"Meow\"?",
+        "question": "Meow",
+        "correctAnswer": "Cat",
         "options": [
-          "Narwhal",
-          "Whale",
-          "Dolphin"
+          "Cat",
+          "Monkey",
+          "Frog"
         ],
-        "correctAnswer": "Narwhal",
-        "hint": "The Narwhal is the 'Unicorn of the Sea' with a long tusk!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly cat!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L77_Q2",
-        "instruction": "Search: Find the PUFFIN",
-        "question": "🐧 Colorful",
+        "id": "KIDS_ANIMALS_L77_Q2",
+        "gameType": "animals",
+        "level": 77,
+        "instruction": "Which animal gives us fresh milk?",
+        "question": "Cow",
+        "correctAnswer": "Cow",
         "options": [
-          "Puffin",
-          "Penguin",
-          "Owl"
+          "Duck",
+          "Cow",
+          "Elephant"
         ],
-        "correctAnswer": "Puffin",
-        "hint": "Puffins are tiny sea birds with colorful beaks!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly cow!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L77_Q3",
-        "instruction": "Search: Find the ARCTIC HARE",
-        "question": "🐰❄️",
+        "id": "KIDS_ANIMALS_L77_Q3",
+        "gameType": "animals",
+        "level": 77,
+        "instruction": "Which animal says \"Baa\"?",
+        "question": "Baa",
+        "correctAnswer": "Sheep",
         "options": [
-          "Arctic Hare",
-          "Rabbit",
-          "Fox"
+          "Sheep",
+          "Frog",
+          "Dog"
         ],
-        "correctAnswer": "Arctic Hare",
-        "hint": "The Arctic Hare is a big white rabbit that loves snow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly sheep!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -371,52 +521,73 @@
     "level": 78,
     "quests": [
       {
-        "id": "KID_ANIMALS_L78_Q1",
-        "instruction": "Actions: Who can HUNT?",
-        "question": "🐻‍❄️",
+        "id": "KIDS_ANIMALS_L78_Q1",
+        "gameType": "animals",
+        "level": 78,
+        "instruction": "Which animal says \"Roar\"?",
+        "question": "Roar",
+        "correctAnswer": "Lion",
         "options": [
-          "Polar Bear",
-          "Seal",
-          "Rabbit"
+          "Frog",
+          "Rooster",
+          "Lion"
         ],
-        "correctAnswer": "Polar Bear",
-        "hint": "Polar bears are the top hunters of the Arctic!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly lion!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L78_Q2",
-        "instruction": "Actions: Who can JUMP into water?",
-        "question": "🐧",
+        "id": "KIDS_ANIMALS_L78_Q2",
+        "gameType": "animals",
+        "level": 78,
+        "instruction": "Which animal loves swimming in the pond?",
+        "question": "Duck",
+        "correctAnswer": "Duck",
         "options": [
-          "Penguin",
-          "Reindeer",
-          "Fox"
+          "Duck",
+          "Frog",
+          "Sheep"
         ],
-        "correctAnswer": "Penguin",
-        "hint": "Penguins dive deep to catch fish!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly duck!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L78_Q3",
-        "instruction": "Actions: Who can PULL a sled?",
-        "question": "🛷",
+        "id": "KIDS_ANIMALS_L78_Q3",
+        "gameType": "animals",
+        "level": 78,
+        "instruction": "Which animal says \"Trumpet\"?",
+        "question": "Trumpet",
+        "correctAnswer": "Elephant",
         "options": [
-          "Husky Dog",
-          "Seal",
-          "Polar Bear"
+          "Elephant",
+          "Dog",
+          "Cat"
         ],
-        "correctAnswer": "Husky Dog",
-        "hint": "Huskies are famous for pulling sleds across the snow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly elephant!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -424,52 +595,73 @@
     "level": 79,
     "quests": [
       {
-        "id": "KID_ANIMALS_L79_Q1",
-        "instruction": "Review: Who has white fur?",
-        "question": "🐻‍❄️ Review",
+        "id": "KIDS_ANIMALS_L79_Q1",
+        "gameType": "animals",
+        "level": 79,
+        "instruction": "Which animal says \"Chatter\"?",
+        "question": "Chatter",
+        "correctAnswer": "Monkey",
         "options": [
-          "Polar Bear",
-          "Brown Bear",
-          "Lion"
+          "Frog",
+          "Cat",
+          "Monkey"
         ],
-        "correctAnswer": "Polar Bear",
-        "hint": "Hidden in the snow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly monkey!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L79_Q2",
-        "instruction": "Review: Who slides on ice?",
-        "question": "🐧 Review",
+        "id": "KIDS_ANIMALS_L79_Q2",
+        "gameType": "animals",
+        "level": 79,
+        "instruction": "Which animal jumps high near the water?",
+        "question": "Frog",
+        "correctAnswer": "Frog",
         "options": [
-          "Penguin",
-          "Fox",
-          "Reindeer"
+          "Cat",
+          "Monkey",
+          "Frog"
         ],
-        "correctAnswer": "Penguin",
-        "hint": "The belly slider!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly frog!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L79_Q3",
-        "instruction": "Review: Who has tusks?",
-        "question": "🦭 Review",
+        "id": "KIDS_ANIMALS_L79_Q3",
+        "gameType": "animals",
+        "level": 79,
+        "instruction": "Which animal says \"Cock-a-doodle-doo\"?",
+        "question": "Cock-a-doodle-doo",
+        "correctAnswer": "Rooster",
         "options": [
-          "Walrus",
-          "Seal",
-          "Rabbit"
+          "Cow",
+          "Rooster",
+          "Dog"
         ],
-        "correctAnswer": "Walrus",
-        "hint": "The big toothy friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly rooster!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -477,51 +669,73 @@
     "level": 80,
     "quests": [
       {
-        "id": "KID_ANIMALS_L80_Q1",
-        "instruction": "Level 80 Challenge: Arctic!",
-        "question": "Who is the 'Unicorn of the Sea'?",
+        "id": "KIDS_ANIMALS_L80_Q1",
+        "gameType": "animals",
+        "level": 80,
+        "instruction": "Which animal says \"Woof Woof\"?",
+        "question": "Woof Woof",
+        "correctAnswer": "Dog",
         "options": [
-          "Narwhal",
-          "Whale",
-          "Dolphin"
+          "Monkey",
+          "Cow",
+          "Dog"
         ],
-        "correctAnswer": "Narwhal",
-        "hint": "The one with the long tusk!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly dog!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L80_Q2",
-        "instruction": "Level 80 Challenge: Warmth!",
-        "question": "What is the fat that keeps seals warm?",
+        "id": "KIDS_ANIMALS_L80_Q2",
+        "gameType": "animals",
+        "level": 80,
+        "instruction": "Which animal loves to chase mice?",
+        "question": "Cat",
+        "correctAnswer": "Cat",
         "options": [
-          "Blubber",
-          "Fur",
-          "Water"
+          "Cat",
+          "Monkey",
+          "Duck"
         ],
-        "correctAnswer": "Blubber",
-        "hint": "Thick and warm!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly cat!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L80_Q3",
-        "instruction": "Level 80 Challenge: Mastery!",
-        "question": "Are you an Arctic Explorer?",
+        "id": "KIDS_ANIMALS_L80_Q3",
+        "gameType": "animals",
+        "level": 80,
+        "instruction": "Which animal says \"Moo\"?",
+        "question": "Moo",
+        "correctAnswer": "Cow",
         "options": [
-          "YES!",
-          "No"
+          "Duck",
+          "Rooster",
+          "Cow"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You are a master of the cold frozen worlds!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly cow!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

@@ -3,50 +3,73 @@
     "level": 31,
     "quests": [
       {
-        "id": "KID_ROUTINE_L31_Q1",
-        "instruction": "What do we do before leaving for school?",
-        "question": "🎒📚✨",
+        "id": "KIDS_ROUTINE_L31_Q1",
+        "gameType": "routine",
+        "level": 31,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Pack Bag",
-          "Go to Sleep",
-          "Wash Hair"
+          "Eat Breakfast",
+          "Wash Face",
+          "Go to Bed"
         ],
-        "correctAnswer": "Pack Bag",
-        "hint": "We put our books, pencils, and lunch inside our backpack! We are packing our bag!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L31_Q2",
-        "instruction": "Find the PACK BAG action",
-        "question": "🎒📚🧒",
+        "id": "KIDS_ROUTINE_L31_Q2",
+        "gameType": "routine",
+        "level": 31,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Found it!",
-          "Not here"
+          "Wash Face",
+          "Brush Teeth",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person putting a notebook and a snack into their backpack!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L31_Q3",
-        "instruction": "Is it READY?",
-        "question": "🎒 = Ready?",
+        "id": "KIDS_ROUTINE_L31_Q3",
+        "gameType": "routine",
+        "level": 31,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Yes, ready for school!",
-          "No, ready for bed"
+          "Brush Teeth",
+          "Go to Bed",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Yes, ready for school!",
-        "hint": "Packing our bag means we have everything we need for a fun day of learning!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 32,
     "quests": [
       {
-        "id": "KID_ROUTINE_L32_Q1",
-        "instruction": "Where are we going in the morning?",
-        "question": "🚶🏫✨",
+        "id": "KIDS_ROUTINE_L32_Q1",
+        "gameType": "routine",
+        "level": 32,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Walk to School",
-          "Walk to Bed",
-          "Walk to Moon"
+          "Wash Face",
+          "Eat Breakfast",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Walk to School",
-        "hint": "We carry our bags and walk with our friends to the big building with classrooms! It's school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L32_Q2",
-        "instruction": "Find the WALK TO SCHOOL action",
-        "question": "🚶🎒🏫",
+        "id": "KIDS_ROUTINE_L32_Q2",
+        "gameType": "routine",
+        "level": 32,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eat Breakfast",
+          "Wash Face",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the children walking together on the sidewalk towards the school gates!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L32_Q3",
-        "instruction": "Is it SCHOOL TIME?",
-        "question": "🏫 = School?",
+        "id": "KIDS_ROUTINE_L32_Q3",
+        "gameType": "routine",
+        "level": 32,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Yes, time to learn!",
-          "No, time to sleep"
+          "Wash Face",
+          "Brush Teeth",
+          "Go to Bed"
         ],
-        "correctAnswer": "Yes, time to learn!",
-        "hint": "Going to school is a very important part of our daily routine!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 33,
     "quests": [
       {
-        "id": "KID_ROUTINE_L33_Q1",
-        "instruction": "What do we do on the playground?",
-        "question": "🤝🏃‍♂️🎢",
+        "id": "KIDS_ROUTINE_L33_Q1",
+        "gameType": "routine",
+        "level": 33,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Play with Friends",
-          "Eat Soup",
+          "Go to Bed",
+          "Wash Face",
+          "Eat Breakfast"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_ROUTINE_L33_Q2",
+        "gameType": "routine",
+        "level": 33,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
+        "options": [
+          "Go to Bed",
+          "Wash Face",
           "Brush Teeth"
         ],
-        "correctAnswer": "Play with Friends",
-        "hint": "We run, jump, and go down the slide with our school buddies! We are playing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L33_Q2",
-        "instruction": "Find the PLAY WITH FRIENDS action",
-        "question": "🤝🧒🧒",
+        "id": "KIDS_ROUTINE_L33_Q3",
+        "gameType": "routine",
+        "level": 33,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Found it!",
-          "Not here"
+          "Wash Face",
+          "Eat Breakfast",
+          "Go to Bed"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the children laughing and sharing toys together!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_ROUTINE_L33_Q3",
-        "instruction": "Is it FUN?",
-        "question": "🤝 = Fun?",
-        "options": [
-          "Yes, so much fun!",
-          "No, boring"
-        ],
-        "correctAnswer": "Yes, so much fun!",
-        "hint": "Playing with friends is the best part of the active day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 34,
     "quests": [
       {
-        "id": "KID_ROUTINE_L34_Q1",
-        "instruction": "What do we do with colors and paper?",
-        "question": "🎨🖌️✨",
+        "id": "KIDS_ROUTINE_L34_Q1",
+        "gameType": "routine",
+        "level": 34,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Paint a Picture",
-          "Drink Water",
-          "Clean Floor"
+          "Brush Teeth",
+          "Go to Bed",
+          "Wash Face"
         ],
-        "correctAnswer": "Paint a Picture",
-        "hint": "We use a brush and bright colors to make beautiful art! We are painting!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L34_Q2",
-        "instruction": "Find the PAINT A PICTURE action",
-        "question": "🎨🖌️🧒",
+        "id": "KIDS_ROUTINE_L34_Q2",
+        "gameType": "routine",
+        "level": 34,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Found it!",
-          "Not here"
+          "Wash Face",
+          "Eat Breakfast",
+          "Go to Bed"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person holding a brush and making colorful marks on paper!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L34_Q3",
-        "instruction": "Is it ART?",
-        "question": "🎨 = Art?",
+        "id": "KIDS_ROUTINE_L34_Q3",
+        "gameType": "routine",
+        "level": 34,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Yes, beautiful art!",
-          "No, food"
+          "Wash Face",
+          "Go to Bed",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Yes, beautiful art!",
-        "hint": "Painting and creating is a fun activity we do during the school day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 35,
     "quests": [
       {
-        "id": "KID_ROUTINE_L35_Q1",
-        "instruction": "School Logic: BOOKS go in...",
-        "question": "📚 -> ?",
+        "id": "KIDS_ROUTINE_L35_Q1",
+        "gameType": "routine",
+        "level": 35,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Backpack",
-          "Toaster"
+          "Go to Bed",
+          "Eat Breakfast",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Backpack",
-        "hint": "We put our school books into our bag so we can carry them easily!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L35_Q2",
-        "instruction": "School Logic: SLIDE is for...",
-        "question": "🎢 -> ?",
+        "id": "KIDS_ROUTINE_L35_Q2",
+        "gameType": "routine",
+        "level": 35,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Playing",
-          "Sleeping"
+          "Eat Breakfast",
+          "Brush Teeth",
+          "Wash Face"
         ],
-        "correctAnswer": "Playing",
-        "hint": "The slide is a fun toy on the playground for us to play on!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L35_Q3",
-        "instruction": "Logic: Do we walk TO school?",
-        "question": "🚶 -> 🏫?",
+        "id": "KIDS_ROUTINE_L35_Q3",
+        "gameType": "routine",
+        "level": 35,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Yes, walk there!",
-          "No, stay home"
+          "Eat Breakfast",
+          "Wash Face",
+          "Go to Bed"
         ],
-        "correctAnswer": "Yes, walk there!",
-        "hint": "Walking or riding to school is how we start our learning adventure!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 36,
     "quests": [
       {
-        "id": "KID_ROUTINE_L36_Q1",
-        "instruction": "Search: Find the child PAINTING",
-        "question": "🎨🖌️🧒",
+        "id": "KIDS_ROUTINE_L36_Q1",
+        "gameType": "routine",
+        "level": 36,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Found it!",
-          "Not here"
+          "Wash Face",
+          "Go to Bed",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person with the paintbrush and colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L36_Q2",
-        "instruction": "Search: Find the BACKPACK",
-        "question": "🎒✨📚",
+        "id": "KIDS_ROUTINE_L36_Q2",
+        "gameType": "routine",
+        "level": 36,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eat Breakfast",
+          "Wash Face",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the bag with straps that you wear on your back!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L36_Q3",
-        "instruction": "Search: Find the SCHOOL building",
-        "question": "🏫✨🌳",
+        "id": "KIDS_ROUTINE_L36_Q3",
+        "gameType": "routine",
+        "level": 36,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eat Breakfast",
+          "Go to Bed",
+          "Wash Face"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the big building with many windows and a flagpole!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 37,
     "quests": [
       {
-        "id": "KID_ROUTINE_L37_Q1",
-        "instruction": "Action: PACK BAG!",
-        "question": "🎒📚✨",
+        "id": "KIDS_ROUTINE_L37_Q1",
+        "gameType": "routine",
+        "level": 37,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Put books in!",
-          "Dump them out"
+          "Wash Face",
+          "Eat Breakfast",
+          "Go to Bed"
         ],
-        "correctAnswer": "Put books in!",
-        "hint": "Carefully place your school things inside the bag!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L37_Q2",
-        "instruction": "Action: WALK TO SCHOOL!",
-        "question": "🚶🎒🏫",
+        "id": "KIDS_ROUTINE_L37_Q2",
+        "gameType": "routine",
+        "level": 37,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Keep walking!",
-          "Sit down"
+          "Brush Teeth",
+          "Wash Face",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Keep walking!",
-        "hint": "Move your legs and follow the path to the school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L37_Q3",
-        "instruction": "Action: PLAY WITH FRIENDS!",
-        "question": "🤝🧒🧒",
+        "id": "KIDS_ROUTINE_L37_Q3",
+        "gameType": "routine",
+        "level": 37,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Share and play!",
-          "Be mean"
+          "Go to Bed",
+          "Brush Teeth",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Share and play!",
-        "hint": "Have fun together and be kind to your buddies!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 38,
     "quests": [
       {
-        "id": "KID_ROUTINE_L38_Q1",
-        "instruction": "Match: What goes to SCHOOL?",
-        "question": "🏫 + ?",
+        "id": "KIDS_ROUTINE_L38_Q1",
+        "gameType": "routine",
+        "level": 38,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Backpack",
-          "Pillow"
+          "Go to Bed",
+          "Brush Teeth",
+          "Wash Face"
         ],
-        "correctAnswer": "Backpack",
-        "hint": "You take your backpack to school with all your supplies!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L38_Q2",
-        "instruction": "Match: What makes ART?",
-        "question": "🎨 + ?",
+        "id": "KIDS_ROUTINE_L38_Q2",
+        "gameType": "routine",
+        "level": 38,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Paintbrush",
-          "Spoon"
+          "Go to Bed",
+          "Eat Breakfast",
+          "Wash Face"
         ],
-        "correctAnswer": "Paintbrush",
-        "hint": "A paintbrush and colors are used to make beautiful art!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L38_Q3",
-        "instruction": "Match: What is for PLAYING?",
-        "question": "🏃‍♂️ + ?",
+        "id": "KIDS_ROUTINE_L38_Q3",
+        "gameType": "routine",
+        "level": 38,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Slide",
-          "Chair"
+          "Brush Teeth",
+          "Eat Breakfast",
+          "Go to Bed"
         ],
-        "correctAnswer": "Slide",
-        "hint": "A slide is a fun way to play and move around outside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 39,
     "quests": [
       {
-        "id": "KID_ROUTINE_L39_Q1",
-        "instruction": "Routine: Pack BEFORE school?",
-        "question": "🎒 -> 🏫?",
+        "id": "KIDS_ROUTINE_L39_Q1",
+        "gameType": "routine",
+        "level": 39,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Yes, pack first!",
-          "No, pack later"
+          "Brush Teeth",
+          "Wash Face",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Yes, pack first!",
-        "hint": "We pack our bags at home before we head out to school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L39_Q2",
-        "instruction": "Routine: Are you a DAYTIME DYNAMO?",
-        "question": "🎒🏫✨❓",
+        "id": "KIDS_ROUTINE_L39_Q2",
+        "gameType": "routine",
+        "level": 39,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Yes, I am!",
-          "No"
+          "Brush Teeth",
+          "Wash Face",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "A daytime dynamo is someone who is active and learns lots of things at school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L39_Q3",
-        "instruction": "Routine: Ready for the challenge?",
-        "question": "🏆✨❓",
+        "id": "KIDS_ROUTINE_L39_Q3",
+        "gameType": "routine",
+        "level": 39,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "YES!",
-          "No"
+          "Go to Bed",
+          "Wash Face",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Level 40 is coming! Show us how busy your school day is!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 40,
     "quests": [
       {
-        "id": "KID_ROUTINE_L40_Q1",
-        "instruction": "Level 40 Challenge: Daytime Dynamo!",
-        "question": "Where are we going? 🚶🎒🏫",
+        "id": "KIDS_ROUTINE_L40_Q1",
+        "gameType": "routine",
+        "level": 40,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "School",
-          "Bed",
-          "Moon"
+          "Brush Teeth",
+          "Wash Face",
+          "Go to Bed"
         ],
-        "correctAnswer": "School",
-        "hint": "Time to learn!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L40_Q2",
-        "instruction": "Level 40 Challenge: Daytime Dynamo!",
-        "question": "What do we do on the playground? 🤝🏃‍♂️",
+        "id": "KIDS_ROUTINE_L40_Q2",
+        "gameType": "routine",
+        "level": 40,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Play with Friends",
-          "Sleep",
-          "Pack Bag"
+          "Wash Face",
+          "Brush Teeth",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Play with Friends",
-        "hint": "Have fun together!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L40_Q3",
-        "instruction": "Level 40 Challenge: Mastery!",
-        "question": "Are you a Daytime Dynamo?",
+        "id": "KIDS_ROUTINE_L40_Q3",
+        "gameType": "routine",
+        "level": 40,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "YES!",
-          "No"
+          "Wash Face",
+          "Eat Breakfast",
+          "Brush Teeth"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 40!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

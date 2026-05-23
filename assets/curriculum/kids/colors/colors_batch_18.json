@@ -3,51 +3,73 @@
     "level": 171,
     "quests": [
       {
-        "id": "KID_COLORS_L171_Q1",
-        "instruction": "Safety: Which color means STOP?",
-        "question": "🛑",
+        "id": "KIDS_COLORS_L171_Q1",
+        "gameType": "colors",
+        "level": 171,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Red",
-          "Green",
-          "Yellow"
+          "Purple",
+          "Blue",
+          "Red"
         ],
-        "correctAnswer": "Red",
-        "hint": "Red is the color of stop signs!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L171_Q2",
-        "instruction": "Safety: Which color means GO?",
-        "question": "🟢",
+        "id": "KIDS_COLORS_L171_Q2",
+        "gameType": "colors",
+        "level": 171,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
           "Green",
-          "Red",
+          "Blue",
+          "Red"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L171_Q3",
+        "gameType": "colors",
+        "level": 171,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
+        "options": [
+          "Orange",
+          "Pink",
           "Blue"
         ],
-        "correctAnswer": "Green",
-        "hint": "Green means it's safe to go!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
-      },
-      {
-        "id": "KID_COLORS_L171_Q3",
-        "instruction": "Does 🚦 help traffic stay safe?",
-        "question": "Safety",
-        "options": [
-          "Yes",
-          "No"
-        ],
-        "correctAnswer": "Yes",
-        "hint": "Traffic lights use colors to tell us what to do!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -55,51 +77,73 @@
     "level": 172,
     "quests": [
       {
-        "id": "KID_COLORS_L172_Q1",
-        "instruction": "Safety: Which color means CAUTION?",
-        "question": "⚠️",
+        "id": "KIDS_COLORS_L172_Q1",
+        "gameType": "colors",
+        "level": 172,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Yellow",
+          "Purple",
           "Red",
-          "Green"
+          "Orange"
         ],
-        "correctAnswer": "Yellow",
-        "hint": "Yellow tells us to slow down and be careful!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L172_Q2",
-        "instruction": "Safety: What color are fire trucks?",
-        "question": "🚒",
+        "id": "KIDS_COLORS_L172_Q2",
+        "gameType": "colors",
+        "level": 172,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
+        "options": [
+          "Purple",
+          "Yellow",
+          "Pink"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L172_Q3",
+        "gameType": "colors",
+        "level": 172,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
           "Red",
           "Blue",
-          "White"
+          "Yellow"
         ],
-        "correctAnswer": "Red",
-        "hint": "Red fire trucks are very easy to see in a hurry!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_COLORS_L172_Q3",
-        "instruction": "Are life jackets often bright orange?",
-        "question": "🦺",
-        "options": [
-          "Yes",
-          "No"
-        ],
-        "correctAnswer": "Yes",
-        "hint": "Bright orange is easy to see in the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -107,51 +151,73 @@
     "level": 173,
     "quests": [
       {
-        "id": "KID_COLORS_L173_Q1",
-        "instruction": "Landmarks: The Statue of Liberty is...?",
-        "question": "🗽",
+        "id": "KIDS_COLORS_L173_Q1",
+        "gameType": "colors",
+        "level": 173,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Green",
-          "Gray",
-          "Blue"
-        ],
-        "correctAnswer": "Green",
-        "hint": "She turned green over many years in the air!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_COLORS_L173_Q2",
-        "instruction": "Landmarks: The White House is...?",
-        "question": "🏛️",
-        "options": [
-          "White",
-          "Pink",
+          "Orange",
+          "Red",
           "Yellow"
         ],
-        "correctAnswer": "White",
-        "hint": "It's right in the name!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L173_Q3",
-        "instruction": "Is the Statue of Liberty made of copper?",
-        "question": "🗽 Fact",
+        "id": "KIDS_COLORS_L173_Q2",
+        "gameType": "colors",
+        "level": 173,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Yes",
-          "No"
+          "Orange",
+          "Purple",
+          "Blue"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Copper turns green when it gets old!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L173_Q3",
+        "gameType": "colors",
+        "level": 173,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
+        "options": [
+          "Purple",
+          "Green",
+          "Orange"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -159,51 +225,73 @@
     "level": 174,
     "quests": [
       {
-        "id": "KID_COLORS_L174_Q1",
-        "instruction": "Landmarks: The Golden Gate Bridge is...?",
-        "question": "🌉",
+        "id": "KIDS_COLORS_L174_Q1",
+        "gameType": "colors",
+        "level": 174,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Orange/Red",
-          "Silver",
-          "Black"
+          "Pink",
+          "Red",
+          "Orange"
         ],
-        "correctAnswer": "Orange/Red",
-        "hint": "Its special color is called International Orange!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L174_Q2",
-        "instruction": "Landmarks: The Eiffel Tower is mostly...?",
-        "question": "🗼",
+        "id": "KIDS_COLORS_L174_Q2",
+        "gameType": "colors",
+        "level": 174,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Brown/Bronze",
-          "Neon Green",
-          "White"
+          "Blue",
+          "Orange",
+          "Purple"
         ],
-        "correctAnswer": "Brown/Bronze",
-        "hint": "It is made of strong iron painted brown!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L174_Q3",
-        "instruction": "Do landmarks have unique colors?",
-        "question": "🎨 Fact",
+        "id": "KIDS_COLORS_L174_Q3",
+        "gameType": "colors",
+        "level": 174,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Yes",
-          "No"
+          "Pink",
+          "Orange",
+          "Green"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Colors help us recognize famous places!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -211,52 +299,73 @@
     "level": 175,
     "quests": [
       {
-        "id": "KID_COLORS_L175_Q1",
-        "instruction": "Symbols: Which color is for HEARTS?",
-        "question": "❤️",
+        "id": "KIDS_COLORS_L175_Q1",
+        "gameType": "colors",
+        "level": 175,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
+          "Orange",
           "Red",
+          "Yellow"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L175_Q2",
+        "gameType": "colors",
+        "level": 175,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
+        "options": [
+          "Yellow",
+          "Red",
+          "Purple"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L175_Q3",
+        "gameType": "colors",
+        "level": 175,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
+        "options": [
+          "Yellow",
           "Green",
           "Blue"
         ],
-        "correctAnswer": "Red",
-        "hint": "Red hearts represent love!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_COLORS_L175_Q2",
-        "instruction": "Symbols: Which color is for PEACE?",
-        "question": "🕊️",
-        "options": [
-          "White",
-          "Black",
-          "Orange"
-        ],
-        "correctAnswer": "White",
-        "hint": "A white dove is a symbol of peace!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_COLORS_L175_Q3",
-        "instruction": "Symbols: Which color is for ROYALTY?",
-        "question": "👑",
-        "options": [
-          "Purple",
-          "Gray",
-          "Brown"
-        ],
-        "correctAnswer": "Purple",
-        "hint": "Long ago, only kings and queens wore purple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -264,49 +373,73 @@
     "level": 176,
     "quests": [
       {
-        "id": "KID_COLORS_L176_Q1",
-        "instruction": "Comparison: 🛑 vs 🟢",
-        "question": "Which is Stop?",
-        "options": [
-          "Red",
-          "Green"
-        ],
-        "correctAnswer": "Red",
-        "hint": "Think of the stop sign!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_COLORS_L176_Q2",
-        "instruction": "Comparison: ⚠️ vs 🛑",
-        "question": "Which is Caution?",
+        "id": "KIDS_COLORS_L176_Q1",
+        "gameType": "colors",
+        "level": 176,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
           "Yellow",
-          "Red"
+          "Green",
+          "Blue"
         ],
-        "correctAnswer": "Yellow",
-        "hint": "Yellow means wait and watch!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L176_Q3",
-        "instruction": "Comparison: 🗽 vs 🌉",
-        "question": "Which is Orange?",
+        "id": "KIDS_COLORS_L176_Q2",
+        "gameType": "colors",
+        "level": 176,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Bridge",
-          "Statue"
+          "Orange",
+          "Green",
+          "Yellow"
         ],
-        "correctAnswer": "Bridge",
-        "hint": "The bridge is orange so ships can see it in fog!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L176_Q3",
+        "gameType": "colors",
+        "level": 176,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
+        "options": [
+          "Purple",
+          "Green",
+          "Red"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -314,52 +447,73 @@
     "level": 177,
     "quests": [
       {
-        "id": "KID_COLORS_L177_Q1",
-        "instruction": "Logic: Match the Nurse's sign",
-        "question": "🏥",
+        "id": "KIDS_COLORS_L177_Q1",
+        "gameType": "colors",
+        "level": 177,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Red Cross",
-          "Blue Star",
-          "Yellow Moon"
-        ],
-        "correctAnswer": "Red Cross",
-        "hint": "The red cross is a symbol of help!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
-      },
-      {
-        "id": "KID_COLORS_L177_Q2",
-        "instruction": "Logic: Match the Recycling sign",
-        "question": "♻️",
-        "options": [
-          "Green",
+          "Pink",
           "Red",
-          "Pink"
+          "Yellow"
         ],
-        "correctAnswer": "Green",
-        "hint": "Green represents helping the earth!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L177_Q3",
-        "instruction": "Logic: Match the Poison sign",
-        "question": "☠️",
+        "id": "KIDS_COLORS_L177_Q2",
+        "gameType": "colors",
+        "level": 177,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Black & White",
-          "Bright Pink",
-          "Rainbow"
+          "Purple",
+          "Blue",
+          "Red"
         ],
-        "correctAnswer": "Black & White",
-        "hint": "Danger signs are often black and white or red!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L177_Q3",
+        "gameType": "colors",
+        "level": 177,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
+        "options": [
+          "Yellow",
+          "Green",
+          "Orange"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -367,51 +521,73 @@
     "level": 178,
     "quests": [
       {
-        "id": "KID_COLORS_L178_Q1",
-        "instruction": "Safety: Can you see NEON colors easily?",
-        "question": "🦺 Art",
+        "id": "KIDS_COLORS_L178_Q1",
+        "gameType": "colors",
+        "level": 178,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Yes",
-          "No"
+          "Red",
+          "Blue",
+          "Yellow"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Neon colors are the best for safety!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L178_Q2",
-        "instruction": "Safety: Match the Lifebuoy",
-        "question": "🛟",
+        "id": "KIDS_COLORS_L178_Q2",
+        "gameType": "colors",
+        "level": 178,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Red & White",
-          "Dark Green",
-          "Brown"
+          "Pink",
+          "Yellow",
+          "Green"
         ],
-        "correctAnswer": "Red & White",
-        "hint": "Lifebuoys need to stand out in the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L178_Q3",
-        "instruction": "Safety: Match the Police light",
-        "question": "🚓",
+        "id": "KIDS_COLORS_L178_Q3",
+        "gameType": "colors",
+        "level": 178,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Blue & Red",
-          "Yellow & Green",
-          "Pink & Purple"
+          "Red",
+          "Pink",
+          "Orange"
         ],
-        "correctAnswer": "Blue & Red",
-        "hint": "Police cars use flashing blue and red lights!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -419,49 +595,73 @@
     "level": 179,
     "quests": [
       {
-        "id": "KID_COLORS_L179_Q1",
-        "instruction": "Compare: 🗽 vs 🏛️",
-        "question": "Which is White?",
+        "id": "KIDS_COLORS_L179_Q1",
+        "gameType": "colors",
+        "level": 179,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "White House",
-          "Statue of Liberty"
+          "Purple",
+          "Green",
+          "Pink"
         ],
-        "correctAnswer": "White House",
-        "hint": "The White House is famous for its color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L179_Q2",
-        "instruction": "Compare: 🟢 vs 🟡 in 🚦",
-        "question": "Which is 'Wait'?",
+        "id": "KIDS_COLORS_L179_Q2",
+        "gameType": "colors",
+        "level": 179,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Yellow",
-          "Green"
+          "Green",
+          "Pink",
+          "Blue"
         ],
-        "correctAnswer": "Yellow",
-        "hint": "Yellow is the middle light!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L179_Q3",
-        "instruction": "Compare: 🌉 vs 🗼",
-        "question": "Which is Orange?",
+        "id": "KIDS_COLORS_L179_Q3",
+        "gameType": "colors",
+        "level": 179,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Golden Gate",
-          "Eiffel Tower"
+          "Orange",
+          "Green",
+          "Red"
         ],
-        "correctAnswer": "Golden Gate",
-        "hint": "The Golden Gate is the orange bridge!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -469,51 +669,73 @@
     "level": 180,
     "quests": [
       {
-        "id": "KID_COLORS_L180_Q1",
-        "instruction": "Level 180 Challenge: Symbols!",
-        "question": "Which color means GO?",
+        "id": "KIDS_COLORS_L180_Q1",
+        "gameType": "colors",
+        "level": 180,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
+        "options": [
+          "Red",
+          "Yellow",
+          "Blue"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L180_Q2",
+        "gameType": "colors",
+        "level": 180,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
+        "options": [
+          "Blue",
+          "Purple",
+          "Pink"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L180_Q3",
+        "gameType": "colors",
+        "level": 180,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
           "Green",
           "Red",
-          "Blue"
-        ],
-        "correctAnswer": "Green",
-        "hint": "Safety first!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
-      },
-      {
-        "id": "KID_COLORS_L180_Q2",
-        "instruction": "Level 180 Challenge: Landmarks!",
-        "question": "The Statue of Liberty is...?",
-        "options": [
-          "Green",
-          "Orange",
           "Yellow"
         ],
-        "correctAnswer": "Green",
-        "hint": "The lady in the harbor!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
-      },
-      {
-        "id": "KID_COLORS_L180_Q3",
-        "instruction": "Level 180 Challenge: Mastery!",
-        "question": "Can colors talk to us?",
-        "options": [
-          "YES!",
-          "No"
-        ],
-        "correctAnswer": "YES!",
-        "hint": "You are a master of symbols and safety!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

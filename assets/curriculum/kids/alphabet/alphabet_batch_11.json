@@ -3,52 +3,73 @@
     "level": 101,
     "quests": [
       {
-        "id": "KID_ALPHABET_L101_Q1",
-        "instruction": "The Magic E: C-A-K-E",
-        "question": "CAKE",
+        "id": "KIDS_ALPHABET_L101_Q1",
+        "gameType": "alphabet",
+        "level": 101,
+        "instruction": "Find the lowercase letter r!",
+        "question": "r",
+        "correctAnswer": "r",
         "options": [
-          "🍰",
-          "🍎",
-          "🍪"
+          "r",
+          "k",
+          "a"
         ],
-        "correctAnswer": "🍰",
-        "hint": "E makes A say its name!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like the letter R.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L101_Q2",
-        "instruction": "The Magic E: L-A-K-E",
-        "question": "LAKE",
+        "id": "KIDS_ALPHABET_L101_Q2",
+        "gameType": "alphabet",
+        "level": 101,
+        "instruction": "Find the lowercase letter s!",
+        "question": "s",
+        "correctAnswer": "s",
         "options": [
-          "🏞️",
-          "🏝️",
-          "🏜️"
+          "s",
+          "i",
+          "w"
         ],
-        "correctAnswer": "🏞️",
-        "hint": "L-A-K-E spells Lake!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like the letter S.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L101_Q3",
-        "instruction": "The Magic E: B-A-K-E",
-        "question": "BAKE",
+        "id": "KIDS_ALPHABET_L101_Q3",
+        "gameType": "alphabet",
+        "level": 101,
+        "instruction": "Find the lowercase letter t!",
+        "question": "t",
+        "correctAnswer": "t",
         "options": [
-          "👩‍🍳",
-          "👩‍🌾",
-          "👩‍🔬"
+          "t",
+          "n",
+          "d"
         ],
-        "correctAnswer": "👩‍🍳",
-        "hint": "To cook in an oven!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like the letter T.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 102,
     "quests": [
       {
-        "id": "KID_ALPHABET_L102_Q1",
-        "instruction": "Which word is 'CAPE'?",
-        "question": "🦸",
+        "id": "KIDS_ALPHABET_L102_Q1",
+        "gameType": "alphabet",
+        "level": 102,
+        "instruction": "Find the uppercase letter U!",
+        "question": "U",
+        "correctAnswer": "U",
         "options": [
-          "CAPE",
-          "TAPE",
-          "LAPE"
+          "U",
+          "F",
+          "H"
         ],
-        "correctAnswer": "CAPE",
-        "hint": "Superheroes wear a CAPE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like the letter U.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L102_Q2",
-        "instruction": "Which word is 'TAPE'?",
-        "question": "🎞️",
+        "id": "KIDS_ALPHABET_L102_Q2",
+        "gameType": "alphabet",
+        "level": 102,
+        "instruction": "Find the uppercase letter V!",
+        "question": "V",
+        "correctAnswer": "V",
         "options": [
-          "TAPE",
-          "CAPE",
-          "MAPE"
+          "V",
+          "A",
+          "D"
         ],
-        "correctAnswer": "TAPE",
-        "hint": "TAPE helps things stick!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like the letter V.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L102_Q3",
-        "instruction": "The 'AKE' Family Challenge!",
-        "question": "CAKE LAKE BAKE",
+        "id": "KIDS_ALPHABET_L102_Q3",
+        "gameType": "alphabet",
+        "level": 102,
+        "instruction": "Find the uppercase letter W!",
+        "question": "W",
+        "correctAnswer": "W",
         "options": [
-          "AKE words",
-          "ATE words",
-          "APE words"
+          "W",
+          "G",
+          "J"
         ],
-        "correctAnswer": "AKE words",
-        "hint": "They all end with AKE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like the letter W.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 103,
     "quests": [
       {
-        "id": "KID_ALPHABET_L103_Q1",
-        "instruction": "The Magic E: L-I-K-E",
-        "question": "LIKE",
+        "id": "KIDS_ALPHABET_L103_Q1",
+        "gameType": "alphabet",
+        "level": 103,
+        "instruction": "Find the lowercase letter x!",
+        "question": "x",
+        "correctAnswer": "x",
         "options": [
-          "👍",
-          "👎",
-          "✊"
+          "e",
+          "d",
+          "x"
         ],
-        "correctAnswer": "👍",
-        "hint": "I LIKE this game!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like the letter X.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L103_Q2",
-        "instruction": "The Magic E: B-I-K-E",
-        "question": "BIKE",
+        "id": "KIDS_ALPHABET_L103_Q2",
+        "gameType": "alphabet",
+        "level": 103,
+        "instruction": "Find the lowercase letter y!",
+        "question": "y",
+        "correctAnswer": "y",
         "options": [
-          "🚲",
-          "🚗",
-          "🚂"
+          "h",
+          "v",
+          "y"
         ],
-        "correctAnswer": "🚲",
-        "hint": "I ride my BIKE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like the letter Y.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L103_Q3",
-        "instruction": "The Magic E: K-I-T-E",
-        "question": "KITE",
+        "id": "KIDS_ALPHABET_L103_Q3",
+        "gameType": "alphabet",
+        "level": 103,
+        "instruction": "Find the lowercase letter z!",
+        "question": "z",
+        "correctAnswer": "z",
         "options": [
-          "🪁",
-          "🎈",
-          "✈️"
+          "h",
+          "d",
+          "z"
         ],
-        "correctAnswer": "🪁",
-        "hint": "Fly a KITE in the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like the letter Z.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 104,
     "quests": [
       {
-        "id": "KID_ALPHABET_L104_Q1",
-        "instruction": "Which word is 'PINE'?",
-        "question": "🌲",
+        "id": "KIDS_ALPHABET_L104_Q1",
+        "gameType": "alphabet",
+        "level": 104,
+        "instruction": "Find the uppercase letter A!",
+        "question": "A",
+        "correctAnswer": "A",
         "options": [
-          "PINE",
-          "LINE",
-          "NINE"
+          "A",
+          "E",
+          "G"
         ],
-        "correctAnswer": "PINE",
-        "hint": "A PINE tree!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like the letter A.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L104_Q2",
-        "instruction": "Which word is 'NINE'?",
-        "question": "9️⃣",
+        "id": "KIDS_ALPHABET_L104_Q2",
+        "gameType": "alphabet",
+        "level": 104,
+        "instruction": "Find the uppercase letter B!",
+        "question": "B",
+        "correctAnswer": "B",
         "options": [
-          "NINE",
-          "LINE",
-          "MINE"
+          "K",
+          "B",
+          "R"
         ],
-        "correctAnswer": "NINE",
-        "hint": "The number NINE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like the letter B.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L104_Q3",
-        "instruction": "The 'INE' Family Challenge!",
-        "question": "PINE LINE NINE",
+        "id": "KIDS_ALPHABET_L104_Q3",
+        "gameType": "alphabet",
+        "level": 104,
+        "instruction": "Find the uppercase letter C!",
+        "question": "C",
+        "correctAnswer": "C",
         "options": [
-          "INE words",
-          "IKE words",
-          "ITE words"
+          "C",
+          "P",
+          "N"
         ],
-        "correctAnswer": "INE words",
-        "hint": "They all end with INE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like the letter C.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 105,
     "quests": [
       {
-        "id": "KID_ALPHABET_L105_Q1",
-        "instruction": "Magic Switch: CAP to ?",
-        "question": "🧢 -> 🦸",
+        "id": "KIDS_ALPHABET_L105_Q1",
+        "gameType": "alphabet",
+        "level": 105,
+        "instruction": "Find the lowercase letter d!",
+        "question": "d",
+        "correctAnswer": "d",
         "options": [
-          "CAPE",
-          "TAPE",
-          "LAPE"
+          "q",
+          "d",
+          "a"
         ],
-        "correctAnswer": "CAPE",
-        "hint": "Add 'E' to CAP to get CAPE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like the letter D.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L105_Q2",
-        "instruction": "Magic Switch: PIN to ?",
-        "question": "📍 -> 🌲",
+        "id": "KIDS_ALPHABET_L105_Q2",
+        "gameType": "alphabet",
+        "level": 105,
+        "instruction": "Find the lowercase letter e!",
+        "question": "e",
+        "correctAnswer": "e",
         "options": [
-          "PINE",
-          "WINE",
-          "LINE"
+          "e",
+          "a",
+          "t"
         ],
-        "correctAnswer": "PINE",
-        "hint": "Add 'E' to PIN to get PINE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like the letter E.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L105_Q3",
-        "instruction": "Magic Switch: KIT to ?",
-        "question": "🧰 -> 🪁",
+        "id": "KIDS_ALPHABET_L105_Q3",
+        "gameType": "alphabet",
+        "level": 105,
+        "instruction": "Find the lowercase letter f!",
+        "question": "f",
+        "correctAnswer": "f",
         "options": [
-          "KITE",
-          "BITE",
-          "SITE"
+          "c",
+          "f",
+          "q"
         ],
-        "correctAnswer": "KITE",
-        "hint": "Add 'E' to KIT to get KITE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like the letter F.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,52 +373,73 @@
     "level": 106,
     "quests": [
       {
-        "id": "KID_ALPHABET_L106_Q1",
-        "instruction": "Which letter is Silent?",
-        "question": "CAKE",
+        "id": "KIDS_ALPHABET_L106_Q1",
+        "gameType": "alphabet",
+        "level": 106,
+        "instruction": "Find the uppercase letter G!",
+        "question": "G",
+        "correctAnswer": "G",
         "options": [
-          "E",
+          "G",
+          "D",
+          "U"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like the letter G.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_ALPHABET_L106_Q2",
+        "gameType": "alphabet",
+        "level": 106,
+        "instruction": "Find the uppercase letter H!",
+        "question": "H",
+        "correctAnswer": "H",
+        "options": [
+          "H",
           "A",
-          "C"
+          "G"
         ],
-        "correctAnswer": "E",
-        "hint": "The 'E' at the end is silent!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like the letter H.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L106_Q2",
-        "instruction": "Which letter is Silent?",
-        "question": "BIKE",
+        "id": "KIDS_ALPHABET_L106_Q3",
+        "gameType": "alphabet",
+        "level": 106,
+        "instruction": "Find the uppercase letter I!",
+        "question": "I",
+        "correctAnswer": "I",
         "options": [
-          "E",
-          "I",
-          "B"
+          "A",
+          "V",
+          "I"
         ],
-        "correctAnswer": "E",
-        "hint": "The 'E' makes 'I' say its name!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
-      },
-      {
-        "id": "KID_ALPHABET_L106_Q3",
-        "instruction": "Which letter is Silent?",
-        "question": "ROPE",
-        "options": [
-          "E",
-          "O",
-          "R"
-        ],
-        "correctAnswer": "E",
-        "hint": "Silent 'E' is magic!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like the letter I.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -321,52 +447,73 @@
     "level": 107,
     "quests": [
       {
-        "id": "KID_ALPHABET_L107_Q1",
-        "instruction": "The Magic E: R-O-P-E",
-        "question": "ROPE",
+        "id": "KIDS_ALPHABET_L107_Q1",
+        "gameType": "alphabet",
+        "level": 107,
+        "instruction": "Find the lowercase letter j!",
+        "question": "j",
+        "correctAnswer": "j",
         "options": [
-          "🪢",
-          "🧵",
-          "🧶"
+          "p",
+          "k",
+          "j"
         ],
-        "correctAnswer": "🪢",
-        "hint": "ROPE ends with E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like the letter J.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L107_Q2",
-        "instruction": "The Magic E: N-O-S-E",
-        "question": "NOSE",
+        "id": "KIDS_ALPHABET_L107_Q2",
+        "gameType": "alphabet",
+        "level": 107,
+        "instruction": "Find the lowercase letter k!",
+        "question": "k",
+        "correctAnswer": "k",
         "options": [
-          "👃",
-          "👂",
-          "👀"
+          "k",
+          "h",
+          "d"
         ],
-        "correctAnswer": "👃",
-        "hint": "NOSE ends with E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like the letter K.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L107_Q3",
-        "instruction": "The Magic E: H-O-S-E",
-        "question": "HOSE",
+        "id": "KIDS_ALPHABET_L107_Q3",
+        "gameType": "alphabet",
+        "level": 107,
+        "instruction": "Find the lowercase letter l!",
+        "question": "l",
+        "correctAnswer": "l",
         "options": [
-          "🐍",
-          "🪵",
-          "🧱"
+          "c",
+          "v",
+          "l"
         ],
-        "correctAnswer": "🐍",
-        "hint": "A garden HOSE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like the letter L.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -374,52 +521,73 @@
     "level": 108,
     "quests": [
       {
-        "id": "KID_ALPHABET_L108_Q1",
-        "instruction": "Identify: 🍦",
-        "question": "Cone",
+        "id": "KIDS_ALPHABET_L108_Q1",
+        "gameType": "alphabet",
+        "level": 108,
+        "instruction": "Find the uppercase letter M!",
+        "question": "M",
+        "correctAnswer": "M",
         "options": [
-          "CONE",
-          "BONE",
-          "ZONE"
+          "H",
+          "M",
+          "Y"
         ],
-        "correctAnswer": "CONE",
-        "hint": "Ice cream CONE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like the letter M.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L108_Q2",
-        "instruction": "Identify: 🦴",
-        "question": "Bone",
+        "id": "KIDS_ALPHABET_L108_Q2",
+        "gameType": "alphabet",
+        "level": 108,
+        "instruction": "Find the uppercase letter N!",
+        "question": "N",
+        "correctAnswer": "N",
         "options": [
-          "BONE",
-          "CONE",
-          "NONE"
+          "E",
+          "Q",
+          "N"
         ],
-        "correctAnswer": "BONE",
-        "hint": "Doggie wants a BONE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like the letter N.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L108_Q3",
-        "instruction": "The 'ONE' Family Challenge!",
-        "question": "CONE BONE ZONE",
+        "id": "KIDS_ALPHABET_L108_Q3",
+        "gameType": "alphabet",
+        "level": 108,
+        "instruction": "Find the uppercase letter O!",
+        "question": "O",
+        "correctAnswer": "O",
         "options": [
-          "ONE words",
-          "OTE words",
-          "ORE words"
+          "H",
+          "I",
+          "O"
         ],
-        "correctAnswer": "ONE words",
-        "hint": "They all end with ONE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like the letter O.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -427,52 +595,73 @@
     "level": 109,
     "quests": [
       {
-        "id": "KID_ALPHABET_L109_Q1",
-        "instruction": "The Magic E: T-U-B-E",
-        "question": "TUBE",
+        "id": "KIDS_ALPHABET_L109_Q1",
+        "gameType": "alphabet",
+        "level": 109,
+        "instruction": "Find the lowercase letter p!",
+        "question": "p",
+        "correctAnswer": "p",
         "options": [
-          "🧪",
-          "🍽️",
-          "🥄"
+          "a",
+          "m",
+          "p"
         ],
-        "correctAnswer": "🧪",
-        "hint": "T-U-B-E spells Tube!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like the letter P.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L109_Q2",
-        "instruction": "The Magic E: C-U-T-E",
-        "question": "CUTE",
+        "id": "KIDS_ALPHABET_L109_Q2",
+        "gameType": "alphabet",
+        "level": 109,
+        "instruction": "Find the lowercase letter q!",
+        "question": "q",
+        "correctAnswer": "q",
         "options": [
-          "🐱",
-          "🦖",
-          "🧌"
+          "n",
+          "q",
+          "j"
         ],
-        "correctAnswer": "🐱",
-        "hint": "The kitten is CUTE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like the letter Q.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L109_Q3",
-        "instruction": "The Magic E: M-U-L-E",
-        "question": "MULE",
+        "id": "KIDS_ALPHABET_L109_Q3",
+        "gameType": "alphabet",
+        "level": 109,
+        "instruction": "Find the lowercase letter r!",
+        "question": "r",
+        "correctAnswer": "r",
         "options": [
-          "🫏",
-          "🐎",
-          "🐖"
+          "r",
+          "y",
+          "a"
         ],
-        "correctAnswer": "🫏",
-        "hint": "A donkey is like a MULE!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like the letter R.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -480,52 +669,73 @@
     "level": 110,
     "quests": [
       {
-        "id": "KID_ALPHABET_L110_Q1",
-        "instruction": "Mastery Challenge: Magic E",
-        "question": "CAKE BIKE ROPE",
+        "id": "KIDS_ALPHABET_L110_Q1",
+        "gameType": "alphabet",
+        "level": 110,
+        "instruction": "Find the uppercase letter S!",
+        "question": "S",
+        "correctAnswer": "S",
         "options": [
-          "Vowel stays long",
-          "Vowel stays short",
-          "No vowels"
+          "P",
+          "C",
+          "S"
         ],
-        "correctAnswer": "Vowel stays long",
-        "hint": "Magic E makes the vowel long!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like the letter S.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L110_Q2",
-        "instruction": "Find the word 'KITE'",
-        "question": "🪁",
+        "id": "KIDS_ALPHABET_L110_Q2",
+        "gameType": "alphabet",
+        "level": 110,
+        "instruction": "Find the uppercase letter T!",
+        "question": "T",
+        "correctAnswer": "T",
         "options": [
-          "KITE",
-          "BIT",
-          "KIT"
+          "R",
+          "O",
+          "T"
         ],
-        "correctAnswer": "KITE",
-        "hint": "KITE has a magic E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like the letter T.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ALPHABET_L110_Q3",
-        "instruction": "Find the word 'HOME'",
-        "question": "🏠",
+        "id": "KIDS_ALPHABET_L110_Q3",
+        "gameType": "alphabet",
+        "level": 110,
+        "instruction": "Find the uppercase letter U!",
+        "question": "U",
+        "correctAnswer": "U",
         "options": [
-          "HOME",
-          "HAM",
-          "HOM"
+          "S",
+          "N",
+          "U"
         ],
-        "correctAnswer": "HOME",
-        "hint": "HOME ends with E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like the letter U.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

@@ -3,50 +3,73 @@
     "level": 21,
     "quests": [
       {
-        "id": "KID_TIME_L21_Q1",
-        "instruction": "Where is the sun in the late afternoon?",
-        "question": "☀️⏬✨",
+        "id": "KIDS_TIME_L21_Q1",
+        "gameType": "time",
+        "level": 21,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Going Down",
-          "In Middle",
-          "Above Clouds"
+          "9:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Going Down",
-        "hint": "The sun is starting to get lower in the sky as it gets ready to set! It's going down!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L21_Q2",
-        "instruction": "Find the LOW SUN",
-        "question": "☀️✨🌅",
+        "id": "KIDS_TIME_L21_Q2",
+        "gameType": "time",
+        "level": 21,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Found it!",
-          "Not here"
+          "4:00 PM",
+          "12:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the orange sun peeking through the trees low in the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L21_Q3",
-        "instruction": "Is it LATE?",
-        "question": "☀️ = Late day?",
+        "id": "KIDS_TIME_L21_Q3",
+        "gameType": "time",
+        "level": 21,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Yes, almost evening!",
-          "No, early morning"
+          "4:00 PM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, almost evening!",
-        "hint": "When the sun gets low, it means our afternoon is almost finished!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 22,
     "quests": [
       {
-        "id": "KID_TIME_L22_Q1",
-        "instruction": "What do we see on the ground when the sun is low?",
-        "question": "👤👤✨",
+        "id": "KIDS_TIME_L22_Q1",
+        "gameType": "time",
+        "level": 22,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Shadows",
-          "Rain",
-          "Snow"
+          "12:00 PM",
+          "8:00 AM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Shadows",
-        "hint": "They are dark shapes that follow us on the ground and get very long! They are shadows!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L22_Q2",
-        "instruction": "Find the LONG SHADOW",
-        "question": "👤✨🚶‍♂️",
+        "id": "KIDS_TIME_L22_Q2",
+        "gameType": "time",
+        "level": 22,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "9:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the long dark shape stretching out on the grass behind the walker!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L22_Q3",
-        "instruction": "Is it LONG?",
-        "question": "👤 = Long shape?",
+        "id": "KIDS_TIME_L22_Q3",
+        "gameType": "time",
+        "level": 22,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Yes, very long!",
-          "No, tiny dot"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, very long!",
-        "hint": "In the afternoon, the low sun makes all our shadows look like giants on the ground!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 23,
     "quests": [
       {
-        "id": "KID_TIME_L23_Q1",
-        "instruction": "What do we eat to get a little energy after school?",
-        "question": "🍎🍎✨",
+        "id": "KIDS_TIME_L23_Q1",
+        "gameType": "time",
+        "level": 23,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Afternoon Snack",
-          "Huge Feast",
-          "Breakfast"
+          "9:00 PM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Afternoon Snack",
-        "hint": "It's a small healthy treat like an apple or some crackers! It's an afternoon snack!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L23_Q2",
-        "instruction": "Find the APPLE snack",
-        "question": "🍎✨🧒",
+        "id": "KIDS_TIME_L23_Q2",
+        "gameType": "time",
+        "level": 23,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the red fruit on the small plate in the student's hand!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L23_Q3",
-        "instruction": "Is it YUMMY?",
-        "question": "🍎 = Yummy snack?",
+        "id": "KIDS_TIME_L23_Q3",
+        "gameType": "time",
+        "level": 23,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Yes, crunch crunch!",
-          "No, yucky"
+          "8:00 AM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, crunch crunch!",
-        "hint": "An afternoon snack gives us the power to finish our chores and play more!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 24,
     "quests": [
       {
-        "id": "KID_TIME_L24_Q1",
-        "instruction": "What school work do we do when we get home?",
-        "question": "✍️✍️✨",
+        "id": "KIDS_TIME_L24_Q1",
+        "gameType": "time",
+        "level": 24,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Homework",
-          "Recess",
-          "Nap"
+          "8:00 AM",
+          "12:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Homework",
-        "hint": "We open our books and practice our reading or math at our desk! It's homework!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L24_Q2",
-        "instruction": "Find the HOMEWORK book",
-        "question": "📖✨✍️",
+        "id": "KIDS_TIME_L24_Q2",
+        "gameType": "time",
+        "level": 24,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "9:00 PM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the open notebook on the desk with the pencil resting on it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L24_Q3",
-        "instruction": "Is it SMART?",
-        "question": "✍️ = Smart work?",
+        "id": "KIDS_TIME_L24_Q3",
+        "gameType": "time",
+        "level": 24,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Yes, keep learning!",
-          "No, for sleeping"
+          "4:00 PM",
+          "12:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Yes, keep learning!",
-        "hint": "Doing our homework in the afternoon helps us remember everything we learned at school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 25,
     "quests": [
       {
-        "id": "KID_TIME_L25_Q1",
-        "instruction": "Afternoon Logic: LOW SUN is for...",
-        "question": "☀️⏬ -> ?",
+        "id": "KIDS_TIME_L25_Q1",
+        "gameType": "time",
+        "level": 25,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Afternoon",
-          "Midday"
+          "12:00 PM",
+          "4:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Afternoon",
-        "hint": "When the sun starts to go down and shadows get long, it is the afternoon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L25_Q2",
-        "instruction": "Afternoon Logic: SHADOWS are...",
-        "question": "👤 -> ?",
+        "id": "KIDS_TIME_L25_Q2",
+        "gameType": "time",
+        "level": 25,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Long & Dark",
-          "White & Round"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Long & Dark",
-        "hint": "In the afternoon, shadows stretch out far away from us on the ground!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L25_Q3",
-        "instruction": "Logic: Do we do HOMEWORK in afternoon?",
-        "question": "✍️🍎☀️ -> ✨?",
+        "id": "KIDS_TIME_L25_Q3",
+        "gameType": "time",
+        "level": 25,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Yes, before dinner!",
-          "No, at midnight"
+          "9:00 PM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, before dinner!",
-        "hint": "Afternoon is the perfect time to finish our work and have a healthy snack!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 26,
     "quests": [
       {
-        "id": "KID_TIME_L26_Q1",
-        "instruction": "Search: Find the child WRITING",
-        "question": "✍️🧒📓",
+        "id": "KIDS_TIME_L26_Q1",
+        "gameType": "time",
+        "level": 26,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "9:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person at their desk with the pencil in their hand!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L26_Q2",
-        "instruction": "Search: Find the SHADOW",
-        "question": "👤✨🌳",
+        "id": "KIDS_TIME_L26_Q2",
+        "gameType": "time",
+        "level": 26,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "9:00 PM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the dark shape under the tree that stretches across the yard!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L26_Q3",
-        "instruction": "Search: Find the apple SNACK",
-        "question": "🍎✨🥤",
+        "id": "KIDS_TIME_L26_Q3",
+        "gameType": "time",
+        "level": 26,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Found it!",
-          "Not here"
+          "8:00 AM",
+          "9:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the fruit next to the glass of juice on the kitchen counter!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 27,
     "quests": [
       {
-        "id": "KID_TIME_L27_Q1",
-        "instruction": "Action: Finish HOMEWORK!",
-        "question": "✍️🧒✨",
+        "id": "KIDS_TIME_L27_Q1",
+        "gameType": "time",
+        "level": 27,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Write your name!",
-          "Eat the book"
+          "8:00 AM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Write your name!",
-        "hint": "Use your pencil to practice your name neatly on the homework page!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L27_Q2",
-        "instruction": "Action: Chase SHADOW!",
-        "question": "👤🧒🏃",
+        "id": "KIDS_TIME_L27_Q2",
+        "gameType": "time",
+        "level": 27,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Run on the dark!",
-          "Hide under bed"
+          "4:00 PM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Run on the dark!",
-        "hint": "Try to step on your shadow as you run across the sunny afternoon grass!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L27_Q3",
-        "instruction": "Action: Eat CRUNCHY apple!",
-        "question": "🍎🧒😋",
+        "id": "KIDS_TIME_L27_Q3",
+        "gameType": "time",
+        "level": 27,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Take a bite!",
-          "Put in bag"
+          "12:00 PM",
+          "8:00 AM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Take a bite!",
-        "hint": "Enjoy your healthy afternoon snack to get fresh power for playing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 28,
     "quests": [
       {
-        "id": "KID_TIME_L28_Q1",
-        "instruction": "Match: What is for the GROUND?",
-        "question": "👤 + ?",
+        "id": "KIDS_TIME_L28_Q1",
+        "gameType": "time",
+        "level": 28,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Shadow",
-          "Star"
+          "12:00 PM",
+          "4:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Shadow",
-        "hint": "Shadows always live on the ground and follow us everywhere we go in the sun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L28_Q2",
-        "instruction": "Match: What is for the DESK?",
-        "question": "✍️ + ?",
+        "id": "KIDS_TIME_L28_Q2",
+        "gameType": "time",
+        "level": 28,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Homework",
-          "Blanket"
+          "8:00 AM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Homework",
-        "hint": "Homework is the smart work we do at our desk every afternoon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L28_Q3",
-        "instruction": "Match: What is for the HUNGER?",
-        "question": "🍎 + ?",
+        "id": "KIDS_TIME_L28_Q3",
+        "gameType": "time",
+        "level": 28,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Afternoon Snack",
-          "Shoe"
+          "8:00 AM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Afternoon Snack",
-        "hint": "An afternoon snack is the perfect little treat when we feel a bit hungry!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 29,
     "quests": [
       {
-        "id": "KID_TIME_L29_Q1",
-        "instruction": "Time: Are shadows long at noon?",
-        "question": "🕛🧒👤❓",
+        "id": "KIDS_TIME_L29_Q1",
+        "gameType": "time",
+        "level": 29,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "No, tiny!",
-          "Yes, giants"
+          "8:00 AM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "No, tiny!",
-        "hint": "At noon, shadows are very small! They only get long in the afternoon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L29_Q2",
-        "instruction": "Time: Are you a SHADOW SCOUT?",
-        "question": "👤📏☀️✨❓",
+        "id": "KIDS_TIME_L29_Q2",
+        "gameType": "time",
+        "level": 29,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Yes, I am!",
-          "No"
+          "8:00 AM",
+          "9:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "A shadow scout knows that the lower the sun goes, the longer the shadows get!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L29_Q3",
-        "instruction": "Time: Ready for the challenge?",
-        "question": "🏆✨❓",
+        "id": "KIDS_TIME_L29_Q3",
+        "gameType": "time",
+        "level": 29,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "YES!",
-          "No"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Level 30 is coming! Show us how much you know about afternoon time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 30,
     "quests": [
       {
-        "id": "KID_TIME_L30_Q1",
-        "instruction": "Level 30 Challenge: Shadow Scout!",
-        "question": "What is long now? 👤📏",
+        "id": "KIDS_TIME_L30_Q1",
+        "gameType": "time",
+        "level": 30,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Shadows",
-          "Sun",
-          "Bed"
+          "4:00 PM",
+          "12:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Shadows",
-        "hint": "Dark shapes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L30_Q2",
-        "instruction": "Level 30 Challenge: Shadow Scout!",
-        "question": "What is for home? ✍️🍎",
+        "id": "KIDS_TIME_L30_Q2",
+        "gameType": "time",
+        "level": 30,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Homework",
-          "Recess",
-          "Math Class"
+          "4:00 PM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Homework",
-        "hint": "School work!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L30_Q3",
-        "instruction": "Level 30 Challenge: Mastery!",
-        "question": "Are you a Shadow Scout?",
+        "id": "KIDS_TIME_L30_Q3",
+        "gameType": "time",
+        "level": 30,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "YES!",
-          "No"
+          "12:00 PM",
+          "9:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 30!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

@@ -1,532 +1,742 @@
 [
   {
+    "level": 161,
     "quests": [
       {
-        "shader": "sparkle_dust",
+        "id": "KIDS_BODY_PARTS_L161_Q1",
+        "gameType": "body_parts",
+        "level": 161,
+        "instruction": "Touch the body part we use to taste delicious ice cream!",
+        "question": "Mouth",
+        "correctAnswer": "Mouth",
         "options": [
-          "Hair",
-          "Belly",
-          "Tongue"
-        ],
-        "id": "KID_BODY_PARTS_L161_Q1",
-        "instruction": "Which is Hair?",
-        "correctAnswer": "Hair",
-        "question": "🦰",
-        "interactionType": "choice",
-        "hint": "Hair grows on top of your head.",
-        "painter": "SunnyMeadow",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "leaf_flutter",
-        "options": [
-          "Stomach",
-          "Skin",
-          "Eyes"
-        ],
-        "id": "KID_BODY_PARTS_L161_Q2",
-        "instruction": "Identify: 🥣",
-        "correctAnswer": "Stomach",
-        "question": "Stomach",
-        "interactionType": "choice",
-        "hint": "Where your food is digested.",
-        "painter": "ForestFriend",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sand_swirl",
-        "options": [
-          "Knee",
-          "Elbow",
-          "Heart"
-        ],
-        "id": "KID_BODY_PARTS_L161_Q3",
-        "instruction": "Tap on 🦵",
-        "correctAnswer": "Knee",
-        "question": "🦵",
-        "interactionType": "choice",
-        "hint": "The middle part of your leg.",
-        "painter": "DinoDesert",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 161
-  },
-  {
-    "quests": [
-      {
-        "shader": "water_ripples",
-        "options": [
-          "Nose",
+          "Hands",
           "Mouth",
-          "Hand"
+          "Nose"
         ],
-        "id": "KID_BODY_PARTS_L162_Q1",
-        "instruction": "Choose the Nose",
-        "correctAnswer": "Nose",
-        "question": "Nose",
-        "interactionType": "choice",
-        "hint": "You have one nose to smell flowers.",
-        "painter": "OceanWave",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "We use our mouth for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "magic_twinkle",
+        "id": "KIDS_BODY_PARTS_L161_Q2",
+        "gameType": "body_parts",
+        "level": 161,
+        "instruction": "Touch the body part we use to clap and hold toys!",
+        "question": "Hands",
+        "correctAnswer": "Hands",
         "options": [
-          "Wrist",
-          "Neck",
-          "Back"
+          "Eyes",
+          "Mouth",
+          "Hands"
         ],
-        "id": "KID_BODY_PARTS_L162_Q2",
-        "instruction": "Pick the Wrist",
-        "correctAnswer": "Wrist",
-        "question": "⌚",
-        "interactionType": "choice",
-        "hint": "The joint between your hand and arm.",
-        "painter": "StarryNight",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "We use our hands for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "bubble_pop",
+        "id": "KIDS_BODY_PARTS_L161_Q3",
+        "gameType": "body_parts",
+        "level": 161,
+        "instruction": "Touch the body part we use to run and kick a soccer ball!",
+        "question": "Feet",
+        "correctAnswer": "Feet",
         "options": [
-          "Fingers",
-          "Toes",
-          "Leg"
+          "Eyes",
+          "Feet",
+          "Ears"
         ],
-        "id": "KID_BODY_PARTS_L162_Q3",
-        "instruction": "Where is Fingers?",
-        "correctAnswer": "Fingers",
-        "question": "Fingers",
-        "interactionType": "choice",
-        "hint": "You have ten fingers on your hands.",
-        "painter": "RainbowSwirl",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "We use our feet for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
-    ],
-    "level": 162
+    ]
   },
   {
+    "level": 162,
     "quests": [
       {
-        "shader": "sugar_glow",
-        "options": [
-          "Thumb",
-          "Chin",
-          "Cheek"
-        ],
-        "id": "KID_BODY_PARTS_L163_Q1",
-        "instruction": "Point to 👍",
-        "correctAnswer": "Thumb",
-        "question": "👍",
-        "interactionType": "choice",
-        "hint": "The biggest finger on your hand.",
-        "painter": "CandyCloud",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "pastel_dream",
-        "options": [
-          "Head",
-          "Hair",
-          "Belly"
-        ],
-        "id": "KID_BODY_PARTS_L163_Q2",
-        "instruction": "Look for 🙆",
-        "correctAnswer": "Head",
-        "question": "Head",
-        "interactionType": "choice",
-        "hint": "Your head is at the very top.",
-        "painter": "UnicornMist",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sparkle_dust",
-        "options": [
-          "Lungs",
-          "Stomach",
-          "Skin"
-        ],
-        "id": "KID_BODY_PARTS_L163_Q3",
-        "instruction": "Find the Lungs",
-        "correctAnswer": "Lungs",
-        "question": "🫁",
-        "interactionType": "choice",
-        "hint": "They help you breathe air.",
-        "painter": "SunnyMeadow",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 163
-  },
-  {
-    "quests": [
-      {
-        "shader": "leaf_flutter",
-        "options": [
-          "Teeth",
-          "Knee",
-          "Elbow"
-        ],
-        "id": "KID_BODY_PARTS_L164_Q1",
-        "instruction": "Select the Teeth",
-        "correctAnswer": "Teeth",
-        "question": "Teeth",
-        "interactionType": "choice",
-        "hint": "You use teeth to bite an apple.",
-        "painter": "ForestFriend",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sand_swirl",
-        "options": [
-          "Ears",
-          "Nose",
-          "Mouth"
-        ],
-        "id": "KID_BODY_PARTS_L164_Q2",
-        "instruction": "Which is Ears?",
-        "correctAnswer": "Ears",
-        "question": "👂",
-        "interactionType": "choice",
-        "hint": "You have two ears to hear music.",
-        "painter": "DinoDesert",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "water_ripples",
-        "options": [
-          "Shoulder",
-          "Wrist",
-          "Neck"
-        ],
-        "id": "KID_BODY_PARTS_L164_Q3",
-        "instruction": "Identify: 👕",
-        "correctAnswer": "Shoulder",
-        "question": "Shoulder",
-        "interactionType": "choice",
-        "hint": "Your arms start at your shoulders.",
-        "painter": "OceanWave",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 164
-  },
-  {
-    "quests": [
-      {
-        "shader": "magic_twinkle",
-        "options": [
-          "Foot",
-          "Fingers",
-          "Toes"
-        ],
-        "id": "KID_BODY_PARTS_L165_Q1",
-        "instruction": "Tap on 🦶",
-        "correctAnswer": "Foot",
-        "question": "🦶",
-        "interactionType": "choice",
-        "hint": "You use your feet to walk and run.",
-        "painter": "StarryNight",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "bubble_pop",
-        "options": [
-          "Chest",
-          "Thumb",
-          "Chin"
-        ],
-        "id": "KID_BODY_PARTS_L165_Q2",
-        "instruction": "Choose the Chest",
-        "correctAnswer": "Chest",
-        "question": "Chest",
-        "interactionType": "choice",
-        "hint": "The front part of your upper body.",
-        "painter": "RainbowSwirl",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sugar_glow",
-        "options": [
-          "Arm",
-          "Head",
-          "Hair"
-        ],
-        "id": "KID_BODY_PARTS_L165_Q3",
-        "instruction": "Pick the Arm",
-        "correctAnswer": "Arm",
-        "question": "💪",
-        "interactionType": "choice",
-        "hint": "Strong arms help you lift things.",
-        "painter": "CandyCloud",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 165
-  },
-  {
-    "quests": [
-      {
-        "shader": "pastel_dream",
-        "options": [
-          "Brain",
-          "Lungs",
-          "Stomach"
-        ],
-        "id": "KID_BODY_PARTS_L166_Q1",
-        "instruction": "Where is Brain?",
-        "correctAnswer": "Brain",
-        "question": "Brain",
-        "interactionType": "choice",
-        "hint": "Inside your head, it helps you think.",
-        "painter": "UnicornMist",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sparkle_dust",
-        "options": [
-          "Tongue",
-          "Teeth",
-          "Knee"
-        ],
-        "id": "KID_BODY_PARTS_L166_Q2",
-        "instruction": "Point to 👅",
-        "correctAnswer": "Tongue",
-        "question": "👅",
-        "interactionType": "choice",
-        "hint": "Your tongue helps you taste candy.",
-        "painter": "SunnyMeadow",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "leaf_flutter",
+        "id": "KIDS_BODY_PARTS_L162_Q1",
+        "gameType": "body_parts",
+        "level": 162,
+        "instruction": "Touch the body part we use to see colorful flowers!",
+        "question": "Eyes",
+        "correctAnswer": "Eyes",
         "options": [
           "Eyes",
           "Ears",
           "Nose"
         ],
-        "id": "KID_BODY_PARTS_L166_Q3",
-        "instruction": "Look for 👀",
-        "correctAnswer": "Eyes",
-        "question": "Eyes",
-        "interactionType": "choice",
-        "hint": "You have two eyes to see colors.",
-        "painter": "ForestFriend",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 166
-  },
-  {
-    "quests": [
-      {
-        "shader": "sand_swirl",
-        "options": [
-          "Heart",
-          "Shoulder",
-          "Wrist"
-        ],
-        "id": "KID_BODY_PARTS_L167_Q1",
-        "instruction": "Find the Heart",
-        "correctAnswer": "Heart",
-        "question": "❤",
-        "interactionType": "choice",
-        "hint": "Your heart pumps blood inside you.",
-        "painter": "DinoDesert",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "We use our eyes for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "water_ripples",
+        "id": "KIDS_BODY_PARTS_L162_Q2",
+        "gameType": "body_parts",
+        "level": 162,
+        "instruction": "Touch the body part we use to hear birds singing!",
+        "question": "Ears",
+        "correctAnswer": "Ears",
         "options": [
-          "Hand",
-          "Foot",
-          "Fingers"
-        ],
-        "id": "KID_BODY_PARTS_L167_Q2",
-        "instruction": "Select the Hand",
-        "correctAnswer": "Hand",
-        "question": "Hand",
-        "interactionType": "choice",
-        "hint": "You use your hands to wave hello.",
-        "painter": "OceanWave",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "magic_twinkle",
-        "options": [
-          "Back",
-          "Chest",
-          "Thumb"
-        ],
-        "id": "KID_BODY_PARTS_L167_Q3",
-        "instruction": "Which is Back?",
-        "correctAnswer": "Back",
-        "question": "🎒",
-        "interactionType": "choice",
-        "hint": "The part of your body behind you.",
-        "painter": "StarryNight",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 167
-  },
-  {
-    "quests": [
-      {
-        "shader": "bubble_pop",
-        "options": [
-          "Leg",
-          "Arm",
-          "Head"
-        ],
-        "id": "KID_BODY_PARTS_L168_Q1",
-        "instruction": "Identify: 🦵",
-        "correctAnswer": "Leg",
-        "question": "Leg",
-        "interactionType": "choice",
-        "hint": "Long legs help you jump high.",
-        "painter": "RainbowSwirl",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sugar_glow",
-        "options": [
-          "Cheek",
-          "Brain",
-          "Lungs"
-        ],
-        "id": "KID_BODY_PARTS_L168_Q2",
-        "instruction": "Tap on 😊",
-        "correctAnswer": "Cheek",
-        "question": "😊",
-        "interactionType": "choice",
-        "hint": "The soft sides of your face.",
-        "painter": "CandyCloud",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "pastel_dream",
-        "options": [
-          "Belly",
-          "Tongue",
-          "Teeth"
-        ],
-        "id": "KID_BODY_PARTS_L168_Q3",
-        "instruction": "Choose the Belly",
-        "correctAnswer": "Belly",
-        "question": "Belly",
-        "interactionType": "choice",
-        "hint": "Your belly is where food goes.",
-        "painter": "UnicornMist",
-        "gameType": "choice_multi"
-      }
-    ],
-    "level": 168
-  },
-  {
-    "quests": [
-      {
-        "shader": "sparkle_dust",
-        "options": [
-          "Skin",
+          "Nose",
           "Eyes",
           "Ears"
         ],
-        "id": "KID_BODY_PARTS_L169_Q1",
-        "instruction": "Pick the Skin",
-        "correctAnswer": "Skin",
-        "question": "🤲",
-        "interactionType": "choice",
-        "hint": "The soft covering all over you.",
-        "painter": "SunnyMeadow",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "We use our ears for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "leaf_flutter",
+        "id": "KIDS_BODY_PARTS_L162_Q3",
+        "gameType": "body_parts",
+        "level": 162,
+        "instruction": "Touch the body part we use to smell tasty cookies!",
+        "question": "Nose",
+        "correctAnswer": "Nose",
         "options": [
-          "Elbow",
-          "Heart",
-          "Shoulder"
+          "Hands",
+          "Nose",
+          "Mouth"
         ],
-        "id": "KID_BODY_PARTS_L169_Q2",
-        "instruction": "Where is Elbow?",
-        "correctAnswer": "Elbow",
-        "question": "Elbow",
-        "interactionType": "choice",
-        "hint": "The middle part of your arm.",
-        "painter": "ForestFriend",
-        "gameType": "choice_multi"
-      },
-      {
-        "shader": "sand_swirl",
-        "options": [
-          "Mouth",
-          "Hand",
-          "Foot"
-        ],
-        "id": "KID_BODY_PARTS_L169_Q3",
-        "instruction": "Point to 👄",
-        "correctAnswer": "Mouth",
-        "question": "👄",
-        "interactionType": "choice",
-        "hint": "You use your mouth to talk and eat.",
-        "painter": "DinoDesert",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "We use our nose for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
-    ],
-    "level": 169
+    ]
   },
   {
+    "level": 163,
     "quests": [
       {
-        "shader": "water_ripples",
+        "id": "KIDS_BODY_PARTS_L163_Q1",
+        "gameType": "body_parts",
+        "level": 163,
+        "instruction": "Touch the body part we use to taste delicious ice cream!",
+        "question": "Mouth",
+        "correctAnswer": "Mouth",
         "options": [
-          "Neck",
-          "Back",
-          "Chest"
+          "Mouth",
+          "Eyes",
+          "Ears"
         ],
-        "id": "KID_BODY_PARTS_L170_Q1",
-        "instruction": "Look for 🧣",
-        "correctAnswer": "Neck",
-        "question": "Neck",
-        "interactionType": "choice",
-        "hint": "The neck holds up your head.",
-        "painter": "OceanWave",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "We use our mouth for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "magic_twinkle",
+        "id": "KIDS_BODY_PARTS_L163_Q2",
+        "gameType": "body_parts",
+        "level": 163,
+        "instruction": "Touch the body part we use to clap and hold toys!",
+        "question": "Hands",
+        "correctAnswer": "Hands",
         "options": [
-          "Toes",
-          "Leg",
-          "Arm"
+          "Eyes",
+          "Ears",
+          "Hands"
         ],
-        "id": "KID_BODY_PARTS_L170_Q2",
-        "instruction": "Find the Toes",
-        "correctAnswer": "Toes",
-        "question": "🦶",
-        "interactionType": "choice",
-        "hint": "You have ten toes on your feet.",
-        "painter": "StarryNight",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "We use our hands for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "shader": "bubble_pop",
+        "id": "KIDS_BODY_PARTS_L163_Q3",
+        "gameType": "body_parts",
+        "level": 163,
+        "instruction": "Touch the body part we use to run and kick a soccer ball!",
+        "question": "Feet",
+        "correctAnswer": "Feet",
         "options": [
-          "Chin",
-          "Cheek",
-          "Brain"
+          "Ears",
+          "Eyes",
+          "Feet"
         ],
-        "id": "KID_BODY_PARTS_L170_Q3",
-        "instruction": "Select the Chin",
-        "correctAnswer": "Chin",
-        "question": "Chin",
-        "interactionType": "choice",
-        "hint": "The part of your face below your mouth.",
-        "painter": "RainbowSwirl",
-        "gameType": "choice_multi"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "We use our feet for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
-    ],
-    "level": 170
+    ]
+  },
+  {
+    "level": 164,
+    "quests": [
+      {
+        "id": "KIDS_BODY_PARTS_L164_Q1",
+        "gameType": "body_parts",
+        "level": 164,
+        "instruction": "Touch the body part we use to see colorful flowers!",
+        "question": "Eyes",
+        "correctAnswer": "Eyes",
+        "options": [
+          "Eyes",
+          "Nose",
+          "Hands"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "We use our eyes for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L164_Q2",
+        "gameType": "body_parts",
+        "level": 164,
+        "instruction": "Touch the body part we use to hear birds singing!",
+        "question": "Ears",
+        "correctAnswer": "Ears",
+        "options": [
+          "Ears",
+          "Eyes",
+          "Nose"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "We use our ears for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L164_Q3",
+        "gameType": "body_parts",
+        "level": 164,
+        "instruction": "Touch the body part we use to smell tasty cookies!",
+        "question": "Nose",
+        "correctAnswer": "Nose",
+        "options": [
+          "Ears",
+          "Nose",
+          "Mouth"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "We use our nose for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 165,
+    "quests": [
+      {
+        "id": "KIDS_BODY_PARTS_L165_Q1",
+        "gameType": "body_parts",
+        "level": 165,
+        "instruction": "Touch the body part we use to taste delicious ice cream!",
+        "question": "Mouth",
+        "correctAnswer": "Mouth",
+        "options": [
+          "Ears",
+          "Eyes",
+          "Mouth"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "We use our mouth for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L165_Q2",
+        "gameType": "body_parts",
+        "level": 165,
+        "instruction": "Touch the body part we use to clap and hold toys!",
+        "question": "Hands",
+        "correctAnswer": "Hands",
+        "options": [
+          "Hands",
+          "Mouth",
+          "Nose"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "We use our hands for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L165_Q3",
+        "gameType": "body_parts",
+        "level": 165,
+        "instruction": "Touch the body part we use to run and kick a soccer ball!",
+        "question": "Feet",
+        "correctAnswer": "Feet",
+        "options": [
+          "Ears",
+          "Hands",
+          "Feet"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "We use our feet for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 166,
+    "quests": [
+      {
+        "id": "KIDS_BODY_PARTS_L166_Q1",
+        "gameType": "body_parts",
+        "level": 166,
+        "instruction": "Touch the body part we use to see colorful flowers!",
+        "question": "Eyes",
+        "correctAnswer": "Eyes",
+        "options": [
+          "Nose",
+          "Ears",
+          "Eyes"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "We use our eyes for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L166_Q2",
+        "gameType": "body_parts",
+        "level": 166,
+        "instruction": "Touch the body part we use to hear birds singing!",
+        "question": "Ears",
+        "correctAnswer": "Ears",
+        "options": [
+          "Eyes",
+          "Feet",
+          "Ears"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "We use our ears for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L166_Q3",
+        "gameType": "body_parts",
+        "level": 166,
+        "instruction": "Touch the body part we use to smell tasty cookies!",
+        "question": "Nose",
+        "correctAnswer": "Nose",
+        "options": [
+          "Nose",
+          "Eyes",
+          "Mouth"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "We use our nose for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 167,
+    "quests": [
+      {
+        "id": "KIDS_BODY_PARTS_L167_Q1",
+        "gameType": "body_parts",
+        "level": 167,
+        "instruction": "Touch the body part we use to taste delicious ice cream!",
+        "question": "Mouth",
+        "correctAnswer": "Mouth",
+        "options": [
+          "Mouth",
+          "Nose",
+          "Eyes"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "We use our mouth for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L167_Q2",
+        "gameType": "body_parts",
+        "level": 167,
+        "instruction": "Touch the body part we use to clap and hold toys!",
+        "question": "Hands",
+        "correctAnswer": "Hands",
+        "options": [
+          "Ears",
+          "Mouth",
+          "Hands"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "We use our hands for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L167_Q3",
+        "gameType": "body_parts",
+        "level": 167,
+        "instruction": "Touch the body part we use to run and kick a soccer ball!",
+        "question": "Feet",
+        "correctAnswer": "Feet",
+        "options": [
+          "Feet",
+          "Nose",
+          "Ears"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "We use our feet for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 168,
+    "quests": [
+      {
+        "id": "KIDS_BODY_PARTS_L168_Q1",
+        "gameType": "body_parts",
+        "level": 168,
+        "instruction": "Touch the body part we use to see colorful flowers!",
+        "question": "Eyes",
+        "correctAnswer": "Eyes",
+        "options": [
+          "Nose",
+          "Ears",
+          "Eyes"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "We use our eyes for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L168_Q2",
+        "gameType": "body_parts",
+        "level": 168,
+        "instruction": "Touch the body part we use to hear birds singing!",
+        "question": "Ears",
+        "correctAnswer": "Ears",
+        "options": [
+          "Feet",
+          "Eyes",
+          "Ears"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "We use our ears for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L168_Q3",
+        "gameType": "body_parts",
+        "level": 168,
+        "instruction": "Touch the body part we use to smell tasty cookies!",
+        "question": "Nose",
+        "correctAnswer": "Nose",
+        "options": [
+          "Ears",
+          "Hands",
+          "Nose"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "We use our nose for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 169,
+    "quests": [
+      {
+        "id": "KIDS_BODY_PARTS_L169_Q1",
+        "gameType": "body_parts",
+        "level": 169,
+        "instruction": "Touch the body part we use to taste delicious ice cream!",
+        "question": "Mouth",
+        "correctAnswer": "Mouth",
+        "options": [
+          "Mouth",
+          "Eyes",
+          "Ears"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "We use our mouth for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L169_Q2",
+        "gameType": "body_parts",
+        "level": 169,
+        "instruction": "Touch the body part we use to clap and hold toys!",
+        "question": "Hands",
+        "correctAnswer": "Hands",
+        "options": [
+          "Hands",
+          "Eyes",
+          "Ears"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "We use our hands for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L169_Q3",
+        "gameType": "body_parts",
+        "level": 169,
+        "instruction": "Touch the body part we use to run and kick a soccer ball!",
+        "question": "Feet",
+        "correctAnswer": "Feet",
+        "options": [
+          "Hands",
+          "Eyes",
+          "Feet"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "We use our feet for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
+  },
+  {
+    "level": 170,
+    "quests": [
+      {
+        "id": "KIDS_BODY_PARTS_L170_Q1",
+        "gameType": "body_parts",
+        "level": 170,
+        "instruction": "Touch the body part we use to see colorful flowers!",
+        "question": "Eyes",
+        "correctAnswer": "Eyes",
+        "options": [
+          "Eyes",
+          "Nose",
+          "Hands"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "We use our eyes for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L170_Q2",
+        "gameType": "body_parts",
+        "level": 170,
+        "instruction": "Touch the body part we use to hear birds singing!",
+        "question": "Ears",
+        "correctAnswer": "Ears",
+        "options": [
+          "Ears",
+          "Eyes",
+          "Feet"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "We use our ears for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_BODY_PARTS_L170_Q3",
+        "gameType": "body_parts",
+        "level": 170,
+        "instruction": "Touch the body part we use to smell tasty cookies!",
+        "question": "Nose",
+        "correctAnswer": "Nose",
+        "options": [
+          "Nose",
+          "Mouth",
+          "Hands"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "We use our nose for this!",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      }
+    ]
   }
 ]

@@ -3,50 +3,73 @@
     "level": 61,
     "quests": [
       {
-        "id": "KID_SCHOOL_L61_Q1",
-        "instruction": "What do we do when it's break time and we feel hungry?",
-        "question": "🍏🍱✨",
+        "id": "KIDS_SCHOOL_L61_Q1",
+        "gameType": "school",
+        "level": 61,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Eat Snack",
-          "Draw Picture",
-          "Go Sleep"
+          "Eraser",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "Eat Snack",
-        "hint": "We open our lunchbox and eat our yummy fruit or sandwich! We are eating a snack!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L61_Q2",
-        "instruction": "Find the EAT SNACK action",
-        "question": "🍏🧒😋",
+        "id": "KIDS_SCHOOL_L61_Q2",
+        "gameType": "school",
+        "level": 61,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person sitting and enjoying their healthy food during break!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L61_Q3",
-        "instruction": "Is it YUMMY?",
-        "question": "🍏 = Yummy snack?",
+        "id": "KIDS_SCHOOL_L61_Q3",
+        "gameType": "school",
+        "level": 61,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Yes, gives energy!",
-          "No, yucky"
+          "Eraser",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, gives energy!",
-        "hint": "Eating a healthy snack helps our brain stay focused for more learning!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 62,
     "quests": [
       {
-        "id": "KID_SCHOOL_L62_Q1",
-        "instruction": "What do we do when the lights go low and it's quiet time?",
-        "question": "😴🛌✨",
+        "id": "KIDS_SCHOOL_L62_Q1",
+        "gameType": "school",
+        "level": 62,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Nap Time",
-          "Recess",
-          "Math Class"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Nap Time",
-        "hint": "We lay on our mats and close our eyes for a short rest! It's nap time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L62_Q2",
-        "instruction": "Find the NAP TIME action",
-        "question": "😴🧒🛌",
+        "id": "KIDS_SCHOOL_L62_Q2",
+        "gameType": "school",
+        "level": 62,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Found it!",
-          "Not here"
+          "Pencil",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person laying down comfortably and taking a peaceful rest!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L62_Q3",
-        "instruction": "Is it RESTFUL?",
-        "question": "😴 = Restful?",
+        "id": "KIDS_SCHOOL_L62_Q3",
+        "gameType": "school",
+        "level": 62,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Yes, quiet rest!",
-          "No, loud noise"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, quiet rest!",
-        "hint": "A little nap gives us fresh energy for the rest of our school day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 63,
     "quests": [
       {
-        "id": "KID_SCHOOL_L63_Q1",
-        "instruction": "What do we do BEFORE we eat our snack?",
-        "question": "🧼🚿✨",
+        "id": "KIDS_SCHOOL_L63_Q1",
+        "gameType": "school",
+        "level": 63,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Wash Hands",
-          "Put on Shoes",
-          "Shout Out"
+          "Pencil",
+          "Ruler",
+          "Eraser"
         ],
-        "correctAnswer": "Wash Hands",
-        "hint": "We use soap and water to get all the germs off our hands! We are washing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L63_Q2",
-        "instruction": "Find the WASH HANDS action",
-        "question": "🧼🧒🚿",
+        "id": "KIDS_SCHOOL_L63_Q2",
+        "gameType": "school",
+        "level": 63,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person with bubbles on their hands at the classroom sink!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L63_Q3",
-        "instruction": "Is it CLEAN?",
-        "question": "🧼 = Clean hands?",
+        "id": "KIDS_SCHOOL_L63_Q3",
+        "gameType": "school",
+        "level": 63,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Yes, goodbye germs!",
-          "No, dirty"
+          "Backpack",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, goodbye germs!",
-        "hint": "Washing our hands is a very healthy habit that keeps us and our friends well!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 64,
     "quests": [
       {
-        "id": "KID_SCHOOL_L64_Q1",
-        "instruction": "What do we do during playtime with our classmates?",
-        "question": "🗣️🤝✨",
+        "id": "KIDS_SCHOOL_L64_Q1",
+        "gameType": "school",
+        "level": 64,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Talk to Friends",
-          "Close Eyes",
-          "Hide in Bag"
+          "Ruler",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "Talk to Friends",
-        "hint": "We share our ideas and play games together! We are talking and playing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L64_Q2",
-        "instruction": "Find the TALK TO FRIENDS action",
-        "question": "🗣️🧒🤝🧒",
+        "id": "KIDS_SCHOOL_L64_Q2",
+        "gameType": "school",
+        "level": 64,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for two friends smiling and talking nicely to each other!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L64_Q3",
-        "instruction": "Is it KIND?",
-        "question": "🗣️ = Kind words?",
+        "id": "KIDS_SCHOOL_L64_Q3",
+        "gameType": "school",
+        "level": 64,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Yes, be nice!",
-          "No, be mean"
+          "Backpack",
+          "Ruler",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, be nice!",
-        "hint": "Talking nicely to our friends makes our school a very happy place to be!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 65,
     "quests": [
       {
-        "id": "KID_SCHOOL_L65_Q1",
-        "instruction": "Lunch Logic: APPLE is for...",
-        "question": "🍏 -> ?",
+        "id": "KIDS_SCHOOL_L65_Q1",
+        "gameType": "school",
+        "level": 65,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Eating",
-          "Writing"
+          "Backpack",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Eating",
-        "hint": "An apple is a crunchy and healthy snack that we eat during our break!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L65_Q2",
-        "instruction": "Lunch Logic: SOAP is for...",
-        "question": "🧼 -> ?",
+        "id": "KIDS_SCHOOL_L65_Q2",
+        "gameType": "school",
+        "level": 65,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Washing Hands",
-          "Eating"
+          "Ruler",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "Washing Hands",
-        "hint": "We use soap to wash our hands before we touch our food!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L65_Q3",
-        "instruction": "Logic: Do we rest at NAP TIME?",
-        "question": "😴 -> ✨?",
+        "id": "KIDS_SCHOOL_L65_Q3",
+        "gameType": "school",
+        "level": 65,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Yes, quiet rest!",
-          "No, loud play"
+          "Backpack",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, quiet rest!",
-        "hint": "Nap time is for letting our bodies and minds take a peaceful break!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 66,
     "quests": [
       {
-        "id": "KID_SCHOOL_L66_Q1",
-        "instruction": "Search: Find the child WASHING",
-        "question": "🧼🧒🚿",
+        "id": "KIDS_SCHOOL_L66_Q1",
+        "gameType": "school",
+        "level": 66,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person at the sink with the bubbly hands!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L66_Q2",
-        "instruction": "Search: Find the NAP MAT",
-        "question": "😴✨🛌",
+        "id": "KIDS_SCHOOL_L66_Q2",
+        "gameType": "school",
+        "level": 66,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Found it!",
-          "Not here"
+          "Pencil",
+          "Ruler",
+          "Backpack"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the soft pad on the floor where students take their rest!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L66_Q3",
-        "instruction": "Search: Find the SNACK apple",
-        "question": "🍏✨🍱",
+        "id": "KIDS_SCHOOL_L66_Q3",
+        "gameType": "school",
+        "level": 66,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the red or green fruit inside the open lunchbox!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 67,
     "quests": [
       {
-        "id": "KID_SCHOOL_L67_Q1",
-        "instruction": "Action: Wash HANDS!",
-        "question": "🧼🧒🚿",
+        "id": "KIDS_SCHOOL_L67_Q1",
+        "gameType": "school",
+        "level": 67,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Scrub with soap!",
-          "Just wet"
+          "Eraser",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Scrub with soap!",
-        "hint": "Rub your hands together with lots of bubbles to get them perfectly clean!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L67_Q2",
-        "instruction": "Action: Rest at NAP!",
-        "question": "😴🧒🛌",
+        "id": "KIDS_SCHOOL_L67_Q2",
+        "gameType": "school",
+        "level": 67,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Close eyes quietly!",
-          "Talk to friend"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Close eyes quietly!",
-        "hint": "Relax your body and keep your voice silent during the rest time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L67_Q3",
-        "instruction": "Action: Share SNACK!",
-        "question": "🍏🧒🤝🧒",
+        "id": "KIDS_SCHOOL_L67_Q3",
+        "gameType": "school",
+        "level": 67,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Give a piece!",
-          "Eat all fast"
+          "Backpack",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Give a piece!",
-        "hint": "If you have extra, sharing a piece of your snack is a very kind thing to do!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 68,
     "quests": [
       {
-        "id": "KID_SCHOOL_L68_Q1",
-        "instruction": "Match: What is for LUNCH?",
-        "question": "🍱 + ?",
+        "id": "KIDS_SCHOOL_L68_Q1",
+        "gameType": "school",
+        "level": 68,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Eating",
-          "Sleeping"
+          "Pencil",
+          "Ruler",
+          "Eraser"
         ],
-        "correctAnswer": "Eating",
-        "hint": "Lunch time is when we sit with our friends and eat our healthy food!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L68_Q2",
-        "instruction": "Match: What is for REST?",
-        "question": "🛌 + ?",
+        "id": "KIDS_SCHOOL_L68_Q2",
+        "gameType": "school",
+        "level": 68,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Nap Time",
-          "Art Class"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Nap Time",
-        "hint": "Our nap mat is where we go when it's time for a quiet rest at school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L68_Q3",
-        "instruction": "Match: What is for GERMS?",
-        "question": "🦠 + ?",
+        "id": "KIDS_SCHOOL_L68_Q3",
+        "gameType": "school",
+        "level": 68,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Washing Hands",
-          "Eating"
+          "Ruler",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Washing Hands",
-        "hint": "Washing our hands with soap is how we say goodbye to all the germs!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 69,
     "quests": [
       {
-        "id": "KID_SCHOOL_L69_Q1",
-        "instruction": "School: Wash hands BEFORE snack?",
-        "question": "🧼 -> 🍏?",
+        "id": "KIDS_SCHOOL_L69_Q1",
+        "gameType": "school",
+        "level": 69,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Yes, clean first!",
-          "No, eat dirty"
+          "Backpack",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, clean first!",
-        "hint": "We always wash our hands before we touch our food to stay healthy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L69_Q2",
-        "instruction": "School: Are you a HEALTHY HERO?",
-        "question": "🍏😴🧼✨❓",
+        "id": "KIDS_SCHOOL_L69_Q2",
+        "gameType": "school",
+        "level": 69,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Yes, I am!",
-          "No"
+          "Backpack",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "A healthy hero knows how to wash their hands and eat good food at school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L69_Q3",
-        "instruction": "School: Ready for the challenge?",
-        "question": "🏆✨❓",
+        "id": "KIDS_SCHOOL_L69_Q3",
+        "gameType": "school",
+        "level": 69,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "YES!",
-          "No"
+          "Eraser",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Level 70 is coming! Show us how healthy you can be at school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 70,
     "quests": [
       {
-        "id": "KID_SCHOOL_L70_Q1",
-        "instruction": "Level 70 Challenge: Healthy Hero!",
-        "question": "What kills germs? 🧼🚿",
+        "id": "KIDS_SCHOOL_L70_Q1",
+        "gameType": "school",
+        "level": 70,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Washing",
-          "Eating",
-          "Running"
+          "Ruler",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Washing",
-        "hint": "Soap and water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L70_Q2",
-        "instruction": "Level 70 Challenge: Healthy Hero!",
-        "question": "What is for rest? 😴🛌",
+        "id": "KIDS_SCHOOL_L70_Q2",
+        "gameType": "school",
+        "level": 70,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Nap Time",
-          "School Bag",
-          "Recess"
+          "Eraser",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "Nap Time",
-        "hint": "Quiet rest!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L70_Q3",
-        "instruction": "Level 70 Challenge: Mastery!",
-        "question": "Are you a Healthy Hero?",
+        "id": "KIDS_SCHOOL_L70_Q3",
+        "gameType": "school",
+        "level": 70,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "YES!",
-          "No"
+          "Backpack",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 70!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

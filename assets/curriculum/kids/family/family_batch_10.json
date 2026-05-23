@@ -3,52 +3,73 @@
     "level": 91,
     "quests": [
       {
-        "id": "KID_FAMILY_L91_Q1",
-        "instruction": "Review: Who gives the best hugs?",
-        "question": "👩 Review",
+        "id": "KIDS_FAMILY_L91_Q1",
+        "gameType": "family",
+        "level": 91,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Mommy",
+          "Grandmother",
+          "Father",
+          "Mother"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FAMILY_L91_Q2",
+        "gameType": "family",
+        "level": 91,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
+        "options": [
           "Brother",
-          "Cousin"
+          "Grandfather",
+          "Father"
         ],
-        "correctAnswer": "Mommy",
-        "hint": "The kind lady who takes care of you every day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L91_Q2",
-        "instruction": "Review: Who plays ball with you?",
-        "question": "👨 Review",
+        "id": "KIDS_FAMILY_L91_Q3",
+        "gameType": "family",
+        "level": 91,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Daddy",
           "Sister",
-          "Baby"
+          "Father",
+          "Grandfather"
         ],
-        "correctAnswer": "Daddy",
-        "hint": "The strong man who loves to play games with you!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_FAMILY_L91_Q3",
-        "instruction": "Review: Who is the little one?",
-        "question": "👶 Review",
-        "options": [
-          "Me",
-          "Grandpa",
-          "Uncle"
-        ],
-        "correctAnswer": "Me",
-        "hint": "That's you! The growing star of the family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 92,
     "quests": [
       {
-        "id": "KID_FAMILY_L92_Q1",
-        "instruction": "Review: Who is the girl sibling?",
-        "question": "👧 Review",
+        "id": "KIDS_FAMILY_L92_Q1",
+        "gameType": "family",
+        "level": 92,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Sister",
+          "Father",
           "Brother",
-          "Daddy"
+          "Mother"
         ],
-        "correctAnswer": "Sister",
-        "hint": "Your sister who loves to play dolls and share toys!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L92_Q2",
-        "instruction": "Review: Who is the boy sibling?",
-        "question": "👦 Review",
+        "id": "KIDS_FAMILY_L92_Q2",
+        "gameType": "family",
+        "level": 92,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Brother",
-          "Sister",
-          "Mommy"
+          "Father",
+          "Grandmother",
+          "Mother"
         ],
-        "correctAnswer": "Brother",
-        "hint": "Your brother who loves to run and play tag!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L92_Q3",
-        "instruction": "Review: Who is the tiny one?",
-        "question": "👶🍼 Review",
+        "id": "KIDS_FAMILY_L92_Q3",
+        "gameType": "family",
+        "level": 92,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Baby",
-          "Daddy",
-          "Aunt"
+          "Grandfather",
+          "Grandmother",
+          "Brother"
         ],
-        "correctAnswer": "Baby",
-        "hint": "The newest and smallest member of the family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 93,
     "quests": [
       {
-        "id": "KID_FAMILY_L93_Q1",
-        "instruction": "Review: Find our cozy HOME",
-        "question": "🏠 Review",
+        "id": "KIDS_FAMILY_L93_Q1",
+        "gameType": "family",
+        "level": 93,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Home",
-          "Park",
-          "School"
+          "Brother",
+          "Sister",
+          "Grandmother"
         ],
-        "correctAnswer": "Home",
-        "hint": "The place where your whole family lives together!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L93_Q2",
-        "instruction": "Review: Find the wagging DOG",
-        "question": "🐶 Review",
+        "id": "KIDS_FAMILY_L93_Q2",
+        "gameType": "family",
+        "level": 93,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Dog",
-          "Cat",
-          "Hamster"
+          "Father",
+          "Mother",
+          "Brother"
         ],
-        "correctAnswer": "Dog",
-        "hint": "The furry family friend who says Woof!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L93_Q3",
-        "instruction": "Review: Find the purring CAT",
-        "question": "🐱 Review",
+        "id": "KIDS_FAMILY_L93_Q3",
+        "gameType": "family",
+        "level": 93,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Cat",
-          "Dog",
-          "Bird"
+          "Sister",
+          "Grandmother",
+          "Brother"
         ],
-        "correctAnswer": "Cat",
-        "hint": "The soft family friend who says Meow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 94,
     "quests": [
       {
-        "id": "KID_FAMILY_L94_Q1",
-        "instruction": "Review: Who knits the wool?",
-        "question": "👵🧶 Review",
+        "id": "KIDS_FAMILY_L94_Q1",
+        "gameType": "family",
+        "level": 94,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Grandma",
-          "Sister",
-          "Uncle"
+          "Mother",
+          "Father",
+          "Grandfather"
         ],
-        "correctAnswer": "Grandma",
-        "hint": "Mommy or daddy's mommy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L94_Q2",
-        "instruction": "Review: Who tells old stories?",
-        "question": "👴📜 Review",
+        "id": "KIDS_FAMILY_L94_Q2",
+        "gameType": "family",
+        "level": 94,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Grandpa",
-          "Baby",
-          "Brother"
+          "Grandfather",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Grandpa",
-        "hint": "Mommy or daddy's daddy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L94_Q3",
-        "instruction": "Review: Who is mommy's sister?",
-        "question": "👩‍🦰 Review",
+        "id": "KIDS_FAMILY_L94_Q3",
+        "gameType": "family",
+        "level": 94,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Aunt",
-          "Uncle",
-          "Cousin"
+          "Grandfather",
+          "Father",
+          "Mother"
         ],
-        "correctAnswer": "Aunt",
-        "hint": "The kind lady who comes for parties!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 95,
     "quests": [
       {
-        "id": "KID_FAMILY_L95_Q1",
-        "instruction": "Review: Who is daddy's brother?",
-        "question": "👨‍🦱 Review",
+        "id": "KIDS_FAMILY_L95_Q1",
+        "gameType": "family",
+        "level": 95,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Uncle",
-          "Aunt",
-          "Grandma"
+          "Grandmother",
+          "Father",
+          "Mother"
         ],
-        "correctAnswer": "Uncle",
-        "hint": "The fun man who tells silly jokes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L95_Q2",
-        "instruction": "Review: Who are the playmates?",
-        "question": "👫 Review",
+        "id": "KIDS_FAMILY_L95_Q2",
+        "gameType": "family",
+        "level": 95,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Cousins",
-          "Grandparents",
-          "Parents"
+          "Sister",
+          "Mother",
+          "Brother"
         ],
-        "correctAnswer": "Cousins",
-        "hint": "The kids of your aunts and uncles!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L95_Q3",
-        "instruction": "Review: Find the best FRIEND",
-        "question": "🧑‍🤝‍🧑 Review",
+        "id": "KIDS_FAMILY_L95_Q3",
+        "gameType": "family",
+        "level": 95,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Best Friend",
-          "Stranger",
-          "Tree"
+          "Sister",
+          "Grandfather",
+          "Father"
         ],
-        "correctAnswer": "Best Friend",
-        "hint": "The one you play with in the park!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,49 +373,73 @@
     "level": 96,
     "quests": [
       {
-        "id": "KID_FAMILY_L96_Q1",
-        "instruction": "Logic: Do we love our family FOREVER?",
-        "question": "👨‍👩‍👧‍👦❤️♾️❓",
+        "id": "KIDS_FAMILY_L96_Q1",
+        "gameType": "family",
+        "level": 96,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Yes, always!",
-          "No, only on Mondays"
+          "Grandfather",
+          "Brother",
+          "Mother"
         ],
-        "correctAnswer": "Yes, always!",
-        "hint": "Family love is very special and stays with you forever!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L96_Q2",
-        "instruction": "Logic: Is your home a happy place?",
-        "question": "🏠😊❓",
+        "id": "KIDS_FAMILY_L96_Q2",
+        "gameType": "family",
+        "level": 96,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Yes, with family!",
-          "No, it's just bricks"
+          "Father",
+          "Grandfather",
+          "Brother"
         ],
-        "correctAnswer": "Yes, with family!",
-        "hint": "The people inside a house make it a happy home with their love!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L96_Q3",
-        "instruction": "Logic: Are friends like family?",
-        "question": "🧑‍🤝‍🧑🤝👨‍👩‍👧‍👦❓",
+        "id": "KIDS_FAMILY_L96_Q3",
+        "gameType": "family",
+        "level": 96,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, very close!",
-          "No, only toys"
+          "Grandmother",
+          "Grandfather",
+          "Mother"
         ],
-        "correctAnswer": "Yes, very close!",
-        "hint": "Some best friends are so special they feel just like family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -318,49 +447,73 @@
     "level": 97,
     "quests": [
       {
-        "id": "KID_FAMILY_L97_Q1",
-        "instruction": "Search: Find the family HUG",
-        "question": "👨‍👩‍👧‍👦🫂 vs 🏠",
+        "id": "KIDS_FAMILY_L97_Q1",
+        "gameType": "family",
+        "level": 97,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Big Hug",
-          "Empty House"
+          "Grandmother",
+          "Brother",
+          "Grandfather"
         ],
-        "correctAnswer": "Big Hug",
-        "hint": "Look for all the family members holding each other close!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L97_Q2",
-        "instruction": "Search: Find the family DINNER",
-        "question": "🥘👨‍👩‍👧‍👦 vs ⚽",
+        "id": "KIDS_FAMILY_L97_Q2",
+        "gameType": "family",
+        "level": 97,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Eating Together",
-          "Playing Ball"
+          "Grandfather",
+          "Grandmother",
+          "Brother"
         ],
-        "correctAnswer": "Eating Together",
-        "hint": "Look for the family sitting at the table sharing a meal!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L97_Q3",
-        "instruction": "Search: Find the family WALK",
-        "question": "🚶‍♂️👨‍👩‍👧‍👦 vs 🛌",
+        "id": "KIDS_FAMILY_L97_Q3",
+        "gameType": "family",
+        "level": 97,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Walking Together",
-          "Sleeping Time"
+          "Sister",
+          "Father",
+          "Grandfather"
         ],
-        "correctAnswer": "Walking Together",
-        "hint": "Look for the family holding hands and walking in the park!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -368,49 +521,73 @@
     "level": 98,
     "quests": [
       {
-        "id": "KID_FAMILY_L98_Q1",
-        "instruction": "Which one is for family LOVE?",
-        "question": "❤️👨‍👩‍👧‍👦 vs 🧱",
+        "id": "KIDS_FAMILY_L98_Q1",
+        "gameType": "family",
+        "level": 98,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Family Love",
-          "Hard Bricks"
+          "Grandmother",
+          "Brother",
+          "Mother"
         ],
-        "correctAnswer": "Family Love",
-        "hint": "The most important thing in any family is the love they share!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L98_Q2",
-        "instruction": "Which one is for a family SMILE?",
-        "question": "😊👨‍👩‍👧‍👦 vs 😡",
+        "id": "KIDS_FAMILY_L98_Q2",
+        "gameType": "family",
+        "level": 98,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Happy Family",
-          "Angry Face"
+          "Father",
+          "Sister",
+          "Grandmother"
         ],
-        "correctAnswer": "Happy Family",
-        "hint": "Being with family makes us feel happy and gives us big smiles!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L98_Q3",
-        "instruction": "Are you ready to be a MASTER?",
-        "question": "🎓👨‍👩‍👧‍👦❓",
+        "id": "KIDS_FAMILY_L98_Q3",
+        "gameType": "family",
+        "level": 98,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, I am!",
-          "Not yet"
+          "Grandfather",
+          "Mother",
+          "Sister"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "You have learned so much about all the people who love you!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -418,49 +595,73 @@
     "level": 99,
     "quests": [
       {
-        "id": "KID_FAMILY_L99_Q1",
-        "instruction": "Master Challenge: Family!",
-        "question": "Are you a Family Expert?",
+        "id": "KIDS_FAMILY_L99_Q1",
+        "gameType": "family",
+        "level": 99,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "YES, I am!",
-          "No"
+          "Grandfather",
+          "Father",
+          "Grandmother"
         ],
-        "correctAnswer": "YES, I am!",
-        "hint": "You know everyone from mommy to your cousins!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L99_Q2",
-        "instruction": "Master Challenge: Final Test!",
-        "question": "Ready for Level 100?",
+        "id": "KIDS_FAMILY_L99_Q2",
+        "gameType": "family",
+        "level": 99,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "YES!",
-          "No"
+          "Brother",
+          "Sister",
+          "Mother"
         ],
-        "correctAnswer": "YES!",
-        "hint": "The graduation is almost here!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L99_Q3",
-        "instruction": "Master Challenge: Mastery!",
-        "question": "Do you love your FAMILY?",
+        "id": "KIDS_FAMILY_L99_Q3",
+        "gameType": "family",
+        "level": 99,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "YES, I do!",
-          "No"
+          "Sister",
+          "Grandmother",
+          "Father"
         ],
-        "correctAnswer": "YES, I do!",
-        "hint": "Family is the best gift in the world!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -468,51 +669,73 @@
     "level": 100,
     "quests": [
       {
-        "id": "KID_FAMILY_L100_Q1",
-        "instruction": "LEVEL 100: MILESTONE!",
-        "question": "Who is at the heart of family?",
+        "id": "KIDS_FAMILY_L100_Q1",
+        "gameType": "family",
+        "level": 100,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "LOVE ❤️",
-          "A Shoe",
-          "A Cloud"
+          "Mother",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "LOVE ❤️",
-        "hint": "The most important part of a family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L100_Q2",
-        "instruction": "LEVEL 100: MILESTONE!",
-        "question": "Who is the FAMILY MASTER?",
+        "id": "KIDS_FAMILY_L100_Q2",
+        "gameType": "family",
+        "level": 100,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "YOU!",
-          "A Bat",
-          "A Rock"
+          "Sister",
+          "Grandmother",
+          "Father"
         ],
-        "correctAnswer": "YOU!",
-        "hint": "YOU HAVE REACHED LEVEL 100!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L100_Q3",
-        "instruction": "GRADUATION DAY!",
-        "question": "Claim your FAMILY TROPHY!",
+        "id": "KIDS_FAMILY_L100_Q3",
+        "gameType": "family",
+        "level": 100,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "CLAIM TROPHY! 🏆",
-          "Wait"
+          "Father",
+          "Mother",
+          "Grandfather"
         ],
-        "correctAnswer": "CLAIM TROPHY! 🏆",
-        "hint": "CONGRATULATIONS! YOU ARE A FAMILY MASTER!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

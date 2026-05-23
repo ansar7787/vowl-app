@@ -3,52 +3,73 @@
     "level": 121,
     "quests": [
       {
-        "id": "KID_NUMBERS_L121_Q1",
-        "instruction": "Share 4 cookies between 2 friends. How many each?",
-        "question": "4 ÷ 2",
-        "options": [
-          "1",
-          "2",
-          "4"
-        ],
+        "id": "KIDS_NUMBERS_L121_Q1",
+        "gameType": "numbers",
+        "level": 121,
+        "instruction": "Touch the number digit matching: \"Two\"!",
+        "question": "Two",
         "correctAnswer": "2",
-        "hint": "Split four into two equal groups!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_NUMBERS_L121_Q2",
-        "instruction": "Share 2 apples between 2 friends. How many each?",
-        "question": "2 ÷ 2",
         "options": [
+          "10",
           "1",
-          "2",
-          "0"
+          "2"
         ],
-        "correctAnswer": "1",
-        "hint": "One for you, one for me!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 2.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L121_Q3",
-        "instruction": "Which shows sharing 4 equally?",
-        "question": "4 shared by 2",
+        "id": "KIDS_NUMBERS_L121_Q2",
+        "gameType": "numbers",
+        "level": 121,
+        "instruction": "Touch the number digit matching: \"Three\"!",
+        "question": "Three",
+        "correctAnswer": "3",
         "options": [
-          "(🍪🍪)(🍪🍪)",
-          "(🍪)(🍪🍪🍪)",
-          "(🍪🍪🍪🍪)"
+          "3",
+          "11",
+          "10"
         ],
-        "correctAnswer": "(🍪🍪)(🍪🍪)",
-        "hint": "Find the one where both groups are the same!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 3.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L121_Q3",
+        "gameType": "numbers",
+        "level": 121,
+        "instruction": "Touch the number digit matching: \"Four\"!",
+        "question": "Four",
+        "correctAnswer": "4",
+        "options": [
+          "4",
+          "9",
+          "14"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Count the items up to 4.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 122,
     "quests": [
       {
-        "id": "KID_NUMBERS_L122_Q1",
-        "instruction": "Share 6 balloons among 2 kids. How many each?",
-        "question": "6 ÷ 2",
+        "id": "KIDS_NUMBERS_L122_Q1",
+        "gameType": "numbers",
+        "level": 122,
+        "instruction": "Touch the number digit matching: \"Three\"!",
+        "question": "Three",
+        "correctAnswer": "3",
         "options": [
-          "2",
+          "7",
+          "1",
+          "3"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Count the items up to 3.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L122_Q2",
+        "gameType": "numbers",
+        "level": 122,
+        "instruction": "Touch the number digit matching: \"Four\"!",
+        "question": "Four",
+        "correctAnswer": "4",
+        "options": [
+          "14",
           "3",
           "4"
         ],
-        "correctAnswer": "3",
-        "hint": "Three plus three makes six!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 4.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L122_Q2",
-        "instruction": "Share 8 stars among 2 wands. How many each?",
-        "question": "8 ÷ 2",
+        "id": "KIDS_NUMBERS_L122_Q3",
+        "gameType": "numbers",
+        "level": 122,
+        "instruction": "Touch the number digit matching: \"Five\"!",
+        "question": "Five",
+        "correctAnswer": "5",
         "options": [
-          "3",
-          "4",
+          "1",
+          "6",
           "5"
         ],
-        "correctAnswer": "4",
-        "hint": "Four plus four is eight!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_NUMBERS_L122_Q3",
-        "instruction": "Sharing means...",
-        "question": "Division",
-        "options": [
-          "Equal Groups",
-          "Taking Away",
-          "Adding"
-        ],
-        "correctAnswer": "Equal Groups",
-        "hint": "Division is making equal groups!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 5.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 123,
     "quests": [
       {
-        "id": "KID_NUMBERS_L123_Q1",
-        "instruction": "Share 10 fish between 2 cats. How many each?",
-        "question": "10 ÷ 2",
+        "id": "KIDS_NUMBERS_L123_Q1",
+        "gameType": "numbers",
+        "level": 123,
+        "instruction": "Touch the number digit matching: \"Four\"!",
+        "question": "Four",
+        "correctAnswer": "4",
         "options": [
-          "4",
+          "3",
+          "10",
+          "4"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Count the items up to 4.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L123_Q2",
+        "gameType": "numbers",
+        "level": 123,
+        "instruction": "Touch the number digit matching: \"Five\"!",
+        "question": "Five",
+        "correctAnswer": "5",
+        "options": [
           "5",
+          "4",
+          "8"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 5.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L123_Q3",
+        "gameType": "numbers",
+        "level": 123,
+        "instruction": "Touch the number digit matching: \"Six\"!",
+        "question": "Six",
+        "correctAnswer": "6",
+        "options": [
+          "8",
+          "4",
           "6"
         ],
-        "correctAnswer": "5",
-        "hint": "Five plus five is ten!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
-      },
-      {
-        "id": "KID_NUMBERS_L123_Q2",
-        "instruction": "Divide 12 into 2 groups. How many in each?",
-        "question": "12 ÷ 2",
-        "options": [
-          "5",
-          "6",
-          "7"
-        ],
-        "correctAnswer": "6",
-        "hint": "Double six is twelve!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
-      },
-      {
-        "id": "KID_NUMBERS_L123_Q3",
-        "instruction": "Which is 10 shared by 2?",
-        "question": "10 ÷ 2",
-        "options": [
-          "5",
-          "2",
-          "10"
-        ],
-        "correctAnswer": "5",
-        "hint": "One hand for each cat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Count the items up to 6.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 124,
     "quests": [
       {
-        "id": "KID_NUMBERS_L124_Q1",
-        "instruction": "The Division Symbol: What does '÷' mean?",
-        "question": "8 ÷ 2",
-        "options": [
-          "Share Equally",
-          "Add Together",
-          "Bigger Than"
-        ],
-        "correctAnswer": "Share Equally",
-        "hint": "The dash with dots means sharing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
-      },
-      {
-        "id": "KID_NUMBERS_L124_Q2",
-        "instruction": "Share 20 coins between 2 piggy banks.",
-        "question": "20 ÷ 2",
+        "id": "KIDS_NUMBERS_L124_Q1",
+        "gameType": "numbers",
+        "level": 124,
+        "instruction": "Touch the number digit matching: \"Five\"!",
+        "question": "Five",
+        "correctAnswer": "5",
         "options": [
           "5",
-          "10",
-          "20"
+          "9",
+          "3"
         ],
-        "correctAnswer": "10",
-        "hint": "Ten plus ten is twenty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 5.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L124_Q3",
-        "instruction": "If you share 0 cookies, how many does each get?",
-        "question": "0 ÷ 5",
+        "id": "KIDS_NUMBERS_L124_Q2",
+        "gameType": "numbers",
+        "level": 124,
+        "instruction": "Touch the number digit matching: \"Six\"!",
+        "question": "Six",
+        "correctAnswer": "6",
         "options": [
-          "0",
-          "5",
+          "14",
+          "15",
+          "6"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 6.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L124_Q3",
+        "gameType": "numbers",
+        "level": 124,
+        "instruction": "Touch the number digit matching: \"Seven\"!",
+        "question": "Seven",
+        "correctAnswer": "7",
+        "options": [
+          "7",
+          "12",
           "1"
         ],
-        "correctAnswer": "0",
-        "hint": "If you start with nothing, you end with nothing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 7.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 125,
     "quests": [
       {
-        "id": "KID_NUMBERS_L125_Q1",
-        "instruction": "What is HALF of 4?",
-        "question": "1/2 of 4",
+        "id": "KIDS_NUMBERS_L125_Q1",
+        "gameType": "numbers",
+        "level": 125,
+        "instruction": "Touch the number digit matching: \"Six\"!",
+        "question": "Six",
+        "correctAnswer": "6",
         "options": [
-          "1",
-          "2",
-          "3"
-        ],
-        "correctAnswer": "2",
-        "hint": "Cut four in the middle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
-      },
-      {
-        "id": "KID_NUMBERS_L125_Q2",
-        "instruction": "What is HALF of 6?",
-        "question": "1/2 of 6",
-        "options": [
-          "2",
           "3",
-          "4"
-        ],
-        "correctAnswer": "3",
-        "hint": "Cut six in the middle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
-      },
-      {
-        "id": "KID_NUMBERS_L125_Q3",
-        "instruction": "What is HALF of 10?",
-        "question": "1/2 of 10",
-        "options": [
-          "4",
-          "5",
+          "8",
           "6"
         ],
-        "correctAnswer": "5",
-        "hint": "One hand out of two!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 6.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L125_Q2",
+        "gameType": "numbers",
+        "level": 125,
+        "instruction": "Touch the number digit matching: \"Seven\"!",
+        "question": "Seven",
+        "correctAnswer": "7",
+        "options": [
+          "7",
+          "1",
+          "8"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 7.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L125_Q3",
+        "gameType": "numbers",
+        "level": 125,
+        "instruction": "Touch the number digit matching: \"Eight\"!",
+        "question": "Eight",
+        "correctAnswer": "8",
+        "options": [
+          "8",
+          "10",
+          "14"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 8.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,52 +373,73 @@
     "level": 126,
     "quests": [
       {
-        "id": "KID_NUMBERS_L126_Q1",
-        "instruction": "Share 6 toys among 3 friends. How many each?",
-        "question": "6 ÷ 3",
+        "id": "KIDS_NUMBERS_L126_Q1",
+        "gameType": "numbers",
+        "level": 126,
+        "instruction": "Touch the number digit matching: \"Seven\"!",
+        "question": "Seven",
+        "correctAnswer": "7",
         "options": [
-          "1",
-          "2",
-          "3"
+          "7",
+          "5",
+          "11"
         ],
-        "correctAnswer": "2",
-        "hint": "2 + 2 + 2 = 6!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 7.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L126_Q2",
-        "instruction": "Share 9 cupcakes among 3 friends. How many each?",
-        "question": "9 ÷ 3",
+        "id": "KIDS_NUMBERS_L126_Q2",
+        "gameType": "numbers",
+        "level": 126,
+        "instruction": "Touch the number digit matching: \"Eight\"!",
+        "question": "Eight",
+        "correctAnswer": "8",
         "options": [
-          "2",
-          "3",
-          "4"
+          "10",
+          "8",
+          "1"
         ],
-        "correctAnswer": "3",
-        "hint": "3 + 3 + 3 = 9!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 8.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L126_Q3",
-        "instruction": "Share 3 hats among 3 friends. How many each?",
-        "question": "3 ÷ 3",
+        "id": "KIDS_NUMBERS_L126_Q3",
+        "gameType": "numbers",
+        "level": 126,
+        "instruction": "Touch the number digit matching: \"Nine\"!",
+        "question": "Nine",
+        "correctAnswer": "9",
         "options": [
-          "0",
-          "1",
-          "3"
+          "9",
+          "13",
+          "8"
         ],
-        "correctAnswer": "1",
-        "hint": "Everyone gets one!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 9.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -321,52 +447,73 @@
     "level": 127,
     "quests": [
       {
-        "id": "KID_NUMBERS_L127_Q1",
-        "instruction": "Divide 8 into groups of 4. How many groups?",
-        "question": "8 ÷ 4",
+        "id": "KIDS_NUMBERS_L127_Q1",
+        "gameType": "numbers",
+        "level": 127,
+        "instruction": "Touch the number digit matching: \"Eight\"!",
+        "question": "Eight",
+        "correctAnswer": "8",
         "options": [
-          "1",
-          "2",
-          "3"
+          "4",
+          "15",
+          "8"
         ],
-        "correctAnswer": "2",
-        "hint": "How many 4s in 8?",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Count the items up to 8.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L127_Q2",
-        "instruction": "Divide 12 into groups of 4. How many groups?",
-        "question": "12 ÷ 4",
+        "id": "KIDS_NUMBERS_L127_Q2",
+        "gameType": "numbers",
+        "level": 127,
+        "instruction": "Touch the number digit matching: \"Nine\"!",
+        "question": "Nine",
+        "correctAnswer": "9",
         "options": [
           "2",
-          "3",
+          "1",
+          "9"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Count the items up to 9.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L127_Q3",
+        "gameType": "numbers",
+        "level": 127,
+        "instruction": "Touch the number digit matching: \"Ten\"!",
+        "question": "Ten",
+        "correctAnswer": "10",
+        "options": [
+          "10",
+          "7",
           "4"
         ],
-        "correctAnswer": "3",
-        "hint": "Count by 4s: 4, 8, 12!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_NUMBERS_L127_Q3",
-        "instruction": "What is 10 shared by 5?",
-        "question": "10 ÷ 5",
-        "options": [
-          "2",
-          "5",
-          "1"
-        ],
-        "correctAnswer": "2",
-        "hint": "How many 5s in 10?",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Count the items up to 10.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -374,52 +521,73 @@
     "level": 128,
     "quests": [
       {
-        "id": "KID_NUMBERS_L128_Q1",
-        "instruction": "Sharing 15 by 3 friends. How many each?",
-        "question": "15 ÷ 3",
+        "id": "KIDS_NUMBERS_L128_Q1",
+        "gameType": "numbers",
+        "level": 128,
+        "instruction": "Touch the number digit matching: \"Nine\"!",
+        "question": "Nine",
+        "correctAnswer": "9",
         "options": [
-          "4",
-          "5",
-          "6"
+          "9",
+          "12",
+          "8"
         ],
-        "correctAnswer": "5",
-        "hint": "Count by 5s: 5, 10, 15!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 9.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L128_Q2",
-        "instruction": "Sharing 15 by 5 friends. How many each?",
-        "question": "15 ÷ 5",
+        "id": "KIDS_NUMBERS_L128_Q2",
+        "gameType": "numbers",
+        "level": 128,
+        "instruction": "Touch the number digit matching: \"Ten\"!",
+        "question": "Ten",
+        "correctAnswer": "10",
         "options": [
-          "2",
-          "3",
-          "5"
+          "7",
+          "10",
+          "16"
         ],
-        "correctAnswer": "3",
-        "hint": "Count by 3s: 3, 6, 9, 12, 15!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 10.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L128_Q3",
-        "instruction": "Sharing 20 by 10 friends. How many each?",
-        "question": "20 ÷ 10",
+        "id": "KIDS_NUMBERS_L128_Q3",
+        "gameType": "numbers",
+        "level": 128,
+        "instruction": "Touch the number digit matching: \"Eleven\"!",
+        "question": "Eleven",
+        "correctAnswer": "11",
         "options": [
-          "2",
-          "5",
-          "10"
+          "11",
+          "8",
+          "14"
         ],
-        "correctAnswer": "2",
-        "hint": "Two tens make twenty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Count the items up to 11.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -427,52 +595,73 @@
     "level": 129,
     "quests": [
       {
-        "id": "KID_NUMBERS_L129_Q1",
-        "instruction": "Relationship: If 2 x 3 = 6, then 6 ÷ 2 = ?",
-        "question": "6 ÷ 2",
+        "id": "KIDS_NUMBERS_L129_Q1",
+        "gameType": "numbers",
+        "level": 129,
+        "instruction": "Touch the number digit matching: \"Ten\"!",
+        "question": "Ten",
+        "correctAnswer": "10",
         "options": [
-          "2",
-          "3",
-          "6"
-        ],
-        "correctAnswer": "3",
-        "hint": "Look at the first math sentence!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_NUMBERS_L129_Q2",
-        "instruction": "Relationship: If 2 x 5 = 10, then 10 ÷ 5 = ?",
-        "question": "10 ÷ 5",
-        "options": [
-          "2",
-          "5",
+          "15",
+          "4",
           "10"
         ],
-        "correctAnswer": "2",
-        "hint": "Multiplication and Division are opposites!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 10.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L129_Q3",
-        "instruction": "Relationship: If 3 x 4 = 12, then 12 ÷ 3 = ?",
-        "question": "12 ÷ 3",
+        "id": "KIDS_NUMBERS_L129_Q2",
+        "gameType": "numbers",
+        "level": 129,
+        "instruction": "Touch the number digit matching: \"Eleven\"!",
+        "question": "Eleven",
+        "correctAnswer": "11",
         "options": [
-          "3",
-          "4",
-          "7"
+          "11",
+          "7",
+          "1"
         ],
-        "correctAnswer": "4",
-        "hint": "The numbers stay the same in the family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 11.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L129_Q3",
+        "gameType": "numbers",
+        "level": 129,
+        "instruction": "Touch the number digit matching: \"Twelve\"!",
+        "question": "Twelve",
+        "correctAnswer": "12",
+        "options": [
+          "12",
+          "4",
+          "11"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Count the items up to 12.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -480,52 +669,73 @@
     "level": 130,
     "quests": [
       {
-        "id": "KID_NUMBERS_L130_Q1",
-        "instruction": "Level 130 Challenge: Sharing!",
-        "question": "10 shared by 2 = ?",
+        "id": "KIDS_NUMBERS_L130_Q1",
+        "gameType": "numbers",
+        "level": 130,
+        "instruction": "Touch the number digit matching: \"Eleven\"!",
+        "question": "Eleven",
+        "correctAnswer": "11",
         "options": [
-          "2",
-          "5",
-          "10"
+          "7",
+          "11",
+          "12"
         ],
-        "correctAnswer": "5",
-        "hint": "Five plus five!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 11.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L130_Q2",
-        "instruction": "Level 130 Challenge: The Half Rule!",
-        "question": "Half of 20 is...?",
+        "id": "KIDS_NUMBERS_L130_Q2",
+        "gameType": "numbers",
+        "level": 130,
+        "instruction": "Touch the number digit matching: \"Twelve\"!",
+        "question": "Twelve",
+        "correctAnswer": "12",
         "options": [
-          "5",
-          "10",
-          "15"
-        ],
-        "correctAnswer": "10",
-        "hint": "Ten plus ten is twenty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_NUMBERS_L130_Q3",
-        "instruction": "Level 130 Challenge: Mastery!",
-        "question": "8 shared by 4 = ?",
-        "options": [
+          "7",
           "1",
-          "2",
-          "4"
+          "12"
         ],
-        "correctAnswer": "2",
-        "hint": "You are a sharing pro!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 12.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L130_Q3",
+        "gameType": "numbers",
+        "level": 130,
+        "instruction": "Touch the number digit matching: \"Thirteen\"!",
+        "question": "Thirteen",
+        "correctAnswer": "13",
+        "options": [
+          "4",
+          "1",
+          "13"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 13.",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

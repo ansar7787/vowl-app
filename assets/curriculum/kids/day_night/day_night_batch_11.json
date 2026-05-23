@@ -3,50 +3,70 @@
     "level": 101,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L101_Q1",
-        "instruction": "Find the EARTH",
-        "question": "🌍✨",
+        "id": "KIDS_DAY_NIGHT_L101_Q1",
+        "gameType": "day_night",
+        "level": 101,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Earth",
-          "Mars",
-          "Saturn"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Earth",
-        "hint": "Earth is our beautiful home! It looks like a blue and green ball from space!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L101_Q2",
-        "instruction": "Which one is our HOME?",
-        "question": "🌍 vs 🪐",
+        "id": "KIDS_DAY_NIGHT_L101_Q2",
+        "gameType": "day_night",
+        "level": 101,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Earth",
-          "Saturn"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Earth",
-        "hint": "We live on the planet Earth with all our friends and animals!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L101_Q3",
-        "instruction": "Is Earth blue and green?",
-        "question": "🌍🟦🟩❓",
+        "id": "KIDS_DAY_NIGHT_L101_Q3",
+        "gameType": "day_night",
+        "level": 101,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, water and land!",
-          "No, it's purple"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, water and land!",
-        "hint": "The blue parts are the big oceans, and the green parts are the land where we live!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +74,70 @@
     "level": 102,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L102_Q1",
-        "instruction": "Find SATURN",
-        "question": "🪐✨",
+        "id": "KIDS_DAY_NIGHT_L102_Q1",
+        "gameType": "day_night",
+        "level": 102,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Saturn",
-          "Earth",
-          "Mars"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Saturn",
-        "hint": "Saturn is a giant planet that has beautiful rings spinning all around it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L102_Q2",
-        "instruction": "Which one has RINGS?",
-        "question": "🪐 vs 🌍",
+        "id": "KIDS_DAY_NIGHT_L102_Q2",
+        "gameType": "day_night",
+        "level": 102,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Saturn",
-          "Earth"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Saturn",
-        "hint": "Saturn's rings are made of millions of tiny pieces of ice and rock!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L102_Q3",
-        "instruction": "Are Saturn's rings icy?",
-        "question": "🪐🧊❓",
+        "id": "KIDS_DAY_NIGHT_L102_Q3",
+        "gameType": "day_night",
+        "level": 102,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, ice and rock!",
-          "No, they are candy"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, ice and rock!",
-        "hint": "The rings are like a giant icy hula-hoop around the planet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +145,70 @@
     "level": 103,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L103_Q1",
-        "instruction": "Find MARS",
-        "question": "🔴✨",
+        "id": "KIDS_DAY_NIGHT_L103_Q1",
+        "gameType": "day_night",
+        "level": 103,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Mars",
-          "Earth",
-          "Moon"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Mars",
-        "hint": "Mars is known as the 'Red Planet' because it is covered in rusty red dust!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L103_Q2",
-        "instruction": "Which one is the RED planet?",
-        "question": "🔴 vs 🌍",
+        "id": "KIDS_DAY_NIGHT_L103_Q2",
+        "gameType": "day_night",
+        "level": 103,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Mars",
-          "Earth"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Mars",
-        "hint": "Mars looks like a bright red dot in the night sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L103_Q3",
-        "instruction": "Is Mars dusty?",
-        "question": "🔴🏜️❓",
+        "id": "KIDS_DAY_NIGHT_L103_Q3",
+        "gameType": "day_night",
+        "level": 103,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, red dust!",
-          "No, it's a pool"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, red dust!",
-        "hint": "Mars has giant dust storms that can cover the whole planet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +216,70 @@
     "level": 104,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L104_Q1",
-        "instruction": "Find the SPACE ROCKET",
-        "question": "🚀✨",
+        "id": "KIDS_DAY_NIGHT_L104_Q1",
+        "gameType": "day_night",
+        "level": 104,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Rocket",
-          "Car",
-          "Bus"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Rocket",
-        "hint": "A rocket has big fire engines that help it blast off away from Earth and into space!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L104_Q2",
-        "instruction": "Which one goes to SPACE?",
-        "question": "🚀 vs 🚌",
+        "id": "KIDS_DAY_NIGHT_L104_Q2",
+        "gameType": "day_night",
+        "level": 104,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Rocket",
-          "Bus"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Rocket",
-        "hint": "Rockets fly much higher and faster than any plane or bus!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L104_Q3",
-        "instruction": "Does a rocket have FIRE?",
-        "question": "🚀🔥❓",
+        "id": "KIDS_DAY_NIGHT_L104_Q3",
+        "gameType": "day_night",
+        "level": 104,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, for power!",
-          "No, it uses juice"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, for power!",
-        "hint": "The fire and smoke come out of the bottom to push the rocket up high!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,50 +287,70 @@
     "level": 105,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L105_Q1",
-        "instruction": "Logic: Does Earth have PEOPLE?",
-        "question": "🌍👫❓",
+        "id": "KIDS_DAY_NIGHT_L105_Q1",
+        "gameType": "day_night",
+        "level": 105,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Yes, billions of us!",
-          "No, only rocks",
-          "Only for Moon"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, billions of us!",
-        "hint": "Earth is the perfect place for people, plants, and animals to live!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L105_Q2",
-        "instruction": "Logic: Are there robots on MARS?",
-        "question": "🔴🤖❓",
+        "id": "KIDS_DAY_NIGHT_L105_Q2",
+        "gameType": "day_night",
+        "level": 105,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Yes, called Rovers!",
-          "No, only cats"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, called Rovers!",
-        "hint": "We sent special robot cars to Mars to take pictures and explore the red rocks!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L105_Q3",
-        "instruction": "Logic: Is there air in SPACE?",
-        "question": "🌌🌬️❌❓",
+        "id": "KIDS_DAY_NIGHT_L105_Q3",
+        "gameType": "day_night",
+        "level": 105,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "No, it's empty!",
-          "Yes, lots of wind"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "No, it's empty!",
-        "hint": "Space doesn't have any air, so astronauts have to bring their own in their suits!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -258,49 +358,70 @@
     "level": 106,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L106_Q1",
-        "instruction": "Search: Find the planet with RINGS",
-        "question": "🪐💍 vs 🌍",
+        "id": "KIDS_DAY_NIGHT_L106_Q1",
+        "gameType": "day_night",
+        "level": 106,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Saturn",
-          "Earth"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Saturn",
-        "hint": "Look for the beautiful circles around the planet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L106_Q2",
-        "instruction": "Search: Find the RED ROVER",
-        "question": "🔴🤖 vs 🚀",
+        "id": "KIDS_DAY_NIGHT_L106_Q2",
+        "gameType": "day_night",
+        "level": 106,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Mars Robot",
-          "Big Rocket"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Mars Robot",
-        "hint": "The little robot car is exploring the red surface of Mars!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L106_Q3",
-        "instruction": "Search: Find the planet EARTH",
-        "question": "🌍🟦 vs 🪐",
+        "id": "KIDS_DAY_NIGHT_L106_Q3",
+        "gameType": "day_night",
+        "level": 106,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Our Home",
-          "Ring Planet"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Our Home",
-        "hint": "Look for the blue water and green clouds on our planet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -308,52 +429,70 @@
     "level": 107,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L107_Q1",
-        "instruction": "Review: Who has the blue water?",
-        "question": "🌍 Review",
+        "id": "KIDS_DAY_NIGHT_L107_Q1",
+        "gameType": "day_night",
+        "level": 107,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Earth",
-          "Mars",
-          "Saturn"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Earth",
-        "hint": "The planet where we all live!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L107_Q2",
-        "instruction": "Review: Who has the red dust?",
-        "question": "🔴 Review",
+        "id": "KIDS_DAY_NIGHT_L107_Q2",
+        "gameType": "day_night",
+        "level": 107,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Mars",
-          "Saturn",
-          "Earth"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Mars",
-        "hint": "The dusty red neighbor planet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L107_Q3",
-        "instruction": "Review: Who has the icy rings?",
-        "question": "🪐 Review",
+        "id": "KIDS_DAY_NIGHT_L107_Q3",
+        "gameType": "day_night",
+        "level": 107,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Saturn",
-          "Earth",
-          "Mars"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Saturn",
-        "hint": "The big planet with the spinning circles!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -361,49 +500,70 @@
     "level": 108,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L108_Q1",
-        "instruction": "Which one is for space exploring?",
-        "question": "🚀🧑‍🚀 vs 🚌🏫",
+        "id": "KIDS_DAY_NIGHT_L108_Q1",
+        "gameType": "day_night",
+        "level": 108,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Going to Planets",
-          "Going to School"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Going to Planets",
-        "hint": "We take a rocket and a space suit to see other worlds!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L108_Q2",
-        "instruction": "Which one is for Martian robots?",
-        "question": "🔴🤖 vs 🐕",
+        "id": "KIDS_DAY_NIGHT_L108_Q2",
+        "gameType": "day_night",
+        "level": 108,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Mars Rover",
-          "Pet Dog"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Mars Rover",
-        "hint": "Robots explore Mars because it is too far for people to visit yet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L108_Q3",
-        "instruction": "Is Earth very PRETTY?",
-        "question": "🌍✨💎❓",
+        "id": "KIDS_DAY_NIGHT_L108_Q3",
+        "gameType": "day_night",
+        "level": 108,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, a blue marble!",
-          "No, it's ugly"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, a blue marble!",
-        "hint": "From space, Earth looks like a beautiful sparkling blue marble in the dark!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -411,49 +571,70 @@
     "level": 109,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L109_Q1",
-        "instruction": "Logic: Do planets go around the SUN?",
-        "question": "☀️🪐❓",
+        "id": "KIDS_DAY_NIGHT_L109_Q1",
+        "gameType": "day_night",
+        "level": 109,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Yes, in big circles!",
-          "No, they go to Moon"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, in big circles!",
-        "hint": "The Sun is like a giant magnet that keeps all the planets spinning around it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L109_Q2",
-        "instruction": "Logic: Is Jupiter a GIANT planet?",
-        "question": "🪐🐘❓",
+        "id": "KIDS_DAY_NIGHT_L109_Q2",
+        "gameType": "day_night",
+        "level": 109,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Yes, the biggest!",
-          "No, it's tiny"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, the biggest!",
-        "hint": "Jupiter is so big that all the other planets could fit inside it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L109_Q3",
-        "instruction": "Logic: Is the Moon a PLANET?",
-        "question": "🌙🪐❓",
+        "id": "KIDS_DAY_NIGHT_L109_Q3",
+        "gameType": "day_night",
+        "level": 109,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "No, it's a moon!",
-          "Yes, it's a planet"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "No, it's a moon!",
-        "hint": "Moons go around planets, and planets go around the sun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -461,51 +642,70 @@
     "level": 110,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L110_Q1",
-        "instruction": "Level 110 Challenge: Planet Explorer!",
-        "question": "Find the planet EARTH",
+        "id": "KIDS_DAY_NIGHT_L110_Q1",
+        "gameType": "day_night",
+        "level": 110,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "🌍",
-          "🔴",
-          "🪐"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "🌍",
-        "hint": "The blue and green home!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L110_Q2",
-        "instruction": "Level 110 Challenge: Planet Explorer!",
-        "question": "Find the ringed planet SATURN",
+        "id": "KIDS_DAY_NIGHT_L110_Q2",
+        "gameType": "day_night",
+        "level": 110,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "🪐",
-          "🌍",
-          "🚀"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "🪐",
-        "hint": "The one with the circles!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L110_Q3",
-        "instruction": "Level 110 Challenge: Mastery!",
-        "question": "Are you a Planet Explorer?",
+        "id": "KIDS_DAY_NIGHT_L110_Q3",
+        "gameType": "day_night",
+        "level": 110,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "YES!",
-          "No"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 110!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

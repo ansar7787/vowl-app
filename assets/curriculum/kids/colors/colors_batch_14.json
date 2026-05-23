@@ -3,51 +3,73 @@
     "level": 131,
     "quests": [
       {
-        "id": "KID_COLORS_L131_Q1",
-        "instruction": "Emotions: Which color feels HAPPY?",
-        "question": "😊",
-        "options": [
-          "Yellow",
-          "Gray",
-          "Black"
-        ],
+        "id": "KIDS_COLORS_L131_Q1",
+        "gameType": "colors",
+        "level": 131,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
         "correctAnswer": "Yellow",
-        "hint": "Yellow is bright and happy like a smile!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_COLORS_L131_Q2",
-        "instruction": "Emotions: Which color feels EXCITING?",
-        "question": "⚡",
         "options": [
+          "Red",
           "Orange",
-          "Blue",
-          "White"
+          "Yellow"
         ],
-        "correctAnswer": "Orange",
-        "hint": "Orange is full of energy and fun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L131_Q3",
-        "instruction": "Is Pink a sweet and kind color?",
-        "question": "💗",
+        "id": "KIDS_COLORS_L131_Q2",
+        "gameType": "colors",
+        "level": 131,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Yes",
-          "No"
+          "Red",
+          "Pink",
+          "Blue"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Pink feels soft, sweet, and kind!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L131_Q3",
+        "gameType": "colors",
+        "level": 131,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
+        "options": [
+          "Pink",
+          "Green",
+          "Yellow"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -55,51 +77,73 @@
     "level": 132,
     "quests": [
       {
-        "id": "KID_COLORS_L132_Q1",
-        "instruction": "Emotions: Which color feels CALM?",
-        "question": "🧘",
+        "id": "KIDS_COLORS_L132_Q1",
+        "gameType": "colors",
+        "level": 132,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Blue",
-          "Red",
-          "Yellow"
-        ],
-        "correctAnswer": "Blue",
-        "hint": "Blue feels quiet like the sleepy sea!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
-      },
-      {
-        "id": "KID_COLORS_L132_Q2",
-        "instruction": "Emotions: Which color feels SLEEPY?",
-        "question": "💤",
-        "options": [
-          "Purple",
           "Orange",
-          "Red"
+          "Blue",
+          "Green"
         ],
-        "correctAnswer": "Purple",
-        "hint": "Purple is a quiet color for sweet dreams!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L132_Q3",
-        "instruction": "Is Gray a quiet and soft color?",
-        "question": "🔘",
+        "id": "KIDS_COLORS_L132_Q2",
+        "gameType": "colors",
+        "level": 132,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Yes",
-          "No"
+          "Red",
+          "Yellow",
+          "Purple"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Gray is quiet like a rainy afternoon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L132_Q3",
+        "gameType": "colors",
+        "level": 132,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
+        "options": [
+          "Pink",
+          "Red",
+          "Green"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -107,51 +151,73 @@
     "level": 133,
     "quests": [
       {
-        "id": "KID_COLORS_L133_Q1",
-        "instruction": "Feelings: Which color is for ANGER?",
-        "question": "😡",
-        "options": [
-          "Red",
-          "Pink",
-          "Blue"
-        ],
+        "id": "KIDS_COLORS_L133_Q1",
+        "gameType": "colors",
+        "level": 133,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
         "correctAnswer": "Red",
-        "hint": "Red is a very strong and hot color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "options": [
+          "Orange",
+          "Green",
+          "Red"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L133_Q2",
-        "instruction": "Feelings: Which color is for SADNESS?",
-        "question": "😢",
+        "id": "KIDS_COLORS_L133_Q2",
+        "gameType": "colors",
+        "level": 133,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Blue/Gray",
           "Yellow",
+          "Blue",
           "Orange"
         ],
-        "correctAnswer": "Blue/Gray",
-        "hint": "Quiet colors often match quiet feelings!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L133_Q3",
-        "instruction": "Can colors change how you feel?",
-        "question": "🎨 Magic",
+        "id": "KIDS_COLORS_L133_Q3",
+        "gameType": "colors",
+        "level": 133,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Yes!",
-          "No"
+          "Blue",
+          "Red",
+          "Orange"
         ],
-        "correctAnswer": "Yes!",
-        "hint": "Looking at bright colors can make you happy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -159,52 +225,73 @@
     "level": 134,
     "quests": [
       {
-        "id": "KID_COLORS_L134_Q1",
-        "instruction": "Logic: Match the Happy room",
-        "question": "Choice",
+        "id": "KIDS_COLORS_L134_Q1",
+        "gameType": "colors",
+        "level": 134,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Bright Yellow",
-          "Dark Black",
-          "Deep Navy"
+          "Orange",
+          "Red",
+          "Green"
         ],
-        "correctAnswer": "Bright Yellow",
-        "hint": "Yellow makes a room feel sunny and happy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L134_Q2",
-        "instruction": "Logic: Match the Calm room",
-        "question": "Choice",
+        "id": "KIDS_COLORS_L134_Q2",
+        "gameType": "colors",
+        "level": 134,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Soft Blue",
-          "Bright Red",
-          "Neon Orange"
+          "Orange",
+          "Pink",
+          "Green"
         ],
-        "correctAnswer": "Soft Blue",
-        "hint": "Soft blue makes a room feel peaceful!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L134_Q3",
-        "instruction": "Logic: Match the Energetic room",
-        "question": "Choice",
+        "id": "KIDS_COLORS_L134_Q3",
+        "gameType": "colors",
+        "level": 134,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Bright Orange",
-          "Soft Gray",
-          "Dark Purple"
+          "Purple",
+          "Red",
+          "Green"
         ],
-        "correctAnswer": "Bright Orange",
-        "hint": "Orange is full of energy and excitement!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -212,52 +299,73 @@
     "level": 135,
     "quests": [
       {
-        "id": "KID_COLORS_L135_Q1",
-        "instruction": "Nature Feelings: Fresh and Alive?",
-        "question": "🍃",
+        "id": "KIDS_COLORS_L135_Q1",
+        "gameType": "colors",
+        "level": 135,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Green",
-          "Black",
-          "Gray"
-        ],
-        "correctAnswer": "Green",
-        "hint": "Green feels fresh like a garden!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
-      },
-      {
-        "id": "KID_COLORS_L135_Q2",
-        "instruction": "Nature Feelings: Strong and Solid?",
-        "question": "🟫",
-        "options": [
-          "Brown",
+          "Yellow",
           "Pink",
-          "Yellow"
+          "Blue"
         ],
-        "correctAnswer": "Brown",
-        "hint": "Brown feels strong like a big tree trunk!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L135_Q3",
-        "instruction": "Nature Feelings: Mysterious and Deep?",
-        "question": "🌌",
+        "id": "KIDS_COLORS_L135_Q2",
+        "gameType": "colors",
+        "level": 135,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Deep Indigo",
-          "Bright Yellow",
-          "White"
+          "Red",
+          "Yellow",
+          "Blue"
         ],
-        "correctAnswer": "Deep Indigo",
-        "hint": "Indigo feels like a mysterious night sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L135_Q3",
+        "gameType": "colors",
+        "level": 135,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
+        "options": [
+          "Yellow",
+          "Pink",
+          "Orange"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -265,49 +373,73 @@
     "level": 136,
     "quests": [
       {
-        "id": "KID_COLORS_L136_Q1",
-        "instruction": "Comparison: Which is more EXCITING?",
-        "question": "🟡 vs 🔘",
-        "options": [
-          "Yellow",
-          "Gray"
-        ],
-        "correctAnswer": "Yellow",
-        "hint": "Bright colors are more exciting!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_COLORS_L136_Q2",
-        "instruction": "Comparison: Which is more PEACEFUL?",
-        "question": "🔵 vs 🔴",
+        "id": "KIDS_COLORS_L136_Q1",
+        "gameType": "colors",
+        "level": 136,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
           "Blue",
-          "Red"
+          "Red",
+          "Yellow"
         ],
-        "correctAnswer": "Blue",
-        "hint": "Cool colors are more peaceful!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L136_Q3",
-        "instruction": "Comparison: Which is more JOYFUL?",
-        "question": "💗 vs ⚫",
+        "id": "KIDS_COLORS_L136_Q2",
+        "gameType": "colors",
+        "level": 136,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Pink",
-          "Black"
+          "Yellow",
+          "Red",
+          "Green"
         ],
-        "correctAnswer": "Pink",
-        "hint": "Pink feels more joyful and sweet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L136_Q3",
+        "gameType": "colors",
+        "level": 136,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
+        "options": [
+          "Green",
+          "Purple",
+          "Orange"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -315,52 +447,73 @@
     "level": 137,
     "quests": [
       {
-        "id": "KID_COLORS_L137_Q1",
-        "instruction": "Artist: Use 🔴 for a scene of...?",
-        "question": "Emotion",
+        "id": "KIDS_COLORS_L137_Q1",
+        "gameType": "colors",
+        "level": 137,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Action/Power",
-          "Sleep/Rest",
-          "Clouds"
+          "Purple",
+          "Yellow",
+          "Red"
         ],
-        "correctAnswer": "Action/Power",
-        "hint": "Red is a color of strong action!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L137_Q2",
-        "instruction": "Artist: Use 🟣 for a scene of...?",
-        "question": "Emotion",
+        "id": "KIDS_COLORS_L137_Q2",
+        "gameType": "colors",
+        "level": 137,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Magic/Dreams",
-          "Sunlight",
-          "Dirt"
+          "Green",
+          "Purple",
+          "Pink"
         ],
-        "correctAnswer": "Magic/Dreams",
-        "hint": "Purple is the color of magic!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L137_Q3",
-        "instruction": "Artist: Use ⚪ for a scene of...?",
-        "question": "Emotion",
+        "id": "KIDS_COLORS_L137_Q3",
+        "gameType": "colors",
+        "level": 137,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Peace/Purity",
-          "Night",
-          "Mud"
+          "Orange",
+          "Yellow",
+          "Red"
         ],
-        "correctAnswer": "Peace/Purity",
-        "hint": "White feels clean and peaceful!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -368,52 +521,73 @@
     "level": 138,
     "quests": [
       {
-        "id": "KID_COLORS_L138_Q1",
-        "instruction": "Contrast: Hot vs Cold feelings?",
-        "question": "🔴 vs 🔵",
+        "id": "KIDS_COLORS_L138_Q1",
+        "gameType": "colors",
+        "level": 138,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Hot vs Cold",
-          "Dry vs Wet",
-          "Old vs New"
+          "Yellow",
+          "Red",
+          "Blue"
         ],
-        "correctAnswer": "Hot vs Cold",
-        "hint": "Red feels hot, blue feels cold!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L138_Q2",
-        "instruction": "Identify: The 'Happy' group?",
-        "question": "Selection",
+        "id": "KIDS_COLORS_L138_Q2",
+        "gameType": "colors",
+        "level": 138,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "🟡 🟠 💗",
-          "⚫ 🔘 🟤",
-          "🔵 🟢 🟣"
+          "Purple",
+          "Pink",
+          "Blue"
         ],
-        "correctAnswer": "🟡 🟠 💗",
-        "hint": "The bright and warm colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L138_Q3",
-        "instruction": "Identify: The 'Quiet' group?",
-        "question": "Selection",
+        "id": "KIDS_COLORS_L138_Q3",
+        "gameType": "colors",
+        "level": 138,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "🔵 🔘 🟣",
-          "🔴 🟡 🟠",
-          "⚪ 🟢 🟡"
+          "Pink",
+          "Orange",
+          "Green"
         ],
-        "correctAnswer": "🔵 🔘 🟣",
-        "hint": "The cool and deep colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -421,49 +595,73 @@
     "level": 139,
     "quests": [
       {
-        "id": "KID_COLORS_L139_Q1",
-        "instruction": "Compare: Is Neon Orange very quiet?",
-        "question": "🟠⚡",
+        "id": "KIDS_COLORS_L139_Q1",
+        "gameType": "colors",
+        "level": 139,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "No, it's very loud!",
-          "Yes"
+          "Red",
+          "Green",
+          "Orange"
         ],
-        "correctAnswer": "No, it's very loud!",
-        "hint": "Neon colors are the loudest and most exciting!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L139_Q2",
-        "instruction": "Compare: Is Midnight Blue very loud?",
-        "question": "🌑🔵",
+        "id": "KIDS_COLORS_L139_Q2",
+        "gameType": "colors",
+        "level": 139,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "No, it's very quiet!",
-          "Yes"
+          "Purple",
+          "Blue",
+          "Orange"
         ],
-        "correctAnswer": "No, it's very quiet!",
-        "hint": "Deep dark colors are very quiet and serious!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L139_Q3",
-        "instruction": "Compare: Which is better for a Party?",
-        "question": "🎉",
+        "id": "KIDS_COLORS_L139_Q3",
+        "gameType": "colors",
+        "level": 139,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Bright Yellow",
-          "Dark Gray"
+          "Blue",
+          "Pink",
+          "Orange"
         ],
-        "correctAnswer": "Bright Yellow",
-        "hint": "Parties need happy, bright colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -471,51 +669,73 @@
     "level": 140,
     "quests": [
       {
-        "id": "KID_COLORS_L140_Q1",
-        "instruction": "Level 140 Challenge: Emotions!",
-        "question": "Which color is most PEACEFUL?",
+        "id": "KIDS_COLORS_L140_Q1",
+        "gameType": "colors",
+        "level": 140,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Soft Blue",
-          "Bright Red",
-          "Neon Yellow"
+          "Pink",
+          "Orange",
+          "Red"
         ],
-        "correctAnswer": "Soft Blue",
-        "hint": "Quiet and cool!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L140_Q2",
-        "instruction": "Level 140 Challenge: Emotions!",
-        "question": "Which color is most EXCITING?",
+        "id": "KIDS_COLORS_L140_Q2",
+        "gameType": "colors",
+        "level": 140,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Bright Orange",
-          "Soft Gray",
-          "Navy Blue"
+          "Yellow",
+          "Purple",
+          "Pink"
         ],
-        "correctAnswer": "Bright Orange",
-        "hint": "Loud and warm!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L140_Q3",
-        "instruction": "Level 140 Challenge: Mastery!",
-        "question": "Do colors have feelings?",
+        "id": "KIDS_COLORS_L140_Q3",
+        "gameType": "colors",
+        "level": 140,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "YES!",
-          "No"
+          "Pink",
+          "Orange",
+          "Blue"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You are a master of color emotions!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

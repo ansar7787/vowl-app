@@ -3,52 +3,73 @@
     "level": 61,
     "quests": [
       {
-        "id": "KID_NUMBERS_L61_Q1",
-        "instruction": "Skip Count by 5s: 🖐️ + 🖐️ = ?",
-        "question": "5, 10, ?",
+        "id": "KIDS_NUMBERS_L61_Q1",
+        "gameType": "numbers",
+        "level": 61,
+        "instruction": "Touch the number digit matching: \"Two\"!",
+        "question": "Two",
+        "correctAnswer": "2",
         "options": [
-          "11",
-          "15",
-          "20"
+          "8",
+          "6",
+          "2"
         ],
-        "correctAnswer": "15",
-        "hint": "Add five more to ten!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 2.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L61_Q2",
-        "instruction": "Which is the next number: 5, 10, 15...",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L61_Q2",
+        "gameType": "numbers",
+        "level": 61,
+        "instruction": "Touch the number digit matching: \"Three\"!",
+        "question": "Three",
+        "correctAnswer": "3",
         "options": [
           "16",
-          "20",
-          "25"
+          "13",
+          "3"
         ],
-        "correctAnswer": "20",
-        "hint": "Four high-fives make twenty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 3.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L61_Q3",
-        "instruction": "Count the petals (5 on each): 🌸🌸🌸",
-        "question": "5+5+5",
+        "id": "KIDS_NUMBERS_L61_Q3",
+        "gameType": "numbers",
+        "level": 61,
+        "instruction": "Touch the number digit matching: \"Four\"!",
+        "question": "Four",
+        "correctAnswer": "4",
         "options": [
-          "10",
-          "15",
-          "20"
+          "1",
+          "4",
+          "5"
         ],
-        "correctAnswer": "15",
-        "hint": "Three fives is fifteen!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Count the items up to 4.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 62,
     "quests": [
       {
-        "id": "KID_NUMBERS_L62_Q1",
-        "instruction": "Skip Count by 5s: 20, 25...",
-        "question": "?",
-        "options": [
-          "26",
-          "30",
-          "35"
-        ],
-        "correctAnswer": "30",
-        "hint": "Add five to twenty-five!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
-      },
-      {
-        "id": "KID_NUMBERS_L62_Q2",
-        "instruction": "Count the nickels (5 cents each): 🪙🪙🪙🪙",
-        "question": "4 x 5",
-        "options": [
-          "15",
-          "20",
-          "25"
-        ],
-        "correctAnswer": "20",
-        "hint": "Four fives make twenty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
-      },
-      {
-        "id": "KID_NUMBERS_L62_Q3",
-        "instruction": "Find the missing: 5, _, 15",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L62_Q1",
+        "gameType": "numbers",
+        "level": 62,
+        "instruction": "Touch the number digit matching: \"Three\"!",
+        "question": "Three",
+        "correctAnswer": "3",
         "options": [
           "6",
-          "10",
-          "20"
+          "3",
+          "8"
         ],
-        "correctAnswer": "10",
-        "hint": "What comes between 5 and 15 when counting by 5s?",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 3.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L62_Q2",
+        "gameType": "numbers",
+        "level": 62,
+        "instruction": "Touch the number digit matching: \"Four\"!",
+        "question": "Four",
+        "correctAnswer": "4",
+        "options": [
+          "4",
+          "10",
+          "2"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 4.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L62_Q3",
+        "gameType": "numbers",
+        "level": 62,
+        "instruction": "Touch the number digit matching: \"Five\"!",
+        "question": "Five",
+        "correctAnswer": "5",
+        "options": [
+          "5",
+          "6",
+          "8"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 5.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 63,
     "quests": [
       {
-        "id": "KID_NUMBERS_L63_Q1",
-        "instruction": "Skip Count by 10s: 🔟 + 🔟 = ?",
-        "question": "10, 20, ?",
+        "id": "KIDS_NUMBERS_L63_Q1",
+        "gameType": "numbers",
+        "level": 63,
+        "instruction": "Touch the number digit matching: \"Four\"!",
+        "question": "Four",
+        "correctAnswer": "4",
         "options": [
-          "21",
-          "30",
-          "40"
+          "1",
+          "11",
+          "4"
         ],
-        "correctAnswer": "30",
-        "hint": "Add ten more to twenty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 4.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L63_Q2",
-        "instruction": "Which is the next number: 10, 20, 30...",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L63_Q2",
+        "gameType": "numbers",
+        "level": 63,
+        "instruction": "Touch the number digit matching: \"Five\"!",
+        "question": "Five",
+        "correctAnswer": "5",
         "options": [
-          "31",
-          "40",
-          "50"
+          "2",
+          "5",
+          "7"
         ],
-        "correctAnswer": "40",
-        "hint": "Four tens make forty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 5.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L63_Q3",
-        "instruction": "Count the fingers: 🔟🔟🔟",
-        "question": "3 x 10",
+        "id": "KIDS_NUMBERS_L63_Q3",
+        "gameType": "numbers",
+        "level": 63,
+        "instruction": "Touch the number digit matching: \"Six\"!",
+        "question": "Six",
+        "correctAnswer": "6",
         "options": [
-          "20",
-          "30",
-          "40"
+          "5",
+          "15",
+          "6"
         ],
-        "correctAnswer": "30",
-        "hint": "Three tens is thirty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Count the items up to 6.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 64,
     "quests": [
       {
-        "id": "KID_NUMBERS_L64_Q1",
-        "instruction": "Skip Count by 10s: 40, 50...",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L64_Q1",
+        "gameType": "numbers",
+        "level": 64,
+        "instruction": "Touch the number digit matching: \"Five\"!",
+        "question": "Five",
+        "correctAnswer": "5",
         "options": [
-          "51",
-          "60",
-          "70"
+          "5",
+          "3",
+          "8"
         ],
-        "correctAnswer": "60",
-        "hint": "Add ten to fifty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 5.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L64_Q2",
-        "instruction": "Count the dimes (10 cents each): 🪙🪙🪙🪙🪙",
-        "question": "5 x 10",
+        "id": "KIDS_NUMBERS_L64_Q2",
+        "gameType": "numbers",
+        "level": 64,
+        "instruction": "Touch the number digit matching: \"Six\"!",
+        "question": "Six",
+        "correctAnswer": "6",
         "options": [
-          "40",
-          "50",
-          "60"
+          "1",
+          "2",
+          "6"
         ],
-        "correctAnswer": "50",
-        "hint": "Five tens make fifty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 6.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L64_Q3",
-        "instruction": "Find the missing: 10, _, 30",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L64_Q3",
+        "gameType": "numbers",
+        "level": 64,
+        "instruction": "Touch the number digit matching: \"Seven\"!",
+        "question": "Seven",
+        "correctAnswer": "7",
         "options": [
-          "11",
-          "20",
-          "40"
+          "1",
+          "7",
+          "16"
         ],
-        "correctAnswer": "20",
-        "hint": "What comes between 10 and 30 when counting by 10s?",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 7.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 65,
     "quests": [
       {
-        "id": "KID_NUMBERS_L65_Q1",
-        "instruction": "Mixed Skip Jumps: 5, 10, 15, 20...",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L65_Q1",
+        "gameType": "numbers",
+        "level": 65,
+        "instruction": "Touch the number digit matching: \"Six\"!",
+        "question": "Six",
+        "correctAnswer": "6",
         "options": [
-          "21",
-          "25",
-          "30"
+          "5",
+          "12",
+          "6"
         ],
-        "correctAnswer": "25",
-        "hint": "Counting by 5s!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 6.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L65_Q2",
-        "instruction": "Mixed Skip Jumps: 10, 20, 30, 40...",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L65_Q2",
+        "gameType": "numbers",
+        "level": 65,
+        "instruction": "Touch the number digit matching: \"Seven\"!",
+        "question": "Seven",
+        "correctAnswer": "7",
         "options": [
-          "41",
-          "50",
-          "60"
+          "7",
+          "1",
+          "15"
         ],
-        "correctAnswer": "50",
-        "hint": "Counting by 10s!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 7.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L65_Q3",
-        "instruction": "Which pattern is counting by 10s?",
-        "question": "10, 20, 30",
+        "id": "KIDS_NUMBERS_L65_Q3",
+        "gameType": "numbers",
+        "level": 65,
+        "instruction": "Touch the number digit matching: \"Eight\"!",
+        "question": "Eight",
+        "correctAnswer": "8",
         "options": [
-          "10, 20, 30",
-          "5, 10, 15",
-          "1, 2, 3"
+          "10",
+          "4",
+          "8"
         ],
-        "correctAnswer": "10, 20, 30",
-        "hint": "The big jumps!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 8.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,52 +373,73 @@
     "level": 66,
     "quests": [
       {
-        "id": "KID_NUMBERS_L66_Q1",
-        "instruction": "Counting Pennies (1c): 1, 2, 3...",
-        "question": "Next?",
+        "id": "KIDS_NUMBERS_L66_Q1",
+        "gameType": "numbers",
+        "level": 66,
+        "instruction": "Touch the number digit matching: \"Seven\"!",
+        "question": "Seven",
+        "correctAnswer": "7",
+        "options": [
+          "9",
+          "7",
+          "4"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 7.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L66_Q2",
+        "gameType": "numbers",
+        "level": 66,
+        "instruction": "Touch the number digit matching: \"Eight\"!",
+        "question": "Eight",
+        "correctAnswer": "8",
+        "options": [
+          "8",
+          "12",
+          "14"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 8.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NUMBERS_L66_Q3",
+        "gameType": "numbers",
+        "level": 66,
+        "instruction": "Touch the number digit matching: \"Nine\"!",
+        "question": "Nine",
+        "correctAnswer": "9",
         "options": [
           "4",
-          "5",
-          "10"
+          "7",
+          "9"
         ],
-        "correctAnswer": "4",
-        "hint": "Counting by 1s!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_NUMBERS_L66_Q2",
-        "instruction": "Counting Nickels (5c): 5, 10, 15...",
-        "question": "Next?",
-        "options": [
-          "16",
-          "20",
-          "25"
-        ],
-        "correctAnswer": "20",
-        "hint": "Counting by 5s!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_NUMBERS_L66_Q3",
-        "instruction": "Counting Dimes (10c): 10, 20, 30...",
-        "question": "Next?",
-        "options": [
-          "31",
-          "40",
-          "50"
-        ],
-        "correctAnswer": "40",
-        "hint": "Counting by 10s!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Count the items up to 9.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -321,52 +447,73 @@
     "level": 67,
     "quests": [
       {
-        "id": "KID_NUMBERS_L67_Q1",
-        "instruction": "Fast Counting: 10, 20, _, 40",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L67_Q1",
+        "gameType": "numbers",
+        "level": 67,
+        "instruction": "Touch the number digit matching: \"Eight\"!",
+        "question": "Eight",
+        "correctAnswer": "8",
         "options": [
-          "25",
-          "30",
-          "35"
+          "5",
+          "14",
+          "8"
         ],
-        "correctAnswer": "30",
-        "hint": "Thirty comes after twenty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 8.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L67_Q2",
-        "instruction": "Fast Counting: 5, 10, _, 20",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L67_Q2",
+        "gameType": "numbers",
+        "level": 67,
+        "instruction": "Touch the number digit matching: \"Nine\"!",
+        "question": "Nine",
+        "correctAnswer": "9",
         "options": [
-          "11",
-          "15",
-          "25"
+          "1",
+          "9",
+          "5"
         ],
-        "correctAnswer": "15",
-        "hint": "Fifteen comes after ten!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Count the items up to 9.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L67_Q3",
-        "instruction": "Count by 5s: 25, 30, 35...",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L67_Q3",
+        "gameType": "numbers",
+        "level": 67,
+        "instruction": "Touch the number digit matching: \"Ten\"!",
+        "question": "Ten",
+        "correctAnswer": "10",
         "options": [
-          "36",
-          "40",
-          "45"
+          "10",
+          "4",
+          "1"
         ],
-        "correctAnswer": "40",
-        "hint": "Add five to thirty-five!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 10.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -374,52 +521,73 @@
     "level": 68,
     "quests": [
       {
-        "id": "KID_NUMBERS_L68_Q1",
-        "instruction": "How many hands for 20 fingers?",
-        "question": "20 fingers",
+        "id": "KIDS_NUMBERS_L68_Q1",
+        "gameType": "numbers",
+        "level": 68,
+        "instruction": "Touch the number digit matching: \"Nine\"!",
+        "question": "Nine",
+        "correctAnswer": "9",
         "options": [
-          "2 hands",
-          "4 hands",
-          "10 hands"
+          "16",
+          "8",
+          "9"
         ],
-        "correctAnswer": "4 hands",
-        "hint": "Each hand has five fingers. 5, 10, 15, 20!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 9.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L68_Q2",
-        "instruction": "How many toes on 2 feet?",
-        "question": "2 feet",
+        "id": "KIDS_NUMBERS_L68_Q2",
+        "gameType": "numbers",
+        "level": 68,
+        "instruction": "Touch the number digit matching: \"Ten\"!",
+        "question": "Ten",
+        "correctAnswer": "10",
         "options": [
-          "5 toes",
-          "10 toes",
-          "15 toes"
+          "4",
+          "8",
+          "10"
         ],
-        "correctAnswer": "10 toes",
-        "hint": "Five plus five!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 10.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L68_Q3",
-        "instruction": "Skip count: 10, 20, 30, 40, 50, _",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L68_Q3",
+        "gameType": "numbers",
+        "level": 68,
+        "instruction": "Touch the number digit matching: \"Eleven\"!",
+        "question": "Eleven",
+        "correctAnswer": "11",
         "options": [
-          "51",
-          "60",
-          "70"
+          "1",
+          "8",
+          "11"
         ],
-        "correctAnswer": "60",
-        "hint": "Add ten to fifty!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 11.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -427,52 +595,73 @@
     "level": 69,
     "quests": [
       {
-        "id": "KID_NUMBERS_L69_Q1",
-        "instruction": "Pattern Detective: 5, 10, 15...",
-        "question": "Is this +1 or +5?",
+        "id": "KIDS_NUMBERS_L69_Q1",
+        "gameType": "numbers",
+        "level": 69,
+        "instruction": "Touch the number digit matching: \"Ten\"!",
+        "question": "Ten",
+        "correctAnswer": "10",
         "options": [
-          "+1",
-          "+5",
-          "+10"
+          "10",
+          "1",
+          "2"
         ],
-        "correctAnswer": "+5",
-        "hint": "We are adding five each time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 10.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L69_Q2",
-        "instruction": "Pattern Detective: 10, 20, 30...",
-        "question": "Is this +5 or +10?",
+        "id": "KIDS_NUMBERS_L69_Q2",
+        "gameType": "numbers",
+        "level": 69,
+        "instruction": "Touch the number digit matching: \"Eleven\"!",
+        "question": "Eleven",
+        "correctAnswer": "11",
         "options": [
-          "+5",
-          "+10",
-          "+1"
+          "11",
+          "7",
+          "8"
         ],
-        "correctAnswer": "+10",
-        "hint": "We are adding ten each time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Count the items up to 11.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L69_Q3",
-        "instruction": "Skip count backwards! 20, 15, 10...",
-        "question": "?",
+        "id": "KIDS_NUMBERS_L69_Q3",
+        "gameType": "numbers",
+        "level": 69,
+        "instruction": "Touch the number digit matching: \"Twelve\"!",
+        "question": "Twelve",
+        "correctAnswer": "12",
         "options": [
-          "9",
-          "5",
-          "0"
+          "4",
+          "16",
+          "12"
         ],
-        "correctAnswer": "5",
-        "hint": "Take away five!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Count the items up to 12.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -480,52 +669,73 @@
     "level": 70,
     "quests": [
       {
-        "id": "KID_NUMBERS_L70_Q1",
-        "instruction": "Level 70 Challenge: Skip Count!",
-        "question": "5, 10, 15, 20, ?",
+        "id": "KIDS_NUMBERS_L70_Q1",
+        "gameType": "numbers",
+        "level": 70,
+        "instruction": "Touch the number digit matching: \"Eleven\"!",
+        "question": "Eleven",
+        "correctAnswer": "11",
         "options": [
-          "21",
-          "25",
-          "30"
+          "14",
+          "4",
+          "11"
         ],
-        "correctAnswer": "25",
-        "hint": "Five more!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 11.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L70_Q2",
-        "instruction": "Level 70 Challenge: Big Jumps!",
-        "question": "10, 20, 30, 40, ?",
+        "id": "KIDS_NUMBERS_L70_Q2",
+        "gameType": "numbers",
+        "level": 70,
+        "instruction": "Touch the number digit matching: \"Twelve\"!",
+        "question": "Twelve",
+        "correctAnswer": "12",
         "options": [
-          "41",
-          "50",
-          "60"
+          "12",
+          "1",
+          "13"
         ],
-        "correctAnswer": "50",
-        "hint": "Ten more!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Count the items up to 12.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NUMBERS_L70_Q3",
-        "instruction": "Level 70 Challenge: Mastery!",
-        "question": "5, 10, 15, 20",
+        "id": "KIDS_NUMBERS_L70_Q3",
+        "gameType": "numbers",
+        "level": 70,
+        "instruction": "Touch the number digit matching: \"Thirteen\"!",
+        "question": "Thirteen",
+        "correctAnswer": "13",
         "options": [
-          "Skip Counting",
-          "Subtraction",
-          "Place Value"
+          "13",
+          "8",
+          "12"
         ],
-        "correctAnswer": "Skip Counting",
-        "hint": "You are a skip counting pro!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Count the items up to 13.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

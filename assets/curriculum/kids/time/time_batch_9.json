@@ -3,50 +3,73 @@
     "level": 81,
     "quests": [
       {
-        "id": "KID_TIME_L81_Q1",
-        "instruction": "What tiny white stars fall from the sky in winter?",
-        "question": "❄️❄️✨",
+        "id": "KIDS_TIME_L81_Q1",
+        "gameType": "time",
+        "level": 81,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Snowflake",
-          "Raindrop",
-          "Leaf"
+          "12:00 PM",
+          "9:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Snowflake",
-        "hint": "They are cold, white, and each one has a beautiful unique shape! They are snowflakes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L81_Q2",
-        "instruction": "Find the SNOWFLAKE",
-        "question": "❄️✨🏠",
+        "id": "KIDS_TIME_L81_Q2",
+        "gameType": "time",
+        "level": 81,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Found it!",
-          "Not here"
+          "8:00 AM",
+          "9:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the tiny white star falling slowly toward the snowy roof!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L81_Q3",
-        "instruction": "Is it COLD?",
-        "question": "❄️ = Cold winter?",
+        "id": "KIDS_TIME_L81_Q3",
+        "gameType": "time",
+        "level": 81,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Yes, brrr!",
-          "No, very hot"
+          "4:00 PM",
+          "12:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Yes, brrr!",
-        "hint": "When the snowflakes fall, it means the world is turning into a winter wonderland!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 82,
     "quests": [
       {
-        "id": "KID_TIME_L82_Q1",
-        "instruction": "What do we build out of big round balls of snow?",
-        "question": "☃️☃️✨",
+        "id": "KIDS_TIME_L82_Q1",
+        "gameType": "time",
+        "level": 82,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Snowman",
-          "Sandcastle",
-          "House"
+          "12:00 PM",
+          "8:00 AM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Snowman",
-        "hint": "He has a carrot nose, coal eyes, and a warm scarf around his neck! It's a snowman!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L82_Q2",
-        "instruction": "Find the SNOWMAN",
-        "question": "☃️✨🧒",
+        "id": "KIDS_TIME_L82_Q2",
+        "gameType": "time",
+        "level": 82,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "8:00 AM",
+          "12:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the happy friend made of snow standing in the middle of the yard!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L82_Q3",
-        "instruction": "Is it FUN?",
-        "question": "☃️ = Snow fun?",
+        "id": "KIDS_TIME_L82_Q3",
+        "gameType": "time",
+        "level": 82,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Yes, let's play!",
-          "No, stay away"
+          "4:00 PM",
+          "12:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Yes, let's play!",
-        "hint": "Building a snowman is one of the best ways to spend a snowy winter afternoon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 83,
     "quests": [
       {
-        "id": "KID_TIME_L83_Q1",
-        "instruction": "What do we wear on our hands to keep our fingers warm?",
-        "question": "🧤🧤✨",
+        "id": "KIDS_TIME_L83_Q1",
+        "gameType": "time",
+        "level": 83,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Mittens",
-          "Socks",
-          "Shoes"
+          "12:00 PM",
+          "4:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Mittens",
-        "hint": "They are soft and cozy and have a special place for our thumbs! They are mittens!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L83_Q2",
-        "instruction": "Find the red MITTENS",
-        "question": "🧤✨🧤",
+        "id": "KIDS_TIME_L83_Q2",
+        "gameType": "time",
+        "level": 83,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "9:00 PM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the pair of red wooly mittens hanging by the fireplace to dry!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L83_Q3",
-        "instruction": "Is it WARM?",
-        "question": "🧤 = Warm hands?",
+        "id": "KIDS_TIME_L83_Q3",
+        "gameType": "time",
+        "level": 83,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Yes, no frostbite!",
-          "No, cold fingers"
+          "9:00 PM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, no frostbite!",
-        "hint": "Wearing mittens means we can play in the snow for a long time without getting cold!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 84,
     "quests": [
       {
-        "id": "KID_TIME_L84_Q1",
-        "instruction": "What warm chocolate drink do we sip after playing in the snow?",
-        "question": "☕☕✨",
+        "id": "KIDS_TIME_L84_Q1",
+        "gameType": "time",
+        "level": 84,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Hot Cocoa",
-          "Cold Juice",
-          "Water"
+          "8:00 AM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Hot Cocoa",
-        "hint": "It's brown, sweet, and often has fluffy white marshmallows on top! It's hot cocoa!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L84_Q2",
-        "instruction": "Find the HOT COCOA mug",
-        "question": "☕✨🛋️",
+        "id": "KIDS_TIME_L84_Q2",
+        "gameType": "time",
+        "level": 84,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "8:00 AM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the steaming blue mug sitting on the table near the cozy couch!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L84_Q3",
-        "instruction": "Is it SWEET?",
-        "question": "☕ = Sweet drink?",
+        "id": "KIDS_TIME_L84_Q3",
+        "gameType": "time",
+        "level": 84,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Yes, with marshmallows!",
-          "No, salty"
+          "8:00 AM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, with marshmallows!",
-        "hint": "Hot cocoa is the perfect way to warm up your tummy on a chilly winter day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 85,
     "quests": [
       {
-        "id": "KID_TIME_L85_Q1",
-        "instruction": "Winter Logic: SNOW is for...",
-        "question": "❄️ -> ?",
+        "id": "KIDS_TIME_L85_Q1",
+        "gameType": "time",
+        "level": 85,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Winter Fun",
-          "Summer Beach"
+          "8:00 AM",
+          "12:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Winter Fun",
-        "hint": "Snow only falls when the air is very cold, which happens during the winter season!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L85_Q2",
-        "instruction": "Winter Logic: MITTENS are for...",
-        "question": "🧤 -> ?",
+        "id": "KIDS_TIME_L85_Q2",
+        "gameType": "time",
+        "level": 85,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Keeping Warm",
-          "Cooling Down"
+          "9:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Keeping Warm",
-        "hint": "We wear mittens to protect our hands from the freezing winter air and cold snow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L85_Q3",
-        "instruction": "Logic: Do we drink COCOA in winter?",
-        "question": "☕🧤❄️ -> ✨?",
+        "id": "KIDS_TIME_L85_Q3",
+        "gameType": "time",
+        "level": 85,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Yes, stay cozy!",
-          "No, only ice"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, stay cozy!",
-        "hint": "Winter is the season for snowmen, warm clothes, and yummy hot chocolate by the fire!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 86,
     "quests": [
       {
-        "id": "KID_TIME_L86_Q1",
-        "instruction": "Search: Find the child SLEDDING",
-        "question": "🛷🧒❄️",
+        "id": "KIDS_TIME_L86_Q1",
+        "gameType": "time",
+        "level": 86,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "9:00 PM",
+          "12:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person sitting on a sled and sliding down the snowy hill!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L86_Q2",
-        "instruction": "Search: Find the SNOWMAN'S hat",
-        "question": "☃️✨🎩",
+        "id": "KIDS_TIME_L86_Q2",
+        "gameType": "time",
+        "level": 86,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "8:00 AM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the black top hat resting on top of the snowman's head!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L86_Q3",
-        "instruction": "Search: Find the steaming COCOA",
-        "question": "☕✨🛋️",
+        "id": "KIDS_TIME_L86_Q3",
+        "gameType": "time",
+        "level": 86,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Found it!",
-          "Not here"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the mug with the little swirls of steam coming off the top!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 87,
     "quests": [
       {
-        "id": "KID_TIME_L87_Q1",
-        "instruction": "Action: Roll a SNOWBALL!",
-        "question": "❄️🧒✨",
+        "id": "KIDS_TIME_L87_Q1",
+        "gameType": "time",
+        "level": 87,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Round and round!",
-          "Eat the snow"
+          "8:00 AM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Round and round!",
-        "hint": "Roll the snow on the ground to make a big ball for your snowman's body!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L87_Q2",
-        "instruction": "Action: Sip the COCOA!",
-        "question": "☕🧒😋",
+        "id": "KIDS_TIME_L87_Q2",
+        "gameType": "time",
+        "level": 87,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Mmmm chocolate!",
-          "Pour it out"
+          "12:00 PM",
+          "4:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Mmmm chocolate!",
-        "hint": "Take a slow sip of your hot cocoa to warm up your whole body after being outside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L87_Q3",
-        "instruction": "Action: Put on MITTENS!",
-        "question": "🧤🧒✨",
+        "id": "KIDS_TIME_L87_Q3",
+        "gameType": "time",
+        "level": 87,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Ready to play!",
-          "Put on toes"
+          "12:00 PM",
+          "8:00 AM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Ready to play!",
-        "hint": "Slide your hands into the soft mittens so your fingers stay warm in the snow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 88,
     "quests": [
       {
-        "id": "KID_TIME_L88_Q1",
-        "instruction": "Match: What is for the SKY?",
-        "question": "❄️ + ?",
+        "id": "KIDS_TIME_L88_Q1",
+        "gameType": "time",
+        "level": 88,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Snowflake",
-          "Leaf"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Snowflake",
-        "hint": "Snowflakes are the winter stars that fall from the grey clouds when it's cold!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L88_Q2",
-        "instruction": "Match: What is for the COLD?",
-        "question": "🧤 + ?",
+        "id": "KIDS_TIME_L88_Q2",
+        "gameType": "time",
+        "level": 88,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Mittens",
-          "Swimsuit"
+          "12:00 PM",
+          "4:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Mittens",
-        "hint": "Mittens are the best way to keep our hands happy and warm during winter time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L88_Q3",
-        "instruction": "Match: What is for the SNOW?",
-        "question": "☃️ + ?",
+        "id": "KIDS_TIME_L88_Q3",
+        "gameType": "time",
+        "level": 88,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Snowman",
-          "Car"
+          "8:00 AM",
+          "12:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Snowman",
-        "hint": "A snowman is the special friend that we can only build during the snowy winter season!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 89,
     "quests": [
       {
-        "id": "KID_TIME_L89_Q1",
-        "instruction": "Time: Is winter for swimming?",
-        "question": "❄️🧒🏊‍♂️❓",
+        "id": "KIDS_TIME_L89_Q1",
+        "gameType": "time",
+        "level": 89,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "No, too cold!",
-          "Yes, every day"
+          "9:00 PM",
+          "4:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "No, too cold!",
-        "hint": "The water in the pool is much too cold for swimming in the winter time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L89_Q2",
-        "instruction": "Time: Are you a WINTER SCOUT?",
-        "question": "❄️☃️☕✨❓",
+        "id": "KIDS_TIME_L89_Q2",
+        "gameType": "time",
+        "level": 89,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Yes, I am!",
-          "No"
+          "4:00 PM",
+          "9:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "A winter scout knows how to dress warm and have the best time in the snow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L89_Q3",
-        "instruction": "Time: Ready for the challenge?",
-        "question": "🏆✨❓",
+        "id": "KIDS_TIME_L89_Q3",
+        "gameType": "time",
+        "level": 89,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "YES!",
-          "No"
+          "9:00 PM",
+          "12:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Level 90 is coming! Show us how much you know about winter time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 90,
     "quests": [
       {
-        "id": "KID_TIME_L90_Q1",
-        "instruction": "Level 90 Challenge: Winter Scout!",
-        "question": "What is white? ❄️✨",
+        "id": "KIDS_TIME_L90_Q1",
+        "gameType": "time",
+        "level": 90,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Snowflakes",
-          "Grass",
-          "Fire"
+          "4:00 PM",
+          "12:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Snowflakes",
-        "hint": "Cold stars!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L90_Q2",
-        "instruction": "Level 90 Challenge: Winter Scout!",
-        "question": "What is for hands? 🧤❄️",
+        "id": "KIDS_TIME_L90_Q2",
+        "gameType": "time",
+        "level": 90,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Mittens",
-          "Hat",
-          "Sock"
+          "8:00 AM",
+          "9:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Mittens",
-        "hint": "Cozy thumb!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L90_Q3",
-        "instruction": "Level 90 Challenge: Mastery!",
-        "question": "Are you a Winter Scout?",
+        "id": "KIDS_TIME_L90_Q3",
+        "gameType": "time",
+        "level": 90,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "YES!",
-          "No"
+          "8:00 AM",
+          "4:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 90!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

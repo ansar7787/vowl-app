@@ -3,50 +3,73 @@
     "level": 11,
     "quests": [
       {
-        "id": "KID_PHONICS_L11_Q1",
-        "instruction": "Find the big letter E",
-        "question": "🇪✨",
+        "id": "KIDS_PHONICS_L11_Q1",
+        "gameType": "phonics",
+        "level": 11,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "E",
-          "F",
-          "L"
-        ],
-        "correctAnswer": "E",
-        "hint": "Big E has one long back and three little arms reaching out to say hello!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_PHONICS_L11_Q2",
-        "instruction": "Which one is E?",
-        "question": "🇪 vs 🇫",
-        "options": [
-          "E",
+          "M",
+          "D",
           "F"
         ],
-        "correctAnswer": "E",
-        "hint": "Big E has a little foot at the bottom, but F only has two arms and no foot!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L11_Q3",
-        "instruction": "Does E have THREE arms?",
-        "question": "🇪 3️⃣❓",
+        "id": "KIDS_PHONICS_L11_Q2",
+        "gameType": "phonics",
+        "level": 11,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Yes, count them!",
-          "No, only one"
+          "Q",
+          "C",
+          "M"
         ],
-        "correctAnswer": "Yes, count them!",
-        "hint": "One at the top, one in the middle, and one at the bottom! That's Big E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_PHONICS_L11_Q3",
+        "gameType": "phonics",
+        "level": 11,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
+        "options": [
+          "H",
+          "P",
+          "B"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 12,
     "quests": [
       {
-        "id": "KID_PHONICS_L12_Q1",
-        "instruction": "Find the small letter e",
-        "question": "e✨",
+        "id": "KIDS_PHONICS_L12_Q1",
+        "gameType": "phonics",
+        "level": 12,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "e",
-          "c",
-          "o"
+          "C",
+          "V",
+          "N"
         ],
-        "correctAnswer": "e",
-        "hint": "Small 'e' looks like a little eye peek-a-booing at you!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L12_Q2",
-        "instruction": "Which one is small e?",
-        "question": "e vs c",
+        "id": "KIDS_PHONICS_L12_Q2",
+        "gameType": "phonics",
+        "level": 12,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "e",
-          "c"
+          "D",
+          "K",
+          "L"
         ],
-        "correctAnswer": "e",
-        "hint": "Small 'e' has a line in the middle that makes it look like it's smiling!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L12_Q3",
-        "instruction": "Is it the same sound as Big E?",
-        "question": "🇪 = e ❓",
+        "id": "KIDS_PHONICS_L12_Q3",
+        "gameType": "phonics",
+        "level": 12,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Yes, same sound!",
-          "No, different"
+          "N",
+          "F",
+          "T"
         ],
-        "correctAnswer": "Yes, same sound!",
-        "hint": "Big E and small e both say 'Eh' like at the start of an egg!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 13,
     "quests": [
       {
-        "id": "KID_PHONICS_L13_Q1",
-        "instruction": "Find the EGG",
-        "question": "🥚✨",
+        "id": "KIDS_PHONICS_L13_Q1",
+        "gameType": "phonics",
+        "level": 13,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Egg",
-          "Bread",
-          "Milk"
+          "T",
+          "M",
+          "N"
         ],
-        "correctAnswer": "Egg",
-        "hint": "An egg is a white oval that starts with the 'Eh' sound of the letter E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L13_Q2",
-        "instruction": "Does EGG start with E?",
-        "question": "🥚 🇪❓",
+        "id": "KIDS_PHONICS_L13_Q2",
+        "gameType": "phonics",
+        "level": 13,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Yes, E is for Egg!",
-          "No, starts with P"
+          "R",
+          "D",
+          "B"
         ],
-        "correctAnswer": "Yes, E is for Egg!",
-        "hint": "Listen: Eh-Eh-Egg! That's the excellent sound of letter E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L13_Q3",
-        "instruction": "Which food says EH?",
-        "question": "🥚 vs 🧀",
+        "id": "KIDS_PHONICS_L13_Q3",
+        "gameType": "phonics",
+        "level": 13,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "Egg",
-          "Cheese"
+          "W",
+          "C",
+          "L"
         ],
-        "correctAnswer": "Egg",
-        "hint": "The white egg starts with the letter E! Eh-Eh-Egg!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 14,
     "quests": [
       {
-        "id": "KID_PHONICS_L14_Q1",
-        "instruction": "Find the ELEPHANT",
-        "question": "🐘✨",
+        "id": "KIDS_PHONICS_L14_Q1",
+        "gameType": "phonics",
+        "level": 14,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "Elephant",
-          "Lion",
-          "Tiger"
+          "D",
+          "L",
+          "H"
         ],
-        "correctAnswer": "Elephant",
-        "hint": "An elephant is a giant gray animal with a long trunk that starts with letter E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L14_Q2",
-        "instruction": "Does ELEPHANT start with E?",
-        "question": "🐘 🇪❓",
+        "id": "KIDS_PHONICS_L14_Q2",
+        "gameType": "phonics",
+        "level": 14,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Yes, E is for Elephant!",
-          "No, starts with D"
+          "N",
+          "F",
+          "Q"
         ],
-        "correctAnswer": "Yes, E is for Elephant!",
-        "hint": "Listen: Eh-Eh-Elephant! It's a big animal for a big letter E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L14_Q3",
-        "instruction": "Which animal says EH?",
-        "question": "🐘 vs 🦓",
+        "id": "KIDS_PHONICS_L14_Q3",
+        "gameType": "phonics",
+        "level": 14,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Elephant",
-          "Zebra"
+          "J",
+          "M",
+          "K"
         ],
-        "correctAnswer": "Elephant",
-        "hint": "The giant elephant begins with the 'Eh' sound of the letter E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,52 +299,73 @@
     "level": 15,
     "quests": [
       {
-        "id": "KID_PHONICS_L15_Q1",
-        "instruction": "Logic: What sound does E make?",
-        "question": "🇪🗣️❓",
+        "id": "KIDS_PHONICS_L15_Q1",
+        "gameType": "phonics",
+        "level": 15,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Eh!",
-          "Oh!",
-          "Ah!"
+          "B",
+          "N",
+          "Q"
         ],
-        "correctAnswer": "Eh!",
-        "hint": "Smile a little and say 'Eh' like you are hearing a secret!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L15_Q2",
-        "instruction": "Logic: Find the 'Eh' word",
-        "question": "🇪👂❓",
+        "id": "KIDS_PHONICS_L15_Q2",
+        "gameType": "phonics",
+        "level": 15,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "Elk",
-          "Bear",
-          "Wolf"
+          "D",
+          "U",
+          "C"
         ],
-        "correctAnswer": "Elk",
-        "hint": "Elk starts with a short 'Eh' sound, just like elephant!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L15_Q3",
-        "instruction": "Logic: Find the body part",
-        "question": "👂✨❓",
+        "id": "KIDS_PHONICS_L15_Q3",
+        "gameType": "phonics",
+        "level": 15,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "Ear",
-          "Nose",
-          "Toe"
+          "D",
+          "T",
+          "M"
         ],
-        "correctAnswer": "Ear",
-        "hint": "Ear starts with the letter E! You use your ears to listen for the letter sounds!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -260,49 +373,73 @@
     "level": 16,
     "quests": [
       {
-        "id": "KID_PHONICS_L16_Q1",
-        "instruction": "Search: Find the letter E",
-        "question": "🇪 vs 🇫",
+        "id": "KIDS_PHONICS_L16_Q1",
+        "gameType": "phonics",
+        "level": 16,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Found it!",
-          "Not here"
+          "F",
+          "L",
+          "S"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the letter with three arms and one foot!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L16_Q2",
-        "instruction": "Search: Find the letter e",
-        "question": "e vs c",
+        "id": "KIDS_PHONICS_L16_Q2",
+        "gameType": "phonics",
+        "level": 16,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Found it!",
-          "Not here"
+          "T",
+          "C",
+          "M"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the little one with the line across the middle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L16_Q3",
-        "instruction": "Search: Find the ENVELOPE",
-        "question": "✉️ vs 🧺",
+        "id": "KIDS_PHONICS_L16_Q3",
+        "gameType": "phonics",
+        "level": 16,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Envelope",
-          "Basket"
+          "B",
+          "T",
+          "O"
         ],
-        "correctAnswer": "Envelope",
-        "hint": "An envelope starts with E! Look for the paper cover for a letter!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -310,52 +447,73 @@
     "level": 17,
     "quests": [
       {
-        "id": "KID_PHONICS_L17_Q1",
-        "instruction": "Review: Who says Eh-Eh-Egg?",
-        "question": "🥚 Review",
+        "id": "KIDS_PHONICS_L17_Q1",
+        "gameType": "phonics",
+        "level": 17,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "E",
-          "A",
-          "O"
+          "T",
+          "C",
+          "M"
         ],
-        "correctAnswer": "E",
-        "hint": "The letter that has three arms!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L17_Q2",
-        "instruction": "Review: Find small letter e",
-        "question": "e Review",
+        "id": "KIDS_PHONICS_L17_Q2",
+        "gameType": "phonics",
+        "level": 17,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "e",
-          "o",
-          "a"
+          "D",
+          "B",
+          "U"
         ],
-        "correctAnswer": "e",
-        "hint": "The little eye-shaped letter!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L17_Q3",
-        "instruction": "Review: Find Big letter E",
-        "question": "🇪 Review",
+        "id": "KIDS_PHONICS_L17_Q3",
+        "gameType": "phonics",
+        "level": 17,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "E",
+          "K",
           "F",
-          "L"
+          "B"
         ],
-        "correctAnswer": "E",
-        "hint": "The one with the most arms!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -363,49 +521,73 @@
     "level": 18,
     "quests": [
       {
-        "id": "KID_PHONICS_L18_Q1",
-        "instruction": "Which one is for BREAKFAST?",
-        "question": "🥚 vs 🐘",
+        "id": "KIDS_PHONICS_L18_Q1",
+        "gameType": "phonics",
+        "level": 18,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Egg",
-          "Elephant"
+          "T",
+          "H",
+          "M"
         ],
-        "correctAnswer": "Egg",
-        "hint": "We eat eggs for breakfast, but elephants live in the wild!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L18_Q2",
-        "instruction": "Which one is GIANT?",
-        "question": "🐘 vs 🥚",
+        "id": "KIDS_PHONICS_L18_Q2",
+        "gameType": "phonics",
+        "level": 18,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Elephant",
-          "Egg"
+          "B",
+          "S",
+          "U"
         ],
-        "correctAnswer": "Elephant",
-        "hint": "The elephant is a massive animal, but the egg is small and fragile!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L18_Q3",
-        "instruction": "Do they BOTH start with E?",
-        "question": "🥚 + 🐘 = 🇪❓",
+        "id": "KIDS_PHONICS_L18_Q3",
+        "gameType": "phonics",
+        "level": 18,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "Yes, both start with E!",
-          "No, only one"
+          "V",
+          "B",
+          "C"
         ],
-        "correctAnswer": "Yes, both start with E!",
-        "hint": "Egg and Elephant both begin with the 'Eh' sound of letter E!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -413,51 +595,73 @@
     "level": 19,
     "quests": [
       {
-        "id": "KID_PHONICS_L19_Q1",
-        "instruction": "Logic: Find the ELBOW",
-        "question": "💪✨",
+        "id": "KIDS_PHONICS_L19_Q1",
+        "gameType": "phonics",
+        "level": 19,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "Elbow",
-          "Knee",
-          "Hand"
+          "Q",
+          "G",
+          "D"
         ],
-        "correctAnswer": "Elbow",
-        "hint": "Your elbow is the joint in your arm! Eh-Eh-Elbow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L19_Q2",
-        "instruction": "Logic: Find the EXIT sign",
-        "question": "🚪🏃‍♂️✨",
+        "id": "KIDS_PHONICS_L19_Q2",
+        "gameType": "phonics",
+        "level": 19,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Exit",
-          "Enter",
-          "Wait"
+          "F",
+          "C",
+          "D"
         ],
-        "correctAnswer": "Exit",
-        "hint": "Exit starts with E! It shows us the way out of a building!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L19_Q3",
-        "instruction": "Logic: Are you E-Excellent?",
-        "question": "🇪🤩❓",
+        "id": "KIDS_PHONICS_L19_Q3",
+        "gameType": "phonics",
+        "level": 19,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Yes, I am!",
-          "No"
+          "M",
+          "R",
+          "C"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "You are doing an excellent job learning the letters!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -465,51 +669,73 @@
     "level": 20,
     "quests": [
       {
-        "id": "KID_PHONICS_L20_Q1",
-        "instruction": "Level 20 Challenge: Elephant Expert!",
-        "question": "Find Big E",
+        "id": "KIDS_PHONICS_L20_Q1",
+        "gameType": "phonics",
+        "level": 20,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "E",
+          "B",
           "F",
-          "B"
+          "L"
         ],
-        "correctAnswer": "E",
-        "hint": "The one with the three arms!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L20_Q2",
-        "instruction": "Level 20 Challenge: Elephant Expert!",
-        "question": "Find small e",
+        "id": "KIDS_PHONICS_L20_Q2",
+        "gameType": "phonics",
+        "level": 20,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "e",
-          "c",
-          "o"
+          "C",
+          "R",
+          "M"
         ],
-        "correctAnswer": "e",
-        "hint": "The eye-shaped one!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L20_Q3",
-        "instruction": "Level 20 Challenge: Mastery!",
-        "question": "Are you an Elephant Expert?",
+        "id": "KIDS_PHONICS_L20_Q3",
+        "gameType": "phonics",
+        "level": 20,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "YES!",
-          "No"
+          "V",
+          "F",
+          "D"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 20!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

@@ -3,50 +3,73 @@
     "level": 111,
     "quests": [
       {
-        "id": "KID_TIME_L111_Q1",
-        "instruction": "What is the first day of the weekend when we don't have school?",
-        "question": "📅🎉✨",
+        "id": "KIDS_TIME_L111_Q1",
+        "gameType": "time",
+        "level": 111,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Saturday",
-          "Monday",
-          "Tuesday"
+          "12:00 PM",
+          "8:00 AM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Saturday",
-        "hint": "Saturday is the day for big adventures, playing outside, and spending time with family! It's Saturday!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L111_Q2",
-        "instruction": "Find the SATURDAY calendar",
-        "question": "📅✨🎡",
+        "id": "KIDS_TIME_L111_Q2",
+        "gameType": "time",
+        "level": 111,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "8:00 AM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the calendar page with the big letter 'S' and a happy sun for the weekend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L111_Q3",
-        "instruction": "Is it PLAY time?",
-        "question": "📅🎉 = No school?",
+        "id": "KIDS_TIME_L111_Q3",
+        "gameType": "time",
+        "level": 111,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Yes, let's play!",
-          "No, do homework"
+          "9:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, let's play!",
-        "hint": "Saturday is the best time to visit the park or go on a fun trip with your family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 112,
     "quests": [
       {
-        "id": "KID_TIME_L112_Q1",
-        "instruction": "Where do we love to go on a sunny Saturday afternoon?",
-        "question": "🎡🎡✨",
+        "id": "KIDS_TIME_L112_Q1",
+        "gameType": "time",
+        "level": 112,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Playground",
-          "Kitchen",
-          "Attic"
+          "8:00 AM",
+          "12:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Playground",
-        "hint": "It has slides, swings, and sandbox fun for all our weekend play! It's the playground!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L112_Q2",
-        "instruction": "Find the SWINGS",
-        "question": "🎡✨🧒",
+        "id": "KIDS_TIME_L112_Q2",
+        "gameType": "time",
+        "level": 112,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "9:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the two seats hanging from chains that the children are swinging on!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L112_Q3",
-        "instruction": "Is it for FUN?",
-        "question": "🎡 = Saturday fun?",
+        "id": "KIDS_TIME_L112_Q3",
+        "gameType": "time",
+        "level": 112,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Yes, wheeee!",
-          "No, for work"
+          "12:00 PM",
+          "4:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Yes, wheeee!",
-        "hint": "The playground is the heart of the weekend, where we make new friends and run fast!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 113,
     "quests": [
       {
-        "id": "KID_TIME_L113_Q1",
-        "instruction": "What is the quiet day of the weekend before school starts again?",
-        "question": "📅⛪✨",
+        "id": "KIDS_TIME_L113_Q1",
+        "gameType": "time",
+        "level": 113,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Sunday",
-          "Wednesday",
-          "Friday"
+          "9:00 PM",
+          "12:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Sunday",
-        "hint": "Sunday is a peaceful day for resting, having a big lunch, and getting ready for the week! It's Sunday!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L113_Q2",
-        "instruction": "Find the SUNDAY calendar",
-        "question": "📅✨🛌",
+        "id": "KIDS_TIME_L113_Q2",
+        "gameType": "time",
+        "level": 113,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Found it!",
-          "Not here"
+          "9:00 PM",
+          "4:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the very last page of the week on the calendar with the soft clouds!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L113_Q3",
-        "instruction": "Is it for REST?",
-        "question": "📅⛪ = Rest day?",
+        "id": "KIDS_TIME_L113_Q3",
+        "gameType": "time",
+        "level": 113,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Yes, sleepy Sunday!",
-          "No, run fast"
+          "8:00 AM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, sleepy Sunday!",
-        "hint": "Sunday is a great day to read a story, take a nap, and be cozy with your family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 114,
     "quests": [
       {
-        "id": "KID_TIME_L114_Q1",
-        "instruction": "What special cold treat might we get on a weekend trip?",
-        "question": "🍦🍦✨",
+        "id": "KIDS_TIME_L114_Q1",
+        "gameType": "time",
+        "level": 114,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Ice Cream",
-          "Broccoli",
-          "Bread"
+          "4:00 PM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Ice Cream",
-        "hint": "It's a sweet reward for a great week, and we love to lick it at the park! It's ice cream!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L114_Q2",
-        "instruction": "Find the ICE CREAM",
-        "question": "🍦✨🧒",
+        "id": "KIDS_TIME_L114_Q2",
+        "gameType": "time",
+        "level": 114,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "9:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the colorful treat in the child's hand as they walk in the park!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L114_Q3",
-        "instruction": "Is it a TREAT?",
-        "question": "🍦 = Weekend treat?",
+        "id": "KIDS_TIME_L114_Q3",
+        "gameType": "time",
+        "level": 114,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Yes, yum yum!",
-          "No, for dinner"
+          "12:00 PM",
+          "4:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Yes, yum yum!",
-        "hint": "Sharing an ice cream is a wonderful way to celebrate the fun of the weekend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 115,
     "quests": [
       {
-        "id": "KID_TIME_L115_Q1",
-        "instruction": "Weekly Logic: SATURDAY is for...",
-        "question": "📅🎉 -> ?",
+        "id": "KIDS_TIME_L115_Q1",
+        "gameType": "time",
+        "level": 115,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Adventure & Play",
-          "Homework & School"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Adventure & Play",
-        "hint": "Saturday is the day we have the most time for big games and exploring outside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L115_Q2",
-        "instruction": "Weekly Logic: SUNDAY is for...",
-        "question": "📅⛪ -> ?",
+        "id": "KIDS_TIME_L115_Q2",
+        "gameType": "time",
+        "level": 115,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Rest & Family",
-          "Bus & Books"
+          "8:00 AM",
+          "12:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Rest & Family",
-        "hint": "Sunday is a slower day when we enjoy being at home and resting our bodies!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L115_Q3",
-        "instruction": "Logic: Do we have 2 weekend days?",
-        "question": "📅🎉 + 📅⛪ -> ❓",
+        "id": "KIDS_TIME_L115_Q3",
+        "gameType": "time",
+        "level": 115,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Yes, Sat & Sun!",
-          "No, only one"
+          "8:00 AM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, Sat & Sun!",
-        "hint": "The weekend has two days of freedom from school: Saturday and Sunday!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 116,
     "quests": [
       {
-        "id": "KID_TIME_L116_Q1",
-        "instruction": "Search: Find the child SWINGING",
-        "question": "🎡🧒✨",
+        "id": "KIDS_TIME_L116_Q1",
+        "gameType": "time",
+        "level": 116,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "8:00 AM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person high in the air on the Saturday playground swings!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L116_Q2",
-        "instruction": "Search: Find the SUNDAY pillow",
-        "question": "🛌✨⛪",
+        "id": "KIDS_TIME_L116_Q2",
+        "gameType": "time",
+        "level": 116,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "12:00 PM",
+          "8:00 AM",
+          "4:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the soft white pillow on the bed where the child is resting on Sunday!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L116_Q3",
-        "instruction": "Search: Find the ICE CREAM shop",
-        "question": "🍦✨🏠",
+        "id": "KIDS_TIME_L116_Q3",
+        "gameType": "time",
+        "level": 116,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Found it!",
-          "Not here"
+          "8:00 AM",
+          "4:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the building with the giant ice cream cone sign on the roof!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 117,
     "quests": [
       {
-        "id": "KID_TIME_L117_Q1",
-        "instruction": "Action: Go down SLIDE!",
-        "question": "🎡🧒✨",
+        "id": "KIDS_TIME_L117_Q1",
+        "gameType": "time",
+        "level": 117,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Wheeee Saturday!",
-          "Sit and cry"
+          "12:00 PM",
+          "4:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Wheeee Saturday!",
-        "hint": "Climb up and slide all the way down for some Saturday afternoon fun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L117_Q2",
-        "instruction": "Action: Eat ICE CREAM!",
-        "question": "🍦🧒😋",
+        "id": "KIDS_TIME_L117_Q2",
+        "gameType": "time",
+        "level": 117,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Lick it up!",
-          "Drop it"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Lick it up!",
-        "hint": "Enjoy your sweet weekend treat before it starts to melt in the sun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L117_Q3",
-        "instruction": "Action: Sleep in late!",
-        "question": "📅⛪🧒🛌",
+        "id": "KIDS_TIME_L117_Q3",
+        "gameType": "time",
+        "level": 117,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Zzzzz Sunday!",
-          "Wake up early"
+          "12:00 PM",
+          "4:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Zzzzz Sunday!",
-        "hint": "On Sunday morning, we can stay in our cozy beds a little bit longer. Goodnight!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 118,
     "quests": [
       {
-        "id": "KID_TIME_L118_Q1",
-        "instruction": "Match: What is for the PARK?",
-        "question": "🎡 + ?",
+        "id": "KIDS_TIME_L118_Q1",
+        "gameType": "time",
+        "level": 118,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Saturday",
-          "Monday"
+          "4:00 PM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Saturday",
-        "hint": "Saturday is the perfect day for a long trip to the park and the playground!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L118_Q2",
-        "instruction": "Match: What is for the NAP?",
-        "question": "🛌 + ?",
+        "id": "KIDS_TIME_L118_Q2",
+        "gameType": "time",
+        "level": 118,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "Sunday",
-          "Tuesday"
+          "12:00 PM",
+          "8:00 AM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Sunday",
-        "hint": "Sunday is the best day for a cozy nap and resting before the new week!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L118_Q3",
-        "instruction": "Match: What is for the SWEET?",
-        "question": "🍦 + ?",
+        "id": "KIDS_TIME_L118_Q3",
+        "gameType": "time",
+        "level": 118,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Weekend",
-          "School"
+          "12:00 PM",
+          "9:00 PM",
+          "8:00 AM"
         ],
-        "correctAnswer": "Weekend",
-        "hint": "Ice cream is the sweet celebration of a fun and happy weekend with family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 119,
     "quests": [
       {
-        "id": "KID_TIME_L119_Q1",
-        "instruction": "Time: Do we have school on Saturday?",
-        "question": "📅🧒🏫❓",
+        "id": "KIDS_TIME_L119_Q1",
+        "gameType": "time",
+        "level": 119,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "No, it's weekend!",
-          "Yes, all day"
+          "12:00 PM",
+          "9:00 PM",
+          "4:00 PM"
         ],
-        "correctAnswer": "No, it's weekend!",
-        "hint": "Saturday is a free day for playing and having fun, not for school lessons!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L119_Q2",
-        "instruction": "Time: Are you a WEEKEND WONDER?",
-        "question": "🎡🍦📅✨❓",
+        "id": "KIDS_TIME_L119_Q2",
+        "gameType": "time",
+        "level": 119,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "Yes, I am!",
-          "No"
+          "4:00 PM",
+          "8:00 AM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "A weekend wonder knows how to have the best time on Saturday and Sunday!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L119_Q3",
-        "instruction": "Time: Ready for the challenge?",
-        "question": "🏆✨❓",
+        "id": "KIDS_TIME_L119_Q3",
+        "gameType": "time",
+        "level": 119,
+        "instruction": "Which clock time matches: \"nighttime when we sleep cozy in our warm beds\"?",
+        "question": "9:00 PM",
+        "correctAnswer": "9:00 PM",
         "options": [
-          "YES!",
-          "No"
+          "12:00 PM",
+          "8:00 AM",
+          "9:00 PM"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Level 120 is coming! Show us how much you know about the weekend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 9:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 120,
     "quests": [
       {
-        "id": "KID_TIME_L120_Q1",
-        "instruction": "Level 120 Challenge: Weekend Wonder!",
-        "question": "What has swings? 🎡✨",
+        "id": "KIDS_TIME_L120_Q1",
+        "gameType": "time",
+        "level": 120,
+        "instruction": "Which clock time matches: \"time to wake up and eat yummy breakfast\"?",
+        "question": "8:00 AM",
+        "correctAnswer": "8:00 AM",
         "options": [
-          "Playground",
-          "Bed",
-          "Bus"
+          "8:00 AM",
+          "9:00 PM",
+          "12:00 PM"
         ],
-        "correctAnswer": "Playground",
-        "hint": "Saturday fun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 8:00 AM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L120_Q2",
-        "instruction": "Level 120 Challenge: Weekend Wonder!",
-        "question": "What is the last day? 📅⛪",
+        "id": "KIDS_TIME_L120_Q2",
+        "gameType": "time",
+        "level": 120,
+        "instruction": "Which clock time matches: \"noon time when we eat our lunch at school\"?",
+        "question": "12:00 PM",
+        "correctAnswer": "12:00 PM",
         "options": [
-          "Sunday",
-          "Saturday",
-          "Friday"
+          "12:00 PM",
+          "4:00 PM",
+          "9:00 PM"
         ],
-        "correctAnswer": "Sunday",
-        "hint": "Rest day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 12:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_TIME_L120_Q3",
-        "instruction": "Level 120 Challenge: Mastery!",
-        "question": "Are you a Weekend Wonder?",
+        "id": "KIDS_TIME_L120_Q3",
+        "gameType": "time",
+        "level": 120,
+        "instruction": "Which clock time matches: \"afternoon time to play in the green park\"?",
+        "question": "4:00 PM",
+        "correctAnswer": "4:00 PM",
         "options": [
-          "YES!",
-          "No"
+          "12:00 PM",
+          "8:00 AM",
+          "4:00 PM"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 120!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Select the correct hour: 4:00 PM.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

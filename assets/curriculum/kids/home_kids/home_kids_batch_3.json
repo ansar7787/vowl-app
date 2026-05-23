@@ -3,52 +3,73 @@
     "level": 21,
     "quests": [
       {
-        "id": "KID_HOME_KIDS_L21_Q1",
-        "instruction": "Find the BED",
-        "question": "🛏️✨",
+        "id": "KIDS_HOME_KIDS_L21_Q1",
+        "gameType": "home_kids",
+        "level": 21,
+        "instruction": "In which room do we find the soft sofa and TV where the family watches shows?",
+        "question": "Living Room",
+        "correctAnswer": "Living Room",
         "options": [
-          "Bed",
-          "Stove",
-          "Car"
+          "Bathroom",
+          "Living Room",
+          "Kitchen"
         ],
-        "correctAnswer": "Bed",
-        "hint": "A bed is a big soft cloud where we lay down our heads to sleep and dream!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the living room in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L21_Q2",
-        "instruction": "Which one is a SLEEPY bed?",
-        "question": "🛏️💤",
+        "id": "KIDS_HOME_KIDS_L21_Q2",
+        "gameType": "home_kids",
+        "level": 21,
+        "instruction": "In which room do we find the comfortable bed to sleep cozy at night?",
+        "question": "Bedroom",
+        "correctAnswer": "Bedroom",
         "options": [
-          "Bed",
-          "Table",
-          "Lamp"
+          "Bedroom",
+          "Living Room",
+          "Kitchen"
         ],
-        "correctAnswer": "Bed",
-        "hint": "Look for the soft place with the pillow and the warm blankets!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the bedroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L21_Q3",
-        "instruction": "Find the dreaming place",
-        "question": "🛏️🛌",
+        "id": "KIDS_HOME_KIDS_L21_Q3",
+        "gameType": "home_kids",
+        "level": 21,
+        "instruction": "In which room do we find the hot stove and oven where mom cooks dinners?",
+        "question": "Kitchen",
+        "correctAnswer": "Kitchen",
         "options": [
-          "Bed",
-          "Fridge",
-          "Sink"
+          "Kitchen",
+          "Bathroom",
+          "Bedroom"
         ],
-        "correctAnswer": "Bed",
-        "hint": "We crawl in here at night and close our eyes to go to sleep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the kitchen in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 22,
     "quests": [
       {
-        "id": "KID_HOME_KIDS_L22_Q1",
-        "instruction": "Find the TEDDY BEAR",
-        "question": "🧸✨",
+        "id": "KIDS_HOME_KIDS_L22_Q1",
+        "gameType": "home_kids",
+        "level": 22,
+        "instruction": "In which room do we find the clean shower and sink to brush your teeth?",
+        "question": "Bathroom",
+        "correctAnswer": "Bathroom",
         "options": [
-          "Teddy Bear",
-          "Apple",
-          "TV"
+          "Bathroom",
+          "Bedroom",
+          "Living Room"
         ],
-        "correctAnswer": "Teddy Bear",
-        "hint": "A teddy bear is a fuzzy, soft friend that we love to hug and play with!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the bathroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L22_Q2",
-        "instruction": "Which one is a FUZZY friend?",
-        "question": "🧸🤗",
+        "id": "KIDS_HOME_KIDS_L22_Q2",
+        "gameType": "home_kids",
+        "level": 22,
+        "instruction": "In which room do we find the soft sofa and TV where the family watches shows?",
+        "question": "Living Room",
+        "correctAnswer": "Living Room",
         "options": [
-          "Teddy Bear",
-          "Spoon",
-          "Mirror"
+          "Living Room",
+          "Bathroom",
+          "Kitchen"
         ],
-        "correctAnswer": "Teddy Bear",
-        "hint": "Look for the brown toy with the soft fur and the happy face!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the living room in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L22_Q3",
-        "instruction": "Find the hugging toy",
-        "question": "🧸💖",
+        "id": "KIDS_HOME_KIDS_L22_Q3",
+        "gameType": "home_kids",
+        "level": 22,
+        "instruction": "In which room do we find the comfortable bed to sleep cozy at night?",
+        "question": "Bedroom",
+        "correctAnswer": "Bedroom",
         "options": [
-          "Teddy Bear",
-          "Bed",
-          "Sofa"
+          "Bathroom",
+          "Bedroom",
+          "Living Room"
         ],
-        "correctAnswer": "Teddy Bear",
-        "hint": "Give it a big squeeze! It's the softest friend in the bedroom!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the bedroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 23,
     "quests": [
       {
-        "id": "KID_HOME_KIDS_L23_Q1",
-        "instruction": "Find the WARDROBE",
-        "question": "👗✨",
+        "id": "KIDS_HOME_KIDS_L23_Q1",
+        "gameType": "home_kids",
+        "level": 23,
+        "instruction": "In which room do we find the hot stove and oven where mom cooks dinners?",
+        "question": "Kitchen",
+        "correctAnswer": "Kitchen",
         "options": [
-          "Wardrobe",
-          "Cake",
-          "Milk"
+          "Bedroom",
+          "Bathroom",
+          "Kitchen"
         ],
-        "correctAnswer": "Wardrobe",
-        "hint": "A wardrobe is a big tall box where we hang our shirts, dresses, and coats!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the kitchen in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L23_Q2",
-        "instruction": "Which one holds the CLOTHES?",
-        "question": "👗🚪",
+        "id": "KIDS_HOME_KIDS_L23_Q2",
+        "gameType": "home_kids",
+        "level": 23,
+        "instruction": "In which room do we find the clean shower and sink to brush your teeth?",
+        "question": "Bathroom",
+        "correctAnswer": "Bathroom",
         "options": [
-          "Wardrobe",
-          "Fridge",
-          "Sink"
+          "Kitchen",
+          "Bedroom",
+          "Bathroom"
         ],
-        "correctAnswer": "Wardrobe",
-        "hint": "Look for the wooden cabinet with the hangers and the folded clothes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the bathroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L23_Q3",
-        "instruction": "Find the dressing box",
-        "question": "👕👖",
+        "id": "KIDS_HOME_KIDS_L23_Q3",
+        "gameType": "home_kids",
+        "level": 23,
+        "instruction": "In which room do we find the soft sofa and TV where the family watches shows?",
+        "question": "Living Room",
+        "correctAnswer": "Living Room",
         "options": [
-          "Wardrobe",
-          "Sofa",
-          "Rug"
+          "Living Room",
+          "Bathroom",
+          "Bedroom"
         ],
-        "correctAnswer": "Wardrobe",
-        "hint": "We open these doors in the morning to find our favorite outfit!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the living room in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 24,
     "quests": [
       {
-        "id": "KID_HOME_KIDS_L24_Q1",
-        "instruction": "Find the WINDOW",
-        "question": "🪟✨",
+        "id": "KIDS_HOME_KIDS_L24_Q1",
+        "gameType": "home_kids",
+        "level": 24,
+        "instruction": "In which room do we find the comfortable bed to sleep cozy at night?",
+        "question": "Bedroom",
+        "correctAnswer": "Bedroom",
         "options": [
-          "Window",
-          "Donut",
-          "Pillow"
+          "Bedroom",
+          "Living Room",
+          "Bathroom"
         ],
-        "correctAnswer": "Window",
-        "hint": "A window is a glass hole in the wall where we can see the garden and the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the bedroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L24_Q2",
-        "instruction": "Which one sees the SUN?",
-        "question": "🪟☀️",
+        "id": "KIDS_HOME_KIDS_L24_Q2",
+        "gameType": "home_kids",
+        "level": 24,
+        "instruction": "In which room do we find the hot stove and oven where mom cooks dinners?",
+        "question": "Kitchen",
+        "correctAnswer": "Kitchen",
         "options": [
-          "Window",
-          "Rug",
-          "Bed"
+          "Kitchen",
+          "Living Room",
+          "Bathroom"
         ],
-        "correctAnswer": "Window",
-        "hint": "Look for the glass square that lets the sunlight into your room!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the kitchen in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L24_Q3",
-        "instruction": "Find the glass wall",
-        "question": "🐦🪟",
+        "id": "KIDS_HOME_KIDS_L24_Q3",
+        "gameType": "home_kids",
+        "level": 24,
+        "instruction": "In which room do we find the clean shower and sink to brush your teeth?",
+        "question": "Bathroom",
+        "correctAnswer": "Bathroom",
         "options": [
-          "Window",
-          "Mirror",
-          "Lamp"
+          "Bedroom",
+          "Kitchen",
+          "Bathroom"
         ],
-        "correctAnswer": "Window",
-        "hint": "We can look through this to see the birds flying outside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the bathroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 25,
     "quests": [
       {
-        "id": "KID_HOME_KIDS_L25_Q1",
-        "instruction": "Mix: Find the BEDROOM friends",
-        "question": "🛏️🧸🪟",
+        "id": "KIDS_HOME_KIDS_L25_Q1",
+        "gameType": "home_kids",
+        "level": 25,
+        "instruction": "In which room do we find the soft sofa and TV where the family watches shows?",
+        "question": "Living Room",
+        "correctAnswer": "Living Room",
         "options": [
-          "Bedroom Group",
-          "Kitchen Group",
-          "Street Group"
+          "Living Room",
+          "Bathroom",
+          "Kitchen"
         ],
-        "correctAnswer": "Bedroom Group",
-        "hint": "All of these are things that make your room cozy and fun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the living room in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L25_Q2",
-        "instruction": "Mix: Find the FUZZY friend",
-        "question": "🧸",
+        "id": "KIDS_HOME_KIDS_L25_Q2",
+        "gameType": "home_kids",
+        "level": 25,
+        "instruction": "In which room do we find the comfortable bed to sleep cozy at night?",
+        "question": "Bedroom",
+        "correctAnswer": "Bedroom",
         "options": [
-          "Teddy Bear",
-          "Bed",
-          "Window"
+          "Bedroom",
+          "Living Room",
+          "Bathroom"
         ],
-        "correctAnswer": "Teddy Bear",
-        "hint": "The one you love to hug at night!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the bedroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L25_Q3",
-        "instruction": "Mix: Which is for SLEEPING?",
-        "question": "🛏️💤",
+        "id": "KIDS_HOME_KIDS_L25_Q3",
+        "gameType": "home_kids",
+        "level": 25,
+        "instruction": "In which room do we find the hot stove and oven where mom cooks dinners?",
+        "question": "Kitchen",
+        "correctAnswer": "Kitchen",
         "options": [
-          "Bed",
-          "Wardrobe",
-          "Lamp"
+          "Living Room",
+          "Bathroom",
+          "Kitchen"
         ],
-        "correctAnswer": "Bed",
-        "hint": "The soft place with the pillow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the kitchen in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,51 +373,73 @@
     "level": 26,
     "quests": [
       {
-        "id": "KID_HOME_KIDS_L26_Q1",
-        "instruction": "Logic: Where do we keep our socks?",
-        "question": "🧦👗",
+        "id": "KIDS_HOME_KIDS_L26_Q1",
+        "gameType": "home_kids",
+        "level": 26,
+        "instruction": "In which room do we find the clean shower and sink to brush your teeth?",
+        "question": "Bathroom",
+        "correctAnswer": "Bathroom",
         "options": [
-          "In the wardrobe!",
-          "On the stove",
-          "In the sink"
+          "Kitchen",
+          "Bedroom",
+          "Bathroom"
         ],
-        "correctAnswer": "In the wardrobe!",
-        "hint": "The wardrobe holds all our clothes in drawers and on hangers!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the bathroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L26_Q2",
-        "instruction": "Logic: What do we do at night?",
-        "question": "🛏️😴",
+        "id": "KIDS_HOME_KIDS_L26_Q2",
+        "gameType": "home_kids",
+        "level": 26,
+        "instruction": "In which room do we find the soft sofa and TV where the family watches shows?",
+        "question": "Living Room",
+        "correctAnswer": "Living Room",
         "options": [
-          "Sleep in bed!",
-          "Jump on TV",
-          "Run in circles"
+          "Living Room",
+          "Bedroom",
+          "Kitchen"
         ],
-        "correctAnswer": "Sleep in bed!",
-        "hint": "Night time is for resting our bodies in a comfy bed!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the living room in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L26_Q3",
-        "instruction": "Logic: Is a window for walking through?",
-        "question": "🪟🚶",
+        "id": "KIDS_HOME_KIDS_L26_Q3",
+        "gameType": "home_kids",
+        "level": 26,
+        "instruction": "In which room do we find the comfortable bed to sleep cozy at night?",
+        "question": "Bedroom",
+        "correctAnswer": "Bedroom",
         "options": [
-          "No, it's for looking!",
-          "Yes"
+          "Bathroom",
+          "Living Room",
+          "Bedroom"
         ],
-        "correctAnswer": "No, it's for looking!",
-        "hint": "We look through the glass, we don't walk through it! Use the door!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the bedroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -320,52 +447,73 @@
     "level": 27,
     "quests": [
       {
-        "id": "KID_HOME_KIDS_L27_Q1",
-        "instruction": "Search: Find the soft pillow",
-        "question": "☁️🛏️",
+        "id": "KIDS_HOME_KIDS_L27_Q1",
+        "gameType": "home_kids",
+        "level": 27,
+        "instruction": "In which room do we find the hot stove and oven where mom cooks dinners?",
+        "question": "Kitchen",
+        "correctAnswer": "Kitchen",
         "options": [
-          "Pillow",
-          "Shoe",
-          "Cup"
+          "Kitchen",
+          "Bedroom",
+          "Bathroom"
         ],
-        "correctAnswer": "Pillow",
-        "hint": "The fluffy white cloud you rest your head on!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the kitchen in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L27_Q2",
-        "instruction": "Search: Find the curtains",
-        "question": "🪟🧣",
+        "id": "KIDS_HOME_KIDS_L27_Q2",
+        "gameType": "home_kids",
+        "level": 27,
+        "instruction": "In which room do we find the clean shower and sink to brush your teeth?",
+        "question": "Bathroom",
+        "correctAnswer": "Bathroom",
         "options": [
-          "Curtains",
-          "Bed",
-          "Teddy"
+          "Kitchen",
+          "Living Room",
+          "Bathroom"
         ],
-        "correctAnswer": "Curtains",
-        "hint": "Look for the colorful cloth that covers the window at night!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the bathroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L27_Q3",
-        "instruction": "Search: Find the toy box",
-        "question": "🧸📦",
+        "id": "KIDS_HOME_KIDS_L27_Q3",
+        "gameType": "home_kids",
+        "level": 27,
+        "instruction": "In which room do we find the soft sofa and TV where the family watches shows?",
+        "question": "Living Room",
+        "correctAnswer": "Living Room",
         "options": [
-          "Toy Box",
-          "Wardrobe",
-          "Window"
+          "Bathroom",
+          "Living Room",
+          "Kitchen"
         ],
-        "correctAnswer": "Toy Box",
-        "hint": "A big box where your teddy bear and toys go to rest!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the living room in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -373,52 +521,73 @@
     "level": 28,
     "quests": [
       {
-        "id": "KID_HOME_KIDS_L28_Q1",
-        "instruction": "Actions: How does a blanket feel?",
-        "question": "🛏️ Choice",
+        "id": "KIDS_HOME_KIDS_L28_Q1",
+        "gameType": "home_kids",
+        "level": 28,
+        "instruction": "In which room do we find the comfortable bed to sleep cozy at night?",
+        "question": "Bedroom",
+        "correctAnswer": "Bedroom",
         "options": [
-          "Warm and Soft!",
-          "Hard and Pointy",
-          "Cold as ice"
+          "Bedroom",
+          "Bathroom",
+          "Living Room"
         ],
-        "correctAnswer": "Warm and Soft!",
-        "hint": "Blankets keep you cozy and snuggly while you sleep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the bedroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L28_Q2",
-        "instruction": "Actions: What color is the sky through the window?",
-        "question": "🪟 Choice",
+        "id": "KIDS_HOME_KIDS_L28_Q2",
+        "gameType": "home_kids",
+        "level": 28,
+        "instruction": "In which room do we find the hot stove and oven where mom cooks dinners?",
+        "question": "Kitchen",
+        "correctAnswer": "Kitchen",
         "options": [
-          "Blue or Dark!",
-          "Green",
-          "Pink"
+          "Bathroom",
+          "Bedroom",
+          "Kitchen"
         ],
-        "correctAnswer": "Blue or Dark!",
-        "hint": "The sky is blue in the day and dark at night!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the kitchen in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L28_Q3",
-        "instruction": "Actions: How do we hug a teddy?",
-        "question": "🧸 Choice",
+        "id": "KIDS_HOME_KIDS_L28_Q3",
+        "gameType": "home_kids",
+        "level": 28,
+        "instruction": "In which room do we find the clean shower and sink to brush your teeth?",
+        "question": "Bathroom",
+        "correctAnswer": "Bathroom",
         "options": [
-          "Squeeze it tight!",
-          "Kick it",
-          "Eat it"
+          "Bedroom",
+          "Living Room",
+          "Bathroom"
         ],
-        "correctAnswer": "Squeeze it tight!",
-        "hint": "Teddies love gentle hugs from their friends!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the bathroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -426,52 +595,73 @@
     "level": 29,
     "quests": [
       {
-        "id": "KID_HOME_KIDS_L29_Q1",
-        "instruction": "Review: Who is for dreaming?",
-        "question": "🛏️ Review",
+        "id": "KIDS_HOME_KIDS_L29_Q1",
+        "gameType": "home_kids",
+        "level": 29,
+        "instruction": "In which room do we find the soft sofa and TV where the family watches shows?",
+        "question": "Living Room",
+        "correctAnswer": "Living Room",
         "options": [
-          "Bed",
-          "Window",
-          "Wardrobe"
+          "Bedroom",
+          "Living Room",
+          "Kitchen"
         ],
-        "correctAnswer": "Bed",
-        "hint": "The soft friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the living room in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L29_Q2",
-        "instruction": "Review: Who is the fuzzy toy?",
-        "question": "🧸 Review",
+        "id": "KIDS_HOME_KIDS_L29_Q2",
+        "gameType": "home_kids",
+        "level": 29,
+        "instruction": "In which room do we find the comfortable bed to sleep cozy at night?",
+        "question": "Bedroom",
+        "correctAnswer": "Bedroom",
         "options": [
-          "Teddy Bear",
-          "Curtain",
-          "Pillow"
+          "Kitchen",
+          "Bathroom",
+          "Bedroom"
         ],
-        "correctAnswer": "Teddy Bear",
-        "hint": "The hugging friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the bedroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_HOME_KIDS_L29_Q3",
-        "instruction": "Review: Who has glass?",
-        "question": "🪟 Review",
+        "id": "KIDS_HOME_KIDS_L29_Q3",
+        "gameType": "home_kids",
+        "level": 29,
+        "instruction": "In which room do we find the hot stove and oven where mom cooks dinners?",
+        "question": "Kitchen",
+        "correctAnswer": "Kitchen",
         "options": [
-          "Window",
-          "Bed",
-          "Rug"
+          "Bathroom",
+          "Bedroom",
+          "Kitchen"
         ],
-        "correctAnswer": "Window",
-        "hint": "The looking friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the kitchen in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -479,51 +669,73 @@
     "level": 30,
     "quests": [
       {
-        "id": "KID_HOME_KIDS_L30_Q1",
-        "instruction": "Level 30 Challenge: Rooms!",
-        "question": "Where do we find a bed and a teddy bear?",
+        "id": "KIDS_HOME_KIDS_L30_Q1",
+        "gameType": "home_kids",
+        "level": 30,
+        "instruction": "In which room do we find the clean shower and sink to brush your teeth?",
+        "question": "Bathroom",
+        "correctAnswer": "Bathroom",
         "options": [
           "Bedroom",
-          "In the Pool",
-          "In the Oven"
+          "Bathroom",
+          "Kitchen"
         ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the bathroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_HOME_KIDS_L30_Q2",
+        "gameType": "home_kids",
+        "level": 30,
+        "instruction": "In which room do we find the soft sofa and TV where the family watches shows?",
+        "question": "Living Room",
+        "correctAnswer": "Living Room",
+        "options": [
+          "Living Room",
+          "Bedroom",
+          "Kitchen"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the living room in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_HOME_KIDS_L30_Q3",
+        "gameType": "home_kids",
+        "level": 30,
+        "instruction": "In which room do we find the comfortable bed to sleep cozy at night?",
+        "question": "Bedroom",
         "correctAnswer": "Bedroom",
-        "hint": "The room where you sleep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_HOME_KIDS_L30_Q2",
-        "instruction": "Level 30 Challenge: Clothing!",
-        "question": "Where do we hang our shirts and pants?",
         "options": [
-          "Wardrobe",
-          "Fridge",
-          "Sink"
+          "Bedroom",
+          "Kitchen",
+          "Bathroom"
         ],
-        "correctAnswer": "Wardrobe",
-        "hint": "The big tall wooden box!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_HOME_KIDS_L30_Q3",
-        "instruction": "Level 30 Challenge: Mastery!",
-        "question": "Are you a Dream Explorer?",
-        "options": [
-          "YES!",
-          "No"
-        ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 30!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the bedroom in your home.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

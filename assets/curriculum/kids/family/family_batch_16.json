@@ -3,50 +3,73 @@
     "level": 151,
     "quests": [
       {
-        "id": "KID_FAMILY_L151_Q1",
-        "instruction": "Find the bright TRUTH",
-        "question": "💡✨",
+        "id": "KIDS_FAMILY_L151_Q1",
+        "gameType": "family",
+        "level": 151,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Truth",
-          "Shadow",
-          "Cloud"
+          "Mother",
+          "Grandmother",
+          "Sister"
         ],
-        "correctAnswer": "Truth",
-        "hint": "The truth is when you say exactly what happened! It's like a bright light in your heart!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L151_Q2",
-        "instruction": "Which one is SHINING?",
-        "question": "💡 vs 🌑",
+        "id": "KIDS_FAMILY_L151_Q2",
+        "gameType": "family",
+        "level": 151,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Truth",
-          "Lie"
+          "Sister",
+          "Mother",
+          "Brother"
         ],
-        "correctAnswer": "Truth",
-        "hint": "Telling the truth makes you feel proud and happy inside, just like a shining light!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L151_Q3",
-        "instruction": "Do we tell mommy the TRUTH?",
-        "question": "👩💡🗣️❓",
+        "id": "KIDS_FAMILY_L151_Q3",
+        "gameType": "family",
+        "level": 151,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, always!",
-          "No, only cats"
+          "Grandmother",
+          "Mother",
+          "Sister"
         ],
-        "correctAnswer": "Yes, always!",
-        "hint": "Even if we make a mistake, telling mommy the truth is the bravest and best thing to do!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 152,
     "quests": [
       {
-        "id": "KID_FAMILY_L152_Q1",
-        "instruction": "Find the kind APOLOGY",
-        "question": "🤝❤️✨",
+        "id": "KIDS_FAMILY_L152_Q1",
+        "gameType": "family",
+        "level": 152,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Apology",
-          "Shout",
-          "Push"
+          "Sister",
+          "Mother",
+          "Grandmother"
         ],
-        "correctAnswer": "Apology",
-        "hint": "An apology is when you say 'I'm sorry' to make someone feel better after a mistake!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L152_Q2",
-        "instruction": "Which one says SORRY?",
-        "question": "🤝 vs 👊",
+        "id": "KIDS_FAMILY_L152_Q2",
+        "gameType": "family",
+        "level": 152,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Sorry Hand",
-          "Angry Fist"
+          "Father",
+          "Grandfather",
+          "Brother"
         ],
-        "correctAnswer": "Sorry Hand",
-        "hint": "We use our words and a gentle hand to show we are sorry for hurting our sister's feelings!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L152_Q3",
-        "instruction": "Does it fix a HEART?",
-        "question": "🤝💔❤️❓",
+        "id": "KIDS_FAMILY_L152_Q3",
+        "gameType": "family",
+        "level": 152,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, mends it!",
-          "No, breaks it more"
+          "Father",
+          "Mother",
+          "Grandfather"
         ],
-        "correctAnswer": "Yes, mends it!",
-        "hint": "Saying 'sorry' is like putting a band-aid on a heart to help it feel happy again!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 153,
     "quests": [
       {
-        "id": "KID_FAMILY_L153_Q1",
-        "instruction": "Find the strong PROMISE",
-        "question": "🤙✨",
+        "id": "KIDS_FAMILY_L153_Q1",
+        "gameType": "family",
+        "level": 153,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Promise",
-          "Wave",
-          "Clap"
+          "Grandmother",
+          "Brother",
+          "Sister"
         ],
-        "correctAnswer": "Promise",
-        "hint": "A promise is a special word you give to daddy that you will definitely do what you said!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L153_Q2",
-        "instruction": "Which one do we KEEP?",
-        "question": "🤙 vs 🎈",
+        "id": "KIDS_FAMILY_L153_Q2",
+        "gameType": "family",
+        "level": 153,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Promise",
-          "Floating Balloon"
+          "Brother",
+          "Father",
+          "Mother"
         ],
-        "correctAnswer": "Promise",
-        "hint": "We keep our promises tight in our hearts so people know they can trust us!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L153_Q3",
-        "instruction": "Is a promise for TRUST?",
-        "question": "🤙🤝❓",
+        "id": "KIDS_FAMILY_L153_Q3",
+        "gameType": "family",
+        "level": 153,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, for trust!",
-          "No, for soup"
+          "Sister",
+          "Father",
+          "Grandfather"
         ],
-        "correctAnswer": "Yes, for trust!",
-        "hint": "When you keep your promise to mommy, she knows she can always trust her big helper!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 154,
     "quests": [
       {
-        "id": "KID_FAMILY_L154_Q1",
-        "instruction": "Find the quiet SECRET",
-        "question": "🤫✨",
+        "id": "KIDS_FAMILY_L154_Q1",
+        "gameType": "family",
+        "level": 154,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Secret",
-          "Shout",
-          "Song"
+          "Brother",
+          "Grandmother",
+          "Mother"
         ],
-        "correctAnswer": "Secret",
-        "hint": "A secret is a quiet whisper you share with your best friend or sister that you keep safe!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L154_Q2",
-        "instruction": "Which one is for WHISPERING?",
-        "question": "🤫 vs 📢",
+        "id": "KIDS_FAMILY_L154_Q2",
+        "gameType": "family",
+        "level": 154,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Quiet Secret",
-          "Loud Speaker"
+          "Father",
+          "Mother",
+          "Sister"
         ],
-        "correctAnswer": "Quiet Secret",
-        "hint": "We use our quiet voices to share a fun surprise or a special secret with family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L154_Q3",
-        "instruction": "Do we keep GOOD secrets?",
-        "question": "🤫🎁❓",
+        "id": "KIDS_FAMILY_L154_Q3",
+        "gameType": "family",
+        "level": 154,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, like a gift!",
-          "No, tell everyone"
+          "Grandfather",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Yes, like a gift!",
-        "hint": "Keeping a secret about a birthday surprise for daddy is a very fun and kind thing to do!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,50 +299,73 @@
     "level": 155,
     "quests": [
       {
-        "id": "KID_FAMILY_L155_Q1",
-        "instruction": "Logic: Why tell the TRUTH?",
-        "question": "💡🗣️❓",
+        "id": "KIDS_FAMILY_L155_Q1",
+        "gameType": "family",
+        "level": 155,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "To have a light heart!",
-          "To get a cookie",
-          "To find a bug"
+          "Mother",
+          "Grandfather",
+          "Grandmother"
         ],
-        "correctAnswer": "To have a light heart!",
-        "hint": "The truth makes you feel free and happy inside, while a lie feels heavy like a rock!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L155_Q2",
-        "instruction": "Logic: Do we say sorry for MISTAKES?",
-        "question": "🤝🏚️❓",
+        "id": "KIDS_FAMILY_L155_Q2",
+        "gameType": "family",
+        "level": 155,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Yes, fix it!",
-          "No, hide it"
+          "Brother",
+          "Father",
+          "Mother"
         ],
-        "correctAnswer": "Yes, fix it!",
-        "hint": "Even if it was an accident, saying sorry shows you are a kind and brave family member!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L155_Q3",
-        "instruction": "Logic: Does honesty build TRUST?",
-        "question": "💡🤝🧱❓",
+        "id": "KIDS_FAMILY_L155_Q3",
+        "gameType": "family",
+        "level": 155,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, strong family!",
-          "No, only bricks"
+          "Father",
+          "Grandmother",
+          "Sister"
         ],
-        "correctAnswer": "Yes, strong family!",
-        "hint": "When we are honest, our family trust grows stronger every single day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -258,49 +373,73 @@
     "level": 156,
     "quests": [
       {
-        "id": "KID_FAMILY_L156_Q1",
-        "instruction": "Search: Find the honesty LIGHT",
-        "question": "💡✨ vs 🌑",
+        "id": "KIDS_FAMILY_L156_Q1",
+        "gameType": "family",
+        "level": 156,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Bright Light",
-          "Darkness"
+          "Grandmother",
+          "Grandfather",
+          "Mother"
         ],
-        "correctAnswer": "Bright Light",
-        "hint": "Look for the shining bulb that represents the truth in our family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L156_Q2",
-        "instruction": "Search: Find the sorry HANDS",
-        "question": "🤝❤️ vs 👊",
+        "id": "KIDS_FAMILY_L156_Q2",
+        "gameType": "family",
+        "level": 156,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Gentle Hands",
-          "Angry Hands"
+          "Grandfather",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Gentle Hands",
-        "hint": "Look for the two hands coming together to make things right again!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L156_Q3",
-        "instruction": "Search: Find the promise PINKY",
-        "question": "🤙✨ vs 🦶",
+        "id": "KIDS_FAMILY_L156_Q3",
+        "gameType": "family",
+        "level": 156,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Pinky Promise",
-          "Running Foot"
+          "Grandfather",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Pinky Promise",
-        "hint": "Look for the little finger hooked to another for a special family promise!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -308,52 +447,73 @@
     "level": 157,
     "quests": [
       {
-        "id": "KID_FAMILY_L157_Q1",
-        "instruction": "Review: Who is the light?",
-        "question": "💡 Review",
+        "id": "KIDS_FAMILY_L157_Q1",
+        "gameType": "family",
+        "level": 157,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Truth",
-          "Lie",
-          "Cloud"
+          "Father",
+          "Mother",
+          "Grandmother"
         ],
-        "correctAnswer": "Truth",
-        "hint": "The one that makes your heart feel bright!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L157_Q2",
-        "instruction": "Review: Who says sorry?",
-        "question": "🤝 Review",
+        "id": "KIDS_FAMILY_L157_Q2",
+        "gameType": "family",
+        "level": 157,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Apology",
-          "Shout",
-          "Sleep"
+          "Grandfather",
+          "Grandmother",
+          "Brother"
         ],
-        "correctAnswer": "Apology",
-        "hint": "The one that fixes a broken heart!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L157_Q3",
-        "instruction": "Review: Who is the pinky?",
-        "question": "🤙 Review",
+        "id": "KIDS_FAMILY_L157_Q3",
+        "gameType": "family",
+        "level": 157,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Promise",
-          "Wave",
-          "Clap"
+          "Mother",
+          "Sister",
+          "Brother"
         ],
-        "correctAnswer": "Promise",
-        "hint": "The one you keep to show you are trustable!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -361,49 +521,73 @@
     "level": 158,
     "quests": [
       {
-        "id": "KID_FAMILY_L158_Q1",
-        "instruction": "Which one is for being BRAVE?",
-        "question": "💡🗣️ vs 🤫🌑",
+        "id": "KIDS_FAMILY_L158_Q1",
+        "gameType": "family",
+        "level": 158,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Telling Truth",
-          "Hiding Truth"
+          "Grandfather",
+          "Grandmother",
+          "Mother"
         ],
-        "correctAnswer": "Telling Truth",
-        "hint": "It takes a brave kid to tell the truth when they have made a mistake!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L158_Q2",
-        "instruction": "Which one is for making FRIENDS?",
-        "question": "🤝❤️ vs 👊",
+        "id": "KIDS_FAMILY_L158_Q2",
+        "gameType": "family",
+        "level": 158,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Apologizing",
-          "Pushing"
+          "Father",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Apologizing",
-        "hint": "Saying sorry is the best way to keep your family and friends happy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L158_Q3",
-        "instruction": "Is your word a GIFT?",
-        "question": "🗣️🎁❓",
+        "id": "KIDS_FAMILY_L158_Q3",
+        "gameType": "family",
+        "level": 158,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, keep it true!",
-          "No, it's air"
+          "Grandfather",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, keep it true!",
-        "hint": "When you give your word to your family, treat it like a precious gift!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -411,49 +595,73 @@
     "level": 159,
     "quests": [
       {
-        "id": "KID_FAMILY_L159_Q1",
-        "instruction": "Logic: Do we tell SECRETS to mommy?",
-        "question": "👩🤫❓",
+        "id": "KIDS_FAMILY_L159_Q1",
+        "gameType": "family",
+        "level": 159,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Yes, keep her safe!",
-          "No, hide them"
+          "Father",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, keep her safe!",
-        "hint": "If a secret ever makes you feel worried, always tell your mommy or daddy right away!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L159_Q2",
-        "instruction": "Logic: Does a lie feel HEAVY?",
-        "question": "🌑🪨❓",
+        "id": "KIDS_FAMILY_L159_Q2",
+        "gameType": "family",
+        "level": 159,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Yes, like a rock!",
-          "No, like a feather"
+          "Father",
+          "Brother",
+          "Mother"
         ],
-        "correctAnswer": "Yes, like a rock!",
-        "hint": "A lie feels heavy and sad, but the truth makes you feel as light as a balloon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L159_Q3",
-        "instruction": "Logic: Is a family built on TRUTH?",
-        "question": "👨‍👩‍👧‍👦🧱💡❓",
+        "id": "KIDS_FAMILY_L159_Q3",
+        "gameType": "family",
+        "level": 159,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, the best foundation!",
-          "No, only on cake"
+          "Sister",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, the best foundation!",
-        "hint": "A family that is honest with each other is the strongest team in the world!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -461,51 +669,73 @@
     "level": 160,
     "quests": [
       {
-        "id": "KID_FAMILY_L160_Q1",
-        "instruction": "Level 160 Challenge: Honest Heart!",
-        "question": "Find bright TRUTH",
+        "id": "KIDS_FAMILY_L160_Q1",
+        "gameType": "family",
+        "level": 160,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "💡",
-          "🌑",
-          "☁️"
+          "Mother",
+          "Brother",
+          "Sister"
         ],
-        "correctAnswer": "💡",
-        "hint": "The one that shines!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L160_Q2",
-        "instruction": "Level 160 Challenge: Honest Heart!",
-        "question": "Find pinky PROMISE",
+        "id": "KIDS_FAMILY_L160_Q2",
+        "gameType": "family",
+        "level": 160,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "🤙",
-          "👋",
-          "👊"
+          "Mother",
+          "Father",
+          "Grandfather"
         ],
-        "correctAnswer": "🤙",
-        "hint": "The one for trust!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L160_Q3",
-        "instruction": "Level 160 Challenge: Mastery!",
-        "question": "Are you an Honest Heart?",
+        "id": "KIDS_FAMILY_L160_Q3",
+        "gameType": "family",
+        "level": 160,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "YES!",
-          "No"
+          "Sister",
+          "Mother",
+          "Grandfather"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 160!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 8,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

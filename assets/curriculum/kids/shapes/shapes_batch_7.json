@@ -3,52 +3,73 @@
     "level": 61,
     "quests": [
       {
-        "id": "KID_SHAPES_L61_Q1",
-        "instruction": "Find the CUBE",
-        "question": "🧊",
-        "options": [
-          "Cube",
-          "Square",
-          "Sphere"
-        ],
-        "correctAnswer": "Cube",
-        "hint": "A cube is like a square box that you can hold in your hand!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_SHAPES_L61_Q2",
-        "instruction": "Which one is a CUBE?",
-        "question": "🎲",
+        "id": "KIDS_SHAPES_L61_Q1",
+        "gameType": "shapes",
+        "level": 61,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
           "Square",
-          "Cube",
-          "Circle"
-        ],
-        "correctAnswer": "Cube",
-        "hint": "Playing dice are perfect cubes with 6 sides!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_SHAPES_L61_Q3",
-        "instruction": "Find the cold ICE CUBE",
-        "question": "🧊❄️",
-        "options": [
-          "Circle",
-          "Cube",
+          "Rectangle",
           "Triangle"
         ],
-        "correctAnswer": "Cube",
-        "hint": "Ice cubes are shaped like little blocks!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L61_Q2",
+        "gameType": "shapes",
+        "level": 61,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Circle",
+          "Square",
+          "Rectangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L61_Q3",
+        "gameType": "shapes",
+        "level": 61,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Triangle",
+          "Square",
+          "Rectangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 62,
     "quests": [
       {
-        "id": "KID_SHAPES_L62_Q1",
-        "instruction": "Find the SPHERE",
-        "question": "⚽",
+        "id": "KIDS_SHAPES_L62_Q1",
+        "gameType": "shapes",
+        "level": 62,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Sphere",
+          "Triangle",
           "Circle",
-          "Cube"
+          "Rectangle"
         ],
-        "correctAnswer": "Sphere",
-        "hint": "A sphere is a round ball shape that is not flat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L62_Q2",
-        "instruction": "Which one is a SPHERE?",
-        "question": "🌍",
+        "id": "KIDS_SHAPES_L62_Q2",
+        "gameType": "shapes",
+        "level": 62,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
+          "Triangle",
           "Circle",
-          "Sphere",
-          "Triangle"
-        ],
-        "correctAnswer": "Sphere",
-        "hint": "Our planet Earth is a giant sphere in space!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_SHAPES_L62_Q3",
-        "instruction": "Find the bouncy BALL",
-        "question": "🏀",
-        "options": [
-          "Sphere",
-          "Cube",
           "Square"
         ],
-        "correctAnswer": "Sphere",
-        "hint": "Basketballs are spheres so they can bounce and roll!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L62_Q3",
+        "gameType": "shapes",
+        "level": 62,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Circle",
+          "Square",
+          "Rectangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 63,
     "quests": [
       {
-        "id": "KID_SHAPES_L63_Q1",
-        "instruction": "Detective: Find the sugar block",
-        "question": "🍬🧊",
+        "id": "KIDS_SHAPES_L63_Q1",
+        "gameType": "shapes",
+        "level": 63,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Cube",
-          "Sphere",
+          "Triangle",
+          "Square",
+          "Circle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L63_Q2",
+        "gameType": "shapes",
+        "level": 63,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Rectangle",
+          "Circle",
           "Triangle"
         ],
-        "correctAnswer": "Cube",
-        "hint": "Sugar cubes are sweet little boxes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L63_Q2",
-        "instruction": "Detective: Find the marble",
-        "question": "🔮",
+        "id": "KIDS_SHAPES_L63_Q3",
+        "gameType": "shapes",
+        "level": 63,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "Sphere",
-          "Circle",
-          "Square"
+          "Square",
+          "Triangle",
+          "Circle"
         ],
-        "correctAnswer": "Sphere",
-        "hint": "Marbles are tiny glass spheres!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_SHAPES_L63_Q3",
-        "instruction": "Detective: Find the Rubik's toy",
-        "question": "🧱🎨",
-        "options": [
-          "Cube",
-          "Sphere",
-          "Star"
-        ],
-        "correctAnswer": "Cube",
-        "hint": "A Rubik's cube is a puzzle with many small squares on a cube!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,49 +225,73 @@
     "level": 64,
     "quests": [
       {
-        "id": "KID_SHAPES_L64_Q1",
-        "instruction": "Logic: Is a square flat?",
-        "question": "🟦 Check",
+        "id": "KIDS_SHAPES_L64_Q1",
+        "gameType": "shapes",
+        "level": 64,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "Yes",
-          "No, it's fat like a cube"
+          "Circle",
+          "Rectangle",
+          "Triangle"
         ],
-        "correctAnswer": "Yes",
-        "hint": "A square is a flat drawing on paper!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L64_Q2",
-        "instruction": "Logic: Can you hold a cube?",
-        "question": "🧊 Check",
+        "id": "KIDS_SHAPES_L64_Q2",
+        "gameType": "shapes",
+        "level": 64,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Yes",
-          "No, it's flat"
+          "Triangle",
+          "Rectangle",
+          "Square"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Cubes have depth and you can pick them up!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L64_Q3",
-        "instruction": "Logic: Is a sphere just a circle?",
-        "question": "⚽ Check",
+        "id": "KIDS_SHAPES_L64_Q3",
+        "gameType": "shapes",
+        "level": 64,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "No, it's a 3D ball!",
-          "Yes"
+          "Rectangle",
+          "Square",
+          "Triangle"
         ],
-        "correctAnswer": "No, it's a 3D ball!",
-        "hint": "A circle is flat like a plate, a sphere is round like a ball!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -212,49 +299,73 @@
     "level": 65,
     "quests": [
       {
-        "id": "KID_SHAPES_L65_Q1",
-        "instruction": "Compare: 🟦 vs 🧊",
-        "question": "Which one can you build with?",
+        "id": "KIDS_SHAPES_L65_Q1",
+        "gameType": "shapes",
+        "level": 65,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "Cube",
+          "Rectangle",
+          "Triangle",
           "Square"
         ],
-        "correctAnswer": "Cube",
-        "hint": "Cubes are blocks that you can stack!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L65_Q2",
-        "instruction": "Compare: ⭕ vs ⚽",
-        "question": "Which one can bounce?",
+        "id": "KIDS_SHAPES_L65_Q2",
+        "gameType": "shapes",
+        "level": 65,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "Sphere",
+          "Rectangle",
+          "Square",
           "Circle"
         ],
-        "correctAnswer": "Sphere",
-        "hint": "Balls bounce, drawings don't!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L65_Q3",
-        "instruction": "Compare: 🧱 vs 🧊",
-        "question": "Which has 6 equal sides?",
+        "id": "KIDS_SHAPES_L65_Q3",
+        "gameType": "shapes",
+        "level": 65,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Cube",
-          "Rectangle"
+          "Triangle",
+          "Rectangle",
+          "Circle"
         ],
-        "correctAnswer": "Cube",
-        "hint": "A cube is perfectly equal on all sides!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -262,52 +373,73 @@
     "level": 66,
     "quests": [
       {
-        "id": "KID_SHAPES_L66_Q1",
-        "instruction": "Identify: Which is a Sphere?",
-        "question": "⚽ Selection",
+        "id": "KIDS_SHAPES_L66_Q1",
+        "gameType": "shapes",
+        "level": 66,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Sphere",
+          "Triangle",
+          "Rectangle",
+          "Circle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L66_Q2",
+        "gameType": "shapes",
+        "level": 66,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Square",
+          "Circle",
+          "Triangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L66_Q3",
+        "gameType": "shapes",
+        "level": 66,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Circle",
           "Square",
           "Triangle"
         ],
-        "correctAnswer": "Sphere",
-        "hint": "Look for the round ball!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
-      },
-      {
-        "id": "KID_SHAPES_L66_Q2",
-        "instruction": "Identify: Which is a Cube?",
-        "question": "🧊 Selection",
-        "options": [
-          "Cube",
-          "Circle",
-          "Star"
-        ],
-        "correctAnswer": "Cube",
-        "hint": "Look for the 3D box!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
-      },
-      {
-        "id": "KID_SHAPES_L66_Q3",
-        "instruction": "Identify: Find the orange",
-        "question": "🍊",
-        "options": [
-          "Sphere",
-          "Cube",
-          "Heart"
-        ],
-        "correctAnswer": "Sphere",
-        "hint": "An orange is a fruit sphere!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -315,52 +447,73 @@
     "level": 67,
     "quests": [
       {
-        "id": "KID_SHAPES_L67_Q1",
-        "instruction": "Search: Find the GLOBE",
-        "question": "🌏",
+        "id": "KIDS_SHAPES_L67_Q1",
+        "gameType": "shapes",
+        "level": 67,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Sphere",
-          "Rectangle",
-          "Star"
-        ],
-        "correctAnswer": "Sphere",
-        "hint": "A globe is a model of our spherical world!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
-      },
-      {
-        "id": "KID_SHAPES_L67_Q2",
-        "instruction": "Search: Find the BLOCKS",
-        "question": "🧱🧱",
-        "options": [
-          "Cube",
+          "Triangle",
           "Circle",
-          "Triangle"
+          "Rectangle"
         ],
-        "correctAnswer": "Cube",
-        "hint": "Toy building blocks are often cubes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L67_Q3",
-        "instruction": "Search: Find the bubble",
-        "question": "🧼🫧",
+        "id": "KIDS_SHAPES_L67_Q2",
+        "gameType": "shapes",
+        "level": 67,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Sphere",
-          "Cube",
-          "Star"
+          "Rectangle",
+          "Square",
+          "Circle"
         ],
-        "correctAnswer": "Sphere",
-        "hint": "Soap bubbles are light, floating spheres!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L67_Q3",
+        "gameType": "shapes",
+        "level": 67,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Square",
+          "Triangle",
+          "Rectangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -368,52 +521,73 @@
     "level": 68,
     "quests": [
       {
-        "id": "KID_SHAPES_L68_Q1",
-        "instruction": "Actions: Who can ROLL?",
-        "question": "⚽ Choice",
+        "id": "KIDS_SHAPES_L68_Q1",
+        "gameType": "shapes",
+        "level": 68,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "Sphere",
-          "Cube",
-          "Square"
+          "Circle",
+          "Rectangle",
+          "Triangle"
         ],
-        "correctAnswer": "Sphere",
-        "hint": "Spheres roll because they have no flat sides!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L68_Q2",
-        "instruction": "Actions: Who can STACK?",
-        "question": "🧊 Choice",
+        "id": "KIDS_SHAPES_L68_Q2",
+        "gameType": "shapes",
+        "level": 68,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Cube",
-          "Sphere",
-          "Circle"
-        ],
-        "correctAnswer": "Cube",
-        "hint": "Cubes have flat sides that help them stay on top of each other!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
-      },
-      {
-        "id": "KID_SHAPES_L68_Q3",
-        "instruction": "Actions: Who can BOUNCE?",
-        "question": "🏀 Choice",
-        "options": [
-          "Sphere",
           "Triangle",
-          "Star"
+          "Circle",
+          "Rectangle"
         ],
-        "correctAnswer": "Sphere",
-        "hint": "Ball shapes are great for sports!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L68_Q3",
+        "gameType": "shapes",
+        "level": 68,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Rectangle",
+          "Circle",
+          "Triangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -421,52 +595,73 @@
     "level": 69,
     "quests": [
       {
-        "id": "KID_SHAPES_L69_Q1",
-        "instruction": "Review: Who is a 3D box?",
-        "question": "🧊 Review",
+        "id": "KIDS_SHAPES_L69_Q1",
+        "gameType": "shapes",
+        "level": 69,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "Cube",
           "Square",
-          "Sphere"
+          "Triangle",
+          "Rectangle"
         ],
-        "correctAnswer": "Cube",
-        "hint": "The block friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L69_Q2",
-        "instruction": "Review: Who is a 3D ball?",
-        "question": "⚽ Review",
+        "id": "KIDS_SHAPES_L69_Q2",
+        "gameType": "shapes",
+        "level": 69,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "Sphere",
+          "Square",
           "Circle",
-          "Triangle"
+          "Rectangle"
         ],
-        "correctAnswer": "Sphere",
-        "hint": "The rolling friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L69_Q3",
-        "instruction": "Review: Who has 6 flat sides?",
-        "question": "🎲 Review",
+        "id": "KIDS_SHAPES_L69_Q3",
+        "gameType": "shapes",
+        "level": 69,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Cube",
-          "Circle",
-          "Star"
+          "Square",
+          "Triangle",
+          "Rectangle"
         ],
-        "correctAnswer": "Cube",
-        "hint": "The dice friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -474,51 +669,73 @@
     "level": 70,
     "quests": [
       {
-        "id": "KID_SHAPES_L70_Q1",
-        "instruction": "Level 70 Challenge: 3D!",
-        "question": "What shape is a basketball?",
+        "id": "KIDS_SHAPES_L70_Q1",
+        "gameType": "shapes",
+        "level": 70,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Sphere",
-          "Cube",
-          "Circle"
-        ],
-        "correctAnswer": "Sphere",
-        "hint": "The round 3D ball!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_SHAPES_L70_Q2",
-        "instruction": "Level 70 Challenge: Blocks!",
-        "question": "What shape is an ice block?",
-        "options": [
-          "Cube",
-          "Sphere",
+          "Rectangle",
+          "Square",
           "Triangle"
         ],
-        "correctAnswer": "Cube",
-        "hint": "The square 3D block!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L70_Q3",
-        "instruction": "Level 70 Challenge: Mastery!",
-        "question": "Are you a 3D Scout?",
+        "id": "KIDS_SHAPES_L70_Q2",
+        "gameType": "shapes",
+        "level": 70,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "YES!",
-          "No"
+          "Square",
+          "Circle",
+          "Rectangle"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 70!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L70_Q3",
+        "gameType": "shapes",
+        "level": 70,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Rectangle",
+          "Circle",
+          "Triangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

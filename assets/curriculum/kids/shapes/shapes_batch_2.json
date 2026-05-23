@@ -3,52 +3,73 @@
     "level": 11,
     "quests": [
       {
-        "id": "KID_SHAPES_L11_Q1",
-        "instruction": "Detective: Find the round ball",
-        "question": "⚽",
+        "id": "KIDS_SHAPES_L11_Q1",
+        "gameType": "shapes",
+        "level": 11,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Circle",
+          "Rectangle",
+          "Triangle",
+          "Square"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L11_Q2",
+        "gameType": "shapes",
+        "level": 11,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Triangle",
+          "Rectangle",
+          "Circle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L11_Q3",
+        "gameType": "shapes",
+        "level": 11,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Rectangle",
           "Square",
           "Triangle"
         ],
-        "correctAnswer": "Circle",
-        "hint": "Balls are circles so they can roll!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_SHAPES_L11_Q2",
-        "instruction": "Detective: Find the pointy hat",
-        "question": "🥳",
-        "options": [
-          "Triangle",
-          "Square",
-          "Circle"
-        ],
-        "correctAnswer": "Triangle",
-        "hint": "Party hats are shaped like triangles!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_SHAPES_L11_Q3",
-        "instruction": "Detective: Find the flat sandwich",
-        "question": "🥪",
-        "options": [
-          "Triangle",
-          "Square",
-          "Star"
-        ],
-        "correctAnswer": "Triangle",
-        "hint": "This sandwich is cut into two triangles!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 12,
     "quests": [
       {
-        "id": "KID_SHAPES_L12_Q1",
-        "instruction": "Counting: How many corners on a TRIANGLE?",
-        "question": "🔺 Corners",
+        "id": "KIDS_SHAPES_L12_Q1",
+        "gameType": "shapes",
+        "level": 12,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "3",
-          "4",
-          "0"
+          "Circle",
+          "Triangle",
+          "Rectangle"
         ],
-        "correctAnswer": "3",
-        "hint": "1, 2, 3 pointy corners!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L12_Q2",
-        "instruction": "Counting: How many corners on a SQUARE?",
-        "question": "🟦 Corners",
+        "id": "KIDS_SHAPES_L12_Q2",
+        "gameType": "shapes",
+        "level": 12,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "4",
-          "3",
-          "5"
+          "Triangle",
+          "Circle",
+          "Rectangle"
         ],
-        "correctAnswer": "4",
-        "hint": "1, 2, 3, 4 corners for the box!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L12_Q3",
-        "instruction": "Counting: How many corners on a CIRCLE?",
-        "question": "⭕ Corners",
+        "id": "KIDS_SHAPES_L12_Q3",
+        "gameType": "shapes",
+        "level": 12,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "0",
-          "1",
-          "4"
+          "Rectangle",
+          "Circle",
+          "Square"
         ],
-        "correctAnswer": "0",
-        "hint": "Circles have no sharp corners at all!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 13,
     "quests": [
       {
-        "id": "KID_SHAPES_L13_Q1",
-        "instruction": "Identify: Who has 4 equal sides?",
-        "question": "Selection",
-        "options": [
-          "Square",
-          "Triangle",
-          "Heart"
-        ],
+        "id": "KIDS_SHAPES_L13_Q1",
+        "gameType": "shapes",
+        "level": 13,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
         "correctAnswer": "Square",
-        "hint": "A square is special because all sides are the same length!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_SHAPES_L13_Q2",
-        "instruction": "Identify: Who has 3 straight sides?",
-        "question": "Selection",
         "options": [
+          "Square",
           "Triangle",
-          "Circle",
-          "Star"
+          "Circle"
         ],
-        "correctAnswer": "Triangle",
-        "hint": "The three-sided shape!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L13_Q3",
-        "instruction": "Identify: Who has no straight sides?",
-        "question": "Selection",
+        "id": "KIDS_SHAPES_L13_Q2",
+        "gameType": "shapes",
+        "level": 13,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
           "Circle",
           "Square",
-          "Triangle"
+          "Rectangle"
         ],
-        "correctAnswer": "Circle",
-        "hint": "Circles are only made of curves!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L13_Q3",
+        "gameType": "shapes",
+        "level": 13,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Square",
+          "Triangle",
+          "Rectangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,49 +225,73 @@
     "level": 14,
     "quests": [
       {
-        "id": "KID_SHAPES_L14_Q1",
-        "instruction": "Compare: ⭕ vs ⚽",
-        "question": "Are they the same shape?",
+        "id": "KIDS_SHAPES_L14_Q1",
+        "gameType": "shapes",
+        "level": 14,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Yes",
-          "No"
+          "Circle",
+          "Triangle",
+          "Rectangle"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Both are perfectly round!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L14_Q2",
-        "instruction": "Compare: 🟦 vs 🧱",
-        "question": "Which is a square?",
+        "id": "KIDS_SHAPES_L14_Q2",
+        "gameType": "shapes",
+        "level": 14,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "🟦",
-          "🧱"
+          "Square",
+          "Triangle",
+          "Rectangle"
         ],
-        "correctAnswer": "🟦",
-        "hint": "The brick is longer, but the blue one is a square!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L14_Q3",
-        "instruction": "Compare: ⭐ vs 🔺",
-        "question": "Which has more points?",
+        "id": "KIDS_SHAPES_L14_Q3",
+        "gameType": "shapes",
+        "level": 14,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "Star",
-          "Triangle"
+          "Square",
+          "Circle",
+          "Rectangle"
         ],
-        "correctAnswer": "Star",
-        "hint": "A star has 5 or more points, a triangle only has 3!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -212,52 +299,73 @@
     "level": 15,
     "quests": [
       {
-        "id": "KID_SHAPES_L15_Q1",
-        "instruction": "World: Find the pizza slice",
-        "question": "🍕",
+        "id": "KIDS_SHAPES_L15_Q1",
+        "gameType": "shapes",
+        "level": 15,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
           "Triangle",
           "Circle",
-          "Heart"
+          "Rectangle"
         ],
-        "correctAnswer": "Triangle",
-        "hint": "One slice is a triangle, the whole pizza is a circle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L15_Q2",
-        "instruction": "World: Find the whole pizza",
-        "question": "🍕 Full",
+        "id": "KIDS_SHAPES_L15_Q2",
+        "gameType": "shapes",
+        "level": 15,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
+          "Rectangle",
           "Circle",
-          "Square",
-          "Star"
-        ],
-        "correctAnswer": "Circle",
-        "hint": "A whole pizza starts as a big circle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
-      },
-      {
-        "id": "KID_SHAPES_L15_Q3",
-        "instruction": "World: Find the donut",
-        "question": "🍩",
-        "options": [
-          "Circle",
-          "Square",
           "Triangle"
         ],
-        "correctAnswer": "Circle",
-        "hint": "Donuts are yummy circles with a hole!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L15_Q3",
+        "gameType": "shapes",
+        "level": 15,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Square",
+          "Circle",
+          "Triangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -265,49 +373,73 @@
     "level": 16,
     "quests": [
       {
-        "id": "KID_SHAPES_L16_Q1",
-        "instruction": "Logic: Does a square roll?",
-        "question": "🟦 Check",
+        "id": "KIDS_SHAPES_L16_Q1",
+        "gameType": "shapes",
+        "level": 16,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "No",
-          "Yes"
+          "Circle",
+          "Square",
+          "Rectangle"
         ],
-        "correctAnswer": "No",
-        "hint": "Squares have flat sides that stop them from rolling!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L16_Q2",
-        "instruction": "Logic: Does a circle roll?",
-        "question": "⭕ Check",
+        "id": "KIDS_SHAPES_L16_Q2",
+        "gameType": "shapes",
+        "level": 16,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Yes",
-          "No"
+          "Square",
+          "Triangle",
+          "Rectangle"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Circles roll perfectly because they are round!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L16_Q3",
-        "instruction": "Logic: Can you build a tower with circles?",
-        "question": "⭕ Check",
+        "id": "KIDS_SHAPES_L16_Q3",
+        "gameType": "shapes",
+        "level": 16,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "No, they roll off!",
-          "Yes"
+          "Square",
+          "Circle",
+          "Rectangle"
         ],
-        "correctAnswer": "No, they roll off!",
-        "hint": "Try building with squares instead!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -315,52 +447,73 @@
     "level": 17,
     "quests": [
       {
-        "id": "KID_SHAPES_L17_Q1",
-        "instruction": "Identify: Who has 5 points?",
-        "question": "Selection",
-        "options": [
-          "Star",
-          "Square",
-          "Triangle"
-        ],
-        "correctAnswer": "Star",
-        "hint": "Count the tips of the star!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_SHAPES_L17_Q2",
-        "instruction": "Identify: Who has 2 curves?",
-        "question": "Selection",
-        "options": [
-          "Heart",
-          "Circle",
-          "Triangle"
-        ],
-        "correctAnswer": "Heart",
-        "hint": "A heart has two curvy bumps at the top!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_SHAPES_L17_Q3",
-        "instruction": "Identify: Who has 4 corners?",
-        "question": "Selection",
+        "id": "KIDS_SHAPES_L17_Q1",
+        "gameType": "shapes",
+        "level": 17,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
           "Square",
+          "Rectangle",
+          "Circle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L17_Q2",
+        "gameType": "shapes",
+        "level": 17,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Rectangle",
           "Triangle",
           "Circle"
         ],
-        "correctAnswer": "Square",
-        "hint": "The boxy shape!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L17_Q3",
+        "gameType": "shapes",
+        "level": 17,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Circle",
+          "Triangle",
+          "Rectangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -368,52 +521,73 @@
     "level": 18,
     "quests": [
       {
-        "id": "KID_SHAPES_L18_Q1",
-        "instruction": "Search: Find the CLOCK",
-        "question": "⏰",
+        "id": "KIDS_SHAPES_L18_Q1",
+        "gameType": "shapes",
+        "level": 18,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
           "Circle",
           "Triangle",
-          "Star"
+          "Rectangle"
         ],
-        "correctAnswer": "Circle",
-        "hint": "Most clocks are round circles!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L18_Q2",
-        "instruction": "Search: Find the GIFT",
-        "question": "🎁",
-        "options": [
-          "Square",
-          "Circle",
-          "Heart"
-        ],
+        "id": "KIDS_SHAPES_L18_Q2",
+        "gameType": "shapes",
+        "level": 18,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
         "correctAnswer": "Square",
-        "hint": "This gift box is a perfect square!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "options": [
+          "Square",
+          "Rectangle",
+          "Triangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L18_Q3",
-        "instruction": "Search: Find the NACHO",
-        "question": "🧀",
+        "id": "KIDS_SHAPES_L18_Q3",
+        "gameType": "shapes",
+        "level": 18,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
           "Triangle",
-          "Square",
+          "Rectangle",
           "Circle"
         ],
-        "correctAnswer": "Triangle",
-        "hint": "Nacho chips are crunchy triangles!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -421,52 +595,73 @@
     "level": 19,
     "quests": [
       {
-        "id": "KID_SHAPES_L19_Q1",
-        "instruction": "Review: Who has 3 corners?",
-        "question": "🔺 Review",
-        "options": [
-          "Triangle",
-          "Square",
-          "Circle"
-        ],
+        "id": "KIDS_SHAPES_L19_Q1",
+        "gameType": "shapes",
+        "level": 19,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
         "correctAnswer": "Triangle",
-        "hint": "The pointy friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "options": [
+          "Rectangle",
+          "Square",
+          "Triangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L19_Q2",
-        "instruction": "Review: Who has NO corners?",
-        "question": "⭕ Review",
+        "id": "KIDS_SHAPES_L19_Q2",
+        "gameType": "shapes",
+        "level": 19,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
           "Circle",
           "Square",
-          "Star"
+          "Rectangle"
         ],
-        "correctAnswer": "Circle",
-        "hint": "The curvy friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L19_Q3",
-        "instruction": "Review: Who has 4 sides?",
-        "question": "🟦 Review",
+        "id": "KIDS_SHAPES_L19_Q3",
+        "gameType": "shapes",
+        "level": 19,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
           "Square",
-          "Triangle",
-          "Heart"
+          "Circle",
+          "Triangle"
         ],
-        "correctAnswer": "Square",
-        "hint": "The box friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -474,51 +669,73 @@
     "level": 20,
     "quests": [
       {
-        "id": "KID_SHAPES_L20_Q1",
-        "instruction": "Level 20 Challenge: Counting!",
-        "question": "How many corners on a square?",
-        "options": [
-          "4",
-          "3",
-          "0"
-        ],
-        "correctAnswer": "4",
-        "hint": "Count the corners of a box!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_SHAPES_L20_Q2",
-        "instruction": "Level 20 Challenge: Roll!",
-        "question": "Which shape can roll down a hill?",
-        "options": [
-          "Circle",
-          "Square",
-          "Triangle"
-        ],
+        "id": "KIDS_SHAPES_L20_Q1",
+        "gameType": "shapes",
+        "level": 20,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
         "correctAnswer": "Circle",
-        "hint": "The round one!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "options": [
+          "Triangle",
+          "Circle",
+          "Rectangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L20_Q3",
-        "instruction": "Level 20 Challenge: Mastery!",
-        "question": "Are you a Junior Architect?",
+        "id": "KIDS_SHAPES_L20_Q2",
+        "gameType": "shapes",
+        "level": 20,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "YES!",
-          "No"
+          "Triangle",
+          "Square",
+          "Rectangle"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 20!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L20_Q3",
+        "gameType": "shapes",
+        "level": 20,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
+        "options": [
+          "Triangle",
+          "Circle",
+          "Rectangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

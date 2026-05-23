@@ -3,50 +3,73 @@
     "level": 41,
     "quests": [
       {
-        "id": "KID_FAMILY_L41_Q1",
-        "instruction": "Find the DOG",
-        "question": "🐶✨",
+        "id": "KIDS_FAMILY_L41_Q1",
+        "gameType": "family",
+        "level": 41,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Dog",
-          "Cat",
-          "Bird"
+          "Grandmother",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Dog",
-        "hint": "A dog is a furry friend who loves to bark and wag its tail when you come home!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L41_Q2",
-        "instruction": "Which one says WOOF?",
-        "question": "🐶 vs 🐱",
+        "id": "KIDS_FAMILY_L41_Q2",
+        "gameType": "family",
+        "level": 41,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Dog",
-          "Cat"
+          "Brother",
+          "Sister",
+          "Grandmother"
         ],
-        "correctAnswer": "Dog",
-        "hint": "Dogs talk to us by barking and making happy noises!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L41_Q3",
-        "instruction": "Does a dog wag its TAIL?",
-        "question": "🐶👋❓",
+        "id": "KIDS_FAMILY_L41_Q3",
+        "gameType": "family",
+        "level": 41,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, when happy!",
-          "No, only cats"
+          "Sister",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Yes, when happy!",
-        "hint": "When a dog is excited to see its family, its tail goes swish-swish back and forth!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 42,
     "quests": [
       {
-        "id": "KID_FAMILY_L42_Q1",
-        "instruction": "Find the CAT",
-        "question": "🐱✨",
+        "id": "KIDS_FAMILY_L42_Q1",
+        "gameType": "family",
+        "level": 42,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Cat",
-          "Dog",
-          "Hamster"
+          "Brother",
+          "Mother",
+          "Sister"
         ],
-        "correctAnswer": "Cat",
-        "hint": "A cat is a soft friend with whiskers who loves to take long naps in the sun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L42_Q2",
-        "instruction": "Which one says MEOW?",
-        "question": "🐱 vs 🐶",
+        "id": "KIDS_FAMILY_L42_Q2",
+        "gameType": "family",
+        "level": 42,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Cat",
-          "Dog"
+          "Grandmother",
+          "Father",
+          "Brother"
         ],
-        "correctAnswer": "Cat",
-        "hint": "Cats have a gentle meow and love to rub against your legs!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L42_Q3",
-        "instruction": "Does a cat PURR?",
-        "question": "🐱🎶❓",
+        "id": "KIDS_FAMILY_L42_Q3",
+        "gameType": "family",
+        "level": 42,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, when cozy!",
-          "No, they only bark"
+          "Grandfather",
+          "Sister",
+          "Mother"
         ],
-        "correctAnswer": "Yes, when cozy!",
-        "hint": "A purr is a soft vibration a cat makes to show it is happy and relaxed!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 43,
     "quests": [
       {
-        "id": "KID_FAMILY_L43_Q1",
-        "instruction": "Find the HAMSTER",
-        "question": "🐹✨",
+        "id": "KIDS_FAMILY_L43_Q1",
+        "gameType": "family",
+        "level": 43,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Hamster",
-          "Rabbit",
-          "Mouse"
+          "Father",
+          "Mother",
+          "Grandmother"
         ],
-        "correctAnswer": "Hamster",
-        "hint": "A hamster is a tiny furry ball that lives in a cage and loves to store seeds in its cheeks!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L43_Q2",
-        "instruction": "Which one runs on a WHEEL?",
-        "question": "🐹🎡 vs 🐶",
+        "id": "KIDS_FAMILY_L43_Q2",
+        "gameType": "family",
+        "level": 43,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Hamster",
-          "Dog"
+          "Grandfather",
+          "Grandmother",
+          "Brother"
         ],
-        "correctAnswer": "Hamster",
-        "hint": "Hamsters are very active at night and love to run round and round on their exercise wheel!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L43_Q3",
-        "instruction": "Is a hamster SMALL?",
-        "question": "🐹🤏❓",
+        "id": "KIDS_FAMILY_L43_Q3",
+        "gameType": "family",
+        "level": 43,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, tiny friend!",
-          "No, like a horse"
+          "Grandmother",
+          "Sister",
+          "Father"
         ],
-        "correctAnswer": "Yes, tiny friend!",
-        "hint": "Hamsters can fit right in the palm of your hand and have soft little paws!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 44,
     "quests": [
       {
-        "id": "KID_FAMILY_L44_Q1",
-        "instruction": "Find the BIRD",
-        "question": "🦜✨",
+        "id": "KIDS_FAMILY_L44_Q1",
+        "gameType": "family",
+        "level": 44,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Bird",
-          "Hamster",
-          "Dog"
+          "Mother",
+          "Sister",
+          "Grandfather"
         ],
-        "correctAnswer": "Bird",
-        "hint": "A pet bird has colorful feathers and can sing beautiful songs in its cage!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L44_Q2",
-        "instruction": "Which one has FEATHERS?",
-        "question": "🦜 vs 🐱",
+        "id": "KIDS_FAMILY_L44_Q2",
+        "gameType": "family",
+        "level": 44,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Bird",
-          "Cat"
+          "Father",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Bird",
-        "hint": "Birds have pretty feathers and wings that help them hop and flutter around!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L44_Q3",
-        "instruction": "Can some birds TALK?",
-        "question": "🦜🗣️❓",
+        "id": "KIDS_FAMILY_L44_Q3",
+        "gameType": "family",
+        "level": 44,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, like a parrot!",
-          "No, only bark"
+          "Father",
+          "Mother",
+          "Grandfather"
         ],
-        "correctAnswer": "Yes, like a parrot!",
-        "hint": "Some smart birds can learn to say 'Hello' or mimic the sounds you make!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,50 +299,73 @@
     "level": 45,
     "quests": [
       {
-        "id": "KID_FAMILY_L45_Q1",
-        "instruction": "Logic: Do we FEED our pets?",
-        "question": "🐶🥣❓",
+        "id": "KIDS_FAMILY_L45_Q1",
+        "gameType": "family",
+        "level": 45,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Yes, they get hungry!",
-          "No, they eat air",
-          "Only on Sundays"
+          "Grandfather",
+          "Sister",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, they get hungry!",
-        "hint": "Just like you, your pets need yummy food and fresh water every day to stay healthy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L45_Q2",
-        "instruction": "Logic: Do we brush a CAT?",
-        "question": "🐱🪥❓",
+        "id": "KIDS_FAMILY_L45_Q2",
+        "gameType": "family",
+        "level": 45,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Yes, for soft fur!",
-          "No, only for rocks"
+          "Brother",
+          "Grandmother",
+          "Sister"
         ],
-        "correctAnswer": "Yes, for soft fur!",
-        "hint": "Brushing your pet's fur helps keep it clean and makes them feel very loved!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L45_Q3",
-        "instruction": "Logic: Are pets part of the FAMILY?",
-        "question": "🐶🤝👨‍👩‍👧‍👦❓",
+        "id": "KIDS_FAMILY_L45_Q3",
+        "gameType": "family",
+        "level": 45,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, we love them!",
-          "No, they are robots"
+          "Sister",
+          "Mother",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, we love them!",
-        "hint": "Even though they are animals, our pets are special members of our family who we take care of!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -258,49 +373,73 @@
     "level": 46,
     "quests": [
       {
-        "id": "KID_FAMILY_L46_Q1",
-        "instruction": "Search: Find the dog BONE",
-        "question": "🐶🦴 vs 🐱",
+        "id": "KIDS_FAMILY_L46_Q1",
+        "gameType": "family",
+        "level": 46,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Dog Snack",
-          "Cozy Cat"
+          "Mother",
+          "Sister",
+          "Grandfather"
         ],
-        "correctAnswer": "Dog Snack",
-        "hint": "Look for the white bone that the dog loves to chew on!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L46_Q2",
-        "instruction": "Search: Find the cat BALL of YARN",
-        "question": "🐱🧶 vs 🦜",
+        "id": "KIDS_FAMILY_L46_Q2",
+        "gameType": "family",
+        "level": 46,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Playful Cat",
-          "Singing Bird"
+          "Father",
+          "Mother",
+          "Grandmother"
         ],
-        "correctAnswer": "Playful Cat",
-        "hint": "Look for the cat playing with the soft ball of string!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L46_Q3",
-        "instruction": "Search: Find the bird CAGE",
-        "question": "🦜🏠 vs 🐹",
+        "id": "KIDS_FAMILY_L46_Q3",
+        "gameType": "family",
+        "level": 46,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Bird Home",
-          "Hamster Wheel"
+          "Grandfather",
+          "Sister",
+          "Brother"
         ],
-        "correctAnswer": "Bird Home",
-        "hint": "Look for the wire house where the bird sits on its perch!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -308,52 +447,73 @@
     "level": 47,
     "quests": [
       {
-        "id": "KID_FAMILY_L47_Q1",
-        "instruction": "Review: Who says Woof?",
-        "question": "🐶 Review",
+        "id": "KIDS_FAMILY_L47_Q1",
+        "gameType": "family",
+        "level": 47,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Dog",
-          "Cat",
-          "Bird"
+          "Brother",
+          "Mother",
+          "Grandmother"
         ],
-        "correctAnswer": "Dog",
-        "hint": "The one that wags its tail for you!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L47_Q2",
-        "instruction": "Review: Who says Meow?",
-        "question": "🐱 Review",
+        "id": "KIDS_FAMILY_L47_Q2",
+        "gameType": "family",
+        "level": 47,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Cat",
-          "Hamster",
-          "Dog"
+          "Brother",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Cat",
-        "hint": "The one with the soft fur and whiskers!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L47_Q3",
-        "instruction": "Review: Who runs on a wheel?",
-        "question": "🐹 Review",
+        "id": "KIDS_FAMILY_L47_Q3",
+        "gameType": "family",
+        "level": 47,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Hamster",
-          "Bird",
-          "Cat"
+          "Father",
+          "Mother",
+          "Sister"
         ],
-        "correctAnswer": "Hamster",
-        "hint": "The tiny one who lives in a cage!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -361,49 +521,73 @@
     "level": 48,
     "quests": [
       {
-        "id": "KID_FAMILY_L48_Q1",
-        "instruction": "Which one is for a dog walk?",
-        "question": "🐶🦮 vs 🛌",
+        "id": "KIDS_FAMILY_L48_Q1",
+        "gameType": "family",
+        "level": 48,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Outdoor Walk",
-          "Nap Time"
+          "Brother",
+          "Sister",
+          "Mother"
         ],
-        "correctAnswer": "Outdoor Walk",
-        "hint": "We put a leash on the dog so we can take them for a fun walk in the park!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L48_Q2",
-        "instruction": "Which one is for a cat scratch?",
-        "question": "🐱🧱 vs 🍦",
+        "id": "KIDS_FAMILY_L48_Q2",
+        "gameType": "family",
+        "level": 48,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Scratching Post",
-          "Ice Cream"
+          "Mother",
+          "Grandfather",
+          "Father"
         ],
-        "correctAnswer": "Scratching Post",
-        "hint": "Cats love to sharpen their claws on a special scratchy post!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L48_Q3",
-        "instruction": "Do pets need LOVE?",
-        "question": "🐶❤️❓",
+        "id": "KIDS_FAMILY_L48_Q3",
+        "gameType": "family",
+        "level": 48,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, lots of it!",
-          "No, only water"
+          "Grandfather",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, lots of it!",
-        "hint": "Pets are happy when you pet them, talk to them, and show them you care!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -411,49 +595,73 @@
     "level": 49,
     "quests": [
       {
-        "id": "KID_FAMILY_L49_Q1",
-        "instruction": "Logic: Do we take pets to the VET?",
-        "question": "🐶🏥❓",
+        "id": "KIDS_FAMILY_L49_Q1",
+        "gameType": "family",
+        "level": 49,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Yes, animal doctor!",
-          "No, to the beach"
+          "Grandmother",
+          "Grandfather",
+          "Father"
         ],
-        "correctAnswer": "Yes, animal doctor!",
-        "hint": "The vet is a special doctor who helps pets feel better when they are sick!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L49_Q2",
-        "instruction": "Logic: Does a fish live in WATER?",
-        "question": "🐟🌊❓",
+        "id": "KIDS_FAMILY_L49_Q2",
+        "gameType": "family",
+        "level": 49,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Yes, in a tank!",
-          "No, in a bed"
+          "Father",
+          "Mother",
+          "Brother"
         ],
-        "correctAnswer": "Yes, in a tank!",
-        "hint": "Pet fish need to stay in clean water so they can breathe and swim!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L49_Q3",
-        "instruction": "Logic: Can a bird fly in the HOUSE?",
-        "question": "🦜🏠❓",
+        "id": "KIDS_FAMILY_L49_Q3",
+        "gameType": "family",
+        "level": 49,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, if cage is open!",
-          "No, only planes"
+          "Sister",
+          "Mother",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, if cage is open!",
-        "hint": "Some pet birds like to fly around the room for a little bit of exercise!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -461,51 +669,73 @@
     "level": 50,
     "quests": [
       {
-        "id": "KID_FAMILY_L50_Q1",
-        "instruction": "Level 50 Challenge: Animal Whisperer!",
-        "question": "Find wagging DOG",
+        "id": "KIDS_FAMILY_L50_Q1",
+        "gameType": "family",
+        "level": 50,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "🐶",
-          "🐱",
-          "🦜"
+          "Grandfather",
+          "Father",
+          "Mother"
         ],
-        "correctAnswer": "🐶",
-        "hint": "The one that says Woof!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L50_Q2",
-        "instruction": "Level 50 Challenge: Animal Whisperer!",
-        "question": "Find purring CAT",
+        "id": "KIDS_FAMILY_L50_Q2",
+        "gameType": "family",
+        "level": 50,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "🐱",
-          "🐹",
-          "🐶"
+          "Grandfather",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "🐱",
-        "hint": "The one that says Meow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L50_Q3",
-        "instruction": "Level 50 Challenge: Mastery!",
-        "question": "Are you an Animal Whisperer?",
+        "id": "KIDS_FAMILY_L50_Q3",
+        "gameType": "family",
+        "level": 50,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "YES!",
-          "No"
+          "Grandfather",
+          "Brother",
+          "Father"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 50!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

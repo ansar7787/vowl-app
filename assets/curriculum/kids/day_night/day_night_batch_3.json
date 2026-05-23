@@ -3,50 +3,70 @@
     "level": 21,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L21_Q1",
-        "instruction": "Find the WAKING UP face",
-        "question": "🥱☀️✨",
+        "id": "KIDS_DAY_NIGHT_L21_Q1",
+        "gameType": "day_night",
+        "level": 21,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Waking Up",
-          "Sleeping",
-          "Angry"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Waking Up",
-        "hint": "A waking up face has a big yawn and a stretch because the sun is shining in the window!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L21_Q2",
-        "instruction": "Which one is WAKING UP?",
-        "question": "🥱🆙 vs 😴",
+        "id": "KIDS_DAY_NIGHT_L21_Q2",
+        "gameType": "day_night",
+        "level": 21,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Morning Stretch",
-          "Deep Sleep"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Morning Stretch",
-        "hint": "When you open your eyes and jump out of bed, you are waking up for the day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L21_Q3",
-        "instruction": "Does the sun wake you up?",
-        "question": "☀️👀❓",
+        "id": "KIDS_DAY_NIGHT_L21_Q3",
+        "gameType": "day_night",
+        "level": 21,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, hello Sun!",
-          "No, only Moon"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, hello Sun!",
-        "hint": "The bright morning light tells your body it's time to start a new adventure!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +74,70 @@
     "level": 22,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L22_Q1",
-        "instruction": "Find the TOOTHBRUSH",
-        "question": "🪥✨",
+        "id": "KIDS_DAY_NIGHT_L22_Q1",
+        "gameType": "day_night",
+        "level": 22,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Toothbrush",
-          "Fork",
-          "Comb"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Toothbrush",
-        "hint": "A toothbrush helps you scrub your teeth to make them shiny and white in the morning!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L22_Q2",
-        "instruction": "Which one is for your TEETH?",
-        "question": "🪥 vs 🧼",
+        "id": "KIDS_DAY_NIGHT_L22_Q2",
+        "gameType": "day_night",
+        "level": 22,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Toothbrush",
-          "Soap"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Toothbrush",
-        "hint": "We use the toothbrush with a little toothpaste to keep our mouth fresh!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L22_Q3",
-        "instruction": "Is brushing important in the MORNING?",
-        "question": "🌅🪥❓",
+        "id": "KIDS_DAY_NIGHT_L22_Q3",
+        "gameType": "day_night",
+        "level": 22,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, clean smile!",
-          "No, only at night"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, clean smile!",
-        "hint": "Brushing your teeth when you wake up is a great way to start your morning routine!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +145,70 @@
     "level": 23,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L23_Q1",
-        "instruction": "Find the BREAKFAST bowl",
-        "question": "🥣✨",
+        "id": "KIDS_DAY_NIGHT_L23_Q1",
+        "gameType": "day_night",
+        "level": 23,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Breakfast",
-          "Pizza",
-          "Cake"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Breakfast",
-        "hint": "A breakfast bowl is filled with yummy cereal or oatmeal to give you energy for the day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L23_Q2",
-        "instruction": "Which one is for BREAKFAST?",
-        "question": "🥣🥛 vs 🍗",
+        "id": "KIDS_DAY_NIGHT_L23_Q2",
+        "gameType": "day_night",
+        "level": 23,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Cereal",
-          "Chicken"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Cereal",
-        "hint": "Cereal with milk is a classic morning meal that many kids love!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L23_Q3",
-        "instruction": "Do we eat breakfast in the DAY?",
-        "question": "☀️🥣❓",
+        "id": "KIDS_DAY_NIGHT_L23_Q3",
+        "gameType": "day_night",
+        "level": 23,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, morning meal!",
-          "No, at midnight"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, morning meal!",
-        "hint": "Breakfast is the first meal we eat after waking up in the morning!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +216,70 @@
     "level": 24,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L24_Q1",
-        "instruction": "Find the SCHOOL CLOTHES",
-        "question": "👕✨",
+        "id": "KIDS_DAY_NIGHT_L24_Q1",
+        "gameType": "day_night",
+        "level": 24,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Clothes",
-          "Bed",
-          "Toy"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Clothes",
-        "hint": "We change out of our pajamas and into our colorful clothes to go to school or play!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L24_Q2",
-        "instruction": "Which one do you wear in the MORNING?",
-        "question": "👕👟 vs 🛌",
+        "id": "KIDS_DAY_NIGHT_L24_Q2",
+        "gameType": "day_night",
+        "level": 24,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Shirt & Shoes",
-          "Pillow"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Shirt & Shoes",
-        "hint": "We put on our favorite shirt and shoes so we are ready for the outside world!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L24_Q3",
-        "instruction": "Is getting dressed for the DAY?",
-        "question": "☀️👕❓",
+        "id": "KIDS_DAY_NIGHT_L24_Q3",
+        "gameType": "day_night",
+        "level": 24,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, ready to go!",
-          "No, for sleeping"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, ready to go!",
-        "hint": "We get dressed after we wake up and brush our teeth!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,51 +287,70 @@
     "level": 25,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L25_Q1",
-        "instruction": "Logic: Who wakes up with a crow?",
-        "question": "🐓📢❓",
+        "id": "KIDS_DAY_NIGHT_L25_Q1",
+        "gameType": "day_night",
+        "level": 25,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Rooster",
-          "Owl",
-          "Cat"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Rooster",
-        "hint": "The rooster says 'Cock-a-doodle-doo!' to tell everyone the sun is coming up!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L25_Q2",
-        "instruction": "Logic: Where does the sun RISE?",
-        "question": "🌅🆙❓",
+        "id": "KIDS_DAY_NIGHT_L25_Q2",
+        "gameType": "day_night",
+        "level": 25,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "In the East",
-          "In the West",
-          "In a box"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "In the East",
-        "hint": "The sun always starts the day on the East side of the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L25_Q3",
-        "instruction": "Logic: Is the sunrise PRETTY?",
-        "question": "🌅✨❓",
+        "id": "KIDS_DAY_NIGHT_L25_Q3",
+        "gameType": "day_night",
+        "level": 25,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, pink and orange!",
-          "No, only black"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, pink and orange!",
-        "hint": "The sky looks like a painting with beautiful colors when the sun wakes up!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -259,49 +358,70 @@
     "level": 26,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L26_Q1",
-        "instruction": "Search: Find the school BUS",
-        "question": "🚌🏫 vs 🛌",
+        "id": "KIDS_DAY_NIGHT_L26_Q1",
+        "gameType": "day_night",
+        "level": 26,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Morning Bus",
-          "Night Bed"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Morning Bus",
-        "hint": "The yellow bus comes in the morning to take kids to school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L26_Q2",
-        "instruction": "Search: Find the morning DEW on grass",
-        "question": "🌱💧 vs 🌵",
+        "id": "KIDS_DAY_NIGHT_L26_Q2",
+        "gameType": "day_night",
+        "level": 26,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Wet Grass",
-          "Dry Sand"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Wet Grass",
-        "hint": "In the morning, the grass is often covered in tiny drops of water called dew!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L26_Q3",
-        "instruction": "Search: Find the alarm CLOCK",
-        "question": "⏰📢 vs 🧸",
+        "id": "KIDS_DAY_NIGHT_L26_Q3",
+        "gameType": "day_night",
+        "level": 26,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Ringing Clock",
-          "Quiet Teddy"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Ringing Clock",
-        "hint": "The alarm clock goes 'Beep Beep!' to help us wake up on time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -309,52 +429,70 @@
     "level": 27,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L27_Q1",
-        "instruction": "Review: Who yawns first?",
-        "question": "🥱 Review",
+        "id": "KIDS_DAY_NIGHT_L27_Q1",
+        "gameType": "day_night",
+        "level": 27,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Waking Up",
-          "Sleeping",
-          "Running"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Waking Up",
-        "hint": "The one who is just opening their eyes to the sun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L27_Q2",
-        "instruction": "Review: Who scrubs teeth?",
-        "question": "🪥 Review",
+        "id": "KIDS_DAY_NIGHT_L27_Q2",
+        "gameType": "day_night",
+        "level": 27,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Toothbrush",
-          "Fork",
-          "Spoon"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Toothbrush",
-        "hint": "The one with the bristles for a clean smile!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L27_Q3",
-        "instruction": "Review: Who is the morning bird?",
-        "question": "🐓 Review",
+        "id": "KIDS_DAY_NIGHT_L27_Q3",
+        "gameType": "day_night",
+        "level": 27,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Rooster",
-          "Owl",
-          "Penguin"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Rooster",
-        "hint": "The one that crows in the farmyard!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -362,49 +500,70 @@
     "level": 28,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L28_Q1",
-        "instruction": "Which one is for morning energy?",
-        "question": "🥣🍎 vs 💤",
+        "id": "KIDS_DAY_NIGHT_L28_Q1",
+        "gameType": "day_night",
+        "level": 28,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Healthy Breakfast",
-          "Sleeping"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Healthy Breakfast",
-        "hint": "Eating good food in the morning gives you power to play!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L28_Q2",
-        "instruction": "Which one is for leaving home?",
-        "question": "🎒👟 vs 🛌",
+        "id": "KIDS_DAY_NIGHT_L28_Q2",
+        "gameType": "day_night",
+        "level": 28,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Backpack & Shoes",
-          "Pillow"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Backpack & Shoes",
-        "hint": "We put on our pack and shoes to go on a morning trip!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L28_Q3",
-        "instruction": "Is the air fresh in the morning?",
-        "question": "🌅🌬️✨❓",
+        "id": "KIDS_DAY_NIGHT_L28_Q3",
+        "gameType": "day_night",
+        "level": 28,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, so crisp!",
-          "No, it's dusty"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, so crisp!",
-        "hint": "Morning air feels cool and clean, perfect for taking a big breath!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -412,49 +571,70 @@
     "level": 29,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L29_Q1",
-        "instruction": "Logic: Do we wash our face in the morning?",
-        "question": "🧼🚿❓",
+        "id": "KIDS_DAY_NIGHT_L29_Q1",
+        "gameType": "day_night",
+        "level": 29,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Yes, wash away sleep!",
-          "No, stay dirty"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, wash away sleep!",
-        "hint": "A little splash of water helps us feel bright and awake!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L29_Q2",
-        "instruction": "Logic: Is cereal crunchy?",
-        "question": "🥣💥❓",
+        "id": "KIDS_DAY_NIGHT_L29_Q2",
+        "gameType": "day_night",
+        "level": 29,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Yes, crunch crunch!",
-          "No, it's quiet"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, crunch crunch!",
-        "hint": "Fresh cereal makes a fun sound when we eat it for breakfast!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L29_Q3",
-        "instruction": "Logic: Do we wear pajamas to school?",
-        "question": "👕🏫❓",
+        "id": "KIDS_DAY_NIGHT_L29_Q3",
+        "gameType": "day_night",
+        "level": 29,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "No, wear real clothes!",
-          "Yes, always"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "No, wear real clothes!",
-        "hint": "We change out of our pajamas and into our day clothes before we leave!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -462,51 +642,70 @@
     "level": 30,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L30_Q1",
-        "instruction": "Level 30 Challenge: Early Bird!",
-        "question": "Find the BREAKFAST cereal",
+        "id": "KIDS_DAY_NIGHT_L30_Q1",
+        "gameType": "day_night",
+        "level": 30,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "🥣🥛",
-          "🍗",
-          "🍕"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "🥣🥛",
-        "hint": "The yummy morning bowl!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L30_Q2",
-        "instruction": "Level 30 Challenge: Early Bird!",
-        "question": "Find the crowing ROOSTER",
+        "id": "KIDS_DAY_NIGHT_L30_Q2",
+        "gameType": "day_night",
+        "level": 30,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "🐓",
-          "🦉",
-          "🐈"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "🐓",
-        "hint": "The one that says 'Cock-a-doodle-doo'!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L30_Q3",
-        "instruction": "Level 30 Challenge: Mastery!",
-        "question": "Are you an Early Bird?",
+        "id": "KIDS_DAY_NIGHT_L30_Q3",
+        "gameType": "day_night",
+        "level": 30,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "YES!",
-          "No"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 30!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

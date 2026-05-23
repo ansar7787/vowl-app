@@ -3,52 +3,73 @@
     "level": 91,
     "quests": [
       {
-        "id": "KID_OPPOSITES_L91_Q1",
-        "instruction": "Review: Find the BIG one",
-        "question": "🐘 Review",
+        "id": "KIDS_OPPOSITES_L91_Q1",
+        "gameType": "opposites",
+        "level": 91,
+        "instruction": "What is the opposite of \"Fast\"? (quick racing cheetah vs slow crawling turtle)",
+        "question": "Fast",
+        "correctAnswer": "Slow",
         "options": [
-          "Big",
-          "Small",
-          "Tall"
+          "Cold",
+          "Short",
+          "Slow"
         ],
-        "correctAnswer": "Big",
-        "hint": "The giant elephant is very large!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "The correct opposite is slow.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L91_Q2",
-        "instruction": "Review: Find the TALL one",
-        "question": "🦒 Review",
+        "id": "KIDS_OPPOSITES_L91_Q2",
+        "gameType": "opposites",
+        "level": 91,
+        "instruction": "What is the opposite of \"Up\"? (climbing high sky vs descending ground levels)",
+        "question": "Up",
+        "correctAnswer": "Down",
         "options": [
-          "Tall",
+          "Down",
           "Short",
           "Small"
         ],
-        "correctAnswer": "Tall",
-        "hint": "The giraffe has a long neck reaching the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "The correct opposite is down.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L91_Q3",
-        "instruction": "Review: Find the UP direction",
-        "question": "🎈 Review",
+        "id": "KIDS_OPPOSITES_L91_Q3",
+        "gameType": "opposites",
+        "level": 91,
+        "instruction": "What is the opposite of \"Hot\"? (sun or burning steam vs cold ice cream)",
+        "question": "Hot",
+        "correctAnswer": "Cold",
         "options": [
-          "Up",
           "Down",
-          "Back"
+          "Small",
+          "Cold"
         ],
-        "correctAnswer": "Up",
-        "hint": "The balloon flies high above!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "The correct opposite is cold.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 92,
     "quests": [
       {
-        "id": "KID_OPPOSITES_L92_Q1",
-        "instruction": "Review: Find the FAST one",
-        "question": "🏎️ Review",
+        "id": "KIDS_OPPOSITES_L92_Q1",
+        "gameType": "opposites",
+        "level": 92,
+        "instruction": "What is the opposite of \"Big\"? (huge elephant vs tiny busy ant)",
+        "question": "Big",
+        "correctAnswer": "Small",
         "options": [
-          "Fast",
+          "Short",
+          "Small",
+          "Slow"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "The correct opposite is small.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_OPPOSITES_L92_Q2",
+        "gameType": "opposites",
+        "level": 92,
+        "instruction": "What is the opposite of \"Tall\"? (high giraffe vs tiny sweet mouse)",
+        "question": "Tall",
+        "correctAnswer": "Short",
+        "options": [
+          "Short",
+          "Down",
+          "Small"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "The correct opposite is short.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_OPPOSITES_L92_Q3",
+        "gameType": "opposites",
+        "level": 92,
+        "instruction": "What is the opposite of \"Fast\"? (quick racing cheetah vs slow crawling turtle)",
+        "question": "Fast",
+        "correctAnswer": "Slow",
+        "options": [
           "Slow",
-          "Hard"
+          "Short",
+          "Small"
         ],
-        "correctAnswer": "Fast",
-        "hint": "The racing car zooms quickly!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_OPPOSITES_L92_Q2",
-        "instruction": "Review: Find the SOFT one",
-        "question": "☁️ Review",
-        "options": [
-          "Soft",
-          "Hard",
-          "Fast"
-        ],
-        "correctAnswer": "Soft",
-        "hint": "The cloud is fluffy like cotton!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_OPPOSITES_L92_Q3",
-        "instruction": "Review: Find the HOT one",
-        "question": "☀️ Review",
-        "options": [
-          "Hot",
-          "Cold",
-          "Dark"
-        ],
-        "correctAnswer": "Hot",
-        "hint": "The sun is warm and bright!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "The correct opposite is slow.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 93,
     "quests": [
       {
-        "id": "KID_OPPOSITES_L93_Q1",
-        "instruction": "Review: Find the HAPPY one",
-        "question": "😊 Review",
+        "id": "KIDS_OPPOSITES_L93_Q1",
+        "gameType": "opposites",
+        "level": 93,
+        "instruction": "What is the opposite of \"Up\"? (climbing high sky vs descending ground levels)",
+        "question": "Up",
+        "correctAnswer": "Down",
         "options": [
-          "Happy",
-          "Sad",
-          "Dirty"
+          "Short",
+          "Down",
+          "Cold"
         ],
-        "correctAnswer": "Happy",
-        "hint": "The face with the big smile!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "The correct opposite is down.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L93_Q2",
-        "instruction": "Review: Find the CLEAN one",
-        "question": "🧹 Review",
+        "id": "KIDS_OPPOSITES_L93_Q2",
+        "gameType": "opposites",
+        "level": 93,
+        "instruction": "What is the opposite of \"Hot\"? (sun or burning steam vs cold ice cream)",
+        "question": "Hot",
+        "correctAnswer": "Cold",
         "options": [
-          "Clean",
-          "Dirty",
-          "Sad"
+          "Short",
+          "Cold",
+          "Small"
         ],
-        "correctAnswer": "Clean",
-        "hint": "The shiny washed friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "The correct opposite is cold.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L93_Q3",
-        "instruction": "Review: Find the DAY one",
-        "question": "☀️ Review",
+        "id": "KIDS_OPPOSITES_L93_Q3",
+        "gameType": "opposites",
+        "level": 93,
+        "instruction": "What is the opposite of \"Big\"? (huge elephant vs tiny busy ant)",
+        "question": "Big",
+        "correctAnswer": "Small",
         "options": [
-          "Day",
-          "Night",
-          "Inside"
+          "Slow",
+          "Down",
+          "Small"
         ],
-        "correctAnswer": "Day",
-        "hint": "When the sun is awake!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "The correct opposite is small.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 94,
     "quests": [
       {
-        "id": "KID_OPPOSITES_L94_Q1",
-        "instruction": "Review: Find the IN one",
-        "question": "🏠 Review",
+        "id": "KIDS_OPPOSITES_L94_Q1",
+        "gameType": "opposites",
+        "level": 94,
+        "instruction": "What is the opposite of \"Tall\"? (high giraffe vs tiny sweet mouse)",
+        "question": "Tall",
+        "correctAnswer": "Short",
         "options": [
-          "In",
-          "Out",
-          "Back"
+          "Small",
+          "Cold",
+          "Short"
         ],
-        "correctAnswer": "In",
-        "hint": "Inside the cozy house!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "The correct opposite is short.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L94_Q2",
-        "instruction": "Review: Find the MORE pile",
-        "question": "🍎🍎🍎 Review",
+        "id": "KIDS_OPPOSITES_L94_Q2",
+        "gameType": "opposites",
+        "level": 94,
+        "instruction": "What is the opposite of \"Fast\"? (quick racing cheetah vs slow crawling turtle)",
+        "question": "Fast",
+        "correctAnswer": "Slow",
         "options": [
-          "More",
-          "Less",
-          "Last"
+          "Short",
+          "Cold",
+          "Slow"
         ],
-        "correctAnswer": "More",
-        "hint": "The group with many apples!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "The correct opposite is slow.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L94_Q3",
-        "instruction": "Review: Find the FIRST one",
-        "question": "🥇 Review",
+        "id": "KIDS_OPPOSITES_L94_Q3",
+        "gameType": "opposites",
+        "level": 94,
+        "instruction": "What is the opposite of \"Up\"? (climbing high sky vs descending ground levels)",
+        "question": "Up",
+        "correctAnswer": "Down",
         "options": [
-          "First",
-          "Last",
-          "Less"
+          "Short",
+          "Down",
+          "Slow"
         ],
-        "correctAnswer": "First",
-        "hint": "The leader of the race!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "The correct opposite is down.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 95,
     "quests": [
       {
-        "id": "KID_OPPOSITES_L95_Q1",
-        "instruction": "Sorting: Find the SIZE opposites",
-        "question": "🐘 vs 🐜",
+        "id": "KIDS_OPPOSITES_L95_Q1",
+        "gameType": "opposites",
+        "level": 95,
+        "instruction": "What is the opposite of \"Hot\"? (sun or burning steam vs cold ice cream)",
+        "question": "Hot",
+        "correctAnswer": "Cold",
         "options": [
-          "Big & Small",
-          "Hot & Cold",
-          "Fast & Slow"
+          "Down",
+          "Small",
+          "Cold"
         ],
-        "correctAnswer": "Big & Small",
-        "hint": "Elephant is big, ant is small!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "The correct opposite is cold.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L95_Q2",
-        "instruction": "Sorting: Find the TEMP opposites",
-        "question": "🔥 vs 🧊",
+        "id": "KIDS_OPPOSITES_L95_Q2",
+        "gameType": "opposites",
+        "level": 95,
+        "instruction": "What is the opposite of \"Big\"? (huge elephant vs tiny busy ant)",
+        "question": "Big",
+        "correctAnswer": "Small",
         "options": [
-          "Hot & Cold",
-          "Up & Down",
-          "In & Out"
+          "Small",
+          "Short",
+          "Slow"
         ],
-        "correctAnswer": "Hot & Cold",
-        "hint": "Fire is hot, ice is cold!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "The correct opposite is small.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L95_Q3",
-        "instruction": "Sorting: Find the PLACE opposites",
-        "question": "🏠 vs 🌳",
+        "id": "KIDS_OPPOSITES_L95_Q3",
+        "gameType": "opposites",
+        "level": 95,
+        "instruction": "What is the opposite of \"Tall\"? (high giraffe vs tiny sweet mouse)",
+        "question": "Tall",
+        "correctAnswer": "Short",
         "options": [
-          "In & Out",
-          "Happy & Sad",
-          "First & Last"
+          "Cold",
+          "Down",
+          "Short"
         ],
-        "correctAnswer": "In & Out",
-        "hint": "House is inside, tree is outside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "The correct opposite is short.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,52 +373,73 @@
     "level": 96,
     "quests": [
       {
-        "id": "KID_OPPOSITES_L96_Q1",
-        "instruction": "Logic: Which is the opposite of SMALL?",
-        "question": "🐜❓",
+        "id": "KIDS_OPPOSITES_L96_Q1",
+        "gameType": "opposites",
+        "level": 96,
+        "instruction": "What is the opposite of \"Fast\"? (quick racing cheetah vs slow crawling turtle)",
+        "question": "Fast",
+        "correctAnswer": "Slow",
         "options": [
-          "Big",
-          "Fast",
-          "Quiet"
+          "Down",
+          "Slow",
+          "Small"
         ],
-        "correctAnswer": "Big",
-        "hint": "Think of the giant elephant!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "The correct opposite is slow.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L96_Q2",
-        "instruction": "Logic: Which is the opposite of DOWN?",
-        "question": "⏬❓",
+        "id": "KIDS_OPPOSITES_L96_Q2",
+        "gameType": "opposites",
+        "level": 96,
+        "instruction": "What is the opposite of \"Up\"? (climbing high sky vs descending ground levels)",
+        "question": "Up",
+        "correctAnswer": "Down",
         "options": [
-          "Up",
-          "Short",
-          "Dirty"
+          "Down",
+          "Cold",
+          "Small"
         ],
-        "correctAnswer": "Up",
-        "hint": "Think of the balloon in the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "The correct opposite is down.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L96_Q3",
-        "instruction": "Logic: Which is the opposite of SLOW?",
-        "question": "🐢❓",
+        "id": "KIDS_OPPOSITES_L96_Q3",
+        "gameType": "opposites",
+        "level": 96,
+        "instruction": "What is the opposite of \"Hot\"? (sun or burning steam vs cold ice cream)",
+        "question": "Hot",
+        "correctAnswer": "Cold",
         "options": [
-          "Fast",
-          "Full",
-          "Dark"
+          "Cold",
+          "Slow",
+          "Short"
         ],
-        "correctAnswer": "Fast",
-        "hint": "Think of the racing car!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "The correct opposite is cold.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -321,52 +447,73 @@
     "level": 97,
     "quests": [
       {
-        "id": "KID_OPPOSITES_L97_Q1",
-        "instruction": "Logic: Which is the opposite of SAD?",
-        "question": "😢❓",
+        "id": "KIDS_OPPOSITES_L97_Q1",
+        "gameType": "opposites",
+        "level": 97,
+        "instruction": "What is the opposite of \"Big\"? (huge elephant vs tiny busy ant)",
+        "question": "Big",
+        "correctAnswer": "Small",
         "options": [
-          "Happy",
-          "More",
-          "Back"
+          "Small",
+          "Cold",
+          "Short"
         ],
-        "correctAnswer": "Happy",
-        "hint": "Think of the smiling face!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "The correct opposite is small.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L97_Q2",
-        "instruction": "Logic: Which is the opposite of LESS?",
-        "question": "🍎❓",
+        "id": "KIDS_OPPOSITES_L97_Q2",
+        "gameType": "opposites",
+        "level": 97,
+        "instruction": "What is the opposite of \"Tall\"? (high giraffe vs tiny sweet mouse)",
+        "question": "Tall",
+        "correctAnswer": "Short",
         "options": [
-          "More",
-          "First",
-          "Soft"
+          "Cold",
+          "Short",
+          "Small"
         ],
-        "correctAnswer": "More",
-        "hint": "Think of the big pile of fruit!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "The correct opposite is short.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L97_Q3",
-        "instruction": "Logic: Which is the opposite of NIGHT?",
-        "question": "🌙❓",
+        "id": "KIDS_OPPOSITES_L97_Q3",
+        "gameType": "opposites",
+        "level": 97,
+        "instruction": "What is the opposite of \"Fast\"? (quick racing cheetah vs slow crawling turtle)",
+        "question": "Fast",
+        "correctAnswer": "Slow",
         "options": [
-          "Day",
-          "Heavy",
-          "Loud"
+          "Slow",
+          "Short",
+          "Down"
         ],
-        "correctAnswer": "Day",
-        "hint": "Think of the bright sun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "The correct opposite is slow.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -374,49 +521,73 @@
     "level": 98,
     "quests": [
       {
-        "id": "KID_OPPOSITES_L98_Q1",
-        "instruction": "Mixed Review: Is a rock HARD?",
-        "question": "🪨❓",
+        "id": "KIDS_OPPOSITES_L98_Q1",
+        "gameType": "opposites",
+        "level": 98,
+        "instruction": "What is the opposite of \"Up\"? (climbing high sky vs descending ground levels)",
+        "question": "Up",
+        "correctAnswer": "Down",
         "options": [
-          "Yes, very Hard!",
-          "No, it's Soft"
+          "Slow",
+          "Short",
+          "Down"
         ],
-        "correctAnswer": "Yes, very Hard!",
-        "hint": "Rocks are solid and don't squish!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "The correct opposite is down.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L98_Q2",
-        "instruction": "Mixed Review: Is the sun BRIGHT?",
-        "question": "☀️❓",
+        "id": "KIDS_OPPOSITES_L98_Q2",
+        "gameType": "opposites",
+        "level": 98,
+        "instruction": "What is the opposite of \"Hot\"? (sun or burning steam vs cold ice cream)",
+        "question": "Hot",
+        "correctAnswer": "Cold",
         "options": [
-          "Yes, shining Bright!",
-          "No, it's Dark"
+          "Short",
+          "Small",
+          "Cold"
         ],
-        "correctAnswer": "Yes, shining Bright!",
-        "hint": "The sun lights up the whole world!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "The correct opposite is cold.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L98_Q3",
-        "instruction": "Mixed Review: Is a pillow SOFT?",
-        "question": "🛌❓",
+        "id": "KIDS_OPPOSITES_L98_Q3",
+        "gameType": "opposites",
+        "level": 98,
+        "instruction": "What is the opposite of \"Big\"? (huge elephant vs tiny busy ant)",
+        "question": "Big",
+        "correctAnswer": "Small",
         "options": [
-          "Yes, fluffy Soft!",
-          "No, it's Hard"
+          "Cold",
+          "Small",
+          "Short"
         ],
-        "correctAnswer": "Yes, fluffy Soft!",
-        "hint": "Pillows are squishy for your head!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "The correct opposite is small.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -424,49 +595,73 @@
     "level": 99,
     "quests": [
       {
-        "id": "KID_OPPOSITES_L99_Q1",
-        "instruction": "Halfway Scout Challenge: The Elephant!",
-        "question": "Is the elephant BIG or SMALL?",
+        "id": "KIDS_OPPOSITES_L99_Q1",
+        "gameType": "opposites",
+        "level": 99,
+        "instruction": "What is the opposite of \"Tall\"? (high giraffe vs tiny sweet mouse)",
+        "question": "Tall",
+        "correctAnswer": "Short",
         "options": [
-          "BIG!",
-          "Small"
+          "Short",
+          "Small",
+          "Down"
         ],
-        "correctAnswer": "BIG!",
-        "hint": "The giant forest friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "The correct opposite is short.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L99_Q2",
-        "instruction": "Halfway Scout Challenge: The Ant!",
-        "question": "Is the ant BIG or SMALL?",
+        "id": "KIDS_OPPOSITES_L99_Q2",
+        "gameType": "opposites",
+        "level": 99,
+        "instruction": "What is the opposite of \"Fast\"? (quick racing cheetah vs slow crawling turtle)",
+        "question": "Fast",
+        "correctAnswer": "Slow",
         "options": [
-          "SMALL!",
-          "Big"
+          "Short",
+          "Slow",
+          "Down"
         ],
-        "correctAnswer": "SMALL!",
-        "hint": "The tiny garden friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "The correct opposite is slow.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L99_Q3",
-        "instruction": "Halfway Scout Challenge: Success!",
-        "question": "Are you ready for Level 100?",
+        "id": "KIDS_OPPOSITES_L99_Q3",
+        "gameType": "opposites",
+        "level": 99,
+        "instruction": "What is the opposite of \"Up\"? (climbing high sky vs descending ground levels)",
+        "question": "Up",
+        "correctAnswer": "Down",
         "options": [
-          "YES!",
-          "No"
+          "Cold",
+          "Down",
+          "Slow"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You are almost a Halfway Scout!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "The correct opposite is down.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -474,51 +669,73 @@
     "level": 100,
     "quests": [
       {
-        "id": "KID_OPPOSITES_L100_Q1",
-        "instruction": "LEVEL 100: MILESTONE!",
-        "question": "What is the opposite of UP?",
+        "id": "KIDS_OPPOSITES_L100_Q1",
+        "gameType": "opposites",
+        "level": 100,
+        "instruction": "What is the opposite of \"Hot\"? (sun or burning steam vs cold ice cream)",
+        "question": "Hot",
+        "correctAnswer": "Cold",
         "options": [
-          "Down",
-          "Big",
-          "Fast"
-        ],
-        "correctAnswer": "Down",
-        "hint": "Think of the ground!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_OPPOSITES_L100_Q2",
-        "instruction": "LEVEL 100: MILESTONE!",
-        "question": "What is the opposite of IN?",
-        "options": [
-          "Out",
+          "Cold",
           "Small",
           "Short"
         ],
-        "correctAnswer": "Out",
-        "hint": "Think of the garden!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "The correct opposite is cold.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_OPPOSITES_L100_Q3",
-        "instruction": "CONGRATULATIONS SCOUT!",
-        "question": "CLICK TO RECEIVE YOUR HALFWAY BADGE!",
+        "id": "KIDS_OPPOSITES_L100_Q2",
+        "gameType": "opposites",
+        "level": 100,
+        "instruction": "What is the opposite of \"Big\"? (huge elephant vs tiny busy ant)",
+        "question": "Big",
+        "correctAnswer": "Small",
         "options": [
-          "🏆 CLAIM HALFWAY SCOUT BADGE! 🏆",
-          "Wait"
+          "Small",
+          "Down",
+          "Slow"
         ],
-        "correctAnswer": "🏆 CLAIM HALFWAY SCOUT BADGE! 🏆",
-        "hint": "YOU HAVE COMPLETED 100 LEVELS OF OPPOSITES!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "The correct opposite is small.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_OPPOSITES_L100_Q3",
+        "gameType": "opposites",
+        "level": 100,
+        "instruction": "What is the opposite of \"Tall\"? (high giraffe vs tiny sweet mouse)",
+        "question": "Tall",
+        "correctAnswer": "Short",
+        "options": [
+          "Down",
+          "Small",
+          "Short"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "The correct opposite is short.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

@@ -3,52 +3,73 @@
     "level": 61,
     "quests": [
       {
-        "id": "KID_FRUITS_L61_Q1",
-        "instruction": "Find the GREEN APPLE",
-        "question": "🍏",
+        "id": "KIDS_FRUITS_L61_Q1",
+        "gameType": "fruits",
+        "level": 61,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Green Apple",
-          "Red Apple",
+          "Apple",
+          "Grapes",
           "Lemon"
         ],
-        "correctAnswer": "Green Apple",
-        "hint": "Green apples are usually a bit more sour and very crunchy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L61_Q2",
-        "instruction": "Which one is a GREEN APPLE?",
-        "question": "🍏✨",
+        "id": "KIDS_FRUITS_L61_Q2",
+        "gameType": "fruits",
+        "level": 61,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "Banana",
-          "Green Apple",
-          "Grape"
-        ],
-        "correctAnswer": "Green Apple",
-        "hint": "Look for the round fruit that is the color of grass!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_FRUITS_L61_Q3",
-        "instruction": "Find the SOUR apple",
-        "question": "🍏",
-        "options": [
-          "Green Apple",
-          "Red Apple",
+          "Lemon",
+          "Grapes",
           "Banana"
         ],
-        "correctAnswer": "Green Apple",
-        "hint": "Green apples (like Granny Smiths) have a zesty, sour taste!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L61_Q3",
+        "gameType": "fruits",
+        "level": 61,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
+        "options": [
+          "Orange",
+          "Banana",
+          "Apple"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 62,
     "quests": [
       {
-        "id": "KID_FRUITS_L62_Q1",
-        "instruction": "Find the PEAR",
-        "question": "🍐",
+        "id": "KIDS_FRUITS_L62_Q1",
+        "gameType": "fruits",
+        "level": 62,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Pear",
+          "Banana",
           "Apple",
           "Orange"
         ],
-        "correctAnswer": "Pear",
-        "hint": "A pear is narrow at the top and wide at the bottom!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L62_Q2",
-        "instruction": "Which one is a PEAR?",
-        "question": "🍐✨",
+        "id": "KIDS_FRUITS_L62_Q2",
+        "gameType": "fruits",
+        "level": 62,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
+        "options": [
+          "Orange",
+          "Grapes",
+          "Lemon"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L62_Q3",
+        "gameType": "fruits",
+        "level": 62,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
           "Banana",
-          "Pear",
-          "Cherry"
+          "Orange",
+          "Lemon"
         ],
-        "correctAnswer": "Pear",
-        "hint": "Pears look like a curvy green or yellow bell!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_FRUITS_L62_Q3",
-        "instruction": "Find the BELL-shaped fruit",
-        "question": "🍐",
-        "options": [
-          "Pear",
-          "Apple",
-          "Grape"
-        ],
-        "correctAnswer": "Pear",
-        "hint": "The pear's unique shape is narrow at the stem and fat at the base!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 63,
     "quests": [
       {
-        "id": "KID_FRUITS_L63_Q1",
-        "instruction": "Detective: Find the apple juice",
-        "question": "🧃🍎",
+        "id": "KIDS_FRUITS_L63_Q1",
+        "gameType": "fruits",
+        "level": 63,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "Apple Juice",
-          "Milk",
-          "Water"
+          "Orange",
+          "Grapes",
+          "Lemon"
         ],
-        "correctAnswer": "Apple Juice",
-        "hint": "Sweet golden juice made from crushing apples!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L63_Q2",
-        "instruction": "Detective: Find the core",
-        "question": "🍏💀",
+        "id": "KIDS_FRUITS_L63_Q2",
+        "gameType": "fruits",
+        "level": 63,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "Apple Core",
-          "Peel",
-          "Leaf"
+          "Orange",
+          "Banana",
+          "Apple"
         ],
-        "correctAnswer": "Apple Core",
-        "hint": "The middle part of the apple that we don't eat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L63_Q3",
-        "instruction": "Detective: Find the soft pear",
-        "question": "🍐🥧",
+        "id": "KIDS_FRUITS_L63_Q3",
+        "gameType": "fruits",
+        "level": 63,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Soft Pear",
-          "Hard Rock",
-          "Bone"
+          "Banana",
+          "Grapes",
+          "Apple"
         ],
-        "correctAnswer": "Soft Pear",
-        "hint": "When a pear is ripe, it feels soft and juicy to the touch!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,51 +225,73 @@
     "level": 64,
     "quests": [
       {
-        "id": "KID_FRUITS_L64_Q1",
-        "instruction": "Mix: Find the ORCHARD friends",
-        "question": "🍎🍐",
+        "id": "KIDS_FRUITS_L64_Q1",
+        "gameType": "fruits",
+        "level": 64,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Apple & Pear",
-          "Banana & Pineapple",
-          "Coconut"
+          "Grapes",
+          "Orange",
+          "Apple"
         ],
-        "correctAnswer": "Apple & Pear",
-        "hint": "These two fruits are cousins that grow in the same orchards!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L64_Q2",
-        "instruction": "Mix: Find the GREEN friends",
-        "question": "🍏🍐",
+        "id": "KIDS_FRUITS_L64_Q2",
+        "gameType": "fruits",
+        "level": 64,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Green Apple & Pear",
-          "Red Apple & Cherry",
+          "Grapes",
+          "Apple",
           "Lemon"
         ],
-        "correctAnswer": "Green Apple & Pear",
-        "hint": "Both of these fruits can be a beautiful bright green color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L64_Q3",
-        "instruction": "Mix: Which is ROUNDER?",
-        "question": "🍎 vs 🍐",
+        "id": "KIDS_FRUITS_L64_Q3",
+        "gameType": "fruits",
+        "level": 64,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
+          "Orange",
           "Apple",
-          "Pear"
+          "Grapes"
         ],
-        "correctAnswer": "Apple",
-        "hint": "An apple is shaped like a ball, but a pear is curvy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -214,52 +299,73 @@
     "level": 65,
     "quests": [
       {
-        "id": "KID_FRUITS_L65_Q1",
-        "instruction": "Identify: Who has a 'Core'?",
-        "question": "Selection",
+        "id": "KIDS_FRUITS_L65_Q1",
+        "gameType": "fruits",
+        "level": 65,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
           "Apple",
-          "Banana",
-          "Grape"
+          "Orange",
+          "Banana"
         ],
-        "correctAnswer": "Apple",
-        "hint": "When you finish eating an apple, the middle part is left over!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L65_Q2",
-        "instruction": "Identify: Who is bell-shaped?",
-        "question": "Selection",
+        "id": "KIDS_FRUITS_L65_Q2",
+        "gameType": "fruits",
+        "level": 65,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Pear",
+          "Lemon",
+          "Grapes",
+          "Banana"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L65_Q3",
+        "gameType": "fruits",
+        "level": 65,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
+        "options": [
+          "Banana",
           "Apple",
           "Orange"
         ],
-        "correctAnswer": "Pear",
-        "hint": "The curvy fruit with a narrow neck!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
-      },
-      {
-        "id": "KID_FRUITS_L65_Q3",
-        "instruction": "Identify: Who can be yellow or green?",
-        "question": "Selection",
-        "options": [
-          "Pear",
-          "Strawberry",
-          "Cherry"
-        ],
-        "correctAnswer": "Pear",
-        "hint": "Pears change from green to yellow as they get sweet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -267,49 +373,73 @@
     "level": 66,
     "quests": [
       {
-        "id": "KID_FRUITS_L66_Q1",
-        "instruction": "Logic: Do apples float in water?",
-        "question": "🍎💧",
+        "id": "KIDS_FRUITS_L66_Q1",
+        "gameType": "fruits",
+        "level": 66,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Yes, they bob!",
-          "No, they sink"
+          "Grapes",
+          "Lemon",
+          "Apple"
         ],
-        "correctAnswer": "Yes, they bob!",
-        "hint": "Apples have lots of air inside, so they stay on top of the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L66_Q2",
-        "instruction": "Logic: Is a pear crunchy like an apple?",
-        "question": "🍐 Check",
+        "id": "KIDS_FRUITS_L66_Q2",
+        "gameType": "fruits",
+        "level": 66,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "No, it's soft and gritty",
-          "Yes"
+          "Grapes",
+          "Apple",
+          "Banana"
         ],
-        "correctAnswer": "No, it's soft and gritty",
-        "hint": "Pears have a unique 'grainy' texture that is different from apples!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L66_Q3",
-        "instruction": "Logic: Can you eat apple skin?",
-        "question": "🍎 Check",
+        "id": "KIDS_FRUITS_L66_Q3",
+        "gameType": "fruits",
+        "level": 66,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
-          "Yes, it's healthy!",
-          "No"
+          "Orange",
+          "Lemon",
+          "Apple"
         ],
-        "correctAnswer": "Yes, it's healthy!",
-        "hint": "The skin has lots of vitamins that help you grow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -317,52 +447,73 @@
     "level": 67,
     "quests": [
       {
-        "id": "KID_FRUITS_L67_Q1",
-        "instruction": "Search: Find the APPLE PIE",
-        "question": "🥧🍎",
+        "id": "KIDS_FRUITS_L67_Q1",
+        "gameType": "fruits",
+        "level": 67,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Apple Pie",
-          "Pizza",
-          "Cake"
+          "Banana",
+          "Apple",
+          "Orange"
         ],
-        "correctAnswer": "Apple Pie",
-        "hint": "A warm dessert made with sliced apples and cinnamon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L67_Q2",
-        "instruction": "Search: Find the apple sauce",
-        "question": "🥣🍏",
+        "id": "KIDS_FRUITS_L67_Q2",
+        "gameType": "fruits",
+        "level": 67,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Apple Sauce",
-          "Yogurt",
-          "Soup"
+          "Orange",
+          "Lemon",
+          "Banana"
         ],
-        "correctAnswer": "Apple Sauce",
-        "hint": "Mashed up apples that are sweet and easy to eat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L67_Q3",
-        "instruction": "Search: Find the orchard basket",
-        "question": "🧺🍎🍐",
+        "id": "KIDS_FRUITS_L67_Q3",
+        "gameType": "fruits",
+        "level": 67,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
         "options": [
-          "Fruit Basket",
-          "Toy Box",
-          "Bag"
+          "Lemon",
+          "Grapes",
+          "Apple"
         ],
-        "correctAnswer": "Fruit Basket",
-        "hint": "The basket where we put all the apples we pick!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -370,51 +521,73 @@
     "level": 68,
     "quests": [
       {
-        "id": "KID_FRUITS_L68_Q1",
-        "instruction": "Actions: How do you check if a PEAR is ripe?",
-        "question": "🍐 Choice",
+        "id": "KIDS_FRUITS_L68_Q1",
+        "gameType": "fruits",
+        "level": 68,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
         "options": [
-          "Press near the stem",
-          "Shake it",
-          "Listen to it"
+          "Grapes",
+          "Apple",
+          "Banana"
         ],
-        "correctAnswer": "Press near the stem",
-        "hint": "If the neck of the pear is soft, it's ready to eat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L68_Q2",
-        "instruction": "Actions: What makes a 'Snap'?",
-        "question": "🍎 Choice",
-        "options": [
-          "Biting an apple",
-          "Biting a banana",
-          "Biting a peach"
-        ],
-        "correctAnswer": "Biting an apple",
-        "hint": "Apples are firm and make a loud snapping sound when you bite!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_FRUITS_L68_Q3",
-        "instruction": "Actions: Which one has a 'Waxy' skin?",
-        "question": "🍎 vs 🍓",
+        "id": "KIDS_FRUITS_L68_Q2",
+        "gameType": "fruits",
+        "level": 68,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
+        "correctAnswer": "Apple",
         "options": [
           "Apple",
-          "Strawberry"
+          "Orange",
+          "Lemon"
         ],
-        "correctAnswer": "Apple",
-        "hint": "Apples have smooth, shiny, waxy skin that can be polished!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L68_Q3",
+        "gameType": "fruits",
+        "level": 68,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
+        "options": [
+          "Grapes",
+          "Banana",
+          "Apple"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -422,52 +595,73 @@
     "level": 69,
     "quests": [
       {
-        "id": "KID_FRUITS_L69_Q1",
-        "instruction": "Review: Who is BELL-shaped?",
-        "question": "🍐 Review",
+        "id": "KIDS_FRUITS_L69_Q1",
+        "gameType": "fruits",
+        "level": 69,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Pear",
-          "Apple",
+          "Orange",
+          "Lemon",
+          "Apple"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L69_Q2",
+        "gameType": "fruits",
+        "level": 69,
+        "instruction": "Identify the fruit that is a sour yellow fruit we squeeze to make lemonade!",
+        "question": "Lemon",
+        "correctAnswer": "Lemon",
+        "options": [
+          "Grapes",
+          "Lemon",
+          "Orange"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose lemon for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FRUITS_L69_Q3",
+        "gameType": "fruits",
+        "level": 69,
+        "instruction": "Identify the fruit that is a small round sweet berries growing in bunches!",
+        "question": "Grapes",
+        "correctAnswer": "Grapes",
+        "options": [
+          "Orange",
+          "Grapes",
           "Lemon"
         ],
-        "correctAnswer": "Pear",
-        "hint": "The curvy friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_FRUITS_L69_Q2",
-        "instruction": "Review: Who is ROUND and CRUNCHY?",
-        "question": "🍎 Review",
-        "options": [
-          "Apple",
-          "Banana",
-          "Plum"
-        ],
-        "correctAnswer": "Apple",
-        "hint": "The orchard king!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_FRUITS_L69_Q3",
-        "instruction": "Review: Who has a core?",
-        "question": "🍏 Review",
-        "options": [
-          "Apple & Pear",
-          "Orange",
-          "Cherry"
-        ],
-        "correctAnswer": "Apple & Pear",
-        "hint": "Both of these fruits have seeds in the center core!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grapes for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -475,51 +669,73 @@
     "level": 70,
     "quests": [
       {
-        "id": "KID_FRUITS_L70_Q1",
-        "instruction": "Level 70 Challenge: Orchard!",
-        "question": "Which fruit bobs in water?",
-        "options": [
-          "Apple",
-          "Pear",
-          "Peach"
-        ],
+        "id": "KIDS_FRUITS_L70_Q1",
+        "gameType": "fruits",
+        "level": 70,
+        "instruction": "Identify the fruit that is a sweet red round fruit growing on trees!",
+        "question": "Apple",
         "correctAnswer": "Apple",
-        "hint": "The round crunchy friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "options": [
+          "Lemon",
+          "Grapes",
+          "Apple"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose apple for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L70_Q2",
-        "instruction": "Level 70 Challenge: Shapes!",
-        "question": "Which fruit is bottom-heavy?",
+        "id": "KIDS_FRUITS_L70_Q2",
+        "gameType": "fruits",
+        "level": 70,
+        "instruction": "Identify the fruit that is a long yellow fruit monkeys love to peel!",
+        "question": "Banana",
+        "correctAnswer": "Banana",
         "options": [
-          "Pear",
-          "Apple",
-          "Orange"
+          "Orange",
+          "Banana",
+          "Lemon"
         ],
-        "correctAnswer": "Pear",
-        "hint": "The bell-shaped friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose banana for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FRUITS_L70_Q3",
-        "instruction": "Level 70 Challenge: Mastery!",
-        "question": "Are you a Fruit Picker?",
+        "id": "KIDS_FRUITS_L70_Q3",
+        "gameType": "fruits",
+        "level": 70,
+        "instruction": "Identify the fruit that is a round juicy citrus fruit named after its color!",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "YES!",
-          "No"
+          "Orange",
+          "Lemon",
+          "Grapes"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 70!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose orange for the answer.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

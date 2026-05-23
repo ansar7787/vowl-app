@@ -3,52 +3,73 @@
     "level": 81,
     "quests": [
       {
-        "id": "KID_NATURE_L81_Q1",
-        "instruction": "Find the PLANET",
-        "question": "🪐✨",
+        "id": "KIDS_NATURE_L81_Q1",
+        "gameType": "nature",
+        "level": 81,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Planet",
-          "Sofa",
-          "Milk"
+          "Tree",
+          "River",
+          "Flower"
         ],
-        "correctAnswer": "Planet",
-        "hint": "A planet is a giant ball of rock or gas that travels in a big circle around the sun in space!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L81_Q2",
-        "instruction": "Which one has RINGS?",
-        "question": "🪐💍",
+        "id": "KIDS_NATURE_L81_Q2",
+        "gameType": "nature",
+        "level": 81,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Planet",
-          "Lamp",
-          "Rug"
+          "Flower",
+          "Tree",
+          "Mountain"
         ],
-        "correctAnswer": "Planet",
-        "hint": "Look for the beautiful world in the sky that has a circle of dust and ice spinning around it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L81_Q3",
-        "instruction": "Find the space ball",
-        "question": "🪐🌌",
+        "id": "KIDS_NATURE_L81_Q3",
+        "gameType": "nature",
+        "level": 81,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Planet",
-          "Bed",
-          "TV"
+          "Cloud",
+          "Flower",
+          "Tree"
         ],
-        "correctAnswer": "Planet",
-        "hint": "Earth is the planet where we live, with all our trees and oceans!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 82,
     "quests": [
       {
-        "id": "KID_NATURE_L82_Q1",
-        "instruction": "Find the COMET",
-        "question": "☄️✨",
+        "id": "KIDS_NATURE_L82_Q1",
+        "gameType": "nature",
+        "level": 82,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Comet",
-          "Hammer",
-          "Fridge"
+          "Tree",
+          "Cloud",
+          "Flower"
         ],
-        "correctAnswer": "Comet",
-        "hint": "A comet is a zooming snowball in space that has a long, glowing tail behind it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L82_Q2",
-        "instruction": "Which one has a TAIL?",
-        "question": "☄️🌬️",
+        "id": "KIDS_NATURE_L82_Q2",
+        "gameType": "nature",
+        "level": 82,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Comet",
-          "Table",
-          "Sink"
+          "Cloud",
+          "Tree",
+          "River"
         ],
-        "correctAnswer": "Comet",
-        "hint": "Look for the fast-moving rock that leaves a bright streak of light across the night sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L82_Q3",
-        "instruction": "Find the space flyer",
-        "question": "☄️💨",
+        "id": "KIDS_NATURE_L82_Q3",
+        "gameType": "nature",
+        "level": 82,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Comet",
-          "Window",
-          "Gate"
+          "River",
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "Comet",
-        "hint": "It travels very quickly past the stars and looks like a falling star!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 83,
     "quests": [
       {
-        "id": "KID_NATURE_L83_Q1",
-        "instruction": "Find the TELESCOPE",
-        "question": "🔭✨",
+        "id": "KIDS_NATURE_L83_Q1",
+        "gameType": "nature",
+        "level": 83,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Telescope",
-          "Donut",
-          "Pillow"
+          "Mountain",
+          "Tree",
+          "River"
         ],
-        "correctAnswer": "Telescope",
-        "hint": "A telescope is a long tube with glass lenses that helps us see the faraway stars and planets very clearly!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L83_Q2",
-        "instruction": "Which one is for LOOKING?",
-        "question": "🔭👁️",
+        "id": "KIDS_NATURE_L83_Q2",
+        "gameType": "nature",
+        "level": 83,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Telescope",
-          "Hat",
-          "Bed"
+          "Tree",
+          "Flower",
+          "Cloud"
         ],
-        "correctAnswer": "Telescope",
-        "hint": "Look for the tool that makes the tiny dots in the sky look like big beautiful worlds!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L83_Q3",
-        "instruction": "Find the star peeker",
-        "question": "🔭🌌",
+        "id": "KIDS_NATURE_L83_Q3",
+        "gameType": "nature",
+        "level": 83,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Telescope",
-          "Lamp",
-          "Rug"
+          "Flower",
+          "Mountain",
+          "River"
         ],
-        "correctAnswer": "Telescope",
-        "hint": "You peer through the small end to see the craters on the moon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 84,
     "quests": [
       {
-        "id": "KID_NATURE_L84_Q1",
-        "instruction": "Find the ROCKET",
-        "question": "🚀✨",
+        "id": "KIDS_NATURE_L84_Q1",
+        "gameType": "nature",
+        "level": 84,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Rocket",
-          "Spoon",
-          "Bath"
+          "River",
+          "Mountain",
+          "Cloud"
         ],
-        "correctAnswer": "Rocket",
-        "hint": "A rocket is a powerful ship that uses fire to blast off from the earth and travel all the way to space!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L84_Q2",
-        "instruction": "Which one for BLAST OFF?",
-        "question": "🚀🔥",
+        "id": "KIDS_NATURE_L84_Q2",
+        "gameType": "nature",
+        "level": 84,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Rocket",
-          "Stone",
-          "Apple"
+          "River",
+          "Flower",
+          "Mountain"
         ],
-        "correctAnswer": "Rocket",
-        "hint": "Look for the pointy ship with the big engines that goes super fast into the clouds!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L84_Q3",
-        "instruction": "Find the space ship",
-        "question": "🚀👩‍🚀",
+        "id": "KIDS_NATURE_L84_Q3",
+        "gameType": "nature",
+        "level": 84,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Rocket",
-          "Lamp",
-          "Rug"
+          "Tree",
+          "River",
+          "Mountain"
         ],
-        "correctAnswer": "Rocket",
-        "hint": "Astronanuts sit inside this to visit the moon and the space station!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 85,
     "quests": [
       {
-        "id": "KID_NATURE_L85_Q1",
-        "instruction": "Mix: Find the SPACE friends",
-        "question": "🪐☄️🚀",
+        "id": "KIDS_NATURE_L85_Q1",
+        "gameType": "nature",
+        "level": 85,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Space Group",
-          "Garden Group",
-          "Kitchen Group"
+          "Tree",
+          "River",
+          "Cloud"
         ],
-        "correctAnswer": "Space Group",
-        "hint": "All of these friends live or travel far away from the earth among the stars!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L85_Q2",
-        "instruction": "Mix: Find the RINGED friend",
-        "question": "🪐",
+        "id": "KIDS_NATURE_L85_Q2",
+        "gameType": "nature",
+        "level": 85,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Planet",
-          "Comet",
-          "Rocket"
+          "Tree",
+          "Cloud",
+          "Flower"
         ],
-        "correctAnswer": "Planet",
-        "hint": "The big ball with the circle around it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L85_Q3",
-        "instruction": "Mix: Which has a TAIL?",
-        "question": "☄️",
+        "id": "KIDS_NATURE_L85_Q3",
+        "gameType": "nature",
+        "level": 85,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Comet",
-          "Rocket",
-          "Planet"
+          "Cloud",
+          "Tree",
+          "Mountain"
         ],
-        "correctAnswer": "Comet",
-        "hint": "The zooming snowball!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,51 +373,73 @@
     "level": 86,
     "quests": [
       {
-        "id": "KID_NATURE_L86_Q1",
-        "instruction": "Logic: How do rockets fly?",
-        "question": "🚀🔥",
+        "id": "KIDS_NATURE_L86_Q1",
+        "gameType": "nature",
+        "level": 86,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "With fire engines!",
-          "With wings",
-          "With wheels"
+          "Cloud",
+          "River",
+          "Flower"
         ],
-        "correctAnswer": "With fire engines!",
-        "hint": "Rockets push fire out of the bottom to lift themselves high into space!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L86_Q2",
-        "instruction": "Logic: What does a telescope do?",
-        "question": "🔭🔍",
+        "id": "KIDS_NATURE_L86_Q2",
+        "gameType": "nature",
+        "level": 86,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Makes things look big!",
-          "Makes things look small",
-          "Changes colors"
+          "Cloud",
+          "Mountain",
+          "River"
         ],
-        "correctAnswer": "Makes things look big!",
-        "hint": "It helps our eyes see things that are very far away by making them look closer!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L86_Q3",
-        "instruction": "Logic: Is a comet for throwing?",
-        "question": "☄️🏈",
+        "id": "KIDS_NATURE_L86_Q3",
+        "gameType": "nature",
+        "level": 86,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "No, it's in space!",
-          "Yes"
+          "Mountain",
+          "River",
+          "Tree"
         ],
-        "correctAnswer": "No, it's in space!",
-        "hint": "Comets are giant rocks in the sky! We throw small balls on the grass!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -320,52 +447,73 @@
     "level": 87,
     "quests": [
       {
-        "id": "KID_NATURE_L87_Q1",
-        "instruction": "Search: Find the astronaut",
-        "question": "👩‍🚀🚀",
+        "id": "KIDS_NATURE_L87_Q1",
+        "gameType": "nature",
+        "level": 87,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Astronaut",
-          "Chef",
-          "Doctor"
+          "Flower",
+          "Cloud",
+          "River"
         ],
-        "correctAnswer": "Astronaut",
-        "hint": "Look for the brave person in the white puffy suit and helmet who travels to the stars!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L87_Q2",
-        "instruction": "Search: Find the sun",
-        "question": "☀️🪐",
+        "id": "KIDS_NATURE_L87_Q2",
+        "gameType": "nature",
+        "level": 87,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Sun",
-          "Moon",
-          "Cloud"
+          "Cloud",
+          "Tree",
+          "Mountain"
         ],
-        "correctAnswer": "Sun",
-        "hint": "The giant star at the center of our space family that gives all the planets light!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L87_Q3",
-        "instruction": "Search: Find the constellations",
-        "question": "🌌✨🦁",
+        "id": "KIDS_NATURE_L87_Q3",
+        "gameType": "nature",
+        "level": 87,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Constellations",
-          "Trees",
-          "Flowers"
+          "Mountain",
+          "Tree",
+          "River"
         ],
-        "correctAnswer": "Constellations",
-        "hint": "Look for the groups of stars that make pictures of animals and heroes in the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -373,52 +521,73 @@
     "level": 88,
     "quests": [
       {
-        "id": "KID_NATURE_L88_Q1",
-        "instruction": "Actions: How does a rocket sound?",
-        "question": "🚀 Choice",
+        "id": "KIDS_NATURE_L88_Q1",
+        "gameType": "nature",
+        "level": 88,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "ROAR and RUMBLE!",
-          "Meow",
-          "Ding"
+          "Mountain",
+          "River",
+          "Cloud"
         ],
-        "correctAnswer": "ROAR and RUMBLE!",
-        "hint": "It's the powerful, loud sound of the engines pushing into the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L88_Q2",
-        "instruction": "Actions: How do planets move?",
-        "question": "🪐 Choice",
+        "id": "KIDS_NATURE_L88_Q2",
+        "gameType": "nature",
+        "level": 88,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Spin and Circle!",
-          "Jump up and down",
-          "Run in a line"
+          "Tree",
+          "River",
+          "Flower"
         ],
-        "correctAnswer": "Spin and Circle!",
-        "hint": "They twirl like dancers while they travel around the bright sun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L88_Q3",
-        "instruction": "Actions: How do we use a telescope?",
-        "question": "🔭 Choice",
+        "id": "KIDS_NATURE_L88_Q3",
+        "gameType": "nature",
+        "level": 88,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Peer with one eye!",
-          "Wear it as a shoe",
-          "Eat it"
+          "Mountain",
+          "Flower",
+          "River"
         ],
-        "correctAnswer": "Peer with one eye!",
-        "hint": "We keep our other eye closed and look through the little glass hole!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -426,52 +595,73 @@
     "level": 89,
     "quests": [
       {
-        "id": "KID_NATURE_L89_Q1",
-        "instruction": "Review: Who has rings?",
-        "question": "🪐 Review",
+        "id": "KIDS_NATURE_L89_Q1",
+        "gameType": "nature",
+        "level": 89,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Planet",
-          "Comet",
-          "Rocket"
+          "Cloud",
+          "Mountain",
+          "River"
         ],
-        "correctAnswer": "Planet",
-        "hint": "The big ball friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L89_Q2",
-        "instruction": "Review: Who for looking?",
-        "question": "🔭 Review",
+        "id": "KIDS_NATURE_L89_Q2",
+        "gameType": "nature",
+        "level": 89,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Telescope",
-          "Rocket",
-          "Planet"
+          "River",
+          "Cloud",
+          "Flower"
         ],
-        "correctAnswer": "Telescope",
-        "hint": "The glass tube friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L89_Q3",
-        "instruction": "Review: Who blasts off?",
-        "question": "🚀 Review",
+        "id": "KIDS_NATURE_L89_Q3",
+        "gameType": "nature",
+        "level": 89,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Rocket",
-          "Comet",
-          "Planet"
+          "Cloud",
+          "River",
+          "Mountain"
         ],
-        "correctAnswer": "Rocket",
-        "hint": "The fire ship friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -479,51 +669,73 @@
     "level": 90,
     "quests": [
       {
-        "id": "KID_NATURE_L90_Q1",
-        "instruction": "Level 90 Challenge: Astronauts!",
-        "question": "What do astronauts wear to breathe in space?",
+        "id": "KIDS_NATURE_L90_Q1",
+        "gameType": "nature",
+        "level": 90,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "A Space Helmet!",
-          "A Hat",
-          "Sunglasses"
+          "Cloud",
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "A Space Helmet!",
-        "hint": "The round glass head-cover!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L90_Q2",
-        "instruction": "Level 90 Challenge: Planets!",
-        "question": "Which planet is our home?",
+        "id": "KIDS_NATURE_L90_Q2",
+        "gameType": "nature",
+        "level": 90,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Earth!",
-          "Mars",
-          "Saturn"
+          "Cloud",
+          "River",
+          "Flower"
         ],
-        "correctAnswer": "Earth!",
-        "hint": "The blue and green planet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L90_Q3",
-        "instruction": "Level 90 Challenge: Mastery!",
-        "question": "Are you a Little Astronaut?",
+        "id": "KIDS_NATURE_L90_Q3",
+        "gameType": "nature",
+        "level": 90,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "YES!",
-          "No"
+          "Tree",
+          "Flower",
+          "Cloud"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 90!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 5,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

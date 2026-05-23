@@ -3,52 +3,73 @@
     "level": 1,
     "quests": [
       {
-        "id": "KID_NATURE_L1_Q1",
-        "instruction": "Find the SUN",
-        "question": "☀️✨",
+        "id": "KIDS_NATURE_L1_Q1",
+        "gameType": "nature",
+        "level": 1,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Sun",
+          "River",
+          "Mountain",
+          "Tree"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NATURE_L1_Q2",
+        "gameType": "nature",
+        "level": 1,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
+        "options": [
+          "Tree",
+          "Mountain",
+          "Flower"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NATURE_L1_Q3",
+        "gameType": "nature",
+        "level": 1,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
+        "options": [
           "Cloud",
-          "Rain"
+          "Flower",
+          "Tree"
         ],
-        "correctAnswer": "Sun",
-        "hint": "The sun is a big, bright yellow ball in the sky that gives us light and keeps us warm!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_NATURE_L1_Q2",
-        "instruction": "Which one is YELLOW?",
-        "question": "☀️🎨",
-        "options": [
-          "Sun",
-          "Moon",
-          "Cloud"
-        ],
-        "correctAnswer": "Sun",
-        "hint": "Look for the golden circle that shines during the day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_NATURE_L1_Q3",
-        "instruction": "Find the morning friend",
-        "question": "☀️🌅",
-        "options": [
-          "Sun",
-          "Night",
-          "Bed"
-        ],
-        "correctAnswer": "Sun",
-        "hint": "It wakes up early to start the new day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 2,
     "quests": [
       {
-        "id": "KID_NATURE_L2_Q1",
-        "instruction": "Find the MOON",
-        "question": "🌙✨",
+        "id": "KIDS_NATURE_L2_Q1",
+        "gameType": "nature",
+        "level": 2,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Moon",
-          "Sun",
+          "Tree",
+          "Flower",
+          "Cloud"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NATURE_L2_Q2",
+        "gameType": "nature",
+        "level": 2,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
+        "options": [
+          "Flower",
+          "River",
+          "Cloud"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NATURE_L2_Q3",
+        "gameType": "nature",
+        "level": 2,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
+        "options": [
+          "River",
+          "Tree",
           "Flower"
         ],
-        "correctAnswer": "Moon",
-        "hint": "The moon is the glowing silver friend that visits us in the night sky while we sleep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_NATURE_L2_Q2",
-        "instruction": "Which one is for NIGHT?",
-        "question": "🌙😴",
-        "options": [
-          "Moon",
-          "Sun",
-          "Rainbow"
-        ],
-        "correctAnswer": "Moon",
-        "hint": "Look for the silver crescent that shines when the world is quiet and dark!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_NATURE_L2_Q3",
-        "instruction": "Find the silver circle",
-        "question": "🌙⚪",
-        "options": [
-          "Moon",
-          "Apple",
-          "Orange"
-        ],
-        "correctAnswer": "Moon",
-        "hint": "It changes shape, sometimes it's a slice and sometimes a big ball!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 3,
     "quests": [
       {
-        "id": "KID_NATURE_L3_Q1",
-        "instruction": "Find the CLOUD",
-        "question": "☁️✨",
+        "id": "KIDS_NATURE_L3_Q1",
+        "gameType": "nature",
+        "level": 3,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Cloud",
-          "Sun",
-          "Tree"
+          "River",
+          "Flower",
+          "Mountain"
         ],
-        "correctAnswer": "Cloud",
-        "hint": "A cloud is a fluffy white puff that floats in the blue sky like a piece of cotton!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L3_Q2",
-        "instruction": "Which one is FLUFFY?",
-        "question": "☁️🧸",
+        "id": "KIDS_NATURE_L3_Q2",
+        "gameType": "nature",
+        "level": 3,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
+          "Tree",
           "Cloud",
-          "Rock",
-          "Stick"
+          "Mountain"
         ],
-        "correctAnswer": "Cloud",
-        "hint": "Look for the soft white shape that looks like a sheep in the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L3_Q3",
-        "instruction": "Find the rain maker",
-        "question": "☁️🌧️",
+        "id": "KIDS_NATURE_L3_Q3",
+        "gameType": "nature",
+        "level": 3,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Cloud",
-          "Sun",
-          "Moon"
+          "Flower",
+          "River",
+          "Mountain"
         ],
-        "correctAnswer": "Cloud",
-        "hint": "Sometimes they turn gray and drop little water splashes on the grass!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 4,
     "quests": [
       {
-        "id": "KID_NATURE_L4_Q1",
-        "instruction": "Find the RAINBOW",
-        "question": "🌈✨",
+        "id": "KIDS_NATURE_L4_Q1",
+        "gameType": "nature",
+        "level": 4,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Rainbow",
-          "Sun",
-          "Moon"
-        ],
-        "correctAnswer": "Rainbow",
-        "hint": "A rainbow is a beautiful bridge of many colors that appears when the sun shines through the rain!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
-      },
-      {
-        "id": "KID_NATURE_L4_Q2",
-        "instruction": "Which one has MANY COLORS?",
-        "question": "🌈🎨",
-        "options": [
-          "Rainbow",
           "Cloud",
-          "Sky"
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "Rainbow",
-        "hint": "Look for the magic arch of red, orange, yellow, green, blue, and purple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L4_Q3",
-        "instruction": "Find the sky bridge",
-        "question": "🌈🌉",
+        "id": "KIDS_NATURE_L4_Q2",
+        "gameType": "nature",
+        "level": 4,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Rainbow",
-          "Gate",
-          "Tree"
+          "Mountain",
+          "Tree",
+          "River"
         ],
-        "correctAnswer": "Rainbow",
-        "hint": "It appears after a rain shower to make the world look bright!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NATURE_L4_Q3",
+        "gameType": "nature",
+        "level": 4,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
+        "options": [
+          "Mountain",
+          "Tree",
+          "River"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 5,
     "quests": [
       {
-        "id": "KID_NATURE_L5_Q1",
-        "instruction": "Mix: Find the SKY friends",
-        "question": "☀️🌙☁️",
+        "id": "KIDS_NATURE_L5_Q1",
+        "gameType": "nature",
+        "level": 5,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Sky Group",
-          "Fruit Group",
-          "Home Group"
+          "Mountain",
+          "Tree",
+          "River"
         ],
-        "correctAnswer": "Sky Group",
-        "hint": "All of these friends live high above the trees in the big blue sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L5_Q2",
-        "instruction": "Mix: Find the BRIGHT friend",
-        "question": "☀️",
+        "id": "KIDS_NATURE_L5_Q2",
+        "gameType": "nature",
+        "level": 5,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Sun",
+          "Flower",
+          "Mountain",
+          "Tree"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_NATURE_L5_Q3",
+        "gameType": "nature",
+        "level": 5,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
+        "options": [
           "Cloud",
-          "Moon"
+          "Flower",
+          "Mountain"
         ],
-        "correctAnswer": "Sun",
-        "hint": "The hot yellow ball for the day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_NATURE_L5_Q3",
-        "instruction": "Mix: Which is for the NIGHT?",
-        "question": "🌙",
-        "options": [
-          "Moon",
-          "Sun",
-          "Rainbow"
-        ],
-        "correctAnswer": "Moon",
-        "hint": "The silver friend who watches over us while we sleep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,51 +373,73 @@
     "level": 6,
     "quests": [
       {
-        "id": "KID_NATURE_L6_Q1",
-        "instruction": "Logic: When does the SUN shine?",
-        "question": "☀️⏰",
+        "id": "KIDS_NATURE_L6_Q1",
+        "gameType": "nature",
+        "level": 6,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "In the Day!",
-          "At Night",
-          "In the Bed"
+          "Tree",
+          "Flower",
+          "River"
         ],
-        "correctAnswer": "In the Day!",
-        "hint": "The sun gives us light to play and explore during the day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L6_Q2",
-        "instruction": "Logic: What is the MOON for?",
-        "question": "🌙💤",
+        "id": "KIDS_NATURE_L6_Q2",
+        "gameType": "nature",
+        "level": 6,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Sleeping time!",
-          "Eating lunch",
-          "Playing soccer"
+          "Cloud",
+          "Tree",
+          "Mountain"
         ],
-        "correctAnswer": "Sleeping time!",
-        "hint": "When the moon comes out, it's time for quiet voices and sweet dreams!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L6_Q3",
-        "instruction": "Logic: Is a cloud for biting?",
-        "question": "☁️👅",
+        "id": "KIDS_NATURE_L6_Q3",
+        "gameType": "nature",
+        "level": 6,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "No, it's made of air!",
-          "Yes"
+          "Tree",
+          "Flower",
+          "Mountain"
         ],
-        "correctAnswer": "No, it's made of air!",
-        "hint": "Clouds are high in the sky! We eat yummy food on the ground!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -320,52 +447,73 @@
     "level": 7,
     "quests": [
       {
-        "id": "KID_NATURE_L7_Q1",
-        "instruction": "Search: Find the STARS",
-        "question": "✨✨🌙",
+        "id": "KIDS_NATURE_L7_Q1",
+        "gameType": "nature",
+        "level": 7,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Stars",
-          "Apples",
-          "Buttons"
+          "Cloud",
+          "Flower",
+          "Tree"
         ],
-        "correctAnswer": "Stars",
-        "hint": "Look for the tiny twinkling lights that dance around the moon at night!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L7_Q2",
-        "instruction": "Search: Find the RAINDROPS",
-        "question": "🌧️💧",
+        "id": "KIDS_NATURE_L7_Q2",
+        "gameType": "nature",
+        "level": 7,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Raindrops",
-          "Stones",
-          "Spoons"
+          "Mountain",
+          "Flower",
+          "Cloud"
         ],
-        "correctAnswer": "Raindrops",
-        "hint": "Look for the little blue water splashes falling from the gray clouds!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L7_Q3",
-        "instruction": "Search: Find the lightning",
-        "question": "⚡🌩️",
+        "id": "KIDS_NATURE_L7_Q3",
+        "gameType": "nature",
+        "level": 7,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Lightning",
-          "Sun",
-          "Rainbow"
+          "River",
+          "Tree",
+          "Mountain"
         ],
-        "correctAnswer": "Lightning",
-        "hint": "The bright yellow flash that sometimes appears during a big rain storm!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -373,52 +521,73 @@
     "level": 8,
     "quests": [
       {
-        "id": "KID_NATURE_L8_Q1",
-        "instruction": "Actions: How does the sun feel?",
-        "question": "☀️ Choice",
+        "id": "KIDS_NATURE_L8_Q1",
+        "gameType": "nature",
+        "level": 8,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Hot and Warm!",
-          "Cold and Icy",
-          "Wet"
+          "Mountain",
+          "Tree",
+          "River"
         ],
-        "correctAnswer": "Hot and Warm!",
-        "hint": "The sun is like a big warm hug for the whole earth!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L8_Q2",
-        "instruction": "Actions: What sound does rain make?",
-        "question": "🌧️ Choice",
+        "id": "KIDS_NATURE_L8_Q2",
+        "gameType": "nature",
+        "level": 8,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "PIT-PAT!",
-          "Bang",
-          "Moo"
+          "Flower",
+          "Mountain",
+          "Tree"
         ],
-        "correctAnswer": "PIT-PAT!",
-        "hint": "It's the soft tapping sound of water hitting the leaves and the roof!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L8_Q3",
-        "instruction": "Actions: How do we see a rainbow?",
-        "question": "🌈 Choice",
+        "id": "KIDS_NATURE_L8_Q3",
+        "gameType": "nature",
+        "level": 8,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Look up at the sky!",
-          "Close your eyes",
-          "Look in the fridge"
+          "Cloud",
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "Look up at the sky!",
-        "hint": "When the sun comes out after the rain, look up to see the colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -426,52 +595,73 @@
     "level": 9,
     "quests": [
       {
-        "id": "KID_NATURE_L9_Q1",
-        "instruction": "Review: Who is yellow?",
-        "question": "☀️ Review",
+        "id": "KIDS_NATURE_L9_Q1",
+        "gameType": "nature",
+        "level": 9,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Sun",
-          "Moon",
+          "Flower",
+          "Tree",
           "Cloud"
         ],
-        "correctAnswer": "Sun",
-        "hint": "The day friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L9_Q2",
-        "instruction": "Review: Who is silver?",
-        "question": "🌙 Review",
+        "id": "KIDS_NATURE_L9_Q2",
+        "gameType": "nature",
+        "level": 9,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Moon",
-          "Sun",
-          "Rainbow"
+          "Mountain",
+          "River",
+          "Cloud"
         ],
-        "correctAnswer": "Moon",
-        "hint": "The night friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L9_Q3",
-        "instruction": "Review: Who is fluffy?",
-        "question": "☁️ Review",
+        "id": "KIDS_NATURE_L9_Q3",
+        "gameType": "nature",
+        "level": 9,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
           "Cloud",
-          "Rainbow",
-          "Sun"
+          "Flower",
+          "Mountain"
         ],
-        "correctAnswer": "Cloud",
-        "hint": "The sky friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -479,51 +669,73 @@
     "level": 10,
     "quests": [
       {
-        "id": "KID_NATURE_L10_Q1",
-        "instruction": "Level 10 Challenge: Sky!",
-        "question": "What has 7 beautiful colors?",
+        "id": "KIDS_NATURE_L10_Q1",
+        "gameType": "nature",
+        "level": 10,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "A Rainbow!",
-          "A Cloud",
-          "The Moon"
+          "Tree",
+          "Flower",
+          "River"
         ],
-        "correctAnswer": "A Rainbow!",
-        "hint": "The magic color bridge!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L10_Q2",
-        "instruction": "Level 10 Challenge: Night!",
-        "question": "What twinkles in the sky at night?",
+        "id": "KIDS_NATURE_L10_Q2",
+        "gameType": "nature",
+        "level": 10,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Stars!",
-          "Apples",
-          "Shoes"
+          "Cloud",
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "Stars!",
-        "hint": "The tiny diamond lights!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L10_Q3",
-        "instruction": "Level 10 Challenge: Mastery!",
-        "question": "Are you a Sky Explorer?",
+        "id": "KIDS_NATURE_L10_Q3",
+        "gameType": "nature",
+        "level": 10,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "YES!",
-          "No"
+          "Mountain",
+          "Cloud",
+          "River"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 10 of Nature!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

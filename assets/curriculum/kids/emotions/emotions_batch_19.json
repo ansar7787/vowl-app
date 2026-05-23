@@ -3,50 +3,73 @@
     "level": 181,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L181_Q1",
-        "instruction": "Find the HEALTHY face",
-        "question": "🍎✨",
+        "id": "KIDS_EMOTIONS_L181_Q1",
+        "gameType": "emotions",
+        "level": 181,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
         "options": [
-          "Healthy",
-          "Sick",
+          "Sad",
+          "Happy",
+          "Excited"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_EMOTIONS_L181_Q2",
+        "gameType": "emotions",
+        "level": 181,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
+        "options": [
+          "Sad",
+          "Happy",
           "Angry"
         ],
-        "correctAnswer": "Healthy",
-        "hint": "A healthy face has glowing pink cheeks and a big happy smile because they are eating good food and staying strong!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L181_Q2",
-        "instruction": "Which one is HEALTHY?",
-        "question": "🍎🥦 vs 🍩🍟",
+        "id": "KIDS_EMOTIONS_L181_Q3",
+        "gameType": "emotions",
+        "level": 181,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
+        "correctAnswer": "Happy",
         "options": [
-          "Apples & Broccoli",
-          "Donuts & Fries"
+          "Happy",
+          "Scared",
+          "Angry"
         ],
-        "correctAnswer": "Apples & Broccoli",
-        "hint": "Eating colorful fruits and veggies helps your body feel wonderful and HEALTHY!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_EMOTIONS_L181_Q3",
-        "instruction": "Is drinking water HEALTHY?",
-        "question": "🥤🍎❓",
-        "options": [
-          "Yes, drink up!",
-          "No, it's for Sleepy"
-        ],
-        "correctAnswer": "Yes, drink up!",
-        "hint": "Water is like magic for your body! Drinking it helps you stay strong and HEALTHY!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 182,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L182_Q1",
-        "instruction": "Find the STRONG face",
-        "question": "💪✨",
+        "id": "KIDS_EMOTIONS_L182_Q1",
+        "gameType": "emotions",
+        "level": 182,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
-          "Strong",
-          "Tired",
-          "Sad"
+          "Sad",
+          "Happy",
+          "Scared"
         ],
-        "correctAnswer": "Strong",
-        "hint": "A strong face looks determined and brave, with muscles ready to help and a heart that doesn't give up!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L182_Q2",
-        "instruction": "Which one is STRONG?",
-        "question": "💪🆙 vs 🥱",
+        "id": "KIDS_EMOTIONS_L182_Q2",
+        "gameType": "emotions",
+        "level": 182,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "Lifting a Box",
-          "Bored Face"
+          "Angry",
+          "Excited",
+          "Scared"
         ],
-        "correctAnswer": "Lifting a Box",
-        "hint": "When you use your arms and legs to help move things, you are being very STRONG and helpful!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L182_Q3",
-        "instruction": "Is trying again STRONG?",
-        "question": "🧗‍♂️💪❓",
+        "id": "KIDS_EMOTIONS_L182_Q3",
+        "gameType": "emotions",
+        "level": 182,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
         "options": [
-          "Yes, never give up!",
-          "No, it's for Silly"
+          "Excited",
+          "Happy",
+          "Angry"
         ],
-        "correctAnswer": "Yes, never give up!",
-        "hint": "Being STRONG isn't just about muscles! It's also about having a STRONG heart that keeps trying!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 183,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L183_Q1",
-        "instruction": "Find the CALM face",
-        "question": "😌✨",
+        "id": "KIDS_EMOTIONS_L183_Q1",
+        "gameType": "emotions",
+        "level": 183,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
         "options": [
-          "Calm",
-          "Furious",
+          "Angry",
+          "Happy",
+          "Sad"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_EMOTIONS_L183_Q2",
+        "gameType": "emotions",
+        "level": 183,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
+        "correctAnswer": "Happy",
+        "options": [
+          "Excited",
+          "Scared",
           "Happy"
         ],
-        "correctAnswer": "Calm",
-        "hint": "A calm face has soft closed eyes and a gentle smile because they are taking slow breaths and feeling peaceful!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L183_Q2",
-        "instruction": "Which one is CALM?",
-        "question": "🧘‍♂️😌 vs 😱",
+        "id": "KIDS_EMOTIONS_L183_Q3",
+        "gameType": "emotions",
+        "level": 183,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
-          "Deep Breathing",
-          "Shocked Face"
+          "Sad",
+          "Angry",
+          "Excited"
         ],
-        "correctAnswer": "Deep Breathing",
-        "hint": "Sitting quietly and taking a slow breath in through your nose helps you feel very CALM!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_EMOTIONS_L183_Q3",
-        "instruction": "Is a soft song CALM?",
-        "question": "🎶😌❓",
-        "options": [
-          "Yes, so peaceful!",
-          "No, it's for Sleepy"
-        ],
-        "correctAnswer": "Yes, so peaceful!",
-        "hint": "Listening to a quiet lullaby makes your heart feel soft and CALM!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 184,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L184_Q1",
-        "instruction": "Find the RESTED face",
-        "question": "💤☀️✨",
+        "id": "KIDS_EMOTIONS_L184_Q1",
+        "gameType": "emotions",
+        "level": 184,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "Rested",
-          "Tired",
-          "Grumpy"
+          "Excited",
+          "Angry",
+          "Scared"
         ],
-        "correctAnswer": "Rested",
-        "hint": "A rested face has bright eyes and a big stretch because they just woke up from a wonderful sleep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L184_Q2",
-        "instruction": "Which one is RESTED?",
-        "question": "💤☀️ vs 🥱",
+        "id": "KIDS_EMOTIONS_L184_Q2",
+        "gameType": "emotions",
+        "level": 184,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
         "options": [
-          "Waking Up Happy",
-          "Sleepy Face"
+          "Excited",
+          "Scared",
+          "Sad"
         ],
-        "correctAnswer": "Waking Up Happy",
-        "hint": "After a long night of dreaming, you feel RESTED and ready for a brand new day of play!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L184_Q3",
-        "instruction": "Is a long nap RESTED?",
-        "question": "🛌💤❓",
+        "id": "KIDS_EMOTIONS_L184_Q3",
+        "gameType": "emotions",
+        "level": 184,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
         "options": [
-          "Yes, all powered up!",
-          "No, it's for Sad"
+          "Scared",
+          "Excited",
+          "Angry"
         ],
-        "correctAnswer": "Yes, all powered up!",
-        "hint": "A cozy nap gives your body a rest so you can feel RESTED and full of energy again!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 185,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L185_Q1",
-        "instruction": "Mix: Find the HEALTHY friend",
-        "question": "🍎 vs 💪",
+        "id": "KIDS_EMOTIONS_L185_Q1",
+        "gameType": "emotions",
+        "level": 185,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
+        "correctAnswer": "Happy",
         "options": [
-          "Healthy",
-          "Strong"
+          "Scared",
+          "Sad",
+          "Happy"
         ],
-        "correctAnswer": "Healthy",
-        "hint": "The one eating a crunchy apple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L185_Q2",
-        "instruction": "Mix: Find the CALM friend",
-        "question": "😌 vs 💤",
+        "id": "KIDS_EMOTIONS_L185_Q2",
+        "gameType": "emotions",
+        "level": 185,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
-          "Calm",
-          "Rested"
+          "Angry",
+          "Sad",
+          "Happy"
         ],
-        "correctAnswer": "Calm",
-        "hint": "The one taking deep breaths!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L185_Q3",
-        "instruction": "Mix: Find the STRONG friend",
-        "question": "💪 vs 🍎",
+        "id": "KIDS_EMOTIONS_L185_Q3",
+        "gameType": "emotions",
+        "level": 185,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "Strong",
-          "Healthy"
+          "Excited",
+          "Scared",
+          "Angry"
         ],
-        "correctAnswer": "Strong",
-        "hint": "The one lifting a heavy box!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,51 +373,73 @@
     "level": 186,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L186_Q1",
-        "instruction": "Logic: What do we do to be HEALTHY?",
-        "question": "🍎❓",
+        "id": "KIDS_EMOTIONS_L186_Q1",
+        "gameType": "emotions",
+        "level": 186,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
         "options": [
-          "Eat Fruit and Run!",
-          "Eat Candy",
-          "Sleep all day"
+          "Excited",
+          "Happy",
+          "Sad"
         ],
-        "correctAnswer": "Eat Fruit and Run!",
-        "hint": "Moving your body and eating good food is the best way to stay HEALTHY!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L186_Q2",
-        "instruction": "Logic: What do we do to be STRONG?",
-        "question": "💪❓",
+        "id": "KIDS_EMOTIONS_L186_Q2",
+        "gameType": "emotions",
+        "level": 186,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
         "options": [
-          "Practice and Help Others!",
-          "Sit still",
-          "Frown"
+          "Angry",
+          "Scared",
+          "Excited"
         ],
-        "correctAnswer": "Practice and Help Others!",
-        "hint": "Helping a friend and practicing your skills makes your body and heart very STRONG!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L186_Q3",
-        "instruction": "Logic: Does deep breathing make you CALM?",
-        "question": "😌💨❓",
+        "id": "KIDS_EMOTIONS_L186_Q3",
+        "gameType": "emotions",
+        "level": 186,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
+        "correctAnswer": "Happy",
         "options": [
-          "Yes, peaceful heart!",
-          "No, it's for Angry"
+          "Excited",
+          "Happy",
+          "Angry"
         ],
-        "correctAnswer": "Yes, peaceful heart!",
-        "hint": "Breathing slowly like you are blowing out a candle helps you feel very CALM and happy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -309,49 +447,73 @@
     "level": 187,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L187_Q1",
-        "instruction": "Search: Find the crunchy carrot",
-        "question": "🥕🍎 vs 💪",
+        "id": "KIDS_EMOTIONS_L187_Q1",
+        "gameType": "emotions",
+        "level": 187,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
-          "Healthy Snack",
-          "Strong Muscle"
+          "Scared",
+          "Happy",
+          "Sad"
         ],
-        "correctAnswer": "Healthy Snack",
-        "hint": "A crunchy orange carrot is a wonderful way to keep your body HEALTHY!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L187_Q2",
-        "instruction": "Search: Find the giant muscle",
-        "question": "💪🆙 vs 💤",
+        "id": "KIDS_EMOTIONS_L187_Q2",
+        "gameType": "emotions",
+        "level": 187,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "Strong Arm",
-          "Rested Face"
+          "Scared",
+          "Happy",
+          "Sad"
         ],
-        "correctAnswer": "Strong Arm",
-        "hint": "A big strong muscle shows how powerful you feel when you are being STRONG!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L187_Q3",
-        "instruction": "Search: Find the sleeping sun",
-        "question": "☀️💤 vs 😌",
+        "id": "KIDS_EMOTIONS_L187_Q3",
+        "gameType": "emotions",
+        "level": 187,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
         "options": [
-          "Rested Sun",
-          "Calm Face"
+          "Sad",
+          "Excited",
+          "Happy"
         ],
-        "correctAnswer": "Rested Sun",
-        "hint": "The sun waking up in the morning is just like you feeling RESTED and happy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -359,52 +521,73 @@
     "level": 188,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L188_Q1",
-        "instruction": "Actions: How do we stay healthy?",
-        "question": "🍎 Choice",
+        "id": "KIDS_EMOTIONS_L188_Q1",
+        "gameType": "emotions",
+        "level": 188,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
         "options": [
-          "Wash our hands!",
-          "Play with mud",
-          "Shout"
+          "Angry",
+          "Sad",
+          "Happy"
         ],
-        "correctAnswer": "Wash our hands!",
-        "hint": "Washing away the germs keeps your body safe and HEALTHY every day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L188_Q2",
-        "instruction": "Actions: What makes us strong?",
-        "question": "💪 Choice",
+        "id": "KIDS_EMOTIONS_L188_Q2",
+        "gameType": "emotions",
+        "level": 188,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
+        "correctAnswer": "Happy",
         "options": [
-          "Running as fast as we can!",
-          "Sleeping",
-          "Sitting"
+          "Scared",
+          "Happy",
+          "Angry"
         ],
-        "correctAnswer": "Running as fast as we can!",
-        "hint": "Running and jumping helps your legs grow very STRONG and fast!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L188_Q3",
-        "instruction": "Actions: How do we show we're rested?",
-        "question": "💤 Choice",
+        "id": "KIDS_EMOTIONS_L188_Q3",
+        "gameType": "emotions",
+        "level": 188,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
-          "A big wide stretch!",
-          "Frown",
-          "Cry"
+          "Sad",
+          "Angry",
+          "Excited"
         ],
-        "correctAnswer": "A big wide stretch!",
-        "hint": "Stretching your arms up high shows that you feel RESTED and full of energy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -412,52 +595,73 @@
     "level": 189,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L189_Q1",
-        "instruction": "Review: Who is healthy?",
-        "question": "🍎 Review",
+        "id": "KIDS_EMOTIONS_L189_Q1",
+        "gameType": "emotions",
+        "level": 189,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "Healthy",
-          "Strong",
-          "Calm"
-        ],
-        "correctAnswer": "Healthy",
-        "hint": "The glowing-cheeked friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_EMOTIONS_L189_Q2",
-        "instruction": "Review: Who is strong?",
-        "question": "💪 Review",
-        "options": [
-          "Strong",
-          "Rested",
-          "Sad"
-        ],
-        "correctAnswer": "Strong",
-        "hint": "The muscle-flexing friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_EMOTIONS_L189_Q3",
-        "instruction": "Review: Who is rested?",
-        "question": "💤 Review",
-        "options": [
-          "Rested",
-          "Sick",
+          "Happy",
+          "Scared",
           "Angry"
         ],
-        "correctAnswer": "Rested",
-        "hint": "The bright-eyed friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_EMOTIONS_L189_Q2",
+        "gameType": "emotions",
+        "level": 189,
+        "instruction": "Which emotion do we feel when we are going to the amusement park?",
+        "question": "Excited",
+        "correctAnswer": "Excited",
+        "options": [
+          "Happy",
+          "Scared",
+          "Excited"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being excited.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_EMOTIONS_L189_Q3",
+        "gameType": "emotions",
+        "level": 189,
+        "instruction": "Which emotion do we feel when things do not go our way?",
+        "question": "Angry",
+        "correctAnswer": "Angry",
+        "options": [
+          "Angry",
+          "Scared",
+          "Excited"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a feeling of being angry.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -465,51 +669,73 @@
     "level": 190,
     "quests": [
       {
-        "id": "KID_EMOTIONS_L190_Q1",
-        "instruction": "Level 190 Challenge: Wellness!",
-        "question": "Which friend is CALM?",
+        "id": "KIDS_EMOTIONS_L190_Q1",
+        "gameType": "emotions",
+        "level": 190,
+        "instruction": "Which emotion do we feel when we smile and laugh out loud?",
+        "question": "Happy",
+        "correctAnswer": "Happy",
         "options": [
-          "😌",
-          "💪",
-          "🍎"
+          "Excited",
+          "Sad",
+          "Happy"
         ],
-        "correctAnswer": "😌",
-        "hint": "The one taking deep breaths!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a feeling of being happy.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L190_Q2",
-        "instruction": "Level 190 Challenge: Power!",
-        "question": "Are you a strong scout?",
+        "id": "KIDS_EMOTIONS_L190_Q2",
+        "gameType": "emotions",
+        "level": 190,
+        "instruction": "Which emotion do we feel when we have tears when we are hurt?",
+        "question": "Sad",
+        "correctAnswer": "Sad",
         "options": [
-          "Yes, I help!",
-          "No",
-          "Angry"
+          "Sad",
+          "Excited",
+          "Happy"
         ],
-        "correctAnswer": "Yes, I help!",
-        "hint": "Helping others is the best kind of strong!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being sad.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_EMOTIONS_L190_Q3",
-        "instruction": "Level 10 Challenge: Mastery!",
-        "question": "Are you a Sunshine Heart?",
+        "id": "KIDS_EMOTIONS_L190_Q3",
+        "gameType": "emotions",
+        "level": 190,
+        "instruction": "Which emotion do we feel when we hear a loud sound in the dark?",
+        "question": "Scared",
+        "correctAnswer": "Scared",
         "options": [
-          "YES!",
-          "No"
+          "Scared",
+          "Angry",
+          "Sad"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 190!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a feeling of being scared.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

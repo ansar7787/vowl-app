@@ -3,52 +3,73 @@
     "level": 101,
     "quests": [
       {
-        "id": "KID_FOOD_KIDS_L101_Q1",
-        "instruction": "Find the BROCCOLI",
-        "question": "🥦✨",
+        "id": "KIDS_FOOD_KIDS_L101_Q1",
+        "gameType": "food_kids",
+        "level": 101,
+        "instruction": "Which delicious food is a soft slice used to make sandwiches?",
+        "question": "Bread",
+        "correctAnswer": "Bread",
         "options": [
-          "Broccoli",
-          "Apple",
+          "Ice Cream",
+          "Bread",
+          "Soup"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It tastes like delicious bread!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FOOD_KIDS_L101_Q2",
+        "gameType": "food_kids",
+        "level": 101,
+        "instruction": "Which delicious food is a sweet baked dessert with candles for birthdays?",
+        "question": "Cake",
+        "correctAnswer": "Cake",
+        "options": [
+          "Cake",
+          "Soup",
           "Bread"
         ],
-        "correctAnswer": "Broccoli",
-        "hint": "Broccoli is a green vegetable that looks exactly like a tiny little tree!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious cake!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L101_Q2",
-        "instruction": "Which one is a GREEN broccoli?",
-        "question": "🥦🌳",
+        "id": "KIDS_FOOD_KIDS_L101_Q3",
+        "gameType": "food_kids",
+        "level": 101,
+        "instruction": "Which delicious food is a flat round bread with melted cheese?",
+        "question": "Pizza",
+        "correctAnswer": "Pizza",
         "options": [
-          "Broccoli",
-          "Banana",
-          "Milk"
+          "Cake",
+          "Bread",
+          "Pizza"
         ],
-        "correctAnswer": "Broccoli",
-        "hint": "Look for the bushy green veggie with the thick stem!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_FOOD_KIDS_L101_Q3",
-        "instruction": "Find the tiny tree",
-        "question": "🥦",
-        "options": [
-          "Broccoli",
-          "Lemon",
-          "Carrot"
-        ],
-        "correctAnswer": "Broccoli",
-        "hint": "This vegetable helps you stay healthy and strong just like a big tree!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious pizza!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 102,
     "quests": [
       {
-        "id": "KID_FOOD_KIDS_L102_Q1",
-        "instruction": "Find the TOMATO",
-        "question": "🍅✨",
+        "id": "KIDS_FOOD_KIDS_L102_Q1",
+        "gameType": "food_kids",
+        "level": 102,
+        "instruction": "Which delicious food is a cold sweet dessert in a cone?",
+        "question": "Ice Cream",
+        "correctAnswer": "Ice Cream",
         "options": [
-          "Tomato",
-          "Egg",
-          "Cereal"
+          "Ice Cream",
+          "Bread",
+          "Soup"
         ],
-        "correctAnswer": "Tomato",
-        "hint": "A tomato is round, bright red, and very juicy inside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It tastes like delicious ice cream!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L102_Q2",
-        "instruction": "Which one is a red TOMATO?",
-        "question": "🍅🍅",
+        "id": "KIDS_FOOD_KIDS_L102_Q2",
+        "gameType": "food_kids",
+        "level": 102,
+        "instruction": "Which delicious food is a warm healthy liquid bowl when cold?",
+        "question": "Soup",
+        "correctAnswer": "Soup",
         "options": [
-          "Tomato",
-          "Watermelon",
-          "Milk"
+          "Soup",
+          "Ice Cream",
+          "Cake"
         ],
-        "correctAnswer": "Tomato",
-        "hint": "Look for the shiny red fruit that we use to make sauce!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It tastes like delicious soup!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L102_Q3",
-        "instruction": "Find the juicy red veggie",
-        "question": "🍅💦",
+        "id": "KIDS_FOOD_KIDS_L102_Q3",
+        "gameType": "food_kids",
+        "level": 102,
+        "instruction": "Which delicious food is a soft slice used to make sandwiches?",
+        "question": "Bread",
+        "correctAnswer": "Bread",
         "options": [
-          "Tomato",
-          "Apple",
-          "Orange"
+          "Soup",
+          "Cake",
+          "Bread"
         ],
-        "correctAnswer": "Tomato",
-        "hint": "It has lots of tiny seeds inside and a little green hat on top!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It tastes like delicious bread!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 103,
     "quests": [
       {
-        "id": "KID_FOOD_KIDS_L103_Q1",
-        "instruction": "Find the POTATO",
-        "question": "🥔✨",
+        "id": "KIDS_FOOD_KIDS_L103_Q1",
+        "gameType": "food_kids",
+        "level": 103,
+        "instruction": "Which delicious food is a sweet baked dessert with candles for birthdays?",
+        "question": "Cake",
+        "correctAnswer": "Cake",
         "options": [
-          "Potato",
-          "Bread",
-          "Donut"
+          "Ice Cream",
+          "Soup",
+          "Cake"
         ],
-        "correctAnswer": "Potato",
-        "hint": "Potatoes are brown on the outside and grow deep in the ground!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It tastes like delicious cake!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L103_Q2",
-        "instruction": "Which one is a brown POTATO?",
-        "question": "🥔🥔",
+        "id": "KIDS_FOOD_KIDS_L103_Q2",
+        "gameType": "food_kids",
+        "level": 103,
+        "instruction": "Which delicious food is a flat round bread with melted cheese?",
+        "question": "Pizza",
+        "correctAnswer": "Pizza",
         "options": [
-          "Potato",
-          "Apple",
-          "Egg"
+          "Soup",
+          "Ice Cream",
+          "Pizza"
         ],
-        "correctAnswer": "Potato",
-        "hint": "Look for the lumpy brown vegetable that comes from the soil!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious pizza!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L103_Q3",
-        "instruction": "Find the lumpy veggie",
-        "question": "🥔🟤",
+        "id": "KIDS_FOOD_KIDS_L103_Q3",
+        "gameType": "food_kids",
+        "level": 103,
+        "instruction": "Which delicious food is a cold sweet dessert in a cone?",
+        "question": "Ice Cream",
+        "correctAnswer": "Ice Cream",
         "options": [
-          "Potato",
-          "Lemon",
-          "Carrot"
+          "Cake",
+          "Ice Cream",
+          "Pizza"
         ],
-        "correctAnswer": "Potato",
-        "hint": "We can mash them, fry them, or bake them!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious ice cream!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 104,
     "quests": [
       {
-        "id": "KID_FOOD_KIDS_L104_Q1",
-        "instruction": "Find the BELL PEPPER",
-        "question": "🫑✨",
+        "id": "KIDS_FOOD_KIDS_L104_Q1",
+        "gameType": "food_kids",
+        "level": 104,
+        "instruction": "Which delicious food is a warm healthy liquid bowl when cold?",
+        "question": "Soup",
+        "correctAnswer": "Soup",
         "options": [
-          "Bell Pepper",
-          "Milk",
-          "Juice"
+          "Cake",
+          "Soup",
+          "Pizza"
         ],
-        "correctAnswer": "Bell Pepper",
-        "hint": "Bell peppers are big, crunchy, and hollow inside with a few seeds!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious soup!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L104_Q2",
-        "instruction": "Which one is a GREEN pepper?",
-        "question": "🫑🟢",
+        "id": "KIDS_FOOD_KIDS_L104_Q2",
+        "gameType": "food_kids",
+        "level": 104,
+        "instruction": "Which delicious food is a soft slice used to make sandwiches?",
+        "question": "Bread",
+        "correctAnswer": "Bread",
         "options": [
-          "Pepper",
-          "Banana",
+          "Cake",
+          "Pizza",
           "Bread"
         ],
-        "correctAnswer": "Pepper",
-        "hint": "Look for the shiny green veggie that looks like a little bell!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It tastes like delicious bread!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L104_Q3",
-        "instruction": "Find the hollow crunch",
-        "question": "🫑🕕",
+        "id": "KIDS_FOOD_KIDS_L104_Q3",
+        "gameType": "food_kids",
+        "level": 104,
+        "instruction": "Which delicious food is a sweet baked dessert with candles for birthdays?",
+        "question": "Cake",
+        "correctAnswer": "Cake",
         "options": [
-          "Bell Pepper",
-          "Butter",
-          "Cheese"
+          "Pizza",
+          "Ice Cream",
+          "Cake"
         ],
-        "correctAnswer": "Bell Pepper",
-        "hint": "When you cut it open, it's empty inside like a little cave!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious cake!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 105,
     "quests": [
       {
-        "id": "KID_FOOD_KIDS_L105_Q1",
-        "instruction": "Mix: Find the VEGGIE patch",
-        "question": "🥦🍅🥔",
+        "id": "KIDS_FOOD_KIDS_L105_Q1",
+        "gameType": "food_kids",
+        "level": 105,
+        "instruction": "Which delicious food is a flat round bread with melted cheese?",
+        "question": "Pizza",
+        "correctAnswer": "Pizza",
         "options": [
-          "Veggie Patch",
-          "Pizza Group",
-          "Milk Group"
+          "Cake",
+          "Bread",
+          "Pizza"
         ],
-        "correctAnswer": "Veggie Patch",
-        "hint": "All of these grow in the garden and are full of vitamins!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It tastes like delicious pizza!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L105_Q2",
-        "instruction": "Mix: Find the TREE friend",
-        "question": "🥦",
+        "id": "KIDS_FOOD_KIDS_L105_Q2",
+        "gameType": "food_kids",
+        "level": 105,
+        "instruction": "Which delicious food is a cold sweet dessert in a cone?",
+        "question": "Ice Cream",
+        "correctAnswer": "Ice Cream",
         "options": [
-          "Broccoli",
-          "Tomato",
-          "Potato"
+          "Ice Cream",
+          "Cake",
+          "Soup"
         ],
-        "correctAnswer": "Broccoli",
-        "hint": "The one that looks like a forest in a single bite!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious ice cream!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L105_Q3",
-        "instruction": "Mix: Which is RED and juicy?",
-        "question": "🍅",
+        "id": "KIDS_FOOD_KIDS_L105_Q3",
+        "gameType": "food_kids",
+        "level": 105,
+        "instruction": "Which delicious food is a warm healthy liquid bowl when cold?",
+        "question": "Soup",
+        "correctAnswer": "Soup",
         "options": [
-          "Tomato",
-          "Broccoli",
-          "Potato"
+          "Ice Cream",
+          "Soup",
+          "Pizza"
         ],
-        "correctAnswer": "Tomato",
-        "hint": "The one with the tiny yellow seeds inside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It tastes like delicious soup!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,51 +373,73 @@
     "level": 106,
     "quests": [
       {
-        "id": "KID_FOOD_KIDS_L106_Q1",
-        "instruction": "Logic: Where do potatoes grow?",
-        "question": "🥔🌱",
+        "id": "KIDS_FOOD_KIDS_L106_Q1",
+        "gameType": "food_kids",
+        "level": 106,
+        "instruction": "Which delicious food is a soft slice used to make sandwiches?",
+        "question": "Bread",
+        "correctAnswer": "Bread",
         "options": [
-          "In the ground!",
-          "On a tree",
-          "In the ocean"
-        ],
-        "correctAnswer": "In the ground!",
-        "hint": "Potatoes are like buried treasure under the dirt!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
-      },
-      {
-        "id": "KID_FOOD_KIDS_L106_Q2",
-        "instruction": "Logic: What can we make with potatoes?",
-        "question": "🥔🥣",
-        "options": [
-          "Mashed Potatoes!",
-          "Juice",
+          "Bread",
+          "Soup",
           "Cake"
         ],
-        "correctAnswer": "Mashed Potatoes!",
-        "hint": "We squash them until they are fluffy and white!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It tastes like delicious bread!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L106_Q3",
-        "instruction": "Logic: Is broccoli a fruit?",
-        "question": "🥦🍎",
+        "id": "KIDS_FOOD_KIDS_L106_Q2",
+        "gameType": "food_kids",
+        "level": 106,
+        "instruction": "Which delicious food is a sweet baked dessert with candles for birthdays?",
+        "question": "Cake",
+        "correctAnswer": "Cake",
         "options": [
-          "No, it's a vegetable!",
-          "Yes"
+          "Cake",
+          "Pizza",
+          "Bread"
         ],
-        "correctAnswer": "No, it's a vegetable!",
-        "hint": "Broccoli is a green plant from the veggie patch!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious cake!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FOOD_KIDS_L106_Q3",
+        "gameType": "food_kids",
+        "level": 106,
+        "instruction": "Which delicious food is a flat round bread with melted cheese?",
+        "question": "Pizza",
+        "correctAnswer": "Pizza",
+        "options": [
+          "Pizza",
+          "Soup",
+          "Cake"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It tastes like delicious pizza!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -320,52 +447,73 @@
     "level": 107,
     "quests": [
       {
-        "id": "KID_FOOD_KIDS_L107_Q1",
-        "instruction": "Search: Find the steam",
-        "question": "☁️🥦",
+        "id": "KIDS_FOOD_KIDS_L107_Q1",
+        "gameType": "food_kids",
+        "level": 107,
+        "instruction": "Which delicious food is a cold sweet dessert in a cone?",
+        "question": "Ice Cream",
+        "correctAnswer": "Ice Cream",
         "options": [
-          "Steaming Broccoli",
-          "Cold Milk",
+          "Soup",
+          "Bread",
+          "Ice Cream"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious ice cream!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FOOD_KIDS_L107_Q2",
+        "gameType": "food_kids",
+        "level": 107,
+        "instruction": "Which delicious food is a warm healthy liquid bowl when cold?",
+        "question": "Soup",
+        "correctAnswer": "Soup",
+        "options": [
+          "Soup",
+          "Ice Cream",
+          "Pizza"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It tastes like delicious soup!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_FOOD_KIDS_L107_Q3",
+        "gameType": "food_kids",
+        "level": 107,
+        "instruction": "Which delicious food is a soft slice used to make sandwiches?",
+        "question": "Bread",
+        "correctAnswer": "Bread",
+        "options": [
+          "Cake",
+          "Soup",
           "Bread"
         ],
-        "correctAnswer": "Steaming Broccoli",
-        "hint": "We steam our veggies to make them soft and yummy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_FOOD_KIDS_L107_Q2",
-        "instruction": "Search: Find the seeds",
-        "question": "🍅✨",
-        "options": [
-          "Tomato Seeds",
-          "Potato Peel",
-          "Milk"
-        ],
-        "correctAnswer": "Tomato Seeds",
-        "hint": "Look inside the red tomato for the tiny little yellow dots!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_FOOD_KIDS_L107_Q3",
-        "instruction": "Search: Find the potato masher",
-        "question": "🥔🔨",
-        "options": [
-          "Masher",
-          "Spoon",
-          "Knife"
-        ],
-        "correctAnswer": "Masher",
-        "hint": "A tool with a squiggly bottom for squashing potatoes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It tastes like delicious bread!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -373,52 +521,73 @@
     "level": 108,
     "quests": [
       {
-        "id": "KID_FOOD_KIDS_L108_Q1",
-        "instruction": "Actions: How does a pepper feel?",
-        "question": "🫑 Choice",
+        "id": "KIDS_FOOD_KIDS_L108_Q1",
+        "gameType": "food_kids",
+        "level": 108,
+        "instruction": "Which delicious food is a sweet baked dessert with candles for birthdays?",
+        "question": "Cake",
+        "correctAnswer": "Cake",
         "options": [
-          "Smooth and Crunchy!",
-          "Soft and Wet",
-          "Fuzzy"
+          "Cake",
+          "Bread",
+          "Soup"
         ],
-        "correctAnswer": "Smooth and Crunchy!",
-        "hint": "The skin is shiny and smooth, but it's very crunchy when you bite it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It tastes like delicious cake!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L108_Q2",
-        "instruction": "Actions: What color is the middle of a potato?",
-        "question": "🥔 Choice",
+        "id": "KIDS_FOOD_KIDS_L108_Q2",
+        "gameType": "food_kids",
+        "level": 108,
+        "instruction": "Which delicious food is a flat round bread with melted cheese?",
+        "question": "Pizza",
+        "correctAnswer": "Pizza",
         "options": [
-          "Creamy White!",
-          "Blue",
-          "Green"
+          "Pizza",
+          "Soup",
+          "Ice Cream"
         ],
-        "correctAnswer": "Creamy White!",
-        "hint": "Take off the brown skin to find the fluffy white inside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious pizza!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L108_Q3",
-        "instruction": "Actions: How do we eat broccoli trees?",
-        "question": "🥦 Choice",
+        "id": "KIDS_FOOD_KIDS_L108_Q3",
+        "gameType": "food_kids",
+        "level": 108,
+        "instruction": "Which delicious food is a cold sweet dessert in a cone?",
+        "question": "Ice Cream",
+        "correctAnswer": "Ice Cream",
         "options": [
-          "Bite the fluffy tops!",
-          "Peel them like bananas",
-          "Drink them"
+          "Soup",
+          "Bread",
+          "Ice Cream"
         ],
-        "correctAnswer": "Bite the fluffy tops!",
-        "hint": "Eat the little green 'leaves' at the top of the tree!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious ice cream!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -426,52 +595,73 @@
     "level": 109,
     "quests": [
       {
-        "id": "KID_FOOD_KIDS_L109_Q1",
-        "instruction": "Review: Who looks like a tree?",
-        "question": "🥦 Review",
+        "id": "KIDS_FOOD_KIDS_L109_Q1",
+        "gameType": "food_kids",
+        "level": 109,
+        "instruction": "Which delicious food is a warm healthy liquid bowl when cold?",
+        "question": "Soup",
+        "correctAnswer": "Soup",
         "options": [
-          "Broccoli",
-          "Tomato",
-          "Potato"
+          "Bread",
+          "Soup",
+          "Cake"
         ],
-        "correctAnswer": "Broccoli",
-        "hint": "The green forest friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious soup!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L109_Q2",
-        "instruction": "Review: Who is lumpy and brown?",
-        "question": "🥔 Review",
+        "id": "KIDS_FOOD_KIDS_L109_Q2",
+        "gameType": "food_kids",
+        "level": 109,
+        "instruction": "Which delicious food is a soft slice used to make sandwiches?",
+        "question": "Bread",
+        "correctAnswer": "Bread",
         "options": [
-          "Potato",
-          "Pepper",
-          "Tomato"
+          "Bread",
+          "Ice Cream",
+          "Cake"
         ],
-        "correctAnswer": "Potato",
-        "hint": "The dirt-treasure friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It tastes like delicious bread!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L109_Q3",
-        "instruction": "Review: Who has a red hat?",
-        "question": "🍅 Review",
+        "id": "KIDS_FOOD_KIDS_L109_Q3",
+        "gameType": "food_kids",
+        "level": 109,
+        "instruction": "Which delicious food is a sweet baked dessert with candles for birthdays?",
+        "question": "Cake",
+        "correctAnswer": "Cake",
         "options": [
-          "Tomato",
-          "Broccoli",
-          "Milk"
+          "Cake",
+          "Soup",
+          "Bread"
         ],
-        "correctAnswer": "Tomato",
-        "hint": "The juicy red friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It tastes like delicious cake!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -479,51 +669,73 @@
     "level": 110,
     "quests": [
       {
-        "id": "KID_FOOD_KIDS_L110_Q1",
-        "instruction": "Level 110 Challenge: Garden!",
-        "question": "Which veggie grows in the ground?",
+        "id": "KIDS_FOOD_KIDS_L110_Q1",
+        "gameType": "food_kids",
+        "level": 110,
+        "instruction": "Which delicious food is a flat round bread with melted cheese?",
+        "question": "Pizza",
+        "correctAnswer": "Pizza",
         "options": [
-          "Potato",
-          "Milk",
-          "Pizza"
+          "Pizza",
+          "Bread",
+          "Cake"
         ],
-        "correctAnswer": "Potato",
-        "hint": "The lumpy brown one!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It tastes like delicious pizza!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L110_Q2",
-        "instruction": "Level 110 Challenge: Shapes!",
-        "question": "What does broccoli look like?",
+        "id": "KIDS_FOOD_KIDS_L110_Q2",
+        "gameType": "food_kids",
+        "level": 110,
+        "instruction": "Which delicious food is a cold sweet dessert in a cone?",
+        "question": "Ice Cream",
+        "correctAnswer": "Ice Cream",
         "options": [
-          "A Tiny Tree",
-          "A Boat",
-          "A Ball"
+          "Bread",
+          "Cake",
+          "Ice Cream"
         ],
-        "correctAnswer": "A Tiny Tree",
-        "hint": "It has branches and leaves!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It tastes like delicious ice cream!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FOOD_KIDS_L110_Q3",
-        "instruction": "Level 110 Challenge: Mastery!",
-        "question": "Are you a Harvest Hero?",
+        "id": "KIDS_FOOD_KIDS_L110_Q3",
+        "gameType": "food_kids",
+        "level": 110,
+        "instruction": "Which delicious food is a warm healthy liquid bowl when cold?",
+        "question": "Soup",
+        "correctAnswer": "Soup",
         "options": [
-          "YES!",
-          "No"
+          "Bread",
+          "Pizza",
+          "Soup"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 110!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It tastes like delicious soup!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

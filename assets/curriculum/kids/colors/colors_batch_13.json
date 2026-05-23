@@ -3,51 +3,73 @@
     "level": 121,
     "quests": [
       {
-        "id": "KID_COLORS_L121_Q1",
-        "instruction": "Opposites: Who is Red's best friend?",
-        "question": "🔴 + ?",
+        "id": "KIDS_COLORS_L121_Q1",
+        "gameType": "colors",
+        "level": 121,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
+          "Orange",
+          "Pink",
+          "Purple"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L121_Q2",
+        "gameType": "colors",
+        "level": 121,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
+        "options": [
+          "Red",
+          "Purple",
+          "Orange"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L121_Q3",
+        "gameType": "colors",
+        "level": 121,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
+        "options": [
+          "Orange",
           "Green",
-          "Blue",
           "Yellow"
         ],
-        "correctAnswer": "Green",
-        "hint": "Red and Green are across from each other on the wheel!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_COLORS_L121_Q2",
-        "instruction": "Opposites: Red and Green are...?",
-        "question": "Relationship",
-        "options": [
-          "Complementary",
-          "Primary",
-          "Same"
-        ],
-        "correctAnswer": "Complementary",
-        "hint": "Complementary colors are 'Best Friends' of the color wheel!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
-      },
-      {
-        "id": "KID_COLORS_L121_Q3",
-        "instruction": "Does 🔴 and 🟢 remind you of Christmas?",
-        "question": "🎄 🍓",
-        "options": [
-          "Yes",
-          "No"
-        ],
-        "correctAnswer": "Yes",
-        "hint": "They are the classic holiday colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -55,51 +77,73 @@
     "level": 122,
     "quests": [
       {
-        "id": "KID_COLORS_L122_Q1",
-        "instruction": "Opposites: Who is Blue's best friend?",
-        "question": "🔵 + ?",
+        "id": "KIDS_COLORS_L122_Q1",
+        "gameType": "colors",
+        "level": 122,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Orange",
+          "Blue",
+          "Green",
+          "Yellow"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L122_Q2",
+        "gameType": "colors",
+        "level": 122,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
+        "options": [
+          "Yellow",
           "Red",
           "Green"
         ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L122_Q3",
+        "gameType": "colors",
+        "level": 122,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
         "correctAnswer": "Orange",
-        "hint": "Blue and Orange pop when they are together!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_COLORS_L122_Q2",
-        "instruction": "Opposites: Blue and Orange are...?",
-        "question": "Relationship",
         "options": [
-          "Complementary",
-          "Secondary",
-          "Dark"
+          "Orange",
+          "Yellow",
+          "Red"
         ],
-        "correctAnswer": "Complementary",
-        "hint": "They are opposites on the color wheel!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_COLORS_L122_Q3",
-        "instruction": "Does 🔵 and 🟠 remind you of the sunset?",
-        "question": "🌊 🌅",
-        "options": [
-          "Yes",
-          "No"
-        ],
-        "correctAnswer": "Yes",
-        "hint": "The orange sun over the blue ocean!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -107,51 +151,73 @@
     "level": 123,
     "quests": [
       {
-        "id": "KID_COLORS_L123_Q1",
-        "instruction": "Opposites: Who is Yellow's best friend?",
-        "question": "🟡 + ?",
+        "id": "KIDS_COLORS_L123_Q1",
+        "gameType": "colors",
+        "level": 123,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
           "Purple",
-          "Green",
+          "Yellow",
+          "Pink"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L123_Q2",
+        "gameType": "colors",
+        "level": 123,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
+        "options": [
+          "Pink",
+          "Orange",
+          "Purple"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L123_Q3",
+        "gameType": "colors",
+        "level": 123,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
+        "options": [
+          "Orange",
+          "Red",
           "Blue"
         ],
-        "correctAnswer": "Purple",
-        "hint": "Yellow and Purple are a royal pair!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
-      },
-      {
-        "id": "KID_COLORS_L123_Q2",
-        "instruction": "Opposites: Yellow and Purple are...?",
-        "question": "Relationship",
-        "options": [
-          "Complementary",
-          "Primary",
-          "Light"
-        ],
-        "correctAnswer": "Complementary",
-        "hint": "They create the strongest contrast!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
-      },
-      {
-        "id": "KID_COLORS_L123_Q3",
-        "instruction": "Does 🟡 and 🟣 remind you of a pansy flower?",
-        "question": "🌸",
-        "options": [
-          "Yes",
-          "No"
-        ],
-        "correctAnswer": "Yes",
-        "hint": "Many flowers use these two colors together!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -159,52 +225,73 @@
     "level": 124,
     "quests": [
       {
-        "id": "KID_COLORS_L124_Q1",
-        "instruction": "Logic: Match the Best Friend",
-        "question": "🔴 -> ?",
+        "id": "KIDS_COLORS_L124_Q1",
+        "gameType": "colors",
+        "level": 124,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "🟢 Green",
-          "🔵 Blue",
-          "🟡 Yellow"
+          "Orange",
+          "Red",
+          "Yellow"
         ],
-        "correctAnswer": "🟢 Green",
-        "hint": "Green is Red's opposite!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L124_Q2",
-        "instruction": "Logic: Match the Best Friend",
-        "question": "🔵 -> ?",
+        "id": "KIDS_COLORS_L124_Q2",
+        "gameType": "colors",
+        "level": 124,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "🟠 Orange",
-          "🔴 Red",
-          "🟣 Purple"
+          "Purple",
+          "Orange",
+          "Blue"
         ],
-        "correctAnswer": "🟠 Orange",
-        "hint": "Orange is Blue's opposite!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L124_Q3",
-        "instruction": "Logic: Match the Best Friend",
-        "question": "🟡 -> ?",
+        "id": "KIDS_COLORS_L124_Q3",
+        "gameType": "colors",
+        "level": 124,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "🟣 Purple",
-          "🟢 Green",
-          "🟠 Orange"
+          "Green",
+          "Yellow",
+          "Blue"
         ],
-        "correctAnswer": "🟣 Purple",
-        "hint": "Purple is Yellow's opposite!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -212,52 +299,73 @@
     "level": 125,
     "quests": [
       {
-        "id": "KID_COLORS_L125_Q1",
-        "instruction": "Contrast: Which pair stands out most?",
-        "question": "Selection",
+        "id": "KIDS_COLORS_L125_Q1",
+        "gameType": "colors",
+        "level": 125,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Red & Green",
-          "Red & Pink",
-          "Red & Orange"
+          "Red",
+          "Purple",
+          "Orange"
         ],
-        "correctAnswer": "Red & Green",
-        "hint": "Opposite colors stand out the most!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L125_Q2",
-        "instruction": "Contrast: Which pair stands out most?",
-        "question": "Selection",
+        "id": "KIDS_COLORS_L125_Q2",
+        "gameType": "colors",
+        "level": 125,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Blue & Orange",
-          "Blue & Purple",
-          "Blue & Green"
+          "Yellow",
+          "Blue",
+          "Purple"
         ],
-        "correctAnswer": "Blue & Orange",
-        "hint": "Opposite colors create high contrast!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L125_Q3",
-        "instruction": "Contrast: Which pair stands out most?",
-        "question": "Selection",
+        "id": "KIDS_COLORS_L125_Q3",
+        "gameType": "colors",
+        "level": 125,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Yellow & Purple",
-          "Yellow & Gold",
-          "Yellow & Green"
+          "Pink",
+          "Purple",
+          "Orange"
         ],
-        "correctAnswer": "Yellow & Purple",
-        "hint": "These two are perfectly balanced opposites!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -265,50 +373,73 @@
     "level": 126,
     "quests": [
       {
-        "id": "KID_COLORS_L126_Q1",
-        "instruction": "Wheel: Can colors be enemies?",
-        "question": "🎨 Logic",
+        "id": "KIDS_COLORS_L126_Q1",
+        "gameType": "colors",
+        "level": 126,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "No, they are all friends!",
-          "Yes"
+          "Blue",
+          "Yellow",
+          "Red"
         ],
-        "correctAnswer": "No, they are all friends!",
-        "hint": "Every color has a place and a friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L126_Q2",
-        "instruction": "Wheel: What is a Color Wheel?",
-        "question": "🎡 Definition",
+        "id": "KIDS_COLORS_L126_Q2",
+        "gameType": "colors",
+        "level": 126,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "A map of colors",
-          "A real wheel",
-          "A game"
+          "Yellow",
+          "Orange",
+          "Pink"
         ],
-        "correctAnswer": "A map of colors",
-        "hint": "The wheel shows how colors relate to each other!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L126_Q3",
-        "instruction": "Wheel: Are the 🌈 colors in a circle?",
-        "question": "🌈 -> 🎡",
+        "id": "KIDS_COLORS_L126_Q3",
+        "gameType": "colors",
+        "level": 126,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Yes",
-          "No"
+          "Pink",
+          "Red",
+          "Blue"
         ],
-        "correctAnswer": "Yes",
-        "hint": "The rainbow order forms the color wheel!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -316,52 +447,73 @@
     "level": 127,
     "quests": [
       {
-        "id": "KID_COLORS_L127_Q1",
-        "instruction": "Design: If a logo is Blue, what color pops?",
-        "question": "🔵 Logo",
+        "id": "KIDS_COLORS_L127_Q1",
+        "gameType": "colors",
+        "level": 127,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
+          "Green",
           "Orange",
-          "Purple",
+          "Red"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L127_Q2",
+        "gameType": "colors",
+        "level": 127,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
+        "options": [
+          "Yellow",
+          "Orange",
           "Green"
         ],
-        "correctAnswer": "Orange",
-        "hint": "Orange will make the blue look brighter!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L127_Q2",
-        "instruction": "Design: If a flower is Red, what color are the leaves?",
-        "question": "🔴 Flower",
+        "id": "KIDS_COLORS_L127_Q3",
+        "gameType": "colors",
+        "level": 127,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
+          "Red",
           "Green",
-          "Blue",
-          "Pink"
+          "Purple"
         ],
-        "correctAnswer": "Green",
-        "hint": "Green leaves make the red flower stand out!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_COLORS_L127_Q3",
-        "instruction": "Design: If a sun is Yellow, what color is the sky in art?",
-        "question": "🟡 Sun",
-        "options": [
-          "Purple (Sunset)",
-          "Green",
-          "White"
-        ],
-        "correctAnswer": "Purple (Sunset)",
-        "hint": "Purple sky makes a yellow sun look glowing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -369,51 +521,73 @@
     "level": 128,
     "quests": [
       {
-        "id": "KID_COLORS_L128_Q1",
-        "instruction": "Artist: Use opposites to make a POP!",
-        "question": "Pop Art",
-        "options": [
-          "Yes",
-          "No"
-        ],
-        "correctAnswer": "Yes",
-        "hint": "This is a secret trick of all great painters!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_COLORS_L128_Q2",
-        "instruction": "Artist: Red's Opposite?",
-        "question": "🔴 -> ?",
+        "id": "KIDS_COLORS_L128_Q1",
+        "gameType": "colors",
+        "level": 128,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
           "Green",
-          "Blue",
-          "Black"
+          "Pink",
+          "Blue"
         ],
-        "correctAnswer": "Green",
-        "hint": "Think of a strawberry!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L128_Q3",
-        "instruction": "Artist: Yellow's Opposite?",
-        "question": "🟡 -> ?",
+        "id": "KIDS_COLORS_L128_Q2",
+        "gameType": "colors",
+        "level": 128,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Purple",
-          "Orange",
-          "White"
+          "Red",
+          "Green",
+          "Blue"
         ],
-        "correctAnswer": "Purple",
-        "hint": "The dark, rich purple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L128_Q3",
+        "gameType": "colors",
+        "level": 128,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
+        "options": [
+          "Green",
+          "Yellow",
+          "Orange"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -421,49 +595,73 @@
     "level": 129,
     "quests": [
       {
-        "id": "KID_COLORS_L129_Q1",
-        "instruction": "Compare: Is Orange across from Blue?",
-        "question": "🎡 Check",
+        "id": "KIDS_COLORS_L129_Q1",
+        "gameType": "colors",
+        "level": 129,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Yes",
-          "No"
+          "Orange",
+          "Purple",
+          "Blue"
         ],
-        "correctAnswer": "Yes",
-        "hint": "They are perfectly across from each other!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L129_Q2",
-        "instruction": "Compare: Is Green across from Red?",
-        "question": "🎡 Check",
+        "id": "KIDS_COLORS_L129_Q2",
+        "gameType": "colors",
+        "level": 129,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Yes",
-          "No"
+          "Orange",
+          "Red",
+          "Green"
         ],
-        "correctAnswer": "Yes",
-        "hint": "They are perfectly across from each other!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L129_Q3",
-        "instruction": "Compare: Is Purple across from Yellow?",
-        "question": "🎡 Check",
+        "id": "KIDS_COLORS_L129_Q3",
+        "gameType": "colors",
+        "level": 129,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Yes",
-          "No"
+          "Orange",
+          "Red",
+          "Yellow"
         ],
-        "correctAnswer": "Yes",
-        "hint": "They are perfectly across from each other!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -471,51 +669,73 @@
     "level": 130,
     "quests": [
       {
-        "id": "KID_COLORS_L130_Q1",
-        "instruction": "Level 130 Challenge: Best Friends!",
-        "question": "Blue + Orange = ?",
+        "id": "KIDS_COLORS_L130_Q1",
+        "gameType": "colors",
+        "level": 130,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Complementary",
-          "Primary",
-          "Wrong"
+          "Red",
+          "Purple",
+          "Yellow"
         ],
-        "correctAnswer": "Complementary",
-        "hint": "Opposite friends!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L130_Q2",
-        "instruction": "Level 130 Challenge: Best Friends!",
-        "question": "Yellow + Purple = ?",
+        "id": "KIDS_COLORS_L130_Q2",
+        "gameType": "colors",
+        "level": 130,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Complementary",
-          "Secondary",
-          "Dark"
+          "Blue",
+          "Orange",
+          "Pink"
         ],
-        "correctAnswer": "Complementary",
-        "hint": "Opposite friends!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L130_Q3",
-        "instruction": "Level 130 Challenge: Mastery!",
-        "question": "Do you know the color wheel?",
+        "id": "KIDS_COLORS_L130_Q3",
+        "gameType": "colors",
+        "level": 130,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "YES!",
-          "No"
+          "Red",
+          "Green",
+          "Purple"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You are a color relationship master!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 7,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

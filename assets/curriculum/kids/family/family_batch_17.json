@@ -3,50 +3,73 @@
     "level": 161,
     "quests": [
       {
-        "id": "KID_FAMILY_L161_Q1",
-        "instruction": "Find the SUITCASE",
-        "question": "🧳✨",
+        "id": "KIDS_FAMILY_L161_Q1",
+        "gameType": "family",
+        "level": 161,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Suitcase",
-          "Box",
-          "Bag"
+          "Grandmother",
+          "Brother",
+          "Father"
         ],
-        "correctAnswer": "Suitcase",
-        "hint": "A suitcase is a big box with wheels that you pack with your clothes for a fun family trip!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L161_Q2",
-        "instruction": "Which one has WHEELS?",
-        "question": "🧳 vs 📦",
+        "id": "KIDS_FAMILY_L161_Q2",
+        "gameType": "family",
+        "level": 161,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Travel Suitcase",
-          "Plain Box"
+          "Brother",
+          "Sister",
+          "Grandfather"
         ],
-        "correctAnswer": "Travel Suitcase",
-        "hint": "Suitcases have wheels so you can pull them easily through the airport with mommy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L161_Q3",
-        "instruction": "Do we PACK our toys?",
-        "question": "🧳🧸❓",
+        "id": "KIDS_FAMILY_L161_Q3",
+        "gameType": "family",
+        "level": 161,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, for the trip!",
-          "No, only air"
+          "Sister",
+          "Brother",
+          "Mother"
         ],
-        "correctAnswer": "Yes, for the trip!",
-        "hint": "Packing your favorite teddy in your suitcase means he can go on the adventure too!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 162,
     "quests": [
       {
-        "id": "KID_FAMILY_L162_Q1",
-        "instruction": "Find the MAP",
-        "question": "🗺️✨",
+        "id": "KIDS_FAMILY_L162_Q1",
+        "gameType": "family",
+        "level": 162,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Map",
-          "Book",
-          "Paper"
+          "Mother",
+          "Father",
+          "Sister"
         ],
-        "correctAnswer": "Map",
-        "hint": "A map is a special drawing that shows daddy where the family needs to go to find the beach or the park!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L162_Q2",
-        "instruction": "Which one shows the WAY?",
-        "question": "🗺️ vs 🎨",
+        "id": "KIDS_FAMILY_L162_Q2",
+        "gameType": "family",
+        "level": 162,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Travel Map",
-          "Painting"
+          "Father",
+          "Mother",
+          "Grandfather"
         ],
-        "correctAnswer": "Travel Map",
-        "hint": "We look at the lines and roads on the map to find the fastest way to our holiday home!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L162_Q3",
-        "instruction": "Is there a TREASURE X?",
-        "question": "🗺️❌❓",
+        "id": "KIDS_FAMILY_L162_Q3",
+        "gameType": "family",
+        "level": 162,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, for adventure!",
-          "No, only dots"
+          "Grandmother",
+          "Grandfather",
+          "Father"
         ],
-        "correctAnswer": "Yes, for adventure!",
-        "hint": "Sometimes we use a map like a treasure hunt to find fun places with our cousins!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 163,
     "quests": [
       {
-        "id": "KID_FAMILY_L163_Q1",
-        "instruction": "Find the BACKPACK",
-        "question": "🎒✨",
+        "id": "KIDS_FAMILY_L163_Q1",
+        "gameType": "family",
+        "level": 163,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Backpack",
-          "Suitcase",
-          "Wallet"
+          "Grandmother",
+          "Grandfather",
+          "Brother"
         ],
-        "correctAnswer": "Backpack",
-        "hint": "A backpack is a bag you wear on your shoulders to carry your snacks and water on a family hike!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L163_Q2",
-        "instruction": "Which one is for your SHOULDERS?",
-        "question": "🎒 vs 👟",
+        "id": "KIDS_FAMILY_L163_Q2",
+        "gameType": "family",
+        "level": 163,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Backpack",
-          "Shoes"
+          "Grandfather",
+          "Father",
+          "Brother"
         ],
-        "correctAnswer": "Backpack",
-        "hint": "We pull the straps tight so the backpack stays cozy on our back while we walk!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L163_Q3",
-        "instruction": "Does it hold your SNACKS?",
-        "question": "🎒🍎❓",
+        "id": "KIDS_FAMILY_L163_Q3",
+        "gameType": "family",
+        "level": 163,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, yum-yum!",
-          "No, only rocks"
+          "Sister",
+          "Father",
+          "Mother"
         ],
-        "correctAnswer": "Yes, yum-yum!",
-        "hint": "Your backpack is the perfect place to keep your apple and juice for the family picnic!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 164,
     "quests": [
       {
-        "id": "KID_FAMILY_L164_Q1",
-        "instruction": "Find the BEACH BALL",
-        "question": "🏖️🏐✨",
+        "id": "KIDS_FAMILY_L164_Q1",
+        "gameType": "family",
+        "level": 164,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Beach Ball",
-          "Soccer Ball",
-          "Rock"
+          "Mother",
+          "Father",
+          "Sister"
         ],
-        "correctAnswer": "Beach Ball",
-        "hint": "A beach ball is light and full of air, perfect for splashing and playing in the waves with your family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L164_Q2",
-        "instruction": "Which one is for the WATER?",
-        "question": "🏖️ vs 🛏️",
+        "id": "KIDS_FAMILY_L164_Q2",
+        "gameType": "family",
+        "level": 164,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Beach Ball",
-          "Bed"
+          "Grandfather",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Beach Ball",
-        "hint": "The beach ball floats on top of the water so you and your sister can push it back and forth!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L164_Q3",
-        "instruction": "Is it colorful and LIGHT?",
-        "question": "🏖️🎈❓",
+        "id": "KIDS_FAMILY_L164_Q3",
+        "gameType": "family",
+        "level": 164,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, very light!",
-          "No, heavy metal"
+          "Father",
+          "Grandfather",
+          "Mother"
         ],
-        "correctAnswer": "Yes, very light!",
-        "hint": "Even a little kid can throw a beach ball high because it's as light as a balloon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,50 +299,73 @@
     "level": 165,
     "quests": [
       {
-        "id": "KID_FAMILY_L165_Q1",
-        "instruction": "Logic: Why do we TRAVEL?",
-        "question": "🚗👨‍👩‍👧‍👦🌍❓",
+        "id": "KIDS_FAMILY_L165_Q1",
+        "gameType": "family",
+        "level": 165,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "See new places!",
-          "To stay asleep",
-          "To hide under a rug"
+          "Mother",
+          "Father",
+          "Grandmother"
         ],
-        "correctAnswer": "See new places!",
-        "hint": "Traveling with your family helps you see the beautiful world and meet new people!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L165_Q2",
-        "instruction": "Logic: Do we wear SUNSCREEN?",
-        "question": "☀️🧴❓",
+        "id": "KIDS_FAMILY_L165_Q2",
+        "gameType": "family",
+        "level": 165,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Yes, for protection!",
-          "No, wear soup"
+          "Grandfather",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, for protection!",
-        "hint": "Mommy puts sunscreen on your skin so the sun doesn't give you a red boo-boo at the beach!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L165_Q3",
-        "instruction": "Logic: Is a trip for MEMORIES?",
-        "question": "📸👨‍👩‍👧‍👦✨❓",
+        "id": "KIDS_FAMILY_L165_Q3",
+        "gameType": "family",
+        "level": 165,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, remember forever!",
-          "No, for eating"
+          "Grandmother",
+          "Father",
+          "Sister"
         ],
-        "correctAnswer": "Yes, remember forever!",
-        "hint": "Going on trips together creates the best family stories and memories in the world!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -258,49 +373,73 @@
     "level": 166,
     "quests": [
       {
-        "id": "KID_FAMILY_L166_Q1",
-        "instruction": "Search: Find the suitcase WHEELS",
-        "question": "🧳⚙️ vs 🧱",
+        "id": "KIDS_FAMILY_L166_Q1",
+        "gameType": "family",
+        "level": 166,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Spinning Wheels",
-          "Hard Bricks"
+          "Mother",
+          "Grandfather",
+          "Father"
         ],
-        "correctAnswer": "Spinning Wheels",
-        "hint": "Look for the tiny black circles at the bottom of the suitcase that help it roll!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L166_Q2",
-        "instruction": "Search: Find the map ROUTE",
-        "question": "🗺️🛣️ vs 🎨",
+        "id": "KIDS_FAMILY_L166_Q2",
+        "gameType": "family",
+        "level": 166,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Family Path",
-          "Art Splash"
+          "Grandfather",
+          "Grandmother",
+          "Father"
         ],
-        "correctAnswer": "Family Path",
-        "hint": "Look for the red line on the map that shows where the family is going!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L166_Q3",
-        "instruction": "Search: Find the beach SAND",
-        "question": "🏖️⛱️ vs 🛌",
+        "id": "KIDS_FAMILY_L166_Q3",
+        "gameType": "family",
+        "level": 166,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Golden Sand",
-          "Soft Bed"
+          "Grandfather",
+          "Father",
+          "Grandmother"
         ],
-        "correctAnswer": "Golden Sand",
-        "hint": "Look for the yellow ground where the family umbrella is standing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -308,52 +447,73 @@
     "level": 167,
     "quests": [
       {
-        "id": "KID_FAMILY_L167_Q1",
-        "instruction": "Review: Who has the wheels?",
-        "question": "🧳 Review",
+        "id": "KIDS_FAMILY_L167_Q1",
+        "gameType": "family",
+        "level": 167,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Suitcase",
-          "Box",
-          "Paper"
+          "Grandmother",
+          "Brother",
+          "Grandfather"
         ],
-        "correctAnswer": "Suitcase",
-        "hint": "The one we pack for the trip!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L167_Q2",
-        "instruction": "Review: Who shows the way?",
-        "question": "🗺️ Review",
+        "id": "KIDS_FAMILY_L167_Q2",
+        "gameType": "family",
+        "level": 167,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Map",
-          "Mirror",
-          "Plate"
+          "Brother",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Map",
-        "hint": "The drawing with the roads and paths!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L167_Q3",
-        "instruction": "Review: Who is on your back?",
-        "question": "🎒 Review",
+        "id": "KIDS_FAMILY_L167_Q3",
+        "gameType": "family",
+        "level": 167,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Backpack",
-          "Suitcase",
-          "Hat"
+          "Sister",
+          "Brother",
+          "Mother"
         ],
-        "correctAnswer": "Backpack",
-        "hint": "The bag for your snacks and water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -361,49 +521,73 @@
     "level": 168,
     "quests": [
       {
-        "id": "KID_FAMILY_L168_Q1",
-        "instruction": "Which one is for a road trip?",
-        "question": "🚗👨‍👩‍👧‍👦 vs 🧹",
+        "id": "KIDS_FAMILY_L168_Q1",
+        "gameType": "family",
+        "level": 168,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Family Car Trip",
-          "Cleaning Floor"
+          "Grandfather",
+          "Father",
+          "Mother"
         ],
-        "correctAnswer": "Family Car Trip",
-        "hint": "Singing songs and playing games in the car makes the long drive very fun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L168_Q2",
-        "instruction": "Which one is for a forest hike?",
-        "question": "🎒🌳 vs 📺",
+        "id": "KIDS_FAMILY_L168_Q2",
+        "gameType": "family",
+        "level": 168,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Walking Outside",
-          "Watching TV"
+          "Brother",
+          "Grandmother",
+          "Father"
         ],
-        "correctAnswer": "Walking Outside",
-        "hint": "Walking through the trees with daddy is a wonderful family adventure!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L168_Q3",
-        "instruction": "Is the world a PLAYGROUND?",
-        "question": "🌍🤸‍♂️✨❓",
+        "id": "KIDS_FAMILY_L168_Q3",
+        "gameType": "family",
+        "level": 168,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, explore it all!",
-          "No, stay home"
+          "Grandfather",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, explore it all!",
-        "hint": "With your family, the whole world becomes one giant playground for you to explore!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -411,49 +595,73 @@
     "level": 169,
     "quests": [
       {
-        "id": "KID_FAMILY_L169_Q1",
-        "instruction": "Logic: Do we take a CAMERA?",
-        "question": "📸🚗❓",
+        "id": "KIDS_FAMILY_L169_Q1",
+        "gameType": "family",
+        "level": 169,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Yes, for pictures!",
-          "No, for soup"
+          "Father",
+          "Grandmother",
+          "Mother"
         ],
-        "correctAnswer": "Yes, for pictures!",
-        "hint": "We take photos of the big mountains and the blue sea so we can show them to grandma!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L169_Q2",
-        "instruction": "Logic: Do we follow a LEADER?",
-        "question": "👨🚶‍♂️🏃‍♂️❓",
+        "id": "KIDS_FAMILY_L169_Q2",
+        "gameType": "family",
+        "level": 169,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Yes, follow daddy!",
-          "No, run away"
+          "Brother",
+          "Father",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, follow daddy!",
-        "hint": "Staying together as a family group is the safest way to explore a new city!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L169_Q3",
-        "instruction": "Logic: Is adventure a JOY?",
-        "question": "🗺️😊✨❓",
+        "id": "KIDS_FAMILY_L169_Q3",
+        "gameType": "family",
+        "level": 169,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, so exciting!",
-          "No, only boring"
+          "Sister",
+          "Brother",
+          "Grandmother"
         ],
-        "correctAnswer": "Yes, so exciting!",
-        "hint": "Discovering new things with the people you love is the best part of every family trip!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -461,51 +669,73 @@
     "level": 170,
     "quests": [
       {
-        "id": "KID_FAMILY_L170_Q1",
-        "instruction": "Level 170 Challenge: World Wanderer!",
-        "question": "Find wheeled SUITCASE",
+        "id": "KIDS_FAMILY_L170_Q1",
+        "gameType": "family",
+        "level": 170,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "🧳",
-          "📦",
-          "🧳"
+          "Brother",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "🧳",
-        "hint": "The one for packing clothes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L170_Q2",
-        "instruction": "Level 170 Challenge: World Wanderer!",
-        "question": "Find adventure MAP",
+        "id": "KIDS_FAMILY_L170_Q2",
+        "gameType": "family",
+        "level": 170,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "🗺️",
-          "📖",
-          "🗒️"
+          "Grandmother",
+          "Grandfather",
+          "Father"
         ],
-        "correctAnswer": "🗺️",
-        "hint": "The one that shows the way!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L170_Q3",
-        "instruction": "Level 170 Challenge: Mastery!",
-        "question": "Are you a World Wanderer?",
+        "id": "KIDS_FAMILY_L170_Q3",
+        "gameType": "family",
+        "level": 170,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "YES!",
-          "No"
+          "Grandfather",
+          "Father",
+          "Sister"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 170!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

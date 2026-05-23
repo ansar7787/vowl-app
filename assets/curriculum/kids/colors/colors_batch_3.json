@@ -3,51 +3,73 @@
     "level": 21,
     "quests": [
       {
-        "id": "KID_COLORS_L21_Q1",
-        "instruction": "Primary Colors: The Magic Three are...?",
-        "question": "🔴 🔵 ?",
+        "id": "KIDS_COLORS_L21_Q1",
+        "gameType": "colors",
+        "level": 21,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
+          "Blue",
           "Yellow",
-          "Green",
-          "Pink"
+          "Red"
         ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L21_Q2",
+        "gameType": "colors",
+        "level": 21,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
         "correctAnswer": "Yellow",
-        "hint": "Red, Blue, and Yellow are the primary colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_COLORS_L21_Q2",
-        "instruction": "Identify: Is Green a Primary Color?",
-        "question": "🟢",
-        "options": [
-          "Yes",
-          "No"
-        ],
-        "correctAnswer": "No",
-        "hint": "Only Red, Blue, and Yellow are primary!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_COLORS_L21_Q3",
-        "instruction": "Which of these is a Primary Color?",
-        "question": "Choice",
         "options": [
           "Red",
           "Orange",
-          "Purple"
+          "Yellow"
         ],
-        "correctAnswer": "Red",
-        "hint": "Red is one of the Magic Three!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L21_Q3",
+        "gameType": "colors",
+        "level": 21,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
+        "options": [
+          "Yellow",
+          "Orange",
+          "Blue"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -55,52 +77,73 @@
     "level": 22,
     "quests": [
       {
-        "id": "KID_COLORS_L22_Q1",
-        "instruction": "Red Power: Find the Primary Red",
-        "question": "🚒",
+        "id": "KIDS_COLORS_L22_Q1",
+        "gameType": "colors",
+        "level": 22,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Red",
-          "Blue",
-          "Yellow"
+          "Green",
+          "Pink",
+          "Orange"
         ],
-        "correctAnswer": "Red",
-        "hint": "Fire trucks are a primary red!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L22_Q2",
-        "instruction": "Blue Power: Find the Primary Blue",
-        "question": "🐳",
+        "id": "KIDS_COLORS_L22_Q2",
+        "gameType": "colors",
+        "level": 22,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Red",
-          "Blue",
-          "Yellow"
+          "Orange",
+          "Green",
+          "Pink"
         ],
-        "correctAnswer": "Blue",
-        "hint": "Big whales are a primary blue!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L22_Q3",
-        "instruction": "Yellow Power: Find the Primary Yellow",
-        "question": "🍌",
+        "id": "KIDS_COLORS_L22_Q3",
+        "gameType": "colors",
+        "level": 22,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Red",
-          "Blue",
-          "Yellow"
+          "Purple",
+          "Orange",
+          "Green"
         ],
-        "correctAnswer": "Yellow",
-        "hint": "Bananas are a primary yellow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -108,50 +151,73 @@
     "level": 23,
     "quests": [
       {
-        "id": "KID_COLORS_L23_Q1",
-        "instruction": "Mixed Primary: 🔴 + 🔵 + 🟡",
-        "question": "How many Primary Colors?",
+        "id": "KIDS_COLORS_L23_Q1",
+        "gameType": "colors",
+        "level": 23,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "2",
-          "3",
-          "4"
+          "Orange",
+          "Purple",
+          "Pink"
         ],
-        "correctAnswer": "3",
-        "hint": "Count the Magic Three colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L23_Q2",
-        "instruction": "Can you make other colors with these?",
-        "question": "🔴🔵🟡",
+        "id": "KIDS_COLORS_L23_Q2",
+        "gameType": "colors",
+        "level": 23,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Yes",
-          "No"
+          "Pink",
+          "Red",
+          "Yellow"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Mixing primary colors makes all the others!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L23_Q3",
-        "instruction": "Is the Sun a Primary Color?",
-        "question": "☀️",
+        "id": "KIDS_COLORS_L23_Q3",
+        "gameType": "colors",
+        "level": 23,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Yes",
-          "No"
+          "Yellow",
+          "Blue",
+          "Green"
         ],
-        "correctAnswer": "Yes",
-        "hint": "The sun is yellow, and yellow is primary!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -159,51 +225,73 @@
     "level": 24,
     "quests": [
       {
-        "id": "KID_COLORS_L24_Q1",
-        "instruction": "Artist: What do you use to paint?",
-        "question": "🖌️",
+        "id": "KIDS_COLORS_L24_Q1",
+        "gameType": "colors",
+        "level": 24,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Brush",
-          "Pencil",
-          "Spoon"
+          "Blue",
+          "Pink",
+          "Orange"
         ],
-        "correctAnswer": "Brush",
-        "hint": "A paintbrush is for colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L24_Q2",
-        "instruction": "Artist: Where do you put your paint?",
-        "question": "🎨",
+        "id": "KIDS_COLORS_L24_Q2",
+        "gameType": "colors",
+        "level": 24,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Palette",
-          "Bowl",
-          "Hand"
+          "Blue",
+          "Green",
+          "Red"
         ],
-        "correctAnswer": "Palette",
-        "hint": "Artists use a palette to hold colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L24_Q3",
-        "instruction": "Is a Crayon for coloring?",
-        "question": "🖍️",
+        "id": "KIDS_COLORS_L24_Q3",
+        "gameType": "colors",
+        "level": 24,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Yes",
-          "No"
+          "Orange",
+          "Red",
+          "Pink"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Crayons help us make colorful art!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -211,52 +299,73 @@
     "level": 25,
     "quests": [
       {
-        "id": "KID_COLORS_L25_Q1",
-        "instruction": "Identify: Find the Primary BLUE",
-        "question": "🔵",
+        "id": "KIDS_COLORS_L25_Q1",
+        "gameType": "colors",
+        "level": 25,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Blue",
           "Purple",
-          "Cyan"
-        ],
-        "correctAnswer": "Blue",
-        "hint": "Look for the darkest blue!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
-      },
-      {
-        "id": "KID_COLORS_L25_Q2",
-        "instruction": "Identify: Find the Primary YELLOW",
-        "question": "🟡",
-        "options": [
-          "Yellow",
-          "Gold",
-          "Cream"
-        ],
-        "correctAnswer": "Yellow",
-        "hint": "Look for the brightest yellow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
-      },
-      {
-        "id": "KID_COLORS_L25_Q3",
-        "instruction": "Identify: Find the Primary RED",
-        "question": "🔴",
-        "options": [
-          "Red",
           "Pink",
-          "Maroon"
+          "Red"
         ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L25_Q2",
+        "gameType": "colors",
+        "level": 25,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
+        "options": [
+          "Pink",
+          "Orange",
+          "Green"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L25_Q3",
+        "gameType": "colors",
+        "level": 25,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
         "correctAnswer": "Red",
-        "hint": "Look for the classic red!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "options": [
+          "Purple",
+          "Red",
+          "Pink"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -264,52 +373,73 @@
     "level": 26,
     "quests": [
       {
-        "id": "KID_COLORS_L26_Q1",
-        "instruction": "Logic: Which is NOT a primary color?",
-        "question": "🔴 🔵 🟡 🟢",
+        "id": "KIDS_COLORS_L26_Q1",
+        "gameType": "colors",
+        "level": 26,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Red",
-          "Blue",
-          "Green"
-        ],
-        "correctAnswer": "Green",
-        "hint": "Green is made by mixing, so it's not primary!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
-      },
-      {
-        "id": "KID_COLORS_L26_Q2",
-        "instruction": "Logic: Which is NOT a primary color?",
-        "question": "🔴 🔵 🟡 🟠",
-        "options": [
-          "Red",
           "Yellow",
-          "Orange"
-        ],
-        "correctAnswer": "Orange",
-        "hint": "Orange is made by mixing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
-      },
-      {
-        "id": "KID_COLORS_L26_Q3",
-        "instruction": "Logic: Which is NOT a primary color?",
-        "question": "🔴 🔵 🟡 🟣",
-        "options": [
-          "Blue",
-          "Yellow",
+          "Red",
           "Purple"
         ],
-        "correctAnswer": "Purple",
-        "hint": "Purple is made by mixing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L26_Q2",
+        "gameType": "colors",
+        "level": 26,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
+        "options": [
+          "Red",
+          "Pink",
+          "Blue"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L26_Q3",
+        "gameType": "colors",
+        "level": 26,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
+        "options": [
+          "Orange",
+          "Green",
+          "Yellow"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -317,49 +447,73 @@
     "level": 27,
     "quests": [
       {
-        "id": "KID_COLORS_L27_Q1",
-        "instruction": "Fruit Check: Primary Red fruit?",
-        "question": "🍎 vs 🍐",
+        "id": "KIDS_COLORS_L27_Q1",
+        "gameType": "colors",
+        "level": 27,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Apple",
-          "Pear"
+          "Orange",
+          "Blue",
+          "Green"
         ],
-        "correctAnswer": "Apple",
-        "hint": "Apples are primary red!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L27_Q2",
-        "instruction": "Fruit Check: Primary Yellow fruit?",
-        "question": "🍋 vs 🍇",
+        "id": "KIDS_COLORS_L27_Q2",
+        "gameType": "colors",
+        "level": 27,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Lemon",
-          "Grapes"
+          "Orange",
+          "Red",
+          "Purple"
         ],
-        "correctAnswer": "Lemon",
-        "hint": "Lemons are primary yellow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L27_Q3",
-        "instruction": "Fruit Check: Is there a Primary Blue fruit?",
-        "question": "🫐",
+        "id": "KIDS_COLORS_L27_Q3",
+        "gameType": "colors",
+        "level": 27,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Yes (Blueberry)",
-          "No"
+          "Green",
+          "Pink",
+          "Orange"
         ],
-        "correctAnswer": "Yes (Blueberry)",
-        "hint": "Blueberries are our primary blue snack!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -367,52 +521,73 @@
     "level": 28,
     "quests": [
       {
-        "id": "KID_COLORS_L28_Q1",
-        "instruction": "Primary Challenge: Find 🔴",
-        "question": "Color?",
-        "options": [
-          "Red",
-          "Yellow",
-          "Blue"
-        ],
+        "id": "KIDS_COLORS_L28_Q1",
+        "gameType": "colors",
+        "level": 28,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
         "correctAnswer": "Red",
-        "hint": "Magic color number one!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "options": [
+          "Orange",
+          "Purple",
+          "Red"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L28_Q2",
-        "instruction": "Primary Challenge: Find 🔵",
-        "question": "Color?",
-        "options": [
-          "Red",
-          "Yellow",
-          "Blue"
-        ],
-        "correctAnswer": "Blue",
-        "hint": "Magic color number two!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_COLORS_L28_Q3",
-        "instruction": "Primary Challenge: Find 🟡",
-        "question": "Color?",
-        "options": [
-          "Red",
-          "Yellow",
-          "Blue"
-        ],
+        "id": "KIDS_COLORS_L28_Q2",
+        "gameType": "colors",
+        "level": 28,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
         "correctAnswer": "Yellow",
-        "hint": "Magic color number three!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "options": [
+          "Purple",
+          "Yellow",
+          "Pink"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L28_Q3",
+        "gameType": "colors",
+        "level": 28,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
+        "options": [
+          "Blue",
+          "Purple",
+          "Red"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -420,52 +595,73 @@
     "level": 29,
     "quests": [
       {
-        "id": "KID_COLORS_L29_Q1",
-        "instruction": "Artist Skills: Mix 🔴 and 🟡",
-        "question": "What happens?",
+        "id": "KIDS_COLORS_L29_Q1",
+        "gameType": "colors",
+        "level": 29,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Orange",
+          "Red",
           "Blue",
           "Green"
         ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L29_Q2",
+        "gameType": "colors",
+        "level": 29,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
         "correctAnswer": "Orange",
-        "hint": "Red and Yellow together make Orange!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_COLORS_L29_Q2",
-        "instruction": "Artist Skills: Mix 🔵 and 🟡",
-        "question": "What happens?",
         "options": [
-          "Green",
+          "Pink",
           "Red",
-          "Purple"
-        ],
-        "correctAnswer": "Green",
-        "hint": "Blue and Yellow together make Green!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_COLORS_L29_Q3",
-        "instruction": "Artist Skills: Mix 🔴 and 🔵",
-        "question": "What happens?",
-        "options": [
-          "Purple",
-          "Green",
           "Orange"
         ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L29_Q3",
+        "gameType": "colors",
+        "level": 29,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
         "correctAnswer": "Purple",
-        "hint": "Red and Blue together make Purple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "options": [
+          "Green",
+          "Purple",
+          "Red"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -473,51 +669,73 @@
     "level": 30,
     "quests": [
       {
-        "id": "KID_COLORS_L30_Q1",
-        "instruction": "Level 30 Challenge: Primary Colors",
-        "question": "How many are there?",
+        "id": "KIDS_COLORS_L30_Q1",
+        "gameType": "colors",
+        "level": 30,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "3",
-          "5",
-          "10"
+          "Pink",
+          "Orange",
+          "Red"
         ],
-        "correctAnswer": "3",
-        "hint": "The Magic Three!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L30_Q2",
-        "instruction": "Level 30 Challenge: Identify 🟡",
-        "question": "Color?",
+        "id": "KIDS_COLORS_L30_Q2",
+        "gameType": "colors",
+        "level": 30,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Yellow",
+          "Blue",
           "Red",
-          "Blue"
+          "Yellow"
         ],
-        "correctAnswer": "Yellow",
-        "hint": "Bright like the sun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L30_Q3",
-        "instruction": "Level 30 Challenge: Mastery",
-        "question": "Are primary colors cool?",
+        "id": "KIDS_COLORS_L30_Q3",
+        "gameType": "colors",
+        "level": 30,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "YES!",
-          "No"
+          "Orange",
+          "Green",
+          "Yellow"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You are a primary color expert!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

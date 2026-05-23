@@ -3,50 +3,73 @@
     "level": 101,
     "quests": [
       {
-        "id": "KID_ROUTINE_L101_Q1",
-        "instruction": "What do we wear to protect our head?",
-        "question": "🪖🚲✨",
+        "id": "KIDS_ROUTINE_L101_Q1",
+        "gameType": "routine",
+        "level": 101,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Helmet",
-          "Hat",
-          "Crown"
+          "Go to Bed",
+          "Eat Breakfast",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Helmet",
-        "hint": "We clip it under our chin before we ride our bike! It keeps our head safe! It's a helmet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L101_Q2",
-        "instruction": "Find the WEAR HELMET action",
-        "question": "🪖🧒🚲",
+        "id": "KIDS_ROUTINE_L101_Q2",
+        "gameType": "routine",
+        "level": 101,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eat Breakfast",
+          "Go to Bed",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person with the hard shell on their head and a big smile on their bike!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L101_Q3",
-        "instruction": "Is it SAFE?",
-        "question": "🪖 = Safe?",
+        "id": "KIDS_ROUTINE_L101_Q3",
+        "gameType": "routine",
+        "level": 101,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Yes, very safe!",
-          "No, scary"
+          "Eat Breakfast",
+          "Brush Teeth",
+          "Wash Face"
         ],
-        "correctAnswer": "Yes, very safe!",
-        "hint": "Wearing a helmet is the most important part of our bike riding routine!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 102,
     "quests": [
       {
-        "id": "KID_ROUTINE_L102_Q1",
-        "instruction": "What do we do when we sit in the car?",
-        "question": "🎢🏎️✨",
+        "id": "KIDS_ROUTINE_L102_Q1",
+        "gameType": "routine",
+        "level": 102,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Fasten Seatbelt",
-          "Jump Around",
-          "Open Door"
+          "Brush Teeth",
+          "Wash Face",
+          "Go to Bed"
         ],
-        "correctAnswer": "Fasten Seatbelt",
-        "hint": "We pull the strap across our body and listen for the 'click'! We are fastening our seatbelt!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L102_Q2",
-        "instruction": "Find the FASTEN SEATBELT action",
-        "question": "🎢🧒🏎️",
+        "id": "KIDS_ROUTINE_L102_Q2",
+        "gameType": "routine",
+        "level": 102,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eat Breakfast",
+          "Brush Teeth",
+          "Go to Bed"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person sitting safely in their car seat with the strap buckled!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L102_Q3",
-        "instruction": "Is it SECURE?",
-        "question": "🎢 = Secure?",
+        "id": "KIDS_ROUTINE_L102_Q3",
+        "gameType": "routine",
+        "level": 102,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Yes, click and safe!",
-          "No, loose"
+          "Go to Bed",
+          "Brush Teeth",
+          "Wash Face"
         ],
-        "correctAnswer": "Yes, click and safe!",
-        "hint": "Buckling up every time we go for a ride keeps us safe on the road!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 103,
     "quests": [
       {
-        "id": "KID_ROUTINE_L103_Q1",
-        "instruction": "What helps our bones grow strong?",
-        "question": "🥛🐄✨",
+        "id": "KIDS_ROUTINE_L103_Q1",
+        "gameType": "routine",
+        "level": 103,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Drinking Milk",
-          "Eating Candy",
-          "Running"
+          "Brush Teeth",
+          "Wash Face",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Drinking Milk",
-        "hint": "This white drink has calcium to make our bones and teeth very hard! It's milk!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L103_Q2",
-        "instruction": "Find the DRINK MILK action",
-        "question": "🥛🧒🥛",
+        "id": "KIDS_ROUTINE_L103_Q2",
+        "gameType": "routine",
+        "level": 103,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Found it!",
-          "Not here"
+          "Wash Face",
+          "Go to Bed",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person having a refreshing glass of milk with their meal!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L103_Q3",
-        "instruction": "Is it HEALTHY?",
-        "question": "🥛 = Healthy?",
+        "id": "KIDS_ROUTINE_L103_Q3",
+        "gameType": "routine",
+        "level": 103,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Yes, grow strong!",
-          "No, weak"
+          "Eat Breakfast",
+          "Brush Teeth",
+          "Go to Bed"
         ],
-        "correctAnswer": "Yes, grow strong!",
-        "hint": "Drinking milk daily is a great habit for growing kids!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 104,
     "quests": [
       {
-        "id": "KID_ROUTINE_L104_Q1",
-        "instruction": "What makes our bodies super strong?",
-        "question": "🥦🥕✨",
+        "id": "KIDS_ROUTINE_L104_Q1",
+        "gameType": "routine",
+        "level": 104,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Eating Vegetables",
-          "Drinking Soda",
-          "Sleeping"
+          "Wash Face",
+          "Eat Breakfast",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Eating Vegetables",
-        "hint": "Green broccoli, orange carrots, and red tomatoes are all vegetables! We eat them to be strong!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L104_Q2",
-        "instruction": "Find the EAT VEGETABLES action",
-        "question": "🥦🧒🥕",
+        "id": "KIDS_ROUTINE_L104_Q2",
+        "gameType": "routine",
+        "level": 104,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Found it!",
-          "Not here"
+          "Wash Face",
+          "Eat Breakfast",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person enjoying a plate of colorful and crunchy veggies!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L104_Q3",
-        "instruction": "Is it POWER?",
-        "question": "🥦 = Power?",
+        "id": "KIDS_ROUTINE_L104_Q3",
+        "gameType": "routine",
+        "level": 104,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Yes, super power!",
-          "No, tired"
+          "Wash Face",
+          "Brush Teeth",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Yes, super power!",
-        "hint": "Eating your vegetables every day gives you the energy to play and learn!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 105,
     "quests": [
       {
-        "id": "KID_ROUTINE_L105_Q1",
-        "instruction": "Safety Logic: HELMET is for...",
-        "question": "🪖 -> ?",
+        "id": "KIDS_ROUTINE_L105_Q1",
+        "gameType": "routine",
+        "level": 105,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Bike Riding",
-          "Sleeping"
+          "Go to Bed",
+          "Eat Breakfast",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Bike Riding",
-        "hint": "We always wear our helmet when we are on wheels to keep our head safe!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L105_Q2",
-        "instruction": "Safety Logic: SEATBELT is for...",
-        "question": "🎢 -> ?",
+        "id": "KIDS_ROUTINE_L105_Q2",
+        "gameType": "routine",
+        "level": 105,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "The Car",
-          "The Park"
+          "Eat Breakfast",
+          "Brush Teeth",
+          "Wash Face"
         ],
-        "correctAnswer": "The Car",
-        "hint": "We buckle our seatbelt as soon as we get into the car for a safe trip!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L105_Q3",
-        "instruction": "Logic: Do we safety check FIRST?",
-        "question": "🪖 -> 🚲?",
+        "id": "KIDS_ROUTINE_L105_Q3",
+        "gameType": "routine",
+        "level": 105,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Yes, safety first!",
-          "No, ride first"
+          "Eat Breakfast",
+          "Brush Teeth",
+          "Wash Face"
         ],
-        "correctAnswer": "Yes, safety first!",
-        "hint": "Checking our helmet and seatbelt is the very first thing we do for an adventure!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 106,
     "quests": [
       {
-        "id": "KID_ROUTINE_L106_Q1",
-        "instruction": "Search: Find the child in the CAR SEAT",
-        "question": "🎢🧒🏎️",
+        "id": "KIDS_ROUTINE_L106_Q1",
+        "gameType": "routine",
+        "level": 106,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Found it!",
-          "Not here"
+          "Wash Face",
+          "Go to Bed",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person buckled in and ready for a ride!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L106_Q2",
-        "instruction": "Search: Find the HELMET",
-        "question": "🪖✨🚲",
+        "id": "KIDS_ROUTINE_L106_Q2",
+        "gameType": "routine",
+        "level": 106,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Found it!",
-          "Not here"
+          "Go to Bed",
+          "Wash Face",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the hard hat that keeps your head safe!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L106_Q3",
-        "instruction": "Search: Find the BROCCOLI",
-        "question": "🥦✨🍽️",
+        "id": "KIDS_ROUTINE_L106_Q3",
+        "gameType": "routine",
+        "level": 106,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Found it!",
-          "Not here"
+          "Go to Bed",
+          "Eat Breakfast",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the little green tree that is good to eat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 107,
     "quests": [
       {
-        "id": "KID_ROUTINE_L107_Q1",
-        "instruction": "Action: Put on HELMET!",
-        "question": "🪖🧒🚲",
+        "id": "KIDS_ROUTINE_L107_Q1",
+        "gameType": "routine",
+        "level": 107,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Click it tight!",
-          "Leave it loose"
+          "Brush Teeth",
+          "Eat Breakfast",
+          "Go to Bed"
         ],
-        "correctAnswer": "Click it tight!",
-        "hint": "Make sure the strap is buckled under your chin so it stays on!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L107_Q2",
-        "instruction": "Action: Fasten SEATBELT!",
-        "question": "🎢🧒🏎️",
+        "id": "KIDS_ROUTINE_L107_Q2",
+        "gameType": "routine",
+        "level": 107,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Click the buckle!",
-          "Sit on it"
+          "Wash Face",
+          "Go to Bed",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Click the buckle!",
-        "hint": "Pull the strap and push the metal part into the buckle until it clicks!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L107_Q3",
-        "instruction": "Action: Eat VEGGIES!",
-        "question": "🥦🧒🥕",
+        "id": "KIDS_ROUTINE_L107_Q3",
+        "gameType": "routine",
+        "level": 107,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Take a crunchy bite!",
-          "Hide them"
+          "Wash Face",
+          "Go to Bed",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Take a crunchy bite!",
-        "hint": "Munch on your carrots and broccoli to get all those vitamins!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 108,
     "quests": [
       {
-        "id": "KID_ROUTINE_L108_Q1",
-        "instruction": "Match: What is for the HEAD?",
-        "question": "🧠 + ?",
+        "id": "KIDS_ROUTINE_L108_Q1",
+        "gameType": "routine",
+        "level": 108,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Helmet",
-          "Shoe"
+          "Brush Teeth",
+          "Go to Bed",
+          "Wash Face"
         ],
-        "correctAnswer": "Helmet",
-        "hint": "A helmet is made specifically to keep your head and brain safe!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L108_Q2",
-        "instruction": "Match: What is for the CAR?",
-        "question": "🏎️ + ?",
+        "id": "KIDS_ROUTINE_L108_Q2",
+        "gameType": "routine",
+        "level": 108,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "Seatbelt",
-          "Toothbrush"
+          "Eat Breakfast",
+          "Brush Teeth",
+          "Wash Face"
         ],
-        "correctAnswer": "Seatbelt",
-        "hint": "A seatbelt is what we use in the car to stay safe in our seat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L108_Q3",
-        "instruction": "Match: What is for POWER?",
-        "question": "🥦 + ?",
+        "id": "KIDS_ROUTINE_L108_Q3",
+        "gameType": "routine",
+        "level": 108,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Vegetables",
-          "Candy"
+          "Eat Breakfast",
+          "Brush Teeth",
+          "Wash Face"
         ],
-        "correctAnswer": "Vegetables",
-        "hint": "Vegetables are the best food to give your body real power and energy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 109,
     "quests": [
       {
-        "id": "KID_ROUTINE_L109_Q1",
-        "instruction": "Routine: Safety BEFORE adventure?",
-        "question": "🪖 -> 🚲?",
+        "id": "KIDS_ROUTINE_L109_Q1",
+        "gameType": "routine",
+        "level": 109,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Yes, check first!",
-          "No, check later"
+          "Go to Bed",
+          "Eat Breakfast",
+          "Brush Teeth"
         ],
-        "correctAnswer": "Yes, check first!",
-        "hint": "We always make sure we are safe before we start our fun activities!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L109_Q2",
-        "instruction": "Routine: Are you a SAFETY SCOUT?",
-        "question": "🪖🎢✨❓",
+        "id": "KIDS_ROUTINE_L109_Q2",
+        "gameType": "routine",
+        "level": 109,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "Yes, I am!",
-          "No"
+          "Go to Bed",
+          "Brush Teeth",
+          "Wash Face"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "A safety scout always remembers to buckle up and wear their helmet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L109_Q3",
-        "instruction": "Routine: Ready for the challenge?",
-        "question": "🏆✨❓",
+        "id": "KIDS_ROUTINE_L109_Q3",
+        "gameType": "routine",
+        "level": 109,
+        "instruction": "Which routine task is done during: \"Morning to get strong energy to study and play\"?",
+        "question": "Eat Breakfast",
+        "correctAnswer": "Eat Breakfast",
         "options": [
-          "YES!",
-          "No"
+          "Wash Face",
+          "Go to Bed",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Level 110 is coming! Show us how safe and healthy you can be!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select eat breakfast to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 110,
     "quests": [
       {
-        "id": "KID_ROUTINE_L110_Q1",
-        "instruction": "Level 110 Challenge: Safety Scout!",
-        "question": "What do we wear on our head? 🪖🚲",
+        "id": "KIDS_ROUTINE_L110_Q1",
+        "gameType": "routine",
+        "level": 110,
+        "instruction": "Which routine task is done during: \"Morning to wake up fresh and happy\"?",
+        "question": "Wash Face",
+        "correctAnswer": "Wash Face",
         "options": [
-          "Helmet",
-          "Hat",
-          "Pillow"
+          "Go to Bed",
+          "Eat Breakfast",
+          "Wash Face"
         ],
-        "correctAnswer": "Helmet",
-        "hint": "Safety first!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Politely select wash face to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L110_Q2",
-        "instruction": "Level 110 Challenge: Safety Scout!",
-        "question": "What clicks in the car? 🎢🏎️",
+        "id": "KIDS_ROUTINE_L110_Q2",
+        "gameType": "routine",
+        "level": 110,
+        "instruction": "Which routine task is done during: \"Night to sleep cozy and dream beautiful dreams\"?",
+        "question": "Go to Bed",
+        "correctAnswer": "Go to Bed",
         "options": [
-          "Seatbelt",
-          "Door",
-          "Window"
+          "Go to Bed",
+          "Wash Face",
+          "Eat Breakfast"
         ],
-        "correctAnswer": "Seatbelt",
-        "hint": "Buckle up!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Politely select go to bed to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ROUTINE_L110_Q3",
-        "instruction": "Level 110 Challenge: Mastery!",
-        "question": "Are you a Safety Scout?",
+        "id": "KIDS_ROUTINE_L110_Q3",
+        "gameType": "routine",
+        "level": 110,
+        "instruction": "Which routine task is done during: \"Morning and Night to keep teeth white and clean\"?",
+        "question": "Brush Teeth",
+        "correctAnswer": "Brush Teeth",
         "options": [
-          "YES!",
-          "No"
+          "Go to Bed",
+          "Eat Breakfast",
+          "Brush Teeth"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 110!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Politely select brush teeth to complete.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

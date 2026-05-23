@@ -3,50 +3,73 @@
     "level": 101,
     "quests": [
       {
-        "id": "KID_PHONICS_L101_Q1",
-        "instruction": "Find the big letter G",
-        "question": "🇬✨",
+        "id": "KIDS_PHONICS_L101_Q1",
+        "gameType": "phonics",
+        "level": 101,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "G",
-          "C",
-          "Q"
+          "F",
+          "P",
+          "L"
         ],
-        "correctAnswer": "G",
-        "hint": "Big G looks like Big C, but it has a little shelf inside for a tiny mouse to sit on!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L101_Q2",
-        "instruction": "Which one is G?",
-        "question": "🇬 vs 🇨",
+        "id": "KIDS_PHONICS_L101_Q2",
+        "gameType": "phonics",
+        "level": 101,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "G",
-          "C"
+          "H",
+          "V",
+          "M"
         ],
-        "correctAnswer": "G",
-        "hint": "Big G has a little line that goes inside! C is just an open circle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L101_Q3",
-        "instruction": "Does G have a SHELF?",
-        "question": "🇬🪜❓",
+        "id": "KIDS_PHONICS_L101_Q3",
+        "gameType": "phonics",
+        "level": 101,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Yes, for the mouse!",
-          "No, only a nose"
+          "B",
+          "H",
+          "F"
         ],
-        "correctAnswer": "Yes, for the mouse!",
-        "hint": "The little horizontal line in Big G is like a tiny shelf or a step!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 102,
     "quests": [
       {
-        "id": "KID_PHONICS_L102_Q1",
-        "instruction": "Find the small letter g",
-        "question": "g✨",
+        "id": "KIDS_PHONICS_L102_Q1",
+        "gameType": "phonics",
+        "level": 102,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "g",
-          "p",
-          "q"
+          "C",
+          "B",
+          "O"
         ],
-        "correctAnswer": "g",
-        "hint": "Small 'g' has a round head and a curly hook tail that goes down under the line!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L102_Q2",
-        "instruction": "Which one has a HOOK?",
-        "question": "g vs q",
+        "id": "KIDS_PHONICS_L102_Q2",
+        "gameType": "phonics",
+        "level": 102,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "g",
-          "q"
+          "S",
+          "D",
+          "H"
         ],
-        "correctAnswer": "g",
-        "hint": "Small 'g' curls its tail up like a fishing hook! q has a straight tail!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L102_Q3",
-        "instruction": "Is it the same sound as Big G?",
-        "question": "🇬 = g ❓",
+        "id": "KIDS_PHONICS_L102_Q3",
+        "gameType": "phonics",
+        "level": 102,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Yes, same sound!",
-          "No, different"
+          "G",
+          "D",
+          "F"
         ],
-        "correctAnswer": "Yes, same sound!",
-        "hint": "Big G and small g both say 'Guh' like at the start of a goat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 103,
     "quests": [
       {
-        "id": "KID_PHONICS_L103_Q1",
-        "instruction": "Find the GOAT",
-        "question": "🐐✨",
+        "id": "KIDS_PHONICS_L103_Q1",
+        "gameType": "phonics",
+        "level": 103,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Goat",
-          "Cow",
-          "Sheep"
+          "M",
+          "O",
+          "U"
         ],
-        "correctAnswer": "Goat",
-        "hint": "A goat is a farm animal with horns and a beard that starts with the 'Guh' sound of letter G!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L103_Q2",
-        "instruction": "Does GOAT start with G?",
-        "question": "🐐 🇬❓",
+        "id": "KIDS_PHONICS_L103_Q2",
+        "gameType": "phonics",
+        "level": 103,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Yes, G is for Goat!",
-          "No, starts with M"
+          "B",
+          "M",
+          "W"
         ],
-        "correctAnswer": "Yes, G is for Goat!",
-        "hint": "Listen: Guh-Guh-Goat! That's the gulping 'Guh' sound of letter G!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L103_Q3",
-        "instruction": "Which animal says GUH?",
-        "question": "🐐 vs 🐖",
+        "id": "KIDS_PHONICS_L103_Q3",
+        "gameType": "phonics",
+        "level": 103,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "Goat",
-          "Pig"
+          "M",
+          "C",
+          "L"
         ],
-        "correctAnswer": "Goat",
-        "hint": "The beardy goat starts with the letter G! Guh-Guh-Goat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 104,
     "quests": [
       {
-        "id": "KID_PHONICS_L104_Q1",
-        "instruction": "Find the GRAPES",
-        "question": "🍇✨",
+        "id": "KIDS_PHONICS_L104_Q1",
+        "gameType": "phonics",
+        "level": 104,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "Grapes",
-          "Apple",
-          "Plum"
+          "N",
+          "B",
+          "D"
         ],
-        "correctAnswer": "Grapes",
-        "hint": "Grapes are small round fruits that grow in bunches and start with the letter G!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L104_Q2",
-        "instruction": "Does GRAPES start with G?",
-        "question": "🍇 🇬❓",
+        "id": "KIDS_PHONICS_L104_Q2",
+        "gameType": "phonics",
+        "level": 104,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Yes, G is for Grapes!",
-          "No, starts with B"
+          "D",
+          "Q",
+          "F"
         ],
-        "correctAnswer": "Yes, G is for Grapes!",
-        "hint": "Listen: Guh-Guh-Grapes! It's a yummy snack for a great letter G!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L104_Q3",
-        "instruction": "Which one grows in a BUNCH?",
-        "question": "🍇 vs 🍉",
+        "id": "KIDS_PHONICS_L104_Q3",
+        "gameType": "phonics",
+        "level": 104,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Grapes",
-          "Watermelon"
+          "C",
+          "M",
+          "P"
         ],
-        "correctAnswer": "Grapes",
-        "hint": "The purple grapes begin with the 'Guh' sound of the letter G!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,52 +299,73 @@
     "level": 105,
     "quests": [
       {
-        "id": "KID_PHONICS_L105_Q1",
-        "instruction": "Logic: What sound does G make?",
-        "question": "🇬🗣️❓",
+        "id": "KIDS_PHONICS_L105_Q1",
+        "gameType": "phonics",
+        "level": 105,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Guh!",
-          "Juh!",
-          "Kuh!"
+          "T",
+          "B",
+          "K"
         ],
-        "correctAnswer": "Guh!",
-        "hint": "Make a sound in the back of your throat like you are drinking water! Guh-Guh-Guh!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L105_Q2",
-        "instruction": "Logic: Find the 'Guh' word",
-        "question": "🇬👂❓",
+        "id": "KIDS_PHONICS_L105_Q2",
+        "gameType": "phonics",
+        "level": 105,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "Gift",
-          "Box",
-          "Toy"
+          "C",
+          "T",
+          "G"
         ],
-        "correctAnswer": "Gift",
-        "hint": "Gift starts with a gulping 'Guh' sound, just like goat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L105_Q3",
-        "instruction": "Logic: Find the GREEN color",
-        "question": "🟩✨❓",
+        "id": "KIDS_PHONICS_L105_Q3",
+        "gameType": "phonics",
+        "level": 105,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "Green",
-          "Red",
-          "Blue"
+          "L",
+          "W",
+          "D"
         ],
-        "correctAnswer": "Green",
-        "hint": "Green starts with G! Guh-Guh-Green! It's the color of the grass!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -260,49 +373,73 @@
     "level": 106,
     "quests": [
       {
-        "id": "KID_PHONICS_L106_Q1",
-        "instruction": "Search: Find the letter G",
-        "question": "🇬 vs 🇨",
+        "id": "KIDS_PHONICS_L106_Q1",
+        "gameType": "phonics",
+        "level": 106,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Found it!",
-          "Not here"
+          "F",
+          "H",
+          "O"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the letter with the little shelf inside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L106_Q2",
-        "instruction": "Search: Find the letter g",
-        "question": "g vs q",
+        "id": "KIDS_PHONICS_L106_Q2",
+        "gameType": "phonics",
+        "level": 106,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Found it!",
-          "Not here"
+          "J",
+          "D",
+          "M"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the one with the curly hook tail!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L106_Q3",
-        "instruction": "Search: Find the GLASSES",
-        "question": "👓 vs 🧢",
+        "id": "KIDS_PHONICS_L106_Q3",
+        "gameType": "phonics",
+        "level": 106,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Glasses",
-          "Cap"
+          "T",
+          "B",
+          "F"
         ],
-        "correctAnswer": "Glasses",
-        "hint": "Glasses start with G! Look for the frames for your eyes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -310,52 +447,73 @@
     "level": 107,
     "quests": [
       {
-        "id": "KID_PHONICS_L107_Q1",
-        "instruction": "Review: Who says Guh-Guh-Goat?",
-        "question": "🐐 Review",
+        "id": "KIDS_PHONICS_L107_Q1",
+        "gameType": "phonics",
+        "level": 107,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "G",
-          "C",
-          "J"
+          "J",
+          "R",
+          "C"
         ],
-        "correctAnswer": "G",
-        "hint": "The letter with the little step inside!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L107_Q2",
-        "instruction": "Review: Find small letter g",
-        "question": "g Review",
-        "options": [
-          "g",
-          "p",
-          "y"
-        ],
-        "correctAnswer": "g",
-        "hint": "The letter with the round head and curly tail!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_PHONICS_L107_Q3",
-        "instruction": "Review: Find Big letter G",
-        "question": "🇬 Review",
+        "id": "KIDS_PHONICS_L107_Q2",
+        "gameType": "phonics",
+        "level": 107,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
           "G",
-          "C",
+          "H",
           "D"
         ],
-        "correctAnswer": "G",
-        "hint": "The tall line that turns into a circle with a shelf!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_PHONICS_L107_Q3",
+        "gameType": "phonics",
+        "level": 107,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
+        "options": [
+          "T",
+          "H",
+          "F"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -363,49 +521,73 @@
     "level": 108,
     "quests": [
       {
-        "id": "KID_PHONICS_L108_Q1",
-        "instruction": "Which one is an ANIMAL?",
-        "question": "🐐 vs 🍇",
+        "id": "KIDS_PHONICS_L108_Q1",
+        "gameType": "phonics",
+        "level": 108,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Goat",
-          "Grapes"
+          "R",
+          "N",
+          "M"
         ],
-        "correctAnswer": "Goat",
-        "hint": "The goat is a living farm animal, but grapes are fruits that grow on a vine!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L108_Q2",
-        "instruction": "Which one is PURPLE?",
-        "question": "🍇 vs 🐐",
+        "id": "KIDS_PHONICS_L108_Q2",
+        "gameType": "phonics",
+        "level": 108,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Grapes",
-          "Goat"
+          "B",
+          "S",
+          "J"
         ],
-        "correctAnswer": "Grapes",
-        "hint": "The grapes are round purple fruits! The goat is usually white or brown!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L108_Q3",
-        "instruction": "Do they BOTH start with G?",
-        "question": "🐐 + 🍇 = 🇬❓",
+        "id": "KIDS_PHONICS_L108_Q3",
+        "gameType": "phonics",
+        "level": 108,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "Yes, both start with G!",
-          "No, only one"
+          "C",
+          "B",
+          "Q"
         ],
-        "correctAnswer": "Yes, both start with G!",
-        "hint": "Goat and Grapes both begin with the 'Guh' sound of letter G!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -413,51 +595,73 @@
     "level": 109,
     "quests": [
       {
-        "id": "KID_PHONICS_L109_Q1",
-        "instruction": "Logic: Find the GARDEN",
-        "question": "🌻🏡✨",
+        "id": "KIDS_PHONICS_L109_Q1",
+        "gameType": "phonics",
+        "level": 109,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "Garden",
-          "House",
-          "Road"
+          "G",
+          "F",
+          "D"
         ],
-        "correctAnswer": "Garden",
-        "hint": "Garden starts with G! It's where the green grass grows! Guh-Guh-Garden!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L109_Q2",
-        "instruction": "Logic: Find the GORILLA",
-        "question": "🦍✨",
+        "id": "KIDS_PHONICS_L109_Q2",
+        "gameType": "phonics",
+        "level": 109,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Gorilla",
-          "Monkey",
-          "Chimp"
+          "F",
+          "R",
+          "P"
         ],
-        "correctAnswer": "Gorilla",
-        "hint": "Gorilla starts with G! It's a giant strong animal! Guh-Guh-Gorilla!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L109_Q3",
-        "instruction": "Logic: Are you G-Great?",
-        "question": "🇬🤩❓",
+        "id": "KIDS_PHONICS_L109_Q3",
+        "gameType": "phonics",
+        "level": 109,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Yes, I am!",
-          "No"
+          "T",
+          "H",
+          "M"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "You are doing a great job learning the letter G!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -465,51 +669,73 @@
     "level": 110,
     "quests": [
       {
-        "id": "KID_PHONICS_L110_Q1",
-        "instruction": "Level 110 Challenge: Great Gopher!",
-        "question": "Find Big G",
+        "id": "KIDS_PHONICS_L110_Q1",
+        "gameType": "phonics",
+        "level": 110,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "G",
+          "O",
+          "Q",
+          "B"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_PHONICS_L110_Q2",
+        "gameType": "phonics",
+        "level": 110,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
+        "options": [
           "C",
-          "O"
+          "B",
+          "F"
         ],
-        "correctAnswer": "G",
-        "hint": "The one with the little shelf!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L110_Q2",
-        "instruction": "Level 110 Challenge: Great Gopher!",
-        "question": "Find small g",
+        "id": "KIDS_PHONICS_L110_Q3",
+        "gameType": "phonics",
+        "level": 110,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "g",
-          "q",
-          "p"
+          "Q",
+          "C",
+          "D"
         ],
-        "correctAnswer": "g",
-        "hint": "The one with the curly hook tail!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
-      },
-      {
-        "id": "KID_PHONICS_L110_Q3",
-        "instruction": "Level 110 Challenge: Mastery!",
-        "question": "Are you a Great Gopher?",
-        "options": [
-          "YES!",
-          "No"
-        ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 110!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

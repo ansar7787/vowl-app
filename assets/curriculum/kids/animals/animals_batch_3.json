@@ -3,52 +3,73 @@
     "level": 21,
     "quests": [
       {
-        "id": "KID_ANIMALS_L21_Q1",
-        "instruction": "Sea: Who is the biggest?",
-        "question": "🐋",
+        "id": "KIDS_ANIMALS_L21_Q1",
+        "gameType": "animals",
+        "level": 21,
+        "instruction": "Which animal says \"Baa\"?",
+        "question": "Baa",
+        "correctAnswer": "Sheep",
         "options": [
-          "Whale",
-          "Shark",
-          "Dolphin"
+          "Elephant",
+          "Monkey",
+          "Sheep"
         ],
-        "correctAnswer": "Whale",
-        "hint": "Whales are the biggest animals in the whole ocean!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly sheep!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L21_Q2",
-        "instruction": "Sea: Who has 8 legs?",
-        "question": "🐙",
+        "id": "KIDS_ANIMALS_L21_Q2",
+        "gameType": "animals",
+        "level": 21,
+        "instruction": "Which animal is the king of the jungle?",
+        "question": "Lion",
+        "correctAnswer": "Lion",
         "options": [
-          "Octopus",
-          "Crab",
-          "Fish"
+          "Dog",
+          "Monkey",
+          "Lion"
         ],
-        "correctAnswer": "Octopus",
-        "hint": "Octopuses have eight long, wiggly arms!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly lion!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L21_Q3",
-        "instruction": "Sea: Who is a friendly swimmer?",
-        "question": "🐬",
+        "id": "KIDS_ANIMALS_L21_Q3",
+        "gameType": "animals",
+        "level": 21,
+        "instruction": "Which animal says \"Quack\"?",
+        "question": "Quack",
+        "correctAnswer": "Duck",
         "options": [
-          "Dolphin",
-          "Shark",
-          "Crab"
+          "Duck",
+          "Cow",
+          "Frog"
         ],
-        "correctAnswer": "Dolphin",
-        "hint": "Dolphins love to jump and play in the waves!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly duck!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 22,
     "quests": [
       {
-        "id": "KID_ANIMALS_L22_Q1",
-        "instruction": "Sea: Who has sharp TEETH?",
-        "question": "🦈",
+        "id": "KIDS_ANIMALS_L22_Q1",
+        "gameType": "animals",
+        "level": 22,
+        "instruction": "Which animal says \"Trumpet\"?",
+        "question": "Trumpet",
+        "correctAnswer": "Elephant",
         "options": [
-          "Shark",
-          "Dolphin",
-          "Whale"
+          "Dog",
+          "Monkey",
+          "Elephant"
         ],
-        "correctAnswer": "Shark",
-        "hint": "Sharks are famous for their many sharp teeth!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly elephant!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L22_Q2",
-        "instruction": "Sea: Who walks sideways?",
-        "question": "🦀",
+        "id": "KIDS_ANIMALS_L22_Q2",
+        "gameType": "animals",
+        "level": 22,
+        "instruction": "Which animal loves to climb and eat bananas?",
+        "question": "Monkey",
+        "correctAnswer": "Monkey",
         "options": [
-          "Crab",
-          "Fish",
-          "Octopus"
+          "Monkey",
+          "Rooster",
+          "Dog"
         ],
-        "correctAnswer": "Crab",
-        "hint": "Crabs have pinchers and walk sideways on the sand!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly monkey!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L22_Q3",
-        "instruction": "Sea: Find the JELLYFISH",
-        "question": "🪼",
+        "id": "KIDS_ANIMALS_L22_Q3",
+        "gameType": "animals",
+        "level": 22,
+        "instruction": "Which animal says \"Ribbit\"?",
+        "question": "Ribbit",
+        "correctAnswer": "Frog",
         "options": [
-          "Jellyfish",
-          "Starfish",
-          "Shark"
+          "Frog",
+          "Cat",
+          "Elephant"
         ],
-        "correctAnswer": "Jellyfish",
-        "hint": "Jellyfish look like soft umbrellas in the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly frog!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 23,
     "quests": [
       {
-        "id": "KID_ANIMALS_L23_Q1",
-        "instruction": "Sea: Find the STARFISH",
-        "question": "⭐",
+        "id": "KIDS_ANIMALS_L23_Q1",
+        "gameType": "animals",
+        "level": 23,
+        "instruction": "Which animal says \"Cock-a-doodle-doo\"?",
+        "question": "Cock-a-doodle-doo",
+        "correctAnswer": "Rooster",
         "options": [
-          "Starfish",
-          "Jellyfish",
-          "Crab"
+          "Sheep",
+          "Rooster",
+          "Frog"
         ],
-        "correctAnswer": "Starfish",
-        "hint": "Starfish have five arms and look like stars!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly rooster!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L23_Q2",
-        "instruction": "Sea: Who has a hard SHELL?",
-        "question": "🐢",
+        "id": "KIDS_ANIMALS_L23_Q2",
+        "gameType": "animals",
+        "level": 23,
+        "instruction": "Which animal keeps your home safe?",
+        "question": "Dog",
+        "correctAnswer": "Dog",
         "options": [
-          "Sea Turtle",
-          "Shark",
-          "Dolphin"
+          "Dog",
+          "Elephant",
+          "Duck"
         ],
-        "correctAnswer": "Sea Turtle",
-        "hint": "Sea turtles carry their homes on their backs!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly dog!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L23_Q3",
-        "instruction": "Sea: Find the SEAHORSE",
-        "question": "🫏🌊",
+        "id": "KIDS_ANIMALS_L23_Q3",
+        "gameType": "animals",
+        "level": 23,
+        "instruction": "Which animal says \"Meow\"?",
+        "question": "Meow",
+        "correctAnswer": "Cat",
         "options": [
-          "Seahorse",
-          "Whale",
-          "Fish"
+          "Cat",
+          "Lion",
+          "Duck"
         ],
-        "correctAnswer": "Seahorse",
-        "hint": "Seahorses are tiny fish that look like horses!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly cat!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 24,
     "quests": [
       {
-        "id": "KID_ANIMALS_L24_Q1",
-        "instruction": "Science: How do fish BREATHE?",
-        "question": "🐠",
+        "id": "KIDS_ANIMALS_L24_Q1",
+        "gameType": "animals",
+        "level": 24,
+        "instruction": "Which animal says \"Moo\"?",
+        "question": "Moo",
+        "correctAnswer": "Cow",
         "options": [
-          "Gills",
-          "Lungs",
-          "Nose"
+          "Monkey",
+          "Dog",
+          "Cow"
         ],
-        "correctAnswer": "Gills",
-        "hint": "Fish use gills to get oxygen from the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly cow!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L24_Q2",
-        "instruction": "Science: How do fish SWIM?",
-        "question": "🐠",
+        "id": "KIDS_ANIMALS_L24_Q2",
+        "gameType": "animals",
+        "level": 24,
+        "instruction": "Which animal gives us warm wool?",
+        "question": "Sheep",
+        "correctAnswer": "Sheep",
         "options": [
-          "Fins",
-          "Legs",
-          "Wings"
+          "Sheep",
+          "Cow",
+          "Cat"
         ],
-        "correctAnswer": "Fins",
-        "hint": "Fish use their fins and tails to push through water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly sheep!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L24_Q3",
-        "instruction": "Science: Who sprays INK?",
-        "question": "🐙",
+        "id": "KIDS_ANIMALS_L24_Q3",
+        "gameType": "animals",
+        "level": 24,
+        "instruction": "Which animal says \"Roar\"?",
+        "question": "Roar",
+        "correctAnswer": "Lion",
         "options": [
-          "Octopus",
-          "Shark",
-          "Whale"
+          "Lion",
+          "Sheep",
+          "Cat"
         ],
-        "correctAnswer": "Octopus",
-        "hint": "Octopuses spray black ink to hide from danger!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly lion!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,49 +299,73 @@
     "level": 25,
     "quests": [
       {
-        "id": "KID_ANIMALS_L25_Q1",
-        "instruction": "Compare: 🦈 vs 🐠",
-        "question": "Which is bigger?",
+        "id": "KIDS_ANIMALS_L25_Q1",
+        "gameType": "animals",
+        "level": 25,
+        "instruction": "Which animal says \"Quack\"?",
+        "question": "Quack",
+        "correctAnswer": "Duck",
         "options": [
-          "Shark",
-          "Little Fish"
+          "Duck",
+          "Elephant",
+          "Sheep"
         ],
-        "correctAnswer": "Shark",
-        "hint": "Sharks are much bigger than pet goldfish!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly duck!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L25_Q2",
-        "instruction": "Compare: 🦀 vs 🐙",
-        "question": "Which has pinchers?",
+        "id": "KIDS_ANIMALS_L25_Q2",
+        "gameType": "animals",
+        "level": 25,
+        "instruction": "Which animal has a very long trunk?",
+        "question": "Elephant",
+        "correctAnswer": "Elephant",
         "options": [
-          "Crab",
-          "Octopus"
+          "Cat",
+          "Dog",
+          "Elephant"
         ],
-        "correctAnswer": "Crab",
-        "hint": "Crabs use their pinchers to find food!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly elephant!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L25_Q3",
-        "instruction": "Compare: 🐬 vs 🐋",
-        "question": "Which is the Giant?",
+        "id": "KIDS_ANIMALS_L25_Q3",
+        "gameType": "animals",
+        "level": 25,
+        "instruction": "Which animal says \"Chatter\"?",
+        "question": "Chatter",
+        "correctAnswer": "Monkey",
         "options": [
-          "Whale",
-          "Dolphin"
+          "Sheep",
+          "Monkey",
+          "Dog"
         ],
-        "correctAnswer": "Whale",
-        "hint": "Whales are the giants of the deep!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly monkey!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -265,52 +373,73 @@
     "level": 26,
     "quests": [
       {
-        "id": "KID_ANIMALS_L26_Q1",
-        "instruction": "Identify: Who lives in a Shell?",
-        "question": "🏠🌊",
+        "id": "KIDS_ANIMALS_L26_Q1",
+        "gameType": "animals",
+        "level": 26,
+        "instruction": "Which animal says \"Ribbit\"?",
+        "question": "Ribbit",
+        "correctAnswer": "Frog",
         "options": [
-          "Crab",
-          "Dolphin",
-          "Shark"
+          "Duck",
+          "Sheep",
+          "Frog"
         ],
-        "correctAnswer": "Crab",
-        "hint": "Many sea animals live in hard shells!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly frog!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L26_Q2",
-        "instruction": "Identify: Who has many Arms?",
-        "question": "💪🌊",
+        "id": "KIDS_ANIMALS_L26_Q2",
+        "gameType": "animals",
+        "level": 26,
+        "instruction": "Which animal wakes us up in the morning?",
+        "question": "Rooster",
+        "correctAnswer": "Rooster",
         "options": [
-          "Octopus",
-          "Fish",
-          "Whale"
+          "Cow",
+          "Elephant",
+          "Rooster"
         ],
-        "correctAnswer": "Octopus",
-        "hint": "Octopuses have eight very strong arms!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly rooster!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L26_Q3",
-        "instruction": "Identify: Who has a Fin on top?",
-        "question": "🦈 Choice",
+        "id": "KIDS_ANIMALS_L26_Q3",
+        "gameType": "animals",
+        "level": 26,
+        "instruction": "Which animal says \"Woof Woof\"?",
+        "question": "Woof Woof",
+        "correctAnswer": "Dog",
         "options": [
-          "Shark",
-          "Octopus",
-          "Starfish"
+          "Dog",
+          "Frog",
+          "Cat"
         ],
-        "correctAnswer": "Shark",
-        "hint": "You can often see a shark's fin above the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly dog!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -318,49 +447,73 @@
     "level": 27,
     "quests": [
       {
-        "id": "KID_ANIMALS_L27_Q1",
-        "instruction": "Logic: Do fish need water?",
-        "question": "🐠 Help",
+        "id": "KIDS_ANIMALS_L27_Q1",
+        "gameType": "animals",
+        "level": 27,
+        "instruction": "Which animal says \"Meow\"?",
+        "question": "Meow",
+        "correctAnswer": "Cat",
         "options": [
-          "Yes",
-          "No"
+          "Cat",
+          "Dog",
+          "Monkey"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Fish must stay in the water to breathe and live!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly cat!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L27_Q2",
-        "instruction": "Logic: Do Whales have blowholes?",
-        "question": "🐋 Help",
+        "id": "KIDS_ANIMALS_L27_Q2",
+        "gameType": "animals",
+        "level": 27,
+        "instruction": "Which animal gives us fresh milk?",
+        "question": "Cow",
+        "correctAnswer": "Cow",
         "options": [
-          "Yes",
-          "No"
+          "Cow",
+          "Monkey",
+          "Duck"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Whales use blowholes to breathe air at the top!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly cow!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L27_Q3",
-        "instruction": "Logic: Is the Ocean salty?",
-        "question": "🌊 Help",
+        "id": "KIDS_ANIMALS_L27_Q3",
+        "gameType": "animals",
+        "level": 27,
+        "instruction": "Which animal says \"Baa\"?",
+        "question": "Baa",
+        "correctAnswer": "Sheep",
         "options": [
-          "Yes",
-          "No"
+          "Frog",
+          "Sheep",
+          "Cow"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Ocean water has lots of salt in it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly sheep!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -368,52 +521,73 @@
     "level": 28,
     "quests": [
       {
-        "id": "KID_ANIMALS_L28_Q1",
-        "instruction": "Search: Find the STINGRAY",
-        "question": "💠",
+        "id": "KIDS_ANIMALS_L28_Q1",
+        "gameType": "animals",
+        "level": 28,
+        "instruction": "Which animal says \"Roar\"?",
+        "question": "Roar",
+        "correctAnswer": "Lion",
         "options": [
-          "Stingray",
-          "Shark",
-          "Whale"
+          "Lion",
+          "Frog",
+          "Monkey"
         ],
-        "correctAnswer": "Stingray",
-        "hint": "Stingrays are flat and glide like kites!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly lion!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L28_Q2",
-        "instruction": "Search: Find the CORAL",
-        "question": "🪸",
+        "id": "KIDS_ANIMALS_L28_Q2",
+        "gameType": "animals",
+        "level": 28,
+        "instruction": "Which animal loves swimming in the pond?",
+        "question": "Duck",
+        "correctAnswer": "Duck",
         "options": [
-          "Coral",
-          "Rock",
-          "Sand"
+          "Rooster",
+          "Duck",
+          "Dog"
         ],
-        "correctAnswer": "Coral",
-        "hint": "Coral is a colorful home for many fish!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly duck!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L28_Q3",
-        "instruction": "Search: Find the LOBSTER",
-        "question": "🦞",
+        "id": "KIDS_ANIMALS_L28_Q3",
+        "gameType": "animals",
+        "level": 28,
+        "instruction": "Which animal says \"Trumpet\"?",
+        "question": "Trumpet",
+        "correctAnswer": "Elephant",
         "options": [
-          "Lobster",
-          "Fish",
-          "Octopus"
+          "Elephant",
+          "Monkey",
+          "Frog"
         ],
-        "correctAnswer": "Lobster",
-        "hint": "Lobsters have big claws and a hard shell!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly elephant!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -421,52 +595,73 @@
     "level": 29,
     "quests": [
       {
-        "id": "KID_ANIMALS_L29_Q1",
-        "instruction": "Review: Who has 8 legs?",
-        "question": "🐙",
+        "id": "KIDS_ANIMALS_L29_Q1",
+        "gameType": "animals",
+        "level": 29,
+        "instruction": "Which animal says \"Chatter\"?",
+        "question": "Chatter",
+        "correctAnswer": "Monkey",
         "options": [
-          "Octopus",
-          "Fish",
-          "Crab"
+          "Elephant",
+          "Cow",
+          "Monkey"
         ],
-        "correctAnswer": "Octopus",
-        "hint": "The wiggly arms!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly monkey!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L29_Q2",
-        "instruction": "Review: Who has sharp teeth?",
-        "question": "🦈",
+        "id": "KIDS_ANIMALS_L29_Q2",
+        "gameType": "animals",
+        "level": 29,
+        "instruction": "Which animal jumps high near the water?",
+        "question": "Frog",
+        "correctAnswer": "Frog",
         "options": [
-          "Shark",
-          "Whale",
-          "Dolphin"
+          "Sheep",
+          "Dog",
+          "Frog"
         ],
-        "correctAnswer": "Shark",
-        "hint": "The king of the sea!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly frog!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L29_Q3",
-        "instruction": "Review: Who is the Giant?",
-        "question": "🐋",
+        "id": "KIDS_ANIMALS_L29_Q3",
+        "gameType": "animals",
+        "level": 29,
+        "instruction": "Which animal says \"Cock-a-doodle-doo\"?",
+        "question": "Cock-a-doodle-doo",
+        "correctAnswer": "Rooster",
         "options": [
-          "Whale",
-          "Dolphin",
-          "Crab"
+          "Rooster",
+          "Lion",
+          "Elephant"
         ],
-        "correctAnswer": "Whale",
-        "hint": "The biggest friend in the ocean!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly rooster!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -474,51 +669,73 @@
     "level": 30,
     "quests": [
       {
-        "id": "KID_ANIMALS_L30_Q1",
-        "instruction": "Level 30 Challenge: Ocean!",
-        "question": "Who has a blowhole?",
+        "id": "KIDS_ANIMALS_L30_Q1",
+        "gameType": "animals",
+        "level": 30,
+        "instruction": "Which animal says \"Woof Woof\"?",
+        "question": "Woof Woof",
+        "correctAnswer": "Dog",
         "options": [
-          "Whale",
-          "Shark",
-          "Fish"
+          "Monkey",
+          "Duck",
+          "Dog"
         ],
-        "correctAnswer": "Whale",
-        "hint": "The giant sprayer!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly dog!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L30_Q2",
-        "instruction": "Level 30 Challenge: Fins!",
-        "question": "How do fish swim?",
+        "id": "KIDS_ANIMALS_L30_Q2",
+        "gameType": "animals",
+        "level": 30,
+        "instruction": "Which animal loves to chase mice?",
+        "question": "Cat",
+        "correctAnswer": "Cat",
         "options": [
-          "Fins",
-          "Legs",
-          "Wings"
+          "Monkey",
+          "Duck",
+          "Cat"
         ],
-        "correctAnswer": "Fins",
-        "hint": "They push the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly cat!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L30_Q3",
-        "instruction": "Level 30 Challenge: Mastery!",
-        "question": "Are you an Ocean Explorer?",
+        "id": "KIDS_ANIMALS_L30_Q3",
+        "gameType": "animals",
+        "level": 30,
+        "instruction": "Which animal says \"Moo\"?",
+        "question": "Moo",
+        "correctAnswer": "Cow",
         "options": [
-          "YES!",
-          "No"
+          "Cow",
+          "Lion",
+          "Elephant"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You are a master of the deep blue sea!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly cow!",
+        "metadata": {
+          "difficulty": 2,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

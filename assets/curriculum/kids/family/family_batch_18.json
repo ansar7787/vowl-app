@@ -3,50 +3,73 @@
     "level": 171,
     "quests": [
       {
-        "id": "KID_FAMILY_L171_Q1",
-        "instruction": "Find the BIRTHDAY CAKE",
-        "question": "🎂✨",
+        "id": "KIDS_FAMILY_L171_Q1",
+        "gameType": "family",
+        "level": 171,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Birthday Cake",
-          "Soup Bowl",
-          "Plate of Peas"
+          "Grandmother",
+          "Mother",
+          "Grandfather"
         ],
-        "correctAnswer": "Birthday Cake",
-        "hint": "A birthday cake is a sweet treat with frosting and candles that we eat to celebrate your special day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L171_Q2",
-        "instruction": "Which one has CANDLES?",
-        "question": "🎂 vs 🥧",
+        "id": "KIDS_FAMILY_L171_Q2",
+        "gameType": "family",
+        "level": 171,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Birthday Cake",
-          "Plain Pie"
+          "Father",
+          "Mother",
+          "Brother"
         ],
-        "correctAnswer": "Birthday Cake",
-        "hint": "We put one candle for every year you have been growing on top of the yummy cake!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L171_Q3",
-        "instruction": "Do we make a WISH?",
-        "question": "🎂🕯️💭❓",
+        "id": "KIDS_FAMILY_L171_Q3",
+        "gameType": "family",
+        "level": 171,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, blow them out!",
-          "No, only cats"
+          "Father",
+          "Grandmother",
+          "Sister"
         ],
-        "correctAnswer": "Yes, blow them out!",
-        "hint": "Close your eyes, think of something happy, and blow out all the candles at once!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 172,
     "quests": [
       {
-        "id": "KID_FAMILY_L172_Q1",
-        "instruction": "Find the PARTY HAT",
-        "question": "🥳✨",
+        "id": "KIDS_FAMILY_L172_Q1",
+        "gameType": "family",
+        "level": 172,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Party Hat",
-          "Helmet",
-          "Crown"
+          "Grandmother",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Party Hat",
-        "hint": "A party hat is a colorful cone you wear on your head during a birthday celebration!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L172_Q2",
-        "instruction": "Which one is a CONE?",
-        "question": "🥳 vs 🧢",
+        "id": "KIDS_FAMILY_L172_Q2",
+        "gameType": "family",
+        "level": 172,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Party Hat",
-          "Soft Cap"
+          "Father",
+          "Mother",
+          "Sister"
         ],
-        "correctAnswer": "Party Hat",
-        "hint": "The party hat is shaped like a triangle and has a fuzzy ball on the very top!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L172_Q3",
-        "instruction": "Does it have a CHIN strap?",
-        "question": "🥳➰❓",
+        "id": "KIDS_FAMILY_L172_Q3",
+        "gameType": "family",
+        "level": 172,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, keep it on!",
-          "No, wear a shoe"
+          "Mother",
+          "Sister",
+          "Grandfather"
         ],
-        "correctAnswer": "Yes, keep it on!",
-        "hint": "The little elastic string helps the party hat stay on your head while you play and dance!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 173,
     "quests": [
       {
-        "id": "KID_FAMILY_L173_Q1",
-        "instruction": "Find the happy MUSIC",
-        "question": "🎶✨",
+        "id": "KIDS_FAMILY_L173_Q1",
+        "gameType": "family",
+        "level": 173,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Music",
-          "Silence",
-          "Clock"
+          "Grandfather",
+          "Grandmother",
+          "Father"
         ],
-        "correctAnswer": "Music",
-        "hint": "Music is the happy sound that comes out of the speakers so everyone can sing and dance!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L173_Q2",
-        "instruction": "Which one is for DANCING?",
-        "question": "🎶 vs 🛌",
+        "id": "KIDS_FAMILY_L173_Q2",
+        "gameType": "family",
+        "level": 173,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Party Music",
-          "Bedtime Story"
+          "Grandmother",
+          "Mother",
+          "Brother"
         ],
-        "correctAnswer": "Party Music",
-        "hint": "When the music starts, everyone in the family can wiggle and move to the beat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L173_Q3",
-        "instruction": "Do we sing HAPPY BIRTHDAY?",
-        "question": "🎶🎂🗣️❓",
+        "id": "KIDS_FAMILY_L173_Q3",
+        "gameType": "family",
+        "level": 173,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, loud and clear!",
-          "No, only bark"
+          "Grandmother",
+          "Sister",
+          "Grandfather"
         ],
-        "correctAnswer": "Yes, loud and clear!",
-        "hint": "Everyone gathers around the cake to sing the most famous birthday song just for you!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 174,
     "quests": [
       {
-        "id": "KID_FAMILY_L174_Q1",
-        "instruction": "Find the confetti POP",
-        "question": "🎉✨",
+        "id": "KIDS_FAMILY_L174_Q1",
+        "gameType": "family",
+        "level": 174,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Confetti",
-          "Rain",
-          "Snow"
+          "Mother",
+          "Father",
+          "Brother"
         ],
-        "correctAnswer": "Confetti",
-        "hint": "Confetti is tiny colorful bits of paper that fly through the air when we celebrate something big!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L174_Q2",
-        "instruction": "Which one is COLORFUL?",
-        "question": "🎉 vs 🗒️",
+        "id": "KIDS_FAMILY_L174_Q2",
+        "gameType": "family",
+        "level": 174,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Party Confetti",
-          "Plain Paper"
+          "Brother",
+          "Father",
+          "Sister"
         ],
-        "correctAnswer": "Party Confetti",
-        "hint": "Confetti looks like a rainbow falling from the sky at a family party!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L174_Q3",
-        "instruction": "Is it for a SURPRISE?",
-        "question": "🎉😲❓",
+        "id": "KIDS_FAMILY_L174_Q3",
+        "gameType": "family",
+        "level": 174,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, Surprise!",
-          "No, for work"
+          "Sister",
+          "Grandfather",
+          "Brother"
         ],
-        "correctAnswer": "Yes, Surprise!",
-        "hint": "We shout 'Surprise!' when daddy walks in and the confetti flies everywhere!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,50 +299,73 @@
     "level": 175,
     "quests": [
       {
-        "id": "KID_FAMILY_L175_Q1",
-        "instruction": "Logic: Why do we CELEBRATE?",
-        "question": "🥳👨‍👩‍👧‍👦✨❓",
+        "id": "KIDS_FAMILY_L175_Q1",
+        "gameType": "family",
+        "level": 175,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Show someone we love them!",
-          "To get dirty",
-          "To find a bug"
+          "Grandmother",
+          "Father",
+          "Mother"
         ],
-        "correctAnswer": "Show someone we love them!",
-        "hint": "Parties are a magic way to tell a family member 'We are so happy you are here'!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L175_Q2",
-        "instruction": "Logic: Do we invite COUSINS?",
-        "question": "👫🥳❓",
+        "id": "KIDS_FAMILY_L175_Q2",
+        "gameType": "family",
+        "level": 175,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Yes, the more the merrier!",
-          "No, only robots"
+          "Mother",
+          "Grandmother",
+          "Brother"
         ],
-        "correctAnswer": "Yes, the more the merrier!",
-        "hint": "Birthdays are the perfect time to have all your cousins over for games and cake!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L175_Q3",
-        "instruction": "Logic: Is a smile the best DECORATION?",
-        "question": "😊✨🎉❓",
+        "id": "KIDS_FAMILY_L175_Q3",
+        "gameType": "family",
+        "level": 175,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, the happiest one!",
-          "No, only balloons"
+          "Sister",
+          "Father",
+          "Brother"
         ],
-        "correctAnswer": "Yes, the happiest one!",
-        "hint": "Even without balloons or cake, a family's happy smiles make the best party ever!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -258,49 +373,73 @@
     "level": 176,
     "quests": [
       {
-        "id": "KID_FAMILY_L176_Q1",
-        "instruction": "Search: Find the birthday CANDLE",
-        "question": "🎂🕯️ vs 🧼",
+        "id": "KIDS_FAMILY_L176_Q1",
+        "gameType": "family",
+        "level": 176,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Bright Candle",
-          "Bubbly Soap"
+          "Mother",
+          "Grandmother",
+          "Grandfather"
         ],
-        "correctAnswer": "Bright Candle",
-        "hint": "Look for the tiny flame on top of the cake that you are about to blow out!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L176_Q2",
-        "instruction": "Search: Find the party BALLOON",
-        "question": "🎈✨ vs 🪨",
+        "id": "KIDS_FAMILY_L176_Q2",
+        "gameType": "family",
+        "level": 176,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Floating Balloon",
-          "Heavy Rock"
+          "Grandfather",
+          "Father",
+          "Grandmother"
         ],
-        "correctAnswer": "Floating Balloon",
-        "hint": "Look for the red balloon floating near the ceiling with a long string!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L176_Q3",
-        "instruction": "Search: Find the gift RIBBON",
-        "question": "🎁🎀 vs 🧹",
+        "id": "KIDS_FAMILY_L176_Q3",
+        "gameType": "family",
+        "level": 176,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Shiny Ribbon",
-          "Dusty Broom"
+          "Grandfather",
+          "Mother",
+          "Father"
         ],
-        "correctAnswer": "Shiny Ribbon",
-        "hint": "Look for the silk bow on the surprise gift for the birthday girl!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -308,52 +447,73 @@
     "level": 177,
     "quests": [
       {
-        "id": "KID_FAMILY_L177_Q1",
-        "instruction": "Review: Who has the frosting?",
-        "question": "🎂 Review",
+        "id": "KIDS_FAMILY_L177_Q1",
+        "gameType": "family",
+        "level": 177,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Cake",
-          "Soup",
-          "Bed"
+          "Grandmother",
+          "Grandfather",
+          "Brother"
         ],
-        "correctAnswer": "Cake",
-        "hint": "The sweet treat for the party!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L177_Q2",
-        "instruction": "Review: Who has the cone shape?",
-        "question": "🥳 Review",
+        "id": "KIDS_FAMILY_L177_Q2",
+        "gameType": "family",
+        "level": 177,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Party Hat",
-          "Helmet",
-          "Boot"
+          "Sister",
+          "Grandmother",
+          "Brother"
         ],
-        "correctAnswer": "Party Hat",
-        "hint": "The one you wear for the birthday song!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L177_Q3",
-        "instruction": "Review: Who is the loud sound?",
-        "question": "🎶 Review",
+        "id": "KIDS_FAMILY_L177_Q3",
+        "gameType": "family",
+        "level": 177,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Music",
-          "Silence",
-          "Sleep"
+          "Father",
+          "Grandfather",
+          "Sister"
         ],
-        "correctAnswer": "Music",
-        "hint": "The one that makes you want to dance!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -361,49 +521,73 @@
     "level": 178,
     "quests": [
       {
-        "id": "KID_FAMILY_L178_Q1",
-        "instruction": "Which one is for a family dance?",
-        "question": "🎶💃 vs 🛌",
+        "id": "KIDS_FAMILY_L178_Q1",
+        "gameType": "family",
+        "level": 178,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "Wiggling & Dancing",
-          "Staying Asleep"
+          "Mother",
+          "Father",
+          "Brother"
         ],
-        "correctAnswer": "Wiggling & Dancing",
-        "hint": "Dancing with mommy and daddy is the funnest part of any party!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L178_Q2",
-        "instruction": "Which one is for a big wish?",
-        "question": "🎂🕯️ vs 🥘",
+        "id": "KIDS_FAMILY_L178_Q2",
+        "gameType": "family",
+        "level": 178,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "Blowing Candles",
-          "Eating Soup"
+          "Brother",
+          "Grandmother",
+          "Father"
         ],
-        "correctAnswer": "Blowing Candles",
-        "hint": "You get to make a special wish every single time you have a birthday!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L178_Q3",
-        "instruction": "Is every day a CELEBRATION?",
-        "question": "☀️🥳✨❓",
+        "id": "KIDS_FAMILY_L178_Q3",
+        "gameType": "family",
+        "level": 178,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "Yes, with family love!",
-          "No, only birthdays"
+          "Brother",
+          "Sister",
+          "Grandfather"
         ],
-        "correctAnswer": "Yes, with family love!",
-        "hint": "Even without cake, every day you spend with your family is a reason to be happy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -411,49 +595,73 @@
     "level": 179,
     "quests": [
       {
-        "id": "KID_FAMILY_L179_Q1",
-        "instruction": "Logic: Do we OPEN gifts?",
-        "question": "🎁👐❓",
+        "id": "KIDS_FAMILY_L179_Q1",
+        "gameType": "family",
+        "level": 179,
+        "instruction": "Identify the family member who bakes delicious pies with love!",
+        "question": "Grandmother",
+        "correctAnswer": "Grandmother",
         "options": [
-          "Yes, see the surprise!",
-          "No, leave them shut"
+          "Grandmother",
+          "Sister",
+          "Father"
         ],
-        "correctAnswer": "Yes, see the surprise!",
-        "hint": "Unwrapping the colorful paper is the most exciting part of receiving a gift from your family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose grandmother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L179_Q2",
-        "instruction": "Logic: Do we say THANK YOU?",
-        "question": "🎁🗣️🙏❓",
+        "id": "KIDS_FAMILY_L179_Q2",
+        "gameType": "family",
+        "level": 179,
+        "instruction": "Identify the family member who shares his toy cars and runs with you!",
+        "question": "Brother",
+        "correctAnswer": "Brother",
         "options": [
-          "Yes, be polite!",
-          "No, just grab"
+          "Grandfather",
+          "Father",
+          "Brother"
         ],
-        "correctAnswer": "Yes, be polite!",
-        "hint": "Saying 'Thank you' to your grandparents for a gift makes them feel very loved and happy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose brother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L179_Q3",
-        "instruction": "Logic: Is the family the real GIFT?",
-        "question": "👨‍👩‍👧‍👦🎁✨❓",
+        "id": "KIDS_FAMILY_L179_Q3",
+        "gameType": "family",
+        "level": 179,
+        "instruction": "Identify the family member who helps you color drawings and laughs together!",
+        "question": "Sister",
+        "correctAnswer": "Sister",
         "options": [
-          "Yes, the best one!",
-          "No, only toys"
+          "Mother",
+          "Grandmother",
+          "Sister"
         ],
-        "correctAnswer": "Yes, the best one!",
-        "hint": "Toys are fun, but having a family that loves you is the most precious gift of all!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose sister from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -461,51 +669,73 @@
     "level": 180,
     "quests": [
       {
-        "id": "KID_FAMILY_L180_Q1",
-        "instruction": "Level 180 Challenge: Celebration Star!",
-        "question": "Find sweet BIRTHDAY CAKE",
+        "id": "KIDS_FAMILY_L180_Q1",
+        "gameType": "family",
+        "level": 180,
+        "instruction": "Identify the family member who loves to hug you and cooks yummy meals!",
+        "question": "Mother",
+        "correctAnswer": "Mother",
         "options": [
-          "🎂",
-          "🥣",
-          "🥦"
+          "Mother",
+          "Sister",
+          "Father"
         ],
-        "correctAnswer": "🎂",
-        "hint": "The one with the candles!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mother from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L180_Q2",
-        "instruction": "Level 180 Challenge: Celebration Star!",
-        "question": "Find silly PARTY HAT",
+        "id": "KIDS_FAMILY_L180_Q2",
+        "gameType": "family",
+        "level": 180,
+        "instruction": "Identify the family member who plays outdoor games and protects the family!",
+        "question": "Father",
+        "correctAnswer": "Father",
         "options": [
-          "🥳",
-          "🪖",
-          "🧢"
+          "Mother",
+          "Grandmother",
+          "Father"
         ],
-        "correctAnswer": "🥳",
-        "hint": "The cone for your head!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose father from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_FAMILY_L180_Q3",
-        "instruction": "Level 180 Challenge: Mastery!",
-        "question": "Are you a Celebration Star?",
+        "id": "KIDS_FAMILY_L180_Q3",
+        "gameType": "family",
+        "level": 180,
+        "instruction": "Identify the family member who tells beautiful stories from long ago!",
+        "question": "Grandfather",
+        "correctAnswer": "Grandfather",
         "options": [
-          "YES!",
-          "No"
+          "Grandfather",
+          "Brother",
+          "Mother"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 180!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose grandfather from the options.",
+        "metadata": {
+          "difficulty": 9,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

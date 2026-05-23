@@ -3,52 +3,73 @@
     "level": 111,
     "quests": [
       {
-        "id": "KID_ANIMALS_L111_Q1",
-        "instruction": "Outback: Who is a big bird that can't fly?",
-        "question": "🐦🇦🇺",
+        "id": "KIDS_ANIMALS_L111_Q1",
+        "gameType": "animals",
+        "level": 111,
+        "instruction": "Which animal says \"Baa\"?",
+        "question": "Baa",
+        "correctAnswer": "Sheep",
         "options": [
-          "Emu",
-          "Eagle",
-          "Duck"
+          "Sheep",
+          "Elephant",
+          "Frog"
         ],
-        "correctAnswer": "Emu",
-        "hint": "Emus are very tall and can run very fast!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly sheep!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L111_Q2",
-        "instruction": "Outback: Who has a bill like a duck?",
-        "question": "🦆🇦🇺",
+        "id": "KIDS_ANIMALS_L111_Q2",
+        "gameType": "animals",
+        "level": 111,
+        "instruction": "Which animal is the king of the jungle?",
+        "question": "Lion",
+        "correctAnswer": "Lion",
         "options": [
-          "Platypus",
-          "Kangaroo",
-          "Koala"
+          "Lion",
+          "Elephant",
+          "Cow"
         ],
-        "correctAnswer": "Platypus",
-        "hint": "The Platypus is a very strange animal that lays eggs but has fur!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly lion!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L111_Q3",
-        "instruction": "Outback: Who is a small, round burrower?",
-        "question": "🪵🇦🇺",
+        "id": "KIDS_ANIMALS_L111_Q3",
+        "gameType": "animals",
+        "level": 111,
+        "instruction": "Which animal says \"Quack\"?",
+        "question": "Quack",
+        "correctAnswer": "Duck",
         "options": [
-          "Wombat",
+          "Duck",
           "Dog",
           "Cat"
         ],
-        "correctAnswer": "Wombat",
-        "hint": "Wombats dig deep tunnels and look like little bears!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly duck!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 112,
     "quests": [
       {
-        "id": "KID_ANIMALS_L112_Q1",
-        "instruction": "Traits: Who carries a baby in a POUCH?",
-        "question": "🦘🇦🇺",
+        "id": "KIDS_ANIMALS_L112_Q1",
+        "gameType": "animals",
+        "level": 112,
+        "instruction": "Which animal says \"Trumpet\"?",
+        "question": "Trumpet",
+        "correctAnswer": "Elephant",
         "options": [
-          "Kangaroo",
-          "Snake",
-          "Lion"
+          "Cat",
+          "Dog",
+          "Elephant"
         ],
-        "correctAnswer": "Kangaroo",
-        "hint": "Kangaroo babies are called Joeys!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly elephant!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L112_Q2",
-        "instruction": "Traits: Who sleeps in Eucalyptus trees?",
-        "question": "🐨🇦🇺",
+        "id": "KIDS_ANIMALS_L112_Q2",
+        "gameType": "animals",
+        "level": 112,
+        "instruction": "Which animal loves to climb and eat bananas?",
+        "question": "Monkey",
+        "correctAnswer": "Monkey",
         "options": [
-          "Koala",
           "Monkey",
-          "Sloth"
+          "Elephant",
+          "Cat"
         ],
-        "correctAnswer": "Koala",
-        "hint": "Koalas sleep up to 20 hours a day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly monkey!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L112_Q3",
-        "instruction": "Traits: Who is a wild Australian dog?",
-        "question": "🐕🇦🇺",
+        "id": "KIDS_ANIMALS_L112_Q3",
+        "gameType": "animals",
+        "level": 112,
+        "instruction": "Which animal says \"Ribbit\"?",
+        "question": "Ribbit",
+        "correctAnswer": "Frog",
         "options": [
-          "Dingo",
-          "Husky",
-          "Wolf"
+          "Monkey",
+          "Frog",
+          "Duck"
         ],
-        "correctAnswer": "Dingo",
-        "hint": "Dingoes live in the outback and look like golden dogs!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly frog!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 113,
     "quests": [
       {
-        "id": "KID_ANIMALS_L113_Q1",
-        "instruction": "Wonders: Find the Kookaburra",
-        "question": "🐦😄",
+        "id": "KIDS_ANIMALS_L113_Q1",
+        "gameType": "animals",
+        "level": 113,
+        "instruction": "Which animal says \"Cock-a-doodle-doo\"?",
+        "question": "Cock-a-doodle-doo",
+        "correctAnswer": "Rooster",
         "options": [
-          "Kookaburra",
-          "Parrot",
-          "Owl"
+          "Rooster",
+          "Frog",
+          "Sheep"
         ],
-        "correctAnswer": "Kookaburra",
-        "hint": "The Kookaburra's call sounds like someone laughing!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly rooster!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L113_Q2",
-        "instruction": "Wonders: Find the Tasmanian Devil",
-        "question": "👹🇦🇺",
+        "id": "KIDS_ANIMALS_L113_Q2",
+        "gameType": "animals",
+        "level": 113,
+        "instruction": "Which animal keeps your home safe?",
+        "question": "Dog",
+        "correctAnswer": "Dog",
         "options": [
-          "Tasmanian Devil",
-          "Bear",
-          "Wolf"
+          "Sheep",
+          "Elephant",
+          "Dog"
         ],
-        "correctAnswer": "Tasmanian Devil",
-        "hint": "They are small but very loud and strong!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly dog!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L113_Q3",
-        "instruction": "Wonders: Find the Echidna",
-        "question": "🦔🇦🇺",
+        "id": "KIDS_ANIMALS_L113_Q3",
+        "gameType": "animals",
+        "level": 113,
+        "instruction": "Which animal says \"Meow\"?",
+        "question": "Meow",
+        "correctAnswer": "Cat",
         "options": [
-          "Echidna",
-          "Hedgehog",
-          "Rabbit"
+          "Duck",
+          "Sheep",
+          "Cat"
         ],
-        "correctAnswer": "Echidna",
-        "hint": "Echidnas have spikes and lay eggs, just like the platypus!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is a friendly cat!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,49 +225,73 @@
     "level": 114,
     "quests": [
       {
-        "id": "KID_ANIMALS_L114_Q1",
-        "instruction": "Compare: 🦘 vs 🐨",
-        "question": "Who can hop?",
+        "id": "KIDS_ANIMALS_L114_Q1",
+        "gameType": "animals",
+        "level": 114,
+        "instruction": "Which animal says \"Moo\"?",
+        "question": "Moo",
+        "correctAnswer": "Cow",
         "options": [
-          "Kangaroo",
-          "Koala"
+          "Cat",
+          "Dog",
+          "Cow"
         ],
-        "correctAnswer": "Kangaroo",
-        "hint": "Kangaroos use their strong back legs to jump!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly cow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L114_Q2",
-        "instruction": "Compare: 🦆🇦🇺 vs 🐠",
-        "question": "Who lays eggs?",
+        "id": "KIDS_ANIMALS_L114_Q2",
+        "gameType": "animals",
+        "level": 114,
+        "instruction": "Which animal gives us warm wool?",
+        "question": "Sheep",
+        "correctAnswer": "Sheep",
         "options": [
-          "Both!",
-          "Only Fish"
+          "Sheep",
+          "Monkey",
+          "Cat"
         ],
-        "correctAnswer": "Both!",
-        "hint": "The platypus is a special mammal that lays eggs!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly sheep!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L114_Q3",
-        "instruction": "Compare: 🐦🇦🇺 vs 🦅",
-        "question": "Who can fly?",
+        "id": "KIDS_ANIMALS_L114_Q3",
+        "gameType": "animals",
+        "level": 114,
+        "instruction": "Which animal says \"Roar\"?",
+        "question": "Roar",
+        "correctAnswer": "Lion",
         "options": [
-          "Eagle",
-          "Emu"
+          "Lion",
+          "Cow",
+          "Monkey"
         ],
-        "correctAnswer": "Eagle",
-        "hint": "Emus have wings but they are too big to fly!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly lion!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -212,49 +299,73 @@
     "level": 115,
     "quests": [
       {
-        "id": "KID_ANIMALS_L115_Q1",
-        "instruction": "Logic: Are Kangaroos from Australia?",
-        "question": "🦘 Help",
+        "id": "KIDS_ANIMALS_L115_Q1",
+        "gameType": "animals",
+        "level": 115,
+        "instruction": "Which animal says \"Quack\"?",
+        "question": "Quack",
+        "correctAnswer": "Duck",
         "options": [
-          "Yes",
-          "No"
+          "Duck",
+          "Monkey",
+          "Elephant"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Australia is the home of kangaroos and koalas!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly duck!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L115_Q2",
-        "instruction": "Logic: Do Koalas drink lots of water?",
-        "question": "🐨 Help",
+        "id": "KIDS_ANIMALS_L115_Q2",
+        "gameType": "animals",
+        "level": 115,
+        "instruction": "Which animal has a very long trunk?",
+        "question": "Elephant",
+        "correctAnswer": "Elephant",
         "options": [
-          "No, mostly leaves",
-          "Yes"
+          "Monkey",
+          "Frog",
+          "Elephant"
         ],
-        "correctAnswer": "No, mostly leaves",
-        "hint": "Koalas get most of their water from eucalyptus leaves!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly elephant!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L115_Q3",
-        "instruction": "Logic: Can a Wombat run?",
-        "question": "🪵 Check",
+        "id": "KIDS_ANIMALS_L115_Q3",
+        "gameType": "animals",
+        "level": 115,
+        "instruction": "Which animal says \"Chatter\"?",
+        "question": "Chatter",
+        "correctAnswer": "Monkey",
         "options": [
-          "Yes, very fast!",
-          "No"
+          "Frog",
+          "Dog",
+          "Monkey"
         ],
-        "correctAnswer": "Yes, very fast!",
-        "hint": "Even though they look slow, wombats can run fast when they need to!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly monkey!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -262,52 +373,73 @@
     "level": 116,
     "quests": [
       {
-        "id": "KID_ANIMALS_L116_Q1",
-        "instruction": "Identify: Who has a bill?",
-        "question": "🦆 Selection",
+        "id": "KIDS_ANIMALS_L116_Q1",
+        "gameType": "animals",
+        "level": 116,
+        "instruction": "Which animal says \"Ribbit\"?",
+        "question": "Ribbit",
+        "correctAnswer": "Frog",
         "options": [
-          "Platypus",
-          "Emu",
-          "Dingo"
+          "Frog",
+          "Sheep",
+          "Dog"
         ],
-        "correctAnswer": "Platypus",
-        "hint": "The strange duck-billed friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly frog!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L116_Q2",
-        "instruction": "Identify: Who has spikes?",
-        "question": "🦔 Selection",
+        "id": "KIDS_ANIMALS_L116_Q2",
+        "gameType": "animals",
+        "level": 116,
+        "instruction": "Which animal wakes us up in the morning?",
+        "question": "Rooster",
+        "correctAnswer": "Rooster",
         "options": [
-          "Echidna",
-          "Koala",
-          "Wombat"
+          "Lion",
+          "Dog",
+          "Rooster"
         ],
-        "correctAnswer": "Echidna",
-        "hint": "The spiky egg-layer!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly rooster!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L116_Q3",
-        "instruction": "Identify: Who has a pouch?",
-        "question": "🦘 Selection",
+        "id": "KIDS_ANIMALS_L116_Q3",
+        "gameType": "animals",
+        "level": 116,
+        "instruction": "Which animal says \"Woof Woof\"?",
+        "question": "Woof Woof",
+        "correctAnswer": "Dog",
         "options": [
-          "Wallaby",
-          "Emu",
-          "Dingo"
+          "Dog",
+          "Frog",
+          "Cow"
         ],
-        "correctAnswer": "Wallaby",
-        "hint": "Wallabies look like small kangaroos!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly dog!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -315,52 +447,73 @@
     "level": 117,
     "quests": [
       {
-        "id": "KID_ANIMALS_L117_Q1",
-        "instruction": "Search: Find the QUOKKA",
-        "question": "🐹🇦🇺",
+        "id": "KIDS_ANIMALS_L117_Q1",
+        "gameType": "animals",
+        "level": 117,
+        "instruction": "Which animal says \"Meow\"?",
+        "question": "Meow",
+        "correctAnswer": "Cat",
         "options": [
-          "Quokka",
-          "Mouse",
-          "Rabbit"
+          "Cat",
+          "Dog",
+          "Lion"
         ],
-        "correctAnswer": "Quokka",
-        "hint": "Quokkas are known as the world's happiest animals because they look like they are smiling!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly cat!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L117_Q2",
-        "instruction": "Search: Find the SUGAR GLIDER",
-        "question": "🐿️🇦🇺",
+        "id": "KIDS_ANIMALS_L117_Q2",
+        "gameType": "animals",
+        "level": 117,
+        "instruction": "Which animal gives us fresh milk?",
+        "question": "Cow",
+        "correctAnswer": "Cow",
         "options": [
-          "Sugar Glider",
-          "Squirrel",
-          "Bat"
+          "Dog",
+          "Cow",
+          "Cat"
         ],
-        "correctAnswer": "Sugar Glider",
-        "hint": "Sugar gliders are tiny possums that can glide through the air!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly cow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L117_Q3",
-        "instruction": "Search: Find the SALTWATER CROCODILE",
-        "question": "🐊🇦🇺",
+        "id": "KIDS_ANIMALS_L117_Q3",
+        "gameType": "animals",
+        "level": 117,
+        "instruction": "Which animal says \"Baa\"?",
+        "question": "Baa",
+        "correctAnswer": "Sheep",
         "options": [
-          "Crocodile",
-          "Lizard",
-          "Turtle"
+          "Duck",
+          "Cat",
+          "Sheep"
         ],
-        "correctAnswer": "Crocodile",
-        "hint": "Australia has the biggest crocodiles in the world!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly sheep!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -368,52 +521,73 @@
     "level": 118,
     "quests": [
       {
-        "id": "KID_ANIMALS_L118_Q1",
-        "instruction": "Actions: Who can LAUGH?",
-        "question": "🐦😄",
+        "id": "KIDS_ANIMALS_L118_Q1",
+        "gameType": "animals",
+        "level": 118,
+        "instruction": "Which animal says \"Roar\"?",
+        "question": "Roar",
+        "correctAnswer": "Lion",
         "options": [
-          "Kookaburra",
-          "Parrot",
-          "Eagle"
+          "Frog",
+          "Lion",
+          "Dog"
         ],
-        "correctAnswer": "Kookaburra",
-        "hint": "The laughing bird of the outback!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly lion!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L118_Q2",
-        "instruction": "Actions: Who can GLIDE?",
-        "question": "🐿️🇦🇺",
+        "id": "KIDS_ANIMALS_L118_Q2",
+        "gameType": "animals",
+        "level": 118,
+        "instruction": "Which animal loves swimming in the pond?",
+        "question": "Duck",
+        "correctAnswer": "Duck",
         "options": [
-          "Sugar Glider",
-          "Kangaroo",
-          "Koala"
+          "Sheep",
+          "Duck",
+          "Cow"
         ],
-        "correctAnswer": "Sugar Glider",
-        "hint": "Gliding from tree to tree!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is a friendly duck!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L118_Q3",
-        "instruction": "Actions: Who can BURROW?",
-        "question": "🪵🇦🇺",
+        "id": "KIDS_ANIMALS_L118_Q3",
+        "gameType": "animals",
+        "level": 118,
+        "instruction": "Which animal says \"Trumpet\"?",
+        "question": "Trumpet",
+        "correctAnswer": "Elephant",
         "options": [
-          "Wombat",
-          "Emu",
-          "Dingo"
+          "Elephant",
+          "Dog",
+          "Cat"
         ],
-        "correctAnswer": "Wombat",
-        "hint": "Digging deep holes in the ground!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly elephant!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -421,52 +595,73 @@
     "level": 119,
     "quests": [
       {
-        "id": "KID_ANIMALS_L119_Q1",
-        "instruction": "Review: Who has a pouch?",
-        "question": "🦘 Review",
+        "id": "KIDS_ANIMALS_L119_Q1",
+        "gameType": "animals",
+        "level": 119,
+        "instruction": "Which animal says \"Chatter\"?",
+        "question": "Chatter",
+        "correctAnswer": "Monkey",
         "options": [
-          "Kangaroo",
-          "Koala",
-          "Both!"
+          "Sheep",
+          "Dog",
+          "Monkey"
         ],
-        "correctAnswer": "Both!",
-        "hint": "Both kangaroos and koalas carry their babies in pouches!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is a friendly monkey!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L119_Q2",
-        "instruction": "Review: Who lays eggs?",
-        "question": "🦆 Review",
+        "id": "KIDS_ANIMALS_L119_Q2",
+        "gameType": "animals",
+        "level": 119,
+        "instruction": "Which animal jumps high near the water?",
+        "question": "Frog",
+        "correctAnswer": "Frog",
         "options": [
-          "Platypus",
-          "Dingo",
-          "Wombat"
+          "Frog",
+          "Sheep",
+          "Dog"
         ],
-        "correctAnswer": "Platypus",
-        "hint": "The strange duck-billed friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is a friendly frog!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L119_Q3",
-        "instruction": "Review: Who sleeps in trees?",
-        "question": "🐨 Review",
+        "id": "KIDS_ANIMALS_L119_Q3",
+        "gameType": "animals",
+        "level": 119,
+        "instruction": "Which animal says \"Cock-a-doodle-doo\"?",
+        "question": "Cock-a-doodle-doo",
+        "correctAnswer": "Rooster",
         "options": [
-          "Koala",
-          "Emu",
-          "Platypus"
+          "Cat",
+          "Elephant",
+          "Rooster"
         ],
-        "correctAnswer": "Koala",
-        "hint": "The sleepy eucalyptus eater!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly rooster!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -474,51 +669,73 @@
     "level": 120,
     "quests": [
       {
-        "id": "KID_ANIMALS_L120_Q1",
-        "instruction": "Level 120 Challenge: Outback!",
-        "question": "Who is the world's happiest animal?",
+        "id": "KIDS_ANIMALS_L120_Q1",
+        "gameType": "animals",
+        "level": 120,
+        "instruction": "Which animal says \"Woof Woof\"?",
+        "question": "Woof Woof",
+        "correctAnswer": "Dog",
         "options": [
-          "Quokka",
-          "Dingo",
-          "Emu"
+          "Frog",
+          "Lion",
+          "Dog"
         ],
-        "correctAnswer": "Quokka",
-        "hint": "The smiling one!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly dog!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L120_Q2",
-        "instruction": "Level 120 Challenge: Traits!",
-        "question": "What is a baby kangaroo called?",
+        "id": "KIDS_ANIMALS_L120_Q2",
+        "gameType": "animals",
+        "level": 120,
+        "instruction": "Which animal loves to chase mice?",
+        "question": "Cat",
+        "correctAnswer": "Cat",
         "options": [
-          "Joey",
-          "Kitten",
-          "Puppy"
+          "Sheep",
+          "Lion",
+          "Cat"
         ],
-        "correctAnswer": "Joey",
-        "hint": "A cute name for a hopper!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is a friendly cat!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_ANIMALS_L120_Q3",
-        "instruction": "Level 120 Challenge: Mastery!",
-        "question": "Are you an Outback Explorer?",
+        "id": "KIDS_ANIMALS_L120_Q3",
+        "gameType": "animals",
+        "level": 120,
+        "instruction": "Which animal says \"Moo\"?",
+        "question": "Moo",
+        "correctAnswer": "Cow",
         "options": [
-          "YES!",
-          "No"
+          "Duck",
+          "Lion",
+          "Cow"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You are a master of the Australian wonders!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is a friendly cow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

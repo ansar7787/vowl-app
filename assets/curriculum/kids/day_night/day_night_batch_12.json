@@ -3,50 +3,70 @@
     "level": 111,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L111_Q1",
-        "instruction": "Find the MORNING shadow",
-        "question": "🌅👤📏✨",
+        "id": "KIDS_DAY_NIGHT_L111_Q1",
+        "gameType": "day_night",
+        "level": 111,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Long Shadow",
-          "Short Shadow",
-          "No Shadow"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Long Shadow",
-        "hint": "In the morning, the sun is low, so your shadow stretches out very long on the grass!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L111_Q2",
-        "instruction": "Which one is LONG?",
-        "question": "👤📏 vs 👤🤏",
+        "id": "KIDS_DAY_NIGHT_L111_Q2",
+        "gameType": "day_night",
+        "level": 111,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Morning Shadow",
-          "Noon Shadow"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Morning Shadow",
-        "hint": "When the sun is waking up, your shadow looks like a giant version of you!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L111_Q3",
-        "instruction": "Does the sun make shadows?",
-        "question": "☀️👤❓",
+        "id": "KIDS_DAY_NIGHT_L111_Q3",
+        "gameType": "day_night",
+        "level": 111,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, it's a big light!",
-          "No, only moon"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, it's a big light!",
-        "hint": "Shadows are made whenever you stand in front of the sun's bright light!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +74,70 @@
     "level": 112,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L112_Q1",
-        "instruction": "Find the NOON shadow",
-        "question": "☀️🆙👤🤏✨",
+        "id": "KIDS_DAY_NIGHT_L112_Q1",
+        "gameType": "day_night",
+        "level": 112,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Tiny Shadow",
-          "Long Shadow",
-          "Giant Shadow"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Tiny Shadow",
-        "hint": "At noon, the sun is right above you, so your shadow is very small and stays under your feet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L112_Q2",
-        "instruction": "Which one is TINY?",
-        "question": "👤🤏 vs 👤📏",
+        "id": "KIDS_DAY_NIGHT_L112_Q2",
+        "gameType": "day_night",
+        "level": 112,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Noon Shadow",
-          "Evening Shadow"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Noon Shadow",
-        "hint": "Look down! At lunchtime, you can barely see your shadow because it's so short!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L112_Q3",
-        "instruction": "Is the sun high at NOON?",
-        "question": "☀️🆙❓",
+        "id": "KIDS_DAY_NIGHT_L112_Q3",
+        "gameType": "day_night",
+        "level": 112,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, top of the sky!",
-          "No, it's setting"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, top of the sky!",
-        "hint": "When the sun is highest, your shadow is the smallest it can be!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +145,70 @@
     "level": 113,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L113_Q1",
-        "instruction": "Find the EVENING shadow",
-        "question": "🌇👤📏✨",
+        "id": "KIDS_DAY_NIGHT_L113_Q1",
+        "gameType": "day_night",
+        "level": 113,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Long Shadow",
-          "Short Shadow",
-          "Circle Shadow"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Long Shadow",
-        "hint": "In the evening, the sun is setting, making your shadow stretch out long again!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L113_Q2",
-        "instruction": "Which one stretches out?",
-        "question": "👤📏 vs 👤🤏",
+        "id": "KIDS_DAY_NIGHT_L113_Q2",
+        "gameType": "day_night",
+        "level": 113,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Evening Shadow",
-          "Noon Shadow"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Evening Shadow",
-        "hint": "The setting sun makes your shadow grow longer and longer as the day ends!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L113_Q3",
-        "instruction": "Do shadows MOVE?",
-        "question": "👤➡️👤❓",
+        "id": "KIDS_DAY_NIGHT_L113_Q3",
+        "gameType": "day_night",
+        "level": 113,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, with the Sun!",
-          "No, they stay still"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, with the Sun!",
-        "hint": "As the sun travels across the sky, your shadow follows and changes its shape!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +216,70 @@
     "level": 114,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L114_Q1",
-        "instruction": "Find the SUNDIAL",
-        "question": "🧭☀️🕰️✨",
+        "id": "KIDS_DAY_NIGHT_L114_Q1",
+        "gameType": "day_night",
+        "level": 114,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Sundial",
-          "Watch",
-          "Clock"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Sundial",
-        "hint": "A sundial is an ancient clock that uses the sun's shadow to tell what time it is!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L114_Q2",
-        "instruction": "Which one uses SHADOWS?",
-        "question": "🧭 vs ⌚",
+        "id": "KIDS_DAY_NIGHT_L114_Q2",
+        "gameType": "day_night",
+        "level": 114,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Sundial",
-          "Wristwatch"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Sundial",
-        "hint": "People used sundials a long time ago before they had batteries or power!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L114_Q3",
-        "instruction": "Does a sundial work at NIGHT?",
-        "question": "🌙🧭❌❓",
+        "id": "KIDS_DAY_NIGHT_L114_Q3",
+        "gameType": "day_night",
+        "level": 114,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "No, needs the Sun!",
-          "Yes, with Moon"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "No, needs the Sun!",
-        "hint": "A sundial needs the bright sun to make the shadow that points to the time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,50 +287,70 @@
     "level": 115,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L115_Q1",
-        "instruction": "Logic: Do CLOUDS hide shadows?",
-        "question": "☁️👤🚫❓",
+        "id": "KIDS_DAY_NIGHT_L115_Q1",
+        "gameType": "day_night",
+        "level": 115,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Yes, light is blocked!",
-          "No, shadows stay"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, light is blocked!",
-        "hint": "When a cloud covers the sun, your shadow disappears because the light is gone!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L115_Q2",
-        "instruction": "Logic: Where is the shadow at NIGHT?",
-        "question": "🌑👤❓",
+        "id": "KIDS_DAY_NIGHT_L115_Q2",
+        "gameType": "day_night",
+        "level": 115,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "It hides in the dark!",
-          "Under the sun",
-          "In a box"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "It hides in the dark!",
-        "hint": "At night, there is no sun to make a shadow, so everything is dark together!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L115_Q3",
-        "instruction": "Logic: Can a LAMP make a shadow?",
-        "question": "💡👤❓",
+        "id": "KIDS_DAY_NIGHT_L115_Q3",
+        "gameType": "day_night",
+        "level": 115,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, any bright light!",
-          "No, only sun"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, any bright light!",
-        "hint": "Any bright light can make a shadow if you stand right in front of it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -258,49 +358,70 @@
     "level": 116,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L116_Q1",
-        "instruction": "Search: Find the shadow on the WALL",
-        "question": "🧱👤 vs 🌲",
+        "id": "KIDS_DAY_NIGHT_L116_Q1",
+        "gameType": "day_night",
+        "level": 116,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Wall Shadow",
-          "Tree Trunk"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Wall Shadow",
-        "hint": "Look for the dark shape cast against the flat surface!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L116_Q2",
-        "instruction": "Search: Find the SHADOW PUPPET",
-        "question": "✋👤 vs 🧸",
+        "id": "KIDS_DAY_NIGHT_L116_Q2",
+        "gameType": "day_night",
+        "level": 116,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Hand Shadow",
-          "Teddy Bear"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Hand Shadow",
-        "hint": "Using your hands in front of a light can make fun shapes like a bunny or a bird!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L116_Q3",
-        "instruction": "Search: Find the long TREE shadow",
-        "question": "🌲👤📏 vs ⚽",
+        "id": "KIDS_DAY_NIGHT_L116_Q3",
+        "gameType": "day_night",
+        "level": 116,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Tall Tree Shadow",
-          "Soccer Ball"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Tall Tree Shadow",
-        "hint": "Even big trees have long shadows that stretch across the ground in the evening!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -308,52 +429,70 @@
     "level": 117,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L117_Q1",
-        "instruction": "Review: Who is the morning giant?",
-        "question": "🌅👤 Review",
+        "id": "KIDS_DAY_NIGHT_L117_Q1",
+        "gameType": "day_night",
+        "level": 117,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "Long Shadow",
-          "Tiny Shadow",
-          "Circle"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Long Shadow",
-        "hint": "The one that stretches out at sunrise!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L117_Q2",
-        "instruction": "Review: Who is the lunchtime helper?",
-        "question": "☀️🆙👤 Review",
+        "id": "KIDS_DAY_NIGHT_L117_Q2",
+        "gameType": "day_night",
+        "level": 117,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Tiny Shadow",
-          "Long Shadow",
-          "Star"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Tiny Shadow",
-        "hint": "The one that stays small under your feet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L117_Q3",
-        "instruction": "Review: Who tells time with sun?",
-        "question": "🧭 Review",
+        "id": "KIDS_DAY_NIGHT_L117_Q3",
+        "gameType": "day_night",
+        "level": 117,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Sundial",
-          "Watch",
-          "Phone"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Sundial",
-        "hint": "The old stone clock for the garden!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -361,49 +500,70 @@
     "level": 118,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L118_Q1",
-        "instruction": "Which one is for sunset patterns?",
-        "question": "🌇👤📏 vs ⚽",
+        "id": "KIDS_DAY_NIGHT_L118_Q1",
+        "gameType": "day_night",
+        "level": 118,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "Long Shadows",
-          "Soccer Play"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Long Shadows",
-        "hint": "As the sun says goodbye, everything in the world gets a long shadow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L118_Q2",
-        "instruction": "Which one is for shadow puppets?",
-        "question": "✋💡👤 vs 🥣",
+        "id": "KIDS_DAY_NIGHT_L118_Q2",
+        "gameType": "day_night",
+        "level": 118,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Playing with Light",
-          "Eating Breakfast"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Playing with Light",
-        "hint": "We can make our own shadows using a lamp in our bedroom!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L118_Q3",
-        "instruction": "Is the shadow always behind the light?",
-        "question": "💡👤➡️❓",
+        "id": "KIDS_DAY_NIGHT_L118_Q3",
+        "gameType": "day_night",
+        "level": 118,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, opposite side!",
-          "No, inside the light"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, opposite side!",
-        "hint": "The shadow always points away from where the light is shining!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -411,49 +571,70 @@
     "level": 119,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L119_Q1",
-        "instruction": "Logic: Do we see shadows in FOG?",
-        "question": "🌫️👤❓",
+        "id": "KIDS_DAY_NIGHT_L119_Q1",
+        "gameType": "day_night",
+        "level": 119,
+        "instruction": "When do we see or do this: \"Going to school with our teacher\"?",
+        "question": "Going to school with our teacher",
+        "correctAnswer": "Daytime",
         "options": [
-          "No, too blurry!",
-          "Yes, very sharp"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "No, too blurry!",
-        "hint": "Fog hides the bright light, so shadows become fuzzy and hard to see!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L119_Q2",
-        "instruction": "Logic: Does a bird make a shadow?",
-        "question": "🐦👤❓",
+        "id": "KIDS_DAY_NIGHT_L119_Q2",
+        "gameType": "day_night",
+        "level": 119,
+        "instruction": "When do we see or do this: \"Eating yummy breakfast\"?",
+        "question": "Eating yummy breakfast",
+        "correctAnswer": "Daytime",
         "options": [
-          "Yes, on the ground!",
-          "No, they are too high"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, on the ground!",
-        "hint": "Even a small bird flying high can make a tiny shadow on the grass!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L119_Q3",
-        "instruction": "Logic: Is your shadow your FRIEND?",
-        "question": "👤🤝❓",
+        "id": "KIDS_DAY_NIGHT_L119_Q3",
+        "gameType": "day_night",
+        "level": 119,
+        "instruction": "When do we see or do this: \"Seeing the big white moon\"?",
+        "question": "Seeing the big white moon",
+        "correctAnswer": "Nighttime",
         "options": [
-          "Yes, it follows you!",
-          "No, it's a ghost"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "Yes, it follows you!",
-        "hint": "Your shadow is always with you whenever there is a bright light!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -461,51 +642,70 @@
     "level": 120,
     "quests": [
       {
-        "id": "KID_DAY_NIGHT_L120_Q1",
-        "instruction": "Level 120 Challenge: Shadow Tracker!",
-        "question": "Find the LONG shadow",
+        "id": "KIDS_DAY_NIGHT_L120_Q1",
+        "gameType": "day_night",
+        "level": 120,
+        "instruction": "When do we see or do this: \"Sun shining brightly\"?",
+        "question": "Sun shining brightly",
+        "correctAnswer": "Daytime",
         "options": [
-          "👤📏",
-          "👤🤏",
-          "🌑"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "👤📏",
-        "hint": "The one from the morning sun!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L120_Q2",
-        "instruction": "Level 120 Challenge: Shadow Tracker!",
-        "question": "Find the ancient SUNDIAL",
+        "id": "KIDS_DAY_NIGHT_L120_Q2",
+        "gameType": "day_night",
+        "level": 120,
+        "instruction": "When do we see or do this: \"Stars twinkling in the sky\"?",
+        "question": "Stars twinkling in the sky",
+        "correctAnswer": "Nighttime",
         "options": [
-          "🧭☀️",
-          "⌚",
-          "📱"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "🧭☀️",
-        "hint": "The shadow clock!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_DAY_NIGHT_L120_Q3",
-        "instruction": "Level 120 Challenge: Mastery!",
-        "question": "Are you a Shadow Tracker?",
+        "id": "KIDS_DAY_NIGHT_L120_Q3",
+        "gameType": "day_night",
+        "level": 120,
+        "instruction": "When do we see or do this: \"Sleeping cozy in our beds\"?",
+        "question": "Sleeping cozy in our beds",
+        "correctAnswer": "Nighttime",
         "options": [
-          "YES!",
-          "No"
+          "Daytime",
+          "Nighttime"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 120!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Think if this happens when it is bright or dark outside.",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

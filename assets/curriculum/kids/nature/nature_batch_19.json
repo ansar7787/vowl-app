@@ -3,52 +3,73 @@
     "level": 181,
     "quests": [
       {
-        "id": "KID_NATURE_L181_Q1",
-        "instruction": "Find the CATTAIL",
-        "question": "🌾✨",
+        "id": "KIDS_NATURE_L181_Q1",
+        "gameType": "nature",
+        "level": 181,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Cattail",
-          "Flower",
+          "Tree",
+          "River",
           "Cloud"
         ],
-        "correctAnswer": "Cattail",
-        "hint": "A cattail is a tall, fuzzy brown plant that grows at the edge of the pond and looks like a hotdog on a stick!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L181_Q2",
-        "instruction": "Which one is FUZZY?",
-        "question": "🌾👋",
+        "id": "KIDS_NATURE_L181_Q2",
+        "gameType": "nature",
+        "level": 181,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Cattail",
-          "Rock",
-          "Glass"
+          "Mountain",
+          "Flower",
+          "Tree"
         ],
-        "correctAnswer": "Cattail",
-        "hint": "Look for the brown plant that feels soft like a velvet tail and grows in the wet mud near the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L181_Q3",
-        "instruction": "Find the pond reed",
-        "question": "🌾🛶",
+        "id": "KIDS_NATURE_L181_Q3",
+        "gameType": "nature",
+        "level": 181,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Cattail",
-          "Bed",
-          "TV"
+          "River",
+          "Cloud",
+          "Tree"
         ],
-        "correctAnswer": "Cattail",
-        "hint": "Birds love to build their nests among these tall, waving brown friends!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 182,
     "quests": [
       {
-        "id": "KID_NATURE_L182_Q1",
-        "instruction": "Find the CANOE",
-        "question": "🛶✨",
+        "id": "KIDS_NATURE_L182_Q1",
+        "gameType": "nature",
+        "level": 182,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Canoe",
-          "Hammer",
-          "Fridge"
+          "Cloud",
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "Canoe",
-        "hint": "A canoe is a long, thin wooden boat that we use to paddle quietly across the still pond water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L182_Q2",
-        "instruction": "Which one for PADDLING?",
-        "question": "🛶🥢",
+        "id": "KIDS_NATURE_L182_Q2",
+        "gameType": "nature",
+        "level": 182,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Canoe",
-          "Car",
-          "Sofa"
+          "Flower",
+          "Tree",
+          "Cloud"
         ],
-        "correctAnswer": "Canoe",
-        "hint": "Look for the narrow boat that floats on the blue water and has room for you and a friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L182_Q3",
-        "instruction": "Find the pond boat",
-        "question": "🛶🪷",
+        "id": "KIDS_NATURE_L182_Q3",
+        "gameType": "nature",
+        "level": 182,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Canoe",
-          "Window",
-          "Gate"
+          "River",
+          "Flower",
+          "Tree"
         ],
-        "correctAnswer": "Canoe",
-        "hint": "We use a wooden paddle to push the water and make the canoe glide like a fish!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 183,
     "quests": [
       {
-        "id": "KID_NATURE_L183_Q1",
-        "instruction": "Find the DUCKLING",
-        "question": "🐥✨",
+        "id": "KIDS_NATURE_L183_Q1",
+        "gameType": "nature",
+        "level": 183,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Duckling",
-          "Dog",
-          "Cat"
+          "Flower",
+          "Mountain",
+          "Tree"
         ],
-        "correctAnswer": "Duckling",
-        "hint": "A duckling is a fuzzy yellow baby duck that loves to swim in the pond and follow its mama in a line!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L183_Q2",
-        "instruction": "Which one is YELLOW?",
-        "question": "🐥🎨",
+        "id": "KIDS_NATURE_L183_Q2",
+        "gameType": "nature",
+        "level": 183,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Duckling",
-          "Frog",
-          "Fish"
+          "Mountain",
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "Duckling",
-        "hint": "Look for the soft, fluffy baby bird that has orange feet and says 'Cheep-Cheep' while it swims!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L183_Q3",
-        "instruction": "Find the baby swimmer",
-        "question": "🐥🌊",
+        "id": "KIDS_NATURE_L183_Q3",
+        "gameType": "nature",
+        "level": 183,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Duckling",
-          "Lamp",
-          "Rug"
+          "Mountain",
+          "Cloud",
+          "Flower"
         ],
-        "correctAnswer": "Duckling",
-        "hint": "It has feathers that stay dry even when it's splashing in the middle of the pond!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 184,
     "quests": [
       {
-        "id": "KID_NATURE_L184_Q1",
-        "instruction": "Find the LILY PAD",
-        "question": "🪷✨",
+        "id": "KIDS_NATURE_L184_Q1",
+        "gameType": "nature",
+        "level": 184,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Lily Pad",
-          "Pillow",
-          "Cloud"
+          "Tree",
+          "Cloud",
+          "Flower"
         ],
-        "correctAnswer": "Lily Pad",
-        "hint": "A lily pad is a giant green leaf that floats on the surface of the pond like a natural boat for frogs!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L184_Q2",
-        "instruction": "Which one FLOATS?",
-        "question": "🪷🌊",
+        "id": "KIDS_NATURE_L184_Q2",
+        "gameType": "nature",
+        "level": 184,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Lily Pad",
-          "Stone",
-          "Anchor"
+          "Cloud",
+          "Mountain",
+          "River"
         ],
-        "correctAnswer": "Lily Pad",
-        "hint": "Look for the flat green circle on the water that has a beautiful flower blooming in the middle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L184_Q3",
-        "instruction": "Find the frog's seat",
-        "question": "🪷🐸",
+        "id": "KIDS_NATURE_L184_Q3",
+        "gameType": "nature",
+        "level": 184,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Lily Pad",
-          "Sofa",
-          "Bed"
+          "Mountain",
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "Lily Pad",
-        "hint": "Frogs love to sit on this leaf while they wait for flies to buzz past!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 185,
     "quests": [
       {
-        "id": "KID_NATURE_L185_Q1",
-        "instruction": "Mix: Find the POND friends",
-        "question": "🌾🛶🐥",
+        "id": "KIDS_NATURE_L185_Q1",
+        "gameType": "nature",
+        "level": 185,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Pond Group",
-          "Space Group",
-          "Desert Group"
+          "Cloud",
+          "Flower",
+          "Tree"
         ],
-        "correctAnswer": "Pond Group",
-        "hint": "All of these friends and things belong in the peaceful blue water and the fuzzy green edges of the pond!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L185_Q2",
-        "instruction": "Mix: Find the BOAT",
-        "question": "🛶",
+        "id": "KIDS_NATURE_L185_Q2",
+        "gameType": "nature",
+        "level": 185,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Canoe",
-          "Lily Pad",
-          "Cattail"
+          "Flower",
+          "Tree",
+          "Cloud"
         ],
-        "correctAnswer": "Canoe",
-        "hint": "The wooden one for paddling!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L185_Q3",
-        "instruction": "Mix: Which is FUZZY?",
-        "question": "🌾",
+        "id": "KIDS_NATURE_L185_Q3",
+        "gameType": "nature",
+        "level": 185,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Cattail",
-          "Duckling",
-          "Canoe"
+          "Cloud",
+          "Mountain",
+          "Tree"
         ],
-        "correctAnswer": "Cattail",
-        "hint": "The plant that looks like a hotdog!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,51 +373,73 @@
     "level": 186,
     "quests": [
       {
-        "id": "KID_NATURE_L186_Q1",
-        "instruction": "Logic: How do ducklings follow their mama?",
-        "question": "🐥➡️🦆",
+        "id": "KIDS_NATURE_L186_Q1",
+        "gameType": "nature",
+        "level": 186,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "In a straight line!",
-          "They fly alone",
-          "They stay home"
+          "Mountain",
+          "Flower",
+          "River"
         ],
-        "correctAnswer": "In a straight line!",
-        "hint": "Ducklings are very good at following the leader so they don't get lost in the big pond!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L186_Q2",
-        "instruction": "Logic: What is a paddle for?",
-        "question": "🛶🥢",
+        "id": "KIDS_NATURE_L186_Q2",
+        "gameType": "nature",
+        "level": 186,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Moving the boat!",
-          "Eating lunch",
-          "Playing music"
+          "Mountain",
+          "River",
+          "Cloud"
         ],
-        "correctAnswer": "Moving the boat!",
-        "hint": "We dip the paddle in the water and push back to make the canoe move forward!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L186_Q3",
-        "instruction": "Logic: Is a lily pad for eating?",
-        "question": "🪷👅",
+        "id": "KIDS_NATURE_L186_Q3",
+        "gameType": "nature",
+        "level": 186,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "No, it's a leaf seat!",
-          "Yes"
+          "Flower",
+          "Tree",
+          "Cloud"
         ],
-        "correctAnswer": "No, it's a leaf seat!",
-        "hint": "Lily pads are for frogs to sit on and for looking pretty in the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -320,52 +447,73 @@
     "level": 187,
     "quests": [
       {
-        "id": "KID_NATURE_L187_Q1",
-        "instruction": "Search: Find the dragon-fly",
-        "question": "🛸🌊",
+        "id": "KIDS_NATURE_L187_Q1",
+        "gameType": "nature",
+        "level": 187,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Dragonfly",
-          "Bird",
-          "Ant"
+          "Mountain",
+          "Flower",
+          "Cloud"
         ],
-        "correctAnswer": "Dragonfly",
-        "hint": "Look for the fast insect with four wings that zips around the cattails like a tiny plane!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L187_Q2",
-        "instruction": "Search: Find the ripples",
-        "question": "🌊🌀",
+        "id": "KIDS_NATURE_L187_Q2",
+        "gameType": "nature",
+        "level": 187,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Ripples",
-          "Stone",
-          "Fish"
+          "Cloud",
+          "River",
+          "Flower"
         ],
-        "correctAnswer": "Ripples",
-        "hint": "Look for the little circles of water that spread out when a duck jumps in or a raindrop falls!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L187_Q3",
-        "instruction": "Search: Find the pond turtle",
-        "question": "🐢🌊",
+        "id": "KIDS_NATURE_L187_Q3",
+        "gameType": "nature",
+        "level": 187,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Turtle",
-          "Snake",
-          "Lizard"
+          "River",
+          "Tree",
+          "Mountain"
         ],
-        "correctAnswer": "Turtle",
-        "hint": "Look for the friend with the shell who loves to sunbathe on a floating log in the pond!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -373,52 +521,73 @@
     "level": 188,
     "quests": [
       {
-        "id": "KID_NATURE_L188_Q1",
-        "instruction": "Actions: How does a duckling sound?",
-        "question": "🐥 Choice",
+        "id": "KIDS_NATURE_L188_Q1",
+        "gameType": "nature",
+        "level": 188,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "CHEEP-CHEEP!",
-          "Roar",
-          "Moo"
+          "Cloud",
+          "Flower",
+          "Mountain"
         ],
-        "correctAnswer": "CHEEP-CHEEP!",
-        "hint": "It's the tiny, high-pitched voice of the fuzzy baby ducks!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L188_Q2",
-        "instruction": "Actions: What sound does a paddle make?",
-        "question": "🛶 Choice",
+        "id": "KIDS_NATURE_L188_Q2",
+        "gameType": "nature",
+        "level": 188,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "BLOOP-DIP!",
-          "Bang",
-          "Pop"
+          "Cloud",
+          "Flower",
+          "Tree"
         ],
-        "correctAnswer": "BLOOP-DIP!",
-        "hint": "It's the sound of the wooden paddle entering the quiet pond water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L188_Q3",
-        "instruction": "Actions: How do ducklings swim?",
-        "question": "🐥 Choice",
+        "id": "KIDS_NATURE_L188_Q3",
+        "gameType": "nature",
+        "level": 188,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Paddle their feet!",
-          "Use their wings",
-          "They jump"
+          "Mountain",
+          "Cloud",
+          "Flower"
         ],
-        "correctAnswer": "Paddle their feet!",
-        "hint": "They have little orange webbed feet that work like paddles under the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -426,52 +595,73 @@
     "level": 189,
     "quests": [
       {
-        "id": "KID_NATURE_L189_Q1",
-        "instruction": "Review: Who is the boat?",
-        "question": "🛶 Review",
+        "id": "KIDS_NATURE_L189_Q1",
+        "gameType": "nature",
+        "level": 189,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Canoe",
-          "Cattail",
-          "Lily Pad"
+          "Cloud",
+          "Flower",
+          "Mountain"
         ],
-        "correctAnswer": "Canoe",
-        "hint": "The wooden paddling friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L189_Q2",
-        "instruction": "Review: Who is the baby?",
-        "question": "🐥 Review",
+        "id": "KIDS_NATURE_L189_Q2",
+        "gameType": "nature",
+        "level": 189,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Duckling",
-          "Turtle",
-          "Cattail"
+          "River",
+          "Flower",
+          "Tree"
         ],
-        "correctAnswer": "Duckling",
-        "hint": "The fuzzy yellow friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L189_Q3",
-        "instruction": "Review: Who is the seat?",
-        "question": "🪷 Review",
+        "id": "KIDS_NATURE_L189_Q3",
+        "gameType": "nature",
+        "level": 189,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Lily Pad",
-          "Cattail",
-          "Canoe"
+          "River",
+          "Cloud",
+          "Mountain"
         ],
-        "correctAnswer": "Lily Pad",
-        "hint": "The green floating friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -479,51 +669,73 @@
     "level": 190,
     "quests": [
       {
-        "id": "KID_NATURE_L190_Q1",
-        "instruction": "Level 190 Challenge: The Pond!",
-        "question": "What plant looks like a hotdog on a stick?",
+        "id": "KIDS_NATURE_L190_Q1",
+        "gameType": "nature",
+        "level": 190,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "A Cattail!",
-          "A Tree",
-          "A Flower"
+          "Tree",
+          "River",
+          "Mountain"
         ],
-        "correctAnswer": "A Cattail!",
-        "hint": "The fuzzy brown one!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L190_Q2",
-        "instruction": "Level 190 Challenge: Swimming!",
-        "question": "Do ducklings swim in a line?",
+        "id": "KIDS_NATURE_L190_Q2",
+        "gameType": "nature",
+        "level": 190,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Yes, they do!",
-          "No, they fly",
-          "Maybe"
+          "Flower",
+          "Cloud",
+          "Mountain"
         ],
-        "correctAnswer": "Yes, they do!",
-        "hint": "They follow their mama!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L190_Q3",
-        "instruction": "Level 190 Challenge: Mastery!",
-        "question": "Are you a Water Lily?",
+        "id": "KIDS_NATURE_L190_Q3",
+        "gameType": "nature",
+        "level": 190,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "YES!",
-          "No"
+          "River",
+          "Mountain",
+          "Cloud"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 190!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

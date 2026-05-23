@@ -3,50 +3,73 @@
     "level": 111,
     "quests": [
       {
-        "id": "KID_COLORS_L111_Q1",
-        "instruction": "Tints: Mix ⚪ + 🟢 = ?",
-        "question": "Pale Green is...?",
+        "id": "KIDS_COLORS_L111_Q1",
+        "gameType": "colors",
+        "level": 111,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Seafoam/Mint",
-          "Forest Green",
-          "Olive"
+          "Red",
+          "Orange",
+          "Yellow"
         ],
-        "correctAnswer": "Seafoam/Mint",
-        "hint": "White and green make a fresh, soft color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L111_Q2",
-        "instruction": "Tints: Which is Seafoam?",
-        "question": "🫧 vs 🌲",
+        "id": "KIDS_COLORS_L111_Q2",
+        "gameType": "colors",
+        "level": 111,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Seafoam",
-          "Forest Green"
+          "Purple",
+          "Blue",
+          "Red"
         ],
-        "correctAnswer": "Seafoam",
-        "hint": "Seafoam is the light, bubbly green!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L111_Q3",
-        "instruction": "Is Mint a secondary tint?",
-        "question": "🎨 Logic",
+        "id": "KIDS_COLORS_L111_Q3",
+        "gameType": "colors",
+        "level": 111,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Yes",
-          "No"
+          "Pink",
+          "Green",
+          "Blue"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Mint is a tint of Green, and Green is secondary!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 112,
     "quests": [
       {
-        "id": "KID_COLORS_L112_Q1",
-        "instruction": "Tints: Mix ⚪ + 🟣 = ?",
-        "question": "Pale Purple is...?",
+        "id": "KIDS_COLORS_L112_Q1",
+        "gameType": "colors",
+        "level": 112,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Lavender",
-          "Plum",
-          "Navy"
+          "Purple",
+          "Pink",
+          "Red"
         ],
-        "correctAnswer": "Lavender",
-        "hint": "White and purple make a soft floral color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L112_Q2",
-        "instruction": "Tints: Which is Lavender?",
-        "question": "🪻 vs 🍇",
+        "id": "KIDS_COLORS_L112_Q2",
+        "gameType": "colors",
+        "level": 112,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Lavender",
-          "Plum"
+          "Yellow",
+          "Purple",
+          "Blue"
         ],
-        "correctAnswer": "Lavender",
-        "hint": "Lavender is the light, soft purple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L112_Q3",
-        "instruction": "Does Lavender feel calm?",
-        "question": "🪻 Feel",
+        "id": "KIDS_COLORS_L112_Q3",
+        "gameType": "colors",
+        "level": 112,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Yes",
-          "No"
+          "Blue",
+          "Yellow",
+          "Red"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Lavender is a very peaceful color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 113,
     "quests": [
       {
-        "id": "KID_COLORS_L113_Q1",
-        "instruction": "Tints: Mix ⚪ + 🟠 = ?",
-        "question": "Pale Orange is...?",
+        "id": "KIDS_COLORS_L113_Q1",
+        "gameType": "colors",
+        "level": 113,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Peach/Coral",
-          "Brick",
-          "Red"
+          "Green",
+          "Pink",
+          "Purple"
         ],
-        "correctAnswer": "Peach/Coral",
-        "hint": "White and orange make a soft, fuzzy color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L113_Q2",
-        "instruction": "Tints: Which is Peach?",
-        "question": "🍑 vs 🧱",
+        "id": "KIDS_COLORS_L113_Q2",
+        "gameType": "colors",
+        "level": 113,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Peach",
-          "Brick"
+          "Blue",
+          "Green",
+          "Orange"
         ],
-        "correctAnswer": "Peach",
-        "hint": "Peach is the light, soft orange!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L113_Q3",
-        "instruction": "Is Coral a warm tint?",
-        "question": "🎨 Logic",
+        "id": "KIDS_COLORS_L113_Q3",
+        "gameType": "colors",
+        "level": 113,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Yes",
-          "No"
+          "Purple",
+          "Red",
+          "Yellow"
         ],
-        "correctAnswer": "Yes",
-        "hint": "Coral comes from orange, which is warm!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,52 +225,73 @@
     "level": 114,
     "quests": [
       {
-        "id": "KID_COLORS_L114_Q1",
-        "instruction": "Mastery: Which is the palest?",
-        "question": "🪻 🟣 🍇",
+        "id": "KIDS_COLORS_L114_Q1",
+        "gameType": "colors",
+        "level": 114,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Lavender",
+          "Yellow",
+          "Red",
+          "Pink"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_COLORS_L114_Q2",
+        "gameType": "colors",
+        "level": 114,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
+        "options": [
           "Purple",
-          "Plum"
+          "Blue",
+          "Red"
         ],
-        "correctAnswer": "Lavender",
-        "hint": "Lavender has the most white in it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L114_Q2",
-        "instruction": "Mastery: Which is the palest?",
-        "question": "🫧 🟢 🌲",
+        "id": "KIDS_COLORS_L114_Q3",
+        "gameType": "colors",
+        "level": 114,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Seafoam",
+          "Pink",
           "Green",
-          "Forest Green"
+          "Yellow"
         ],
-        "correctAnswer": "Seafoam",
-        "hint": "Seafoam has the most white in it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
-      },
-      {
-        "id": "KID_COLORS_L114_Q3",
-        "instruction": "Mastery: Which is the palest?",
-        "question": "🍑 🟠 🧱",
-        "options": [
-          "Peach",
-          "Orange",
-          "Brick Red"
-        ],
-        "correctAnswer": "Peach",
-        "hint": "Peach has the most white in it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -209,50 +299,73 @@
     "level": 115,
     "quests": [
       {
-        "id": "KID_COLORS_L115_Q1",
-        "instruction": "Shades: Mix ⚫ + 🟢 = ?",
-        "question": "Deep Green is...?",
+        "id": "KIDS_COLORS_L115_Q1",
+        "gameType": "colors",
+        "level": 115,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Forest Green",
-          "Seafoam",
-          "Lime"
+          "Red",
+          "Yellow",
+          "Blue"
         ],
-        "correctAnswer": "Forest Green",
-        "hint": "Black and green make a deep, dark forest color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L115_Q2",
-        "instruction": "Shades: Which is Forest Green?",
-        "question": "🌲 vs 🫧",
+        "id": "KIDS_COLORS_L115_Q2",
+        "gameType": "colors",
+        "level": 115,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Forest Green",
-          "Seafoam"
+          "Purple",
+          "Orange",
+          "Green"
         ],
-        "correctAnswer": "Forest Green",
-        "hint": "Forest green is the dark, moody green!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L115_Q3",
-        "instruction": "Does Forest Green look like nature?",
-        "question": "🌲 Look",
+        "id": "KIDS_COLORS_L115_Q3",
+        "gameType": "colors",
+        "level": 115,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Yes",
-          "No"
+          "Orange",
+          "Green",
+          "Blue"
         ],
-        "correctAnswer": "Yes",
-        "hint": "It's the color of deep woods!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -260,50 +373,73 @@
     "level": 116,
     "quests": [
       {
-        "id": "KID_COLORS_L116_Q1",
-        "instruction": "Shades: Mix ⚫ + 🟣 = ?",
-        "question": "Deep Purple is...?",
+        "id": "KIDS_COLORS_L116_Q1",
+        "gameType": "colors",
+        "level": 116,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Plum/Eggplant",
-          "Lavender",
-          "Pink"
+          "Orange",
+          "Red",
+          "Purple"
         ],
-        "correctAnswer": "Plum/Eggplant",
-        "hint": "Black and purple make a deep, rich fruit color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L116_Q2",
-        "instruction": "Shades: Which is Plum?",
-        "question": "🍇 vs 🪻",
+        "id": "KIDS_COLORS_L116_Q2",
+        "gameType": "colors",
+        "level": 116,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Plum",
-          "Lavender"
+          "Pink",
+          "Green",
+          "Purple"
         ],
-        "correctAnswer": "Plum",
-        "hint": "Plum is the dark, heavy purple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L116_Q3",
-        "instruction": "Is Eggplant a shade of purple?",
-        "question": "🍆",
+        "id": "KIDS_COLORS_L116_Q3",
+        "gameType": "colors",
+        "level": 116,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Yes",
-          "No"
+          "Green",
+          "Red",
+          "Blue"
         ],
-        "correctAnswer": "Yes",
-        "hint": "It's a very dark, rich shade!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "DinoDesert",
-        "shader": "sand_swirl"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -311,50 +447,73 @@
     "level": 117,
     "quests": [
       {
-        "id": "KID_COLORS_L117_Q1",
-        "instruction": "Shades: Mix ⚫ + 🟠 = ?",
-        "question": "Deep Orange is...?",
+        "id": "KIDS_COLORS_L117_Q1",
+        "gameType": "colors",
+        "level": 117,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Terracotta/Brick",
-          "Peach",
-          "Yellow"
+          "Pink",
+          "Yellow",
+          "Purple"
         ],
-        "correctAnswer": "Terracotta/Brick",
-        "hint": "Black and orange make a deep, earthy color!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L117_Q2",
-        "instruction": "Shades: Which is Brick Orange?",
-        "question": "🧱 vs 🍑",
+        "id": "KIDS_COLORS_L117_Q2",
+        "gameType": "colors",
+        "level": 117,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Brick Orange",
-          "Peach"
+          "Red",
+          "Blue",
+          "Pink"
         ],
-        "correctAnswer": "Brick Orange",
-        "hint": "Brick is the dark, solid orange shade!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L117_Q3",
-        "instruction": "Is Burnt Orange a shade?",
-        "question": "🍂 Look",
+        "id": "KIDS_COLORS_L117_Q3",
+        "gameType": "colors",
+        "level": 117,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
-          "Yes",
-          "No"
+          "Orange",
+          "Yellow",
+          "Green"
         ],
-        "correctAnswer": "Yes",
-        "hint": "It's dark and deep, so it's a shade!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -362,52 +521,73 @@
     "level": 118,
     "quests": [
       {
-        "id": "KID_COLORS_L118_Q1",
-        "instruction": "Logic: Which is the deepest?",
-        "question": "🍇 🟣 🪻",
+        "id": "KIDS_COLORS_L118_Q1",
+        "gameType": "colors",
+        "level": 118,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Plum",
           "Purple",
-          "Lavender"
+          "Pink",
+          "Orange"
         ],
-        "correctAnswer": "Plum",
-        "hint": "Plum has the most black in it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L118_Q2",
-        "instruction": "Logic: Which is the deepest?",
-        "question": "🌲 🟢 🫧",
+        "id": "KIDS_COLORS_L118_Q2",
+        "gameType": "colors",
+        "level": 118,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "Forest Green",
-          "Green",
-          "Seafoam"
+          "Red",
+          "Purple",
+          "Green"
         ],
-        "correctAnswer": "Forest Green",
-        "hint": "Forest green has the most black in it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L118_Q3",
-        "instruction": "Logic: Which is the deepest?",
-        "question": "🧱 🟠 🍑",
+        "id": "KIDS_COLORS_L118_Q3",
+        "gameType": "colors",
+        "level": 118,
+        "instruction": "What color is beautiful rose flowers?",
+        "question": "Pink",
+        "correctAnswer": "Pink",
         "options": [
-          "Brick Orange",
-          "Orange",
-          "Peach"
+          "Red",
+          "Pink",
+          "Purple"
         ],
-        "correctAnswer": "Brick Orange",
-        "hint": "Brick orange has the most black in it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like bright pink!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -415,49 +595,73 @@
     "level": 119,
     "quests": [
       {
-        "id": "KID_COLORS_L119_Q1",
-        "instruction": "Comparison: Lavender vs Plum",
-        "question": "Which is lighter?",
+        "id": "KIDS_COLORS_L119_Q1",
+        "gameType": "colors",
+        "level": 119,
+        "instruction": "What color is ripe strawberries?",
+        "question": "Red",
+        "correctAnswer": "Red",
         "options": [
-          "Lavender",
-          "Plum"
+          "Red",
+          "Blue",
+          "Yellow"
         ],
-        "correctAnswer": "Lavender",
-        "hint": "Lavender is the tint, so it's lighter!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright red!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L119_Q2",
-        "instruction": "Comparison: Seafoam vs Forest",
-        "question": "Which is darker?",
+        "id": "KIDS_COLORS_L119_Q2",
+        "gameType": "colors",
+        "level": 119,
+        "instruction": "What color is sweet bananas?",
+        "question": "Yellow",
+        "correctAnswer": "Yellow",
         "options": [
-          "Forest Green",
-          "Seafoam"
+          "Pink",
+          "Yellow",
+          "Red"
         ],
-        "correctAnswer": "Forest Green",
-        "hint": "Forest is the shade, so it's darker!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright yellow!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L119_Q3",
-        "instruction": "Comparison: Peach vs Brick",
-        "question": "Which is lighter?",
+        "id": "KIDS_COLORS_L119_Q3",
+        "gameType": "colors",
+        "level": 119,
+        "instruction": "What color is the clear summer sky?",
+        "question": "Blue",
+        "correctAnswer": "Blue",
         "options": [
-          "Peach",
-          "Brick Orange"
+          "Yellow",
+          "Orange",
+          "Blue"
         ],
-        "correctAnswer": "Peach",
-        "hint": "Peach is the tint, so it's lighter!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright blue!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -465,51 +669,73 @@
     "level": 120,
     "quests": [
       {
-        "id": "KID_COLORS_L120_Q1",
-        "instruction": "Level 120 Challenge: Mastery!",
-        "question": "Seafoam is a tint of...?",
+        "id": "KIDS_COLORS_L120_Q1",
+        "gameType": "colors",
+        "level": 120,
+        "instruction": "What color is fresh grass in the park?",
+        "question": "Green",
+        "correctAnswer": "Green",
         "options": [
           "Green",
-          "Blue",
-          "Red"
+          "Red",
+          "Pink"
         ],
-        "correctAnswer": "Green",
-        "hint": "White and Green!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like bright green!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L120_Q2",
-        "instruction": "Level 120 Challenge: Mastery!",
-        "question": "Plum is a shade of...?",
+        "id": "KIDS_COLORS_L120_Q2",
+        "gameType": "colors",
+        "level": 120,
+        "instruction": "What color is juicy orange fruits?",
+        "question": "Orange",
+        "correctAnswer": "Orange",
         "options": [
-          "Purple",
           "Orange",
+          "Red",
           "Yellow"
         ],
-        "correctAnswer": "Purple",
-        "hint": "Black and Purple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like bright orange!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_COLORS_L120_Q3",
-        "instruction": "Level 120 Challenge: Mastery!",
-        "question": "Are you a secondary expert?",
+        "id": "KIDS_COLORS_L120_Q3",
+        "gameType": "colors",
+        "level": 120,
+        "instruction": "What color is sweet juicy grapes?",
+        "question": "Purple",
+        "correctAnswer": "Purple",
         "options": [
-          "YES!",
-          "No"
+          "Purple",
+          "Blue",
+          "Green"
         ],
-        "correctAnswer": "YES!",
-        "hint": "You know all the complex colors!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like bright purple!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

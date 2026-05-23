@@ -3,50 +3,73 @@
     "level": 181,
     "quests": [
       {
-        "id": "KID_SCHOOL_L181_Q1",
-        "instruction": "How do we move through the school halls?",
-        "question": "🚶‍♂️🤫✨",
+        "id": "KIDS_SCHOOL_L181_Q1",
+        "gameType": "school",
+        "level": 181,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Walk Quietly",
-          "Run Fast",
-          "Shout Out"
+          "Backpack",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Walk Quietly",
-        "hint": "We use our walking feet and our quiet voices so we don't disturb other classes! We walk quietly!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L181_Q2",
-        "instruction": "Find the WALK QUIETLY action",
-        "question": "🚶‍♂️🧒🤫",
+        "id": "KIDS_SCHOOL_L181_Q2",
+        "gameType": "school",
+        "level": 181,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the student walking nicely in the hall with their finger to their lips!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L181_Q3",
-        "instruction": "Is it SAFE?",
-        "question": "🚶‍♂️ = Safe hall?",
+        "id": "KIDS_SCHOOL_L181_Q3",
+        "gameType": "school",
+        "level": 181,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Yes, no bumping!",
-          "No, very messy"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, no bumping!",
-        "hint": "Walking quietly is a great rule that keeps everyone safe and happy in our school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 182,
     "quests": [
       {
-        "id": "KID_SCHOOL_L182_Q1",
-        "instruction": "What do we do as soon as we sit on the school bus?",
-        "question": "🚌💺✨",
+        "id": "KIDS_SCHOOL_L182_Q1",
+        "gameType": "school",
+        "level": 182,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Wear Seatbelt",
-          "Jump High",
-          "Open Window"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Wear Seatbelt",
-        "hint": "We click the belt across our lap so we stay safe while the bus is moving! Click-click!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L182_Q2",
-        "instruction": "Find the SEATBELT",
-        "question": "💺✨🚌",
+        "id": "KIDS_SCHOOL_L182_Q2",
+        "gameType": "school",
+        "level": 182,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Found it!",
-          "Not here"
+          "Backpack",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the black strap clicked into the seat next to the student!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L182_Q3",
-        "instruction": "Is it SMART?",
-        "question": "💺 = Safe ride?",
+        "id": "KIDS_SCHOOL_L182_Q3",
+        "gameType": "school",
+        "level": 182,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Yes, click-click!",
-          "No, boring"
+          "Eraser",
+          "Ruler",
+          "Pencil"
         ],
-        "correctAnswer": "Yes, click-click!",
-        "hint": "Wearing our seatbelt is the most important rule for our bus ride to school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 183,
     "quests": [
       {
-        "id": "KID_SCHOOL_L183_Q1",
-        "instruction": "Who helps us cross the busy street near school?",
-        "question": "🛑👮✨",
+        "id": "KIDS_SCHOOL_L183_Q1",
+        "gameType": "school",
+        "level": 183,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Crossing Guard",
-          "Chef",
-          "Astronaut"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Crossing Guard",
-        "hint": "They wear a bright vest and hold a big STOP sign to keep the cars still! It's the crossing guard!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L183_Q2",
-        "instruction": "Find the CROSSING GUARD",
-        "question": "🛑✨👮",
+        "id": "KIDS_SCHOOL_L183_Q2",
+        "gameType": "school",
+        "level": 183,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Found it!",
-          "Not here"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person in the yellow vest holding the red stop sign in the street!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L183_Q3",
-        "instruction": "Is it SAFE?",
-        "question": "🛑 = Wait for sign?",
+        "id": "KIDS_SCHOOL_L183_Q3",
+        "gameType": "school",
+        "level": 183,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Yes, cross safely!",
-          "No, run fast"
+          "Backpack",
+          "Ruler",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, cross safely!",
-        "hint": "Waiting for the crossing guard to say it's okay is the best way to cross the street!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 184,
     "quests": [
       {
-        "id": "KID_SCHOOL_L184_Q1",
-        "instruction": "What tells us that class is starting or lunch is ready?",
-        "question": "🔔🎶✨",
+        "id": "KIDS_SCHOOL_L184_Q1",
+        "gameType": "school",
+        "level": 184,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "School Bell",
-          "Telephone",
-          "Radio"
+          "Ruler",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "School Bell",
-        "hint": "It makes a loud 'ring-ring' sound that everyone can hear in the whole school! It's the bell!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L184_Q2",
-        "instruction": "Find the SCHOOL BELL",
-        "question": "🔔✨🏫",
+        "id": "KIDS_SCHOOL_L184_Q2",
+        "gameType": "school",
+        "level": 184,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the gold or silver bell hanging on the wall near the classroom door!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L184_Q3",
-        "instruction": "Is it TIME?",
-        "question": "🔔 = Time for class?",
+        "id": "KIDS_SCHOOL_L184_Q3",
+        "gameType": "school",
+        "level": 184,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Yes, let's go!",
-          "No, stay asleep"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, let's go!",
-        "hint": "Listening for the bell helps us know where we need to be at the right time!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 185,
     "quests": [
       {
-        "id": "KID_SCHOOL_L185_Q1",
-        "instruction": "Safety Logic: BELT is for...",
-        "question": "💺 -> ?",
+        "id": "KIDS_SCHOOL_L185_Q1",
+        "gameType": "school",
+        "level": 185,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Bus Safety",
-          "Eating Dinner"
+          "Eraser",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "Bus Safety",
-        "hint": "We use our seatbelt on the bus to make sure we stay in our seat and stay safe!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L185_Q2",
-        "instruction": "Safety Logic: STOP sign is for...",
-        "question": "🛑 -> ?",
+        "id": "KIDS_SCHOOL_L185_Q2",
+        "gameType": "school",
+        "level": 185,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Waiting",
-          "Running"
+          "Eraser",
+          "Ruler",
+          "Pencil"
         ],
-        "correctAnswer": "Waiting",
-        "hint": "When the crossing guard shows the stop sign, we wait nicely for the cars to stop!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L185_Q3",
-        "instruction": "Logic: Do we follow RULES?",
-        "question": "🚶‍♂️🛑🔔 -> ✨?",
+        "id": "KIDS_SCHOOL_L185_Q3",
+        "gameType": "school",
+        "level": 185,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Yes, for safety!",
-          "No, just for fun"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, for safety!",
-        "hint": "Following school rules helps every student stay safe and have a great day of learning!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 186,
     "quests": [
       {
-        "id": "KID_SCHOOL_L186_Q1",
-        "instruction": "Search: Find the child WAITING",
-        "question": "🛑🧒👮",
+        "id": "KIDS_SCHOOL_L186_Q1",
+        "gameType": "school",
+        "level": 186,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Found it!",
-          "Not here"
+          "Backpack",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person standing nicely at the curb, waiting for the guard's signal!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L186_Q2",
-        "instruction": "Search: Find the SEATBELT",
-        "question": "💺✨🚌",
+        "id": "KIDS_SCHOOL_L186_Q2",
+        "gameType": "school",
+        "level": 186,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the safety strap clicked across the student in the bus seat!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L186_Q3",
-        "instruction": "Search: Find the silent WALKER",
-        "question": "🚶‍♂️✨🤫",
+        "id": "KIDS_SCHOOL_L186_Q3",
+        "gameType": "school",
+        "level": 186,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person walking slowly and quietly through the school hallway!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 187,
     "quests": [
       {
-        "id": "KID_SCHOOL_L187_Q1",
-        "instruction": "Action: Click the BELT!",
-        "question": "💺🧒✨",
+        "id": "KIDS_SCHOOL_L187_Q1",
+        "gameType": "school",
+        "level": 187,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Click-click!",
-          "Tug it off"
+          "Backpack",
+          "Ruler",
+          "Eraser"
         ],
-        "correctAnswer": "Click-click!",
-        "hint": "Pull the belt across your lap and push it into the buckle until you hear the click!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L187_Q2",
-        "instruction": "Action: Watch the GUARD!",
-        "question": "👮🧒🛑",
+        "id": "KIDS_SCHOOL_L187_Q2",
+        "gameType": "school",
+        "level": 187,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Wait for wave!",
-          "Run across"
+          "Ruler",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Wait for wave!",
-        "hint": "Keep your eyes on the crossing guard and wait for them to wave you across the street!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L187_Q3",
-        "instruction": "Action: Listen for BELL!",
-        "question": "🔔🧒👂",
+        "id": "KIDS_SCHOOL_L187_Q3",
+        "gameType": "school",
+        "level": 187,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Go to class!",
-          "Stay outside"
+          "Ruler",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "Go to class!",
-        "hint": "When the bell rings, walk quietly to your classroom for your next lesson!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 188,
     "quests": [
       {
-        "id": "KID_SCHOOL_L188_Q1",
-        "instruction": "Match: What is for BUS?",
-        "question": "🚌 + ?",
+        "id": "KIDS_SCHOOL_L188_Q1",
+        "gameType": "school",
+        "level": 188,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Seatbelt",
-          "Toothbrush"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Seatbelt",
-        "hint": "The seatbelt is our most important safety friend on the big school bus!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L188_Q2",
-        "instruction": "Match: What is for STREET?",
-        "question": "🛑 + ?",
+        "id": "KIDS_SCHOOL_L188_Q2",
+        "gameType": "school",
+        "level": 188,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Crossing Guard",
-          "Pillow"
+          "Eraser",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Crossing Guard",
-        "hint": "The crossing guard helps us cross the street safely every morning!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L188_Q3",
-        "instruction": "Match: What is for HALLWAY?",
-        "question": "🚶‍♂️ + ?",
+        "id": "KIDS_SCHOOL_L188_Q3",
+        "gameType": "school",
+        "level": 188,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Walking Quietly",
-          "Jumping High"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Walking Quietly",
-        "hint": "Walking quietly is how we move through the hallways at school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 189,
     "quests": [
       {
-        "id": "KID_SCHOOL_L189_Q1",
-        "instruction": "School: Follow all rules?",
-        "question": "🚶‍♂️🛑🔔✨❓",
+        "id": "KIDS_SCHOOL_L189_Q1",
+        "gameType": "school",
+        "level": 189,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Yes, be safe!",
-          "No, break them"
+          "Backpack",
+          "Ruler",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, be safe!",
-        "hint": "We always follow our school rules to make sure everyone stays safe and happy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L189_Q2",
-        "instruction": "School: Are you a SAFETY SCOUT?",
-        "question": "🛑🚌🚶‍♂️✨❓",
+        "id": "KIDS_SCHOOL_L189_Q2",
+        "gameType": "school",
+        "level": 189,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Yes, I am!",
-          "No"
+          "Backpack",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "A safety scout knows all the rules and helps their friends stay safe too!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L189_Q3",
-        "instruction": "School: Ready for the challenge?",
-        "question": "🏆✨❓",
+        "id": "KIDS_SCHOOL_L189_Q3",
+        "gameType": "school",
+        "level": 189,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "YES!",
-          "No"
+          "Ruler",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Level 190 is coming! Show us how safe you can be at school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 190,
     "quests": [
       {
-        "id": "KID_SCHOOL_L190_Q1",
-        "instruction": "Level 190 Challenge: Safety Scout!",
-        "question": "What is on the bus? 🚌💺",
+        "id": "KIDS_SCHOOL_L190_Q1",
+        "gameType": "school",
+        "level": 190,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Seatbelt",
-          "Fridge",
-          "Sink"
+          "Backpack",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Seatbelt",
-        "hint": "Click-click!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L190_Q2",
-        "instruction": "Level 190 Challenge: Safety Scout!",
-        "question": "What tells time? 🔔🏫",
+        "id": "KIDS_SCHOOL_L190_Q2",
+        "gameType": "school",
+        "level": 190,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "School Bell",
-          "Hat",
-          "Shoe"
+          "Eraser",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "School Bell",
-        "hint": "Ring-ring!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L190_Q3",
-        "instruction": "Level 190 Challenge: Mastery!",
-        "question": "Are you a Safety Scout?",
+        "id": "KIDS_SCHOOL_L190_Q3",
+        "gameType": "school",
+        "level": 190,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "YES!",
-          "No"
+          "Ruler",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 190!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 10,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

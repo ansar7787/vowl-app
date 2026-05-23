@@ -3,50 +3,73 @@
     "level": 1,
     "quests": [
       {
-        "id": "KID_PHONICS_L1_Q1",
-        "instruction": "Find the big letter A",
-        "question": "🅰️✨",
+        "id": "KIDS_PHONICS_L1_Q1",
+        "gameType": "phonics",
+        "level": 1,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "A",
-          "B",
-          "C"
+          "F",
+          "R",
+          "L"
         ],
-        "correctAnswer": "A",
-        "hint": "Big A looks like a mountain with a little bridge in the middle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L1_Q2",
-        "instruction": "Which one is A?",
-        "question": "🅰️ vs 🅱️",
+        "id": "KIDS_PHONICS_L1_Q2",
+        "gameType": "phonics",
+        "level": 1,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "A",
+          "F",
+          "D",
+          "M"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_PHONICS_L1_Q3",
+        "gameType": "phonics",
+        "level": 1,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
+        "options": [
+          "J",
+          "W",
           "B"
         ],
-        "correctAnswer": "A",
-        "hint": "Look for the letter that starts like a tent! Up, down, and across!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_PHONICS_L1_Q3",
-        "instruction": "Is this a Big A?",
-        "question": "🅰️❓",
-        "options": [
-          "Yes, Big A!",
-          "No, a rock"
-        ],
-        "correctAnswer": "Yes, Big A!",
-        "hint": "This is the king of the letters, the first one in the alphabet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 2,
     "quests": [
       {
-        "id": "KID_PHONICS_L2_Q1",
-        "instruction": "Find the small letter a",
-        "question": "a✨",
+        "id": "KIDS_PHONICS_L2_Q1",
+        "gameType": "phonics",
+        "level": 2,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "a",
-          "b",
-          "o"
+          "C",
+          "W",
+          "H"
         ],
-        "correctAnswer": "a",
-        "hint": "Small 'a' is a little circle with a short tail on the side!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L2_Q2",
-        "instruction": "Which one is small a?",
-        "question": "a vs d",
+        "id": "KIDS_PHONICS_L2_Q2",
+        "gameType": "phonics",
+        "level": 2,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "a",
-          "d"
+          "F",
+          "P",
+          "D"
         ],
-        "correctAnswer": "a",
-        "hint": "Small 'a' has its tail on the right side, just like a little pet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L2_Q3",
-        "instruction": "Is it the same sound as Big A?",
-        "question": "🅰️ = a ❓",
+        "id": "KIDS_PHONICS_L2_Q3",
+        "gameType": "phonics",
+        "level": 2,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Yes, same sound!",
-          "No, different"
+          "R",
+          "D",
+          "F"
         ],
-        "correctAnswer": "Yes, same sound!",
-        "hint": "Big A and small a both say 'Ah' like at the start of an apple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 3,
     "quests": [
       {
-        "id": "KID_PHONICS_L3_Q1",
-        "instruction": "Find the APPLE",
-        "question": "🍎✨",
+        "id": "KIDS_PHONICS_L3_Q1",
+        "gameType": "phonics",
+        "level": 3,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Apple",
-          "Banana",
-          "Orange"
+          "M",
+          "J",
+          "H"
         ],
-        "correctAnswer": "Apple",
-        "hint": "An apple is a crunchy red fruit that starts with the letter A!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L3_Q2",
-        "instruction": "Does APPLE start with A?",
-        "question": "🍎 🅰️❓",
+        "id": "KIDS_PHONICS_L3_Q2",
+        "gameType": "phonics",
+        "level": 3,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Yes, A is for Apple!",
-          "No, starts with B"
+          "B",
+          "J",
+          "R"
         ],
-        "correctAnswer": "Yes, A is for Apple!",
-        "hint": "Listen to the sound: Ah-Ah-Apple! That's the sound of the letter A!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L3_Q3",
-        "instruction": "Which fruit says AH?",
-        "question": "🍎 vs 🍌",
+        "id": "KIDS_PHONICS_L3_Q3",
+        "gameType": "phonics",
+        "level": 3,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "Apple",
-          "Banana"
+          "C",
+          "P",
+          "U"
         ],
-        "correctAnswer": "Apple",
-        "hint": "The red apple starts with the happy 'Ah' sound of letter A!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 4,
     "quests": [
       {
-        "id": "KID_PHONICS_L4_Q1",
-        "instruction": "Find the ANT",
-        "question": "🐜✨",
+        "id": "KIDS_PHONICS_L4_Q1",
+        "gameType": "phonics",
+        "level": 4,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "Ant",
-          "Bee",
-          "Spider"
+          "D",
+          "F",
+          "V"
         ],
-        "correctAnswer": "Ant",
-        "hint": "An ant is a tiny busy insect that starts with the letter A!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L4_Q2",
-        "instruction": "Does ANT start with A?",
-        "question": "🐜 🅰️❓",
+        "id": "KIDS_PHONICS_L4_Q2",
+        "gameType": "phonics",
+        "level": 4,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Yes, A is for Ant!",
-          "No, starts with Z"
+          "F",
+          "D",
+          "S"
         ],
-        "correctAnswer": "Yes, A is for Ant!",
-        "hint": "Listen: Ah-Ah-Ant! There is that A sound again!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L4_Q3",
-        "instruction": "Which bug says AH?",
-        "question": "🐜 vs 🐝",
+        "id": "KIDS_PHONICS_L4_Q3",
+        "gameType": "phonics",
+        "level": 4,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Ant",
-          "Bee"
+          "M",
+          "V",
+          "C"
         ],
-        "correctAnswer": "Ant",
-        "hint": "The tiny ant starts with the letter A, just like apple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,51 +299,73 @@
     "level": 5,
     "quests": [
       {
-        "id": "KID_PHONICS_L5_Q1",
-        "instruction": "Logic: What sound does A make?",
-        "question": "🅰️🗣️❓",
+        "id": "KIDS_PHONICS_L5_Q1",
+        "gameType": "phonics",
+        "level": 5,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Ah!",
-          "Boo!",
-          "Moo!"
+          "N",
+          "U",
+          "B"
         ],
-        "correctAnswer": "Ah!",
-        "hint": "Open your mouth wide and say 'Ah' like you are eating an apple!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L5_Q2",
-        "instruction": "Logic: Find the 'Ah' word",
-        "question": "🅰️👂❓",
+        "id": "KIDS_PHONICS_L5_Q2",
+        "gameType": "phonics",
+        "level": 5,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "Alligator",
-          "Bear",
-          "Cat"
+          "S",
+          "K",
+          "C"
         ],
-        "correctAnswer": "Alligator",
-        "hint": "Alligator starts with a big wide 'Ah' sound!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L5_Q3",
-        "instruction": "Logic: Is A the FIRST letter?",
-        "question": "🅰️ #1 ❓",
+        "id": "KIDS_PHONICS_L5_Q3",
+        "gameType": "phonics",
+        "level": 5,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "Yes, it's number 1!",
-          "No, it's last"
+          "L",
+          "D",
+          "S"
         ],
-        "correctAnswer": "Yes, it's number 1!",
-        "hint": "A is the very first letter you meet when you start the alphabet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -259,49 +373,73 @@
     "level": 6,
     "quests": [
       {
-        "id": "KID_PHONICS_L6_Q1",
-        "instruction": "Search: Find the letter A",
-        "question": "🅰️ vs 🅱️",
+        "id": "KIDS_PHONICS_L6_Q1",
+        "gameType": "phonics",
+        "level": 6,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Found it!",
-          "Not here"
+          "F",
+          "N",
+          "O"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the red letter that looks like a pointy mountain!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L6_Q2",
-        "instruction": "Search: Find the letter a",
-        "question": "a vs o",
+        "id": "KIDS_PHONICS_L6_Q2",
+        "gameType": "phonics",
+        "level": 6,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Found it!",
-          "Not here"
+          "M",
+          "T",
+          "C"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the little circle with the tiny tail on the right!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L6_Q3",
-        "instruction": "Search: Find the AXE",
-        "question": "🪓 vs 🧺",
+        "id": "KIDS_PHONICS_L6_Q3",
+        "gameType": "phonics",
+        "level": 6,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Axe",
-          "Basket"
+          "B",
+          "L",
+          "S"
         ],
-        "correctAnswer": "Axe",
-        "hint": "An axe starts with the 'Ah' sound of letter A! Look for the tool with the wood handle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -309,52 +447,73 @@
     "level": 7,
     "quests": [
       {
-        "id": "KID_PHONICS_L7_Q1",
-        "instruction": "Review: Who says Ah-Ah-Apple?",
-        "question": "🍎 Review",
+        "id": "KIDS_PHONICS_L7_Q1",
+        "gameType": "phonics",
+        "level": 7,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "A",
-          "B",
-          "M"
+          "C",
+          "S",
+          "J"
         ],
-        "correctAnswer": "A",
-        "hint": "The very first letter of the alphabet!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L7_Q2",
-        "instruction": "Review: Find small letter a",
-        "question": "a Review",
+        "id": "KIDS_PHONICS_L7_Q2",
+        "gameType": "phonics",
+        "level": 7,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "a",
-          "p",
-          "q"
+          "F",
+          "D",
+          "N"
         ],
-        "correctAnswer": "a",
-        "hint": "The little circle with the tail!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L7_Q3",
-        "instruction": "Review: Find Big letter A",
-        "question": "A Review",
+        "id": "KIDS_PHONICS_L7_Q3",
+        "gameType": "phonics",
+        "level": 7,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "A",
-          "H",
-          "K"
+          "F",
+          "U",
+          "R"
         ],
-        "correctAnswer": "A",
-        "hint": "The one that looks like a tent!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -362,49 +521,73 @@
     "level": 8,
     "quests": [
       {
-        "id": "KID_PHONICS_L8_Q1",
-        "instruction": "Which one is for EATING?",
-        "question": "🍎 vs 🐜",
+        "id": "KIDS_PHONICS_L8_Q1",
+        "gameType": "phonics",
+        "level": 8,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Apple",
-          "Ant"
+          "M",
+          "B",
+          "C"
         ],
-        "correctAnswer": "Apple",
-        "hint": "We eat the crunchy red apple, but we let the tiny ant crawl in the grass!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L8_Q2",
-        "instruction": "Which one is an INSECT?",
-        "question": "🐜 vs 🍎",
+        "id": "KIDS_PHONICS_L8_Q2",
+        "gameType": "phonics",
+        "level": 8,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "Ant",
-          "Apple"
+          "F",
+          "J",
+          "B"
         ],
-        "correctAnswer": "Ant",
-        "hint": "The ant is the little bug that starts with the letter A!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L8_Q3",
-        "instruction": "Do they BOTH start with A?",
-        "question": "🍎 + 🐜 = 🅰️❓",
+        "id": "KIDS_PHONICS_L8_Q3",
+        "gameType": "phonics",
+        "level": 8,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "Yes, both start with A!",
-          "No, only one"
+          "C",
+          "O",
+          "V"
         ],
-        "correctAnswer": "Yes, both start with A!",
-        "hint": "Apple and Ant both begin with the 'Ah' sound of letter A!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -412,51 +595,73 @@
     "level": 9,
     "quests": [
       {
-        "id": "KID_PHONICS_L9_Q1",
-        "instruction": "Logic: Find the ARROW",
-        "question": "🏹✨",
+        "id": "KIDS_PHONICS_L9_Q1",
+        "gameType": "phonics",
+        "level": 9,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "Arrow",
-          "Bow",
-          "Target"
+          "D",
+          "F",
+          "L"
         ],
-        "correctAnswer": "Arrow",
-        "hint": "Arrow starts with A! Ah-Ah-Arrow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L9_Q2",
-        "instruction": "Logic: Find the ANCHOR",
-        "question": "⚓✨",
+        "id": "KIDS_PHONICS_L9_Q2",
+        "gameType": "phonics",
+        "level": 9,
+        "instruction": "Which letter makes the phonic sound: \"/f/ as in Fish\"?",
+        "question": "/f/ as in Fish",
+        "correctAnswer": "F",
         "options": [
-          "Anchor",
-          "Ship",
-          "Wave"
+          "D",
+          "J",
+          "F"
         ],
-        "correctAnswer": "Anchor",
-        "hint": "Anchor starts with A! It holds the ship safe in the water!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Fish\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L9_Q3",
-        "instruction": "Logic: Are you an A-Star?",
-        "question": "🅰️⭐❓",
+        "id": "KIDS_PHONICS_L9_Q3",
+        "gameType": "phonics",
+        "level": 9,
+        "instruction": "Which letter makes the phonic sound: \"/m/ as in Monkey\"?",
+        "question": "/m/ as in Monkey",
+        "correctAnswer": "M",
         "options": [
-          "Yes, I am!",
-          "No"
+          "M",
+          "H",
+          "S"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "You are doing amazing at learning the first letter!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Monkey\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -464,51 +669,73 @@
     "level": 10,
     "quests": [
       {
-        "id": "KID_PHONICS_L10_Q1",
-        "instruction": "Level 10 Challenge: Apple Ace!",
-        "question": "Find Big A",
+        "id": "KIDS_PHONICS_L10_Q1",
+        "gameType": "phonics",
+        "level": 10,
+        "instruction": "Which letter makes the phonic sound: \"/b/ as in Ball\"?",
+        "question": "/b/ as in Ball",
+        "correctAnswer": "B",
         "options": [
-          "A",
-          "H",
-          "M"
+          "R",
+          "B",
+          "H"
         ],
-        "correctAnswer": "A",
-        "hint": "The one that looks like a mountain!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Ball\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L10_Q2",
-        "instruction": "Level 10 Challenge: Apple Ace!",
-        "question": "Find small a",
+        "id": "KIDS_PHONICS_L10_Q2",
+        "gameType": "phonics",
+        "level": 10,
+        "instruction": "Which letter makes the phonic sound: \"/k/ as in Cat\"?",
+        "question": "/k/ as in Cat",
+        "correctAnswer": "C",
         "options": [
-          "a",
-          "o",
-          "c"
+          "C",
+          "R",
+          "T"
         ],
-        "correctAnswer": "a",
-        "hint": "The one with the tiny tail!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Cat\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_PHONICS_L10_Q3",
-        "instruction": "Level 10 Challenge: Mastery!",
-        "question": "Are you an Apple Ace?",
+        "id": "KIDS_PHONICS_L10_Q3",
+        "gameType": "phonics",
+        "level": 10,
+        "instruction": "Which letter makes the phonic sound: \"/d/ as in Dog\"?",
+        "question": "/d/ as in Dog",
+        "correctAnswer": "D",
         "options": [
-          "YES!",
-          "No"
+          "D",
+          "V",
+          "G"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 10!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the starting letter of the word \"Dog\".",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

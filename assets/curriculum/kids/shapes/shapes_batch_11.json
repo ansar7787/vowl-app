@@ -3,52 +3,73 @@
     "level": 101,
     "quests": [
       {
-        "id": "KID_SHAPES_L101_Q1",
-        "instruction": "Find the HEPTAGON",
-        "question": "⬗",
+        "id": "KIDS_SHAPES_L101_Q1",
+        "gameType": "shapes",
+        "level": 101,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "Heptagon",
-          "Hexagon",
-          "Octagon"
+          "Square",
+          "Rectangle",
+          "Triangle"
         ],
-        "correctAnswer": "Heptagon",
-        "hint": "A heptagon is a special shape with 7 sides!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L101_Q2",
-        "instruction": "Which one has 7 SIDES?",
-        "question": "Selection",
+        "id": "KIDS_SHAPES_L101_Q2",
+        "gameType": "shapes",
+        "level": 101,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "Heptagon",
-          "Pentagon",
-          "Square"
-        ],
-        "correctAnswer": "Heptagon",
-        "hint": "Count carefully: 1, 2, 3, 4, 5, 6, 7!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_SHAPES_L101_Q3",
-        "instruction": "Find the shape of a 50p coin",
-        "question": "💷",
-        "options": [
-          "Heptagon",
+          "Square",
           "Circle",
           "Rectangle"
         ],
-        "correctAnswer": "Heptagon",
-        "hint": "Some coins, like the British 50p, are curved heptagons!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L101_Q3",
+        "gameType": "shapes",
+        "level": 101,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Square",
+          "Circle",
+          "Triangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 102,
     "quests": [
       {
-        "id": "KID_SHAPES_L102_Q1",
-        "instruction": "Find the NONAGON",
-        "question": "non",
+        "id": "KIDS_SHAPES_L102_Q1",
+        "gameType": "shapes",
+        "level": 102,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Nonagon",
-          "Heptagon",
-          "Octagon"
+          "Rectangle",
+          "Circle",
+          "Square"
         ],
-        "correctAnswer": "Nonagon",
-        "hint": "A nonagon has 9 sides! It looks almost like a circle!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L102_Q2",
-        "instruction": "Which one has 9 CORNERS?",
-        "question": "Selection",
+        "id": "KIDS_SHAPES_L102_Q2",
+        "gameType": "shapes",
+        "level": 102,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "Nonagon",
-          "Pentagon",
-          "Triangle"
-        ],
-        "correctAnswer": "Nonagon",
-        "hint": "Count the points: 1, 2, 3, 4, 5, 6, 7, 8, 9!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
-      },
-      {
-        "id": "KID_SHAPES_L102_Q3",
-        "instruction": "Find the decorative tile",
-        "question": "🧱✨",
-        "options": [
-          "Nonagon",
+          "Rectangle",
           "Square",
           "Circle"
         ],
-        "correctAnswer": "Nonagon",
-        "hint": "Fancy tiles can sometimes have 9 beautiful sides!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L102_Q3",
+        "gameType": "shapes",
+        "level": 102,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Triangle",
+          "Square",
+          "Circle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 103,
     "quests": [
       {
-        "id": "KID_SHAPES_L103_Q1",
-        "instruction": "Detective: Find the jar lid",
-        "question": "🧴",
+        "id": "KIDS_SHAPES_L103_Q1",
+        "gameType": "shapes",
+        "level": 103,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Heptagon",
+          "Rectangle",
           "Circle",
           "Triangle"
         ],
-        "correctAnswer": "Heptagon",
-        "hint": "Some lids have 7 sides to help you grip them better!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L103_Q2",
-        "instruction": "Detective: Find the mirror frame",
-        "question": "🪞✨",
+        "id": "KIDS_SHAPES_L103_Q2",
+        "gameType": "shapes",
+        "level": 103,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Nonagon",
-          "Oval",
-          "Heart"
-        ],
-        "correctAnswer": "Nonagon",
-        "hint": "A mirror with 9 sides is very fancy!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
-      },
-      {
-        "id": "KID_SHAPES_L103_Q3",
-        "instruction": "Detective: Find the strange coin",
-        "question": "🪙",
-        "options": [
-          "Heptagon",
+          "Triangle",
           "Circle",
-          "Square"
+          "Rectangle"
         ],
-        "correctAnswer": "Heptagon",
-        "hint": "This coin isn't round, it has 7 flat edges!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L103_Q3",
+        "gameType": "shapes",
+        "level": 103,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Square",
+          "Circle",
+          "Triangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,51 +225,73 @@
     "level": 104,
     "quests": [
       {
-        "id": "KID_SHAPES_L104_Q1",
-        "instruction": "Logic: How many sides on a HEPTAGON?",
-        "question": "⬗ Count",
+        "id": "KIDS_SHAPES_L104_Q1",
+        "gameType": "shapes",
+        "level": 104,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "7",
-          "6",
-          "8"
+          "Rectangle",
+          "Triangle",
+          "Circle"
         ],
-        "correctAnswer": "7",
-        "hint": "Hepta means 7!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L104_Q2",
-        "instruction": "Logic: How many sides on a NONAGON?",
-        "question": "⬢ Count",
+        "id": "KIDS_SHAPES_L104_Q2",
+        "gameType": "shapes",
+        "level": 104,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "9",
-          "7",
-          "10"
+          "Circle",
+          "Triangle",
+          "Rectangle"
         ],
-        "correctAnswer": "9",
-        "hint": "Nona means 9!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L104_Q3",
-        "instruction": "Logic: Which has MORE sides?",
-        "question": "Heptagon vs Nonagon",
+        "id": "KIDS_SHAPES_L104_Q3",
+        "gameType": "shapes",
+        "level": 104,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Nonagon",
-          "Heptagon"
+          "Circle",
+          "Rectangle",
+          "Triangle"
         ],
-        "correctAnswer": "Nonagon",
-        "hint": "9 is bigger than 7!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -214,52 +299,73 @@
     "level": 105,
     "quests": [
       {
-        "id": "KID_SHAPES_L105_Q1",
-        "instruction": "Identify: Who has 7 corners?",
-        "question": "Selection",
+        "id": "KIDS_SHAPES_L105_Q1",
+        "gameType": "shapes",
+        "level": 105,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "Heptagon",
-          "Hexagon",
-          "Octagon"
+          "Rectangle",
+          "Circle",
+          "Square"
         ],
-        "correctAnswer": "Heptagon",
-        "hint": "The lucky 7 shape!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L105_Q2",
-        "instruction": "Identify: Who has 9 corners?",
-        "question": "Selection",
+        "id": "KIDS_SHAPES_L105_Q2",
+        "gameType": "shapes",
+        "level": 105,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "Nonagon",
-          "Heptagon",
-          "Pentagon"
+          "Circle",
+          "Rectangle",
+          "Square"
         ],
-        "correctAnswer": "Nonagon",
-        "hint": "The mighty 9 shape!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L105_Q3",
-        "instruction": "Identify: Find the heptagon star",
-        "question": "✴️",
+        "id": "KIDS_SHAPES_L105_Q3",
+        "gameType": "shapes",
+        "level": 105,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "7-Point Star",
-          "5-Point Star",
-          "6-Point Star"
+          "Circle",
+          "Triangle",
+          "Square"
         ],
-        "correctAnswer": "7-Point Star",
-        "hint": "Count the points on the sparkly star!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -267,49 +373,73 @@
     "level": 106,
     "quests": [
       {
-        "id": "KID_SHAPES_L106_Q1",
-        "instruction": "Compare: ⬗ vs 🛑",
-        "question": "Who has FEWER sides?",
+        "id": "KIDS_SHAPES_L106_Q1",
+        "gameType": "shapes",
+        "level": 106,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Heptagon",
-          "Octagon"
+          "Triangle",
+          "Rectangle",
+          "Circle"
         ],
-        "correctAnswer": "Heptagon",
-        "hint": "Heptagon has 7, Octagon has 8!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L106_Q2",
-        "instruction": "Compare: ⬢ vs ⬗",
-        "question": "Who has MORE sides?",
+        "id": "KIDS_SHAPES_L106_Q2",
+        "gameType": "shapes",
+        "level": 106,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "Heptagon",
-          "Hexagon"
+          "Triangle",
+          "Circle",
+          "Square"
         ],
-        "correctAnswer": "Heptagon",
-        "hint": "Heptagon has 7, Hexagon has 6!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L106_Q3",
-        "instruction": "Compare: non vs 🛑",
-        "question": "Which is a Nonagon?",
+        "id": "KIDS_SHAPES_L106_Q3",
+        "gameType": "shapes",
+        "level": 106,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "Nonagon",
-          "Octagon"
+          "Circle",
+          "Square",
+          "Triangle"
         ],
-        "correctAnswer": "Nonagon",
-        "hint": "The one with 9 sides!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -317,52 +447,73 @@
     "level": 107,
     "quests": [
       {
-        "id": "KID_SHAPES_L107_Q1",
-        "instruction": "Search: Find the cactus slice",
-        "question": "🌵",
+        "id": "KIDS_SHAPES_L107_Q1",
+        "gameType": "shapes",
+        "level": 107,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Heptagon",
-          "Square",
-          "Circle"
-        ],
-        "correctAnswer": "Heptagon",
-        "hint": "Some cacti have 7 ribs, making a heptagon slice!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
-      },
-      {
-        "id": "KID_SHAPES_L107_Q2",
-        "instruction": "Search: Find the flower",
-        "question": "🌸",
-        "options": [
-          "Nonagon",
           "Triangle",
-          "Heart"
+          "Circle",
+          "Rectangle"
         ],
-        "correctAnswer": "Nonagon",
-        "hint": "This flower has 9 petals, forming a nonagon!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L107_Q3",
-        "instruction": "Search: Find the gear",
-        "question": "⚙️",
+        "id": "KIDS_SHAPES_L107_Q2",
+        "gameType": "shapes",
+        "level": 107,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Nonagon",
-          "Circle",
+          "Square",
+          "Rectangle",
+          "Triangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L107_Q3",
+        "gameType": "shapes",
+        "level": 107,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
+        "options": [
+          "Triangle",
+          "Rectangle",
           "Square"
         ],
-        "correctAnswer": "Nonagon",
-        "hint": "This special gear has 9 teeth!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "UnicornMist",
-        "shader": "pastel_dream"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -370,52 +521,73 @@
     "level": 108,
     "quests": [
       {
-        "id": "KID_SHAPES_L108_Q1",
-        "instruction": "Actions: Who can be a COIN?",
-        "question": "🪙 Choice",
+        "id": "KIDS_SHAPES_L108_Q1",
+        "gameType": "shapes",
+        "level": 108,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "Heptagon",
-          "Square",
-          "Star"
+          "Circle",
+          "Rectangle",
+          "Square"
         ],
-        "correctAnswer": "Heptagon",
-        "hint": "7-sided coins are very unique!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L108_Q2",
-        "instruction": "Actions: Who can be a DECORATION?",
-        "question": "💠 Choice",
+        "id": "KIDS_SHAPES_L108_Q2",
+        "gameType": "shapes",
+        "level": 108,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
         "options": [
-          "Nonagon",
           "Triangle",
-          "Rectangle"
+          "Circle",
+          "Square"
         ],
-        "correctAnswer": "Nonagon",
-        "hint": "9-sided patterns are beautiful for art!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L108_Q3",
-        "instruction": "Actions: Who can be a LID?",
-        "question": "🧴 Choice",
+        "id": "KIDS_SHAPES_L108_Q3",
+        "gameType": "shapes",
+        "level": 108,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Heptagon",
-          "Heart",
+          "Triangle",
+          "Rectangle",
           "Circle"
         ],
-        "correctAnswer": "Heptagon",
-        "hint": "7 sides make it easy to twist!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -423,52 +595,73 @@
     "level": 109,
     "quests": [
       {
-        "id": "KID_SHAPES_L109_Q1",
-        "instruction": "Review: Who has 7 sides?",
-        "question": "⬗ Review",
+        "id": "KIDS_SHAPES_L109_Q1",
+        "gameType": "shapes",
+        "level": 109,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "Heptagon",
-          "Hexagon",
-          "Octagon"
-        ],
-        "correctAnswer": "Heptagon",
-        "hint": "The lucky 7 friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_SHAPES_L109_Q2",
-        "instruction": "Review: Who has 9 sides?",
-        "question": "⬢ Review",
-        "options": [
-          "Nonagon",
-          "Heptagon",
-          "Pentagon"
-        ],
-        "correctAnswer": "Nonagon",
-        "hint": "The mighty 9 friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
-      },
-      {
-        "id": "KID_SHAPES_L109_Q3",
-        "instruction": "Review: Who is a 50p coin?",
-        "question": "💷 Review",
-        "options": [
-          "Heptagon",
+          "Square",
           "Circle",
-          "Square"
+          "Triangle"
         ],
-        "correctAnswer": "Heptagon",
-        "hint": "The 7-sided money!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L109_Q2",
+        "gameType": "shapes",
+        "level": 109,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
+        "options": [
+          "Rectangle",
+          "Triangle",
+          "Circle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
+      },
+      {
+        "id": "KIDS_SHAPES_L109_Q3",
+        "gameType": "shapes",
+        "level": 109,
+        "instruction": "Touch the shape that matches a slice of cheesy pizza or small clothes hanger!",
+        "question": "Triangle",
+        "correctAnswer": "Triangle",
+        "options": [
+          "Rectangle",
+          "Circle",
+          "Triangle"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect triangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -476,51 +669,73 @@
     "level": 110,
     "quests": [
       {
-        "id": "KID_SHAPES_L110_Q1",
-        "instruction": "Level 110 Challenge: Advanced!",
-        "question": "What shape has 9 sides?",
+        "id": "KIDS_SHAPES_L110_Q1",
+        "gameType": "shapes",
+        "level": 110,
+        "instruction": "Touch the shape that matches a flat entry door or wide classroom writing board!",
+        "question": "Rectangle",
+        "correctAnswer": "Rectangle",
         "options": [
-          "Nonagon",
-          "Heptagon",
-          "Octagon"
+          "Circle",
+          "Rectangle",
+          "Triangle"
         ],
-        "correctAnswer": "Nonagon",
-        "hint": "Count to 9!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "It looks like a perfect rectangle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L110_Q2",
-        "instruction": "Level 110 Challenge: Coins!",
-        "question": "How many sides on a heptagon coin?",
+        "id": "KIDS_SHAPES_L110_Q2",
+        "gameType": "shapes",
+        "level": 110,
+        "instruction": "Touch the shape that matches a symmetrical window pane or cardboard gift box!",
+        "question": "Square",
+        "correctAnswer": "Square",
         "options": [
-          "7",
-          "9",
-          "8"
+          "Circle",
+          "Rectangle",
+          "Square"
         ],
-        "correctAnswer": "7",
-        "hint": "Count the lucky sides!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "It looks like a perfect square!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SHAPES_L110_Q3",
-        "instruction": "Level 110 Challenge: Mastery!",
-        "question": "Are you a Master Counter?",
+        "id": "KIDS_SHAPES_L110_Q3",
+        "gameType": "shapes",
+        "level": 110,
+        "instruction": "Touch the shape that matches a round wall clock or sweet round donut!",
+        "question": "Circle",
+        "correctAnswer": "Circle",
         "options": [
-          "YES!",
-          "No"
+          "Rectangle",
+          "Circle",
+          "Square"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 110!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "It looks like a perfect circle!",
+        "metadata": {
+          "difficulty": 6,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

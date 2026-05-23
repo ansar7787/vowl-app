@@ -3,52 +3,73 @@
     "level": 61,
     "quests": [
       {
-        "id": "KID_NATURE_L61_Q1",
-        "instruction": "Find the BIRD",
-        "question": "🐦✨",
+        "id": "KIDS_NATURE_L61_Q1",
+        "gameType": "nature",
+        "level": 61,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Bird",
-          "Dog",
-          "Car"
+          "Tree",
+          "River",
+          "Cloud"
         ],
-        "correctAnswer": "Bird",
-        "hint": "A bird is a colorful friend with feathers and wings who can fly high in the sky and sing happy songs!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L61_Q2",
-        "instruction": "Which one has FEATHERS?",
-        "question": "🐦🪶",
+        "id": "KIDS_NATURE_L61_Q2",
+        "gameType": "nature",
+        "level": 61,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Bird",
-          "Lamp",
-          "Rug"
+          "Flower",
+          "Tree",
+          "Mountain"
         ],
-        "correctAnswer": "Bird",
-        "hint": "Look for the soft friend who has a beak for eating seeds and wings for flying!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L61_Q3",
-        "instruction": "Find the singer",
-        "question": "🐦🎶",
+        "id": "KIDS_NATURE_L61_Q3",
+        "gameType": "nature",
+        "level": 61,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Bird",
-          "Sofa",
-          "Bath"
+          "Tree",
+          "Flower",
+          "Cloud"
         ],
-        "correctAnswer": "Bird",
-        "hint": "It wakes us up in the morning with a beautiful 'tweet-tweet' sound from the trees!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -56,52 +77,73 @@
     "level": 62,
     "quests": [
       {
-        "id": "KID_NATURE_L62_Q1",
-        "instruction": "Find the WING",
-        "question": "🦅✨",
+        "id": "KIDS_NATURE_L62_Q1",
+        "gameType": "nature",
+        "level": 62,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Wing",
-          "Shoe",
-          "Hat"
+          "Flower",
+          "Cloud",
+          "Mountain"
         ],
-        "correctAnswer": "Wing",
-        "hint": "A wing is a special arm covered in feathers that birds flap to push themselves through the air!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L62_Q2",
-        "instruction": "Which one is for FLYING?",
-        "question": "🦅☁️",
+        "id": "KIDS_NATURE_L62_Q2",
+        "gameType": "nature",
+        "level": 62,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Wing",
-          "Fork",
-          "Bed"
+          "Cloud",
+          "Mountain",
+          "Tree"
         ],
-        "correctAnswer": "Wing",
-        "hint": "Look for the wide, flat part of the bird that spreads out to catch the wind!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L62_Q3",
-        "instruction": "Find the sky flapper",
-        "question": "🦅💨",
+        "id": "KIDS_NATURE_L62_Q3",
+        "gameType": "nature",
+        "level": 62,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Wing",
-          "Window",
-          "Gate"
+          "River",
+          "Mountain",
+          "Cloud"
         ],
-        "correctAnswer": "Wing",
-        "hint": "Birds have two of these, one on each side, to help them steer and soar!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -109,52 +151,73 @@
     "level": 63,
     "quests": [
       {
-        "id": "KID_NATURE_L63_Q1",
-        "instruction": "Find the NEST",
-        "question": "🪺✨",
+        "id": "KIDS_NATURE_L63_Q1",
+        "gameType": "nature",
+        "level": 63,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Nest",
-          "Box",
-          "Cup"
+          "Mountain",
+          "Flower",
+          "Tree"
         ],
-        "correctAnswer": "Nest",
-        "hint": "A nest is a cozy bowl made of twigs, grass, and mud where birds keep their babies safe and warm!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L63_Q2",
-        "instruction": "Which one is in a TREE?",
-        "question": "🪺🌳",
+        "id": "KIDS_NATURE_L63_Q2",
+        "gameType": "nature",
+        "level": 63,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Nest",
-          "Bath",
-          "Oven"
+          "Flower",
+          "Tree",
+          "Mountain"
         ],
-        "correctAnswer": "Nest",
-        "hint": "Look for the round home hidden among the leaves high up in the branches!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L63_Q3",
-        "instruction": "Find the twig home",
-        "question": "🪺🥢",
+        "id": "KIDS_NATURE_L63_Q3",
+        "gameType": "nature",
+        "level": 63,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Nest",
-          "Rug",
-          "Sofa"
+          "Tree",
+          "Mountain",
+          "Flower"
         ],
-        "correctAnswer": "Nest",
-        "hint": "Mama birds use their beaks to weave together sticks and feathers to make this soft bed!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -162,52 +225,73 @@
     "level": 64,
     "quests": [
       {
-        "id": "KID_NATURE_L64_Q1",
-        "instruction": "Find the EGG",
-        "question": "🥚✨",
+        "id": "KIDS_NATURE_L64_Q1",
+        "gameType": "nature",
+        "level": 64,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Egg",
-          "Ball",
-          "Block"
+          "Cloud",
+          "Mountain",
+          "River"
         ],
-        "correctAnswer": "Egg",
-        "hint": "An egg is a smooth, oval shell where a tiny baby bird grows until it's ready to hatch!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L64_Q2",
-        "instruction": "Which one is OVAL?",
-        "question": "🥚⚪",
+        "id": "KIDS_NATURE_L64_Q2",
+        "gameType": "nature",
+        "level": 64,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Egg",
-          "Table",
-          "Sink"
+          "River",
+          "Cloud",
+          "Mountain"
         ],
-        "correctAnswer": "Egg",
-        "hint": "Look for the white or spotted treasure that sits inside the bird's nest!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L64_Q3",
-        "instruction": "Find the baby shell",
-        "question": "🥚🐣",
+        "id": "KIDS_NATURE_L64_Q3",
+        "gameType": "nature",
+        "level": 64,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Egg",
-          "Window",
-          "Gate"
+          "Mountain",
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "Egg",
-        "hint": "When the baby is big enough, it taps on the inside until the egg cracks open!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -215,52 +299,73 @@
     "level": 65,
     "quests": [
       {
-        "id": "KID_NATURE_L65_Q1",
-        "instruction": "Mix: Find the FLYING friends",
-        "question": "🐦🦅🪺",
+        "id": "KIDS_NATURE_L65_Q1",
+        "gameType": "nature",
+        "level": 65,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Flying Group",
-          "Ocean Group",
-          "Garden Group"
+          "Cloud",
+          "Flower",
+          "Tree"
         ],
-        "correctAnswer": "Flying Group",
-        "hint": "All of these help our feathered friends live high up in the sky and trees!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L65_Q2",
-        "instruction": "Mix: Find the SINGER",
-        "question": "🐦",
+        "id": "KIDS_NATURE_L65_Q2",
+        "gameType": "nature",
+        "level": 65,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Bird",
-          "Nest",
-          "Egg"
+          "Tree",
+          "Flower",
+          "Cloud"
         ],
-        "correctAnswer": "Bird",
-        "hint": "The one with the beak and feathers!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L65_Q3",
-        "instruction": "Mix: Which is for SLEEPING?",
-        "question": "🪺",
+        "id": "KIDS_NATURE_L65_Q3",
+        "gameType": "nature",
+        "level": 65,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Nest",
-          "Wing",
-          "Egg"
+          "River",
+          "Cloud",
+          "Mountain"
         ],
-        "correctAnswer": "Nest",
-        "hint": "The twiggy bowl for the babies!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -268,51 +373,73 @@
     "level": 66,
     "quests": [
       {
-        "id": "KID_NATURE_L66_Q1",
-        "instruction": "Logic: How do birds fly?",
-        "question": "🦅🌬️",
+        "id": "KIDS_NATURE_L66_Q1",
+        "gameType": "nature",
+        "level": 66,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Flap their wings!",
-          "Run very fast",
-          "Use a car"
+          "River",
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "Flap their wings!",
-        "hint": "Birds push the air down with their wings to lift themselves into the sky!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L66_Q2",
-        "instruction": "Logic: What is a nest made of?",
-        "question": "🪺🥢",
+        "id": "KIDS_NATURE_L66_Q2",
+        "gameType": "nature",
+        "level": 66,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Twigs and grass!",
-          "Ice and snow",
-          "Chocolate"
+          "Cloud",
+          "River",
+          "Mountain"
         ],
-        "correctAnswer": "Twigs and grass!",
-        "hint": "Birds collect small sticks and soft moss to weave their cozy homes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L66_Q3",
-        "instruction": "Logic: Is an egg for playing catch?",
-        "question": "🥚🏈",
+        "id": "KIDS_NATURE_L66_Q3",
+        "gameType": "nature",
+        "level": 66,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "No, be very gentle!",
-          "Yes"
+          "Flower",
+          "Tree",
+          "Cloud"
         ],
-        "correctAnswer": "No, be very gentle!",
-        "hint": "Eggs are very fragile and have baby birds inside! We must not touch them!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "PandaPlay",
-        "shader": "bamboo_breeze"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -320,52 +447,73 @@
     "level": 67,
     "quests": [
       {
-        "id": "KID_NATURE_L67_Q1",
-        "instruction": "Search: Find the OWL",
-        "question": "🦉🌌",
+        "id": "KIDS_NATURE_L67_Q1",
+        "gameType": "nature",
+        "level": 67,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "Owl",
-          "Duck",
-          "Chicken"
+          "Tree",
+          "Flower",
+          "Mountain"
         ],
-        "correctAnswer": "Owl",
-        "hint": "Look for the wise bird with big round eyes who stays awake all night and says 'Hoo-Hoo'!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L67_Q2",
-        "instruction": "Search: Find the feathers",
-        "question": "🪶🪶",
+        "id": "KIDS_NATURE_L67_Q2",
+        "gameType": "nature",
+        "level": 67,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Feathers",
-          "Leaves",
-          "Flowers"
+          "Tree",
+          "Cloud",
+          "Mountain"
         ],
-        "correctAnswer": "Feathers",
-        "hint": "Look for the soft, light coverings that keep birds warm and help them glide!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L67_Q3",
-        "instruction": "Search: Find the duck",
-        "question": "🦆🌊",
+        "id": "KIDS_NATURE_L67_Q3",
+        "gameType": "nature",
+        "level": 67,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Duck",
-          "Eagle",
-          "Bat"
+          "Flower",
+          "Tree",
+          "River"
         ],
-        "correctAnswer": "Duck",
-        "hint": "Look for the water bird with a flat beak and webbed feet who says 'Quack-Quack'!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -373,52 +521,73 @@
     "level": 68,
     "quests": [
       {
-        "id": "KID_NATURE_L68_Q1",
-        "instruction": "Actions: How does a bird sound?",
-        "question": "🐦 Choice",
+        "id": "KIDS_NATURE_L68_Q1",
+        "gameType": "nature",
+        "level": 68,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "TWEET TWEET!",
-          "Roar",
-          "Oink"
+          "Mountain",
+          "River",
+          "Tree"
         ],
-        "correctAnswer": "TWEET TWEET!",
-        "hint": "It's the happy, high-pitched song that fills the morning air!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L68_Q2",
-        "instruction": "Actions: What sound does a duck make?",
-        "question": "🦆 Choice",
+        "id": "KIDS_NATURE_L68_Q2",
+        "gameType": "nature",
+        "level": 68,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "QUACK QUACK!",
-          "Meow",
-          "Bloop"
+          "Tree",
+          "Cloud",
+          "Flower"
         ],
-        "correctAnswer": "QUACK QUACK!",
-        "hint": "It's the funny, loud sound they make while swimming in the pond!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L68_Q3",
-        "instruction": "Actions: How do birds build nests?",
-        "question": "🪺 Choice",
+        "id": "KIDS_NATURE_L68_Q3",
+        "gameType": "nature",
+        "level": 68,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "With their beaks!",
-          "With their feet",
-          "With hammers"
+          "Cloud",
+          "Mountain",
+          "Flower"
         ],
-        "correctAnswer": "With their beaks!",
-        "hint": "They are very clever and use their mouths to pick up and place every single twig!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "OceanWave",
-        "shader": "water_ripples"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -426,52 +595,73 @@
     "level": 69,
     "quests": [
       {
-        "id": "KID_NATURE_L69_Q1",
-        "instruction": "Review: Who has wings?",
-        "question": "🐦 Review",
+        "id": "KIDS_NATURE_L69_Q1",
+        "gameType": "nature",
+        "level": 69,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "Bird",
-          "Nest",
-          "Egg"
+          "Flower",
+          "Cloud",
+          "Tree"
         ],
-        "correctAnswer": "Bird",
-        "hint": "The flying friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L69_Q2",
-        "instruction": "Review: Who lives in trees?",
-        "question": "🪺 Review",
+        "id": "KIDS_NATURE_L69_Q2",
+        "gameType": "nature",
+        "level": 69,
+        "instruction": "Identify the nature element that is a flowing stream of cool fresh water carrying fish!",
+        "question": "River",
+        "correctAnswer": "River",
         "options": [
-          "Nest",
-          "Egg",
-          "Ocean"
+          "Mountain",
+          "Flower",
+          "River"
         ],
-        "correctAnswer": "Nest",
-        "hint": "The twiggy home friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose river from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L69_Q3",
-        "instruction": "Review: Who hatches?",
-        "question": "🥚 Review",
+        "id": "KIDS_NATURE_L69_Q3",
+        "gameType": "nature",
+        "level": 69,
+        "instruction": "Identify the nature element that is a giant rocky peak reaching high above the clouds!",
+        "question": "Mountain",
+        "correctAnswer": "Mountain",
         "options": [
-          "Egg",
-          "Wing",
-          "Sofa"
+          "River",
+          "Mountain",
+          "Tree"
         ],
-        "correctAnswer": "Egg",
-        "hint": "The oval shell friend!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose mountain from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -479,51 +669,73 @@
     "level": 70,
     "quests": [
       {
-        "id": "KID_NATURE_L70_Q1",
-        "instruction": "Level 70 Challenge: Flight!",
-        "question": "What covers a bird's body to keep it warm?",
+        "id": "KIDS_NATURE_L70_Q1",
+        "gameType": "nature",
+        "level": 70,
+        "instruction": "Identify the nature element that is a tall green plant with thick wooden trunk and branches!",
+        "question": "Tree",
+        "correctAnswer": "Tree",
         "options": [
-          "Feathers!",
-          "Fur",
-          "Clothes"
+          "Mountain",
+          "Cloud",
+          "Tree"
         ],
-        "correctAnswer": "Feathers!",
-        "hint": "The soft light coverings!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "Choose tree from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L70_Q2",
-        "instruction": "Level 70 Challenge: Night!",
-        "question": "Which bird stays awake when you sleep?",
+        "id": "KIDS_NATURE_L70_Q2",
+        "gameType": "nature",
+        "level": 70,
+        "instruction": "Identify the nature element that is a beautiful sweet-smelling colorful plant with petals!",
+        "question": "Flower",
+        "correctAnswer": "Flower",
         "options": [
-          "The Owl!",
-          "The Chicken",
-          "The Pigeon"
+          "Mountain",
+          "Tree",
+          "Flower"
         ],
-        "correctAnswer": "The Owl!",
-        "hint": "The one with the big round eyes!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "Choose flower from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_NATURE_L70_Q3",
-        "instruction": "Level 70 Challenge: Mastery!",
-        "question": "Are you a Sky Watcher?",
+        "id": "KIDS_NATURE_L70_Q3",
+        "gameType": "nature",
+        "level": 70,
+        "instruction": "Identify the nature element that is a fluffy white cotton shape floating in the blue sky!",
+        "question": "Cloud",
+        "correctAnswer": "Cloud",
         "options": [
-          "YES!",
-          "No"
+          "Cloud",
+          "Mountain",
+          "Flower"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 70!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "Choose cloud from the green nature elements.",
+        "metadata": {
+          "difficulty": 4,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

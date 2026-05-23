@@ -3,50 +3,73 @@
     "level": 11,
     "quests": [
       {
-        "id": "KID_SCHOOL_L11_Q1",
-        "instruction": "What do we sit on at our desk?",
-        "question": "🪑🪑✨",
+        "id": "KIDS_SCHOOL_L11_Q1",
+        "gameType": "school",
+        "level": 11,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Chair",
-          "Cloud",
-          "Flower"
+          "Ruler",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Chair",
-        "hint": "It has four legs and a back for us to lean on while we work! It's a chair!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L11_Q2",
-        "instruction": "Find the CHAIR",
-        "question": "🪑✨🛋️",
+        "id": "KIDS_SCHOOL_L11_Q2",
+        "gameType": "school",
+        "level": 11,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the small seat that fits perfectly at your school desk!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L11_Q3",
-        "instruction": "Is it COMFY?",
-        "question": "🪑 = Comfy?",
+        "id": "KIDS_SCHOOL_L11_Q3",
+        "gameType": "school",
+        "level": 11,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Yes, sit nicely!",
-          "No, hard rock"
+          "Backpack",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, sit nicely!",
-        "hint": "Sitting correctly in our chair helps us focus on our teacher!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 12,
     "quests": [
       {
-        "id": "KID_SCHOOL_L12_Q1",
-        "instruction": "Where do we put our notebook to write?",
-        "question": "🛋️📓✨",
+        "id": "KIDS_SCHOOL_L12_Q1",
+        "gameType": "school",
+        "level": 12,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Desk",
-          "Floor",
-          "Ceiling"
+          "Pencil",
+          "Ruler",
+          "Backpack"
         ],
-        "correctAnswer": "Desk",
-        "hint": "It's a flat table where we keep our pencils and books! It's a desk!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L12_Q2",
-        "instruction": "Find the DESK",
-        "question": "🛋️✨🪑",
+        "id": "KIDS_SCHOOL_L12_Q2",
+        "gameType": "school",
+        "level": 12,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the wooden table with space underneath for your legs!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L12_Q3",
-        "instruction": "Is it NEAT?",
-        "question": "🛋️ = Neat desk?",
+        "id": "KIDS_SCHOOL_L12_Q3",
+        "gameType": "school",
+        "level": 12,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Yes, tidy space!",
-          "No, messy"
+          "Ruler",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, tidy space!",
-        "hint": "Keeping our desk organized helps us find our tools quickly!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 13,
     "quests": [
       {
-        "id": "KID_SCHOOL_L13_Q1",
-        "instruction": "What does the teacher use to write for the class?",
-        "question": "🖍️🖼️✨",
+        "id": "KIDS_SCHOOL_L13_Q1",
+        "gameType": "school",
+        "level": 13,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Board",
-          "Window",
-          "Door"
+          "Eraser",
+          "Ruler",
+          "Backpack"
         ],
-        "correctAnswer": "Board",
-        "hint": "It's a big white or green space at the front of the room! It's the board!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L13_Q2",
-        "instruction": "Find the BOARD",
-        "question": "🖍️✨👩‍🏫",
+        "id": "KIDS_SCHOOL_L13_Q2",
+        "gameType": "school",
+        "level": 13,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the big rectangle where the teacher writes ABCs and 123s!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L13_Q3",
-        "instruction": "Is it BRIGHT?",
-        "question": "🖍️ = Bright board?",
+        "id": "KIDS_SCHOOL_L13_Q3",
+        "gameType": "school",
+        "level": 13,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Yes, clear letters!",
-          "No, dark"
+          "Backpack",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, clear letters!",
-        "hint": "We look at the board to learn new things together every day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 14,
     "quests": [
       {
-        "id": "KID_SCHOOL_L14_Q1",
-        "instruction": "What do we use to draw straight lines?",
-        "question": "📏✨📏",
-        "options": [
-          "Ruler",
-          "Snake",
-          "String"
-        ],
+        "id": "KIDS_SCHOOL_L14_Q1",
+        "gameType": "school",
+        "level": 14,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
         "correctAnswer": "Ruler",
-        "hint": "It's long and flat with numbers on it! We use it to measure! It's a ruler!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "options": [
+          "Eraser",
+          "Pencil",
+          "Ruler"
+        ],
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L14_Q2",
-        "instruction": "Find the RULER",
-        "question": "📏✨📐",
+        "id": "KIDS_SCHOOL_L14_Q2",
+        "gameType": "school",
+        "level": 14,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the stick with lines and numbers that helps us draw perfectly!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L14_Q3",
-        "instruction": "Is it LONG?",
-        "question": "📏 = Long ruler?",
+        "id": "KIDS_SCHOOL_L14_Q3",
+        "gameType": "school",
+        "level": 14,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Yes, for measuring!",
-          "No, tiny"
+          "Backpack",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Yes, for measuring!",
-        "hint": "A ruler helps us see how big or small our drawings are!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 15,
     "quests": [
       {
-        "id": "KID_SCHOOL_L15_Q1",
-        "instruction": "Classroom Logic: CHAIR is for...",
-        "question": "🪑 -> ?",
+        "id": "KIDS_SCHOOL_L15_Q1",
+        "gameType": "school",
+        "level": 15,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Sitting",
-          "Running"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Sitting",
-        "hint": "We sit on our chair when it is time to work at our desks!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L15_Q2",
-        "instruction": "Classroom Logic: BOARD is for...",
-        "question": "🖍️ -> ?",
+        "id": "KIDS_SCHOOL_L15_Q2",
+        "gameType": "school",
+        "level": 15,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Teaching",
-          "Sleeping"
+          "Eraser",
+          "Ruler",
+          "Pencil"
         ],
-        "correctAnswer": "Teaching",
-        "hint": "The teacher uses the board to show the whole class what to learn!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L15_Q3",
-        "instruction": "Logic: Is a RULER for numbers?",
-        "question": "📏 = 123?",
+        "id": "KIDS_SCHOOL_L15_Q3",
+        "gameType": "school",
+        "level": 15,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Yes, it has numbers!",
-          "No, just colors"
+          "Ruler",
+          "Eraser",
+          "Backpack"
         ],
-        "correctAnswer": "Yes, it has numbers!",
-        "hint": "Rulers have numbers to help us measure things exactly right!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 16,
     "quests": [
       {
-        "id": "KID_SCHOOL_L16_Q1",
-        "instruction": "Search: Find the classroom CHAIR",
-        "question": "🪑✨🏫",
+        "id": "KIDS_SCHOOL_L16_Q1",
+        "gameType": "school",
+        "level": 16,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Found it!",
-          "Not here"
+          "Backpack",
+          "Ruler",
+          "Pencil"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the small wooden seat near the desk!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L16_Q2",
-        "instruction": "Search: Find the RULER",
-        "question": "📏✨📐",
+        "id": "KIDS_SCHOOL_L16_Q2",
+        "gameType": "school",
+        "level": 16,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Ruler",
+          "Backpack"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the long measuring tool with the numbers!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L16_Q3",
-        "instruction": "Search: Find the BIG BOARD",
-        "question": "🖍️✨🖼️",
+        "id": "KIDS_SCHOOL_L16_Q3",
+        "gameType": "school",
+        "level": 16,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the large rectangle at the front of the classroom!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 17,
     "quests": [
       {
-        "id": "KID_SCHOOL_L17_Q1",
-        "instruction": "Action: Sit in CHAIR!",
-        "question": "🪑🧒🧘",
+        "id": "KIDS_SCHOOL_L17_Q1",
+        "gameType": "school",
+        "level": 17,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Sit nicely!",
-          "Stand on it"
+          "Eraser",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "Sit nicely!",
-        "hint": "Keep your back straight and your feet on the floor while you sit!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L17_Q2",
-        "instruction": "Action: Write on BOARD!",
-        "question": "🖍️🧒🖼️",
+        "id": "KIDS_SCHOOL_L17_Q2",
+        "gameType": "school",
+        "level": 17,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Draw a star!",
-          "Eat marker"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Draw a star!",
-        "hint": "Use the special marker to make a bright star on the board!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L17_Q3",
-        "instruction": "Action: Measure with RULER!",
-        "question": "📏🧒✏️",
+        "id": "KIDS_SCHOOL_L17_Q3",
+        "gameType": "school",
+        "level": 17,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Find the size!",
-          "Throw ruler"
+          "Eraser",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Find the size!",
-        "hint": "Put the ruler next to your pencil to see how long it is!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 18,
     "quests": [
       {
-        "id": "KID_SCHOOL_L18_Q1",
-        "instruction": "Match: What is for the CLASSROOM?",
-        "question": "🏫 + ?",
+        "id": "KIDS_SCHOOL_L18_Q1",
+        "gameType": "school",
+        "level": 18,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Desk",
-          "Pillow"
+          "Pencil",
+          "Ruler",
+          "Eraser"
         ],
-        "correctAnswer": "Desk",
-        "hint": "A desk is the special table where we do all our school work!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L18_Q2",
-        "instruction": "Match: What is for the TEACHER?",
-        "question": "👩‍🏫 + ?",
+        "id": "KIDS_SCHOOL_L18_Q2",
+        "gameType": "school",
+        "level": 18,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Whiteboard",
-          "Cradle"
+          "Backpack",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Whiteboard",
-        "hint": "The teacher uses the whiteboard to teach us all our lessons!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L18_Q3",
-        "instruction": "Match: What is for SITTING?",
-        "question": "🧘 + ?",
+        "id": "KIDS_SCHOOL_L18_Q3",
+        "gameType": "school",
+        "level": 18,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Chair",
-          "Ladder"
+          "Backpack",
+          "Ruler",
+          "Pencil"
         ],
-        "correctAnswer": "Chair",
-        "hint": "A chair is what we use to sit comfortably while we learn!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 19,
     "quests": [
       {
-        "id": "KID_SCHOOL_L19_Q1",
-        "instruction": "School: Is the desk for work?",
-        "question": "🛋️✍️❓",
+        "id": "KIDS_SCHOOL_L19_Q1",
+        "gameType": "school",
+        "level": 19,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Yes, work here!",
-          "No, for sleep"
+          "Eraser",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, work here!",
-        "hint": "Our desk is our very own space for writing and learning!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L19_Q2",
-        "instruction": "School: Are you a CLASSROOM CADET?",
-        "question": "🪑🛋️✨❓",
+        "id": "KIDS_SCHOOL_L19_Q2",
+        "gameType": "school",
+        "level": 19,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Yes, I am!",
-          "No"
+          "Ruler",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "A classroom cadet knows all the important places in their room!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L19_Q3",
-        "instruction": "School: Ready for the challenge?",
-        "question": "🏆✨❓",
+        "id": "KIDS_SCHOOL_L19_Q3",
+        "gameType": "school",
+        "level": 19,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "YES!",
-          "No"
+          "Eraser",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Level 20 is coming! Show us how well you know your classroom!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 20,
     "quests": [
       {
-        "id": "KID_SCHOOL_L20_Q1",
-        "instruction": "Level 20 Challenge: Classroom Cadet!",
-        "question": "What do we sit on? 🪑🧘",
+        "id": "KIDS_SCHOOL_L20_Q1",
+        "gameType": "school",
+        "level": 20,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Chair",
-          "Table",
-          "Floor"
+          "Eraser",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Chair",
-        "hint": "Four legs!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L20_Q2",
-        "instruction": "Level 20 Challenge: Classroom Cadet!",
-        "question": "What does teacher use? 🖍️🖼️",
+        "id": "KIDS_SCHOOL_L20_Q2",
+        "gameType": "school",
+        "level": 20,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Board",
-          "Window",
-          "Desk"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Board",
-        "hint": "Big and white!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L20_Q3",
-        "instruction": "Level 20 Challenge: Mastery!",
-        "question": "Are you a Classroom Cadet?",
+        "id": "KIDS_SCHOOL_L20_Q3",
+        "gameType": "school",
+        "level": 20,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "YES!",
-          "No"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 20!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 1,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }

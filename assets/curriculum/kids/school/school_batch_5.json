@@ -3,50 +3,73 @@
     "level": 41,
     "quests": [
       {
-        "id": "KID_SCHOOL_L41_Q1",
-        "instruction": "Who helps us learn new things in class?",
-        "question": "👩‍🏫✨🏫",
+        "id": "KIDS_SCHOOL_L41_Q1",
+        "gameType": "school",
+        "level": 41,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Teacher",
-          "Dog",
-          "Bird"
+          "Pencil",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Teacher",
-        "hint": "She stands at the board and reads us stories and teaches us numbers! It's the teacher!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L41_Q2",
-        "instruction": "Find the TEACHER",
-        "question": "👩‍🏫✨🖍️",
+        "id": "KIDS_SCHOOL_L41_Q2",
+        "gameType": "school",
+        "level": 41,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Found it!",
-          "Not here"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person holding a book and smiling at the front of the classroom!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L41_Q3",
-        "instruction": "Is she HELPFUL?",
-        "question": "👩‍🏫 = Helpful?",
+        "id": "KIDS_SCHOOL_L41_Q3",
+        "gameType": "school",
+        "level": 41,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Yes, very helpful!",
-          "No, mean"
+          "Backpack",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, very helpful!",
-        "hint": "Our teacher is here to guide us and help us grow smarter every day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -54,50 +77,73 @@
     "level": 42,
     "quests": [
       {
-        "id": "KID_SCHOOL_L42_Q1",
-        "instruction": "Who are the children learning in class?",
-        "question": "🧒✨🎒",
+        "id": "KIDS_SCHOOL_L42_Q1",
+        "gameType": "school",
+        "level": 42,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Students",
-          "Cats",
-          "Bears"
+          "Eraser",
+          "Ruler",
+          "Backpack"
         ],
-        "correctAnswer": "Students",
-        "hint": "They sit at their desks, listen to the teacher, and play at recess! They are students!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L42_Q2",
-        "instruction": "Find the STUDENT",
-        "question": "🧒✨📓",
+        "id": "KIDS_SCHOOL_L42_Q2",
+        "gameType": "school",
+        "level": 42,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Found it!",
-          "Not here"
+          "Backpack",
+          "Ruler",
+          "Eraser"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the child with a backpack and a pencil ready to learn something new!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L42_Q3",
-        "instruction": "Is he LEARNING?",
-        "question": "🧒 = Learning?",
+        "id": "KIDS_SCHOOL_L42_Q3",
+        "gameType": "school",
+        "level": 42,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Yes, working hard!",
-          "No, sleeping"
+          "Backpack",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Yes, working hard!",
-        "hint": "Being a student means we get to discover new and exciting things every day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -105,50 +151,73 @@
     "level": 43,
     "quests": [
       {
-        "id": "KID_SCHOOL_L43_Q1",
-        "instruction": "Who is the leader of the whole school?",
-        "question": "👔✨🏫",
+        "id": "KIDS_SCHOOL_L43_Q1",
+        "gameType": "school",
+        "level": 43,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Principal",
-          "Baby",
-          "Fish"
+          "Eraser",
+          "Pencil",
+          "Backpack"
         ],
-        "correctAnswer": "Principal",
-        "hint": "They have a big office and make sure the whole school is safe and happy! It's the principal!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L43_Q2",
-        "instruction": "Find the PRINCIPAL",
-        "question": "👔✨📞",
+        "id": "KIDS_SCHOOL_L43_Q2",
+        "gameType": "school",
+        "level": 43,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Found it!",
-          "Not here"
+          "Ruler",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person in a suit or nice clothes who helps keep the school running!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L43_Q3",
-        "instruction": "Is he KIND?",
-        "question": "👔 = Kind?",
+        "id": "KIDS_SCHOOL_L43_Q3",
+        "gameType": "school",
+        "level": 43,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Yes, loves students!",
-          "No, scary monster"
+          "Backpack",
+          "Ruler",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, loves students!",
-        "hint": "The principal is a friend who makes sure everyone has what they need at school!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -156,50 +225,73 @@
     "level": 44,
     "quests": [
       {
-        "id": "KID_SCHOOL_L44_Q1",
-        "instruction": "Who keeps our school clean and shiny?",
-        "question": "🧹✨🧽",
+        "id": "KIDS_SCHOOL_L44_Q1",
+        "gameType": "school",
+        "level": 44,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Janitor",
-          "Cook",
-          "Pilot"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Janitor",
-        "hint": "They use a mop and a broom to clean the floors and keep our halls bright! It's the janitor!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L44_Q2",
-        "instruction": "Find the JANITOR",
-        "question": "🧹✨🏢",
+        "id": "KIDS_SCHOOL_L44_Q2",
+        "gameType": "school",
+        "level": 44,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person with the big bunch of keys and a cleaning cart!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L44_Q3",
-        "instruction": "Is he IMPORTANT?",
-        "question": "🧹 = Important?",
+        "id": "KIDS_SCHOOL_L44_Q3",
+        "gameType": "school",
+        "level": 44,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Yes, very!",
-          "No, not at all"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, very!",
-        "hint": "The janitor works hard to make sure our school is a healthy and clean place to learn!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -207,49 +299,73 @@
     "level": 45,
     "quests": [
       {
-        "id": "KID_SCHOOL_L45_Q1",
-        "instruction": "People Logic: TEACHER is for...",
-        "question": "👩‍🏫 -> ?",
+        "id": "KIDS_SCHOOL_L45_Q1",
+        "gameType": "school",
+        "level": 45,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Helping",
-          "Sleeping"
+          "Backpack",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Helping",
-        "hint": "Our teacher is always ready to help us with a question or a problem in class!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L45_Q2",
-        "instruction": "People Logic: STUDENT is for...",
-        "question": "🧒 -> ?",
+        "id": "KIDS_SCHOOL_L45_Q2",
+        "gameType": "school",
+        "level": 45,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Learning",
-          "Working"
+          "Pencil",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Learning",
-        "hint": "Students come to school to learn about letters, numbers, and the world!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L45_Q3",
-        "instruction": "Logic: Do we like our SCHOOL SQUAD?",
-        "question": "👩‍🏫🧒👔🧹 -> ✨?",
+        "id": "KIDS_SCHOOL_L45_Q3",
+        "gameType": "school",
+        "level": 45,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Yes, best team!",
-          "No, hate them"
+          "Ruler",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, best team!",
-        "hint": "Everyone at school works together to make it a wonderful place for you!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "SunnyMeadow",
-        "shader": "sparkle_dust"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -257,49 +373,73 @@
     "level": 46,
     "quests": [
       {
-        "id": "KID_SCHOOL_L46_Q1",
-        "instruction": "Search: Find the child LEARNING",
-        "question": "🧒✨📖",
+        "id": "KIDS_SCHOOL_L46_Q1",
+        "gameType": "school",
+        "level": 46,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the person focused on their book and their lesson!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L46_Q2",
-        "instruction": "Search: Find the JANITOR'S broom",
-        "question": "🧹✨🏢",
+        "id": "KIDS_SCHOOL_L46_Q2",
+        "gameType": "school",
+        "level": 46,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Found it!",
-          "Not here"
+          "Backpack",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the long cleaning tool that sweeps the floor!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L46_Q3",
-        "instruction": "Search: Find the PRINCIPAL'S office",
-        "question": "👔✨🚪",
+        "id": "KIDS_SCHOOL_L46_Q3",
+        "gameType": "school",
+        "level": 46,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Found it!",
-          "Not here"
+          "Eraser",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "Found it!",
-        "hint": "Look for the door with the principal's name on it!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -307,49 +447,73 @@
     "level": 47,
     "quests": [
       {
-        "id": "KID_SCHOOL_L47_Q1",
-        "instruction": "Action: Listen to TEACHER!",
-        "question": "👩‍🏫🧒👂",
+        "id": "KIDS_SCHOOL_L47_Q1",
+        "gameType": "school",
+        "level": 47,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Listen carefully!",
-          "Talk loud"
+          "Eraser",
+          "Backpack",
+          "Ruler"
         ],
-        "correctAnswer": "Listen carefully!",
-        "hint": "Use your ears to hear the important things the teacher is saying!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L47_Q2",
-        "instruction": "Action: Ask STUDENT for help!",
-        "question": "🧒🤝🧒",
+        "id": "KIDS_SCHOOL_L47_Q2",
+        "gameType": "school",
+        "level": 47,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Help a friend!",
-          "Take toy"
+          "Ruler",
+          "Backpack",
+          "Pencil"
         ],
-        "correctAnswer": "Help a friend!",
-        "hint": "If a friend is stuck, show them how to do it in a kind way!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L47_Q3",
-        "instruction": "Action: Say hi to JANITOR!",
-        "question": "👋🧒🧹",
+        "id": "KIDS_SCHOOL_L47_Q3",
+        "gameType": "school",
+        "level": 47,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Give a wave!",
-          "Run past"
+          "Backpack",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Give a wave!",
-        "hint": "A friendly hello makes everyone's day at school much happier!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "CandyCloud",
-        "shader": "sugar_glow"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -357,49 +521,73 @@
     "level": 48,
     "quests": [
       {
-        "id": "KID_SCHOOL_L48_Q1",
-        "instruction": "Match: Who is for HELPING?",
-        "question": "🤝 + ?",
+        "id": "KIDS_SCHOOL_L48_Q1",
+        "gameType": "school",
+        "level": 48,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Teacher",
-          "Wall"
+          "Pencil",
+          "Eraser",
+          "Ruler"
         ],
-        "correctAnswer": "Teacher",
-        "hint": "The teacher is always there to help you learn and grow!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L48_Q2",
-        "instruction": "Match: Who is for LEARNING?",
-        "question": "📖 + ?",
+        "id": "KIDS_SCHOOL_L48_Q2",
+        "gameType": "school",
+        "level": 48,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "Student",
-          "Sofa"
+          "Backpack",
+          "Eraser",
+          "Pencil"
         ],
-        "correctAnswer": "Student",
-        "hint": "Students are the ones who come to school to learn every day!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L48_Q3",
-        "instruction": "Match: Who is for CLEANING?",
-        "question": "🧹 + ?",
+        "id": "KIDS_SCHOOL_L48_Q3",
+        "gameType": "school",
+        "level": 48,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Janitor",
-          "Cook"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Janitor",
-        "hint": "The janitor is the one who keeps our school looking shiny and clean!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "ForestFriend",
-        "shader": "leaf_flutter"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsCandyBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -407,49 +595,73 @@
     "level": 49,
     "quests": [
       {
-        "id": "KID_SCHOOL_L49_Q1",
-        "instruction": "School: Is the principal a friend?",
-        "question": "👔🤝🧒❓",
+        "id": "KIDS_SCHOOL_L49_Q1",
+        "gameType": "school",
+        "level": 49,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Yes, big friend!",
-          "No, enemy"
+          "Ruler",
+          "Backpack",
+          "Eraser"
         ],
-        "correctAnswer": "Yes, big friend!",
-        "hint": "The principal loves to see students learning and being kind!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsForestBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L49_Q2",
-        "instruction": "School: Are you in the SCHOOL SQUAD?",
-        "question": "👩‍🏫🧒👔🧹✨❓",
+        "id": "KIDS_SCHOOL_L49_Q2",
+        "gameType": "school",
+        "level": 49,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "Yes, I am!",
-          "No"
+          "Eraser",
+          "Ruler",
+          "Pencil"
         ],
-        "correctAnswer": "Yes, I am!",
-        "hint": "You are a very important part of our big and happy school family!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsGalaxyBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L49_Q3",
-        "instruction": "School: Ready for the challenge?",
-        "question": "🏆✨❓",
+        "id": "KIDS_SCHOOL_L49_Q3",
+        "gameType": "school",
+        "level": 49,
+        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+        "question": "Eraser",
+        "correctAnswer": "Eraser",
         "options": [
-          "YES!",
-          "No"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Level 50 is coming! Show us how well you know your school team!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "RainbowSwirl",
-        "shader": "bubble_pop"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom eraser.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   },
@@ -457,51 +669,73 @@
     "level": 50,
     "quests": [
       {
-        "id": "KID_SCHOOL_L50_Q1",
-        "instruction": "Level 50 Challenge: School Squad!",
-        "question": "Who teaches us? 👩‍🏫✨",
+        "id": "KIDS_SCHOOL_L50_Q1",
+        "gameType": "school",
+        "level": 50,
+        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+        "question": "Ruler",
+        "correctAnswer": "Ruler",
         "options": [
-          "Teacher",
-          "Janitor",
-          "Student"
+          "Ruler",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Teacher",
-        "hint": "At the board!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsSafariBackground",
+        "shader": "",
+        "hint": "This is the classroom ruler.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L50_Q2",
-        "instruction": "Level 50 Challenge: School Squad!",
-        "question": "Who cleans the floor? 🧹✨",
+        "id": "KIDS_SCHOOL_L50_Q2",
+        "gameType": "school",
+        "level": 50,
+        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+        "question": "Backpack",
+        "correctAnswer": "Backpack",
         "options": [
-          "Janitor",
-          "Principal",
-          "Teacher"
+          "Backpack",
+          "Pencil",
+          "Eraser"
         ],
-        "correctAnswer": "Janitor",
-        "hint": "With a broom!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsOceanBackground",
+        "shader": "",
+        "hint": "This is the classroom backpack.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       },
       {
-        "id": "KID_SCHOOL_L50_Q3",
-        "instruction": "Level 50 Challenge: Mastery!",
-        "question": "Are you in the School Squad?",
+        "id": "KIDS_SCHOOL_L50_Q3",
+        "gameType": "school",
+        "level": 50,
+        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+        "question": "Pencil",
+        "correctAnswer": "Pencil",
         "options": [
-          "YES!",
-          "No"
+          "Eraser",
+          "Pencil",
+          "Ruler"
         ],
-        "correctAnswer": "YES!",
-        "hint": "Congratulations! You have completed Level 50!",
-        "gameType": "choice_multi",
-        "interactionType": "choice",
-        "painter": "StarryNight",
-        "shader": "magic_twinkle"
+        "imageUrl": "",
+        "audioUrl": "",
+        "painter": "KidsWorldBackground",
+        "shader": "",
+        "hint": "This is the classroom pencil.",
+        "metadata": {
+          "difficulty": 3,
+          "xpReward": 10,
+          "coinReward": 5
+        }
       }
     ]
   }
