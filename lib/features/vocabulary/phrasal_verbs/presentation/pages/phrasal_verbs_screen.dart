@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,7 +13,10 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_la
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_painters.dart';
+import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_lcd.dart';
+import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_vault_handle.dart';
+import 'package:vowl/features/vocabulary/phrasal_verbs/presentation/widgets/phrasal_verbs_option_key.dart';
 
 class PhrasalVerbsScreen extends StatefulWidget {
   final int level;
@@ -92,8 +94,10 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          if (state.currentIndex != _lastProcessedIndex ||
-              (_isAnswered && state.lastAnswerCorrect == null)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+
+          if (isNewQuestion || isRetry) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
@@ -101,6 +105,11 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
               _isCorrect = null;
               _selectedOption = null;
               _vaultController.reset();
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
         }
@@ -179,31 +188,44 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
                           SizedBox(height: 20.h),
 
                           // LCD Display
-                          _buildLcdDisplay(
-                            quest.hint?.replaceFirst("DEFINITION: ", "") ??
+                          PhrasalVerbsLcd(
+                            text: quest.hint?.replaceFirst("DEFINITION: ", "") ??
                                 "ANALYZING VAULT...",
-                            theme.primaryColor,
-                            isDark,
+                            color: theme.primaryColor,
+                            isDark: isDark,
                           ),
 
                           SizedBox(height: 30.h),
 
                           // The Central Vault Handle
-                          _buildVaultHandle(
-                            quest.word ?? "VERB",
-                            theme.primaryColor,
-                            isDark,
+                          PhrasalVerbsVaultHandle(
+                            verb: quest.word ?? "VERB",
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            vaultController: _vaultController,
                           ),
 
                           SizedBox(height: 30.h),
 
                           // Key Options (Particles)
-                          _buildParticleKeys(
-                            quest.options ?? [],
-                            quest.correctAnswer ?? "",
-                            theme.primaryColor,
-                            isDark,
-                            isFinalFailure,
+                          Wrap(
+                            spacing: 15.w,
+                            runSpacing: 15.h,
+                            alignment: WrapAlignment.center,
+                            children: (quest.options ?? []).asMap().entries.map((entry) {
+                              return PhrasalVerbsOptionKey(
+                                text: entry.value,
+                                correct: quest.correctAnswer ?? "",
+                                color: theme.primaryColor,
+                                isDark: isDark,
+                                isAnswered: _isAnswered,
+                                isCorrect: _isCorrect,
+                                selectedOption: _selectedOption,
+                                isFinalFailure: isFinalFailure,
+                                index: entry.key,
+                                onTap: () => _submitChoice(entry.value, quest.correctAnswer ?? ""),
+                              );
+                            }).toList(),
                           ),
                           SizedBox(height: 20.h),
                         ],
@@ -245,259 +267,4 @@ class _PhrasalVerbsScreenState extends State<PhrasalVerbsScreen>
         .shimmer(duration: 3.seconds);
   }
 
-  Widget _buildLcdDisplay(String text, Color color, bool isDark) {
-    return Container(
-      width: 0.9.sw,
-      padding: EdgeInsets.all(15.r),
-      decoration: BoxDecoration(
-        color: isDark ? color.withValues(alpha: 0.05) : Colors.white,
-        borderRadius: BorderRadius.circular(15.r),
-        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: 0.08),
-            blurRadius: 20,
-            spreadRadius: 2,
-            offset: const Offset(0, 5),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.radar_rounded, size: 12.sp, color: color),
-                  SizedBox(width: 8.w),
-                  Text(
-                    "DECRYPTING TARGET",
-                    style: GoogleFonts.shareTechMono(
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.bold,
-                      color: color,
-                      letterSpacing: 2,
-                    ),
-                  ),
-                ],
-              )
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .fade(duration: 1.seconds),
-          SizedBox(height: 10.h),
-          Text(
-            text.toUpperCase(),
-            textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.bold,
-              color: isDark ? Colors.white : Colors.black87,
-              height: 1.2,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildVaultHandle(String verb, Color color, bool isDark) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        // The Outer Rotating Vault Gear
-        AnimatedBuilder(
-          animation: _vaultController,
-          builder: (context, child) {
-            final unlockRotation = _vaultController.value * math.pi * 2.0;
-            return Transform.rotate(
-              angle: unlockRotation,
-              child: Container(
-                width: 150.r,
-                height: 150.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: isDark ? const Color(0xFF151E2E) : Colors.white,
-                  border: Border.all(
-                    color: color.withValues(alpha: 0.4),
-                    width: 2,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: color.withValues(alpha: 0.15),
-                      blurRadius: 20,
-                      spreadRadius: 2,
-                    ),
-                  ],
-                ),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: List.generate(8, (i) {
-                    return Transform.rotate(
-                      angle: i * math.pi / 4,
-                      child: Align(
-                        alignment: Alignment.topCenter,
-                        child: Container(
-                          width: 10.r,
-                          height: 15.r,
-                          decoration: BoxDecoration(
-                            color: color.withValues(alpha: 0.3),
-                            borderRadius: BorderRadius.circular(3),
-                          ),
-                        ),
-                      ),
-                    );
-                  }),
-                ),
-              ).animate(onPlay: (c) => c.repeat()).rotate(duration: 25.seconds),
-            );
-          },
-        ),
-
-        // The Stationary Verb Core
-        Container(
-          width: 90.r,
-          height: 90.r,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: isDark ? Colors.black : Colors.white,
-            border: Border.all(color: color, width: 3),
-            boxShadow: [
-              BoxShadow(
-                color: isDark ? Colors.black54 : Colors.grey.shade300,
-                blurRadius: 10,
-                offset: const Offset(3, 3),
-              ),
-            ],
-          ),
-          child: Center(
-            child: Text(
-              verb.toUpperCase(),
-              style: GoogleFonts.outfit(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : Colors.black87,
-                letterSpacing: 1.5,
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildParticleKeys(
-    List<String> options,
-    String correct,
-    Color color,
-    bool isDark,
-    bool isFinalFailure,
-  ) {
-    return Wrap(
-      spacing: 15.w,
-      runSpacing: 15.h,
-      alignment: WrapAlignment.center,
-      children: options.asMap().entries.map((entry) {
-        int index = entry.key;
-        String o = entry.value;
-
-        final isSelected = _selectedOption == o;
-        final showCorrect =
-            (_isAnswered && _isCorrect == true && o == correct) ||
-            (_isAnswered && isFinalFailure && o == correct);
-        final isWrong = _isAnswered && isSelected && _isCorrect == false;
-
-        Color cardBg = isDark ? color.withValues(alpha: 0.1) : Colors.white;
-        Color cardBorder = color.withValues(alpha: 0.3);
-        Color textColor = isDark ? Colors.white : Colors.black87;
-
-        if (showCorrect) {
-          cardBg = Colors.green;
-          cardBorder = Colors.greenAccent;
-          textColor = Colors.white;
-        } else if (isWrong) {
-          cardBg = Colors.red;
-          cardBorder = Colors.redAccent;
-          textColor = Colors.white;
-        } else if (isSelected) {
-          cardBg = color;
-          cardBorder = color;
-          textColor = Colors.white;
-        }
-
-        Widget keyCard = ScaleButton(
-          onTap: () => _submitChoice(o, correct),
-          child: Container(
-            width: 150.w, // Increased!
-            padding: EdgeInsets.symmetric(vertical: 20.h), // Increased!
-            decoration: BoxDecoration(
-              color: cardBg,
-              borderRadius: BorderRadius.circular(15.r),
-              border: Border.all(color: cardBorder, width: 2),
-              boxShadow: [
-                BoxShadow(
-                  color: showCorrect
-                      ? Colors.green.withValues(alpha: 0.5)
-                      : (isWrong
-                            ? Colors.red.withValues(alpha: 0.5)
-                            : color.withValues(alpha: 0.1)),
-                  blurRadius: showCorrect || isSelected ? 15 : 8,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Center(
-              child: Text(
-                o.toUpperCase(),
-                style: GoogleFonts.outfit(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.bold,
-                  color: textColor,
-                  letterSpacing: 1,
-                ),
-              ),
-            ),
-          ),
-        );
-
-        if (showCorrect) {
-          keyCard = keyCard.animate().scale(
-            end: const Offset(1.1, 1.1),
-            duration: 300.ms,
-            curve: Curves.easeOutBack,
-          );
-        } else if (isWrong) {
-          keyCard = keyCard.animate().shakeX(amount: 5, duration: 400.ms);
-        }
-
-        return keyCard
-            .animate(onPlay: (c) => c.repeat(reverse: true))
-            .moveY(
-              begin: -3,
-              end: 3,
-              duration: (1200 + (index * 200)).ms,
-              curve: Curves.easeInOut,
-            );
-      }).toList(),
-    );
-  }
-}
-
-class GridPainter extends CustomPainter {
-  final Color color;
-  GridPainter(this.color);
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = 0.5;
-    const step = 40.0;
-    for (double x = 0; x < size.width; x += step) {
-      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
-    }
-    for (double y = 0; y < size.height; y += step) {
-      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
