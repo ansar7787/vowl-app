@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -13,6 +11,10 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_la
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_painters.dart';
+import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_instruction.dart';
+import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_thesis_paper.dart';
+import 'package:vowl/features/vocabulary/academic_word/presentation/widgets/academic_word_shard.dart';
 
 class AcademicWordScreen extends StatefulWidget {
   final int level;
@@ -54,7 +56,10 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          if (state.currentIndex != _lastProcessedIndex || (_isAnswered && state.lastAnswerCorrect == null)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+
+          if (isNewQuestion || isRetry) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
@@ -62,6 +67,11 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
               _isCorrect = null;
               _dragOffset = Offset.zero;
               _activeShardIndex = null;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
         }
@@ -128,25 +138,37 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
 
                         Positioned(
                           top: 130.h,
-                          child: _buildThesisPaper(
-                            quest.passage ?? "",
-                            theme.primaryColor,
-                            isDark,
+                          child: AcademicWordThesisPaper(
+                            passage: quest.passage ?? "",
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            slotKey: _slotKey,
+                            isAnswered: _isAnswered,
+                            isCorrect: _isCorrect,
+                            correctAnswer: quest.correctAnswer,
                           ),
                         ),
 
                         ...List.generate(quest.options?.length ?? 0, (i) {
-                          return _buildAcademicShard(
-                            i,
-                            quest.options![i],
-                            theme.primaryColor,
-                            isDark,
+                          return AcademicWordShard(
+                            index: i,
+                            text: quest.options![i],
+                            color: theme.primaryColor,
+                            isDark: isDark,
+                            isDragging: _activeShardIndex == i,
+                            offset: _dragOffset,
+                            constraints: constraints,
+                            onTap: () => _attemptThrust(i, quest),
+                            onDragStart: (_) => _onShardDragStart(i),
+                            onDragUpdate: (d) => _onShardDragUpdate(i, d),
+                            onDragEnd: (_) => _onShardDragEnd(i, quest),
+                            initialPosition: _getShardInitialPosition(i, quest.options?.length ?? 4),
                           );
                         }),
 
                         Positioned(
                           top: 50.h,
-                          child: _buildInstruction(theme.primaryColor),
+                          child: AcademicWordInstruction(color: theme.primaryColor),
                         ),
                       ],
                     );
@@ -156,172 +178,6 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
       },
     );
   }
-
-  Widget _buildInstruction(Color color) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.2)),
-      ),
-      child: Text(
-        "THRUST WORD INTO THE THESIS",
-        style: GoogleFonts.shareTechMono(
-          fontSize: 11.sp,
-          fontWeight: FontWeight.bold,
-          color: color,
-          letterSpacing: 2,
-        ),
-      ),
-    )
-    .animate(onPlay: (c) => c.repeat(reverse: true))
-    .shimmer(duration: 2.seconds, color: color.withValues(alpha: 0.3));
-  }
-
-  Widget _buildThesisPaper(String passage, Color color, bool isDark) {
-    final parts = passage.split('[TARGET]');
-
-    return Container(
-      width: 330.w,
-      padding: EdgeInsets.all(28.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(4.r),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.5 : 0.1),
-            blurRadius: 30,
-            offset: const Offset(0, 15),
-          ),
-          BoxShadow(
-            color: color.withValues(alpha: 0.1),
-            blurRadius: 50,
-          ),
-        ],
-        border: Border.all(
-          color: isDark ? color.withValues(alpha: 0.3) : color.withValues(alpha: 0.1),
-          width: 1.5,
-        ),
-      ),
-      child: RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(
-          style: GoogleFonts.crimsonPro(
-            fontSize: 20.sp,
-            height: 1.6,
-            color: isDark ? Colors.white70 : Colors.black87,
-          ),
-          children: [
-            TextSpan(text: parts[0]),
-            WidgetSpan(
-              alignment: PlaceholderAlignment.middle,
-              child: Container(
-                key: _slotKey,
-                width: 150.w,
-                height: 40.h,
-                margin: EdgeInsets.symmetric(horizontal: 8.w),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.05),
-                  border: Border(
-                    bottom: BorderSide(
-                      color: _isAnswered && _isCorrect == false ? Colors.red : color,
-                      width: 2.5,
-                    ),
-                  ),
-                ),
-                child: Center(
-                  child: _isAnswered && _isCorrect == true
-                      ? Text(
-                          _lastQuest?.correctAnswer?.toUpperCase() ?? "",
-                          style: GoogleFonts.shareTechMono(
-                            color: color,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16.sp,
-                          ),
-                        ).animate().fadeIn().scale()
-                      : Text(
-                          "THRUST_PENDING",
-                          style: GoogleFonts.shareTechMono(
-                            color: color.withValues(alpha: 0.3),
-                            fontSize: 10.sp,
-                            letterSpacing: 1,
-                          ),
-                        ).animate(onPlay: (c) => c.repeat()).shimmer(),
-                ),
-              ),
-            ),
-            if (parts.length > 1) TextSpan(text: parts[1]),
-          ],
-        ),
-      ),
-    )
-    .animate()
-    .fadeIn(duration: 1.seconds)
-    .slideY(begin: -0.05, end: 0, curve: Curves.easeOutCubic);
-  }
-
-  Widget _buildAcademicShard(int index, String text, Color color, bool isDark) {
-    final initial = _getShardInitialPosition(index, (_lastQuest?.options?.length ?? 4));
-    final isDragging = _activeShardIndex == index;
-    final offset = isDragging ? _dragOffset : Offset.zero;
-
-    return Positioned(
-      left: (_lastConstraints!.maxWidth / 2) + initial.dx + offset.dx - 70.w,
-      top: (_lastConstraints!.maxHeight / 2) + initial.dy + offset.dy - 35.h,
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () => _attemptThrust(index, _lastQuest!),
-        onPanStart: (_) => _onShardDragStart(index),
-        onPanUpdate: (d) => _onShardDragUpdate(index, d),
-        onPanEnd: (_) => _onShardDragEnd(index, _lastQuest!),
-        child: Container(
-          width: 140.w,
-          height: 70.h,
-          decoration: BoxDecoration(
-            color: isDark ? const Color(0xFF334155) : Colors.white,
-            borderRadius: BorderRadius.circular(12.r),
-            border: Border.all(
-              color: isDragging ? color : color.withValues(alpha: 0.3),
-              width: 2,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: isDragging ? 0.3 : 0.1),
-                blurRadius: isDragging ? 20 : 10,
-                offset: Offset(0, isDragging ? 10 : 5),
-              ),
-            ],
-          ),
-          child: Center(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 12.w),
-                child: Text(
-                  text.toUpperCase(),
-                  style: GoogleFonts.shareTechMono(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w900,
-                    color: isDark ? Colors.white : Colors.black87,
-                    letterSpacing: 1,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    )
-    .animate(onPlay: (c) => c.repeat(reverse: true))
-    .moveY(
-      begin: -5,
-      end: 5,
-      duration: (2 + index).seconds,
-      curve: Curves.easeInOut,
-    );
-  }
-
   void _onShardDragStart(int index) {
     if (_isAnswered) return;
     setState(() => _activeShardIndex = index);
@@ -412,24 +268,4 @@ class _AcademicWordScreenState extends State<AcademicWordScreen> with TickerProv
     
     return Offset(x, y);
   }
-}
-
-class GridPainter extends CustomPainter {
-  final Color color;
-  GridPainter(this.color);
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color..strokeWidth = 0.5;
-    const step = 40.0;
-    for (double i = 0; i < size.width; i += step) {
-      canvas.drawLine(Offset(i, 0), Offset(i, size.height), paint);
-    }
-    for (double i = 0; i < size.height; i += step) {
-      canvas.drawLine(Offset(0, i), Offset(size.width, i), paint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
