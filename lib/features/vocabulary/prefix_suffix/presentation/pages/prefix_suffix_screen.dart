@@ -144,13 +144,21 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          if (state.currentIndex != _lastProcessedIndex || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
+
+          if (isNewQuestion || isRetry) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _dragOffset = Offset.zero;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
         }
@@ -232,7 +240,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
 
   Widget _buildMissionControl(Color color) {
     return Positioned(
-      top: -80.h,
+      top: 10.h,
       child: Column(
         children: [
           Container(
