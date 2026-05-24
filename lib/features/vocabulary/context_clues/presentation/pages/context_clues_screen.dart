@@ -432,5 +432,3 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
         .shimmer(duration: 2.seconds, color: Colors.white10);
   }
 }
-
-
