@@ -14,6 +14,9 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_la
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_painters.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_warp_gate.dart';
+import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_word_shard.dart';
 
 class SynonymSearchScreen extends StatefulWidget {
   final int level;
@@ -180,9 +183,9 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
       case 1:
         return Offset(hDist, -vDist);
       case 2:
-        return Offset(-hDist, vDist + 90.h);
+        return Offset(-hDist, vDist);
       case 3:
-        return Offset(hDist, vDist + 90.h);
+        return Offset(hDist, vDist);
       default:
         double angle = (index * (2 * math.pi / total)) - (math.pi / 2);
         return Offset(math.cos(angle) * hDist, math.sin(angle) * vDist);
@@ -196,14 +199,21 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          if (state.currentIndex != _lastProcessedIndex ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = state.lastAnswerCorrect == null && _isAnswered;
+
+          if (isNewQuestion || isRetry) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _initShards(state.currentQuest.options?.length ?? 0);
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
         }
@@ -298,10 +308,10 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                               ),
                             ),
                           ),
-                          _buildWarpGate(
-                            quest.word ?? "",
-                            theme.primaryColor,
-                            isDark,
+                          SynonymWarpGate(
+                            word: quest.word ?? "",
+                            color: theme.primaryColor,
+                            isDark: isDark,
                           ),
                           ...List.generate(quest.options?.length ?? 0, (i) {
                             if (_activeShardIndex == i &&
@@ -338,14 +348,24 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
                             return const SizedBox.shrink();
                           }),
                           ...List.generate(quest.options?.length ?? 0, (i) {
-                            return _buildWordShard(
-                              i,
-                              quest.options![i],
-                              theme.primaryColor,
-                              isDark,
-                              quest.options!.length,
-                              constraints,
-                              quest,
+                            return SynonymWordShard(
+                              index: i,
+                              text: quest.options![i],
+                              color: theme.primaryColor,
+                              isDark: isDark,
+                              initialPos: _getShardInitialPosition(
+                                i,
+                                quest.options!.length,
+                                constraints,
+                              ),
+                              offset: _shardOffsets[i] ?? Offset.zero,
+                              isWarping: _isWarping[i] ?? false,
+                              isActive: _activeShardIndex == i,
+                              safeWidth: safeWidth,
+                              safeHeight: safeHeight,
+                              onPanStart: (d) => _onShardDragStart(i, d),
+                              onPanUpdate: (d) => _onShardDragUpdate(i, d),
+                              onPanEnd: () => _onShardDragEnd(i, quest),
                             );
                           }),
                           Positioned(
@@ -410,328 +430,5 @@ class _SynonymSearchScreenState extends State<SynonymSearchScreen>
         );
   }
 
-  Widget _buildWarpGate(String word, Color color, bool isDark) {
-    return RepaintBoundary(
-      child: Center(
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Container(
-                  width: 220.r,
-                  height: 220.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: RadialGradient(
-                      colors: [
-                        color.withValues(alpha: 0.2),
-                        Colors.transparent,
-                      ],
-                      stops: const [0.3, 1.0],
-                    ),
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat())
-                .scale(
-                  begin: const Offset(0.8, 0.8),
-                  end: const Offset(1.3, 1.3),
-                  duration: 3.seconds,
-                  curve: Curves.easeInOut,
-                )
-                .fadeOut(),
-            Container(
-                  width: 180.r,
-                  height: 180.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: color.withValues(alpha: 0.8),
-                      width: 5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.6),
-                        blurRadius: 40,
-                        spreadRadius: 8,
-                      ),
-                      BoxShadow(
-                        color: color.withValues(alpha: 0.3),
-                        blurRadius: 80,
-                        spreadRadius: 15,
-                      ),
-                    ],
-                  ),
-                  child: ClipOval(
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Positioned.fill(
-                              child: RepaintBoundary(
-                                child: CustomPaint(
-                                  painter: VortexPainter(color),
-                                ),
-                              ),
-                            )
-                            .animate(onPlay: (c) => c.repeat())
-                            .rotate(duration: 10.seconds),
-                        Center(
-                          child: Padding(
-                            padding: EdgeInsets.all(25.r),
-                            child: FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                word.toUpperCase(),
-                                textAlign: TextAlign.center,
-                                maxLines: 1,
-                                style: GoogleFonts.outfit(
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: Colors.white,
-                                  letterSpacing: 3,
-                                  shadows: [
-                                    Shadow(
-                                      color: Colors.black.withValues(
-                                        alpha: 0.5,
-                                      ),
-                                      blurRadius: 12,
-                                    ),
-                                    Shadow(color: color, blurRadius: 25),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                )
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(
-                  begin: const Offset(1.0, 1.0),
-                  end: const Offset(1.05, 1.05),
-                  duration: 2.seconds,
-                ),
-            ...List.generate(4, (i) => _buildOrbitalParticle(i, color)),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildOrbitalParticle(int index, Color color) {
-    final duration = (3 + index).seconds;
-    return RotationTransition(
-      turns: AlwaysStoppedAnimation(index * 0.25),
-      child: SizedBox(
-        width: 170.r,
-        height: 170.r,
-        child: Align(
-          alignment: Alignment.topCenter,
-          child: Container(
-            width: 8.r,
-            height: 8.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: color,
-              boxShadow: [
-                BoxShadow(color: color, blurRadius: 15, spreadRadius: 2),
-              ],
-            ),
-          ),
-        ),
-      ),
-    ).animate(onPlay: (c) => c.repeat()).rotate(duration: duration);
-  }
-
-  Widget _buildWordShard(
-    int index,
-    String text,
-    Color color,
-    bool isDark,
-    int total,
-    BoxConstraints constraints,
-    VocabularyQuest quest,
-  ) {
-    final initialPos = _getShardInitialPosition(index, total, constraints);
-    final offset = _shardOffsets[index] ?? Offset.zero;
-    final isWarping = _isWarping[index] ?? false;
-    final isActive = _activeShardIndex == index;
-    final screenSize = MediaQuery.of(context).size;
-    final double safeWidth = constraints.maxWidth.isFinite
-        ? constraints.maxWidth
-        : screenSize.width;
-    final double safeHeight = constraints.maxHeight.isFinite
-        ? constraints.maxHeight
-        : (screenSize.height * 0.6);
-
-    return Positioned(
-      left: safeWidth / 2 + initialPos.dx + offset.dx - 45.w,
-      top: safeHeight / 2 + initialPos.dy + offset.dy - 35.h,
-      child: GestureDetector(
-        onPanStart: (d) => _onShardDragStart(index, d),
-        onPanUpdate: (d) => _onShardDragUpdate(index, d),
-        onPanEnd: (d) => _onShardDragEnd(index, quest),
-        child: TweenAnimationBuilder<double>(
-          duration: 400.ms,
-          curve: Curves.easeOutBack,
-          tween: Tween(
-            begin: 1.0,
-            end: isWarping ? 0.0 : (isActive ? 1.15 : 1.0),
-          ),
-          builder: (context, scale, child) => Transform.scale(
-            scale: scale,
-            child: Opacity(
-              opacity: isWarping ? 0.0 : 1.0,
-              child: child,
-            ),
-          ),
-          child: Container(
-            width: 90.w,
-            height: 70.h,
-            decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : Colors.white,
-              borderRadius: BorderRadius.circular(18.r),
-              border: Border.all(
-                color: isActive ? color : color.withValues(alpha: 0.4),
-                width: isActive ? 3 : 2,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: color.withValues(alpha: isActive ? 0.5 : 0.15),
-                  blurRadius: isActive ? 25 : 15,
-                  spreadRadius: isActive ? 2 : 0,
-                  offset: const Offset(0, 8),
-                ),
-              ],
-            ),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Opacity(
-                  opacity: 0.15,
-                  child: RepaintBoundary(
-                    child: CustomPaint(
-                      size: Size(90.w, 70.h),
-                      painter: TechPatternPainter(color),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(8.r),
-                  child: Text(
-                    text.toUpperCase(),
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.shareTechMono(
-                      fontSize: 12.sp,
-                      color: isDark ? Colors.white : Colors.black87,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ).animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(
-            begin: -8,
-            end: 8,
-            duration: (2 + index * 0.5).seconds,
-            curve: Curves.easeInOut,
-          )
-          .rotate(
-            begin: -0.02,
-            end: 0.02,
-            duration: (3 + index).seconds,
-            curve: Curves.easeInOut,
-          ),
-      ),
-    );
-  }
 }
 
-class CosmicGridPainter extends CustomPainter {
-  final Color color;
-  CosmicGridPainter(this.color);
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color..strokeWidth = 1.0;
-    const spacing = 40.0;
-    for (double i = 0; i < size.width; i += spacing) {
-      canvas.drawLine(Offset(i, 0), Offset(i, size.height), paint);
-    }
-    for (double i = 0; i < size.height; i += spacing) {
-      canvas.drawLine(Offset(0, i), Offset(size.width, i), paint);
-    }
-  }
-  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
-
-class TrailPainter extends CustomPainter {
-  final List<Offset> points;
-  final Color color;
-  TrailPainter(this.points, this.color);
-  @override
-  void paint(Canvas canvas, Size size) {
-    if (points.length < 2) return;
-    final paint = Paint()
-      ..color = color.withValues(alpha: 0.3)
-      ..strokeWidth = 3.0
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke;
-    final path = Path();
-    path.moveTo(points.first.dx, points.first.dy);
-    for (int i = 1; i < points.length; i++) {
-      path.lineTo(points[i].dx, points[i].dy);
-    }
-    canvas.drawPath(path, paint);
-    final dotPaint = Paint()..style = PaintingStyle.fill;
-    for (int i = 0; i < points.length; i++) {
-      final double progress = i / points.length;
-      dotPaint.color = color.withValues(alpha: progress * 0.4);
-      canvas.drawCircle(points[i], (2 + progress * 3).r, dotPaint);
-    }
-  }
-  @override bool shouldRepaint(TrailPainter oldDelegate) => true;
-}
-
-class VortexPainter extends CustomPainter {
-  final Color color;
-  VortexPainter(this.color);
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color.withValues(alpha: 0.4)
-      ..strokeWidth = 2
-      ..style = PaintingStyle.stroke;
-    final center = Offset(size.width / 2, size.height / 2);
-    for (int i = 0; i < 5; i++) {
-      double radius = (i + 1) * 15.0;
-      canvas.drawCircle(center, radius, paint);
-      double angle = i * math.pi / 2;
-      canvas.drawLine(
-        center + Offset(math.cos(angle) * radius, math.sin(angle) * radius),
-        center + Offset(math.cos(angle + 0.5) * (radius + 10), math.sin(angle + 0.5) * (radius + 10)),
-        paint,
-      );
-    }
-  }
-  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
-
-class TechPatternPainter extends CustomPainter {
-  final Color color;
-  TechPatternPainter(this.color);
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color..strokeWidth = 1.5..style = PaintingStyle.stroke;
-    canvas.drawLine(Offset(0, size.height * 0.2), Offset(size.width * 0.3, size.height * 0.2), paint);
-    canvas.drawLine(Offset(size.width * 0.3, size.height * 0.2), Offset(size.width * 0.5, size.height * 0.5), paint);
-    canvas.drawLine(Offset(size.width * 0.7, size.height * 0.8), Offset(size.width, size.height * 0.8), paint);
-    canvas.drawCircle(Offset(size.width * 0.1, size.height * 0.8), 3, paint);
-    canvas.drawCircle(Offset(size.width * 0.9, size.height * 0.2), 3, paint);
-  }
-  @override bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
