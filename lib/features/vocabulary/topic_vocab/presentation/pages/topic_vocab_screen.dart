@@ -207,112 +207,129 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
           onHint: () {
             setState(() => _isHintActive = true);
           },
-          child: Container(
-            height: 0.75.sh, 
-            alignment: Alignment.center,
-            child: Stack(
-              alignment: Alignment.center,
-              clipBehavior: Clip.none,
-              children: [
-                // 1. BATCH PROGRESS
-                Positioned(
-                  top: 0,
-                  child: RepaintBoundary(
-                    child: TopicBatchCounter(
-                      count: _userChoices.length, 
-                      total: options.length, 
-                      color: theme.primaryColor
-                    ),
-                  ),
-                ),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final maxHeight = constraints.maxHeight;
+              final maxWidth = constraints.maxWidth;
 
-                // 2. INSTRUCTION
-                Positioned(
-                  top: 60.h, 
-                  child: _buildInstruction(displayInstruction, theme.primaryColor)
-                ),
+              // Define relative positions as percentages of the actual available height
+              final counterTop = 0.0;
+              final instructionTop = maxHeight * 0.08;
+              final machineTop = maxHeight * 0.27;
+              
+              // Word is positioned relative to bottom to work nicely with flicking physics
+              final wordBottom = maxHeight * 0.40;
+              final flyingWordBottom = maxHeight * 0.40;
+              final binBottom = maxHeight * 0.02;
 
-                // 3. EMISSION MACHINE
-                Positioned(
-                  top: 180.h,
-                  child: RepaintBoundary(
-                    child: TopicMachineHead(primaryColor: theme.primaryColor, emoji: quest?.topicEmoji ?? "📦"),
-                  ),
-                ),
-
-                // Containment Bins
-                Positioned(
-                  bottom: 20.h,
-                  left: 0,
-                  child: RepaintBoundary(
-                    child: TopicContainmentBin(
-                      index: 0, label: buckets[0], color: theme.primaryColor, isDark: isDark, 
-                      correctAnswer: correctAnswer, currentWord: currentWord, 
-                      words: _wordsInBins[0] ?? [], isHintActive: _isHintActive,
-                    ),
-                  ),
-                ),
-                if (buckets.length > 1)
-                  Positioned(
-                    bottom: 20.h,
-                    right: 0,
-                    child: RepaintBoundary(
-                      child: TopicContainmentBin(
-                        index: 1, label: buckets[1], color: theme.primaryColor, isDark: isDark, 
-                        correctAnswer: correctAnswer, currentWord: currentWord, 
-                        words: _wordsInBins[1] ?? [], isHintActive: _isHintActive,
+              return SizedBox(
+                height: maxHeight,
+                width: maxWidth,
+                child: Stack(
+                  alignment: Alignment.center,
+                  clipBehavior: Clip.none,
+                  children: [
+                    // 1. BATCH PROGRESS
+                    Positioned(
+                      top: counterTop,
+                      child: RepaintBoundary(
+                        child: TopicBatchCounter(
+                          count: _userChoices.length, 
+                          total: options.length, 
+                          color: theme.primaryColor,
+                        ),
                       ),
                     ),
-                  ),
-                
-                // Draggable Word Core
-                if (!_isAnswered && currentWord.isNotEmpty && _flickedWord == null) 
-                  Positioned(
-                    bottom: 250.h,
-                    child: TopicDraggableWord(
-                      word: currentWord, 
-                      primaryColor: theme.primaryColor, 
-                      isDark: isDark,
-                      onFlick: (v) => _handleFlick(v, currentWord, buckets, correctAnswer),
-                    ).animate(key: ValueKey("word_$_currentWordIndex"))
-                     .move(begin: const Offset(0, -100), end: Offset.zero, duration: 500.ms, curve: Curves.bounceOut)
-                     .fadeIn(),
-                  ),
 
-                // Flying Word Animation
-                if (_flickedWord != null)
-                  Positioned(
-                    bottom: 250.h,
-                    child: Container(
-                      width: 140.w, 
-                      height: 70.h,  
-                      decoration: BoxDecoration(
-                        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-                        borderRadius: BorderRadius.circular(12.r),
-                        border: Border.all(color: theme.primaryColor.withValues(alpha: 0.5), width: 1.5),
+                    // 2. INSTRUCTION
+                    Positioned(
+                      top: instructionTop, 
+                      child: _buildInstruction(displayInstruction, theme.primaryColor),
+                    ),
+
+                    // 3. EMISSION MACHINE
+                    Positioned(
+                      top: machineTop,
+                      child: RepaintBoundary(
+                        child: TopicMachineHead(primaryColor: theme.primaryColor, emoji: quest?.topicEmoji ?? "📦"),
                       ),
-                      child: Center(
-                        child: Text(
-                          _flickedWord!.toUpperCase(),
-                          style: GoogleFonts.shareTechMono(
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.bold,
-                            color: isDark ? Colors.white : Colors.black87,
+                    ),
+
+                    // Containment Bins
+                    Positioned(
+                      bottom: binBottom,
+                      left: 8.w, // Added premium visual margin from the edge
+                      child: RepaintBoundary(
+                        child: TopicContainmentBin(
+                          index: 0, label: buckets[0], color: theme.primaryColor, isDark: isDark, 
+                          correctAnswer: correctAnswer, currentWord: currentWord, 
+                          words: _wordsInBins[0] ?? [], isHintActive: _isHintActive,
+                        ),
+                      ),
+                    ),
+                    if (buckets.length > 1)
+                      Positioned(
+                        bottom: binBottom,
+                        right: 8.w, // Added premium visual margin from the edge
+                        child: RepaintBoundary(
+                          child: TopicContainmentBin(
+                            index: 1, label: buckets[1], color: theme.primaryColor, isDark: isDark, 
+                            correctAnswer: correctAnswer, currentWord: currentWord, 
+                            words: _wordsInBins[1] ?? [], isHintActive: _isHintActive,
                           ),
                         ),
                       ),
-                    ).animate()
-                     .move(
-                       begin: Offset.zero, 
-                       end: Offset(_flickTarget == 0 ? -120.w : 120.w, 180.h), 
-                       duration: 400.ms, 
-                       curve: Curves.easeInBack
-                     )
-                     .scale(begin: const Offset(1,1), end: const Offset(0.2, 0.2))
-                     .fadeOut(),
-                  ),
-              ],
-            ),
+                    
+                    // Draggable Word Core
+                    if (!_isAnswered && currentWord.isNotEmpty && _flickedWord == null) 
+                      Positioned(
+                        bottom: wordBottom,
+                        child: TopicDraggableWord(
+                          word: currentWord, 
+                          primaryColor: theme.primaryColor, 
+                          isDark: isDark,
+                          onFlick: (v) => _handleFlick(v, currentWord, buckets, correctAnswer),
+                        ).animate(key: ValueKey("word_$_currentWordIndex"))
+                         .move(begin: const Offset(0, -100), end: Offset.zero, duration: 500.ms, curve: Curves.bounceOut)
+                         .fadeIn(),
+                      ),
+
+                    // Flying Word Animation
+                    if (_flickedWord != null)
+                      Positioned(
+                        bottom: flyingWordBottom,
+                        child: Container(
+                          width: 140.w, 
+                          height: 70.h,  
+                          decoration: BoxDecoration(
+                            color: isDark ? const Color(0xFF1E293B) : Colors.white,
+                            borderRadius: BorderRadius.circular(12.r),
+                            border: Border.all(color: theme.primaryColor.withValues(alpha: 0.5), width: 1.5),
+                          ),
+                          child: Center(
+                            child: Text(
+                              _flickedWord!.toUpperCase(),
+                              style: GoogleFonts.shareTechMono(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.bold,
+                                color: isDark ? Colors.white : Colors.black87,
+                              ),
+                            ),
+                          ),
+                        ).animate()
+                         .move(
+                           begin: Offset.zero, 
+                           end: Offset(_flickTarget == 0 ? -110.w : 110.w, maxHeight * 0.28), 
+                           duration: 400.ms, 
+                           curve: Curves.easeInBack,
+                         )
+                         .scale(begin: const Offset(1,1), end: const Offset(0.2, 0.2))
+                         .fadeOut(),
+                      ),
+                  ],
+                ),
+              );
+            },
           ),
         );
       },
