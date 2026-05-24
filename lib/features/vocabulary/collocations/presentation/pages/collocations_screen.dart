@@ -13,6 +13,8 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_la
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_anchor_bubble.dart';
+import 'package:vowl/features/vocabulary/collocations/presentation/widgets/collocation_option_bubble.dart';
 
 class CollocationsScreen extends StatefulWidget {
   final int level;
@@ -82,8 +84,10 @@ class _CollocationsScreenState extends State<CollocationsScreen>
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          if (state.currentIndex != _lastProcessedIndex ||
-              (_isAnswered && state.lastAnswerCorrect == null)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+
+          if (isNewQuestion || isRetry) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
@@ -91,9 +95,11 @@ class _CollocationsScreenState extends State<CollocationsScreen>
               _isCorrect = null;
               _selectedOption = null;
             });
-          }
-          if (state.lastAnswerCorrect != null && _isCorrect == null) {
-            setState(() => _isCorrect = state.lastAnswerCorrect);
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
+            });
           }
         }
         if (state is VocabularyGameComplete) {
@@ -182,7 +188,13 @@ class _CollocationsScreenState extends State<CollocationsScreen>
         SizedBox(height: 30.h),
 
         // Anchor Word Bubble
-        Center(child: _buildAnchorBubble(quest.word ?? "", color, isDark)),
+        Center(
+          child: CollocationAnchorBubble(
+            text: quest.word ?? "",
+            color: color,
+            isDark: isDark,
+          ),
+        ),
 
         SizedBox(height: 40.h),
 
@@ -192,13 +204,22 @@ class _CollocationsScreenState extends State<CollocationsScreen>
           runSpacing: 40.h,
           alignment: WrapAlignment.center,
           children: (quest.options ?? []).asMap().entries.map((entry) {
-            return _buildOptionBubble(
-              entry.value,
-              quest.correctAnswer ?? "",
-              color,
-              isDark,
-              isFinalFailure,
-              entry.key,
+            return CollocationOptionBubble(
+              text: entry.value,
+              correct: quest.correctAnswer ?? "",
+              color: color,
+              isDark: isDark,
+              isAnswered: _isAnswered,
+              isCorrect: _isCorrect,
+              selectedOption: _selectedOption,
+              isFinalFailure: isFinalFailure,
+              index: entry.key,
+              onTap: () {
+                if (!_isAnswered) {
+                  _hapticService.light();
+                  _submitAnswer(entry.value, quest.correctAnswer ?? "");
+                }
+              },
             );
           }).toList(),
         ),
@@ -232,138 +253,4 @@ class _CollocationsScreenState extends State<CollocationsScreen>
         .shimmer(duration: 2.seconds);
   }
 
-  Widget _buildAnchorBubble(String text, Color color, bool isDark) {
-    return Container(
-          padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 25.h),
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(40.r),
-            boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.4),
-                blurRadius: 25,
-                spreadRadius: 2,
-                offset: const Offset(0, 10),
-              ),
-            ],
-          ),
-          child: Text(
-            text.toUpperCase(),
-            style: GoogleFonts.outfit(
-              fontSize: 28.sp,
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
-              letterSpacing: 2,
-            ),
-          ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(begin: -5, end: 5, duration: 2.seconds, curve: Curves.easeInOut);
-  }
-
-  Widget _buildOptionBubble(
-    String text,
-    String correct,
-    Color color,
-    bool isDark,
-    bool isFinalFailure,
-    int index,
-  ) {
-    final isSelected = _selectedOption == text;
-    final showCorrect =
-        (_isAnswered && _isCorrect == true && text == correct) ||
-        (_isAnswered && isFinalFailure && text == correct);
-    final showWrong = _isAnswered && isSelected && _isCorrect == false;
-
-    Color bubbleColor = isDark
-        ? Colors.white.withValues(alpha: 0.05)
-        : Colors.black.withValues(alpha: 0.03);
-    Color borderColor = color.withValues(alpha: 0.3);
-    Color textColor = isDark ? Colors.white : Colors.black87;
-
-    if (showCorrect) {
-      bubbleColor = Colors.green.withValues(alpha: 0.2);
-      borderColor = Colors.green;
-      textColor = Colors.green;
-    } else if (showWrong) {
-      bubbleColor = Colors.red.withValues(alpha: 0.2);
-      borderColor = Colors.red;
-      textColor = Colors.red;
-    } else if (isSelected) {
-      bubbleColor = color.withValues(alpha: 0.2);
-      borderColor = color;
-      textColor = color;
-    }
-
-    Widget bubble = GestureDetector(
-          onTap: () {
-            if (!_isAnswered) {
-              _hapticService.light();
-              _submitAnswer(text, correct);
-            }
-          },
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOutCubic,
-            width: 130.w,
-            height: 130.w,
-            decoration: BoxDecoration(
-              color: bubbleColor,
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: borderColor,
-                width: isSelected || showCorrect || showWrong ? 3 : 1,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: showCorrect || isSelected 
-                      ? borderColor.withValues(alpha: 0.3) 
-                      : Colors.transparent,
-                  blurRadius: showCorrect || isSelected ? 15 : 0,
-                  spreadRadius: showCorrect || isSelected ? 2 : 0,
-                ),
-              ],
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.all(15.r),
-                child: Text(
-                  text.toUpperCase(),
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.bold,
-                    color: textColor,
-                    letterSpacing: 1,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        );
-
-    // Apply the "Selected" bump
-    Widget animatedBubble = bubble.animate(target: isSelected && !showCorrect ? 1 : 0)
-        .scale(end: const Offset(1.05, 1.05), duration: 200.ms);
-
-    // Apply the massive "Pop Fusion" explosion if correct
-    animatedBubble = animatedBubble.animate(target: showCorrect ? 1 : 0)
-        .scale(end: const Offset(1.8, 1.8), duration: 600.ms, curve: Curves.easeOutBack)
-        .fadeOut(duration: 500.ms);
-
-    // Apply the staggered vertical offset and continuous floating
-    double staggeredOffset = index % 2 == 0 ? -20.0 : 20.0;
-    
-    return Transform.translate(
-      offset: Offset(0, staggeredOffset),
-      child: animatedBubble
-          .animate(onPlay: (c) => c.repeat(reverse: true))
-          .moveY(
-            begin: -6,
-            end: 6,
-            duration: (1500 + (index * 300)).ms,
-            curve: Curves.easeInOut,
-          ),
-    );
-  }
 }
