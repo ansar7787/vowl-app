@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,7 +13,9 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_la
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/vocabulary/context_clues/presentation/widgets/context_clues_painters.dart';
+import 'package:vowl/features/vocabulary/context_clues/presentation/widgets/context_clues_scanner.dart';
+import 'package:vowl/features/vocabulary/context_clues/presentation/widgets/context_clues_evidence_tags.dart';
 
 class ContextCluesScreen extends StatefulWidget {
   final int level;
@@ -63,14 +63,18 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
   void _onLensMove(DragUpdateDetails details, BoxConstraints constraints) {
     if (_isAnswered) return;
 
-    // Update position within constraints
+    final double halfWidth = constraints.maxWidth / 2;
+    final double halfHeight = constraints.maxHeight / 2;
+    final double padding = 90.r;
+
+    // Keep lens safely inside Paper dossier boundaries
     double newX = (_lensPosition.value.dx + details.delta.dx).clamp(
-      -constraints.maxWidth / 2,
-      constraints.maxWidth / 2,
+      -halfWidth + padding,
+      halfWidth - padding,
     );
     double newY = (_lensPosition.value.dy + details.delta.dy).clamp(
-      -constraints.maxHeight / 2,
-      constraints.maxHeight / 2,
+      -halfHeight + padding,
+      halfHeight - padding,
     );
 
     _lensPosition.value = Offset(newX, newY);
@@ -114,9 +118,10 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          // 1. Handle new question or explicit reset from bloc
-          if (state.currentIndex != _lastProcessedIndex ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+
+          if (isNewQuestion || isRetry) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
@@ -126,10 +131,11 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
               _lensPosition.value = Offset.zero;
               _discoveredClues.clear();
             });
-          }
-          // 2. Sync isCorrect for UI highlights if we didn't set it locally yet
-          if (state.lastAnswerCorrect != null && _isCorrect == null) {
-            setState(() => _isCorrect = state.lastAnswerCorrect);
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
+            });
           }
         }
         if (state is VocabularyGameComplete) {
@@ -247,7 +253,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                           top: (constraints.maxHeight / 2) + pos.dy - 90.r,
                           child: GestureDetector(
                             onPanUpdate: (d) => _onLensMove(d, constraints),
-                            child: _buildMagnifyingScanner(color),
+                            child: ContextCluesScanner(color: color),
                           ),
                         );
                       },
@@ -259,11 +265,15 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
         ),
 
         // 4. Evidence Tags (Options)
-        _buildEvidenceTags(
-          quest.options ?? [],
-          quest.correctAnswer ?? "",
-          color,
-          isFinalFailure,
+        ContextCluesEvidenceTags(
+          options: quest.options ?? [],
+          correct: quest.correctAnswer ?? "",
+          color: color,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
+          selectedOption: _selectedOption,
+          isFinalFailure: isFinalFailure,
+          onOptionSelected: (o) => _submitAnswer(o, quest.correctAnswer ?? ""),
         ),
         SizedBox(height: 30.h),
       ],
@@ -421,269 +431,6 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
         .animate(onPlay: (c) => c.repeat(reverse: true))
         .shimmer(duration: 2.seconds, color: Colors.white10);
   }
-
-  Widget _buildMagnifyingScanner(Color color) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        // Outer Ring
-        Container(
-          width: 160.r,
-          height: 160.r,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(color: color, width: 8),
-            boxShadow: [
-              BoxShadow(
-                color: color.withValues(alpha: 0.2),
-                blurRadius: 30,
-                spreadRadius: 5,
-              ),
-            ],
-          ),
-        ),
-        // Glass Inner with UV Effect
-        Container(
-          width: 144.r,
-          height: 144.r,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            gradient: RadialGradient(
-              colors: [
-                color.withValues(alpha: 0.1),
-                color.withValues(alpha: 0.0),
-              ],
-            ),
-          ),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 0.5, sigmaY: 0.5),
-            child: Container(color: Colors.transparent),
-          ),
-        ),
-        // Scanner Crosshair
-        CustomPaint(
-          size: Size(120.r, 120.r),
-          painter: ScannerCrosshairPainter(color),
-        ),
-        // Handle
-        Transform.translate(
-          offset: const Offset(60, 60),
-          child: Transform.rotate(
-            angle: math.pi / 4,
-            child: Container(
-              width: 15.w,
-              height: 60.h,
-              decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.circular(4.r),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildEvidenceTags(
-    List<String> options,
-    String correct,
-    Color color,
-    bool isFinalFailure,
-  ) {
-    return Column(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w),
-          child: Row(
-            children: [
-              Icon(Icons.label_important_rounded, size: 14.r, color: color),
-              SizedBox(width: 8.w),
-              Text(
-                "IDENTIFY REDACTED COMPONENT",
-                style: GoogleFonts.shareTechMono(
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
-                  color: color.withValues(alpha: 0.7),
-                  letterSpacing: 1.5,
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height: 15.h),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Row(
-            children: options.map((o) {
-              final isSelected = _selectedOption == o;
-              final showCorrect =
-                  (_isAnswered && _isCorrect == true && o == correct) ||
-                  (_isAnswered && isFinalFailure && o == correct);
-              final showWrong =
-                  _isAnswered && isSelected && _isCorrect == false;
-
-              return Padding(
-                padding: EdgeInsets.only(right: 15.w),
-                child: ScaleButton(
-                  onTap: () => _submitAnswer(o, correct),
-                  child: Container(
-                    padding: EdgeInsets.only(left: 10.w),
-                    decoration: BoxDecoration(
-                      color: color.withValues(alpha: 0.05),
-                      borderRadius: BorderRadius.circular(4.r),
-                    ),
-                    child: IntrinsicWidth(
-                      child: Row(
-                        children: [
-                          // Tag String Hole
-                          Container(
-                            width: 10.r,
-                            height: 10.r,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 20.w,
-                              vertical: 15.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: showCorrect
-                                  ? Colors.green.withValues(alpha: 0.2)
-                                  : (showWrong
-                                        ? Colors.red.withValues(alpha: 0.2)
-                                        : (isSelected
-                                              ? color.withValues(alpha: 0.2)
-                                              : Colors.white)),
-                              border: Border(
-                                left: BorderSide(
-                                  color: color.withValues(alpha: 0.2),
-                                  width: 1,
-                                ),
-                              ),
-                            ),
-                            child: Text(
-                              o.toUpperCase(),
-                              style: GoogleFonts.shareTechMono(
-                                fontSize: 13.sp,
-                                fontWeight: FontWeight.bold,
-                                color: showCorrect
-                                    ? Colors.green
-                                    : (showWrong
-                                          ? Colors.red
-                                          : (isSelected
-                                                ? color
-                                                : Colors.black87)),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            }).toList(),
-          ),
-        ),
-      ],
-    ).animate().fadeIn(delay: 400.ms).slideY(begin: 0.2);
-  }
 }
 
-class PaperGridPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = Colors.blue.withValues(alpha: 0.03)
-      ..strokeWidth = 1.0;
 
-    const step = 25.0;
-    for (double i = 0; i < size.width; i += step) {
-      canvas.drawLine(Offset(i, 0), Offset(i, size.height), paint);
-    }
-    for (double i = 0; i < size.height; i += step) {
-      canvas.drawLine(Offset(0, i), Offset(size.width, i), paint);
-    }
-
-    // "CONFIDENTIAL" Stamp
-    final textPainter = TextPainter(
-      text: TextSpan(
-        text: "CONFIDENTIAL",
-        style: GoogleFonts.oswald(
-          fontSize: 60.sp,
-          color: Colors.red.withValues(alpha: 0.03),
-          fontWeight: FontWeight.w900,
-        ),
-      ),
-      textDirection: TextDirection.ltr,
-    );
-    textPainter.layout();
-    canvas.save();
-    canvas.translate(size.width / 2, size.height / 2);
-    canvas.rotate(-math.pi / 6);
-    textPainter.paint(
-      canvas,
-      Offset(-textPainter.width / 2, -textPainter.height / 2),
-    );
-    canvas.restore();
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
-
-class ScannerCrosshairPainter extends CustomPainter {
-  final Color color;
-  ScannerCrosshairPainter(this.color);
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color.withValues(alpha: 0.4)
-      ..strokeWidth = 1.5
-      ..style = PaintingStyle.stroke;
-
-    final center = Offset(size.width / 2, size.height / 2);
-
-    // Corner brackets
-    const len = 20.0;
-    canvas.drawPath(
-      Path()
-        ..moveTo(0, len)
-        ..lineTo(0, 0)
-        ..lineTo(len, 0),
-      paint,
-    );
-    canvas.drawPath(
-      Path()
-        ..moveTo(size.width - len, 0)
-        ..lineTo(size.width, 0)
-        ..lineTo(size.width, len),
-      paint,
-    );
-    canvas.drawPath(
-      Path()
-        ..moveTo(size.width, size.height - len)
-        ..lineTo(size.width, size.height)
-        ..lineTo(size.width - len, size.height),
-      paint,
-    );
-    canvas.drawPath(
-      Path()
-        ..moveTo(len, size.height)
-        ..lineTo(0, size.height)
-        ..lineTo(0, size.height - len),
-      paint,
-    );
-
-    // Center dot
-    canvas.drawCircle(center, 2, paint..style = PaintingStyle.fill);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
-}
