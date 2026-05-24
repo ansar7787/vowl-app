@@ -14,6 +14,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'dart:math';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_front.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_back.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_hints.dart';
 
 class FlashcardsScreen extends StatefulWidget {
   final int level;
@@ -51,13 +54,13 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     );
   }
 
-  void _onDragUpdate(DragUpdateDetails details) {
+  void _onHorizontalDragUpdate(DragUpdateDetails details) {
     if (_isAnswered) return;
     if (_isRetrying) setState(() => _isRetrying = false);
 
     final oldOffset = _dragOffset;
     setState(() {
-      _dragOffset += details.delta;
+      _dragOffset = Offset(_dragOffset.dx + details.delta.dx, 0);
       _dragAngle = _dragOffset.dx / 500;
 
       // Better haptic throttle: trigger only every 20 pixels of horizontal movement
@@ -68,7 +71,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     });
   }
 
-  void _onDragEnd(DragEndDetails details) {
+  void _onHorizontalDragEnd(DragEndDetails details) {
     if (_isAnswered) return;
     if (_dragOffset.dx.abs() > 150) {
       _submitAnswer(_dragOffset.dx > 0);
@@ -187,11 +190,9 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                     // Subtracting some space for instruction and hints
                     final availableHeight = constraints.maxHeight;
                     final cardHeight = (availableHeight * 0.65)
-                        .clamp(300.0, 450.0)
-                        .h;
+                        .clamp(300.0, 450.0);
                     final cardWidth = (constraints.maxWidth * 0.85)
-                        .clamp(280.0, 320.0)
-                        .w;
+                        .clamp(280.0, 320.0);
 
                     return SingleChildScrollView(
                       physics: const NeverScrollableScrollPhysics(), // Keep swipe gestures clean
@@ -211,7 +212,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
                               cardHeight * 0.95, // Slight reduction to safely fit
                             ),
                             SizedBox(height: 20.h),
-                            _buildSwipeHints(theme.primaryColor),
+                            FlashcardSwipeHints(color: theme.primaryColor),
                             SizedBox(height: 12.h),
                           ],
                         ),
@@ -262,13 +263,25 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
     double width,
     double height,
   ) {
-    // Optimization: Pre-calculate card faces to avoid rebuilds during animation frames
-    final frontCard = _buildCardFront(quest, color, isDark, width, height);
-    final backCard = _buildCardBack(quest, color, isDark, width, height);
+    final frontCard = FlashcardSwipeFront(
+      quest: quest,
+      color: color,
+      isDark: isDark,
+      width: width,
+      height: height,
+    );
+    final backCard = FlashcardSwipeBack(
+      quest: quest,
+      color: color,
+      isDark: isDark,
+      width: width,
+      height: height,
+      isHintActive: _isHintActive,
+    );
 
     return GestureDetector(
-      onPanUpdate: _onDragUpdate,
-      onPanEnd: _onDragEnd,
+      onHorizontalDragUpdate: _onHorizontalDragUpdate,
+      onHorizontalDragEnd: _onHorizontalDragEnd,
       onTap: () {
         _hapticService.light();
         setState(() => _isFlipped = !_isFlipped);
@@ -324,231 +337,5 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
         ],
       ),
     );
-  }
-
-  Widget _buildCardFront(
-    dynamic quest,
-    Color color,
-    bool isDark,
-    double width,
-    double height,
-  ) {
-    return Container(
-      width: width,
-      height: height,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: isDark ? Colors.white10 : color.withValues(alpha: 0.15),
-          width: 1,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black26,
-            blurRadius: 25,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: EdgeInsets.all(20.r),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-            ),
-            child: Text(
-              quest.topicEmoji ?? "🏷️",
-              style: TextStyle(fontSize: 56.sp),
-            ),
-          ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
-          SizedBox(height: 32.h),
-          FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              quest.word?.toUpperCase() ?? "",
-              style: GoogleFonts.outfit(
-                fontSize: 32.sp,
-                fontWeight: FontWeight.w900,
-                color: isDark ? Colors.white : Colors.black87,
-                letterSpacing: 4,
-              ),
-            ),
-          ),
-          const Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.touch_app_rounded,
-                size: 14.r,
-                color: color.withValues(alpha: 0.5),
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                "TAP TO FLIP",
-                style: GoogleFonts.outfit(
-                  fontSize: 10.sp,
-                  color: color.withValues(alpha: 0.5),
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 2,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCardBack(
-    dynamic quest,
-    Color color,
-    bool isDark,
-    double width,
-    double height,
-  ) {
-    return Container(
-      width: width,
-      height: height,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F172A) : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: color, width: 3),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: 0.2),
-            blurRadius: 20,
-            offset: const Offset(0, 5),
-          ),
-        ],
-      ),
-      child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 10.h),
-            Text(
-              "DEFINITION",
-              style: GoogleFonts.outfit(
-                fontSize: 10.sp,
-                color: color,
-                fontWeight: FontWeight.w900,
-                letterSpacing: 2,
-              ),
-            ),
-            SizedBox(height: 16.h),
-            Text(
-              quest.definition ?? "",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.fredoka(
-                fontSize: 19.sp,
-                color: _isHintActive ? color : (isDark ? Colors.white : Colors.black87),
-                height: 1.4,
-                fontWeight: _isHintActive ? FontWeight.w900 : FontWeight.w500,
-                shadows: _isHintActive ? [Shadow(color: color.withValues(alpha: 0.5), blurRadius: 10)] : null,
-              ),
-            ),
-            SizedBox(height: 28.h),
-            Divider(
-              color: color.withValues(alpha: 0.1),
-              thickness: 1,
-              indent: 40.w,
-              endIndent: 40.w,
-            ),
-            SizedBox(height: 24.h),
-            Text(
-              "EXAMPLE",
-              style: GoogleFonts.outfit(
-                fontSize: 10.sp,
-                color: Colors.amber.shade700,
-                fontWeight: FontWeight.w900,
-                letterSpacing: 2,
-              ),
-            ),
-            SizedBox(height: 12.h),
-            Text(
-              quest.example ?? "",
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 15.sp,
-                color: isDark ? Colors.white70 : Colors.black54,
-                fontStyle: FontStyle.italic,
-                height: 1.5,
-              ),
-            ),
-            if (quest.explanation != null && quest.explanation!.isNotEmpty) ...[
-              SizedBox(height: 24.h),
-              Text(
-                "EXPLANATION",
-                style: GoogleFonts.outfit(
-                  fontSize: 10.sp,
-                  color: Colors.blue.shade700,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 2,
-                ),
-              ),
-              SizedBox(height: 12.h),
-              Text(
-                quest.explanation!,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 14.sp,
-                  color: isDark ? Colors.white60 : Colors.black45,
-                  height: 1.5,
-                ),
-              ),
-            ],
-            SizedBox(height: 10.h),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSwipeHints(Color color) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        _buildHintIcon(Icons.refresh_rounded, Colors.redAccent, "REVIEW"),
-        _buildHintIcon(
-          Icons.check_circle_rounded,
-          Colors.greenAccent,
-          "MASTER",
-        ),
-      ],
-    );
-  }
-
-  Widget _buildHintIcon(IconData icon, Color color, String label) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.all(12.r),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: color.withValues(alpha: 0.1),
-            border: Border.all(color: color.withValues(alpha: 0.3)),
-          ),
-          child: Icon(icon, color: color, size: 24.r),
-        ),
-        SizedBox(height: 8.h),
-        Text(
-          label,
-          style: GoogleFonts.outfit(
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w900,
-            color: color,
-            letterSpacing: 1,
-          ),
-        ),
-      ],
-    ).animate().fadeIn(delay: 400.ms).scale();
   }
 }
