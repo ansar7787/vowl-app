@@ -13,7 +13,9 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_la
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_painters.dart';
+import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_chat_bubbles.dart';
+import 'package:vowl/features/vocabulary/idioms/presentation/widgets/idioms_option_chip.dart';
 
 class IdiomsScreen extends StatefulWidget {
   final int level;
@@ -75,13 +77,21 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: (context, state) {
         if (state is VocabularyLoaded) {
-          if (state.currentIndex != _lastProcessedIndex || (_isAnswered && state.lastAnswerCorrect == null)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+
+          if (isNewQuestion || isRetry) {
             setState(() {
               _lastQuest = state.currentQuest;
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _selectedOption = null;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
         }
@@ -187,7 +197,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
           child: ListView(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             children: [
-              _buildSystemMessage("INCOMING TRANSMISSION...", color),
+              IdiomsSystemMessage(text: "INCOMING TRANSMISSION...", color: color),
               SizedBox(height: 20.h),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -198,7 +208,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                     child: Icon(Icons.psychology_alt_rounded, size: 20.r, color: color),
                   ),
                   SizedBox(width: 10.w),
-                  _buildStrangerMessage(quest.topicEmoji ?? "❓", color, isDark),
+                  IdiomsStrangerMessage(emojis: quest.topicEmoji ?? "❓", color: color, isDark: isDark),
                 ],
               ),
 
@@ -208,7 +218,7 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    _buildUserMessage(_selectedOption!, color, _isCorrect, isDark),
+                    IdiomsUserMessage(text: _selectedOption!, color: color, isCorrect: _isCorrect, isDark: isDark),
                     SizedBox(width: 10.w),
                     CircleAvatar(
                       radius: 18.r,
@@ -225,202 +235,37 @@ class _IdiomsScreenState extends State<IdiomsScreen> {
 
               if (_isAnswered && _isCorrect == false) ...[
                 SizedBox(height: 15.h),
-                _buildSystemMessage("DECRYPTION FAILED. RE-EVALUATE SEQUENCE.", Colors.redAccent),
+                IdiomsSystemMessage(text: "DECRYPTION FAILED. RE-EVALUATE SEQUENCE.", color: Colors.redAccent),
               ],
             ],
           ),
         ),
         
-        _buildOptions(quest.options ?? [], quest.correctAnswer ?? "", color, isDark),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Wrap(
+            spacing: 12.w,
+            runSpacing: 12.h,
+            alignment: WrapAlignment.center,
+            children: (quest.options ?? []).map((o) {
+              return IdiomsOptionChip(
+                text: o,
+                correct: quest.correctAnswer ?? "",
+                color: color,
+                isDark: isDark,
+                isAnswered: _isAnswered,
+                isCorrect: _isCorrect,
+                selectedOption: _selectedOption,
+                onTap: () => _submitAnswer(o, quest.correctAnswer ?? ""),
+              );
+            }).toList(),
+          ),
+        )
+        .animate()
+        .fadeIn(delay: 800.ms)
+        .slideY(begin: 0.3, curve: Curves.easeOutCubic),
         SizedBox(height: 40.h),
       ],
     );
   }
-
-  Widget _buildSystemMessage(String text, Color color) {
-    return Center(
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(color: color.withValues(alpha: 0.1)),
-        ),
-        child: Text(
-          text,
-          style: GoogleFonts.shareTechMono(fontSize: 9.sp, color: color, letterSpacing: 1.5, fontWeight: FontWeight.bold),
-        ),
-      ),
-    ).animate().fadeIn().slideY(begin: 0.2);
-  }
-
-  Widget _buildStrangerMessage(String emojis, Color color, bool isDark) {
-    return Container(
-      constraints: BoxConstraints(maxWidth: 0.75.sw),
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF1E293B) : Colors.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(24.r),
-          topRight: Radius.circular(24.r),
-          bottomRight: Radius.circular(24.r),
-        ),
-        border: Border.all(
-          color: isDark ? color.withValues(alpha: 0.3) : color.withValues(alpha: 0.15),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: isDark ? 0.2 : 0.05),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
-      child: Text(
-        emojis,
-        style: TextStyle(fontSize: 48.sp),
-      ),
-    )
-    .animate()
-    .slideX(begin: -0.1, duration: 500.ms, curve: Curves.easeOutCubic)
-    .fadeIn();
-  }
-
-  Widget _buildUserMessage(String text, Color color, bool? isCorrect, bool isDark) {
-    final bgColor = isCorrect == true ? Colors.green : (isCorrect == false ? Colors.red : color);
-    return Container(
-      constraints: BoxConstraints(maxWidth: 0.75.sw),
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-      decoration: BoxDecoration(
-        color: isDark ? bgColor.withValues(alpha: 0.15) : bgColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(24.r),
-          topRight: Radius.circular(24.r),
-          bottomLeft: Radius.circular(24.r),
-        ),
-        border: Border.all(color: bgColor.withValues(alpha: 0.5), width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: bgColor.withValues(alpha: 0.05),
-            blurRadius: 15,
-            offset: const Offset(0, 5),
-          ),
-        ],
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Flexible(
-            child: Text(
-              text.toUpperCase(),
-              style: GoogleFonts.outfit(
-                fontSize: 14.sp,
-                fontWeight: FontWeight.w800,
-                color: isDark ? Colors.white : Colors.black87,
-                letterSpacing: 0.5,
-              ),
-            ),
-          ),
-          if (isCorrect != null) ...[
-            SizedBox(width: 10.w),
-            Icon(
-              isCorrect ? Icons.verified_rounded : Icons.gpp_bad_rounded,
-              color: isCorrect ? Colors.greenAccent : Colors.redAccent,
-              size: 18.r,
-            ).animate().scale(duration: 400.ms, curve: Curves.elasticOut),
-          ],
-        ],
-      ),
-    )
-    .animate()
-    .slideX(begin: 0.1, duration: 500.ms, curve: Curves.easeOutCubic)
-    .fadeIn();
-  }
-
-  Widget _buildOptions(List<String> options, String correct, Color color, bool isDark) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
-      child: Wrap(
-        spacing: 12.w,
-        runSpacing: 12.h,
-        alignment: WrapAlignment.center,
-        children: options.map((o) {
-          final isSelected = _selectedOption == o;
-          final isWrong = _isAnswered && isSelected && _isCorrect == false;
-          final isCorrectOption = _isAnswered && o == correct && _isCorrect == true;
-
-          Color cardBg = isDark ? color.withValues(alpha: 0.1) : Colors.white;
-          Color cardBorder = color.withValues(alpha: 0.3);
-          Color textColor = isDark ? Colors.white70 : Colors.black87;
-
-          if (isCorrectOption) {
-            cardBg = Colors.green.withValues(alpha: 0.2);
-            cardBorder = Colors.green;
-            textColor = isDark ? Colors.white : Colors.green.shade700;
-          } else if (isWrong) {
-            cardBg = Colors.red.withValues(alpha: 0.2);
-            cardBorder = Colors.red;
-            textColor = isDark ? Colors.white : Colors.red.shade700;
-          } else if (isSelected) {
-            cardBg = color.withValues(alpha: 0.3);
-            cardBorder = color;
-            textColor = isDark ? Colors.white : color;
-          }
-
-          return ScaleButton(
-            onTap: () => _submitAnswer(o, correct),
-            child: AnimatedContainer(
-              duration: 300.ms,
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
-              decoration: BoxDecoration(
-                color: cardBg,
-                borderRadius: BorderRadius.circular(30.r),
-                border: Border.all(color: cardBorder, width: 1.5),
-                boxShadow: [
-                  if (isSelected || isCorrectOption)
-                    BoxShadow(
-                      color: cardBorder.withValues(alpha: 0.3),
-                      blurRadius: 10,
-                    ),
-                ],
-              ),
-              child: Text(
-                o.toUpperCase(),
-                style: GoogleFonts.outfit(
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w800,
-                  color: textColor,
-                  letterSpacing: 0.5,
-                ),
-              ),
-            ),
-          );
-        }).toList(),
-      ),
-    )
-    .animate()
-    .fadeIn(delay: 800.ms)
-    .slideY(begin: 0.3, curve: Curves.easeOutCubic);
-  }
-}
-
-class GridPainter extends CustomPainter {
-  final Color color;
-  GridPainter(this.color);
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color..strokeWidth = 0.5;
-    const step = 40.0;
-    for (double x = 0; x < size.width; x += step) {
-      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
-    }
-    for (double y = 0; y < size.height; y += step) {
-      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
