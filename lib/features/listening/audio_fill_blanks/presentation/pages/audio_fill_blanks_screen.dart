@@ -10,9 +10,11 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_instruction.dart';
+import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_jar.dart';
+import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_canvas.dart';
+import 'package:vowl/features/listening/audio_fill_blanks/presentation/widgets/audio_fill_blanks_input.dart';
 
 class AudioFillBlanksScreen extends StatefulWidget {
   final int level;
@@ -83,14 +85,22 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     return BlocConsumer<ListeningBloc, ListeningState>(
       listener: (context, state) {
         if (state is ListeningLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _revealProgress = 0.0;
               _controller.clear();
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -114,16 +124,32 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: 20.h),
-              _buildInstruction(theme.primaryColor),
+              AudioFillBlanksInstruction(color: theme.primaryColor),
               SizedBox(height: 40.h),
-              _buildInkJar(quest.textToSpeak ?? "", theme.primaryColor),
+              AudioFillBlanksJar(
+                color: theme.primaryColor,
+                onTap: () {
+                  _soundService.playTts(quest.textToSpeak ?? "");
+                  _hapticService.selection();
+                },
+              ),
               SizedBox(height: 40.h),
               SizedBox(
                 height: 220.h,
-                child: _buildInkCanvas(quest.textWithBlanks ?? "", theme.primaryColor, isDark),
+                child: AudioFillBlanksCanvas(
+                  text: quest.textWithBlanks ?? "",
+                  revealProgress: _revealProgress,
+                  onSmear: _onSmear,
+                  primaryColor: theme.primaryColor,
+                  isDark: isDark,
+                ),
               ),
               SizedBox(height: 40.h),
-              _buildInputTerminal(theme.primaryColor, isDark),
+              AudioFillBlanksInput(
+                controller: _controller,
+                isAnswered: _isAnswered,
+                primaryColor: theme.primaryColor,
+              ),
               SizedBox(height: 40.h),
               if (!_isAnswered)
                 ScaleButton(
@@ -142,92 +168,4 @@ class _AudioFillBlanksScreenState extends State<AudioFillBlanksScreen> {
     );
   }
 
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.water_drop_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Flexible(
-            child: Text(
-              "SMEAR THE INK TO REVEAL TRANSCRIPTION",
-              style: GoogleFonts.outfit(
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: primaryColor,
-                letterSpacing: 1.2,
-              ),
-              overflow: TextOverflow.visible,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildInkJar(String text, Color color) {
-    return ScaleButton(
-      onTap: () {
-        _soundService.playTts(text);
-        _hapticService.selection();
-      },
-      child: Container(
-        width: 100.r, height: 100.r,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color.withValues(alpha: 0.15),
-          border: Border.all(color: color.withValues(alpha: 0.3), width: 3),
-          boxShadow: [BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 20)],
-        ),
-        child: Icon(Icons.graphic_eq_rounded, size: 40.r, color: color),
-      ),
-    );
-  }
-
-  Widget _buildInkCanvas(String text, Color primaryColor, bool isDark) {
-    return GestureDetector(
-      onPanUpdate: (details) => _onSmear(details.delta.dx.abs() / 200 + details.delta.dy.abs() / 200),
-      child: GlassTile(
-        padding: EdgeInsets.all(32.r), borderRadius: BorderRadius.circular(24.r),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Opacity(
-              opacity: _revealProgress,
-              child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.fredoka(fontSize: 20.sp, color: isDark ? Colors.white70 : Colors.black87)),
-            ),
-            if (_revealProgress < 1.0)
-              ...List.generate(5, (i) => Positioned(
-                left: 20.w + (i * 50.w),
-                child: Container(
-                  width: 60.r, height: 60.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: isDark ? Colors.indigo[900]!.withValues(alpha: 0.8 - _revealProgress) : Colors.black87.withValues(alpha: 0.8 - _revealProgress),
-                  ),
-                ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2), duration: 2.seconds),
-              )),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildInputTerminal(Color primaryColor, bool isDark) {
-    return TextField(
-      controller: _controller,
-      enabled: !_isAnswered,
-      textAlign: TextAlign.center,
-      style: GoogleFonts.shareTechMono(fontSize: 22.sp, fontWeight: FontWeight.w900, color: primaryColor),
-      decoration: InputDecoration(
-        hintText: "TYPE THE MISSING DATA",
-        hintStyle: GoogleFonts.shareTechMono(fontSize: 14.sp, color: Colors.grey.withValues(alpha: 0.5)),
-        enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: primaryColor.withValues(alpha: 0.2))),
-        focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: primaryColor, width: 2)),
-      ),
-    );
-  }
 }
