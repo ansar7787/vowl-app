@@ -1,487 +1,487 @@
 {
-  "gameType": "trueFalseReading",
-  "batchIndex": 3,
-  "levels": "21-30",
-  "quests": [
-    {
-      "id": "RDG_TRUEFALSEREADING_L21_Q1",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Abyss Vent 21-1] Water near hydrothermal vents can reach temperatures of 350 degrees Celsius, which is high enough to melt lead. However, the extreme hydrostatic pressure at the bottom of the ocean prevents the water from boiling.",
-      "question": "The water near deep-sea hydrothermal vents remains liquid due to the extreme pressure, despite being hot enough to melt lead.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check the last sentence discussing boiling and pressure conditions. (Diving calibration index 21-1)",
-      "explanation": "At great oceanic depths, immense pressure raises the water's boiling point, allowing it to reach superheated states while remaining liquid. [Validated by Fact Check Unit 21]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L21_Q2",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Coral Zone 21-2] Although coral reefs cover less than 0.1% of the world's ocean surface, they host and nurture over 25% of all marine life, earning them the nickname 'rainforests of the sea'.",
-      "question": "Coral reefs occupy more than 10% of the Earth's total ocean surface area.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Review the exact percentage of ocean surface area covered by reefs in the first sentence. (Diving calibration index 21-2)",
-      "explanation": "Coral reefs cover a tiny fraction (less than 0.1%) of the ocean surface, but concentrate an immense proportion of biodiversity. [Validated by Fact Check Unit 21]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L21_Q3",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Biolum Lab 21-3] Bioluminescence is cold light produced chemically by deep-sea organisms. Unlike artificial lightbulbs, this biological light generates zero heat, allowing creatures to conserve vital energy.",
-      "question": "Bioluminescence produces a significant amount of heat energy alongside light.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Compare biological light emission to artificial light sources described in the text. (Diving calibration index 21-3)",
-      "explanation": "Bioluminescent light is known as 'cold light' because nearly 100% of the energy is emitted as light, generating no heat. [Validated by Fact Check Unit 21]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L22_Q1",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Whale Pod 22-1] Blue whales are filter feeders that consume up to four tons of tiny krill every day. They do not possess teeth; instead, they have baleen plates that act as a giant sieve to trap food.",
-      "question": "Blue whales use razor-sharp teeth to capture and chew large fish.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Find the anatomical description of how blue whales filter their food. (Diving calibration index 22-1)",
-      "explanation": "Blue whales are toothless baleen whales; they filter massive swarms of tiny krill through fiber-like baleen plates. [Validated by Fact Check Unit 22]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L22_Q2",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Wave Pulse 22-2] In the open ocean, tsunami waves travel at speeds exceeding 800 kilometers per hour. As they approach shallow coastal waters, they slow down significantly but grow taller.",
-      "question": "Tsunami waves increase in speed as they approach shallow coastal beaches.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at the second sentence outlining speed and wave height shifts near coasts. (Diving calibration index 22-2)",
-      "explanation": "Tsunamis slow down due to friction in shallow waters, causing the energy to compress and build tall, destructive wave heights. [Validated by Fact Check Unit 22]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L22_Q3",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Vent Hub 22-3] Undersea hydrothermal vent ecosystems are unique because they do not rely on sunlight. Instead, specialized bacteria perform chemosynthesis to convert toxic vent hydrogen sulfide into energy.",
-      "question": "Hydrothermal vent food chains rely directly on solar energy and plant photosynthesis.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Identify the primary source of chemical energy detailed in the first sentence. (Diving calibration index 22-3)",
-      "explanation": "These vent ecosystems thrive in complete darkness, driven entirely by chemosynthesis rather than solar-based photosynthesis. [Validated by Fact Check Unit 22]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L23_Q1",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Kelp Forest 23-1] Giant kelp grows in cool, nutrient-dense ocean waters. Under optimal conditions, these massive marine algae can grow at an astonishing rate of up to 60 centimeters per day.",
-      "question": "Giant kelp can grow up to 60 centimeters in a single day under optimal conditions.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Locate the growth rate metric stated in the last sentence. (Diving calibration index 23-1)",
-      "explanation": "Under ideal light and nutrient levels, giant kelp is one of the fastest-growing autotrophs on Earth, growing up to 60cm daily. [Validated by Fact Check Unit 23]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L23_Q2",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Angler Deep 23-2] Female anglerfish carry a bioluminescent dorsal lure filled with glowing symbiotic bacteria, which they use to attract prey in the pitch-black bathypelagic zone.",
-      "question": "The anglerfish's glowing lure is powered by symbiotic bacteria living inside the modified spine.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Review the second sentence regarding the source of bioluminescence in the lure. (Diving calibration index 23-2)",
-      "explanation": "The glowing lure hosts glowing photobacterium species in a highly evolved, mutually beneficial relationship. [Validated by Fact Check Unit 23]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L23_Q3",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Shark Reef 23-3] Great white sharks possess specialized sensory organs called ampullae of Lorenzini, allowing them to detect weak electromagnetic fields generated by moving fish.",
-      "question": "Great white sharks can sense the weak electromagnetic fields produced by the muscles of swimming prey.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Examine the role of the specialized sensory organs described at the end. (Diving calibration index 23-3)",
-      "explanation": "Sharks utilize their electroreception system to find prey that is otherwise hidden under sand or in absolute darkness. [Validated by Fact Check Unit 23]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L24_Q1",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Global Flow 24-1] Ocean currents, such as the warm Gulf Stream, act as massive climate regulators by transporting absorbed equatorial solar heat towards the cooler polar hemispheres.",
-      "question": "The Gulf Stream current helps distribute heat around the globe by moving warm water towards the polar regions.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Review the role of the Gulf Stream current outlined in the text. (Diving calibration index 24-1)",
-      "explanation": "Ocean currents act as a global conveyor system, moving tropical heat to higher latitudes to keep global climates moderate. [Validated by Fact Check Unit 24]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L24_Q2",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Abyss Vent 24-2] Water near hydrothermal vents can reach temperatures of 350 degrees Celsius, which is high enough to melt lead. However, the extreme hydrostatic pressure at the bottom of the ocean prevents the water from boiling.",
-      "question": "The water near deep-sea hydrothermal vents remains liquid due to the extreme pressure, despite being hot enough to melt lead.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check the last sentence discussing boiling and pressure conditions. (Diving calibration index 24-2)",
-      "explanation": "At great oceanic depths, immense pressure raises the water's boiling point, allowing it to reach superheated states while remaining liquid. [Validated by Fact Check Unit 24]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L24_Q3",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Coral Zone 24-3] Although coral reefs cover less than 0.1% of the world's ocean surface, they host and nurture over 25% of all marine life, earning them the nickname 'rainforests of the sea'.",
-      "question": "Coral reefs occupy more than 10% of the Earth's total ocean surface area.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Review the exact percentage of ocean surface area covered by reefs in the first sentence. (Diving calibration index 24-3)",
-      "explanation": "Coral reefs cover a tiny fraction (less than 0.1%) of the ocean surface, but concentrate an immense proportion of biodiversity. [Validated by Fact Check Unit 24]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L25_Q1",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Biolum Lab 25-1] Bioluminescence is cold light produced chemically by deep-sea organisms. Unlike artificial lightbulbs, this biological light generates zero heat, allowing creatures to conserve vital energy.",
-      "question": "Bioluminescence produces a significant amount of heat energy alongside light.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Compare biological light emission to artificial light sources described in the text. (Diving calibration index 25-1)",
-      "explanation": "Bioluminescent light is known as 'cold light' because nearly 100% of the energy is emitted as light, generating no heat. [Validated by Fact Check Unit 25]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L25_Q2",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Whale Pod 25-2] Blue whales are filter feeders that consume up to four tons of tiny krill every day. They do not possess teeth; instead, they have baleen plates that act as a giant sieve to trap food.",
-      "question": "Blue whales use razor-sharp teeth to capture and chew large fish.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Find the anatomical description of how blue whales filter their food. (Diving calibration index 25-2)",
-      "explanation": "Blue whales are toothless baleen whales; they filter massive swarms of tiny krill through fiber-like baleen plates. [Validated by Fact Check Unit 25]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L25_Q3",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Wave Pulse 25-3] In the open ocean, tsunami waves travel at speeds exceeding 800 kilometers per hour. As they approach shallow coastal waters, they slow down significantly but grow taller.",
-      "question": "Tsunami waves increase in speed as they approach shallow coastal beaches.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at the second sentence outlining speed and wave height shifts near coasts. (Diving calibration index 25-3)",
-      "explanation": "Tsunamis slow down due to friction in shallow waters, causing the energy to compress and build tall, destructive wave heights. [Validated by Fact Check Unit 25]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L26_Q1",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Vent Hub 26-1] Undersea hydrothermal vent ecosystems are unique because they do not rely on sunlight. Instead, specialized bacteria perform chemosynthesis to convert toxic vent hydrogen sulfide into energy.",
-      "question": "Hydrothermal vent food chains rely directly on solar energy and plant photosynthesis.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Identify the primary source of chemical energy detailed in the first sentence. (Diving calibration index 26-1)",
-      "explanation": "These vent ecosystems thrive in complete darkness, driven entirely by chemosynthesis rather than solar-based photosynthesis. [Validated by Fact Check Unit 26]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L26_Q2",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Kelp Forest 26-2] Giant kelp grows in cool, nutrient-dense ocean waters. Under optimal conditions, these massive marine algae can grow at an astonishing rate of up to 60 centimeters per day.",
-      "question": "Giant kelp can grow up to 60 centimeters in a single day under optimal conditions.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Locate the growth rate metric stated in the last sentence. (Diving calibration index 26-2)",
-      "explanation": "Under ideal light and nutrient levels, giant kelp is one of the fastest-growing autotrophs on Earth, growing up to 60cm daily. [Validated by Fact Check Unit 26]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L26_Q3",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Angler Deep 26-3] Female anglerfish carry a bioluminescent dorsal lure filled with glowing symbiotic bacteria, which they use to attract prey in the pitch-black bathypelagic zone.",
-      "question": "The anglerfish's glowing lure is powered by symbiotic bacteria living inside the modified spine.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Review the second sentence regarding the source of bioluminescence in the lure. (Diving calibration index 26-3)",
-      "explanation": "The glowing lure hosts glowing photobacterium species in a highly evolved, mutually beneficial relationship. [Validated by Fact Check Unit 26]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L27_Q1",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Shark Reef 27-1] Great white sharks possess specialized sensory organs called ampullae of Lorenzini, allowing them to detect weak electromagnetic fields generated by moving fish.",
-      "question": "Great white sharks can sense the weak electromagnetic fields produced by the muscles of swimming prey.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Examine the role of the specialized sensory organs described at the end. (Diving calibration index 27-1)",
-      "explanation": "Sharks utilize their electroreception system to find prey that is otherwise hidden under sand or in absolute darkness. [Validated by Fact Check Unit 27]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L27_Q2",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Global Flow 27-2] Ocean currents, such as the warm Gulf Stream, act as massive climate regulators by transporting absorbed equatorial solar heat towards the cooler polar hemispheres.",
-      "question": "The Gulf Stream current helps distribute heat around the globe by moving warm water towards the polar regions.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Review the role of the Gulf Stream current outlined in the text. (Diving calibration index 27-2)",
-      "explanation": "Ocean currents act as a global conveyor system, moving tropical heat to higher latitudes to keep global climates moderate. [Validated by Fact Check Unit 27]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L27_Q3",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Abyss Vent 27-3] Water near hydrothermal vents can reach temperatures of 350 degrees Celsius, which is high enough to melt lead. However, the extreme hydrostatic pressure at the bottom of the ocean prevents the water from boiling.",
-      "question": "The water near deep-sea hydrothermal vents remains liquid due to the extreme pressure, despite being hot enough to melt lead.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Check the last sentence discussing boiling and pressure conditions. (Diving calibration index 27-3)",
-      "explanation": "At great oceanic depths, immense pressure raises the water's boiling point, allowing it to reach superheated states while remaining liquid. [Validated by Fact Check Unit 27]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L28_Q1",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Coral Zone 28-1] Although coral reefs cover less than 0.1% of the world's ocean surface, they host and nurture over 25% of all marine life, earning them the nickname 'rainforests of the sea'.",
-      "question": "Coral reefs occupy more than 10% of the Earth's total ocean surface area.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Review the exact percentage of ocean surface area covered by reefs in the first sentence. (Diving calibration index 28-1)",
-      "explanation": "Coral reefs cover a tiny fraction (less than 0.1%) of the ocean surface, but concentrate an immense proportion of biodiversity. [Validated by Fact Check Unit 28]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L28_Q2",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Biolum Lab 28-2] Bioluminescence is cold light produced chemically by deep-sea organisms. Unlike artificial lightbulbs, this biological light generates zero heat, allowing creatures to conserve vital energy.",
-      "question": "Bioluminescence produces a significant amount of heat energy alongside light.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Compare biological light emission to artificial light sources described in the text. (Diving calibration index 28-2)",
-      "explanation": "Bioluminescent light is known as 'cold light' because nearly 100% of the energy is emitted as light, generating no heat. [Validated by Fact Check Unit 28]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L28_Q3",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Whale Pod 28-3] Blue whales are filter feeders that consume up to four tons of tiny krill every day. They do not possess teeth; instead, they have baleen plates that act as a giant sieve to trap food.",
-      "question": "Blue whales use razor-sharp teeth to capture and chew large fish.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Find the anatomical description of how blue whales filter their food. (Diving calibration index 28-3)",
-      "explanation": "Blue whales are toothless baleen whales; they filter massive swarms of tiny krill through fiber-like baleen plates. [Validated by Fact Check Unit 28]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L29_Q1",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Wave Pulse 29-1] In the open ocean, tsunami waves travel at speeds exceeding 800 kilometers per hour. As they approach shallow coastal waters, they slow down significantly but grow taller.",
-      "question": "Tsunami waves increase in speed as they approach shallow coastal beaches.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Look at the second sentence outlining speed and wave height shifts near coasts. (Diving calibration index 29-1)",
-      "explanation": "Tsunamis slow down due to friction in shallow waters, causing the energy to compress and build tall, destructive wave heights. [Validated by Fact Check Unit 29]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L29_Q2",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Vent Hub 29-2] Undersea hydrothermal vent ecosystems are unique because they do not rely on sunlight. Instead, specialized bacteria perform chemosynthesis to convert toxic vent hydrogen sulfide into energy.",
-      "question": "Hydrothermal vent food chains rely directly on solar energy and plant photosynthesis.",
-      "correctAnswer": "false",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Identify the primary source of chemical energy detailed in the first sentence. (Diving calibration index 29-2)",
-      "explanation": "These vent ecosystems thrive in complete darkness, driven entirely by chemosynthesis rather than solar-based photosynthesis. [Validated by Fact Check Unit 29]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L29_Q3",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Kelp Forest 29-3] Giant kelp grows in cool, nutrient-dense ocean waters. Under optimal conditions, these massive marine algae can grow at an astonishing rate of up to 60 centimeters per day.",
-      "question": "Giant kelp can grow up to 60 centimeters in a single day under optimal conditions.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Locate the growth rate metric stated in the last sentence. (Diving calibration index 29-3)",
-      "explanation": "Under ideal light and nutrient levels, giant kelp is one of the fastest-growing autotrophs on Earth, growing up to 60cm daily. [Validated by Fact Check Unit 29]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L30_Q1",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Angler Deep 30-1] Female anglerfish carry a bioluminescent dorsal lure filled with glowing symbiotic bacteria, which they use to attract prey in the pitch-black bathypelagic zone.",
-      "question": "The anglerfish's glowing lure is powered by symbiotic bacteria living inside the modified spine.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Review the second sentence regarding the source of bioluminescence in the lure. (Diving calibration index 30-1)",
-      "explanation": "The glowing lure hosts glowing photobacterium species in a highly evolved, mutually beneficial relationship. [Validated by Fact Check Unit 30]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L30_Q2",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Shark Reef 30-2] Great white sharks possess specialized sensory organs called ampullae of Lorenzini, allowing them to detect weak electromagnetic fields generated by moving fish.",
-      "question": "Great white sharks can sense the weak electromagnetic fields produced by the muscles of swimming prey.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Examine the role of the specialized sensory organs described at the end. (Diving calibration index 30-2)",
-      "explanation": "Sharks utilize their electroreception system to find prey that is otherwise hidden under sand or in absolute darkness. [Validated by Fact Check Unit 30]."
-    },
-    {
-      "id": "RDG_TRUEFALSEREADING_L30_Q3",
-      "instruction": "FLICK THE COIN TO VERIFY THE FACT",
-      "difficulty": 1,
-      "subtype": "trueFalseReading",
-      "interactionType": "Coin Flip",
-      "passage": "[Global Flow 30-3] Ocean currents, such as the warm Gulf Stream, act as massive climate regulators by transporting absorbed equatorial solar heat towards the cooler polar hemispheres.",
-      "question": "The Gulf Stream current helps distribute heat around the globe by moving warm water towards the polar regions.",
-      "correctAnswer": "true",
-      "options": [
-        "true",
-        "false"
-      ],
-      "hint": "Review the role of the Gulf Stream current outlined in the text. (Diving calibration index 30-3)",
-      "explanation": "Ocean currents act as a global conveyor system, moving tropical heat to higher latitudes to keep global climates moderate. [Validated by Fact Check Unit 30]."
-    }
-  ]
+    "gameType": "trueFalseReading",
+    "batchIndex": 3,
+    "levels": "21-30",
+    "quests": [
+        {
+            "id": "RDG_TRUEFALSEREADING_L21_Q1",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Abyss Vent 21-1] Water near hydrothermal vents can reach temperatures of 350 degrees Celsius, which is high enough to melt lead. However, the extreme hydrostatic pressure at the bottom of the ocean prevents the water from boiling.",
+            "question": "The water near deep-sea hydrothermal vents remains liquid due to the extreme pressure, despite being hot enough to melt lead.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check the last sentence discussing boiling and pressure conditions. (Diving calibration index 21-1)",
+            "explanation": "At great oceanic depths, immense pressure raises the water's boiling point, allowing it to reach superheated states while remaining liquid. [Validated by Fact Check Unit 21]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L21_Q2",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Coral Zone 21-2] Although coral reefs cover less than 0.1% of the world's ocean surface, they host and nurture over 25% of all marine life, earning them the nickname 'rainforests of the sea'.",
+            "question": "Coral reefs occupy more than 10% of the Earth's total ocean surface area.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Review the exact percentage of ocean surface area covered by reefs in the first sentence. (Diving calibration index 21-2)",
+            "explanation": "Coral reefs cover a tiny fraction (less than 0.1%) of the ocean surface, but concentrate an immense proportion of biodiversity. [Validated by Fact Check Unit 21]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L21_Q3",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Biolum Lab 21-3] Bioluminescence is cold light produced chemically by deep-sea organisms. Unlike artificial lightbulbs, this biological light generates zero heat, allowing creatures to conserve vital energy.",
+            "question": "Bioluminescence produces a significant amount of heat energy alongside light.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Compare biological light emission to artificial light sources described in the text. (Diving calibration index 21-3)",
+            "explanation": "Bioluminescent light is known as 'cold light' because nearly 100% of the energy is emitted as light, generating no heat. [Validated by Fact Check Unit 21]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L22_Q1",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Whale Pod 22-1] Blue whales are filter feeders that consume up to four tons of tiny krill every day. They do not possess teeth; instead, they have baleen plates that act as a giant sieve to trap food.",
+            "question": "Blue whales use razor-sharp teeth to capture and chew large fish.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Find the anatomical description of how blue whales filter their food. (Diving calibration index 22-1)",
+            "explanation": "Blue whales are toothless baleen whales; they filter massive swarms of tiny krill through fiber-like baleen plates. [Validated by Fact Check Unit 22]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L22_Q2",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Wave Pulse 22-2] In the open ocean, tsunami waves travel at speeds exceeding 800 kilometers per hour. As they approach shallow coastal waters, they slow down significantly but grow taller.",
+            "question": "Tsunami waves increase in speed as they approach shallow coastal beaches.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at the second sentence outlining speed and wave height shifts near coasts. (Diving calibration index 22-2)",
+            "explanation": "Tsunamis slow down due to friction in shallow waters, causing the energy to compress and build tall, destructive wave heights. [Validated by Fact Check Unit 22]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L22_Q3",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Vent Hub 22-3] Undersea hydrothermal vent ecosystems are unique because they do not rely on sunlight. Instead, specialized bacteria perform chemosynthesis to convert toxic vent hydrogen sulfide into energy.",
+            "question": "Hydrothermal vent food chains rely directly on solar energy and plant photosynthesis.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Identify the primary source of chemical energy detailed in the first sentence. (Diving calibration index 22-3)",
+            "explanation": "These vent ecosystems thrive in complete darkness, driven entirely by chemosynthesis rather than solar-based photosynthesis. [Validated by Fact Check Unit 22]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L23_Q1",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Kelp Forest 23-1] Giant kelp grows in cool, nutrient-dense ocean waters. Under optimal conditions, these massive marine algae can grow at an astonishing rate of up to 60 centimeters per day.",
+            "question": "Giant kelp can grow up to 60 centimeters in a single day under optimal conditions.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Locate the growth rate metric stated in the last sentence. (Diving calibration index 23-1)",
+            "explanation": "Under ideal light and nutrient levels, giant kelp is one of the fastest-growing autotrophs on Earth, growing up to 60cm daily. [Validated by Fact Check Unit 23]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L23_Q2",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Angler Deep 23-2] Female anglerfish carry a bioluminescent dorsal lure filled with glowing symbiotic bacteria, which they use to attract prey in the pitch-black bathypelagic zone.",
+            "question": "The anglerfish's glowing lure is powered by symbiotic bacteria living inside the modified spine.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Review the second sentence regarding the source of bioluminescence in the lure. (Diving calibration index 23-2)",
+            "explanation": "The glowing lure hosts glowing photobacterium species in a highly evolved, mutually beneficial relationship. [Validated by Fact Check Unit 23]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L23_Q3",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Shark Reef 23-3] Great white sharks possess specialized sensory organs called ampullae of Lorenzini, allowing them to detect weak electromagnetic fields generated by moving fish.",
+            "question": "Great white sharks can sense the weak electromagnetic fields produced by the muscles of swimming prey.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Examine the role of the specialized sensory organs described at the end. (Diving calibration index 23-3)",
+            "explanation": "Sharks utilize their electroreception system to find prey that is otherwise hidden under sand or in absolute darkness. [Validated by Fact Check Unit 23]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L24_Q1",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Global Flow 24-1] Ocean currents, such as the warm Gulf Stream, act as massive climate regulators by transporting absorbed equatorial solar heat towards the cooler polar hemispheres.",
+            "question": "The Gulf Stream current helps distribute heat around the globe by moving warm water towards the polar regions.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Review the role of the Gulf Stream current outlined in the text. (Diving calibration index 24-1)",
+            "explanation": "Ocean currents act as a global conveyor system, moving tropical heat to higher latitudes to keep global climates moderate. [Validated by Fact Check Unit 24]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L24_Q2",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Abyss Vent 24-2] Water near hydrothermal vents can reach temperatures of 350 degrees Celsius, which is high enough to melt lead. However, the extreme hydrostatic pressure at the bottom of the ocean prevents the water from boiling.",
+            "question": "The water near deep-sea hydrothermal vents remains liquid due to the extreme pressure, despite being hot enough to melt lead.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check the last sentence discussing boiling and pressure conditions. (Diving calibration index 24-2)",
+            "explanation": "At great oceanic depths, immense pressure raises the water's boiling point, allowing it to reach superheated states while remaining liquid. [Validated by Fact Check Unit 24]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L24_Q3",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Coral Zone 24-3] Although coral reefs cover less than 0.1% of the world's ocean surface, they host and nurture over 25% of all marine life, earning them the nickname 'rainforests of the sea'.",
+            "question": "Coral reefs occupy more than 10% of the Earth's total ocean surface area.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Review the exact percentage of ocean surface area covered by reefs in the first sentence. (Diving calibration index 24-3)",
+            "explanation": "Coral reefs cover a tiny fraction (less than 0.1%) of the ocean surface, but concentrate an immense proportion of biodiversity. [Validated by Fact Check Unit 24]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L25_Q1",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Biolum Lab 25-1] Bioluminescence is cold light produced chemically by deep-sea organisms. Unlike artificial lightbulbs, this biological light generates zero heat, allowing creatures to conserve vital energy.",
+            "question": "Bioluminescence produces a significant amount of heat energy alongside light.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Compare biological light emission to artificial light sources described in the text. (Diving calibration index 25-1)",
+            "explanation": "Bioluminescent light is known as 'cold light' because nearly 100% of the energy is emitted as light, generating no heat. [Validated by Fact Check Unit 25]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L25_Q2",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Whale Pod 25-2] Blue whales are filter feeders that consume up to four tons of tiny krill every day. They do not possess teeth; instead, they have baleen plates that act as a giant sieve to trap food.",
+            "question": "Blue whales use razor-sharp teeth to capture and chew large fish.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Find the anatomical description of how blue whales filter their food. (Diving calibration index 25-2)",
+            "explanation": "Blue whales are toothless baleen whales; they filter massive swarms of tiny krill through fiber-like baleen plates. [Validated by Fact Check Unit 25]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L25_Q3",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Wave Pulse 25-3] In the open ocean, tsunami waves travel at speeds exceeding 800 kilometers per hour. As they approach shallow coastal waters, they slow down significantly but grow taller.",
+            "question": "Tsunami waves increase in speed as they approach shallow coastal beaches.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at the second sentence outlining speed and wave height shifts near coasts. (Diving calibration index 25-3)",
+            "explanation": "Tsunamis slow down due to friction in shallow waters, causing the energy to compress and build tall, destructive wave heights. [Validated by Fact Check Unit 25]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L26_Q1",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Vent Hub 26-1] Undersea hydrothermal vent ecosystems are unique because they do not rely on sunlight. Instead, specialized bacteria perform chemosynthesis to convert toxic vent hydrogen sulfide into energy.",
+            "question": "Hydrothermal vent food chains rely directly on solar energy and plant photosynthesis.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Identify the primary source of chemical energy detailed in the first sentence. (Diving calibration index 26-1)",
+            "explanation": "These vent ecosystems thrive in complete darkness, driven entirely by chemosynthesis rather than solar-based photosynthesis. [Validated by Fact Check Unit 26]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L26_Q2",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Kelp Forest 26-2] Giant kelp grows in cool, nutrient-dense ocean waters. Under optimal conditions, these massive marine algae can grow at an astonishing rate of up to 60 centimeters per day.",
+            "question": "Giant kelp can grow up to 60 centimeters in a single day under optimal conditions.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Locate the growth rate metric stated in the last sentence. (Diving calibration index 26-2)",
+            "explanation": "Under ideal light and nutrient levels, giant kelp is one of the fastest-growing autotrophs on Earth, growing up to 60cm daily. [Validated by Fact Check Unit 26]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L26_Q3",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Angler Deep 26-3] Female anglerfish carry a bioluminescent dorsal lure filled with glowing symbiotic bacteria, which they use to attract prey in the pitch-black bathypelagic zone.",
+            "question": "The anglerfish's glowing lure is powered by symbiotic bacteria living inside the modified spine.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Review the second sentence regarding the source of bioluminescence in the lure. (Diving calibration index 26-3)",
+            "explanation": "The glowing lure hosts glowing photobacterium species in a highly evolved, mutually beneficial relationship. [Validated by Fact Check Unit 26]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L27_Q1",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Shark Reef 27-1] Great white sharks possess specialized sensory organs called ampullae of Lorenzini, allowing them to detect weak electromagnetic fields generated by moving fish.",
+            "question": "Great white sharks can sense the weak electromagnetic fields produced by the muscles of swimming prey.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Examine the role of the specialized sensory organs described at the end. (Diving calibration index 27-1)",
+            "explanation": "Sharks utilize their electroreception system to find prey that is otherwise hidden under sand or in absolute darkness. [Validated by Fact Check Unit 27]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L27_Q2",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Global Flow 27-2] Ocean currents, such as the warm Gulf Stream, act as massive climate regulators by transporting absorbed equatorial solar heat towards the cooler polar hemispheres.",
+            "question": "The Gulf Stream current helps distribute heat around the globe by moving warm water towards the polar regions.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Review the role of the Gulf Stream current outlined in the text. (Diving calibration index 27-2)",
+            "explanation": "Ocean currents act as a global conveyor system, moving tropical heat to higher latitudes to keep global climates moderate. [Validated by Fact Check Unit 27]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L27_Q3",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Abyss Vent 27-3] Water near hydrothermal vents can reach temperatures of 350 degrees Celsius, which is high enough to melt lead. However, the extreme hydrostatic pressure at the bottom of the ocean prevents the water from boiling.",
+            "question": "The water near deep-sea hydrothermal vents remains liquid due to the extreme pressure, despite being hot enough to melt lead.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Check the last sentence discussing boiling and pressure conditions. (Diving calibration index 27-3)",
+            "explanation": "At great oceanic depths, immense pressure raises the water's boiling point, allowing it to reach superheated states while remaining liquid. [Validated by Fact Check Unit 27]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L28_Q1",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Coral Zone 28-1] Although coral reefs cover less than 0.1% of the world's ocean surface, they host and nurture over 25% of all marine life, earning them the nickname 'rainforests of the sea'.",
+            "question": "Coral reefs occupy more than 10% of the Earth's total ocean surface area.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Review the exact percentage of ocean surface area covered by reefs in the first sentence. (Diving calibration index 28-1)",
+            "explanation": "Coral reefs cover a tiny fraction (less than 0.1%) of the ocean surface, but concentrate an immense proportion of biodiversity. [Validated by Fact Check Unit 28]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L28_Q2",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Biolum Lab 28-2] Bioluminescence is cold light produced chemically by deep-sea organisms. Unlike artificial lightbulbs, this biological light generates zero heat, allowing creatures to conserve vital energy.",
+            "question": "Bioluminescence produces a significant amount of heat energy alongside light.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Compare biological light emission to artificial light sources described in the text. (Diving calibration index 28-2)",
+            "explanation": "Bioluminescent light is known as 'cold light' because nearly 100% of the energy is emitted as light, generating no heat. [Validated by Fact Check Unit 28]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L28_Q3",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Whale Pod 28-3] Blue whales are filter feeders that consume up to four tons of tiny krill every day. They do not possess teeth; instead, they have baleen plates that act as a giant sieve to trap food.",
+            "question": "Blue whales use razor-sharp teeth to capture and chew large fish.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Find the anatomical description of how blue whales filter their food. (Diving calibration index 28-3)",
+            "explanation": "Blue whales are toothless baleen whales; they filter massive swarms of tiny krill through fiber-like baleen plates. [Validated by Fact Check Unit 28]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L29_Q1",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Wave Pulse 29-1] In the open ocean, tsunami waves travel at speeds exceeding 800 kilometers per hour. As they approach shallow coastal waters, they slow down significantly but grow taller.",
+            "question": "Tsunami waves increase in speed as they approach shallow coastal beaches.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Look at the second sentence outlining speed and wave height shifts near coasts. (Diving calibration index 29-1)",
+            "explanation": "Tsunamis slow down due to friction in shallow waters, causing the energy to compress and build tall, destructive wave heights. [Validated by Fact Check Unit 29]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L29_Q2",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Vent Hub 29-2] Undersea hydrothermal vent ecosystems are unique because they do not rely on sunlight. Instead, specialized bacteria perform chemosynthesis to convert toxic vent hydrogen sulfide into energy.",
+            "question": "Hydrothermal vent food chains rely directly on solar energy and plant photosynthesis.",
+            "correctAnswer": "false",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Identify the primary source of chemical energy detailed in the first sentence. (Diving calibration index 29-2)",
+            "explanation": "These vent ecosystems thrive in complete darkness, driven entirely by chemosynthesis rather than solar-based photosynthesis. [Validated by Fact Check Unit 29]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L29_Q3",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Kelp Forest 29-3] Giant kelp grows in cool, nutrient-dense ocean waters. Under optimal conditions, these massive marine algae can grow at an astonishing rate of up to 60 centimeters per day.",
+            "question": "Giant kelp can grow up to 60 centimeters in a single day under optimal conditions.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Locate the growth rate metric stated in the last sentence. (Diving calibration index 29-3)",
+            "explanation": "Under ideal light and nutrient levels, giant kelp is one of the fastest-growing autotrophs on Earth, growing up to 60cm daily. [Validated by Fact Check Unit 29]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L30_Q1",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Angler Deep 30-1] Female anglerfish carry a bioluminescent dorsal lure filled with glowing symbiotic bacteria, which they use to attract prey in the pitch-black bathypelagic zone.",
+            "question": "The anglerfish's glowing lure is powered by symbiotic bacteria living inside the modified spine.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Review the second sentence regarding the source of bioluminescence in the lure. (Diving calibration index 30-1)",
+            "explanation": "The glowing lure hosts glowing photobacterium species in a highly evolved, mutually beneficial relationship. [Validated by Fact Check Unit 30]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L30_Q2",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Shark Reef 30-2] Great white sharks possess specialized sensory organs called ampullae of Lorenzini, allowing them to detect weak electromagnetic fields generated by moving fish.",
+            "question": "Great white sharks can sense the weak electromagnetic fields produced by the muscles of swimming prey.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Examine the role of the specialized sensory organs described at the end. (Diving calibration index 30-2)",
+            "explanation": "Sharks utilize their electroreception system to find prey that is otherwise hidden under sand or in absolute darkness. [Validated by Fact Check Unit 30]."
+        },
+        {
+            "id": "RDG_TRUEFALSEREADING_L30_Q3",
+            "instruction": "FLICK THE COIN TO VERIFY THE FACT",
+            "difficulty": 1,
+            "subtype": "trueFalseReading",
+            "interactionType": "Coin Flip",
+            "passage": "[Global Flow 30-3] Ocean currents, such as the warm Gulf Stream, act as massive climate regulators by transporting absorbed equatorial solar heat towards the cooler polar hemispheres.",
+            "question": "The Gulf Stream current helps distribute heat around the globe by moving warm water towards the polar regions.",
+            "correctAnswer": "true",
+            "options": [
+                "true",
+                "false"
+            ],
+            "hint": "Review the role of the Gulf Stream current outlined in the text. (Diving calibration index 30-3)",
+            "explanation": "Ocean currents act as a global conveyor system, moving tropical heat to higher latitudes to keep global climates moderate. [Validated by Fact Check Unit 30]."
+        }
+    ]
 }

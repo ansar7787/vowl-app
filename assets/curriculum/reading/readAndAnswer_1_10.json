@@ -1,577 +1,577 @@
 {
-  "gameType": "readAndAnswer",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "RDG_READANDANSWER_L1_Q1",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Abyss Sector 1-1] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-      "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
-      "options": [
-        "The extreme water pressure",
-        "The freezing deep ocean currents",
-        "The high chemical mineral content",
-        "The metal shell of the submersible"
-      ],
-      "correctAnswer": "The extreme water pressure",
-      "correctAnswerIndex": 0,
-      "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 1-1)",
-      "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 1]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L1_Q2",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Reef Zone 1-2] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-      "question": "Why are coral reefs compared to tropical rainforests?",
-      "options": [
-        "Their vast biodiversity",
-        "Their warm geographic location",
-        "Their dense leafy plants",
-        "Their heavy rainfall amounts"
-      ],
-      "correctAnswer": "Their vast biodiversity",
-      "correctAnswerIndex": 0,
-      "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 1-2)",
-      "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 1]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L1_Q3",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Biolum Lab 1-3] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-      "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
-      "options": [
-        "Attracting prey or finding mates",
-        "Photosynthesizing food molecules",
-        "Warming up frozen waters",
-        "Navigating back to shallow reefs"
-      ],
-      "correctAnswer": "Attracting prey or finding mates",
-      "correctAnswerIndex": 0,
-      "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 1-3)",
-      "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 1]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L2_Q1",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Whale Pod 2-1] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-      "question": "What does the blue whale primarily eat to maintain its massive body size?",
-      "options": [
-        "Tiny crustaceans called krill",
-        "Large predatory sharks",
-        "Giant deep-sea squids",
-        "Marine plants and kelp forests"
-      ],
-      "correctAnswer": "Tiny crustaceans called krill",
-      "correctAnswerIndex": 0,
-      "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 2-1)",
-      "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 2]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L2_Q2",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Seismic Hub 2-2] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-      "question": "How fast can a tsunami travel across the deep open ocean?",
-      "options": [
-        "Over 800 kilometers per hour",
-        "Around 100 kilometers per hour",
-        "As fast as a swimming shark",
-        "Slower than shallow tide waves"
-      ],
-      "correctAnswer": "Over 800 kilometers per hour",
-      "correctAnswerIndex": 0,
-      "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 2-2)",
-      "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 2]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L2_Q3",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Vent Sector 2-3] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-      "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
-      "options": [
-        "Chemosynthesis by bacteria",
-        "Solar radiation absorption",
-        "Thermal heat collection",
-        "Predatory coral filter feeding"
-      ],
-      "correctAnswer": "Chemosynthesis by bacteria",
-      "correctAnswerIndex": 0,
-      "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 2-3)",
-      "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 2]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L3_Q1",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Kelp Grove 3-1] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-      "question": "How fast can giant kelp grow under ideal environmental conditions?",
-      "options": [
-        "Up to 60 centimeters per day",
-        "Around 10 centimeters per week",
-        "Over 5 meters every single hour",
-        "Only during the warm summer season"
-      ],
-      "correctAnswer": "Up to 60 centimeters per day",
-      "correctAnswerIndex": 0,
-      "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 3-1)",
-      "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 3]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L3_Q2",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Angler Depths 3-2] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-      "question": "How does the female anglerfish attract prey in the dark abyss?",
-      "options": [
-        "Using a glowing bacterial lure",
-        "Emitting loud acoustic pulses",
-        "Releasing chemical scents",
-        "Hiding in sandy reef trenches"
-      ],
-      "correctAnswer": "Using a glowing bacterial lure",
-      "correctAnswerIndex": 0,
-      "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 3-2)",
-      "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 3]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L3_Q3",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Shark Reef 3-3] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-      "question": "What sensory capability allows sharks to locate hidden swimming prey?",
-      "options": [
-        "Sensing electromagnetic fields",
-        "Highly developed color vision",
-        "Feeling thermal temperature shifts",
-        "Hearing low-frequency whale songs"
-      ],
-      "correctAnswer": "Sensing electromagnetic fields",
-      "correctAnswerIndex": 0,
-      "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 3-3)",
-      "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 3]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L4_Q1",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Global Sea 4-1] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-      "question": "What is one primary way the ocean regulates the Earth's global climate?",
-      "options": [
-        "Distributing heat via currents",
-        "Creating global volcanic rings",
-        "Reflecting all incoming sunlight",
-        "Increasing atmospheric oxygen levels"
-      ],
-      "correctAnswer": "Distributing heat via currents",
-      "correctAnswerIndex": 0,
-      "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 4-1)",
-      "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 4]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L4_Q2",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Abyss Sector 4-2] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-      "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
-      "options": [
-        "The extreme water pressure",
-        "The freezing deep ocean currents",
-        "The high chemical mineral content",
-        "The metal shell of the submersible"
-      ],
-      "correctAnswer": "The extreme water pressure",
-      "correctAnswerIndex": 0,
-      "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 4-2)",
-      "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 4]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L4_Q3",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Reef Zone 4-3] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-      "question": "Why are coral reefs compared to tropical rainforests?",
-      "options": [
-        "Their vast biodiversity",
-        "Their warm geographic location",
-        "Their dense leafy plants",
-        "Their heavy rainfall amounts"
-      ],
-      "correctAnswer": "Their vast biodiversity",
-      "correctAnswerIndex": 0,
-      "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 4-3)",
-      "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 4]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L5_Q1",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Biolum Lab 5-1] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-      "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
-      "options": [
-        "Attracting prey or finding mates",
-        "Photosynthesizing food molecules",
-        "Warming up frozen waters",
-        "Navigating back to shallow reefs"
-      ],
-      "correctAnswer": "Attracting prey or finding mates",
-      "correctAnswerIndex": 0,
-      "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 5-1)",
-      "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 5]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L5_Q2",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Whale Pod 5-2] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-      "question": "What does the blue whale primarily eat to maintain its massive body size?",
-      "options": [
-        "Tiny crustaceans called krill",
-        "Large predatory sharks",
-        "Giant deep-sea squids",
-        "Marine plants and kelp forests"
-      ],
-      "correctAnswer": "Tiny crustaceans called krill",
-      "correctAnswerIndex": 0,
-      "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 5-2)",
-      "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 5]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L5_Q3",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Seismic Hub 5-3] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-      "question": "How fast can a tsunami travel across the deep open ocean?",
-      "options": [
-        "Over 800 kilometers per hour",
-        "Around 100 kilometers per hour",
-        "As fast as a swimming shark",
-        "Slower than shallow tide waves"
-      ],
-      "correctAnswer": "Over 800 kilometers per hour",
-      "correctAnswerIndex": 0,
-      "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 5-3)",
-      "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 5]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L6_Q1",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Vent Sector 6-1] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-      "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
-      "options": [
-        "Chemosynthesis by bacteria",
-        "Solar radiation absorption",
-        "Thermal heat collection",
-        "Predatory coral filter feeding"
-      ],
-      "correctAnswer": "Chemosynthesis by bacteria",
-      "correctAnswerIndex": 0,
-      "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 6-1)",
-      "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 6]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L6_Q2",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Kelp Grove 6-2] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-      "question": "How fast can giant kelp grow under ideal environmental conditions?",
-      "options": [
-        "Up to 60 centimeters per day",
-        "Around 10 centimeters per week",
-        "Over 5 meters every single hour",
-        "Only during the warm summer season"
-      ],
-      "correctAnswer": "Up to 60 centimeters per day",
-      "correctAnswerIndex": 0,
-      "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 6-2)",
-      "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 6]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L6_Q3",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Angler Depths 6-3] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-      "question": "How does the female anglerfish attract prey in the dark abyss?",
-      "options": [
-        "Using a glowing bacterial lure",
-        "Emitting loud acoustic pulses",
-        "Releasing chemical scents",
-        "Hiding in sandy reef trenches"
-      ],
-      "correctAnswer": "Using a glowing bacterial lure",
-      "correctAnswerIndex": 0,
-      "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 6-3)",
-      "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 6]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L7_Q1",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Shark Reef 7-1] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-      "question": "What sensory capability allows sharks to locate hidden swimming prey?",
-      "options": [
-        "Sensing electromagnetic fields",
-        "Highly developed color vision",
-        "Feeling thermal temperature shifts",
-        "Hearing low-frequency whale songs"
-      ],
-      "correctAnswer": "Sensing electromagnetic fields",
-      "correctAnswerIndex": 0,
-      "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 7-1)",
-      "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 7]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L7_Q2",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Global Sea 7-2] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-      "question": "What is one primary way the ocean regulates the Earth's global climate?",
-      "options": [
-        "Distributing heat via currents",
-        "Creating global volcanic rings",
-        "Reflecting all incoming sunlight",
-        "Increasing atmospheric oxygen levels"
-      ],
-      "correctAnswer": "Distributing heat via currents",
-      "correctAnswerIndex": 0,
-      "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 7-2)",
-      "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 7]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L7_Q3",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Abyss Sector 7-3] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
-      "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
-      "options": [
-        "The extreme water pressure",
-        "The freezing deep ocean currents",
-        "The high chemical mineral content",
-        "The metal shell of the submersible"
-      ],
-      "correctAnswer": "The extreme water pressure",
-      "correctAnswerIndex": 0,
-      "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 7-3)",
-      "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 7]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L8_Q1",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Reef Zone 8-1] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
-      "question": "Why are coral reefs compared to tropical rainforests?",
-      "options": [
-        "Their vast biodiversity",
-        "Their warm geographic location",
-        "Their dense leafy plants",
-        "Their heavy rainfall amounts"
-      ],
-      "correctAnswer": "Their vast biodiversity",
-      "correctAnswerIndex": 0,
-      "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 8-1)",
-      "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 8]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L8_Q2",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Biolum Lab 8-2] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
-      "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
-      "options": [
-        "Attracting prey or finding mates",
-        "Photosynthesizing food molecules",
-        "Warming up frozen waters",
-        "Navigating back to shallow reefs"
-      ],
-      "correctAnswer": "Attracting prey or finding mates",
-      "correctAnswerIndex": 0,
-      "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 8-2)",
-      "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 8]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L8_Q3",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Whale Pod 8-3] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
-      "question": "What does the blue whale primarily eat to maintain its massive body size?",
-      "options": [
-        "Tiny crustaceans called krill",
-        "Large predatory sharks",
-        "Giant deep-sea squids",
-        "Marine plants and kelp forests"
-      ],
-      "correctAnswer": "Tiny crustaceans called krill",
-      "correctAnswerIndex": 0,
-      "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 8-3)",
-      "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 8]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L9_Q1",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Seismic Hub 9-1] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
-      "question": "How fast can a tsunami travel across the deep open ocean?",
-      "options": [
-        "Over 800 kilometers per hour",
-        "Around 100 kilometers per hour",
-        "As fast as a swimming shark",
-        "Slower than shallow tide waves"
-      ],
-      "correctAnswer": "Over 800 kilometers per hour",
-      "correctAnswerIndex": 0,
-      "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 9-1)",
-      "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 9]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L9_Q2",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Vent Sector 9-2] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
-      "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
-      "options": [
-        "Chemosynthesis by bacteria",
-        "Solar radiation absorption",
-        "Thermal heat collection",
-        "Predatory coral filter feeding"
-      ],
-      "correctAnswer": "Chemosynthesis by bacteria",
-      "correctAnswerIndex": 0,
-      "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 9-2)",
-      "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 9]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L9_Q3",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Kelp Grove 9-3] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
-      "question": "How fast can giant kelp grow under ideal environmental conditions?",
-      "options": [
-        "Up to 60 centimeters per day",
-        "Around 10 centimeters per week",
-        "Over 5 meters every single hour",
-        "Only during the warm summer season"
-      ],
-      "correctAnswer": "Up to 60 centimeters per day",
-      "correctAnswerIndex": 0,
-      "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 9-3)",
-      "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 9]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L10_Q1",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Angler Depths 10-1] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
-      "question": "How does the female anglerfish attract prey in the dark abyss?",
-      "options": [
-        "Using a glowing bacterial lure",
-        "Emitting loud acoustic pulses",
-        "Releasing chemical scents",
-        "Hiding in sandy reef trenches"
-      ],
-      "correctAnswer": "Using a glowing bacterial lure",
-      "correctAnswerIndex": 0,
-      "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 10-1)",
-      "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 10]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L10_Q2",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Shark Reef 10-2] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
-      "question": "What sensory capability allows sharks to locate hidden swimming prey?",
-      "options": [
-        "Sensing electromagnetic fields",
-        "Highly developed color vision",
-        "Feeling thermal temperature shifts",
-        "Hearing low-frequency whale songs"
-      ],
-      "correctAnswer": "Sensing electromagnetic fields",
-      "correctAnswerIndex": 0,
-      "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 10-2)",
-      "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 10]."
-    },
-    {
-      "id": "RDG_READANDANSWER_L10_Q3",
-      "instruction": "DIVE AND ANCHOR THE TRUTH",
-      "difficulty": 1,
-      "subtype": "readAndAnswer",
-      "interactionType": "Text Diver",
-      "passage": "[Global Sea 10-3] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
-      "question": "What is one primary way the ocean regulates the Earth's global climate?",
-      "options": [
-        "Distributing heat via currents",
-        "Creating global volcanic rings",
-        "Reflecting all incoming sunlight",
-        "Increasing atmospheric oxygen levels"
-      ],
-      "correctAnswer": "Distributing heat via currents",
-      "correctAnswerIndex": 0,
-      "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 10-3)",
-      "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 10]."
-    }
-  ]
+    "gameType": "readAndAnswer",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "id": "RDG_READANDANSWER_L1_Q1",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Abyss Sector 1-1] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
+            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "options": [
+                "The extreme water pressure",
+                "The freezing deep ocean currents",
+                "The high chemical mineral content",
+                "The metal shell of the submersible"
+            ],
+            "correctAnswer": "The extreme water pressure",
+            "correctAnswerIndex": 0,
+            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 1-1)",
+            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 1]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L1_Q2",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Reef Zone 1-2] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
+            "question": "Why are coral reefs compared to tropical rainforests?",
+            "options": [
+                "Their vast biodiversity",
+                "Their warm geographic location",
+                "Their dense leafy plants",
+                "Their heavy rainfall amounts"
+            ],
+            "correctAnswer": "Their vast biodiversity",
+            "correctAnswerIndex": 0,
+            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 1-2)",
+            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 1]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L1_Q3",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Biolum Lab 1-3] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
+            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "options": [
+                "Attracting prey or finding mates",
+                "Photosynthesizing food molecules",
+                "Warming up frozen waters",
+                "Navigating back to shallow reefs"
+            ],
+            "correctAnswer": "Attracting prey or finding mates",
+            "correctAnswerIndex": 0,
+            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 1-3)",
+            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 1]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L2_Q1",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Whale Pod 2-1] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
+            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "options": [
+                "Tiny crustaceans called krill",
+                "Large predatory sharks",
+                "Giant deep-sea squids",
+                "Marine plants and kelp forests"
+            ],
+            "correctAnswer": "Tiny crustaceans called krill",
+            "correctAnswerIndex": 0,
+            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 2-1)",
+            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 2]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L2_Q2",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Seismic Hub 2-2] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
+            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "options": [
+                "Over 800 kilometers per hour",
+                "Around 100 kilometers per hour",
+                "As fast as a swimming shark",
+                "Slower than shallow tide waves"
+            ],
+            "correctAnswer": "Over 800 kilometers per hour",
+            "correctAnswerIndex": 0,
+            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 2-2)",
+            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 2]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L2_Q3",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Vent Sector 2-3] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
+            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "options": [
+                "Chemosynthesis by bacteria",
+                "Solar radiation absorption",
+                "Thermal heat collection",
+                "Predatory coral filter feeding"
+            ],
+            "correctAnswer": "Chemosynthesis by bacteria",
+            "correctAnswerIndex": 0,
+            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 2-3)",
+            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 2]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L3_Q1",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Kelp Grove 3-1] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
+            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "options": [
+                "Up to 60 centimeters per day",
+                "Around 10 centimeters per week",
+                "Over 5 meters every single hour",
+                "Only during the warm summer season"
+            ],
+            "correctAnswer": "Up to 60 centimeters per day",
+            "correctAnswerIndex": 0,
+            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 3-1)",
+            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 3]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L3_Q2",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Angler Depths 3-2] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
+            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "options": [
+                "Using a glowing bacterial lure",
+                "Emitting loud acoustic pulses",
+                "Releasing chemical scents",
+                "Hiding in sandy reef trenches"
+            ],
+            "correctAnswer": "Using a glowing bacterial lure",
+            "correctAnswerIndex": 0,
+            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 3-2)",
+            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 3]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L3_Q3",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Shark Reef 3-3] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
+            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "options": [
+                "Sensing electromagnetic fields",
+                "Highly developed color vision",
+                "Feeling thermal temperature shifts",
+                "Hearing low-frequency whale songs"
+            ],
+            "correctAnswer": "Sensing electromagnetic fields",
+            "correctAnswerIndex": 0,
+            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 3-3)",
+            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 3]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L4_Q1",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Global Sea 4-1] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
+            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "options": [
+                "Distributing heat via currents",
+                "Creating global volcanic rings",
+                "Reflecting all incoming sunlight",
+                "Increasing atmospheric oxygen levels"
+            ],
+            "correctAnswer": "Distributing heat via currents",
+            "correctAnswerIndex": 0,
+            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 4-1)",
+            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 4]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L4_Q2",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Abyss Sector 4-2] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
+            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "options": [
+                "The extreme water pressure",
+                "The freezing deep ocean currents",
+                "The high chemical mineral content",
+                "The metal shell of the submersible"
+            ],
+            "correctAnswer": "The extreme water pressure",
+            "correctAnswerIndex": 0,
+            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 4-2)",
+            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 4]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L4_Q3",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Reef Zone 4-3] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
+            "question": "Why are coral reefs compared to tropical rainforests?",
+            "options": [
+                "Their vast biodiversity",
+                "Their warm geographic location",
+                "Their dense leafy plants",
+                "Their heavy rainfall amounts"
+            ],
+            "correctAnswer": "Their vast biodiversity",
+            "correctAnswerIndex": 0,
+            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 4-3)",
+            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 4]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L5_Q1",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Biolum Lab 5-1] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
+            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "options": [
+                "Attracting prey or finding mates",
+                "Photosynthesizing food molecules",
+                "Warming up frozen waters",
+                "Navigating back to shallow reefs"
+            ],
+            "correctAnswer": "Attracting prey or finding mates",
+            "correctAnswerIndex": 0,
+            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 5-1)",
+            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 5]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L5_Q2",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Whale Pod 5-2] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
+            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "options": [
+                "Tiny crustaceans called krill",
+                "Large predatory sharks",
+                "Giant deep-sea squids",
+                "Marine plants and kelp forests"
+            ],
+            "correctAnswer": "Tiny crustaceans called krill",
+            "correctAnswerIndex": 0,
+            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 5-2)",
+            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 5]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L5_Q3",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Seismic Hub 5-3] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
+            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "options": [
+                "Over 800 kilometers per hour",
+                "Around 100 kilometers per hour",
+                "As fast as a swimming shark",
+                "Slower than shallow tide waves"
+            ],
+            "correctAnswer": "Over 800 kilometers per hour",
+            "correctAnswerIndex": 0,
+            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 5-3)",
+            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 5]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L6_Q1",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Vent Sector 6-1] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
+            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "options": [
+                "Chemosynthesis by bacteria",
+                "Solar radiation absorption",
+                "Thermal heat collection",
+                "Predatory coral filter feeding"
+            ],
+            "correctAnswer": "Chemosynthesis by bacteria",
+            "correctAnswerIndex": 0,
+            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 6-1)",
+            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 6]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L6_Q2",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Kelp Grove 6-2] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
+            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "options": [
+                "Up to 60 centimeters per day",
+                "Around 10 centimeters per week",
+                "Over 5 meters every single hour",
+                "Only during the warm summer season"
+            ],
+            "correctAnswer": "Up to 60 centimeters per day",
+            "correctAnswerIndex": 0,
+            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 6-2)",
+            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 6]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L6_Q3",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Angler Depths 6-3] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
+            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "options": [
+                "Using a glowing bacterial lure",
+                "Emitting loud acoustic pulses",
+                "Releasing chemical scents",
+                "Hiding in sandy reef trenches"
+            ],
+            "correctAnswer": "Using a glowing bacterial lure",
+            "correctAnswerIndex": 0,
+            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 6-3)",
+            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 6]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L7_Q1",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Shark Reef 7-1] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
+            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "options": [
+                "Sensing electromagnetic fields",
+                "Highly developed color vision",
+                "Feeling thermal temperature shifts",
+                "Hearing low-frequency whale songs"
+            ],
+            "correctAnswer": "Sensing electromagnetic fields",
+            "correctAnswerIndex": 0,
+            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 7-1)",
+            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 7]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L7_Q2",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Global Sea 7-2] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
+            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "options": [
+                "Distributing heat via currents",
+                "Creating global volcanic rings",
+                "Reflecting all incoming sunlight",
+                "Increasing atmospheric oxygen levels"
+            ],
+            "correctAnswer": "Distributing heat via currents",
+            "correctAnswerIndex": 0,
+            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 7-2)",
+            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 7]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L7_Q3",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Abyss Sector 7-3] Deep in the Mariana Trench, the deep-sea submersible Alvin encountered a hydrothermal vent emitting black sulfide minerals. The temperature of the water near the vent was measured at 350 degrees Celsius, which is high enough to melt lead. However, the extreme pressure keeps the water liquid.",
+            "question": "What prevents the superheated water from boiling at the hydrothermal vent?",
+            "options": [
+                "The extreme water pressure",
+                "The freezing deep ocean currents",
+                "The high chemical mineral content",
+                "The metal shell of the submersible"
+            ],
+            "correctAnswer": "The extreme water pressure",
+            "correctAnswerIndex": 0,
+            "hint": "Focus on the last sentence of the passage describing physical forces. (Diving calibration index 7-3)",
+            "explanation": "The extreme liquid pressure deep in the ocean raises the boiling point, preventing the 350°C water from vaporizing. [Logged under Abyss Calibration unit 7]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L8_Q1",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Reef Zone 8-1] Coral reefs are often called the rainforests of the sea because of their immense biodiversity. Although they cover less than 0.1% of the world's ocean surface, they provide a habitat for at least 25% of all marine species, including fish, mollusks, and sea turtles.",
+            "question": "Why are coral reefs compared to tropical rainforests?",
+            "options": [
+                "Their vast biodiversity",
+                "Their warm geographic location",
+                "Their dense leafy plants",
+                "Their heavy rainfall amounts"
+            ],
+            "correctAnswer": "Their vast biodiversity",
+            "correctAnswerIndex": 0,
+            "hint": "Look for the metaphorical comparison in the opening sentence. (Diving calibration index 8-1)",
+            "explanation": "Both coral reefs and rainforests are characterized by high concentrations of diverse living species. [Logged under Abyss Calibration unit 8]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L8_Q2",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Biolum Lab 8-2] Bioluminescence is the production and emission of light by a living organism. In the deep ocean, where sunlight cannot penetrate, organisms use this cold light to attract prey, find mates, or scare away potential predators.",
+            "question": "What is a primary purpose of bioluminescence in the sunless deep sea?",
+            "options": [
+                "Attracting prey or finding mates",
+                "Photosynthesizing food molecules",
+                "Warming up frozen waters",
+                "Navigating back to shallow reefs"
+            ],
+            "correctAnswer": "Attracting prey or finding mates",
+            "correctAnswerIndex": 0,
+            "hint": "Identify the three main ecological uses listed in the second sentence. (Diving calibration index 8-2)",
+            "explanation": "Organisms emit light to communicate, lure food, and survive in pitch-black depths. [Logged under Abyss Calibration unit 8]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L8_Q3",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Whale Pod 8-3] The blue whale is the largest animal ever known to have lived on Earth, even larger than the biggest dinosaurs. To maintain its massive size, it consumes up to four tons of tiny shrimp-like crustaceans called krill every single day during the feeding season.",
+            "question": "What does the blue whale primarily eat to maintain its massive body size?",
+            "options": [
+                "Tiny crustaceans called krill",
+                "Large predatory sharks",
+                "Giant deep-sea squids",
+                "Marine plants and kelp forests"
+            ],
+            "correctAnswer": "Tiny crustaceans called krill",
+            "correctAnswerIndex": 0,
+            "hint": "Look closely at the second sentence specifying the whale's exact diet. (Diving calibration index 8-3)",
+            "explanation": "Blue whales are filter feeders that rely almost entirely on krill for sustenance. [Logged under Abyss Calibration unit 8]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L9_Q1",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Seismic Hub 9-1] Undersea earthquakes and volcanic eruptions can displace massive volumes of water, generating a series of waves known as tsunamis. In the open ocean, these waves travel at speeds exceeding 800 kilometers per hour, comparable to a commercial jet passenger plane.",
+            "question": "How fast can a tsunami travel across the deep open ocean?",
+            "options": [
+                "Over 800 kilometers per hour",
+                "Around 100 kilometers per hour",
+                "As fast as a swimming shark",
+                "Slower than shallow tide waves"
+            ],
+            "correctAnswer": "Over 800 kilometers per hour",
+            "correctAnswerIndex": 0,
+            "hint": "Find the speed comparison in the second sentence of the text. (Diving calibration index 9-1)",
+            "explanation": "In deep water, tsunamis move incredibly quickly with long wavelengths and low wave heights. [Logged under Abyss Calibration unit 9]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L9_Q2",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Vent Sector 9-2] Hydrothermal vents support unique ecosystems that do not rely on sunlight for energy. Instead, specialized bacteria utilize chemosynthesis, converting toxic hydrogen sulfide gas from the vent into organic matter that feeds crabs and giant tubeworms.",
+            "question": "What process replaces photosynthesis as the primary energy source in vent ecosystems?",
+            "options": [
+                "Chemosynthesis by bacteria",
+                "Solar radiation absorption",
+                "Thermal heat collection",
+                "Predatory coral filter feeding"
+            ],
+            "correctAnswer": "Chemosynthesis by bacteria",
+            "correctAnswerIndex": 0,
+            "hint": "Look for the chemical term defined in the second sentence. (Diving calibration index 9-2)",
+            "explanation": "Chemosynthesis uses chemical energy instead of light to manufacture organic food compounds. [Logged under Abyss Calibration unit 9]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L9_Q3",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Kelp Grove 9-3] Giant kelp forests grow in cool, nutrient-rich shallow waters. They are among the most dynamic ecosystems on Earth, capable of growing up to 60 centimeters per day under ideal conditions, providing food and shelter for sea otters and kelp bass.",
+            "question": "How fast can giant kelp grow under ideal environmental conditions?",
+            "options": [
+                "Up to 60 centimeters per day",
+                "Around 10 centimeters per week",
+                "Over 5 meters every single hour",
+                "Only during the warm summer season"
+            ],
+            "correctAnswer": "Up to 60 centimeters per day",
+            "correctAnswerIndex": 0,
+            "hint": "Check the numerical growth rate stated in the middle of the text. (Diving calibration index 9-3)",
+            "explanation": "Giant kelp grows exceptionally fast, making it a highly productive marine habitat. [Logged under Abyss Calibration unit 9]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L10_Q1",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Angler Depths 10-1] The anglerfish is famous for its hunting method in the dark bathypelagic zone. Females possess a modified dorsal spine that hosts glowing symbiotic bacteria, acting as a fishing rod and light lure to attract curious prey directly to their jaws.",
+            "question": "How does the female anglerfish attract prey in the dark abyss?",
+            "options": [
+                "Using a glowing bacterial lure",
+                "Emitting loud acoustic pulses",
+                "Releasing chemical scents",
+                "Hiding in sandy reef trenches"
+            ],
+            "correctAnswer": "Using a glowing bacterial lure",
+            "correctAnswerIndex": 0,
+            "hint": "Identify the anatomical modification and symbiotic partner mentioned in the text. (Diving calibration index 10-1)",
+            "explanation": "Symbiotic bioluminescent bacteria inside the fish's lure attract prey in the dark. [Logged under Abyss Calibration unit 10]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L10_Q2",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Shark Reef 10-2] Great white sharks are apex predators with an extraordinary sense of smell. They can detect a single drop of blood in 100 liters of water and sense tiny electromagnetic fields generated by the muscle movements of swimming fish.",
+            "question": "What sensory capability allows sharks to locate hidden swimming prey?",
+            "options": [
+                "Sensing electromagnetic fields",
+                "Highly developed color vision",
+                "Feeling thermal temperature shifts",
+                "Hearing low-frequency whale songs"
+            ],
+            "correctAnswer": "Sensing electromagnetic fields",
+            "correctAnswerIndex": 0,
+            "hint": "Review the second half of the paragraph discussing electrical sensations. (Diving calibration index 10-2)",
+            "explanation": "Sharks utilize ampullae of Lorenzini to sense electromagnetic fields of moving prey. [Logged under Abyss Calibration unit 10]."
+        },
+        {
+            "id": "RDG_READANDANSWER_L10_Q3",
+            "instruction": "DIVE AND ANCHOR THE TRUTH",
+            "difficulty": 1,
+            "subtype": "readAndAnswer",
+            "interactionType": "Text Diver",
+            "passage": "[Global Sea 10-3] The ocean holds approximately 97% of Earth's water. It plays a critical role in regulating the global climate by absorbing vast amounts of solar radiation and distributing heat through global currents like the Gulf Stream.",
+            "question": "What is one primary way the ocean regulates the Earth's global climate?",
+            "options": [
+                "Distributing heat via currents",
+                "Creating global volcanic rings",
+                "Reflecting all incoming sunlight",
+                "Increasing atmospheric oxygen levels"
+            ],
+            "correctAnswer": "Distributing heat via currents",
+            "correctAnswerIndex": 0,
+            "hint": "Examine the second sentence describing heat distribution systems. (Diving calibration index 10-3)",
+            "explanation": "Ocean currents act as conveyor belts, transferring warm water and heat around the globe. [Logged under Abyss Calibration unit 10]."
+        }
+    ]
 }

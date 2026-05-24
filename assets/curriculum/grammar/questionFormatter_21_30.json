@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 3,
-  "levels": "21-30",
-  "quests": [
-    {
-      "id": "qf_l21_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He is the manager.",
-      "sentence": "He is the manager.",
-      "options": [
-        "He is the manager, isn't he?",
-        "Is he the manager?",
-        "He is the manager, is he?",
-        "He is the manager, does he?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "He is the manager, isn't he?",
-      "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'.",
-      "explanation": "Positive statement requires a negative tag."
-    },
-    {
-      "id": "qf_l21_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She could have won the race.",
-      "sentence": "She could have won the race.",
-      "options": [
-        "Could she have won the race?",
-        "Could have she won the race?",
-        "Should she have won the race?",
-        "She could have won the race?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Could she have won the race?",
-      "hint": "Invert the first auxiliary 'could'.",
-      "explanation": "Invert the primary modal in a perfect modal construction."
-    },
-    {
-      "id": "qf_l21_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The project was finished.",
-      "sentence": "The project was finished.",
-      "options": [
-        "Was the project finished?",
-        "Did the project finish?",
-        "Is the project finished?",
-        "The project was finished?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Was the project finished?",
-      "hint": "Invert 'was' in passive voice.",
-      "explanation": "Invert auxiliary 'was' and subject."
-    },
-    {
-      "id": "qf_l22_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You haven't seen him lately.",
-      "sentence": "You haven't seen him lately.",
-      "options": [
-        "You haven't seen him lately, have you?",
-        "You haven't seen him lately, haven't you?",
-        "Have you seen him lately?",
-        "You haven't seen him lately, did you?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "You haven't seen him lately, have you?",
-      "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'.",
-      "explanation": "Negative statement requires a positive tag."
-    },
-    {
-      "id": "qf_l22_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They should have reported this.",
-      "sentence": "They should have reported this.",
-      "options": [
-        "Should they have reported this?",
-        "Should have they reported this?",
-        "Would they have reported this?",
-        "They should have reported this?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Should they have reported this?",
-      "hint": "Invert the first modal 'should'.",
-      "explanation": "Invert the primary modal."
-    },
-    {
-      "id": "qf_l22_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They are being monitored.",
-      "sentence": "They are being monitored.",
-      "options": [
-        "Are they being monitored?",
-        "Do they being monitored?",
-        "Are they monitoring?",
-        "They are being monitored?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Are they being monitored?",
-      "hint": "Invert the first auxiliary 'are'.",
-      "explanation": "Invert primary auxiliary."
-    },
-    {
-      "id": "qf_l23_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They will arrive on time.",
-      "sentence": "They will arrive on time.",
-      "options": [
-        "They will arrive on time, won't they?",
-        "They will arrive on time, will they?",
-        "Will they arrive on time?",
-        "They will arrive on time, don't they?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "They will arrive on time, won't they?",
-      "hint": "A positive future statement with 'will' takes 'won't they?'.",
-      "explanation": "Will shifts to won't in the tag."
-    },
-    {
-      "id": "qf_l23_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He would have helped us.",
-      "sentence": "He would have helped us.",
-      "options": [
-        "Would he have helped us?",
-        "Would have he helped us?",
-        "Could he have helped us?",
-        "He would have helped us?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would he have helped us?",
-      "hint": "Invert the first auxiliary 'would'.",
-      "explanation": "Invert the primary modal."
-    },
-    {
-      "id": "qf_l23_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He has been arrested.",
-      "sentence": "He has been arrested.",
-      "options": [
-        "Has he been arrested?",
-        "Did he been arrested?",
-        "Have he been arrested?",
-        "He has been arrested?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Has he been arrested?",
-      "hint": "Invert 'has'.",
-      "explanation": "Invert primary auxiliary."
-    },
-    {
-      "id": "qf_l24_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She doesn't like coffee.",
-      "sentence": "She doesn't like coffee.",
-      "options": [
-        "She doesn't like coffee, does she?",
-        "She doesn't like coffee, doesn't she?",
-        "Does she like coffee?",
-        "She doesn't like coffee, is she?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "She doesn't like coffee, does she?",
-      "hint": "A negative present statement with 'doesn't' takes 'does she?'.",
-      "explanation": "Doesn't shifts to does in the tag."
-    },
-    {
-      "id": "qf_l24_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You must have seen the sign.",
-      "sentence": "You must have seen the sign.",
-      "options": [
-        "Must you have seen the sign?",
-        "Must have you seen the sign?",
-        "Did you have seen the sign?",
-        "You must have seen the sign?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Must you have seen the sign?",
-      "hint": "Invert 'must'.",
-      "explanation": "Invert the primary modal."
-    },
-    {
-      "id": "qf_l24_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She was being interviewed.",
-      "sentence": "She was being interviewed.",
-      "options": [
-        "Was she being interviewed?",
-        "Did she being interviewed?",
-        "Was she interviewing?",
-        "She was being interviewed?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Was she being interviewed?",
-      "hint": "Invert 'was'.",
-      "explanation": "Invert primary auxiliary."
-    },
-    {
-      "id": "qf_l25_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You can drive a shuttle.",
-      "sentence": "You can drive a shuttle.",
-      "options": [
-        "You can drive a shuttle, can't you?",
-        "You can drive a shuttle, can you?",
-        "Can you drive a shuttle?",
-        "You can drive a shuttle, don't you?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "You can drive a shuttle, can't you?",
-      "hint": "Positive 'can' takes negative 'can't you?'.",
-      "explanation": "Can shifts to can't in the tag."
-    },
-    {
-      "id": "qf_l25_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We might have missed them.",
-      "sentence": "We might have missed them.",
-      "options": [
-        "Might we have missed them?",
-        "Might have we missed them?",
-        "Did we might have missed them?",
-        "We might have missed them?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Might we have missed them?",
-      "hint": "Invert 'might'.",
-      "explanation": "Invert the primary modal."
-    },
-    {
-      "id": "qf_l25_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We have been invited.",
-      "sentence": "We have been invited.",
-      "options": [
-        "Have we been invited?",
-        "Has we been invited?",
-        "Do we been invited?",
-        "We have been invited?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Have we been invited?",
-      "hint": "Invert 'have'.",
-      "explanation": "Invert primary auxiliary."
-    },
-    {
-      "id": "qf_l26_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He didn't finish the task.",
-      "sentence": "He didn't finish the task.",
-      "options": [
-        "He didn't finish the task, did he?",
-        "He didn't finish the task, didn't he?",
-        "Did he finish the task?",
-        "He didn't finish the task, was he?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "He didn't finish the task, did he?",
-      "hint": "Negative past 'didn't' takes positive 'did he?'.",
-      "explanation": "Didn't shifts to did in the tag."
-    },
-    {
-      "id": "qf_l26_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She ought to have apologized.",
-      "sentence": "She ought to have apologized.",
-      "options": [
-        "Ought she to have apologized?",
-        "Ought to she have apologized?",
-        "Should she to have apologized?",
-        "She ought to have apologized?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Ought she to have apologized?",
-      "hint": "Invert 'ought' with the subject.",
-      "explanation": "Invert the first element of 'ought to'."
-    },
-    {
-      "id": "qf_l26_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The temple is being restored.",
-      "sentence": "The temple is being restored.",
-      "options": [
-        "Is the temple being restored?",
-        "Does the temple being restored?",
-        "Is the temple restoring?",
-        "The temple is being restored?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Is the temple being restored?",
-      "hint": "Invert 'is'.",
-      "explanation": "Invert primary auxiliary."
-    },
-    {
-      "id": "qf_l27_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They are ready.",
-      "sentence": "They are ready.",
-      "options": [
-        "They are ready, aren't they?",
-        "They are ready, are they?",
-        "Are they ready?",
-        "They are ready, don't they?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "They are ready, aren't they?",
-      "hint": "Positive 'are' takes negative 'aren't they?'.",
-      "explanation": "Are shifts to aren't in the tag."
-    },
-    {
-      "id": "qf_l27_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They can't have forgotten.",
-      "sentence": "They can't have forgotten.",
-      "options": [
-        "Can they have forgotten?",
-        "Can't they have forgotten?",
-        "Have they can't forgotten?",
-        "They can't have forgotten?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Can they have forgotten?",
-      "hint": "Invert modal 'can' (or negative 'can't').",
-      "explanation": "Invert the modal auxiliary."
-    },
-    {
-      "id": "qf_l27_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They had been warned.",
-      "sentence": "They had been warned.",
-      "options": [
-        "Had they been warned?",
-        "Did they had been warned?",
-        "Have they been warned?",
-        "They had been warned?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Had they been warned?",
-      "hint": "Invert 'had'.",
-      "explanation": "Invert primary auxiliary."
-    },
-    {
-      "id": "qf_l28_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She has been working hard.",
-      "sentence": "She has been working hard.",
-      "options": [
-        "She has been working hard, hasn't she?",
-        "She has been working hard, has she?",
-        "Has she been working hard?",
-        "She has been working hard, doesn't she?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "She has been working hard, hasn't she?",
-      "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'.",
-      "explanation": "Has shifts to hasn't in the tag."
-    },
-    {
-      "id": "qf_l28_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You shouldn't have done that.",
-      "sentence": "You shouldn't have done that.",
-      "options": [
-        "Should you have done that?",
-        "Shouldn't you have done that?",
-        "Did you shouldn't have done that?",
-        "You shouldn't have done that?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Shouldn't you have done that?",
-      "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'.",
-      "explanation": "Negative inversion is correct."
-    },
-    {
-      "id": "qf_l28_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She will be promoted.",
-      "sentence": "She will be promoted.",
-      "options": [
-        "Will she be promoted?",
-        "Does she will be promoted?",
-        "Will she promoting?",
-        "She will be promoted?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Will she be promoted?",
-      "hint": "Invert 'will'.",
-      "explanation": "Invert primary auxiliary."
-    },
-    {
-      "id": "qf_l29_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You wouldn't do that.",
-      "sentence": "You wouldn't do that.",
-      "options": [
-        "You wouldn't do that, would you?",
-        "You wouldn't do that, wouldn't you?",
-        "Would you do that?",
-        "You wouldn't do that, did you?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "You wouldn't do that, would you?",
-      "hint": "Negative 'wouldn't' takes positive 'would you?'.",
-      "explanation": "Wouldn't shifts to would in the tag."
-    },
-    {
-      "id": "qf_l29_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He wouldn't have agreed.",
-      "sentence": "He wouldn't have agreed.",
-      "options": [
-        "Would he have agreed?",
-        "Wouldn't he have agreed?",
-        "Did he wouldn't have agreed?",
-        "He wouldn't have agreed?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Wouldn't he have agreed?",
-      "hint": "Keep the negative force for inverted negative modal.",
-      "explanation": "Wouldn't he have agreed is correct."
-    },
-    {
-      "id": "qf_l29_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He should be informed.",
-      "sentence": "He should be informed.",
-      "options": [
-        "Should he be informed?",
-        "Do he should be informed?",
-        "Should he informing?",
-        "He should be informed?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Should he be informed?",
-      "hint": "Invert 'should'.",
-      "explanation": "Invert primary auxiliary."
-    },
-    {
-      "id": "qf_l30_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We should go now.",
-      "sentence": "We should go now.",
-      "options": [
-        "We should go now, shouldn't we?",
-        "We should go now, should we?",
-        "Should we go now?",
-        "We should go now, don't we?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "We should go now, shouldn't we?",
-      "hint": "Positive 'should' takes negative 'shouldn't we?'.",
-      "explanation": "Should shifts to shouldn't in the tag."
-    },
-    {
-      "id": "qf_l30_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We couldn't have known.",
-      "sentence": "We couldn't have known.",
-      "options": [
-        "Could we have known?",
-        "Couldn't we have known?",
-        "Did we couldn't have known?",
-        "We couldn't have known?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Couldn't we have known?",
-      "hint": "Negative modal inversion.",
-      "explanation": "Couldn't we have known is correct."
-    },
-    {
-      "id": "qf_l30_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You would be surprised.",
-      "sentence": "You would be surprised.",
-      "options": [
-        "Would you be surprised?",
-        "Do you would be surprised?",
-        "Would you surprising?",
-        "You would be surprised?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would you be surprised?",
-      "hint": "Invert 'would'.",
-      "explanation": "Invert primary auxiliary."
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 3,
+    "levels": "21-30",
+    "quests": [
+        {
+            "id": "qf_l21_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He is the manager.",
+            "sentence": "He is the manager.",
+            "options": [
+                "He is the manager, isn't he?",
+                "Is he the manager?",
+                "He is the manager, is he?",
+                "He is the manager, does he?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "He is the manager, isn't he?",
+            "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'.",
+            "explanation": "Positive statement requires a negative tag."
+        },
+        {
+            "id": "qf_l21_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She could have won the race.",
+            "sentence": "She could have won the race.",
+            "options": [
+                "Could she have won the race?",
+                "Could have she won the race?",
+                "Should she have won the race?",
+                "She could have won the race?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Could she have won the race?",
+            "hint": "Invert the first auxiliary 'could'.",
+            "explanation": "Invert the primary modal in a perfect modal construction."
+        },
+        {
+            "id": "qf_l21_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "The project was finished.",
+            "sentence": "The project was finished.",
+            "options": [
+                "Was the project finished?",
+                "Did the project finish?",
+                "Is the project finished?",
+                "The project was finished?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Was the project finished?",
+            "hint": "Invert 'was' in passive voice.",
+            "explanation": "Invert auxiliary 'was' and subject."
+        },
+        {
+            "id": "qf_l22_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You haven't seen him lately.",
+            "sentence": "You haven't seen him lately.",
+            "options": [
+                "You haven't seen him lately, have you?",
+                "You haven't seen him lately, haven't you?",
+                "Have you seen him lately?",
+                "You haven't seen him lately, did you?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "You haven't seen him lately, have you?",
+            "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'.",
+            "explanation": "Negative statement requires a positive tag."
+        },
+        {
+            "id": "qf_l22_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They should have reported this.",
+            "sentence": "They should have reported this.",
+            "options": [
+                "Should they have reported this?",
+                "Should have they reported this?",
+                "Would they have reported this?",
+                "They should have reported this?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Should they have reported this?",
+            "hint": "Invert the first modal 'should'.",
+            "explanation": "Invert the primary modal."
+        },
+        {
+            "id": "qf_l22_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They are being monitored.",
+            "sentence": "They are being monitored.",
+            "options": [
+                "Are they being monitored?",
+                "Do they being monitored?",
+                "Are they monitoring?",
+                "They are being monitored?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Are they being monitored?",
+            "hint": "Invert the first auxiliary 'are'.",
+            "explanation": "Invert primary auxiliary."
+        },
+        {
+            "id": "qf_l23_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They will arrive on time.",
+            "sentence": "They will arrive on time.",
+            "options": [
+                "They will arrive on time, won't they?",
+                "They will arrive on time, will they?",
+                "Will they arrive on time?",
+                "They will arrive on time, don't they?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "They will arrive on time, won't they?",
+            "hint": "A positive future statement with 'will' takes 'won't they?'.",
+            "explanation": "Will shifts to won't in the tag."
+        },
+        {
+            "id": "qf_l23_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He would have helped us.",
+            "sentence": "He would have helped us.",
+            "options": [
+                "Would he have helped us?",
+                "Would have he helped us?",
+                "Could he have helped us?",
+                "He would have helped us?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would he have helped us?",
+            "hint": "Invert the first auxiliary 'would'.",
+            "explanation": "Invert the primary modal."
+        },
+        {
+            "id": "qf_l23_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He has been arrested.",
+            "sentence": "He has been arrested.",
+            "options": [
+                "Has he been arrested?",
+                "Did he been arrested?",
+                "Have he been arrested?",
+                "He has been arrested?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Has he been arrested?",
+            "hint": "Invert 'has'.",
+            "explanation": "Invert primary auxiliary."
+        },
+        {
+            "id": "qf_l24_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She doesn't like coffee.",
+            "sentence": "She doesn't like coffee.",
+            "options": [
+                "She doesn't like coffee, does she?",
+                "She doesn't like coffee, doesn't she?",
+                "Does she like coffee?",
+                "She doesn't like coffee, is she?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "She doesn't like coffee, does she?",
+            "hint": "A negative present statement with 'doesn't' takes 'does she?'.",
+            "explanation": "Doesn't shifts to does in the tag."
+        },
+        {
+            "id": "qf_l24_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You must have seen the sign.",
+            "sentence": "You must have seen the sign.",
+            "options": [
+                "Must you have seen the sign?",
+                "Must have you seen the sign?",
+                "Did you have seen the sign?",
+                "You must have seen the sign?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Must you have seen the sign?",
+            "hint": "Invert 'must'.",
+            "explanation": "Invert the primary modal."
+        },
+        {
+            "id": "qf_l24_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She was being interviewed.",
+            "sentence": "She was being interviewed.",
+            "options": [
+                "Was she being interviewed?",
+                "Did she being interviewed?",
+                "Was she interviewing?",
+                "She was being interviewed?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Was she being interviewed?",
+            "hint": "Invert 'was'.",
+            "explanation": "Invert primary auxiliary."
+        },
+        {
+            "id": "qf_l25_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You can drive a shuttle.",
+            "sentence": "You can drive a shuttle.",
+            "options": [
+                "You can drive a shuttle, can't you?",
+                "You can drive a shuttle, can you?",
+                "Can you drive a shuttle?",
+                "You can drive a shuttle, don't you?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "You can drive a shuttle, can't you?",
+            "hint": "Positive 'can' takes negative 'can't you?'.",
+            "explanation": "Can shifts to can't in the tag."
+        },
+        {
+            "id": "qf_l25_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We might have missed them.",
+            "sentence": "We might have missed them.",
+            "options": [
+                "Might we have missed them?",
+                "Might have we missed them?",
+                "Did we might have missed them?",
+                "We might have missed them?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Might we have missed them?",
+            "hint": "Invert 'might'.",
+            "explanation": "Invert the primary modal."
+        },
+        {
+            "id": "qf_l25_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We have been invited.",
+            "sentence": "We have been invited.",
+            "options": [
+                "Have we been invited?",
+                "Has we been invited?",
+                "Do we been invited?",
+                "We have been invited?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Have we been invited?",
+            "hint": "Invert 'have'.",
+            "explanation": "Invert primary auxiliary."
+        },
+        {
+            "id": "qf_l26_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He didn't finish the task.",
+            "sentence": "He didn't finish the task.",
+            "options": [
+                "He didn't finish the task, did he?",
+                "He didn't finish the task, didn't he?",
+                "Did he finish the task?",
+                "He didn't finish the task, was he?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "He didn't finish the task, did he?",
+            "hint": "Negative past 'didn't' takes positive 'did he?'.",
+            "explanation": "Didn't shifts to did in the tag."
+        },
+        {
+            "id": "qf_l26_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She ought to have apologized.",
+            "sentence": "She ought to have apologized.",
+            "options": [
+                "Ought she to have apologized?",
+                "Ought to she have apologized?",
+                "Should she to have apologized?",
+                "She ought to have apologized?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Ought she to have apologized?",
+            "hint": "Invert 'ought' with the subject.",
+            "explanation": "Invert the first element of 'ought to'."
+        },
+        {
+            "id": "qf_l26_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "The temple is being restored.",
+            "sentence": "The temple is being restored.",
+            "options": [
+                "Is the temple being restored?",
+                "Does the temple being restored?",
+                "Is the temple restoring?",
+                "The temple is being restored?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Is the temple being restored?",
+            "hint": "Invert 'is'.",
+            "explanation": "Invert primary auxiliary."
+        },
+        {
+            "id": "qf_l27_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They are ready.",
+            "sentence": "They are ready.",
+            "options": [
+                "They are ready, aren't they?",
+                "They are ready, are they?",
+                "Are they ready?",
+                "They are ready, don't they?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "They are ready, aren't they?",
+            "hint": "Positive 'are' takes negative 'aren't they?'.",
+            "explanation": "Are shifts to aren't in the tag."
+        },
+        {
+            "id": "qf_l27_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They can't have forgotten.",
+            "sentence": "They can't have forgotten.",
+            "options": [
+                "Can they have forgotten?",
+                "Can't they have forgotten?",
+                "Have they can't forgotten?",
+                "They can't have forgotten?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Can they have forgotten?",
+            "hint": "Invert modal 'can' (or negative 'can't').",
+            "explanation": "Invert the modal auxiliary."
+        },
+        {
+            "id": "qf_l27_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They had been warned.",
+            "sentence": "They had been warned.",
+            "options": [
+                "Had they been warned?",
+                "Did they had been warned?",
+                "Have they been warned?",
+                "They had been warned?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Had they been warned?",
+            "hint": "Invert 'had'.",
+            "explanation": "Invert primary auxiliary."
+        },
+        {
+            "id": "qf_l28_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She has been working hard.",
+            "sentence": "She has been working hard.",
+            "options": [
+                "She has been working hard, hasn't she?",
+                "She has been working hard, has she?",
+                "Has she been working hard?",
+                "She has been working hard, doesn't she?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "She has been working hard, hasn't she?",
+            "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'.",
+            "explanation": "Has shifts to hasn't in the tag."
+        },
+        {
+            "id": "qf_l28_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You shouldn't have done that.",
+            "sentence": "You shouldn't have done that.",
+            "options": [
+                "Should you have done that?",
+                "Shouldn't you have done that?",
+                "Did you shouldn't have done that?",
+                "You shouldn't have done that?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Shouldn't you have done that?",
+            "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'.",
+            "explanation": "Negative inversion is correct."
+        },
+        {
+            "id": "qf_l28_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She will be promoted.",
+            "sentence": "She will be promoted.",
+            "options": [
+                "Will she be promoted?",
+                "Does she will be promoted?",
+                "Will she promoting?",
+                "She will be promoted?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Will she be promoted?",
+            "hint": "Invert 'will'.",
+            "explanation": "Invert primary auxiliary."
+        },
+        {
+            "id": "qf_l29_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You wouldn't do that.",
+            "sentence": "You wouldn't do that.",
+            "options": [
+                "You wouldn't do that, would you?",
+                "You wouldn't do that, wouldn't you?",
+                "Would you do that?",
+                "You wouldn't do that, did you?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "You wouldn't do that, would you?",
+            "hint": "Negative 'wouldn't' takes positive 'would you?'.",
+            "explanation": "Wouldn't shifts to would in the tag."
+        },
+        {
+            "id": "qf_l29_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He wouldn't have agreed.",
+            "sentence": "He wouldn't have agreed.",
+            "options": [
+                "Would he have agreed?",
+                "Wouldn't he have agreed?",
+                "Did he wouldn't have agreed?",
+                "He wouldn't have agreed?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Wouldn't he have agreed?",
+            "hint": "Keep the negative force for inverted negative modal.",
+            "explanation": "Wouldn't he have agreed is correct."
+        },
+        {
+            "id": "qf_l29_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He should be informed.",
+            "sentence": "He should be informed.",
+            "options": [
+                "Should he be informed?",
+                "Do he should be informed?",
+                "Should he informing?",
+                "He should be informed?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Should he be informed?",
+            "hint": "Invert 'should'.",
+            "explanation": "Invert primary auxiliary."
+        },
+        {
+            "id": "qf_l30_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We should go now.",
+            "sentence": "We should go now.",
+            "options": [
+                "We should go now, shouldn't we?",
+                "We should go now, should we?",
+                "Should we go now?",
+                "We should go now, don't we?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "We should go now, shouldn't we?",
+            "hint": "Positive 'should' takes negative 'shouldn't we?'.",
+            "explanation": "Should shifts to shouldn't in the tag."
+        },
+        {
+            "id": "qf_l30_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We couldn't have known.",
+            "sentence": "We couldn't have known.",
+            "options": [
+                "Could we have known?",
+                "Couldn't we have known?",
+                "Did we couldn't have known?",
+                "We couldn't have known?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Couldn't we have known?",
+            "hint": "Negative modal inversion.",
+            "explanation": "Couldn't we have known is correct."
+        },
+        {
+            "id": "qf_l30_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You would be surprised.",
+            "sentence": "You would be surprised.",
+            "options": [
+                "Would you be surprised?",
+                "Do you would be surprised?",
+                "Would you surprising?",
+                "You would be surprised?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would you be surprised?",
+            "hint": "Invert 'would'.",
+            "explanation": "Invert primary auxiliary."
+        }
+    ]
 }

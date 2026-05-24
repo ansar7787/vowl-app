@@ -1,777 +1,777 @@
 {
-  "gameType": "readAndMatch",
-  "batchIndex": 3,
-  "levels": "21-30",
-  "quests": [
-    {
-      "id": "RDG_READANDMATCH_L21_Q1",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
+    "gameType": "readAndMatch",
+    "batchIndex": 3,
+    "levels": "21-30",
+    "quests": [
         {
-          "key": "[L21-Q1-0] Chemosynthesis",
-          "value": "Conversion of chemical compounds into food energy in complete darkness."
+            "id": "RDG_READANDMATCH_L21_Q1",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L21-Q1-0] Chemosynthesis",
+                    "value": "Conversion of chemical compounds into food energy in complete darkness."
+                },
+                {
+                    "key": "[L21-Q1-1] Photosynthesis",
+                    "value": "Conversion of solar light energy into glucose and oxygen."
+                },
+                {
+                    "key": "[L21-Q1-2] Bioluminescence",
+                    "value": "Production of cold light via chemical reactions inside photophores."
+                }
+            ],
+            "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 21-1)",
+            "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 21]."
         },
         {
-          "key": "[L21-Q1-1] Photosynthesis",
-          "value": "Conversion of solar light energy into glucose and oxygen."
+            "id": "RDG_READANDMATCH_L21_Q2",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L21-Q2-0] Holdfast",
+                    "value": "Root-like structure that anchors kelp securely to rocky seafloors."
+                },
+                {
+                    "key": "[L21-Q2-1] Pneumatocyst",
+                    "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
+                },
+                {
+                    "key": "[L21-Q2-2] Stipe",
+                    "value": "Stem-like structure supporting kelp blades and connecting them to base."
+                }
+            ],
+            "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 21-2)",
+            "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 21]."
         },
         {
-          "key": "[L21-Q1-2] Bioluminescence",
-          "value": "Production of cold light via chemical reactions inside photophores."
+            "id": "RDG_READANDMATCH_L21_Q3",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L21-Q3-0] Luciferin",
+                    "value": "Pigment molecule that emits light when oxidized."
+                },
+                {
+                    "key": "[L21-Q3-1] Luciferase",
+                    "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
+                },
+                {
+                    "key": "[L21-Q3-2] Photophore",
+                    "value": "Specialized light-producing organ containing glowing cells."
+                }
+            ],
+            "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 21-3)",
+            "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 21]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L22_Q1",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L22-Q1-0] Subduction",
+                    "value": "Tectonic process forcing ocean plates down into hot mantle."
+                },
+                {
+                    "key": "[L22-Q1-1] Magma",
+                    "value": "High-pressure liquid molten rock generated beneath Earth's crust."
+                },
+                {
+                    "key": "[L22-Q1-2] Basalt",
+                    "value": "Volcanic rock formed from rapid cooling of underwater lava."
+                },
+                {
+                    "key": "[L22-Q1-3] Seamount",
+                    "value": "Submerged mountain formed by underwater volcanic eruptions."
+                }
+            ],
+            "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 22-1)",
+            "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 22]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L22_Q2",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L22-Q2-0] Hagfish",
+                    "value": "Scavenger that secretes suffocating slime to ward off predators."
+                },
+                {
+                    "key": "[L22-Q2-1] Bone Worm",
+                    "value": "Organism that extracts lipids from deep whale skeletal structures."
+                },
+                {
+                    "key": "[L22-Q2-2] Microbial Mat",
+                    "value": "Bacterial colony digesting remaining lipids over decades."
+                },
+                {
+                    "key": "[L22-Q2-3] Sleeper Shark",
+                    "value": "Slow-moving deep predator feeding on falling organic detritus."
+                }
+            ],
+            "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 22-2)",
+            "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 22]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L22_Q3",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L22-Q3-0] Phytoplankton",
+                    "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
+                },
+                {
+                    "key": "[L22-Q3-1] Zooplankton",
+                    "value": "Drifting microscopic animal larvae consuming phytoplankton."
+                },
+                {
+                    "key": "[L22-Q3-2] Krill",
+                    "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
+                },
+                {
+                    "key": "[L22-Q3-3] Baleen Plate",
+                    "value": "Sieving structures used by blue whales to filter organic prey."
+                },
+                {
+                    "key": "[L22-Q3-4] Sperm Whale",
+                    "value": "Apex ocean predator hunting deep-sea giant squids."
+                }
+            ],
+            "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 22-3)",
+            "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 22]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L23_Q1",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L23-Q1-0] Chemosynthesis",
+                    "value": "Conversion of chemical compounds into food energy in complete darkness."
+                },
+                {
+                    "key": "[L23-Q1-1] Photosynthesis",
+                    "value": "Conversion of solar light energy into glucose and oxygen."
+                },
+                {
+                    "key": "[L23-Q1-2] Bioluminescence",
+                    "value": "Production of cold light via chemical reactions inside photophores."
+                }
+            ],
+            "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 23-1)",
+            "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 23]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L23_Q2",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L23-Q2-0] Holdfast",
+                    "value": "Root-like structure that anchors kelp securely to rocky seafloors."
+                },
+                {
+                    "key": "[L23-Q2-1] Pneumatocyst",
+                    "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
+                },
+                {
+                    "key": "[L23-Q2-2] Stipe",
+                    "value": "Stem-like structure supporting kelp blades and connecting them to base."
+                }
+            ],
+            "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 23-2)",
+            "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 23]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L23_Q3",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L23-Q3-0] Luciferin",
+                    "value": "Pigment molecule that emits light when oxidized."
+                },
+                {
+                    "key": "[L23-Q3-1] Luciferase",
+                    "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
+                },
+                {
+                    "key": "[L23-Q3-2] Photophore",
+                    "value": "Specialized light-producing organ containing glowing cells."
+                }
+            ],
+            "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 23-3)",
+            "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 23]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L24_Q1",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L24-Q1-0] Subduction",
+                    "value": "Tectonic process forcing ocean plates down into hot mantle."
+                },
+                {
+                    "key": "[L24-Q1-1] Magma",
+                    "value": "High-pressure liquid molten rock generated beneath Earth's crust."
+                },
+                {
+                    "key": "[L24-Q1-2] Basalt",
+                    "value": "Volcanic rock formed from rapid cooling of underwater lava."
+                },
+                {
+                    "key": "[L24-Q1-3] Seamount",
+                    "value": "Submerged mountain formed by underwater volcanic eruptions."
+                }
+            ],
+            "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 24-1)",
+            "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 24]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L24_Q2",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L24-Q2-0] Hagfish",
+                    "value": "Scavenger that secretes suffocating slime to ward off predators."
+                },
+                {
+                    "key": "[L24-Q2-1] Bone Worm",
+                    "value": "Organism that extracts lipids from deep whale skeletal structures."
+                },
+                {
+                    "key": "[L24-Q2-2] Microbial Mat",
+                    "value": "Bacterial colony digesting remaining lipids over decades."
+                },
+                {
+                    "key": "[L24-Q2-3] Sleeper Shark",
+                    "value": "Slow-moving deep predator feeding on falling organic detritus."
+                }
+            ],
+            "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 24-2)",
+            "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 24]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L24_Q3",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L24-Q3-0] Phytoplankton",
+                    "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
+                },
+                {
+                    "key": "[L24-Q3-1] Zooplankton",
+                    "value": "Drifting microscopic animal larvae consuming phytoplankton."
+                },
+                {
+                    "key": "[L24-Q3-2] Krill",
+                    "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
+                },
+                {
+                    "key": "[L24-Q3-3] Baleen Plate",
+                    "value": "Sieving structures used by blue whales to filter organic prey."
+                },
+                {
+                    "key": "[L24-Q3-4] Sperm Whale",
+                    "value": "Apex ocean predator hunting deep-sea giant squids."
+                }
+            ],
+            "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 24-3)",
+            "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 24]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L25_Q1",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L25-Q1-0] Chemosynthesis",
+                    "value": "Conversion of chemical compounds into food energy in complete darkness."
+                },
+                {
+                    "key": "[L25-Q1-1] Photosynthesis",
+                    "value": "Conversion of solar light energy into glucose and oxygen."
+                },
+                {
+                    "key": "[L25-Q1-2] Bioluminescence",
+                    "value": "Production of cold light via chemical reactions inside photophores."
+                }
+            ],
+            "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 25-1)",
+            "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 25]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L25_Q2",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L25-Q2-0] Holdfast",
+                    "value": "Root-like structure that anchors kelp securely to rocky seafloors."
+                },
+                {
+                    "key": "[L25-Q2-1] Pneumatocyst",
+                    "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
+                },
+                {
+                    "key": "[L25-Q2-2] Stipe",
+                    "value": "Stem-like structure supporting kelp blades and connecting them to base."
+                }
+            ],
+            "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 25-2)",
+            "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 25]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L25_Q3",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L25-Q3-0] Luciferin",
+                    "value": "Pigment molecule that emits light when oxidized."
+                },
+                {
+                    "key": "[L25-Q3-1] Luciferase",
+                    "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
+                },
+                {
+                    "key": "[L25-Q3-2] Photophore",
+                    "value": "Specialized light-producing organ containing glowing cells."
+                }
+            ],
+            "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 25-3)",
+            "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 25]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L26_Q1",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L26-Q1-0] Subduction",
+                    "value": "Tectonic process forcing ocean plates down into hot mantle."
+                },
+                {
+                    "key": "[L26-Q1-1] Magma",
+                    "value": "High-pressure liquid molten rock generated beneath Earth's crust."
+                },
+                {
+                    "key": "[L26-Q1-2] Basalt",
+                    "value": "Volcanic rock formed from rapid cooling of underwater lava."
+                },
+                {
+                    "key": "[L26-Q1-3] Seamount",
+                    "value": "Submerged mountain formed by underwater volcanic eruptions."
+                }
+            ],
+            "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 26-1)",
+            "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 26]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L26_Q2",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L26-Q2-0] Hagfish",
+                    "value": "Scavenger that secretes suffocating slime to ward off predators."
+                },
+                {
+                    "key": "[L26-Q2-1] Bone Worm",
+                    "value": "Organism that extracts lipids from deep whale skeletal structures."
+                },
+                {
+                    "key": "[L26-Q2-2] Microbial Mat",
+                    "value": "Bacterial colony digesting remaining lipids over decades."
+                },
+                {
+                    "key": "[L26-Q2-3] Sleeper Shark",
+                    "value": "Slow-moving deep predator feeding on falling organic detritus."
+                }
+            ],
+            "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 26-2)",
+            "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 26]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L26_Q3",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L26-Q3-0] Phytoplankton",
+                    "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
+                },
+                {
+                    "key": "[L26-Q3-1] Zooplankton",
+                    "value": "Drifting microscopic animal larvae consuming phytoplankton."
+                },
+                {
+                    "key": "[L26-Q3-2] Krill",
+                    "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
+                },
+                {
+                    "key": "[L26-Q3-3] Baleen Plate",
+                    "value": "Sieving structures used by blue whales to filter organic prey."
+                },
+                {
+                    "key": "[L26-Q3-4] Sperm Whale",
+                    "value": "Apex ocean predator hunting deep-sea giant squids."
+                }
+            ],
+            "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 26-3)",
+            "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 26]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L27_Q1",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L27-Q1-0] Chemosynthesis",
+                    "value": "Conversion of chemical compounds into food energy in complete darkness."
+                },
+                {
+                    "key": "[L27-Q1-1] Photosynthesis",
+                    "value": "Conversion of solar light energy into glucose and oxygen."
+                },
+                {
+                    "key": "[L27-Q1-2] Bioluminescence",
+                    "value": "Production of cold light via chemical reactions inside photophores."
+                }
+            ],
+            "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 27-1)",
+            "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 27]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L27_Q2",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L27-Q2-0] Holdfast",
+                    "value": "Root-like structure that anchors kelp securely to rocky seafloors."
+                },
+                {
+                    "key": "[L27-Q2-1] Pneumatocyst",
+                    "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
+                },
+                {
+                    "key": "[L27-Q2-2] Stipe",
+                    "value": "Stem-like structure supporting kelp blades and connecting them to base."
+                }
+            ],
+            "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 27-2)",
+            "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 27]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L27_Q3",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L27-Q3-0] Luciferin",
+                    "value": "Pigment molecule that emits light when oxidized."
+                },
+                {
+                    "key": "[L27-Q3-1] Luciferase",
+                    "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
+                },
+                {
+                    "key": "[L27-Q3-2] Photophore",
+                    "value": "Specialized light-producing organ containing glowing cells."
+                }
+            ],
+            "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 27-3)",
+            "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 27]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L28_Q1",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L28-Q1-0] Subduction",
+                    "value": "Tectonic process forcing ocean plates down into hot mantle."
+                },
+                {
+                    "key": "[L28-Q1-1] Magma",
+                    "value": "High-pressure liquid molten rock generated beneath Earth's crust."
+                },
+                {
+                    "key": "[L28-Q1-2] Basalt",
+                    "value": "Volcanic rock formed from rapid cooling of underwater lava."
+                },
+                {
+                    "key": "[L28-Q1-3] Seamount",
+                    "value": "Submerged mountain formed by underwater volcanic eruptions."
+                }
+            ],
+            "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 28-1)",
+            "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 28]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L28_Q2",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L28-Q2-0] Hagfish",
+                    "value": "Scavenger that secretes suffocating slime to ward off predators."
+                },
+                {
+                    "key": "[L28-Q2-1] Bone Worm",
+                    "value": "Organism that extracts lipids from deep whale skeletal structures."
+                },
+                {
+                    "key": "[L28-Q2-2] Microbial Mat",
+                    "value": "Bacterial colony digesting remaining lipids over decades."
+                },
+                {
+                    "key": "[L28-Q2-3] Sleeper Shark",
+                    "value": "Slow-moving deep predator feeding on falling organic detritus."
+                }
+            ],
+            "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 28-2)",
+            "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 28]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L28_Q3",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L28-Q3-0] Phytoplankton",
+                    "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
+                },
+                {
+                    "key": "[L28-Q3-1] Zooplankton",
+                    "value": "Drifting microscopic animal larvae consuming phytoplankton."
+                },
+                {
+                    "key": "[L28-Q3-2] Krill",
+                    "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
+                },
+                {
+                    "key": "[L28-Q3-3] Baleen Plate",
+                    "value": "Sieving structures used by blue whales to filter organic prey."
+                },
+                {
+                    "key": "[L28-Q3-4] Sperm Whale",
+                    "value": "Apex ocean predator hunting deep-sea giant squids."
+                }
+            ],
+            "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 28-3)",
+            "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 28]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L29_Q1",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L29-Q1-0] Chemosynthesis",
+                    "value": "Conversion of chemical compounds into food energy in complete darkness."
+                },
+                {
+                    "key": "[L29-Q1-1] Photosynthesis",
+                    "value": "Conversion of solar light energy into glucose and oxygen."
+                },
+                {
+                    "key": "[L29-Q1-2] Bioluminescence",
+                    "value": "Production of cold light via chemical reactions inside photophores."
+                }
+            ],
+            "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 29-1)",
+            "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 29]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L29_Q2",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L29-Q2-0] Holdfast",
+                    "value": "Root-like structure that anchors kelp securely to rocky seafloors."
+                },
+                {
+                    "key": "[L29-Q2-1] Pneumatocyst",
+                    "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
+                },
+                {
+                    "key": "[L29-Q2-2] Stipe",
+                    "value": "Stem-like structure supporting kelp blades and connecting them to base."
+                }
+            ],
+            "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 29-2)",
+            "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 29]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L29_Q3",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L29-Q3-0] Luciferin",
+                    "value": "Pigment molecule that emits light when oxidized."
+                },
+                {
+                    "key": "[L29-Q3-1] Luciferase",
+                    "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
+                },
+                {
+                    "key": "[L29-Q3-2] Photophore",
+                    "value": "Specialized light-producing organ containing glowing cells."
+                }
+            ],
+            "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 29-3)",
+            "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 29]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L30_Q1",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L30-Q1-0] Subduction",
+                    "value": "Tectonic process forcing ocean plates down into hot mantle."
+                },
+                {
+                    "key": "[L30-Q1-1] Magma",
+                    "value": "High-pressure liquid molten rock generated beneath Earth's crust."
+                },
+                {
+                    "key": "[L30-Q1-2] Basalt",
+                    "value": "Volcanic rock formed from rapid cooling of underwater lava."
+                },
+                {
+                    "key": "[L30-Q1-3] Seamount",
+                    "value": "Submerged mountain formed by underwater volcanic eruptions."
+                }
+            ],
+            "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 30-1)",
+            "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 30]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L30_Q2",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L30-Q2-0] Hagfish",
+                    "value": "Scavenger that secretes suffocating slime to ward off predators."
+                },
+                {
+                    "key": "[L30-Q2-1] Bone Worm",
+                    "value": "Organism that extracts lipids from deep whale skeletal structures."
+                },
+                {
+                    "key": "[L30-Q2-2] Microbial Mat",
+                    "value": "Bacterial colony digesting remaining lipids over decades."
+                },
+                {
+                    "key": "[L30-Q2-3] Sleeper Shark",
+                    "value": "Slow-moving deep predator feeding on falling organic detritus."
+                }
+            ],
+            "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 30-2)",
+            "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 30]."
+        },
+        {
+            "id": "RDG_READANDMATCH_L30_Q3",
+            "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
+            "difficulty": 1,
+            "subtype": "readAndMatch",
+            "interactionType": "Laser Link",
+            "pairs": [
+                {
+                    "key": "[L30-Q3-0] Phytoplankton",
+                    "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
+                },
+                {
+                    "key": "[L30-Q3-1] Zooplankton",
+                    "value": "Drifting microscopic animal larvae consuming phytoplankton."
+                },
+                {
+                    "key": "[L30-Q3-2] Krill",
+                    "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
+                },
+                {
+                    "key": "[L30-Q3-3] Baleen Plate",
+                    "value": "Sieving structures used by blue whales to filter organic prey."
+                },
+                {
+                    "key": "[L30-Q3-4] Sperm Whale",
+                    "value": "Apex ocean predator hunting deep-sea giant squids."
+                }
+            ],
+            "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 30-3)",
+            "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 30]."
         }
-      ],
-      "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 21-1)",
-      "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 21]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L21_Q2",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L21-Q2-0] Holdfast",
-          "value": "Root-like structure that anchors kelp securely to rocky seafloors."
-        },
-        {
-          "key": "[L21-Q2-1] Pneumatocyst",
-          "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
-        },
-        {
-          "key": "[L21-Q2-2] Stipe",
-          "value": "Stem-like structure supporting kelp blades and connecting them to base."
-        }
-      ],
-      "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 21-2)",
-      "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 21]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L21_Q3",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L21-Q3-0] Luciferin",
-          "value": "Pigment molecule that emits light when oxidized."
-        },
-        {
-          "key": "[L21-Q3-1] Luciferase",
-          "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
-        },
-        {
-          "key": "[L21-Q3-2] Photophore",
-          "value": "Specialized light-producing organ containing glowing cells."
-        }
-      ],
-      "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 21-3)",
-      "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 21]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L22_Q1",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L22-Q1-0] Subduction",
-          "value": "Tectonic process forcing ocean plates down into hot mantle."
-        },
-        {
-          "key": "[L22-Q1-1] Magma",
-          "value": "High-pressure liquid molten rock generated beneath Earth's crust."
-        },
-        {
-          "key": "[L22-Q1-2] Basalt",
-          "value": "Volcanic rock formed from rapid cooling of underwater lava."
-        },
-        {
-          "key": "[L22-Q1-3] Seamount",
-          "value": "Submerged mountain formed by underwater volcanic eruptions."
-        }
-      ],
-      "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 22-1)",
-      "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 22]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L22_Q2",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L22-Q2-0] Hagfish",
-          "value": "Scavenger that secretes suffocating slime to ward off predators."
-        },
-        {
-          "key": "[L22-Q2-1] Bone Worm",
-          "value": "Organism that extracts lipids from deep whale skeletal structures."
-        },
-        {
-          "key": "[L22-Q2-2] Microbial Mat",
-          "value": "Bacterial colony digesting remaining lipids over decades."
-        },
-        {
-          "key": "[L22-Q2-3] Sleeper Shark",
-          "value": "Slow-moving deep predator feeding on falling organic detritus."
-        }
-      ],
-      "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 22-2)",
-      "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 22]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L22_Q3",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L22-Q3-0] Phytoplankton",
-          "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
-        },
-        {
-          "key": "[L22-Q3-1] Zooplankton",
-          "value": "Drifting microscopic animal larvae consuming phytoplankton."
-        },
-        {
-          "key": "[L22-Q3-2] Krill",
-          "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
-        },
-        {
-          "key": "[L22-Q3-3] Baleen Plate",
-          "value": "Sieving structures used by blue whales to filter organic prey."
-        },
-        {
-          "key": "[L22-Q3-4] Sperm Whale",
-          "value": "Apex ocean predator hunting deep-sea giant squids."
-        }
-      ],
-      "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 22-3)",
-      "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 22]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L23_Q1",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L23-Q1-0] Chemosynthesis",
-          "value": "Conversion of chemical compounds into food energy in complete darkness."
-        },
-        {
-          "key": "[L23-Q1-1] Photosynthesis",
-          "value": "Conversion of solar light energy into glucose and oxygen."
-        },
-        {
-          "key": "[L23-Q1-2] Bioluminescence",
-          "value": "Production of cold light via chemical reactions inside photophores."
-        }
-      ],
-      "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 23-1)",
-      "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 23]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L23_Q2",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L23-Q2-0] Holdfast",
-          "value": "Root-like structure that anchors kelp securely to rocky seafloors."
-        },
-        {
-          "key": "[L23-Q2-1] Pneumatocyst",
-          "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
-        },
-        {
-          "key": "[L23-Q2-2] Stipe",
-          "value": "Stem-like structure supporting kelp blades and connecting them to base."
-        }
-      ],
-      "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 23-2)",
-      "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 23]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L23_Q3",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L23-Q3-0] Luciferin",
-          "value": "Pigment molecule that emits light when oxidized."
-        },
-        {
-          "key": "[L23-Q3-1] Luciferase",
-          "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
-        },
-        {
-          "key": "[L23-Q3-2] Photophore",
-          "value": "Specialized light-producing organ containing glowing cells."
-        }
-      ],
-      "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 23-3)",
-      "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 23]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L24_Q1",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L24-Q1-0] Subduction",
-          "value": "Tectonic process forcing ocean plates down into hot mantle."
-        },
-        {
-          "key": "[L24-Q1-1] Magma",
-          "value": "High-pressure liquid molten rock generated beneath Earth's crust."
-        },
-        {
-          "key": "[L24-Q1-2] Basalt",
-          "value": "Volcanic rock formed from rapid cooling of underwater lava."
-        },
-        {
-          "key": "[L24-Q1-3] Seamount",
-          "value": "Submerged mountain formed by underwater volcanic eruptions."
-        }
-      ],
-      "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 24-1)",
-      "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 24]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L24_Q2",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L24-Q2-0] Hagfish",
-          "value": "Scavenger that secretes suffocating slime to ward off predators."
-        },
-        {
-          "key": "[L24-Q2-1] Bone Worm",
-          "value": "Organism that extracts lipids from deep whale skeletal structures."
-        },
-        {
-          "key": "[L24-Q2-2] Microbial Mat",
-          "value": "Bacterial colony digesting remaining lipids over decades."
-        },
-        {
-          "key": "[L24-Q2-3] Sleeper Shark",
-          "value": "Slow-moving deep predator feeding on falling organic detritus."
-        }
-      ],
-      "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 24-2)",
-      "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 24]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L24_Q3",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L24-Q3-0] Phytoplankton",
-          "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
-        },
-        {
-          "key": "[L24-Q3-1] Zooplankton",
-          "value": "Drifting microscopic animal larvae consuming phytoplankton."
-        },
-        {
-          "key": "[L24-Q3-2] Krill",
-          "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
-        },
-        {
-          "key": "[L24-Q3-3] Baleen Plate",
-          "value": "Sieving structures used by blue whales to filter organic prey."
-        },
-        {
-          "key": "[L24-Q3-4] Sperm Whale",
-          "value": "Apex ocean predator hunting deep-sea giant squids."
-        }
-      ],
-      "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 24-3)",
-      "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 24]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L25_Q1",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L25-Q1-0] Chemosynthesis",
-          "value": "Conversion of chemical compounds into food energy in complete darkness."
-        },
-        {
-          "key": "[L25-Q1-1] Photosynthesis",
-          "value": "Conversion of solar light energy into glucose and oxygen."
-        },
-        {
-          "key": "[L25-Q1-2] Bioluminescence",
-          "value": "Production of cold light via chemical reactions inside photophores."
-        }
-      ],
-      "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 25-1)",
-      "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 25]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L25_Q2",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L25-Q2-0] Holdfast",
-          "value": "Root-like structure that anchors kelp securely to rocky seafloors."
-        },
-        {
-          "key": "[L25-Q2-1] Pneumatocyst",
-          "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
-        },
-        {
-          "key": "[L25-Q2-2] Stipe",
-          "value": "Stem-like structure supporting kelp blades and connecting them to base."
-        }
-      ],
-      "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 25-2)",
-      "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 25]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L25_Q3",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L25-Q3-0] Luciferin",
-          "value": "Pigment molecule that emits light when oxidized."
-        },
-        {
-          "key": "[L25-Q3-1] Luciferase",
-          "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
-        },
-        {
-          "key": "[L25-Q3-2] Photophore",
-          "value": "Specialized light-producing organ containing glowing cells."
-        }
-      ],
-      "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 25-3)",
-      "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 25]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L26_Q1",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L26-Q1-0] Subduction",
-          "value": "Tectonic process forcing ocean plates down into hot mantle."
-        },
-        {
-          "key": "[L26-Q1-1] Magma",
-          "value": "High-pressure liquid molten rock generated beneath Earth's crust."
-        },
-        {
-          "key": "[L26-Q1-2] Basalt",
-          "value": "Volcanic rock formed from rapid cooling of underwater lava."
-        },
-        {
-          "key": "[L26-Q1-3] Seamount",
-          "value": "Submerged mountain formed by underwater volcanic eruptions."
-        }
-      ],
-      "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 26-1)",
-      "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 26]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L26_Q2",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L26-Q2-0] Hagfish",
-          "value": "Scavenger that secretes suffocating slime to ward off predators."
-        },
-        {
-          "key": "[L26-Q2-1] Bone Worm",
-          "value": "Organism that extracts lipids from deep whale skeletal structures."
-        },
-        {
-          "key": "[L26-Q2-2] Microbial Mat",
-          "value": "Bacterial colony digesting remaining lipids over decades."
-        },
-        {
-          "key": "[L26-Q2-3] Sleeper Shark",
-          "value": "Slow-moving deep predator feeding on falling organic detritus."
-        }
-      ],
-      "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 26-2)",
-      "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 26]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L26_Q3",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L26-Q3-0] Phytoplankton",
-          "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
-        },
-        {
-          "key": "[L26-Q3-1] Zooplankton",
-          "value": "Drifting microscopic animal larvae consuming phytoplankton."
-        },
-        {
-          "key": "[L26-Q3-2] Krill",
-          "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
-        },
-        {
-          "key": "[L26-Q3-3] Baleen Plate",
-          "value": "Sieving structures used by blue whales to filter organic prey."
-        },
-        {
-          "key": "[L26-Q3-4] Sperm Whale",
-          "value": "Apex ocean predator hunting deep-sea giant squids."
-        }
-      ],
-      "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 26-3)",
-      "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 26]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L27_Q1",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L27-Q1-0] Chemosynthesis",
-          "value": "Conversion of chemical compounds into food energy in complete darkness."
-        },
-        {
-          "key": "[L27-Q1-1] Photosynthesis",
-          "value": "Conversion of solar light energy into glucose and oxygen."
-        },
-        {
-          "key": "[L27-Q1-2] Bioluminescence",
-          "value": "Production of cold light via chemical reactions inside photophores."
-        }
-      ],
-      "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 27-1)",
-      "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 27]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L27_Q2",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L27-Q2-0] Holdfast",
-          "value": "Root-like structure that anchors kelp securely to rocky seafloors."
-        },
-        {
-          "key": "[L27-Q2-1] Pneumatocyst",
-          "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
-        },
-        {
-          "key": "[L27-Q2-2] Stipe",
-          "value": "Stem-like structure supporting kelp blades and connecting them to base."
-        }
-      ],
-      "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 27-2)",
-      "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 27]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L27_Q3",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L27-Q3-0] Luciferin",
-          "value": "Pigment molecule that emits light when oxidized."
-        },
-        {
-          "key": "[L27-Q3-1] Luciferase",
-          "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
-        },
-        {
-          "key": "[L27-Q3-2] Photophore",
-          "value": "Specialized light-producing organ containing glowing cells."
-        }
-      ],
-      "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 27-3)",
-      "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 27]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L28_Q1",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L28-Q1-0] Subduction",
-          "value": "Tectonic process forcing ocean plates down into hot mantle."
-        },
-        {
-          "key": "[L28-Q1-1] Magma",
-          "value": "High-pressure liquid molten rock generated beneath Earth's crust."
-        },
-        {
-          "key": "[L28-Q1-2] Basalt",
-          "value": "Volcanic rock formed from rapid cooling of underwater lava."
-        },
-        {
-          "key": "[L28-Q1-3] Seamount",
-          "value": "Submerged mountain formed by underwater volcanic eruptions."
-        }
-      ],
-      "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 28-1)",
-      "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 28]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L28_Q2",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L28-Q2-0] Hagfish",
-          "value": "Scavenger that secretes suffocating slime to ward off predators."
-        },
-        {
-          "key": "[L28-Q2-1] Bone Worm",
-          "value": "Organism that extracts lipids from deep whale skeletal structures."
-        },
-        {
-          "key": "[L28-Q2-2] Microbial Mat",
-          "value": "Bacterial colony digesting remaining lipids over decades."
-        },
-        {
-          "key": "[L28-Q2-3] Sleeper Shark",
-          "value": "Slow-moving deep predator feeding on falling organic detritus."
-        }
-      ],
-      "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 28-2)",
-      "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 28]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L28_Q3",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L28-Q3-0] Phytoplankton",
-          "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
-        },
-        {
-          "key": "[L28-Q3-1] Zooplankton",
-          "value": "Drifting microscopic animal larvae consuming phytoplankton."
-        },
-        {
-          "key": "[L28-Q3-2] Krill",
-          "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
-        },
-        {
-          "key": "[L28-Q3-3] Baleen Plate",
-          "value": "Sieving structures used by blue whales to filter organic prey."
-        },
-        {
-          "key": "[L28-Q3-4] Sperm Whale",
-          "value": "Apex ocean predator hunting deep-sea giant squids."
-        }
-      ],
-      "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 28-3)",
-      "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 28]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L29_Q1",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L29-Q1-0] Chemosynthesis",
-          "value": "Conversion of chemical compounds into food energy in complete darkness."
-        },
-        {
-          "key": "[L29-Q1-1] Photosynthesis",
-          "value": "Conversion of solar light energy into glucose and oxygen."
-        },
-        {
-          "key": "[L29-Q1-2] Bioluminescence",
-          "value": "Production of cold light via chemical reactions inside photophores."
-        }
-      ],
-      "hint": "Match oceanographic energy reactions: chemical synthesis, solar synthesis, and biological glowing. (Diving calibration index 29-1)",
-      "explanation": "Chemosynthesis uses chemicals, photosynthesis uses sunlight, and bioluminescence produces light. [Verified by Abyssal Connector Unit 29]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L29_Q2",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L29-Q2-0] Holdfast",
-          "value": "Root-like structure that anchors kelp securely to rocky seafloors."
-        },
-        {
-          "key": "[L29-Q2-1] Pneumatocyst",
-          "value": "Gas-filled bladder that keeps kelp blades floating near sunlight."
-        },
-        {
-          "key": "[L29-Q2-2] Stipe",
-          "value": "Stem-like structure supporting kelp blades and connecting them to base."
-        }
-      ],
-      "hint": "Link kelp anatomical structures: holdfast anchors, gas bladders float, and stipe supports. (Diving calibration index 29-2)",
-      "explanation": "Each structure performs a distinct structural role in giant kelp ecosystems. [Verified by Abyssal Connector Unit 29]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L29_Q3",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L29-Q3-0] Luciferin",
-          "value": "Pigment molecule that emits light when oxidized."
-        },
-        {
-          "key": "[L29-Q3-1] Luciferase",
-          "value": "Enzyme catalyst that accelerates light-producing chemical reactions."
-        },
-        {
-          "key": "[L29-Q3-2] Photophore",
-          "value": "Specialized light-producing organ containing glowing cells."
-        }
-      ],
-      "hint": "Match bioluminescent elements: pigment, enzyme catalyst, and light-producing organ. (Diving calibration index 29-3)",
-      "explanation": "The pigment luciferin reacts with oxygen aided by luciferase inside specialized photophores. [Verified by Abyssal Connector Unit 29]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L30_Q1",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L30-Q1-0] Subduction",
-          "value": "Tectonic process forcing ocean plates down into hot mantle."
-        },
-        {
-          "key": "[L30-Q1-1] Magma",
-          "value": "High-pressure liquid molten rock generated beneath Earth's crust."
-        },
-        {
-          "key": "[L30-Q1-2] Basalt",
-          "value": "Volcanic rock formed from rapid cooling of underwater lava."
-        },
-        {
-          "key": "[L30-Q1-3] Seamount",
-          "value": "Submerged mountain formed by underwater volcanic eruptions."
-        }
-      ],
-      "hint": "Match tectonic geology features: subduction forces, magma flows, basalt cools, and seamounts erupt. (Diving calibration index 30-1)",
-      "explanation": "Subduction creates magma, which cools into basalt rock and builds majestic seamounts. [Verified by Abyssal Connector Unit 30]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L30_Q2",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L30-Q2-0] Hagfish",
-          "value": "Scavenger that secretes suffocating slime to ward off predators."
-        },
-        {
-          "key": "[L30-Q2-1] Bone Worm",
-          "value": "Organism that extracts lipids from deep whale skeletal structures."
-        },
-        {
-          "key": "[L30-Q2-2] Microbial Mat",
-          "value": "Bacterial colony digesting remaining lipids over decades."
-        },
-        {
-          "key": "[L30-Q2-3] Sleeper Shark",
-          "value": "Slow-moving deep predator feeding on falling organic detritus."
-        }
-      ],
-      "hint": "Link whale fall decay agents: slime scavenger, bone worm, microbial mat, and slow-moving shark. (Diving calibration index 30-2)",
-      "explanation": "Each plays a specialized biological role in reclaiming nutrients from deep ocean whale falls. [Verified by Abyssal Connector Unit 30]."
-    },
-    {
-      "id": "RDG_READANDMATCH_L30_Q3",
-      "instruction": "BRIDGE THE SEMANTIC GAP WITH LASERS",
-      "difficulty": 1,
-      "subtype": "readAndMatch",
-      "interactionType": "Laser Link",
-      "pairs": [
-        {
-          "key": "[L30-Q3-0] Phytoplankton",
-          "value": "Microscopic single-celled drifting algae generating atmospheric oxygen."
-        },
-        {
-          "key": "[L30-Q3-1] Zooplankton",
-          "value": "Drifting microscopic animal larvae consuming phytoplankton."
-        },
-        {
-          "key": "[L30-Q3-2] Krill",
-          "value": "Small shrimp-like crustaceans forming critical mid-tier food sources."
-        },
-        {
-          "key": "[L30-Q3-3] Baleen Plate",
-          "value": "Sieving structures used by blue whales to filter organic prey."
-        },
-        {
-          "key": "[L30-Q3-4] Sperm Whale",
-          "value": "Apex ocean predator hunting deep-sea giant squids."
-        }
-      ],
-      "hint": "Match pelagic food web layers: microscopic algae, animal larvae, krill, baleen sieves, and apex hunters. (Diving calibration index 30-3)",
-      "explanation": "Ocean food webs scale from microscopic phytoplankton up to colossal apex sperm whales. [Verified by Abyssal Connector Unit 30]."
-    }
-  ]
+    ]
 }

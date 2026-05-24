@@ -1,742 +1,742 @@
 [
-  {
-    "level": 1,
-    "quests": [
-      {
-        "id": "KIDS_SCHOOL_L1_Q1",
-        "gameType": "school",
+    {
         "level": 1,
-        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
-        "question": "Backpack",
-        "correctAnswer": "Backpack",
-        "options": [
-          "Eraser",
-          "Ruler",
-          "Backpack"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsSafariBackground",
-        "shader": "",
-        "hint": "This is the classroom backpack.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L1_Q2",
-        "gameType": "school",
-        "level": 1,
-        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
-        "question": "Pencil",
-        "correctAnswer": "Pencil",
-        "options": [
-          "Backpack",
-          "Eraser",
-          "Pencil"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsForestBackground",
-        "shader": "",
-        "hint": "This is the classroom pencil.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L1_Q3",
-        "gameType": "school",
-        "level": 1,
-        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
-        "question": "Eraser",
-        "correctAnswer": "Eraser",
-        "options": [
-          "Ruler",
-          "Pencil",
-          "Eraser"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsSafariBackground",
-        "shader": "",
-        "hint": "This is the classroom eraser.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      }
-    ]
-  },
-  {
-    "level": 2,
-    "quests": [
-      {
-        "id": "KIDS_SCHOOL_L2_Q1",
-        "gameType": "school",
+        "quests": [
+            {
+                "id": "KIDS_SCHOOL_L1_Q1",
+                "gameType": "school",
+                "level": 1,
+                "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+                "question": "Backpack",
+                "correctAnswer": "Backpack",
+                "options": [
+                    "Eraser",
+                    "Ruler",
+                    "Backpack"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsSafariBackground",
+                "shader": "",
+                "hint": "This is the classroom backpack.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L1_Q2",
+                "gameType": "school",
+                "level": 1,
+                "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+                "question": "Pencil",
+                "correctAnswer": "Pencil",
+                "options": [
+                    "Backpack",
+                    "Eraser",
+                    "Pencil"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsForestBackground",
+                "shader": "",
+                "hint": "This is the classroom pencil.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L1_Q3",
+                "gameType": "school",
+                "level": 1,
+                "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+                "question": "Eraser",
+                "correctAnswer": "Eraser",
+                "options": [
+                    "Ruler",
+                    "Pencil",
+                    "Eraser"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsSafariBackground",
+                "shader": "",
+                "hint": "This is the classroom eraser.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            }
+        ]
+    },
+    {
         "level": 2,
-        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
-        "question": "Ruler",
-        "correctAnswer": "Ruler",
-        "options": [
-          "Eraser",
-          "Pencil",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsForestBackground",
-        "shader": "",
-        "hint": "This is the classroom ruler.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L2_Q2",
-        "gameType": "school",
-        "level": 2,
-        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
-        "question": "Backpack",
-        "correctAnswer": "Backpack",
-        "options": [
-          "Eraser",
-          "Backpack",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsSafariBackground",
-        "shader": "",
-        "hint": "This is the classroom backpack.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L2_Q3",
-        "gameType": "school",
-        "level": 2,
-        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
-        "question": "Pencil",
-        "correctAnswer": "Pencil",
-        "options": [
-          "Eraser",
-          "Pencil",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsCandyBackground",
-        "shader": "",
-        "hint": "This is the classroom pencil.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      }
-    ]
-  },
-  {
-    "level": 3,
-    "quests": [
-      {
-        "id": "KIDS_SCHOOL_L3_Q1",
-        "gameType": "school",
+        "quests": [
+            {
+                "id": "KIDS_SCHOOL_L2_Q1",
+                "gameType": "school",
+                "level": 2,
+                "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+                "question": "Ruler",
+                "correctAnswer": "Ruler",
+                "options": [
+                    "Eraser",
+                    "Pencil",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsForestBackground",
+                "shader": "",
+                "hint": "This is the classroom ruler.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L2_Q2",
+                "gameType": "school",
+                "level": 2,
+                "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+                "question": "Backpack",
+                "correctAnswer": "Backpack",
+                "options": [
+                    "Eraser",
+                    "Backpack",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsSafariBackground",
+                "shader": "",
+                "hint": "This is the classroom backpack.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L2_Q3",
+                "gameType": "school",
+                "level": 2,
+                "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+                "question": "Pencil",
+                "correctAnswer": "Pencil",
+                "options": [
+                    "Eraser",
+                    "Pencil",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsCandyBackground",
+                "shader": "",
+                "hint": "This is the classroom pencil.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            }
+        ]
+    },
+    {
         "level": 3,
-        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
-        "question": "Eraser",
-        "correctAnswer": "Eraser",
-        "options": [
-          "Ruler",
-          "Backpack",
-          "Eraser"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsWorldBackground",
-        "shader": "",
-        "hint": "This is the classroom eraser.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L3_Q2",
-        "gameType": "school",
-        "level": 3,
-        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
-        "question": "Ruler",
-        "correctAnswer": "Ruler",
-        "options": [
-          "Ruler",
-          "Eraser",
-          "Pencil"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsWorldBackground",
-        "shader": "",
-        "hint": "This is the classroom ruler.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L3_Q3",
-        "gameType": "school",
-        "level": 3,
-        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
-        "question": "Backpack",
-        "correctAnswer": "Backpack",
-        "options": [
-          "Eraser",
-          "Backpack",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsOceanBackground",
-        "shader": "",
-        "hint": "This is the classroom backpack.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      }
-    ]
-  },
-  {
-    "level": 4,
-    "quests": [
-      {
-        "id": "KIDS_SCHOOL_L4_Q1",
-        "gameType": "school",
+        "quests": [
+            {
+                "id": "KIDS_SCHOOL_L3_Q1",
+                "gameType": "school",
+                "level": 3,
+                "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+                "question": "Eraser",
+                "correctAnswer": "Eraser",
+                "options": [
+                    "Ruler",
+                    "Backpack",
+                    "Eraser"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsWorldBackground",
+                "shader": "",
+                "hint": "This is the classroom eraser.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L3_Q2",
+                "gameType": "school",
+                "level": 3,
+                "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+                "question": "Ruler",
+                "correctAnswer": "Ruler",
+                "options": [
+                    "Ruler",
+                    "Eraser",
+                    "Pencil"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsWorldBackground",
+                "shader": "",
+                "hint": "This is the classroom ruler.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L3_Q3",
+                "gameType": "school",
+                "level": 3,
+                "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+                "question": "Backpack",
+                "correctAnswer": "Backpack",
+                "options": [
+                    "Eraser",
+                    "Backpack",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsOceanBackground",
+                "shader": "",
+                "hint": "This is the classroom backpack.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            }
+        ]
+    },
+    {
         "level": 4,
-        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
-        "question": "Pencil",
-        "correctAnswer": "Pencil",
-        "options": [
-          "Ruler",
-          "Backpack",
-          "Pencil"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsForestBackground",
-        "shader": "",
-        "hint": "This is the classroom pencil.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L4_Q2",
-        "gameType": "school",
-        "level": 4,
-        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
-        "question": "Eraser",
-        "correctAnswer": "Eraser",
-        "options": [
-          "Pencil",
-          "Eraser",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsGalaxyBackground",
-        "shader": "",
-        "hint": "This is the classroom eraser.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L4_Q3",
-        "gameType": "school",
-        "level": 4,
-        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
-        "question": "Ruler",
-        "correctAnswer": "Ruler",
-        "options": [
-          "Eraser",
-          "Backpack",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsSafariBackground",
-        "shader": "",
-        "hint": "This is the classroom ruler.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      }
-    ]
-  },
-  {
-    "level": 5,
-    "quests": [
-      {
-        "id": "KIDS_SCHOOL_L5_Q1",
-        "gameType": "school",
+        "quests": [
+            {
+                "id": "KIDS_SCHOOL_L4_Q1",
+                "gameType": "school",
+                "level": 4,
+                "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+                "question": "Pencil",
+                "correctAnswer": "Pencil",
+                "options": [
+                    "Ruler",
+                    "Backpack",
+                    "Pencil"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsForestBackground",
+                "shader": "",
+                "hint": "This is the classroom pencil.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L4_Q2",
+                "gameType": "school",
+                "level": 4,
+                "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+                "question": "Eraser",
+                "correctAnswer": "Eraser",
+                "options": [
+                    "Pencil",
+                    "Eraser",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsGalaxyBackground",
+                "shader": "",
+                "hint": "This is the classroom eraser.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L4_Q3",
+                "gameType": "school",
+                "level": 4,
+                "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+                "question": "Ruler",
+                "correctAnswer": "Ruler",
+                "options": [
+                    "Eraser",
+                    "Backpack",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsSafariBackground",
+                "shader": "",
+                "hint": "This is the classroom ruler.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            }
+        ]
+    },
+    {
         "level": 5,
-        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
-        "question": "Backpack",
-        "correctAnswer": "Backpack",
-        "options": [
-          "Ruler",
-          "Backpack",
-          "Eraser"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsOceanBackground",
-        "shader": "",
-        "hint": "This is the classroom backpack.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L5_Q2",
-        "gameType": "school",
-        "level": 5,
-        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
-        "question": "Pencil",
-        "correctAnswer": "Pencil",
-        "options": [
-          "Eraser",
-          "Backpack",
-          "Pencil"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsSafariBackground",
-        "shader": "",
-        "hint": "This is the classroom pencil.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L5_Q3",
-        "gameType": "school",
-        "level": 5,
-        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
-        "question": "Eraser",
-        "correctAnswer": "Eraser",
-        "options": [
-          "Eraser",
-          "Backpack",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsForestBackground",
-        "shader": "",
-        "hint": "This is the classroom eraser.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      }
-    ]
-  },
-  {
-    "level": 6,
-    "quests": [
-      {
-        "id": "KIDS_SCHOOL_L6_Q1",
-        "gameType": "school",
+        "quests": [
+            {
+                "id": "KIDS_SCHOOL_L5_Q1",
+                "gameType": "school",
+                "level": 5,
+                "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+                "question": "Backpack",
+                "correctAnswer": "Backpack",
+                "options": [
+                    "Ruler",
+                    "Backpack",
+                    "Eraser"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsOceanBackground",
+                "shader": "",
+                "hint": "This is the classroom backpack.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L5_Q2",
+                "gameType": "school",
+                "level": 5,
+                "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+                "question": "Pencil",
+                "correctAnswer": "Pencil",
+                "options": [
+                    "Eraser",
+                    "Backpack",
+                    "Pencil"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsSafariBackground",
+                "shader": "",
+                "hint": "This is the classroom pencil.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L5_Q3",
+                "gameType": "school",
+                "level": 5,
+                "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+                "question": "Eraser",
+                "correctAnswer": "Eraser",
+                "options": [
+                    "Eraser",
+                    "Backpack",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsForestBackground",
+                "shader": "",
+                "hint": "This is the classroom eraser.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            }
+        ]
+    },
+    {
         "level": 6,
-        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
-        "question": "Ruler",
-        "correctAnswer": "Ruler",
-        "options": [
-          "Ruler",
-          "Eraser",
-          "Pencil"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsOceanBackground",
-        "shader": "",
-        "hint": "This is the classroom ruler.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L6_Q2",
-        "gameType": "school",
-        "level": 6,
-        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
-        "question": "Backpack",
-        "correctAnswer": "Backpack",
-        "options": [
-          "Ruler",
-          "Backpack",
-          "Pencil"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsCandyBackground",
-        "shader": "",
-        "hint": "This is the classroom backpack.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L6_Q3",
-        "gameType": "school",
-        "level": 6,
-        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
-        "question": "Pencil",
-        "correctAnswer": "Pencil",
-        "options": [
-          "Pencil",
-          "Backpack",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsOceanBackground",
-        "shader": "",
-        "hint": "This is the classroom pencil.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      }
-    ]
-  },
-  {
-    "level": 7,
-    "quests": [
-      {
-        "id": "KIDS_SCHOOL_L7_Q1",
-        "gameType": "school",
+        "quests": [
+            {
+                "id": "KIDS_SCHOOL_L6_Q1",
+                "gameType": "school",
+                "level": 6,
+                "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+                "question": "Ruler",
+                "correctAnswer": "Ruler",
+                "options": [
+                    "Ruler",
+                    "Eraser",
+                    "Pencil"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsOceanBackground",
+                "shader": "",
+                "hint": "This is the classroom ruler.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L6_Q2",
+                "gameType": "school",
+                "level": 6,
+                "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+                "question": "Backpack",
+                "correctAnswer": "Backpack",
+                "options": [
+                    "Ruler",
+                    "Backpack",
+                    "Pencil"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsCandyBackground",
+                "shader": "",
+                "hint": "This is the classroom backpack.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L6_Q3",
+                "gameType": "school",
+                "level": 6,
+                "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+                "question": "Pencil",
+                "correctAnswer": "Pencil",
+                "options": [
+                    "Pencil",
+                    "Backpack",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsOceanBackground",
+                "shader": "",
+                "hint": "This is the classroom pencil.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            }
+        ]
+    },
+    {
         "level": 7,
-        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
-        "question": "Eraser",
-        "correctAnswer": "Eraser",
-        "options": [
-          "Ruler",
-          "Backpack",
-          "Eraser"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsWorldBackground",
-        "shader": "",
-        "hint": "This is the classroom eraser.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L7_Q2",
-        "gameType": "school",
-        "level": 7,
-        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
-        "question": "Ruler",
-        "correctAnswer": "Ruler",
-        "options": [
-          "Pencil",
-          "Eraser",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsCandyBackground",
-        "shader": "",
-        "hint": "This is the classroom ruler.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L7_Q3",
-        "gameType": "school",
-        "level": 7,
-        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
-        "question": "Backpack",
-        "correctAnswer": "Backpack",
-        "options": [
-          "Pencil",
-          "Eraser",
-          "Backpack"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsWorldBackground",
-        "shader": "",
-        "hint": "This is the classroom backpack.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      }
-    ]
-  },
-  {
-    "level": 8,
-    "quests": [
-      {
-        "id": "KIDS_SCHOOL_L8_Q1",
-        "gameType": "school",
+        "quests": [
+            {
+                "id": "KIDS_SCHOOL_L7_Q1",
+                "gameType": "school",
+                "level": 7,
+                "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+                "question": "Eraser",
+                "correctAnswer": "Eraser",
+                "options": [
+                    "Ruler",
+                    "Backpack",
+                    "Eraser"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsWorldBackground",
+                "shader": "",
+                "hint": "This is the classroom eraser.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L7_Q2",
+                "gameType": "school",
+                "level": 7,
+                "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+                "question": "Ruler",
+                "correctAnswer": "Ruler",
+                "options": [
+                    "Pencil",
+                    "Eraser",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsCandyBackground",
+                "shader": "",
+                "hint": "This is the classroom ruler.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L7_Q3",
+                "gameType": "school",
+                "level": 7,
+                "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+                "question": "Backpack",
+                "correctAnswer": "Backpack",
+                "options": [
+                    "Pencil",
+                    "Eraser",
+                    "Backpack"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsWorldBackground",
+                "shader": "",
+                "hint": "This is the classroom backpack.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            }
+        ]
+    },
+    {
         "level": 8,
-        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
-        "question": "Pencil",
-        "correctAnswer": "Pencil",
-        "options": [
-          "Eraser",
-          "Ruler",
-          "Pencil"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsCandyBackground",
-        "shader": "",
-        "hint": "This is the classroom pencil.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L8_Q2",
-        "gameType": "school",
-        "level": 8,
-        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
-        "question": "Eraser",
-        "correctAnswer": "Eraser",
-        "options": [
-          "Ruler",
-          "Pencil",
-          "Eraser"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsGalaxyBackground",
-        "shader": "",
-        "hint": "This is the classroom eraser.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L8_Q3",
-        "gameType": "school",
-        "level": 8,
-        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
-        "question": "Ruler",
-        "correctAnswer": "Ruler",
-        "options": [
-          "Pencil",
-          "Ruler",
-          "Eraser"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsOceanBackground",
-        "shader": "",
-        "hint": "This is the classroom ruler.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      }
-    ]
-  },
-  {
-    "level": 9,
-    "quests": [
-      {
-        "id": "KIDS_SCHOOL_L9_Q1",
-        "gameType": "school",
+        "quests": [
+            {
+                "id": "KIDS_SCHOOL_L8_Q1",
+                "gameType": "school",
+                "level": 8,
+                "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+                "question": "Pencil",
+                "correctAnswer": "Pencil",
+                "options": [
+                    "Eraser",
+                    "Ruler",
+                    "Pencil"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsCandyBackground",
+                "shader": "",
+                "hint": "This is the classroom pencil.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L8_Q2",
+                "gameType": "school",
+                "level": 8,
+                "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+                "question": "Eraser",
+                "correctAnswer": "Eraser",
+                "options": [
+                    "Ruler",
+                    "Pencil",
+                    "Eraser"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsGalaxyBackground",
+                "shader": "",
+                "hint": "This is the classroom eraser.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L8_Q3",
+                "gameType": "school",
+                "level": 8,
+                "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+                "question": "Ruler",
+                "correctAnswer": "Ruler",
+                "options": [
+                    "Pencil",
+                    "Ruler",
+                    "Eraser"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsOceanBackground",
+                "shader": "",
+                "hint": "This is the classroom ruler.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            }
+        ]
+    },
+    {
         "level": 9,
-        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
-        "question": "Backpack",
-        "correctAnswer": "Backpack",
-        "options": [
-          "Backpack",
-          "Ruler",
-          "Eraser"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsCandyBackground",
-        "shader": "",
-        "hint": "This is the classroom backpack.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L9_Q2",
-        "gameType": "school",
-        "level": 9,
-        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
-        "question": "Pencil",
-        "correctAnswer": "Pencil",
-        "options": [
-          "Pencil",
-          "Backpack",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsOceanBackground",
-        "shader": "",
-        "hint": "This is the classroom pencil.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L9_Q3",
-        "gameType": "school",
-        "level": 9,
-        "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
-        "question": "Eraser",
-        "correctAnswer": "Eraser",
-        "options": [
-          "Backpack",
-          "Ruler",
-          "Eraser"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsSafariBackground",
-        "shader": "",
-        "hint": "This is the classroom eraser.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      }
-    ]
-  },
-  {
-    "level": 10,
-    "quests": [
-      {
-        "id": "KIDS_SCHOOL_L10_Q1",
-        "gameType": "school",
+        "quests": [
+            {
+                "id": "KIDS_SCHOOL_L9_Q1",
+                "gameType": "school",
+                "level": 9,
+                "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+                "question": "Backpack",
+                "correctAnswer": "Backpack",
+                "options": [
+                    "Backpack",
+                    "Ruler",
+                    "Eraser"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsCandyBackground",
+                "shader": "",
+                "hint": "This is the classroom backpack.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L9_Q2",
+                "gameType": "school",
+                "level": 9,
+                "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+                "question": "Pencil",
+                "correctAnswer": "Pencil",
+                "options": [
+                    "Pencil",
+                    "Backpack",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsOceanBackground",
+                "shader": "",
+                "hint": "This is the classroom pencil.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L9_Q3",
+                "gameType": "school",
+                "level": 9,
+                "instruction": "Touch the classroom object we use to rub out mistakes completely from our papers!",
+                "question": "Eraser",
+                "correctAnswer": "Eraser",
+                "options": [
+                    "Backpack",
+                    "Ruler",
+                    "Eraser"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsSafariBackground",
+                "shader": "",
+                "hint": "This is the classroom eraser.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            }
+        ]
+    },
+    {
         "level": 10,
-        "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
-        "question": "Ruler",
-        "correctAnswer": "Ruler",
-        "options": [
-          "Backpack",
-          "Ruler",
-          "Eraser"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsCandyBackground",
-        "shader": "",
-        "hint": "This is the classroom ruler.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L10_Q2",
-        "gameType": "school",
-        "level": 10,
-        "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
-        "question": "Backpack",
-        "correctAnswer": "Backpack",
-        "options": [
-          "Pencil",
-          "Eraser",
-          "Backpack"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsSafariBackground",
-        "shader": "",
-        "hint": "This is the classroom backpack.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      },
-      {
-        "id": "KIDS_SCHOOL_L10_Q3",
-        "gameType": "school",
-        "level": 10,
-        "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
-        "question": "Pencil",
-        "correctAnswer": "Pencil",
-        "options": [
-          "Pencil",
-          "Backpack",
-          "Ruler"
-        ],
-        "imageUrl": "",
-        "audioUrl": "",
-        "painter": "KidsSafariBackground",
-        "shader": "",
-        "hint": "This is the classroom pencil.",
-        "metadata": {
-          "difficulty": 1,
-          "xpReward": 10,
-          "coinReward": 5
-        }
-      }
-    ]
-  }
+        "quests": [
+            {
+                "id": "KIDS_SCHOOL_L10_Q1",
+                "gameType": "school",
+                "level": 10,
+                "instruction": "Touch the classroom object we use to draw straight neat line margins on sheets!",
+                "question": "Ruler",
+                "correctAnswer": "Ruler",
+                "options": [
+                    "Backpack",
+                    "Ruler",
+                    "Eraser"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsCandyBackground",
+                "shader": "",
+                "hint": "This is the classroom ruler.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L10_Q2",
+                "gameType": "school",
+                "level": 10,
+                "instruction": "Touch the classroom object we use to carry our storybooks and lunchboxes safely!",
+                "question": "Backpack",
+                "correctAnswer": "Backpack",
+                "options": [
+                    "Pencil",
+                    "Eraser",
+                    "Backpack"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsSafariBackground",
+                "shader": "",
+                "hint": "This is the classroom backpack.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            },
+            {
+                "id": "KIDS_SCHOOL_L10_Q3",
+                "gameType": "school",
+                "level": 10,
+                "instruction": "Touch the classroom object we use to write words and draw beautiful houses!",
+                "question": "Pencil",
+                "correctAnswer": "Pencil",
+                "options": [
+                    "Pencil",
+                    "Backpack",
+                    "Ruler"
+                ],
+                "imageUrl": "",
+                "audioUrl": "",
+                "painter": "KidsSafariBackground",
+                "shader": "",
+                "hint": "This is the classroom pencil.",
+                "metadata": {
+                    "difficulty": 1,
+                    "xpReward": 10,
+                    "coinReward": 5
+                }
+            }
+        ]
+    }
 ]

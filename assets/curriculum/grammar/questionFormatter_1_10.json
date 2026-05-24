@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "qf_l1_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She likes ice cream.",
-      "sentence": "She likes ice cream.",
-      "options": [
-        "Does she like ice cream?",
-        "Do she likes ice cream?",
-        "Is she like ice cream?",
-        "She likes ice cream?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Does she like ice cream?",
-      "hint": "Use 'Does' for third person singular present.",
-      "explanation": "Does is the correct present tense auxiliary for 'she'."
-    },
-    {
-      "id": "qf_l1_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She can swim well.",
-      "sentence": "She can swim well.",
-      "options": [
-        "Can she swim well?",
-        "Does she can swim well?",
-        "Can she swims well?",
-        "She can swim well?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Can she swim well?",
-      "hint": "Invert modal 'can' and subject.",
-      "explanation": "Can she swim is correct modal inversion."
-    },
-    {
-      "id": "qf_l1_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He lives in London.",
-      "sentence": "He lives in London.",
-      "options": [
-        "Does he live in London?",
-        "Do he lives in London?",
-        "Is he live in London?",
-        "He lives in London?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Does he live in London?",
-      "hint": "Use 'Does' for present third person singular.",
-      "explanation": "Does he live is the correct present question."
-    },
-    {
-      "id": "qf_l2_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They went to school.",
-      "sentence": "They went to school.",
-      "options": [
-        "Did they go to school?",
-        "Did they went to school?",
-        "Do they went to school?",
-        "They went to school?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did they go to school?",
-      "hint": "Use 'Did' + base verb for simple past.",
-      "explanation": "Did + go is the past tense question form of went."
-    },
-    {
-      "id": "qf_l2_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They have finished lunch.",
-      "sentence": "They have finished lunch.",
-      "options": [
-        "Have they finished lunch?",
-        "Did they have finished lunch?",
-        "Has they finished lunch?",
-        "They have finished lunch?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Have they finished lunch?",
-      "hint": "Invert auxiliary 'have' and subject.",
-      "explanation": "Have they finished is correct present perfect inversion."
-    },
-    {
-      "id": "qf_l2_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They have a ship.",
-      "sentence": "They have a ship.",
-      "options": [
-        "Do they have a ship?",
-        "Has they a ship?",
-        "Do they has a ship?",
-        "They have a ship?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do they have a ship?",
-      "hint": "Use 'Do' for present plural questions.",
-      "explanation": "Do they have is correct."
-    },
-    {
-      "id": "qf_l3_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He is a doctor.",
-      "sentence": "He is a doctor.",
-      "options": [
-        "Is he a doctor?",
-        "Does he is a doctor?",
-        "Do he a doctor?",
-        "He is a doctor?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Is he a doctor?",
-      "hint": "Invert the subject and the verb 'to be'.",
-      "explanation": "Is he is the correct inverted form of He is."
-    },
-    {
-      "id": "qf_l3_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We will arrive tomorrow.",
-      "sentence": "We will arrive tomorrow.",
-      "options": [
-        "Will we arrive tomorrow?",
-        "Do we will arrive tomorrow?",
-        "Will we arrived tomorrow?",
-        "We will arrive tomorrow?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Will we arrive tomorrow?",
-      "hint": "Invert modal 'will' and subject.",
-      "explanation": "Will we arrive is correct future inversion."
-    },
-    {
-      "id": "qf_l3_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She is reading.",
-      "sentence": "She is reading.",
-      "options": [
-        "Is she reading?",
-        "Does she reading?",
-        "Is she read?",
-        "She is reading?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Is she reading?",
-      "hint": "Invert 'is' and 'she'.",
-      "explanation": "Is she reading is correct."
-    },
-    {
-      "id": "qf_l4_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We have some apples.",
-      "sentence": "We have some apples.",
-      "options": [
-        "Do we have any apples?",
-        "Have we some apples?",
-        "Do we has some apples?",
-        "We have any apples?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do we have any apples?",
-      "hint": "Use 'Do' for first person plural questions.",
-      "explanation": "Do we have is the standard question form."
-    },
-    {
-      "id": "qf_l4_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You should wait here.",
-      "sentence": "You should wait here.",
-      "options": [
-        "Should you wait here?",
-        "Do you should wait here?",
-        "Should you waiting here?",
-        "You should wait here?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Should you wait here?",
-      "hint": "Invert modal 'should'.",
-      "explanation": "Should you wait is correct."
-    },
-    {
-      "id": "qf_l4_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We were working.",
-      "sentence": "We were working.",
-      "options": [
-        "Were we working?",
-        "Was we working?",
-        "Did we working?",
-        "We were working?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Were we working?",
-      "hint": "Invert 'were' and 'we'.",
-      "explanation": "Were we working is correct."
-    },
-    {
-      "id": "qf_l5_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She swam in the pool.",
-      "sentence": "She swam in the pool.",
-      "options": [
-        "Did she swim in the pool?",
-        "Did she swam in the pool?",
-        "Does she swim in the pool?",
-        "She swam in the pool?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did she swim in the pool?",
-      "hint": "Use 'Did' + base verb 'swim'.",
-      "explanation": "Did she swim is correct for past actions."
-    },
-    {
-      "id": "qf_l5_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He has seen this movie.",
-      "sentence": "He has seen this movie.",
-      "options": [
-        "Has he seen this movie?",
-        "Did he has seen this movie?",
-        "Have he seen this movie?",
-        "He has seen this movie?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Has he seen this movie?",
-      "hint": "Invert auxiliary 'has'.",
-      "explanation": "Has he seen is correct."
-    },
-    {
-      "id": "qf_l5_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He was sleeping.",
-      "sentence": "He was sleeping.",
-      "options": [
-        "Was he sleeping?",
-        "Were he sleeping?",
-        "Did he sleeping?",
-        "He was sleeping?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Was he sleeping?",
-      "hint": "Invert 'was' and 'he'.",
-      "explanation": "Was he sleeping is correct."
-    },
-    {
-      "id": "qf_l6_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The system is online.",
-      "sentence": "The system is online.",
-      "options": [
-        "Is the system online?",
-        "Does the system online?",
-        "Are the system online?",
-        "System is online?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Is the system online?",
-      "hint": "Invert the subject and 'is'.",
-      "explanation": "Is the system online is correct."
-    },
-    {
-      "id": "qf_l6_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They could hear us.",
-      "sentence": "They could hear us.",
-      "options": [
-        "Could they hear us?",
-        "Did they could hear us?",
-        "Could they heard us?",
-        "They could hear us?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Could they hear us?",
-      "hint": "Invert modal 'could'.",
-      "explanation": "Could they hear is correct."
-    },
-    {
-      "id": "qf_l6_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She has been working.",
-      "sentence": "She has been working.",
-      "options": [
-        "Has she been working?",
-        "Have she been working?",
-        "Does she been working?",
-        "She has been working?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Has she been working?",
-      "hint": "Invert auxiliary 'has'.",
-      "explanation": "Has she been working is correct."
-    },
-    {
-      "id": "qf_l7_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They work in the city.",
-      "sentence": "They work in the city.",
-      "options": [
-        "Do they work in the city?",
-        "Does they work in the city?",
-        "Are they work in the city?",
-        "They work in the city?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Do they work in the city?",
-      "hint": "Use 'Do' for third person plural present.",
-      "explanation": "Do they work is correct."
-    },
-    {
-      "id": "qf_l7_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She will help us.",
-      "sentence": "She will help us.",
-      "options": [
-        "Will she help us?",
-        "Does she will help us?",
-        "Will she helps us?",
-        "She will help us?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Will she help us?",
-      "hint": "Invert 'will'.",
-      "explanation": "Will she help is correct."
-    },
-    {
-      "id": "qf_l7_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They had left early.",
-      "sentence": "They had left early.",
-      "options": [
-        "Had they left early?",
-        "Did they had left early?",
-        "Have they left early?",
-        "They had left early?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Had they left early?",
-      "hint": "Invert auxiliary 'had'.",
-      "explanation": "Had they left is correct."
-    },
-    {
-      "id": "qf_l8_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He forgot his keys.",
-      "sentence": "He forgot his keys.",
-      "options": [
-        "Did he forget his keys?",
-        "Did he forgot his keys?",
-        "Does he forget his keys?",
-        "He forgot his keys?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did he forget his keys?",
-      "hint": "Use 'Did' + base verb 'forget'.",
-      "explanation": "Did he forget is correct."
-    },
-    {
-      "id": "qf_l8_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We must report this.",
-      "sentence": "We must report this.",
-      "options": [
-        "Must we report this?",
-        "Do we must report this?",
-        "Must we reporting this?",
-        "We must report this?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Must we report this?",
-      "hint": "Invert modal 'must'.",
-      "explanation": "Must we report is correct."
-    },
-    {
-      "id": "qf_l8_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He can read maps.",
-      "sentence": "He can read maps.",
-      "options": [
-        "Can he read maps?",
-        "Does he can read maps?",
-        "Can he reads maps?",
-        "He can read maps?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Can he read maps?",
-      "hint": "Invert modal 'can'.",
-      "explanation": "Can he read is correct."
-    },
-    {
-      "id": "qf_l9_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You are happy.",
-      "sentence": "You are happy.",
-      "options": [
-        "Are you happy?",
-        "Do you happy?",
-        "Is you happy?",
-        "You are happy?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Are you happy?",
-      "hint": "Invert 'you' and 'are'.",
-      "explanation": "Are you happy is correct."
-    },
-    {
-      "id": "qf_l9_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He would like tea.",
-      "sentence": "He would like tea.",
-      "options": [
-        "Would he like tea?",
-        "Does he would like tea?",
-        "Would he likes tea?",
-        "He would like tea?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would he like tea?",
-      "hint": "Invert 'would'.",
-      "explanation": "Would he like is correct."
-    },
-    {
-      "id": "qf_l9_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You should try it.",
-      "sentence": "You should try it.",
-      "options": [
-        "Should you try it?",
-        "Do you should try it?",
-        "Should you trying it?",
-        "You should try it?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Should you try it?",
-      "hint": "Invert 'should'.",
-      "explanation": "Should you try is correct."
-    },
-    {
-      "id": "qf_l10_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She wrote a letter.",
-      "sentence": "She wrote a letter.",
-      "options": [
-        "Did she write a letter?",
-        "Did she wrote a letter?",
-        "Does she write a letter?",
-        "She wrote a letter?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Did she write a letter?",
-      "hint": "Use 'Did' + 'write'.",
-      "explanation": "Did she write is correct."
-    },
-    {
-      "id": "qf_l10_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You may enter.",
-      "sentence": "You may enter.",
-      "options": [
-        "May you enter?",
-        "Do you may enter?",
-        "May you entering?",
-        "You may enter?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "May you enter?",
-      "hint": "Invert modal 'may'.",
-      "explanation": "May you enter is correct."
-    },
-    {
-      "id": "qf_l10_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 1,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They will win.",
-      "sentence": "They will win.",
-      "options": [
-        "Will they win?",
-        "Do they will win?",
-        "Will they winning?",
-        "They will win?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Will they win?",
-      "hint": "Invert 'will'.",
-      "explanation": "Will they win is correct."
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "id": "qf_l1_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She likes ice cream.",
+            "sentence": "She likes ice cream.",
+            "options": [
+                "Does she like ice cream?",
+                "Do she likes ice cream?",
+                "Is she like ice cream?",
+                "She likes ice cream?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Does she like ice cream?",
+            "hint": "Use 'Does' for third person singular present.",
+            "explanation": "Does is the correct present tense auxiliary for 'she'."
+        },
+        {
+            "id": "qf_l1_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She can swim well.",
+            "sentence": "She can swim well.",
+            "options": [
+                "Can she swim well?",
+                "Does she can swim well?",
+                "Can she swims well?",
+                "She can swim well?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Can she swim well?",
+            "hint": "Invert modal 'can' and subject.",
+            "explanation": "Can she swim is correct modal inversion."
+        },
+        {
+            "id": "qf_l1_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He lives in London.",
+            "sentence": "He lives in London.",
+            "options": [
+                "Does he live in London?",
+                "Do he lives in London?",
+                "Is he live in London?",
+                "He lives in London?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Does he live in London?",
+            "hint": "Use 'Does' for present third person singular.",
+            "explanation": "Does he live is the correct present question."
+        },
+        {
+            "id": "qf_l2_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They went to school.",
+            "sentence": "They went to school.",
+            "options": [
+                "Did they go to school?",
+                "Did they went to school?",
+                "Do they went to school?",
+                "They went to school?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Did they go to school?",
+            "hint": "Use 'Did' + base verb for simple past.",
+            "explanation": "Did + go is the past tense question form of went."
+        },
+        {
+            "id": "qf_l2_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They have finished lunch.",
+            "sentence": "They have finished lunch.",
+            "options": [
+                "Have they finished lunch?",
+                "Did they have finished lunch?",
+                "Has they finished lunch?",
+                "They have finished lunch?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Have they finished lunch?",
+            "hint": "Invert auxiliary 'have' and subject.",
+            "explanation": "Have they finished is correct present perfect inversion."
+        },
+        {
+            "id": "qf_l2_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They have a ship.",
+            "sentence": "They have a ship.",
+            "options": [
+                "Do they have a ship?",
+                "Has they a ship?",
+                "Do they has a ship?",
+                "They have a ship?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do they have a ship?",
+            "hint": "Use 'Do' for present plural questions.",
+            "explanation": "Do they have is correct."
+        },
+        {
+            "id": "qf_l3_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He is a doctor.",
+            "sentence": "He is a doctor.",
+            "options": [
+                "Is he a doctor?",
+                "Does he is a doctor?",
+                "Do he a doctor?",
+                "He is a doctor?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Is he a doctor?",
+            "hint": "Invert the subject and the verb 'to be'.",
+            "explanation": "Is he is the correct inverted form of He is."
+        },
+        {
+            "id": "qf_l3_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We will arrive tomorrow.",
+            "sentence": "We will arrive tomorrow.",
+            "options": [
+                "Will we arrive tomorrow?",
+                "Do we will arrive tomorrow?",
+                "Will we arrived tomorrow?",
+                "We will arrive tomorrow?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Will we arrive tomorrow?",
+            "hint": "Invert modal 'will' and subject.",
+            "explanation": "Will we arrive is correct future inversion."
+        },
+        {
+            "id": "qf_l3_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She is reading.",
+            "sentence": "She is reading.",
+            "options": [
+                "Is she reading?",
+                "Does she reading?",
+                "Is she read?",
+                "She is reading?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Is she reading?",
+            "hint": "Invert 'is' and 'she'.",
+            "explanation": "Is she reading is correct."
+        },
+        {
+            "id": "qf_l4_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We have some apples.",
+            "sentence": "We have some apples.",
+            "options": [
+                "Do we have any apples?",
+                "Have we some apples?",
+                "Do we has some apples?",
+                "We have any apples?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do we have any apples?",
+            "hint": "Use 'Do' for first person plural questions.",
+            "explanation": "Do we have is the standard question form."
+        },
+        {
+            "id": "qf_l4_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You should wait here.",
+            "sentence": "You should wait here.",
+            "options": [
+                "Should you wait here?",
+                "Do you should wait here?",
+                "Should you waiting here?",
+                "You should wait here?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Should you wait here?",
+            "hint": "Invert modal 'should'.",
+            "explanation": "Should you wait is correct."
+        },
+        {
+            "id": "qf_l4_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We were working.",
+            "sentence": "We were working.",
+            "options": [
+                "Were we working?",
+                "Was we working?",
+                "Did we working?",
+                "We were working?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Were we working?",
+            "hint": "Invert 'were' and 'we'.",
+            "explanation": "Were we working is correct."
+        },
+        {
+            "id": "qf_l5_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She swam in the pool.",
+            "sentence": "She swam in the pool.",
+            "options": [
+                "Did she swim in the pool?",
+                "Did she swam in the pool?",
+                "Does she swim in the pool?",
+                "She swam in the pool?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Did she swim in the pool?",
+            "hint": "Use 'Did' + base verb 'swim'.",
+            "explanation": "Did she swim is correct for past actions."
+        },
+        {
+            "id": "qf_l5_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He has seen this movie.",
+            "sentence": "He has seen this movie.",
+            "options": [
+                "Has he seen this movie?",
+                "Did he has seen this movie?",
+                "Have he seen this movie?",
+                "He has seen this movie?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Has he seen this movie?",
+            "hint": "Invert auxiliary 'has'.",
+            "explanation": "Has he seen is correct."
+        },
+        {
+            "id": "qf_l5_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He was sleeping.",
+            "sentence": "He was sleeping.",
+            "options": [
+                "Was he sleeping?",
+                "Were he sleeping?",
+                "Did he sleeping?",
+                "He was sleeping?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Was he sleeping?",
+            "hint": "Invert 'was' and 'he'.",
+            "explanation": "Was he sleeping is correct."
+        },
+        {
+            "id": "qf_l6_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "The system is online.",
+            "sentence": "The system is online.",
+            "options": [
+                "Is the system online?",
+                "Does the system online?",
+                "Are the system online?",
+                "System is online?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Is the system online?",
+            "hint": "Invert the subject and 'is'.",
+            "explanation": "Is the system online is correct."
+        },
+        {
+            "id": "qf_l6_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They could hear us.",
+            "sentence": "They could hear us.",
+            "options": [
+                "Could they hear us?",
+                "Did they could hear us?",
+                "Could they heard us?",
+                "They could hear us?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Could they hear us?",
+            "hint": "Invert modal 'could'.",
+            "explanation": "Could they hear is correct."
+        },
+        {
+            "id": "qf_l6_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She has been working.",
+            "sentence": "She has been working.",
+            "options": [
+                "Has she been working?",
+                "Have she been working?",
+                "Does she been working?",
+                "She has been working?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Has she been working?",
+            "hint": "Invert auxiliary 'has'.",
+            "explanation": "Has she been working is correct."
+        },
+        {
+            "id": "qf_l7_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They work in the city.",
+            "sentence": "They work in the city.",
+            "options": [
+                "Do they work in the city?",
+                "Does they work in the city?",
+                "Are they work in the city?",
+                "They work in the city?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Do they work in the city?",
+            "hint": "Use 'Do' for third person plural present.",
+            "explanation": "Do they work is correct."
+        },
+        {
+            "id": "qf_l7_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She will help us.",
+            "sentence": "She will help us.",
+            "options": [
+                "Will she help us?",
+                "Does she will help us?",
+                "Will she helps us?",
+                "She will help us?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Will she help us?",
+            "hint": "Invert 'will'.",
+            "explanation": "Will she help is correct."
+        },
+        {
+            "id": "qf_l7_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They had left early.",
+            "sentence": "They had left early.",
+            "options": [
+                "Had they left early?",
+                "Did they had left early?",
+                "Have they left early?",
+                "They had left early?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Had they left early?",
+            "hint": "Invert auxiliary 'had'.",
+            "explanation": "Had they left is correct."
+        },
+        {
+            "id": "qf_l8_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He forgot his keys.",
+            "sentence": "He forgot his keys.",
+            "options": [
+                "Did he forget his keys?",
+                "Did he forgot his keys?",
+                "Does he forget his keys?",
+                "He forgot his keys?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Did he forget his keys?",
+            "hint": "Use 'Did' + base verb 'forget'.",
+            "explanation": "Did he forget is correct."
+        },
+        {
+            "id": "qf_l8_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We must report this.",
+            "sentence": "We must report this.",
+            "options": [
+                "Must we report this?",
+                "Do we must report this?",
+                "Must we reporting this?",
+                "We must report this?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Must we report this?",
+            "hint": "Invert modal 'must'.",
+            "explanation": "Must we report is correct."
+        },
+        {
+            "id": "qf_l8_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He can read maps.",
+            "sentence": "He can read maps.",
+            "options": [
+                "Can he read maps?",
+                "Does he can read maps?",
+                "Can he reads maps?",
+                "He can read maps?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Can he read maps?",
+            "hint": "Invert modal 'can'.",
+            "explanation": "Can he read is correct."
+        },
+        {
+            "id": "qf_l9_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You are happy.",
+            "sentence": "You are happy.",
+            "options": [
+                "Are you happy?",
+                "Do you happy?",
+                "Is you happy?",
+                "You are happy?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Are you happy?",
+            "hint": "Invert 'you' and 'are'.",
+            "explanation": "Are you happy is correct."
+        },
+        {
+            "id": "qf_l9_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He would like tea.",
+            "sentence": "He would like tea.",
+            "options": [
+                "Would he like tea?",
+                "Does he would like tea?",
+                "Would he likes tea?",
+                "He would like tea?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would he like tea?",
+            "hint": "Invert 'would'.",
+            "explanation": "Would he like is correct."
+        },
+        {
+            "id": "qf_l9_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You should try it.",
+            "sentence": "You should try it.",
+            "options": [
+                "Should you try it?",
+                "Do you should try it?",
+                "Should you trying it?",
+                "You should try it?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Should you try it?",
+            "hint": "Invert 'should'.",
+            "explanation": "Should you try is correct."
+        },
+        {
+            "id": "qf_l10_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She wrote a letter.",
+            "sentence": "She wrote a letter.",
+            "options": [
+                "Did she write a letter?",
+                "Did she wrote a letter?",
+                "Does she write a letter?",
+                "She wrote a letter?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Did she write a letter?",
+            "hint": "Use 'Did' + 'write'.",
+            "explanation": "Did she write is correct."
+        },
+        {
+            "id": "qf_l10_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You may enter.",
+            "sentence": "You may enter.",
+            "options": [
+                "May you enter?",
+                "Do you may enter?",
+                "May you entering?",
+                "You may enter?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "May you enter?",
+            "hint": "Invert modal 'may'.",
+            "explanation": "May you enter is correct."
+        },
+        {
+            "id": "qf_l10_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 1,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They will win.",
+            "sentence": "They will win.",
+            "options": [
+                "Will they win?",
+                "Do they will win?",
+                "Will they winning?",
+                "They will win?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Will they win?",
+            "hint": "Invert 'will'.",
+            "explanation": "Will they win is correct."
+        }
+    ]
 }

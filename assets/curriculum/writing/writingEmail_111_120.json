@@ -1,667 +1,667 @@
 {
-  "gameType": "writingEmail",
-  "batchIndex": 12,
-  "levels": "111-120",
-  "quests": [
-    {
-      "id": "WRT_WRITINGEMAIL_L111_Q1",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 111-1] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
-      "options": [
-        "DEAR SCIENTIFIC COUNCIL,",
-        "REGARDS, DEEP EXPLORATION TEAM",
-        "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-        "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 111-1)",
-      "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 111]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L111_Q2",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 111-2] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
-      "options": [
-        "DEAR CHIEF ASTROBIOLOGIST,",
-        "SINCERELY, BENTHIC BIOLOGY LAB",
-        "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-        "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 111-2)",
-      "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 111]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L111_Q3",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 111-3] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
-      "options": [
-        "DEAR MARINE PATROL LEAGUE,",
-        "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-        "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-        "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 111-3)",
-      "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 111]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L112_Q1",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 112-1] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
-      "options": [
-        "DEAR CAMERA DEVELOPMENT TEAM,",
-        "BEST REGARDS, OPTICAL SYSTEMS ENG",
-        "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-        "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 112-1)",
-      "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 112]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L112_Q2",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 112-2] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
-      "options": [
-        "DEAR CONSERVATION DIRECTORS,",
-        "WARM REGARDS, KELP FORESTS COALITION",
-        "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-        "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 112-2)",
-      "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 112]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L112_Q3",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 112-3] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
-      "options": [
-        "DEAR SCIENTIFIC COUNCIL,",
-        "REGARDS, DEEP EXPLORATION TEAM",
-        "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-        "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 112-3)",
-      "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 112]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L113_Q1",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 113-1] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
-      "options": [
-        "DEAR CHIEF ASTROBIOLOGIST,",
-        "SINCERELY, BENTHIC BIOLOGY LAB",
-        "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-        "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 113-1)",
-      "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 113]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L113_Q2",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 113-2] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
-      "options": [
-        "DEAR MARINE PATROL LEAGUE,",
-        "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-        "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-        "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 113-2)",
-      "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 113]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L113_Q3",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 113-3] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
-      "options": [
-        "DEAR CAMERA DEVELOPMENT TEAM,",
-        "BEST REGARDS, OPTICAL SYSTEMS ENG",
-        "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-        "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 113-3)",
-      "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 113]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L114_Q1",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 114-1] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
-      "options": [
-        "DEAR CONSERVATION DIRECTORS,",
-        "WARM REGARDS, KELP FORESTS COALITION",
-        "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-        "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 114-1)",
-      "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 114]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L114_Q2",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 114-2] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
-      "options": [
-        "DEAR SCIENTIFIC COUNCIL,",
-        "REGARDS, DEEP EXPLORATION TEAM",
-        "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-        "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 114-2)",
-      "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 114]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L114_Q3",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 114-3] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
-      "options": [
-        "DEAR CHIEF ASTROBIOLOGIST,",
-        "SINCERELY, BENTHIC BIOLOGY LAB",
-        "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-        "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 114-3)",
-      "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 114]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L115_Q1",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 115-1] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
-      "options": [
-        "DEAR MARINE PATROL LEAGUE,",
-        "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-        "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-        "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 115-1)",
-      "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 115]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L115_Q2",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 115-2] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
-      "options": [
-        "DEAR CAMERA DEVELOPMENT TEAM,",
-        "BEST REGARDS, OPTICAL SYSTEMS ENG",
-        "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-        "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 115-2)",
-      "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 115]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L115_Q3",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 115-3] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
-      "options": [
-        "DEAR CONSERVATION DIRECTORS,",
-        "WARM REGARDS, KELP FORESTS COALITION",
-        "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-        "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 115-3)",
-      "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 115]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L116_Q1",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 116-1] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
-      "options": [
-        "DEAR SCIENTIFIC COUNCIL,",
-        "REGARDS, DEEP EXPLORATION TEAM",
-        "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-        "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 116-1)",
-      "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 116]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L116_Q2",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 116-2] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
-      "options": [
-        "DEAR CHIEF ASTROBIOLOGIST,",
-        "SINCERELY, BENTHIC BIOLOGY LAB",
-        "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-        "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 116-2)",
-      "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 116]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L116_Q3",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 116-3] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
-      "options": [
-        "DEAR MARINE PATROL LEAGUE,",
-        "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-        "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-        "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 116-3)",
-      "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 116]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L117_Q1",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 117-1] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
-      "options": [
-        "DEAR CAMERA DEVELOPMENT TEAM,",
-        "BEST REGARDS, OPTICAL SYSTEMS ENG",
-        "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-        "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 117-1)",
-      "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 117]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L117_Q2",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 117-2] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
-      "options": [
-        "DEAR CONSERVATION DIRECTORS,",
-        "WARM REGARDS, KELP FORESTS COALITION",
-        "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-        "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 117-2)",
-      "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 117]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L117_Q3",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 117-3] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
-      "options": [
-        "DEAR SCIENTIFIC COUNCIL,",
-        "REGARDS, DEEP EXPLORATION TEAM",
-        "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-        "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 117-3)",
-      "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 117]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L118_Q1",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 118-1] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
-      "options": [
-        "DEAR CHIEF ASTROBIOLOGIST,",
-        "SINCERELY, BENTHIC BIOLOGY LAB",
-        "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-        "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 118-1)",
-      "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 118]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L118_Q2",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 118-2] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
-      "options": [
-        "DEAR MARINE PATROL LEAGUE,",
-        "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-        "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-        "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 118-2)",
-      "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 118]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L118_Q3",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 118-3] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
-      "options": [
-        "DEAR CAMERA DEVELOPMENT TEAM,",
-        "BEST REGARDS, OPTICAL SYSTEMS ENG",
-        "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-        "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 118-3)",
-      "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 118]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L119_Q1",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 119-1] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
-      "options": [
-        "DEAR CONSERVATION DIRECTORS,",
-        "WARM REGARDS, KELP FORESTS COALITION",
-        "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-        "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 119-1)",
-      "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 119]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L119_Q2",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 119-2] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
-      "options": [
-        "DEAR SCIENTIFIC COUNCIL,",
-        "REGARDS, DEEP EXPLORATION TEAM",
-        "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
-        "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 119-2)",
-      "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 119]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L119_Q3",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 119-3] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
-      "options": [
-        "DEAR CHIEF ASTROBIOLOGIST,",
-        "SINCERELY, BENTHIC BIOLOGY LAB",
-        "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
-        "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 119-3)",
-      "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 119]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L120_Q1",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 120-1] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
-      "options": [
-        "DEAR MARINE PATROL LEAGUE,",
-        "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
-        "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
-        "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 120-1)",
-      "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 120]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L120_Q2",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 120-2] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
-      "options": [
-        "DEAR CAMERA DEVELOPMENT TEAM,",
-        "BEST REGARDS, OPTICAL SYSTEMS ENG",
-        "SUBJ: LUCIFERIN SENSITIVITY TESTING",
-        "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 120-2)",
-      "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 120]."
-    },
-    {
-      "id": "WRT_WRITINGEMAIL_L120_Q3",
-      "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
-      "difficulty": 3,
-      "subtype": "writingEmail",
-      "interactionType": "Slot Sorter",
-      "prompt": "[Calibration Dispatch 120-3] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
-      "options": [
-        "DEAR CONSERVATION DIRECTORS,",
-        "WARM REGARDS, KELP FORESTS COALITION",
-        "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
-        "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
-      ],
-      "correctOrder": [
-        2,
-        0,
-        3,
-        1
-      ],
-      "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 120-3)",
-      "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 120]."
-    }
-  ]
+    "gameType": "writingEmail",
+    "batchIndex": 12,
+    "levels": "111-120",
+    "quests": [
+        {
+            "id": "WRT_WRITINGEMAIL_L111_Q1",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 111-1] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "options": [
+                "DEAR SCIENTIFIC COUNCIL,",
+                "REGARDS, DEEP EXPLORATION TEAM",
+                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
+                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 111-1)",
+            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 111]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L111_Q2",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 111-2] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "options": [
+                "DEAR CHIEF ASTROBIOLOGIST,",
+                "SINCERELY, BENTHIC BIOLOGY LAB",
+                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
+                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 111-2)",
+            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 111]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L111_Q3",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 111-3] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "options": [
+                "DEAR MARINE PATROL LEAGUE,",
+                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
+                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
+                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 111-3)",
+            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 111]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L112_Q1",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 112-1] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "options": [
+                "DEAR CAMERA DEVELOPMENT TEAM,",
+                "BEST REGARDS, OPTICAL SYSTEMS ENG",
+                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
+                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 112-1)",
+            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 112]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L112_Q2",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 112-2] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "options": [
+                "DEAR CONSERVATION DIRECTORS,",
+                "WARM REGARDS, KELP FORESTS COALITION",
+                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
+                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 112-2)",
+            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 112]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L112_Q3",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 112-3] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "options": [
+                "DEAR SCIENTIFIC COUNCIL,",
+                "REGARDS, DEEP EXPLORATION TEAM",
+                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
+                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 112-3)",
+            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 112]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L113_Q1",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 113-1] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "options": [
+                "DEAR CHIEF ASTROBIOLOGIST,",
+                "SINCERELY, BENTHIC BIOLOGY LAB",
+                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
+                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 113-1)",
+            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 113]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L113_Q2",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 113-2] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "options": [
+                "DEAR MARINE PATROL LEAGUE,",
+                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
+                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
+                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 113-2)",
+            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 113]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L113_Q3",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 113-3] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "options": [
+                "DEAR CAMERA DEVELOPMENT TEAM,",
+                "BEST REGARDS, OPTICAL SYSTEMS ENG",
+                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
+                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 113-3)",
+            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 113]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L114_Q1",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 114-1] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "options": [
+                "DEAR CONSERVATION DIRECTORS,",
+                "WARM REGARDS, KELP FORESTS COALITION",
+                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
+                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 114-1)",
+            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 114]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L114_Q2",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 114-2] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "options": [
+                "DEAR SCIENTIFIC COUNCIL,",
+                "REGARDS, DEEP EXPLORATION TEAM",
+                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
+                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 114-2)",
+            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 114]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L114_Q3",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 114-3] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "options": [
+                "DEAR CHIEF ASTROBIOLOGIST,",
+                "SINCERELY, BENTHIC BIOLOGY LAB",
+                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
+                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 114-3)",
+            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 114]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L115_Q1",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 115-1] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "options": [
+                "DEAR MARINE PATROL LEAGUE,",
+                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
+                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
+                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 115-1)",
+            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 115]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L115_Q2",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 115-2] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "options": [
+                "DEAR CAMERA DEVELOPMENT TEAM,",
+                "BEST REGARDS, OPTICAL SYSTEMS ENG",
+                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
+                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 115-2)",
+            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 115]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L115_Q3",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 115-3] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "options": [
+                "DEAR CONSERVATION DIRECTORS,",
+                "WARM REGARDS, KELP FORESTS COALITION",
+                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
+                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 115-3)",
+            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 115]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L116_Q1",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 116-1] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "options": [
+                "DEAR SCIENTIFIC COUNCIL,",
+                "REGARDS, DEEP EXPLORATION TEAM",
+                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
+                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 116-1)",
+            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 116]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L116_Q2",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 116-2] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "options": [
+                "DEAR CHIEF ASTROBIOLOGIST,",
+                "SINCERELY, BENTHIC BIOLOGY LAB",
+                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
+                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 116-2)",
+            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 116]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L116_Q3",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 116-3] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "options": [
+                "DEAR MARINE PATROL LEAGUE,",
+                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
+                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
+                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 116-3)",
+            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 116]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L117_Q1",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 117-1] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "options": [
+                "DEAR CAMERA DEVELOPMENT TEAM,",
+                "BEST REGARDS, OPTICAL SYSTEMS ENG",
+                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
+                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 117-1)",
+            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 117]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L117_Q2",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 117-2] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "options": [
+                "DEAR CONSERVATION DIRECTORS,",
+                "WARM REGARDS, KELP FORESTS COALITION",
+                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
+                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 117-2)",
+            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 117]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L117_Q3",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 117-3] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "options": [
+                "DEAR SCIENTIFIC COUNCIL,",
+                "REGARDS, DEEP EXPLORATION TEAM",
+                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
+                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 117-3)",
+            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 117]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L118_Q1",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 118-1] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "options": [
+                "DEAR CHIEF ASTROBIOLOGIST,",
+                "SINCERELY, BENTHIC BIOLOGY LAB",
+                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
+                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 118-1)",
+            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 118]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L118_Q2",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 118-2] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "options": [
+                "DEAR MARINE PATROL LEAGUE,",
+                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
+                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
+                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 118-2)",
+            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 118]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L118_Q3",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 118-3] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "options": [
+                "DEAR CAMERA DEVELOPMENT TEAM,",
+                "BEST REGARDS, OPTICAL SYSTEMS ENG",
+                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
+                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 118-3)",
+            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 118]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L119_Q1",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 119-1] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "options": [
+                "DEAR CONSERVATION DIRECTORS,",
+                "WARM REGARDS, KELP FORESTS COALITION",
+                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
+                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 119-1)",
+            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 119]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L119_Q2",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 119-2] Draft an official mission brief describing the discovery of thermal chimney fields in the Mariana Trench.",
+            "options": [
+                "DEAR SCIENTIFIC COUNCIL,",
+                "REGARDS, DEEP EXPLORATION TEAM",
+                "SUBJ: MARIANA THERMAL CHIMNEY SURVEY",
+                "WE HAVE SUCCESSFULLY DOCUMENTED ACTIVE HYDROTHERMAL CHIMNEYS VENTING SUPERHEATED CHEMICAL PLUMES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Place the SUBJ: line as the Subject, 'DEAR' as Salutation, 'WE HAVE' as Body, and 'REGARDS' as Sign-Off. (Diving calibration index 119-2)",
+            "explanation": "A standard scientific dispatch follows a subject header, formal greeting, central briefing statement, and professional signature. [Verified by Academy Dispatch Unit 119]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L119_Q3",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 119-3] Draft a research status dispatch reporting on chemosynthetic bacteria colonies around abyssal geothermal springs.",
+            "options": [
+                "DEAR CHIEF ASTROBIOLOGIST,",
+                "SINCERELY, BENTHIC BIOLOGY LAB",
+                "SUBJ: CHEMOSYNTHESIS RESEARCH UPDATE",
+                "BACTERIAL CULTURES DEMONSTRATE SUSTAINED METABOLIC CONVERSION OF HYDROGEN SULFIDE WITHOUT SOLAR BEAMS."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map the UPDATE subject to Subject, formal salutation, sulfur metabolic body, and SINCERELY signature. (Diving calibration index 119-3)",
+            "explanation": "Correspondence structures dictate separating administrative titles, salutations, core evidence paragraphs, and sign-offs. [Verified by Academy Dispatch Unit 119]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L120_Q1",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 120-1] Compose an oceanographic log alert summarizing cold upwelling wind impacts along coastal fisheries.",
+            "options": [
+                "DEAR MARINE PATROL LEAGUE,",
+                "RESPECTFULLY, CLIMATIC ANALYSIS UNIT",
+                "SUBJ: UPWELLING FLOW AND PLANKTON ALERTS",
+                "STRONG OFFSHORE WINDS HAVE TRIGGERED INTENSE DEEP CURRENT UPWELLING, BOOSTING LOCAL PLANKTON DENSITIES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Link SUBJ: UPWELLING to Subject, 'DEAR' to Salutation, wind/plankton flow to Body, and CLIMATIC signature to Sign-Off. (Diving calibration index 120-1)",
+            "explanation": "Administrative alerts require a subject line, recipient salutation, core wind analysis narrative, and closing authority signature. [Verified by Academy Dispatch Unit 120]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L120_Q2",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 120-2] Draft a hardware engineering report notifying engineers about new bioluminescent scanning cameras.",
+            "options": [
+                "DEAR CAMERA DEVELOPMENT TEAM,",
+                "BEST REGARDS, OPTICAL SYSTEMS ENG",
+                "SUBJ: LUCIFERIN SENSITIVITY TESTING",
+                "NEW SENSORS REGISTER COLD EMANATIONS OF BIOLUMINESCENT ORGANIC REACTIONS UNDER HIGH PRESSURE."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Weigh 'SUBJ: LUCIFERIN' as Subject, camera team as Salutation, optical sensor scans as Body, and OPTICAL signature as Sign-Off. (Diving calibration index 120-2)",
+            "explanation": "Engineering dispatches separate testing topics, engineer recipients, sensory results data, and closing sign-offs. [Verified by Academy Dispatch Unit 120]."
+        },
+        {
+            "id": "WRT_WRITINGEMAIL_L120_Q3",
+            "instruction": "SEQUENCE THE DISPATCH SEGMENTS CHRONOLOGICALLY INTO THEIR SLOTS",
+            "difficulty": 3,
+            "subtype": "writingEmail",
+            "interactionType": "Slot Sorter",
+            "prompt": "[Calibration Dispatch 120-3] Compose an ecological impact report outlining the state of giant kelp sanctuaries.",
+            "options": [
+                "DEAR CONSERVATION DIRECTORS,",
+                "WARM REGARDS, KELP FORESTS COALITION",
+                "SUBJ: KELP CANOPY ANCHORAGE SURVEY",
+                "HOLDFAST STRUCTURES SECURE STABLE WATER COOLING CANOPIES DESPITE RECENT THERMAL WAVE DISTURBANCES."
+            ],
+            "correctOrder": [
+                2,
+                0,
+                3,
+                1
+            ],
+            "hint": "Map 'SUBJ: KELP' to Subject, 'DEAR CONSERVATION' to Salutation, canopy survey to Body, and KELP COALITION to Sign-Off. (Diving calibration index 120-3)",
+            "explanation": "Conservation logs require a clear subject, formal director address, canopy health survey body, and coalition signature. [Verified by Academy Dispatch Unit 120]."
+        }
+    ]
 }

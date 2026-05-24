@@ -1,547 +1,547 @@
 {
-  "gameType": "voiceSwap",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "vs_l1_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The engineer analyzes the system silently.",
-      "sentence": "The engineer analyzes the system silently.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "The subject ('engineer') performs the action ('analyzes').",
-      "explanation": "The subject acts directly upon the system."
-    },
-    {
-      "id": "vs_l1_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The technician fixed the broken valve.",
-      "sentence": "The technician fixed the broken valve.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "The subject ('technician') performs the action ('fixed').",
-      "explanation": "Standard active voice."
-    },
-    {
-      "id": "vs_l1_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The computer executes the script quickly.",
-      "sentence": "The computer executes the script quickly.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Computer does the action.",
-      "explanation": "Active voice."
-    },
-    {
-      "id": "vs_l2_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The portal was opened by the commander.",
-      "sentence": "The portal was opened by the commander.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "The action is received by the subject ('portal').",
-      "explanation": "The action is performed by an agent introduced by 'by'."
-    },
-    {
-      "id": "vs_l2_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The signal was transmitted by the heavy tower.",
-      "sentence": "The signal was transmitted by the heavy tower.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "The signal received the transmission.",
-      "explanation": "Passive voice with agent."
-    },
-    {
-      "id": "vs_l2_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The module was optimized by the team.",
-      "sentence": "The module was optimized by the team.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Module received optimization.",
-      "explanation": "Passive voice."
-    },
-    {
-      "id": "vs_l3_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The scientist conducts the experiment.",
-      "sentence": "The scientist conducts the experiment.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "The scientist is actively performing the experiment.",
-      "explanation": "Subject verb object structure is active."
-    },
-    {
-      "id": "vs_l3_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The pilot protects the shuttle.",
-      "sentence": "The pilot protects the shuttle.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Subject acts on the object.",
-      "explanation": "Simple present active."
-    },
-    {
-      "id": "vs_l3_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The guard monitors the corridor.",
-      "sentence": "The guard monitors the corridor.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Guard does the monitoring.",
-      "explanation": "Active voice."
-    },
-    {
-      "id": "vs_l4_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The research data was lost in transit.",
-      "sentence": "The research data was lost in transit.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "The action happened to the data, and the agent is missing.",
-      "explanation": "Passive without agent."
-    },
-    {
-      "id": "vs_l4_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The shield was activated during the storm.",
-      "sentence": "The shield was activated during the storm.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Action done to the shield.",
-      "explanation": "Agentless passive."
-    },
-    {
-      "id": "vs_l4_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The files were corrupted by the virus.",
-      "sentence": "The files were corrupted by the virus.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Files were acted upon.",
-      "explanation": "Passive voice."
-    },
-    {
-      "id": "vs_l5_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The doctor discovered a new vaccine.",
-      "sentence": "The doctor discovered a new vaccine.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "The doctor did the discovering.",
-      "explanation": "Simple past active."
-    },
-    {
-      "id": "vs_l5_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The captain steered the ship safely.",
-      "sentence": "The captain steered the ship safely.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Captain did the steering.",
-      "explanation": "Past active."
-    },
-    {
-      "id": "vs_l5_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The scanner detected a strange object.",
-      "sentence": "The scanner detected a strange object.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Scanner did the detecting.",
-      "explanation": "Active voice."
-    },
-    {
-      "id": "vs_l6_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The security breach was reported by the guard.",
-      "sentence": "The security breach was reported by the guard.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "The action is received by 'breach'.",
-      "explanation": "Passive with agent."
-    },
-    {
-      "id": "vs_l6_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The system was updated by the coder.",
-      "sentence": "The system was updated by the coder.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "System received the update.",
-      "explanation": "Passive voice."
-    },
-    {
-      "id": "vs_l6_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The laser was aligned by the expert.",
-      "sentence": "The laser was aligned by the expert.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Laser received the alignment.",
-      "explanation": "Passive voice."
-    },
-    {
-      "id": "vs_l7_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The programmer writes the clean code.",
-      "sentence": "The programmer writes the clean code.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Subject does the writing.",
-      "explanation": "Active voice."
-    },
-    {
-      "id": "vs_l7_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The robot scans the surface.",
-      "sentence": "The robot scans the surface.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Robot does the scanning.",
-      "explanation": "Active voice."
-    },
-    {
-      "id": "vs_l7_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The engineer tests the thruster.",
-      "sentence": "The engineer tests the thruster.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Engineer does the testing.",
-      "explanation": "Active voice."
-    },
-    {
-      "id": "vs_l8_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The shuttle was repaired in record time.",
-      "sentence": "The shuttle was repaired in record time.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "The shuttle received the repairs.",
-      "explanation": "Agentless passive."
-    },
-    {
-      "id": "vs_l8_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The core was stabilized yesterday.",
-      "sentence": "The core was stabilized yesterday.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Core received the stabilization.",
-      "explanation": "Passive voice."
-    },
-    {
-      "id": "vs_l8_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The hatch was sealed after the leak.",
-      "sentence": "The hatch was sealed after the leak.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Hatch received the sealing.",
-      "explanation": "Passive voice."
-    },
-    {
-      "id": "vs_l9_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The team designed the new spacecraft.",
-      "sentence": "The team designed the new spacecraft.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "The team performed the design.",
-      "explanation": "Simple past active."
-    },
-    {
-      "id": "vs_l9_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The architect designed the dome.",
-      "sentence": "The architect designed the dome.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Architect did the designing.",
-      "explanation": "Active voice."
-    },
-    {
-      "id": "vs_l9_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The researcher found the solution.",
-      "sentence": "The researcher found the solution.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Active",
-      "correctAnswerCategory": "Active",
-      "hint": "Researcher did the finding.",
-      "explanation": "Active voice."
-    },
-    {
-      "id": "vs_l10_q1",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The command was executed by the computer.",
-      "sentence": "The command was executed by the computer.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "The command received the execution.",
-      "explanation": "Passive voice."
-    },
-    {
-      "id": "vs_l10_q2",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The alarm was sounded by the detector.",
-      "sentence": "The alarm was sounded by the detector.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Alarm was acted upon.",
-      "explanation": "Passive voice."
-    },
-    {
-      "id": "vs_l10_q3",
-      "instruction": "FLIP THE VOICE TRANSMUTER",
-      "difficulty": 1,
-      "subtype": "voiceSwap",
-      "interactionType": "Active/Passive Slider",
-      "question": "The message was decoded by the station.",
-      "sentence": "The message was decoded by the station.",
-      "options": [
-        "Active",
-        "Passive"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Passive",
-      "correctAnswerCategory": "Passive",
-      "hint": "Message received decoding.",
-      "explanation": "Passive voice."
-    }
-  ]
+    "gameType": "voiceSwap",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "id": "vs_l1_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The engineer analyzes the system silently.",
+            "sentence": "The engineer analyzes the system silently.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "The subject ('engineer') performs the action ('analyzes').",
+            "explanation": "The subject acts directly upon the system."
+        },
+        {
+            "id": "vs_l1_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The technician fixed the broken valve.",
+            "sentence": "The technician fixed the broken valve.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "The subject ('technician') performs the action ('fixed').",
+            "explanation": "Standard active voice."
+        },
+        {
+            "id": "vs_l1_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The computer executes the script quickly.",
+            "sentence": "The computer executes the script quickly.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Computer does the action.",
+            "explanation": "Active voice."
+        },
+        {
+            "id": "vs_l2_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The portal was opened by the commander.",
+            "sentence": "The portal was opened by the commander.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The action is received by the subject ('portal').",
+            "explanation": "The action is performed by an agent introduced by 'by'."
+        },
+        {
+            "id": "vs_l2_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The signal was transmitted by the heavy tower.",
+            "sentence": "The signal was transmitted by the heavy tower.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The signal received the transmission.",
+            "explanation": "Passive voice with agent."
+        },
+        {
+            "id": "vs_l2_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The module was optimized by the team.",
+            "sentence": "The module was optimized by the team.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Module received optimization.",
+            "explanation": "Passive voice."
+        },
+        {
+            "id": "vs_l3_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The scientist conducts the experiment.",
+            "sentence": "The scientist conducts the experiment.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "The scientist is actively performing the experiment.",
+            "explanation": "Subject verb object structure is active."
+        },
+        {
+            "id": "vs_l3_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The pilot protects the shuttle.",
+            "sentence": "The pilot protects the shuttle.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Subject acts on the object.",
+            "explanation": "Simple present active."
+        },
+        {
+            "id": "vs_l3_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The guard monitors the corridor.",
+            "sentence": "The guard monitors the corridor.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Guard does the monitoring.",
+            "explanation": "Active voice."
+        },
+        {
+            "id": "vs_l4_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The research data was lost in transit.",
+            "sentence": "The research data was lost in transit.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The action happened to the data, and the agent is missing.",
+            "explanation": "Passive without agent."
+        },
+        {
+            "id": "vs_l4_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The shield was activated during the storm.",
+            "sentence": "The shield was activated during the storm.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Action done to the shield.",
+            "explanation": "Agentless passive."
+        },
+        {
+            "id": "vs_l4_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The files were corrupted by the virus.",
+            "sentence": "The files were corrupted by the virus.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Files were acted upon.",
+            "explanation": "Passive voice."
+        },
+        {
+            "id": "vs_l5_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The doctor discovered a new vaccine.",
+            "sentence": "The doctor discovered a new vaccine.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "The doctor did the discovering.",
+            "explanation": "Simple past active."
+        },
+        {
+            "id": "vs_l5_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The captain steered the ship safely.",
+            "sentence": "The captain steered the ship safely.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Captain did the steering.",
+            "explanation": "Past active."
+        },
+        {
+            "id": "vs_l5_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The scanner detected a strange object.",
+            "sentence": "The scanner detected a strange object.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Scanner did the detecting.",
+            "explanation": "Active voice."
+        },
+        {
+            "id": "vs_l6_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The security breach was reported by the guard.",
+            "sentence": "The security breach was reported by the guard.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The action is received by 'breach'.",
+            "explanation": "Passive with agent."
+        },
+        {
+            "id": "vs_l6_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The system was updated by the coder.",
+            "sentence": "The system was updated by the coder.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "System received the update.",
+            "explanation": "Passive voice."
+        },
+        {
+            "id": "vs_l6_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The laser was aligned by the expert.",
+            "sentence": "The laser was aligned by the expert.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Laser received the alignment.",
+            "explanation": "Passive voice."
+        },
+        {
+            "id": "vs_l7_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The programmer writes the clean code.",
+            "sentence": "The programmer writes the clean code.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Subject does the writing.",
+            "explanation": "Active voice."
+        },
+        {
+            "id": "vs_l7_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The robot scans the surface.",
+            "sentence": "The robot scans the surface.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Robot does the scanning.",
+            "explanation": "Active voice."
+        },
+        {
+            "id": "vs_l7_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The engineer tests the thruster.",
+            "sentence": "The engineer tests the thruster.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Engineer does the testing.",
+            "explanation": "Active voice."
+        },
+        {
+            "id": "vs_l8_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The shuttle was repaired in record time.",
+            "sentence": "The shuttle was repaired in record time.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The shuttle received the repairs.",
+            "explanation": "Agentless passive."
+        },
+        {
+            "id": "vs_l8_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The core was stabilized yesterday.",
+            "sentence": "The core was stabilized yesterday.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Core received the stabilization.",
+            "explanation": "Passive voice."
+        },
+        {
+            "id": "vs_l8_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The hatch was sealed after the leak.",
+            "sentence": "The hatch was sealed after the leak.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Hatch received the sealing.",
+            "explanation": "Passive voice."
+        },
+        {
+            "id": "vs_l9_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The team designed the new spacecraft.",
+            "sentence": "The team designed the new spacecraft.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "The team performed the design.",
+            "explanation": "Simple past active."
+        },
+        {
+            "id": "vs_l9_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The architect designed the dome.",
+            "sentence": "The architect designed the dome.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Architect did the designing.",
+            "explanation": "Active voice."
+        },
+        {
+            "id": "vs_l9_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The researcher found the solution.",
+            "sentence": "The researcher found the solution.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Active",
+            "correctAnswerCategory": "Active",
+            "hint": "Researcher did the finding.",
+            "explanation": "Active voice."
+        },
+        {
+            "id": "vs_l10_q1",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The command was executed by the computer.",
+            "sentence": "The command was executed by the computer.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "The command received the execution.",
+            "explanation": "Passive voice."
+        },
+        {
+            "id": "vs_l10_q2",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The alarm was sounded by the detector.",
+            "sentence": "The alarm was sounded by the detector.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Alarm was acted upon.",
+            "explanation": "Passive voice."
+        },
+        {
+            "id": "vs_l10_q3",
+            "instruction": "FLIP THE VOICE TRANSMUTER",
+            "difficulty": 1,
+            "subtype": "voiceSwap",
+            "interactionType": "Active/Passive Slider",
+            "question": "The message was decoded by the station.",
+            "sentence": "The message was decoded by the station.",
+            "options": [
+                "Active",
+                "Passive"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Passive",
+            "correctAnswerCategory": "Passive",
+            "hint": "Message received decoding.",
+            "explanation": "Passive voice."
+        }
+    ]
 }

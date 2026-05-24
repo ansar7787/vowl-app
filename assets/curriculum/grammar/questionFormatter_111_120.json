@@ -1,577 +1,577 @@
 {
-  "gameType": "questionFormatter",
-  "batchIndex": 12,
-  "levels": "111-120",
-  "quests": [
-    {
-      "id": "qf_l111_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He is the manager in sector 10.",
-      "sentence": "He is the manager in sector 10.",
-      "options": [
-        "He is the manager, isn't he in sector 10?",
-        "Is he the manager in sector 10?",
-        "He is the manager, is he in sector 10?",
-        "He is the manager, does he in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "He is the manager, isn't he in sector 10?",
-      "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'. (Sector 10 calibration)",
-      "explanation": "Positive statement requires a negative tag. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l111_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She could have won the race in sector 10.",
-      "sentence": "She could have won the race in sector 10.",
-      "options": [
-        "Could she have won the race in sector 10?",
-        "Could have she won the race in sector 10?",
-        "Should she have won the race in sector 10?",
-        "She could have won the race in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Could she have won the race in sector 10?",
-      "hint": "Invert the first auxiliary 'could'. (Sector 10 calibration)",
-      "explanation": "Invert the primary modal in a perfect modal construction. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l111_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The project was finished in sector 10.",
-      "sentence": "The project was finished in sector 10.",
-      "options": [
-        "Was the project finished in sector 10?",
-        "Did the project finish in sector 10?",
-        "Is the project finished in sector 10?",
-        "The project was finished in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Was the project finished in sector 10?",
-      "hint": "Invert 'was' in passive voice. (Sector 10 calibration)",
-      "explanation": "Invert auxiliary 'was' and subject. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l112_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You haven't seen him lately in sector 10.",
-      "sentence": "You haven't seen him lately in sector 10.",
-      "options": [
-        "You haven't seen him lately, have you in sector 10?",
-        "You haven't seen him lately, haven't you in sector 10?",
-        "Have you seen him lately in sector 10?",
-        "You haven't seen him lately, did you in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "You haven't seen him lately, have you in sector 10?",
-      "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'. (Sector 10 calibration)",
-      "explanation": "Negative statement requires a positive tag. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l112_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They should have reported this in sector 10.",
-      "sentence": "They should have reported this in sector 10.",
-      "options": [
-        "Should they have reported this in sector 10?",
-        "Should have they reported this in sector 10?",
-        "Would they have reported this in sector 10?",
-        "They should have reported this in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Should they have reported this in sector 10?",
-      "hint": "Invert the first modal 'should'. (Sector 10 calibration)",
-      "explanation": "Invert the primary modal. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l112_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They are being monitored in sector 10.",
-      "sentence": "They are being monitored in sector 10.",
-      "options": [
-        "Are they being monitored in sector 10?",
-        "Do they being monitored in sector 10?",
-        "Are they monitoring in sector 10?",
-        "They are being monitored in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Are they being monitored in sector 10?",
-      "hint": "Invert the first auxiliary 'are'. (Sector 10 calibration)",
-      "explanation": "Invert primary auxiliary. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l113_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They will arrive on time in sector 10.",
-      "sentence": "They will arrive on time in sector 10.",
-      "options": [
-        "They will arrive on time, won't they in sector 10?",
-        "They will arrive on time, will they in sector 10?",
-        "Will they arrive on time in sector 10?",
-        "They will arrive on time, don't they in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "They will arrive on time, won't they in sector 10?",
-      "hint": "A positive future statement with 'will' takes 'won't they?'. (Sector 10 calibration)",
-      "explanation": "Will shifts to won't in the tag. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l113_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He would have helped us in sector 10.",
-      "sentence": "He would have helped us in sector 10.",
-      "options": [
-        "Would he have helped us in sector 10?",
-        "Would have he helped us in sector 10?",
-        "Could he have helped us in sector 10?",
-        "He would have helped us in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would he have helped us in sector 10?",
-      "hint": "Invert the first auxiliary 'would'. (Sector 10 calibration)",
-      "explanation": "Invert the primary modal. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l113_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He has been arrested in sector 10.",
-      "sentence": "He has been arrested in sector 10.",
-      "options": [
-        "Has he been arrested in sector 10?",
-        "Did he been arrested in sector 10?",
-        "Have he been arrested in sector 10?",
-        "He has been arrested in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Has he been arrested in sector 10?",
-      "hint": "Invert 'has'. (Sector 10 calibration)",
-      "explanation": "Invert primary auxiliary. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l114_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She doesn't like coffee in sector 10.",
-      "sentence": "She doesn't like coffee in sector 10.",
-      "options": [
-        "She doesn't like coffee, does she in sector 10?",
-        "She doesn't like coffee, doesn't she in sector 10?",
-        "Does she like coffee in sector 10?",
-        "She doesn't like coffee, is she in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "She doesn't like coffee, does she in sector 10?",
-      "hint": "A negative present statement with 'doesn't' takes 'does she?'. (Sector 10 calibration)",
-      "explanation": "Doesn't shifts to does in the tag. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l114_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You must have seen the sign in sector 10.",
-      "sentence": "You must have seen the sign in sector 10.",
-      "options": [
-        "Must you have seen the sign in sector 10?",
-        "Must have you seen the sign in sector 10?",
-        "Did you have seen the sign in sector 10?",
-        "You must have seen the sign in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Must you have seen the sign in sector 10?",
-      "hint": "Invert 'must'. (Sector 10 calibration)",
-      "explanation": "Invert the primary modal. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l114_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She was being interviewed in sector 10.",
-      "sentence": "She was being interviewed in sector 10.",
-      "options": [
-        "Was she being interviewed in sector 10?",
-        "Did she being interviewed in sector 10?",
-        "Was she interviewing in sector 10?",
-        "She was being interviewed in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Was she being interviewed in sector 10?",
-      "hint": "Invert 'was'. (Sector 10 calibration)",
-      "explanation": "Invert primary auxiliary. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l115_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You can drive a shuttle in sector 10.",
-      "sentence": "You can drive a shuttle in sector 10.",
-      "options": [
-        "You can drive a shuttle, can't you in sector 10?",
-        "You can drive a shuttle, can you in sector 10?",
-        "Can you drive a shuttle in sector 10?",
-        "You can drive a shuttle, don't you in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "You can drive a shuttle, can't you in sector 10?",
-      "hint": "Positive 'can' takes negative 'can't you?'. (Sector 10 calibration)",
-      "explanation": "Can shifts to can't in the tag. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l115_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We might have missed them in sector 10.",
-      "sentence": "We might have missed them in sector 10.",
-      "options": [
-        "Might we have missed them in sector 10?",
-        "Might have we missed them in sector 10?",
-        "Did we might have missed them in sector 10?",
-        "We might have missed them in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Might we have missed them in sector 10?",
-      "hint": "Invert 'might'. (Sector 10 calibration)",
-      "explanation": "Invert the primary modal. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l115_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We have been invited in sector 10.",
-      "sentence": "We have been invited in sector 10.",
-      "options": [
-        "Have we been invited in sector 10?",
-        "Has we been invited in sector 10?",
-        "Do we been invited in sector 10?",
-        "We have been invited in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Have we been invited in sector 10?",
-      "hint": "Invert 'have'. (Sector 10 calibration)",
-      "explanation": "Invert primary auxiliary. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l116_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He didn't finish the task in sector 10.",
-      "sentence": "He didn't finish the task in sector 10.",
-      "options": [
-        "He didn't finish the task, did he in sector 10?",
-        "He didn't finish the task, didn't he in sector 10?",
-        "Did he finish the task in sector 10?",
-        "He didn't finish the task, was he in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "He didn't finish the task, did he in sector 10?",
-      "hint": "Negative past 'didn't' takes positive 'did he?'. (Sector 10 calibration)",
-      "explanation": "Didn't shifts to did in the tag. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l116_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She ought to have apologized in sector 10.",
-      "sentence": "She ought to have apologized in sector 10.",
-      "options": [
-        "Ought she to have apologized in sector 10?",
-        "Ought to she have apologized in sector 10?",
-        "Should she to have apologized in sector 10?",
-        "She ought to have apologized in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Ought she to have apologized in sector 10?",
-      "hint": "Invert 'ought' with the subject. (Sector 10 calibration)",
-      "explanation": "Invert the first element of 'ought to'. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l116_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "The temple is being restored in sector 10.",
-      "sentence": "The temple is being restored in sector 10.",
-      "options": [
-        "Is the temple being restored in sector 10?",
-        "Does the temple being restored in sector 10?",
-        "Is the temple restoring in sector 10?",
-        "The temple is being restored in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Is the temple being restored in sector 10?",
-      "hint": "Invert 'is'. (Sector 10 calibration)",
-      "explanation": "Invert primary auxiliary. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l117_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They are ready in sector 10.",
-      "sentence": "They are ready in sector 10.",
-      "options": [
-        "They are ready, aren't they in sector 10?",
-        "They are ready, are they in sector 10?",
-        "Are they ready in sector 10?",
-        "They are ready, don't they in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "They are ready, aren't they in sector 10?",
-      "hint": "Positive 'are' takes negative 'aren't they?'. (Sector 10 calibration)",
-      "explanation": "Are shifts to aren't in the tag. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l117_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They can't have forgotten in sector 10.",
-      "sentence": "They can't have forgotten in sector 10.",
-      "options": [
-        "Can they have forgotten in sector 10?",
-        "Can't they have forgotten in sector 10?",
-        "Have they can't forgotten in sector 10?",
-        "They can't have forgotten in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Can they have forgotten in sector 10?",
-      "hint": "Invert modal 'can' (or negative 'can't'). (Sector 10 calibration)",
-      "explanation": "Invert the modal auxiliary. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l117_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "They had been warned in sector 10.",
-      "sentence": "They had been warned in sector 10.",
-      "options": [
-        "Had they been warned in sector 10?",
-        "Did they had been warned in sector 10?",
-        "Have they been warned in sector 10?",
-        "They had been warned in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Had they been warned in sector 10?",
-      "hint": "Invert 'had'. (Sector 10 calibration)",
-      "explanation": "Invert primary auxiliary. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l118_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She has been working hard in sector 10.",
-      "sentence": "She has been working hard in sector 10.",
-      "options": [
-        "She has been working hard, hasn't she in sector 10?",
-        "She has been working hard, has she in sector 10?",
-        "Has she been working hard in sector 10?",
-        "She has been working hard, doesn't she in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "She has been working hard, hasn't she in sector 10?",
-      "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'. (Sector 10 calibration)",
-      "explanation": "Has shifts to hasn't in the tag. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l118_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You shouldn't have done that in sector 10.",
-      "sentence": "You shouldn't have done that in sector 10.",
-      "options": [
-        "Should you have done that in sector 10?",
-        "Shouldn't you have done that in sector 10?",
-        "Did you shouldn't have done that in sector 10?",
-        "You shouldn't have done that in sector 10?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Shouldn't you have done that in sector 10?",
-      "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'. (Sector 10 calibration)",
-      "explanation": "Negative inversion is correct. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l118_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "She will be promoted in sector 10.",
-      "sentence": "She will be promoted in sector 10.",
-      "options": [
-        "Will she be promoted in sector 10?",
-        "Does she will be promoted in sector 10?",
-        "Will she promoting in sector 10?",
-        "She will be promoted in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Will she be promoted in sector 10?",
-      "hint": "Invert 'will'. (Sector 10 calibration)",
-      "explanation": "Invert primary auxiliary. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l119_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You wouldn't do that in sector 10.",
-      "sentence": "You wouldn't do that in sector 10.",
-      "options": [
-        "You wouldn't do that, would you in sector 10?",
-        "You wouldn't do that, wouldn't you in sector 10?",
-        "Would you do that in sector 10?",
-        "You wouldn't do that, did you in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "You wouldn't do that, would you in sector 10?",
-      "hint": "Negative 'wouldn't' takes positive 'would you?'. (Sector 10 calibration)",
-      "explanation": "Wouldn't shifts to would in the tag. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l119_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He wouldn't have agreed in sector 10.",
-      "sentence": "He wouldn't have agreed in sector 10.",
-      "options": [
-        "Would he have agreed in sector 10?",
-        "Wouldn't he have agreed in sector 10?",
-        "Did he wouldn't have agreed in sector 10?",
-        "He wouldn't have agreed in sector 10?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Wouldn't he have agreed in sector 10?",
-      "hint": "Keep the negative force for inverted negative modal. (Sector 10 calibration)",
-      "explanation": "Wouldn't he have agreed is correct. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l119_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "He should be informed in sector 10.",
-      "sentence": "He should be informed in sector 10.",
-      "options": [
-        "Should he be informed in sector 10?",
-        "Do he should be informed in sector 10?",
-        "Should he informing in sector 10?",
-        "He should be informed in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Should he be informed in sector 10?",
-      "hint": "Invert 'should'. (Sector 10 calibration)",
-      "explanation": "Invert primary auxiliary. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l120_q1",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We should go now in sector 10.",
-      "sentence": "We should go now in sector 10.",
-      "options": [
-        "We should go now, shouldn't we in sector 10?",
-        "We should go now, should we in sector 10?",
-        "Should we go now in sector 10?",
-        "We should go now, don't we in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "We should go now, shouldn't we in sector 10?",
-      "hint": "Positive 'should' takes negative 'shouldn't we?'. (Sector 10 calibration)",
-      "explanation": "Should shifts to shouldn't in the tag. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l120_q2",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "We couldn't have known in sector 10.",
-      "sentence": "We couldn't have known in sector 10.",
-      "options": [
-        "Could we have known in sector 10?",
-        "Couldn't we have known in sector 10?",
-        "Did we couldn't have known in sector 10?",
-        "We couldn't have known in sector 10?"
-      ],
-      "correctAnswerIndex": 1,
-      "correctAnswer": "Couldn't we have known in sector 10?",
-      "hint": "Negative modal inversion. (Sector 10 calibration)",
-      "explanation": "Couldn't we have known is correct. [Verified in sector 10]."
-    },
-    {
-      "id": "qf_l120_q3",
-      "instruction": "CRANK THE INQUIRY",
-      "difficulty": 3,
-      "subtype": "questionFormatter",
-      "interactionType": "Crank Logic",
-      "question": "You would be surprised in sector 10.",
-      "sentence": "You would be surprised in sector 10.",
-      "options": [
-        "Would you be surprised in sector 10?",
-        "Do you would be surprised in sector 10?",
-        "Would you surprising in sector 10?",
-        "You would be surprised in sector 10?"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "Would you be surprised in sector 10?",
-      "hint": "Invert 'would'. (Sector 10 calibration)",
-      "explanation": "Invert primary auxiliary. [Verified in sector 10]."
-    }
-  ]
+    "gameType": "questionFormatter",
+    "batchIndex": 12,
+    "levels": "111-120",
+    "quests": [
+        {
+            "id": "qf_l111_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He is the manager in sector 10.",
+            "sentence": "He is the manager in sector 10.",
+            "options": [
+                "He is the manager, isn't he in sector 10?",
+                "Is he the manager in sector 10?",
+                "He is the manager, is he in sector 10?",
+                "He is the manager, does he in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "He is the manager, isn't he in sector 10?",
+            "hint": "A positive statement with 'is' takes a negative tag 'isn't he?'. (Sector 10 calibration)",
+            "explanation": "Positive statement requires a negative tag. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l111_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She could have won the race in sector 10.",
+            "sentence": "She could have won the race in sector 10.",
+            "options": [
+                "Could she have won the race in sector 10?",
+                "Could have she won the race in sector 10?",
+                "Should she have won the race in sector 10?",
+                "She could have won the race in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Could she have won the race in sector 10?",
+            "hint": "Invert the first auxiliary 'could'. (Sector 10 calibration)",
+            "explanation": "Invert the primary modal in a perfect modal construction. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l111_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "The project was finished in sector 10.",
+            "sentence": "The project was finished in sector 10.",
+            "options": [
+                "Was the project finished in sector 10?",
+                "Did the project finish in sector 10?",
+                "Is the project finished in sector 10?",
+                "The project was finished in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Was the project finished in sector 10?",
+            "hint": "Invert 'was' in passive voice. (Sector 10 calibration)",
+            "explanation": "Invert auxiliary 'was' and subject. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l112_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You haven't seen him lately in sector 10.",
+            "sentence": "You haven't seen him lately in sector 10.",
+            "options": [
+                "You haven't seen him lately, have you in sector 10?",
+                "You haven't seen him lately, haven't you in sector 10?",
+                "Have you seen him lately in sector 10?",
+                "You haven't seen him lately, did you in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "You haven't seen him lately, have you in sector 10?",
+            "hint": "A negative statement with 'haven't' takes a positive tag 'have you?'. (Sector 10 calibration)",
+            "explanation": "Negative statement requires a positive tag. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l112_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They should have reported this in sector 10.",
+            "sentence": "They should have reported this in sector 10.",
+            "options": [
+                "Should they have reported this in sector 10?",
+                "Should have they reported this in sector 10?",
+                "Would they have reported this in sector 10?",
+                "They should have reported this in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Should they have reported this in sector 10?",
+            "hint": "Invert the first modal 'should'. (Sector 10 calibration)",
+            "explanation": "Invert the primary modal. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l112_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They are being monitored in sector 10.",
+            "sentence": "They are being monitored in sector 10.",
+            "options": [
+                "Are they being monitored in sector 10?",
+                "Do they being monitored in sector 10?",
+                "Are they monitoring in sector 10?",
+                "They are being monitored in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Are they being monitored in sector 10?",
+            "hint": "Invert the first auxiliary 'are'. (Sector 10 calibration)",
+            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l113_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They will arrive on time in sector 10.",
+            "sentence": "They will arrive on time in sector 10.",
+            "options": [
+                "They will arrive on time, won't they in sector 10?",
+                "They will arrive on time, will they in sector 10?",
+                "Will they arrive on time in sector 10?",
+                "They will arrive on time, don't they in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "They will arrive on time, won't they in sector 10?",
+            "hint": "A positive future statement with 'will' takes 'won't they?'. (Sector 10 calibration)",
+            "explanation": "Will shifts to won't in the tag. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l113_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He would have helped us in sector 10.",
+            "sentence": "He would have helped us in sector 10.",
+            "options": [
+                "Would he have helped us in sector 10?",
+                "Would have he helped us in sector 10?",
+                "Could he have helped us in sector 10?",
+                "He would have helped us in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would he have helped us in sector 10?",
+            "hint": "Invert the first auxiliary 'would'. (Sector 10 calibration)",
+            "explanation": "Invert the primary modal. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l113_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He has been arrested in sector 10.",
+            "sentence": "He has been arrested in sector 10.",
+            "options": [
+                "Has he been arrested in sector 10?",
+                "Did he been arrested in sector 10?",
+                "Have he been arrested in sector 10?",
+                "He has been arrested in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Has he been arrested in sector 10?",
+            "hint": "Invert 'has'. (Sector 10 calibration)",
+            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l114_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She doesn't like coffee in sector 10.",
+            "sentence": "She doesn't like coffee in sector 10.",
+            "options": [
+                "She doesn't like coffee, does she in sector 10?",
+                "She doesn't like coffee, doesn't she in sector 10?",
+                "Does she like coffee in sector 10?",
+                "She doesn't like coffee, is she in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "She doesn't like coffee, does she in sector 10?",
+            "hint": "A negative present statement with 'doesn't' takes 'does she?'. (Sector 10 calibration)",
+            "explanation": "Doesn't shifts to does in the tag. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l114_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You must have seen the sign in sector 10.",
+            "sentence": "You must have seen the sign in sector 10.",
+            "options": [
+                "Must you have seen the sign in sector 10?",
+                "Must have you seen the sign in sector 10?",
+                "Did you have seen the sign in sector 10?",
+                "You must have seen the sign in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Must you have seen the sign in sector 10?",
+            "hint": "Invert 'must'. (Sector 10 calibration)",
+            "explanation": "Invert the primary modal. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l114_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She was being interviewed in sector 10.",
+            "sentence": "She was being interviewed in sector 10.",
+            "options": [
+                "Was she being interviewed in sector 10?",
+                "Did she being interviewed in sector 10?",
+                "Was she interviewing in sector 10?",
+                "She was being interviewed in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Was she being interviewed in sector 10?",
+            "hint": "Invert 'was'. (Sector 10 calibration)",
+            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l115_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You can drive a shuttle in sector 10.",
+            "sentence": "You can drive a shuttle in sector 10.",
+            "options": [
+                "You can drive a shuttle, can't you in sector 10?",
+                "You can drive a shuttle, can you in sector 10?",
+                "Can you drive a shuttle in sector 10?",
+                "You can drive a shuttle, don't you in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "You can drive a shuttle, can't you in sector 10?",
+            "hint": "Positive 'can' takes negative 'can't you?'. (Sector 10 calibration)",
+            "explanation": "Can shifts to can't in the tag. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l115_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We might have missed them in sector 10.",
+            "sentence": "We might have missed them in sector 10.",
+            "options": [
+                "Might we have missed them in sector 10?",
+                "Might have we missed them in sector 10?",
+                "Did we might have missed them in sector 10?",
+                "We might have missed them in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Might we have missed them in sector 10?",
+            "hint": "Invert 'might'. (Sector 10 calibration)",
+            "explanation": "Invert the primary modal. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l115_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We have been invited in sector 10.",
+            "sentence": "We have been invited in sector 10.",
+            "options": [
+                "Have we been invited in sector 10?",
+                "Has we been invited in sector 10?",
+                "Do we been invited in sector 10?",
+                "We have been invited in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Have we been invited in sector 10?",
+            "hint": "Invert 'have'. (Sector 10 calibration)",
+            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l116_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He didn't finish the task in sector 10.",
+            "sentence": "He didn't finish the task in sector 10.",
+            "options": [
+                "He didn't finish the task, did he in sector 10?",
+                "He didn't finish the task, didn't he in sector 10?",
+                "Did he finish the task in sector 10?",
+                "He didn't finish the task, was he in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "He didn't finish the task, did he in sector 10?",
+            "hint": "Negative past 'didn't' takes positive 'did he?'. (Sector 10 calibration)",
+            "explanation": "Didn't shifts to did in the tag. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l116_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She ought to have apologized in sector 10.",
+            "sentence": "She ought to have apologized in sector 10.",
+            "options": [
+                "Ought she to have apologized in sector 10?",
+                "Ought to she have apologized in sector 10?",
+                "Should she to have apologized in sector 10?",
+                "She ought to have apologized in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Ought she to have apologized in sector 10?",
+            "hint": "Invert 'ought' with the subject. (Sector 10 calibration)",
+            "explanation": "Invert the first element of 'ought to'. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l116_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "The temple is being restored in sector 10.",
+            "sentence": "The temple is being restored in sector 10.",
+            "options": [
+                "Is the temple being restored in sector 10?",
+                "Does the temple being restored in sector 10?",
+                "Is the temple restoring in sector 10?",
+                "The temple is being restored in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Is the temple being restored in sector 10?",
+            "hint": "Invert 'is'. (Sector 10 calibration)",
+            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l117_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They are ready in sector 10.",
+            "sentence": "They are ready in sector 10.",
+            "options": [
+                "They are ready, aren't they in sector 10?",
+                "They are ready, are they in sector 10?",
+                "Are they ready in sector 10?",
+                "They are ready, don't they in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "They are ready, aren't they in sector 10?",
+            "hint": "Positive 'are' takes negative 'aren't they?'. (Sector 10 calibration)",
+            "explanation": "Are shifts to aren't in the tag. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l117_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They can't have forgotten in sector 10.",
+            "sentence": "They can't have forgotten in sector 10.",
+            "options": [
+                "Can they have forgotten in sector 10?",
+                "Can't they have forgotten in sector 10?",
+                "Have they can't forgotten in sector 10?",
+                "They can't have forgotten in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Can they have forgotten in sector 10?",
+            "hint": "Invert modal 'can' (or negative 'can't'). (Sector 10 calibration)",
+            "explanation": "Invert the modal auxiliary. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l117_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "They had been warned in sector 10.",
+            "sentence": "They had been warned in sector 10.",
+            "options": [
+                "Had they been warned in sector 10?",
+                "Did they had been warned in sector 10?",
+                "Have they been warned in sector 10?",
+                "They had been warned in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Had they been warned in sector 10?",
+            "hint": "Invert 'had'. (Sector 10 calibration)",
+            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l118_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She has been working hard in sector 10.",
+            "sentence": "She has been working hard in sector 10.",
+            "options": [
+                "She has been working hard, hasn't she in sector 10?",
+                "She has been working hard, has she in sector 10?",
+                "Has she been working hard in sector 10?",
+                "She has been working hard, doesn't she in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "She has been working hard, hasn't she in sector 10?",
+            "hint": "Use the first auxiliary 'has' in the tag: 'hasn't she?'. (Sector 10 calibration)",
+            "explanation": "Has shifts to hasn't in the tag. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l118_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You shouldn't have done that in sector 10.",
+            "sentence": "You shouldn't have done that in sector 10.",
+            "options": [
+                "Should you have done that in sector 10?",
+                "Shouldn't you have done that in sector 10?",
+                "Did you shouldn't have done that in sector 10?",
+                "You shouldn't have done that in sector 10?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Shouldn't you have done that in sector 10?",
+            "hint": "Keep the negative force or invert to negative 'Shouldn't you have done that?'. (Sector 10 calibration)",
+            "explanation": "Negative inversion is correct. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l118_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "She will be promoted in sector 10.",
+            "sentence": "She will be promoted in sector 10.",
+            "options": [
+                "Will she be promoted in sector 10?",
+                "Does she will be promoted in sector 10?",
+                "Will she promoting in sector 10?",
+                "She will be promoted in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Will she be promoted in sector 10?",
+            "hint": "Invert 'will'. (Sector 10 calibration)",
+            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l119_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You wouldn't do that in sector 10.",
+            "sentence": "You wouldn't do that in sector 10.",
+            "options": [
+                "You wouldn't do that, would you in sector 10?",
+                "You wouldn't do that, wouldn't you in sector 10?",
+                "Would you do that in sector 10?",
+                "You wouldn't do that, did you in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "You wouldn't do that, would you in sector 10?",
+            "hint": "Negative 'wouldn't' takes positive 'would you?'. (Sector 10 calibration)",
+            "explanation": "Wouldn't shifts to would in the tag. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l119_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He wouldn't have agreed in sector 10.",
+            "sentence": "He wouldn't have agreed in sector 10.",
+            "options": [
+                "Would he have agreed in sector 10?",
+                "Wouldn't he have agreed in sector 10?",
+                "Did he wouldn't have agreed in sector 10?",
+                "He wouldn't have agreed in sector 10?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Wouldn't he have agreed in sector 10?",
+            "hint": "Keep the negative force for inverted negative modal. (Sector 10 calibration)",
+            "explanation": "Wouldn't he have agreed is correct. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l119_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "He should be informed in sector 10.",
+            "sentence": "He should be informed in sector 10.",
+            "options": [
+                "Should he be informed in sector 10?",
+                "Do he should be informed in sector 10?",
+                "Should he informing in sector 10?",
+                "He should be informed in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Should he be informed in sector 10?",
+            "hint": "Invert 'should'. (Sector 10 calibration)",
+            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l120_q1",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We should go now in sector 10.",
+            "sentence": "We should go now in sector 10.",
+            "options": [
+                "We should go now, shouldn't we in sector 10?",
+                "We should go now, should we in sector 10?",
+                "Should we go now in sector 10?",
+                "We should go now, don't we in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "We should go now, shouldn't we in sector 10?",
+            "hint": "Positive 'should' takes negative 'shouldn't we?'. (Sector 10 calibration)",
+            "explanation": "Should shifts to shouldn't in the tag. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l120_q2",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "We couldn't have known in sector 10.",
+            "sentence": "We couldn't have known in sector 10.",
+            "options": [
+                "Could we have known in sector 10?",
+                "Couldn't we have known in sector 10?",
+                "Did we couldn't have known in sector 10?",
+                "We couldn't have known in sector 10?"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Couldn't we have known in sector 10?",
+            "hint": "Negative modal inversion. (Sector 10 calibration)",
+            "explanation": "Couldn't we have known is correct. [Verified in sector 10]."
+        },
+        {
+            "id": "qf_l120_q3",
+            "instruction": "CRANK THE INQUIRY",
+            "difficulty": 3,
+            "subtype": "questionFormatter",
+            "interactionType": "Crank Logic",
+            "question": "You would be surprised in sector 10.",
+            "sentence": "You would be surprised in sector 10.",
+            "options": [
+                "Would you be surprised in sector 10?",
+                "Do you would be surprised in sector 10?",
+                "Would you surprising in sector 10?",
+                "You would be surprised in sector 10?"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Would you be surprised in sector 10?",
+            "hint": "Invert 'would'. (Sector 10 calibration)",
+            "explanation": "Invert primary auxiliary. [Verified in sector 10]."
+        }
+    ]
 }

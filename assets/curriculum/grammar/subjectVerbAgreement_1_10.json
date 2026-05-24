@@ -1,487 +1,487 @@
 {
-  "gameType": "subjectVerbAgreement",
-  "batchIndex": 1,
-  "levels": "1-10",
-  "quests": [
-    {
-      "id": "sva_l1_q1",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The star ___ brightly tonight.",
-      "options": [
-        "shines",
-        "shine"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "shines",
-      "hint": "Singular subject 'star' takes a singular verb.",
-      "explanation": "'shines' is correct for third-person singular."
-    },
-    {
-      "id": "sva_l1_q2",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The stars ___ brightly tonight.",
-      "options": [
-        "shine",
-        "shines"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "shine",
-      "hint": "Plural subject 'stars' takes a plural verb.",
-      "explanation": "'shine' is correct for plural subjects."
-    },
-    {
-      "id": "sva_l1_q3",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Both the captain and the pilot ___ the chart.",
-      "options": [
-        "study",
-        "studies"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "study",
-      "hint": "'Both...and' always creates a plural subject.",
-      "explanation": "Plural subject requires the base verb 'study'."
-    },
-    {
-      "id": "sva_l2_q1",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "A scout ship ___ entering orbit.",
-      "options": [
-        "is",
-        "are"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "is",
-      "hint": "Singular subject 'ship' requires 'is'.",
-      "explanation": "'is' aligns with the singular subject."
-    },
-    {
-      "id": "sva_l2_q2",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Scout ships ___ entering orbit.",
-      "options": [
-        "are",
-        "is"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "are",
-      "hint": "Plural subject 'ships' requires 'are'.",
-      "explanation": "'are' matches the plural subject."
-    },
-    {
-      "id": "sva_l2_q3",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Neither the sensor nor the battery ___ functional.",
-      "options": [
-        "is",
-        "are"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "is",
-      "hint": "With 'neither...nor', singular subjects take a singular verb.",
-      "explanation": "'is' agrees with the closer singular noun."
-    },
-    {
-      "id": "sva_l3_q1",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The scientist ___ the telemetry daily.",
-      "options": [
-        "verifies",
-        "verify"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "verifies",
-      "hint": "A singular person 'scientist' requires a verb with '-s'.",
-      "explanation": "'verifies' is the singular verb."
-    },
-    {
-      "id": "sva_l3_q2",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The scientists ___ the telemetry daily.",
-      "options": [
-        "verify",
-        "verifies"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "verify",
-      "hint": "Plural 'scientists' takes a base verb.",
-      "explanation": "'verify' is the plural verb."
-    },
-    {
-      "id": "sva_l3_q3",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The crew, along with the droids, ___ arrived.",
-      "options": [
-        "has",
-        "have"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "has",
-      "hint": "'along with' is parenthetical; subject is 'crew' (singular collective).",
-      "explanation": "'has' agrees with the singular main subject."
-    },
-    {
-      "id": "sva_l4_q1",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Our thruster ___ an inspection.",
-      "options": [
-        "needs",
-        "need"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "needs",
-      "hint": "'thruster' is singular.",
-      "explanation": "'needs' is third-person singular."
-    },
-    {
-      "id": "sva_l4_q2",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Our thrusters ___ an inspection.",
-      "options": [
-        "need",
-        "needs"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "need",
-      "hint": "'thrusters' is plural.",
-      "explanation": "'need' is correct."
-    },
-    {
-      "id": "sva_l4_q3",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Each of the new cadets ___ a tablet.",
-      "options": [
-        "receives",
-        "receive"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "receives",
-      "hint": "'Each' is always singular.",
-      "explanation": "'receives' is third-person singular."
-    },
-    {
-      "id": "sva_l5_q1",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The portal ___ a massive amount of power.",
-      "options": [
-        "consumes",
-        "consume"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "consumes",
-      "hint": "'portal' is singular.",
-      "explanation": "'consumes' agrees with a singular subject."
-    },
-    {
-      "id": "sva_l5_q2",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The portals ___ a massive amount of power.",
-      "options": [
-        "consume",
-        "consumes"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "consume",
-      "hint": "'portals' is plural.",
-      "explanation": "'consume' agrees with plural."
-    },
-    {
-      "id": "sva_l5_q3",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "One of the reactors ___ offline.",
-      "options": [
-        "is",
-        "are"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "is",
-      "hint": "The subject is 'One', not 'reactors'.",
-      "explanation": "'is' agrees with 'One'."
-    },
-    {
-      "id": "sva_l6_q1",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "A foreign transmission ___ detected.",
-      "options": [
-        "has been",
-        "have been"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "has been",
-      "hint": "'transmission' is singular.",
-      "explanation": "'has been' is the singular present perfect helper."
-    },
-    {
-      "id": "sva_l6_q2",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Foreign transmissions ___ detected.",
-      "options": [
-        "have been",
-        "has been"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "have been",
-      "hint": "'transmissions' is plural.",
-      "explanation": "'have been' is correct."
-    },
-    {
-      "id": "sva_l6_q3",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "A number of anomalies ___ detected.",
-      "options": [
-        "were",
-        "was"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "were",
-      "hint": "'A number of' is a plural quantifier.",
-      "explanation": "'were' matches plural count."
-    },
-    {
-      "id": "sva_l7_q1",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The command droid ___ instructions.",
-      "options": [
-        "demands",
-        "demand"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "demands",
-      "hint": "'droid' is singular.",
-      "explanation": "'demands' agrees with third-person singular."
-    },
-    {
-      "id": "sva_l7_q2",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The command droids ___ instructions.",
-      "options": [
-        "demand",
-        "demands"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "demand",
-      "hint": "'droids' is plural.",
-      "explanation": "'demand' agrees with plural."
-    },
-    {
-      "id": "sva_l7_q3",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The number of anomalies ___ increasing.",
-      "options": [
-        "is",
-        "are"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "is",
-      "hint": "'The number of' is a singular quantifier.",
-      "explanation": "'is' is correct."
-    },
-    {
-      "id": "sva_l8_q1",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Your custom avatar ___ ready.",
-      "options": [
-        "is",
-        "are"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "is",
-      "hint": "'avatar' is singular.",
-      "explanation": "'is' matches singular subjects."
-    },
-    {
-      "id": "sva_l8_q2",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Your custom avatars ___ ready.",
-      "options": [
-        "are",
-        "is"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "are",
-      "hint": "'avatars' is plural.",
-      "explanation": "'are' is correct."
-    },
-    {
-      "id": "sva_l8_q3",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Everything in the vaults ___ secure.",
-      "options": [
-        "is",
-        "are"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "is",
-      "hint": "'Everything' is an indefinite singular pronoun.",
-      "explanation": "'is' is correct."
-    },
-    {
-      "id": "sva_l9_q1",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The warp gate ___ every ten cycles.",
-      "options": [
-        "activates",
-        "activate"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "activates",
-      "hint": "'gate' is singular.",
-      "explanation": "'activates' is singular."
-    },
-    {
-      "id": "sva_l9_q2",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "The warp gates ___ every ten cycles.",
-      "options": [
-        "activate",
-        "activates"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "activate",
-      "hint": "'gates' is plural.",
-      "explanation": "'activate' is correct."
-    },
-    {
-      "id": "sva_l9_q3",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Either the coordinates or the map ___ incorrect.",
-      "options": [
-        "is",
-        "are"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "is",
-      "hint": "With 'either...or', verb agrees with the nearest noun ('map' is singular).",
-      "explanation": "'is' agrees with singular 'map'."
-    },
-    {
-      "id": "sva_l10_q1",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "A solar flare ___ the shields.",
-      "options": [
-        "disrupts",
-        "disrupt"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "disrupts",
-      "hint": "'flare' is singular.",
-      "explanation": "'disrupts' is singular."
-    },
-    {
-      "id": "sva_l10_q2",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "Solar flares ___ the shields.",
-      "options": [
-        "disrupt",
-        "disrupts"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "disrupt",
-      "hint": "'flares' is plural.",
-      "explanation": "'disrupt' is correct."
-    },
-    {
-      "id": "sva_l10_q3",
-      "instruction": "SYNC THE AGREEMENT",
-      "difficulty": 1,
-      "subtype": "subjectVerbAgreement",
-      "interactionType": "Marriage Ring",
-      "question": "A fleet of ships ___ approaching.",
-      "options": [
-        "is",
-        "are"
-      ],
-      "correctAnswerIndex": 0,
-      "correctAnswer": "is",
-      "hint": "Subject is 'fleet' (singular), not 'ships'.",
-      "explanation": "'is' agrees with the singular 'fleet'."
-    }
-  ]
+    "gameType": "subjectVerbAgreement",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "id": "sva_l1_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The star ___ brightly tonight.",
+            "options": [
+                "shines",
+                "shine"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "shines",
+            "hint": "Singular subject 'star' takes a singular verb.",
+            "explanation": "'shines' is correct for third-person singular."
+        },
+        {
+            "id": "sva_l1_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The stars ___ brightly tonight.",
+            "options": [
+                "shine",
+                "shines"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "shine",
+            "hint": "Plural subject 'stars' takes a plural verb.",
+            "explanation": "'shine' is correct for plural subjects."
+        },
+        {
+            "id": "sva_l1_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Both the captain and the pilot ___ the chart.",
+            "options": [
+                "study",
+                "studies"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "study",
+            "hint": "'Both...and' always creates a plural subject.",
+            "explanation": "Plural subject requires the base verb 'study'."
+        },
+        {
+            "id": "sva_l2_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "A scout ship ___ entering orbit.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "Singular subject 'ship' requires 'is'.",
+            "explanation": "'is' aligns with the singular subject."
+        },
+        {
+            "id": "sva_l2_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Scout ships ___ entering orbit.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "hint": "Plural subject 'ships' requires 'are'.",
+            "explanation": "'are' matches the plural subject."
+        },
+        {
+            "id": "sva_l2_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Neither the sensor nor the battery ___ functional.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "With 'neither...nor', singular subjects take a singular verb.",
+            "explanation": "'is' agrees with the closer singular noun."
+        },
+        {
+            "id": "sva_l3_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The scientist ___ the telemetry daily.",
+            "options": [
+                "verifies",
+                "verify"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "verifies",
+            "hint": "A singular person 'scientist' requires a verb with '-s'.",
+            "explanation": "'verifies' is the singular verb."
+        },
+        {
+            "id": "sva_l3_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The scientists ___ the telemetry daily.",
+            "options": [
+                "verify",
+                "verifies"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "verify",
+            "hint": "Plural 'scientists' takes a base verb.",
+            "explanation": "'verify' is the plural verb."
+        },
+        {
+            "id": "sva_l3_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The crew, along with the droids, ___ arrived.",
+            "options": [
+                "has",
+                "have"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "has",
+            "hint": "'along with' is parenthetical; subject is 'crew' (singular collective).",
+            "explanation": "'has' agrees with the singular main subject."
+        },
+        {
+            "id": "sva_l4_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Our thruster ___ an inspection.",
+            "options": [
+                "needs",
+                "need"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "needs",
+            "hint": "'thruster' is singular.",
+            "explanation": "'needs' is third-person singular."
+        },
+        {
+            "id": "sva_l4_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Our thrusters ___ an inspection.",
+            "options": [
+                "need",
+                "needs"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "need",
+            "hint": "'thrusters' is plural.",
+            "explanation": "'need' is correct."
+        },
+        {
+            "id": "sva_l4_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Each of the new cadets ___ a tablet.",
+            "options": [
+                "receives",
+                "receive"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "receives",
+            "hint": "'Each' is always singular.",
+            "explanation": "'receives' is third-person singular."
+        },
+        {
+            "id": "sva_l5_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The portal ___ a massive amount of power.",
+            "options": [
+                "consumes",
+                "consume"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "consumes",
+            "hint": "'portal' is singular.",
+            "explanation": "'consumes' agrees with a singular subject."
+        },
+        {
+            "id": "sva_l5_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The portals ___ a massive amount of power.",
+            "options": [
+                "consume",
+                "consumes"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "consume",
+            "hint": "'portals' is plural.",
+            "explanation": "'consume' agrees with plural."
+        },
+        {
+            "id": "sva_l5_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "One of the reactors ___ offline.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "The subject is 'One', not 'reactors'.",
+            "explanation": "'is' agrees with 'One'."
+        },
+        {
+            "id": "sva_l6_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "A foreign transmission ___ detected.",
+            "options": [
+                "has been",
+                "have been"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "has been",
+            "hint": "'transmission' is singular.",
+            "explanation": "'has been' is the singular present perfect helper."
+        },
+        {
+            "id": "sva_l6_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Foreign transmissions ___ detected.",
+            "options": [
+                "have been",
+                "has been"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "have been",
+            "hint": "'transmissions' is plural.",
+            "explanation": "'have been' is correct."
+        },
+        {
+            "id": "sva_l6_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "A number of anomalies ___ detected.",
+            "options": [
+                "were",
+                "was"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "were",
+            "hint": "'A number of' is a plural quantifier.",
+            "explanation": "'were' matches plural count."
+        },
+        {
+            "id": "sva_l7_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The command droid ___ instructions.",
+            "options": [
+                "demands",
+                "demand"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "demands",
+            "hint": "'droid' is singular.",
+            "explanation": "'demands' agrees with third-person singular."
+        },
+        {
+            "id": "sva_l7_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The command droids ___ instructions.",
+            "options": [
+                "demand",
+                "demands"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "demand",
+            "hint": "'droids' is plural.",
+            "explanation": "'demand' agrees with plural."
+        },
+        {
+            "id": "sva_l7_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The number of anomalies ___ increasing.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "'The number of' is a singular quantifier.",
+            "explanation": "'is' is correct."
+        },
+        {
+            "id": "sva_l8_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Your custom avatar ___ ready.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "'avatar' is singular.",
+            "explanation": "'is' matches singular subjects."
+        },
+        {
+            "id": "sva_l8_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Your custom avatars ___ ready.",
+            "options": [
+                "are",
+                "is"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "are",
+            "hint": "'avatars' is plural.",
+            "explanation": "'are' is correct."
+        },
+        {
+            "id": "sva_l8_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Everything in the vaults ___ secure.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "'Everything' is an indefinite singular pronoun.",
+            "explanation": "'is' is correct."
+        },
+        {
+            "id": "sva_l9_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The warp gate ___ every ten cycles.",
+            "options": [
+                "activates",
+                "activate"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "activates",
+            "hint": "'gate' is singular.",
+            "explanation": "'activates' is singular."
+        },
+        {
+            "id": "sva_l9_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "The warp gates ___ every ten cycles.",
+            "options": [
+                "activate",
+                "activates"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "activate",
+            "hint": "'gates' is plural.",
+            "explanation": "'activate' is correct."
+        },
+        {
+            "id": "sva_l9_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Either the coordinates or the map ___ incorrect.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "With 'either...or', verb agrees with the nearest noun ('map' is singular).",
+            "explanation": "'is' agrees with singular 'map'."
+        },
+        {
+            "id": "sva_l10_q1",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "A solar flare ___ the shields.",
+            "options": [
+                "disrupts",
+                "disrupt"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "disrupts",
+            "hint": "'flare' is singular.",
+            "explanation": "'disrupts' is singular."
+        },
+        {
+            "id": "sva_l10_q2",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "Solar flares ___ the shields.",
+            "options": [
+                "disrupt",
+                "disrupts"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "disrupt",
+            "hint": "'flares' is plural.",
+            "explanation": "'disrupt' is correct."
+        },
+        {
+            "id": "sva_l10_q3",
+            "instruction": "SYNC THE AGREEMENT",
+            "difficulty": 1,
+            "subtype": "subjectVerbAgreement",
+            "interactionType": "Marriage Ring",
+            "question": "A fleet of ships ___ approaching.",
+            "options": [
+                "is",
+                "are"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "is",
+            "hint": "Subject is 'fleet' (singular), not 'ships'.",
+            "explanation": "'is' agrees with the singular 'fleet'."
+        }
+    ]
 }
