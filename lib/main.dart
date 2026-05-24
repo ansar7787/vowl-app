@@ -128,11 +128,10 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addObserver(this);
 
     // Global Asset Pre-caching for "Elite Performance"
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -154,12 +153,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         context,
       );
     });
-  }
-
-  @override
-  void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
   }
 
   @override
@@ -202,60 +195,54 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                 ),
               );
 
-              return BlocBuilder<AuthBloc, AuthState>(
-                buildWhen: (prev, curr) => prev.user?.id != curr.user?.id,
-                builder: (context, authState) {
-                  return MaterialApp.router(
-                    key: ValueKey(authState.user?.id ?? 'guest'),
-                    title: 'Vowl',
-                    debugShowCheckedModeBanner: false,
-                    theme: AppTheme.lightTheme,
-                    darkTheme: state.isMidnight
-                        ? AppTheme.midnightTheme
-                        : AppTheme.darkTheme,
-                    themeMode: state.themeMode,
-                    routerConfig: AppRouter.router,
-                    builder: (context, child) {
-                      return GlobalErrorBoundary(
-                        child: ConnectivityWrapper(
-                          child: GlobalAudioFeedbackListener(
-                            child: MultiBlocListener(
-                              listeners: [
-                                BlocListener<AuthBloc, AuthState>(
-                                  listenWhen: (prev, curr) =>
-                                      prev.status != AuthStatus.authenticated &&
-                                      curr.status == AuthStatus.authenticated,
-                                  listener: (context, authState) {
-                                    context.read<ProgressionBloc>().add(
-                                      const ProgressionCheckDailyStreakRequested(),
-                                    );
-                                  },
-                                ),
-                              ],
-                              child: BlocBuilder<AuthBloc, AuthState>(
-                                builder: (context, authState) {
-                                  final isLoggingOut =
-                                      authState.status == AuthStatus.loggingOut;
-
-                                  return LoadingOverlay(
-                                    isLoading: isLoggingOut,
-                                    message: 'Securing your quest data',
-                                    child: Container(
-                                      color: state.isMidnight
-                                          ? Colors.black
-                                          : (isActuallyDark
-                                                ? const Color(0xFF0F172A)
-                                                : const Color(0xFFF8FAFC)),
-                                      child: child!,
-                                    ),
-                                  );
-                                },
-                              ),
+              return MaterialApp.router(
+                title: 'Vowl',
+                debugShowCheckedModeBanner: false,
+                theme: AppTheme.lightTheme,
+                darkTheme: state.isMidnight
+                    ? AppTheme.midnightTheme
+                    : AppTheme.darkTheme,
+                themeMode: state.themeMode,
+                routerConfig: AppRouter.router,
+                builder: (context, child) {
+                  return GlobalErrorBoundary(
+                    child: ConnectivityWrapper(
+                      child: GlobalAudioFeedbackListener(
+                        child: MultiBlocListener(
+                          listeners: [
+                            BlocListener<AuthBloc, AuthState>(
+                              listenWhen: (prev, curr) =>
+                                  prev.status != AuthStatus.authenticated &&
+                                  curr.status == AuthStatus.authenticated,
+                              listener: (context, authState) {
+                                context.read<ProgressionBloc>().add(
+                                  const ProgressionCheckDailyStreakRequested(),
+                                );
+                              },
                             ),
+                          ],
+                          child: BlocBuilder<AuthBloc, AuthState>(
+                            builder: (context, authState) {
+                              final isLoggingOut =
+                                  authState.status == AuthStatus.loggingOut;
+
+                              return LoadingOverlay(
+                                isLoading: isLoggingOut,
+                                message: 'Securing your quest data',
+                                child: Container(
+                                  color: state.isMidnight
+                                      ? Colors.black
+                                      : (isActuallyDark
+                                            ? const Color(0xFF0F172A)
+                                            : const Color(0xFFF8FAFC)),
+                                  child: child!,
+                                ),
+                              );
+                            },
                           ),
                         ),
-                      );
-                    },
+                      ),
+                    ),
                   );
                 },
               );
