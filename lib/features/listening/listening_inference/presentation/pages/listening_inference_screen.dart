@@ -10,7 +10,9 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_instruction.dart';
+import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_radar_core.dart';
+import 'package:vowl/features/listening/listening_inference/presentation/widgets/listening_inference_grid.dart';
 
 class ListeningInferenceScreen extends StatefulWidget {
   final int level;
@@ -70,19 +72,26 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> wit
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
       listener: (context, state) {
         if (state is ListeningLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -107,20 +116,35 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> wit
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: 10.h),
-              _buildInstruction(theme.primaryColor),
-                    SizedBox(height: 10.h),
-                    _buildRadarCore(quest.textToSpeak ?? "", theme.primaryColor),
-                    SizedBox(height: 30.h),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16.w),
-                      child: Text(
-                        quest.question?.toUpperCase() ?? "INFER THE ACTOR",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.2),
-                      ),
-                    ),
-                    SizedBox(height: 30.h),
-                    _buildInferenceGrid(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+              ListeningInferenceInstruction(color: theme.primaryColor),
+              SizedBox(height: 10.h),
+              ListeningInferenceRadarCore(
+                onTap: () {
+                  _soundService.playTts(quest.textToSpeak ?? "");
+                  _hapticService.selection();
+                },
+                pulseController: _pulseController,
+                color: theme.primaryColor,
+              ),
+              SizedBox(height: 30.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: Text(
+                  quest.question?.toUpperCase() ?? "INFER THE ACTOR",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.2),
+                ),
+              ),
+              SizedBox(height: 30.h),
+              ListeningInferenceGrid(
+                options: quest.options ?? [],
+                correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                color: theme.primaryColor,
+                isAnswered: _isAnswered,
+                isCorrectState: _isCorrect,
+                selectedIndex: _selectedIndex,
+                onSubmitAnswer: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
+              ),
               SizedBox(height: 30.h),
             ],
           ),
@@ -129,133 +153,5 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> wit
     );
   }
 
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.radar_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("PROBE SUBTEXT TO INFER INTENT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildRadarCore(String tts, Color color) {
-    return ScaleButton(
-      onTap: () {
-        _soundService.playTts(tts);
-        _hapticService.selection();
-      },
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Pulse Rings
-          ...List.generate(3, (i) {
-            return AnimatedBuilder(
-              animation: _pulseController,
-              builder: (context, child) {
-                double progress = (_pulseController.value + (i * 0.33)) % 1.0;
-                return Container(
-                  width: (100 + (progress * 150)).r,
-                  height: (100 + (progress * 150)).r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: color.withValues(alpha: (1.0 - progress) * 0.3), width: 2.r),
-                  ),
-                );
-              },
-            );
-          }),
-          
-          // Central Core
-          Container(
-            padding: EdgeInsets.all(32.r),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle, 
-              gradient: RadialGradient(colors: [color, color.withValues(alpha: 0.7)]),
-              boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 30, spreadRadius: 5)],
-            ),
-            child: Icon(Icons.psychology_rounded, size: 64.r, color: Colors.white),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildInferenceGrid(List<String> options, int correct, Color color, bool isDark) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      child: Wrap(
-        spacing: 16.w,
-        runSpacing: 16.h,
-        alignment: WrapAlignment.center,
-        children: List.generate(options.length, (index) {
-          bool isSelected = _selectedIndex == index;
-          bool isChoiceCorrect = _isAnswered && index == correct && _isCorrect == true;
-          bool isChoiceWrong = _isAnswered && isSelected && _isCorrect == false;
-          
-          return ScaleButton(
-            onTap: () => _submitAnswer(index, correct),
-            child: Container(
-              width: 135.w,
-              padding: EdgeInsets.all(12.r),
-              decoration: BoxDecoration(
-                color: isChoiceCorrect 
-                    ? Colors.greenAccent 
-                    : (isChoiceWrong 
-                        ? Colors.redAccent 
-                        : (isSelected ? color : const Color(0xFF1E1E24))),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: isChoiceCorrect || isChoiceWrong || isSelected 
-                      ? Colors.white.withValues(alpha: 0.5) 
-                      : color.withValues(alpha: 0.2),
-                  width: 1.5,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.4),
-                    offset: Offset(0, 4.h),
-                    blurRadius: 8,
-                  ),
-                  if (isSelected || isChoiceCorrect || isChoiceWrong)
-                    BoxShadow(
-                      color: (isChoiceCorrect ? Colors.greenAccent : (isChoiceWrong ? Colors.redAccent : color)).withValues(alpha: 0.3),
-                      blurRadius: 15,
-                      spreadRadius: 2,
-                    ),
-                ],
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    isChoiceCorrect ? Icons.verified_user_rounded : (isChoiceWrong ? Icons.report_problem_rounded : Icons.bubble_chart_rounded),
-                    color: Colors.white,
-                    size: 18.r
-                  ),
-                  SizedBox(height: 6.h),
-                  Text(
-                    options[index].toUpperCase(),
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.white,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        }),
-      ),
-    );
-  }
 }
 
