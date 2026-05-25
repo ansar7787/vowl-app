@@ -11,7 +11,10 @@ import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_instruction.dart';
+import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_oscilloscope.dart';
+import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_timeline.dart';
+import 'package:vowl/features/listening/audio_sentence_order/presentation/widgets/audio_sentence_order_segments.dart';
 
 class AudioSentenceOrderScreen extends StatefulWidget {
   final int level;
@@ -98,22 +101,27 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
       listener: (context, state) {
         if (state is ListeningLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _segments = List.from(state.currentQuest.shuffledSentences ?? []);
               _slots = List.generate(_segments.length, (_) => "");
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -151,11 +159,14 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
               : Column(
                   children: [
                     const Spacer(flex: 1),
-                    _buildInstruction(theme.primaryColor),
+                    AudioSentenceOrderInstruction(color: theme.primaryColor),
                     const Spacer(flex: 2),
-                    _buildOscilloscope(
-                      quest.textToSpeak ?? "",
-                      theme.primaryColor,
+                    AudioSentenceOrderOscilloscope(
+                      onTap: () {
+                        _soundService.playTts(quest.textToSpeak ?? "");
+                        _hapticService.selection();
+                      },
+                      color: theme.primaryColor,
                     ),
                     const Spacer(flex: 2),
                     Expanded(
@@ -163,7 +174,12 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                       child: SingleChildScrollView(
                         clipBehavior: Clip.none,
                         physics: const BouncingScrollPhysics(),
-                        child: _buildTimeline(theme.primaryColor, isDark),
+                        child: AudioSentenceOrderTimeline(
+                          slots: _slots,
+                          color: theme.primaryColor,
+                          onSnap: _onSnap,
+                          onUnsnap: _onUnsnap,
+                        ),
                       ),
                     ),
                     const Spacer(flex: 2),
@@ -172,7 +188,13 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
                       child: SingleChildScrollView(
                         clipBehavior: Clip.none,
                         physics: const BouncingScrollPhysics(),
-                        child: _buildSegmentsField(theme.primaryColor, isDark),
+                        child: AudioSentenceOrderSegments(
+                          segments: _segments,
+                          slots: _slots,
+                          color: theme.primaryColor,
+                          isAnswered: _isAnswered,
+                          onSnap: _onSnap,
+                        ),
                       ),
                     ),
                     const Spacer(flex: 2),
@@ -216,174 +238,4 @@ class _AudioSentenceOrderScreenState extends State<AudioSentenceOrderScreen> {
     );
   }
 
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.waves_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text(
-            "SNAP SEGMENTS TO TIMELINE",
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildOscilloscope(String tts, Color color) {
-    return ScaleButton(
-      onTap: () {
-        _soundService.playTts(tts);
-        _hapticService.selection();
-      },
-      child: Container(
-        height: 100.h,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            ...List.generate(
-              20,
-              (i) =>
-                  Container(
-                        width: 4.w,
-                        height: 20.h + (i % 5 * 10).h,
-                        margin: EdgeInsets.symmetric(horizontal: 2.w),
-                        decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.4),
-                          borderRadius: BorderRadius.circular(2.r),
-                        ),
-                      )
-                      .animate(onPlay: (c) => c.repeat(reverse: true))
-                      .scaleY(
-                        begin: 0.5,
-                        end: 1.5,
-                        duration: 500.ms,
-                        delay: (i * 50).ms,
-                      ),
-            ),
-            Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 48.r),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildTimeline(Color color, bool isDark) {
-    return Wrap(
-      spacing: 8.w,
-      runSpacing: 8.h,
-      alignment: WrapAlignment.center,
-      children: List.generate(
-        _slots.length,
-        (index) => DragTarget<String>(
-          onAcceptWithDetails: (details) => _onSnap(details.data, index),
-          builder: (context, candidateData, rejectedData) => GestureDetector(
-            onTap: () => _onUnsnap(index),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: _slots[index].isEmpty
-                    ? color.withValues(alpha: 0.05)
-                    : color.withValues(alpha: 0.2),
-                borderRadius: BorderRadius.circular(12.r),
-                border: Border.all(
-                  color: _slots[index].isEmpty
-                      ? color.withValues(alpha: 0.2)
-                      : color,
-                ),
-              ),
-              child: Text(
-                _slots[index].isEmpty ? "???" : _slots[index],
-                style: GoogleFonts.shareTechMono(
-                  fontSize: 14.sp,
-                  fontWeight: FontWeight.bold,
-                  color: _slots[index].isEmpty
-                      ? color.withValues(alpha: 0.4)
-                      : color,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSegmentsField(Color color, bool isDark) {
-    return Wrap(
-      spacing: 12.w,
-      runSpacing: 12.h,
-      alignment: WrapAlignment.center,
-      children: _segments
-          .map(
-            (s) => Draggable<String>(
-              data: s,
-              feedback: Material(
-                color: Colors.transparent,
-                child: _buildSegmentChip(s, color, true),
-              ),
-              childWhenDragging: Opacity(
-                opacity: 0.3,
-                child: _buildSegmentChip(s, color, false),
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  if (_isAnswered) return;
-                  int firstEmptyIndex = _slots.indexOf("");
-                  if (firstEmptyIndex != -1) {
-                    _onSnap(s, firstEmptyIndex);
-                  }
-                },
-                child: _buildSegmentChip(s, color, false),
-              ),
-            ),
-          )
-          .toList(),
-    );
-  }
-
-  Widget _buildSegmentChip(String text, Color color, bool isFeedback) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-      decoration: BoxDecoration(
-        color: isFeedback ? color : color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: color.withValues(alpha: 0.4)),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: isFeedback ? 0.4 : 0.1),
-            blurRadius: isFeedback ? 10 : 5,
-            offset: Offset(0, isFeedback ? 4 : 2),
-          ),
-        ],
-      ),
-      child: Text(
-        text,
-        style: GoogleFonts.outfit(
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w600,
-          color: isFeedback ? Colors.white : color,
-        ),
-      ),
-    );
-  }
 }
