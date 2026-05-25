@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -12,6 +11,11 @@ import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.d
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
+import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_instruction.dart';
+import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_passage.dart';
+import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_terminals.dart';
+import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_result.dart';
+import 'package:vowl/features/reading/reading_conclusion/presentation/widgets/reading_conclusion_bridge_painter.dart';
 
 class ReadingConclusionScreen extends StatefulWidget {
   final int level;
@@ -107,8 +111,11 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
     return BlocConsumer<ReadingBloc, ReadingState>(
       listener: (context, state) {
         if (state is ReadingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -116,6 +123,11 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
               _selectedIndex = null;
               _dragStart = null;
               _dragCurrent = null;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -144,17 +156,36 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
                   child: Column(
                     children: [
                       SizedBox(height: 16.h),
-                      _buildInstruction(theme.primaryColor),
+                      ReadingConclusionInstruction(primaryColor: theme.primaryColor),
                       SizedBox(height: 32.h),
                       
-                      _buildCentralPassage(quest.passage ?? "", theme.primaryColor, isDark),
+                      ReadingConclusionPassage(
+                        passage: quest.passage ?? "",
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                        onDragStart: _onBridgeStart,
+                        onDragUpdate: _onBridgeUpdate,
+                      ),
                       SizedBox(height: 32.h),
                       
-                      _buildConclusionTerminals(quest.options ?? [], quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                      ReadingConclusionTerminals(
+                        options: quest.options ?? [],
+                        correct: quest.correctAnswer ?? "",
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                        selectedIndex: _selectedIndex,
+                        isAnswered: _isAnswered,
+                        onBridgeEnd: (idx, opt) => _onBridgeEnd(idx, opt, quest.correctAnswer ?? ""),
+                        onSubmitTap: (idx, opt) => _submitAnswer(idx, opt, quest.correctAnswer ?? ""),
+                      ),
                       
                       if (_isAnswered) ...[
                         SizedBox(height: 30.h),
-                        _buildCorrectResult(quest, theme.primaryColor, isDark),
+                        ReadingConclusionResult(
+                          quest: quest,
+                          isCorrect: _isCorrect == true,
+                          isDark: isDark,
+                        ),
                       ],
                       SizedBox(height: 60.h),
                     ],
@@ -174,164 +205,4 @@ class _ReadingConclusionScreenState extends State<ReadingConclusionScreen> {
       },
     );
   }
-
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.hub_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("BRIDGE THE PASSAGE TO THE CORRECT VERDICT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCentralPassage(String text, Color color, bool isDark) {
-    return GestureDetector(
-      onPanStart: (details) => _onBridgeStart(details.globalPosition),
-      onPanUpdate: (details) => _onBridgeUpdate(details.globalPosition),
-      child: Container(
-        padding: EdgeInsets.all(24.r),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: color, width: 2),
-          boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 30)
-          ],
-        ),
-        child: Column(
-          children: [
-            Icon(Icons.auto_awesome_motion_rounded, color: color, size: 32.r),
-            SizedBox(height: 16.h),
-            Text(
-              text, 
-              textAlign: TextAlign.center, 
-              style: GoogleFonts.fredoka(
-                fontSize: 15.sp, 
-                height: 1.4, 
-                color: isDark ? Colors.white70 : Colors.black87
-              )
-            ),
-          ],
-        ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: -4, end: 4, duration: 2.seconds),
-    );
-  }
-
-  Widget _buildConclusionTerminals(List<String> options, String correct, Color color, bool isDark) {
-    return Column(
-      children: List.generate(options.length, (index) => Padding(
-        padding: EdgeInsets.only(bottom: 12.h),
-        child: DragTarget<String>(
-          onAcceptWithDetails: (details) => _onBridgeEnd(index, options[index], correct),
-          builder: (context, candidateData, rejectedData) {
-            bool isSelected = _selectedIndex == index;
-            bool isCorrect = _isAnswered && options[index].trim().toLowerCase() == correct.trim().toLowerCase();
-            bool isWrong = _isAnswered && isSelected && !isCorrect;
-
-            return GestureDetector(
-              onTap: () => _submitAnswer(index, options[index], correct),
-              child: AnimatedContainer(
-                duration: 300.milliseconds,
-                width: double.infinity,
-                padding: EdgeInsets.all(18.r),
-                decoration: BoxDecoration(
-                  color: isCorrect 
-                      ? Colors.greenAccent.withValues(alpha: 0.25) 
-                      : (isWrong 
-                          ? Colors.redAccent.withValues(alpha: 0.25) 
-                          : (isSelected ? color.withValues(alpha: 0.15) : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.04)))),
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: isCorrect || isWrong || isSelected 
-                        ? (isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color)) 
-                        : (isDark ? Colors.white24 : Colors.black12), 
-                    width: 2
-                  ),
-                ),
-                child: Text(
-                  options[index].toUpperCase(), 
-                  textAlign: TextAlign.center, 
-                  style: GoogleFonts.shareTechMono(
-                    fontSize: 12.sp, 
-                    fontWeight: FontWeight.bold, 
-                    color: isDark ? Colors.white : Colors.black87
-                  )
-                ),
-              ),
-            );
-          },
-        ),
-      )),
-    );
-  }
-
-  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
-  }
-}
-
-class BridgePainter extends CustomPainter {
-  final Offset start;
-  final Offset end;
-  final Color color;
-  BridgePainter({required this.start, required this.end, required this.color});
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()..color = color..strokeWidth = 3..style = PaintingStyle.stroke;
-    final glow = Paint()..color = color.withValues(alpha: 0.35)..strokeWidth = 10..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
-    
-    final path = Path();
-    path.moveTo(start.dx, start.dy);
-    path.quadraticBezierTo((start.dx + end.dx) / 2, (start.dy + end.dy) / 2 + 50, end.dx, end.dy);
-    
-    canvas.drawPath(path, glow);
-    canvas.drawPath(path, paint);
-    
-    canvas.drawCircle(start, 6.r, Paint()..color = color);
-    canvas.drawCircle(end, 6.r, Paint()..color = color);
-  }
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
