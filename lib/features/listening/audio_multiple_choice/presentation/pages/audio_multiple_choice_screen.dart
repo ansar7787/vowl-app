@@ -1,8 +1,5 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -11,9 +8,9 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_instruction.dart';
+import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_question.dart';
+import 'package:vowl/features/listening/audio_multiple_choice/presentation/widgets/audio_multiple_choice_spinner.dart';
 
 class AudioMultipleChoiceScreen extends StatefulWidget {
   final int level;
@@ -80,14 +77,22 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     return BlocConsumer<ListeningBloc, ListeningState>(
       listener: (context, state) {
         if (state is ListeningLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
               _rotation = 0.0;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -111,13 +116,28 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
           child: quest == null ? const SizedBox() : Column(
             children: [
               const Spacer(flex: 1),
-              _buildInstruction(theme.primaryColor),
+              AudioMultipleChoiceInstruction(color: theme.primaryColor),
               const Spacer(flex: 2),
-              _buildQuestionDisplay(quest.question ?? "", theme.primaryColor, isDark),
+              AudioMultipleChoiceQuestion(text: quest.question ?? "", isDark: isDark),
               const Spacer(flex: 2),
               Expanded(
                 flex: 12,
-                child: _buildOrbitalSpinner(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, quest.textToSpeak ?? ""),
+                child: AudioMultipleChoiceSpinner(
+                  options: quest.options ?? [],
+                  correct: quest.correctAnswerIndex ?? 0,
+                  color: theme.primaryColor,
+                  tts: quest.textToSpeak ?? "",
+                  rotation: _rotation,
+                  selectedIndex: _selectedIndex,
+                  isAnswered: _isAnswered,
+                  isCorrectState: _isCorrect,
+                  onSpin: _onSpin,
+                  onSelectSatellite: (idx) => _submitAnswer(idx, quest.correctAnswerIndex ?? 0),
+                  onTapCore: () {
+                    _soundService.playTts(quest.textToSpeak ?? "");
+                    _hapticService.selection();
+                  },
+                ),
               ),
               const Spacer(flex: 1),
             ],
@@ -127,108 +147,5 @@ class _AudioMultipleChoiceScreenState extends State<AudioMultipleChoiceScreen> {
     );
   }
 
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.track_changes_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Flexible(
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text("SPIN SATELLITES TO LOCK IN CORRECT DATA", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildQuestionDisplay(String text, Color color, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(24.r), borderRadius: BorderRadius.circular(20.r),
-      child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w700, color: isDark ? Colors.white : Colors.black87)),
-    );
-  }
-
-  Widget _buildOrbitalSpinner(List<String> options, int correct, Color color, String tts) {
-    return GestureDetector(
-      onPanUpdate: (details) => _onSpin(details.delta.dx),
-      child: Container(
-        width: double.infinity,
-        color: Colors.transparent, // Ensures the entire area is draggable
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            // Orbital Ring
-            Container(
-              width: 300.r, height: 300.r,
-              decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: color.withValues(alpha: 0.1), width: 2)),
-            ),
-            
-            // Central Core
-            ScaleButton(
-              onTap: () {
-                _soundService.playTts(tts);
-                _hapticService.selection();
-              },
-              child: Container(
-                width: 100.r, height: 100.r,
-                decoration: BoxDecoration(shape: BoxShape.circle, color: color, boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 20)]),
-                child: Icon(Icons.graphic_eq_rounded, color: Colors.white, size: 50.r),
-              ),
-            ),
-            
-            // Satellite Options
-            ...List.generate(options.length, (index) {
-              double angle = (index * (2 * 3.14159 / options.length)) + _rotation;
-              double radius = 130.r;
-              return Align(
-                alignment: Alignment.center,
-                child: Transform.translate(
-                  offset: Offset(radius * math.cos(angle), radius * math.sin(angle)),
-                  child: _buildSatellite(index, options[index], correct, color),
-                ),
-              );
-            }),
-            
-            // Target Zone
-            Positioned(
-              top: 40.h,
-              child: Container(
-                width: 40.w, height: 10.h,
-                decoration: BoxDecoration(color: Colors.white24, borderRadius: BorderRadius.circular(5.r)),
-              ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 1.seconds),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSatellite(int index, String text, int correct, Color color) {
-    bool isSelected = _selectedIndex == index;
-    bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
-    bool isWrong = _isAnswered && isSelected && _isCorrect == false;
-    Color tileColor = isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : (isSelected ? Colors.white : color));
-
-    return ScaleButton(
-      onTap: () => _submitAnswer(index, correct),
-      child: Container(
-        width: 80.r, height: 80.r,
-        padding: EdgeInsets.all(8.r),
-        decoration: BoxDecoration(
-          color: tileColor.withValues(alpha: 0.2),
-          shape: BoxShape.circle,
-          border: Border.all(color: tileColor, width: 2),
-          boxShadow: isSelected ? [BoxShadow(color: tileColor.withValues(alpha: 0.5), blurRadius: 15)] : [],
-        ),
-        child: Center(child: Text(text, textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white))),
-      ),
-    );
-  }
 }
 
