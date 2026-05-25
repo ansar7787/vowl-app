@@ -10,8 +10,11 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
+import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_instruction.dart';
+import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_tube.dart';
+import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_option_rack.dart';
+import 'package:vowl/features/reading/paragraph_summary/presentation/widgets/paragraph_summary_result.dart';
 
 class ParagraphSummaryScreen extends StatefulWidget {
   final int level;
@@ -97,8 +100,11 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
     return BlocConsumer<ReadingBloc, ReadingState>(
       listener: (context, state) {
         if (state is ReadingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -106,6 +112,11 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
               _selectedOption = null;
               _isDistilled = false;
               _pinchWidth = 1.0;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -132,14 +143,21 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
               child: Column(
                 children: [
                   SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
+                  ParagraphSummaryInstruction(primaryColor: theme.primaryColor),
                   SizedBox(height: 24.h),
                   
                   // Distillation Squeeze Tube
                   GestureDetector(
                     onScaleUpdate: (details) => _onPinchUpdate(details.scale),
                     onScaleEnd: (details) => _onPinchEnd(),
-                    child: _buildDistillationTube(quest.passage ?? "", quest.keywords ?? [], theme.primaryColor, isDark),
+                    child: ParagraphSummaryTube(
+                      passage: quest.passage ?? "",
+                      keywords: quest.keywords ?? [],
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                      pinchWidth: _pinchWidth,
+                      isDistilled: _isDistilled,
+                    ),
                   ),
                   
                   SizedBox(height: 16.h),
@@ -151,18 +169,30 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                     style: GoogleFonts.shareTechMono(
                       color: _isDistilled ? Colors.greenAccent : theme.primaryColor.withValues(alpha: 0.6), 
                       fontSize: 11.sp, 
-                      letterSpacing: 2
-                    )
+                      letterSpacing: 2,
+                    ),
                   ),
                   
                   if (_isDistilled) ...[
                     SizedBox(height: 24.h),
-                    _buildOptionRack(quest.options ?? [], quest.correctAnswer ?? "", theme.primaryColor, isDark),
+                    ParagraphSummaryOptionRack(
+                      options: quest.options ?? [],
+                      correctAnswer: quest.correctAnswer ?? "",
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                      selectedOption: _selectedOption,
+                      isAnswered: _isAnswered,
+                      onTapOption: (opt) => _submitAnswer(opt, quest.correctAnswer ?? ""),
+                    ),
                   ],
                   
                   if (_isAnswered) ...[
                     SizedBox(height: 30.h),
-                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                    ParagraphSummaryResult(
+                      quest: quest,
+                      isCorrect: _isCorrect == true,
+                      isDark: isDark,
+                    ),
                   ],
                   SizedBox(height: 60.h),
                 ],
@@ -172,165 +202,5 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
         );
       },
     );
-  }
-
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.science_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("SQUEEZE TUBE TO DISTILL & SUMMARIZE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDistillationTube(String passage, List<String> keywords, Color color, bool isDark) {
-    return AnimatedContainer(
-      duration: 200.milliseconds,
-      width: 320.w * _pinchWidth,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r * _pinchWidth),
-        border: Border.all(color: color, width: 4),
-        boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 30, spreadRadius: 2),
-        ],
-      ),
-      child: AnimatedSwitcher(
-        duration: 400.milliseconds,
-        child: !_isDistilled
-            ? Text(
-                passage, 
-                key: const ValueKey("passage"),
-                textAlign: TextAlign.center, 
-                style: GoogleFonts.fredoka(
-                  fontSize: 15.sp, 
-                  height: 1.4,
-                  color: isDark ? Colors.white70 : Colors.black87
-                )
-              )
-            : Wrap(
-                key: const ValueKey("keywords"),
-                spacing: 10.w, runSpacing: 10.h,
-                alignment: WrapAlignment.center,
-                children: keywords.map((k) => Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.15), 
-                    borderRadius: BorderRadius.circular(20.r), 
-                    border: Border.all(color: color, width: 2)
-                  ),
-                  child: Text(
-                    k.toUpperCase(), 
-                    style: GoogleFonts.outfit(
-                      fontSize: 12.sp, 
-                      fontWeight: FontWeight.w900, 
-                      color: isDark ? Colors.white : color
-                    )
-                  ),
-                ).animate().scale(duration: 300.milliseconds)).toList(),
-              ),
-      ),
-    );
-  }
-
-  Widget _buildOptionRack(List<String> options, String correct, Color color, bool isDark) {
-    return Column(
-      children: options.map((opt) {
-        final bool isSelected = _selectedOption == opt;
-        
-        Color cardColor = isDark ? Colors.grey.shade900 : Colors.white;
-        Color borderColor = isDark ? Colors.white10 : Colors.grey.shade300;
-        
-        if (_isAnswered) {
-          if (opt.trim().toLowerCase() == correct.trim().toLowerCase()) {
-            cardColor = Colors.greenAccent.withValues(alpha: 0.15);
-            borderColor = Colors.greenAccent;
-          } else if (isSelected) {
-            cardColor = Colors.redAccent.withValues(alpha: 0.15);
-            borderColor = Colors.redAccent;
-          }
-        } else if (isSelected) {
-          borderColor = color;
-        }
-
-        return Padding(
-          padding: EdgeInsets.only(bottom: 12.h),
-          child: GestureDetector(
-            onTap: () => _submitAnswer(opt, correct),
-            child: Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(18.r),
-              decoration: BoxDecoration(
-                color: cardColor,
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: borderColor, width: 2),
-                boxShadow: [
-                  BoxShadow(
-                    color: isDark ? Colors.black45 : Colors.black12, 
-                    blurRadius: 6, 
-                    offset: const Offset(0, 2)
-                  )
-                ],
-              ),
-              child: Text(
-                opt, 
-                style: GoogleFonts.outfit(
-                  fontSize: 13.sp, 
-                  fontWeight: FontWeight.bold, 
-                  color: isDark ? Colors.white70 : Colors.black87
-                )
-              ),
-            ),
-          ),
-        );
-      }).toList(),
-    );
-  }
-
-  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }
