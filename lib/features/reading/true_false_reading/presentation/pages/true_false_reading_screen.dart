@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -10,9 +9,12 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
+import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_instruction.dart';
+import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_passage.dart';
+import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_statement.dart';
+import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_coin_zone.dart';
+import 'package:vowl/features/reading/true_false_reading/presentation/widgets/true_false_reading_result.dart';
 
 class TrueFalseReadingScreen extends StatefulWidget {
   final int level;
@@ -90,8 +92,11 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
     return BlocConsumer<ReadingBloc, ReadingState>(
       listener: (context, state) {
         if (state is ReadingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -99,6 +104,11 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
               _coinX = 0.0;
               _coinY = 0.0;
               _coinRotation = 0.0;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -125,16 +135,35 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
               child: Column(
                 children: [
                   SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
+                  TrueFalseReadingInstruction(primaryColor: theme.primaryColor),
                   SizedBox(height: 24.h),
-                  _buildPassageViewer(quest.passage ?? "", theme.primaryColor, isDark),
+                  TrueFalseReadingPassage(
+                    passage: quest.passage ?? "",
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                  ),
                   SizedBox(height: 32.h),
-                  _buildStatementBanner(quest.question ?? "", theme.primaryColor, isDark),
+                  TrueFalseReadingStatement(
+                    statement: quest.question ?? "",
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                  ),
                   SizedBox(height: 40.h),
-                  _buildCoinFlipZone(theme.primaryColor, isDark),
+                  TrueFalseReadingCoinZone(
+                    coinX: _coinX,
+                    coinY: _coinY,
+                    coinRotation: _coinRotation,
+                    onFlick: _onFlick,
+                    isDark: isDark,
+                    themeColor: theme.primaryColor,
+                  ),
                   if (_isAnswered) ...[
                     SizedBox(height: 30.h),
-                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                    TrueFalseReadingResult(
+                      quest: quest,
+                      isCorrect: _isCorrect == true,
+                      isDark: isDark,
+                    ),
                   ],
                   SizedBox(height: 60.h),
                 ],
@@ -144,157 +173,6 @@ class _TrueFalseReadingScreenState extends State<TrueFalseReadingScreen> {
         );
       },
     );
-  }
-
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.published_with_changes_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("FLICK THE TRUTH COIN TO VALIDATE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildPassageViewer(String passage, Color color, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(20.r), borderRadius: BorderRadius.circular(20.r),
-      color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-      child: Text(
-        passage, 
-        style: GoogleFonts.fredoka(
-          fontSize: 16.sp, 
-          height: 1.5, 
-          color: isDark ? Colors.white70 : Colors.black87
-        )
-      ),
-    );
-  }
-
-  Widget _buildStatementBanner(String statement, Color color, bool isDark) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.1 : 0.06), 
-        borderRadius: BorderRadius.circular(15.r), 
-        border: Border.all(color: color.withValues(alpha: 0.3))
-      ),
-      child: Text(
-        '"$statement"', 
-        textAlign: TextAlign.center, 
-        style: GoogleFonts.outfit(
-          fontSize: 18.sp, 
-          fontWeight: FontWeight.w800, 
-          color: isDark ? color : color.withValues(alpha: 0.95), 
-          fontStyle: FontStyle.italic
-        )
-      ),
-    );
-  }
-
-  Widget _buildCoinFlipZone(Color color, bool isDark) {
-    return SizedBox(
-      height: 250.h, width: double.infinity,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Slots
-          Positioned(left: 20.w, child: _buildSlot("FALSE", Colors.redAccent, isDark)),
-          Positioned(right: 20.w, child: _buildSlot("TRUE", Colors.greenAccent, isDark)),
-          
-          // The Coin
-          Transform.translate(
-            offset: Offset(_coinX, _coinY),
-            child: Transform.rotate(
-              angle: _coinRotation,
-              child: GestureDetector(
-                onPanUpdate: (details) => _onFlick(details.delta),
-                child: Container(
-                  width: 100.r, height: 100.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(
-                      colors: [Colors.amberAccent, Colors.orangeAccent],
-                      begin: Alignment.topLeft, end: Alignment.bottomRight,
-                    ),
-                    boxShadow: [BoxShadow(color: isDark ? Colors.black45 : Colors.black12, blurRadius: 15, offset: const Offset(0, 5))],
-                    border: Border.all(color: Colors.white30, width: 2),
-                  ),
-                  child: Center(child: Icon(Icons.stars_rounded, color: Colors.white, size: 48.r)),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSlot(String label, Color color, bool isDark) {
-    bool isTargeted = (_coinX > 0 && label == "TRUE") || (_coinX < 0 && label == "FALSE");
-    return Opacity(
-      opacity: isTargeted ? 1.0 : (isDark ? 0.3 : 0.15),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: isDark ? 0.1 : 0.05),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: isTargeted ? color : color.withValues(alpha: isDark ? 0.4 : 0.2), 
-            width: 2
-          ),
-        ),
-        child: RotatedBox(
-          quarterTurns: 3,
-          child: Text(label, style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 2)),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }
 
