@@ -11,9 +11,10 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
+import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_target_badge.dart';
+import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_terminal.dart';
+import 'package:vowl/features/reading/skimming_scanning/presentation/widgets/skimming_scanning_result.dart';
 
 class SkimmingScanningScreen extends StatefulWidget {
   final int level;
@@ -48,20 +49,16 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
   }
 
   void _startAutoScroll() {
-    Future.delayed(800.milliseconds, () {
+    Future.delayed(const Duration(milliseconds: 800), () {
       if (!mounted || _isAnswered) return;
       if (_scrollController.hasClients) {
         _scrollController.animateTo(
           _scrollController.position.maxScrollExtent,
-          duration: 12.seconds,
+          duration: const Duration(seconds: 12),
           curve: Curves.linear,
         );
       }
     });
-  }
-
-  String _cleanWord(String word) {
-    return word.replaceAll(RegExp(r'[.,\/#!$%\^&\*;:{}=\-_`~()\[\]]'), '').trim();
   }
 
   void _submitCorrectAnswer() {
@@ -93,8 +90,11 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
     return BlocConsumer<ReadingBloc, ReadingState>(
       listener: (context, state) {
         if (state is ReadingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -104,6 +104,11 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
               _scrollController.jumpTo(0);
             }
             _startAutoScroll();
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
+            });
           }
           _lastLives = state.livesRemaining;
         }
@@ -129,14 +134,30 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
               child: Column(
                 children: [
                   SizedBox(height: 16.h),
-                  _buildTargetBadge(quest.targetItem ?? "", theme.primaryColor),
+                  SkimmingScanningTargetBadge(
+                    item: quest.targetItem ?? "",
+                    color: theme.primaryColor,
+                  ),
                   SizedBox(height: 24.h),
                   
                   // Scanning Terminal Box
                   SizedBox(
                     height: 260.h,
                     width: double.infinity,
-                    child: _buildScanningTerminal(quest.passage ?? "", quest.correctAnswer ?? "", theme.primaryColor),
+                    child: SkimmingScanningTerminal(
+                      text: quest.passage ?? "",
+                      correct: quest.correctAnswer ?? "",
+                      color: theme.primaryColor,
+                      scrollController: _scrollController,
+                      isAnswered: _isAnswered,
+                      onTapWord: (clean) {
+                        if (clean.toLowerCase() == (quest.correctAnswer ?? "").toLowerCase()) {
+                          _submitCorrectAnswer();
+                        } else {
+                          _submitIncorrectAnswer();
+                        }
+                      },
+                    ),
                   ),
                   
                   SizedBox(height: 20.h),
@@ -146,13 +167,17 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                     style: GoogleFonts.shareTechMono(
                       color: _isAnswered ? Colors.greenAccent : theme.primaryColor, 
                       fontSize: 12.sp, 
-                      letterSpacing: 2
-                    )
+                      letterSpacing: 2,
+                    ),
                   ),
                   
                   if (_isAnswered) ...[
                     SizedBox(height: 24.h),
-                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                    SkimmingScanningResult(
+                      quest: quest,
+                      isCorrect: _isCorrect == true,
+                      isDark: isDark,
+                    ),
                   ],
                   SizedBox(height: 50.h),
                 ],
@@ -162,170 +187,5 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
         );
       },
     );
-  }
-
-  Widget _buildTargetBadge(String item, Color color) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color, width: 2),
-        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 20)],
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.radar_rounded, color: color, size: 24.r).animate(onPlay: (c) => c.repeat()).shimmer(),
-          SizedBox(width: 12.w),
-          Text("ACQUIRE: ${item.toUpperCase()}", style: GoogleFonts.shareTechMono(fontSize: 16.sp, fontWeight: FontWeight.w900, color: color)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildScanningTerminal(String text, String correct, Color color) {
-    final List<String> words = text.split(RegExp(r'\s+'));
-    
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: Colors.white10, width: 4),
-        boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 30, spreadRadius: 2)
-        ],
-      ),
-      child: Stack(
-        children: [
-          // Scrolling Content
-          ListView.builder(
-            controller: _scrollController,
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-            itemCount: (words.length / 4).ceil(),
-            itemBuilder: (context, index) {
-              int start = index * 4;
-              int end = (start + 4).clamp(0, words.length);
-              final List<String> rowWords = words.sublist(start, end);
-              
-              return Padding(
-                padding: EdgeInsets.symmetric(vertical: 8.h),
-                child: Wrap(
-                  spacing: 8.w, runSpacing: 8.h,
-                  children: rowWords.map((word) {
-                    final clean = _cleanWord(word);
-                    final isCorrectTarget = clean.toLowerCase() == correct.toLowerCase();
-                    
-                    final bool isTapped = _isAnswered && isCorrectTarget;
-                    
-                    return GestureDetector(
-                      onTap: () {
-                        if (isCorrectTarget) {
-                          _submitCorrectAnswer();
-                        } else {
-                          _submitIncorrectAnswer();
-                        }
-                      },
-                      child: AnimatedContainer(
-                        duration: 300.milliseconds,
-                        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                        decoration: BoxDecoration(
-                          color: isTapped 
-                              ? Colors.greenAccent.withValues(alpha: 0.25) 
-                              : Colors.transparent,
-                          borderRadius: BorderRadius.circular(8.r),
-                          border: Border.all(
-                            color: isTapped 
-                                ? Colors.greenAccent 
-                                : Colors.transparent,
-                            width: 1.5
-                          ),
-                        ),
-                        child: Text(
-                          word,
-                          style: GoogleFonts.shareTechMono(
-                            fontSize: 18.sp,
-                            color: isTapped 
-                                ? Colors.greenAccent 
-                                : Colors.greenAccent.withValues(alpha: 0.8),
-                            fontWeight: isTapped ? FontWeight.bold : FontWeight.normal,
-                            letterSpacing: 1,
-                          ),
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                ),
-              );
-            },
-          ),
-          
-          // CRT Overlay
-          IgnorePointer(
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.r),
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter, end: Alignment.bottomCenter,
-                  colors: [Colors.black.withValues(alpha: 0.3), Colors.transparent, Colors.black.withValues(alpha: 0.3)],
-                  stops: const [0, 0.5, 1],
-                ),
-              ),
-            ),
-          ),
-          
-          // Scanline
-          const Positioned.fill(child: _ScanlineEffect()),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
-  }
-}
-
-class _ScanlineEffect extends StatelessWidget {
-  const _ScanlineEffect();
-  @override
-  Widget build(BuildContext context) {
-    return const TechPatternOverlay(opacity: 0.05);
   }
 }
