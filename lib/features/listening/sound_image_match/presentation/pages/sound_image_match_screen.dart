@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -10,9 +8,9 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_instruction.dart';
+import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_emitter.dart';
+import 'package:vowl/features/listening/sound_image_match/presentation/widgets/sound_image_match_scanner_field.dart';
 
 class SoundImageMatchScreen extends StatefulWidget {
   final int level;
@@ -72,20 +70,27 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
     final theme = LevelThemeHelper.getTheme('listening', level: widget.level);
 
     return BlocConsumer<ListeningBloc, ListeningState>(
       listener: (context, state) {
         if (state is ListeningLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
               _lensPosition = const Offset(150, 150);
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -109,13 +114,29 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
           child: quest == null ? const SizedBox() : Column(
             children: [
               const Spacer(flex: 1),
-              _buildInstruction(theme.primaryColor),
+              SoundImageMatchInstruction(color: theme.primaryColor),
               const Spacer(flex: 2),
-              _buildEmitter(quest.textToSpeak ?? "", theme.primaryColor),
+              SoundImageMatchEmitter(
+                onTap: () {
+                  _soundService.playTts(quest.textToSpeak ?? "");
+                  _hapticService.selection();
+                },
+                color: theme.primaryColor,
+              ),
               const Spacer(flex: 2),
               Expanded(
                 flex: 12,
-                child: _buildScannerField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+                child: SoundImageMatchScannerField(
+                  options: quest.options ?? [],
+                  correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                  color: theme.primaryColor,
+                  isAnswered: _isAnswered,
+                  isCorrectState: _isCorrect,
+                  selectedIndex: _selectedIndex,
+                  lensPosition: _lensPosition,
+                  onScan: _onScan,
+                  onSelect: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
+                ),
               ),
               const Spacer(flex: 1),
             ],
@@ -125,130 +146,5 @@ class _SoundImageMatchScreenState extends State<SoundImageMatchScreen> {
     );
   }
 
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.biotech_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Flexible(
-            child: Text("DRAG LENS TO SCAN • DOUBLE-TAP TO SELECT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildEmitter(String tts, Color color) {
-    return ScaleButton(
-      onTap: () {
-        _soundService.playTts(tts);
-        _hapticService.selection();
-      },
-      child: Container(
-        padding: EdgeInsets.all(20.r),
-        decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.1), border: Border.all(color: color.withValues(alpha: 0.3))),
-        child: Icon(Icons.graphic_eq_rounded, color: color, size: 48.r),
-      ),
-    );
-  }
-
-  Widget _buildScannerField(List<String> options, int correct, Color color, bool isDark) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return Stack(
-          children: [
-            // The Options Grid
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, crossAxisSpacing: 16.w, mainAxisSpacing: 16.h, childAspectRatio: constraints.maxWidth / (constraints.maxHeight / 2 * 1.8)
-              ),
-              itemCount: options.length,
-              itemBuilder: (context, index) => _buildEncryptedTile(index, options[index], correct, color, isDark, constraints),
-            ),
-          
-          // The Scanning Lens
-          Positioned(
-            left: _lensPosition.dx - 50.r,
-            top: _lensPosition.dy - 50.r,
-            child: GestureDetector(
-              onPanUpdate: (details) => _onScan(_lensPosition + details.delta),
-              child: Container(
-                width: 100.r, height: 100.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Colors.cyanAccent, width: 3),
-                  boxShadow: [BoxShadow(color: Colors.cyanAccent.withValues(alpha: 0.3), blurRadius: 15, spreadRadius: 5)],
-                ),
-                child: Center(
-                  child: Icon(Icons.filter_center_focus_rounded, color: Colors.cyanAccent, size: 24.r)
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .scale(begin: const Offset(0.8, 0.8), end: const Offset(1.2, 1.2), duration: 800.ms),
-                ),
-              ),
-            ),
-          ),
-        ],
-      );
-    },
-  );
-}
-
-  Widget _buildEncryptedTile(int index, String text, int correct, Color color, bool isDark, BoxConstraints fieldConstraints) {
-    double tileWidth = fieldConstraints.maxWidth / 2;
-    double tileHeight = tileWidth / (fieldConstraints.maxWidth / (fieldConstraints.maxHeight / 2 * 1.8)); // derived from childAspectRatio
-    
-    double centerX = (index % 2 == 0) ? tileWidth / 2 : tileWidth * 1.5;
-    double centerY = (index < 2) ? tileHeight / 2 : tileHeight * 1.5;
-    
-    double dist = (Offset(_lensPosition.dx, _lensPosition.dy) - Offset(centerX, centerY)).distance;
-    bool isRevealed = dist < 60.r;
-    bool isSelected = _isAnswered && _selectedIndex == index;
-    bool showResult = isSelected;
-    Color tileColor = showResult ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent) : Colors.white.withValues(alpha: 0.05);
-
-    return GestureDetector(
-      onDoubleTap: () => _submitAnswer(index, correct),
-      child: GlassTile(
-        padding: EdgeInsets.all(12.r), borderRadius: BorderRadius.circular(20.r),
-        color: tileColor,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            if (isRevealed || _isAnswered)
-              FittedBox(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(_getCategoryIcon(text), color: isSelected ? Colors.white : color, size: 32.r),
-                    SizedBox(height: 8.h),
-                    Text(text.toUpperCase(), style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, color: isSelected ? Colors.white : color)),
-                  ],
-                ),
-              ),
-            if (!isRevealed && !_isAnswered)
-              Icon(Icons.security_rounded, color: Colors.white24, size: 32.r),
-          ],
-        ),
-      ),
-    );
-  }
-
-  IconData _getCategoryIcon(String category) {
-    switch (category.toLowerCase()) {
-      case 'fruits': return Icons.apple_rounded;
-      case 'tools': return Icons.build_rounded;
-      case 'vehicles': return Icons.directions_car_rounded;
-      case 'professions': return Icons.work_rounded;
-      case 'animals': return Icons.pets_rounded;
-      case 'places': return Icons.location_on_rounded;
-      default: return Icons.category_rounded;
-    }
-  }
 }
 
