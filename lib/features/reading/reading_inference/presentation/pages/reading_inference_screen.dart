@@ -10,10 +10,11 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
+import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_instruction.dart';
+import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_foggy_mirror.dart';
+import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_option.dart';
+import 'package:vowl/features/reading/reading_inference/presentation/widgets/reading_inference_result.dart';
 
 class ReadingInferenceScreen extends StatefulWidget {
   final int level;
@@ -85,8 +86,11 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
     return BlocConsumer<ReadingBloc, ReadingState>(
       listener: (context, state) {
         if (state is ReadingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
@@ -94,6 +98,11 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
               _selectedIndex = null;
               _rubPoints.clear();
               _clarity = 0.0;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -120,10 +129,18 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
               child: Column(
                 children: [
                   SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
+                  ReadingInferenceInstruction(primaryColor: theme.primaryColor),
                   SizedBox(height: 32.h),
                   
-                  _buildFoggyMirror(quest.passage ?? "", theme.primaryColor, isDark),
+                  ReadingInferenceFoggyMirror(
+                    passage: quest.passage ?? "",
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                    isAnswered: _isAnswered,
+                    rubPoints: _rubPoints,
+                    clarity: _clarity,
+                    onRub: _onRub,
+                  ),
                   SizedBox(height: 32.h),
                   
                   Text(
@@ -133,16 +150,33 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
                       fontSize: 14.sp, 
                       fontWeight: FontWeight.w900, 
                       color: theme.primaryColor, 
-                      letterSpacing: 1.5
-                    )
+                      letterSpacing: 1.5,
+                    ),
                   ),
                   SizedBox(height: 24.h),
                   
-                  ...List.generate(quest.options?.length ?? 0, (index) => _buildInferenceOption(index, quest.options![index], quest.correctAnswer ?? "", theme.primaryColor, isDark)),
+                  ...List.generate(
+                    quest.options?.length ?? 0,
+                    (index) => ReadingInferenceOption(
+                      index: index,
+                      text: quest.options![index],
+                      correct: quest.correctAnswer ?? "",
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                      selectedIndex: _selectedIndex,
+                      isAnswered: _isAnswered,
+                      clarity: _clarity,
+                      onTap: () => _onChoiceTap(index, quest.options![index], quest.correctAnswer ?? ""),
+                    ),
+                  ),
                   
                   if (_isAnswered) ...[
                     SizedBox(height: 30.h),
-                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                    ReadingInferenceResult(
+                      quest: quest,
+                      isCorrect: _isCorrect == true,
+                      isDark: isDark,
+                    ),
                   ],
                   SizedBox(height: 60.h),
                 ],
@@ -153,175 +187,4 @@ class _ReadingInferenceScreenState extends State<ReadingInferenceScreen> {
       },
     );
   }
-
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.auto_awesome_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("RUB THE MIRROR TO REVEAL SCIENTIFIC CLUES", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildFoggyMirror(String text, Color color, bool isDark) {
-    return GestureDetector(
-      onPanUpdate: (details) => _onRub(details.localPosition),
-      child: Stack(
-        children: [
-          // Clear Passage Text
-          GlassTile(
-            padding: EdgeInsets.all(26.r), borderRadius: BorderRadius.circular(24.r),
-            color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-            child: Text(
-              text, 
-              textAlign: TextAlign.center, 
-              style: GoogleFonts.fredoka(
-                fontSize: 16.sp, 
-                height: 1.4,
-                color: isDark ? Colors.white : Colors.black87, 
-                fontWeight: FontWeight.w500
-              )
-            ),
-          ),
-          
-          // Fog Cover Layer
-          if (!_isAnswered)
-            Positioned.fill(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(24.r),
-                child: CustomPaint(
-                  painter: FogPainter(
-                    points: _rubPoints, 
-                    clarity: _clarity, 
-                    color: isDark ? Colors.grey.shade800 : Colors.blueGrey.shade100
-                  ),
-                ),
-              ),
-            ),
-          
-          // Glowing clues overlay
-          if (_clarity > 0.5 && !_isAnswered)
-            Positioned.fill(
-              child: Center(
-                child: Icon(
-                  Icons.lightbulb_outline_rounded, 
-                  color: Colors.amber.withValues(alpha: 0.35), 
-                  size: 80.r
-                ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildInferenceOption(int index, String text, String correct, Color color, bool isDark) {
-    bool isSelected = _selectedIndex == index;
-    bool isCorrect = _isAnswered && text.trim().toLowerCase() == correct.trim().toLowerCase();
-    bool isWrong = _isAnswered && isSelected && !isCorrect;
-    bool isDisabled = _clarity < 0.3 && !_isAnswered;
-
-    return Padding(
-      padding: EdgeInsets.only(bottom: 12.h),
-      child: ScaleButton(
-        onTap: () => _onChoiceTap(index, text, correct),
-        child: AnimatedOpacity(
-          duration: 300.milliseconds,
-          opacity: isDisabled ? 0.35 : 1.0,
-          child: GlassTile(
-            padding: EdgeInsets.all(20.r), borderRadius: BorderRadius.circular(20.r),
-            color: isCorrect 
-                ? Colors.greenAccent.withValues(alpha: 0.25) 
-                : (isWrong 
-                    ? Colors.redAccent.withValues(alpha: 0.25) 
-                    : (isSelected ? color.withValues(alpha: 0.15) : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.04)))),
-            child: Center(
-              child: Text(
-                text, 
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 14.sp, 
-                  fontWeight: FontWeight.bold, 
-                  color: isDark ? Colors.white : Colors.black87
-                )
-              )
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
-  }
-}
-
-class FogPainter extends CustomPainter {
-  final List<Offset> points;
-  final double clarity;
-  final Color color;
-  FogPainter({required this.points, required this.clarity, required this.color});
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color.withValues(alpha: 0.95 - (clarity * 0.4))
-      ..style = PaintingStyle.fill;
-    canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
-    
-    final clearPaint = Paint()
-      ..blendMode = BlendMode.clear
-      ..strokeWidth = 35.r
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
-      
-    for (int i = 0; i < points.length - 1; i++) {
-      canvas.drawLine(points[i], points[i + 1], clearPaint);
-    }
-  }
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
