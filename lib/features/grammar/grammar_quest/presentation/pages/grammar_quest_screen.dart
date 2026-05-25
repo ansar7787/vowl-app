@@ -12,8 +12,11 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_instruction.dart';
+import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_sentence.dart';
+import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_sentinel_needle_painter.dart';
+import 'package:vowl/features/grammar/grammar_quest/presentation/widgets/grammar_quest_compass_ticks_painter.dart';
 
 class GrammarQuestScreen extends StatefulWidget {
   final int level;
@@ -135,15 +138,21 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
     return BlocConsumer<GrammarBloc, GrammarState>(
       listener: (context, state) {
         if (state is GrammarLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex ||
-              livesChanged ||
-              (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _needleRotation = 0.0;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -185,12 +194,11 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
               : Column(
                   children: [
                     SizedBox(height: 20.h),
-                    _buildInstruction(theme.primaryColor),
+                    GrammarQuestInstruction(primaryColor: theme.primaryColor),
                     SizedBox(height: 32.h),
-                    _buildSentenceDisplay(
-                      quest.sentence ?? quest.question ?? "",
-                      theme.primaryColor,
-                      isDark,
+                    GrammarQuestSentence(
+                      text: quest.sentence ?? quest.question ?? "",
+                      isDark: isDark,
                     ),
                     SizedBox(height: 60.h),
                     _buildQuestCompass(
@@ -207,48 +215,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
     );
   }
 
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.explore_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text(
-            "STEER TO THE CORRECT RULE",
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
-  Widget _buildSentenceDisplay(String text, Color primaryColor, bool isDark) {
-    return GlassTile(
-      padding: EdgeInsets.all(24.r),
-      borderRadius: BorderRadius.circular(28.r),
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: GoogleFonts.fredoka(
-          fontSize: 20.sp,
-          color: isDark ? Colors.white : Colors.black87,
-          height: 1.4,
-        ),
-      ),
-    );
-  }
 
   Widget _buildQuestCompass(
     List<String> options,
@@ -293,7 +260,7 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
                   ),
                 ),
                 child: CustomPaint(
-                  painter: _CompassTicksPainter(
+                  painter: CompassTicksPainter(
                     primaryColor.withValues(alpha: 0.2),
                   ),
                 ),
@@ -561,146 +528,8 @@ class _GrammarQuestScreenState extends State<GrammarQuestScreen>
     return RepaintBoundary(
       child: CustomPaint(
         size: Size(32.r, height),
-        painter: _SentinelNeedlePainter(color: color, isGlass: isGlass),
+        painter: SentinelNeedlePainter(color: color, isGlass: isGlass),
       ),
     );
-  }
-}
-
-class _SentinelNeedlePainter extends CustomPainter {
-  final Color color;
-  final bool isGlass;
-
-  _SentinelNeedlePainter({required this.color, required this.isGlass});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final centerX = size.width / 2;
-
-    // 1. Shadow/Outer Frame Glow
-    if (isGlass) {
-      final glowPaint = Paint()
-        ..color = color.withValues(alpha: 0.15)
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);
-      canvas.drawPath(_getOuterFramePath(size), glowPaint);
-    }
-
-    // 2. Main Segmented Frame
-    final framePaint = Paint()
-      ..shader = LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [
-          color.withValues(alpha: isGlass ? 0.8 : 0.4),
-          color.withValues(alpha: isGlass ? 0.3 : 0.1),
-          color.withValues(alpha: isGlass ? 0.6 : 0.2),
-        ],
-        stops: const [0.0, 0.5, 1.0],
-      ).createShader(Rect.fromLTWH(0, 0, size.width, size.height))
-      ..style = PaintingStyle.fill;
-
-    canvas.drawPath(_getOuterFramePath(size), framePaint);
-
-    // 3. Crystalline Energy Core (The "Sentinel" Beam)
-    if (isGlass) {
-      final corePaint = Paint()
-        ..shader = LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Colors.white,
-            color.withValues(alpha: 0.9),
-            color.withValues(alpha: 0.0),
-          ],
-          stops: const [0.0, 0.3, 1.0],
-        ).createShader(Rect.fromLTWH(centerX - 5.r, 0, 10.r, size.height * 0.8))
-        ..style = PaintingStyle.fill;
-
-      final corePath = Path()
-        ..moveTo(centerX, size.height * 0.05)
-        ..lineTo(centerX + 3.r, size.height * 0.4)
-        ..lineTo(centerX + 1.r, size.height * 0.75)
-        ..lineTo(centerX - 1.r, size.height * 0.75)
-        ..lineTo(centerX - 3.r, size.height * 0.4)
-        ..close();
-
-      canvas.drawPath(corePath, corePaint);
-    }
-
-    // 4. Refractive Edge Highlights
-    final edgePaint = Paint()
-      ..color = Colors.white.withValues(alpha: isGlass ? 0.4 : 0.1)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 0.8;
-    canvas.drawPath(_getOuterFramePath(size), edgePaint);
-
-    // 5. Precision Micro-Ticks (The "Instrument" Look)
-    if (isGlass) {
-      final tickPaint = Paint()
-        ..color = Colors.white.withValues(alpha: 0.3)
-        ..strokeWidth = 1;
-
-      for (int i = 1; i <= 5; i++) {
-        final y = size.height * (0.3 + (i * 0.08));
-        final tickWidth = (i == 3) ? 6.r : 3.r;
-        canvas.drawLine(
-          Offset(centerX - tickWidth, y),
-          Offset(centerX + tickWidth, y),
-          tickPaint,
-        );
-      }
-    }
-  }
-
-  Path _getOuterFramePath(Size size) {
-    final centerX = size.width / 2;
-    return Path()
-      ..moveTo(centerX, 0) // Tip
-      ..lineTo(size.width, size.height * 0.35) // Flare
-      ..lineTo(centerX + 6.r, size.height * 0.45) // Neck In
-      ..lineTo(centerX + 8.r, size.height * 0.8) // Base Flare
-      ..lineTo(centerX - 8.r, size.height * 0.8) // Base Flare
-      ..lineTo(centerX - 6.r, size.height * 0.45) // Neck In
-      ..lineTo(0, size.height * 0.35) // Flare
-      ..close();
-  }
-
-  @override
-  bool shouldRepaint(covariant _SentinelNeedlePainter oldDelegate) {
-    return oldDelegate.color != color || oldDelegate.isGlass != isGlass;
-  }
-}
-
-class _CompassTicksPainter extends CustomPainter {
-  final Color color;
-  _CompassTicksPainter(this.color);
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = 1.r
-      ..style = PaintingStyle.stroke;
-    final center = Offset(size.width / 2, size.height / 2);
-    final radius = size.width / 2;
-
-    for (var i = 0; i < 36; i++) {
-      final angle = (i * 10) * (math.pi / 180);
-      final isMajor = i % 9 == 0;
-      final start = Offset(
-        center.dx + (radius - (isMajor ? 15.r : 8.r)) * math.cos(angle),
-        center.dy + (radius - (isMajor ? 15.r : 8.r)) * math.sin(angle),
-      );
-      final end = Offset(
-        center.dx + radius * math.cos(angle),
-        center.dy + radius * math.sin(angle),
-      );
-      canvas.drawLine(start, end, paint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant _CompassTicksPainter oldDelegate) {
-    return oldDelegate.color != color;
   }
 }
