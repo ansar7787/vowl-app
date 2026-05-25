@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -10,8 +9,9 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/listening/presentation/widgets/listening_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'dart:math';
+import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_instruction.dart';
+import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_sonar_field.dart';
+import 'package:vowl/features/listening/ambient_id/presentation/widgets/ambient_id_emitter_node.dart';
 
 class AmbientIdScreen extends StatefulWidget {
   final int level;
@@ -76,13 +76,21 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> with SingleTickerProv
     return BlocConsumer<ListeningBloc, ListeningState>(
       listener: (context, state) {
         if (state is ListeningLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -107,11 +115,26 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> with SingleTickerProv
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: 10.h),
-              _buildInstruction(theme.primaryColor),
+              AmbientIdInstruction(color: theme.primaryColor),
               SizedBox(height: 20.h),
-              _buildSonarField(quest.options ?? [], quest.correctAnswerIndex ?? 0, theme.primaryColor),
+              AmbientIdSonarField(
+                options: quest.options ?? [],
+                correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+                color: theme.primaryColor,
+                radarController: _radarController,
+                isAnswered: _isAnswered,
+                isCorrectState: _isCorrect,
+                selectedIndex: _selectedIndex,
+                onSubmitAnswer: (index) => _submitAnswer(index, quest.correctAnswerIndex ?? 0),
+              ),
               SizedBox(height: 20.h),
-              _buildEmitterNode(quest.textToSpeak ?? "", theme.primaryColor),
+              AmbientIdEmitterNode(
+                onTap: () {
+                  _soundService.playTts(quest.textToSpeak ?? "");
+                  _hapticService.selection();
+                },
+                color: theme.primaryColor,
+              ),
               SizedBox(height: 30.h),
             ],
           ),
@@ -120,167 +143,5 @@ class _AmbientIdScreenState extends State<AmbientIdScreen> with SingleTickerProv
     );
   }
 
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.radar_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("ANCHOR THE AUDITORY CONTEXT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSonarField(List<String> options, int correct, Color color) {
-    return SizedBox(
-      height: 380.h, width: double.infinity,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // Radar Sweep Animation
-          AnimatedBuilder(
-            animation: _radarController,
-            builder: (context, child) {
-              return Transform.rotate(
-                angle: _radarController.value * 6.28,
-                child: Container(
-                  width: 380.r, height: 380.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: SweepGradient(
-                      colors: [color.withValues(alpha: 0.2), Colors.transparent],
-                      stops: const [0.1, 0.25],
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
-          
-          // Spatial Rings
-          ...List.generate(3, (i) => Container(
-            width: (i + 1) * 120.r, height: (i + 1) * 120.r,
-            decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: color.withValues(alpha: 0.1))),
-          )),
-          
-          // Location Hubs
-          ...List.generate(options.length, (index) {
-            double angle = (index * 6.28 / options.length) - 1.57;
-            double dist = 135.r;
-            return Transform.translate(
-              offset: Offset(dist * cos(angle), dist * sin(angle)),
-              child: _buildLocationHub(index, options[index], correct, color),
-            );
-          }),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildLocationHub(int index, String text, int correct, Color color) {
-    bool isSelected = _selectedIndex == index;
-    // Loophole fix: Don't reveal correct answer early if they failed
-    bool isCorrect = _isAnswered && index == correct && _isCorrect == true;
-    bool isWrong = _isAnswered && isSelected && _isCorrect == false;
-    
-
-    return ScaleButton(
-      onTap: () => _submitAnswer(index, correct),
-      child: Container(
-        width: 90.r, height: 90.r,
-        decoration: BoxDecoration(
-          color: isCorrect 
-              ? Colors.greenAccent 
-              : (isWrong ? Colors.redAccent : (isSelected ? color : const Color(0xFF1E1E24))),
-          shape: BoxShape.circle,
-          border: Border.all(
-            color: isCorrect || isWrong || isSelected 
-                ? Colors.white.withValues(alpha: 0.5) 
-                : color.withValues(alpha: 0.3), 
-            width: 2,
-          ),
-          boxShadow: [
-            if (isSelected || isCorrect || isWrong) 
-              BoxShadow(
-                color: (isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : color)).withValues(alpha: 0.4), 
-                blurRadius: 15, 
-                spreadRadius: 2,
-              ),
-            // Permanent subtle base shadow
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.3),
-              offset: const Offset(0, 4),
-              blurRadius: 10,
-            ),
-          ],
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(_getLocationIcon(text), color: Colors.white, size: 22.r),
-              SizedBox(height: 4.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4.w),
-                child: FittedBox(
-                  child: Text(
-                    text.toUpperCase(), 
-                    textAlign: TextAlign.center, 
-                    style: GoogleFonts.shareTechMono(fontSize: 8.sp, fontWeight: FontWeight.w900, color: Colors.white)
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildEmitterNode(String tts, Color color) {
-    return ScaleButton(
-      onTap: () {
-        _soundService.playTts(tts);
-        _hapticService.selection();
-      },
-      child: Container(
-        padding: EdgeInsets.all(28.r),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle, 
-          color: color, 
-          border: Border.all(color: Colors.white.withValues(alpha: 0.5), width: 2.5),
-          boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 25),
-            BoxShadow(color: Colors.black.withValues(alpha: 0.4), offset: const Offset(0, 4), blurRadius: 10),
-          ],
-        ),
-        child: Icon(Icons.settings_input_antenna_rounded, size: 52.r, color: Colors.white),
-      ),
-    );
-  }
-
-  IconData _getLocationIcon(String loc) {
-    final l = loc.toLowerCase();
-    if (l.contains('forest')) return Icons.forest_rounded;
-    if (l.contains('cyber') || l.contains('city')) return Icons.location_city_rounded;
-    if (l.contains('space')) return Icons.rocket_launch_rounded;
-    if (l.contains('ocean') || l.contains('deep')) return Icons.waves_rounded;
-    if (l.contains('base') || l.contains('military')) return Icons.security_rounded;
-    if (l.contains('lab')) return Icons.science_rounded;
-    if (l.contains('temple')) return Icons.temple_hindu_rounded;
-    if (l.contains('vault')) return Icons.lock_rounded;
-    if (l.contains('station')) return Icons.settings_input_antenna_rounded;
-    if (l.contains('airport')) return Icons.local_airport_rounded;
-    if (l.contains('train')) return Icons.train_rounded;
-    if (l.contains('library')) return Icons.local_library_rounded;
-    if (l.contains('mall')) return Icons.local_mall_rounded;
-    if (l.contains('restaurant')) return Icons.restaurant_rounded;
-    if (l.contains('park')) return Icons.park_rounded;
-    return Icons.place_rounded;
-  }
 }
 
