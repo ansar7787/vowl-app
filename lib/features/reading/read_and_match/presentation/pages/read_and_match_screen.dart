@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -10,8 +9,11 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
+import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_instruction.dart';
+import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_terminal.dart';
+import 'package:vowl/features/reading/read_and_match/presentation/widgets/laser_bridge_painter.dart';
+import 'package:vowl/features/reading/read_and_match/presentation/widgets/read_and_match_result.dart';
 
 class ReadAndMatchScreen extends StatefulWidget {
   final int level;
@@ -110,7 +112,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
       _soundService.playWrong();
       setState(() { _isAnswered = true; _isCorrect = false; });
       context.read<ReadingBloc>().add(SubmitAnswer(false));
-      Future.delayed(1500.milliseconds, () {
+      Future.delayed(const Duration(milliseconds: 1500), () {
         if (mounted) {
           setState(() {
             _matches.clear();
@@ -130,14 +132,22 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
     return BlocConsumer<ReadingBloc, ReadingState>(
       listener: (context, state) {
         if (state is ReadingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _matches.clear();
               _activeKey = null;
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -169,7 +179,7 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
               child: Column(
                 children: [
                   SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
+                  ReadAndMatchInstruction(primaryColor: theme.primaryColor),
                   SizedBox(height: 32.h),
                   
                   // Interactive Canvas Stack
@@ -184,7 +194,15 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                             Expanded(
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: keys.map((k) => _buildTerminal(k, true, theme.primaryColor, isDark)).toList(),
+                                children: keys.map((k) => ReadAndMatchTerminal(
+                                  text: k,
+                                  isSource: true,
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  isMatched: _matches.containsKey(k),
+                                  isActive: _activeKey == k,
+                                  onTap: () => _onKeyTap(k),
+                                )).toList(),
                               ),
                             ),
                             SizedBox(width: 40.w),
@@ -192,7 +210,15 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                             Expanded(
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: values.map((v) => _buildTerminal(v, false, theme.primaryColor, isDark, pairs: pairs)).toList(),
+                                children: values.map((v) => ReadAndMatchTerminal(
+                                  text: v,
+                                  isSource: false,
+                                  color: theme.primaryColor,
+                                  isDark: isDark,
+                                  isMatched: _matches.containsValue(v),
+                                  isActive: false,
+                                  onTap: () => _onValueTap(v, pairs),
+                                )).toList(),
                               ),
                             ),
                           ],
@@ -217,7 +243,11 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
                   
                   if (_isAnswered) ...[
                     SizedBox(height: 30.h),
-                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                    ReadAndMatchResult(
+                      quest: quest,
+                      isCorrect: _isCorrect == true,
+                      isDark: isDark,
+                    ),
                   ],
                   SizedBox(height: 50.h),
                 ],
@@ -228,145 +258,4 @@ class _ReadAndMatchScreenState extends State<ReadAndMatchScreen> {
       },
     );
   }
-
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.bolt_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("TAP A CONCEPT ON LEFT, THEN ITS DEFINITION ON RIGHT", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTerminal(String text, bool isSource, Color color, bool isDark, {List<Map<String, String>>? pairs}) {
-    bool isMatched = isSource ? _matches.containsKey(text) : _matches.containsValue(text);
-    bool isActive = isSource && _activeKey == text;
-    
-    return GestureDetector(
-      key: _getKeyFor(text),
-      onTap: () => isSource ? _onKeyTap(text) : _onValueTap(text, pairs!),
-      child: AnimatedContainer(
-        duration: 300.milliseconds,
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-        decoration: BoxDecoration(
-          color: isMatched 
-              ? color.withValues(alpha: isDark ? 0.15 : 0.08) 
-              : (isActive ? color.withValues(alpha: isDark ? 0.3 : 0.15) : (isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.04))),
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: isMatched || isActive ? color : (isDark ? Colors.white10 : Colors.black12), 
-            width: 2
-          ),
-          boxShadow: [
-            if (isMatched || isActive) 
-              BoxShadow(color: color.withValues(alpha: 0.25), blurRadius: 12, offset: const Offset(0, 4))
-          ],
-        ),
-        child: Text(
-          text.contains("]") ? text.split("]").last.trim() : text, 
-          textAlign: TextAlign.center, 
-          style: GoogleFonts.shareTechMono(
-            fontSize: 13.sp, 
-            color: isMatched || isActive 
-                ? (isDark ? Colors.white : color) 
-                : (isDark ? Colors.white70 : Colors.black87), 
-            fontWeight: FontWeight.bold
-          )
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
-  }
-}
-
-class LaserBridgePainter extends CustomPainter {
-  final Map<String, String> matches;
-  final String? activeKey;
-  final Offset? Function(GlobalKey) getCenter;
-  final GlobalKey Function(String) getKey;
-  final Color color;
-
-  LaserBridgePainter({
-    required this.matches,
-    required this.activeKey,
-    required this.getCenter,
-    required this.getKey,
-    required this.color,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..strokeWidth = 3
-      ..strokeCap = StrokeCap.round;
-
-    final glow = Paint()
-      ..color = color.withValues(alpha: 0.35)
-      ..strokeWidth = 10
-      ..strokeCap = StrokeCap.round
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
-
-    // Draw lines for established matches
-    matches.forEach((k, v) {
-      final keyCenter = getCenter(getKey(k));
-      final valCenter = getCenter(getKey(v));
-
-      if (keyCenter != null && valCenter != null) {
-        canvas.drawLine(keyCenter, valCenter, glow);
-        canvas.drawLine(keyCenter, valCenter, paint);
-        canvas.drawCircle(keyCenter, 5, paint);
-        canvas.drawCircle(valCenter, 5, paint);
-      }
-    });
-  }
-
-  @override
-  bool shouldRepaint(LaserBridgePainter oldDelegate) => true;
 }
