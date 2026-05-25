@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -11,10 +10,11 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/reading/presentation/bloc/reading_bloc.dart';
 import 'package:vowl/features/reading/presentation/widgets/reading_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
+import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_instruction.dart';
+import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_stone_slab.dart';
+import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_capstone.dart';
+import 'package:vowl/features/reading/sentence_order_reading/presentation/widgets/sentence_order_reading_result.dart';
 
 class SentenceOrderReadingScreen extends StatefulWidget {
   final int level;
@@ -88,13 +88,21 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
     return BlocConsumer<ReadingBloc, ReadingState>(
       listener: (context, state) {
         if (state is ReadingLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _currentOrder = List<String>.from(state.currentQuest.shuffledSentences ?? []);
+            });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
             });
           }
           _lastLives = state.livesRemaining;
@@ -121,22 +129,38 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
               child: Column(
                 children: [
                   SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
+                  SentenceOrderReadingInstruction(primaryColor: theme.primaryColor),
                   SizedBox(height: 24.h),
                   ReorderableListView(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     proxyDecorator: (child, index, animation) => _buildProxy(child, animation, theme.primaryColor),
                     onReorder: _onReorder,
-                    children: List.generate(_currentOrder.length, (index) => _buildStoneSlab(_currentOrder[index], index, theme.primaryColor, isDark)),
+                    children: List.generate(_currentOrder.length, (index) => SentenceOrderReadingStoneSlab(
+                      key: ValueKey(_currentOrder[index]),
+                      text: _currentOrder[index],
+                      index: index,
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                    )),
                   ),
                   if (!_isAnswered) ...[
                     SizedBox(height: 24.h),
-                    _buildCapstone(quest.correctOrder ?? [], quest.shuffledSentences ?? [], theme.primaryColor),
+                    SentenceOrderReadingCapstone(
+                      color: theme.primaryColor,
+                      onTap: () {
+                        _hapticService.heavy();
+                        _submitAnswer(quest.correctOrder ?? [], quest.shuffledSentences ?? []);
+                      },
+                    ),
                   ],
                   if (_isAnswered) ...[
                     SizedBox(height: 30.h),
-                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                    SentenceOrderReadingResult(
+                      quest: quest,
+                      isCorrect: _isCorrect == true,
+                      isDark: isDark,
+                    ),
                   ],
                   SizedBox(height: 50.h),
                 ],
@@ -148,53 +172,7 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
     );
   }
 
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.architecture_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("RESTORE THE LOGICAL STRUCTURE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
 
-  Widget _buildStoneSlab(String text, int index, Color color, bool isDark) {
-    return Container(
-      key: ValueKey(text),
-      margin: EdgeInsets.only(bottom: 12.h),
-      child: GlassTile(
-        padding: EdgeInsets.all(24.r), borderRadius: BorderRadius.circular(15.r),
-        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.04),
-        border: Border.all(color: isDark ? Colors.white10 : Colors.black12, width: 2),
-        child: Row(
-          children: [
-            Container(
-              width: 32.r, height: 32.r,
-              decoration: BoxDecoration(shape: BoxShape.circle, color: color.withValues(alpha: 0.2)),
-              child: Center(child: Text("${index + 1}", style: GoogleFonts.shareTechMono(color: color, fontSize: 14.sp, fontWeight: FontWeight.bold))),
-            ),
-            SizedBox(width: 16.w),
-            Expanded(
-              child: Text(
-                text, 
-                style: GoogleFonts.fredoka(
-                  fontSize: 15.sp, 
-                  height: 1.4, 
-                  color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87
-                )
-              )
-            ),
-            Icon(Icons.drag_handle_rounded, color: isDark ? Colors.white24 : Colors.black26, size: 24.r),
-          ],
-        ),
-      ),
-    );
-  }
 
   Widget _buildProxy(Widget child, Animation<double> animation, Color color) {
     return AnimatedBuilder(
@@ -218,71 +196,5 @@ class _SentenceOrderReadingScreenState extends State<SentenceOrderReadingScreen>
     );
   }
 
-  Widget _buildCapstone(List<int> correct, List<String> original, Color color) {
-    return ScaleButton(
-      onTap: () {
-        _hapticService.heavy();
-        _submitAnswer(correct, original);
-      },
-      child: Container(
-        width: double.infinity, height: 70.h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.r),
-          gradient: LinearGradient(colors: [color, color.withValues(alpha: 0.7)]),
-          boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 15, offset: const Offset(0, 5))],
-        ),
-        child: Center(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.lock_clock_rounded, color: Colors.white, size: 24.r),
-              SizedBox(width: 16.w),
-              Text("LOCK CAPSTONE", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2)),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCorrectResult(ReadingQuest quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
-  }
 }
 
