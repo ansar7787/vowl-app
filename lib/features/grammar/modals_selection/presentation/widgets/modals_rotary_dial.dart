@@ -1,0 +1,202 @@
+import 'dart:math';
+import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+
+class ModalsRotaryDial extends StatefulWidget {
+  final List<String> options;
+  final bool isAnswered;
+  final bool isDark;
+  final Color primaryColor;
+  final ValueChanged<int> onSelectionChanged;
+
+  const ModalsRotaryDial({
+    super.key,
+    required this.options,
+    required this.isAnswered,
+    required this.isDark,
+    required this.primaryColor,
+    required this.onSelectionChanged,
+  });
+
+  @override
+  State<ModalsRotaryDial> createState() => _ModalsRotaryDialState();
+}
+
+class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
+  final _hapticService = di.sl<HapticService>();
+  double _rotation = 0.0;
+  double _panStartAngle = 0.0;
+  int _selectedIndex = 0;
+
+  @override
+  void didUpdateWidget(covariant ModalsRotaryDial oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Reset on new question (detected by isAnswered going from true to false)
+    if (!widget.isAnswered && oldWidget.isAnswered) {
+      setState(() {
+        _rotation = 0.0;
+        _selectedIndex = 0;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        // Outer Halo
+        Container(
+          width: 280.r,
+          height: 280.r,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: widget.primaryColor.withValues(alpha: 0.05),
+              width: 2.r,
+            ),
+          ),
+        ),
+        // Dial Words (Holographic Ring)
+        ...List.generate(widget.options.length, (i) {
+          final angle = (i * (2 * pi / widget.options.length)) - (pi / 2);
+          final isSelected = _selectedIndex == i;
+          return Transform.translate(
+            offset: Offset(cos(angle) * 125.r, sin(angle) * 125.r),
+            child: AnimatedScale(
+              duration: 300.ms,
+              scale: isSelected ? 1.25 : 0.9,
+              child: AnimatedDefaultTextStyle(
+                duration: 300.ms,
+                style: GoogleFonts.outfit(
+                  fontSize: 16.sp,
+                  fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
+                  color: isSelected
+                      ? widget.primaryColor
+                      : (widget.isDark ? Colors.white30 : Colors.black26),
+                  letterSpacing: 1,
+                ),
+                child: Text(widget.options[i]),
+              ),
+            ),
+          );
+        }),
+        // The Physical Dial (Glass Morph)
+        GestureDetector(
+          onPanStart: (details) {
+            if (widget.isAnswered) return;
+            final center = Offset(85.r, 85.r);
+            final pos = details.localPosition;
+            _panStartAngle = atan2(pos.dy - center.dy, pos.dx - center.dx) - _rotation;
+          },
+          onPanUpdate: (details) {
+            if (widget.isAnswered) return;
+            final center = Offset(85.r, 85.r);
+            final pos = details.localPosition;
+            final currentAngle = atan2(pos.dy - center.dy, pos.dx - center.dx);
+            final newRotation = currentAngle - _panStartAngle;
+
+            final count = widget.options.length;
+            final normalizedRot = (newRotation + pi / 2) % (2 * pi);
+            final rawIndex = (count - (normalizedRot / (2 * pi) * count).round()) % count;
+            final selected = rawIndex.clamp(0, count - 1);
+
+            if (selected != _selectedIndex) {
+              _hapticService.selection();
+              widget.onSelectionChanged(selected);
+            }
+
+            setState(() {
+              _rotation = newRotation;
+              _selectedIndex = selected;
+            });
+          },
+          child: Transform.rotate(
+            angle: _rotation,
+            child: Container(
+              width: 170.r,
+              height: 170.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: widget.isDark
+                      ? [
+                          Colors.white.withValues(alpha: 0.1),
+                          Colors.white.withValues(alpha: 0.02),
+                        ]
+                      : [
+                          Colors.black.withValues(alpha: 0.05),
+                          Colors.black.withValues(alpha: 0.01),
+                        ],
+                ),
+                border: Border.all(
+                  color: widget.primaryColor.withValues(alpha: 0.2),
+                  width: 1.5,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.2),
+                    blurRadius: 20,
+                    offset: const Offset(5, 5),
+                  ),
+                  BoxShadow(
+                    color: widget.primaryColor.withValues(alpha: 0.1),
+                    blurRadius: 10,
+                    spreadRadius: 2,
+                  ),
+                ],
+              ),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  // Indicators (Glass Etchings)
+                  ...List.generate(
+                    24,
+                    (i) => Transform.rotate(
+                      angle: i * (2 * pi / 24),
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: Container(
+                          width: 2.r,
+                          height: 8.r,
+                          margin: EdgeInsets.only(top: 10.r),
+                          color: widget.primaryColor.withValues(alpha: 0.2),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // The Glowing Pointer
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Container(
+                      width: 6.r,
+                      height: 35.r,
+                      margin: EdgeInsets.only(top: 15.r),
+                      decoration: BoxDecoration(
+                        color: widget.primaryColor,
+                        borderRadius: BorderRadius.circular(3.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: widget.primaryColor,
+                            blurRadius: 15,
+                            spreadRadius: 1,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
