@@ -12,108 +12,11 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/roleplay/presentation/bloc/roleplay_bloc.dart';
 import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
-
-// Dynamic laser path connection painter
-class BranchingPathPainter extends CustomPainter {
-  final Offset probeOffset;
-  final Offset launchCenter;
-  final List<Offset> terminalCenters;
-  final int? hoveredIndex;
-  final Color themeColor;
-  final bool isAnswered;
-  final int? selectedIndex;
-  final int correctIndex;
-
-  BranchingPathPainter({
-    required this.probeOffset,
-    required this.launchCenter,
-    required this.terminalCenters,
-    required this.hoveredIndex,
-    required this.themeColor,
-    required this.isAnswered,
-    required this.selectedIndex,
-    required this.correctIndex,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final Offset currentProbePos = launchCenter + probeOffset;
-
-    for (int i = 0; i < terminalCenters.length; i++) {
-      final Offset termPos = terminalCenters[i];
-      final bool isHovered = hoveredIndex == i;
-      final bool isSelected = selectedIndex == i;
-
-      Color lineColor = themeColor.withValues(alpha: 0.15);
-      double strokeWidth = 1.5;
-
-      if (isAnswered) {
-        if (isSelected) {
-          lineColor = (i == correctIndex) ? Colors.greenAccent : Colors.redAccent;
-          strokeWidth = 3.0;
-        } else if (i == correctIndex) {
-          lineColor = Colors.greenAccent.withValues(alpha: 0.4);
-          strokeWidth = 2.0;
-        } else {
-          lineColor = Colors.transparent;
-        }
-      } else if (isHovered) {
-        lineColor = themeColor;
-        strokeWidth = 3.0;
-      }
-
-      final Paint paint = Paint()
-        ..color = lineColor
-        ..strokeWidth = strokeWidth
-        ..style = PaintingStyle.stroke;
-
-      // Draw beautiful Bezier control curves connecting terminals to launcher
-      final Path path = Path();
-      path.moveTo(launchCenter.dx, launchCenter.dy);
-      
-      final double controlY = (launchCenter.dy + termPos.dy) / 2;
-      path.cubicTo(
-        launchCenter.dx, controlY,
-        termPos.dx, controlY,
-        termPos.dx, termPos.dy,
-      );
-
-      canvas.drawPath(path, paint);
-
-      // Draw secondary glowing dynamic signal pulses on active channels
-      if (isHovered && !isAnswered) {
-        final Paint glowPaint = Paint()
-          ..color = themeColor.withValues(alpha: 0.4)
-          ..strokeWidth = 6.0
-          ..style = PaintingStyle.stroke
-          ..strokeCap = StrokeCap.round;
-        canvas.drawPath(path, glowPaint);
-      }
-    }
-
-    // Always draw an energy line from launch pad directly to the moving probe
-    if (!isAnswered && probeOffset != Offset.zero) {
-      final Paint activePaint = Paint()
-        ..color = themeColor.withValues(alpha: 0.7)
-        ..strokeWidth = 3.0
-        ..style = PaintingStyle.stroke;
-      canvas.drawLine(launchCenter, currentProbePos, activePaint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant BranchingPathPainter oldDelegate) {
-    return oldDelegate.probeOffset != probeOffset ||
-        oldDelegate.launchCenter != launchCenter ||
-        oldDelegate.terminalCenters != terminalCenters ||
-        oldDelegate.hoveredIndex != hoveredIndex ||
-        oldDelegate.themeColor != themeColor ||
-        oldDelegate.isAnswered != isAnswered ||
-        oldDelegate.selectedIndex != selectedIndex;
-  }
-}
+import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_instruction.dart';
+import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_persona_console.dart';
+import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_explanation_card.dart';
+import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_path_painter.dart';
 
 class BranchingDialogueScreen extends StatefulWidget {
   final int level;
@@ -305,16 +208,25 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen> with 
                   padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
                   child: Column(
                     children: [
-                      _buildHeaderInstruction(theme.primaryColor),
+                      BranchingDialogueInstruction(primaryColor: theme.primaryColor),
                       SizedBox(height: 16.h),
-                      _buildPersonaConsole(quest, theme.primaryColor, isDark),
+                      BranchingDialoguePersonaConsole(
+                        quest: quest,
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                        onListen: () => _triggerAutoPlay(quest),
+                      ),
                       SizedBox(height: 20.h),
                       _buildConsoleBoard(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
                       SizedBox(height: 20.h),
 
                       AnimatedCrossFade(
                         firstChild: const SizedBox(),
-                        secondChild: _buildExplanationCard(quest, isDark),
+                        secondChild: BranchingDialogueExplanationCard(
+                          quest: quest,
+                          isDark: isDark,
+                          isCorrect: _isCorrect,
+                        ),
                         crossFadeState: _isAnswered
                             ? CrossFadeState.showSecond
                             : CrossFadeState.showFirst,
@@ -327,146 +239,6 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen> with 
         );
       },
     );
-  }
-
-  Widget _buildHeaderInstruction(Color color) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: color.withValues(alpha: 0.2)),
-          ),
-          child: Text(
-            "FLICK DECISION PROBE CHANNELS",
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: color,
-              letterSpacing: 2.5,
-            ),
-          ),
-        ),
-        SizedBox(height: 10.h),
-        Text(
-          "Navigate dialogue branches to lock response target",
-          textAlign: TextAlign.center,
-          style: GoogleFonts.outfit(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey.shade400,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildPersonaConsole(RoleplayQuest quest, Color color, bool isDark) {
-    return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: color.withValues(alpha: 0.1),
-            blurRadius: 15,
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              // Rotating Hologram Ring
-              Container(
-                width: 54.r,
-                height: 54.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: color.withValues(alpha: 0.15),
-                  border: Border.all(color: color, width: 2),
-                ),
-                child: Icon(
-                  Icons.person_pin_rounded,
-                  color: color,
-                  size: 32.r,
-                ),
-              ).animate(
-                onPlay: (c) => c.repeat(reverse: true),
-              ).scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.12, 1.12),
-                duration: 1.seconds,
-              ),
-              SizedBox(width: 14.w),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    quest.roleName?.toUpperCase() ?? "TELEMETRY AGENT",
-                    style: GoogleFonts.shareTechMono(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.bold,
-                      color: color,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                  SizedBox(height: 4.h),
-                  Text(
-                    "BRANCH COMMS COMMITTED",
-                    style: GoogleFonts.outfit(
-                      fontSize: 10.sp,
-                      color: Colors.grey.shade500,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
-              ),
-              const Spacer(),
-              ScaleButton(
-                onTap: () => _triggerAutoPlay(quest),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(Icons.volume_up_rounded, size: 16.r, color: color),
-                      SizedBox(width: 4.w),
-                      Text(
-                        "REPLAY",
-                        style: GoogleFonts.outfit(
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.bold,
-                          color: color,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 16.h),
-          Text(
-            quest.scene ?? "",
-            textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(
-              fontSize: 18.sp,
-              color: isDark ? Colors.white70 : Colors.black87,
-              height: 1.3,
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
   }
 
   Widget _buildConsoleBoard(List<String> options, int correctIndex, Color color, bool isDark) {
@@ -659,60 +431,5 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen> with 
         ),
       ),
     );
-  }
-
-  Widget _buildExplanationCard(RoleplayQuest quest, bool isDark) {
-    final Color cardColor = (_isCorrect ?? false) ? Colors.greenAccent : Colors.orangeAccent;
-
-    return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131326) : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: cardColor.withValues(alpha: 0.25),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: cardColor.withValues(alpha: 0.1),
-            blurRadius: 12,
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Icon(
-                (_isCorrect ?? false) ? Icons.verified_rounded : Icons.info_rounded,
-                color: cardColor,
-                size: 24.r,
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                (_isCorrect ?? false) ? "Branch Navigation Integrity Verified!" : "Incorrect Dialogue Lane!",
-                style: GoogleFonts.outfit(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-          Text(
-            quest.explanation ?? "Mastering your dialogue path selections improves vocabulary and conversational fluency.",
-            style: GoogleFonts.outfit(
-              fontSize: 14.sp,
-              color: isDark ? Colors.white70 : Colors.black54,
-              height: 1.3,
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
   }
 }

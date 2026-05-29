@@ -15,60 +15,10 @@ import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
-
-// Hologram Tension Particle Wave Painter
-class TensionWavePainter extends CustomPainter {
-  final double progress;
-  final double pulseValue;
-  final Color themeColor;
-  final bool isAnswered;
-  final bool? isCorrect;
-
-  TensionWavePainter({
-    required this.progress,
-    required this.pulseValue,
-    required this.themeColor,
-    required this.isAnswered,
-    this.isCorrect,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final center = Offset(size.width / 2, size.height / 2);
-    final baseRadius = size.width / 2;
-
-    Color waveColor = themeColor;
-    if (isAnswered) {
-      waveColor = (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent;
-    } else {
-      // Transition from cyan/blue to red based on time/tension progress
-      waveColor = Color.lerp(themeColor, const Color(0xFFFF3366), progress) ?? themeColor;
-    }
-
-    final wavePaint = Paint()
-      ..color = waveColor.withValues(alpha: 0.08 + (0.1 * progress))
-      ..style = PaintingStyle.fill;
-
-    // Pulse circles
-    canvas.drawCircle(center, baseRadius * (0.8 + 0.15 * pulseValue), wavePaint);
-
-    final linePaint = Paint()
-      ..color = waveColor.withValues(alpha: 0.2 + (0.3 * progress))
-      ..strokeWidth = 1.5
-      ..style = PaintingStyle.stroke;
-
-    canvas.drawCircle(center, baseRadius * (0.8 + 0.1 * pulseValue), linePaint);
-  }
-
-  @override
-  bool shouldRepaint(covariant TensionWavePainter oldDelegate) {
-    return oldDelegate.progress != progress ||
-        oldDelegate.pulseValue != pulseValue ||
-        oldDelegate.themeColor != themeColor ||
-        oldDelegate.isAnswered != isAnswered ||
-        oldDelegate.isCorrect != isCorrect;
-  }
-}
+import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_instruction.dart';
+import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_scene_display.dart';
+import 'package:vowl/features/roleplay/situational_response/presentation/widgets/situational_response_explanation_panel.dart';
+import 'package:vowl/features/roleplay/situational_response/presentation/widgets/tension_wave_painter.dart';
 
 class SituationalResponseScreen extends StatefulWidget {
   final int level;
@@ -256,9 +206,14 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> w
                   padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
                   child: Column(
                     children: [
-                      _buildHeaderInstruction(theme.primaryColor),
+                      SituationalResponseInstruction(primaryColor: theme.primaryColor),
                       SizedBox(height: 16.h),
-                      _buildSceneDisplay(quest, theme.primaryColor, isDark),
+                      SituationalResponseSceneDisplay(
+                        quest: quest,
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                        onListen: () => _triggerAutoPlay(quest),
+                      ),
                       SizedBox(height: 24.h),
                       _buildReactionZone(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
                       SizedBox(height: 20.h),
@@ -266,7 +221,11 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> w
                       // Explanations Card when answered
                       AnimatedCrossFade(
                         firstChild: const SizedBox(),
-                        secondChild: _buildExplanationPanel(quest, isDark),
+                        secondChild: SituationalResponseExplanationPanel(
+                          quest: quest,
+                          isDark: isDark,
+                          isCorrect: _isCorrect,
+                        ),
                         crossFadeState: _isAnswered
                             ? CrossFadeState.showSecond
                             : CrossFadeState.showFirst,
@@ -279,116 +238,6 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> w
         );
       },
     );
-  }
-
-  Widget _buildHeaderInstruction(Color color) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: color.withValues(alpha: 0.2)),
-          ),
-          child: Text(
-            "TENSION REEL DECISION MATRIX",
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: color,
-              letterSpacing: 2.5,
-            ),
-          ),
-        ),
-        SizedBox(height: 10.h),
-        Text(
-          "Replicate the best reaction before tension peaks",
-          textAlign: TextAlign.center,
-          style: GoogleFonts.outfit(
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey.shade400,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildSceneDisplay(RoleplayQuest quest, Color color, bool isDark) {
-    final Color glowColor = color.withValues(alpha: 0.25);
-
-    return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: color.withValues(alpha: 0.15), width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: glowColor,
-            blurRadius: 15,
-            spreadRadius: -3,
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.theater_comedy_rounded, color: color, size: 24.r),
-              SizedBox(width: 8.w),
-              Text(
-                "ACTIVE SCENARIO",
-                style: GoogleFonts.shareTechMono(
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.bold,
-                  color: color,
-                  letterSpacing: 1.5,
-                ),
-              ),
-              const Spacer(),
-              ScaleButton(
-                onTap: () => _triggerAutoPlay(quest),
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(Icons.volume_up_rounded, size: 16.r, color: color),
-                      SizedBox(width: 4.w),
-                      Text(
-                        "LISTEN",
-                        style: GoogleFonts.outfit(
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.bold,
-                          color: color,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 16.h),
-          Text(
-            quest.scene ?? "",
-            textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(
-              fontSize: 20.sp,
-              color: isDark ? Colors.white : Colors.black87,
-              height: 1.3,
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
   }
 
   Widget _buildReactionZone(List<String> options, int correctIndex, Color color, bool isDark) {
@@ -599,60 +448,5 @@ class _SituationalResponseScreenState extends State<SituationalResponseScreen> w
         ),
       ),
     );
-  }
-
-  Widget _buildExplanationPanel(RoleplayQuest quest, bool isDark) {
-    final Color cardColor = (_isCorrect ?? false) ? Colors.greenAccent : Colors.orangeAccent;
-
-    return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131326) : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: cardColor.withValues(alpha: 0.25),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: cardColor.withValues(alpha: 0.1),
-            blurRadius: 12,
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Icon(
-                (_isCorrect ?? false) ? Icons.verified_rounded : Icons.info_rounded,
-                color: cardColor,
-                size: 24.r,
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                (_isCorrect ?? false) ? "Perfect synergy!" : "Tension overload!",
-                style: GoogleFonts.outfit(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-          Text(
-            quest.explanation ?? "Understanding situational contexts key elements boosts communication fluency.",
-            style: GoogleFonts.outfit(
-              fontSize: 14.sp,
-              color: isDark ? Colors.white70 : Colors.black54,
-              height: 1.3,
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
   }
 }
