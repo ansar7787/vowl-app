@@ -11,6 +11,7 @@ import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/grammar/subject_verb_agreement/presentation/widgets/subject_verb_agreement_instruction.dart';
 
 class SubjectVerbAgreementScreen extends StatefulWidget {
   final int level;
@@ -59,8 +60,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { 
-        _isAnswered = true; 
+      setState(() {
+        _isAnswered = true;
         _isCorrect = false;
         // Snap the quantum core completely to the selected wrong terminal
         _ringOffset = Offset(targetIndex == 0 ? -120.w : 120.w, 0.0);
@@ -98,9 +99,9 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
       builder: (context, state) {
         final quest = (state is GrammarLoaded) ? state.currentQuest : null;
         final options = quest?.options ?? ["Is", "Are"];
-        
+
         return GrammarBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
@@ -108,10 +109,10 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
           child: quest == null ? const SizedBox() : Column(
             children: [
               SizedBox(height: 10.h),
-              _buildInstruction(theme.primaryColor),
+              SubjectVerbAgreementInstruction(primaryColor: theme.primaryColor),
               SizedBox(height: 24.h),
-              
-              // Optimized: Atmospheric Harmony Hub (The Diamond Standard)
+
+              // Atmospheric Harmony Hub
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 24.w),
                 child: Container(
@@ -168,7 +169,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                         onTap: () => _onConnect(1, quest.correctAnswerIndex ?? 0),
                         child: _buildVerbTerminal(1, options[1], theme.primaryColor, Alignment.centerRight, quest.correctAnswerIndex ?? 0),
                       ),
-                      
+
                       // The Quantum Core (Harmony Slider)
                       GestureDetector(
                         onPanUpdate: _isAnswered ? null : (details) {
@@ -207,28 +208,6 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     }
   }
 
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.waves_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text(
-            "TUNE THE LINGUISTIC HARMONY",
-            style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _buildVerbTerminal(int index, String verb, Color primaryColor, Alignment alignment, int correctIndex) {
     final isCorrect = _isAnswered && _isCorrect == true && index == correctIndex;
     final isWrong = _isAnswered && _isCorrect == false && index != correctIndex;
@@ -239,8 +218,8 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
         width: 110.r, height: 110.r,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: isCorrect 
-              ? Colors.greenAccent.withValues(alpha: 0.1) 
+          color: isCorrect
+              ? Colors.greenAccent.withValues(alpha: 0.1)
               : (isWrong ? Colors.redAccent.withValues(alpha: 0.1) : Colors.transparent),
           border: Border.all(
             color: isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : primaryColor.withValues(alpha: 0.2)),
@@ -282,4 +261,3 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
     );
   }
 }
-

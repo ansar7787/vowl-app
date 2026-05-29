@@ -12,6 +12,8 @@ import 'package:vowl/features/grammar/presentation/widgets/grammar_base_layout.d
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
+import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_instruction.dart';
+import 'package:vowl/features/grammar/conjunctions/presentation/widgets/conjunctions_brick_sheet.dart';
 
 class ConjunctionsScreen extends StatefulWidget {
   final int level;
@@ -29,7 +31,7 @@ class ConjunctionsScreen extends StatefulWidget {
 class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTickerProviderStateMixin {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
-  
+
   String? _placedBrick;
   bool _isAnswered = false;
   bool? _isCorrect;
@@ -40,24 +42,30 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
   @override
   void initState() {
     super.initState();
-    context.read<GrammarBloc>().add(FetchGrammarQuests(gameType: widget.gameType, level: widget.level));
+    context.read<GrammarBloc>().add(
+      FetchGrammarQuests(gameType: widget.gameType, level: widget.level),
+    );
   }
 
   void _onBridge(String conj, int correctIndex, List<String> options) {
     if (_isAnswered) return;
-    
+
     bool isCorrect = conj == options[correctIndex];
 
     if (isCorrect) {
       _hapticService.heavy();
       _soundService.playCorrect();
-      setState(() { _isAnswered = true; _isCorrect = true; _placedBrick = conj; });
+      setState(() {
+        _isAnswered = true;
+        _isCorrect = true;
+        _placedBrick = conj;
+      });
       context.read<GrammarBloc>().add(SubmitAnswer(true));
     } else {
       _hapticService.error();
       _soundService.playWrong();
-      setState(() { 
-        _isAnswered = true; 
+      setState(() {
+        _isAnswered = true;
         _isCorrect = false;
         _placedBrick = conj;
       });
@@ -73,22 +81,39 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
     return BlocConsumer<GrammarBloc, GrammarState>(
       listener: (context, state) {
         if (state is GrammarLoaded) {
-          final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
-          if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
+          final isNewQuestion = state.currentIndex != _lastProcessedIndex;
+          final isRetry = _isAnswered && state.lastAnswerCorrect == null;
+          final livesChanged = _lastLives != null && state.livesRemaining > _lastLives!;
+
+          if (isNewQuestion || isRetry || livesChanged) {
             setState(() {
               _lastProcessedIndex = state.currentIndex;
               _isAnswered = false;
               _isCorrect = null;
               _placedBrick = null;
             });
+          } else if (state.lastAnswerCorrect != null && !_isAnswered) {
+            setState(() {
+              _isAnswered = true;
+              _isCorrect = state.lastAnswerCorrect;
+            });
           }
           _lastLives = state.livesRemaining;
         }
         if (state is GrammarGameComplete) {
           setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'SYNAPSE!', enableDoubleUp: true);
+          GameDialogHelper.showCompletion(
+            context,
+            xp: state.xpEarned,
+            coins: state.coinsEarned,
+            title: 'SYNAPSE!',
+            enableDoubleUp: true,
+          );
         } else if (state is GrammarGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<GrammarBloc>().add(RestoreLife()));
+          GameDialogHelper.showGameOver(
+            context,
+            onRestore: () => context.read<GrammarBloc>().add(RestoreLife()),
+          );
         }
       },
       builder: (context, state) {
@@ -96,123 +121,125 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
         final options = quest?.options ?? ["AND", "BUT", "OR"];
         final question = quest?.question ?? "I like apples... I like oranges.";
         final parts = question.contains("...") ? question.split("...") : question.split("___");
-        
+
         return GrammarBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
           isFinalFailure: state is GrammarLoaded && state.isFinalFailure,
           showConfetti: _showConfetti,
           onContinue: () => context.read<GrammarBloc>().add(NextQuestion()),
           onHint: () => context.read<GrammarBloc>().add(GrammarHintUsed()),
-          child: quest == null ? const SizedBox() : Column(
-            children: [
-              SizedBox(height: 10.h),
-              _buildInstruction(theme.primaryColor),
-              SizedBox(height: 20.h),
-              
-              // Optimized: Magnetic Junction Bridge (The Diamond Standard)
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      _buildIslandPiece(parts.first, isDark, theme.primaryColor),
-                      SizedBox(height: 24.h),
-                      _buildMagneticJunction(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
-                      SizedBox(height: 24.h),
-                      if (parts.length > 1 && parts.last.isNotEmpty) 
-                        _buildIslandPiece(parts.last, isDark, theme.primaryColor).animate().fadeIn(delay: 400.ms),
-                      if (_isAnswered) ...[
-                        SizedBox(height: 20.h),
-                        _buildCorrectResult(quest, theme.primaryColor, isDark),
-                      ],
-                    ],
-                  ),
-                ),
-              ),
+          child: quest == null
+              ? const SizedBox()
+              : Column(
+                  children: [
+                    SizedBox(height: 10.h),
+                    ConjunctionsInstruction(primaryColor: theme.primaryColor),
+                    SizedBox(height: 20.h),
 
-              _buildBrickSheet(options, theme.primaryColor, isDark),
-              SizedBox(height: 40.h),
-            ],
-          ),
+                    // Magnetic Junction Bridge
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            _buildIslandPiece(parts.first, isDark, theme.primaryColor),
+                            SizedBox(height: 24.h),
+                            _buildMagneticJunction(
+                              options,
+                              quest.correctAnswerIndex ?? 0,
+                              theme.primaryColor,
+                              isDark,
+                            ),
+                            SizedBox(height: 24.h),
+                            if (parts.length > 1 && parts.last.isNotEmpty)
+                              _buildIslandPiece(parts.last, isDark, theme.primaryColor)
+                                  .animate()
+                                  .fadeIn(delay: 400.ms),
+                            if (_isAnswered) ...[
+                              SizedBox(height: 20.h),
+                              _buildCorrectResult(quest, theme.primaryColor, isDark),
+                            ],
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    ConjunctionsBrickSheet(
+                      options: options,
+                      placedBrick: _placedBrick,
+                      primaryColor: theme.primaryColor,
+                      isDark: isDark,
+                    ),
+                    SizedBox(height: 40.h),
+                  ],
+                ),
         );
       },
     );
   }
 
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: primaryColor.withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: primaryColor.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.architecture_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text(
-            "CONNECT THE LINGUISTIC BRIDGE", 
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp, 
-              fontWeight: FontWeight.w900, 
-              color: primaryColor, 
-              letterSpacing: 1.5
-            )
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildMagneticJunction(List<String> options, int correctIndex, Color primaryColor, bool isDark) {
+  Widget _buildMagneticJunction(
+    List<String> options,
+    int correctIndex,
+    Color primaryColor,
+    bool isDark,
+  ) {
     return DragTarget<String>(
       onAcceptWithDetails: (details) => _onBridge(details.data, correctIndex, options),
       builder: (context, candidateData, rejectedData) {
         final isHighlight = candidateData.isNotEmpty;
-        final nodeColor = _placedBrick != null 
-            ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent) 
+        final nodeColor = _placedBrick != null
+            ? (_isCorrect == true ? Colors.greenAccent : Colors.redAccent)
             : (isHighlight ? primaryColor : primaryColor.withValues(alpha: 0.3));
 
         return Container(
-          width: 180.w, 
+          width: 180.w,
           height: 70.h,
           decoration: BoxDecoration(
             color: nodeColor.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: nodeColor.withValues(alpha: 0.4), 
+              color: nodeColor.withValues(alpha: 0.4),
               width: 2,
-              style: _placedBrick != null ? BorderStyle.none : BorderStyle.solid
+              style: _placedBrick != null ? BorderStyle.none : BorderStyle.solid,
             ),
             boxShadow: [
               if (isHighlight || _placedBrick != null)
-                BoxShadow(color: nodeColor.withValues(alpha: 0.2), blurRadius: 20, spreadRadius: 2)
+                BoxShadow(
+                  color: nodeColor.withValues(alpha: 0.2),
+                  blurRadius: 20,
+                  spreadRadius: 2,
+                )
             ],
           ),
           child: Center(
-            child: _placedBrick != null 
-              ? Text(
-                  _placedBrick!.toUpperCase(), 
-                  style: GoogleFonts.outfit(
-                    fontSize: 20.sp, 
-                    fontWeight: FontWeight.w900, 
-                    color: nodeColor
-                  )
-                ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
-              : (isHighlight 
-                  ? Icon(Icons.bolt_rounded, color: primaryColor, size: 28.r).animate().scale().shimmer() 
-                  : Text(
-                      "JUNCTION", 
-                      style: GoogleFonts.outfit(
-                        fontSize: 10.sp, 
-                        fontWeight: FontWeight.w900, 
-                        color: primaryColor.withValues(alpha: 0.4),
-                        letterSpacing: 2
-                      )
-                    )),
+            child: _placedBrick != null
+                ? Text(
+                    _placedBrick!.toUpperCase(),
+                    style: GoogleFonts.outfit(
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w900,
+                      color: nodeColor,
+                    ),
+                  ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
+                : (isHighlight
+                    ? Icon(Icons.bolt_rounded, color: primaryColor, size: 28.r)
+                        .animate()
+                        .scale()
+                        .shimmer()
+                    : Text(
+                        "JUNCTION",
+                        style: GoogleFonts.outfit(
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w900,
+                          color: primaryColor.withValues(alpha: 0.4),
+                          letterSpacing: 2,
+                        ),
+                      )),
           ),
         );
       },
@@ -229,50 +256,13 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
         border: Border.all(color: primaryColor.withValues(alpha: 0.1), width: 1.5),
       ),
       child: Text(
-        text.trim(), 
-        textAlign: TextAlign.center, 
+        text.trim(),
+        textAlign: TextAlign.center,
         style: GoogleFonts.fredoka(
-          fontSize: 18.sp, 
+          fontSize: 18.sp,
           color: isDark ? Colors.white : Colors.black87,
-          height: 1.4
-        )
-      ),
-    );
-  }
-
-  Widget _buildBrickSheet(List<String> options, Color primaryColor, bool isDark) {
-    return Wrap(
-      spacing: 16.w,
-      runSpacing: 16.h,
-      alignment: WrapAlignment.center,
-      children: options.map((opt) => _buildBrick(opt, primaryColor, isDark)).toList(),
-    );
-  }
-
-  Widget _buildBrick(String text, Color primaryColor, bool isDark) {
-    final isPlaced = _placedBrick == text;
-    return Draggable<String>(
-      data: text,
-      feedback: _buildTactileBrick(text, primaryColor, isDark, isDragging: true),
-      childWhenDragging: Opacity(opacity: 0.2, child: _buildTactileBrick(text, primaryColor, isDark)),
-      child: isPlaced ? const SizedBox(width: 80, height: 50) : _buildTactileBrick(text, primaryColor, isDark),
-    );
-  }
-
-  Widget _buildTactileBrick(String text, Color primaryColor, bool isDark, {bool isDragging = false}) {
-    return Material(
-      color: Colors.transparent,
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-        decoration: BoxDecoration(
-          color: isDark ? Colors.grey[900] : Colors.white,
-          borderRadius: BorderRadius.circular(12.r),
-          boxShadow: [
-            BoxShadow(color: Colors.black.withValues(alpha: 0.3), blurRadius: isDragging ? 15 : 5, offset: isDragging ? const Offset(5, 5) : const Offset(2, 2)),
-          ],
-          border: Border.all(color: primaryColor.withValues(alpha: 0.5), width: 2),
+          height: 1.4,
         ),
-        child: Text(text.toUpperCase(), style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: primaryColor)),
       ),
     );
   }
@@ -286,11 +276,18 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
       decoration: BoxDecoration(
         color: displayColor.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+        border: Border.all(
+          color: displayColor.withValues(alpha: 0.3),
+          width: 2,
+        ),
       ),
       child: Column(
         children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          Icon(
+            correct ? Icons.check_circle_rounded : Icons.cancel_rounded,
+            color: displayColor,
+            size: 36.r,
+          ),
           SizedBox(height: 10.h),
           Text(
             correct ? "CORRECT!" : "INCORRECT",
@@ -317,4 +314,3 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
     ).animate().shimmer(duration: 2.seconds);
   }
 }
-
