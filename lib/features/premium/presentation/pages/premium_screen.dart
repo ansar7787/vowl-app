@@ -9,7 +9,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/features/premium/presentation/widgets/premium_widgets.dart';
+import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 
 class PremiumScreen extends StatefulWidget {
   const PremiumScreen({super.key});
