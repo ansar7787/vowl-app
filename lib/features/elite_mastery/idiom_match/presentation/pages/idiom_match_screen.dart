@@ -2,7 +2,6 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -16,6 +15,8 @@ import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/widgets/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import '../widgets/idiom_match_options_panel.dart';
+
 
 class IdiomMatchScreen extends StatefulWidget {
   final int level;
@@ -366,68 +367,20 @@ class _IdiomMatchScreenState extends State<IdiomMatchScreen> {
           ),
         ],
         SizedBox(height: 30.h),
-        Column(
-          children: List.generate(_shuffledOptions.length, (index) {
-            final option = _shuffledOptions[index];
-            final isSelected = _selectedIndex == index;
-            final isWrong = _wrongIndices.contains(index);
-            final isCorrect =
-                _isAnswered &&
-                _originalIndices[index] == quest.correctAnswerIndex;
-            Color textColor = isDark ? Colors.white : Colors.black87;
-
-            return Padding(
-              padding: EdgeInsets.only(bottom: 16.h),
-              child: ScaleButton(
-                onTap: _isAnswered
-                    ? null
-                    : () => _onOptionSelected(index, quest.correctAnswerIndex),
-                child: GlassTile(
-                  borderRadius: BorderRadius.circular(24.r),
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 24.w,
-                    vertical: 22.h,
-                  ),
-                  usePremiumStyle: true,
-                  showShadow: true,
-                  color: isDark ? Colors.black.withValues(alpha: 0.3) : null,
-                  border: Border.all(
-                    color: isCorrect
-                        ? Colors.green
-                        : (isWrong
-                              ? Colors.red
-                              : (isSelected
-                                    ? Colors.green
-                                    : (isDark ? Colors.white.withValues(alpha: 0.15) : Colors.black.withValues(alpha: 0.08)))),
-                    width: 1.5,
-                  ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          option,
-                          style: GoogleFonts.outfit(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w500,
-                            color: textColor,
-                          ),
-                        ),
-                      ),
-                      if (isWrong)
-                        Icon(
-                          Icons.cancel_rounded,
-                          color: Colors.redAccent,
-                          size: 24.r,
-                        ).animate().shake(duration: 400.ms),
-                    ],
-                  ),
-                ),
-              ).animate().fadeIn(delay: (index * 100).ms).slideX(begin: 0.1),
-            );
-          }),
+        IdiomMatchOptionsPanel(
+          shuffledOptions: _shuffledOptions,
+          originalIndices: _originalIndices,
+          selectedIndex: _selectedIndex,
+          wrongIndices: _wrongIndices,
+          isAnswered: _isAnswered,
+          correctAnswerIndex: quest.correctAnswerIndex ?? 0,
+          isDark: isDark,
+          primaryColor: theme.primaryColor,
+          onOptionSelected: (index) => _onOptionSelected(index, quest.correctAnswerIndex),
         ),
         SizedBox(height: 20.h),
       ],
     );
   }
 }
+

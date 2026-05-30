@@ -14,6 +14,9 @@ import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/widgets/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import '../widgets/speed_spelling_input_field.dart';
+import '../widgets/speed_spelling_character_deck.dart';
+
 
 class SpeedSpellingScreen extends StatefulWidget {
   final int level;
@@ -322,138 +325,15 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
 
     return Column(
       children: [
-        Container(
-          height: 100.h,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            gradient: _isCorrect == true
-                ? LinearGradient(
-                    colors: [
-                      Colors.greenAccent.withValues(alpha: 0.2),
-                      Colors.greenAccent.withValues(alpha: 0.05),
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  )
-                : LinearGradient(
-                    colors: [
-                      isDark
-                          ? Colors.white.withValues(alpha: 0.08)
-                          : Colors.black.withValues(alpha: 0.05),
-                      isDark
-                          ? Colors.white.withValues(alpha: 0.03)
-                          : Colors.black.withValues(alpha: 0.02),
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-            borderRadius: BorderRadius.circular(28.r),
-            border: Border.all(
-              color: (_isAnswered || (_isCorrect == false && _attempts > 0))
-                  ? (_isCorrect == true
-                        ? Colors.greenAccent.withValues(alpha: 0.6)
-                        : Colors.redAccent.withValues(alpha: 0.6))
-                  : (isDark ? Colors.white : Colors.black.withValues(alpha: 0.1)),
-              width: 2.5,
-            ),
-            boxShadow: _isCorrect == true
-                ? [
-                    BoxShadow(
-                      color: Colors.greenAccent.withValues(alpha: 0.2),
-                      blurRadius: 30,
-                      spreadRadius: -5,
-                    ),
-                  ]
-                : [
-                    BoxShadow(
-                      color: isDark
-                          ? Colors.black.withValues(alpha: 0.2)
-                          : Colors.black.withValues(alpha: 0.05),
-                      blurRadius: 20,
-                      offset: const Offset(0, 10),
-                    ),
-                  ],
-          ),
-          child: Stack(
-            children: [
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    left: 20.w,
-                    right: 90.w, // Safe space for Backspace + Clear buttons
-                  ),
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      _currentInput,
-                      style: GoogleFonts.outfit(
-                        fontSize: 36.sp,
-                        fontWeight: FontWeight.w900,
-                        color: _isCorrect == true
-                            ? Colors.greenAccent
-                            : (isDark ? theme.primaryColor : const Color(0xFF0F172A)),
-                        letterSpacing: 6,
-                        shadows: _isCorrect == true
-                            ? [
-                                Shadow(
-                                  color: Colors.greenAccent.withValues(
-                                    alpha: 0.5,
-                                  ),
-                                  blurRadius: 20,
-                                ),
-                              ]
-                            : [],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              if (_currentInput.isNotEmpty && !_isAnswered)
-                Positioned(
-                  right: 12.w,
-                  top: 0,
-                  bottom: 0,
-                  child: Center(
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        ScaleButton(
-                          onTap: _onBackspace,
-                          child: Container(
-                            padding: EdgeInsets.all(8.r),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.15),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.backspace_rounded,
-                              color: isDark ? Colors.white : const Color(0xFF0F172A),
-                              size: 18.r,
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 8.w),
-                        ScaleButton(
-                          onTap: _onClear,
-                          child: Container(
-                            padding: EdgeInsets.all(8.r),
-                            decoration: BoxDecoration(
-                              color: Colors.white.withValues(alpha: 0.15),
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.refresh_rounded,
-                              color: isDark ? Colors.white : const Color(0xFF0F172A),
-                              size: 18.r,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-            ],
-          ),
+        SpeedSpellingInputField(
+          currentInput: _currentInput,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
+          attempts: _attempts,
+          isDark: isDark,
+          primaryColor: theme.primaryColor,
+          onBackspace: _onBackspace,
+          onClear: _onClear,
         ),
         if (state.isHintVisible) ...[
           SizedBox(height: 20.h),
@@ -465,65 +345,10 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
           ),
         ],
         SizedBox(height: 30.h),
-        Wrap(
-          spacing: 12.w,
-          runSpacing: 12.h,
-          alignment: WrapAlignment.center,
-          children: List.generate(_shuffledChars.length, (index) {
-            final char = _shuffledChars[index];
-            return ScaleButton(
-              onTap: char == "" ? null : () => _onCharTap(char, index),
-              child: AnimatedOpacity(
-                duration: const Duration(milliseconds: 200),
-                opacity: char == "" ? 0.3 : 1.0,
-                child: Container(
-                  width: 54.r,
-                  height: 54.r,
-                  decoration: BoxDecoration(
-                    color: char == ""
-                        ? (isDark
-                              ? Colors.white.withValues(alpha: 0.02)
-                              : Colors.black.withValues(alpha: 0.02))
-                        : (isDark
-                              ? Colors.white.withValues(alpha: 0.12)
-                              : Colors.white),
-                    borderRadius: BorderRadius.circular(18.r),
-                    border: Border.all(
-                      color: char == ""
-                          ? (isDark
-                                ? Colors.white.withValues(alpha: 0.05)
-                                : Colors.black.withValues(alpha: 0.05))
-                          : (isDark
-                                ? Colors.white.withValues(alpha: 0.2)
-                                : Colors.black.withValues(alpha: 0.08)),
-                      width: 1.5,
-                    ),
-                    boxShadow: char == ""
-                        ? []
-                        : [
-                            BoxShadow(
-                              color: isDark
-                                  ? Colors.black.withValues(alpha: 0.3)
-                                  : Colors.black.withValues(alpha: 0.08),
-                              blurRadius: 12,
-                              offset: const Offset(0, 6),
-                            ),
-                          ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      char,
-                      style: GoogleFonts.outfit(
-                        fontSize: 22.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : const Color(0xFF1E293B),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            );
-          }),
+        SpeedSpellingCharacterDeck(
+          shuffledChars: _shuffledChars,
+          isDark: isDark,
+          onCharTap: (char, index) => _onCharTap(char, index),
         ),
         SizedBox(height: 32.h),
         if (!_isAnswered)

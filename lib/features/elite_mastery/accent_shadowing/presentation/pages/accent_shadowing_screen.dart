@@ -7,7 +7,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -17,6 +16,9 @@ import '../../../presentation/bloc/elite_mastery_bloc.dart';
 import '../../../presentation/widgets/elite_base_layout.dart';
 import '../../../presentation/widgets/elite_hint_card.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import '../widgets/accent_shadowing_target_panel.dart';
+import '../widgets/accent_shadowing_mic_trigger.dart';
+
 
 class AccentShadowingScreen extends StatefulWidget {
   final int level;
@@ -331,20 +333,14 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
 
     return Column(
       children: [
-        GlassTile(
-          borderRadius: BorderRadius.circular(32.r),
-          padding: EdgeInsets.all(32.r),
-          border: (_isAnswered || (_isCorrect == false && _attempts > 0)) ? Border.all(
-            color: _isCorrect == true ? Colors.greenAccent : Colors.redAccent,
-            width: 2,
-          ) : null,
-          child: Column(
-            children: [
-              Icon(Icons.record_voice_over_rounded, color: isDark ? theme.primaryColor : const Color(0xFF0F172A), size: 32.r),
-              SizedBox(height: 20.h),
-              _buildTargetWords(quest.text ?? quest.textToSpeak ?? "??", isDark, theme.primaryColor),
-            ],
-          ),
+        AccentShadowingTargetPanel(
+          text: quest.text ?? quest.textToSpeak ?? "??",
+          matchedIndices: _matchedIndices,
+          isDark: isDark,
+          primaryColor: theme.primaryColor,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect,
+          attempts: _attempts,
         ),
         if (state.isHintVisible) ...[
           SizedBox(height: 20.h),
@@ -363,68 +359,16 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             child: Text(_lastWords, style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w600, color: theme.primaryColor), textAlign: TextAlign.center),
           ).animate().fadeIn(),
         SizedBox(height: 40.h),
-        if (!_isAnswered)
-          ScaleButton(
-            onTap: () => _toggleListening(quest.text ?? quest.textToSpeak ?? ""),
-            child: Container(
-              width: 100.r, height: 100.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _isListening ? Colors.red : theme.primaryColor,
-                boxShadow: [BoxShadow(color: (_isListening ? Colors.red : theme.primaryColor).withValues(alpha: 0.4), blurRadius: 30, spreadRadius: _isListening ? 10 : 0)],
-              ),
-              child: Icon(_isListening ? Icons.stop_rounded : Icons.mic_rounded, color: Colors.white, size: 48.r),
-            ),
-          ).animate(onPlay: (controller) => controller.repeat())
-           .scale(begin: const Offset(1, 1), end: _isListening ? const Offset(1.1, 1.1) : const Offset(1, 1), duration: 800.ms),
-        if (!_isAnswered && _attempts > 0 && !_isListening)
-          Padding(
-            padding: EdgeInsets.only(top: 20.h),
-            child: ScaleButton(
-              onTap: _tutorPass,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-                decoration: BoxDecoration(
-                  color: Colors.amber.withValues(alpha: 0.2),
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(color: Colors.amber, width: 1.5),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(Icons.auto_awesome_rounded, color: Colors.amber, size: 18.r),
-                    SizedBox(width: 8.w),
-                    Text("I SPOKE CORRECTLY!", style: GoogleFonts.outfit(color: Colors.amber, fontWeight: FontWeight.w900, fontSize: 12.sp)),
-                  ],
-                ),
-              ),
-            ),
-          ).animate().fadeIn().shake(),
+        AccentShadowingMicTrigger(
+          isListening: _isListening,
+          onTap: () => _toggleListening(quest.text ?? quest.textToSpeak ?? ""),
+          onTutorPass: _tutorPass,
+          primaryColor: theme.primaryColor,
+          attempts: _attempts,
+          isAnswered: _isAnswered,
+        ),
       ],
     );
   }
-
-  Widget _buildTargetWords(String text, bool isDark, Color primaryColor) {
-    final words = text.split(RegExp(r'\s+'));
-    return Wrap(
-      alignment: WrapAlignment.center,
-      spacing: 8.w,
-      runSpacing: 8.h,
-      children: List.generate(words.length, (index) {
-        final isMatched = _matchedIndices.contains(index);
-        return Text(
-          words[index],
-          style: GoogleFonts.outfit(
-            fontSize: 24.sp,
-            fontWeight: FontWeight.w900,
-            color: isMatched 
-              ? Colors.greenAccent 
-              : (isDark ? Colors.white : const Color(0xFF1E293B)),
-            height: 1.4,
-            decoration: isMatched ? TextDecoration.none : null,
-          ),
-        ).animate(target: isMatched ? 1 : 0).scale(begin: const Offset(1,1), end: const Offset(1.1, 1.1), duration: 200.ms);
-      }),
-    );
-  }
 }
+
