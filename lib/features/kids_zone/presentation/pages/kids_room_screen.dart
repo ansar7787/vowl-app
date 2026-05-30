@@ -20,6 +20,13 @@ import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 
+// Decoupled sub-widgets
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_top_bar.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_action_panel.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_exit_dialog.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_decor_sheet.dart';
+import 'package:vowl/features/kids_zone/presentation/widgets/kids_room_food_sheet.dart';
+
 class KidsRoomScreen extends StatefulWidget {
   const KidsRoomScreen({super.key});
 
@@ -56,23 +63,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     "You're my best friend! 🦉",
   ];
 
-  @override
-  void initState() {
-    super.initState();
-    _spawnHiddenCoin();
-  }
-
-  void _spawnHiddenCoin() {
-    final rand = Random();
-    if (rand.nextDouble() < 0.3) { // 30% chance
-      setState(() {
-        _hasHiddenCoin = true;
-        _coinLocation = rand.nextBool() ? "bed" : "window";
-        _isCoinFound = false;
-      });
-    }
-  }
-
   final Map<String, List<Map<String, dynamic>>> _furnitureStore = {
     'bed': [
       {'id': 'default_bed', 'name': 'Snuggly Bed', 'icon': '🛏️', 'price': 0},
@@ -87,6 +77,23 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       {'id': 'undersea_window', 'name': 'Deep Sea', 'icon': '🌊', 'price': 1500},
     ],
   };
+
+  @override
+  void initState() {
+    super.initState();
+    _spawnHiddenCoin();
+  }
+
+  void _spawnHiddenCoin() {
+    final rand = Random();
+    if (rand.nextDouble() < 0.3) {
+      setState(() {
+        _hasHiddenCoin = true;
+        _coinLocation = rand.nextBool() ? "bed" : "window";
+        _isCoinFound = false;
+      });
+    }
+  }
 
   void _speak(String text) {
     di.sl<TtsService>().speak(text);
@@ -104,7 +111,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       final index = _themes.indexOf(_currentTheme);
       _currentTheme = _themes[(index + 1) % _themes.length];
       
-      // Sync weather with theme for more magic
       if (_currentTheme == 'space') {
         _weather = 'starry';
       } else if (_currentTheme == 'ocean') {
@@ -140,9 +146,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         return PopScope(
           canPop: false,
           onPopInvokedWithResult: (didPop, result) {
-            if (didPop) {
-              return;
-            }
+            if (didPop) return;
             _showBackConfirmation(context);
           },
           child: Builder(
@@ -156,24 +160,34 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                 backgroundColor: bgColor,
                 body: Stack(
                   children: [
-                    // 1. MODERN SHADER BACKGROUND (2026 STYLE)
                     _buildModernBackground(isDark: isDark),
-
-                    // 2. LIVING WORLD: FLYING BIRDS & MICRO DECOR
                     ..._buildLivingBackgroundItems(),
-
-                    // 3. REFINED FURNITURE LAYER
                     _buildFurnitureLayer(user),
-
-                    // 4. MAIN CONTENT
                     SafeArea(
                       child: Column(
                         children: [
-                          _buildPremiumTopBar(context, user),
+                          KidsRoomTopBar(
+                            user: user,
+                            happiness: _happiness,
+                            onBack: () => _showBackConfirmation(context),
+                          ),
                           const Spacer(),
                           _buildMascotSection(user),
                           const Spacer(),
-                          _buildModernActionPanel(context, user),
+                          KidsRoomActionPanel(
+                            isSleeping: _isSleeping,
+                            onDecor: () => _showDecorStore(context, user),
+                            onFeed: () => _showFoodMenu(context, user),
+                            onSleepToggle: () {
+                              setState(() => _isSleeping = !_isSleeping);
+                              _speak(_isSleeping ? "Goodnight! Shhh..." : "I'm awake! Let's play!");
+                            },
+                            onTalk: () {
+                              _speak(_encouragements[Random().nextInt(_encouragements.length)]);
+                              _addHappiness(0.02, user);
+                            },
+                            onThemeCycle: _cycleTheme,
+                          ),
                         ],
                       ),
                     ),
@@ -188,7 +202,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                           color: const Color(0xFF0F172A).withValues(alpha: 0.6),
                           child: Stack(
                             children: [
-                              // STARS
                               ...List.generate(25, (i) => Positioned(
                                 top: Random().nextDouble() * 1.sh,
                                 left: Random().nextDouble() * 1.sw,
@@ -196,12 +209,11 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                     .animate(onPlay: (c) => c.repeat(reverse: true))
                                     .fadeOut(duration: (1 + Random().nextDouble() * 2).seconds),
                               )),
-                              // WAKE UP PROMPT
                               Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    SizedBox(height: 200.h), // Offset to not cover mascot face too much
+                                    SizedBox(height: 200.h),
                                     Container(
                                       padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
                                       decoration: BoxDecoration(
@@ -249,7 +261,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
 
     return Stack(
       children: [
-        // Shader Base
         Positioned.fill(
           child: KidsBackgroundRenderer(
             painterName: painterName,
@@ -259,7 +270,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           ),
         ),
         
-        // Weather Overlays
         if (_weather == 'rainy')
           ...List.generate(15, (i) => Positioned(
             top: -20,
@@ -280,7 +290,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                 .rotate(begin: 0, end: 2, duration: 1.seconds),
           )),
 
-        // Magic Theme Sparkle transition
         Positioned.fill(
           child: IgnorePointer(
             child: const Text("✨", style: TextStyle(fontSize: 20))
@@ -298,8 +307,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
       _buildMicroEmoji('✨', 50.h, 40.w),
       _buildMicroEmoji('🎈', 200.h, 300.w),
       _buildMicroEmoji('🌈', 400.h, 20.w),
-      
-      // FLYING BIRDS
       _buildFlyingBird(120.h, 3.seconds),
       _buildFlyingBird(250.h, 5.seconds, isSlow: true),
     ];
@@ -328,121 +335,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     );
   }
 
-  Widget _buildPremiumTopBar(BuildContext context, UserEntity user) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              ScaleButton(
-                onTap: () => _showBackConfirmation(context),
-                child: GlassTile(
-                  padding: EdgeInsets.all(10.r),
-                  borderRadius: BorderRadius.circular(20.r),
-                  child: Icon(
-                    Icons.arrow_back_ios_new_rounded,
-                    color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54,
-                    size: 18.sp,
-                  ),
-                ),
-              ),
-              const Spacer(),
-              _buildTopStatusCapsule(user),
-              const Spacer(),
-              _buildCurrencyBadge(user),
-            ],
-          ),
-          SizedBox(height: 12.h),
-          _buildCompactLoveMeter(),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTopStatusCapsule(UserEntity user) {
-    return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      borderRadius: BorderRadius.circular(20.r),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text("🦉", style: TextStyle(fontSize: 16.sp)),
-          SizedBox(width: 8.w),
-          Text(
-            "BUDDY ROOM",
-            style: GoogleFonts.outfit(
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w900,
-              color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
-              letterSpacing: 1,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCurrencyBadge(UserEntity user) {
-    return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      borderRadius: BorderRadius.circular(20.r),
-      child: Row(
-        children: [
-          Icon(Icons.star_rounded, color: const Color(0xFFF59E0B), size: 16.sp),
-          SizedBox(width: 8.w),
-          Text(
-            "${user.kidsCoins}",
-            style: GoogleFonts.outfit(
-              fontWeight: FontWeight.w900,
-              color: Theme.of(context).brightness == Brightness.dark ? Colors.white : const Color(0xFF1E293B),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCompactLoveMeter() {
-    return GlassTile(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-      borderRadius: BorderRadius.circular(30.r),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text("❤️", style: TextStyle(fontSize: 14.sp))
-              .animate(onPlay: (c) => c.repeat(reverse: true))
-              .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2)),
-          SizedBox(width: 8.w),
-          Stack(
-            children: [
-              Container(
-                width: 100.w,
-                height: 6.h,
-                decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha: 0.05),
-                  borderRadius: BorderRadius.circular(10.r),
-                ),
-              ),
-              AnimatedContainer(
-                duration: 500.ms,
-                width: 100.w * _happiness,
-                height: 6.h,
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(colors: [Color(0xFFFB7185), Color(0xFFE11D48)]),
-                  borderRadius: BorderRadius.circular(10.r),
-                  boxShadow: [BoxShadow(color: const Color(0xFFE11D48).withValues(alpha: 0.3), blurRadius: 4)],
-                ),
-              ),
-            ],
-          ),
-          SizedBox(width: 6.w),
-          Text("${(_happiness * 100).toInt()}%", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: const Color(0xFFE11D48))),
-        ],
-      ),
-    ).animate().fadeIn().slideY(begin: -0.2, end: 0);
-  }
-
   Widget _buildFurnitureLayer(UserEntity user) {
     final equipped = user.kidsEquippedFurniture;
     final bedId = equipped['bed'] ?? 'default_bed';
@@ -468,7 +360,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     String emoji = '🏠';
     for (var cat in _furnitureStore.values) {
       for (var item in cat) {
-        if (item['id'] == id) emoji = item['icon'];
+        if (item['id'] == id) emoji = item['icon'] as String;
       }
     }
 
@@ -486,7 +378,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         alignment: Alignment.center,
         clipBehavior: Clip.none,
         children: [
-          // THE COIN (HIDDEN BEHIND)
           if (isHidingCoin)
             Positioned(
               top: -10,
@@ -545,12 +436,11 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             GestureDetector(
               onTap: () {
                 _speak(_encouragements[Random().nextInt(_encouragements.length)]);
-                _addHappiness(0.01, user); // 1% per tap
+                _addHappiness(0.01, user);
               },
               child: Stack(
                 alignment: Alignment.center,
                 children: [
-                  // HAPPINESS GLOW / AURA
                   if (_happiness > 0.5)
                     Container(
                       width: 150.r,
@@ -568,7 +458,6 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                     ).animate(onPlay: (c) => c.repeat(reverse: true))
                      .scale(begin: const Offset(0.9, 0.9), end: const Offset(1.1, 1.1), duration: 2.seconds),
 
-                  // SPARKLES FOR HIGH HAPPINESS
                   if (_happiness > 0.8)
                     ...List.generate(5, (i) => Positioned(
                       top: Random().nextDouble() * 100 - 50,
@@ -644,7 +533,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
     );
   }
 
-  Widget _buildGlossySticker(String emoji, double size, {KidsAssetAnimation animation = KidsAssetAnimation.none}) {
+  Widget _buildGlossySticker(String emoji, double size) {
     return Container(
       width: size,
       height: size,
@@ -655,140 +544,26 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
         boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.08), blurRadius: 12, offset: const Offset(0, 5))],
       ),
       child: Center(
-        child: AnimatedKidsAsset(emoji: emoji, size: size * 0.7, animation: animation),
-      ),
-    );
-  }
-
-  Widget _buildModernActionPanel(BuildContext context, UserEntity user) {
-    return Container(
-      margin: EdgeInsets.all(20.r),
-      padding: EdgeInsets.all(16.r),
-      decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.6),
-        borderRadius: BorderRadius.circular(30.r),
-        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.05), blurRadius: 20)],
-        border: Border.all(color: Colors.white),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          _buildModernActionButton("Decor", Icons.palette_rounded, Colors.indigo, () => _showDecorStore(context, user)),
-          _buildModernActionButton("Feed", Icons.restaurant_rounded, Colors.pink, () => _showFoodMenu(context, user)),
-          _buildModernActionButton(_isSleeping ? "Wake" : "Sleep", _isSleeping ? Icons.wb_sunny_rounded : Icons.bedtime_rounded, Colors.amber, () {
-            setState(() => _isSleeping = !_isSleeping);
-            _speak(_isSleeping ? "Goodnight! Shhh..." : "I'm awake! Let's play!");
-          }),
-          _buildModernActionButton("Talk", Icons.chat_bubble_rounded, Colors.lightBlue, () {
-            _speak(_encouragements[Random().nextInt(_encouragements.length)]);
-            _addHappiness(0.02, user); // 2% per talk
-          }),
-          _buildModernActionButton("Theme", Icons.auto_awesome_rounded, Colors.teal, _cycleTheme),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildModernActionButton(String label, IconData icon, Color color, VoidCallback onTap) {
-    return ScaleButton(
-      onTap: onTap,
-      child: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.all(12.r),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-              border: Border.all(color: color.withValues(alpha: 0.2), width: 1),
-            ),
-            child: Icon(icon, color: color, size: 20.sp),
-          ),
-          SizedBox(height: 6.h),
-          Text(
-            label,
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: Theme.of(context).brightness == Brightness.dark ? Colors.white38 : Colors.black54,
-            ),
-          ),
-        ],
+        child: AnimatedKidsAsset(emoji: emoji, size: size * 0.7, animation: KidsAssetAnimation.none),
       ),
     );
   }
 
   void _showDecorStore(BuildContext context, UserEntity user) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (context) => GlassTile(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
-        child: Container(
-          padding: EdgeInsets.all(24.r),
-          child: DefaultTabController(
-            length: 2,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text("DECORATE ROOM", style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w900)),
-                const TabBar(tabs: [Tab(text: "BEDS"), Tab(text: "WINDOWS")], labelColor: Colors.black87, indicatorColor: Colors.black87),
-                SizedBox(
-                  height: 250.h,
-                  child: TabBarView(
-                    children: [
-                      _buildStoreGrid('bed', user),
-                      _buildStoreGrid('window', user),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+    KidsRoomDecorSheet.show(
+      context,
+      user: user,
+      furnitureStore: _furnitureStore,
+      onItemTap: (category, item) => _handleFurnitureTap(category, item, user),
     );
   }
 
-  Widget _buildStoreGrid(String category, UserEntity user) {
-    final items = _furnitureStore[category]!;
-    return GridView.builder(
-      padding: EdgeInsets.symmetric(vertical: 20.h),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 1.5, crossAxisSpacing: 10, mainAxisSpacing: 10),
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        final item = items[index];
-        final isOwned = user.kidsOwnedFurniture.contains(item['id']);
-        final isEquipped = user.kidsEquippedFurniture[category] == item['id'];
-        return ScaleButton(
-          onTap: () => _handleFurnitureTap(category, item, isOwned, user),
-          child: Container(
-            decoration: BoxDecoration(
-              color: isEquipped ? Colors.black.withValues(alpha: 0.05) : Colors.white.withValues(alpha: 0.4),
-              borderRadius: BorderRadius.circular(15.r),
-              border: Border.all(color: isEquipped ? Colors.black26 : Colors.transparent),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(item['icon'], style: TextStyle(fontSize: 24.sp)),
-                Text(item['name'], style: GoogleFonts.outfit(fontSize: 11.sp, fontWeight: FontWeight.bold)),
-                 if (!isOwned) Row(mainAxisSize: MainAxisSize.min, children: [
-                  Text("${item['price']} ", style: GoogleFonts.outfit(fontSize: 9.sp, fontWeight: FontWeight.w900, color: Colors.black54)),
-                  Icon(Icons.star_rounded, size: 9.sp, color: const Color(0xFFF59E0B)),
-                ]),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  void _handleFurnitureTap(String category, Map<String, dynamic> item, bool isOwned, UserEntity user) {
+  void _handleFurnitureTap(String category, Map<String, dynamic> item, UserEntity user) {
+    final isOwned = user.kidsOwnedFurniture.contains(item['id']);
     if (isOwned) {
       context.read<ProfileBloc>().add(ProfileUpdateFurnitureRequested(category, item['id'] as String));
       Navigator.pop(context);
-    } else if (user.kidsCoins >= item['price']) {
+    } else if (user.kidsCoins >= (item['price'] as int)) {
       context.read<ProfileBloc>().add(ProfileBuyFurnitureRequested(category, item['id'] as String, item['price'] as int));
       _speak("New item unlocked!");
       Navigator.pop(context);
@@ -799,39 +574,15 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
   }
 
   void _showFoodMenu(BuildContext context, UserEntity user) {
-    final food = [
-      {'name': 'Apple', 'icon': '🍎', 'price': 0, 'happiness': 0.02},
-      {'name': 'Cake', 'icon': '🍰', 'price': 50, 'happiness': 0.05},
-      {'name': 'Golden Berry', 'icon': '🫐', 'price': 200, 'happiness': 0.10},
-    ];
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: Colors.transparent,
-      builder: (context) => GlassTile(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(30.r)),
-        child: Container(
-          padding: EdgeInsets.all(24.r),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text("YUMMY TREATS", style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w900)),
-              SizedBox(height: 20.h),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: food.map((f) => _buildFoodItem(f, user)).toList()),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildFoodItem(Map<String, dynamic> f, UserEntity user) {
-    return ScaleButton(
-      onTap: () {
-        if (user.kidsCoins >= f['price']) {
+    KidsRoomFoodSheet.show(
+      context,
+      user: user,
+      onFoodSelected: (f) {
+        if (user.kidsCoins >= (f['price'] as int)) {
           context.read<EconomyBloc>().add(EconomyAddKidsCoinsRequested(-(f['price'] as int)));
           Navigator.pop(context);
           setState(() {
-            _currentFood = f['icon'];
+            _currentFood = f['icon'] as String;
             _isFeeding = true;
           });
           di.sl<SoundService>().playCorrect();
@@ -845,77 +596,16 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
           _showModernNotification(context, "NOT ENOUGH COINS! ⭐", isError: true);
         }
       },
-      child: Column(
-        children: [
-          Container(padding: EdgeInsets.all(12.r), decoration: BoxDecoration(color: Colors.orange.withValues(alpha: 0.1), shape: BoxShape.circle), child: Text(f['icon'], style: TextStyle(fontSize: 30.sp))),
-          Text(f['name'], style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.bold)),
-          if (f['price'] > 0) Row(mainAxisSize: MainAxisSize.min, children: [
-            Text("${f['price']} ", style: GoogleFonts.outfit(fontSize: 9.sp, fontWeight: FontWeight.w900, color: Colors.black54)),
-            Icon(Icons.star_rounded, size: 9.sp, color: const Color(0xFFF59E0B)),
-          ]),
-        ],
-      ),
     );
   }
 
   void _showBackConfirmation(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => Center(
-        child: Material(
-          color: Colors.transparent,
-          child: SizedBox(
-            width: 280.w,
-            child: GlassTile(
-              padding: EdgeInsets.all(20.r),
-              borderRadius: BorderRadius.circular(25.r),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text("LEAVING SO SOON?", style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.black87, letterSpacing: 1)),
-                  SizedBox(height: 10.h),
-                  Text("Your buddy will miss you! Stay a bit longer to earn more coins? ❤️", 
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(fontSize: 11.sp, color: Colors.black45, fontWeight: FontWeight.w600)),
-                  SizedBox(height: 20.h),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: ScaleButton(
-                          onTap: () => Navigator.pop(context),
-                          child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 10.h),
-                            decoration: BoxDecoration(color: Colors.black.withValues(alpha: 0.05), borderRadius: BorderRadius.circular(15.r)),
-                            child: Center(child: Text("STAY", style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w800, color: Colors.black54))),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      Expanded(
-                        child: ScaleButton(
-                          onTap: () {
-                            Navigator.pop(context); // Close dialog
-                            Navigator.pop(context); // Exit room
-                          },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 10.h),
-                            decoration: BoxDecoration(
-                              gradient: const LinearGradient(colors: [Color(0xFFFB7185), Color(0xFFE11D48)]),
-                              borderRadius: BorderRadius.circular(15.r),
-                              boxShadow: [BoxShadow(color: const Color(0xFFE11D48).withValues(alpha: 0.2), blurRadius: 10, offset: const Offset(0, 4))],
-                            ),
-                            child: Center(child: Text("EXIT", style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w800, color: Colors.white))),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ).animate().scale(curve: Curves.easeOutBack, duration: 400.ms).fadeIn(),
-          ),
-        ),
-      ),
+    KidsRoomExitDialog.show(
+      context,
+      onExit: () {
+        Navigator.pop(context);
+        Navigator.pop(context);
+      },
     );
   }
 
