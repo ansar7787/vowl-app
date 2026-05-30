@@ -192,6 +192,10 @@ import 'package:vowl/features/accent/speed_variance/presentation/pages/speed_var
     as a_sv_game;
 import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_drill_screen.dart'
     as a_dd_game;
+import 'package:vowl/features/accent/connected_speech/presentation/pages/connected_speech_screen.dart'
+    as a_cs_game;
+import 'package:vowl/features/accent/pitch_modulation/presentation/pages/pitch_modulation_screen.dart'
+    as a_pm_game;
 
 // --- ROLEPLAY SCREENS ---
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/pages/branching_dialogue_screen.dart'
@@ -1339,6 +1343,10 @@ class AppRouter {
         return a_sv_game.SpeedVarianceScreen(level: level, gameType: gameType);
       case GameSubtype.dialectDrill:
         return a_dd_game.DialectDrillScreen(level: level, gameType: gameType);
+      case GameSubtype.connectedSpeech:
+        return a_cs_game.ConnectedSpeechScreen(level: level, gameType: gameType);
+      case GameSubtype.pitchModulation:
+        return a_pm_game.PitchModulationScreen(level: level, gameType: gameType);
       default:
         return a_mp_game.MinimalPairsScreen(level: level, gameType: gameType);
     }
