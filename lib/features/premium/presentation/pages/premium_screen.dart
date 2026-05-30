@@ -21,6 +21,8 @@ class PremiumScreen extends StatefulWidget {
 class _PremiumScreenState extends State<PremiumScreen> {
   final _paymentService = di.sl<PaymentService>();
   int _selectedPlanIndex = 1;
+  bool _paymentCompleted = false;
+  bool? _paymentSuccess;
 
   final List<Map<String, dynamic>> _plans = const [
     {
@@ -66,13 +68,22 @@ class _PremiumScreenState extends State<PremiumScreen> {
       await _paymentService.upgradeToPremium(user.id, selectedPlan['days'] as int);
       if (mounted) {
         Haptics.vibrate(HapticsType.success);
-        context.pop();
+        setState(() {
+          _paymentCompleted = true;
+          _paymentSuccess = true;
+        });
       }
     }
   }
 
   void _handlePaymentFailure(PaymentFailureResponse response) {
     Haptics.vibrate(HapticsType.error);
+    if (mounted) {
+      setState(() {
+        _paymentCompleted = true;
+        _paymentSuccess = false;
+      });
+    }
   }
 
   void _handleExternalWallet(ExternalWalletResponse response) {}
@@ -128,6 +139,218 @@ class _PremiumScreenState extends State<PremiumScreen> {
                 ],
               ),
             ),
+            if (_paymentCompleted)
+              Positioned.fill(
+                child: Container(
+                  color: Colors.black.withValues(alpha: 0.85),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (_paymentSuccess == true)
+                          Container(
+                            padding: EdgeInsets.all(32.r),
+                            margin: EdgeInsets.symmetric(horizontal: 24.w),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.08),
+                              borderRadius: BorderRadius.circular(30.r),
+                              border: Border.all(
+                                color: const Color(0xFFF59E0B).withValues(alpha: 0.3),
+                                width: 2,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(0x33F59E0B),
+                                  blurRadius: 40,
+                                  spreadRadius: 5,
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Container(
+                                  width: 80.r,
+                                  height: 80.r,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xFFF59E0B),
+                                  ),
+                                  child: const Icon(
+                                    Icons.check_rounded,
+                                    color: Colors.white,
+                                    size: 40,
+                                  ),
+                                )
+                                    .animate()
+                                    .scale(duration: 500.ms, curve: Curves.elasticOut)
+                                    .shimmer(duration: 2.seconds),
+                                SizedBox(height: 24.h),
+                                Text(
+                                  "UPGRADE SUCCESSFUL",
+                                  style: GoogleFonts.shareTechMono(
+                                    fontSize: 22.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: const Color(0xFFF59E0B),
+                                    letterSpacing: 2,
+                                  ),
+                                ),
+                                SizedBox(height: 12.h),
+                                Text(
+                                  "Welcome to Vowl Pro. Your elite learning journey starts now!",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.outfit(
+                                    fontSize: 14.sp,
+                                    color: Colors.white70,
+                                    height: 1.4,
+                                  ),
+                                ),
+                                SizedBox(height: 24.h),
+                                ScaleButton(
+                                  onTap: () {
+                                    context.pop();
+                                  },
+                                  child: Container(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 32.w,
+                                      vertical: 12.h,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20.r),
+                                    ),
+                                    child: Text(
+                                      "BEGIN ADVENTURE",
+                                      style: GoogleFonts.outfit(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 13.sp,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ).animate().fade().scale(begin: const Offset(0.9, 0.9))
+                        else
+                          Container(
+                            padding: EdgeInsets.all(32.r),
+                            margin: EdgeInsets.symmetric(horizontal: 24.w),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withValues(alpha: 0.08),
+                              borderRadius: BorderRadius.circular(30.r),
+                              border: Border.all(
+                                color: const Color(0xFFF43F5E).withValues(alpha: 0.3),
+                                width: 2,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(0x33F43F5E),
+                                  blurRadius: 40,
+                                  spreadRadius: 5,
+                                ),
+                              ],
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Container(
+                                  width: 80.r,
+                                  height: 80.r,
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xFFF43F5E),
+                                  ),
+                                  child: const Icon(
+                                    Icons.close_rounded,
+                                    color: Colors.white,
+                                    size: 40,
+                                  ),
+                                ).animate().scale(duration: 500.ms, curve: Curves.elasticOut),
+                                SizedBox(height: 24.h),
+                                Text(
+                                  "TRANSACTION FAILED",
+                                  style: GoogleFonts.shareTechMono(
+                                    fontSize: 22.sp,
+                                    fontWeight: FontWeight.bold,
+                                    color: const Color(0xFFF43F5E),
+                                    letterSpacing: 2,
+                                  ),
+                                ),
+                                SizedBox(height: 12.h),
+                                Text(
+                                  "The payment could not be completed. Please try again or use another payment method.",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.outfit(
+                                    fontSize: 14.sp,
+                                    color: Colors.white70,
+                                    height: 1.4,
+                                  ),
+                                ),
+                                SizedBox(height: 24.h),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ScaleButton(
+                                      onTap: () {
+                                        setState(() {
+                                          _paymentCompleted = false;
+                                          _paymentSuccess = null;
+                                        });
+                                      },
+                                      child: Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                          vertical: 12.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          border: Border.all(color: Colors.white54),
+                                          borderRadius: BorderRadius.circular(20.r),
+                                        ),
+                                        child: Text(
+                                          "RETRY",
+                                          style: GoogleFonts.outfit(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w900,
+                                            fontSize: 13.sp,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(width: 12.w),
+                                    ScaleButton(
+                                      onTap: () {
+                                        context.pop();
+                                      },
+                                      child: Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 24.w,
+                                          vertical: 12.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(20.r),
+                                        ),
+                                        child: Text(
+                                          "CLOSE",
+                                          style: GoogleFonts.outfit(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.w900,
+                                            fontSize: 13.sp,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ).animate().fade().scale(begin: const Offset(0.9, 0.9)),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
           ],
         ),
       ),
