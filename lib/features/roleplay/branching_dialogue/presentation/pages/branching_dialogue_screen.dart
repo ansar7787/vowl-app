@@ -1,9 +1,6 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -16,7 +13,7 @@ import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_instruction.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_persona_console.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_explanation_card.dart';
-import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_path_painter.dart';
+import 'package:vowl/features/roleplay/branching_dialogue/presentation/widgets/branching_dialogue_console_board.dart';
 
 class BranchingDialogueScreen extends StatefulWidget {
   final int level;
@@ -217,7 +214,19 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen> with 
                         onListen: () => _triggerAutoPlay(quest),
                       ),
                       SizedBox(height: 20.h),
-                      _buildConsoleBoard(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+                      BranchingDialogueConsoleBoard(
+                        options: options,
+                        correctIndex: quest.correctAnswerIndex ?? 0,
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                        probeOffset: _probeOffset,
+                        hoveredIndex: _hoveredIndex,
+                        selectedIndex: _selectedIndex,
+                        isAnswered: _isAnswered,
+                        onProbeDragStart: _onProbeDragStart,
+                        onProbeDragUpdate: _onProbeDragUpdate,
+                        onProbeDragEnd: _onProbeDragEnd,
+                      ),
                       SizedBox(height: 20.h),
 
                       AnimatedCrossFade(
@@ -238,198 +247,6 @@ class _BranchingDialogueScreenState extends State<BranchingDialogueScreen> with 
                 ),
         );
       },
-    );
-  }
-
-  Widget _buildConsoleBoard(List<String> options, int correctIndex, Color color, bool isDark) {
-    return Container(
-      width: 1.sw,
-      height: 400.h,
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF07070F) : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(36.r),
-        border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
-        ),
-      ),
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          final double width = constraints.maxWidth;
-          final double height = constraints.maxHeight;
-
-          // Bottom launcher dock center
-          final Offset launchCenter = Offset(width / 2, height - 70.h);
-
-          // Calculate horizontal positioning of 3 terminal nodes evenly spaced along a curved arc
-          final double leftPadding = 45.w;
-          final List<Offset> terminalCenters = List.generate(options.length, (i) {
-            double x = leftPadding + i * (width - 2 * leftPadding) / (options.length - 1);
-            
-            // Dip in vertical height at centers to create a beautiful sweeping arc curve
-            double arcOffset = 25.h * math.sin((i / (options.length - 1)) * math.pi);
-            double y = 80.h - arcOffset;
-            return Offset(x, y);
-          });
-
-          return Stack(
-            clipBehavior: Clip.none,
-            children: [
-              // Custom paint grid connector lanes
-              Positioned.fill(
-                child: CustomPaint(
-                  painter: BranchingPathPainter(
-                    probeOffset: _probeOffset,
-                    launchCenter: launchCenter,
-                    terminalCenters: terminalCenters,
-                    hoveredIndex: _hoveredIndex,
-                    themeColor: color,
-                    isAnswered: _isAnswered,
-                    selectedIndex: _selectedIndex,
-                    correctIndex: correctIndex,
-                  ),
-                ),
-              ),
-
-              // Orbiting path nodes (Dialogue Terminal options)
-              ...List.generate(options.length, (i) {
-                final Offset termPos = terminalCenters[i];
-                return _buildPathTerminalNode(i, options[i], termPos, correctIndex, color, isDark);
-              }),
-
-              // Launch pad base
-              Positioned(
-                left: launchCenter.dx - 45.r,
-                top: launchCenter.dy - 45.r,
-                child: Container(
-                  width: 90.r,
-                  height: 90.r,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: color.withValues(alpha: 0.2), width: 1.5),
-                    color: isDark ? Colors.white.withValues(alpha: 0.02) : Colors.black.withValues(alpha: 0.01),
-                  ),
-                ),
-              ),
-
-              // Interactive Decision Probe
-              if (!_isAnswered)
-                Positioned(
-                  left: launchCenter.dx + _probeOffset.dx - 36.r,
-                  top: launchCenter.dy + _probeOffset.dy - 36.r,
-                  child: GestureDetector(
-                    onPanStart: _onProbeDragStart,
-                    onPanUpdate: (details) => _onProbeDragUpdate(details, launchCenter, terminalCenters),
-                    onPanEnd: (_) => _onProbeDragEnd(correctIndex),
-                    child: Container(
-                      width: 72.r,
-                      height: 72.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: color,
-                        boxShadow: [
-                          BoxShadow(
-                            color: color.withValues(alpha: 0.4),
-                            blurRadius: 15,
-                            spreadRadius: 2,
-                          ),
-                        ],
-                      ),
-                      child: Icon(
-                        Icons.gps_fixed_rounded,
-                        color: Colors.white,
-                        size: 32.r,
-                      ),
-                    ).animate(
-                      onPlay: (c) => c.repeat(reverse: true),
-                    ).scale(
-                      begin: const Offset(1, 1),
-                      end: const Offset(1.1, 1.1),
-                      duration: 800.ms,
-                    ),
-                  ),
-                ),
-            ],
-          );
-        },
-      ),
-    );
-  }
-
-  Widget _buildPathTerminalNode(
-    int index,
-    String text,
-    Offset position,
-    int correctIndex,
-    Color color,
-    bool isDark,
-  ) {
-    final bool isHovered = _hoveredIndex == index;
-    final bool isSelected = _selectedIndex == index;
-    final bool hideOther = _isAnswered && !isSelected;
-
-    Color termColor = color;
-    if (_isAnswered && isSelected) {
-      termColor = (index == correctIndex) ? Colors.greenAccent : Colors.redAccent;
-    }
-
-    return AnimatedPositioned(
-      duration: const Duration(milliseconds: 250),
-      left: position.dx - 48.w,
-      top: position.dy - 60.h,
-      child: AnimatedOpacity(
-        duration: const Duration(milliseconds: 300),
-        opacity: hideOther ? 0.0 : 1.0,
-        child: Column(
-          children: [
-            Container(
-              width: 72.r,
-              height: 72.r,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: isHovered ? color : (isDark ? const Color(0xFF0F0F1B) : Colors.white),
-                border: Border.all(
-                  color: isSelected ? termColor : color.withValues(alpha: 0.5),
-                  width: isSelected || isHovered ? 3.0 : 1.5,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: (isSelected ? termColor : color).withValues(alpha: isHovered || isSelected ? 0.35 : 0.1),
-                    blurRadius: 12,
-                    spreadRadius: 1,
-                  ),
-                ],
-              ),
-              child: Icon(
-                _isAnswered && isSelected
-                    ? (index == correctIndex ? Icons.verified_rounded : Icons.cancel_outlined)
-                    : Icons.alt_route_rounded,
-                color: isHovered || (_isAnswered && isSelected)
-                    ? Colors.white
-                    : color,
-                size: 28.r,
-              ),
-            ),
-            SizedBox(height: 8.h),
-            SizedBox(
-              width: 90.w,
-              child: Text(
-                text,
-                textAlign: TextAlign.center,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.outfit(
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isHovered
-                      ? color
-                      : (isDark ? Colors.white70 : Colors.black87),
-                  height: 1.2,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

@@ -14,103 +14,10 @@ import 'package:vowl/features/roleplay/presentation/widgets/roleplay_base_layout
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
-
-// Holographic audio wave equalizer spectrum painter
-class EqualizerArcPainter extends CustomPainter {
-  final double rotationValue; // Selected dial level (0.0 to 1.0)
-  final double targetValue;   // Empathy target level (0.0 to 1.0)
-  final double timeAnimation; // Wave time tick
-  final Color themeColor;
-
-  EqualizerArcPainter({
-    required this.rotationValue,
-    required this.targetValue,
-    required this.timeAnimation,
-    required this.themeColor,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final double radius = size.width / 2;
-    final Offset center = Offset(radius, radius);
-    final bool isMatched = (rotationValue - targetValue).abs() < 0.12;
-
-    // Draw background track ring
-    final Paint trackPaint = Paint()
-      ..color = Colors.black.withValues(alpha: 0.1)
-      ..strokeWidth = 6.0
-      ..style = PaintingStyle.stroke;
-    canvas.drawCircle(center, radius - 12, trackPaint);
-
-    // Draw Gold Target Zone marker
-    final Paint targetPaint = Paint()
-      ..color = isMatched ? Colors.greenAccent : Colors.orangeAccent
-      ..strokeWidth = 10.0
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke;
-    
-    // Convert target empathy decimal value to radians arc
-    final double targetAngleStart = -math.pi + (targetValue * 2 * math.pi) - 0.18;
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius - 12),
-      targetAngleStart,
-      0.36,
-      false,
-      targetPaint,
-    );
-
-    // Draw selected value sweep indicator
-    final Paint progressPaint = Paint()
-      ..color = themeColor.withValues(alpha: 0.8)
-      ..strokeWidth = 4.0
-      ..strokeCap = StrokeCap.round;
-
-    final double sweepAngle = rotationValue * 2 * math.pi;
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius - 20),
-      -math.pi / 2,
-      sweepAngle,
-      false,
-      progressPaint,
-    );
-
-    // Paint jagged audio equalizer spectrum lines around the outer dial ring
-    final Paint spectrumPaint = Paint()
-      ..strokeWidth = 2.0
-      ..style = PaintingStyle.stroke;
-
-    final int numSpokes = 64;
-    for (int i = 0; i < numSpokes; i++) {
-      final double angle = (i * 2 * math.pi / numSpokes) - math.pi / 2;
-      
-      // Jagged dynamic oscillation height based on current selected level
-      double frequencySpeed = 5.0 + (rotationValue * 25.0);
-      double phase = (timeAnimation * 2 * math.pi) + (i * frequencySpeed * 0.15);
-      double waveHeight = math.sin(phase) * (4.r + (rotationValue * 14.r));
-
-      final double startR = radius - 6.r;
-      final double endR = radius + 2.r + waveHeight;
-
-      final Offset startPt = Offset(center.dx + startR * math.cos(angle), center.dy + startR * math.sin(angle));
-      final Offset endPt = Offset(center.dx + endR * math.cos(angle), center.dy + endR * math.sin(angle));
-
-      // Color fades from deep blue (soft) to red (aggressive) based on spoke index
-      Color spokeColor = Color.lerp(Colors.cyanAccent, Colors.redAccent, rotationValue) ?? themeColor;
-      if (isMatched) spokeColor = Colors.greenAccent;
-
-      spectrumPaint.color = spokeColor.withValues(alpha: 0.35 + (0.6 * math.sin(phase).abs()));
-      canvas.drawLine(startPt, endPt, spectrumPaint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant EqualizerArcPainter oldDelegate) {
-    return oldDelegate.rotationValue != rotationValue ||
-        oldDelegate.targetValue != targetValue ||
-        oldDelegate.timeAnimation != timeAnimation ||
-        oldDelegate.themeColor != themeColor;
-  }
-}
+import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_instruction.dart';
+import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_conflict_card.dart';
+import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_dial_console.dart';
+import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_explanation_card.dart';
 
 class ConflictResolverScreen extends StatefulWidget {
   final int level;
@@ -273,13 +180,25 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen> with Ti
                   padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
                   child: Column(
                     children: [
-                      _buildHeaderInstruction(theme.primaryColor),
+                      ConflictResolverInstruction(primaryColor: theme.primaryColor),
                       SizedBox(height: 16.h),
-                      _buildConflictCard(quest.scene ?? "", theme.primaryColor, isDark),
+                      ConflictResolverConflictCard(
+                        scene: quest.scene ?? "",
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                        rotation: _rotation,
+                      ),
                       SizedBox(height: 24.h),
 
                       // Circular audio dials
-                      _buildDialConsole(empathyTarget, theme.primaryColor, isDark),
+                      ConflictResolverDialConsole(
+                        targetValue: empathyTarget,
+                        color: theme.primaryColor,
+                        isDark: isDark,
+                        rotation: _rotation,
+                        waveAnimation: _waveController,
+                        onDialDragged: _onDialDragged,
+                      ),
                       SizedBox(height: 28.h),
 
                       // Submit control button
@@ -322,7 +241,11 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen> with Ti
                       // Post-answer review cards
                       AnimatedCrossFade(
                         firstChild: const SizedBox(),
-                        secondChild: _buildExplanationCard(quest, isDark),
+                        secondChild: ConflictResolverExplanationCard(
+                          quest: quest,
+                          isDark: isDark,
+                          isCorrect: _isCorrect,
+                        ),
                         crossFadeState: _isAnswered
                             ? CrossFadeState.showSecond
                             : CrossFadeState.showFirst,
@@ -335,296 +258,5 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen> with Ti
         );
       },
     );
-  }
-
-  Widget _buildHeaderInstruction(Color color) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(color: color.withValues(alpha: 0.2)),
-          ),
-          child: Text(
-            "EMPATHY DIAL SPECTRUM",
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: color,
-              letterSpacing: 2.5,
-            ),
-          ),
-        ),
-        SizedBox(height: 10.h),
-        Text(
-          "Tune the console to balance the argument frequency",
-          textAlign: TextAlign.center,
-          style: GoogleFonts.outfit(
-            fontSize: 14.sp,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey.shade400,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildConflictCard(String scene, Color color, bool isDark) {
-    Color emotionalColor = Color.lerp(Colors.cyanAccent, Colors.redAccent, _rotation) ?? color;
-    if ((_rotation - 0.75).abs() < 0.12) {
-      emotionalColor = Colors.greenAccent;
-    }
-
-    return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(22.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF0F0F1B) : Colors.white,
-        borderRadius: BorderRadius.circular(30.r),
-        border: Border.all(color: emotionalColor.withValues(alpha: 0.25), width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: emotionalColor.withValues(alpha: 0.08),
-            blurRadius: 15,
-          ),
-        ],
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: EdgeInsets.all(12.r),
-            decoration: BoxDecoration(
-              color: emotionalColor.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-            ),
-            child: Icon(Icons.forum_rounded, color: emotionalColor, size: 24.r),
-          ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-                begin: const Offset(1, 1),
-                end: const Offset(1.15, 1.15),
-                duration: 1.5.seconds,
-                curve: Curves.easeInOut,
-              ),
-          SizedBox(width: 16.w),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "CONFLICT SCENARIO DETECTED:",
-                  style: GoogleFonts.shareTechMono(
-                    fontSize: 10.sp,
-                    color: emotionalColor,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 6.h),
-                Text(
-                  scene,
-                  style: GoogleFonts.fredoka(
-                    fontSize: 17.sp,
-                    color: isDark ? Colors.white : Colors.black87,
-                    height: 1.35,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDialConsole(double targetValue, Color color, bool isDark) {
-    final double dialDiameter = 220.r;
-    final Offset dialCenter = Offset(dialDiameter / 2, dialDiameter / 2);
-    final bool isMatched = (_rotation - targetValue).abs() < 0.12;
-
-    return Container(
-      width: 1.sw,
-      padding: EdgeInsets.symmetric(vertical: 24.h),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF07070F) : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(36.r),
-        border: Border.all(
-          color: isDark ? Colors.white.withValues(alpha: 0.03) : Colors.black.withValues(alpha: 0.03),
-        ),
-      ),
-      child: Column(
-        children: [
-          // Holographic Dial Board
-          GestureDetector(
-            onPanUpdate: (details) => _onDialDragged(details, dialCenter),
-            child: Container(
-              width: dialDiameter,
-              height: dialDiameter,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.transparent,
-              ),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  // Spinning audio spectrum equalizer lines
-                  Positioned.fill(
-                    child: AnimatedBuilder(
-                      animation: _waveController,
-                      builder: (context, child) {
-                        return CustomPaint(
-                          painter: EqualizerArcPainter(
-                            rotationValue: _rotation,
-                            targetValue: targetValue,
-                            timeAnimation: _waveController.value,
-                            themeColor: color,
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-
-                  // Metallic rotatable core knob
-                  Transform.rotate(
-                    angle: _rotation * 2 * math.pi,
-                    child: Container(
-                      width: 130.r,
-                      height: 130.r,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: isDark
-                              ? [const Color(0xFF2A2A3E), const Color(0xFF131326)]
-                              : [Colors.white, Colors.grey.shade300],
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(alpha: 0.25),
-                            blurRadius: 10,
-                            offset: const Offset(3, 3),
-                          ),
-                        ],
-                        border: Border.all(
-                          color: isMatched
-                              ? Colors.greenAccent
-                              : color.withValues(alpha: 0.3),
-                          width: 3,
-                        ),
-                      ),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          // Rotary position notch marker
-                          Positioned(
-                            top: 8.r,
-                            child: Container(
-                              width: 6.r,
-                              height: 16.r,
-                              decoration: BoxDecoration(
-                                color: isMatched ? Colors.greenAccent : color,
-                                borderRadius: BorderRadius.circular(3.r),
-                              ),
-                            ),
-                          ),
-                          Icon(
-                            isMatched ? Icons.check_rounded : Icons.tune_rounded,
-                            color: isMatched ? Colors.greenAccent : color.withValues(alpha: 0.7),
-                            size: 32.r,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(height: 20.h),
-          
-          // Calibration level metrics
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "DIAL LEVEL: ",
-                style: GoogleFonts.shareTechMono(
-                  fontSize: 10.sp,
-                  color: Colors.grey,
-                  letterSpacing: 1.5,
-                ),
-              ),
-              Text(
-                "${(_rotation * 100).toInt()}% empathy",
-                style: GoogleFonts.shareTechMono(
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isMatched
-                      ? Colors.greenAccent
-                      : Color.lerp(Colors.cyanAccent, Colors.redAccent, _rotation),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildExplanationCard(RoleplayQuest quest, bool isDark) {
-    final Color cardColor = (_isCorrect ?? false) ? Colors.greenAccent : Colors.orangeAccent;
-
-    return Container(
-      width: 1.sw,
-      padding: EdgeInsets.all(22.r),
-      decoration: BoxDecoration(
-        color: isDark ? const Color(0xFF131326) : Colors.white,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(
-          color: cardColor.withValues(alpha: 0.25),
-          width: 1.5,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: cardColor.withValues(alpha: 0.15),
-            blurRadius: 15,
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            children: [
-              Icon(
-                (_isCorrect ?? false) ? Icons.verified_rounded : Icons.info_rounded,
-                color: cardColor,
-                size: 24.r,
-              ),
-              SizedBox(width: 8.w),
-              Text(
-                (_isCorrect ?? false) ? "Frequency Calibrated!" : "Frequency Distortion!",
-                style: GoogleFonts.outfit(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: isDark ? Colors.white : Colors.black87,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(height: 12.h),
-          Text(
-            quest.explanation ?? "Calibrating voice frequency teaches strong crisis control and empathic context listening patterns.",
-            style: GoogleFonts.outfit(
-              fontSize: 14.sp,
-              color: isDark ? Colors.white70 : Colors.black54,
-              height: 1.35,
-            ),
-          ),
-        ],
-      ),
-    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.05);
   }
 }
