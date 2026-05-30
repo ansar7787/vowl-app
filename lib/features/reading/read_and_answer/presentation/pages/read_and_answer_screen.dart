@@ -14,7 +14,6 @@ import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_floating_passage.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_anchor_point.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_buoy_option.dart';
-import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_depth_meter.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/widgets/read_and_answer_result.dart';
 
 class ReadAndAnswerScreen extends StatefulWidget {
@@ -34,8 +33,6 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
   final _hapticService = di.sl<HapticService>();
   final _soundService = di.sl<SoundService>();
   
-  final ScrollController _scrollController = ScrollController();
-  double _depth = 0.0;
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
@@ -47,16 +44,6 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
   void initState() {
     super.initState();
     context.read<ReadingBloc>().add(FetchReadingQuests(gameType: widget.gameType, level: widget.level));
-    _scrollController.addListener(() {
-      setState(() => _depth = _scrollController.offset);
-      if (_depth % 50 < 5) _hapticService.selection();
-    });
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
   }
 
   void _onChoiceTap(int index, String selected, String correct) {
@@ -96,7 +83,6 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _selectedIndex = null;
-              if (_scrollController.hasClients) _scrollController.jumpTo(0);
             });
           } else if (state.lastAnswerCorrect != null && !_isAnswered) {
             setState(() {
@@ -117,86 +103,58 @@ class _ReadAndAnswerScreenState extends State<ReadAndAnswerScreen> {
         final ReadingQuest? quest = (state is ReadingLoaded) ? state.currentQuest as ReadingQuest? : null;
         
         return ReadingBaseLayout(
-          gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 
+          gameType: widget.gameType,
+          level: widget.level,
+          isAnswered: _isAnswered,
+          isCorrect: _isCorrect, 
           showConfetti: _showConfetti,
-          useScrolling: false,
+          useScrolling: true,
           onContinue: () => context.read<ReadingBloc>().add(NextQuestion()),
           onHint: () => context.read<ReadingBloc>().add(ReadingHintUsed()),
-          child: quest == null ? const SizedBox() : Stack(
+          child: quest == null ? const SizedBox() : Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // The Deep Sea Abyss
-              _buildAbyssBackground(theme.primaryColor, isDark),
-              
-              // The Diving Scroll
-              ListView(
-                controller: _scrollController,
-                physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 24.w),
-                children: [
-                  SizedBox(height: 100.h),
-                  ReadAndAnswerInstruction(primaryColor: theme.primaryColor),
-                  SizedBox(height: 60.h),
-                  ReadAndAnswerFloatingPassage(
-                    text: quest.passage ?? "",
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 100.h),
-                  ReadAndAnswerAnchorPoint(
-                    question: quest.question ?? "",
-                    color: theme.primaryColor,
-                    isDark: isDark,
-                  ),
-                  SizedBox(height: 40.h),
-                  ...List.generate(quest.options?.length ?? 0, (index) {
-                    final optionText = quest.options![index];
-                    return ReadAndAnswerBuoyOption(
-                      index: index,
-                      text: optionText,
-                      correct: quest.correctAnswer ?? "",
-                      color: theme.primaryColor,
-                      isDark: isDark,
-                      isAnswered: _isAnswered,
-                      selectedIndex: _selectedIndex,
-                      onTap: () => _onChoiceTap(index, optionText, quest.correctAnswer ?? ""),
-                    );
-                  }),
-                  if (_isAnswered) ...[
-                    SizedBox(height: 20.h),
-                    ReadAndAnswerResult(
-                      quest: quest,
-                      isCorrect: _isCorrect == true,
-                      isDark: isDark,
-                    ),
-                  ],
-                  SizedBox(height: 200.h),
-                ],
-              ),
-              
-              // Depth Indicator
-              ReadAndAnswerDepthMeter(
-                depth: _depth,
+              SizedBox(height: 16.h),
+              ReadAndAnswerInstruction(primaryColor: theme.primaryColor),
+              SizedBox(height: 24.h),
+              ReadAndAnswerFloatingPassage(
+                text: quest.passage ?? "",
                 color: theme.primaryColor,
+                isDark: isDark,
               ),
+              SizedBox(height: 32.h),
+              ReadAndAnswerAnchorPoint(
+                question: quest.question ?? "",
+                color: theme.primaryColor,
+                isDark: isDark,
+              ),
+              SizedBox(height: 32.h),
+              ...List.generate(quest.options?.length ?? 0, (index) {
+                final optionText = quest.options![index];
+                return ReadAndAnswerBuoyOption(
+                  index: index,
+                  text: optionText,
+                  correct: quest.correctAnswer ?? "",
+                  color: theme.primaryColor,
+                  isDark: isDark,
+                  isAnswered: _isAnswered,
+                  selectedIndex: _selectedIndex,
+                  onTap: () => _onChoiceTap(index, optionText, quest.correctAnswer ?? ""),
+                );
+              }),
+              if (_isAnswered) ...[
+                SizedBox(height: 24.h),
+                ReadAndAnswerResult(
+                  quest: quest,
+                  isCorrect: _isCorrect == true,
+                  isDark: isDark,
+                ),
+              ],
+              SizedBox(height: 40.h),
             ],
           ),
         );
       },
     );
   }
-
-  Widget _buildAbyssBackground(Color color, bool isDark) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter, end: Alignment.bottomCenter,
-          colors: isDark 
-              ? [color.withValues(alpha: 0.2), color.withValues(alpha: 0.05), Colors.black]
-              : [color.withValues(alpha: 0.1), color.withValues(alpha: 0.02), Colors.white],
-          stops: const [0.0, 0.4, 1.0],
-        ),
-      ),
-    );
-  }
 }
-
