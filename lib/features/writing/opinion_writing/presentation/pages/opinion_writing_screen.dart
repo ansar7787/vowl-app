@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -11,9 +12,12 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
+import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_instruction.dart';
+import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_thesis_card.dart';
+import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_scale_interface.dart';
+import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_argument_stones.dart';
+import 'package:vowl/features/writing/opinion_writing/presentation/widgets/opinion_writing_explanation_card.dart';
 
 class OpinionWritingScreen extends StatefulWidget {
   final int level;
@@ -53,7 +57,6 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
     
     _hapticService.success();
     setState(() {
-      // Remove from opposite pan if dragged from there
       _leftPanArgs.remove(arg);
       _rightPanArgs.remove(arg);
 
@@ -63,7 +66,6 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
         _rightPanArgs.add(arg);
       }
       
-      // Calculate imbalance: diff between pans affects rotation
       double diff = (_leftPanArgs.length - _rightPanArgs.length).toDouble();
       _scaleRotation = (diff * 0.1).clamp(-0.3, 0.3);
     });
@@ -94,7 +96,6 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
     final correctPros = correctProsIndices.map((idx) => options[idx]).toSet();
     final correctCons = options.where((opt) => !correctPros.contains(opt)).toSet();
 
-    // Verify left pan contains Pros and right contains Cons
     bool isLeftCorrect = _leftPanArgs.length == 2 && _leftPanArgs.every((arg) => correctPros.contains(arg));
     bool isRightCorrect = _rightPanArgs.length == 2 && _rightPanArgs.every((arg) => correctCons.contains(arg));
 
@@ -115,7 +116,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
       });
       context.read<WritingBloc>().add(SubmitAnswer(false));
       
-      Future.delayed(1.5.seconds, () {
+      Future.delayed(const Duration(milliseconds: 1500), () {
         if (mounted) {
           setState(() {
             _isAnswered = false;
@@ -175,16 +176,34 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
               child: Column(
                 children: [
                   SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
+                  OpinionWritingInstruction(primaryColor: theme.primaryColor),
                   SizedBox(height: 24.h),
                   
-                  _buildThesisCard(quest.prompt ?? "", theme.primaryColor, isDark),
+                  OpinionWritingThesisCard(
+                    text: quest.prompt ?? "",
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                  ),
                   SizedBox(height: 24.h),
                   
-                  _buildScaleInterface(theme.primaryColor, isDark),
+                  OpinionWritingScaleInterface(
+                    scaleRotation: _scaleRotation,
+                    leftPanArgs: _leftPanArgs,
+                    rightPanArgs: _rightPanArgs,
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                    onDropArg: _onDropArg,
+                    onRemoveArg: _removeArg,
+                  ),
                   SizedBox(height: 32.h),
                   
-                  _buildArgumentStones(options, theme.primaryColor, isDark),
+                  OpinionWritingArgumentStones(
+                    options: options,
+                    leftPanArgs: _leftPanArgs,
+                    rightPanArgs: _rightPanArgs,
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                  ),
                   SizedBox(height: 36.h),
                   
                   if (!_isAnswered)
@@ -211,7 +230,12 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                   
                   if (_isAnswered) ...[
                     SizedBox(height: 30.h),
-                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                    OpinionWritingExplanationCard(
+                      quest: quest,
+                      isCorrect: _isCorrect == true,
+                      primaryColor: theme.primaryColor,
+                      isDark: isDark,
+                    ),
                   ],
                   SizedBox(height: 60.h),
                 ],
@@ -221,270 +245,5 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
         );
       },
     );
-  }
-
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.balance_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("WEIGH YOUR ARGUMENTS ON THE SCALE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildThesisCard(String text, Color color, bool isDark) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
-      ),
-      child: Stack(
-        children: [
-          const TechPatternOverlay(opacity: 0.05),
-          Text(
-            text, 
-            textAlign: TextAlign.center, 
-            style: GoogleFonts.outfit(
-              fontSize: 16.sp, 
-              fontWeight: FontWeight.w800, 
-              color: isDark ? Colors.white : Colors.black87,
-              height: 1.4
-            )
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildScaleInterface(Color color, bool isDark) {
-    return SizedBox(
-      height: 250.h,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          // The Pivot Base
-          Positioned(
-            bottom: 0,
-            child: Container(
-              width: 12.w, height: 160.h, 
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [color.withValues(alpha: 0.5), color],
-                  begin: Alignment.topCenter, end: Alignment.bottomCenter
-                ), 
-                borderRadius: BorderRadius.vertical(top: Radius.circular(6.r))
-              )
-            )
-          ),
-          // The Beam
-          AnimatedRotation(
-            duration: 600.milliseconds, curve: Curves.elasticOut,
-            turns: _scaleRotation / (2 * 3.14159),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  width: 280.w, height: 10.h,
-                  decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(5.r), boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 20)]),
-                ),
-                Positioned(
-                  left: 0,
-                  child: _buildPan(true, color, isDark),
-                ),
-                Positioned(
-                  right: 0,
-                  child: _buildPan(false, color, isDark),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildPan(bool isLeft, Color color, bool isDark) {
-    final args = isLeft ? _leftPanArgs : _rightPanArgs;
-    
-    return DragTarget<String>(
-      onAcceptWithDetails: (details) => _onDropArg(details.data, isLeft),
-      builder: (context, candidateData, rejectedData) {
-        final highlight = candidateData.isNotEmpty;
-        
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Rope chains holding the pan
-            Container(width: 2.w, height: 40.h, color: color.withValues(alpha: 0.4)),
-            Container(
-              width: 125.w, 
-              constraints: BoxConstraints(minHeight: 100.h),
-              padding: EdgeInsets.all(8.r),
-              decoration: BoxDecoration(
-                color: isDark ? Colors.black87 : Colors.white,
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: highlight ? Colors.greenAccent : color.withValues(alpha: args.isNotEmpty ? 0.8 : 0.2), 
-                  width: 2
-                ),
-                boxShadow: [
-                  BoxShadow(color: color.withValues(alpha: isDark ? 0.3 : 0.08), blurRadius: 10)
-                ],
-              ),
-              child: Column(
-                children: [
-                  Text(
-                    isLeft ? "PROS" : "CONS",
-                    style: GoogleFonts.shareTechMono(
-                      color: isLeft ? Colors.greenAccent : Colors.redAccent,
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.bold
-                    )
-                  ),
-                  Divider(color: color.withValues(alpha: 0.15), height: 8.h),
-                  if (args.isEmpty)
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20.h),
-                      child: Text(
-                        "Drag argument here",
-                        textAlign: TextAlign.center,
-                        style: GoogleFonts.shareTechMono(
-                          color: isDark ? Colors.white24 : Colors.black26,
-                          fontSize: 9.sp
-                        )
-                      ),
-                    ),
-                  Wrap(
-                    spacing: 4.w, runSpacing: 4.h,
-                    children: args.map((a) => GestureDetector(
-                      onTap: () => _removeArg(a, isLeft),
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 4.h),
-                        decoration: BoxDecoration(
-                          color: color.withValues(alpha: 0.1), 
-                          borderRadius: BorderRadius.circular(8.r),
-                          border: Border.all(color: color.withValues(alpha: 0.3))
-                        ),
-                        child: Text(
-                          a,
-                          style: GoogleFonts.shareTechMono(
-                            color: isDark ? Colors.white70 : Colors.black87,
-                            fontSize: 8.sp,
-                            fontWeight: FontWeight.bold
-                          )
-                        ),
-                      ).animate().scale().fadeIn(),
-                    )).toList(),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  Widget _buildArgumentStones(List<String> options, Color color, bool isDark) {
-    // Only display options that are not currently slotted on either pan
-    final placed = _leftPanArgs.toSet()..addAll(_rightPanArgs);
-    final availableOptions = options.where((o) => !placed.contains(o)).toList();
-
-    return Container(
-      constraints: BoxConstraints(minHeight: 80.h),
-      child: Wrap(
-        spacing: 10.w, runSpacing: 10.h,
-        alignment: WrapAlignment.center,
-        children: availableOptions.map((o) => Draggable<String>(
-          data: o,
-          feedback: Material(
-            color: Colors.transparent,
-            child: Container(
-              width: 140.w,
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-              decoration: BoxDecoration(
-                color: color, 
-                borderRadius: BorderRadius.circular(16.r), 
-                boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 20)]
-              ),
-              child: Text(
-                o, 
-                style: GoogleFonts.shareTechMono(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10.sp)
-              )
-            )
-          ),
-          child: Container(
-            width: 140.w,
-            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-            decoration: BoxDecoration(
-              color: isDark ? Colors.black87 : Colors.white, 
-              borderRadius: BorderRadius.circular(16.r), 
-              border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
-              boxShadow: [
-                BoxShadow(color: color.withValues(alpha: isDark ? 0.35 : 0.15), blurRadius: 6)
-              ],
-            ),
-            child: Text(
-              o, 
-              textAlign: TextAlign.center,
-              style: GoogleFonts.shareTechMono(
-                color: isDark ? Colors.white70 : Colors.black87, 
-                fontWeight: FontWeight.bold, 
-                fontSize: 9.sp
-              )
-            ),
-          ),
-        )).toList(),
-      ),
-    );
-  }
-
-  Widget _buildCorrectResult(dynamic quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }

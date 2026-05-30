@@ -11,9 +11,11 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
+import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_instruction.dart';
+import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_sentence_card.dart';
+import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_vault.dart';
+import 'package:vowl/features/writing/correction_writing/presentation/widgets/correction_writing_explanation_card.dart';
 
 class CorrectionWritingScreen extends StatefulWidget {
   final int level;
@@ -76,7 +78,7 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
       });
       context.read<WritingBloc>().add(SubmitAnswer(false));
       
-      Future.delayed(1.5.seconds, () {
+      Future.delayed(const Duration(milliseconds: 1500), () {
         if (mounted) {
           setState(() {
             _isAnswered = false;
@@ -131,13 +133,24 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
               child: Column(
                 children: [
                   SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
+                  CorrectionWritingInstruction(primaryColor: theme.primaryColor),
                   SizedBox(height: 24.h),
                   
-                  _buildSentenceCard(quest.passage ?? "", theme.primaryColor, isDark),
+                  CorrectionWritingSentenceCard(
+                    passage: quest.passage ?? "",
+                    selectedCorrection: _selectedCorrection,
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                  ),
                   SizedBox(height: 32.h),
                   
-                  _buildCorrectionVault(options, theme.primaryColor, isDark),
+                  CorrectionWritingVault(
+                    options: options,
+                    selectedCorrection: _selectedCorrection,
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                    onSelectCorrection: _onSelectCorrection,
+                  ),
                   SizedBox(height: 36.h),
                   
                   if (!_isAnswered)
@@ -156,7 +169,12 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                         child: Center(
                           child: Text(
                             "AUDIT SYNTAX", 
-                            style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2)
+                            style: GoogleFonts.outfit(
+                              fontSize: 16.sp, 
+                              fontWeight: FontWeight.w900, 
+                              color: Colors.white, 
+                              letterSpacing: 2
+                            )
                           )
                         ),
                       ),
@@ -164,7 +182,12 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
                   
                   if (_isAnswered) ...[
                     SizedBox(height: 30.h),
-                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                    CorrectionWritingExplanationCard(
+                      quest: quest,
+                      isCorrect: _isCorrect == true,
+                      primaryColor: theme.primaryColor,
+                      isDark: isDark,
+                    ),
                   ],
                   SizedBox(height: 60.h),
                 ],
@@ -174,202 +197,5 @@ class _CorrectionWritingScreenState extends State<CorrectionWritingScreen> {
         );
       },
     );
-  }
-
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.auto_fix_high_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("IDENTIFY AND REPLACE THE ERRORED SYNTAX PHRASE", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSentenceCard(String passage, Color color, bool isDark) {
-    // Parse sentence containing square brackets e.g. "Each of the [are ready] for Mariana"
-    final startIdx = passage.indexOf('[');
-    final endIdx = passage.indexOf(']');
-    
-    if (startIdx == -1 || endIdx == -1) {
-      return Container(
-        padding: EdgeInsets.all(24.r),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
-        ),
-        child: Text(
-          passage,
-          style: GoogleFonts.spectral(
-            fontSize: 16.sp,
-            color: isDark ? Colors.white : Colors.black87,
-            height: 1.6,
-          ),
-        ),
-      );
-    }
-    
-    final preText = passage.substring(0, startIdx);
-    final errorText = passage.substring(startIdx + 1, endIdx);
-    final postText = passage.substring(endIdx + 1);
-
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white12 : Colors.black12, width: 2),
-      ),
-      child: Stack(
-        children: [
-          const TechPatternOverlay(opacity: 0.05),
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: GoogleFonts.spectral(
-                fontSize: 16.sp,
-                color: isDark ? Colors.white70 : Colors.black87,
-                height: 1.6,
-                fontWeight: FontWeight.w500
-              ),
-              children: [
-                TextSpan(text: preText),
-                WidgetSpan(
-                  alignment: PlaceholderAlignment.middle,
-                  child: AnimatedContainer(
-                    duration: 300.milliseconds,
-                    margin: EdgeInsets.symmetric(horizontal: 8.w),
-                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-                    decoration: BoxDecoration(
-                      color: _selectedCorrection != null 
-                        ? Colors.greenAccent.withValues(alpha: 0.1) 
-                        : Colors.redAccent.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(
-                        color: _selectedCorrection != null ? Colors.greenAccent : Colors.redAccent,
-                        width: 2,
-                        style: _selectedCorrection != null ? BorderStyle.solid : BorderStyle.none
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          _selectedCorrection ?? errorText.toUpperCase(),
-                          style: GoogleFonts.shareTechMono(
-                            fontSize: 14.sp,
-                            color: _selectedCorrection != null ? Colors.greenAccent : Colors.redAccent,
-                            fontWeight: FontWeight.bold
-                          )
-                        ),
-                        SizedBox(width: 6.w),
-                        Icon(
-                          _selectedCorrection != null ? Icons.check_circle_outline_rounded : Icons.cancel_outlined,
-                          size: 14.r,
-                          color: _selectedCorrection != null ? Colors.greenAccent : Colors.redAccent,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                TextSpan(text: postText),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildCorrectionVault(List<String> options, Color color, bool isDark) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text(
-          "AVAILABLE SYNTACTIC CORRECTIONS",
-          style: GoogleFonts.shareTechMono(fontSize: 10.sp, color: isDark ? Colors.white54 : Colors.black54, fontWeight: FontWeight.bold)
-        ),
-        SizedBox(height: 16.h),
-        Wrap(
-          spacing: 12.w, runSpacing: 12.h,
-          alignment: WrapAlignment.center,
-          children: options.map((opt) {
-            final bool isSelected = _selectedCorrection == opt;
-            final displayColor = isSelected ? color : (isDark ? Colors.white24 : Colors.black26);
-
-            return GestureDetector(
-              onTap: () => _onSelectCorrection(opt),
-              child: AnimatedContainer(
-                duration: 200.milliseconds,
-                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-                decoration: BoxDecoration(
-                  color: isSelected ? color.withValues(alpha: 0.15) : (isDark ? Colors.black45 : Colors.white),
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(color: displayColor, width: 2),
-                  boxShadow: [
-                    BoxShadow(color: color.withValues(alpha: isSelected ? 0.35 : 0.08), blurRadius: 8)
-                  ],
-                ),
-                child: Text(
-                  opt,
-                  style: GoogleFonts.shareTechMono(
-                    color: isSelected ? color : (isDark ? Colors.white70 : Colors.black87),
-                    fontSize: 11.sp,
-                    fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
-            );
-          }).toList(),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildCorrectResult(dynamic quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }

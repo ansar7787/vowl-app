@@ -11,9 +11,12 @@ import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
+import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_instruction.dart';
+import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_prompt_card.dart';
+import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_hex_slot.dart';
+import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_data_stream.dart';
+import 'package:vowl/features/writing/writing_email/presentation/widgets/writing_email_explanation_card.dart';
 
 class WritingEmailScreen extends StatefulWidget {
   final int level;
@@ -56,7 +59,6 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     
     _hapticService.success();
     setState(() {
-      // If the data was already placed in a different slot, clear that slot
       _slots.forEach((key, val) {
         if (val == data) {
           _slots[key] = null;
@@ -81,7 +83,6 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     final options = quest.options ?? [];
     final correctOrderIndices = quest.correctOrder ?? [0, 1, 2, 3];
     
-    // Validate slots contain the correct index value matching the keys
     bool isSubjectCorrect = _slots['SUBJECT'] == options[correctOrderIndices[0]];
     bool isSalutationCorrect = _slots['SALUTATION'] == options[correctOrderIndices[1]];
     bool isBodyCorrect = _slots['BODY'] == options[correctOrderIndices[2]];
@@ -104,7 +105,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
       });
       context.read<WritingBloc>().add(SubmitAnswer(false));
       
-      Future.delayed(1.5.seconds, () {
+      Future.delayed(const Duration(milliseconds: 1500), () {
         if (mounted) {
           setState(() {
             _isAnswered = false;
@@ -160,16 +161,32 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
               child: Column(
                 children: [
                   SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
+                  WritingEmailInstruction(primaryColor: theme.primaryColor),
                   SizedBox(height: 24.h),
                   
-                  _buildPromptCard(quest.prompt ?? "", theme.primaryColor, isDark),
+                  WritingEmailPromptCard(
+                    text: quest.prompt ?? "",
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                  ),
                   SizedBox(height: 24.h),
                   
-                  ..._slots.keys.map((k) => _buildHexSlot(k, theme.primaryColor, isDark)),
+                  ..._slots.keys.map((k) => WritingEmailHexSlot(
+                    slotKey: k,
+                    slotValue: _slots[k],
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                    onSlot: _onSlot,
+                    onClearSlot: _clearSlot,
+                  )),
                   SizedBox(height: 24.h),
                   
-                  _buildDataStream(options, theme.primaryColor, isDark),
+                  WritingEmailDataStream(
+                    items: options,
+                    slots: _slots,
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                  ),
                   SizedBox(height: 32.h),
                   
                   if (!_isAnswered)
@@ -188,7 +205,12 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                         child: Center(
                           child: Text(
                             "TRANSMIT DISPATCH", 
-                            style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2)
+                            style: GoogleFonts.outfit(
+                              fontSize: 16.sp, 
+                              fontWeight: FontWeight.w900, 
+                              color: Colors.white, 
+                              letterSpacing: 2
+                            )
                           )
                         ),
                       ),
@@ -196,7 +218,12 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                   
                   if (_isAnswered) ...[
                     SizedBox(height: 30.h),
-                    _buildCorrectResult(quest, theme.primaryColor, isDark),
+                    WritingEmailExplanationCard(
+                      quest: quest,
+                      isCorrect: _isCorrect == true,
+                      primaryColor: theme.primaryColor,
+                      isDark: isDark,
+                    ),
                   ],
                   SizedBox(height: 60.h),
                 ],
@@ -206,208 +233,5 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
         );
       },
     );
-  }
-
-  Widget _buildInstruction(Color primaryColor) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: primaryColor.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.terminal_rounded, size: 14.r, color: primaryColor),
-          SizedBox(width: 12.w),
-          Text("SEQUENCE THE DATA PACKETS INTO THE NEURAL SLOTS", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildPromptCard(String text, Color color, bool isDark) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white12 : Colors.black12),
-      ),
-      child: Stack(
-        children: [
-          const TechPatternOverlay(opacity: 0.05),
-          Text(
-            text, 
-            textAlign: TextAlign.center, 
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp, 
-              fontWeight: FontWeight.w800, 
-              color: isDark ? Colors.white : Colors.black87,
-              height: 1.4
-            )
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHexSlot(String key, Color color, bool isDark) {
-    bool hasData = _slots[key] != null;
-
-    return DragTarget<String>(
-      onAcceptWithDetails: (details) => _onSlot(key, details.data),
-      builder: (context, candidateData, rejectedData) {
-        final highlight = candidateData.isNotEmpty;
-        
-        return GestureDetector(
-          onTap: () => _clearSlot(key),
-          child: Container(
-            margin: EdgeInsets.only(bottom: 12.h),
-            padding: EdgeInsets.all(16.r),
-            decoration: BoxDecoration(
-              color: isDark ? Colors.black45 : Colors.white,
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(
-                color: highlight ? Colors.greenAccent : (hasData ? color : color.withValues(alpha: 0.2)), 
-                width: 2
-              ),
-              boxShadow: [
-                BoxShadow(color: color.withValues(alpha: isDark ? 0.25 : 0.08), blurRadius: 8)
-              ],
-            ),
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(8.r)
-                  ),
-                  child: Text(
-                    key, 
-                    style: GoogleFonts.shareTechMono(
-                      color: color, 
-                      fontSize: 9.sp, 
-                      fontWeight: FontWeight.bold
-                    )
-                  ),
-                ),
-                SizedBox(width: 16.w),
-                Expanded(
-                  child: Text(
-                    _slots[key] ?? "--- PULL NEURAL SEGMENT HERE ---", 
-                    style: GoogleFonts.shareTechMono(
-                      color: hasData 
-                        ? (isDark ? Colors.white70 : Colors.black87) 
-                        : (isDark ? Colors.white24 : Colors.black26),
-                      fontSize: 11.sp,
-                      fontWeight: hasData ? FontWeight.bold : FontWeight.normal
-                    )
-                  )
-                ),
-                if (hasData)
-                  Icon(Icons.check_circle_rounded, color: Colors.greenAccent, size: 18.r)
-                    .animate().scale().fadeIn(),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _buildDataStream(List<String> items, Color color, bool isDark) {
-    // Hide items that are already slotted in any of the slots
-    final placed = _slots.values.toSet();
-    final availableItems = items.where((i) => !placed.contains(i)).toList();
-
-    return Container(
-      constraints: BoxConstraints(minHeight: 80.h),
-      child: Wrap(
-        spacing: 12.w, runSpacing: 12.h,
-        alignment: WrapAlignment.center,
-        children: availableItems.map((i) => Draggable<String>(
-          data: i,
-          feedback: Material(
-            color: Colors.transparent, 
-            child: Container(
-              width: 260.w,
-              padding: EdgeInsets.all(12.r), 
-              decoration: BoxDecoration(
-                color: color, 
-                borderRadius: BorderRadius.circular(12.r),
-                boxShadow: [
-                  BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 20)
-                ]
-              ), 
-              child: Text(
-                i, 
-                style: GoogleFonts.shareTechMono(color: Colors.white, fontSize: 10.sp, fontWeight: FontWeight.bold)
-              )
-            )
-          ),
-          child: Container(
-            width: 140.w,
-            padding: EdgeInsets.all(12.r), 
-            decoration: BoxDecoration(
-              color: isDark ? Colors.black87 : Colors.white, 
-              borderRadius: BorderRadius.circular(16.r), 
-              border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
-              boxShadow: [
-                BoxShadow(color: color.withValues(alpha: isDark ? 0.35 : 0.15), blurRadius: 6)
-              ],
-            ), 
-            child: Text(
-              i, 
-              textAlign: TextAlign.center,
-              style: GoogleFonts.shareTechMono(
-                color: isDark ? Colors.white70 : Colors.black87, 
-                fontSize: 9.sp, 
-                fontWeight: FontWeight.bold
-              )
-            )
-          ),
-        )).toList(),
-      ),
-    );
-  }
-
-  Widget _buildCorrectResult(dynamic quest, Color primaryColor, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }

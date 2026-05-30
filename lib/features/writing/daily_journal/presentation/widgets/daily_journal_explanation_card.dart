@@ -1,0 +1,81 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
+
+class DailyJournalExplanationCard extends StatelessWidget {
+  final WritingQuest quest;
+  final bool isCorrect;
+  final Color primaryColor;
+  final bool isDark;
+
+  const DailyJournalExplanationCard({
+    super.key,
+    required this.quest,
+    required this.isCorrect,
+    required this.primaryColor,
+    required this.isDark,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final displayColor = isCorrect ? Colors.greenAccent : Colors.redAccent;
+
+    return Container(
+      padding: EdgeInsets.all(20.r),
+      decoration: BoxDecoration(
+        color: displayColor.withValues(alpha: 0.05),
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Column(
+        children: [
+          Icon(isCorrect ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
+          SizedBox(height: 10.h),
+          Text(
+            isCorrect ? "CORRECT!" : "INCORRECT",
+            style: GoogleFonts.outfit(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w900,
+              color: displayColor,
+              letterSpacing: 2,
+            ),
+          ),
+          if (quest.sampleAnswer != null) ...[
+            SizedBox(height: 16.h),
+            Text(
+              "SAMPLE JOURNAL LOG",
+              style: GoogleFonts.shareTechMono(
+                fontSize: 10.sp, 
+                color: primaryColor, 
+                fontWeight: FontWeight.bold
+              )
+            ),
+            SizedBox(height: 6.h),
+            Text(
+              quest.sampleAnswer!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.spectral(
+                fontSize: 14.sp,
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white70 : Colors.black87,
+              ),
+            ),
+          ],
+          if (quest.explanation != null) ...[
+            SizedBox(height: 16.h),
+            Text(
+              quest.explanation!,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.outfit(
+                fontSize: 12.sp,
+                color: isDark ? Colors.white60 : Colors.black54,
+              ),
+            ),
+          ],
+        ],
+      ),
+    ).animate().shimmer(duration: 2.seconds);
+  }
+}
