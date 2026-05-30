@@ -24,13 +24,15 @@ class TrueFalseReadingInstruction extends StatelessWidget {
         children: [
           Icon(Icons.published_with_changes_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "FLICK THE TRUTH COIN TO VALIDATE",
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              "FLICK THE TRUTH COIN TO VALIDATE",
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

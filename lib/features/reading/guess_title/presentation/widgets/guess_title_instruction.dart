@@ -24,13 +24,15 @@ class GuessTitleInstruction extends StatelessWidget {
         children: [
           Icon(Icons.inventory_2_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "SNAP THE TITLE LABEL ONTO THE CRATE",
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              "SNAP THE TITLE LABEL ONTO THE CRATE",
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

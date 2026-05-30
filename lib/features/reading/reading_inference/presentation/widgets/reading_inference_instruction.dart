@@ -24,13 +24,15 @@ class ReadingInferenceInstruction extends StatelessWidget {
         children: [
           Icon(Icons.auto_awesome_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "RUB THE MIRROR TO REVEAL SCIENTIFIC CLUES", 
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp, 
-              fontWeight: FontWeight.w900, 
-              color: primaryColor, 
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              "RUB THE MIRROR TO REVEAL SCIENTIFIC CLUES", 
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp, 
+                fontWeight: FontWeight.w900, 
+                color: primaryColor, 
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

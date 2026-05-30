@@ -24,13 +24,15 @@ class ClozeTestInstruction extends StatelessWidget {
         children: [
           Icon(Icons.settings_input_component_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "INJECT FUEL CELLS TO POWER THE PASSAGE", 
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp, 
-              fontWeight: FontWeight.w900, 
-              color: primaryColor, 
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              "INJECT FUEL CELLS TO POWER THE PASSAGE", 
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp, 
+                fontWeight: FontWeight.w900, 
+                color: primaryColor, 
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

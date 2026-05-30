@@ -25,13 +25,15 @@ class ReadAndAnswerInstruction extends StatelessWidget {
           children: [
             Icon(Icons.scuba_diving_rounded, size: 14.r, color: primaryColor),
             SizedBox(width: 12.w),
-            Text(
-              "DIVE THROUGH THE ABYSS TO ANCHOR TRUTH",
-              style: GoogleFonts.outfit(
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w900,
-                color: primaryColor,
-                letterSpacing: 1.5,
+            Flexible(
+              child: Text(
+                "DIVE THROUGH THE ABYSS TO ANCHOR TRUTH",
+                style: GoogleFonts.outfit(
+                  fontSize: 10.sp,
+                  fontWeight: FontWeight.w900,
+                  color: primaryColor,
+                  letterSpacing: 1.5,
+                ),
               ),
             ),
           ],

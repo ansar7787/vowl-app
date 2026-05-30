@@ -24,13 +24,15 @@ class ReadAndMatchInstruction extends StatelessWidget {
         children: [
           Icon(Icons.bolt_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "TAP A CONCEPT ON LEFT, THEN ITS DEFINITION ON RIGHT",
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              "TAP A CONCEPT ON LEFT, THEN ITS DEFINITION ON RIGHT",
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

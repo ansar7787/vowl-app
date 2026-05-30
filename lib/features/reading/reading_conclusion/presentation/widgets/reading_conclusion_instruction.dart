@@ -24,13 +24,15 @@ class ReadingConclusionInstruction extends StatelessWidget {
         children: [
           Icon(Icons.hub_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "BRIDGE THE PASSAGE TO THE CORRECT VERDICT", 
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp, 
-              fontWeight: FontWeight.w900, 
-              color: primaryColor, 
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              "BRIDGE THE PASSAGE TO THE CORRECT VERDICT", 
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp, 
+                fontWeight: FontWeight.w900, 
+                color: primaryColor, 
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

@@ -24,13 +24,15 @@ class ParagraphSummaryInstruction extends StatelessWidget {
         children: [
           Icon(Icons.science_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "SQUEEZE TUBE TO DISTILL & SUMMARIZE", 
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp, 
-              fontWeight: FontWeight.w900, 
-              color: primaryColor, 
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              "SQUEEZE TUBE TO DISTILL & SUMMARIZE", 
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp, 
+                fontWeight: FontWeight.w900, 
+                color: primaryColor, 
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

@@ -26,15 +26,17 @@ class ReadingSpeedInstruction extends StatelessWidget {
         children: [
           Icon(Icons.bolt_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            isRevealed 
-                ? "ANALYZE THE COMPREHENSION QUEST" 
-                : "TAP THE GLOWING SONIC CORE TO BRIEFLY UNBLUR TEXT", 
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp, 
-              fontWeight: FontWeight.w900, 
-              color: primaryColor, 
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              isRevealed 
+                  ? "ANALYZE THE COMPREHENSION QUEST" 
+                  : "TAP THE GLOWING SONIC CORE TO BRIEFLY UNBLUR TEXT", 
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp, 
+                fontWeight: FontWeight.w900, 
+                color: primaryColor, 
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

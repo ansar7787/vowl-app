@@ -24,13 +24,15 @@ class SentenceOrderReadingInstruction extends StatelessWidget {
         children: [
           Icon(Icons.architecture_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "RESTORE THE LOGICAL STRUCTURE",
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              "RESTORE THE LOGICAL STRUCTURE",
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],

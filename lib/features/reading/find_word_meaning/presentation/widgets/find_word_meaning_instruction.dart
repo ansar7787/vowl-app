@@ -24,13 +24,15 @@ class FindWordMeaningInstruction extends StatelessWidget {
         children: [
           Icon(Icons.zoom_in_rounded, size: 14.r, color: primaryColor),
           SizedBox(width: 12.w),
-          Text(
-            "SCAN THE MANUSCRIPT WITH THE LEXICAL LENS",
-            style: GoogleFonts.outfit(
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w900,
-              color: primaryColor,
-              letterSpacing: 1.5,
+          Flexible(
+            child: Text(
+              "SCAN THE MANUSCRIPT WITH THE LEXICAL LENS",
+              style: GoogleFonts.outfit(
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w900,
+                color: primaryColor,
+                letterSpacing: 1.5,
+              ),
             ),
           ),
         ],
