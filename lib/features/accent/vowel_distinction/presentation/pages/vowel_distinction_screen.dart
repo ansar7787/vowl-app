@@ -1,7 +1,7 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -10,10 +10,13 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
 import 'package:vowl/features/accent/presentation/widgets/accent_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
+import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_instruction.dart';
+import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_prompt_card.dart';
+import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_pulse_speaker.dart';
+import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_spectral_slider.dart';
+import 'package:vowl/features/accent/vowel_distinction/presentation/widgets/vowel_distinction_explanation_card.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class VowelDistinctionScreen extends StatefulWidget {
   final int level;
@@ -148,20 +151,43 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
               child: Column(
                 children: [
                   SizedBox(height: 16.h),
-                  _buildInstruction(theme.primaryColor),
+                  VowelDistinctionInstruction(color: theme.primaryColor),
                   SizedBox(height: 24.h),
                   
-                  _buildPromptCard(quest.word ?? "", theme.primaryColor, isDark),
+                  VowelDistinctionPromptCard(
+                    word: quest.word ?? "",
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                  ),
                   SizedBox(height: 32.h),
                   
-                  _buildPulseSpeaker(quest.textToSpeak ?? "", theme.primaryColor),
+                  VowelDistinctionPulseSpeaker(
+                    text: quest.textToSpeak ?? "",
+                    color: theme.primaryColor,
+                    onPlayTts: _playTts,
+                  ),
                   SizedBox(height: 48.h),
                   
-                  _buildSpectralSlider(options, quest.correctAnswerIndex ?? 0, theme.primaryColor, isDark),
+                  VowelDistinctionSpectralSlider(
+                    options: options,
+                    correctIndex: quest.correctAnswerIndex ?? 0,
+                    color: theme.primaryColor,
+                    isDark: isDark,
+                    isAnswered: _isAnswered,
+                    selectedIndex: _selectedIndex,
+                    sliderValue: _sliderValue,
+                    onSubmitChoice: _submitChoice,
+                    onSliderUpdate: _onSliderUpdate,
+                  ),
                   
                   if (_isAnswered) ...[
                     SizedBox(height: 40.h),
-                    _buildResultExplanation(quest, theme.primaryColor, isDark),
+                    VowelDistinctionExplanationCard(
+                      quest: quest,
+                      color: theme.primaryColor,
+                      isDark: isDark,
+                      isCorrect: _isCorrect,
+                    ),
                   ],
                   SizedBox(height: 60.h),
                 ],
@@ -171,218 +197,5 @@ class _VowelDistinctionScreenState extends State<VowelDistinctionScreen> {
         );
       },
     );
-  }
-
-  Widget _buildInstruction(Color color) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-      decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.2))),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.tune_rounded, size: 14.r, color: color),
-          SizedBox(width: 12.w),
-          Text("SLIDE NEEDLE OR TAP THE VOWEL SOUND ORB", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 1.5)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildPromptCard(String word, Color color, bool isDark) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(24.r),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: isDark ? 0.05 : 0.08),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: isDark ? Colors.white12 : Colors.black12, width: 2),
-      ),
-      child: Stack(
-        children: [
-          const TechPatternOverlay(opacity: 0.05),
-          Center(
-            child: Column(
-              children: [
-                Text(
-                  "TARGET WORD", 
-                  style: GoogleFonts.shareTechMono(
-                    fontSize: 10.sp, 
-                    fontWeight: FontWeight.bold, 
-                    color: color, 
-                    letterSpacing: 2
-                  )
-                ),
-                SizedBox(height: 8.h),
-                Text(
-                  word.toUpperCase(), 
-                  style: GoogleFonts.outfit(
-                    fontSize: 28.sp, 
-                    fontWeight: FontWeight.w900, 
-                    color: isDark ? Colors.white : Colors.black87, 
-                    letterSpacing: 4
-                  )
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildPulseSpeaker(String text, Color color) {
-    return ScaleButton(
-      onTap: () => _playTts(text),
-      child: Container(
-        width: 110.r, height: 110.r,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color.withValues(alpha: 0.1),
-          border: Border.all(color: color, width: 3),
-          boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.15), blurRadius: 20)
-          ],
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.graphic_eq_rounded, color: color, size: 36.r)
-                .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2)),
-              SizedBox(height: 6.h),
-              Text(
-                "HEAR VOWEL",
-                style: GoogleFonts.shareTechMono(color: color, fontSize: 8.sp, fontWeight: FontWeight.bold, letterSpacing: 1)
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildSpectralSlider(List<String> options, int correct, Color color, bool isDark) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _buildVowelOrb(options[0], 0, correct, color, isDark),
-            _buildVowelOrb(options[1], 1, correct, color, isDark),
-          ],
-        ),
-        SizedBox(height: 32.h),
-        _buildSliderBar(correct, color),
-      ],
-    );
-  }
-
-  Widget _buildVowelOrb(String text, int index, int correctIndex, Color color, bool isDark) {
-    final bool isSelected = _selectedIndex == index;
-    final bool correct = index == correctIndex;
-    
-    Color orbColor = color.withValues(alpha: 0.1);
-    Color textColor = color;
-    if (_isAnswered && isSelected) {
-      orbColor = correct ? Colors.greenAccent.withValues(alpha: 0.2) : Colors.redAccent.withValues(alpha: 0.2);
-      textColor = correct ? Colors.greenAccent : Colors.redAccent;
-    } else if (isSelected) {
-      orbColor = color;
-      textColor = Colors.white;
-    }
-
-    return ScaleButton(
-      onTap: () => _submitChoice(index, correctIndex),
-      child: Container(
-        width: 100.r, height: 100.r,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: orbColor,
-          border: Border.all(
-            color: _isAnswered && isSelected 
-              ? textColor 
-              : color.withValues(alpha: isSelected ? 1.0 : 0.3), 
-            width: 3
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: isSelected 
-                ? (correct ? Colors.greenAccent.withValues(alpha: 0.3) : color.withValues(alpha: 0.3)) 
-                : Colors.transparent, 
-              blurRadius: 15
-            )
-          ],
-        ),
-        child: Center(
-          child: Text(
-            text, 
-            style: GoogleFonts.shareTechMono(
-              fontSize: 20.sp, 
-              fontWeight: FontWeight.bold, 
-              color: textColor
-            )
-          ),
-        ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .scale(begin: const Offset(1,1), end: const Offset(1.05, 1.05), duration: (2 + index).seconds),
-    );
-  }
-
-  Widget _buildSliderBar(int correct, Color color) {
-    return SliderTheme(
-      data: SliderThemeData(
-        activeTrackColor: color,
-        inactiveTrackColor: color.withValues(alpha: 0.1),
-        thumbColor: color,
-        overlayColor: color.withValues(alpha: 0.2),
-        trackHeight: 10.h,
-        thumbShape: RoundSliderThumbShape(enabledThumbRadius: 16.r),
-      ),
-      child: Slider(
-        value: _sliderValue,
-        onChanged: (v) => _onSliderUpdate(v, correct),
-      ),
-    );
-  }
-
-  Widget _buildResultExplanation(AccentQuest quest, Color color, bool isDark) {
-    final bool correct = _isCorrect == true;
-    final displayColor = correct ? Colors.greenAccent : Colors.redAccent;
-
-    return Container(
-      padding: EdgeInsets.all(20.r),
-      decoration: BoxDecoration(
-        color: displayColor.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: displayColor.withValues(alpha: 0.3), width: 2),
-      ),
-      child: Column(
-        children: [
-          Icon(correct ? Icons.check_circle_rounded : Icons.cancel_rounded, color: displayColor, size: 36.r),
-          SizedBox(height: 10.h),
-          Text(
-            correct ? "CORRECT VOWEL!" : "INCORRECT VOWEL",
-            style: GoogleFonts.outfit(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w900,
-              color: displayColor,
-              letterSpacing: 2,
-            ),
-          ),
-          if (quest.explanation != null) ...[
-            SizedBox(height: 10.h),
-            Text(
-              quest.explanation!,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
-                fontSize: 12.sp,
-                color: isDark ? Colors.white60 : Colors.black54,
-              ),
-            ),
-          ],
-        ],
-      ),
-    ).animate().shimmer(duration: 2.seconds);
   }
 }
