@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -14,6 +13,9 @@ import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_base_la
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import '../widgets/prefix_suffix_mission_control.dart';
+import '../widgets/prefix_suffix_docking_terminal.dart';
+import '../widgets/prefix_suffix_root_rover.dart';
 
 class PrefixSuffixScreen extends StatefulWidget {
   final int level;
@@ -221,13 +223,29 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
                   alignment: Alignment.center,
                   clipBehavior: Clip.none,
                   children: [
-                    _buildMissionControl(theme.primaryColor),
+                    PrefixSuffixMissionControl(primaryColor: theme.primaryColor),
                     
                     // Docking Terminals (Options)
-                    ...List.generate(quest.options?.length ?? 0, (i) => _buildDockingTerminal(i, quest.options![i], theme.primaryColor, isDark, quest.options!.length, constraints)),
+                    ...List.generate(
+                      quest.options?.length ?? 0,
+                      (i) => PrefixSuffixDockingTerminal(
+                        index: i,
+                        text: quest.options![i],
+                        primaryColor: theme.primaryColor,
+                        isDark: isDark,
+                        position: _getTerminalPosition(i, quest.options!.length, constraints),
+                      ),
+                    ),
 
                     // The Root Rover (Central Draggable)
-                    _buildRootRover(quest, theme.primaryColor, isDark),
+                    PrefixSuffixRootRover(
+                      rootWord: quest.rootWord ?? "???",
+                      primaryColor: theme.primaryColor,
+                      isDark: isDark,
+                      dragOffset: _dragOffset,
+                      onPanUpdate: _onRoverDrag,
+                      onPanEnd: (_) => _onRoverRelease(quest),
+                    ),
                   ],
                 ),
               );
@@ -237,149 +255,8 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen> {
       },
     );
   }
-
-  Widget _buildMissionControl(Color color) {
-    return Positioned(
-      top: 10.h,
-      child: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [color, color.withValues(alpha: 0.7)]),
-              borderRadius: BorderRadius.circular(12.r),
-              boxShadow: [BoxShadow(color: color.withValues(alpha: 0.3), blurRadius: 10)],
-            ),
-            child: Text(
-              "DOCK THE ROVER",
-              style: GoogleFonts.shareTechMono(fontSize: 12.sp, fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 2),
-            ),
-          ).animate(onPlay: (c) => c.repeat(reverse: true)).shimmer(duration: 2.seconds),
-          SizedBox(height: 8.h),
-          Text(
-            "LEXICAL MISSION IN PROGRESS",
-            style: GoogleFonts.outfit(fontSize: 8.sp, color: color.withValues(alpha: 0.5), fontWeight: FontWeight.w800, letterSpacing: 1.5),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildDockingTerminal(int index, String text, Color color, bool isDark, int total, BoxConstraints constraints) {
-    final pos = _getTerminalPosition(index, total, constraints);
-    final screenSize = MediaQuery.of(context).size;
-    final double safeWidth = constraints.maxWidth.isFinite ? constraints.maxWidth : screenSize.width;
-    final double safeHeight = constraints.maxHeight.isFinite ? constraints.maxHeight : (screenSize.height * 0.6);
-    
-    return Positioned(
-      left: safeWidth / 2 + pos.dx - 40.w,
-      top: safeHeight / 2 + pos.dy - 35.h,
-      child: Container(
-        width: 80.w,
-        height: 70.h,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF0F172A) : Colors.white,
-          borderRadius: BorderRadius.circular(15.r),
-          border: Border.all(color: color.withValues(alpha: 0.4), width: 2),
-          boxShadow: [
-            BoxShadow(color: color.withValues(alpha: 0.1), blurRadius: 10, spreadRadius: 1),
-          ],
-        ),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            // Hexagonal tech pattern background
-            Opacity(
-              opacity: 0.1,
-              child: Icon(Icons.hexagon_outlined, color: color, size: 50.r),
-            ),
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  text.toUpperCase(),
-                  style: GoogleFonts.shareTechMono(fontSize: 16.sp, fontWeight: FontWeight.bold, color: color),
-                ),
-                SizedBox(height: 2.h),
-                Container(
-                  width: 25.w,
-                  height: 3.h,
-                  decoration: BoxDecoration(
-                    color: color.withValues(alpha: 0.3),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ).animate(onPlay: (c) => c.repeat(reverse: true))
-       .scale(begin: const Offset(1,1), end: const Offset(1.05, 1.05), duration: 1.5.seconds)
-       .shimmer(delay: (index * 150).ms, duration: 3.seconds, color: color.withValues(alpha: 0.2)),
-    );
-  }
-
-  Widget _buildRootRover(VocabularyQuest quest, Color color, bool isDark) {
-    return GestureDetector(
-      onPanUpdate: _onRoverDrag,
-      onPanEnd: (_) => _onRoverRelease(quest),
-      child: Transform.translate(
-        offset: _dragOffset,
-        child: AnimatedScale(
-          duration: 150.ms,
-          scale: _dragOffset == Offset.zero ? 1.0 : 1.15,
-          child: Container(
-            width: 130.w,
-            padding: EdgeInsets.symmetric(vertical: 20.h),
-            decoration: BoxDecoration(
-              color: isDark ? const Color(0xFF1E293B) : Colors.white,
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(color: color, width: 2.5),
-              boxShadow: [
-                BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 25, spreadRadius: 2),
-              ],
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Detailed Rocket Icon
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Icon(Icons.rocket_rounded, color: color, size: 32.r),
-                    Positioned(
-                      bottom: 0,
-                      child: Container(
-                        width: 4.r, height: 8.r,
-                        decoration: BoxDecoration(
-                          color: Colors.orangeAccent,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ).animate(onPlay: (c) => c.repeat()).scaleY(begin: 0.5, end: 1.5).fadeOut(),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 12.h),
-                Text(
-                  (quest.rootWord ?? "???").toUpperCase(),
-                  style: GoogleFonts.shareTechMono(
-                    fontSize: 20.sp, 
-                    fontWeight: FontWeight.w900, 
-                    color: isDark ? Colors.white : Colors.black87, 
-                    letterSpacing: 1.2
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    ).animate(target: _dragOffset == Offset.zero ? 1 : 0)
-     .shake(duration: 3.seconds, hz: 0.3);
-  }
 }
+
 
 
 
