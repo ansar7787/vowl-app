@@ -1,5 +1,16 @@
-class QuestRegistry {
-  /// Maps each gameType to its corresponding category (skill) folder in assets/curriculum.
+import 'package:flutter/foundation.dart';
+
+/// Registry mapping game types to curriculum skill categories and asset paths.
+/// 
+/// This class is abstract to prevent instantiation and subclassing.
+@immutable
+abstract class QuestRegistry {
+  // Private constructor to prevent instantiation.
+  const QuestRegistry._();
+
+  /// Maps each gameType to its corresponding category (skill) folder in `assets/curriculum`.
+  /// 
+  /// Lookups operate in constant O(1) time complexity.
   static const Map<String, String> gameToCategory = {
     // Accent
     'consonantClarity': 'accent',
@@ -105,8 +116,6 @@ class QuestRegistry {
     'correctionWriting': 'writing',
     'dailyJournal': 'writing',
     'describeSituationWriting': 'writing',
-    'essayDrafting': 'writing',
-    'fixTheSentence': 'writing',
     'opinionWriting': 'writing',
     'sentenceBuilder': 'writing',
     'shortAnswerWriting': 'writing',
@@ -120,12 +129,15 @@ class QuestRegistry {
     'accentShadowing': 'elite_mastery',
   };
 
-  /// Gets the full asset path for a specific game and level batch.
+  /// Gets the full local bundle asset path for a specific game and level batch.
+  /// 
   /// Batch size is 10 levels (30 questions) per file.
+  /// Uses a constant O(1) mathematical index mapping to locate boundaries instantly.
   static String getAssetPath(String gameType, int level) {
     final category = gameToCategory[gameType];
     if (category == null) throw Exception('Unknown gameType: $gameType');
 
+    // O(1) mathematical mapping instead of N-iteration scanning
     final batchIndex = ((level - 1) ~/ 10) + 1;
     final startLevel = (batchIndex - 1) * 10 + 1;
     final endLevel = batchIndex * 10;
