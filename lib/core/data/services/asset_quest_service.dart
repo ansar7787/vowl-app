@@ -6,6 +6,18 @@ import 'package:flutter/services.dart';
 import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/core/data/constants/quest_registry.dart';
 
+/// Contract definition for quest-loading service layers.
+abstract class QuestService {
+  /// Loads quests for a specific game and level from the active source.
+  Future<List<Map<String, dynamic>>> getQuests(String gameType, int level);
+  
+  /// Pre-loads a batch for the next set of levels in the background.
+  Future<void> preloadBatch(String gameType, int currentLevel);
+
+  /// Clears the memory cache.
+  void clearCache();
+}
+
 /// Parses JSON in an isolate to avoid jank on the main thread.
 List<Map<String, dynamic>> _parseQuestsInIsolate(String jsonString) {
   try {
@@ -24,19 +36,25 @@ List<Map<String, dynamic>> _parseQuestsInIsolate(String jsonString) {
   return [];
 }
 
-class AssetQuestService {
+/// High-performance local asset quest loader service.
+/// 
+/// Employs:
+/// 1. **DSA: Least Recently Used (LRU) Cache** via [LinkedHashMap] in $O(1)$ evictions.
+/// 2. **DSA: Request Coalescing** via active [Completer] futures to prevent redundant disk reads.
+/// 3. **Concurrency: Isolate Parsing** via Flutter's `compute` utility to guarantee 0% UI frame drops.
+class AssetQuestService implements QuestService {
   /// Maximum number of batches kept in memory.
-  /// Each batch is typically 30 quests (~20-50KB), so 5 batches ≈ 250KB max.
   static const int _maxCacheSize = 5;
 
   /// LRU cache: newest entries at the end, oldest at the front.
+  /// Standard DSA lookup and deletion operates in O(1) time complexity.
   final LinkedHashMap<String, List<Map<String, dynamic>>> _batchCache =
       LinkedHashMap();
 
-  /// Paths currently being loaded to prevent duplicate simultaneous loads.
+  /// Coalescing map for active disk loads to prevent simultaneous identical IO tasks.
   final Map<String, Completer<List<Map<String, dynamic>>>> _loadingPaths = {};
 
-  /// Evicts the oldest batch if cache exceeds the limit.
+  /// Evicts the oldest batch if cache exceeds the limit in O(1) time.
   void _trimCache() {
     while (_batchCache.length > _maxCacheSize) {
       final evicted = _batchCache.keys.first;
@@ -48,7 +66,9 @@ class AssetQuestService {
   }
 
   /// Loads quests for a specific game and level from local assets.
-  /// Returns a list of quest maps or an empty list if not found.
+  /// 
+  /// Returns a list of quest maps or throws a [ServerException] if failed.
+  @override
   Future<List<Map<String, dynamic>>> getQuests(
     String gameType,
     int level,
@@ -62,9 +82,11 @@ class AssetQuestService {
       return _filterQuests(gameType, level, cached);
     }
 
-    // 2. Return the pending future if already loading
+    // 2. Return the pending future if already loading (Request Coalescing)
     if (_loadingPaths.containsKey(path)) {
-      debugPrint('AssetQuestService: Waiting for already loading path $path');
+      if (kDebugMode) {
+        debugPrint('AssetQuestService: Coalescing request for loading path: $path');
+      }
       final quests = await _loadingPaths[path]!.future;
       return _filterQuests(gameType, level, quests);
     }
@@ -81,6 +103,7 @@ class AssetQuestService {
         throw ServerException('AssetQuestService: JSON file at $path is empty');
       }
 
+      // Concurrency: Parse JSON in a separate isolate to bypass main-thread GC & parsing stutters
       final List<Map<String, dynamic>> quests = await compute(_parseQuestsInIsolate, jsonString);
 
       _batchCache[path] = quests;
@@ -97,8 +120,10 @@ class AssetQuestService {
   }
 
   /// Pre-loads a batch for the next set of levels.
+  @override
   Future<void> preloadBatch(String gameType, int currentLevel) async {
-    final nextBatchLevel = ((currentLevel + 1) / 10).ceil() * 10 + 1;
+    // Fast O(1) integer arithmetic without floating-point conversions
+    final nextBatchLevel = (((currentLevel + 1) - 1) ~/ 10) * 10 + 11;
     final path = QuestRegistry.getAssetPath(gameType, nextBatchLevel);
     
     if (_batchCache.containsKey(path) || _loadingPaths.containsKey(path)) return;
@@ -133,7 +158,6 @@ class AssetQuestService {
     int level,
     List<Map<String, dynamic>> quests,
   ) {
-    // Pattern 2: Generic fallback for other games
     bool filterQuests(dynamic q, int level) {
       try {
         final levelStr = level.toString();
@@ -148,8 +172,7 @@ class AssetQuestService {
         final id = q['id']?.toString();
         if (id == null) return false;
 
-        // Robust Regex for level matching:
-        // Matches 'l1', 'level1', 'l01', etc., ensuring boundary protection
+        // Robust Regex for level matching with boundary protection
         final explicitLevelRegex = RegExp(
           '(?:l|level)0*$levelStr(?![0-9])',
           caseSensitive: false,
@@ -160,7 +183,6 @@ class AssetQuestService {
         }
 
         // 3. Fallback: Check if the ID ends with or contains the level number with boundary
-        // e.g., 'story_1_q1' or 'q1' (if level is 1)
         final fallbackRegex = RegExp(
           '(?:^|[^0-9])0*$levelStr(?![0-9])',
         );
@@ -187,12 +209,14 @@ class AssetQuestService {
   }
 
   /// Clears the memory cache.
+  @override
   void clearCache() {
-    debugPrint('AssetQuestService: Clearing batch cache');
+    if (kDebugMode) {
+      debugPrint('AssetQuestService: Clearing batch cache');
+    }
     _batchCache.clear();
   }
 
   /// Returns the current number of cached batches.
   int get cacheSize => _batchCache.length;
 }
-
