@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// The central production-grade theme declaration for Vowl, coordinate
+/// light, dark, and midnight configurations with seamless system-level overlays.
 class AppTheme {
-  // Education Quiz Master Palette (Option B - The Winner)
+  // Education Quiz Master Palette
   // 1. Primary: Indigo (Trust + Focus)
   // 2. Secondary: Emerald (Success + Progress)
   // 3. Accent: Amber (Rewards + Stars)
@@ -11,7 +14,7 @@ class AppTheme {
   static const secondaryEmerald = Color(0xFF10B981);
   static const accentAmber = Color(0xFFF59E0B);
   
-  // Premium Soft Tints (For backgrounds, selections, and highlights without eye strain)
+  // Premium Soft Tints
   static const primaryIndigoTintLight = Color(0xFFEEF2FF); // Indigo 50
   static const primaryIndigoTintDark = Color(0xFF1E1B4B);  // Indigo 950
   
@@ -20,7 +23,7 @@ class AppTheme {
   static const borderLight = Color(0xFFE2E8F0);   // Slate 200
   
   static const scaffoldDark = Color(0xFF0F172A);  // Slate 900
-  static const cardDark = Color(0xFF1E293B);      // Slate 800 (Elevated card depth!)
+  static const cardDark = Color(0xFF1E293B);      // Slate 800
   static const borderDark = Color(0xFF334155);    // Slate 700
   
   static final ThemeData lightTheme = ThemeData(
@@ -38,10 +41,17 @@ class AppTheme {
     cardColor: cardLight,
     dividerColor: borderLight,
     textTheme: GoogleFonts.outfitTextTheme().apply(
-      bodyColor: const Color(0xFF0F172A), // Slate 900 for ultra-premium readability
+      bodyColor: const Color(0xFF0F172A), // Slate 900
       displayColor: primaryIndigo,
     ),
     appBarTheme: AppBarTheme(
+      systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light,
+        systemNavigationBarColor: Colors.transparent,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
       backgroundColor: primaryIndigo,
       foregroundColor: Colors.white,
       elevation: 0,
@@ -87,7 +97,7 @@ class AppTheme {
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryIndigo,
       brightness: Brightness.dark,
-      primary: const Color(0xFF818CF8), // Lighter indigo for dark mode
+      primary: const Color(0xFF818CF8), // Lighter indigo
       secondary: secondaryEmerald,
       tertiary: accentAmber,
       surface: cardDark,
@@ -97,11 +107,18 @@ class AppTheme {
     canvasColor: scaffoldDark,
     cardColor: cardDark,
     dividerColor: borderDark,
-    textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme).apply(
+    textTheme: GoogleFonts.outfitTextTheme().apply(
       bodyColor: const Color(0xFFF8FAFC), // Slate 50
       displayColor: Colors.white,
     ),
     appBarTheme: AppBarTheme(
+      systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+        systemNavigationBarColor: Colors.transparent,
+        systemNavigationBarIconBrightness: Brightness.light,
+      ),
       backgroundColor: Colors.transparent,
       foregroundColor: Colors.white,
       elevation: 0,
@@ -150,18 +167,25 @@ class AppTheme {
       primary: const Color(0xFF818CF8),
       secondary: secondaryEmerald,
       tertiary: accentAmber,
-      surface: const Color(0xFF0B0F19), // Elevated high-contrast card depth!
+      surface: const Color(0xFF0B0F19), // High-contrast card base
       primaryContainer: primaryIndigoTintDark,
     ),
     scaffoldBackgroundColor: Colors.black,
     canvasColor: Colors.black,
     cardColor: const Color(0xFF0B0F19),
     dividerColor: const Color(0xFF1E293B),
-    textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme).apply(
+    textTheme: GoogleFonts.outfitTextTheme().apply(
       bodyColor: Colors.white,
       displayColor: Colors.white,
     ),
     appBarTheme: AppBarTheme(
+      systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+        systemNavigationBarColor: Colors.transparent,
+        systemNavigationBarIconBrightness: Brightness.light,
+      ),
       backgroundColor: Colors.transparent,
       foregroundColor: Colors.white,
       elevation: 0,
