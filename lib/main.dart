@@ -119,7 +119,6 @@ void main() async {
       );
 
       di.sl<NotificationService>().init().then((_) {
-        di.sl<NotificationService>().requestPermissions();
         di.sl<NotificationService>().scheduleWeeklyMotivation();
       });
     });
