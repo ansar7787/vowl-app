@@ -916,7 +916,8 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
   }
 
   void _showLockedFeedback(BuildContext context, Color color) {
-    HapticFeedback.vibrate();
+    HapticFeedback.mediumImpact();
+    ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
@@ -951,7 +952,9 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
         _buddyMessageTimer?.cancel();
         final user = context.read<AuthBloc>().state.user;
         final mascotId = user?.vowlMascot ?? 'vowl_prime';
-        final mascotName = mascotId.split('_').map((e) => e[0].toUpperCase() + e.substring(1)).join(' ');
+        final mascotName = mascotId.isNotEmpty
+            ? mascotId.split('_').map((e) => e.isNotEmpty ? e[0].toUpperCase() + e.substring(1) : '').join(' ')
+            : 'Companion';
         
         final messages = [
           "Level $unlockedLevels! You're unstoppable, Superstar! ⭐",
