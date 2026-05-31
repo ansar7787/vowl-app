@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+/// Dynamic immutable entity representing resolved visual parameters for active screens.
 class GameBriefing {
   final String title;
   final String objective;
@@ -19,7 +20,13 @@ class GameBriefing {
   });
 }
 
+/// Performance-optimized instruction coordinator resolving game descriptions
+/// using O(1) static lookup maps and concise, punchy visual instructions.
 class GameInstructionService {
+  // Private constructor to enforce static utility boundaries
+  const GameInstructionService._();
+
+  /// Resolves briefing assets, incorporating Milestone markers for Level 100.
   static GameBriefing getBriefing(GameSubtype? type, String? fallbackTitle, {int level = 1}) {
     final baseBriefing = _getBaseBriefing(type, fallbackTitle);
 
@@ -45,1024 +52,9 @@ class GameInstructionService {
       return getDefaultBriefing(fallbackTitle ?? "Quest");
     }
 
-    // --- 1. ELITE MASTERY (High Stakes) ---
-    if (type == GameSubtype.storyBuilder) {
-      return const GameBriefing(
-        title: "Story Builder",
-        icon: Icons.reorder_rounded,
-        objective: "DRAG & REORDER: Reconstruct the logical flow of the story by dragging sentences into their correct chronological order.",
-        rules: ["3 Hearts per mission", "2 Strikes (Mistakes Re-queued)", "Logic and context are key"],
-        actionText: "Build Story",
-        tip: "PRO TIP: Look for transition words like 'However', 'Consequently', or 'Subsequently' to link sequences!",
-      );
-    }
-    if (type == GameSubtype.idiomMatch) {
-      return const GameBriefing(
-        title: "Idiom Match",
-        icon: Icons.psychology_rounded,
-        objective: "MATCH MEANINGS: Pair the colorful idiom with its literal meaning. Master the subtext of native conversation.",
-        rules: ["Match correctly to win", "Avoid literal traps", "3 Hearts per mission"],
-        actionText: "Match Idioms",
-        tip: "PRO TIP: Don't take idioms literally! They usually describe a feeling or social situation using common objects.",
-      );
-    }
-    if (type == GameSubtype.speedSpelling) {
-      return const GameBriefing(
-        title: "Speed Spelling",
-        icon: Icons.spellcheck_rounded,
-        objective: "BEAT THE CLOCK: Spell the target word accurately before time expires. Focus on common spelling traps.",
-        rules: ["Spelling must be exact", "Watch the timer", "3 Hearts per mission"],
-        actionText: "Start Spelling",
-        tip: "PRO TIP: Trust your muscle memory! Trying to think about every letter can slow you down; let it flow.",
-      );
-    }
-    if (type == GameSubtype.accentShadowing) {
-      return const GameBriefing(
-        title: "Accent Shadowing",
-        icon: Icons.mic_external_on_rounded,
-        objective: "RECORD & SHADOW: Speak along with the native model. Match their pitch, rhythm, and intonation perfectly.",
-        rules: ["Listen first, then speak", "Match the waveform", "3 Hearts per mission"],
-        actionText: "Shadow Voice",
-        tip: "PRO TIP: Focus on the musicality! Accent is about the 'song' of the language—the rises and falls in pitch.",
-      );
-    }
-
-    // --- 2. GRAMMAR (Technical Precision) ---
-    if (type == GameSubtype.voiceSwap) {
-      return const GameBriefing(
-        title: "Voice Swap",
-        icon: Icons.swap_horiz_rounded,
-        objective: "TRANSFORM SENTENCES: Switch between Active and Passive voice without changing the core meaning.",
-        rules: ["Identify the agent", "Change the verb form", "Keep the meaning intact"],
-        actionText: "Swap Voice",
-        tip: "PRO TIP: In Passive voice, the object becomes the star! Use 'by [someone]' only if the agent is important.",
-      );
-    }
-    if (type == GameSubtype.directIndirectSpeech) {
-      return const GameBriefing(
-        title: "Speech Shift",
-        icon: Icons.forum_rounded,
-        objective: "CONVERT SPEECH: Change direct quotes into reported speech. Watch your tenses and pronouns!",
-        rules: ["Shift tenses backward", "Update time markers", "Correct the pronouns"],
-        actionText: "Report Speech",
-        tip: "PRO TIP: 'Present' becomes 'Past'! If someone said 'I am here', you report that they 'were there'.",
-      );
-    }
-    if (type == GameSubtype.tenseMastery) {
-      return const GameBriefing(
-        title: "Tense Mastery",
-        icon: Icons.history_toggle_off_rounded,
-        objective: "MAP THE TIMELINE: Place the action in its correct temporal state. Perfect your use of Past, Present, and Future.",
-        rules: ["Check for time markers", "Identify frequency", "3 Hearts per mission"],
-        actionText: "Master Tenses",
-        tip: "PRO TIP: Look for 'Signal Words'! 'Since' often needs Perfect tense, while 'Usually' needs Simple Present.",
-      );
-    }
-    if (type == GameSubtype.grammarQuest) {
-      return const GameBriefing(
-        title: "Grammar Core",
-        icon: Icons.gavel_rounded,
-        objective: "RESOLVE PATTERNS: Fix the underlying structural errors to create a perfect linguistic system.",
-        rules: ["Identify errors", "Choose the correction", "Master the rules"],
-        actionText: "Fix Structure",
-        tip: "PRO TIP: Read the sentence out loud in your head! Often, you can 'hear' if a rule is being broken.",
-      );
-    }
-    if (type == GameSubtype.sentenceCorrection) {
-      return const GameBriefing(
-        title: "Error Auditor",
-        icon: Icons.spellcheck_rounded,
-        objective: "AUDIT SENTENCES: Scan the text for grammatical anomalies and replace them with correct forms.",
-        rules: ["Find the glitch", "Apply the fix", "Verify the meaning"],
-        actionText: "Audit Text",
-        tip: "PRO TIP: Focus on subject-verb agreement first—it's the most common source of errors!",
-      );
-    }
-    if (type == GameSubtype.wordReorder) {
-      return const GameBriefing(
-        title: "Syntax Reorder",
-        icon: Icons.reorder_rounded,
-        objective: "REORDER WORDS: Arrange scrambled segments into a grammatically sound sequence.",
-        rules: ["Identify the subject", "Find the main verb", "Arrange complements"],
-        actionText: "Align Syntax",
-        tip: "PRO TIP: Adjectives usually come before nouns, and adverbs often follow verbs. Follow the logic!",
-      );
-    }
-    if (type == GameSubtype.partsOfSpeech) {
-      return const GameBriefing(
-        title: "Lexical Anatomy",
-        icon: Icons.category_rounded,
-        objective: "IDENTIFY FUNCTIONS: Label words based on their role in the sentence (Noun, Verb, Adjective, etc.).",
-        rules: ["Analyze word function", "Categorize correctly", "Build structure"],
-        actionText: "Identify Role",
-        tip: "PRO TIP: If it's an action, it's a verb. If it's a person/place/thing, it's a noun. Simple!",
-      );
-    }
-    if (type == GameSubtype.subjectVerbAgreement) {
-      return const GameBriefing(
-        title: "Agreement Sync",
-        icon: Icons.sync_rounded,
-        objective: "SYNC SUBJECTS: Ensure the verb matches the subject in number and person.",
-        rules: ["Identify the subject", "Check singular vs plural", "Match the verb form"],
-        actionText: "Sync Agreement",
-        tip: "PRO TIP: Watch out for 'distractors'—prepositional phrases that sit between the subject and the verb!",
-      );
-    }
-    if (type == GameSubtype.clauseConnector) {
-      return const GameBriefing(
-        title: "Clause Linker",
-        icon: Icons.link_rounded,
-        objective: "CONNECT IDEAS: Use appropriate conjunctions to link independent and dependent clauses.",
-        rules: ["Analyze relationship", "Choose the connector", "Ensure logical flow"],
-        actionText: "Link Clauses",
-        tip: "PRO TIP: Use 'Because' for reasons, 'Although' for contrast, and 'While' for simultaneous actions.",
-      );
-    }
-    if (type == GameSubtype.questionFormatter) {
-      return const GameBriefing(
-        title: "Inquiry Logic",
-        icon: Icons.help_outline_rounded,
-        objective: "FORMAT QUESTIONS: Transform statements into accurate interrogative forms.",
-        rules: ["Invert subject/verb", "Add auxiliary verbs", "Match the tense"],
-        actionText: "Format Inquiry",
-        tip: "PRO TIP: Remember the 'Qu-A-S-V' rule: Question word, Auxiliary, Subject, Verb!",
-      );
-    }
-    if (type == GameSubtype.articleInsertion) {
-      return const GameBriefing(
-        title: "Article Anchor",
-        icon: Icons.anchor_rounded,
-        objective: "ANCHOR NOUNS: Insert the correct articles (a, an, the) or determine if none is needed.",
-        rules: ["Check for specificity", "Identify first sounds", "Countable vs Uncountable"],
-        actionText: "Insert Articles",
-        tip: "PRO TIP: Use 'The' for specific things we both know about, and 'A/An' for anything general.",
-      );
-    }
-    if (type == GameSubtype.modifierPlacement) {
-      return const GameBriefing(
-        title: "Modifier Map",
-        icon: Icons.location_on_rounded,
-        objective: "PLACE MODIFIERS: Ensure adjectives and adverbs are placed correctly to avoid ambiguity.",
-        rules: ["Avoid dangling modifiers", "Link to target word", "Clear the meaning"],
-        actionText: "Map Modifiers",
-        tip: "PRO TIP: Place the modifier as close as possible to the word it's describing!",
-      );
-    }
-    if (type == GameSubtype.modalsSelection) {
-      return const GameBriefing(
-        title: "Modal Matrix",
-        icon: Icons.grid_view_rounded,
-        objective: "CHOOSE MODALS: Select the auxiliary verb that expresses the right degree of possibility or necessity.",
-        rules: ["Analyze the mood", "Check for permission/duty", "Match the strength"],
-        actionText: "Select Modal",
-        tip: "PRO TIP: 'Must' is for strong obligation, while 'Should' is for friendly advice.",
-      );
-    }
-    if (type == GameSubtype.prepositionChoice) {
-      return const GameBriefing(
-        title: "Position Pro",
-        icon: Icons.directions_rounded,
-        objective: "PICK PREPOSITIONS: Master the small words that define time, space, and relationship.",
-        rules: ["Analyze spatial data", "Check time markers", "Verify collocations"],
-        actionText: "Choose Position",
-        tip: "PRO TIP: Use 'In' for large spaces, 'On' for surfaces, and 'At' for specific points.",
-      );
-    }
-    if (type == GameSubtype.pronounResolution) {
-      return const GameBriefing(
-        title: "Pronoun Pivot",
-        icon: Icons.people_rounded,
-        objective: "RESOLVE PRONOUNS: Ensure every pronoun has a clear and logical antecedent.",
-        rules: ["Find the antecedent", "Match gender & number", "Avoid ambiguity"],
-        actionText: "Resolve Pivot",
-        tip: "PRO TIP: If there are two people, 'he' can be confusing. Use their names or clear markers!",
-      );
-    }
-    if (type == GameSubtype.punctuationMastery) {
-      return const GameBriefing(
-        title: "Symbol Scribe",
-        icon: Icons.short_text_rounded,
-        objective: "MASTER SYMBOLS: Place commas, semi-colons, and periods to structure the text perfectly.",
-        rules: ["Separate list items", "Connect related ideas", "Define boundaries"],
-        actionText: "Scribe Symbols",
-        tip: "PRO TIP: Use a comma before 'and' only in long lists or between independent clauses!",
-      );
-    }
-    if (type == GameSubtype.relativeClauses) {
-      return const GameBriefing(
-        title: "Relative Rail",
-        icon: Icons.linear_scale_rounded,
-        objective: "EXTEND MEANING: Use relative pronouns (who, which, that) to add essential details to nouns.",
-        rules: ["Identify the noun", "Choose the pronoun", "Link the detail"],
-        actionText: "Link Relative",
-        tip: "PRO TIP: Use 'Who' for people and 'Which' or 'That' for things and animals.",
-      );
-    }
-    if (type == GameSubtype.conditionals) {
-      return const GameBriefing(
-        title: "If-Logic",
-        icon: Icons.alt_route_rounded,
-        objective: "HYPOTHESIZE: Master 'If' statements across zero, first, second, and third conditionals.",
-        rules: ["Identify the condition", "Match the tense sequence", "Predict the result"],
-        actionText: "Solve Logic",
-        tip: "PRO TIP: In 'Second Conditional' (imaginary), use 'If I WERE' even for singular subjects!",
-      );
-    }
-    if (type == GameSubtype.conjunctions) {
-      return const GameBriefing(
-        title: "Logic Junction",
-        icon: Icons.join_inner_rounded,
-        objective: "JOIN IDEAS: Use FANBOYS and subordinating conjunctions to build complex thoughts.",
-        rules: ["Compare/Contrast ideas", "Identify cause/effect", "Connect the flow"],
-        actionText: "Join Junction",
-        tip: "PRO TIP: Remember 'FANBOYS': For, And, Nor, But, Or, Yet, So!",
-      );
-    }
-
-    // --- 3. READING (Comprehension & Speed) ---
-    if (type == GameSubtype.skimmingScanning) {
-      return const GameBriefing(
-        title: "Skim & Scan",
-        icon: Icons.search_rounded,
-        objective: "FIND DATA FAST: Scan the text to locate specific facts or skim for the overall main idea.",
-        rules: ["Speed is crucial", "Ignore filler words", "Locate specific data points"],
-        actionText: "Start Scanning",
-        tip: "PRO TIP: Use your eyes like a radar! Don't read every word; hunt for capital letters or numbers first.",
-      );
-    }
-    if (type == GameSubtype.clozeTest) {
-      return const GameBriefing(
-        title: "Context Mastery",
-        icon: Icons.format_color_text_rounded,
-        objective: "FILL THE GAPS: Restore the passage by choosing the most contextually appropriate words.",
-        rules: ["Read before and after", "Check for collocations", "Ensure logical flow"],
-        actionText: "Fill Gaps",
-        tip: "PRO TIP: Read the whole sentence first! The word after the gap often dictates what part of speech you need.",
-      );
-    }
-    if (type == GameSubtype.findWordMeaning) {
-      return const GameBriefing(
-        title: "Lexical Linker",
-        icon: Icons.menu_book_rounded,
-        objective: "Locate and match word definitions within the context of the text.",
-        rules: ["Analyze the context", "Match word to meaning", "Build vocabulary"],
-        actionText: "Link Words",
-        tip: "Context is your best friend! The surrounding words often reveal the hidden meaning. 📚",
-      );
-    }
-    if (type == GameSubtype.guessTitle) {
-      return const GameBriefing(
-        title: "Title Tactician",
-        icon: Icons.title_rounded,
-        objective: "Deduce the most appropriate title for the given passage.",
-        rules: ["Identify main theme", "Check all options", "Summarize the core"],
-        actionText: "Deduce Title",
-        tip: "A great title captures the 'big picture'. Look for the most repeated themes! 🏷️",
-      );
-    }
-    if (type == GameSubtype.paragraphSummary) {
-      return const GameBriefing(
-        title: "Summary Sieve",
-        icon: Icons.short_text_rounded,
-        objective: "Select the sentence that best captures the essence of the paragraph.",
-        rules: ["Filter out details", "Find the main point", "Stay objective"],
-        actionText: "Summarize Now",
-        tip: "Avoid sentences that only mention one small detail; look for the overarching idea! 📋",
-      );
-    }
-    if (type == GameSubtype.readAndAnswer) {
-      return const GameBriefing(
-        title: "Insight Analyst",
-        icon: Icons.fact_check_rounded,
-        objective: "Answer specific comprehension questions about the text.",
-        rules: ["Refer back to text", "Verify every detail", "Think critically"],
-        actionText: "Analyze Text",
-        tip: "Don't guess! The answer is ALWAYS in the text—you just have to find it. 🕵️",
-      );
-    }
-    if (type == GameSubtype.readAndMatch) {
-      return const GameBriefing(
-        title: "Semantic Bridge",
-        icon: Icons.bolt_rounded,
-        objective: "Connect related concepts and facts from the reading passage.",
-        rules: ["Bridge the gaps", "Use lasers to link", "Confirm relationships"],
-        actionText: "Bridge Gaps",
-        tip: "Think about how concepts relate—is it cause and effect, or part and whole? 🌉",
-      );
-    }
-    if (type == GameSubtype.readingConclusion) {
-      return const GameBriefing(
-        title: "Logical Finisher",
-        icon: Icons.last_page_rounded,
-        objective: "Predict the logical conclusion or next step based on the text.",
-        rules: ["Follow the logic", "Predict outcome", "Verify with evidence"],
-        actionText: "Predict Final",
-        tip: "Follow the clues the author left! Where does the logic naturally lead? 🏁",
-      );
-    }
-    if (type == GameSubtype.readingInference) {
-      return const GameBriefing(
-        title: "Subtext Sleuth",
-        icon: Icons.biotech_rounded,
-        objective: "Identify what is implied but not explicitly stated.",
-        rules: ["Read between lines", "Detect subtext", "Infer correctly"],
-        actionText: "Deduce Subtext",
-        tip: "The author's tone and choice of words often hide a deeper meaning. 🔍",
-      );
-    }
-    if (type == GameSubtype.readingSpeedCheck) {
-      return const GameBriefing(
-        title: "Velocity Reader",
-        icon: Icons.speed_rounded,
-        objective: "Test your comprehension while reading at high velocity.",
-        rules: ["Read fast", "Maintain accuracy", "Beat the timer"],
-        actionText: "Race Timer",
-        tip: "Don't subvocalize (read out loud in your head)! Let your eyes glide over the text. ⚡",
-      );
-    }
-    if (type == GameSubtype.sentenceOrderReading) {
-      return const GameBriefing(
-        title: "Structure Architect",
-        icon: Icons.architecture_rounded,
-        objective: "Reorganize scrambled sentences to restore logical flow.",
-        rules: ["Find the logic", "Check transitions", "Rebuild the system"],
-        actionText: "Rebuild Flow",
-        tip: "Look for transition words like 'however', 'moreover', and 'finally'. 🏗️",
-      );
-    }
-    if (type == GameSubtype.trueFalseReading) {
-      return const GameBriefing(
-        title: "Truth Verifier",
-        icon: Icons.verified_user_rounded,
-        objective: "Determine the factual accuracy of statements against the text.",
-        rules: ["Locate the evidence", "Check for nuances", "Validate truth"],
-        actionText: "Verify Truth",
-        tip: "Be careful of 'absolute' words like 'always', 'never', or 'only'! ⚖️",
-      );
-    }
-
-    // --- 4. VOCABULARY (Lexical Expansion) ---
-    if (type == GameSubtype.flashcards) {
-      return const GameBriefing(
-        title: "Flashcards",
-        icon: Icons.style_rounded,
-        objective: "Master words by swiping through the deck.",
-        rules: ["Tap to flip", "Swipe Right = Known", "Swipe Left = Review"],
-        actionText: "Master Now",
-        tip: "Speed isn't the goal—mastery is! 🚀",
-      );
-    }
-    if (type == GameSubtype.topicVocab) {
-      return const GameBriefing(
-        title: "Topic Nexus",
-        icon: Icons.category_rounded,
-        objective: "Sort words into their thematic bins.",
-        rules: ["Analyze the word", "Swipe into matching bin", "Clear the queue"],
-        actionText: "Start Sorting",
-        tip: "Sorting by topic builds semantic memory 2x faster! 🧠",
-      );
-    }
-    if (type == GameSubtype.prefixSuffix) {
-      return const GameBriefing(
-        title: "Word Roots",
-        icon: Icons.spa_rounded,
-        objective: "Build words by attaching affixes to roots.",
-        rules: ["Analyze root", "Attach correct affix", "3 Hearts"],
-        actionText: "Build Words",
-        tip: "Roots are the DNA of English! 🌱",
-      );
-    }
-    if (type == GameSubtype.wordFormation) {
-      return const GameBriefing(
-        title: "Morpheme Mixer",
-        icon: Icons.science_rounded,
-        objective: "Slide the correct suffix into the core to transform the word.",
-        rules: ["Analyze root", "Slide suffix", "Form word"],
-        actionText: "Ready to Mix?",
-        tip: "Suffixes change words from verbs to nouns or adjectives! 🧪🚀",
-      );
-    }
-    if (type == GameSubtype.synonymSearch) {
-      return const GameBriefing(
-        title: "Word Warp",
-        icon: Icons.cyclone,
-        objective: "Warp the synonym into the central gate.",
-        rules: ["Find the twin", "Drag into the Warp Gate", "Avoid distractions"],
-        actionText: "Start Warp",
-        tip: "Focus on the core meaning, filter the noise! 🌀",
-      );
-    }
-    if (type == GameSubtype.antonymSearch) {
-      return const GameBriefing(
-        title: "Polarity Pull",
-        icon: Icons.electrical_services_rounded,
-        objective: "Drag the antonym into the opposite pole.",
-        rules: ["Find the Antonym", "Opposites Attract", "3 Hearts left"],
-        actionText: "Start Pull",
-        tip: "Opposite meaning = Opposite pole! ⚡🧲",
-      );
-    }
-
-    if (type == GameSubtype.academicWord) {
-      return const GameBriefing(
-        title: "Thesis Thrust",
-        icon: Icons.auto_stories_rounded,
-        objective: "Identify academic words and thrust them into the thesis.",
-        rules: ["Analyze context", "Thrust the correct shard", "3 Hearts"],
-        actionText: "Initiate Thrust",
-        tip: "Academic words are precise—look at the logic! 📜✒️",
-      );
-    }
-    if (type == GameSubtype.contextClues) {
-      return const GameBriefing(
-        title: "Detective Lens",
-        icon: Icons.search_rounded,
-        objective: "Use the Lens to reveal hidden clues and identify the word.",
-        rules: ["Drag to reveal clues", "Analyze context", "3 Hearts"],
-        actionText: "Start Scan",
-        tip: "Clues often hide right next to the redacted word! 🔍",
-      );
-    }
-    if (type == GameSubtype.collocations) {
-      return const GameBriefing(
-        title: "Pair Pop",
-        icon: Icons.bubble_chart_rounded,
-        objective: "Find the word that naturally pairs with the top anchor.",
-        rules: ["Analyze anchor", "Select partner bubble", "Fuse the pair"],
-        actionText: "Initiate Fusion",
-        tip: "Collocations are words that naturally go together! 🫧⚡",
-      );
-    }
-    if (type == GameSubtype.phrasalVerbs) {
-      return const GameBriefing(
-        title: "Verb Vault",
-        icon: Icons.vpn_key_rounded,
-        objective: "Match the correct particle to the verb to unlock the vault.",
-        rules: ["Read Definition", "Select Particle", "Crack Vault"],
-        actionText: "Start Hack",
-        tip: "Particles change everything! 'Turn UP' is not 'Turn DOWN'. ⚙️",
-      );
-    }
-    if (type == GameSubtype.idioms) {
-      return const GameBriefing(
-        title: "Emojify",
-        icon: Icons.forum_rounded,
-        objective: "Decode emoji transmissions into idioms.",
-        rules: ["Interpret emojis", "Select matching idiom", "3 Hearts"],
-        actionText: "Send Message",
-        tip: "Idioms are secret codes for culture! 💬",
-      );
-    }
-    if (type == GameSubtype.contextualUsage) {
-      return const GameBriefing(
-        title: "Usage Unfold",
-        icon: Icons.auto_stories_rounded,
-        objective: "Analyze context and unfold the perfect word.",
-        rules: ["Evaluate context", "Unfold the correct fit", "3 Hearts"],
-        actionText: "Unfold Truth",
-        tip: "Nuance is key! Choose the word that belongs. 📖✨",
-      );
-    }
-
-    // --- WRITING (Composition & Flow) ---
-    if (type == GameSubtype.sentenceBuilder) {
-      return const GameBriefing(
-        title: "Sentence Architect",
-        icon: Icons.architecture_rounded,
-        objective: "CONSTRUCT SYNTAX: Build a grammatically sound sentence from isolated fragments.",
-        rules: ["Start with the Subject", "Identify the Verb", "Check the ending"],
-        actionText: "Build Sentence",
-        tip: "PRO TIP: Start with the 'Who' or 'What', then find the 'Action'!",
-      );
-    }
-    if (type == GameSubtype.completeSentence) {
-      return const GameBriefing(
-        title: "Fragment Fixer",
-        icon: Icons.healing_rounded,
-        objective: "HEAL FRAGMENTS: Add the missing components to turn a fragment into a complete thought.",
-        rules: ["Identify the missing part", "Maintain the tone", "Verify the logic"],
-        actionText: "Fix Fragment",
-        tip: "PRO TIP: A complete sentence needs a Subject and a Verb at the very least!",
-      );
-    }
-    if (type == GameSubtype.describeSituationWriting) {
-      return const GameBriefing(
-        title: "Context Scribe",
-        icon: Icons.description_rounded,
-        objective: "DESCRIBE SCENES: Write a detailed description of the given situation or image.",
-        rules: ["Use vivid adjectives", "Be specific & clear", "Show, don't just tell"],
-        actionText: "Scribe Scene",
-        tip: "PRO TIP: Use your senses! What would you see, hear, or feel in this situation?",
-      );
-    }
-    if (type == GameSubtype.fixTheSentence) {
-      return const GameBriefing(
-        title: "Clarity Editor",
-        icon: Icons.edit_rounded,
-        objective: "REVISE TEXT: Identify and fix errors in grammar, punctuation, or style.",
-        rules: ["Find the flaw", "Rewrite for clarity", "3 Hearts left"],
-        actionText: "Apply Edit",
-        tip: "PRO TIP: Read it out loud! If it sounds clumsy, it probably needs a revision.",
-      );
-    }
-    if (type == GameSubtype.shortAnswerWriting) {
-      return const GameBriefing(
-        title: "Briefing Pro",
-        icon: Icons.short_text_rounded,
-        objective: "CONCISE REPLIES: Provide a direct and clear answer to the prompt in few words.",
-        rules: ["Be direct", "Stay on topic", "Mind your grammar"],
-        actionText: "Submit Answer",
-        tip: "PRO TIP: Get straight to the point! You don't need long introductions for short answers.",
-      );
-    }
-    if (type == GameSubtype.opinionWriting) {
-      return const GameBriefing(
-        title: "Vocal Pen",
-        icon: Icons.rate_review_rounded,
-        objective: "EXPRESS VIEWS: Write a short paragraph expressing your stance on a given topic.",
-        rules: ["State your opinion", "Provide one reason", "Use persuasive words"],
-        actionText: "Express View",
-        tip: "PRO TIP: Use words like 'I believe', 'In my view', or 'Furthermore' to strengthen your case.",
-      );
-    }
-    if (type == GameSubtype.dailyJournal) {
-      return const GameBriefing(
-        title: "Daily Chronicler",
-        icon: Icons.auto_stories_rounded,
-        objective: "LOG PROGRESS: Write a short entry about your day or a specific reflection.",
-        rules: ["Be honest", "Use past tense", "Focus on reflections"],
-        actionText: "Log Entry",
-        tip: "PRO TIP: Use time markers like 'This morning', 'Later on', and 'Finally' to organize your day.",
-      );
-    }
-    if (type == GameSubtype.summarizeStoryWriting) {
-      return const GameBriefing(
-        title: "Essence Extractor",
-        icon: Icons.compress_rounded,
-        objective: "SUMMARIZE: Condense a long story into its most important core points.",
-        rules: ["Remove fluff", "Highlight key events", "Stay objective"],
-        actionText: "Summarize Now",
-        tip: "PRO TIP: Focus on the 'Who', 'What', 'Where', and 'Why' of the story.",
-      );
-    }
-    if (type == GameSubtype.writingEmail) {
-      return const GameBriefing(
-        title: "Email Expert",
-        icon: Icons.alternate_email_rounded,
-        objective: "PROFESSIONAL MAIL: Compose an appropriate email based on the scenario.",
-        rules: ["Use right greeting", "State the purpose", "Use formal closing"],
-        actionText: "Send Mail",
-        tip: "PRO TIP: Start with 'I am writing to...' to immediately clarify your purpose.",
-      );
-    }
-    if (type == GameSubtype.correctionWriting) {
-      return const GameBriefing(
-        title: "Deep Editor",
-        icon: Icons.fact_check_rounded,
-        objective: "FINAL POLISH: Rewrite the entire paragraph to fix all underlying issues.",
-        rules: ["Check all rules", "Improve flow", "Achieve 100% accuracy"],
-        actionText: "Final Polish",
-        tip: "PRO TIP: Look for repetitive words and replace them with synonyms to make it sound better!",
-      );
-    }
-    if (type == GameSubtype.essayDrafting) {
-      return const GameBriefing(
-        title: "Essay Architect",
-        icon: Icons.article_rounded,
-        objective: "DRAFT STRUCTURE: Organize your thoughts into an introduction, body, and conclusion.",
-        rules: ["Clear thesis", "Logical body", "Strong conclusion"],
-        actionText: "Draft Essay",
-        tip: "PRO TIP: Your conclusion should remind the reader of your main point without just repeating it.",
-      );
-    }
-
-    // --- 5. LISTENING (Auditory Precision) ---
-    if (type == GameSubtype.ambientId) {
-      return const GameBriefing(
-        title: "Spatial Anchor",
-        icon: Icons.radar_rounded,
-        objective: "Identify the environment by analyzing spatial audio cues.",
-        rules: ["Listen to the background", "Scan the radar", "Anchor the location"],
-        actionText: "Anchor Location",
-        tip: "Focus on the 'texture' of the sound—echoes and hums tell a story! 📻",
-      );
-    }
-    if (type == GameSubtype.audioFillBlanks) {
-      return const GameBriefing(
-        title: "Ink Decoder",
-        icon: Icons.water_drop_rounded,
-        objective: "Transcribe missing words from the audio feed.",
-        rules: ["Smear the ink to see", "Listen for the gap", "Type exactly what you hear"],
-        actionText: "Start Decoding",
-        tip: "Typing what you hear builds a strong brain-ear connection! ✍️👂",
-      );
-    }
-    if (type == GameSubtype.audioMultipleChoice) {
-      return const GameBriefing(
-        title: "Sonic Satellites",
-        icon: Icons.track_changes_rounded,
-        objective: "Filter the audio signal and select the correct interpretation.",
-        rules: ["Spin satellites to lock", "Listen to the central core", "Choose the data match"],
-        actionText: "Lock Signal",
-        tip: "Filter out the noise—focus only on the speaker's core message! 🛰️",
-      );
-    }
-    if (type == GameSubtype.audioSentenceOrder) {
-      return const GameBriefing(
-        title: "Timeline Scrubber",
-        icon: Icons.waves_rounded,
-        objective: "Reconstruct the sequence of spoken segments.",
-        rules: ["Listen to the full stream", "Snap segments to timeline", "Calibrate the signal"],
-        actionText: "Calibrate Signal",
-        tip: "Logical flow is everything! Look for connectors like 'then' or 'so'. 🌊",
-      );
-    }
-    if (type == GameSubtype.audioTrueFalse) {
-      return const GameBriefing(
-        title: "Signal Validator",
-        icon: Icons.verified_user_rounded,
-        objective: "Verify the accuracy of a statement based on the audio feed.",
-        rules: ["Analyze the claim", "Compare to audio data", "Validate or Nullify"],
-        actionText: "Begin Validation",
-        tip: "Don't be fooled by similar words—the meaning must match exactly! ✅",
-      );
-    }
-    if (type == GameSubtype.detailSpotlight) {
-      return const GameBriefing(
-        title: "Spotlight Search",
-        icon: Icons.flashlight_on_rounded,
-        objective: "Locate specific details hidden within a complex audio passage.",
-        rules: ["Scan the shadows", "Listen for specific evidence", "Locate the target"],
-        actionText: "Start Search",
-        tip: "Details are like gold—listen for numbers, names, and dates! 🔦",
-      );
-    }
-    if (type == GameSubtype.emotionRecognition) {
-      return const GameBriefing(
-        title: "Sentiment Prober",
-        icon: Icons.psychology_rounded,
-        objective: "Decode the speaker's emotional state through tone and pitch.",
-        rules: ["Navigate the neural core", "Analyze pitch & rhythm", "Match the sentiment"],
-        actionText: "Probe Sentiment",
-        tip: "It's not what they say, it's how they say it! Listen for the 'song'. 🎭",
-      );
-    }
-    if (type == GameSubtype.fastSpeechDecoder) {
-      return const GameBriefing(
-        title: "Nuance Calibrator",
-        icon: Icons.settings_input_composite_rounded,
-        objective: "Decode rapid-fire speech by calibrating playback speed.",
-        rules: ["Rotate gears to change speed", "Listen for clarity", "Unfold the meaning"],
-        actionText: "Calibrate Gears",
-        tip: "Slow it down first, then try at full speed once you've got it! ⚙️",
-      );
-    }
-    if (type == GameSubtype.listeningInference) {
-      return const GameBriefing(
-        title: "Inference Lens",
-        icon: Icons.biotech_rounded,
-        objective: "Understand what was implied, not just what was said.",
-        rules: ["Read between the waves", "Deduce the subtext", "Choose logical conclusion"],
-        actionText: "Focus Lens",
-        tip: "The speaker often hides their true meaning behind their tone. 🔍",
-      );
-    }
-    if (type == GameSubtype.soundImageMatch) {
-      return const GameBriefing(
-        title: "Thematic Linker",
-        icon: Icons.category_rounded,
-        objective: "Link auditory data to its visual/categorical equivalent.",
-        rules: ["Scan encrypted tiles", "Match sound to symbol", "Confirm the thematic link"],
-        actionText: "Confirm Link",
-        tip: "Visualizing the sound helps solidify it in your long-term memory! 🖼️",
-      );
-    }
-
-    // --- ACCENT (Native Resonance) ---
-    if (type == GameSubtype.minimalPairs) {
-      return const GameBriefing(
-        title: "Minimal Distinctions",
-        icon: Icons.compare_arrows_rounded,
-        objective: "IDENTIFY SOUNDS: Distinguish between words that differ by only one sound (e.g., Ship vs Sheep).",
-        rules: ["Listen to the vowel", "Compare lengths", "Identify the match"],
-        actionText: "Match Sound",
-        tip: "PRO TIP: Focus on the duration of the sound! Long vowels and short vowels change everything.",
-      );
-    }
-    if (type == GameSubtype.intonationMimic) {
-      return const GameBriefing(
-        title: "Pitch Mimic",
-        icon: Icons.waves_rounded,
-        objective: "MIMIC PITCH: Match the rising and falling tones of the native speaker.",
-        rules: ["Watch the waveform", "Match the peaks", "3 Hearts left"],
-        actionText: "Mimic Now",
-        tip: "PRO TIP: Questions usually end with a rising pitch, while statements fall. Follow the wave!",
-      );
-    }
-    if (type == GameSubtype.syllableStress) {
-      return const GameBriefing(
-        title: "Stress Spotter",
-        icon: Icons.priority_high_rounded,
-        objective: "IDENTIFY STRESS: Pinpoint the emphasized syllable in a multi-syllabic word.",
-        rules: ["Listen for loudness", "Check vowel clarity", "Mark the stress"],
-        actionText: "Spot Stress",
-        tip: "PRO TIP: Stressed syllables are louder, longer, and higher in pitch than others!",
-      );
-    }
-    if (type == GameSubtype.wordLinking) {
-      return const GameBriefing(
-        title: "Fluid Flow",
-        icon: Icons.link_rounded,
-        objective: "LINK WORDS: Master how native speakers join words together (e.g., 'Not at all' sounds like 'Notatall').",
-        rules: ["Listen for gliding", "Connect consonants", "Avoid choppy speech"],
-        actionText: "Start Glide",
-        tip: "PRO TIP: When a word ends in a consonant and the next starts with a vowel, push them together!",
-      );
-    }
-    if (type == GameSubtype.shadowingChallenge) {
-      return const GameBriefing(
-        title: "Speed Shadow",
-        icon: Icons.bolt_rounded,
-        objective: "SHADOW NOW: Speak along with the audio with minimal delay. Perfect your timing.",
-        rules: ["No delay allowed", "Sync your voice", "3 Hearts"],
-        actionText: "Initiate Shadow",
-        tip: "PRO TIP: Don't wait for the audio to finish—start speaking as soon as you hear the first syllable!",
-      );
-    }
-    if (type == GameSubtype.vowelDistinction) {
-      return const GameBriefing(
-        title: "Vowel Vortex",
-        icon: Icons.cyclone_rounded,
-        objective: "ISOLATE VOWELS: Master the nuances between complex vowel sounds like /æ/, /ɛ/, and /ɪ/.",
-        rules: ["Focus on tongue position", "Identify the sound", "Select the match"],
-        actionText: "Sort Vowels",
-        tip: "PRO TIP: For /æ/ (like 'cat'), open your mouth wider than for /ɛ/ (like 'met')!",
-      );
-    }
-    if (type == GameSubtype.consonantClarity) {
-      return const GameBriefing(
-        title: "Clear Consonants",
-        icon: Icons.graphic_eq_rounded,
-        objective: "MASTER CLARITY: Perfect difficult consonant sounds and clusters (e.g., /th/, /r/, /l/).",
-        rules: ["Focus on airflow", "Check teeth position", "Record clearly"],
-        actionText: "Speak Clearly",
-        tip: "PRO TIP: For the 'TH' sound, place the tip of your tongue gently between your front teeth!",
-      );
-    }
-    if (type == GameSubtype.pitchPatternMatch) {
-      return const GameBriefing(
-        title: "Musical Melody",
-        icon: Icons.music_note_rounded,
-        objective: "MATCH MELODY: Replicate the 'musical' pattern of a full sentence.",
-        rules: ["Listen to the melody", "Hum first if needed", "Speak with rhythm"],
-        actionText: "Match Melody",
-        tip: "PRO TIP: English is a stress-timed language—some words are fast, some are slow. Match the tempo!",
-      );
-    }
-    if (type == GameSubtype.speedVariance) {
-      return const GameBriefing(
-        title: "Tempo Trainer",
-        icon: Icons.speed_rounded,
-        objective: "MANAGE SPEED: Practice speaking at different speeds while maintaining perfect clarity.",
-        rules: ["Slow for accuracy", "Fast for fluency", "Maintain rhythm"],
-        actionText: "Train Tempo",
-        tip: "PRO TIP: Even when speaking fast, don't sacrifice the ending sounds of your words!",
-      );
-    }
-    if (type == GameSubtype.dialectDrill) {
-      return const GameBriefing(
-        title: "Dialect Diver",
-        icon: Icons.public_rounded,
-        objective: "ADAPT ACCENTS: Identify and mimic characteristics of different English dialects.",
-        rules: ["Identify region", "Mimic vowel shifts", "3 Hearts"],
-        actionText: "Start Drill",
-        tip: "PRO TIP: Accents are about specific vowel shifts! Pay attention to how 'O' or 'A' sounds change.",
-      );
-    }
-    if (type == GameSubtype.connectedSpeech) {
-      return const GameBriefing(
-        title: "Fusion Focus",
-        icon: Icons.settings_input_composite_rounded,
-        objective: "REDUCE SOUNDS: Master contractions and reduced sounds (e.g., 'going to' -> 'gonna').",
-        rules: ["Identify reductions", "Speak fluently", "Sound natural"],
-        actionText: "Start Fusion",
-        tip: "PRO TIP: Reducing function words helps you sound more like a native speaker in casual talk!",
-      );
-    }
-    if (type == GameSubtype.pitchModulation) {
-      return const GameBriefing(
-        title: "Dynamic Range",
-        icon: Icons.legend_toggle_rounded,
-        objective: "EMOTIONAL RANGE: Use pitch to express different emotions (surprise, anger, joy).",
-        rules: ["Match the emotion", "Shift your pitch", "3 Hearts left"],
-        actionText: "Modulate Now",
-        tip: "PRO TIP: Higher pitch often signals excitement or surprise, while lower pitch is more serious.",
-      );
-    }
-
-    // --- ROLEPLAY (Social Intelligence) ---
-    if (type == GameSubtype.branchingDialogue) {
-      return const GameBriefing(
-        title: "Choice Navigator",
-        icon: Icons.alt_route_rounded,
-        objective: "NAVIGATE PATHS: Choose the response that leads to the most successful outcome.",
-        rules: ["Listen to the prompt", "Evaluate consequences", "Stay on mission"],
-        actionText: "Choose Path",
-        tip: "PRO TIP: Think about the other person's feelings before you choose your response!",
-      );
-    }
-    if (type == GameSubtype.situationalResponse) {
-      return const GameBriefing(
-        title: "Reflex Responder",
-        icon: Icons.flash_on_rounded,
-        objective: "RESPOND FAST: Pick the most appropriate social response for the given situation.",
-        rules: ["Match the social tone", "Be polite/direct", "3 Hearts"],
-        actionText: "Respond Now",
-        tip: "PRO TIP: Politeness markers like 'Could you' or 'Would you mind' go a long way!",
-      );
-    }
-    if (type == GameSubtype.jobInterview) {
-      return const GameBriefing(
-        title: "Career Closer",
-        icon: Icons.business_center_rounded,
-        objective: "INTERVIEW PRO: Navigate a high-stakes job interview by choosing professional answers.",
-        rules: ["Be professional", "Highlight skills", "Stay confident"],
-        actionText: "Start Interview",
-        tip: "PRO TIP: Always link your answers back to how you can help the company succeed!",
-      );
-    }
-    if (type == GameSubtype.medicalConsult) {
-      return const GameBriefing(
-        title: "Health Liaison",
-        icon: Icons.medical_services_rounded,
-        objective: "EXPLAIN SYMPTOMS: Describe medical issues or understand doctor's advice clearly.",
-        rules: ["Be accurate", "Describe feelings", "3 Hearts"],
-        actionText: "Start Consult",
-        tip: "PRO TIP: Use specific words like 'Aching', 'Sharp', or 'Dull' to describe pain.",
-      );
-    }
-    if (type == GameSubtype.gourmetOrder) {
-      return const GameBriefing(
-        title: "Order Master",
-        icon: Icons.restaurant_rounded,
-        objective: "DINE OUT: Order food, ask for recommendations, and handle bill issues.",
-        rules: ["Be polite", "Check the menu", "Clear communication"],
-        actionText: "Place Order",
-        tip: "PRO TIP: Using 'I'd like' is more polite than 'I want' when ordering food!",
-      );
-    }
-    if (type == GameSubtype.travelDesk) {
-      return const GameBriefing(
-        title: "Global Traveler",
-        icon: Icons.flight_takeoff_rounded,
-        objective: "NAVIGATE TRAVEL: Handle check-ins, directions, and hotel bookings in English.",
-        rules: ["Check your tickets", "Follow directions", "Ask for help"],
-        actionText: "Start Journey",
-        tip: "PRO TIP: Always confirm directions by repeating them back to the person!",
-      );
-    }
-    if (type == GameSubtype.conflictResolver) {
-      return const GameBriefing(
-        title: "Peace Maker",
-        icon: Icons.handshake_rounded,
-        objective: "DE-ESCALATE: Resolve social conflicts or misunderstandings with tact and diplomacy.",
-        rules: ["Use 'I' statements", "Acknowledge feelings", "Find a middle ground"],
-        actionText: "Resolve Conflict",
-        tip: "PRO TIP: Say 'I understand' even if you disagree—it helps calm the other person down.",
-      );
-    }
-    if (type == GameSubtype.elevatorPitch) {
-      return const GameBriefing(
-        title: "Pitch Perfect",
-        icon: Icons.rocket_launch_rounded,
-        objective: "PITCH IDEAS: Deliver a compelling and concise message in a short time frame.",
-        rules: ["Be brief", "High impact", "3 Hearts left"],
-        actionText: "Start Pitch",
-        tip: "PRO TIP: Start with a hook! Grab their attention in the first 5 seconds.",
-      );
-    }
-    if (type == GameSubtype.socialSpark) {
-      return const GameBriefing(
-        title: "Charisma Core",
-        icon: Icons.celebration_rounded,
-        objective: "SMALL TALK: Master the art of starting and maintaining casual conversations.",
-        rules: ["Ask open questions", "Show interest", "Keep it light"],
-        actionText: "Spark Talk",
-        tip: "PRO TIP: Ask 'Why' or 'How' instead of 'Yes/No' questions to keep the talk going!",
-      );
-    }
-    if (type == GameSubtype.emergencyHub) {
-      return const GameBriefing(
-        title: "Emergency Voice",
-        icon: Icons.emergency_share_rounded,
-        objective: "CRISIS CALL: Communicate effectively during high-pressure emergency situations.",
-        rules: ["Stay calm", "Give location first", "Be precise"],
-        actionText: "Help Now",
-        tip: "PRO TIP: Your location is the most important data—give it as soon as possible!",
-      );
-    }
-
-    // --- 2. SPEAKING (Oral Proficiency) ---
-    if (type == GameSubtype.repeatSentence) {
-      return const GameBriefing(
-        title: "Echo Master",
-        icon: Icons.graphic_eq_rounded,
-        objective: "Accurately repeat the given sentence while maintaining rhythm.",
-        rules: ["Hold the mic to record", "Trace the sound wave", "Master the cadence"],
-        actionText: "Start Echo",
-        tip: "Rhythm is as important as pronunciation! Try to match the 'beat' of the speaker. 🥁",
-      );
-    }
-    if (type == GameSubtype.pronunciationFocus) {
-      return const GameBriefing(
-        title: "Phonetic Precision",
-        icon: Icons.record_voice_over_rounded,
-        objective: "Perfect your pronunciation of challenging phonemes and clusters.",
-        rules: ["Focus on mouth position", "Repeat the target sound", "Analyze your waves"],
-        actionText: "Practice Sound",
-        tip: "Watch the mouth position in your mind! Small changes in tongue placement make a huge difference. 👄",
-      );
-    }
-    if (type == GameSubtype.dailyExpression) {
-      return const GameBriefing(
-        title: "Social Fluent",
-        icon: Icons.chat_bubble_rounded,
-        objective: "Master common daily phrases by matching native intonation.",
-        rules: ["Listen to the model", "Record your voice", "Match the social tone"],
-        actionText: "Speak Now",
-        tip: "Imagine you're talking to a friend! Social context changes how we stress certain words. 🤝",
-      );
-    }
-    if (type == GameSubtype.dialogueRoleplay) {
-      return const GameBriefing(
-        title: "Scene Architect",
-        icon: Icons.theater_comedy_rounded,
-        objective: "Participate in a simulated conversation by speaking your lines.",
-        rules: ["Follow the script", "Speak with emotion", "Keep the flow going"],
-        actionText: "Enter Scene",
-        tip: "Don't just read—ACT! Expressive speaking helps with long-term memory. 🎭",
-      );
-    }
-    if (type == GameSubtype.sceneDescriptionSpeaking) {
-      return const GameBriefing(
-        title: "Visual Narrator",
-        icon: Icons.image_search_rounded,
-        objective: "Describe the visual scene using appropriate vocabulary and structure.",
-        rules: ["Analyze the image", "Speak descriptive details", "Build a narrative"],
-        actionText: "Describe Scene",
-        tip: "Start with the biggest objects and then focus on the small details! 🖼️",
-      );
-    }
-    if (type == GameSubtype.situationSpeaking) {
-      return const GameBriefing(
-        title: "Crisis Communicator",
-        icon: Icons.emergency_rounded,
-        objective: "Respond to a specific real-world situation using spoken English.",
-        rules: ["Understand the context", "Speak your solution", "Be clear and direct"],
-        actionText: "Resolve Now",
-        tip: "In real situations, clarity is key! Focus on getting your main point across quickly. 🆘",
-      );
-    }
-    if (type == GameSubtype.speakMissingWord) {
-      return const GameBriefing(
-        title: "Vocal Decoder",
-        icon: Icons.find_in_page_rounded,
-        objective: "Complete the sentence orally by speaking the missing term.",
-        rules: ["Identify the gap", "Speak the word clearly", "Verify the context"],
-        actionText: "Speak Word",
-        tip: "Say the whole sentence in your head first to find the missing piece. 🧩",
-      );
-    }
-    if (type == GameSubtype.speakOpposite) {
-      return const GameBriefing(
-        title: "Antonym Orator",
-        icon: Icons.compare_arrows_rounded,
-        objective: "Orally state the opposite of the given word or phrase.",
-        rules: ["Analyze the target", "Speak the antonym", "Maintain accuracy"],
-        actionText: "Vocalize Opposite",
-        tip: "Think of the 'flip side'! If it's hot, the antonym is cold. 🔄",
-      );
-    }
-    if (type == GameSubtype.speakSynonym) {
-      return const GameBriefing(
-        title: "Lexical Speaker",
-        icon: Icons.library_books_rounded,
-        objective: "Provide a spoken synonym for the target word.",
-        rules: ["Find similar meaning", "Speak the synonym", "Expand your voice"],
-        actionText: "Vocalize Synonym",
-        tip: "There's always more than one way to say something! Expand your word bank. 📖",
-      );
-    }
-    if (type == GameSubtype.yesNoSpeaking) {
-      return const GameBriefing(
-        title: "Voice Validator",
-        icon: Icons.fact_check_rounded,
-        objective: "Answer factual questions with a spoken 'Yes' or 'No'.",
-        rules: ["Listen to the question", "Speak your confirmation", "Be quick and clear"],
-        actionText: "Validate Voice",
-        tip: "Confidence is key! Speak your answer firmly. ⚖️",
-      );
-    }
+    // Dynamic O(1) map resolution
+    final resolved = _briefings[type];
+    if (resolved != null) return resolved;
 
     // --- CATEGORY FALLBACKS ---
     final category = type.category;
@@ -1071,7 +63,7 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Voice Mastery",
           icon: Icons.record_voice_over_rounded,
-          objective: "TAP MIC & SPEAK: Express the phrase clearly. Your buddy is listening for perfect pitch and rhythm!",
+          objective: "Tap mic and repeat the phrase clearly at a natural pace.",
           rules: ["Find a quiet place", "Speak at a natural pace", "Match the example"],
           actionText: "Record Now",
           tip: "PRO TIP: Record yourself! Comparing your pitch to the model helps master the natural rhythm.",
@@ -1080,7 +72,7 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Audio Analysis",
           icon: Icons.headphones_rounded,
-          objective: "LISTEN & CHOOSE: Analyze the audio feed and identify the hidden linguistic patterns.",
+          objective: "Listen carefully and choose the correct answer option.",
           rules: ["Use headphones", "Focus on intonation", "Identify keywords"],
           actionText: "Initialize Feed",
           tip: "PRO TIP: Close your eyes! Focusing on pure sound helps catch subtle phoneme changes.",
@@ -1089,7 +81,7 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Text Comprehension",
           icon: Icons.menu_book_rounded,
-          objective: "READ & EXTRACT: Analyze the passage. Comprehension and detail-gathering are your goals.",
+          objective: "Read the passage carefully and answer the comprehension questions.",
           rules: ["Read the whole text", "Identify main ideas", "Check details carefully"],
           actionText: "Analyze Text",
           tip: "PRO TIP: Scan for keywords first! Don't get stuck on one word; focus on the overall message.",
@@ -1098,7 +90,7 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Sentence Construction",
           icon: Icons.edit_note_rounded,
-          objective: "DRAG & BUILD: Organize the fragments into a syntactically perfect sentence.",
+          objective: "Arrange the words in the correct order to build a complete sentence.",
           rules: ["Check your spelling", "Check punctuation", "Structure logically"],
           actionText: "Build Sentence",
           tip: "PRO TIP: Start with the verb! Finding the action helps the rest of the sentence fall into place.",
@@ -1107,7 +99,7 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Structural Logic",
           icon: Icons.architecture_rounded,
-          objective: "RESOLVE PATTERNS: Fix the underlying structural errors to create a perfect linguistic system.",
+          objective: "Fix the underlying structural errors to complete the sentence.",
           rules: ["Identify errors", "Choose the correction", "Master the rules"],
           actionText: "Fix Structure",
           tip: "PRO TIP: Read the sentence out loud in your head! Often, you can 'hear' if a rule is being broken.",
@@ -1116,7 +108,7 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Word Power",
           icon: Icons.auto_awesome_rounded,
-          objective: "IDENTIFY & LEARN: Expand your lexicon by matching words to their contextual definitions.",
+          objective: "Match words to their correct definitions to expand your vocabulary.",
           rules: ["Memorize the meanings", "Understand context", "Build word bank"],
           actionText: "Acquire Lexicon",
           tip: "PRO TIP: Visual associations help! Try to link the word to a picture in your mind.",
@@ -1125,7 +117,7 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Phonetic Drill",
           icon: Icons.music_note_rounded,
-          objective: "MIMIC & MATCH: Focus on the rhythm and pitch. Sound exactly like a native speaker.",
+          objective: "Focus on rhythm and pitch. Sound exactly like a native speaker.",
           rules: ["Listen to intonation", "Mimic the rhythm", "Repeat until perfect"],
           actionText: "Start Drill",
           tip: "PRO TIP: Over-enunciate! Emphasizing the vowels helps clear up minimal pair confusion.",
@@ -1134,7 +126,7 @@ class GameInstructionService {
         return const GameBriefing(
           title: "Social Simulation",
           icon: Icons.groups_rounded,
-          objective: "CHOOSE WISELY: Navigate social scenarios by selecting the most appropriate responses.",
+          objective: "Navigate social scenarios by selecting the best conversational response.",
           rules: ["Stay in character", "Think of the goal", "React naturally"],
           actionText: "Enter Scenario",
           tip: "PRO TIP: Be expressive! The tone is just as important as the words in social interactions.",
@@ -1143,6 +135,827 @@ class GameInstructionService {
         return getDefaultBriefing(fallbackTitle ?? "Quest");
     }
   }
+
+  // Large centralized static register matching GameSubtypes to their Briefing parameters.
+  static final Map<GameSubtype, GameBriefing> _briefings = {
+    // 1. ELITE MASTERY
+    GameSubtype.storyBuilder: const GameBriefing(
+      title: "Story Builder",
+      icon: Icons.reorder_rounded,
+      objective: "Drag sentences into chronological order to rebuild the story.",
+      rules: ["3 Hearts per mission", "2 Strikes (Mistakes Re-queued)", "Logic and context are key"],
+      actionText: "Build Story",
+      tip: "PRO TIP: Look for transition words like 'However', 'Consequently', or 'Subsequently' to link sequences!",
+    ),
+    GameSubtype.idiomMatch: const GameBriefing(
+      title: "Idiom Match",
+      icon: Icons.psychology_rounded,
+      objective: "Pair the idioms with their true definitions and meanings.",
+      rules: ["Match correctly to win", "Avoid literal traps", "3 Hearts per mission"],
+      actionText: "Match Idioms",
+      tip: "PRO TIP: Don't take idioms literally! They usually describe a feeling or social situation.",
+    ),
+    GameSubtype.speedSpelling: const GameBriefing(
+      title: "Speed Spelling",
+      icon: Icons.spellcheck_rounded,
+      objective: "Spell the target word correctly before the timer runs out.",
+      rules: ["Spelling must be exact", "Watch the timer", "3 Hearts per mission"],
+      actionText: "Start Spelling",
+      tip: "PRO TIP: Trust your muscle memory! Trying to think about every letter can slow you down.",
+    ),
+    GameSubtype.accentShadowing: const GameBriefing(
+      title: "Accent Shadowing",
+      icon: Icons.mic_external_on_rounded,
+      objective: "Speak along with the audio. Match the speaker's pitch and rhythm.",
+      rules: ["Listen first, then speak", "Match the waveform", "3 Hearts per mission"],
+      actionText: "Shadow Voice",
+      tip: "PRO TIP: Focus on the musicality! Accent is about the 'song' of the language.",
+    ),
+
+    // 2. GRAMMAR
+    GameSubtype.voiceSwap: const GameBriefing(
+      title: "Voice Swap",
+      icon: Icons.swap_horiz_rounded,
+      objective: "Switch between Active and Passive voice without changing the meaning.",
+      rules: ["Identify the agent", "Change the verb form", "Keep meaning intact"],
+      actionText: "Swap Voice",
+      tip: "PRO TIP: In Passive voice, the object becomes the star! Use 'by [someone]' only if needed.",
+    ),
+    GameSubtype.directIndirectSpeech: const GameBriefing(
+      title: "Speech Shift",
+      icon: Icons.forum_rounded,
+      objective: "Convert direct quotes into reported speech with correct tenses.",
+      rules: ["Shift tenses backward", "Update time markers", "Correct tenses & pronouns"],
+      actionText: "Report Speech",
+      tip: "PRO TIP: 'Present' becomes 'Past'! If someone said 'I am here', report 'they were there'.",
+    ),
+    GameSubtype.tenseMastery: const GameBriefing(
+      title: "Tense Mastery",
+      icon: Icons.history_toggle_off_rounded,
+      objective: "Select or place verbs in their correct chronological tenses.",
+      rules: ["Check for time markers", "Identify frequency", "3 Hearts per mission"],
+      actionText: "Master Tenses",
+      tip: "PRO TIP: Look for 'Signal Words'! 'Since' often needs Perfect, while 'Usually' needs Present.",
+    ),
+    GameSubtype.grammarQuest: const GameBriefing(
+      title: "Grammar Core",
+      icon: Icons.gavel_rounded,
+      objective: "Identify and choose the correct form to complete the sentence.",
+      rules: ["Identify errors", "Choose the correction", "Master the rules"],
+      actionText: "Fix Structure",
+      tip: "PRO TIP: Read the sentence out loud in your head! Often, you can 'hear' if a rule is broken.",
+    ),
+    GameSubtype.sentenceCorrection: const GameBriefing(
+      title: "Error Auditor",
+      icon: Icons.spellcheck_rounded,
+      objective: "Scan the text for grammatical errors and apply the correct fix.",
+      rules: ["Find the glitch", "Apply the fix", "Verify the meaning"],
+      actionText: "Audit Text",
+      tip: "PRO TIP: Focus on subject-verb agreement first—it's the most common source of errors!",
+    ),
+    GameSubtype.wordReorder: const GameBriefing(
+      title: "Syntax Reorder",
+      icon: Icons.reorder_rounded,
+      objective: "Arrange scrambled words into a grammatically sound sentence.",
+      rules: ["Identify the subject", "Find the main verb", "Arrange complements"],
+      actionText: "Align Syntax",
+      tip: "PRO TIP: Adjectives usually come before nouns, and adverbs often follow verbs.",
+    ),
+    GameSubtype.partsOfSpeech: const GameBriefing(
+      title: "Lexical Anatomy",
+      icon: Icons.category_rounded,
+      objective: "Identify and label the correct parts of speech in the sentence.",
+      rules: ["Analyze word function", "Categorize correctly", "Build structure"],
+      actionText: "Identify Role",
+      tip: "PRO TIP: If it's an action, it's a verb. If it's a person/place/thing, it's a noun.",
+    ),
+    GameSubtype.subjectVerbAgreement: const GameBriefing(
+      title: "Agreement Sync",
+      icon: Icons.sync_rounded,
+      objective: "Choose the correct verb form to match the subject.",
+      rules: ["Identify subject", "Check singular vs plural", "Match verb form"],
+      actionText: "Sync Agreement",
+      tip: "PRO TIP: Watch out for 'distractors'—prepositional phrases that sit between subject and verb!",
+    ),
+    GameSubtype.clauseConnector: const GameBriefing(
+      title: "Clause Linker",
+      icon: Icons.link_rounded,
+      objective: "Choose the appropriate conjunction to connect the clauses.",
+      rules: ["Analyze relationship", "Choose the connector", "Ensure logical flow"],
+      actionText: "Link Clauses",
+      tip: "PRO TIP: Use 'Because' for reasons, 'Although' for contrast, and 'While' for simultaneous actions.",
+    ),
+    GameSubtype.questionFormatter: const GameBriefing(
+      title: "Inquiry Logic",
+      icon: Icons.help_outline_rounded,
+      objective: "Arrange words or choose forms to create an accurate question.",
+      rules: ["Invert subject/verb", "Add auxiliary verbs", "Match the tense"],
+      actionText: "Format Inquiry",
+      tip: "PRO TIP: Remember the 'Qu-A-S-V' rule: Question word, Auxiliary, Subject, Verb!",
+    ),
+    GameSubtype.articleInsertion: const GameBriefing(
+      title: "Article Anchor",
+      icon: Icons.anchor_rounded,
+      objective: "Insert the correct article (a, an, the) or choose 'no article'.",
+      rules: ["Check for specificity", "Identify first sounds", "Countable vs Uncountable"],
+      actionText: "Insert Articles",
+      tip: "PRO TIP: Use 'The' for specific things we both know about, and 'A/An' for general things.",
+    ),
+    GameSubtype.modifierPlacement: const GameBriefing(
+      title: "Modifier Map",
+      icon: Icons.location_on_rounded,
+      objective: "Place modifiers in the correct position to clarify the sentence.",
+      rules: ["Avoid dangling modifiers", "Link to target word", "Clear the meaning"],
+      actionText: "Map Modifiers",
+      tip: "PRO TIP: Place the modifier as close as possible to the word it's describing!",
+    ),
+    GameSubtype.modalsSelection: const GameBriefing(
+      title: "Modal Matrix",
+      icon: Icons.grid_view_rounded,
+      objective: "Select the modal verb that best fits the sentence's context.",
+      rules: ["Analyze the mood", "Check for permission/duty", "Match the strength"],
+      actionText: "Select Modal",
+      tip: "PRO TIP: 'Must' is for strong obligation, while 'Should' is for friendly advice.",
+    ),
+    GameSubtype.prepositionChoice: const GameBriefing(
+      title: "Position Pro",
+      icon: Icons.directions_rounded,
+      objective: "Choose the correct preposition to complete the sentence.",
+      rules: ["Analyze spatial data", "Check time markers", "Verify collocations"],
+      actionText: "Choose Position",
+      tip: "PRO TIP: Use 'In' for large spaces, 'On' for surfaces, and 'At' for specific points.",
+    ),
+    GameSubtype.pronounResolution: const GameBriefing(
+      title: "Pronoun Pivot",
+      icon: Icons.people_rounded,
+      objective: "Select the correct pronoun that clearly resolves the sentence.",
+      rules: ["Find the antecedent", "Match gender & number", "Avoid ambiguity"],
+      actionText: "Resolve Pivot",
+      tip: "PRO TIP: If there are two people, 'he' can be confusing. Use their names or clear markers!",
+    ),
+    GameSubtype.punctuationMastery: const GameBriefing(
+      title: "Symbol Scribe",
+      icon: Icons.short_text_rounded,
+      objective: "Place commas, periods, or semi-colons in the correct locations.",
+      rules: ["Separate list items", "Connect related ideas", "Define boundaries"],
+      actionText: "Scribe Symbols",
+      tip: "PRO TIP: Use a comma before 'and' only in long lists or between independent clauses!",
+    ),
+    GameSubtype.relativeClauses: const GameBriefing(
+      title: "Relative Rail",
+      icon: Icons.linear_scale_rounded,
+      objective: "Use relative pronouns (who, which, that) to connect the clauses.",
+      rules: ["Identify the noun", "Choose the pronoun", "Link the detail"],
+      actionText: "Link Relative",
+      tip: "PRO TIP: Use 'Who' for people and 'Which' or 'That' for things and animals.",
+    ),
+    GameSubtype.conditionals: const GameBriefing(
+      title: "If-Logic",
+      icon: Icons.alt_route_rounded,
+      objective: "Complete the conditional sentence using the correct verb form.",
+      rules: ["Identify the condition", "Match the tense sequence", "Predict the result"],
+      actionText: "Solve Logic",
+      tip: "PRO TIP: In 'Second Conditional' (imaginary), use 'If I WERE' even for singular subjects!",
+    ),
+    GameSubtype.conjunctions: const GameBriefing(
+      title: "Logic Junction",
+      icon: Icons.join_inner_rounded,
+      objective: "Select the correct conjunction to bridge the thoughts.",
+      rules: ["Compare/Contrast ideas", "Identify cause/effect", "Connect the flow"],
+      actionText: "Join Junction",
+      tip: "PRO TIP: Remember 'FANBOYS': For, And, Nor, But, Or, Yet, So!",
+    ),
+
+    // 3. READING
+    GameSubtype.skimmingScanning: const GameBriefing(
+      title: "Skim & Scan",
+      icon: Icons.search_rounded,
+      objective: "Scan the text fast to locate specific facts or main ideas.",
+      rules: ["Speed is crucial", "Ignore filler words", "Locate specific data points"],
+      actionText: "Start Scanning",
+      tip: "PRO TIP: Use your eyes like a radar! Hunt for capital letters or numbers first.",
+    ),
+    GameSubtype.clozeTest: const GameBriefing(
+      title: "Context Mastery",
+      icon: Icons.format_color_text_rounded,
+      objective: "Fill the blanks by choosing contextually correct words.",
+      rules: ["Read before and after", "Check for collocations", "Ensure logical flow"],
+      actionText: "Fill Gaps",
+      tip: "PRO TIP: Read the whole sentence first! Surrounding words reveal the needed part of speech.",
+    ),
+    GameSubtype.findWordMeaning: const GameBriefing(
+      title: "Lexical Linker",
+      icon: Icons.menu_book_rounded,
+      objective: "Find and match word definitions directly within the passage context.",
+      rules: ["Analyze context", "Match word to meaning", "Build vocabulary"],
+      actionText: "Link Words",
+      tip: "Context is your best friend! The surrounding words often reveal hidden meanings.",
+    ),
+    GameSubtype.guessTitle: const GameBriefing(
+      title: "Title Tactician",
+      icon: Icons.title_rounded,
+      objective: "Read the passage and choose the most appropriate title.",
+      rules: ["Identify main theme", "Check all options", "Summarize the core"],
+      actionText: "Deduce Title",
+      tip: "A great title captures the 'big picture'. Look for the most repeated themes!",
+    ),
+    GameSubtype.paragraphSummary: const GameBriefing(
+      title: "Summary Sieve",
+      icon: Icons.short_text_rounded,
+      objective: "Select the single sentence that best summarizes the paragraph.",
+      rules: ["Filter out details", "Find the main point", "Stay objective"],
+      actionText: "Summarize Now",
+      tip: "Avoid sentences that only mention one small detail; look for the overarching idea!",
+    ),
+    GameSubtype.readAndAnswer: const GameBriefing(
+      title: "Insight Analyst",
+      icon: Icons.fact_check_rounded,
+      objective: "Read the passage and select correct answers to comprehension questions.",
+      rules: ["Refer back to text", "Verify every detail", "Think critically"],
+      actionText: "Analyze Text",
+      tip: "Don't guess! The answer is ALWAYS in the text—you just have to find it.",
+    ),
+    GameSubtype.readAndMatch: const GameBriefing(
+      title: "Semantic Bridge",
+      icon: Icons.bolt_rounded,
+      objective: "Connect related facts and concepts from the reading passage.",
+      rules: ["Bridge the gaps", "Use lasers to link", "Confirm relationships"],
+      actionText: "Bridge Gaps",
+      tip: "Think about how concepts relate—is it cause and effect, or part and whole?",
+    ),
+    GameSubtype.readingConclusion: const GameBriefing(
+      title: "Logical Finisher",
+      icon: Icons.last_page_rounded,
+      objective: "Predict the most logical conclusion based on the reading text.",
+      rules: ["Follow the logic", "Predict outcome", "Verify with evidence"],
+      actionText: "Predict Final",
+      tip: "Follow the clues the author left! Where does the logic naturally lead?",
+    ),
+    GameSubtype.readingInference: const GameBriefing(
+      title: "Subtext Sleuth",
+      icon: Icons.biotech_rounded,
+      objective: "Identify implications in the text that are not explicitly stated.",
+      rules: ["Read between lines", "Detect subtext", "Infer correctly"],
+      actionText: "Deduce Subtext",
+      tip: "The author's tone and choice of words often hide a deeper meaning.",
+    ),
+    GameSubtype.readingSpeedCheck: const GameBriefing(
+      title: "Velocity Reader",
+      icon: Icons.speed_rounded,
+      objective: "Test your reading speed and comprehension under a timer.",
+      rules: ["Read fast", "Maintain accuracy", "Beat the timer"],
+      actionText: "Race Timer",
+      tip: "Don't subvocalize (read out loud in your head)! Let your eyes glide over the text.",
+    ),
+    GameSubtype.sentenceOrderReading: const GameBriefing(
+      title: "Structure Architect",
+      icon: Icons.architecture_rounded,
+      objective: "Arrange scrambled sentences into their logical paragraph order.",
+      rules: ["Find the logic", "Check transitions", "Rebuild the system"],
+      actionText: "Rebuild Flow",
+      tip: "Look for transition words like 'however', 'moreover', and 'finally'.",
+    ),
+    GameSubtype.trueFalseReading: const GameBriefing(
+      title: "Truth Verifier",
+      icon: Icons.verified_user_rounded,
+      objective: "Determine if statements are true or false based on the text.",
+      rules: ["Locate the evidence", "Check for nuances", "Validate truth"],
+      actionText: "Verify Truth",
+      tip: "Be careful of 'absolute' words like 'always', 'never', or 'only'!",
+    ),
+
+    // 4. VOCABULARY
+    GameSubtype.flashcards: const GameBriefing(
+      title: "Flashcards",
+      icon: Icons.style_rounded,
+      objective: "Tap to flip flashcards and swipe through to master terms.",
+      rules: ["Tap to flip", "Swipe Right = Known", "Swipe Left = Review"],
+      actionText: "Master Now",
+      tip: "Speed isn't the goal—mastery is! Take your time to review definitions.",
+    ),
+    GameSubtype.topicVocab: const GameBriefing(
+      title: "Topic Nexus",
+      icon: Icons.category_rounded,
+      objective: "Sort words into their correct thematic category bins.",
+      rules: ["Analyze the word", "Swipe into matching bin", "Clear the queue"],
+      actionText: "Start Sorting",
+      tip: "Sorting by topic builds semantic memory 2x faster!",
+    ),
+    GameSubtype.prefixSuffix: const GameBriefing(
+      title: "Word Roots",
+      icon: Icons.spa_rounded,
+      objective: "Build words by attaching the correct prefixes or suffixes to roots.",
+      rules: ["Analyze root", "Attach correct affix", "3 Hearts left"],
+      actionText: "Build Words",
+      tip: "Roots are the DNA of English! Master them to expand vocabulary rapidly.",
+    ),
+    GameSubtype.wordFormation: const GameBriefing(
+      title: "Morpheme Mixer",
+      icon: Icons.science_rounded,
+      objective: "Combine prefixes, suffixes, and roots to form correct words.",
+      rules: ["Analyze root", "Slide suffix", "Form word"],
+      actionText: "Ready to Mix?",
+      tip: "Suffixes change words from verbs to nouns or adjectives!",
+    ),
+    GameSubtype.synonymSearch: const GameBriefing(
+      title: "Word Warp",
+      icon: Icons.cyclone,
+      objective: "Identify and match the correct synonym for the target word.",
+      rules: ["Find the twin", "Drag into Warp Gate", "Avoid distractions"],
+      actionText: "Start Warp",
+      tip: "Focus on the core meaning, and filter out visual distractions!",
+    ),
+    GameSubtype.antonymSearch: const GameBriefing(
+      title: "Polarity Pull",
+      icon: Icons.electrical_services_rounded,
+      objective: "Identify and select the correct antonym for the target word.",
+      rules: ["Find the Antonym", "Opposites Attract", "3 Hearts left"],
+      actionText: "Start Pull",
+      tip: "Opposite meaning = Opposite pole! Match them quickly.",
+    ),
+    GameSubtype.academicWord: const GameBriefing(
+      title: "Thesis Thrust",
+      icon: Icons.auto_stories_rounded,
+      objective: "Identify advanced academic vocabulary matching the context.",
+      rules: ["Analyze context", "Thrust the correct shard", "3 Hearts left"],
+      actionText: "Initiate Thrust",
+      tip: "Academic words are highly precise—pay attention to logical hints!",
+    ),
+    GameSubtype.contextClues: const GameBriefing(
+      title: "Detective Lens",
+      icon: Icons.search_rounded,
+      objective: "Use context clues to identify the meaning of unknown words.",
+      rules: ["Drag to reveal clues", "Analyze context", "3 Hearts left"],
+      actionText: "Start Scan",
+      tip: "Clues often hide right next to the redacted or highlighted word!",
+    ),
+    GameSubtype.collocations: const GameBriefing(
+      title: "Pair Pop",
+      icon: Icons.bubble_chart_rounded,
+      objective: "Match words that naturally pair together (e.g., 'make a decision').",
+      rules: ["Analyze anchor", "Select partner bubble", "Fuse the pair"],
+      actionText: "Initiate Fusion",
+      tip: "Collocations are words that naturally go together like peanut butter and jelly!",
+    ),
+    GameSubtype.phrasalVerbs: const GameBriefing(
+      title: "Verb Vault",
+      icon: Icons.vpn_key_rounded,
+      objective: "Select correct prepositions or particles to complete phrasal verbs.",
+      rules: ["Read Definition", "Select Particle", "Crack Vault"],
+      actionText: "Start Hack",
+      tip: "Particles change everything! 'Turn up' has a completely different meaning than 'turn down'.",
+    ),
+    GameSubtype.idioms: const GameBriefing(
+      title: "Emojify",
+      icon: Icons.forum_rounded,
+      objective: "Decode emojis and phrases into correct English idioms.",
+      rules: ["Interpret emojis", "Select matching idiom", "3 Hearts left"],
+      actionText: "Send Message",
+      tip: "Idioms are colorful cultural keys! Don't take them literally.",
+    ),
+    GameSubtype.contextualUsage: const GameBriefing(
+      title: "Usage Unfold",
+      icon: Icons.auto_stories_rounded,
+      objective: "Identify the word that fits perfectly in the context of the sentence.",
+      rules: ["Evaluate context", "Unfold the correct fit", "3 Hearts left"],
+      actionText: "Unfold Truth",
+      tip: "Nuance is key! Choose the word that logically belongs in the sentence.",
+    ),
+
+    // 5. WRITING
+    GameSubtype.sentenceBuilder: const GameBriefing(
+      title: "Sentence Architect",
+      icon: Icons.architecture_rounded,
+      objective: "Arrange sentence fragments into a grammatically correct order.",
+      rules: ["Start with Subject", "Identify the Verb", "Check ending punctuation"],
+      actionText: "Build Sentence",
+      tip: "PRO TIP: Start with the 'Who' or 'What', then find the 'Action'!",
+    ),
+    GameSubtype.completeSentence: const GameBriefing(
+      title: "Fragment Fixer",
+      icon: Icons.healing_rounded,
+      objective: "Complete fragments by choosing or writing correct missing parts.",
+      rules: ["Identify missing part", "Maintain the tone", "Verify logical structure"],
+      actionText: "Fix Fragment",
+      tip: "PRO TIP: A complete sentence needs both a Subject and a Verb at minimum!",
+    ),
+    GameSubtype.describeSituationWriting: const GameBriefing(
+      title: "Context Scribe",
+      icon: Icons.description_rounded,
+      objective: "Write a descriptive paragraph based on the scenario or image.",
+      rules: ["Use vivid adjectives", "Be specific & clear", "Show, don't just tell"],
+      actionText: "Scribe Scene",
+      tip: "PRO TIP: Use sensory words! Describe what is seen, heard, or felt.",
+    ),
+    GameSubtype.fixTheSentence: const GameBriefing(
+      title: "Clarity Editor",
+      icon: Icons.edit_rounded,
+      objective: "Scan the sentence and correct grammatical and stylistic errors.",
+      rules: ["Find the flaw", "Rewrite for clarity", "3 Hearts left"],
+      actionText: "Apply Edit",
+      tip: "PRO TIP: Read it out loud in your head! If it sounds clumsy, revise it.",
+    ),
+    GameSubtype.shortAnswerWriting: const GameBriefing(
+      title: "Briefing Pro",
+      icon: Icons.short_text_rounded,
+      objective: "Write a brief, concise, and direct response to the prompt.",
+      rules: ["Be direct", "Stay on topic", "Mind your grammar"],
+      actionText: "Submit Answer",
+      tip: "PRO TIP: Get straight to the point! Keep it short and accurate.",
+    ),
+    GameSubtype.opinionWriting: const GameBriefing(
+      title: "Vocal Pen",
+      icon: Icons.rate_review_rounded,
+      objective: "Write a brief statement expressing and defending your opinion.",
+      rules: ["State opinion", "Provide one solid reason", "Use persuasive language"],
+      actionText: "Express View",
+      tip: "PRO TIP: Use transitions like 'In my view', 'For instance', or 'Consequently'.",
+    ),
+    GameSubtype.dailyJournal: const GameBriefing(
+      title: "Daily Chronicler",
+      icon: Icons.auto_stories_rounded,
+      objective: "Write a short personal journal reflection based on the prompt.",
+      rules: ["Be reflective", "Use appropriate tenses", "Focus on clear narrative"],
+      actionText: "Log Entry",
+      tip: "PRO TIP: Use sequential markers like 'First', 'Later', and 'Eventually'.",
+    ),
+    GameSubtype.summarizeStoryWriting: const GameBriefing(
+      title: "Essence Extractor",
+      icon: Icons.compress_rounded,
+      objective: "Read the story and draft a concise, objective summary.",
+      rules: ["Remove fluff", "Highlight key events", "Stay objective"],
+      actionText: "Summarize Now",
+      tip: "PRO TIP: Identify the 'Who', 'What', 'Where', and 'Why' of the plot.",
+    ),
+    GameSubtype.writingEmail: const GameBriefing(
+      title: "Email Expert",
+      icon: Icons.alternate_email_rounded,
+      objective: "Compose a professional and contextually appropriate email.",
+      rules: ["Use right greeting", "State clear purpose", "Use formal closing"],
+      actionText: "Send Mail",
+      tip: "PRO TIP: Clear subject lines and direct greetings set the professional tone.",
+    ),
+    GameSubtype.correctionWriting: const GameBriefing(
+      title: "Deep Editor",
+      icon: Icons.fact_check_rounded,
+      objective: "Polish and rewrite the paragraph to fix all structural issues.",
+      rules: ["Check all rules", "Improve logical flow", "Aim for 100% accuracy"],
+      actionText: "Final Polish",
+      tip: "PRO TIP: Look for repetitive words and swap them for rich synonyms!",
+    ),
+    GameSubtype.essayDrafting: const GameBriefing(
+      title: "Essay Architect",
+      icon: Icons.article_rounded,
+      objective: "Draft a structured essay with an introduction, body, and conclusion.",
+      rules: ["Clear thesis", "Logical body paragraphs", "Strong closing summary"],
+      actionText: "Draft Essay",
+      tip: "PRO TIP: Ensure each body paragraph has a clear topic sentence.",
+    ),
+
+    // 6. LISTENING
+    GameSubtype.ambientId: const GameBriefing(
+      title: "Spatial Anchor",
+      icon: Icons.radar_rounded,
+      objective: "Listen to the background audio and identify the scenario location.",
+      rules: ["Listen to background", "Scan the radar", "Anchor the location"],
+      actionText: "Anchor Location",
+      tip: "Focus on ambient sounds like footsteps, echoes, wind, or hums!",
+    ),
+    GameSubtype.audioFillBlanks: const GameBriefing(
+      title: "Ink Decoder",
+      icon: Icons.water_drop_rounded,
+      objective: "Listen to the audio feed and type the missing words in the transcript.",
+      rules: ["Smear the ink", "Listen for the gap", "Type exactly what you hear"],
+      actionText: "Start Decoding",
+      tip: "Listen carefully to short helper words like 'a', 'the', 'in', or 'at'!",
+    ),
+    GameSubtype.audioMultipleChoice: const GameBriefing(
+      title: "Sonic Satellites",
+      icon: Icons.track_changes_rounded,
+      objective: "Listen to the audio passage and select the correct answer.",
+      rules: ["Spin satellites", "Listen to speaker", "Select correct data match"],
+      actionText: "Lock Signal",
+      tip: "Filter out noise and focus entirely on the speaker's main message.",
+    ),
+    GameSubtype.audioSentenceOrder: const GameBriefing(
+      title: "Timeline Scrubber",
+      icon: Icons.waves_rounded,
+      objective: "Listen and arrange the spoken segments in their correct chronological order.",
+      rules: ["Listen to stream", "Snap segments to timeline", "Calibrate sequence"],
+      actionText: "Calibrate Signal",
+      tip: "Logical connectors like 'first', 'then', and 'after that' are your clues.",
+    ),
+    GameSubtype.audioTrueFalse: const GameBriefing(
+      title: "Signal Validator",
+      icon: Icons.verified_user_rounded,
+      objective: "Listen to the speaker and verify if the claim is true or false.",
+      rules: ["Analyze the claim", "Compare with audio data", "Validate or Nullify"],
+      actionText: "Begin Validation",
+      tip: "Be careful of exact details—names, numbers, and dates must match perfectly.",
+    ),
+    GameSubtype.detailSpotlight: const GameBriefing(
+      title: "Spotlight Search",
+      icon: Icons.flashlight_on_rounded,
+      objective: "Listen for specific names, numbers, or details within the passage.",
+      rules: ["Scan details", "Listen for target keywords", "Identify match"],
+      actionText: "Start Search",
+      tip: "Note details as you listen—rushing to answer from memory can be tricky!",
+    ),
+    GameSubtype.emotionRecognition: const GameBriefing(
+      title: "Sentiment Prober",
+      icon: Icons.psychology_rounded,
+      objective: "Identify the speaker's emotional state from their pitch and tone.",
+      rules: ["Navigate core", "Analyze pitch & rhythm", "Match exact sentiment"],
+      actionText: "Probe Sentiment",
+      tip: "Rhythm, volume spikes, and sighing express more than literal words.",
+    ),
+    GameSubtype.fastSpeechDecoder: const GameBriefing(
+      title: "Nuance Calibrator",
+      icon: Icons.settings_input_composite_rounded,
+      objective: "Decode rapid native speech by picking out word boundaries.",
+      rules: ["Rotate gears", "Listen for speed transitions", "Unfold the meaning"],
+      actionText: "Calibrate Gears",
+      tip: "Focus on stressed syllables—they carry the core meaning in fast speech.",
+    ),
+    GameSubtype.listeningInference: const GameBriefing(
+      title: "Inference Lens",
+      icon: Icons.biotech_rounded,
+      objective: "Infer implications in the spoken passage that are not explicitly stated.",
+      rules: ["Read between waves", "Deduce the subtext", "Choose logical conclusion"],
+      actionText: "Focus Lens",
+      tip: "Listen for hesitation or sarcasm—voice inflections hold crucial keys.",
+    ),
+    GameSubtype.soundImageMatch: const GameBriefing(
+      title: "Thematic Linker",
+      icon: Icons.category_rounded,
+      objective: "Listen to the audio sound and match it with the correct visual image.",
+      rules: ["Scan tiles", "Match sound to symbol", "Confirm thematic link"],
+      actionText: "Confirm Link",
+      tip: "Try to describe the sound in one word before selecting your choice.",
+    ),
+
+    // 7. ACCENT
+    GameSubtype.minimalPairs: const GameBriefing(
+      title: "Minimal Distinctions",
+      icon: Icons.compare_arrows_rounded,
+      objective: "Distinguish between words with minor sound differences (e.g., live vs leave).",
+      rules: ["Listen to the vowel", "Compare lengths", "Identify the match"],
+      actionText: "Match Sound",
+      tip: "PRO TIP: Pay attention to mouth shape and vowel duration!",
+    ),
+    GameSubtype.intonationMimic: const GameBriefing(
+      title: "Pitch Mimic",
+      icon: Icons.waves_rounded,
+      objective: "Repeat the sentence mimicking the rising and falling native pitch curves.",
+      rules: ["Watch the waveform", "Match the peaks", "3 Hearts left"],
+      actionText: "Mimic Now",
+      tip: "PRO TIP: Exaggerate the rising pitch at the end of questions!",
+    ),
+    GameSubtype.syllableStress: const GameBriefing(
+      title: "Stress Spotter",
+      icon: Icons.priority_high_rounded,
+      objective: "Pinpoint and highlight the primary stressed syllable in the word.",
+      rules: ["Listen for loudness", "Check vowel clarity", "Mark the stress"],
+      actionText: "Spot Stress",
+      tip: "PRO TIP: Stressed syllables are louder, higher in pitch, and have longer vowels.",
+    ),
+    GameSubtype.wordLinking: const GameBriefing(
+      title: "Fluid Flow",
+      icon: Icons.link_rounded,
+      objective: "Master word boundary linking to speak with native fluid rhythms.",
+      rules: ["Listen for glides", "Connect consonants", "Avoid choppy phrases"],
+      actionText: "Start Glide",
+      tip: "PRO TIP: Push end consonants directly into starting vowels of the next word.",
+    ),
+    GameSubtype.shadowingChallenge: const GameBriefing(
+      title: "Speed Shadow",
+      icon: Icons.bolt_rounded,
+      objective: "Speak along with the native model with minimal delay to train fluency.",
+      rules: ["No delay allowed", "Sync your voice", "3 Hearts left"],
+      actionText: "Initiate Shadow",
+      tip: "PRO TIP: Don't wait—begin speaking as soon as you hear the first sound!",
+    ),
+    GameSubtype.vowelDistinction: const GameBriefing(
+      title: "Vowel Vortex",
+      icon: Icons.cyclone_rounded,
+      objective: "Isolate and master differences between subtle English vowel phonemes.",
+      rules: ["Focus on tongue position", "Identify exact sound", "Select match"],
+      actionText: "Sort Vowels",
+      tip: "PRO TIP: Drop your jaw slightly lower for vowels like /æ/ than for /ɛ/.",
+    ),
+    GameSubtype.consonantClarity: const GameBriefing(
+      title: "Clear Consonants",
+      icon: Icons.graphic_eq_rounded,
+      objective: "Perfect pronunciation of difficult consonant clusters and friction sounds.",
+      rules: ["Focus on airflow", "Check teeth position", "Record clearly"],
+      actionText: "Speak Clearly",
+      tip: "PRO TIP: Keep your tongue tip gently between your teeth for the /θ/ ('th') sound.",
+    ),
+    GameSubtype.pitchPatternMatch: const GameBriefing(
+      title: "Musical Melody",
+      icon: Icons.music_note_rounded,
+      objective: "Replicate the musical timing and pitch contour of the full sentence.",
+      rules: ["Listen to the melody", "Hum first if needed", "Speak with rhythm"],
+      actionText: "Match Melody",
+      tip: "PRO TIP: Match the speed transitions—unstressed words are fast, stressed are slow.",
+    ),
+    GameSubtype.speedVariance: const GameBriefing(
+      title: "Tempo Trainer",
+      icon: Icons.speed_rounded,
+      objective: "Speak the passage at fast, medium, and slow tempos with perfect clarity.",
+      rules: ["Slow for accuracy", "Fast for fluency", "Maintain steady rhythm"],
+      actionText: "Train Tempo",
+      tip: "PRO TIP: Keep clear boundaries between words even at high speed.",
+    ),
+    GameSubtype.dialectDrill: const GameBriefing(
+      title: "Dialect Diver",
+      icon: Icons.public_rounded,
+      objective: "Identify and mimic pronunciation variants of major global dialects.",
+      rules: ["Identify region", "Mimic vowel shifts", "3 Hearts left"],
+      actionText: "Start Drill",
+      tip: "PRO TIP: Pay attention to 'r' dropping and distinct vowel shifts.",
+    ),
+    GameSubtype.connectedSpeech: const GameBriefing(
+      title: "Fusion Focus",
+      icon: Icons.settings_input_composite_rounded,
+      objective: "Master kontractions and reductions to speak with casual native speed.",
+      rules: ["Identify reductions", "Speak fluently", "Sound natural"],
+      actionText: "Start Fusion",
+      tip: "PRO TIP: Reduction turns function words like 'to' or 'for' into quick sounds.",
+    ),
+    GameSubtype.pitchModulation: const GameBriefing(
+      title: "Dynamic Range",
+      icon: Icons.legend_toggle_rounded,
+      objective: "Shift pitch ranges to express emotions like excitement or surprise.",
+      rules: ["Match the emotion", "Shift your pitch", "3 Hearts left"],
+      actionText: "Modulate Now",
+      tip: "PRO TIP: Exaggerate pitch height for surprise, and lower it for calm authority.",
+    ),
+
+    // 8. ROLEPLAY
+    GameSubtype.branchingDialogue: const GameBriefing(
+      title: "Choice Navigator",
+      icon: Icons.alt_route_rounded,
+      objective: "Make conversational choices that lead to a successful scenario outcome.",
+      rules: ["Listen to prompt", "Evaluate consequences", "Stay on mission"],
+      actionText: "Choose Path",
+      tip: "PRO TIP: Gauge the speaker's reaction and select the most empathetic reply.",
+    ),
+    GameSubtype.situationalResponse: const GameBriefing(
+      title: "Reflex Responder",
+      icon: Icons.flash_on_rounded,
+      objective: "Choose the most appropriate and polite social response for the scenario.",
+      rules: ["Match social tone", "Be polite/direct", "3 Hearts left"],
+      actionText: "Respond Now",
+      tip: "PRO TIP: Use expressions like 'I would appreciate it' or 'Would you mind'!",
+    ),
+    GameSubtype.jobInterview: const GameBriefing(
+      title: "Career Closer",
+      icon: Icons.business_center_rounded,
+      objective: "Choose professional responses to nail your high-stakes job interview.",
+      rules: ["Be professional", "Highlight core skills", "Stay confident"],
+      actionText: "Start Interview",
+      tip: "PRO TIP: Frame replies to show how your experience solves their business needs.",
+    ),
+    GameSubtype.medicalConsult: const GameBriefing(
+      title: "Health Liaison",
+      icon: Icons.medical_services_rounded,
+      objective: "Clearly explain symptoms or follow a doctor's detailed instructions.",
+      rules: ["Be accurate", "Describe physical feelings", "3 Hearts left"],
+      actionText: "Start Consult",
+      tip: "PRO TIP: Use specific descriptors like 'throbbing', 'sharp', or 'dull ache'.",
+    ),
+    GameSubtype.gourmetOrder: const GameBriefing(
+      title: "Order Master",
+      icon: Icons.restaurant_rounded,
+      objective: "Order food, request custom adjustments, and settle restaurant bills.",
+      rules: ["Be highly polite", "Check details carefully", "Communicate clearly"],
+      actionText: "Place Order",
+      tip: "PRO TIP: Using 'Could I get...' is the preferred way to place polite orders.",
+    ),
+    GameSubtype.travelDesk: const GameBriefing(
+      title: "Global Traveler",
+      icon: Icons.flight_takeoff_rounded,
+      objective: "Manage check-ins, navigate directions, and handle hotel booking requests.",
+      rules: ["Check travel tickets", "Follow directions", "Ask for support"],
+      actionText: "Start Journey",
+      tip: "PRO TIP: Confirm directions by repeating them back to check understanding.",
+    ),
+    GameSubtype.conflictResolver: const GameBriefing(
+      title: "Peace Maker",
+      icon: Icons.handshake_rounded,
+      objective: "Resolve conversational arguments and misunderstandings using tactful words.",
+      rules: ["Use 'I' statements", "Acknowledge feelings", "Find middle ground"],
+      actionText: "Resolve Conflict",
+      tip: "PRO TIP: De-escalate early by validating their perspective before replying.",
+    ),
+    GameSubtype.elevatorPitch: const GameBriefing(
+      title: "Pitch Perfect",
+      icon: Icons.rocket_launch_rounded,
+      objective: "Deliver a compelling, high-impact business message in 30 seconds.",
+      rules: ["Be concise", "High emotional impact", "3 Hearts left"],
+      actionText: "Start Pitch",
+      tip: "PRO TIP: Lead with a massive hook that frames a relatable daily problem.",
+    ),
+    GameSubtype.socialSpark: const GameBriefing(
+      title: "Charisma Core",
+      icon: Icons.celebration_rounded,
+      objective: "Initiate and sustain engaging small talk with new acquaintances.",
+      rules: ["Ask open questions", "Show high interest", "Keep the tone light"],
+      actionText: "Spark Talk",
+      tip: "PRO TIP: Ask 'what' or 'how' to keep the conversational partner sharing.",
+    ),
+    GameSubtype.emergencyHub: const GameBriefing(
+      title: "Emergency Voice",
+      icon: Icons.emergency_share_rounded,
+      objective: "Communicate clearly and stay calm under pressure in crisis scenarios.",
+      rules: ["Stay highly calm", "State location first", "Be exact & concise"],
+      actionText: "Help Now",
+      tip: "PRO TIP: Clear, slow, and specific directions save lives in critical moments.",
+    ),
+
+    // 9. SPEAKING
+    GameSubtype.repeatSentence: const GameBriefing(
+      title: "Echo Master",
+      icon: Icons.graphic_eq_rounded,
+      objective: "Listen carefully and repeat the sentence matching cadence and wave patterns.",
+      rules: ["Hold mic to record", "Trace sound wave", "Master the cadence"],
+      actionText: "Start Echo",
+      tip: "PRO TIP: Match the stress rhythm—English flows in stressed clusters!",
+    ),
+    GameSubtype.pronunciationFocus: const GameBriefing(
+      title: "Phonetic Precision",
+      icon: Icons.record_voice_over_rounded,
+      objective: "Perfect mouth movements to pronounce challenging sounds and clusters.",
+      rules: ["Focus on mouth shape", "Repeat target phoneme", "Analyze feedback waves"],
+      actionText: "Practice Sound",
+      tip: "PRO TIP: Pay attention to where your tongue touches the roof of your mouth.",
+    ),
+    GameSubtype.dailyExpression: const GameBriefing(
+      title: "Social Fluent",
+      icon: Icons.chat_bubble_rounded,
+      objective: "Speak daily expressions with natural, native-like emphasis.",
+      rules: ["Listen to the model", "Record your expression", "Match social tone"],
+      actionText: "Speak Now",
+      tip: "PRO TIP: Emphasize the keywords that carry the main emotional meaning.",
+    ),
+    GameSubtype.dialogueRoleplay: const GameBriefing(
+      title: "Scene Architect",
+      icon: Icons.theater_comedy_rounded,
+      objective: "Speak your roleplay script lines with correct emotion and phrasing.",
+      rules: ["Follow the script", "Speak with feeling", "Keep the flow going"],
+      actionText: "Enter Scene",
+      tip: "PRO TIP: Match your voice acting to the simulated character's mood!",
+    ),
+    GameSubtype.sceneDescriptionSpeaking: const GameBriefing(
+      title: "Visual Narrator",
+      icon: Icons.image_search_rounded,
+      objective: "Describe the image scene clearly using descriptive adjectives.",
+      rules: ["Analyze the image", "Speak descriptive details", "Build a narrative"],
+      actionText: "Describe Scene",
+      tip: "PRO TIP: Start with foreground actions, then move to background details.",
+    ),
+    GameSubtype.situationSpeaking: const GameBriefing(
+      title: "Crisis Communicator",
+      icon: Icons.emergency_rounded,
+      objective: "Orally provide a clear, direct solution to the real-world scenario.",
+      rules: ["Understand context", "Speak your solution", "Be clear and direct"],
+      actionText: "Resolve Now",
+      tip: "PRO TIP: Focus on direct, simple language to convey your message quickly.",
+    ),
+    GameSubtype.speakMissingWord: const GameBriefing(
+      title: "Vocal Decoder",
+      icon: Icons.find_in_page_rounded,
+      objective: "Read the prompt and speak the missing word clearly to fill the blank.",
+      rules: ["Identify the gap", "Speak the word clearly", "Verify the context"],
+      actionText: "Speak Word",
+      tip: "PRO TIP: Look at surrounding nouns and verbs to match singular vs plural context.",
+    ),
+    GameSubtype.speakOpposite: const GameBriefing(
+      title: "Antonym Orator",
+      icon: Icons.compare_arrows_rounded,
+      objective: "Orally state the direct opposite/antonym of the prompt word.",
+      rules: ["Analyze target", "Speak the antonym", "Maintain accuracy"],
+      actionText: "Vocalize Opposite",
+      tip: "PRO TIP: Think of contrasting poles (e.g. fast/slow, build/destroy).",
+    ),
+    GameSubtype.speakSynonym: const GameBriefing(
+      title: "Lexical Speaker",
+      icon: Icons.library_books_rounded,
+      objective: "Orally state a correct synonym for the target word.",
+      rules: ["Find similar meaning", "Speak synonym clearly", "Expand your voice"],
+      actionText: "Vocalize Synonym",
+      tip: "PRO TIP: Expand your vocabulary by grouping similar words together.",
+    ),
+    GameSubtype.yesNoSpeaking: const GameBriefing(
+      title: "Voice Validator",
+      icon: Icons.fact_check_rounded,
+      objective: "Answer the factual questions firmly with a spoken 'Yes' or 'No'.",
+      rules: ["Listen to the question", "Speak confirmation clearly", "Be quick and clear"],
+      actionText: "Validate Voice",
+      tip: "PRO TIP: Speak with confident, clear pronunciation directly into the mic.",
+    ),
+  };
 
   static GameBriefing? _getKidsBriefing(String category) {
     switch (category.toLowerCase()) {
