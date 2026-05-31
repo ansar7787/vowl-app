@@ -99,6 +99,7 @@ class GameDialogHelper {
                 adService.showRewardedAd(
                   isPremium: isPremium,
                   onUserEarnedReward: (_) {
+                    if (!context.mounted) return;
                     context.read<EconomyBloc>().add(
                       EconomyTripleUpRewardsRequested(0, coins * 2),
                     );
@@ -108,9 +109,7 @@ class GameDialogHelper {
                       icon: Icons.auto_awesome_rounded,
                       color: const Color(0xFF10B981),
                     );
-                    if (context.mounted) {
-                      Navigator.of(context).pop(popResult);
-                    }
+                    Navigator.of(context).pop(popResult);
                   },
                   onDismissed: () {
                     if (context.mounted) {
@@ -186,7 +185,9 @@ class GameDialogHelper {
                     isPremium: false,
                     onUserEarnedReward: (_) {
                       onRestore();
-                      Navigator.pop(c);
+                      if (c.mounted) {
+                        Navigator.pop(c);
+                      }
                     },
                     onDismissed: () {},
                   );
@@ -334,6 +335,7 @@ class GameDialogHelper {
                 isPremium: isPremium,
                 onHintEarned: () {
                   onHintEarned?.call();
+                  if (!context.mounted) return;
                   // Also persist to account
                   context.read<EconomyBloc>().add(
                     const EconomyPurchaseHintRequested(0, hintAmount: 1),
