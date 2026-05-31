@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
+/// A performant CustomPainter to draw curvilinear curvy snake level pathways.
 class ModernPathPainter extends CustomPainter {
   final List<Offset> points;
   final Color color;
   final double thickness;
+  final double dashWidth;
+  final double dashSpace;
 
   ModernPathPainter({
     required this.points,
     required this.color,
     this.thickness = 6.0,
-  });
+    this.dashWidth = 10.0,
+    this.dashSpace = 8.0,
+  }) : assert(dashWidth > 0, 'dashWidth must be strictly positive to prevent infinite loops'),
+       assert(dashSpace >= 0, 'dashSpace must be non-negative');
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -28,15 +35,13 @@ class ModernPathPainter extends CustomPainter {
       final p0 = points[i];
       final p1 = points[i + 1];
 
-      // Calculate control point for a smooth curve
-      // We want a vertical "S" shape or smooth snake
       final midY = (p0.dy + p1.dy) / 2;
 
       path.quadraticBezierTo(
-        p0.dx, // Control DX
-        midY, // Control DY
-        p1.dx, // Target DX
-        p1.dy, // Target DY
+        p0.dx,
+        midY,
+        p1.dx,
+        p1.dy,
       );
     }
 
@@ -44,8 +49,6 @@ class ModernPathPainter extends CustomPainter {
   }
 
   void _drawDashedPath(Canvas canvas, Path path, Paint paint) {
-    const dashWidth = 10.0;
-    const dashSpace = 8.0;
     double distance = 0.0;
 
     for (final pathMetric in path.computeMetrics()) {
@@ -64,6 +67,8 @@ class ModernPathPainter extends CustomPainter {
   bool shouldRepaint(covariant ModernPathPainter oldDelegate) {
     return oldDelegate.color != color || 
            oldDelegate.thickness != thickness || 
-           oldDelegate.points.length != points.length;
+           oldDelegate.dashWidth != dashWidth || 
+           oldDelegate.dashSpace != dashSpace || 
+           !listEquals(oldDelegate.points, points);
   }
 }
