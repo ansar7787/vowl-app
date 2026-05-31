@@ -3,6 +3,8 @@ import 'package:equatable/equatable.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/review_service.dart';
 
 class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
   final AuthRepository repository;
@@ -11,13 +13,25 @@ class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
 
   @override
   Future<Either<Failure, void>> call(UpdateUserRewardsParams params) async {
-    return await repository.updateUserRewards(
+    final result = await repository.updateUserRewards(
       gameType: params.gameType,
       level: params.level,
       xpIncrease: params.xpIncrease,
       coinIncrease: params.coinIncrease,
       isDoubleReward: params.isDoubleReward,
     );
+
+    // Organically notify ReviewService upon successful level completions
+    result.fold(
+      (failure) => null,
+      (_) {
+        try {
+          di.sl<ReviewService>().notifyQuestCompleted();
+        } catch (_) {}
+      },
+    );
+
+    return result;
   }
 }
 

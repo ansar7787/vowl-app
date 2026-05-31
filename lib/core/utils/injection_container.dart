@@ -22,6 +22,7 @@ import 'package:vowl/core/utils/analytics_service.dart';
 import 'package:vowl/core/utils/security_service.dart';
 import 'package:vowl/core/utils/remote_config_service.dart';
 import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/core/utils/review_service.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:vowl/features/kids_zone/data/datasources/kids_local_data_source.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
@@ -175,6 +176,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => StoryService());
   sl.registerLazySingleton(() => PraiseService());
   sl.registerLazySingleton(() => AnalyticsService());
+  sl.registerLazySingleton(() => ReviewService());
 
   // Data Sources
   sl.registerLazySingleton<AuthRemoteDataSource>(
