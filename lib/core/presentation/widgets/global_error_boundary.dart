@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:go_router/go_router.dart';
 
+/// A global error boundary widget that catches widget-tree crashes,
+/// provides system anomaly feedback, and restores Flutter's global builder on dispose.
 class GlobalErrorBoundary extends StatefulWidget {
   final Widget child;
 
@@ -16,10 +18,14 @@ class GlobalErrorBoundary extends StatefulWidget {
 class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
   bool _hasError = false;
   String _errorMessage = "";
+  late ErrorWidgetBuilder _originalErrorBuilder;
 
   @override
   void initState() {
     super.initState();
+    // Cache the original global error builder to restore on disposal (prevents memory leaks)
+    _originalErrorBuilder = ErrorWidget.builder;
+    
     // Catch Flutter Framework errors within the widget tree
     ErrorWidget.builder = (FlutterErrorDetails details) {
       // Schedule a post-frame callback to update state safely
@@ -35,78 +41,89 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
     };
   }
 
+  @override
+  void dispose() {
+    // Restore original global error builder callback to clean up the framework footprint
+    ErrorWidget.builder = _originalErrorBuilder;
+    super.dispose();
+  }
+
   Widget _buildErrorUI(String error) {
     return Scaffold(
       backgroundColor: const Color(0xFF0F172A),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.all(32.r),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "🛸",
-                style: TextStyle(fontSize: 80.sp),
-              ),
-              SizedBox(height: 24.h),
-              Text(
-                "SYSTEM ANOMALY",
-                style: GoogleFonts.outfit(
-                  fontSize: 24.sp,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.white,
-                  letterSpacing: 2,
+      body: RepaintBoundary(
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.all(32.r),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "🛸",
+                  style: TextStyle(fontSize: 80.sp),
                 ),
-              ),
-              SizedBox(height: 16.h),
-              Text(
-                error.length > 100 ? "${error.substring(0, 100)}..." : error,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 14.sp,
-                  color: Colors.redAccent.withValues(alpha: 0.8),
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              SizedBox(height: 16.h),
-              Text(
-                "Vowl encountered an unexpected cosmic event. Don't worry, your progress is safe!",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
-                  fontSize: 16.sp,
-                  color: Colors.white70,
-                ),
-              ),
-              SizedBox(height: 40.h),
-              ScaleButton(
-                onTap: () {
-                  // Attempt to go home
-                  if (context.canPop()) {
-                    context.pop();
-                  } else {
-                    context.go('/home');
-                  }
-                  setState(() {
-                    _hasError = false;
-                    _errorMessage = "";
-                  });
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF6366F1),
-                    borderRadius: BorderRadius.circular(20.r),
+                SizedBox(height: 24.h),
+                Text(
+                  "SYSTEM ANOMALY",
+                  style: GoogleFonts.outfit(
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    letterSpacing: 2,
                   ),
-                  child: Text(
-                    "RETURN TO BASE",
-                    style: GoogleFonts.outfit(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w900,
+                ),
+                SizedBox(height: 16.h),
+                Text(
+                  error.length > 100 ? "${error.substring(0, 100)}..." : error,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.outfit(
+                    fontSize: 14.sp,
+                    color: Colors.redAccent.withValues(alpha: 0.8),
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(height: 16.h),
+                Text(
+                  "Vowl encountered an unexpected cosmic event. Don't worry, your progress is safe!",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.outfit(
+                    fontSize: 16.sp,
+                    color: Colors.white70,
+                  ),
+                ),
+                SizedBox(height: 40.h),
+                ScaleButton(
+                  onTap: () {
+                    // Attempt to go home safely
+                    if (context.canPop()) {
+                      context.pop();
+                    } else {
+                      context.go('/home');
+                    }
+                    if (mounted) {
+                      setState(() {
+                        _hasError = false;
+                        _errorMessage = "";
+                      });
+                    }
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF6366F1),
+                      borderRadius: BorderRadius.circular(20.r),
+                    ),
+                    child: Text(
+                      "RETURN TO BASE",
+                      style: GoogleFonts.outfit(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
