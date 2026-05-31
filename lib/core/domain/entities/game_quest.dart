@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 
+/// Defines the exact modality of user interaction required by the quest interface.
 enum InteractionType {
   speech,
   choice,
@@ -50,9 +52,21 @@ enum InteractionType {
   mimic,
   shadow,
   stress,
-  linking,
+  linking;
+
+  /// Pre-computed fast lookup table for constant O(1) string-to-enum resolution.
+  static final Map<String, InteractionType> _nameMap = {
+    for (final val in InteractionType.values) val.name.toLowerCase(): val,
+  };
+
+  /// Safely resolves any string value into its matching [InteractionType] in O(1) constant time.
+  static InteractionType fromString(String? val, {InteractionType fallback = InteractionType.choice}) {
+    if (val == null) return fallback;
+    return _nameMap[val.toLowerCase()] ?? fallback;
+  }
 }
 
+/// Identifies the sub-gamification engine type assigned to the quest.
 enum GameSubtype {
   // 1. Speaking
   repeatSentence,
@@ -162,9 +176,21 @@ enum GameSubtype {
   storyBuilder,
   idiomMatch,
   speedSpelling,
-  accentShadowing,
+  accentShadowing;
+
+  /// Pre-computed fast lookup table for constant O(1) string-to-enum resolution.
+  static final Map<String, GameSubtype> _nameMap = {
+    for (final val in GameSubtype.values) val.name.toLowerCase(): val,
+  };
+
+  /// Safely resolves any string value into its matching [GameSubtype] in O(1) constant time.
+  static GameSubtype fromString(String? val, {GameSubtype fallback = GameSubtype.repeatSentence}) {
+    if (val == null) return fallback;
+    return _nameMap[val.toLowerCase()] ?? fallback;
+  }
 }
 
+/// Category grouping representing primary syllabus pillars.
 enum QuestType {
   speaking,
   listening,
@@ -174,9 +200,22 @@ enum QuestType {
   vocabulary,
   accent,
   roleplay,
-  eliteMastery,
+  eliteMastery;
+
+  /// Pre-computed fast lookup table for constant O(1) string-to-enum resolution.
+  static final Map<String, QuestType> _nameMap = {
+    for (final val in QuestType.values) val.name.toLowerCase(): val,
+    'elitemastery': QuestType.eliteMastery,
+  };
+
+  /// Safely resolves any string value into its matching [QuestType] in O(1) constant time.
+  static QuestType fromString(String? val, {QuestType fallback = QuestType.reading}) {
+    if (val == null) return fallback;
+    return _nameMap[val.toLowerCase()] ?? fallback;
+  }
 }
 
+/// Helper methods to calculate category mapping dynamically in O(1) time complexity.
 extension GameSubtypeX on GameSubtype {
   QuestType get category {
     if (index <= GameSubtype.dailyExpression.index) return QuestType.speaking;
@@ -270,6 +309,7 @@ extension QuestTypeX on QuestType {
 
 /// Visual configuration for quest UI theming.
 /// Maps to the `visual_config` JSON object in curriculum files.
+@immutable
 class VisualConfig extends Equatable {
   final String painterType;
   final String primaryColor;
@@ -301,10 +341,27 @@ class VisualConfig extends Equatable {
     'shader_effect': shaderEffect,
   };
 
+  /// Type-safe state manipulator.
+  VisualConfig copyWith({
+    String? painterType,
+    String? primaryColor,
+    double? pulseIntensity,
+    String? shaderEffect,
+  }) {
+    return VisualConfig(
+      painterType: painterType ?? this.painterType,
+      primaryColor: primaryColor ?? this.primaryColor,
+      pulseIntensity: pulseIntensity ?? this.pulseIntensity,
+      shaderEffect: shaderEffect ?? this.shaderEffect,
+    );
+  }
+
   @override
   List<Object?> get props => [painterType, primaryColor, pulseIntensity, shaderEffect];
 }
 
+/// Central domain entity model representing a game quest challenge task.
+@immutable
 class GameQuest extends Equatable {
   final String id;
   final QuestType? type;
