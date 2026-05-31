@@ -121,6 +121,7 @@ class AdRewardCard extends StatelessWidget {
       isPremium: isPremium,
       onUserEarnedReward: (reward) {
         rewardEarned = true;
+        if (!context.mounted) return;
         // Use EconomyAddCoinsRequested to ensure history is logged
         context.read<EconomyBloc>().add(
           const EconomyAddCoinsRequested(
