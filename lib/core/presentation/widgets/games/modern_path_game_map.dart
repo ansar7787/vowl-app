@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -60,18 +61,22 @@ class ModernPathGameMap extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             child: Stack(
               children: [
-                // Dynamic Background Layer
-                _buildBackground(theme, totalLevels),
-                // The Curvy Path
-                CustomPaint(
-                  size: Size(
-                    ScreenUtil().screenWidth,
-                    120.h + (totalLevels * 140.h) + 100.h,
-                  ),
-                  painter: ModernPathPainter(
-                    points: points,
-                    color: theme.primaryColor.withValues(alpha: 0.2),
-                    thickness: 8.w,
+                // Dynamic Background Layer - GPU Isolated
+                RepaintBoundary(
+                  child: _buildBackground(theme, totalLevels),
+                ),
+                // The Curvy Path - GPU Isolated
+                RepaintBoundary(
+                  child: CustomPaint(
+                    size: Size(
+                      ScreenUtil().screenWidth,
+                      120.h + (totalLevels * 140.h) + 100.h,
+                    ),
+                    painter: ModernPathPainter(
+                      points: points,
+                      color: theme.primaryColor.withValues(alpha: 0.2),
+                      thickness: 8.w,
+                    ),
                   ),
                 ),
 
@@ -368,6 +373,8 @@ class ModernPathGameMap extends StatelessWidget {
   }
 
   void _showLockedFeedback(BuildContext context, Color color) {
+    HapticFeedback.mediumImpact();
+    ScaffoldMessenger.of(context).clearSnackBars();
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
