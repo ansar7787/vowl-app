@@ -60,10 +60,12 @@ class _VictoryScreenState extends State<VictoryScreen> {
         body: Stack(
           children: [
             MeshGradientBackground(colors: theme.backgroundColors),
-            TwinklingStarsBackground(
-              starColor: theme.primaryColor.withValues(alpha: 0.8),
-              starCount: 40, // Reduced for less clutter
-              baseOpacity: isDark ? 0.4 : 0.2, // Subtler
+            RepaintBoundary(
+              child: TwinklingStarsBackground(
+                starColor: theme.primaryColor.withValues(alpha: 0.8),
+                starCount: 40,
+                baseOpacity: isDark ? 0.4 : 0.2,
+              ),
             ),
             SafeArea(
               child: Padding(
@@ -97,7 +99,9 @@ class _VictoryScreenState extends State<VictoryScreen> {
                 ),
               ),
             ),
-            const GameConfetti(),
+            const RepaintBoundary(
+              child: GameConfetti(),
+            ),
           ],
         ),
       ),
@@ -240,6 +244,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
             di.sl<AdService>().showRewardedAd(
               isPremium: isPremium,
               onUserEarnedReward: (_) {
+                if (!mounted) return;
                 context.read<EconomyBloc>().add(
                   EconomyTripleUpRewardsRequested(widget.xp * 2, widget.coins * 2),
                 );
