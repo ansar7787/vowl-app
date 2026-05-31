@@ -1,6 +1,12 @@
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+/// Performance-optimized dummy curriculum generator for Vowl admin dashboards,
+/// reconciling database key structures to match system model schemas perfectly.
 class GameContentGenerator {
+  // Private constructor to enforce static utility boundaries
+  const GameContentGenerator._();
+
+  /// Generates a standardized list of level quests in map serialization format.
   static List<Map<String, dynamic>> generateLevels({
     required GameSubtype subtype,
     required QuestType category,
@@ -8,11 +14,16 @@ class GameContentGenerator {
     int endLevel = 30,
     int itemsPerLevel = 3,
   }) {
-    List<Map<String, dynamic>> allQuests = [];
+    // Assert structural requirements for safety
+    assert(startLevel >= 1, 'startLevel must be greater than or equal to 1');
+    assert(endLevel >= startLevel, 'endLevel must be greater than or equal to startLevel');
+    assert(itemsPerLevel >= 1, 'itemsPerLevel must be greater than or equal to 1');
+
+    final List<Map<String, dynamic>> allQuests = [];
 
     for (int level = startLevel; level <= endLevel; level++) {
       for (int item = 1; item <= itemsPerLevel; item++) {
-        Map<String, dynamic> quest = {
+        final Map<String, dynamic> quest = {
           'id': '${subtype.name}_L${level}_$item',
           'instruction': _getInstruction(subtype, item),
           'type': category.name,
@@ -127,7 +138,7 @@ class GameContentGenerator {
           'audioUrl': 'https://example.com/audio/L${level}_$item.mp3',
           'question': 'Where does the speaker want to go?',
           'options': ['Park', 'Library', 'Cinema'],
-          'correctIndex': 1,
+          'correctAnswerIndex': 1,
         };
 
       // 3. Reading
@@ -137,14 +148,14 @@ class GameContentGenerator {
               'Sample passage for level $level. English is a fascinating language with a rich history.',
           'question': 'What is the topic of the passage?',
           'options': ['Math', 'History', 'English'],
-          'correctIndex': 2,
+          'correctAnswerIndex': 2,
         };
       case GameSubtype.findWordMeaning:
         return {
           'word': 'Fascinating',
           'passage': 'English is a fascinating language...',
           'options': ['Boring', 'Very interesting'],
-          'correctIndex': 1,
+          'correctAnswerIndex': 1,
         };
 
       // 4. Writing
@@ -176,12 +187,12 @@ class GameContentGenerator {
         return {
           'sentence': 'He ___ to the gym every day.',
           'options': ['go', 'goes'],
-          'correctIndex': 1,
+          'correctAnswerIndex': 1,
         };
       case GameSubtype.sentenceCorrection:
         return {
-          'incorrect': 'She don\'t know the answer.',
-          'correct': 'She doesn\'t know the answer.',
+          'incorrect': "She don't know the answer.",
+          'correct': "She doesn't know the answer.",
         };
       case GameSubtype.wordReorder:
         return {
@@ -194,7 +205,7 @@ class GameContentGenerator {
         return {
           'word': 'Diligent',
           'definition':
-              'Having or showing care and conscientiousness in one\'s work or duties.',
+              "Having or showing care and conscientiousness in one's work or duties.",
           'example':
               'She is a diligent student who always finishes her homework on time.',
         };
@@ -202,7 +213,7 @@ class GameContentGenerator {
         return {
           'word': 'Happy',
           'options': ['Sad', 'Joyful', 'Angry'],
-          'correctIndex': 1,
+          'correctAnswerIndex': 1,
         };
 
       // 7. Accent
@@ -210,7 +221,7 @@ class GameContentGenerator {
         return {
           'words': ['Bit', 'Beat'],
           'audio': 'https://example.com/audio/minimal_pairs_$item.mp3',
-          'correctIndex': 0,
+          'correctAnswerIndex': 0,
         };
       case GameSubtype.intonationMimic:
         return {
@@ -231,8 +242,8 @@ class GameContentGenerator {
       case GameSubtype.situationalResponse:
         return {
           'situation': 'A friend is feeling sad.',
-          'responses': ['I\'m sorry to hear that.', 'It\'s not a big deal.'],
-          'correctIndex': 0,
+          'responses': ["I'm sorry to hear that.", "It's not a big deal."],
+          'correctAnswerIndex': 0,
         };
 
       default:
