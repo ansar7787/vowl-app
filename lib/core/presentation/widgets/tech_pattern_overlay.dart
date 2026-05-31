@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// A premium grid backdrop overlay, highly optimized to completely avoid expensive
+/// offscreen blending (Opacity saveLayers) by applying alpha directly to paint strokes,
+/// and cached at a GPU level via a RepaintBoundary.
 class TechPatternOverlay extends StatelessWidget {
   final double opacity;
   final Color color;
@@ -14,10 +17,11 @@ class TechPatternOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
-      child: Opacity(
-        opacity: opacity,
+      child: RepaintBoundary(
         child: CustomPaint(
-          painter: _TechPatternPainter(color: color),
+          painter: _TechPatternPainter(
+            color: color.withValues(alpha: opacity),
+          ),
           size: Size.infinite,
         ),
       ),
@@ -48,5 +52,7 @@ class _TechPatternPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant _TechPatternPainter oldDelegate) {
+    return oldDelegate.color != color;
+  }
 }
