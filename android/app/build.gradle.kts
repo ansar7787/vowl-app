@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     // START: FlutterFire Configuration
@@ -37,18 +40,20 @@ android {
     }
 
     val keystorePropertiesFile = rootProject.file("key.properties")
-    val keystoreProperties = java.util.Properties()
+    val keystoreProperties = Properties()
     if (keystorePropertiesFile.exists()) {
-        keystoreProperties.load(java.io.FileInputStream(keystorePropertiesFile))
+        FileInputStream(keystorePropertiesFile).use { stream ->
+            keystoreProperties.load(stream)
+        }
     }
 
     signingConfigs {
         create("release") {
             if (keystorePropertiesFile.exists()) {
-                keyAlias = keystoreProperties["keyAlias"] as String
-                keyPassword = keystoreProperties["keyPassword"] as String
-                storeFile = file(keystoreProperties["storeFile"] as String)
-                storePassword = keystoreProperties["storePassword"] as String
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+                storeFile = file(keystoreProperties.getProperty("storeFile"))
+                storePassword = keystoreProperties.getProperty("storePassword")
             }
         }
     }
