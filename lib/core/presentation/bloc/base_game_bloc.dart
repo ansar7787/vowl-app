@@ -1,8 +1,15 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+// --- SENTINEL FOR NULLABLE OVERRIDES ---
+class _Sentinel {
+  const _Sentinel();
+}
+const _sentinel = _Sentinel();
+
 // --- BASE STATES ---
-abstract class BaseGameState {
+abstract class BaseGameState extends Equatable {
   final int lives;
   final int currentIndex;
   final bool isLoading;
@@ -16,6 +23,9 @@ abstract class BaseGameState {
     this.error,
     this.isComplete = false,
   });
+
+  @override
+  List<Object?> get props => [lives, currentIndex, isLoading, error, isComplete];
 }
 
 class GameInitial extends BaseGameState {
@@ -45,17 +55,27 @@ class GameActive<T extends GameQuest> extends BaseGameState {
     List<T>? quests,
     int? lives,
     int? currentIndex,
-    bool? lastAnswerCorrect,
+    Object? lastAnswerCorrect = _sentinel,
     bool? hintUsed,
   }) {
     return GameActive<T>(
       quests: quests ?? this.quests,
       lives: lives ?? this.lives,
       currentIndex: currentIndex ?? this.currentIndex,
-      lastAnswerCorrect: lastAnswerCorrect, // Nullable override
+      lastAnswerCorrect: lastAnswerCorrect == _sentinel 
+          ? this.lastAnswerCorrect 
+          : (lastAnswerCorrect as bool?),
       hintUsed: hintUsed ?? this.hintUsed,
     );
   }
+
+  @override
+  List<Object?> get props => [
+        ...super.props,
+        quests,
+        lastAnswerCorrect,
+        hintUsed,
+      ];
 }
 
 class GameError extends BaseGameState {
@@ -65,8 +85,14 @@ class GameError extends BaseGameState {
 class GameComplete extends BaseGameState {
   final int xpEarned;
   final int coinsEarned;
-  const GameComplete({required this.xpEarned, required this.coinsEarned})
-    : super(isComplete: true);
+
+  const GameComplete({
+    required this.xpEarned,
+    required this.coinsEarned,
+  }) : super(isComplete: true);
+
+  @override
+  List<Object?> get props => [...super.props, xpEarned, coinsEarned];
 }
 
 class GameOver extends BaseGameState {
@@ -74,17 +100,28 @@ class GameOver extends BaseGameState {
 }
 
 // --- BASE EVENTS ---
-abstract class BaseGameEvent {}
+abstract class BaseGameEvent extends Equatable {
+  @override
+  List<Object?> get props => [];
+}
 
 class LoadGame extends BaseGameEvent {
   final GameSubtype subtype;
   final int level;
+
   LoadGame(this.subtype, this.level);
+
+  @override
+  List<Object?> get props => [subtype, level];
 }
 
 class SubmitGameAnswer extends BaseGameEvent {
   final bool isCorrect;
+
   SubmitGameAnswer(this.isCorrect);
+
+  @override
+  List<Object?> get props => [isCorrect];
 }
 
 class NextGameQuestion extends BaseGameEvent {}
@@ -94,20 +131,20 @@ class RestartGameLevel extends BaseGameEvent {}
 // --- BASE BLOC ---
 abstract class BaseGameBloc<T extends GameQuest>
     extends Bloc<BaseGameEvent, BaseGameState> {
-  BaseGameBloc() : super(const GameInitial());
 
-  // Subclasses implement these
-  Future<List<T>> fetchQuests(GameSubtype subtype, int level);
-  Future<void> onLevelComplete(int xp, int coins);
-
-  void registerEvents() {
+  BaseGameBloc() : super(const GameInitial()) {
     on<LoadGame>(_onLoadGame);
     on<SubmitGameAnswer>(_onSubmitAnswer);
     on<NextGameQuestion>(_onNextQuestion);
     on<RestartGameLevel>((event, emit) => emit(const GameInitial()));
   }
 
+  // Subclasses implement these to resolve curriculum data and rewards
+  Future<List<T>> fetchQuests(GameSubtype subtype, int level);
+  Future<void> onLevelComplete(int xp, int coins);
+
   Future<void> _onLoadGame(LoadGame event, Emitter<BaseGameState> emit) async {
+    if (state is GameLoading) return; // Defensive guard: prevents double load race conditions
     emit(const GameLoading());
     try {
       final quests = await fetchQuests(event.subtype, event.level);
