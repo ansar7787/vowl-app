@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:go_router/go_router.dart';
 import 'dart:async';
@@ -75,7 +76,9 @@ class AppRouter {
   static final GoRouter router = GoRouter(
     initialLocation: initialRoute,
     observers: [
-      FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
+      // Safe guard preventing unhandled FirebaseExceptions during unit tests or mock runs
+      if (Firebase.apps.isNotEmpty)
+        FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
     ],
     refreshListenable: _StreamListenable(di.sl<AuthBloc>().stream),
     redirect: (context, state) {
@@ -103,7 +106,7 @@ class AppRouter {
         return null;
       }
 
-      // 2. Handle Unauthenticated Users
+      // 3. Handle Unauthenticated Users
       if (!isAuthenticated) {
         if (!isAuthRoute && !isSplashRoute) {
           return loginRoute;
