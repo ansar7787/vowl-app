@@ -22,7 +22,7 @@ class GrammarRepositoryImpl implements GrammarRepository {
       );
       return Right(remoteQuests);
     } on ServerException catch (e) {
-      return Left(ServerFailure(e.message ?? "An unexpected error occurred."));
+      return Left(ServerFailure(e.message));
     } catch (e) {
       return const Left(ServerFailure("Failed to load grammar quests."));
     }
