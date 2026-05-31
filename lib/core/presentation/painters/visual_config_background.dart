@@ -4,6 +4,9 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 
 /// Factory that maps `visual_config.painter_type` strings to actual
 /// animated background widgets for quest screens.
+/// 
+/// Incorporates a global [RepaintBoundary] layer to isolate all animated custom
+/// painters and block redundant layout recalculation sweeps.
 class VisualConfigBackground extends StatelessWidget {
   final VisualConfig config;
 
@@ -11,7 +14,11 @@ class VisualConfigBackground extends StatelessWidget {
 
   Color get _primaryColor {
     try {
-      return Color(int.parse(config.primaryColor));
+      String hexColor = config.primaryColor.replaceAll('#', '').replaceAll('0x', '').trim();
+      if (hexColor.length == 6) {
+        hexColor = 'FF$hexColor'; // Full opacity standard
+      }
+      return Color(int.parse(hexColor, radix: 16));
     } catch (_) {
       return const Color(0xFF03A9F4);
     }
@@ -20,7 +27,9 @@ class VisualConfigBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
-      child: _buildPainter(),
+      child: RepaintBoundary(
+        child: _buildPainter(),
+      ),
     );
   }
 
@@ -610,20 +619,18 @@ class _VocabNexusWidgetState extends State<_VocabNexusWidget>
 
   @override
   Widget build(BuildContext context) {
-    return RepaintBoundary(
-      child: AnimatedBuilder(
-        animation: _controller,
-        builder: (context, child) {
-          return CustomPaint(
-            painter: _VocabNexusPainter(
-              color: widget.color,
-              t: _controller.value,
-              intensity: widget.intensity,
-            ),
-            size: Size.infinite,
-          );
-        },
-      ),
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        return CustomPaint(
+          painter: _VocabNexusPainter(
+            color: widget.color,
+            t: _controller.value,
+            intensity: widget.intensity,
+          ),
+          size: Size.infinite,
+        );
+      },
     );
   }
 }
