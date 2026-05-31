@@ -15,6 +15,8 @@ enum VowlMascotState {
   sleeping,
 }
 
+/// A premium, highly-interactive companion companion asset showing Owly the mascot
+/// with progressive aura states, equipped visual accessories, and state expressions.
 class VowlMascot extends StatelessWidget {
   final VowlMascotState state;
   final double? size;
@@ -64,7 +66,6 @@ class VowlMascot extends StatelessWidget {
             (isKidsMode ? (user?.kidsMascot ?? 'owly') : (user?.vowlMascot ?? 'vowl_prime'));
         
         final isVoxBot = effectiveMascotId == 'vox_bot';
-
         final botSize = size ?? 120.r;
         
         // DYNAMIC MAP SELECTION
@@ -195,7 +196,9 @@ class VowlMascot extends StatelessWidget {
           );
         }
 
-        if (!useFloatingAnimation) return bot;
+        if (!useFloatingAnimation) {
+          return RepaintBoundary(child: bot);
+        }
 
         var animatedBot = bot
             .animate(onPlay: (controller) => controller.repeat(reverse: true))
@@ -235,16 +238,18 @@ class VowlMascot extends StatelessWidget {
         if (state == VowlMascotState.worried) stateEmoji = '😰';
 
         if (stateEmoji != null) {
-          return Stack(
-            alignment: Alignment.center,
-            children: [
-              animatedBot,
-              Positioned(
-                bottom: botSize * 0.1,
-                right: 0,
-                child: Text(stateEmoji, style: TextStyle(fontSize: botSize * 0.2)),
-              ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: 0, end: -10),
-            ],
+          return RepaintBoundary(
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                animatedBot,
+                Positioned(
+                  bottom: botSize * 0.1,
+                  right: 0,
+                  child: Text(stateEmoji, style: TextStyle(fontSize: botSize * 0.2)),
+                ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(begin: 0, end: -10),
+              ],
+            ),
           );
         }
 
