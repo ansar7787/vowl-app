@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// A premium, cinematic full-screen briefing overlay presenting quest objectives,
+/// rules, and tips before a level begins, secured with mounted lifecycle guards.
 class QuestBriefingOverlay extends StatefulWidget {
   final String title;
   final String objective;
@@ -34,8 +36,15 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
   bool _isExiting = false;
 
   void _handleStart() {
+    if (!mounted) return;
     setState(() => _isExiting = true);
-    Future.delayed(const Duration(milliseconds: 500), widget.onStart);
+    
+    // Safely defer start callback to match exit fade duration
+    Future.delayed(const Duration(milliseconds: 500), () {
+      if (mounted) {
+        widget.onStart();
+      }
+    });
   }
 
   @override
@@ -44,7 +53,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
       color: Colors.transparent,
       child: Stack(
         children: [
-          // Background Overlay (Optimized: No Blur)
+          // Background Overlay
           Positioned.fill(
             child: Container(color: Colors.black.withValues(alpha: 0.85)),
           ).animate(target: _isExiting ? 1 : 0).fadeOut(duration: 400.ms),
@@ -72,28 +81,30 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    // Animated Hero Icon
-                    Container(
-                      padding: EdgeInsets.all(24.r),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.6)],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                            color: widget.primaryColor.withValues(alpha: 0.5),
-                            blurRadius: 20,
-                            offset: const Offset(0, 10),
+                    // Isolate animated Hero Icon ticks on dynamic composites
+                    RepaintBoundary(
+                      child: Container(
+                        padding: EdgeInsets.all(24.r),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.6)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
                           ),
-                        ],
-                      ),
-                      child: Icon(widget.icon, color: Colors.white, size: 48.r),
-                    ).animate(onPlay: (c) => c.repeat(reverse: true))
-                     .shimmer(duration: 2.seconds, color: Colors.white30)
-                     .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), duration: 1.seconds),
+                          shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: widget.primaryColor.withValues(alpha: 0.5),
+                              blurRadius: 20,
+                              offset: const Offset(0, 10),
+                            ),
+                          ],
+                        ),
+                        child: Icon(widget.icon, color: Colors.white, size: 48.r),
+                      ).animate(onPlay: (c) => c.repeat(reverse: true))
+                       .shimmer(duration: 2.seconds, color: Colors.white30)
+                       .scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), duration: 1.seconds),
+                    ),
 
                     SizedBox(height: 24.h),
 
@@ -197,39 +208,41 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
 
                     SizedBox(height: 32.h),
 
-                    // Action Button
-                    ScaleButton(
-                      onTap: _handleStart,
-                      child: Container(
-                        width: double.infinity,
-                        height: 65.h,
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.8)],
-                          ),
-                          borderRadius: BorderRadius.circular(24.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: widget.primaryColor.withValues(alpha: 0.4),
-                              blurRadius: 15,
-                              offset: const Offset(0, 8),
+                    // Action Button (Isolated continuous shimmer paints)
+                    RepaintBoundary(
+                      child: ScaleButton(
+                        onTap: _handleStart,
+                        child: Container(
+                          width: double.infinity,
+                          height: 65.h,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [widget.primaryColor, widget.primaryColor.withValues(alpha: 0.8)],
                             ),
-                          ],
-                        ),
-                        child: Center(
-                          child: Text(
-                            widget.actionText.toUpperCase(),
-                            style: GoogleFonts.outfit(
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
-                              letterSpacing: 2,
+                            borderRadius: BorderRadius.circular(24.r),
+                            boxShadow: [
+                              BoxShadow(
+                                color: widget.primaryColor.withValues(alpha: 0.4),
+                                blurRadius: 15,
+                                offset: const Offset(0, 8),
+                              ),
+                            ],
+                          ),
+                          child: Center(
+                            child: Text(
+                              widget.actionText.toUpperCase(),
+                              style: GoogleFonts.outfit(
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.w900,
+                                color: Colors.white,
+                                letterSpacing: 2,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ).animate(onPlay: (c) => c.repeat(reverse: true))
-                     .shimmer(delay: 2.seconds, duration: 1.seconds, color: Colors.white24),
+                      ).animate(onPlay: (c) => c.repeat(reverse: true))
+                       .shimmer(delay: 2.seconds, duration: 1.seconds, color: Colors.white24),
+                    ),
                   ],
                 ),
               ).animate(target: _isExiting ? 1 : 0)
