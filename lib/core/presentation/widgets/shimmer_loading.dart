@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// A premium, theme-adaptive rectangular, circular, or rounded placeholder shimmer block
+/// that isolates its high-frequency slide paintings using a RepaintBoundary.
 class ShimmerLoading extends StatelessWidget {
   final double? width;
   final double? height;
@@ -33,23 +35,26 @@ class ShimmerLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Shimmer.fromColors(
-      baseColor: isDark
-          ? Colors.white.withValues(alpha: 0.05)
-          : Colors.grey[300]!,
-      highlightColor: isDark
-          ? Colors.white.withValues(alpha: 0.1)
-          : Colors.grey[100]!,
-      period: const Duration(milliseconds: 1500),
-      child: Container(
-        width: width,
-        height: height,
-        decoration: ShapeDecoration(color: Colors.grey, shape: shapeBorder),
+    return RepaintBoundary(
+      child: Shimmer.fromColors(
+        baseColor: isDark
+            ? Colors.white.withValues(alpha: 0.05)
+            : Colors.grey[300]!,
+        highlightColor: isDark
+            ? Colors.white.withValues(alpha: 0.1)
+            : Colors.grey[100]!,
+        period: const Duration(milliseconds: 1500),
+        child: Container(
+          width: width,
+          height: height,
+          decoration: ShapeDecoration(color: Colors.grey, shape: shapeBorder),
+        ),
       ),
     );
   }
 }
 
+/// A dedicated gaming category level shimmer screen.
 class GameShimmerLoading extends StatelessWidget {
   final Color? primaryColor;
   const GameShimmerLoading({super.key, this.primaryColor});
@@ -69,19 +74,21 @@ class GameShimmerLoading extends StatelessWidget {
       double? width,
       required double height,
       double radius = 12,
-      BoxShape shape = BoxShape.rectangle,
+      BoxShape shape = BoxShape.circle,
     }) {
-      return Shimmer.fromColors(
-        baseColor: baseColor,
-        highlightColor: highlightColor,
-        period: const Duration(milliseconds: 1800),
-        child: Container(
-          width: width,
-          height: height,
-          decoration: BoxDecoration(
-            color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[200],
-            borderRadius: shape == BoxShape.circle ? null : BorderRadius.circular(radius.r),
-            shape: shape,
+      return RepaintBoundary(
+        child: Shimmer.fromColors(
+          baseColor: baseColor,
+          highlightColor: highlightColor,
+          period: const Duration(milliseconds: 1800),
+          child: Container(
+            width: width,
+            height: height,
+            decoration: BoxDecoration(
+              color: isDark ? Colors.white.withValues(alpha: 0.1) : Colors.grey[200],
+              borderRadius: shape == BoxShape.circle ? null : BorderRadius.circular(radius.r),
+              shape: shape,
+            ),
           ),
         ),
       );
@@ -121,14 +128,16 @@ class GameShimmerLoading extends StatelessWidget {
                   width: 2,
                 ),
               ),
-              child: Shimmer.fromColors(
-                baseColor: baseColor,
-                highlightColor: highlightColor,
-                period: const Duration(milliseconds: 2200),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey[100],
-                    borderRadius: BorderRadius.circular(32.r),
+              child: RepaintBoundary(
+                child: Shimmer.fromColors(
+                  baseColor: baseColor,
+                  highlightColor: highlightColor,
+                  period: const Duration(milliseconds: 2200),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.grey[100],
+                      borderRadius: BorderRadius.circular(32.r),
+                    ),
                   ),
                 ),
               ),
@@ -149,6 +158,7 @@ class GameShimmerLoading extends StatelessWidget {
   }
 }
 
+/// A dedicated Nexus Hub leaderboard rankings shimmer block loader.
 class LeaderboardShimmerLoading extends StatelessWidget {
   const LeaderboardShimmerLoading({super.key});
 
@@ -206,6 +216,7 @@ class LeaderboardShimmerLoading extends StatelessWidget {
   }
 }
 
+/// A dedicated Home Dashboard view shimmer block loader.
 class HomeShimmerLoading extends StatelessWidget {
   const HomeShimmerLoading({super.key});
 
@@ -272,6 +283,7 @@ class HomeShimmerLoading extends StatelessWidget {
   }
 }
 
+/// A dedicated profile view screen shimmer loader.
 class ProfileShimmerLoading extends StatelessWidget {
   const ProfileShimmerLoading({super.key});
 
