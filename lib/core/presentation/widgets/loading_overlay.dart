@@ -5,6 +5,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// A premium, glassmorphic full-screen loading overlay with dynamic status text cycles.
 class LoadingOverlay extends StatefulWidget {
   final bool isLoading;
   final Widget child;
@@ -32,6 +33,14 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
     'Securing environment',
     'Optimizing assets',
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.isLoading) {
+      _startRotation();
+    }
+  }
 
   @override
   void didUpdateWidget(LoadingOverlay oldWidget) {
@@ -127,7 +136,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                                    begin: const Offset(1.0, 1.0),
                                    end: const Offset(1.1, 1.1),
                                    curve: Curves.easeInOut,
-                                 ),
+                                  ),
                               ],
                             ),
                           ),

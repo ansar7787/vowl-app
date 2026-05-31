@@ -1,6 +1,7 @@
 import 'package:clock/clock.dart';
 import 'package:flutter/material.dart';
 
+/// A button that scales down slightly when pressed, providing organic tactile feedback.
 class ScaleButton extends StatefulWidget {
   final Widget child;
   final VoidCallback? onTap;
@@ -33,6 +34,20 @@ class _ScaleButtonState extends State<ScaleButton>
       begin: 1.0,
       end: widget.scaleDown,
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+  }
+
+  @override
+  void didUpdateWidget(covariant ScaleButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.duration != widget.duration) {
+      _controller.duration = widget.duration;
+    }
+    if (oldWidget.scaleDown != widget.scaleDown) {
+      _scaleAnimation = Tween<double>(
+        begin: 1.0,
+        end: widget.scaleDown,
+      ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
+    }
   }
 
   @override
