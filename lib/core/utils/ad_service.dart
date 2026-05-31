@@ -73,20 +73,38 @@ class AdService {
           : dotenv.env['ADMOB_INTERSTITIAL_IOS'] ?? '';
     }
 
+    if (adUnitId.isEmpty) {
+      if (kDebugMode) {
+        debugPrint('AdService: Missing interstitial ad unit ID in .env');
+      }
+      return;
+    }
+
     InterstitialAd.load(
       adUnitId: adUnitId,
       request: request,
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (InterstitialAd ad) {
+          if (kDebugMode) {
+            debugPrint('AdService: Interstitial ad loaded.');
+          }
           _interstitialAd = ad;
           _numInterstitialLoadAttempts = 0;
           _interstitialAd!.setImmersiveMode(true);
         },
         onAdFailedToLoad: (LoadAdError error) {
+          if (kDebugMode) {
+            debugPrint('AdService: Interstitial ad failed to load: ${error.message} (Code: ${error.code})');
+          }
           _numInterstitialLoadAttempts += 1;
           _interstitialAd = null;
           if (_numInterstitialLoadAttempts <= maxFailedLoadAttempts) {
-            loadInterstitialAd();
+            // Retry with exponential backoff delay (2s, 4s, 8s...)
+            final delay = Duration(seconds: 2 * _numInterstitialLoadAttempts);
+            if (kDebugMode) {
+              debugPrint('AdService: Retrying interstitial load in ${delay.inSeconds}s...');
+            }
+            Future.delayed(delay, () => loadInterstitialAd());
           }
         },
       ),
