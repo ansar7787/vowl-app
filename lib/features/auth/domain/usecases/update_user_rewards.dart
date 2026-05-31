@@ -2,12 +2,12 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
-import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/review_service.dart';
 
 class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
-  final AuthRepository repository;
+  final GamificationRepository repository;
 
   UpdateUserRewards(this.repository);
 

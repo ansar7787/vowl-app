@@ -110,18 +110,10 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<void> logOut() async {
-    // 1. Sign out from providers
+    // Sign out from providers safely
     await Future.wait([
       _firebaseAuth.signOut(),
       _googleSignIn.signOut(),
     ]);
-
-    // 2. Terminate and clear Firestore to prevent state leakage/permission issues
-    try {
-      await FirebaseFirestore.instance.terminate();
-      await FirebaseFirestore.instance.clearPersistence();
-    } catch (e) {
-      // Ignore errors if already terminated
-    }
   }
 }

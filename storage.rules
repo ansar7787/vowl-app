@@ -1,0 +1,25 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Profile Pictures
+    match /profile_pics/{imageId} {
+      // Anyone authenticated can read user profile pictures (for rankings / socials)
+      allow read: if request.auth != null;
+      
+      // Users can only write/update/delete their own profile picture
+      allow write: if request.auth != null && imageId == request.auth.uid + '.jpg';
+    }
+    
+    // General assets or game-related resources
+    match /assets/{allPaths=**} {
+      allow read: if true; // Public read-only for game assets
+      allow write: if false; // Read-only for clients, managed by admin upload scripts
+    }
+    
+    // Fallback block
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

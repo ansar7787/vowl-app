@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:go_router/go_router.dart';
-import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
@@ -12,8 +10,9 @@ import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/presentation/widgets/holographic_card.dart';
-import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/features/auth/presentation/widgets/forgot_password_widgets.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   const ForgotPasswordPage({super.key});
@@ -103,43 +102,9 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    // Brand Row (Mascot + Title)
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      children: [
-                                        VowlBotAuthCompanion(
-                                          emailFocus: _emailFocus,
-                                          size: 60,
-                                          isForgotPassword: true,
-                                        ),
-                                        SizedBox(width: 8.w),
-                                        Hero(
-                                          tag: 'auth_title',
-                                          child: Material(
-                                            color: Colors.transparent,
-                                            child: Text(
-                                              'Vowl',
-                                              style: GoogleFonts.outfit(
-                                                fontSize: 44.sp,
-                                                fontWeight: FontWeight.w900,
-                                                color: const Color(0xFF2563EB), // Vowl Blue
-                                                letterSpacing: -1.5,
-                                              ),
-                                              textAlign: TextAlign.center,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Text(
-                                      'Recover your account safely',
-                                      style: GoogleFonts.outfit(
-                                        fontSize: 15.sp,
-                                        fontWeight: FontWeight.w600,
-                                        color: secondaryColor,
-                                      ),
-                                      textAlign: TextAlign.center,
+                                    ForgotPasswordHeader(
+                                      emailFocus: _emailFocus,
+                                      secondaryColor: secondaryColor,
                                     ),
                                     SizedBox(height: 32.h),
                                     HolographicCard(
@@ -158,119 +123,35 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                           SizedBox(height: 32.h),
                                           ShakeableWrapper(
                                             shakeCount: _emailShake,
-                                            child: TextFormField(
-                                              key: _emailKey,
+                                            child: ForgotPasswordEmailInput(
+                                              fieldKey: _emailKey,
                                               controller: _emailController,
                                               focusNode: _emailFocus,
-                                              validator: (value) {
-                                                if (value == null || value.isEmpty) {
-                                                  return 'Please enter your email';
-                                                }
-                                                if (!RegExp(
-                                                  r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
-                                                ).hasMatch(value)) {
-                                                  return 'Please enter a valid email';
-                                                }
-                                                return null;
-                                              },
-                                              style: TextStyle(color: contrastColor),
-                                              decoration: InputDecoration(
-                                                hintText: 'Email Address',
-                                                hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
-                                                errorStyle: GoogleFonts.outfit(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 12.sp),
-                                                prefixIcon: Icon(
-                                                  Icons.email_outlined,
-                                                  color: contrastColor.withValues(alpha: 0.5),
-                                                ),
-                                                filled: true,
-                                                fillColor: Theme.of(context).brightness == Brightness.dark 
-                                                    ? const Color(0xFF1E293B) 
-                                                    : const Color(0xFFF3F4F6),
-                                                border: OutlineInputBorder(
-                                                  borderRadius: BorderRadius.circular(16.r),
-                                                  borderSide: BorderSide.none,
-                                                ),
-                                                enabledBorder: OutlineInputBorder(
-                                                  borderRadius: BorderRadius.circular(16.r),
-                                                  borderSide: BorderSide.none,
-                                                ),
-                                                focusedBorder: OutlineInputBorder(
-                                                  borderRadius: BorderRadius.circular(16.r),
-                                                  borderSide: const BorderSide(
-                                                    color: Color(0xFF2563EB),
-                                                    width: 1.5,
-                                                  ),
-                                                ),
-                                                errorBorder: OutlineInputBorder(
-                                                  borderRadius: BorderRadius.circular(16.r),
-                                                  borderSide: const BorderSide(color: Colors.red, width: 2),
-                                                ),
-                                                focusedErrorBorder: OutlineInputBorder(
-                                                  borderRadius: BorderRadius.circular(16.r),
-                                                  borderSide: const BorderSide(color: Colors.red, width: 2.5),
-                                                ),
-                                                contentPadding: EdgeInsets.symmetric(
-                                                  vertical: 20.h,
-                                                  horizontal: 20.w,
-                                                ),
-                                              ),
-                                              keyboardType: TextInputType.emailAddress,
+                                              contrastColor: contrastColor,
                                             ),
                                           ),
                                           SizedBox(height: 24.h),
-                                          ElevatedButton(
-                                            onPressed: state.isSubmitting
-                                                ? null
-                                                : () {
-                                                    if (_formKey.currentState?.validate() ?? false) {
-                                                      context.read<LoginCubit>().forgotPassword(
-                                                            _emailController.text.trim(),
-                                                          );
-                                                    } else {
-                                                      if (!(_emailKey.currentState?.validate() ?? true)) {
-                                                        setState(() => _emailShake++);
-                                                      }
-                                                      Haptics.vibrate(HapticsType.error);
-                                                    }
-                                                  },
-                                            child: state.isSubmitting
-                                                ? const SizedBox(
-                                                    height: 24,
-                                                    width: 24,
-                                                    child: CircularProgressIndicator(
-                                                      color: Colors.white,
-                                                      strokeWidth: 2,
-                                                    ),
-                                                  )
-                                                : const Text('Send Reset Link'),
+                                          SendResetLinkButton(
+                                            isSubmitting: state.isSubmitting,
+                                            onPressed: () {
+                                              if (_formKey.currentState?.validate() ?? false) {
+                                                context.read<LoginCubit>().forgotPassword(
+                                                      _emailController.text.trim(),
+                                                    );
+                                              } else {
+                                                if (!(_emailKey.currentState?.validate() ?? true)) {
+                                                  setState(() => _emailShake++);
+                                                }
+                                                Haptics.vibrate(HapticsType.error);
+                                              }
+                                            },
                                           ),
                                         ],
                                       ),
                                     ),
                                     SizedBox(height: 32.h),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          "Remember your password? ",
-                                          style: GoogleFonts.outfit(
-                                            color: secondaryColor,
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                        TextButton(
-                                          onPressed: () =>
-                                              context.go(AppRouter.loginRoute),
-                                          child: Text(
-                                            'Login',
-                                            style: GoogleFonts.outfit(
-                                              color: const Color(0xFF2563EB),
-                                              fontWeight: FontWeight.w900,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                    RememberPasswordFooter(
+                                      secondaryColor: secondaryColor,
                                     ),
                                     SizedBox(height: 24.h),
                                   ],
@@ -292,19 +173,14 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   }
 
   void _showSnackBar(BuildContext context, String message, Color color) {
-    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          message,
-          style: GoogleFonts.outfit(fontWeight: FontWeight.w700),
-        ),
-        backgroundColor: color,
-        duration: const Duration(milliseconds: 1500),
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
-        margin: EdgeInsets.all(24.r),
-      ),
-    );
+    CustomSnackBarType type = CustomSnackBarType.info;
+    if (color == Colors.red) {
+      type = CustomSnackBarType.error;
+    } else if (color == Colors.orange) {
+      type = CustomSnackBarType.warning;
+    } else if (color == Colors.blue || color == Colors.green) {
+      type = CustomSnackBarType.success;
+    }
+    CustomSnackBar.show(context: context, message: message, type: type);
   }
 }

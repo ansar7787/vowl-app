@@ -2,10 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
-import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
 
 class UpdateCategoryStats implements UseCase<void, UpdateCategoryStatsParams> {
-  final AuthRepository _repository;
+  final GamificationRepository _repository;
 
   UpdateCategoryStats(this._repository);
 

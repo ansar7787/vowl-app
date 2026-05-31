@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
-import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/features/auth/domain/repositories/shop_repository.dart';
 
-class EquipKidsAccessory implements UseCase<void, String?> {
-  final AuthRepository repository;
+class EquipKidsAccessory extends UseCase<void, String?> {
+  final ShopRepository repository;
 
   EquipKidsAccessory(this.repository);
 

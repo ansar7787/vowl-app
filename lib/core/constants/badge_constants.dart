@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
+/// Represents the data model and metadata configuration for a gamified level milestone badge.
+@immutable
 class BadgeData {
+  /// Unique identifier of the badge.
   final String id;
+  
+  /// Display name of the badge.
   final String name;
+  
+  /// Visual Icon representing the trophy/achievement tier.
   final IconData icon;
+  
+  /// Primary hex color representing the badge's tier (e.g. Bronze, Silver, Gold).
   final Color color;
+  
+  /// The minimum user level milestone required to unlock/claim this badge.
   final int? minLevel;
 
   const BadgeData({
@@ -17,7 +28,15 @@ class BadgeData {
   });
 }
 
-class BadgeConstants {
+/// Namespace for milestone progression and badge metadata constants.
+/// 
+/// This class is abstract to prevent instantiation and subclassing.
+@immutable
+abstract class BadgeConstants {
+  // Private constructor to prevent instantiation.
+  const BadgeConstants._();
+
+  /// Static collection of all curriculum milestone badges available in the app.
   static const List<BadgeData> badges = [
     BadgeData(
       id: 'bronze_wings',

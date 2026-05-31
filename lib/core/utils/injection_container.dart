@@ -29,6 +29,12 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/auth/data/datasources/auth_remote_data_source.dart';
 import 'package:vowl/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/features/auth/domain/repositories/user_repository.dart';
+import 'package:vowl/features/auth/data/repositories/user_repository_impl.dart';
+import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
+import 'package:vowl/features/auth/data/repositories/gamification_repository_impl.dart';
+import 'package:vowl/features/auth/domain/repositories/shop_repository.dart';
+import 'package:vowl/features/auth/data/repositories/shop_repository_impl.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/reading/domain/repositories/reading_repository.dart';
 import 'package:vowl/features/reading/data/repositories/reading_repository_impl.dart';
@@ -256,26 +262,26 @@ Future<void> init() async {
     () => GetUserStream(sl<AuthRepository>()),
   );
   sl.registerLazySingleton<UpdateUserCoins>(
-    () => UpdateUserCoins(sl<AuthRepository>()),
+    () => UpdateUserCoins(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<UpdateCategoryStats>(
-    () => UpdateCategoryStats(sl<AuthRepository>()),
+    () => UpdateCategoryStats(sl<GamificationRepository>()),
   );
-  sl.registerLazySingleton<AwardBadge>(() => AwardBadge(sl<AuthRepository>()));
+  sl.registerLazySingleton<AwardBadge>(() => AwardBadge(sl<GamificationRepository>()));
   sl.registerLazySingleton<AwardKidsSticker>(
-    () => AwardKidsSticker(sl<AuthRepository>()),
+    () => AwardKidsSticker(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<UpdateKidsMascot>(
-    () => UpdateKidsMascot(sl<AuthRepository>()),
+    () => UpdateKidsMascot(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<BuyKidsAccessory>(
-    () => BuyKidsAccessory(sl<AuthRepository>()),
+    () => BuyKidsAccessory(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<EquipKidsAccessory>(
-    () => EquipKidsAccessory(sl<AuthRepository>()),
+    () => EquipKidsAccessory(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<UpdateUnlockedLevel>(
-    () => UpdateUnlockedLevel(sl<AuthRepository>()),
+    () => UpdateUnlockedLevel(sl<GamificationRepository>()),
   );
   sl.registerLazySingleton<SendEmailVerification>(
     () => SendEmailVerification(sl<AuthRepository>()),
@@ -284,19 +290,19 @@ Future<void> init() async {
   sl.registerLazySingleton<GetCurrentUser>(
     () => GetCurrentUser(sl<AuthRepository>()),
   );
-  sl.registerLazySingleton<UpdateUser>(() => UpdateUser(sl<AuthRepository>()));
+  sl.registerLazySingleton<UpdateUser>(() => UpdateUser(sl<UserRepository>()));
   sl.registerLazySingleton<ClaimVipGift>(
-    () => ClaimVipGift(sl<AuthRepository>()),
+    () => ClaimVipGift(sl<UserRepository>()),
   );
   sl.registerLazySingleton<PurchaseHint>(
-    () => PurchaseHint(sl<AuthRepository>()),
+    () => PurchaseHint(sl<ShopRepository>()),
   );
-  sl.registerLazySingleton<UseHint>(() => UseHint(sl<AuthRepository>()));
+  sl.registerLazySingleton<UseHint>(() => UseHint(sl<ShopRepository>()));
   sl.registerLazySingleton<UseWritingHint>(
-    () => UseWritingHint(sl<AuthRepository>()),
+    () => UseWritingHint(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<UpdateUserRewards>(
-    () => UpdateUserRewards(sl<AuthRepository>()),
+    () => UpdateUserRewards(sl<GamificationRepository>()),
   );
   sl.registerLazySingleton<GetRoleplayQuest>(
     () => GetRoleplayQuest(sl<RoleplayRepository>()),
@@ -320,34 +326,34 @@ Future<void> init() async {
     () => GetVocabularyQuests(sl<VocabularyRepository>()),
   );
   sl.registerLazySingleton<UpdateProfilePicture>(
-    () => UpdateProfilePicture(sl<AuthRepository>()),
+    () => UpdateProfilePicture(sl<UserRepository>()),
   );
   sl.registerLazySingleton<UpdateDisplayName>(
-    () => UpdateDisplayName(sl<AuthRepository>()),
+    () => UpdateDisplayName(sl<UserRepository>()),
   );
   sl.registerLazySingleton<RepairStreak>(
-    () => RepairStreak(sl<AuthRepository>()),
+    () => RepairStreak(sl<GamificationRepository>()),
   );
   sl.registerLazySingleton<PurchaseStreakFreeze>(
-    () => PurchaseStreakFreeze(sl<AuthRepository>()),
+    () => PurchaseStreakFreeze(sl<GamificationRepository>()),
   );
   sl.registerLazySingleton<ActivateDoubleXP>(
-    () => ActivateDoubleXP(sl<AuthRepository>()),
+    () => ActivateDoubleXP(sl<GamificationRepository>()),
   );
   sl.registerLazySingleton<DeleteAccount>(
     () => DeleteAccount(sl<AuthRepository>()),
   );
   sl.registerLazySingleton<ClaimDailyGift>(
-    () => ClaimDailyGift(sl<AuthRepository>()),
+    () => ClaimDailyGift(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<ClaimDailyChest>(
-    () => ClaimDailyChest(sl<AuthRepository>()),
+    () => ClaimDailyChest(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<ClaimKidsDailyReward>(
-    () => ClaimKidsDailyReward(sl<AuthRepository>()),
+    () => ClaimKidsDailyReward(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<AwardKidsCoins>(
-    () => AwardKidsCoins(sl<AuthRepository>()),
+    () => AwardKidsCoins(sl<ShopRepository>()),
   );
   sl.registerLazySingleton<GetKidsQuests>(() => GetKidsQuests(sl()));
   sl.registerLazySingleton<GetEliteMasteryQuests>(
@@ -361,6 +367,25 @@ Future<void> init() async {
       firebaseAuth: sl<FirebaseAuth>(),
       firestore: sl<FirebaseFirestore>(),
       storage: sl<FirebaseStorage>(),
+    ),
+  );
+  sl.registerLazySingleton<UserRepository>(
+    () => UserRepositoryImpl(
+      firebaseAuth: sl<FirebaseAuth>(),
+      firestore: sl<FirebaseFirestore>(),
+      storage: sl<FirebaseStorage>(),
+    ),
+  );
+  sl.registerLazySingleton<GamificationRepository>(
+    () => GamificationRepositoryImpl(
+      firebaseAuth: sl<FirebaseAuth>(),
+      firestore: sl<FirebaseFirestore>(),
+    ),
+  );
+  sl.registerLazySingleton<ShopRepository>(
+    () => ShopRepositoryImpl(
+      firebaseAuth: sl<FirebaseAuth>(),
+      firestore: sl<FirebaseFirestore>(),
     ),
   );
   sl.registerLazySingleton<ReadingRepository>(

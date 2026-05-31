@@ -24,9 +24,7 @@ import 'package:vowl/features/kids_zone/presentation/widgets/kids_reward_ad_card
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/home/presentation/widgets/home_quick_stats.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
-import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/features/home/presentation/utils/notification_priming_helper.dart';
 
 final ScrollController homeScrollController = ScrollController();
 
@@ -50,49 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
       if (context.read<AuthBloc>().state.status == AuthStatus.authenticated) {
         context.read<EconomyBloc>().add(const EconomyCheckDailyRewardRequested());
       }
-      _checkNotificationPriming();
+      final user = context.read<AuthBloc>().state.user;
+      final streak = user?.currentStreak ?? 0;
+      NotificationPrimingHelper.checkAndPrompt(context, streak);
     });
-  }
-
-  Future<void> _checkNotificationPriming() async {
-    // Delay slightly to let the home screen render and daily chest dialog show first
-    await Future.delayed(const Duration(milliseconds: 3000));
-    if (!mounted) return;
-
-    final prefs = await SharedPreferences.getInstance();
-    final bool hasPrimed = prefs.getBool('notification_primed') ?? false;
-    
-    if (!hasPrimed && mounted) {
-      _showNotificationPrimingDialog();
-    }
-  }
-
-  void _showNotificationPrimingDialog() {
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => ModernGameDialog(
-        title: "Owly is Waiting! 🦉⏰",
-        description: "Enable daily notifications so your friendly tutor can help you protect your streaks and keep learning!",
-        buttonText: "YES, REMIND ME! 🔥",
-        secondaryButtonText: "NOT NOW",
-        isSuccess: true,
-        onButtonPressed: () async {
-          Haptics.vibrate(HapticsType.medium);
-          Navigator.of(context).pop();
-          // Request real permission
-          await di.sl<NotificationService>().requestPermissions();
-          final prefs = await SharedPreferences.getInstance();
-          await prefs.setBool('notification_primed', true);
-        },
-        onSecondaryPressed: () async {
-          Haptics.vibrate(HapticsType.light);
-          Navigator.of(context).pop();
-          final prefs = await SharedPreferences.getInstance();
-          await prefs.setBool('notification_primed', true);
-        },
-      ),
-    );
   }
 
   Future<void> _fetchGlobalRank() async {

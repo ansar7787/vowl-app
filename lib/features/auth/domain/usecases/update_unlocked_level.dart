@@ -2,10 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
-import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
 
 class UpdateUnlockedLevel extends UseCase<void, UpdateUnlockedLevelParams> {
-  final AuthRepository repository;
+  final GamificationRepository repository;
 
   UpdateUnlockedLevel(this.repository);
 

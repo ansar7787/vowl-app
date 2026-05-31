@@ -1,7 +1,7 @@
-import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
+import 'package:vowl/features/auth/domain/repositories/shop_repository.dart';
 
 class UseWritingHint {
-  final AuthRepository repository;
+  final ShopRepository repository;
 
   UseWritingHint(this.repository);
 

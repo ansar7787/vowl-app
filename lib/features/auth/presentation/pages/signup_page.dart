@@ -14,6 +14,8 @@ import 'package:vowl/core/presentation/widgets/holographic_card.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/features/auth/presentation/widgets/signup_widgets.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -172,7 +174,7 @@ class _SignUpViewState extends State<SignUpView> {
                                           children: [
                                             ShakeableWrapper(
                                               shakeCount: _nameShake,
-                                              child: _NameInput(
+                                              child: SignUpNameInput(
                                                 fieldKey: _nameKey,
                                                 focusNode: _nameFocus,
                                               ),
@@ -180,7 +182,7 @@ class _SignUpViewState extends State<SignUpView> {
                                             SizedBox(height: 16.h),
                                             ShakeableWrapper(
                                               shakeCount: _emailShake,
-                                              child: _EmailInput(
+                                              child: SignUpEmailInput(
                                                 fieldKey: _emailKey,
                                                 focusNode: _emailFocus,
                                               ),
@@ -188,13 +190,13 @@ class _SignUpViewState extends State<SignUpView> {
                                             SizedBox(height: 16.h),
                                             ShakeableWrapper(
                                               shakeCount: _passwordShake,
-                                              child: _PasswordInput(
+                                              child: SignUpPasswordInput(
                                                 fieldKey: _passwordKey,
                                                 focusNode: _passwordFocus,
                                               ),
                                             ),
                                             SizedBox(height: 32.h),
-                                            _SignUpButton(
+                                            SignUpButton(
                                               formKey: _formKey,
                                               onValidationError: () {
                                                 Haptics.vibrate(HapticsType.error);
@@ -257,281 +259,14 @@ class _SignUpViewState extends State<SignUpView> {
   }
 
   void _showSnackBar(BuildContext context, String message, Color color) {
-    ScaffoldMessenger.of(context).hideCurrentSnackBar();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          message,
-          style: GoogleFonts.outfit(fontWeight: FontWeight.w700),
-        ),
-        backgroundColor: color,
-        duration: const Duration(milliseconds: 1500),
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
-        margin: EdgeInsets.all(24.r),
-      ),
-    );
-  }
-}
-
-class _NameInput extends StatelessWidget {
-  final GlobalKey<FormFieldState>? fieldKey;
-  final FocusNode? focusNode;
-  const _NameInput({this.fieldKey, this.focusNode});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SignUpCubit, SignUpState>(
-      buildWhen: (previous, current) => previous.name != current.name,
-      builder: (context, state) {
-        return TextFormField(
-          key: fieldKey,
-          focusNode: focusNode,
-          onChanged: (name) => context.read<SignUpCubit>().nameChanged(name),
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter your name';
-            }
-            if (value.length < 2) {
-              return 'Name must be at least 2 characters';
-            }
-            return null;
-          },
-          textInputAction: TextInputAction.next,
-          style: TextStyle(color: MeshGradientBackground.getContrastColor(context)),
-          decoration: InputDecoration(
-            hintText: 'Full Name',
-            hintStyle: TextStyle(color: MeshGradientBackground.getContrastColor(context).withValues(alpha: 0.5)),
-            errorStyle: const TextStyle(color: Colors.red),
-            prefixIcon: Icon(
-              Icons.person_outline,
-              color: MeshGradientBackground.getContrastColor(context).withValues(alpha: 0.5),
-            ),
-            filled: true,
-            fillColor: Theme.of(context).brightness == Brightness.dark 
-                ? const Color(0xFF1E293B) 
-                : const Color(0xFFF3F4F6),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: BorderSide.none,
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: BorderSide.none,
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: const BorderSide(
-                color: Color(0xFF2563EB),
-                width: 1.5,
-              ),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: const BorderSide(color: Colors.red, width: 1),
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: const BorderSide(color: Colors.red, width: 1.5),
-            ),
-            contentPadding: EdgeInsets.symmetric(
-              vertical: 20.h,
-              horizontal: 20.w,
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class _EmailInput extends StatelessWidget {
-  final GlobalKey<FormFieldState>? fieldKey;
-  final FocusNode? focusNode;
-  const _EmailInput({this.fieldKey, this.focusNode});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SignUpCubit, SignUpState>(
-      buildWhen: (previous, current) => previous.email != current.email,
-      builder: (context, state) {
-        return TextFormField(
-          key: fieldKey,
-          focusNode: focusNode,
-          onChanged: (email) => context.read<SignUpCubit>().emailChanged(email),
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter your email';
-            }
-            if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(value)) {
-              return 'Please enter a valid email';
-            }
-            return null;
-          },
-          textInputAction: TextInputAction.next,
-          style: TextStyle(color: MeshGradientBackground.getContrastColor(context)),
-          decoration: InputDecoration(
-            hintText: 'Email',
-            hintStyle: TextStyle(color: MeshGradientBackground.getContrastColor(context).withValues(alpha: 0.5)),
-            prefixIcon: Icon(
-              Icons.email_outlined,
-              color: MeshGradientBackground.getContrastColor(context).withValues(alpha: 0.5),
-            ),
-            filled: true,
-            fillColor: Theme.of(context).brightness == Brightness.dark 
-                ? const Color(0xFF1E293B) 
-                : const Color(0xFFF3F4F6),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: BorderSide.none,
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: BorderSide.none,
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: const BorderSide(
-                color: Color(0xFF2563EB),
-                width: 1.5,
-              ),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: const BorderSide(color: Colors.red, width: 1),
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: const BorderSide(color: Colors.red, width: 1.5),
-            ),
-            contentPadding: EdgeInsets.symmetric(
-              vertical: 20.h,
-              horizontal: 20.w,
-            ),
-          ),
-          keyboardType: TextInputType.emailAddress,
-        );
-      },
-    );
-  }
-}
-
-class _PasswordInput extends StatelessWidget {
-  final GlobalKey<FormFieldState>? fieldKey;
-  final FocusNode? focusNode;
-  const _PasswordInput({this.fieldKey, this.focusNode});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SignUpCubit, SignUpState>(
-      buildWhen: (previous, current) =>
-          previous.password != current.password ||
-          previous.isPasswordVisible != current.isPasswordVisible,
-      builder: (context, state) {
-        return TextFormField(
-          key: fieldKey,
-          focusNode: focusNode,
-          onChanged: (password) =>
-              context.read<SignUpCubit>().passwordChanged(password),
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter your password';
-            }
-            if (value.length < 6) {
-              return 'Password must be at least 6 characters';
-            }
-            return null;
-          },
-          textInputAction: TextInputAction.done,
-          obscureText: !state.isPasswordVisible,
-          style: TextStyle(color: MeshGradientBackground.getContrastColor(context)),
-          decoration: InputDecoration(
-            hintText: 'Password',
-            hintStyle: TextStyle(color: MeshGradientBackground.getContrastColor(context).withValues(alpha: 0.5)),
-            prefixIcon: Icon(
-              Icons.lock_outlined,
-              color: MeshGradientBackground.getContrastColor(context).withValues(alpha: 0.5),
-            ),
-            suffixIcon: IconButton(
-              icon: Icon(
-                state.isPasswordVisible
-                    ? Icons.visibility_outlined
-                    : Icons.visibility_off_outlined,
-                color: MeshGradientBackground.getContrastColor(context).withValues(alpha: 0.5),
-              ),
-              onPressed: () =>
-                  context.read<SignUpCubit>().togglePasswordVisibility(),
-            ),
-            filled: true,
-            fillColor: Theme.of(context).brightness == Brightness.dark 
-                ? const Color(0xFF1E293B) 
-                : const Color(0xFFF3F4F6),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: BorderSide.none,
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: BorderSide.none,
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: const BorderSide(
-                color: Color(0xFF2563EB),
-                width: 1.5,
-              ),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: const BorderSide(color: Colors.red, width: 1),
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16.r),
-              borderSide: const BorderSide(color: Colors.red, width: 1.5),
-            ),
-            contentPadding: EdgeInsets.symmetric(
-              vertical: 20.h,
-              horizontal: 20.w,
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class _SignUpButton extends StatelessWidget {
-  final GlobalKey<FormState> formKey;
-  final VoidCallback onValidationError;
-
-  const _SignUpButton({required this.formKey, required this.onValidationError});
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SignUpCubit, SignUpState>(
-      builder: (context, state) {
-        return ElevatedButton(
-          onPressed: state.isSubmitting
-              ? null
-              : () {
-                  if (formKey.currentState?.validate() ?? false) {
-                    context.read<SignUpCubit>().signUp();
-                  } else {
-                    onValidationError();
-                  }
-                },
-          child: state.isSubmitting
-              ? const SizedBox(
-                  height: 24,
-                  width: 24,
-                  child: CircularProgressIndicator(
-                    color: Colors.white,
-                    strokeWidth: 2,
-                  ),
-                )
-              : const Text('Create Account'),
-        );
-      },
-    );
+    CustomSnackBarType type = CustomSnackBarType.info;
+    if (color == Colors.red) {
+      type = CustomSnackBarType.error;
+    } else if (color == Colors.orange) {
+      type = CustomSnackBarType.warning;
+    } else if (color == Colors.blue || color == Colors.green) {
+      type = CustomSnackBarType.success;
+    }
+    CustomSnackBar.show(context: context, message: message, type: type);
   }
 }
