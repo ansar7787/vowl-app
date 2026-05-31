@@ -490,14 +490,8 @@ class AppRouter {
 
       if (isSplashRoute) return null;
 
-      final isVerifyEmailRoute = state.uri.path == verifyEmailRoute;
-      final isHatchingRoute = state.uri.path == hatchingRoute;
-
       final isAuthRoute =
           isLoginRoute || isSignupRoute || isForgotPasswordRoute;
-
-      // Routes that should not trigger a redirect to login during transitions
-      final isTransitionRoute = isVerifyEmailRoute || isHatchingRoute;
 
       // 1. Wait for Auth State (Prevent early redirect during initialization)
       if (authState.status == AuthStatus.unknown) {
@@ -507,7 +501,7 @@ class AppRouter {
 
       // 2. Handle Unauthenticated Users
       if (!isAuthenticated) {
-        if (!isAuthRoute && !isTransitionRoute && !isSplashRoute) {
+        if (!isAuthRoute && !isSplashRoute) {
           return loginRoute;
         }
         return null;

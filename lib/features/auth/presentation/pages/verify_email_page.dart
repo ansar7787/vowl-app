@@ -218,6 +218,8 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                         SizedBox(height: 16.h),
                         TextButton(
                           onPressed: () {
+                            timer?.cancel();
+                            _resendTimer?.cancel();
                             context.read<AuthBloc>().add(AuthLogoutRequested());
                           },
                           child: Text(
