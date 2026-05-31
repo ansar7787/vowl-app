@@ -2,7 +2,15 @@ import 'dart:math';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
+/// Helper coordinator to calculate dynamic sequence paths and custom quest mixes
+/// for the discovery hub, ensuring perfect list limits and optimized memory footprints.
 class DiscoveryHelper {
+  // Private constructor to prevent instantiations
+  const DiscoveryHelper._();
+
+  static final Random _random = Random();
+
+  /// Resolves dynamic quests based on specific hub sequence configurations.
   static List<GameQuest> getQuestsForSequence(
     String sequenceId,
     UserEntity user,
@@ -48,12 +56,12 @@ class DiscoveryHelper {
 
     if (allZero) {
       final types = QuestType.values;
-      lowestType = types[Random().nextInt(types.length)];
-      favoriteType = types[Random().nextInt(types.length)];
+      lowestType = types[_random.nextInt(types.length)];
+      favoriteType = types[_random.nextInt(types.length)];
     }
 
     final types = QuestType.values;
-    final randomType = types[Random().nextInt(types.length)];
+    final randomType = types[_random.nextInt(types.length)];
 
     // Curated mix: Weakest -> Favorite -> Random wildcard
     return [
@@ -66,7 +74,7 @@ class DiscoveryHelper {
   static List<GameQuest> _generateDailyDuo(UserEntity user) {
     // Mixed vocal & listening/reading
     final speakingGame = _getRandomGameForCategory(user, QuestType.speaking);
-    final isListening = Random().nextBool();
+    final isListening = _random.nextBool();
     final secondGame = _getRandomGameForCategory(user, isListening ? QuestType.listening : QuestType.reading);
 
     return [
@@ -93,10 +101,13 @@ class DiscoveryHelper {
       attempts++;
     }
 
-    // Ensure we have 3 even if random failed to pick unique ones
     final list = grammarGames.toList();
-    if (list.length < 3) {
+    
+    // Safety guard to always guarantee exactly 3 distinct entries
+    int fallbackAttempts = 0;
+    while (list.length < 3 && fallbackAttempts < 10) {
       list.add(_getRandomGameForCategory(user, QuestType.writing));
+      fallbackAttempts++;
     }
     
     return list;
@@ -104,7 +115,7 @@ class DiscoveryHelper {
 
   static List<GameQuest> _generateRandomQuest(UserEntity user) {
     final types = QuestType.values;
-    final randomType = types[Random().nextInt(types.length)];
+    final randomType = types[_random.nextInt(types.length)];
     return [_getRandomGameForCategory(user, randomType)];
   }
 
@@ -114,10 +125,10 @@ class DiscoveryHelper {
     if (subtypes.isEmpty) {
       // Fallback: pick any non-legacy subtype
       final fallback = GameSubtype.values.where((s) => !s.isLegacy).toList();
-      final subtype = fallback[Random().nextInt(fallback.length)];
+      final subtype = fallback[_random.nextInt(fallback.length)];
       return _getQuestForSubtype(user, subtype, 'Explore this quest!');
     }
-    final subtype = subtypes[Random().nextInt(subtypes.length)];
+    final subtype = subtypes[_random.nextInt(subtypes.length)];
     return _getQuestForSubtype(
       user,
       subtype,
