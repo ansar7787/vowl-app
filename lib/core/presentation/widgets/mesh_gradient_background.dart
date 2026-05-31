@@ -3,10 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// A premium, theme-adaptive aurora mesh gradient backdrop with organic glowing clouds,
+/// a techno dot-grid pattern, and a corner framing overlay, optimized for theme toggling.
 class MeshGradientBackground extends StatelessWidget {
   final List<Color>? colors;
   final bool showLetters;
-  final Color? auraColor; // New: For interactive feedback
+  final Color? auraColor; // For interactive feedback
+
   const MeshGradientBackground({
     super.key,
     this.colors,
@@ -57,77 +60,79 @@ class MeshGradientBackground extends StatelessWidget {
             ),
           ),
   
-        // 2. Interactive Aura Layer (Focus feedback)
-        if (auraColor != null)
-          Center(
+          // 2. Interactive Aura Layer (Focus feedback)
+          if (auraColor != null)
+            Center(
+              child: Container(
+                width: 1.sw,
+                height: 1.sh,
+                decoration: BoxDecoration(
+                  gradient: RadialGradient(
+                    colors: [
+                      auraColor!.withValues(alpha: isDark ? 0.12 : 0.2),
+                      Colors.transparent,
+                    ],
+                  ),
+                ),
+              ),
+            ),
+
+          // 3. Aurora Clouds (Large, soft, modern overlapping gradients)
+          if (!isMidnight)
+            ...[
+              _StaticBlob(
+                alignment: const Alignment(-1.5, -0.8),
+                color: backgroundColors[1].withValues(alpha: isDark ? 0.3 : 0.5),
+                size: 700.w,
+              ),
+              _StaticBlob(
+                alignment: const Alignment(1.5, -0.4),
+                color: backgroundColors[2].withValues(alpha: isDark ? 0.2 : 0.4),
+                size: 800.w,
+              ),
+              _StaticBlob(
+                alignment: const Alignment(-0.8, 1.5),
+                color: backgroundColors[3].withValues(alpha: isDark ? 0.15 : 0.3),
+                size: 600.w,
+              ),
+              _StaticBlob(
+                alignment: const Alignment(0, 0),
+                color: backgroundColors[0].withValues(alpha: isDark ? 0.05 : 0.1),
+                size: 1.sw,
+              ),
+              if (!isDark) // Extra depth for light mode
+                _StaticBlob(
+                  alignment: const Alignment(0.8, 0.9),
+                  color: const Color(0xFFFAF5FF).withValues(alpha: 0.3),
+                  size: 400.w,
+                ),
+            ],
+   
+          // 4. Modern Dot Grid Pattern
+          Positioned.fill(
+            child: IgnorePointer(
+              child: CustomPaint(
+                painter: _ModernPatternPainter(isDark: isDark),
+              ),
+            ),
+          ),
+   
+          // 5. Final Contrast & Depth Overlay
+          Positioned.fill(
             child: Container(
-              width: 1.sw,
-              height: 1.sh,
               decoration: BoxDecoration(
-                gradient: RadialGradient(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                   colors: [
-                    auraColor!.withValues(alpha: isDark ? 0.12 : 0.2),
+                    isDark ? Colors.black.withValues(alpha: 0.1) : Colors.white.withValues(alpha: 0.05),
                     Colors.transparent,
+                    isDark ? Colors.black.withValues(alpha: 0.05) : Colors.white.withValues(alpha: 0.1),
                   ],
                 ),
               ),
             ),
           ),
-
-        // 3. Aurora Clouds (Large, soft, modern overlapping gradients)
-        if (!isMidnight)
-          ...[
-            _StaticBlob(
-              alignment: const Alignment(-1.5, -0.8),
-              color: backgroundColors[1].withValues(alpha: isDark ? 0.3 : 0.5),
-              size: 700.w,
-            ),
-            _StaticBlob(
-              alignment: const Alignment(1.5, -0.4),
-              color: backgroundColors[2].withValues(alpha: isDark ? 0.2 : 0.4),
-              size: 800.w,
-            ),
-            _StaticBlob(
-              alignment: const Alignment(-0.8, 1.5),
-              color: backgroundColors[3].withValues(alpha: isDark ? 0.15 : 0.3),
-              size: 600.w,
-            ),
-            _StaticBlob(
-              alignment: const Alignment(0, 0),
-              color: backgroundColors[0].withValues(alpha: isDark ? 0.05 : 0.1),
-              size: 1.sw,
-            ),
-            if (!isDark) // Extra depth for light mode
-              _StaticBlob(
-                alignment: const Alignment(0.8, 0.9),
-                color: const Color(0xFFFAF5FF).withValues(alpha: 0.3),
-                size: 400.w,
-              ),
-          ],
-  
-        // 4. Modern Dot Grid Pattern
-        Positioned.fill(
-          child: IgnorePointer(
-            child: CustomPaint(painter: _ModernPatternPainter(isDark: isDark)),
-          ),
-        ),
-  
-        // 5. Final Contrast & Depth Overlay
-        Positioned.fill(
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  isDark ? Colors.black.withValues(alpha: 0.1) : Colors.white.withValues(alpha: 0.05),
-                  Colors.transparent,
-                  isDark ? Colors.black.withValues(alpha: 0.05) : Colors.white.withValues(alpha: 0.1),
-                ],
-              ),
-            ),
-          ),
-        ),
         ],
       ),
     );
@@ -194,7 +199,7 @@ class _ModernPatternPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant _ModernPatternPainter oldDelegate) {
+    return oldDelegate.isDark != isDark;
+  }
 }
-
-// Removed unused _StaticAlphabet widget to resolve IDE warnings.
