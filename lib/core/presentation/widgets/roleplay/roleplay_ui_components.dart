@@ -316,33 +316,35 @@ class TypingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: List.generate(3, (index) {
-        return Container(
-              width: 6.r,
-              height: 6.r,
-              margin: EdgeInsets.symmetric(horizontal: 2.w),
-              decoration: BoxDecoration(
-                color: color.withValues(alpha: 0.5),
-                shape: BoxShape.circle,
-              ),
-            )
-            .animate(onPlay: (c) => c.repeat())
-            .scale(
-              duration: 600.ms,
-              delay: (index * 150).ms,
-              begin: const Offset(1, 1),
-              end: const Offset(1.5, 1.5),
-              curve: Curves.easeInOut,
-            )
-            .then()
-            .scale(
-              duration: 600.ms,
-              begin: const Offset(1.5, 1.5),
-              end: const Offset(1, 1),
-            );
-      }),
+    return RepaintBoundary(
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: List.generate(3, (index) {
+          return Container(
+                width: 6.r,
+                height: 6.r,
+                margin: EdgeInsets.symmetric(horizontal: 2.w),
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.5),
+                  shape: BoxShape.circle,
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat())
+              .scale(
+                duration: 600.ms,
+                delay: (index * 150).ms,
+                begin: const Offset(1, 1),
+                end: const Offset(1.5, 1.5),
+                curve: Curves.easeInOut,
+              )
+              .then()
+              .scale(
+                duration: 600.ms,
+                begin: const Offset(1.5, 1.5),
+                end: const Offset(1, 1),
+              );
+        }),
+      ),
     );
   }
 }
@@ -391,10 +393,12 @@ class SceneBackdrop extends StatelessWidget {
     return Positioned(
       top: 150.h,
       right: -50.w,
-      child: Icon(
-        _getIcon(),
-        size: 300.r,
-        color: color.withValues(alpha: 0.05),
+      child: RepaintBoundary(
+        child: Icon(
+          _getIcon(),
+          size: 300.r,
+          color: color.withValues(alpha: 0.05),
+        ),
       ),
     ).animate().fadeIn(duration: 1000.ms).scale(begin: const Offset(0.8, 0.8));
   }
@@ -447,29 +451,31 @@ class HintButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-          onTap: onTap,
-          child: Container(
-            padding: EdgeInsets.all(10.r),
-            decoration: BoxDecoration(
-              color: isUsed ? Colors.white10 : color.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: isUsed ? Colors.white24 : color.withValues(alpha: 0.3),
-                width: 1.5,
+    return RepaintBoundary(
+      child: GestureDetector(
+            onTap: onTap,
+            child: Container(
+              padding: EdgeInsets.all(10.r),
+              decoration: BoxDecoration(
+                color: isUsed ? Colors.white10 : color.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: isUsed ? Colors.white24 : color.withValues(alpha: 0.3),
+                  width: 1.5,
+                ),
+              ),
+              child: Icon(
+                Icons.lightbulb_rounded,
+                color: isUsed ? Colors.white24 : Colors.amber,
+                size: 22.r,
               ),
             ),
-            child: Icon(
-              Icons.lightbulb_rounded,
-              color: isUsed ? Colors.white24 : Colors.amber,
-              size: 22.r,
-            ),
+          )
+          .animate(target: isUsed ? 0 : 1)
+          .shimmer(
+            duration: 2.seconds,
+            color: Colors.amber.withValues(alpha: 0.2),
           ),
-        )
-        .animate(target: isUsed ? 0 : 1)
-        .shimmer(
-          duration: 2.seconds,
-          color: Colors.amber.withValues(alpha: 0.2),
-        );
+    );
   }
 }
