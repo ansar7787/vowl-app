@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 enum VowlBackgroundStyle { scatter, focal, grid }
 
+/// A performance-optimized letter background texture for game and category maps.
 class VowlLetterBackground extends StatelessWidget {
   final Color color;
   final VowlBackgroundStyle style;
@@ -18,8 +19,10 @@ class VowlLetterBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned.fill(
       child: IgnorePointer(
-        child: CustomPaint(
-          painter: _VowlLetterPainter(color: color, style: style),
+        child: RepaintBoundary(
+          child: CustomPaint(
+            painter: _VowlLetterPainter(color: color, style: style),
+          ),
         ),
       ),
     );
@@ -34,6 +37,8 @@ class _VowlLetterPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    if (size.width <= 0 || size.height <= 0) return;
+
     final paint = Paint()
       ..color = color
       ..style = PaintingStyle.fill;
@@ -98,7 +103,7 @@ class _VowlLetterPainter extends CustomPainter {
           color: color,
           fontSize: fontSize,
           fontWeight: FontWeight.w900,
-          fontFamily: 'Outfit', // Using the app's font
+          fontFamily: 'Outfit',
         ),
       ),
       textDirection: TextDirection.ltr,
@@ -116,5 +121,7 @@ class _VowlLetterPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant _VowlLetterPainter oldDelegate) {
+    return oldDelegate.color != color || oldDelegate.style != style;
+  }
 }
