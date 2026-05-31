@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+/// Centralized asset registry and item configurations for Vowl.
+/// 
+/// Provides unified null-safe accessors for mascots, accessories, prices,
+/// and theme colors to prevent layout runtime exceptions.
 class VowlAssets {
   // Mascots for Vowl Users
   static const Map<String, String> mascotMap = {
@@ -64,17 +68,56 @@ class VowlAssets {
   };
 
   static const Map<String, Color> itemColors = {
-    'vowl_prime': Colors.blueAccent,
-    'silver_wing': Colors.blueGrey,
-    'night_oracle': Colors.indigoAccent,
-    'phantom_hoot': Color(0xFF00FF41), 
-    'golden_talon': Colors.amberAccent,
-    'moss_feather': Color(0xFF2ECC71),
-    'scholar_cap': Colors.indigo,
-    'frost_aura': Colors.lightBlueAccent,
-    'night_vision': Colors.blueGrey,
-    'phoenix_wings': Colors.orangeAccent,
-    'dragon_heart': Colors.redAccent,
-    'wind_whistler': Colors.cyanAccent,
+    'vowl_prime': Color(0xFF3B82F6), // Premium Blue
+    'silver_wing': Color(0xFF64748B), // Slate Grey
+    'night_oracle': Color(0xFF6366F1), // Indigo
+    'phantom_hoot': Color(0xFF10B981), // Emerald
+    'golden_talon': Color(0xFFF59E0B), // Amber
+    'moss_feather': Color(0xFF10B981), // Forest Green
+    'scholar_cap': Color(0xFF4F46E5), // Scholar Indigo
+    'frost_aura': Color(0xFF06B6D4), // Frost Cyan
+    'night_vision': Color(0xFF475569), // Dark Vision Slate
+    'phoenix_wings': Color(0xFFEF4444), // Phoenix Red
+    'dragon_heart': Color(0xFFEC4899), // Dragon Pink
+    'wind_whistler': Color(0xFF0EA5E9), // Sky Blue
   };
+
+  // ============================================================
+  // Null-Safe Lookup Helpers (Prevents UI runtime crash sweeps)
+  // ============================================================
+
+  /// Safely resolves a color mapping for a mascot or accessory.
+  static Color getItemColor(String key, {Color fallback = const Color(0xFF2563EB)}) {
+    return itemColors[key] ?? fallback;
+  }
+
+  /// Safely resolves the emoji visual representation for a mascot.
+  static String getMascotEmoji(String key, {String fallback = '🦉'}) {
+    return mascotMap[key] ?? fallback;
+  }
+
+  /// Safely resolves the display name for a mascot.
+  static String getMascotName(String key, {String fallback = 'Companion'}) {
+    return mascotNames[key] ?? fallback;
+  }
+
+  /// Safely resolves the lore trait description for a mascot.
+  static String getMascotTrait(String key, {String fallback = 'Ancient Spirit of Vowl'}) {
+    return mascotTraits[key] ?? fallback;
+  }
+
+  /// Safely resolves the emoji visual representation for an accessory.
+  static String getAccessoryEmoji(String key, {String fallback = '✨'}) {
+    return accessoryMap[key] ?? fallback;
+  }
+
+  /// Safely resolves the display name for an accessory.
+  static String getAccessoryName(String key, {String fallback = 'Item'}) {
+    return accessoryNames[key] ?? fallback;
+  }
+
+  /// Safely resolves the price tag in Vowl coins for an accessory.
+  static int getAccessoryPrice(String key, {int fallback = 0}) {
+    return accessoryPrices[key] ?? fallback;
+  }
 }
