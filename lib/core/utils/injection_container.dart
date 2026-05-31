@@ -10,7 +10,6 @@ import 'package:vowl/core/utils/seeding_service.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/local_smart_tutor.dart';
 import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/core/utils/content_generation_service.dart';
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/quest_upload_service.dart';
@@ -173,7 +172,6 @@ Future<void> init() async {
   sl.registerLazySingleton(() => AdService());
   sl.registerLazySingleton(() => PaymentService(getCurrentUser: sl(), firestore: sl()));
   sl.registerLazySingleton(() => SpeechService());
-  sl.registerLazySingleton(() => ContentGenerationService());
   sl.registerLazySingleton(() => QuestUploadService());
   sl.registerLazySingleton(() => TtsService());
   sl.registerLazySingleton(() => KidsTTSService());
