@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
+/// A performance-optimized background with dynamic connecting neural network particles for auth.
 class AuthBackground extends StatefulWidget {
   final Widget child;
   const AuthBackground({super.key, required this.child});
@@ -13,7 +14,7 @@ class _AuthBackgroundState extends State<AuthBackground>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   final List<Particle> _particles = [];
-  final Random _random = Random();
+  final Random _random = Random(42); // Seeded to maintain clean visual look
 
   @override
   void initState() {
@@ -46,17 +47,20 @@ class _AuthBackgroundState extends State<AuthBackground>
           height: double.infinity,
         ),
         // Animated Particles
-        AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            return CustomPaint(
-              painter: ParticlePainter(
-                particles: _particles,
-                animationValue: _controller.value,
-              ),
-              child: Container(),
-            );
-          },
+        RepaintBoundary(
+          child: AnimatedBuilder(
+            animation: _controller,
+            builder: (context, child) {
+              return CustomPaint(
+                painter: ParticlePainter(
+                  particles: _particles,
+                  animationValue: _controller.value,
+                  random: _random,
+                ),
+                child: Container(),
+              );
+            },
+          ),
         ),
         // Content
         widget.child,
@@ -73,6 +77,7 @@ class Particle {
   late double opacity;
   late String text;
   late double fontSize;
+  TextPainter? _cachedPainter;
 
   Particle(Random random) {
     reset(random);
@@ -91,16 +96,36 @@ class Particle {
     text = String.fromCharCode(charCode);
 
     fontSize = random.nextDouble() * 24 + 12; // 12 - 36
+    _cachedPainter = null; // Invalidate cached text painter
   }
 
-  void update() {
+  /// High-performance caching layer to prevent allocating TextPainters in paint loop
+  TextPainter getPainter(Color baseColor) {
+    if (_cachedPainter == null) {
+      _cachedPainter = TextPainter(
+        text: TextSpan(
+          text: text,
+          style: TextStyle(
+            color: baseColor.withValues(alpha: opacity),
+            fontSize: fontSize,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        textDirection: TextDirection.ltr,
+      );
+      _cachedPainter!.layout();
+    }
+    return _cachedPainter!;
+  }
+
+  void update(Random random) {
     x += speedX;
     y += speedY;
 
     if (x < -0.1 || x > 1.1 || y < -0.1 || y > 1.1) {
-      if (Random().nextInt(100) < 5) {
+      if (random.nextInt(100) < 5) {
         // Small chance to reset to random position
-        reset(Random());
+        reset(random);
       } else {
         // Wrap around logic
         x = x < -0.1 ? 1.1 : (x > 1.1 ? -0.1 : x);
@@ -113,11 +138,18 @@ class Particle {
 class ParticlePainter extends CustomPainter {
   final List<Particle> particles;
   final double animationValue;
+  final Random random;
 
-  ParticlePainter({required this.particles, required this.animationValue});
+  ParticlePainter({
+    required this.particles,
+    required this.animationValue,
+    required this.random,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
+    if (size.width <= 0 || size.height <= 0) return;
+
     // Draw connections (Neural Network)
     final linePaint = Paint()
       ..color = const Color(0xFF2563EB)
@@ -145,23 +177,11 @@ class ParticlePainter extends CustomPainter {
       }
     }
 
-    // Draw Letters
+    // Draw Letters using high-performance cached TextPainters
     for (var particle in particles) {
-      particle.update();
+      particle.update(random);
 
-      final textSpan = TextSpan(
-        text: particle.text,
-        style: TextStyle(
-          color: const Color(0xFF2563EB).withValues(alpha: particle.opacity),
-          fontSize: particle.fontSize,
-          fontWeight: FontWeight.bold,
-        ),
-      );
-      final textPainter = TextPainter(
-        text: textSpan,
-        textDirection: TextDirection.ltr,
-      );
-      textPainter.layout();
+      final textPainter = particle.getPainter(const Color(0xFF2563EB));
       textPainter.paint(
         canvas,
         Offset(
