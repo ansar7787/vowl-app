@@ -4,12 +4,19 @@ import 'package:google_fonts/google_fonts.dart';
 
 enum CustomSnackBarType { success, error, info, warning }
 
+/// Centered premium UI snackbar controller mapped to modern curated color scales,
+/// ensuring safe rendering and prevent crashes on unmounted view scopes.
 class CustomSnackBar {
+  /// Displays a customized, floating floating alert box.
   static void show({
     required BuildContext context,
     required String message,
     required CustomSnackBarType type,
+    Duration duration = const Duration(seconds: 4),
   }) {
+    // Defensive check preventing runtime exceptions on unmounted build elements
+    if (!context.mounted) return;
+
     final isDark = Theme.of(context).brightness == Brightness.dark;
     
     // Curated Premium Theme Colors matching our 10/10 design system
@@ -55,7 +62,7 @@ class CustomSnackBar {
       elevation: 0,
       backgroundColor: Colors.transparent,
       behavior: SnackBarBehavior.floating,
-      duration: const Duration(seconds: 4),
+      duration: duration,
       margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       padding: EdgeInsets.zero,
       content: Container(
@@ -107,11 +114,11 @@ class CustomSnackBar {
                             Text(
                               title,
                               style: GoogleFonts.outfit(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w900,
-                                color: textColor,
-                                letterSpacing: 0.3,
-                              ),
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: textColor,
+                                  letterSpacing: 0.3,
+                                ),
                             ),
                             SizedBox(height: 2.h),
                             Text(
@@ -135,7 +142,10 @@ class CustomSnackBar {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: () {
-                    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                    // Safe guard check on context execution limits
+                    if (context.mounted) {
+                      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                    }
                   },
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 14.w),
