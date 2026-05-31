@@ -6,6 +6,8 @@ import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// A premium, theme-adaptive glassmorphic dialog panel presenting success briefings,
+/// exit confirmations, or rescue actions, optimized to isolate dynamic repaint ticks.
 class ModernGameDialog extends StatelessWidget {
   final String title;
   final String description;
@@ -54,21 +56,24 @@ class ModernGameDialog extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                padding: EdgeInsets.all(16.r),
-                decoration: BoxDecoration(
-                  color: primaryColor.withValues(alpha: 0.1),
-                  shape: BoxShape.circle,
+              // Isolate dynamic mascot floating and shaking animations
+              RepaintBoundary(
+                child: Container(
+                  padding: EdgeInsets.all(16.r),
+                  decoration: BoxDecoration(
+                    color: primaryColor.withValues(alpha: 0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: isSuccess ? _buildVictoryMascot(context) : Icon(
+                    Icons.heart_broken_rounded,
+                    color: primaryColor,
+                    size: 48.r,
+                  ),
+                ).animate().scale(
+                  delay: 200.ms,
+                  duration: 500.ms,
+                  curve: Curves.elasticOut,
                 ),
-                child: isSuccess ? _buildVictoryMascot(context) : Icon(
-                  Icons.heart_broken_rounded,
-                  color: primaryColor,
-                  size: 48.r,
-                ),
-              ).animate().scale(
-                delay: 200.ms,
-                duration: 500.ms,
-                curve: Curves.elasticOut,
               ),
               SizedBox(height: 24.h),
               Text(
@@ -91,69 +96,72 @@ class ModernGameDialog extends StatelessWidget {
               ),
               SizedBox(height: 32.h),
               if (onAdAction != null) ...[
-                ScaleButton(
-                  onTap: onAdAction!,
-                  child: Container(
-                    width: double.infinity,
-                    height: 56.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.r),
-                      gradient: LinearGradient(
-                        colors: isExitConfirmation
-                            ? [
-                                const Color(0xFF64748B), // Slate for Quit
-                                const Color(0xFF475569),
-                              ]
-                            : isRescueLife
-                                ? [
-                                    const Color(0xFF2563EB),
-                                    const Color(0xFF1E3A8A),
-                                  ] // Blue for Rescue
-                                : [
-                                    const Color(0xFFFFD700),
-                                    const Color(0xFFFFA500),
-                                  ], // Gold for Double Up
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color:
-                              (isRescueLife
-                                      ? Colors.blue
-                                      : const Color(0xFFFFA500))
-                                  .withValues(alpha: 0.3),
-                          blurRadius: 12,
-                          offset: const Offset(0, 4),
+                // Isolate continuous 60Hz-120Hz shimmer button animations
+                RepaintBoundary(
+                  child: ScaleButton(
+                    onTap: onAdAction!,
+                    child: Container(
+                      width: double.infinity,
+                      height: 56.h,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16.r),
+                        gradient: LinearGradient(
+                          colors: isExitConfirmation
+                              ? [
+                                  const Color(0xFF64748B), // Slate for Quit
+                                  const Color(0xFF475569),
+                                ]
+                              : isRescueLife
+                                  ? [
+                                      const Color(0xFF2563EB),
+                                      const Color(0xFF1E3A8A),
+                                    ] // Blue for Rescue
+                                  : [
+                                      const Color(0xFFFFD700),
+                                      const Color(0xFFFFA500),
+                                    ], // Gold for Double Up
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
                         ),
-                      ],
-                    ),
-                    child: Center(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              isExitConfirmation
-                                  ? Icons.logout_rounded
-                                  : isRescueLife
-                                      ? Icons.play_circle_fill
-                                      : Icons.play_circle_fill_rounded,
-                              color: (isRescueLife || isExitConfirmation) ? Colors.white : Colors.black87,
-                              size: 20.r,
-                            ),
-                            SizedBox(width: 8.w),
-                            Text(
-                              adButtonText ?? "TRIPLE REWARDS (3X)",
-                              style: GoogleFonts.outfit(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 0.5,
+                        boxShadow: [
+                          BoxShadow(
+                            color:
+                                (isRescueLife
+                                        ? Colors.blue
+                                        : const Color(0xFFFFA500))
+                                    .withValues(alpha: 0.3),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Center(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                isExitConfirmation
+                                    ? Icons.logout_rounded
+                                    : isRescueLife
+                                        ? Icons.play_circle_fill
+                                        : Icons.play_circle_fill_rounded,
                                 color: (isRescueLife || isExitConfirmation) ? Colors.white : Colors.black87,
+                                size: 20.r,
                               ),
-                            ),
-                          ],
+                              SizedBox(width: 8.w),
+                              Text(
+                                adButtonText ?? "TRIPLE REWARDS (3X)",
+                                style: GoogleFonts.outfit(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  letterSpacing: 0.5,
+                                  color: (isRescueLife || isExitConfirmation) ? Colors.white : Colors.black87,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
