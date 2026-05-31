@@ -1,6 +1,8 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
+/// A premium, high-performance starry night backdrop with smooth drifting and twinkling stars,
+/// optimized to eliminate all path allocation churn on frame ticks.
 class TwinklingStarsBackground extends StatefulWidget {
   final Color starColor;
   final int starCount;
@@ -9,7 +11,7 @@ class TwinklingStarsBackground extends StatefulWidget {
   const TwinklingStarsBackground({
     super.key,
     required this.starColor,
-    this.starCount = 50, // Reduced slightly for better mobile density
+    this.starCount = 50,
     this.baseOpacity = 0.4,
   });
 
@@ -17,14 +19,18 @@ class TwinklingStarsBackground extends StatefulWidget {
   State<TwinklingStarsBackground> createState() => _TwinklingStarsBackgroundState();
 }
 
-class _TwinklingStarsBackgroundState extends State<TwinklingStarsBackground> with SingleTickerProviderStateMixin {
+class _TwinklingStarsBackgroundState extends State<TwinklingStarsBackground>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late List<_Star> _stars;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 20))..repeat();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 20),
+    )..repeat();
     _generateStars();
   }
 
@@ -53,18 +59,20 @@ class _TwinklingStarsBackgroundState extends State<TwinklingStarsBackground> wit
   @override
   Widget build(BuildContext context) {
     return IgnorePointer(
-      child: AnimatedBuilder(
-        animation: _controller,
-        builder: (context, child) {
-          return CustomPaint(
-            painter: _StarPainter(
-              stars: _stars,
-              progress: _controller.value,
-              color: widget.starColor.withValues(alpha: widget.baseOpacity),
-            ),
-            size: Size.infinite,
-          );
-        },
+      child: RepaintBoundary(
+        child: AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
+            return CustomPaint(
+              painter: _StarPainter(
+                stars: _stars,
+                progress: _controller.value,
+                color: widget.starColor.withValues(alpha: widget.baseOpacity),
+              ),
+              size: Size.infinite,
+            );
+          },
+        ),
       ),
     );
   }
@@ -99,7 +107,31 @@ class _StarPainter extends CustomPainter {
   final double progress;
   final Color color;
 
-  _StarPainter({required this.stars, required this.progress, required this.color});
+  // Single static shared path template representing the star shape pre-allocated at compilation
+  static final Path _starShapePath = () {
+    final path = Path();
+    const int points = 5;
+    const double angle = (math.pi * 2) / (points * 2);
+
+    for (int i = 0; i < points * 2; i++) {
+      final double r = (i % 2 == 0) ? 1.0 : 0.5;
+      final double x = math.cos(i * angle) * r;
+      final double y = math.sin(i * angle) * r;
+      if (i == 0) {
+        path.moveTo(x, y);
+      } else {
+        path.lineTo(x, y);
+      }
+    }
+    path.close();
+    return path;
+  }();
+
+  _StarPainter({
+    required this.stars,
+    required this.progress,
+    required this.color,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -120,29 +152,18 @@ class _StarPainter extends CustomPainter {
       if (star.type == _StarType.circle) {
         canvas.drawCircle(Offset(x, y), star.size / 2, paint);
       } else {
-        _drawStar(canvas, Offset(x, y), 5, star.size, star.size / 2, paint);
+        // High-performance matrix translation utilizing the static cached shape path
+        canvas.save();
+        canvas.translate(x, y);
+        canvas.scale(star.size / 2);
+        canvas.drawPath(_starShapePath, paint);
+        canvas.restore();
       }
     }
-  }
-
-  void _drawStar(Canvas canvas, Offset center, int points, double innerRadius, double outerRadius, Paint paint) {
-    final path = Path();
-    final double angle = (math.pi * 2) / (points * 2);
-
-    for (int i = 0; i < points * 2; i++) {
-      final double r = (i % 2 == 0) ? outerRadius : innerRadius;
-      final double x = center.dx + math.cos(i * angle) * r;
-      final double y = center.dy + math.sin(i * angle) * r;
-      if (i == 0) {
-        path.moveTo(x, y);
-      } else {
-        path.lineTo(x, y);
-      }
-    }
-    path.close();
-    canvas.drawPath(path, paint);
   }
 
   @override
-  bool shouldRepaint(covariant _StarPainter oldDelegate) => true;
+  bool shouldRepaint(covariant _StarPainter oldDelegate) {
+    return oldDelegate.progress != progress || oldDelegate.color != color;
+  }
 }
