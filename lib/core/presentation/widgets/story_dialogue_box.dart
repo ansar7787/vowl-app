@@ -6,6 +6,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/story_service.dart';
 
+/// A premium, glassmorphic dialog box presenting story beats and mission briefings,
+/// optimized to protect expensive BackdropFilter blur operations from redundant animation redraws.
 class StoryDialogueBox extends StatelessWidget {
   final StoryBeat beat;
   final VoidCallback onDismiss;
@@ -92,22 +94,25 @@ class StoryDialogueBox extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              width: 8.r,
-              height: 8.r,
-              decoration: BoxDecoration(
-                color: beat.themeColor,
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: beat.themeColor.withValues(alpha: 0.5),
-                    blurRadius: 10,
-                  ),
-                ],
+            // Isolate high-frequency pulsing indicator dot inside a RepaintBoundary
+            RepaintBoundary(
+              child: Container(
+                width: 8.r,
+                height: 8.r,
+                decoration: BoxDecoration(
+                  color: beat.themeColor,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: beat.themeColor.withValues(alpha: 0.5),
+                      blurRadius: 10,
+                    ),
+                  ],
+                ),
+              ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
+                begin: const Offset(0.8, 0.8),
+                duration: 800.ms,
               ),
-            ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(
-              begin: const Offset(0.8, 0.8),
-              duration: 800.ms,
             ),
             SizedBox(width: 12.w),
             Text(
@@ -130,30 +135,33 @@ class StoryDialogueBox extends StatelessWidget {
       padding: EdgeInsets.all(32.r),
       child: Column(
         children: [
-          Container(
-            padding: EdgeInsets.all(20.r),
-            decoration: BoxDecoration(
-              color: beat.themeColor.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-              border: Border.all(
+          // Isolate high-frequency floating mascot animation inside a RepaintBoundary
+          RepaintBoundary(
+            child: Container(
+              padding: EdgeInsets.all(20.r),
+              decoration: BoxDecoration(
                 color: beat.themeColor.withValues(alpha: 0.1),
-                width: 2,
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: beat.themeColor.withValues(alpha: 0.1),
+                  width: 2,
+                ),
               ),
+              child: Text(
+                beat.mascotEmoji,
+                style: TextStyle(fontSize: 48.sp),
+              ),
+            ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(
+              begin: -8,
+              end: 8,
+              duration: 2500.ms,
+              curve: Curves.easeInOutSine,
+            ).scale(
+              begin: const Offset(1, 1),
+              end: const Offset(1.1, 1.1),
+              duration: 2500.ms,
+              curve: Curves.easeInOutSine,
             ),
-            child: Text(
-              beat.mascotEmoji,
-              style: TextStyle(fontSize: 48.sp),
-            ),
-          ).animate(onPlay: (c) => c.repeat(reverse: true)).moveY(
-            begin: -8,
-            end: 8,
-            duration: 2500.ms,
-            curve: Curves.easeInOutSine,
-          ).scale(
-            begin: const Offset(1, 1),
-            end: const Offset(1.1, 1.1),
-            duration: 2500.ms,
-            curve: Curves.easeInOutSine,
           ),
           SizedBox(height: 24.h),
           Text(
@@ -213,4 +221,3 @@ class StoryDialogueBox extends StatelessWidget {
     ).animate().fadeIn(delay: 500.ms).moveY(begin: 20, end: 0);
   }
 }
-
