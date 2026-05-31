@@ -57,13 +57,18 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  // 1. Sequential Initialization of core services (order matters: Firebase before DI)
-  await dotenv.load(fileName: ".env");
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // 1. Parallelize non-dependent core initializations to prevent main thread blocking/jank
+  final initResults = await Future.wait([
+    dotenv.load(fileName: ".env"),
+    Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
+    SecurityService.isDeviceSecure(),
+  ]);
+
+  final bool isSecure = initResults[2] as bool;
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 
+  // 2. Initialize Dependency Injection (depends on Firebase initialization)
   await di.init();
-  final isSecure = await SecurityService.isDeviceSecure();
 
   // 2. Configure Firestore Persistence (Non-blocking)
   FirebaseFirestore.instance.settings = const Settings(
