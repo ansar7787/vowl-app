@@ -2,47 +2,52 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+/// A premium, highly-performant animated map background for speaking category levels.
+/// 
+/// Employs [RepaintBoundary] layer isolation to protect active map level nodes,
+/// indicators, and shop headers from redundant visual repaint passes.
 class SpeakingMapBackground extends StatelessWidget {
   const SpeakingMapBackground({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        // Base Gradient
-        Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xFF0F172A), Color(0xFF1E1B4B)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+    return RepaintBoundary(
+      child: Stack(
+        children: [
+          // Base Gradient
+          Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xFF0F172A), Color(0xFF1E1B4B)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
             ),
           ),
-        ),
-        // Sonic Waves
-        ...List.generate(6, (i) {
-          return Positioned(
-            top: (i * 300).h,
-            left: (i % 2 == 0) ? -100.w : null,
-            right: (i % 2 != 0) ? -100.w : null,
-            child:
-                Opacity(
-                      opacity: 0.08,
-                      child: Icon(
-                        Icons.graphic_eq_rounded,
-                        size: 400.r,
-                        color: const Color(0xFF8B5CF6),
-                      ),
-                    )
-                    .animate(onPlay: (c) => c.repeat(reverse: true))
-                    .scale(
-                      begin: const Offset(1, 1),
-                      end: const Offset(1.2, 1.2),
-                      duration: (3 + i).seconds,
-                    ),
-          );
-        }),
-      ],
+          // Sonic Waves
+          ...List.generate(6, (i) {
+            return Positioned(
+              top: (i * 300).h,
+              left: (i % 2 == 0) ? -100.w : null,
+              right: (i % 2 != 0) ? -100.w : null,
+              child: Opacity(
+                opacity: 0.08,
+                child: Icon(
+                  Icons.graphic_eq_rounded,
+                  size: 400.r,
+                  color: const Color(0xFF8B5CF6),
+                ),
+              )
+              .animate(onPlay: (c) => c.repeat(reverse: true))
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.2, 1.2),
+                duration: (3 + i).seconds,
+              ),
+            );
+          }),
+        ],
+      ),
     );
   }
 }

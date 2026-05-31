@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-/// A premium, highly-performant animated map background for reading category levels.
+/// A premium, highly-performant animated map background for the elite mastery category levels.
 /// 
 /// Employs [RepaintBoundary] layer isolation to protect active map level nodes,
 /// indicators, and shop headers from redundant visual repaint passes.
-class ReadingMapBackground extends StatelessWidget {
-  const ReadingMapBackground({super.key});
+class EliteMasteryMapBackground extends StatelessWidget {
+  const EliteMasteryMapBackground({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,37 +18,39 @@ class ReadingMapBackground extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF0D1D1D), Color(0xFF063333)],
+                colors: [Color(0xFF0F172A), Color(0xFF78350F)], // Slate Grey to Imperial Gold
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
             ),
           ),
-          // Floating Book Icons
-          ...List.generate(8, (i) {
+          // Floating Premium Badges & Sparks
+          ...List.generate(12, (i) {
+            final isStar = i % 2 == 0;
             return Positioned(
-              top: (i * 250).h,
-              left: (i % 3 == 0) ? 20.w : (i % 3 == 1 ? 150.w : 300.w),
+              top: (i * 180).h,
+              left: (i * 45).w % 1.sw,
               child: Opacity(
-                opacity: 0.1,
+                opacity: 0.12,
                 child: Icon(
-                  Icons.auto_stories_rounded,
-                  size: 80.r,
-                  color: const Color(0xFF06B6D4),
+                  isStar ? Icons.auto_awesome_rounded : Icons.workspace_premium_rounded,
+                  size: (isStar ? 40 : 60).r,
+                  color: const Color(0xFFF59E0B),
                 ),
               )
               .animate(onPlay: (c) => c.repeat())
+              .shimmer(duration: (2 + (i % 3)).seconds, color: Colors.white)
               .moveY(
                 begin: 0,
-                end: -40.h,
-                duration: (4 + i).seconds,
+                end: -80.h,
+                duration: (6 + i).seconds,
                 curve: Curves.easeInOut,
               )
               .then()
               .moveY(
-                begin: -40.h,
+                begin: -80.h,
                 end: 0,
-                duration: (4 + i).seconds,
+                duration: (6 + i).seconds,
                 curve: Curves.easeInOut,
               ),
             );
