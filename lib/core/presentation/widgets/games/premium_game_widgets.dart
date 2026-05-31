@@ -438,12 +438,14 @@ class _PremiumWaveVisualizerState extends State<PremiumWaveVisualizer>
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) {
-        return CustomPaint(
-          size: Size(double.infinity, 100.h),
-          painter: WavePainter(
-            animationValue: _controller.value,
-            isListening: widget.isListening,
-            color: widget.primaryColor,
+        return RepaintBoundary(
+          child: CustomPaint(
+            size: Size(double.infinity, 100.h),
+            painter: WavePainter(
+              animationValue: _controller.value,
+              isListening: widget.isListening,
+              color: widget.primaryColor,
+            ),
           ),
         );
       },
@@ -473,19 +475,21 @@ class WavePainter extends CustomPainter {
 
     final path = Path();
     final centerY = size.height / 2;
+    final halfWidth = size.width / 2;
+    if (halfWidth <= 0) return;
 
     for (double i = 0; i <= size.width; i++) {
       final x = i;
       final wave1 =
           15 *
           (isListening ? 1.0 : 0.2) *
-          (1 - ((i - size.width / 2).abs() / (size.width / 2))) *
+          (1 - ((i - halfWidth).abs() / halfWidth)) *
           math.sin((i / 40) + (animationValue * 10));
 
       final wave2 =
           10 *
           (isListening ? 1.0 : 0.2) *
-          (1 - ((i - size.width / 2).abs() / (size.width / 2))) *
+          (1 - ((i - halfWidth).abs() / halfWidth)) *
           math.sin((i / 30) - (animationValue * 15));
 
       if (i == 0) {
@@ -507,7 +511,7 @@ class WavePainter extends CustomPainter {
       final wave3 =
           8 *
           (isListening ? 1.0 : 0.2) *
-          (1 - ((i - size.width / 2).abs() / (size.width / 2))) *
+          (1 - ((i - halfWidth).abs() / halfWidth)) *
           math.sin((i / 20) + (animationValue * 20));
 
       if (i == 0) {
@@ -522,6 +526,7 @@ class WavePainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant WavePainter oldDelegate) {
     return oldDelegate.animationValue != animationValue ||
-        oldDelegate.isListening != isListening;
+        oldDelegate.isListening != isListening ||
+        oldDelegate.color != color;
   }
 }
