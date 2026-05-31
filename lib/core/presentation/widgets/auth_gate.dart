@@ -5,6 +5,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/pages/login_page.dart';
 import 'package:vowl/features/home/presentation/pages/home_screen.dart';
 
+/// An authentication gate with premium animated transitions and state keying.
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
 
@@ -12,13 +13,34 @@ class AuthGate extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
+        Widget activeScreen;
+
         if (state.status == AuthStatus.authenticated) {
-          return const HomeScreen();
+          activeScreen = const HomeScreen(key: ValueKey('auth_authenticated'));
         } else if (state.status == AuthStatus.unauthenticated) {
-          return const LoginPage();
+          activeScreen = const LoginPage(key: ValueKey('auth_unauthenticated'));
+        } else {
+          activeScreen = const Scaffold(
+            key: ValueKey('auth_loading'),
+            body: Center(
+              child: RepaintBoundary(
+                child: ShimmerLoading.circular(width: 50, height: 50),
+              ),
+            ),
+          );
         }
-        return const Scaffold(
-          body: Center(child: ShimmerLoading.circular(width: 50, height: 50)),
+
+        return AnimatedSwitcher(
+          duration: const Duration(milliseconds: 400),
+          switchInCurve: Curves.easeInOut,
+          switchOutCurve: Curves.easeInOut,
+          transitionBuilder: (Widget child, Animation<double> animation) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
+          child: activeScreen,
         );
       },
     );
