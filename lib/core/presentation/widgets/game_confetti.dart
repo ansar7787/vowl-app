@@ -14,6 +14,7 @@ class GameConfetti extends StatefulWidget {
 
 class _GameConfettiState extends State<GameConfetti> {
   late ConfettiController _controller;
+  final Random _random = Random(42); // Seeded to maintain clean visual look and avoid object churn
 
   @override
   void initState() {
@@ -25,16 +26,23 @@ class _GameConfettiState extends State<GameConfetti> {
   }
 
   @override
+  void didUpdateWidget(covariant GameConfetti oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.shouldPop && !oldWidget.shouldPop) {
+      _controller.play();
+    }
+  }
+
+  @override
   void dispose() {
     _controller.dispose();
     super.dispose();
   }
 
-  /// Creates varied shapes for a more dynamic look.
+  /// Creates varied shapes for a more dynamic look without allocating new Random states on every call.
   Path _createVariedPath(Size size) {
     final path = Path();
-    final random = Random();
-    final shapeType = random.nextInt(3);
+    final shapeType = _random.nextInt(3);
 
     switch (shapeType) {
       case 0: // Rectangle/Paper
@@ -55,55 +63,57 @@ class _GameConfettiState extends State<GameConfetti> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        // Left Emitter
-        Align(
-          alignment: Alignment.topLeft,
-          child: ConfettiWidget(
-            confettiController: _controller,
-            blastDirection: pi / 4, // Inward and down
-            emissionFrequency: 0.1,
-            numberOfParticles: 15,
-            maxBlastForce: 35,
-            minBlastForce: 15,
-            gravity: 0.3,
-            createParticlePath: _createVariedPath,
-            colors: _confettiColors,
+    return RepaintBoundary(
+      child: Stack(
+        children: [
+          // Left Emitter
+          Align(
+            alignment: Alignment.topLeft,
+            child: ConfettiWidget(
+              confettiController: _controller,
+              blastDirection: pi / 4, // Inward and down
+              emissionFrequency: 0.1,
+              numberOfParticles: 15,
+              maxBlastForce: 35,
+              minBlastForce: 15,
+              gravity: 0.3,
+              createParticlePath: _createVariedPath,
+              colors: _confettiColors,
+            ),
           ),
-        ),
-        // Right Emitter
-        Align(
-          alignment: Alignment.topRight,
-          child: ConfettiWidget(
-            confettiController: _controller,
-            blastDirection: 3 * pi / 4, // Inward and down
-            emissionFrequency: 0.1,
-            numberOfParticles: 15,
-            maxBlastForce: 35,
-            minBlastForce: 15,
-            gravity: 0.3,
-            createParticlePath: _createVariedPath,
-            colors: _confettiColors,
+          // Right Emitter
+          Align(
+            alignment: Alignment.topRight,
+            child: ConfettiWidget(
+              confettiController: _controller,
+              blastDirection: 3 * pi / 4, // Inward and down
+              emissionFrequency: 0.1,
+              numberOfParticles: 15,
+              maxBlastForce: 35,
+              minBlastForce: 15,
+              gravity: 0.3,
+              createParticlePath: _createVariedPath,
+              colors: _confettiColors,
+            ),
           ),
-        ),
-        // Center Burst
-        Align(
-          alignment: Alignment.topCenter,
-          child: ConfettiWidget(
-            confettiController: _controller,
-            blastDirection: pi / 2, // Straight down
-            blastDirectionality: BlastDirectionality.explosive,
-            emissionFrequency: 0.05,
-            numberOfParticles: 25,
-            gravity: 0.2,
-            maxBlastForce: 60,
-            minBlastForce: 30,
-            createParticlePath: _createVariedPath,
-            colors: _confettiColors,
+          // Center Burst
+          Align(
+            alignment: Alignment.topCenter,
+            child: ConfettiWidget(
+              confettiController: _controller,
+              blastDirection: pi / 2, // Straight down
+              blastDirectionality: BlastDirectionality.explosive,
+              emissionFrequency: 0.05,
+              numberOfParticles: 25,
+              gravity: 0.2,
+              maxBlastForce: 60,
+              minBlastForce: 30,
+              createParticlePath: _createVariedPath,
+              colors: _confettiColors,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
