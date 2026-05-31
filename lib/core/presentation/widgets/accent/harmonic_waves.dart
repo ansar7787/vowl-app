@@ -3,10 +3,15 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:math' as math;
 
+/// A premium, highly-performant accent widget that displays layered, oscillating sine waves.
+/// 
+/// Incorporates GPU repaint boundary isolation and precise paint caching schemes to
+/// guarantee rock-solid frame rate execution during intensive gameplay modules.
 class HarmonicWaves extends StatelessWidget {
   final Color color;
   final double? height;
   final double? width;
+
   const HarmonicWaves({
     super.key,
     required this.color,
@@ -19,42 +24,41 @@ class HarmonicWaves extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final h = height ?? 200.h;
-        final w =
-            width ??
-            (constraints.hasBoundedWidth ? constraints.maxWidth : 1.sw);
+        final w = width ?? (constraints.hasBoundedWidth ? constraints.maxWidth : 1.sw);
 
-        return SizedBox(
-          height: h,
-          width: w,
-          child: ClipRect(
-            child: Stack(
-              children: List.generate(3, (index) {
-                return Positioned(
-                  bottom: -(h * 0.25) + (index * (h * 0.1)),
-                  left: -w * 0.2,
-                  right: -w * 0.2,
-                  child:
-                      Opacity(
-                            opacity: 0.1 - (index * 0.02),
-                            child: CustomPaint(
-                              size: Size(w, h),
-                              painter: WavePainter(
-                                color: color,
-                                phase: index * math.pi / 4,
-                                frequency: 1 + (index * 0.5),
-                                waveHeight: h * 0.25,
-                              ),
-                            ),
-                          )
-                          .animate(onPlay: (c) => c.repeat())
-                          .moveX(
-                            begin: -w * 0.1,
-                            end: w * 0.1,
-                            duration: (3000 + index * 1000).ms,
-                            curve: Curves.easeInOutSine,
-                          ),
-                );
-              }),
+        return RepaintBoundary(
+          child: SizedBox(
+            height: h,
+            width: w,
+            child: ClipRect(
+              child: Stack(
+                children: List.generate(3, (index) {
+                  return Positioned(
+                    bottom: -(h * 0.25) + (index * (h * 0.1)),
+                    left: -w * 0.2,
+                    right: -w * 0.2,
+                    child: Opacity(
+                      opacity: (0.1 - (index * 0.02)).clamp(0.01, 1.0),
+                      child: CustomPaint(
+                        size: Size(w, h),
+                        painter: WavePainter(
+                          color: color,
+                          phase: index * math.pi / 4,
+                          frequency: 1 + (index * 0.5),
+                          waveHeight: h * 0.25,
+                        ),
+                      ),
+                    )
+                    .animate(onPlay: (c) => c.repeat())
+                    .moveX(
+                      begin: -w * 0.1,
+                      end: w * 0.1,
+                      duration: (3000 + index * 1000).ms,
+                      curve: Curves.easeInOutSine,
+                    ),
+                  );
+                }),
+              ),
             ),
           ),
         );
@@ -99,5 +103,10 @@ class WavePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant WavePainter oldDelegate) {
+    return oldDelegate.color != color ||
+        oldDelegate.phase != phase ||
+        oldDelegate.frequency != frequency ||
+        oldDelegate.waveHeight != waveHeight;
+  }
 }
