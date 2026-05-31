@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
+/// A performance-optimized interactive microphone controller with double-trigger event safety.
 class SonicMicButton extends StatelessWidget {
   final bool isListening;
   final VoidCallback onStart;
@@ -30,44 +31,57 @@ class SonicMicButton extends StatelessWidget {
         ),
       ),
       child: GestureDetector(
-        onLongPressStart: (_) => onStart(),
-        onLongPressEnd: (_) => onStop(),
-        onTapDown: (_) => onStart(),
-        onTapUp: (_) => onStop(),
-        child: ScaleButton(
-          onTap: () {}, // Handled by gestures
-          child: Container(
-            width: 90.r,
-            height: 90.r,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              gradient: LinearGradient(
-                colors: isListening
-                    ? [Colors.redAccent, Colors.red]
-                    : [primaryColor, primaryColor.withValues(alpha: 0.8)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: (isListening ? Colors.redAccent : primaryColor)
-                      .withValues(alpha: 0.4),
-                  blurRadius: isListening ? 40 : 20,
-                  spreadRadius: isListening ? 10 : 0,
+        onLongPressStart: (_) {
+          if (!isListening) onStart();
+        },
+        onLongPressEnd: (_) {
+          if (isListening) onStop();
+        },
+        onTapDown: (_) {
+          if (!isListening) onStart();
+        },
+        onTapUp: (_) {
+          if (isListening) onStop();
+        },
+        onTapCancel: () {
+          if (isListening) onStop();
+        },
+        child: RepaintBoundary(
+          child: ScaleButton(
+            onTap: () {}, // Handled securely by custom gesture detectors
+            child: Container(
+              width: 90.r,
+              height: 90.r,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  colors: isListening
+                      ? [Colors.redAccent, Colors.red]
+                      : [primaryColor, primaryColor.withValues(alpha: 0.8)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
-              ],
+                boxShadow: [
+                  BoxShadow(
+                    color: (isListening ? Colors.redAccent : primaryColor)
+                        .withValues(alpha: 0.4),
+                    blurRadius: isListening ? 40 : 20,
+                    spreadRadius: isListening ? 10 : 0,
+                  ),
+                ],
+              ),
+              child:
+                  Icon(
+                        isListening
+                            ? Icons.graphic_eq_rounded
+                            : Icons.mic_rounded,
+                        color: Colors.white,
+                        size: 40.r,
+                      )
+                      .animate(target: isListening ? 1 : 0)
+                      .scale(duration: 200.ms)
+                      .shimmer(duration: 1000.ms, color: Colors.white24),
             ),
-            child:
-                Icon(
-                      isListening
-                          ? Icons.graphic_eq_rounded
-                          : Icons.mic_rounded,
-                      color: Colors.white,
-                      size: 40.r,
-                    )
-                    .animate(target: isListening ? 1 : 0)
-                    .scale(duration: 200.ms)
-                    .shimmer(duration: 1000.ms, color: Colors.white24),
           ),
         ),
       ),
