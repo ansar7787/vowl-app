@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
+/// A performant CustomPainter to draw straight or dashed quest connection tracks.
 class GameMapLinePainter extends CustomPainter {
   final List<Offset> points;
   final Color color;
   final double thickness;
   final bool isDashed;
+  final double dashWidth;
+  final double dashSpace;
 
   GameMapLinePainter({
     required this.points,
     required this.color,
     this.thickness = 4.0,
     this.isDashed = false,
-  });
+    this.dashWidth = 10.0,
+    this.dashSpace = 8.0,
+  }) : assert(dashWidth > 0, 'dashWidth must be strictly positive to prevent infinite loops'),
+       assert(dashSpace >= 0, 'dashSpace must be non-negative');
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -27,8 +34,6 @@ class GameMapLinePainter extends CustomPainter {
     path.moveTo(points[0].dx, points[0].dy);
 
     for (int i = 1; i < points.length; i++) {
-      // Smooth out the path slightly using quadratic bezier if needed,
-      // but for "sticking with line" user usually wants direct connections or simple curves
       path.lineTo(points[i].dx, points[i].dy);
     }
 
@@ -40,8 +45,6 @@ class GameMapLinePainter extends CustomPainter {
   }
 
   void _drawDashedPath(Canvas canvas, Path path, Paint paint) {
-    const dashWidth = 10.0;
-    const dashSpace = 8.0;
     double distance = 0.0;
 
     for (final pathMetric in path.computeMetrics()) {
@@ -57,5 +60,12 @@ class GameMapLinePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(covariant GameMapLinePainter oldDelegate) {
+    return oldDelegate.color != color ||
+        oldDelegate.thickness != thickness ||
+        oldDelegate.isDashed != isDashed ||
+        oldDelegate.dashWidth != dashWidth ||
+        oldDelegate.dashSpace != dashSpace ||
+        !listEquals(oldDelegate.points, points);
+  }
 }
