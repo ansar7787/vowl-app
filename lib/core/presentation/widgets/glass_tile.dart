@@ -2,6 +2,8 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+/// A premium, high-performance frosted glassmorphic card widget.
+/// Implements physically realistic glass overlay blending and repaint boundaries.
 class GlassTile extends StatelessWidget {
   const GlassTile({
     super.key,
@@ -49,36 +51,6 @@ class GlassTile extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         borderRadius: r,
-        gradient: usePremiumStyle
-            ? LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: isDark
-                    ? [
-                        (color ?? (isMidnight ? Colors.black : Colors.white)).withValues(alpha: isMidnight ? 0.15 : 0.2),
-                        Colors.white.withValues(alpha: isMidnight ? 0.05 : 0.08),
-                        (isMidnight ? Colors.white : Colors.black).withValues(alpha: 0.05),
-                      ]
-                    : [
-                        (color ?? Colors.white).withValues(alpha: 0.8),
-                        Colors.white.withValues(alpha: 0.4),
-                        Colors.white.withValues(alpha: 0.2),
-                      ],
-                stops: const [0.0, 0.5, 1.0],
-              )
-            : LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: isDark
-                    ? [
-                        (color ?? (isMidnight ? Colors.black : Colors.white)).withValues(alpha: isMidnight ? 0.1 : 0.12),
-                        Colors.white.withValues(alpha: 0.02),
-                      ]
-                    : [
-                        (color ?? Colors.white).withValues(alpha: 0.6),
-                        Colors.white.withValues(alpha: 0.2),
-                      ],
-              ),
         border: border ?? Border.all(
           color: borderColor ??
               (isDark
@@ -105,11 +77,56 @@ class GlassTile extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: r,
-        child: BackdropFilter(
-          filter: ui.ImageFilter.blur(sigmaX: sigma, sigmaY: sigma),
-          child: RepaintBoundary(
-            child: Padding(padding: padding ?? EdgeInsets.zero, child: child),
-          ),
+        child: Stack(
+          children: [
+            // 1. Physically realistic frosted background blur
+            Positioned.fill(
+              child: BackdropFilter(
+                filter: ui.ImageFilter.blur(sigmaX: sigma, sigmaY: sigma),
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: usePremiumStyle
+                        ? LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: isDark
+                                ? [
+                                    (color ?? (isMidnight ? Colors.black : Colors.white)).withValues(alpha: isMidnight ? 0.15 : 0.2),
+                                    Colors.white.withValues(alpha: isMidnight ? 0.05 : 0.08),
+                                    (isMidnight ? Colors.white : Colors.black).withValues(alpha: 0.05),
+                                  ]
+                                : [
+                                    (color ?? Colors.white).withValues(alpha: 0.8),
+                                    Colors.white.withValues(alpha: 0.4),
+                                    Colors.white.withValues(alpha: 0.2),
+                                  ],
+                            stops: const [0.0, 0.5, 1.0],
+                          )
+                        : LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: isDark
+                                ? [
+                                    (color ?? (isMidnight ? Colors.black : Colors.white)).withValues(alpha: isMidnight ? 0.1 : 0.12),
+                                    Colors.white.withValues(alpha: 0.02),
+                                  ]
+                                : [
+                                    (color ?? Colors.white).withValues(alpha: 0.6),
+                                    Colors.white.withValues(alpha: 0.2),
+                                  ],
+                          ),
+                  ),
+                ),
+              ),
+            ),
+            // 2. High-performance isolated content builder
+            RepaintBoundary(
+              child: Padding(
+                padding: padding ?? EdgeInsets.zero,
+                child: child,
+              ),
+            ),
+          ],
         ),
       ),
     );
