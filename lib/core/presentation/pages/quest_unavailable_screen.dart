@@ -6,6 +6,10 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 
+/// A premium, responsive screen displayed when a requested quest is not available.
+/// 
+/// Adapts dynamically to show either single-action return flows or multi-action
+/// retry/exit loops depending on the availability of a retry callback.
 class QuestUnavailableScreen extends StatelessWidget {
   final VoidCallback? onRetry;
   final String message;
@@ -31,7 +35,7 @@ class QuestUnavailableScreen extends StatelessWidget {
                 : [
                     const Color(0xFFF1F5F9),
                     const Color(0xFFE2E8F0),
-                  ], // Slightly darker light mode for better text pop
+                  ],
           ),
           SafeArea(
             child: Padding(
@@ -73,7 +77,7 @@ class QuestUnavailableScreen extends StatelessWidget {
                       fontSize: 16.sp,
                       color: isDark
                           ? Colors.white.withValues(alpha: 0.7)
-                          : const Color(0xFF64748b),
+                          : const Color(0xFF64748B),
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -98,66 +102,100 @@ class QuestUnavailableScreen extends StatelessWidget {
                       ),
                     ),
                   SizedBox(height: 40.h),
-                  ScaleButton(
-                    onTap: onRetry ?? () => context.pop(),
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 18.h),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
-                        ),
-                        borderRadius: BorderRadius.circular(20.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: const Color(
-                              0xFF2563EB,
-                            ).withValues(alpha: 0.3),
-                            blurRadius: 20,
-                            offset: const Offset(0, 10),
+                  
+                  // Adaptive Button Layout Layout Mechanics
+                  if (onRetry != null) ...[
+                    ScaleButton(
+                      onTap: onRetry!,
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(vertical: 18.h),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
                           ),
-                        ],
-                      ),
-                      child: Center(
-                        child: Text(
-                          "TRY AGAIN",
-                          style: GoogleFonts.outfit(
-                            color: Colors.white,
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1,
-                          ),
+                          borderRadius: BorderRadius.circular(20.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF2563EB).withValues(alpha: 0.3),
+                              blurRadius: 20,
+                              offset: const Offset(0, 10),
+                            ),
+                          ],
                         ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 16.h),
-                  ScaleButton(
-                    onTap: () => context.pop(),
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 18.h),
-                      decoration: BoxDecoration(
-                        color: isDark
-                            ? Colors.white.withValues(alpha: 0.1)
-                            : Colors.black.withValues(alpha: 0.05),
-                        borderRadius: BorderRadius.circular(20.r),
-                      ),
-                      child: Center(
-                        child: Text(
-                          "EXIT GAME",
-                          style: GoogleFonts.outfit(
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.8)
-                                : const Color(0xFF475569),
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1,
+                        child: Center(
+                          child: Text(
+                            "TRY AGAIN",
+                            style: GoogleFonts.outfit(
+                              color: Colors.white,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
+                    SizedBox(height: 16.h),
+                    ScaleButton(
+                      onTap: () => context.pop(),
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(vertical: 18.h),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? Colors.white.withValues(alpha: 0.1)
+                              : Colors.black.withValues(alpha: 0.05),
+                          borderRadius: BorderRadius.circular(20.r),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "EXIT GAME",
+                            style: GoogleFonts.outfit(
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.8)
+                                  : const Color(0xFF475569),
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ] else ...[
+                    ScaleButton(
+                      onTap: () => context.pop(),
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(vertical: 18.h),
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF2563EB), Color(0xFF4F46E5)],
+                          ),
+                          borderRadius: BorderRadius.circular(20.r),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color(0xFF2563EB).withValues(alpha: 0.3),
+                              blurRadius: 20,
+                              offset: const Offset(0, 10),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            "BACK TO LEVELS",
+                            style: GoogleFonts.outfit(
+                              color: Colors.white,
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
