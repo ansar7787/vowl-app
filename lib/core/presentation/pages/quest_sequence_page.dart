@@ -8,6 +8,10 @@ import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
+/// A premium page presenting themed multi-part curriculum sequences.
+/// 
+/// Guides the user sequentially through selected challenges, utilizing
+/// dynamic mesh gradients and haptic tactile feedback.
 class QuestSequencePage extends StatefulWidget {
   final String sequenceId;
   final List<GameQuest> quests;
@@ -48,14 +52,12 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
     setState(() => _isLaunching = true);
     final quest = widget.quests[_currentIndex];
 
-    // Derive category from subtype if type is missing as a separate field
-    // Subtypes are grouped in ranges (0-9: speaking, 10-19: listening, etc.)
     final subtype = quest.subtype?.name ?? '';
-    // Use the subtype's built-in category mapping instead of fragile index ranges
-    String category = quest.subtype != null ? quest.subtype!.category.name : (quest.type?.name ?? 'speaking');
+    final category = quest.subtype != null 
+        ? quest.subtype!.category.name 
+        : (quest.type?.name ?? 'speaking');
 
     final level = quest.difficulty;
-
     final route = '/game?category=$category&subtype=$subtype&level=$level';
 
     final result = await context.push(route);
@@ -83,7 +85,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
   void _finishSequence() {
     GameDialogHelper.showCompletion(
       context,
-      xp: 0, // Sequence doesn't track total cumulative XP yet
+      xp: 0, 
       coins: 0,
       title: 'QUEST COMPLETED!',
       description: 'You finished the $_sequenceTitle! Great work on your training.',
@@ -100,9 +102,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
         : _currentIndex / widget.quests.length;
 
     return Scaffold(
-      backgroundColor: Theme.of(context).brightness == Brightness.dark 
-          ? const Color(0xFF0F172A) 
-          : Colors.white,
+      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
       body: Stack(
         children: [
           const MeshGradientBackground(showLetters: false),
@@ -146,13 +146,13 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                               ),
                             ),
                             Text(
-                              'Part ${_currentIndex + 1} of ${widget.quests.length}',
+                              _currentIndex < widget.quests.length
+                                  ? 'Part ${_currentIndex + 1} of ${widget.quests.length}'
+                                  : 'Completed',
                               style: GoogleFonts.outfit(
                                 fontSize: 24.sp,
                                 fontWeight: FontWeight.w900,
-                                color: isDark
-                                    ? Colors.white
-                                    : const Color(0xFF0F172A),
+                                color: isDark ? Colors.white : const Color(0xFF0F172A),
                               ),
                             ),
                           ],
@@ -208,32 +208,42 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                           style: GoogleFonts.outfit(
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w800,
-                            color: isDark
-                                ? Colors.white
-                                : const Color(0xFF0F172A),
+                            color: isDark ? Colors.white : const Color(0xFF0F172A),
                           ),
                           textAlign: TextAlign.center,
                         ),
                         SizedBox(height: 32.h),
                         SizedBox(
                           width: double.infinity,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFF2563EB),
+                          child: ScaleButton(
+                            onTap: _isLaunching ? null : _startNextGame,
+                            child: Container(
+                              alignment: Alignment.center,
                               padding: EdgeInsets.symmetric(vertical: 20.h),
-                              shape: RoundedRectangleBorder(
+                              decoration: BoxDecoration(
+                                color: _isLaunching 
+                                    ? const Color(0xFF2563EB).withValues(alpha: 0.5)
+                                    : const Color(0xFF2563EB),
                                 borderRadius: BorderRadius.circular(20.r),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: const Color(0xFF2563EB).withValues(alpha: 0.3),
+                                    blurRadius: 15,
+                                    offset: const Offset(0, 5),
+                                  )
+                                ],
                               ),
-                            ),
-                            onPressed: _isLaunching ? null : _startNextGame,
-                            child: Text(
-                              _isLaunching
-                                  ? 'LOADING...'
-                                  : 'START PART ${_currentIndex + 1}',
-                              style: GoogleFonts.outfit(
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white,
+                              child: Text(
+                                _isLaunching
+                                    ? 'LOADING...'
+                                    : _currentIndex < widget.quests.length
+                                        ? 'START PART ${_currentIndex + 1}'
+                                        : 'FINISH QUEST',
+                                style: GoogleFonts.outfit(
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
