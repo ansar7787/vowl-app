@@ -32,7 +32,7 @@ class ThemeResult {
 }
 
 class LevelThemeHelper {
-  /// Known category names
+  /// Known category names mapped for fast set operations
   static const _categoryNames = {
     'vocabulary', 'grammar', 'listening', 'reading',
     'writing', 'speaking', 'accent', 'roleplay', 'elitemastery',
@@ -40,7 +40,7 @@ class LevelThemeHelper {
 
   /// Core Category Base Colors (Mathematically Balanced for Distinction)
   static Color _getCategoryBaseColor(String category) {
-    switch (category.toLowerCase()) {
+    switch (category.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '')) {
       case 'speaking':
         return const Color(0xFFF44336); // Pure Red
       case 'writing':
@@ -64,9 +64,35 @@ class LevelThemeHelper {
     }
   }
 
+  /// Map categories to readable, capitalized Titles
+  static String _getCategoryTitle(String category) {
+    switch (category.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '')) {
+      case 'speaking':
+        return 'Speaking';
+      case 'listening':
+        return 'Listening';
+      case 'reading':
+        return 'Reading';
+      case 'writing':
+        return 'Writing';
+      case 'grammar':
+        return 'Grammar';
+      case 'vocabulary':
+        return 'Vocabulary';
+      case 'accent':
+        return 'Accent';
+      case 'roleplay':
+        return 'Roleplay';
+      case 'elitemastery':
+        return 'Elite Mastery';
+      default:
+        return category;
+    }
+  }
+
   /// Category icons
   static IconData _getCategoryIcon(String category) {
-    switch (category.toLowerCase()) {
+    switch (category.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '')) {
       case 'speaking':
         return Icons.mic_rounded;
       case 'reading':
@@ -96,7 +122,8 @@ class LevelThemeHelper {
     bool isDark = true,
     bool isMidnight = false,
   }) {
-    final Color base = _getCategoryBaseColor(category);
+    final String normalized = category.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '');
+    final Color base = _getCategoryBaseColor(normalized);
     final HSLColor hsl = HSLColor.fromColor(base);
 
     Color bgTop;
@@ -106,7 +133,7 @@ class LevelThemeHelper {
       bgTop = hsl.withLightness(0.15).withSaturation(0.6).toColor();
       bgBottom = isMidnight ? const Color(0xFF000000) : const Color(0xFF0F172A);
     } else {
-      if (category.toLowerCase() == 'reading') {
+      if (normalized == 'reading') {
         bgTop = const Color(0xFFFFFFFF);
         bgBottom = const Color(0xFFF8FAFC);
       } else {
@@ -116,7 +143,7 @@ class LevelThemeHelper {
     }
 
     final gameCategory = GameCategory.values.firstWhere(
-      (c) => c.name.toLowerCase() == category.toLowerCase(),
+      (c) => c.name.toLowerCase() == normalized,
       orElse: () => GameCategory.grammar,
     );
 
@@ -124,8 +151,8 @@ class LevelThemeHelper {
       primaryColor: base,
       accentColor: hsl.withLightness(0.7).toColor(),
       backgroundColors: [bgTop, bgBottom],
-      title: category.toUpperCase(),
-      icon: _getCategoryIcon(category),
+      title: _getCategoryTitle(normalized).toUpperCase(),
+      icon: _getCategoryIcon(normalized),
       category: gameCategory,
     );
   }
@@ -136,13 +163,15 @@ class LevelThemeHelper {
     bool isDark = true,
     bool isMidnight = false,
   }) {
+    final String normalizedType = gameType.trim().toLowerCase().replaceAll(' ', '').replaceAll('_', '');
+
     // 1. Detect Category
-    if (_categoryNames.contains(gameType.toLowerCase())) {
-      return getCategoryTheme(gameType, isDark: isDark, isMidnight: isMidnight);
+    if (_categoryNames.contains(normalizedType)) {
+      return getCategoryTheme(normalizedType, isDark: isDark, isMidnight: isMidnight);
     }
 
     final subtype = GameSubtype.values.firstWhere(
-      (s) => s.name.toLowerCase() == gameType.toLowerCase(),
+      (s) => s.name.toLowerCase() == normalizedType,
       orElse: () => GameSubtype.grammarQuest,
     );
     
@@ -182,7 +211,6 @@ class LevelThemeHelper {
 
     // 4. Title Mapping
     String title = "Quest";
-    final type = gameType.toLowerCase();
     
     final Map<String, String> gameTitles = {
       // Speaking
@@ -304,8 +332,8 @@ class LevelThemeHelper {
       'accentshadowing': "Accent Shadowing",
     };
 
-    if (gameTitles.containsKey(type)) {
-      title = gameTitles[type]!;
+    if (gameTitles.containsKey(normalizedType)) {
+      title = gameTitles[normalizedType]!;
     }
 
     // 5. Category Enum Mapping
@@ -319,7 +347,7 @@ class LevelThemeHelper {
       accentColor: accent,
       backgroundColors: [bgTop, bgBottom],
       title: title.toUpperCase(),
-      icon: _getSubtypeIcon(type),
+      icon: _getSubtypeIcon(normalizedType),
       category: finalCategory,
     );
   }
