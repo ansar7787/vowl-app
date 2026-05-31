@@ -1,6 +1,25 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
+/// Centralized utility helper to translate raw, cryptic system error details
+/// into elegant, clean localized messages for standard user notifications.
 class AuthErrorHandler {
-  static String getMessage(String error) {
-    final cleanMsg = error.toLowerCase();
+  /// Resolves user-friendly messages for standard authentication failure signatures,
+  /// accepting any error type (FirebaseAuthException, FirebaseException, String, or null).
+  static String getMessage(dynamic error) {
+    if (error == null) {
+      return 'Authentication issue. Please try again or contact Vowl Support!';
+    }
+
+    String errorString = '';
+    if (error is FirebaseAuthException) {
+      errorString = '${error.code} ${error.message ?? ''}';
+    } else if (error is FirebaseException) {
+      errorString = '${error.code} ${error.message ?? ''}';
+    } else {
+      errorString = error.toString();
+    }
+
+    final cleanMsg = errorString.toLowerCase();
 
     // 1. Google Auth Sign-in Conflicts or Invalid credentials
     if (cleanMsg.contains('invalid-credential') || 
