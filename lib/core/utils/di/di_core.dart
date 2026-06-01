@@ -50,7 +50,7 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<SeedingService>(() => SeedingService(sl<FirebaseFirestore>()));
   sl.registerLazySingleton<SoundService>(() => SoundService());
   sl.registerLazySingleton<HapticService>(() => HapticService());
-  sl.registerLazySingleton<LocalSmartTutor>(() => LocalSmartTutor());
+  sl.registerLazySingleton<SmartTutor>(() => const LocalSmartTutor());
   sl.registerLazySingleton<AdService>(() => AdService());
   sl.registerLazySingleton<PaymentService>(() => PaymentService(
         getCurrentUser: sl<GetCurrentUser>(),

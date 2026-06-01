@@ -1,67 +1,98 @@
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
-class LocalSmartTutor {
-  /// Analyzes the user's category stats and returns the ID of the category
-  /// that needs the most improvement.
-  ///
-  /// Logic:
-  /// 1. If no stats exist, returns 'reading' as default.
-  /// 2. Finds the category with the lowest accuracy score.
-  /// 3. If multiple have the same low score, picks one via round-robin based on level.
-  /// 4. If all scores are high (>80%), suggests 'challenge' (or rotates normally).
+/// Abstract contract defining the Smart Tutor intelligence system.
+///
+/// Decouples the tutor recommendation algorithm from presentation layers,
+/// in accordance with Clean Architecture principles.
+abstract class SmartTutor {
+  /// Analyzes the user's category stats and suggests the next quest category.
+  String suggestNextQuestCategory(UserEntity user);
+
+  /// Computes updated mastery scores for a category based on correct/incorrect results.
+  Map<String, int> calculateNewStats(
+    Map<String, int> currentStats,
+    String categoryId,
+    bool isCorrect,
+  );
+}
+
+/// Concrete implementation of [SmartTutor] using lightweight, localized rules.
+class LocalSmartTutor implements SmartTutor {
+  // Mastery Score Constraints
+  static const int defaultNeutralScore = 50;
+  static const int maxMasteryScore = 100;
+  static const int minMasteryScore = 0;
+  static const int scoreStepAdjustment = 10;
+  static const int proficiencyThreshold = 80;
+
+  // Predefined Fallbacks and Rotation Collections
+  static const String fallbackCategory = 'reading';
+  static const List<String> rotatedCategories = [
+    'grammar',
+    'reading',
+    'writing',
+    'speaking',
+  ];
+
+  const LocalSmartTutor();
+
+  @override
   String suggestNextQuestCategory(UserEntity user) {
-    if (user.categoryStats.isEmpty) {
-      return 'reading';
+    final stats = user.categoryStats;
+    if (stats.isEmpty) {
+      return fallbackCategory;
     }
 
-    String weakestCategory = 'reading';
-    int lowestScore = 101; // Max is 100
+    int lowestScore = maxMasteryScore + 1;
+    final List<String> weakestCandidates = [];
 
-    user.categoryStats.forEach((category, score) {
+    // O(N) optimized entry iteration
+    for (final entry in stats.entries) {
+      final category = entry.key;
+      final score = entry.value;
+
       if (score < lowestScore) {
         lowestScore = score;
-        weakestCategory = category;
+        weakestCandidates
+          ..clear()
+          ..add(category);
+      } else if (score == lowestScore) {
+        weakestCandidates.add(category);
       }
-    });
+    }
 
-    // If the user determines they are proficient in everything (>80%),
-    // we can use a rotation based on level to keep it varied.
-    if (lowestScore > 80) {
+    // Spec Requirement 4: Proficient in everything (>80%), rotate to vary quests.
+    if (lowestScore > proficiencyThreshold) {
       return _getRotatedCategory(user.level);
     }
 
-    return weakestCategory;
+    // Spec Requirement 3: If multiple have same lowest score, pick via level-based round-robin rotation.
+    if (weakestCandidates.length > 1) {
+      final index = user.level % weakestCandidates.length;
+      return weakestCandidates[index];
+    }
+
+    return weakestCandidates.first;
   }
 
   String _getRotatedCategory(int level) {
-    int remainder = level % 4;
-    switch (remainder) {
-      case 1:
-        return 'reading';
-      case 2:
-        return 'writing';
-      case 3:
-        return 'speaking';
-      default:
-        return 'grammar';
-    }
+    // Avoid range exceptions with index clamping
+    final index = level % rotatedCategories.length;
+    return rotatedCategories[index];
   }
 
-  /// Updates the stats map with a new result.
-  /// Returns a new map to be saved to the user entity.
+  @override
   Map<String, int> calculateNewStats(
     Map<String, int> currentStats,
     String categoryId,
     bool isCorrect,
   ) {
-    final Map<String, int> newStats = Map.from(currentStats);
-    final int currentScore = newStats[categoryId] ?? 50; // Start neutral at 50
+    final Map<String, int> newStats = Map<String, int>.from(currentStats);
+    final int currentScore = newStats[categoryId] ?? defaultNeutralScore;
 
-    // Simple moving average-ish approach for "Current Mastery"
-    // If correct, +5. If wrong, -5. Clamped between 0 and 100.
-    int newScore = isCorrect ? currentScore + 10 : currentScore - 10;
-    if (newScore > 100) newScore = 100;
-    if (newScore < 0) newScore = 0;
+    // Moving mastery scoring adjustment
+    final adjustment = isCorrect ? scoreStepAdjustment : -scoreStepAdjustment;
+    final newScore = (currentScore + adjustment).clamp(minMasteryScore, maxMasteryScore);
 
     newStats[categoryId] = newScore;
     return newStats;
