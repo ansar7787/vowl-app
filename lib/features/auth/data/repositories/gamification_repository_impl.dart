@@ -4,6 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
 
+/// Concrete implementation of [GamificationRepository] handling atomic writes and progress tracking.
+///
+/// Fully optimized to execute all read-then-write progress modifications inside Firestore transactions,
+/// ensuring zero concurrency race conditions.
 class GamificationRepositoryImpl implements GamificationRepository {
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
@@ -13,6 +17,21 @@ class GamificationRepositoryImpl implements GamificationRepository {
     FirebaseFirestore? firestore,
   }) : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
        _firestore = firestore ?? FirebaseFirestore.instance;
+
+  /// Defensive helper to translate raw database exceptions into structured [Failure] domains.
+  Failure _handleException(dynamic e) {
+    if (e is FirebaseException) {
+      if (e.code == 'unavailable' || e.code == 'network-request-failed') {
+        return NetworkFailure('Network connection failed. Operating in offline mode.');
+      }
+      return ServerFailure('Database operation failed: ${e.message}');
+    }
+    final errStr = e.toString();
+    if (errStr.contains('SocketException') || errStr.contains('NetworkError')) {
+      return NetworkFailure('Network unreachable. Please check connection states.');
+    }
+    return ServerFailure(errStr);
+  }
 
   @override
   Future<Either<Failure, void>> updateUserRewards({
@@ -147,7 +166,7 @@ class GamificationRepositoryImpl implements GamificationRepository {
 
       return const Right(null);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -158,10 +177,11 @@ class GamificationRepositoryImpl implements GamificationRepository {
   ) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user != null) {
-        final docRef = _firestore.collection('users').doc(user.uid);
-        final doc = await docRef.get();
+      if (user == null) return Left(AuthFailure('User not logged in'));
 
+      final docRef = _firestore.collection('users').doc(user.uid);
+      await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
         Map<String, int> unlockedLevels = {};
         if (doc.exists && doc.data() != null) {
           final data = doc.data()!;
@@ -173,14 +193,12 @@ class GamificationRepositoryImpl implements GamificationRepository {
         final currentUnlocked = unlockedLevels[categoryId] ?? 1;
         if (newLevel > currentUnlocked) {
           unlockedLevels[categoryId] = newLevel;
-          await docRef.update({'unlockedLevels': unlockedLevels});
+          transaction.update(docRef, {'unlockedLevels': unlockedLevels});
         }
-        return const Right(null);
-      } else {
-        return Left(AuthFailure('User not logged in'));
-      }
+      });
+      return const Right(null);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -191,10 +209,11 @@ class GamificationRepositoryImpl implements GamificationRepository {
   ) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user != null) {
-        final docRef = _firestore.collection('users').doc(user.uid);
-        final doc = await docRef.get();
+      if (user == null) return Left(AuthFailure('User not logged in'));
 
+      final docRef = _firestore.collection('users').doc(user.uid);
+      await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
         Map<String, int> currentStats = {};
         if (doc.exists && doc.data() != null) {
           final data = doc.data()!;
@@ -209,14 +228,11 @@ class GamificationRepositoryImpl implements GamificationRepository {
         if (newScore < 0) newScore = 0;
 
         currentStats[categoryId] = newScore;
-
-        await docRef.update({'categoryStats': currentStats});
-        return const Right(null);
-      } else {
-        return Left(AuthFailure('User not logged in'));
-      }
+        transaction.update(docRef, {'categoryStats': currentStats});
+      });
+      return const Right(null);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -224,15 +240,14 @@ class GamificationRepositoryImpl implements GamificationRepository {
   Future<Either<Failure, void>> awardBadge(String badgeId) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user != null) {
-        await _firestore.collection('users').doc(user.uid).update({
-          'badges': FieldValue.arrayUnion([badgeId]),
-        });
-        return const Right(null);
-      }
-      return Left(AuthFailure('User not logged in'));
+      if (user == null) return Left(AuthFailure('User not logged in'));
+
+      await _firestore.collection('users').doc(user.uid).update({
+        'badges': FieldValue.arrayUnion([badgeId]),
+      });
+      return const Right(null);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -240,37 +255,36 @@ class GamificationRepositoryImpl implements GamificationRepository {
   Future<Either<Failure, void>> repairStreak(int cost) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user != null) {
-        final docRef = _firestore.collection('users').doc(user.uid);
-        await _firestore.runTransaction((transaction) async {
-          final snapshot = await transaction.get(docRef);
-          if (!snapshot.exists) throw Exception("User not found");
-          final currentCoins =
-              (snapshot.data()?['coins'] as num?)?.toInt() ?? 0;
-          if (currentCoins < cost) throw Exception("Not enough coins");
+      if (user == null) return Left(AuthFailure('User not logged in'));
 
-          final history = List<Map<String, dynamic>>.from(
-            snapshot.data()?['coinHistory'] ?? [],
-          );
-          final entry = {
-            'title': 'Repaired Streak',
-            'amount': -cost,
-            'isEarned': false,
-            'date': DateTime.now().toIso8601String(),
-          };
-          history.insert(0, entry);
-          if (history.length > 10) history.removeLast();
+      final docRef = _firestore.collection('users').doc(user.uid);
+      await _firestore.runTransaction((transaction) async {
+        final snapshot = await transaction.get(docRef);
+        if (!snapshot.exists) throw Exception("User not found");
+        final currentCoins =
+            (snapshot.data()?['coins'] as num?)?.toInt() ?? 0;
+        if (currentCoins < cost) throw Exception("Not enough coins");
 
-          transaction.update(docRef, {
-            'coins': currentCoins - cost,
-            'coinHistory': history,
-          });
+        final history = List<Map<String, dynamic>>.from(
+          snapshot.data()?['coinHistory'] ?? [],
+        );
+        final entry = {
+          'title': 'Repaired Streak',
+          'amount': -cost,
+          'isEarned': false,
+          'date': DateTime.now().toIso8601String(),
+        };
+        history.insert(0, entry);
+        if (history.length > 10) history.removeLast();
+
+        transaction.update(docRef, {
+          'coins': currentCoins - cost,
+          'coinHistory': history,
         });
-        return const Right(null);
-      }
-      return Left(AuthFailure('User not logged in'));
+      });
+      return const Right(null);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -278,44 +292,43 @@ class GamificationRepositoryImpl implements GamificationRepository {
   Future<Either<Failure, void>> purchaseStreakFreeze(int cost) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user != null) {
-        final docRef = _firestore.collection('users').doc(user.uid);
-        await _firestore.runTransaction((transaction) async {
-          final doc = await transaction.get(docRef);
-          if (!doc.exists || doc.data() == null) {
-            throw Exception('User data not found');
-          }
+      if (user == null) return Left(AuthFailure('User not logged in'));
 
-          final data = doc.data()!;
-          final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
-          if (currentCoins < cost) throw Exception('Not enough coins');
+      final docRef = _firestore.collection('users').doc(user.uid);
+      await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          throw Exception('User data not found');
+        }
 
-          List<Map<String, dynamic>> history = [];
-          if (data['coinHistory'] != null) {
-            history = List<Map<String, dynamic>>.from(data['coinHistory']);
-          }
+        final data = doc.data()!;
+        final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+        if (currentCoins < cost) throw Exception('Not enough coins');
 
-          final entry = {
-            'title': 'Purchased Streak Freeze',
-            'amount': -cost,
-            'isEarned': false,
-            'date': DateTime.now().toIso8601String(),
-          };
+        List<Map<String, dynamic>> history = [];
+        if (data['coinHistory'] != null) {
+          history = List<Map<String, dynamic>>.from(data['coinHistory']);
+        }
 
-          history.insert(0, entry);
-          if (history.length > 10) history.removeLast();
+        final entry = {
+          'title': 'Purchased Streak Freeze',
+          'amount': -cost,
+          'isEarned': false,
+          'date': DateTime.now().toIso8601String(),
+        };
 
-          transaction.update(docRef, {
-            'coins': currentCoins - cost,
-            'streakFreezes': FieldValue.increment(1),
-            'coinHistory': history,
-          });
+        history.insert(0, entry);
+        if (history.length > 10) history.removeLast();
+
+        transaction.update(docRef, {
+          'coins': currentCoins - cost,
+          'streakFreezes': FieldValue.increment(1),
+          'coinHistory': history,
         });
-        return const Right(null);
-      }
-      return Left(AuthFailure('User not logged in'));
+      });
+      return const Right(null);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -323,46 +336,45 @@ class GamificationRepositoryImpl implements GamificationRepository {
   Future<Either<Failure, void>> activateDoubleXP(int cost) async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user != null) {
-        final docRef = _firestore.collection('users').doc(user.uid);
-        await _firestore.runTransaction((transaction) async {
-          final doc = await transaction.get(docRef);
-          if (!doc.exists || doc.data() == null) {
-            throw Exception('User data not found');
-          }
+      if (user == null) return Left(AuthFailure('User not logged in'));
 
-          final data = doc.data()!;
-          final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
-          if (currentCoins < cost) throw Exception('Not enough coins');
+      final docRef = _firestore.collection('users').doc(user.uid);
+      await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          throw Exception('User data not found');
+        }
 
-          List<Map<String, dynamic>> history = [];
-          if (data['coinHistory'] != null) {
-            history = List<Map<String, dynamic>>.from(data['coinHistory']);
-          }
+        final data = doc.data()!;
+        final currentCoins = (data['coins'] as num?)?.toInt() ?? 0;
+        if (currentCoins < cost) throw Exception('Not enough coins');
 
-          final entry = {
-            'title': 'Purchased Double XP',
-            'amount': -cost,
-            'isEarned': false,
-            'date': DateTime.now().toIso8601String(),
-          };
+        List<Map<String, dynamic>> history = [];
+        if (data['coinHistory'] != null) {
+          history = List<Map<String, dynamic>>.from(data['coinHistory']);
+        }
 
-          history.insert(0, entry);
-          if (history.length > 10) history.removeLast();
+        final entry = {
+          'title': 'Purchased Double XP',
+          'amount': -cost,
+          'isEarned': false,
+          'date': DateTime.now().toIso8601String(),
+        };
 
-          final expiry = DateTime.now().add(const Duration(hours: 24));
-          transaction.update(docRef, {
-            'coins': currentCoins - cost,
-            'doubleXP': 1,
-            'doubleXPExpiry': Timestamp.fromDate(expiry),
-            'coinHistory': history,
-          });
+        history.insert(0, entry);
+        if (history.length > 10) history.removeLast();
+
+        final expiry = DateTime.now().add(const Duration(hours: 24));
+        transaction.update(docRef, {
+          'coins': currentCoins - cost,
+          'doubleXP': 1,
+          'doubleXPExpiry': Timestamp.fromDate(expiry),
+          'coinHistory': history,
         });
-        return const Right(null);
-      }
-      return Left(AuthFailure('User not logged in'));
+      });
+      return const Right(null);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 }
