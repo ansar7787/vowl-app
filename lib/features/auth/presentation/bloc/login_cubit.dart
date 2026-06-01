@@ -7,6 +7,9 @@ import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/network/network_info.dart';
 
+// ============================================================================
+// STATE
+// ============================================================================
 class LoginState extends Equatable {
   final String email;
   final String password;
@@ -14,7 +17,6 @@ class LoginState extends Equatable {
   final bool isSuccess;
   final String? errorMessage;
   final String? successMessage;
-
   final bool isPasswordVisible;
 
   const LoginState({
@@ -59,6 +61,9 @@ class LoginState extends Equatable {
   ];
 }
 
+// ============================================================================
+// CUBIT
+// ============================================================================
 class LoginCubit extends Cubit<LoginState> {
   final LogInWithEmail _logInWithEmail;
   final LogInWithGoogle _logInWithGoogle;
@@ -82,10 +87,31 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> logInWithCredentials() async {
     if (state.isSubmitting) return;
 
+    // Client-side Input Validations
+    final trimmedEmail = state.email.trim();
+    if (trimmedEmail.isEmpty) {
+      emit(state.copyWith(errorMessage: 'Email address cannot be empty.'));
+      return;
+    }
+    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    if (!emailRegex.hasMatch(trimmedEmail)) {
+      emit(state.copyWith(errorMessage: 'Please enter a valid email address.'));
+      return;
+    }
+    if (state.password.isEmpty) {
+      emit(state.copyWith(errorMessage: 'Password cannot be empty.'));
+      return;
+    }
+    if (state.password.length < 6) {
+      emit(state.copyWith(errorMessage: 'Password must be at least 6 characters long.'));
+      return;
+    }
+
+    // Network Connectivity Verification
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
-          errorMessage: "No internet connection. Please check your network.",
+          errorMessage: 'No internet connection. Please check your network.',
         ),
       );
       return;
@@ -93,8 +119,9 @@ class LoginCubit extends Cubit<LoginState> {
 
     emit(state.copyWith(isSubmitting: true));
     final result = await _logInWithEmail(
-      LogInParams(email: state.email, password: state.password),
+      LogInParams(email: trimmedEmail, password: state.password),
     );
+    
     result.fold(
       (failure) {
         if (isClosed) return;
@@ -115,10 +142,11 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> logInWithGoogle() async {
     if (state.isSubmitting) return;
 
+    // Network Connectivity Verification
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
-          errorMessage: "No internet connection. Please check your network.",
+          errorMessage: 'No internet connection. Please check your network.',
         ),
       );
       return;
@@ -126,6 +154,7 @@ class LoginCubit extends Cubit<LoginState> {
 
     emit(state.copyWith(isSubmitting: true));
     final result = await _logInWithGoogle(NoParams());
+    
     result.fold(
       (failure) {
         if (isClosed) return;
@@ -146,17 +175,30 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> forgotPassword(String email) async {
     if (state.isSubmitting) return;
 
+    final trimmedEmail = email.trim();
+    if (trimmedEmail.isEmpty) {
+      emit(state.copyWith(errorMessage: 'Please enter your email address to receive reset links.'));
+      return;
+    }
+    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    if (!emailRegex.hasMatch(trimmedEmail)) {
+      emit(state.copyWith(errorMessage: 'Please enter a valid email address.'));
+      return;
+    }
+
+    // Network Connectivity Verification
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
-          errorMessage: "No internet connection. Please check your network.",
+          errorMessage: 'No internet connection. Please check your network.',
         ),
       );
       return;
     }
 
     emit(state.copyWith(isSubmitting: true));
-    final result = await _forgotPassword(email);
+    final result = await _forgotPassword(trimmedEmail);
+    
     result.fold(
       (failure) {
         if (isClosed) return;
