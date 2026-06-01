@@ -8,6 +8,9 @@ import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/repositories/user_repository.dart';
 
+/// Concrete implementation of [UserRepository] managing user profiles and storage updates.
+///
+/// Implements transactional constraints for claiming daily VIP rewards, preventing coin exploits.
 class UserRepositoryImpl implements UserRepository {
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
@@ -20,6 +23,21 @@ class UserRepositoryImpl implements UserRepository {
   }) : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
        _firestore = firestore ?? FirebaseFirestore.instance,
        _storage = storage ?? FirebaseStorage.instance;
+
+  /// Defensive helper to translate raw database/storage exceptions into structured [Failure] domains.
+  Failure _handleException(dynamic e) {
+    if (e is FirebaseException) {
+      if (e.code == 'unavailable' || e.code == 'network-request-failed') {
+        return NetworkFailure('Network connection failed. Operating in offline mode.');
+      }
+      return ServerFailure('Database operation failed: ${e.message}');
+    }
+    final errStr = e.toString();
+    if (errStr.contains('SocketException') || errStr.contains('NetworkError')) {
+      return NetworkFailure('Network unreachable. Please check connection states.');
+    }
+    return ServerFailure(errStr);
+  }
 
   @override
   Future<Either<Failure, void>> updateUser(UserEntity user) async {
@@ -77,7 +95,7 @@ class UserRepositoryImpl implements UserRepository {
       await docRef.set(userModel.toMap(), SetOptions(merge: true));
       return const Right(null);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -95,7 +113,7 @@ class UserRepositoryImpl implements UserRepository {
 
       return const Right(null);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -119,7 +137,7 @@ class UserRepositoryImpl implements UserRepository {
 
       return Right(downloadUrl);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -127,29 +145,41 @@ class UserRepositoryImpl implements UserRepository {
   Future<Either<Failure, void>> claimVipGift() async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user != null) {
-        final docRef = _firestore.collection('users').doc(user.uid);
-        final doc = await docRef.get();
+      if (user == null) return Left(AuthFailure('User not logged in'));
 
-        if (doc.exists && doc.data() != null) {
-          final userData = UserModel.fromMap(doc.data()!);
+      final docRef = _firestore.collection('users').doc(user.uid);
 
-          if (!userData.isPremium) {
-            return Left(AuthFailure('User is not premium'));
-          }
-
-          await docRef.update({
-            'coins': FieldValue.increment(100),
-            'lastVipGiftDate': Timestamp.now(),
-          });
-          return const Right(null);
+      return await _firestore.runTransaction((transaction) async {
+        final doc = await transaction.get(docRef);
+        if (!doc.exists || doc.data() == null) {
+          return Left(AuthFailure('User data not found'));
         }
-        return Left(AuthFailure('User data not found'));
-      } else {
-        return Left(AuthFailure('User not logged in'));
-      }
+
+        final userData = UserModel.fromMap(doc.data()!);
+
+        if (!userData.isPremium) {
+          return Left(AuthFailure('User is not premium'));
+        }
+
+        final now = DateTime.now();
+        final lastGift = userData.lastVipGiftDate;
+        final bool available = lastGift == null ||
+            lastGift.year != now.year ||
+            lastGift.month != now.month ||
+            lastGift.day != now.day;
+
+        if (!available) {
+          return Left(AuthFailure('Daily VIP gift already claimed today'));
+        }
+
+        transaction.update(docRef, {
+          'coins': FieldValue.increment(100),
+          'lastVipGiftDate': Timestamp.now(),
+        });
+        return const Right(null);
+      });
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 }
