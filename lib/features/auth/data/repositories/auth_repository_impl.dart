@@ -10,11 +10,17 @@ import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/domain/repositories/auth_repository.dart';
 
+/// Concrete implementation of [AuthRepository] orchestrating user sessions via Firebase Auth and Firestore.
+///
+/// Implements high-performance stream caching to prevent memory leaks and duplicate Firestore read charges.
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource _remoteDataSource;
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final FirebaseFirestore _firestore;
   final FirebaseStorage _storage;
+
+  /// High-performance shared broadcast stream to prevent duplicate cloud listeners.
+  late final Stream<UserEntity?> _userStream;
 
   AuthRepositoryImpl({
     required AuthRemoteDataSource remoteDataSource,
@@ -24,10 +30,12 @@ class AuthRepositoryImpl implements AuthRepository {
   }) : _remoteDataSource = remoteDataSource,
        _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
        _firestore = firestore ?? FirebaseFirestore.instance,
-       _storage = storage ?? FirebaseStorage.instance;
+       _storage = storage ?? FirebaseStorage.instance {
+    _initUserStream();
+  }
 
-  @override
-  Stream<UserEntity?> get user {
+  /// Initializes the unified broadcast stream controller, preventing heap memory leaks.
+  void _initUserStream() {
     late StreamController<UserEntity?> controller;
     StreamSubscription<firebase_auth.User?>? authSubscription;
     StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>? firestoreSubscription;
@@ -106,7 +114,25 @@ class AuthRepositoryImpl implements AuthRepository {
       },
     );
 
-    return controller.stream;
+    _userStream = controller.stream;
+  }
+
+  @override
+  Stream<UserEntity?> get user => _userStream;
+
+  /// Defensive helper to translate raw authentication exceptions into structured [Failure] domains.
+  Failure _handleException(dynamic e) {
+    if (e is firebase_auth.FirebaseAuthException) {
+      if (e.code == 'network-request-failed' || e.code == 'unavailable') {
+        return NetworkFailure('No internet connection. Please verify your network.');
+      }
+      return AuthFailure(e.code);
+    }
+    final errStr = e.toString();
+    if (errStr.contains('SocketException') || errStr.contains('NetworkError')) {
+      return NetworkFailure('Network unreachable. Please check connection states.');
+    }
+    return ServerFailure(errStr);
   }
 
   @override
@@ -116,7 +142,7 @@ class AuthRepositoryImpl implements AuthRepository {
       final user = await _mapFirebaseUserToUserEntity(firebaseUser);
       return Right(user);
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -195,10 +221,8 @@ class AuthRepositoryImpl implements AuthRepository {
       } else {
         return Left(ServerFailure('User creation failed'));
       }
-    } on firebase_auth.FirebaseAuthException catch (e) {
-      return Left(AuthFailure(e.code));
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -213,10 +237,8 @@ class AuthRepositoryImpl implements AuthRepository {
         password: password,
       );
       return Right(userModel);
-    } on firebase_auth.FirebaseAuthException catch (e) {
-      return Left(AuthFailure(e.code));
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -225,10 +247,8 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       await _remoteDataSource.logInWithGoogle();
       return const Right(null);
-    } on firebase_auth.FirebaseAuthException catch (e) {
-      return Left(AuthFailure(e.code));
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -238,7 +258,7 @@ class AuthRepositoryImpl implements AuthRepository {
       await _remoteDataSource.logOut();
       return const Right(null);
     } catch (e) {
-      return Left(CacheFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -247,10 +267,8 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       await _firebaseAuth.sendPasswordResetEmail(email: email);
       return const Right(null);
-    } on firebase_auth.FirebaseAuthException catch (e) {
-      return Left(AuthFailure(e.code));
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -259,10 +277,8 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       await _firebaseAuth.currentUser?.sendEmailVerification();
       return const Right(null);
-    } on firebase_auth.FirebaseAuthException catch (e) {
-      return Left(AuthFailure(e.code));
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -271,10 +287,8 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       await _firebaseAuth.currentUser?.reload();
       return const Right(null);
-    } on firebase_auth.FirebaseAuthException catch (e) {
-      return Left(AuthFailure(e.code));
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 
@@ -301,9 +315,9 @@ class AuthRepositoryImpl implements AuthRepository {
       if (e.code == 'requires-recent-login') {
         return Left(AuthFailure('requires-recent-login'));
       }
-      return Left(AuthFailure(e.code));
+      return Left(_handleException(e));
     } catch (e) {
-      return Left(ServerFailure(e.toString()));
+      return Left(_handleException(e));
     }
   }
 }
