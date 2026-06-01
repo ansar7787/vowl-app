@@ -1,7 +1,13 @@
-import 'package:equatable/equatable.dart';
+import 'package:collection/collection.dart';
+import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
-class UserEntity extends Equatable {
+/// Central domain entity representing a User session in the Vowl ecosystem.
+///
+/// Implements high-performance custom Deep Collection Equality overrides for [operator ==] and [hashCode]
+/// to prevent false state changes in BLoCs and eliminate redundant UI re-renders on collections.
+@immutable
+class UserEntity {
   final String id;
   final String email;
   final String? displayName;
@@ -106,7 +112,7 @@ class UserEntity extends Equatable {
       'dialogueRoleplay': 1,
       'branchingDialogue': 1,
       'situationalResponse': 1,
-      // Categories (for backward compatibility or summary)
+      // Categories
       'reading': 1,
       'writing': 1,
       'speaking': 1,
@@ -188,7 +194,7 @@ class UserEntity extends Equatable {
     return count;
   }
 
-  // Mastery Getters (Dynamically derived from categoryStats for children)
+  // Mastery Getters
   int get speakingMastery => getCategoryProgress(QuestType.speaking);
   int get readingMastery => getCategoryProgress(QuestType.reading);
   int get writingMastery => getCategoryProgress(QuestType.writing);
@@ -198,57 +204,43 @@ class UserEntity extends Equatable {
   int get accentMastery => getCategoryProgress(QuestType.accent);
   int get roleplayMastery => getCategoryProgress(QuestType.roleplay);
 
-  /// Calculates the highest progress among subtypes in a category.
-  /// This provides a better sense of achievement for new users.
   int getCategoryProgress(QuestType type) {
     final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
     if (subtypes.isEmpty) return 0;
 
     int maxProgress = 0;
-
     for (final subtype in subtypes) {
       final progress = categoryStats[subtype.name] ?? 0;
       if (progress > maxProgress) {
         maxProgress = progress;
       }
     }
-
     return maxProgress;
   }
 
-  /// Calculates the total number of levels cleared across all games in a category.
-  /// This provides a cumulative progression metric that encourages playing all games.
   int getTotalCategoryLevelsCleared(QuestType type) {
     final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
     if (subtypes.isEmpty) return 0;
 
     int totalCleared = 0;
-
     for (final subtype in subtypes) {
       if (unlockedLevels.containsKey(subtype.name)) {
-        // If they are on level N, they have cleared N-1 levels.
         final level = unlockedLevels[subtype.name]!;
         if (level > 1) {
           totalCleared += (level - 1);
         }
       }
     }
-
     return totalCleared;
   }
 
-  /// Calculates the maximum theoretical levels for a category (200 levels per active game).
   int getMaxCategoryLevels(QuestType type) {
     final subtypes = type.subtypes.where((s) => !s.isLegacy).toList();
     return subtypes.length * 200;
   }
 
-  /// Returns the effective level for content fetching.
-  /// Beyond level 200, we loop back to high-difficulty content (150-200)
-  /// to ensure zero running cost for generation while providing infinite play.
   int getEffectiveLevel(String categoryOrGame, int level) {
     if (level <= 200) return level;
-    // Map Level 201+ to a loop between 150 and 200
     return 150 + ((level - 201) % 50);
   }
 
@@ -264,61 +256,123 @@ class UserEntity extends Equatable {
     if (lastVipGiftDate == null) return true;
     final now = DateTime.now();
     final lastGift = lastVipGiftDate!;
-    // Check if it's a different day
     return lastGift.year != now.year ||
         lastGift.month != now.month ||
         lastGift.day != now.day;
   }
 
   @override
-  List<Object?> get props => [
-    id,
-    email,
-    displayName,
-    photoUrl,
-    fcmToken,
-    coins,
-    totalExp,
-    isAdmin,
-    currentStreak,
-    lastLoginDate,
-    isEmailVerified,
-    isPremium,
-    premiumExpiryDate,
-    categoryStats,
-    unlockedLevels,
-    completedLevels,
-    badges,
-    streakFreezes,
-    hintCount,
-    hintPacks,
-    doubleXP,
-    doubleXPExpiry,
-    dailyXpHistory,
-    recentActivities,
-    lastVipGiftDate,
-    lastDailyRewardDate,
-    kidsCoins,
-    kidsStickers,
-    kidsMascot,
-    kidsEquippedSticker,
-    kidsOwnedAccessories,
-    kidsEquippedAccessory,
-    vowlMascot,
-    vowlEquippedAccessory,
-    vowlOwnedAccessories,
-    vowlOwnedMascots,
-    claimedStreakMilestones,
-    claimedLevelMilestones,
-    coinHistory,
-    hasPermanentXPBoost,
-    lastFreeSpinDate,
-    lastAdSpinDate,
-    adSpinsUsedToday,
-    lastKidsDailyRewardDate,
-    kidsOwnedFurniture,
-    kidsEquippedFurniture,
-  ];
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    final MapEquality mapEquals = const MapEquality();
+    final ListEquality listEquals = const ListEquality();
+    final DeepCollectionEquality deepEquals = const DeepCollectionEquality();
+
+    return other is UserEntity &&
+        other.id == id &&
+        other.email == email &&
+        other.displayName == displayName &&
+        other.photoUrl == photoUrl &&
+        other.fcmToken == fcmToken &&
+        other.coins == coins &&
+        other.totalExp == totalExp &&
+        other.isAdmin == isAdmin &&
+        other.currentStreak == currentStreak &&
+        other.lastLoginDate == lastLoginDate &&
+        other.isPremium == isPremium &&
+        other.isEmailVerified == isEmailVerified &&
+        other.premiumExpiryDate == premiumExpiryDate &&
+        mapEquals.equals(other.categoryStats, categoryStats) &&
+        mapEquals.equals(other.unlockedLevels, unlockedLevels) &&
+        deepEquals.equals(other.completedLevels, completedLevels) &&
+        listEquals.equals(other.badges, badges) &&
+        other.streakFreezes == streakFreezes &&
+        other.hintCount == hintCount &&
+        other.hintPacks == hintPacks &&
+        other.doubleXP == doubleXP &&
+        other.doubleXPExpiry == doubleXPExpiry &&
+        mapEquals.equals(other.dailyXpHistory, dailyXpHistory) &&
+        deepEquals.equals(other.recentActivities, recentActivities) &&
+        other.lastVipGiftDate == lastVipGiftDate &&
+        other.lastDailyRewardDate == lastDailyRewardDate &&
+        other.kidsCoins == kidsCoins &&
+        listEquals.equals(other.kidsStickers, kidsStickers) &&
+        other.kidsMascot == kidsMascot &&
+        other.kidsEquippedSticker == kidsEquippedSticker &&
+        listEquals.equals(other.kidsOwnedAccessories, kidsOwnedAccessories) &&
+        other.kidsEquippedAccessory == kidsEquippedAccessory &&
+        other.vowlMascot == vowlMascot &&
+        other.vowlEquippedAccessory == vowlEquippedAccessory &&
+        listEquals.equals(other.vowlOwnedAccessories, vowlOwnedAccessories) &&
+        listEquals.equals(other.vowlOwnedMascots, vowlOwnedMascots) &&
+        listEquals.equals(other.claimedStreakMilestones, claimedStreakMilestones) &&
+        listEquals.equals(other.claimedLevelMilestones, claimedLevelMilestones) &&
+        deepEquals.equals(other.coinHistory, coinHistory) &&
+        other.hasPermanentXPBoost == hasPermanentXPBoost &&
+        other.lastFreeSpinDate == lastFreeSpinDate &&
+        other.lastAdSpinDate == lastAdSpinDate &&
+        other.adSpinsUsedToday == adSpinsUsedToday &&
+        other.lastKidsDailyRewardDate == lastKidsDailyRewardDate &&
+        listEquals.equals(other.kidsOwnedFurniture, kidsOwnedFurniture) &&
+        mapEquals.equals(other.kidsEquippedFurniture, kidsEquippedFurniture);
+  }
+
+  @override
+  int get hashCode {
+    final Object hasher = Object.hashAll([
+      id,
+      email,
+      displayName,
+      photoUrl,
+      fcmToken,
+      coins,
+      totalExp,
+      isAdmin,
+      currentStreak,
+      lastLoginDate,
+      isPremium,
+      isEmailVerified,
+      premiumExpiryDate,
+      const MapEquality().hash(categoryStats),
+      const MapEquality().hash(unlockedLevels),
+      const DeepCollectionEquality().hash(completedLevels),
+      const ListEquality().hash(badges),
+      streakFreezes,
+      hintCount,
+      hintPacks,
+    ]);
+    final Object hasher2 = Object.hashAll([
+      doubleXP,
+      doubleXPExpiry,
+      const MapEquality().hash(dailyXpHistory),
+      const DeepCollectionEquality().hash(recentActivities),
+      lastVipGiftDate,
+      lastDailyRewardDate,
+      kidsCoins,
+      const ListEquality().hash(kidsStickers),
+      kidsMascot,
+      kidsEquippedSticker,
+      const ListEquality().hash(kidsOwnedAccessories),
+      kidsEquippedAccessory,
+      vowlMascot,
+      vowlEquippedAccessory,
+      const ListEquality().hash(vowlOwnedAccessories),
+      const ListEquality().hash(vowlOwnedMascots),
+      const ListEquality().hash(claimedStreakMilestones),
+      const ListEquality().hash(claimedLevelMilestones),
+      const DeepCollectionEquality().hash(coinHistory),
+      hasPermanentXPBoost,
+    ]);
+    final Object hasher3 = Object.hashAll([
+      lastFreeSpinDate,
+      lastAdSpinDate,
+      adSpinsUsedToday,
+      lastKidsDailyRewardDate,
+      const ListEquality().hash(kidsOwnedFurniture),
+      const MapEquality().hash(kidsEquippedFurniture),
+    ]);
+    return Object.hash(hasher, hasher2, hasher3);
+  }
 
   UserEntity copyWith({
     List<String>? badges,
