@@ -11,6 +11,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:io';
+import 'dart:async';
 
 @pragma('vm:entry-point')
 Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -19,9 +20,24 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 }
 
 class NotificationService {
+  // Service configuration constraints
+  static const String mainChannelId = 'vowl_main_channel';
+  static const String streakChannelId = 'vowl_streak_channel';
+  static const String weeklyChannelId = 'vowl_weekly_channel';
+  static const String highImportanceChannelId = 'high_importance_channel';
+
+  static const int streakReminderNotificationId = 101;
+  static const int weeklyMotivationNotificationId = 202;
+  static const int maxLocalNotificationModulo = 100000;
+
   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
   final FlutterLocalNotificationsPlugin _localNotifications = FlutterLocalNotificationsPlugin();
   bool _timezoneInitialized = false;
+
+  // StreamSubscriptions to prevent memory leaks & duplicate notifications
+  StreamSubscription<RemoteMessage>? _onMessageSubscription;
+  StreamSubscription<String>? _onTokenRefreshSubscription;
+  StreamSubscription<RemoteMessage>? _onMessageOpenedAppSubscription;
 
   /// Check if notifications are enabled via user preferences
   Future<bool> get _areNotificationsEnabled async {
@@ -29,8 +45,23 @@ class NotificationService {
     return prefs.getBool('notifications_enabled') ?? true;
   }
 
+  /// Crash-proof getter resolving current local location or falling back to UTC safely
+  tz.Location get _currentLocation {
+    if (_timezoneInitialized) {
+      try {
+        return tz.local;
+      } catch (_) {
+        // Fallback to UTC if local location is corrupted/null
+      }
+    }
+    return tz.UTC;
+  }
+
   Future<void> init() async {
-    // 1. Initialize Timezones
+    // 1. Cancel existing active subscriptions to prevent memory leaks during re-init
+    await _cancelSubscriptions();
+
+    // 2. Initialize Timezones
     tz.initializeTimeZones();
     String timeZoneName = 'UTC';
     try {
@@ -39,7 +70,6 @@ class NotificationService {
       
       // Resilient parsing for various OS formats
       if (timeZoneName.contains('/')) {
-        // Handle common formats like "Asia/Kolkata" or "TimezoneInfo(Asia/Kolkata)"
         final RegExp regex = RegExp(r'([A-Za-z]+/[A-Za-z_]+)');
         final match = regex.firstMatch(timeZoneName);
         if (match != null) {
@@ -59,7 +89,7 @@ class NotificationService {
       }
     }
 
-    // 2. Initialize Local Notifications
+    // 3. Initialize Local Notifications
     const AndroidInitializationSettings androidSettings = AndroidInitializationSettings('@mipmap/ic_launcher');
     const DarwinInitializationSettings iosSettings = DarwinInitializationSettings();
     
@@ -70,32 +100,31 @@ class NotificationService {
 
     await _localNotifications.initialize(initSettings);
 
-    // 3. Create Notification Channels (Android 8.0+)
+    // 4. Create Notification Channels (Android 8.0+)
     if (Platform.isAndroid) {
       final androidPlugin = _localNotifications.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
       if (androidPlugin != null) {
         await androidPlugin.createNotificationChannel(const AndroidNotificationChannel(
-          'vowl_main_channel', 'Main Notifications', 
+          mainChannelId, 'Main Notifications', 
           description: 'Used for game updates', importance: Importance.max,
         ));
         await androidPlugin.createNotificationChannel(const AndroidNotificationChannel(
-          'vowl_streak_channel', 'Streak Reminders', 
+          streakChannelId, 'Streak Reminders', 
           description: 'Motivation alerts', importance: Importance.max,
         ));
         await androidPlugin.createNotificationChannel(const AndroidNotificationChannel(
-          'vowl_weekly_channel', 'Weekly Goals', 
+          weeklyChannelId, 'Weekly Goals', 
           description: 'Weekly summaries', importance: Importance.high,
         ));
-        // Fallback for legacy or manual console notifications
         await androidPlugin.createNotificationChannel(const AndroidNotificationChannel(
-          'high_importance_channel', 'High Importance', 
+          highImportanceChannelId, 'High Importance', 
           description: 'Critical updates', importance: Importance.max,
         ));
       }
     }
 
-    // 4. Handle Foreground Messages
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
+    // 5. Handle Foreground Messages with memory-safe subscriptions
+    _onMessageSubscription = FirebaseMessaging.onMessage.listen((RemoteMessage message) async {
       if (message.notification != null) {
         final enabled = await _areNotificationsEnabled;
         if (!enabled) return;
@@ -106,22 +135,20 @@ class NotificationService {
       }
     });
 
-    // 5. Get FCM Token and SAVE it to Firestore
+    // 6. Get FCM Token and SAVE it to Firestore
     await _saveFCMTokenToFirestore();
 
-    // 6. Listen for token refresh events (token can rotate at any time)
-    _fcm.onTokenRefresh.listen((newToken) {
+    // 7. Listen for token refresh events
+    _onTokenRefreshSubscription = _fcm.onTokenRefresh.listen((newToken) {
       _updateTokenInFirestore(newToken);
     });
 
-    // 7. Handle Notification Clicks (When app is in background/terminated)
-    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+    // 8. Handle Notification Clicks (When app is in background/terminated)
+    _onMessageOpenedAppSubscription = FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       debugPrint('Notification clicked! Path: ${message.data['path']}');
-      // If we have a deep link or specific route in data, we could navigate here.
-      // For production, we usually use a stream or a global navigator key.
     });
 
-    // 8. Check for initial message (if app was terminated and opened by notification)
+    // 9. Check for initial message (if app was terminated and opened by notification)
     RemoteMessage? initialMessage = await FirebaseMessaging.instance.getInitialMessage();
     if (initialMessage != null) {
       debugPrint('App opened from terminated state by notification');
@@ -168,7 +195,6 @@ class NotificationService {
   }
 
   /// CRASH-PROOF PERMISSIONS
-  /// We wait for the first frame to ensure the Activity is ready.
   Future<void> requestPermissions() async {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       try {
@@ -181,7 +207,6 @@ class NotificationService {
         
         if (settings.authorizationStatus == AuthorizationStatus.authorized) {
           debugPrint('User granted Firebase notification permission');
-          // Re-save token after permission is granted (in case it wasn't available before)
           await _saveFCMTokenToFirestore();
         }
 
@@ -204,12 +229,11 @@ class NotificationService {
   }
 
   Future<void> showNotification(String title, String body) async {
-    // Respect user's notification preference
     final enabled = await _areNotificationsEnabled;
     if (!enabled) return;
 
     const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
-      'vowl_main_channel',
+      mainChannelId,
       'Main Notifications',
       channelDescription: 'Used for game updates and streak reminders',
       importance: Importance.max,
@@ -222,7 +246,7 @@ class NotificationService {
     );
 
     await _localNotifications.show(
-      DateTime.now().millisecondsSinceEpoch % 100000,
+      DateTime.now().millisecondsSinceEpoch % maxLocalNotificationModulo,
       title,
       body,
       platformDetails,
@@ -230,20 +254,18 @@ class NotificationService {
   }
 
   /// SCHEDULES A STREAK REMINDER
-  /// This will notify the user in 22 hours to come back and play!
   Future<void> scheduleStreakReminder(int currentStreak) async {
-    // Respect user's notification preference
     final enabled = await _areNotificationsEnabled;
     if (!enabled) {
-      await _localNotifications.cancel(101);
+      await _localNotifications.cancel(streakReminderNotificationId);
       return;
     }
 
-    // 1. Cancel existing reminders to avoid double-messages
-    await _localNotifications.cancel(101); // ID 101 reserved for streak reminders
+    // Cancel existing reminders to avoid double-messages
+    await _localNotifications.cancel(streakReminderNotificationId);
 
     const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
-      'vowl_streak_channel',
+      streakChannelId,
       'Streak Reminders',
       channelDescription: 'Keeps you motivated to learn!',
       importance: Importance.max,
@@ -254,13 +276,12 @@ class NotificationService {
       android: androidDetails,
     );
 
-    // Check for exact alarm permission on Android
     bool useExact = true;
     if (Platform.isAndroid) {
       useExact = await Permission.scheduleExactAlarm.isGranted;
     }
 
-    // Ensure timezone is initialized before accessing tz.local
+    // Resilient timezone wait mechanism (non-blocking)
     if (!_timezoneInitialized) {
       debugPrint('NotificationService: Waiting for timezone initialization...');
       int retry = 0;
@@ -270,10 +291,11 @@ class NotificationService {
       }
     }
 
-    final now = _timezoneInitialized ? tz.TZDateTime.now(tz.local) : tz.TZDateTime.now(tz.UTC);
+    final location = _currentLocation;
+    final now = tz.TZDateTime.now(location);
 
     await _localNotifications.zonedSchedule(
-      101,
+      streakReminderNotificationId,
       'Owly is Waiting! 🦉🔥',
       'Your $currentStreak-day streak is in danger! Play now to keep it alive!',
       now.add(const Duration(hours: 22)),
@@ -290,17 +312,15 @@ class NotificationService {
   }
 
   /// SCHEDULES WEEKLY MOTIVATION
-  /// Notifies the user every Sunday morning to review their progress.
   Future<void> scheduleWeeklyMotivation() async {
-    // Respect user's notification preference
     final enabled = await _areNotificationsEnabled;
     if (!enabled) {
-      await _localNotifications.cancel(202);
+      await _localNotifications.cancel(weeklyMotivationNotificationId);
       return;
     }
 
     const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
-      'vowl_weekly_channel',
+      weeklyChannelId,
       'Weekly Goals',
       channelDescription: 'Sunday morning motivation!',
       importance: Importance.high,
@@ -309,12 +329,13 @@ class NotificationService {
 
     const NotificationDetails platformDetails = NotificationDetails(android: androidDetails);
 
-    // Schedule for Sunday at 10:00 AM
+    final location = _currentLocation;
+
     await _localNotifications.zonedSchedule(
-      202, // Unique ID for weekly motivation
+      weeklyMotivationNotificationId,
       'Sunday Study Session! 📚',
       'Ready to crush your goals this week? Let\'s review what you learned!',
-      _nextInstanceOfSundayTenAM(),
+      _nextInstanceOfSundayTenAM(location),
       platformDetails,
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
       uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
@@ -326,9 +347,9 @@ class NotificationService {
     }
   }
 
-  tz.TZDateTime _nextInstanceOfSundayTenAM() {
-    final tz.TZDateTime now = tz.TZDateTime.now(tz.local);
-    tz.TZDateTime scheduledDate = tz.TZDateTime(tz.local, now.year, now.month, now.day, 10);
+  tz.TZDateTime _nextInstanceOfSundayTenAM(tz.Location location) {
+    final tz.TZDateTime now = tz.TZDateTime.now(location);
+    tz.TZDateTime scheduledDate = tz.TZDateTime(location, now.year, now.month, now.day, 10);
     while (scheduledDate.weekday != DateTime.sunday) {
       scheduledDate = scheduledDate.add(const Duration(days: 1));
     }
@@ -356,8 +377,22 @@ class NotificationService {
     }
   }
 
-  /// Called when user toggles notifications in settings.
-  /// Cancels all scheduled local notifications if disabled.
+  /// Release resources, stream listeners, and active triggers to prevent leaks
+  Future<void> _cancelSubscriptions() async {
+    await _onMessageSubscription?.cancel();
+    await _onTokenRefreshSubscription?.cancel();
+    await _onMessageOpenedAppSubscription?.cancel();
+    _onMessageSubscription = null;
+    _onTokenRefreshSubscription = null;
+    _onMessageOpenedAppSubscription = null;
+  }
+
+  /// Dispose entry point for clean architectural lifecycle management
+  Future<void> dispose() async {
+    await _cancelSubscriptions();
+  }
+
+  /// Called when user toggles notifications in settings
   Future<void> onNotificationPreferenceChanged(bool enabled) async {
     if (!enabled) {
       await cancelAllReminders();
@@ -365,7 +400,6 @@ class NotificationService {
         debugPrint('NotificationService: Notifications disabled by user. All reminders cancelled.');
       }
     } else {
-      // Re-schedule recurring notifications
       await scheduleWeeklyMotivation();
       if (kDebugMode) {
         debugPrint('NotificationService: Notifications re-enabled by user.');
