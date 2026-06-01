@@ -1,6 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
+/// Concrete data model extending [UserEntity] with robust JSON parsing and serialization pipelines.
+///
+/// Implements defensive parsing boundaries to handle both Firestore [Timestamp] types and standard
+/// ISO 8601 string fallbacks safely, preventing runtime class cast exceptions.
 class UserModel extends UserEntity {
   const UserModel({
     required super.id,
@@ -54,6 +58,19 @@ class UserModel extends UserEntity {
     },
   });
 
+  /// Safely parses date-time configurations from dynamic JSON objects, preventing runtime crashes.
+  static DateTime? _parseDateTime(dynamic value) {
+    if (value == null) return null;
+    if (value is Timestamp) return value.toDate();
+    if (value is String) return DateTime.tryParse(value);
+    if (value is int) return DateTime.fromMillisecondsSinceEpoch(value);
+    try {
+      return (value as dynamic).toDate();
+    } catch (_) {
+      return null;
+    }
+  }
+
   factory UserModel.fromJson(Map<String, dynamic> map) {
     return UserModel(
       id: map['id'] ?? '',
@@ -65,14 +82,10 @@ class UserModel extends UserEntity {
       totalExp: (map['totalExp'] as num?)?.toInt() ?? 0,
       isAdmin: map['isAdmin'] ?? false,
       currentStreak: (map['currentStreak'] as num?)?.toInt() ?? 0,
-      lastLoginDate: map['lastLoginDate'] != null
-          ? (map['lastLoginDate'] as dynamic).toDate()
-          : null,
+      lastLoginDate: _parseDateTime(map['lastLoginDate']),
       isEmailVerified: map['isEmailVerified'] ?? false,
       isPremium: map['isPremium'] ?? false,
-      premiumExpiryDate: map['premiumExpiryDate'] != null
-          ? (map['premiumExpiryDate'] as Timestamp).toDate()
-          : null,
+      premiumExpiryDate: _parseDateTime(map['premiumExpiryDate']),
       categoryStats: map['categoryStats'] != null
           ? (map['categoryStats'] as Map).map(
               (key, value) => MapEntry(key.toString(), (value as num).toInt()),
@@ -83,6 +96,7 @@ class UserModel extends UserEntity {
               (key, value) => MapEntry(key.toString(), (value as num).toInt()),
             )
           : const {
+              // Speaking
               'repeatSentence': 1,
               'speakMissingWord': 1,
               'situationSpeaking': 1,
@@ -91,8 +105,10 @@ class UserModel extends UserEntity {
               'speakSynonym': 1,
               'speakOpposite': 1,
               'dailyExpression': 1,
+              // Listening
               'audioFillBlanks': 1,
               'audioMultipleChoice': 1,
+              // Reading
               'readAndAnswer': 1,
               'findWordMeaning': 1,
               'trueFalseReading': 1,
@@ -101,6 +117,7 @@ class UserModel extends UserEntity {
               'guessTitle': 1,
               'readAndMatch': 1,
               'paragraphSummary': 1,
+              // Writing
               'sentenceBuilder': 1,
               'completeSentence': 1,
               'describeSituationWriting': 1,
@@ -108,15 +125,19 @@ class UserModel extends UserEntity {
               'shortAnswerWriting': 1,
               'opinionWriting': 1,
               'dailyJournal': 1,
+              // Grammar
               'grammarQuest': 1,
               'sentenceCorrection': 1,
               'wordReorder': 1,
+              // Accent
               'pronunciationFocus': 1,
               'minimalPairs': 1,
               'intonationMimic': 1,
+              // Roleplay
               'dialogueRoleplay': 1,
               'branchingDialogue': 1,
               'situationalResponse': 1,
+              // Categories
               'reading': 1,
               'writing': 1,
               'speaking': 1,
@@ -145,6 +166,14 @@ class UserModel extends UserEntity {
               'home_kids': 1,
               'food_kids': 1,
               'transport': 1,
+              'body_parts': 1,
+              'clothing': 1,
+              // Elite Mastery
+              'storyBuilder': 1,
+              'idiomMatch': 1,
+              'speedSpelling': 1,
+              'accentShadowing': 1,
+              'elitemastery': 1,
             },
       completedLevels: map['completedLevels'] != null
           ? (map['completedLevels'] as Map).map(
@@ -161,9 +190,7 @@ class UserModel extends UserEntity {
       hintCount: (map['hintCount'] as num?)?.toInt() ?? 0,
       hintPacks: (map['hintPacks'] as num?)?.toInt() ?? 0,
       doubleXP: (map['doubleXP'] as num?)?.toInt() ?? 0,
-      doubleXPExpiry: map['doubleXPExpiry'] != null
-          ? (map['doubleXPExpiry'] as Timestamp).toDate()
-          : null,
+      doubleXPExpiry: _parseDateTime(map['doubleXPExpiry']),
       dailyXpHistory: map['dailyXpHistory'] != null
           ? (map['dailyXpHistory'] as Map).map(
               (key, value) => MapEntry(key.toString(), (value as num).toInt()),
@@ -172,15 +199,9 @@ class UserModel extends UserEntity {
       recentActivities: map['recentActivities'] != null
           ? List<Map<String, dynamic>>.from(map['recentActivities'])
           : [],
-      lastVipGiftDate: map['lastVipGiftDate'] != null
-          ? (map['lastVipGiftDate'] as Timestamp).toDate()
-          : null,
-      lastDailyRewardDate: map['lastDailyRewardDate'] != null
-          ? (map['lastDailyRewardDate'] as Timestamp).toDate()
-          : null,
-      lastKidsDailyRewardDate: map['lastKidsDailyRewardDate'] != null
-          ? (map['lastKidsDailyRewardDate'] as Timestamp).toDate()
-          : null,
+      lastVipGiftDate: _parseDateTime(map['lastVipGiftDate']),
+      lastDailyRewardDate: _parseDateTime(map['lastDailyRewardDate']),
+      lastKidsDailyRewardDate: _parseDateTime(map['lastKidsDailyRewardDate']),
       kidsStickers: map['kidsStickers'] != null
           ? List<String>.from(map['kidsStickers'])
           : const [],
@@ -205,12 +226,8 @@ class UserModel extends UserEntity {
           ? List<Map<String, dynamic>>.from(map['coinHistory'])
           : const [],
       hasPermanentXPBoost: map['hasPermanentXPBoost'] ?? false,
-      lastFreeSpinDate: map['lastFreeSpinDate'] != null
-          ? (map['lastFreeSpinDate'] as Timestamp).toDate()
-          : null,
-      lastAdSpinDate: map['lastAdSpinDate'] != null
-          ? (map['lastAdSpinDate'] as Timestamp).toDate()
-          : null,
+      lastFreeSpinDate: _parseDateTime(map['lastFreeSpinDate']),
+      lastAdSpinDate: _parseDateTime(map['lastAdSpinDate']),
       adSpinsUsedToday: (map['adSpinsUsedToday'] as num?)?.toInt() ?? 0,
       vowlMascot: map['vowlMascot'],
       vowlEquippedAccessory: map['vowlEquippedAccessory'],
