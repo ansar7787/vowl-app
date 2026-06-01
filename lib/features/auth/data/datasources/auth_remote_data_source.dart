@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart' as gsignin;
 import 'package:vowl/features/auth/data/models/user_model.dart';
 
+/// Data source interface handling direct backend network API integrations for authentication.
 abstract class AuthRemoteDataSource {
   Future<UserModel> signUp({required String email, required String password});
   Future<UserModel> logInWithEmail({
@@ -13,15 +14,22 @@ abstract class AuthRemoteDataSource {
   Future<void> logOut();
 }
 
+/// Concrete implementation of [AuthRemoteDataSource] utilizing Firebase and Google Sign-in.
+///
+/// Refactored to allow fully injectable instances of [FirebaseFirestore] for test isolation,
+/// and enhanced with robust, non-blocking sign-out sequences.
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final FirebaseAuth _firebaseAuth;
   final gsignin.GoogleSignIn _googleSignIn;
+  final FirebaseFirestore _firestore;
 
   AuthRemoteDataSourceImpl({
     FirebaseAuth? firebaseAuth,
     gsignin.GoogleSignIn? googleSignIn,
+    FirebaseFirestore? firestore,
   }) : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
-       _googleSignIn = googleSignIn ?? gsignin.GoogleSignIn();
+       _googleSignIn = googleSignIn ?? gsignin.GoogleSignIn(),
+       _firestore = firestore ?? FirebaseFirestore.instance;
 
   @override
   Future<UserModel> signUp({
@@ -36,13 +44,13 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final newUser = UserModel(
       id: credential.user!.uid,
       email: credential.user!.email ?? '',
-      isAdmin: false, // Default false
+      isAdmin: false,
       dailyXpHistory: const {},
       recentActivities: const [],
     );
 
-    // Create Firestore document
-    await FirebaseFirestore.instance
+    // Create Firestore document with injected db reference
+    await _firestore
         .collection('users')
         .doc(newUser.id)
         .set(newUser.toMap());
@@ -86,7 +94,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     final user = userCredential.user;
 
     if (user != null) {
-      final userDoc = await FirebaseFirestore.instance
+      final userDoc = await _firestore
           .collection('users')
           .doc(user.uid)
           .get();
@@ -100,7 +108,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
           dailyXpHistory: const {},
           recentActivities: const [],
         );
-        await FirebaseFirestore.instance
+        await _firestore
             .collection('users')
             .doc(user.uid)
             .set(newUser.toMap());
@@ -110,10 +118,12 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<void> logOut() async {
-    // Sign out from providers safely
-    await Future.wait([
-      _firebaseAuth.signOut(),
-      _googleSignIn.signOut(),
-    ]);
+    // Guarantees non-blocking local session sign out even if network-based provider logout fails
+    try {
+      await _googleSignIn.signOut();
+    } catch (_) {
+      // Silently swallow Google provider clearing faults
+    }
+    await _firebaseAuth.signOut();
   }
 }
