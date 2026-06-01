@@ -48,7 +48,7 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<NotificationService>(() => NotificationService());
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl<InternetConnection>()));
   sl.registerLazySingleton<SeedingService>(() => SeedingService(sl<FirebaseFirestore>()));
-  sl.registerLazySingleton<SoundService>(() => SoundService());
+  sl.registerLazySingleton<SoundService>(() => SoundService(sl<TtsService>()));
   sl.registerLazySingleton<HapticService>(() => HapticService());
   sl.registerLazySingleton<SmartTutor>(() => const LocalSmartTutor());
   sl.registerLazySingleton<AdService>(() => AdService());
