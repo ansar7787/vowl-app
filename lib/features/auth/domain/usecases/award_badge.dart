@@ -10,11 +10,6 @@ class AwardBadge implements UseCase<void, String> {
 
   @override
   Future<Either<Failure, void>> call(String badgeId) async {
-    try {
-      await repository.awardBadge(badgeId);
-      return const Right(null);
-    } catch (e) {
-      return Left(ServerFailure(e.toString()));
-    }
+    return repository.awardBadge(badgeId);
   }
 }

@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
-import 'package:flutter/foundation.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
 
@@ -222,16 +221,18 @@ class GamificationRepositoryImpl implements GamificationRepository {
   }
 
   @override
-  Future<void> awardBadge(String badgeId) async {
+  Future<Either<Failure, void>> awardBadge(String badgeId) async {
     try {
       final user = _firebaseAuth.currentUser;
       if (user != null) {
         await _firestore.collection('users').doc(user.uid).update({
           'badges': FieldValue.arrayUnion([badgeId]),
         });
+        return const Right(null);
       }
+      return Left(AuthFailure('User not logged in'));
     } catch (e) {
-      debugPrint('Error awarding badge: $e');
+      return Left(ServerFailure(e.toString()));
     }
   }
 
