@@ -149,12 +149,28 @@ import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
 
 final sl = GetIt.instance;
 
-/// Central Dependency Injection container coordinator initializing all services,
-/// data sources, repositories, use cases, and presentation BLoCs inside Vowl.
+/// Central Dependency Injection container coordinator.
+/// Modularly decomposed to maintain SRP and prevent giant merge conflicts.
 Future<void> init() async {
-  // ==========================================
-  // 1. EXTERNAL PLATFORM BOUNDARIES
-  // ==========================================
+  await _initExternalAndCore();
+  _initAuthFeature();
+  _initReadingFeature();
+  _initWritingFeature();
+  _initSpeakingFeature();
+  _initGrammarFeature();
+  _initRoleplayFeature();
+  _initAccentFeature();
+  _initListeningFeature();
+  _initVocabularyFeature();
+  _initKidsZoneFeature();
+  _initEliteMasteryFeature();
+}
+
+// ==========================================
+// 1. EXTERNAL & CORE INFRASTRUCTURE SERVICES
+// ==========================================
+Future<void> _initExternalAndCore() async {
+  // External Platform Boundaries
   sl.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
   sl.registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance);
   sl.registerLazySingleton<FirebaseStorage>(() => FirebaseStorage.instance);
@@ -162,9 +178,7 @@ Future<void> init() async {
   sl.registerLazySingleton<InternetConnection>(() => InternetConnection());
   sl.registerLazySingleton<FirebaseRemoteConfig>(() => FirebaseRemoteConfig.instance);
 
-  // ==========================================
-  // 2. CORE SYSTEMS & INFRASTRUCTURE
-  // ==========================================
+  // Core Systems
   sl.registerLazySingleton<SecurityService>(() => SecurityService());
   sl.registerLazySingleton<RemoteConfigService>(() => RemoteConfigService(sl<FirebaseRemoteConfig>()));
   sl.registerLazySingleton<NotificationService>(() => NotificationService());
@@ -188,59 +202,21 @@ Future<void> init() async {
   sl.registerLazySingleton<PraiseService>(() => PraiseService());
   sl.registerLazySingleton<AnalyticsService>(() => AnalyticsService());
   sl.registerLazySingleton<ReviewService>(() => ReviewService());
+}
 
-  // ==========================================
-  // 3. REMOTE & LOCAL DATA SOURCES
-  // ==========================================
+// ==========================================
+// 2. AUTHENTICATION & ECONOMY FEATURE MODULE
+// ==========================================
+void _initAuthFeature() {
+  // Data Source
   sl.registerLazySingleton<AuthRemoteDataSource>(
     () => AuthRemoteDataSourceImpl(
       firebaseAuth: sl<FirebaseAuth>(),
       googleSignIn: sl<GoogleSignIn>(),
     ),
   );
-  sl.registerLazySingleton<ReadingRemoteDataSource>(
-    () => ReadingRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
-  );
-  sl.registerLazySingleton<WritingRemoteDataSource>(
-    () => WritingRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
-  );
-  sl.registerLazySingleton<SpeakingRemoteDataSource>(
-    () => SpeakingRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
-  );
-  sl.registerLazySingleton<GrammarRemoteDataSource>(
-    () => GrammarRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
-  );
-  sl.registerLazySingleton<RoleplayRemoteDataSource>(
-    () => RoleplayRemoteDataSourceImpl(
-      firestore: sl<FirebaseFirestore>(),
-      assetQuestService: sl<AssetQuestService>(),
-    ),
-  );
-  sl.registerLazySingleton<AccentDataSource>(
-    () => AccentDataSourceImpl(
-      firestore: sl<FirebaseFirestore>(),
-      assetQuestService: sl<AssetQuestService>(),
-    ),
-  );
-  sl.registerLazySingleton<ListeningRemoteDataSource>(
-    () => ListeningRemoteDataSourceImpl(
-      firestore: sl<FirebaseFirestore>(),
-      assetQuestService: sl<AssetQuestService>(),
-    ),
-  );
-  sl.registerLazySingleton<VocabularyRemoteDataSource>(
-    () => VocabularyRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
-  );
-  sl.registerLazySingleton<KidsRemoteDataSource>(
-    () => KidsRemoteDataSourceImpl(firestore: sl<FirebaseFirestore>()),
-  );
-  sl.registerLazySingleton<KidsLocalDataSource>(
-    () => KidsLocalDataSourceImpl(),
-  );
 
-  // ==========================================
-  // 4. ARCHITECTURAL REPOSITORIES
-  // ==========================================
+  // Repositories
   sl.registerLazySingleton<AuthRepository>(
     () => AuthRepositoryImpl(
       remoteDataSource: sl<AuthRemoteDataSource>(),
@@ -268,77 +244,11 @@ Future<void> init() async {
       firestore: sl<FirebaseFirestore>(),
     ),
   );
-  sl.registerLazySingleton<ReadingRepository>(
-    () => ReadingRepositoryImpl(remoteDataSource: sl<ReadingRemoteDataSource>()),
-  );
-  sl.registerLazySingleton<WritingRepository>(
-    () => WritingRepositoryImpl(remoteDataSource: sl<WritingRemoteDataSource>()),
-  );
-  sl.registerLazySingleton<SpeakingRepository>(
-    () => SpeakingRepositoryImpl(
-      remoteDataSource: sl<SpeakingRemoteDataSource>(),
-    ),
-  );
-  sl.registerLazySingleton<GrammarRepository>(
-    () => GrammarRepositoryImpl(remoteDataSource: sl<GrammarRemoteDataSource>()),
-  );
   sl.registerLazySingleton<LeaderboardRepository>(
     () => LeaderboardRepositoryImpl(sl<FirebaseFirestore>()),
   );
-  sl.registerLazySingleton<RoleplayRepository>(
-    () => RoleplayRepositoryImpl(
-      remoteDataSource: sl<RoleplayRemoteDataSource>(),
-      networkInfo: sl<NetworkInfo>(),
-    ),
-  );
-  sl.registerLazySingleton<AccentRepository>(
-    () => AccentRepositoryImpl(
-      remoteDataSource: sl<AccentDataSource>(),
-      networkInfo: sl<NetworkInfo>(),
-    ),
-  );
-  sl.registerLazySingleton<ListeningRepository>(
-    () => ListeningRepositoryImpl(
-      remoteDataSource: sl<ListeningRemoteDataSource>(),
-      networkInfo: sl<NetworkInfo>(),
-    ),
-  );
-  sl.registerLazySingleton<VocabularyRepository>(
-    () => VocabularyRepositoryImpl(
-      remoteDataSource: sl<VocabularyRemoteDataSource>(),
-    ),
-  );
-  sl.registerLazySingleton<KidsRepository>(
-    () => KidsRepositoryImpl(
-      remoteDataSource: sl<KidsRemoteDataSource>(),
-      localDataSource: sl<KidsLocalDataSource>(),
-    ),
-  );
-  sl.registerLazySingleton<EliteMasteryDataSource>(
-    () => EliteMasteryDataSourceImpl(assetQuestService: sl<AssetQuestService>()),
-  );
-  sl.registerLazySingleton<EliteMasteryRepository>(
-    () => EliteMasteryRepositoryImpl(dataSource: sl<EliteMasteryDataSource>()),
-  );
 
-  // ==========================================
-  // 5. DOMAIN USE CASES
-  // ==========================================
-  sl.registerLazySingleton<GetReadingQuest>(
-    () => GetReadingQuest(sl<ReadingRepository>()),
-  );
-  sl.registerLazySingleton<GetWritingQuest>(
-    () => GetWritingQuest(sl<WritingRepository>()),
-  );
-  sl.registerLazySingleton<GetSpeakingQuest>(
-    () => GetSpeakingQuest(sl<SpeakingRepository>()),
-  );
-  sl.registerLazySingleton<GetGrammarQuest>(
-    () => GetGrammarQuest(sl<GrammarRepository>()),
-  );
-  sl.registerLazySingleton<PreloadGrammarQuest>(
-    () => PreloadGrammarQuest(sl<GrammarRepository>()),
-  );
+  // Use Cases
   sl.registerLazySingleton<SignUp>(() => SignUp(sl<AuthRepository>()));
   sl.registerLazySingleton<LogInWithEmail>(
     () => LogInWithEmail(sl<AuthRepository>()),
@@ -396,27 +306,6 @@ Future<void> init() async {
   sl.registerLazySingleton<UpdateUserRewards>(
     () => UpdateUserRewards(sl<GamificationRepository>()),
   );
-  sl.registerLazySingleton<GetRoleplayQuest>(
-    () => GetRoleplayQuest(sl<RoleplayRepository>()),
-  );
-  sl.registerLazySingleton<PreloadRoleplayQuests>(
-    () => PreloadRoleplayQuests(sl<RoleplayRepository>()),
-  );
-  sl.registerLazySingleton<GetAccentQuest>(
-    () => GetAccentQuest(sl<AccentRepository>()),
-  );
-  sl.registerLazySingleton<PreloadAccentQuest>(
-    () => PreloadAccentQuest(sl<AccentRepository>()),
-  );
-  sl.registerLazySingleton<ClearAccentQuestCache>(
-    () => ClearAccentQuestCache(sl<AccentRepository>()),
-  );
-  sl.registerLazySingleton<GetListeningQuests>(
-    () => GetListeningQuests(sl<ListeningRepository>()),
-  );
-  sl.registerLazySingleton<GetVocabularyQuests>(
-    () => GetVocabularyQuests(sl<VocabularyRepository>()),
-  );
   sl.registerLazySingleton<UpdateProfilePicture>(
     () => UpdateProfilePicture(sl<UserRepository>()),
   );
@@ -447,14 +336,8 @@ Future<void> init() async {
   sl.registerLazySingleton<AwardKidsCoins>(
     () => AwardKidsCoins(sl<ShopRepository>()),
   );
-  sl.registerLazySingleton<GetKidsQuests>(() => GetKidsQuests(sl<KidsRepository>()));
-  sl.registerLazySingleton<GetEliteMasteryQuests>(
-    () => GetEliteMasteryQuests(sl<EliteMasteryRepository>()),
-  );
 
-  // ==========================================
-  // 6. PRESENTATION LAYER BLOCS
-  // ==========================================
+  // Presentation BLoCs
   sl.registerLazySingleton<AuthBloc>(
     () => AuthBloc(
       getUserStream: sl<GetUserStream>(),
@@ -520,7 +403,21 @@ Future<void> init() async {
   sl.registerFactory<LeaderboardBloc>(
     () => LeaderboardBloc(repository: sl<LeaderboardRepository>()),
   );
+}
 
+// ==========================================
+// 3. READING QUEST MODULE
+// ==========================================
+void _initReadingFeature() {
+  sl.registerLazySingleton<ReadingRemoteDataSource>(
+    () => ReadingRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
+  );
+  sl.registerLazySingleton<ReadingRepository>(
+    () => ReadingRepositoryImpl(remoteDataSource: sl<ReadingRemoteDataSource>()),
+  );
+  sl.registerLazySingleton<GetReadingQuest>(
+    () => GetReadingQuest(sl<ReadingRepository>()),
+  );
   sl.registerFactory<ReadingBloc>(
     () => ReadingBloc(
       getQuest: sl<GetReadingQuest>(),
@@ -535,6 +432,21 @@ Future<void> init() async {
       networkInfo: sl<NetworkInfo>(),
     ),
   );
+}
+
+// ==========================================
+// 4. WRITING QUEST MODULE
+// ==========================================
+void _initWritingFeature() {
+  sl.registerLazySingleton<WritingRemoteDataSource>(
+    () => WritingRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
+  );
+  sl.registerLazySingleton<WritingRepository>(
+    () => WritingRepositoryImpl(remoteDataSource: sl<WritingRemoteDataSource>()),
+  );
+  sl.registerLazySingleton<GetWritingQuest>(
+    () => GetWritingQuest(sl<WritingRepository>()),
+  );
   sl.registerFactory<WritingBloc>(
     () => WritingBloc(
       getQuest: sl<GetWritingQuest>(),
@@ -547,6 +459,23 @@ Future<void> init() async {
       hapticService: sl<HapticService>(),
       useHint: sl<UseHint>(),
     ),
+  );
+}
+
+// ==========================================
+// 5. SPEAKING QUEST MODULE
+// ==========================================
+void _initSpeakingFeature() {
+  sl.registerLazySingleton<SpeakingRemoteDataSource>(
+    () => SpeakingRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
+  );
+  sl.registerLazySingleton<SpeakingRepository>(
+    () => SpeakingRepositoryImpl(
+      remoteDataSource: sl<SpeakingRemoteDataSource>(),
+    ),
+  );
+  sl.registerLazySingleton<GetSpeakingQuest>(
+    () => GetSpeakingQuest(sl<SpeakingRepository>()),
   );
   sl.registerFactory<SpeakingBloc>(
     () => SpeakingBloc(
@@ -562,6 +491,24 @@ Future<void> init() async {
       networkInfo: sl<NetworkInfo>(),
     ),
   );
+}
+
+// ==========================================
+// 6. GRAMMAR QUEST MODULE
+// ==========================================
+void _initGrammarFeature() {
+  sl.registerLazySingleton<GrammarRemoteDataSource>(
+    () => GrammarRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
+  );
+  sl.registerLazySingleton<GrammarRepository>(
+    () => GrammarRepositoryImpl(remoteDataSource: sl<GrammarRemoteDataSource>()),
+  );
+  sl.registerLazySingleton<GetGrammarQuest>(
+    () => GetGrammarQuest(sl<GrammarRepository>()),
+  );
+  sl.registerLazySingleton<PreloadGrammarQuest>(
+    () => PreloadGrammarQuest(sl<GrammarRepository>()),
+  );
   sl.registerFactory<GrammarBloc>(
     () => GrammarBloc(
       getQuest: sl<GetGrammarQuest>(),
@@ -576,6 +523,30 @@ Future<void> init() async {
       useHint: sl<UseHint>(),
     ),
   );
+}
+
+// ==========================================
+// 7. ROLEPLAY QUEST MODULE
+// ==========================================
+void _initRoleplayFeature() {
+  sl.registerLazySingleton<RoleplayRemoteDataSource>(
+    () => RoleplayRemoteDataSourceImpl(
+      firestore: sl<FirebaseFirestore>(),
+      assetQuestService: sl<AssetQuestService>(),
+    ),
+  );
+  sl.registerLazySingleton<RoleplayRepository>(
+    () => RoleplayRepositoryImpl(
+      remoteDataSource: sl<RoleplayRemoteDataSource>(),
+      networkInfo: sl<NetworkInfo>(),
+    ),
+  );
+  sl.registerLazySingleton<GetRoleplayQuest>(
+    () => GetRoleplayQuest(sl<RoleplayRepository>()),
+  );
+  sl.registerLazySingleton<PreloadRoleplayQuests>(
+    () => PreloadRoleplayQuests(sl<RoleplayRepository>()),
+  );
   sl.registerFactory<RoleplayBloc>(
     () => RoleplayBloc(
       getQuest: sl<GetRoleplayQuest>(),
@@ -589,6 +560,33 @@ Future<void> init() async {
       useHint: sl<UseHint>(),
       networkInfo: sl<NetworkInfo>(),
     ),
+  );
+}
+
+// ==========================================
+// 8. ACCENT QUEST MODULE
+// ==========================================
+void _initAccentFeature() {
+  sl.registerLazySingleton<AccentDataSource>(
+    () => AccentDataSourceImpl(
+      firestore: sl<FirebaseFirestore>(),
+      assetQuestService: sl<AssetQuestService>(),
+    ),
+  );
+  sl.registerLazySingleton<AccentRepository>(
+    () => AccentRepositoryImpl(
+      remoteDataSource: sl<AccentDataSource>(),
+      networkInfo: sl<NetworkInfo>(),
+    ),
+  );
+  sl.registerLazySingleton<GetAccentQuest>(
+    () => GetAccentQuest(sl<AccentRepository>()),
+  );
+  sl.registerLazySingleton<PreloadAccentQuest>(
+    () => PreloadAccentQuest(sl<AccentRepository>()),
+  );
+  sl.registerLazySingleton<ClearAccentQuestCache>(
+    () => ClearAccentQuestCache(sl<AccentRepository>()),
   );
   sl.registerFactory<AccentBloc>(
     () => AccentBloc(
@@ -606,6 +604,27 @@ Future<void> init() async {
       networkInfo: sl<NetworkInfo>(),
     ),
   );
+}
+
+// ==========================================
+// 9. LISTENING QUEST MODULE
+// ==========================================
+void _initListeningFeature() {
+  sl.registerLazySingleton<ListeningRemoteDataSource>(
+    () => ListeningRemoteDataSourceImpl(
+      firestore: sl<FirebaseFirestore>(),
+      assetQuestService: sl<AssetQuestService>(),
+    ),
+  );
+  sl.registerLazySingleton<ListeningRepository>(
+    () => ListeningRepositoryImpl(
+      remoteDataSource: sl<ListeningRemoteDataSource>(),
+      networkInfo: sl<NetworkInfo>(),
+    ),
+  );
+  sl.registerLazySingleton<GetListeningQuests>(
+    () => GetListeningQuests(sl<ListeningRepository>()),
+  );
   sl.registerFactory<ListeningBloc>(
     () => ListeningBloc(
       getQuest: sl<GetListeningQuests>(),
@@ -619,6 +638,23 @@ Future<void> init() async {
       useHint: sl<UseHint>(),
       networkInfo: sl<NetworkInfo>(),
     ),
+  );
+}
+
+// ==========================================
+// 10. VOCABULARY QUEST MODULE
+// ==========================================
+void _initVocabularyFeature() {
+  sl.registerLazySingleton<VocabularyRemoteDataSource>(
+    () => VocabularyRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
+  );
+  sl.registerLazySingleton<VocabularyRepository>(
+    () => VocabularyRepositoryImpl(
+      remoteDataSource: sl<VocabularyRemoteDataSource>(),
+    ),
+  );
+  sl.registerLazySingleton<GetVocabularyQuests>(
+    () => GetVocabularyQuests(sl<VocabularyRepository>()),
   );
   sl.registerFactory<vocab.VocabularyBloc>(
     () => vocab.VocabularyBloc(
@@ -634,6 +670,25 @@ Future<void> init() async {
       networkInfo: sl<NetworkInfo>(),
     ),
   );
+}
+
+// ==========================================
+// 11. KIDS ZONE FEATURE MODULE
+// ==========================================
+void _initKidsZoneFeature() {
+  sl.registerLazySingleton<KidsRemoteDataSource>(
+    () => KidsRemoteDataSourceImpl(firestore: sl<FirebaseFirestore>()),
+  );
+  sl.registerLazySingleton<KidsLocalDataSource>(
+    () => KidsLocalDataSourceImpl(),
+  );
+  sl.registerLazySingleton<KidsRepository>(
+    () => KidsRepositoryImpl(
+      remoteDataSource: sl<KidsRemoteDataSource>(),
+      localDataSource: sl<KidsLocalDataSource>(),
+    ),
+  );
+  sl.registerLazySingleton<GetKidsQuests>(() => GetKidsQuests(sl<KidsRepository>()));
   sl.registerFactory<KidsBloc>(
     () => KidsBloc(
       getKidsQuests: sl<GetKidsQuests>(),
@@ -644,6 +699,21 @@ Future<void> init() async {
       soundService: sl<SoundService>(),
       hapticService: sl<HapticService>(),
     ),
+  );
+}
+
+// ==========================================
+// 12. ELITE MASTERY FEATURE MODULE
+// ==========================================
+void _initEliteMasteryFeature() {
+  sl.registerLazySingleton<EliteMasteryDataSource>(
+    () => EliteMasteryDataSourceImpl(assetQuestService: sl<AssetQuestService>()),
+  );
+  sl.registerLazySingleton<EliteMasteryRepository>(
+    () => EliteMasteryRepositoryImpl(dataSource: sl<EliteMasteryDataSource>()),
+  );
+  sl.registerLazySingleton<GetEliteMasteryQuests>(
+    () => GetEliteMasteryQuests(sl<EliteMasteryRepository>()),
   );
   sl.registerFactory<EliteMasteryBloc>(
     () => EliteMasteryBloc(
