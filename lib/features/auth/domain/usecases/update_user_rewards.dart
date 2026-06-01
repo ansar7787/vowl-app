@@ -3,13 +3,17 @@ import 'package:equatable/equatable.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/features/auth/domain/repositories/gamification_repository.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/review_service.dart';
 
+/// Use case updating player progress levels, daily milestones, and coins.
+///
+/// Refactored to cleanly accept injected [ReviewService] dependencies at construction time,
+/// decoupling the Domain layer from concrete presentation service locators.
 class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
   final GamificationRepository repository;
+  final ReviewService _reviewService;
 
-  UpdateUserRewards(this.repository);
+  UpdateUserRewards(this.repository, this._reviewService);
 
   @override
   Future<Either<Failure, void>> call(UpdateUserRewardsParams params) async {
@@ -26,7 +30,7 @@ class UpdateUserRewards extends UseCase<void, UpdateUserRewardsParams> {
       (failure) => null,
       (_) {
         try {
-          di.sl<ReviewService>().notifyQuestCompleted();
+          _reviewService.notifyQuestCompleted();
         } catch (_) {}
       },
     );
