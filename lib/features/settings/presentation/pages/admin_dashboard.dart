@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vowl/core/utils/generation_strategies.dart';
 import 'package:vowl/core/utils/quest_upload_service.dart';
 import 'package:vowl/core/utils/game_content_generator.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -82,8 +81,44 @@ class _AdminDashboardState extends State<AdminDashboard>
     });
   }
 
+  String _getSpecificInstructions(QuestType skill, GameSubtype subtype) {
+    final List<String> signatures = [];
+    if (skill == QuestType.speaking ||
+        skill == QuestType.accent ||
+        subtype == GameSubtype.accentShadowing) {
+      signatures.add('"textToSpeak"');
+    }
+    if (skill == QuestType.reading || skill == QuestType.listening) {
+      signatures.add('"passage"');
+    }
+    if (skill == QuestType.grammar ||
+        skill == QuestType.reading ||
+        skill == QuestType.listening ||
+        skill == QuestType.vocabulary) {
+      signatures.add('"question"');
+    }
+    final String name = subtype.name.toLowerCase();
+    final bool hasOptions = name.contains('choice') ||
+        name.contains('match') ||
+        name.contains('search') ||
+        name.contains('select') ||
+        name.contains('quest') ||
+        name.contains('agreement') ||
+        name.contains('pos') ||
+        name.contains('vocab') ||
+        name.contains('phrasal') ||
+        name.contains('idiom') ||
+        name.contains('article') ||
+        name.contains('preposition');
+
+    if (hasOptions) {
+      signatures.add('"options"');
+    }
+    return '{${signatures.join(', ')}}';
+  }
+
   void _loadTemplate() {
-    final strategy = PromptStrategy().getSpecificInstructions(
+    final strategy = _getSpecificInstructions(
       _selectedSkill,
       _selectedGameType,
     );
