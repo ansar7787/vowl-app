@@ -108,7 +108,7 @@ class GamificationRepositoryImpl implements GamificationRepository {
           'fruits', 'family', 'school', 'verbs', 'routine',
           'emotions', 'prepositions', 'phonics', 'day_night',
           'nature', 'home_kids', 'food_kids', 'transport',
-          'time', 'opposites', 'body', 'clothing',
+          'time', 'opposites', 'body_parts', 'clothing',
         };
         final isKidsGame = kidsGames.contains(gameType);
 

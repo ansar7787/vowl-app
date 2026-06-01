@@ -96,19 +96,31 @@ class UserModel extends UserEntity {
               (key, value) => MapEntry(key.toString(), (value as num).toInt()),
             )
           : const {
-              // Speaking
+              // 1. Speaking (10 Games)
               'repeatSentence': 1,
               'speakMissingWord': 1,
               'situationSpeaking': 1,
               'sceneDescriptionSpeaking': 1,
               'yesNoSpeaking': 1,
               'speakSynonym': 1,
+              'dialogueRoleplay': 1,
+              'pronunciationFocus': 1,
               'speakOpposite': 1,
               'dailyExpression': 1,
-              // Listening
+
+              // 2. Listening (10 Games)
               'audioFillBlanks': 1,
               'audioMultipleChoice': 1,
-              // Reading
+              'audioSentenceOrder': 1,
+              'audioTrueFalse': 1,
+              'soundImageMatch': 1,
+              'fastSpeechDecoder': 1,
+              'emotionRecognition': 1,
+              'detailSpotlight': 1,
+              'listeningInference': 1,
+              'ambientId': 1,
+
+              // 3. Reading (12 Games)
               'readAndAnswer': 1,
               'findWordMeaning': 1,
               'trueFalseReading': 1,
@@ -117,7 +129,12 @@ class UserModel extends UserEntity {
               'guessTitle': 1,
               'readAndMatch': 1,
               'paragraphSummary': 1,
-              // Writing
+              'readingInference': 1,
+              'readingConclusion': 1,
+              'clozeTest': 1,
+              'skimmingScanning': 1,
+
+              // 4. Writing (11 Games)
               'sentenceBuilder': 1,
               'completeSentence': 1,
               'describeSituationWriting': 1,
@@ -125,27 +142,79 @@ class UserModel extends UserEntity {
               'shortAnswerWriting': 1,
               'opinionWriting': 1,
               'dailyJournal': 1,
-              // Grammar
+              'summarizeStoryWriting': 1,
+              'writingEmail': 1,
+              'correctionWriting': 1,
+              'essayDrafting': 1,
+
+              // 5. Grammar (19 Games)
               'grammarQuest': 1,
               'sentenceCorrection': 1,
               'wordReorder': 1,
-              // Accent
-              'pronunciationFocus': 1,
+              'tenseMastery': 1,
+              'partsOfSpeech': 1,
+              'subjectVerbAgreement': 1,
+              'clauseConnector': 1,
+              'voiceSwap': 1,
+              'questionFormatter': 1,
+              'articleInsertion': 1,
+              'modifierPlacement': 1,
+              'modalsSelection': 1,
+              'prepositionChoice': 1,
+              'pronounResolution': 1,
+              'punctuationMastery': 1,
+              'relativeClauses': 1,
+              'conditionals': 1,
+              'conjunctions': 1,
+              'directIndirectSpeech': 1,
+
+              // 6. Vocabulary (12 Games)
+              'flashcards': 1,
+              'synonymSearch': 1,
+              'antonymSearch': 1,
+              'contextClues': 1,
+              'phrasalVerbs': 1,
+              'idioms': 1,
+              'academicWord': 1,
+              'topicVocab': 1,
+              'wordFormation': 1,
+              'prefixSuffix': 1,
+              'collocations': 1,
+              'contextualUsage': 1,
+
+              // 7. Accent (12 Games)
               'minimalPairs': 1,
               'intonationMimic': 1,
-              // Roleplay
-              'dialogueRoleplay': 1,
+              'syllableStress': 1,
+              'wordLinking': 1,
+              'shadowingChallenge': 1,
+              'vowelDistinction': 1,
+              'consonantClarity': 1,
+              'pitchPatternMatch': 1,
+              'speedVariance': 1,
+              'dialectDrill': 1,
+              'connectedSpeech': 1,
+              'pitchModulation': 1,
+
+              // 8. Roleplay (10 Games)
               'branchingDialogue': 1,
               'situationalResponse': 1,
-              // Categories
-              'reading': 1,
-              'writing': 1,
-              'speaking': 1,
-              'grammar': 1,
-              'roleplay': 1,
-              'accent': 1,
-              'listening': 1,
-              // Kids Zone (21 Games)
+              'jobInterview': 1,
+              'medicalConsult': 1,
+              'gourmetOrder': 1,
+              'travelDesk': 1,
+              'conflictResolver': 1,
+              'elevatorPitch': 1,
+              'socialSpark': 1,
+              'emergencyHub': 1,
+
+              // 9. Elite Mastery (4 Games)
+              'storyBuilder': 1,
+              'idiomMatch': 1,
+              'speedSpelling': 1,
+              'accentShadowing': 1,
+
+              // 10. Kids Zone (22 Games)
               'alphabet': 1,
               'numbers': 1,
               'colors': 1,
@@ -159,20 +228,25 @@ class UserModel extends UserEntity {
               'emotions': 1,
               'prepositions': 1,
               'phonics': 1,
-              'time': 1,
-              'opposites': 1,
               'day_night': 1,
               'nature': 1,
               'home_kids': 1,
               'food_kids': 1,
               'transport': 1,
+              'time': 1,
+              'opposites': 1,
               'body_parts': 1,
               'clothing': 1,
-              // Elite Mastery
-              'storyBuilder': 1,
-              'idiomMatch': 1,
-              'speedSpelling': 1,
-              'accentShadowing': 1,
+
+              // Categories (9 Categories)
+              'reading': 1,
+              'writing': 1,
+              'speaking': 1,
+              'grammar': 1,
+              'roleplay': 1,
+              'accent': 1,
+              'listening': 1,
+              'vocabulary': 1,
               'elitemastery': 1,
             },
       completedLevels: map['completedLevels'] != null
