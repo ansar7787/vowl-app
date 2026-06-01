@@ -63,7 +63,7 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<KidsAudioService>(() => KidsAudioService());
   sl.registerLazySingleton<AssetQuestService>(() => AssetQuestService());
   sl.registerLazySingleton<StoryService>(() => StoryService());
-  sl.registerLazySingleton<PraiseService>(() => PraiseService());
+  sl.registerLazySingleton<PraiseService>(() => PraiseService(sl<TtsService>()));
   sl.registerLazySingleton<AnalyticsService>(() => AnalyticsService());
   sl.registerLazySingleton<ReviewService>(() => ReviewService());
 }

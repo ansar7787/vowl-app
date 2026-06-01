@@ -1,9 +1,27 @@
 import 'dart:math';
 import 'package:vowl/core/utils/tts_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
 
-class PraiseService {
-  final List<String> _encouragements = [
+/// Abstract contract defining praise and positive reinforcement audio triggers.
+///
+/// Decouples voice reinforcement logic from calling UI/Bloc controllers,
+/// in accordance with Clean Architecture principles.
+abstract class PraiseService {
+  /// Factory mapping to the concrete reinforcement service.
+  factory PraiseService(TtsService ttsService) = PraiseServiceImpl;
+
+  /// Plays a randomly selected positive reinforcement praise phrase.
+  void givePraise({bool isKids = false});
+}
+
+/// Concrete implementation of [PraiseService] using [TtsService].
+class PraiseServiceImpl implements PraiseService {
+  final TtsService _ttsService;
+
+  // Single static Random instance to optimize CPU/memory allocation
+  static final Random _random = Random();
+
+  // Static compile-time const collections to optimize heap memory allocations
+  static const List<String> _encouragements = [
     "Incredible work!",
     "You're a natural!",
     "Brilliant!",
@@ -16,7 +34,7 @@ class PraiseService {
     "That was super fast!",
   ];
 
-  final List<String> _kidsEncouragements = [
+  static const List<String> _kidsEncouragements = [
     "Yay! You did it!",
     "Wow! You're so smart!",
     "Great job, friend!",
@@ -26,12 +44,14 @@ class PraiseService {
     "High five! That's right!",
   ];
 
+  const PraiseServiceImpl(this._ttsService);
+
+  @override
   void givePraise({bool isKids = false}) {
-    final random = Random();
     final phrases = isKids ? _kidsEncouragements : _encouragements;
-    final phrase = phrases[random.nextInt(phrases.length)];
+    final phrase = phrases[_random.nextInt(phrases.length)];
     
-    // Use the existing TtsService
-    di.sl<TtsService>().speak(phrase);
+    // Play through the injected TtsService (DIP compliant)
+    _ttsService.speak(phrase);
   }
 }
