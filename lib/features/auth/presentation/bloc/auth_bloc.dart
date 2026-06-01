@@ -10,7 +10,9 @@ import 'package:vowl/features/auth/domain/usecases/forgot_password.dart';
 import 'package:vowl/features/auth/domain/usecases/get_current_user.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 
-// Events
+// ============================================================================
+// EVENTS
+// ============================================================================
 abstract class AuthEvent extends Equatable {
   const AuthEvent();
   @override
@@ -47,8 +49,9 @@ class AuthPasswordResetRequested extends AuthEvent {
   List<Object?> get props => [email];
 }
 
-
-// States
+// ============================================================================
+// STATES
+// ============================================================================
 enum AuthStatus { authenticated, unauthenticated, unknown, loggingOut }
 
 class AuthState extends Equatable {
@@ -73,22 +76,25 @@ class AuthState extends Equatable {
   @override
   List<Object?> get props => [status, user, message, isEmailVerified];
 
+  /// CopyWith supporting explicit clearing of transient messages via nullable function values.
   AuthState copyWith({
     AuthStatus? status,
     UserEntity? user,
-    String? message,
+    String? Function()? message,
     bool? isEmailVerified,
   }) {
     return AuthState._(
       status: status ?? this.status,
       user: user ?? this.user,
-      message: message ?? this.message,
+      message: message != null ? message() : this.message,
       isEmailVerified: isEmailVerified ?? this.isEmailVerified,
     );
   }
 }
 
-// Bloc
+// ============================================================================
+// BLOC
+// ============================================================================
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final GetUserStream _getUserStream;
   final LogOut _logOut;
@@ -134,6 +140,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Future<void> _onLogoutRequested(AuthLogoutRequested event, Emitter<AuthState> emit) async {
+    // Guards against multiple concurrent sign-out requests / button double-taps
+    if (state.status == AuthStatus.loggingOut) return;
+    
     emit(state.copyWith(status: AuthStatus.loggingOut));
     await _logOut(NoParams());
     emit(const AuthState.unauthenticated());
@@ -146,7 +155,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Future<void> _onRefreshUser(AuthRefreshUser event, Emitter<AuthState> emit) async {
     final result = await _getCurrentUser(NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (user) {
         if (user != null) {
           emit(AuthState.authenticated(user));
@@ -156,6 +165,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   Future<void> _onDeleteAccountRequested(AuthDeleteAccountRequested event, Emitter<AuthState> emit) async {
+    // Guards against concurrent account deletion flows / double-clicks
+    if (state.status == AuthStatus.loggingOut) return;
+
     emit(state.copyWith(status: AuthStatus.loggingOut));
     final result = await _deleteAccount(NoParams());
     result.fold(
@@ -166,7 +178,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         }
         emit(state.copyWith(
           status: AuthStatus.authenticated,
-          message: message,
+          message: () => message,
         ));
       },
       (_) => add(const AuthLogoutRequested()),
@@ -176,11 +188,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Future<void> _onPasswordResetRequested(AuthPasswordResetRequested event, Emitter<AuthState> emit) async {
     final result = await _forgotPassword(event.email);
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => emit(state.copyWith(message: 'Reset email sent!')),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (_) => emit(state.copyWith(message: () => 'Reset email sent!')),
     );
   }
-
 
   @override
   Future<void> close() {
