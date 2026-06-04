@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:equatable/equatable.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 
@@ -5,16 +6,23 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 abstract class LeaderboardEvent extends Equatable {
   const LeaderboardEvent();
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
-class LoadLeaderboard extends LeaderboardEvent {}
+class LoadLeaderboard extends LeaderboardEvent {
+  final Completer<void>? completer;
+
+  const LoadLeaderboard({this.completer});
+
+  @override
+  List<Object?> get props => [completer];
+}
 
 // States
 abstract class LeaderboardState extends Equatable {
   const LeaderboardState();
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
 class LeaderboardInitial extends LeaderboardState {}
@@ -26,12 +34,12 @@ class LeaderboardLoaded extends LeaderboardState {
   final DateTime lastUpdated;
   const LeaderboardLoaded(this.users, this.lastUpdated);
   @override
-  List<Object> get props => [users, lastUpdated];
+  List<Object?> get props => [users, lastUpdated];
 }
 
 class LeaderboardError extends LeaderboardState {
   final String message;
   const LeaderboardError(this.message);
   @override
-  List<Object> get props => [message];
+  List<Object?> get props => [message];
 }

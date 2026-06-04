@@ -10,5 +10,5 @@ class LeaderboardResult {
 }
 
 abstract class LeaderboardRepository {
-  Future<Either<Failure, LeaderboardResult>> getTopUsers({int limit = 10});
+  Future<Either<Failure, LeaderboardResult>> getTopUsers({int limit = 50});
 }

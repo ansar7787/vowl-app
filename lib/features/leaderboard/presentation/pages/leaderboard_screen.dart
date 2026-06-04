@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,8 +41,9 @@ class LeaderboardScreen extends StatelessWidget {
                 if (state is LeaderboardLoaded)
                   RefreshIndicator(
                     onRefresh: () async {
-                      context.read<LeaderboardBloc>().add(LoadLeaderboard());
-                      await Future.delayed(const Duration(milliseconds: 500));
+                      final completer = Completer<void>();
+                      context.read<LeaderboardBloc>().add(LoadLeaderboard(completer: completer));
+                      await completer.future;
                     },
                     backgroundColor: Colors.transparent,
                     color: const Color(0xFF2563EB),
@@ -119,9 +121,9 @@ class LeaderboardScreen extends StatelessWidget {
                                 final user = state.users[userIndex];
                                 final rank = userIndex + 1;
                                 final currentUser = context
-                                    .read<AuthBloc>()
-                                    .state
-                                    .user;
+                                    .select<AuthBloc, UserEntity?>(
+                                      (bloc) => bloc.state.user,
+                                    );
                                 final isMe = currentUser?.id == user.id;
 
                                 return RepaintBoundary(
@@ -508,7 +510,9 @@ class LeaderboardScreen extends StatelessWidget {
 
   Widget _buildMyRankCard(BuildContext context, List<UserEntity> allUsers) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final currentUser = context.read<AuthBloc>().state.user;
+    final currentUser = context.select<AuthBloc, UserEntity?>(
+      (bloc) => bloc.state.user,
+    );
     if (currentUser == null) return const SizedBox.shrink();
 
     final rankIndex = allUsers.indexWhere((u) => u.id == currentUser.id);

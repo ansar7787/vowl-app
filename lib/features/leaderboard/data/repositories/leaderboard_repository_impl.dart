@@ -64,11 +64,18 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
         }
       }
 
-      // Initialize the cache so future reads use the O(1) fetch
-      await cacheDocRef.set({
-        'lastUpdated': FieldValue.serverTimestamp(),
-        'users': usersData,
-      }, SetOptions(merge: true));
+      // Initialize the cache so future reads use the O(1) fetch.
+      // Wrapped in try-catch because clients may not have write permissions to metadata collection.
+      try {
+        await cacheDocRef.set({
+          'lastUpdated': FieldValue.serverTimestamp(),
+          'users': usersData,
+        }, SetOptions(merge: true));
+      } catch (e) {
+        if (kDebugMode) {
+          debugPrint('Failed to set metadata leaderboard cache: $e');
+        }
+      }
 
       return Right(LeaderboardResult(users: users, lastUpdated: fetchTime));
     } catch (e) {
