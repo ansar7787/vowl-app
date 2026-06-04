@@ -28,6 +28,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   int _secondsRemaining = 30;
   Timer? _resendTimer;
   bool _isLoggingOut = false;
+  bool _isChecking = false; // Guard flag to prevent concurrent validation API requests
 
   @override
   void initState() {
@@ -48,14 +49,17 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   }
 
   Future<void> _checkEmailVerified() async {
+    if (_isChecking) return;
     if (_isLoggingOut) return;
     if (!mounted) return;
     
     final authState = context.read<AuthBloc>().state;
     if (authState.status != AuthStatus.authenticated) return;
 
+    _isChecking = true;
     final result = await sl<AuthRepository>().reloadUser();
     
+    _isChecking = false;
     if (!mounted) return;
     if (_isLoggingOut) return;
     
@@ -65,7 +69,10 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
     result.fold(
       (failure) {
         if (context.read<AuthBloc>().state.status == AuthStatus.authenticated && !_isLoggingOut) {
-          _showSnackBar('Verification check failed: ${AuthErrorHandler.getMessage(failure.message)}', Colors.red);
+          _showSnackBar(
+            'Verification check failed: ${AuthErrorHandler.getMessage(failure.message)}',
+            CustomSnackBarType.error,
+          );
         }
       },
       (_) {
@@ -101,21 +108,22 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
 
   Future<void> _sendVerificationEmail() async {
     final result = await sl<AuthRepository>().sendEmailVerification();
-    result.fold((failure) => _showSnackBar(AuthErrorHandler.getMessage(failure.message), Colors.red), (_) {
-      _showSnackBar('Verification email sent! Please check your inbox.', Colors.green);
-      _startResendTimer();
-    });
+    result.fold(
+      (failure) => _showSnackBar(
+        AuthErrorHandler.getMessage(failure.message),
+        CustomSnackBarType.error,
+      ),
+      (_) {
+        _showSnackBar(
+          'Verification email sent! Please check your inbox.',
+          CustomSnackBarType.success,
+        );
+        _startResendTimer();
+      },
+    );
   }
 
-  void _showSnackBar(String message, Color color) {
-    CustomSnackBarType type = CustomSnackBarType.info;
-    if (color == Colors.red) {
-      type = CustomSnackBarType.error;
-    } else if (color == Colors.orange) {
-      type = CustomSnackBarType.warning;
-    } else if (color == Colors.blue || color == Colors.green) {
-      type = CustomSnackBarType.success;
-    }
+  void _showSnackBar(String message, CustomSnackBarType type) {
     CustomSnackBar.show(context: context, message: message, type: type);
   }
 
@@ -156,50 +164,50 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
 
         return Scaffold(
           backgroundColor: bgColor,
-        body: Stack(
-          children: [
-            const MeshGradientBackground(),
-            SafeArea(
-              child: Center(
-                child: SingleChildScrollView(
-                  padding: EdgeInsets.all(24.w),
-                  child: GlassTile(
-                    padding: EdgeInsets.all(32.r),
-                    borderRadius: BorderRadius.circular(40.r),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const VerifyEmailIconHeader(),
-                        SizedBox(height: 32.h),
-                        const VerifyEmailStatusText(),
-                        SizedBox(height: 40.h),
-                        ResendEmailButton(
-                          canResendEmail: canResendEmail,
-                          secondsRemaining: _secondsRemaining,
-                          onPressed: _sendVerificationEmail,
-                        ),
-                        SizedBox(height: 16.h),
-                        VerifyConfirmationButton(
-                          onPressed: _checkEmailVerified,
-                        ),
-                        SizedBox(height: 16.h),
-                        VerifyLogoutButton(
-                          onPressed: () {
-                            setState(() {
-                              _isLoggingOut = true;
-                            });
-                            timer?.cancel();
-                            _resendTimer?.cancel();
-                            context.read<AuthBloc>().add(const AuthLogoutRequested());
-                          },
-                        ),
-                      ],
+          body: Stack(
+            children: [
+              const MeshGradientBackground(),
+              SafeArea(
+                child: Center(
+                  child: SingleChildScrollView(
+                    padding: EdgeInsets.all(24.w),
+                    child: GlassTile(
+                      padding: EdgeInsets.all(32.r),
+                      borderRadius: BorderRadius.circular(40.r),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const VerifyEmailIconHeader(),
+                          SizedBox(height: 32.h),
+                          const VerifyEmailStatusText(),
+                          SizedBox(height: 40.h),
+                          ResendEmailButton(
+                            canResendEmail: canResendEmail,
+                            secondsRemaining: _secondsRemaining,
+                            onPressed: _sendVerificationEmail,
+                          ),
+                          SizedBox(height: 16.h),
+                          VerifyConfirmationButton(
+                            onPressed: _checkEmailVerified,
+                          ),
+                          SizedBox(height: 16.h),
+                          VerifyLogoutButton(
+                            onPressed: () {
+                              setState(() {
+                                _isLoggingOut = true;
+                              });
+                              timer?.cancel();
+                              _resendTimer?.cancel();
+                              context.read<AuthBloc>().add(const AuthLogoutRequested());
+                            },
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
           ),
         );
       }),
