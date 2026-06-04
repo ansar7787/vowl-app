@@ -15,7 +15,13 @@ class PremiumHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: () => context.pop(),
+            onPressed: () {
+              if (context.canPop()) {
+                context.pop();
+              } else {
+                context.go('/');
+              }
+            },
             icon: Icon(
               Icons.keyboard_backspace_rounded,
               color: isDark ? const Color(0x61FFFFFF) : const Color(0x61000000),

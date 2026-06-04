@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/payment_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/premium/presentation/widgets/widgets.dart';
 
 class PremiumScreen extends StatefulWidget {
@@ -62,12 +63,16 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   void _handlePaymentSuccess(PaymentSuccessResponse response) async {
+    // Crucial Guard: asynchronous Razorpay callback could execute after widget pop,
+    // which throws State/BuildContext exceptions upon accessing context.read()
+    if (!mounted) return;
+    
     final user = context.read<AuthBloc>().state.user;
     if (user != null) {
       final selectedPlan = _plans[_selectedPlanIndex];
       await _paymentService.upgradeToPremium(user.id, selectedPlan['days'] as int);
       if (mounted) {
-        Haptics.vibrate(HapticsType.success);
+        di.sl<HapticService>().success();
         setState(() {
           _paymentCompleted = true;
           _paymentSuccess = true;
@@ -77,7 +82,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   }
 
   void _handlePaymentFailure(PaymentFailureResponse response) {
-    Haptics.vibrate(HapticsType.error);
+    di.sl<HapticService>().error();
     if (mounted) {
       setState(() {
         _paymentCompleted = true;
@@ -97,70 +102,80 @@ class _PremiumScreenState extends State<PremiumScreen> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final backgroundColor = isDark ? const Color(0xFF020617) : const Color(0xFFF8FAFC);
     
-    return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          color: isDark ? const Color(0xFF020617) : const Color(0xFFF8FAFC),
-        ),
-        child: Stack(
-          children: [
-            Positioned(
-              top: -100,
-              right: -50,
-              child: StaticGlow(color: isDark ? const Color(0x14F59E0B) : const Color(0x08F59E0B)),
-            ),
-            SafeArea(
-              child: Column(
-                children: [
-                  const PremiumHeader(),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20.w),
-                      child: Column(
-                        children: [
-                          const Spacer(),
-                          const PremiumHero(),
-                          const Spacer(),
-                          _buildPlanList(),
-                          const Spacer(),
-                          const ModernFeatureBar(),
-                          const Spacer(flex: 2),
-                          _buildCTAButton(),
-                          SizedBox(height: 20.h),
-                          _buildSecureTag(isDark),
-                          SizedBox(height: 12.h),
-                        ],
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
+        statusBarBrightness: isDark ? Brightness.dark : Brightness.light,
+        systemNavigationBarColor: backgroundColor,
+        systemNavigationBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
+      ),
+      child: Scaffold(
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            color: backgroundColor,
+          ),
+          child: Stack(
+            children: [
+              Positioned(
+                top: -100,
+                right: -50,
+                child: StaticGlow(color: isDark ? const Color(0x14F59E0B) : const Color(0x08F59E0B)),
+              ),
+              SafeArea(
+                child: Column(
+                  children: [
+                    const PremiumHeader(),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        child: Column(
+                          children: [
+                            const Spacer(),
+                            const PremiumHero(),
+                            const Spacer(),
+                            _buildPlanList(),
+                            const Spacer(),
+                            const ModernFeatureBar(),
+                            const Spacer(flex: 2),
+                            _buildCTAButton(),
+                            SizedBox(height: 20.h),
+                            _buildSecureTag(isDark),
+                            SizedBox(height: 12.h),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            if (_paymentCompleted)
-              Positioned.fill(
-                child: Container(
-                  color: Colors.black.withValues(alpha: 0.85),
-                  child: Center(
-                    child: _paymentSuccess == true
-                        ? PremiumSuccessOverlay(
-                            onBeginAdventure: () => context.pop(),
-                          )
-                        : PremiumFailureOverlay(
-                            onRetry: () {
-                              setState(() {
-                                _paymentCompleted = false;
-                                _paymentSuccess = null;
-                              });
-                            },
-                            onClose: () => context.pop(),
-                          ),
-                  ),
+                  ],
                 ),
               ),
-          ],
+              if (_paymentCompleted)
+                Positioned.fill(
+                  child: Container(
+                    color: Colors.black.withValues(alpha: 0.85),
+                    child: Center(
+                      child: _paymentSuccess == true
+                          ? PremiumSuccessOverlay(
+                              onBeginAdventure: () => context.pop(),
+                            )
+                          : PremiumFailureOverlay(
+                              onRetry: () {
+                                setState(() {
+                                  _paymentCompleted = false;
+                                  _paymentSuccess = null;
+                                });
+                              },
+                              onClose: () => context.pop(),
+                            ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );
@@ -173,7 +188,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
           plan: _plans[index],
           isSelected: _selectedPlanIndex == index,
           onTap: () {
-            Haptics.vibrate(HapticsType.selection);
+            di.sl<HapticService>().selection();
             setState(() => _selectedPlanIndex = index);
           },
         );
@@ -184,7 +199,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   Widget _buildCTAButton() {
     return ScaleButton(
       onTap: () {
-        Haptics.vibrate(HapticsType.heavy);
+        di.sl<HapticService>().heavy();
         final user = context.read<AuthBloc>().state.user;
         if (user != null) {
           final plan = _plans[_selectedPlanIndex];
