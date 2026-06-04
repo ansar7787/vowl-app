@@ -31,8 +31,8 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
       final Map<String, dynamic> data = json.decode(jsonString);
       
       final now = DateTime.now();
-      final String dateKey = DateFormat('MM-DD').format(now);
-      final String specificKey = DateFormat('yyyy-MM-DD').format(now);
+      final String dateKey = DateFormat('MM-dd').format(now);
+      final String specificKey = DateFormat('yyyy-MM-dd').format(now);
 
       String title = "OWLY'S WISDOM";
       String text = "";

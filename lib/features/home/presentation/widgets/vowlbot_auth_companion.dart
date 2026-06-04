@@ -58,6 +58,18 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
   @override
   void didUpdateWidget(VowlBotAuthCompanion oldWidget) {
     super.didUpdateWidget(oldWidget);
+    if (oldWidget.nameFocus != widget.nameFocus) {
+      oldWidget.nameFocus?.removeListener(_onFocusChange);
+      widget.nameFocus?.addListener(_onFocusChange);
+    }
+    if (oldWidget.emailFocus != widget.emailFocus) {
+      oldWidget.emailFocus?.removeListener(_onFocusChange);
+      widget.emailFocus?.addListener(_onFocusChange);
+    }
+    if (oldWidget.passwordFocus != widget.passwordFocus) {
+      oldWidget.passwordFocus?.removeListener(_onFocusChange);
+      widget.passwordFocus?.addListener(_onFocusChange);
+    }
     if (oldWidget.nameValue != widget.nameValue) {
       setState(() {});
     }

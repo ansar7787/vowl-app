@@ -79,11 +79,14 @@ class StreakCalendar extends StatelessWidget {
         final bool isPlayed = xp > 0 || (isToday && isSameLoginDay && user.currentStreak > 0);
         final isFuture = day.isAfter(now);
 
+        final dayName = DateFormat('E').format(day);
+        final firstLetter = dayName.isNotEmpty ? dayName[0] : '';
+
         return Expanded(
           child: Column(
             children: [
               Text(
-                DateFormat('E').format(day)[0],
+                firstLetter,
                 style: GoogleFonts.outfit(
                   fontSize: 11.sp,
                   color: isToday
