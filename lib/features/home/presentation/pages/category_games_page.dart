@@ -26,13 +26,28 @@ class CategoryGamesPage extends StatefulWidget {
 }
 
 class _CategoryGamesPageState extends State<CategoryGamesPage> {
+  late List<GameSubtype> _games;
+
   @override
   void initState() {
     super.initState();
+    _games = _getGamesForCategory(widget.categoryId);
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final games = _getGamesForCategory(widget.categoryId);
-      CurriculumService.prewarmCache(games.map((g) => g.name).toList());
+      CurriculumService.prewarmCache(_games.map((g) => g.name).toList());
     });
+  }
+
+  @override
+  void didUpdateWidget(CategoryGamesPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.categoryId != widget.categoryId) {
+      setState(() {
+        _games = _getGamesForCategory(widget.categoryId);
+      });
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        CurriculumService.prewarmCache(_games.map((g) => g.name).toList());
+      });
+    }
   }
 
   @override
@@ -57,7 +72,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
       );
     }
 
-    final games = _getGamesForCategory(widget.categoryId);
+    final games = _games;
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
 
     return Scaffold(
@@ -71,8 +86,10 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
-              // Spacer for the floating App Bar
-              SliverToBoxAdapter(child: SizedBox(height: 130.h)),
+              // Responsive spacer matching the dynamic floating App Bar
+              SliverToBoxAdapter(
+                child: SizedBox(height: MediaQuery.of(context).padding.top + 90.h),
+              ),
 
               // 3. Mastery Dashboard Header
               SliverToBoxAdapter(
@@ -105,20 +122,26 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             top: 0,
             left: 0,
             right: 0,
-            child: _buildFloatingGlassAppBar(context, theme, isDark, contentColor),
+            child: RepaintBoundary(
+              child: _buildFloatingGlassAppBar(context, theme, isDark, contentColor),
+            ),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildFloatingGlassAppBar(BuildContext context, dynamic theme, bool isDark, Color contentColor) {
+  Widget _buildFloatingGlassAppBar(BuildContext context, ThemeResult theme, bool isDark, Color contentColor) {
     return ClipRRect(
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
         child: Container(
-          height: 110.h,
-          padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, left: 20.w, right: 20.w),
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).padding.top + 12.h,
+            bottom: 16.h,
+            left: 20.w,
+            right: 20.w,
+          ),
           decoration: BoxDecoration(
             color: (isDark ? Colors.black : Colors.white).withValues(alpha: 0.1),
             border: Border(
@@ -131,7 +154,13 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ScaleButton(
-                onTap: () => context.pop(),
+                onTap: () {
+                  if (context.canPop()) {
+                    context.pop();
+                  } else {
+                    context.go(AppRouter.homeRoute);
+                  }
+                },
                 child: Container(
                   padding: EdgeInsets.all(10.r),
                   decoration: BoxDecoration(
@@ -183,13 +212,14 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     );
   }
 
-  Widget _buildMasteryDashboard(dynamic theme, UserEntity user, List<GameSubtype> games, bool isDark) {
+  Widget _buildMasteryDashboard(ThemeResult theme, UserEntity user, List<GameSubtype> games, bool isDark) {
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
     
     // Calculate Progress (200 levels per game)
     int clearedLevels = 0;
     for (var g in games) {
-      clearedLevels += (user.unlockedLevels[g.name] ?? 1) - 1;
+      final level = user.unlockedLevels[g.name] ?? 1;
+      clearedLevels += (level - 1).clamp(0, 200);
     }
     final totalLevels = games.length * 200;
     final progress = totalLevels > 0 ? (clearedLevels / totalLevels) : 0.0;
@@ -243,7 +273,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                     ],
                   ),
                 ),
-                SizedBox(width: 12.w), // Space buffer to prevent touching
+                SizedBox(width: 12.w),
                 Flexible(
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
@@ -267,7 +297,6 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
               ],
             ),
             SizedBox(height: 20.h),
-            // Massive Liquid Progress
             _buildLiquidProgressBar(theme.primaryColor, clearedLevels + 1, total: totalLevels),
             SizedBox(height: 20.h),
             Row(
@@ -336,97 +365,95 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
     final displayColor = isDark ? theme.primaryColor : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
     final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
 
-    return ScaleButton(
-      onTap: () => context.push('${AppRouter.levelsRoute}?category=${widget.categoryId}&gameType=${subtype.name}'),
-      child: Stack(
-        clipBehavior: Clip.none,
-        children: [
-          // Main Card Body
-          GlassTile(
-            borderRadius: BorderRadius.circular(32.r),
-            padding: EdgeInsets.all(24.r),
-            glassOpacity: 0.15, // Match shelf opacity
-            showShadow: false, // Remove unwanted glow
-            usePremiumStyle: true,
-            child: Row(
-              children: [
-                // Spatial Icon Placeholder (The real icon floats above)
-                SizedBox(width: 60.r),
-                SizedBox(width: 20.w),
-                // Game Details
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        theme.title.toUpperCase(),
-                        style: GoogleFonts.outfit(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w900,
-                          color: contentColor,
-                          letterSpacing: 1,
+    return RepaintBoundary(
+      child: ScaleButton(
+        onTap: () => context.push('${AppRouter.levelsRoute}?category=${widget.categoryId}&gameType=${subtype.name}'),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            // Main Card Body
+            GlassTile(
+              borderRadius: BorderRadius.circular(32.r),
+              padding: EdgeInsets.all(24.r),
+              glassOpacity: 0.15,
+              showShadow: false,
+              usePremiumStyle: true,
+              child: Row(
+                children: [
+                  SizedBox(width: 60.r),
+                  SizedBox(width: 20.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          theme.title.toUpperCase(),
+                          style: GoogleFonts.outfit(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w900,
+                            color: contentColor,
+                            letterSpacing: 1,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 8.h),
-                      // Liquid Progress Bar
-                      _buildLiquidProgressBar(displayColor, currentLevel),
-                      SizedBox(height: 8.h),
-                      Text(
-                        "MISSION PROGRESS: ${((currentLevel - 1) / 200 * 100).toInt()}%",
-                        style: GoogleFonts.outfit(
-                          fontSize: 9.sp,
-                          fontWeight: FontWeight.w800,
-                          color: displayColor.withValues(alpha: 0.6),
-                          letterSpacing: 0.5,
+                        SizedBox(height: 8.h),
+                        _buildLiquidProgressBar(displayColor, currentLevel),
+                        SizedBox(height: 8.h),
+                        Text(
+                          "MISSION PROGRESS: ${(((currentLevel - 1).clamp(0, 200)) / 200 * 100).toInt()}%",
+                          style: GoogleFonts.outfit(
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w800,
+                            color: displayColor.withValues(alpha: 0.6),
+                            letterSpacing: 0.5,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(width: 12.w),
-                // Completion Badge
-                _buildSpatialBadge(displayColor, currentLevel, isNew),
-              ],
-            ),
-          ),
-          
-          // Floating Spatial Icon
-          Positioned(
-            left: 20.w,
-            top: -15.h,
-            child: Container(
-              width: 64.r,
-              height: 64.r,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [displayColor, displayColor.withValues(alpha: 0.7)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(20.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: displayColor.withValues(alpha: 0.4),
-                    blurRadius: 20,
-                    offset: const Offset(0, 8),
-                  ),
+                  SizedBox(width: 12.w),
+                  _buildSpatialBadge(displayColor, currentLevel, isNew),
                 ],
               ),
-              child: Icon(
-                GameHelper.getIconForSubtype(subtype),
-                color: Colors.white,
-                size: 32.r,
-              ),
-            ).animate(onPlay: (c) => c.repeat(reverse: true))
-             .moveY(begin: 0, end: -5, duration: 2.seconds, curve: Curves.easeInOutQuad),
-          ),
-        ],
+            ),
+            
+            // Floating Spatial Icon
+            Positioned(
+              left: 20.w,
+              top: -15.h,
+              child: Container(
+                width: 64.r,
+                height: 64.r,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [displayColor, displayColor.withValues(alpha: 0.7)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: displayColor.withValues(alpha: 0.4),
+                      blurRadius: 20,
+                      offset: const Offset(0, 8),
+                    ),
+                  ],
+                ),
+                child: Icon(
+                  GameHelper.getIconForSubtype(subtype),
+                  color: Colors.white,
+                  size: 32.r,
+                ),
+              ).animate(onPlay: (c) => c.repeat(reverse: true))
+               .moveY(begin: 0, end: -5, duration: 2.seconds, curve: Curves.easeInOutQuad),
+            ),
+          ],
+        ),
       ),
     ).animate().fadeIn(duration: 200.ms);
   }
 
   Widget _buildLiquidProgressBar(Color color, int currentLevel, {int total = 200}) {
-    final progress = ((currentLevel - 1) % total) / total.toDouble();
+    final progress = ((currentLevel - 1).clamp(0, total)) / total.toDouble();
     return Container(
       height: 8.h,
       width: double.infinity,
