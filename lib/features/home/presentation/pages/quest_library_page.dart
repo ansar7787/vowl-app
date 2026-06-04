@@ -1,13 +1,733 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
+import 'package:vowl/core/utils/game_helper.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
-class QuestLibraryPage extends StatelessWidget {
+class QuestLibraryPage extends StatefulWidget {
   const QuestLibraryPage({super.key});
 
   @override
+  State<QuestLibraryPage> createState() => _QuestLibraryPageState();
+}
+
+class _QuestLibraryPageState extends State<QuestLibraryPage> {
+  final TextEditingController _searchController = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
+  
+  String _searchQuery = '';
+  String _selectedCategory = 'ALL';
+
+  // Cache list of categories and clean subtypes to avoid rebuilding lists on every frame
+  late final List<String> _categories;
+  late final List<GameSubtype> _allSubtypes;
+
+  @override
+  void initState() {
+    super.initState();
+    _categories = [
+      'ALL',
+      'VOCABULARY',
+      'GRAMMAR',
+      'SPEAKING',
+      'LISTENING',
+      'READING',
+      'WRITING',
+      'ACCENT',
+      'ROLEPLAY',
+      'ELITE'
+    ];
+    _allSubtypes = GameSubtype.values.where((s) => !s.isLegacy).toList();
+    _searchController.addListener(_onSearchChanged);
+  }
+
+  void _onSearchChanged() {
+    setState(() {
+      _searchQuery = _searchController.text.trim().toLowerCase();
+    });
+  }
+
+  @override
+  void dispose() {
+    _searchController.removeListener(_onSearchChanged);
+    _searchController.dispose();
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  List<GameSubtype> _getFilteredSubtypes() {
+    return _allSubtypes.where((subtype) {
+      // 1. Filter by category
+      if (_selectedCategory != 'ALL') {
+        final catName = subtype.category.name.toLowerCase();
+        final selectedLower = _selectedCategory.toLowerCase();
+        if (selectedLower == 'elite') {
+          if (catName != 'elitemastery') return false;
+        } else {
+          if (catName != selectedLower) return false;
+        }
+      }
+      
+      // 2. Filter by search query
+      if (_searchQuery.isNotEmpty) {
+        final theme = LevelThemeHelper.getTheme(subtype.name);
+        final title = theme.title.toLowerCase();
+        final name = subtype.name.toLowerCase();
+        if (!title.contains(_searchQuery) && !name.contains(_searchQuery)) {
+          return false;
+        }
+      }
+      return true;
+    }).toList();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
+    
+    final bgColor = isMidnight 
+        ? const Color(0xFF020617) 
+        : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+
+    final authState = context.watch<AuthBloc>().state;
+    final user = authState.user;
+
+    if (user == null) {
+      return Scaffold(
+        backgroundColor: bgColor,
+        body: Center(
+          child: CircularProgressIndicator(
+            color: isDark ? Colors.white38 : const Color(0xFF3B82F6),
+          ),
+        ),
+      );
+    }
+
+    final filteredList = _getFilteredSubtypes();
+
     return Scaffold(
-      appBar: AppBar(title: Text('QuestLibraryPage')),
-      body: const Center(child: Text('QuestLibraryPage Content')),
+      backgroundColor: bgColor,
+      body: Stack(
+        children: [
+          // 1. Immersive Mesh Gradient Background
+          const MeshGradientBackground(showLetters: false),
+
+          // 2. Dynamic Scroll Content
+          CustomScrollView(
+            controller: _scrollController,
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              // Safe area spacing for floating app bar
+              SliverToBoxAdapter(
+                child: SizedBox(height: MediaQuery.of(context).padding.top + 95.h),
+              ),
+
+              // 3. Stats Dashboard Panel
+              SliverToBoxAdapter(
+                child: _buildLibraryStatsDashboard(user, isDark),
+              ),
+
+              // 4. Horizontal Categories Track & Search Capsule (Sticky-like placement)
+              SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.only(top: 24.h),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      _buildSearchField(isDark, contentColor),
+                      SizedBox(height: 16.h),
+                      _buildCategoriesTrack(isDark),
+                    ],
+                  ),
+                ),
+              ),
+
+              // 5. Dynamic Quest Cards Grid/List
+              filteredList.isEmpty
+                  ? SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Center(
+                        child: Text(
+                          "No matching quests found",
+                          style: GoogleFonts.outfit(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                            color: contentColor.withValues(alpha: 0.5),
+                          ),
+                        ),
+                      ),
+                    )
+                  : SliverPadding(
+                      padding: EdgeInsets.fromLTRB(24.w, 24.h, 24.w, 100.h),
+                      sliver: SliverList(
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) {
+                            return Padding(
+                              padding: EdgeInsets.only(bottom: 16.h),
+                              child: _buildLibraryQuestCard(
+                                context,
+                                user,
+                                filteredList[index],
+                                isDark,
+                              ),
+                            );
+                          },
+                          childCount: filteredList.length,
+                        ),
+                      ),
+                    ),
+            ],
+          ),
+
+          // 6. Floating Glass Island AppBar
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: RepaintBoundary(
+              child: _buildFloatingGlassAppBar(context, isDark, contentColor),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildFloatingGlassAppBar(BuildContext context, bool isDark, Color contentColor) {
+    return ClipRRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+        child: Container(
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).padding.top + 12.h,
+            bottom: 16.h,
+            left: 20.w,
+            right: 20.w,
+          ),
+          decoration: BoxDecoration(
+            color: (isDark ? Colors.black : Colors.white).withValues(alpha: 0.1),
+            border: Border(
+              bottom: BorderSide(
+                color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.05),
+              ),
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ScaleButton(
+                onTap: () {
+                  if (context.canPop()) {
+                    context.pop();
+                  } else {
+                    context.go(AppRouter.homeRoute);
+                  }
+                },
+                child: Container(
+                  padding: EdgeInsets.all(10.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    shape: BoxShape.circle,
+                    border: Border.all(color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.1)),
+                  ),
+                  child: Icon(Icons.arrow_back_ios_new_rounded, color: contentColor, size: 20.r),
+                ),
+              ),
+              // Centered Title Pill
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF3B82F6).withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(24.r),
+                  border: Border.all(color: const Color(0xFF3B82F6).withValues(alpha: 0.2)),
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.auto_stories_rounded, color: const Color(0xFF3B82F6), size: 16.r),
+                    SizedBox(width: 8.w),
+                    Text(
+                      "QUEST ARCHIVE",
+                      style: GoogleFonts.outfit(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w900,
+                        color: contentColor,
+                        letterSpacing: 1.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Stats Indicator
+              Container(
+                padding: EdgeInsets.all(10.r),
+                decoration: BoxDecoration(
+                  color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                  shape: BoxShape.circle,
+                  border: Border.all(color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.1)),
+                ),
+                child: Icon(Icons.travel_explore_rounded, color: const Color(0xFF3B82F6), size: 20.r),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildLibraryStatsDashboard(UserEntity user, bool isDark) {
+    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+    
+    // Calculate global stats across all active games (200 levels each)
+    int clearedLevels = 0;
+    for (final subtype in _allSubtypes) {
+      final level = user.unlockedLevels[subtype.name] ?? 1;
+      clearedLevels += (level - 1).clamp(0, 200);
+    }
+    final totalLevels = _allSubtypes.length * 200;
+    final progress = totalLevels > 0 ? (clearedLevels / totalLevels) : 0.0;
+
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Container(
+        padding: EdgeInsets.all(24.r),
+        decoration: BoxDecoration(
+          color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.white.withValues(alpha: 0.6),
+          borderRadius: BorderRadius.circular(32.r),
+          border: Border.all(color: const Color(0xFF3B82F6).withValues(alpha: 0.2)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.05),
+              blurRadius: 20,
+              offset: const Offset(0, 10),
+            ),
+          ],
+        ),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "GLOBAL ARCHIVE PROGRESS",
+                        style: GoogleFonts.outfit(
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w800,
+                          color: const Color(0xFF3B82F6),
+                          letterSpacing: 2,
+                        ),
+                      ),
+                      SizedBox(height: 4.h),
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "${(progress * 100).toStringAsFixed(progress < 0.01 && progress > 0 ? 2 : 1)}% MASTERY",
+                          style: GoogleFonts.outfit(
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.w900,
+                            color: contentColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 12.w),
+                Flexible(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF3B82F6).withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                    ),
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        "$clearedLevels/$totalLevels LVLS",
+                        style: GoogleFonts.outfit(
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w900,
+                          color: const Color(0xFF3B82F6),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20.h),
+            _buildProgressBar(const Color(0xFF3B82F6), clearedLevels + 1, total: totalLevels),
+            SizedBox(height: 20.h),
+            Row(
+              children: [
+                Expanded(child: _buildStatMini(Icons.military_tech_rounded, "XP POWER", "${clearedLevels * 10} XP", const Color(0xFF3B82F6), isDark)),
+                Expanded(child: Center(child: _buildStatMini(Icons.auto_stories_rounded, "QUESTS", "${_allSubtypes.length}", const Color(0xFF3B82F6), isDark))),
+                Expanded(child: Align(alignment: Alignment.centerRight, child: _buildStatMini(Icons.stars_rounded, "STATUS", _getGlobalStatus(progress), const Color(0xFF3B82F6), isDark))),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  String _getGlobalStatus(double progress) {
+    if (progress <= 0.0) return "INITIATE";
+    if (progress < 0.15) return "EXPLORER";
+    if (progress < 0.35) return "ADVENTURER";
+    if (progress < 0.55) return "CHAMPION";
+    if (progress < 0.80) return "CONQUEROR";
+    if (progress < 0.99) return "GRANDMASTER";
+    return "LEGENDARY";
+  }
+
+  Widget _buildStatMini(IconData icon, String label, String value, Color color, bool isDark) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, color: color, size: 12.r),
+            SizedBox(width: 4.w),
+            Text(
+              label,
+              style: GoogleFonts.outfit(
+                fontSize: 8.sp,
+                fontWeight: FontWeight.w800,
+                color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.4),
+                letterSpacing: 1,
+              ),
+            ),
+          ],
+        ),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            value,
+            style: GoogleFonts.outfit(
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w900,
+              color: isDark ? Colors.white : const Color(0xFF0F172A),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSearchField(bool isDark, Color contentColor) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Container(
+        height: 52.h,
+        decoration: BoxDecoration(
+          color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+          borderRadius: BorderRadius.circular(20.r),
+          border: Border.all(
+            color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.1),
+          ),
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        child: Row(
+          children: [
+            Icon(
+              Icons.search_rounded,
+              color: contentColor.withValues(alpha: 0.5),
+              size: 22.r,
+            ),
+            SizedBox(width: 12.w),
+            Expanded(
+              child: TextField(
+                controller: _searchController,
+                style: GoogleFonts.outfit(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w600,
+                  color: contentColor,
+                ),
+                decoration: InputDecoration(
+                  hintText: "Search quest names...",
+                  hintStyle: GoogleFonts.outfit(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                    color: contentColor.withValues(alpha: 0.4),
+                  ),
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.zero,
+                ),
+              ),
+            ),
+            if (_searchQuery.isNotEmpty)
+              ScaleButton(
+                onTap: () {
+                  _searchController.clear();
+                },
+                child: Icon(
+                  Icons.close_rounded,
+                  color: contentColor.withValues(alpha: 0.6),
+                  size: 20.r,
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCategoriesTrack(bool isDark) {
+    return SizedBox(
+      height: 40.h,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
+        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        itemCount: _categories.length,
+        itemBuilder: (context, index) {
+          final cat = _categories[index];
+          final isSelected = _selectedCategory == cat;
+          
+          Color activeColor = const Color(0xFF3B82F6);
+          if (cat == 'ELITE') activeColor = const Color(0xFFFFD700);
+
+          return Padding(
+            padding: EdgeInsets.only(right: 12.w),
+            child: ScaleButton(
+              onTap: () {
+                setState(() {
+                  _selectedCategory = cat;
+                });
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeOutCubic,
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                decoration: BoxDecoration(
+                  color: isSelected
+                      ? activeColor.withValues(alpha: 0.15)
+                      : (isDark ? Colors.white.withValues(alpha: 0.04) : Colors.black.withValues(alpha: 0.02)),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: isSelected
+                        ? activeColor.withValues(alpha: 0.3)
+                        : (isDark ? Colors.white : Colors.black).withValues(alpha: 0.08),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    cat,
+                    style: GoogleFonts.outfit(
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w900,
+                      color: isSelected ? activeColor : (isDark ? Colors.white60 : Colors.black54),
+                      letterSpacing: 1,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildLibraryQuestCard(
+    BuildContext context,
+    UserEntity user,
+    GameSubtype subtype,
+    bool isDark,
+  ) {
+    final theme = LevelThemeHelper.getTheme(subtype.name, isDark: isDark);
+    final currentLevel = user.unlockedLevels[subtype.name] ?? 1;
+    final isNew = !user.categoryStats.containsKey(subtype.name) && currentLevel == 1;
+    final displayColor = isDark ? theme.primaryColor : HSLColor.fromColor(theme.primaryColor).withLightness(0.4).toColor();
+    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
+
+    return RepaintBoundary(
+      child: ScaleButton(
+        onTap: () => context.push(
+          '${AppRouter.levelsRoute}?category=${subtype.category.name}&gameType=${subtype.name}',
+        ),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            // Card Body
+            GlassTile(
+              borderRadius: BorderRadius.circular(32.r),
+              padding: EdgeInsets.all(24.r),
+              glassOpacity: 0.15,
+              showShadow: false,
+              usePremiumStyle: true,
+              child: Row(
+                children: [
+                  SizedBox(width: 60.r),
+                  SizedBox(width: 20.w),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                              decoration: BoxDecoration(
+                                color: displayColor.withValues(alpha: 0.12),
+                                borderRadius: BorderRadius.circular(8.r),
+                              ),
+                              child: Text(
+                                subtype.category.name.toUpperCase(),
+                                style: GoogleFonts.outfit(
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: displayColor,
+                                  letterSpacing: 0.5,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 6.h),
+                        Text(
+                          theme.title.toUpperCase(),
+                          style: GoogleFonts.outfit(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w900,
+                            color: contentColor,
+                            letterSpacing: 1,
+                          ),
+                        ),
+                        SizedBox(height: 8.h),
+                        _buildProgressBar(displayColor, currentLevel),
+                        SizedBox(height: 8.h),
+                        Text(
+                          "COMPLETED: ${(((currentLevel - 1).clamp(0, 200)) / 200 * 100).toInt()}%",
+                          style: GoogleFonts.outfit(
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w800,
+                            color: displayColor.withValues(alpha: 0.6),
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 12.w),
+                  _buildBadge(displayColor, currentLevel, isNew),
+                ],
+              ),
+            ),
+            
+            // Floating Spatial Icon
+            Positioned(
+              left: 20.w,
+              top: -15.h,
+              child: Container(
+                width: 64.r,
+                height: 64.r,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [displayColor, displayColor.withValues(alpha: 0.7)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(20.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: displayColor.withValues(alpha: 0.4),
+                      blurRadius: 20,
+                      offset: const Offset(0, 8),
+                    ),
+                  ],
+                ),
+                child: Icon(
+                  GameHelper.getIconForSubtype(subtype),
+                  color: Colors.white,
+                  size: 32.r,
+                ),
+              ).animate(onPlay: (c) => c.repeat(reverse: true))
+               .moveY(begin: 0, end: -5, duration: 2.seconds, curve: Curves.easeInOutQuad),
+            ),
+          ],
+        ),
+      ),
+    ).animate().fadeIn(duration: 200.ms);
+  }
+
+  Widget _buildProgressBar(Color color, int currentLevel, {int total = 200}) {
+    final progress = ((currentLevel - 1).clamp(0, total)) / total.toDouble();
+    return Container(
+      height: 8.h,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(10.r),
+      ),
+      child: FractionallySizedBox(
+        alignment: Alignment.centerLeft,
+        widthFactor: progress.clamp(0.05, 1.0),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [color, color.withValues(alpha: 0.6)],
+            ),
+            borderRadius: BorderRadius.circular(10.r),
+            boxShadow: [
+              BoxShadow(
+                color: color.withValues(alpha: 0.3),
+                blurRadius: 4,
+              ),
+            ],
+          ),
+        ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds),
+      ),
+    );
+  }
+
+  Widget _buildBadge(Color color, int currentLevel, bool isNew) {
+    if (isNew) {
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(12.r),
+          boxShadow: [BoxShadow(color: color.withValues(alpha: 0.4), blurRadius: 10)],
+        ),
+        child: Text(
+          "NEW",
+          style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white),
+        ),
+      ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 1.5.seconds);
+    }
+
+    return Container(
+      padding: EdgeInsets.all(10.r),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        shape: BoxShape.circle,
+        border: Border.all(color: color.withValues(alpha: 0.2)),
+      ),
+      child: Text(
+        "$currentLevel",
+        style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: color),
+      ),
     );
   }
 }
