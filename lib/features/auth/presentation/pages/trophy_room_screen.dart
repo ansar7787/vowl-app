@@ -27,10 +27,22 @@ class TrophyRoomScreen extends StatelessWidget {
           // Dynamic mesh background with gold/purple theme for achievements
           MeshGradientBackground(
             colors: isMidnight
-                ? [const Color(0xFF020617), const Color(0xFF4C1D95).withValues(alpha: 0.3), const Color(0xFFB45309).withValues(alpha: 0.2)]
+                ? [
+                    const Color(0xFF020617),
+                    const Color(0xFF4C1D95).withValues(alpha: 0.3),
+                    const Color(0xFFB45309).withValues(alpha: 0.2),
+                  ]
                 : (isDark
-                    ? [const Color(0xFF0F172A), const Color(0xFF5B21B6), const Color(0xFF92400E)]
-                    : [const Color(0xFFF8FAFC), const Color(0xFFEDE9FE), const Color(0xFFFEF3C7)]),
+                    ? [
+                        const Color(0xFF0F172A),
+                        const Color(0xFF5B21B6),
+                        const Color(0xFF92400E),
+                      ]
+                    : [
+                        const Color(0xFFF8FAFC),
+                        const Color(0xFFEDE9FE),
+                        const Color(0xFFFEF3C7),
+                      ]),
           ),
           
           SafeArea(
@@ -45,15 +57,11 @@ class TrophyRoomScreen extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                   surfaceTintColor: Colors.transparent,
                   elevation: 0,
-                  expandedHeight: 80.h,
-                  collapsedHeight: 64.h,
-                  toolbarHeight: 64.h,
-                  flexibleSpace: FlexibleSpaceBar(
-                    titlePadding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 8.h,
-                    ),
-                    title: BlocBuilder<AuthBloc, AuthState>(
+                  titleSpacing: 0,
+                  toolbarHeight: 80.h,
+                  title: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.w),
+                    child: BlocBuilder<AuthBloc, AuthState>(
                       builder: (context, state) {
                         return GlassTile(
                           padding: EdgeInsets.symmetric(
@@ -70,7 +78,11 @@ class TrophyRoomScreen extends StatelessWidget {
                                 child: IconButton(
                                   padding: EdgeInsets.zero,
                                   iconSize: 18.r,
-                                  onPressed: () => context.pop(),
+                                  onPressed: () {
+                                    if (context.canPop()) {
+                                      context.pop();
+                                    }
+                                  },
                                   icon: const Icon(
                                     Icons.arrow_back_ios_new_rounded,
                                   ),
@@ -128,9 +140,11 @@ class TrophyRoomScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 24.w),
+                
+                // Mascot Stage Section
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  sliver: SliverToBoxAdapter(
                     child: Column(
                       children: [
                         SizedBox(height: 16.h),
@@ -138,7 +152,51 @@ class TrophyRoomScreen extends StatelessWidget {
                         SizedBox(height: 48.h),
                         _buildSectionTitle("LEGENDARY BADGES", isDark, isMidnight),
                         SizedBox(height: 20.h),
-                        _buildBadgeSection(context, isDark, isMidnight),
+                      ],
+                    ),
+                  ),
+                ),
+                
+                // Badges Grid / Empty Section
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  sliver: BlocBuilder<AuthBloc, AuthState>(
+                    builder: (context, state) {
+                      final badges = state.user?.badges ?? [];
+                      if (badges.isEmpty) {
+                        return SliverToBoxAdapter(
+                          child: _buildEmptySection(
+                            "No badges yet. Start your journey to earn legendary rewards!",
+                            isDark,
+                            isMidnight,
+                          ),
+                        );
+                      }
+                      
+                      return SliverGrid(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          mainAxisSpacing: 16.r,
+                          crossAxisSpacing: 16.r,
+                          childAspectRatio: 0.75,
+                        ),
+                        delegate: SliverChildBuilderDelegate(
+                          (context, index) {
+                            return _buildBadgeCard(badges[index], isDark, isMidnight, index);
+                          },
+                          childCount: badges.length,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                
+                // Collectibles Section
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  sliver: SliverToBoxAdapter(
+                    child: Column(
+                      children: [
                         SizedBox(height: 48.h),
                         _buildSectionTitle("COLLECTIBLES VAULT", isDark, isMidnight),
                         SizedBox(height: 20.h),
@@ -192,6 +250,8 @@ class TrophyRoomScreen extends StatelessWidget {
       builder: (context, state) {
         final user = state.user;
         final level = user?.level ?? 1;
+        final mascotId = user?.vowlMascot;
+        final accessoryId = user?.vowlEquippedAccessory;
 
         return GlassTile(
           borderRadius: BorderRadius.circular(40.r),
@@ -260,6 +320,9 @@ class TrophyRoomScreen extends StatelessWidget {
                           size: 90.r,
                           state: VowlMascotState.happy,
                           useFloatingAnimation: true,
+                          level: level,
+                          mascotId: mascotId,
+                          accessoryId: accessoryId,
                         ),
                       ],
                     ).animate(onPlay: (c) => c.repeat(reverse: true))
@@ -312,32 +375,6 @@ class TrophyRoomScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildBadgeSection(BuildContext context, bool isDark, bool isMidnight) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, state) {
-        final badges = state.user?.badges ?? [];
-        if (badges.isEmpty) {
-          return _buildEmptySection("No badges yet. Start your journey to earn legendary rewards!", isDark, isMidnight);
-        }
-        
-        return GridView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            mainAxisSpacing: 16.r,
-            crossAxisSpacing: 16.r,
-            childAspectRatio: 0.75,
-          ),
-          itemCount: badges.length,
-          itemBuilder: (context, index) {
-            return _buildBadgeCard(badges[index], isDark, isMidnight, index);
-          },
-        );
-      },
-    );
-  }
-
   Widget _buildBadgeCard(String badgeId, bool isDark, bool isMidnight, int index) {
     // Generate a pseudo-random color based on the badge ID
     final colors = [
@@ -348,7 +385,7 @@ class TrophyRoomScreen extends StatelessWidget {
       [const Color(0xFFF59E0B), const Color(0xFFD97706)], // Amber
     ];
     
-    final colorPair = colors[badgeId.hashCode % colors.length];
+    final colorPair = colors[badgeId.hashCode.abs() % colors.length];
 
     return GlassTile(
       borderRadius: BorderRadius.circular(24.r),
