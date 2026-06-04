@@ -13,6 +13,7 @@ import 'package:vowl/features/premium/presentation/pages/premium_screen.dart';
 import 'package:vowl/features/home/presentation/pages/streak_screen.dart';
 import 'package:vowl/features/settings/presentation/pages/admin_dashboard.dart';
 import 'package:vowl/features/home/presentation/pages/quest_library_page.dart';
+import 'package:vowl/features/profile/presentation/pages/trophy_room_screen.dart';
 
 class HomeRoutes {
   static const String splashRoute = '/splash';
@@ -27,6 +28,7 @@ class HomeRoutes {
   static const String streakRoute = '/streak';
   static const String hatchingRoute = '/hatching';
   static const String vowlMascotRoute = '/vowl-mascot';
+  static const String trophyRoomRoute = '/trophy-room';
 
   static final List<RouteBase> routes = [
     GoRoute(
@@ -108,6 +110,11 @@ class HomeRoutes {
       path: adminRoute,
       pageBuilder: (context, state) =>
           fadeTransitionPage(child: const AdminDashboard(), state: state),
+    ),
+    GoRoute(
+      path: trophyRoomRoute,
+      pageBuilder: (context, state) =>
+          fadeTransitionPage(child: const TrophyRoomScreen(), state: state),
     ),
   ];
 }
