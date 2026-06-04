@@ -102,18 +102,18 @@ class ProgressionState extends Equatable {
   List<Object?> get props => [message, isLoading, streakUpdatedToday, lastPurchaseType, lastPurchaseSuccess];
 
   ProgressionState copyWith({
-    String? message, 
+    String? Function()? message, 
     bool? isLoading,
     bool? streakUpdatedToday,
-    String? lastPurchaseType,
-    bool? lastPurchaseSuccess,
+    String? Function()? lastPurchaseType,
+    bool? Function()? lastPurchaseSuccess,
   }) {
     return ProgressionState(
-      message: message,
+      message: message != null ? message() : this.message,
       isLoading: isLoading ?? this.isLoading,
       streakUpdatedToday: streakUpdatedToday ?? this.streakUpdatedToday,
-      lastPurchaseType: lastPurchaseType,
-      lastPurchaseSuccess: lastPurchaseSuccess,
+      lastPurchaseType: lastPurchaseType != null ? lastPurchaseType() : this.lastPurchaseType,
+      lastPurchaseSuccess: lastPurchaseSuccess != null ? lastPurchaseSuccess() : this.lastPurchaseSuccess,
     );
   }
 }
@@ -147,7 +147,11 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     on<ProgressionCheckDailyStreakRequested>(_onCheckDailyStreak);
     on<ProgressionAddXpRequested>(_onAddXp);
     on<ProgressionPurchasePermanentXPBoostRequested>(_onPurchasePermanentXPBoost);
-    on<ProgressionClearMessageRequested>((event, emit) => emit(state.copyWith(message: null, lastPurchaseType: null, lastPurchaseSuccess: null)));
+    on<ProgressionClearMessageRequested>((event, emit) => emit(state.copyWith(
+      message: () => null, 
+      lastPurchaseType: () => null, 
+      lastPurchaseSuccess: () => null,
+    )));
     on<ProgressionResetRequested>(_onReset);
   }
 
@@ -209,7 +213,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
           notificationService.scheduleStreakReminder(updatedUser.currentStreak);
           emit(state.copyWith(
             streakUpdatedToday: true,
-            message: hasAutoShield ? 'Elite Shield Protected Your Streak!' : 'Streak Shield Activated!',
+            message: () => hasAutoShield ? 'Elite Shield Protected Your Streak!' : 'Streak Shield Activated!',
           ));
         } else {
           // Reset streak
@@ -221,7 +225,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
           notificationService.scheduleStreakReminder(1);
           emit(state.copyWith(
             streakUpdatedToday: true,
-            message: 'Streak Lost! Starting Fresh at 1.',
+            message: () => 'Streak Lost! Starting Fresh at 1.',
           ));
         }
       }
@@ -237,8 +241,8 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     if (authBloc.state.status != AuthStatus.authenticated) return;
     final result = await repairStreak(event.cost);
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => emit(state.copyWith(message: 'Streak Repaired!')),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (_) => emit(state.copyWith(message: () => 'Streak Repaired!')),
     );
   }
 
@@ -252,8 +256,8 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => emit(state.copyWith(message: 'Streak Repaired!')),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (_) => emit(state.copyWith(message: () => 'Streak Repaired!')),
     );
   }
 
@@ -262,14 +266,14 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     final result = await purchaseStreakFreeze(event.cost);
     result.fold(
       (failure) => emit(state.copyWith(
-        message: failure.message,
-        lastPurchaseType: 'shield',
-        lastPurchaseSuccess: false,
+        message: () => failure.message,
+        lastPurchaseType: () => 'shield',
+        lastPurchaseSuccess: () => false,
       )),
       (_) => emit(state.copyWith(
-        message: 'Streak Shield Purchased!',
-        lastPurchaseType: 'shield',
-        lastPurchaseSuccess: true,
+        message: () => 'Streak Shield Purchased!',
+        lastPurchaseType: () => 'shield',
+        lastPurchaseSuccess: () => true,
       )),
     );
   }
@@ -279,14 +283,14 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     final result = await activateDoubleXP(event.cost);
     result.fold(
       (failure) => emit(state.copyWith(
-        message: failure.message,
-        lastPurchaseType: 'warp',
-        lastPurchaseSuccess: false,
+        message: () => failure.message,
+        lastPurchaseType: () => 'warp',
+        lastPurchaseSuccess: () => false,
       )),
       (_) => emit(state.copyWith(
-        message: 'Double XP Activated!',
-        lastPurchaseType: 'warp',
-        lastPurchaseSuccess: true,
+        message: () => 'Double XP Activated!',
+        lastPurchaseType: () => 'warp',
+        lastPurchaseSuccess: () => true,
       )),
     );
   }
@@ -298,9 +302,9 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     
     if (user.coins < event.cost) {
       emit(state.copyWith(
-        message: 'Not enough coins!',
-        lastPurchaseType: 'scroll',
-        lastPurchaseSuccess: false,
+        message: () => 'Not enough coins!',
+        lastPurchaseType: () => 'scroll',
+        lastPurchaseSuccess: () => false,
       ));
       return;
     }
@@ -313,14 +317,14 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(
-        message: failure.message,
-        lastPurchaseType: 'scroll',
-        lastPurchaseSuccess: false,
+        message: () => failure.message,
+        lastPurchaseType: () => 'scroll',
+        lastPurchaseSuccess: () => false,
       )),
       (_) => emit(state.copyWith(
-        message: 'Golden Scroll Activated!',
-        lastPurchaseType: 'scroll',
-        lastPurchaseSuccess: true,
+        message: () => 'Golden Scroll Activated!',
+        lastPurchaseType: () => 'scroll',
+        lastPurchaseSuccess: () => true,
       )),
     );
   }
@@ -337,8 +341,8 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => emit(state.copyWith(message: 'Milestone Claimed!')),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (_) => emit(state.copyWith(message: () => 'Milestone Claimed!')),
     );
   }
 
@@ -353,8 +357,8 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     );
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
-      (_) => emit(state.copyWith(message: 'Milestone Claimed!')),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
+      (_) => emit(state.copyWith(message: () => 'Milestone Claimed!')),
     );
   }
 
@@ -366,7 +370,7 @@ class ProgressionBloc extends Bloc<ProgressionEvent, ProgressionState> {
     final updatedUser = user.copyWith(totalExp: user.totalExp + event.amount);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthRefreshUser());
       },

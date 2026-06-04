@@ -114,17 +114,17 @@ class EconomyState extends Equatable {
   List<Object?> get props => [message, isLoading, lastPurchaseType, lastPurchaseSuccess, isDailyRewardAvailable];
 
   EconomyState copyWith({
-    String? message, 
+    String? Function()? message, 
     bool? isLoading,
-    String? lastPurchaseType,
-    bool? lastPurchaseSuccess,
+    String? Function()? lastPurchaseType,
+    bool? Function()? lastPurchaseSuccess,
     bool? isDailyRewardAvailable,
   }) {
     return EconomyState(
-      message: message,
+      message: message != null ? message() : this.message,
       isLoading: isLoading ?? this.isLoading,
-      lastPurchaseType: lastPurchaseType,
-      lastPurchaseSuccess: lastPurchaseSuccess,
+      lastPurchaseType: lastPurchaseType != null ? lastPurchaseType() : this.lastPurchaseType,
+      lastPurchaseSuccess: lastPurchaseSuccess != null ? lastPurchaseSuccess() : this.lastPurchaseSuccess,
       isDailyRewardAvailable: isDailyRewardAvailable ?? this.isDailyRewardAvailable,
     );
   }
@@ -180,7 +180,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     result.fold(
       (failure) {
         debugPrint('EconomyBloc: Adding Coins FAILED: ${failure.message}');
-        emit(state.copyWith(message: failure.message));
+        emit(state.copyWith(message: () => failure.message));
       },
       (_) {
         debugPrint('EconomyBloc: Adding Coins SUCCESS. Refreshing User...');
@@ -193,7 +193,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     if (authBloc.state.status != AuthStatus.authenticated) return;
     final result = await awardKidsCoins(event.amount);
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthRefreshUser());
       },
@@ -208,15 +208,15 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     ));
     result.fold(
       (failure) => emit(state.copyWith(
-        message: failure.message,
-        lastPurchaseType: 'hint',
-        lastPurchaseSuccess: false,
+        message: () => failure.message,
+        lastPurchaseType: () => 'hint',
+        lastPurchaseSuccess: () => false,
       )),
       (_) {
         authBloc.add(const AuthRefreshUser());
         emit(state.copyWith(
-          lastPurchaseType: 'hint',
-          lastPurchaseSuccess: true,
+          lastPurchaseType: () => 'hint',
+          lastPurchaseSuccess: () => true,
         ));
       },
     );
@@ -229,7 +229,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     result.fold(
       (failure) {
         debugPrint('EconomyBloc: Hint Consumption FAILED: ${failure.message}');
-        emit(state.copyWith(message: failure.message));
+        emit(state.copyWith(message: () => failure.message));
       },
       (_) {
         debugPrint('EconomyBloc: Hint Consumption SUCCESS. Refreshing User...');
@@ -242,7 +242,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     if (authBloc.state.status != AuthStatus.authenticated) return;
     final result = await claimVipGift(NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthRefreshUser());
       },
@@ -253,7 +253,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     if (authBloc.state.status != AuthStatus.authenticated) return;
     final result = await claimDailyGift(NoParams());
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthRefreshUser());
       },
@@ -272,7 +272,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
 
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthRefreshUser());
       },
@@ -290,7 +290,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
 
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthRefreshUser());
       },
@@ -304,7 +304,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     result.fold(
       (failure) {
         debugPrint('EconomyBloc: Daily Chest FAILED: ${failure.message}');
-        emit(state.copyWith(message: failure.message));
+        emit(state.copyWith(message: () => failure.message));
       },
       (_) {
         debugPrint('EconomyBloc: Daily Chest SUCCESS. Refreshing User...');
@@ -320,7 +320,7 @@ class EconomyBloc extends Bloc<EconomyEvent, EconomyState> {
     result.fold(
       (failure) {
         debugPrint('EconomyBloc: Kids Daily Reward FAILED: ${failure.message}');
-        emit(state.copyWith(message: failure.message));
+        emit(state.copyWith(message: () => failure.message));
       },
       (_) {
         debugPrint('EconomyBloc: Kids Daily Reward SUCCESS. Refreshing User...');

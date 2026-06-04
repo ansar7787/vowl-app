@@ -119,16 +119,16 @@ class ProfileState extends Equatable {
   List<Object?> get props => [message, isLoading, lastPurchaseType, lastPurchaseSuccess];
 
   ProfileState copyWith({
-    String? message, 
+    String? Function()? message, 
     bool? isLoading,
-    String? lastPurchaseType,
-    bool? lastPurchaseSuccess,
+    String? Function()? lastPurchaseType,
+    bool? Function()? lastPurchaseSuccess,
   }) {
     return ProfileState(
-      message: message ?? this.message,
+      message: message != null ? message() : this.message,
       isLoading: isLoading ?? this.isLoading,
-      lastPurchaseType: lastPurchaseType,
-      lastPurchaseSuccess: lastPurchaseSuccess,
+      lastPurchaseType: lastPurchaseType != null ? lastPurchaseType() : this.lastPurchaseType,
+      lastPurchaseSuccess: lastPurchaseSuccess != null ? lastPurchaseSuccess() : this.lastPurchaseSuccess,
     );
   }
 }
@@ -163,15 +163,18 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     on<ProfileBuyVowlAccessoryRequested>(_onBuyVowlAccessory);
     on<ProfileEquipVowlAccessoryRequested>(_onEquipVowlAccessory);
     on<ProfileEquipStickerRequested>(_onEquipSticker);
-    on<ProfileClearPurchaseFeedback>((event, emit) => emit(state.copyWith(lastPurchaseType: null, lastPurchaseSuccess: null)));
+    on<ProfileClearPurchaseFeedback>((event, emit) => emit(state.copyWith(
+      lastPurchaseType: () => null, 
+      lastPurchaseSuccess: () => null,
+    )));
   }
 
   Future<void> _onUpdateDisplayName(ProfileUpdateDisplayNameRequested event, Emitter<ProfileState> emit) async {
     final result = await updateDisplayName(event.displayName);
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
-        emit(state.copyWith(message: 'Name updated!'));
+        emit(state.copyWith(message: () => 'Name updated!'));
         authBloc.add(const AuthReloadUser());
       },
     );
@@ -180,9 +183,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   Future<void> _onUpdatePicture(ProfileUpdatePictureRequested event, Emitter<ProfileState> emit) async {
     final result = await updateProfilePicture(event.filePath);
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
-        emit(state.copyWith(message: 'Profile picture updated!'));
+        emit(state.copyWith(message: () => 'Profile picture updated!'));
         authBloc.add(const AuthReloadUser());
       },
     );
@@ -191,7 +194,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   Future<void> _onUpdateMascot(ProfileUpdateMascotRequested event, Emitter<ProfileState> emit) async {
     final result = await updateKidsMascot(event.mascotId);
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthReloadUser());
       },
@@ -204,7 +207,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       cost: event.cost,
     ));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthReloadUser());
       },
@@ -214,7 +217,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   Future<void> _onEquipAccessory(ProfileEquipAccessoryRequested event, Emitter<ProfileState> emit) async {
     final result = await equipKidsAccessory(event.accessoryId);
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthReloadUser());
       },
@@ -231,7 +234,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final updatedUser = user.copyWith(kidsEquippedFurniture: newEquipped);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthReloadUser());
       },
@@ -243,7 +246,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     if (user == null) return;
 
     if (user.kidsCoins < event.cost) {
-      emit(state.copyWith(message: 'Not enough coins!'));
+      emit(state.copyWith(message: () => 'Not enough coins!'));
       return;
     }
 
@@ -259,7 +262,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthReloadUser());
       },
@@ -273,7 +276,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final updatedUser = user.copyWith(vowlMascot: event.mascotId);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         // Reload user so the AuthBloc session state reflects the change
         authBloc.add(const AuthReloadUser());
@@ -286,7 +289,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     if (user == null) return;
 
     if (user.coins < event.cost) {
-      emit(state.copyWith(message: 'Not enough coins!'));
+      emit(state.copyWith(message: () => 'Not enough coins!'));
       return;
     }
 
@@ -300,15 +303,15 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
       (failure) => emit(state.copyWith(
-        message: failure.message,
-        lastPurchaseType: 'vowl_accessory',
-        lastPurchaseSuccess: false,
+        message: () => failure.message,
+        lastPurchaseType: () => 'vowl_accessory',
+        lastPurchaseSuccess: () => false,
       )),
       (_) {
         authBloc.add(const AuthReloadUser());
         emit(state.copyWith(
-          lastPurchaseType: 'vowl_accessory',
-          lastPurchaseSuccess: true,
+          lastPurchaseType: () => 'vowl_accessory',
+          lastPurchaseSuccess: () => true,
         ));
       },
     );
@@ -321,7 +324,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final updatedUser = user.copyWith(vowlEquippedAccessory: event.accessoryId);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthReloadUser());
       },
@@ -335,7 +338,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final updatedUser = user.copyWith(kidsEquippedSticker: event.stickerId);
     final result = await updateUser(UpdateUserParams(user: updatedUser));
     result.fold(
-      (failure) => emit(state.copyWith(message: failure.message)),
+      (failure) => emit(state.copyWith(message: () => failure.message)),
       (_) {
         authBloc.add(const AuthReloadUser());
       },
