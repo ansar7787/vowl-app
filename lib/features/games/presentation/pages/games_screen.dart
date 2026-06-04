@@ -289,7 +289,9 @@ class _GamesScreenState extends State<GamesScreen> {
         if (onSeeAll != null)
           ScaleButton(
             onTap: () {
-              Haptics.vibrate(HapticsType.light);
+              try {
+                Haptics.vibrate(HapticsType.light);
+              } catch (_) {}
               onSeeAll();
             },
             child: Container(
