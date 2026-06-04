@@ -68,11 +68,11 @@ class _LoginViewState extends State<LoginView> {
               _showSnackBar(
                 context,
                 state.errorMessage!,
-                isWarning ? Colors.orange : Colors.red,
+                isWarning ? CustomSnackBarType.warning : CustomSnackBarType.error,
               );
             }
             if (state.successMessage != null) {
-              _showSnackBar(context, state.successMessage!, Colors.blue);
+              _showSnackBar(context, state.successMessage!, CustomSnackBarType.success);
             }
           },
         ),
@@ -80,8 +80,10 @@ class _LoginViewState extends State<LoginView> {
           listenWhen: (previous, current) =>
               previous.message != current.message && current.message != null,
           listener: (context, state) {
-            Haptics.vibrate(HapticsType.success);
-            _showSnackBar(context, state.message!, Colors.blue);
+            try {
+              Haptics.vibrate(HapticsType.success);
+            } catch (_) {}
+            _showSnackBar(context, state.message!, CustomSnackBarType.success);
           },
         ),
       ],
@@ -230,9 +232,11 @@ class _LoginViewState extends State<LoginView> {
                                           LoginButton(
                                             formKey: _formKey,
                                             onValidationError: () {
-                                              Haptics.vibrate(
-                                                HapticsType.error,
-                                              );
+                                              try {
+                                                Haptics.vibrate(
+                                                  HapticsType.error,
+                                                );
+                                              } catch (_) {}
                                               if (!(_emailKey.currentState
                                                       ?.validate() ??
                                                   true)) {
@@ -296,15 +300,7 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 
-  void _showSnackBar(BuildContext context, String message, Color color) {
-    CustomSnackBarType type = CustomSnackBarType.info;
-    if (color == Colors.red) {
-      type = CustomSnackBarType.error;
-    } else if (color == Colors.orange) {
-      type = CustomSnackBarType.warning;
-    } else if (color == Colors.blue || color == Colors.green) {
-      type = CustomSnackBarType.success;
-    }
+  void _showSnackBar(BuildContext context, String message, CustomSnackBarType type) {
     CustomSnackBar.show(context: context, message: message, type: type);
   }
 }
