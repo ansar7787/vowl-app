@@ -14,6 +14,8 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/core/presentation/widgets/banner_ad_widget.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/utils/app_router.dart';
 
 class VowlMascotScreen extends StatefulWidget {
   const VowlMascotScreen({super.key});
@@ -128,7 +130,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final primaryColor = Colors.greenAccent;
     final surfaceColor = isMidnight 
-        ? Colors.black 
+        ? const Color(0xFF020617) 
         : (isDark ? const Color(0xFF0F172A) : Colors.white);
     final textColor = isDark ? Colors.white : const Color(0xFF0F172A);
 
@@ -160,7 +162,16 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
       child: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           final user = state.user;
-          if (user == null) return const SizedBox.shrink();
+          if (user == null) {
+            return Scaffold(
+              backgroundColor: surfaceColor,
+              body: Center(
+                child: CircularProgressIndicator(
+                  color: isDark ? Colors.white30 : const Color(0xFF3B82F6),
+                ),
+              ),
+            );
+          }
 
           return Scaffold(
             backgroundColor: surfaceColor,
@@ -192,10 +203,12 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                     SliverToBoxAdapter(
                       child: Padding(
                         padding: EdgeInsets.symmetric(vertical: 20.h),
-                        child: _buildTabSwitcher(
-                          isDark,
-                          primaryColor,
-                          textColor,
+                        child: RepaintBoundary(
+                          child: _buildTabSwitcher(
+                            isDark,
+                            primaryColor,
+                            textColor,
+                          ),
                         ),
                       ),
                     ),
@@ -232,7 +245,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
 
   Widget _buildSliverAppBar(
     BuildContext context,
-    dynamic user,
+    UserEntity user,
     Color textColor,
     bool isDark,
     Color primaryColor,
@@ -260,7 +273,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                 ),
               ),
             ),
-            padding: EdgeInsets.only(top: ScreenUtil().statusBarHeight),
+            padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
             child: FlexibleSpaceBar(
               centerTitle: true,
               titlePadding: EdgeInsets.zero,
@@ -275,7 +288,13 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                     child: Row(
                       children: [
                         ScaleButton(
-                          onTap: () => context.pop(),
+                          onTap: () {
+                            if (context.canPop()) {
+                              context.pop();
+                            } else {
+                              context.go(AppRouter.homeRoute);
+                            }
+                          },
                           child: Container(
                             padding: EdgeInsets.all(8.r),
                             decoration: BoxDecoration(
@@ -292,7 +311,6 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                             ),
                           ),
                         ),
-                        // 1. Fix Overflow: Wrap center column in Expanded
                         const Expanded(child: SizedBox()),
                         if (!isCollapsed)
                           Expanded(
@@ -346,7 +364,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
   }
 
   Widget _buildGreenDollarDisplay(
-    dynamic user,
+    UserEntity user,
     bool isDark,
     Color primaryColor,
   ) {
@@ -435,7 +453,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
 
   Widget _buildSelectionSliver(
     BuildContext context,
-    dynamic user,
+    UserEntity user,
     bool isDark,
     Color primaryColor,
     Color textColor,
@@ -447,42 +465,47 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
         delegate: SliverChildListDelegate([
           _buildSectionHeader('SYNCHRONIZED ELITES', textColor),
           SizedBox(height: 20.h),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 0.85,
-              crossAxisSpacing: 16.w,
-              mainAxisSpacing: 16.h,
-            ),
-            itemCount: mascots.length,
-            itemBuilder: (context, index) {
-              final id = mascots[index];
-              final emoji = VowlAssets.mascotMap[id]!;
-              final name = VowlAssets.mascotNames[id]!;
-              // 2. Unlock all mascots (remove isOwned check for switching)
-              final isSelected =
-                  user.vowlMascot == id ||
-                  (user.vowlMascot == null && id == 'vowl_prime');
+          RepaintBoundary(
+            child: GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.85,
+                crossAxisSpacing: 16.w,
+                mainAxisSpacing: 16.h,
+              ),
+              itemCount: mascots.length,
+              itemBuilder: (context, index) {
+                final id = mascots[index];
+                final emoji = VowlAssets.mascotMap[id]!;
+                final name = VowlAssets.mascotNames[id]!;
+                final isSelected =
+                    user.vowlMascot == id ||
+                    (user.vowlMascot == null && id == 'vowl_prime');
 
-              return _buildMascotTile(
-                context,
-                id,
-                name,
-                emoji,
-                isSelected,
-                isDark,
-                primaryColor,
-                textColor,
-              );
-            },
+                return _buildMascotTile(
+                  context,
+                  id,
+                  name,
+                  emoji,
+                  isSelected,
+                  isDark,
+                  primaryColor,
+                  textColor,
+                );
+              },
+            ),
           ),
           SizedBox(height: 32.h),
-          const BannerAdWidget(),
+          const RepaintBoundary(
+            child: BannerAdWidget(),
+          ),
           SizedBox(height: 32.h),
           if (user.vowlMascot != null)
-            _buildEquippedSection(user, isDark, primaryColor, textColor),
+            RepaintBoundary(
+              child: _buildEquippedSection(user, isDark, primaryColor, textColor),
+            ),
         ]),
       ),
     );
@@ -490,7 +513,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
 
   Widget _buildBoutiqueSliver(
     BuildContext context,
-    dynamic user,
+    UserEntity user,
     bool isDark,
     Color primaryColor,
     Color textColor,
@@ -502,41 +525,45 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
         delegate: SliverChildListDelegate([
           _buildSectionHeader('CYBERNETIC AUGMENTS', textColor),
           SizedBox(height: 20.h),
-          GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 0.78,
-              crossAxisSpacing: 16.w,
-              mainAxisSpacing: 16.h,
-            ),
-            itemCount: accessories.length,
-            itemBuilder: (context, index) {
-              final id = accessories[index];
-              final emoji = VowlAssets.accessoryMap[id]!;
-              final name = VowlAssets.accessoryNames[id]!;
-              final price = VowlAssets.accessoryPrices[id]!;
-              final isOwned = user.vowlOwnedAccessories.contains(id);
-              final isEquipped = user.vowlEquippedAccessory == id;
+          RepaintBoundary(
+            child: GridView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.78,
+                crossAxisSpacing: 16.w,
+                mainAxisSpacing: 16.h,
+              ),
+              itemCount: accessories.length,
+              itemBuilder: (context, index) {
+                final id = accessories[index];
+                final emoji = VowlAssets.accessoryMap[id]!;
+                final name = VowlAssets.accessoryNames[id]!;
+                final price = VowlAssets.accessoryPrices[id]!;
+                final isOwned = user.vowlOwnedAccessories.contains(id);
+                final isEquipped = user.vowlEquippedAccessory == id;
 
-              return _buildAccessoryTile(
-                context,
-                id,
-                name,
-                emoji,
-                price,
-                isOwned,
-                isEquipped,
-                isDark,
-                primaryColor,
-                textColor,
-                user,
-              );
-            },
+                return _buildAccessoryTile(
+                  context,
+                  id,
+                  name,
+                  emoji,
+                  price,
+                  isOwned,
+                  isEquipped,
+                  isDark,
+                  primaryColor,
+                  textColor,
+                  user,
+                );
+              },
+            ),
           ),
           SizedBox(height: 32.h),
-          const BannerAdWidget(),
+          const RepaintBoundary(
+            child: BannerAdWidget(),
+          ),
           SizedBox(height: 100.h),
         ]),
       ),
@@ -586,7 +613,6 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // 3. Add Premium Tile Animation
               Container(
                     width: 60.r,
                     height: 60.r,
@@ -648,7 +674,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
   }
 
   Widget _buildEquippedSection(
-    dynamic user,
+    UserEntity user,
     bool isDark,
     Color primaryColor,
     Color textColor,
@@ -759,7 +785,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
     bool isDark,
     Color primaryColor,
     Color textColor,
-    dynamic user,
+    UserEntity user,
   ) {
     return GlassTile(
       borderRadius: BorderRadius.circular(24.r),
@@ -827,7 +853,6 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                     await Future.delayed(const Duration(milliseconds: 1500));
                     if (mounted) setState(() => _isProcessing = false);
                   } else {
-                    // 4. Implement real error feedback for insufficient coins
                     _hapticService.error();
                     _showModernSnackbar(
                       context,
@@ -908,41 +933,43 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
       bottom: 0,
       left: 0,
       right: 0,
-      child: ClipRRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-          child: Container(
-            height: 60.h,
-            decoration: BoxDecoration(
-              border: Border(
-                top: BorderSide(color: primaryColor.withValues(alpha: 0.25)),
+      child: RepaintBoundary(
+        child: ClipRRect(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            child: Container(
+              height: 60.h,
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(color: primaryColor.withValues(alpha: 0.25)),
+                ),
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    primaryColor.withValues(alpha: 0.08),
+                    Colors.transparent,
+                  ],
+                ),
               ),
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  primaryColor.withValues(alpha: 0.08),
-                  Colors.transparent,
+              padding: EdgeInsets.symmetric(horizontal: 24.w),
+              child: Row(
+                children: [
+                  Icon(Icons.security_rounded, color: primaryColor, size: 14.r),
+                  SizedBox(width: 12.w),
+                  Text(
+                    'NEURAL CONNECTION STABLE // ELITE STATUS ACTIVE',
+                    style: GoogleFonts.jetBrainsMono(
+                      fontSize: 8.sp,
+                      fontWeight: FontWeight.w700,
+                      color: primaryColor.withValues(alpha: 0.8),
+                      letterSpacing: 1,
+                    ),
+                  ),
+                  const Spacer(),
+                  _buildSyncIndicator(primaryColor),
                 ],
               ),
-            ),
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Row(
-              children: [
-                Icon(Icons.security_rounded, color: primaryColor, size: 14.r),
-                SizedBox(width: 12.w),
-                Text(
-                  'NEURAL CONNECTION STABLE // ELITE STATUS ACTIVE',
-                  style: GoogleFonts.jetBrainsMono(
-                    fontSize: 8.sp,
-                    fontWeight: FontWeight.w700,
-                    color: primaryColor.withValues(alpha: 0.8),
-                    letterSpacing: 1,
-                  ),
-                ),
-                const Spacer(),
-                _buildSyncIndicator(primaryColor),
-              ],
             ),
           ),
         ),
@@ -974,4 +1001,3 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
     );
   }
 }
-
