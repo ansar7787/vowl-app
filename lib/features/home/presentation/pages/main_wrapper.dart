@@ -4,6 +4,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class MainWrapper extends StatelessWidget {
@@ -14,69 +16,78 @@ class MainWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
 
     return Scaffold(
-      backgroundColor: isDark ? const Color(0xFF0F172A) : Colors.white,
+      backgroundColor: isMidnight
+          ? const Color(0xFF020617)
+          : (isDark ? const Color(0xFF0F172A) : Colors.white),
       extendBody: true,
       body: navigationShell,
-      bottomNavigationBar: Container(
-        height: 82.h,
-        margin: EdgeInsets.fromLTRB(12.w, 0, 12.w, 12.h),
-        child: Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            // 1. Premium Glass Background
-            ClipRRect(
-              borderRadius: BorderRadius.circular(24.r),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
-                child: Container(
-                  height: 65.h,
-                  decoration: BoxDecoration(
-                    color: isDark
-                        ? Colors.white.withValues(alpha: 0.08)
-                        : Colors.white.withValues(alpha: 0.7),
-                    borderRadius: BorderRadius.circular(24.r),
-                    border: Border.all(
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.12)
-                          : Colors.white.withValues(alpha: 0.4),
-                      width: 1.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.1),
-                        blurRadius: 40,
-                        offset: const Offset(0, 15),
+      bottomNavigationBar: RepaintBoundary(
+        child: Container(
+          height: 82.h,
+          margin: EdgeInsets.fromLTRB(12.w, 0, 12.w, 12.h),
+          child: Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              // 1. Premium Glass Background
+              ClipRRect(
+                borderRadius: BorderRadius.circular(24.r),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                  child: Container(
+                    height: 65.h,
+                    decoration: BoxDecoration(
+                      color: isMidnight
+                          ? Colors.black.withValues(alpha: 0.2)
+                          : (isDark
+                              ? Colors.white.withValues(alpha: 0.08)
+                              : Colors.white.withValues(alpha: 0.7)),
+                      borderRadius: BorderRadius.circular(24.r),
+                      border: Border.all(
+                        color: isMidnight
+                            ? Colors.white.withValues(alpha: 0.08)
+                            : (isDark
+                                ? Colors.white.withValues(alpha: 0.12)
+                                : Colors.white.withValues(alpha: 0.4)),
+                        width: 1.5,
                       ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.15),
+                          blurRadius: 40,
+                          offset: const Offset(0, 15),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              
+              // 2. Navigation Items
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: SizedBox(
+                  height: 65.h,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      _buildNavItem(context, 0, Icons.home_outlined, Icons.home_rounded, 'Home'),
+                      _buildNavItem(context, 1, Icons.sports_esports_outlined, Icons.sports_esports_rounded, 'Games'),
+                      _buildNavItem(context, 2, Icons.leaderboard_outlined, Icons.leaderboard_rounded, 'Ranks'),
+                      _buildNavItem(context, 3, Icons.person_outline_rounded, Icons.person_rounded, 'Profile'),
                     ],
                   ),
                 ),
               ),
-            ),
-            
-            // 2. Navigation Items
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: SizedBox(
-                height: 65.h,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Expanded(child: _buildNavItem(context, 0, Icons.home_outlined, Icons.home_rounded, 'Home')),
-                    Expanded(child: _buildNavItem(context, 1, Icons.sports_esports_outlined, Icons.sports_esports_rounded, 'Games')),
-                    Expanded(child: _buildNavItem(context, 2, Icons.leaderboard_outlined, Icons.leaderboard_rounded, 'Ranks')),
-                    Expanded(child: _buildNavItem(context, 3, Icons.person_outline_rounded, Icons.person_rounded, 'Profile')),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ).animate().slideY(
-          begin: 0.5, // Reduced slide distance for faster arrival
-          end: 0,
-          duration: 350.ms, // Much faster entry
-          curve: Curves.easeOutCubic,
+            ],
+          ).animate().slideY(
+            begin: 0.5,
+            end: 0,
+            duration: 350.ms,
+            curve: Curves.easeOutCubic,
+          ),
         ),
       ),
     );
@@ -100,7 +111,7 @@ class MainWrapper extends StatelessWidget {
         duration: const Duration(milliseconds: 400),
         curve: Curves.easeOutBack,
         padding: EdgeInsets.symmetric(
-          horizontal: isSelected ? 10.w : 6.w,
+          horizontal: isSelected ? 12.w : 8.w,
           vertical: 8.h,
         ),
         decoration: BoxDecoration(
@@ -147,20 +158,24 @@ class MainWrapper extends StatelessWidget {
 
   void _onTap(BuildContext context, int index) {
     if (navigationShell.currentIndex == index) {
-      final homeController = di.sl<ScrollController>(instanceName: 'home');
-      final gamesController = di.sl<ScrollController>(instanceName: 'games');
-      if (index == 0 && homeController.hasClients) {
-        homeController.animateTo(
-          0.0,
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.fastOutSlowIn,
-        );
-      } else if (index == 1 && gamesController.hasClients) {
-        gamesController.animateTo(
-          0.0,
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.fastOutSlowIn,
-        );
+      if (index == 0 && di.sl.isRegistered<ScrollController>(instanceName: 'home')) {
+        final homeController = di.sl<ScrollController>(instanceName: 'home');
+        if (homeController.hasClients) {
+          homeController.animateTo(
+            0.0,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.fastOutSlowIn,
+          );
+        }
+      } else if (index == 1 && di.sl.isRegistered<ScrollController>(instanceName: 'games')) {
+        final gamesController = di.sl<ScrollController>(instanceName: 'games');
+        if (gamesController.hasClients) {
+          gamesController.animateTo(
+            0.0,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.fastOutSlowIn,
+          );
+        }
       }
     }
 
