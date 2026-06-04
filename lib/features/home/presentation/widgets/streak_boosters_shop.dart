@@ -111,7 +111,9 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                       context.read<ProgressionBloc>().add(
                             const ProgressionRepairStreakWithAdRequested(),
                           );
-                      Haptics.vibrate(HapticsType.success);
+                      try {
+                        Haptics.vibrate(HapticsType.success);
+                      } catch (_) {}
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text("STREAK REPAIRED! 🔥"),
@@ -177,7 +179,9 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
     if (_isProcessing) return;
 
     if (currentCoins < cost) {
-      Haptics.vibrate(HapticsType.error);
+      try {
+        Haptics.vibrate(HapticsType.error);
+      } catch (_) {}
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Row(
@@ -206,7 +210,9 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
     }
 
     setState(() => _isProcessing = true);
-    Haptics.vibrate(HapticsType.heavy);
+    try {
+      Haptics.vibrate(HapticsType.heavy);
+    } catch (_) {}
     action();
 
     ScaffoldMessenger.of(context).showSnackBar(

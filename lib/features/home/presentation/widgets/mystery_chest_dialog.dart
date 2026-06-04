@@ -37,7 +37,9 @@ class _MysteryChestDialogState extends State<MysteryChestDialog> {
   Future<void> _openChest() async {
     if (_chestOpened || !mounted) return;
     setState(() => _chestOpened = true);
-    Haptics.vibrate(HapticsType.heavy);
+    try {
+      Haptics.vibrate(HapticsType.heavy);
+    } catch (_) {}
 
     final isPremium = context.read<AuthBloc>().state.user?.isPremium ?? false;
 
