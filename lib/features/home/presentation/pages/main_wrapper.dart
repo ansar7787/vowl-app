@@ -4,8 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vowl/features/home/presentation/pages/home_screen.dart';
-import 'package:vowl/features/games/presentation/pages/games_screen.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class MainWrapper extends StatelessWidget {
   const MainWrapper({required this.navigationShell, super.key});
@@ -148,14 +147,16 @@ class MainWrapper extends StatelessWidget {
 
   void _onTap(BuildContext context, int index) {
     if (navigationShell.currentIndex == index) {
-      if (index == 0 && homeScrollController.hasClients) {
-        homeScrollController.animateTo(
+      final homeController = di.sl<ScrollController>(instanceName: 'home');
+      final gamesController = di.sl<ScrollController>(instanceName: 'games');
+      if (index == 0 && homeController.hasClients) {
+        homeController.animateTo(
           0.0,
           duration: const Duration(milliseconds: 500),
           curve: Curves.fastOutSlowIn,
         );
-      } else if (index == 1 && gamesScrollController.hasClients) {
-        gamesScrollController.animateTo(
+      } else if (index == 1 && gamesController.hasClients) {
+        gamesController.animateTo(
           0.0,
           duration: const Duration(milliseconds: 500),
           curve: Curves.fastOutSlowIn,

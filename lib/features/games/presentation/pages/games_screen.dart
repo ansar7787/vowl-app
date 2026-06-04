@@ -13,8 +13,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/home/presentation/widgets/category_shelf.dart';
 import 'package:vowl/core/utils/game_helper.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
-
-final ScrollController gamesScrollController = ScrollController();
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class GamesScreen extends StatefulWidget {
   const GamesScreen({super.key});
@@ -43,7 +42,7 @@ class _GamesScreenState extends State<GamesScreen> {
             children: [
               const MeshGradientBackground(showLetters: false),
               CustomScrollView(
-                controller: gamesScrollController,
+                controller: di.sl<ScrollController>(instanceName: 'games'),
                 physics: const BouncingScrollPhysics(),
                 slivers: [
                   _buildGlassAppBar(context, isDark),

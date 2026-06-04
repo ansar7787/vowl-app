@@ -26,8 +26,6 @@ import 'package:vowl/features/home/presentation/widgets/home_quick_stats.dart';
 import 'package:vowl/features/home/presentation/widgets/home_section_header.dart';
 import 'package:vowl/features/home/presentation/utils/notification_priming_helper.dart';
 
-final ScrollController homeScrollController = ScrollController();
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -134,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: const Color(0xFF2563EB),
                   displacement: 40.h,
                   child: CustomScrollView(
-                    controller: homeScrollController,
+                    controller: di.sl<ScrollController>(instanceName: 'home'),
                     physics: const BouncingScrollPhysics(),
                     slivers: [
                       SliverToBoxAdapter(

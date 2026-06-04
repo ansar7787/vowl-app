@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:flutter/widgets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -66,4 +67,10 @@ Future<void> initExternalAndCore(GetIt sl) async {
   sl.registerLazySingleton<PraiseService>(() => PraiseService(sl<TtsService>()));
   sl.registerLazySingleton<AnalyticsService>(() => AnalyticsService());
   sl.registerLazySingleton<ReviewService>(() => ReviewService());
+
+  // ==========================================
+  // NAVIGATION CONTROLLERS
+  // ==========================================
+  sl.registerLazySingleton<ScrollController>(() => ScrollController(), instanceName: 'home');
+  sl.registerLazySingleton<ScrollController>(() => ScrollController(), instanceName: 'games');
 }
