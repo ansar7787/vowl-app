@@ -53,10 +53,10 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state.successMessage != null) {
-          _showSnackBar(context, state.successMessage!, Colors.blue);
+          _showSnackBar(context, state.successMessage!, CustomSnackBarType.success);
         }
         if (state.errorMessage != null) {
-          _showSnackBar(context, state.errorMessage!, Colors.red);
+          _showSnackBar(context, state.errorMessage!, CustomSnackBarType.error);
         }
       },
       child: BlocBuilder<LoginCubit, LoginState>(
@@ -142,7 +142,9 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                                 if (!(_emailKey.currentState?.validate() ?? true)) {
                                                   setState(() => _emailShake++);
                                                 }
-                                                Haptics.vibrate(HapticsType.error);
+                                                try {
+                                                  Haptics.vibrate(HapticsType.error);
+                                                } catch (_) {}
                                               }
                                             },
                                           ),
@@ -172,15 +174,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
     );
   }
 
-  void _showSnackBar(BuildContext context, String message, Color color) {
-    CustomSnackBarType type = CustomSnackBarType.info;
-    if (color == Colors.red) {
-      type = CustomSnackBarType.error;
-    } else if (color == Colors.orange) {
-      type = CustomSnackBarType.warning;
-    } else if (color == Colors.blue || color == Colors.green) {
-      type = CustomSnackBarType.success;
-    }
+  void _showSnackBar(BuildContext context, String message, CustomSnackBarType type) {
     CustomSnackBar.show(context: context, message: message, type: type);
   }
 }
