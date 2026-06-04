@@ -28,6 +28,8 @@ class SignUpNameInput extends StatelessWidget {
             return null;
           },
           textInputAction: TextInputAction.next,
+          keyboardType: TextInputType.name,
+          autofillHints: const [AutofillHints.name],
           style: TextStyle(color: MeshGradientBackground.getContrastColor(context)),
           decoration: InputDecoration(
             hintText: 'Full Name',
@@ -101,6 +103,8 @@ class SignUpEmailInput extends StatelessWidget {
             return null;
           },
           textInputAction: TextInputAction.next,
+          keyboardType: TextInputType.emailAddress,
+          autofillHints: const [AutofillHints.email],
           style: TextStyle(color: MeshGradientBackground.getContrastColor(context)),
           decoration: InputDecoration(
             hintText: 'Email',
@@ -143,7 +147,6 @@ class SignUpEmailInput extends StatelessWidget {
               horizontal: 20.w,
             ),
           ),
-          keyboardType: TextInputType.emailAddress,
         );
       },
     );
@@ -178,6 +181,8 @@ class SignUpPasswordInput extends StatelessWidget {
           },
           textInputAction: TextInputAction.done,
           obscureText: !state.isPasswordVisible,
+          keyboardType: TextInputType.visiblePassword,
+          autofillHints: const [AutofillHints.newPassword],
           style: TextStyle(color: MeshGradientBackground.getContrastColor(context)),
           decoration: InputDecoration(
             hintText: 'Password',
