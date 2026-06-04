@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -16,6 +15,7 @@ import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dar
 import 'package:vowl/features/settings/presentation/widgets/settings_widgets.dart';
 import 'package:vowl/features/settings/presentation/widgets/legal_constants.dart';
 import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class SettingsScreen extends StatefulWidget {
@@ -214,7 +214,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
             color: isDark ? Colors.white : Colors.black,
           ),
         ),
-        onPressed: () => context.pop(),
+        onPressed: () {
+          if (context.canPop()) {
+            context.pop();
+          } else {
+            context.go('/');
+          }
+        },
       ),
       title: Text(
         'Settings',
@@ -268,7 +274,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<void> _handleClearCache(BuildContext context) async {
-    Haptics.vibrate(HapticsType.light);
+    di.sl<HapticService>().light();
     try {
       final prefs = await SharedPreferences.getInstance();
       await prefs.clear();

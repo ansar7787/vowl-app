@@ -3,10 +3,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class SettingsSectionTitle extends StatelessWidget {
   final String title;
@@ -178,7 +180,7 @@ class SettingsSwitchTile extends StatelessWidget {
           Switch.adaptive(
             value: value,
             onChanged: (val) {
-              Haptics.vibrate(HapticsType.light);
+              di.sl<HapticService>().light();
               onChanged(val);
             },
             activeThumbColor: const Color(0xFF2563EB),
@@ -269,7 +271,7 @@ class SettingsLogoutButton extends StatelessWidget {
 }
 
 class SettingsProfileSection extends StatelessWidget {
-  final dynamic user;
+  final UserEntity? user;
   final bool isDark;
 
   const SettingsProfileSection({
@@ -280,7 +282,8 @@ class SettingsProfileSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (user == null) return const SizedBox.shrink();
+    final currentUser = user;
+    if (currentUser == null) return const SizedBox.shrink();
 
     return GlassTile(
       padding: EdgeInsets.all(24.r),
@@ -288,7 +291,7 @@ class SettingsProfileSection extends StatelessWidget {
       child: Row(
         children: [
           GestureDetector(
-            onTap: () => SettingsDialogs.showEditProfile(context, user),
+            onTap: () => SettingsDialogs.showEditProfile(context, currentUser),
             child: Stack(
               children: [
                 Container(
@@ -314,13 +317,13 @@ class SettingsProfileSection extends StatelessWidget {
                   child: CircleAvatar(
                     radius: 36.r,
                     backgroundColor: const Color(0xFF1E293B),
-                    backgroundImage: user.photoUrl != null &&
-                            user.photoUrl!.isNotEmpty
-                        ? (user.photoUrl!.startsWith('http')
-                            ? NetworkImage(user.photoUrl!)
-                            : FileImage(File(user.photoUrl!)) as ImageProvider)
+                    backgroundImage: currentUser.photoUrl != null &&
+                            currentUser.photoUrl!.isNotEmpty
+                        ? (currentUser.photoUrl!.startsWith('http')
+                            ? NetworkImage(currentUser.photoUrl!)
+                            : FileImage(File(currentUser.photoUrl!)) as ImageProvider)
                         : null,
-                    child: user.photoUrl == null || user.photoUrl!.isEmpty
+                    child: currentUser.photoUrl == null || currentUser.photoUrl!.isEmpty
                         ? Icon(
                             Icons.person_rounded,
                             size: 36.r,
@@ -366,7 +369,7 @@ class SettingsProfileSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  user.displayName ?? 'Explorer',
+                  currentUser.displayName ?? 'Explorer',
                   style: GoogleFonts.outfit(
                     fontSize: 22.sp,
                     fontWeight: FontWeight.w900,
@@ -375,7 +378,7 @@ class SettingsProfileSection extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  user.email,
+                  currentUser.email,
                   style: GoogleFonts.outfit(
                     fontSize: 14.sp,
                     color: isDark
@@ -409,7 +412,7 @@ class SettingsProfileSection extends StatelessWidget {
                       ),
                       SizedBox(width: 6.w),
                       Text(
-                        user.isPremium ? 'PREMIUM QUESTER' : 'FREE ACCOUNT',
+                        currentUser.isPremium ? 'PREMIUM QUESTER' : 'FREE ACCOUNT',
                         style: GoogleFonts.outfit(
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w900,

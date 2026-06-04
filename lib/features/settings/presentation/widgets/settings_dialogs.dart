@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
-
 import 'package:image_picker/image_picker.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
-
+import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class SettingsDialogs {
-  static void showEditProfile(BuildContext context, dynamic user) {
+  static void showEditProfile(BuildContext context, UserEntity user) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final TextEditingController nameController = TextEditingController(
       text: user.displayName,
@@ -57,7 +57,7 @@ class SettingsDialogs {
                     }
                   },
                   child: Stack(
-                    alignment: Alignment.center,
+                     alignment: Alignment.center,
                     children: [
                       Container(
                         padding: EdgeInsets.all(4.r),
@@ -225,7 +225,7 @@ class SettingsDialogs {
 
   static void showLogout(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    Haptics.vibrate(HapticsType.medium);
+    di.sl<HapticService>().warning();
     showGeneralDialog(
       context: context,
       barrierDismissible: true,
@@ -334,7 +334,7 @@ class SettingsDialogs {
 
   static void showPasswordReset(BuildContext context, String email) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    Haptics.vibrate(HapticsType.medium);
+    di.sl<HapticService>().warning();
     showGeneralDialog(
       context: context,
       barrierDismissible: true,
@@ -449,7 +449,7 @@ class SettingsDialogs {
 
   static void showDeleteAccount(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    Haptics.vibrate(HapticsType.heavy);
+    di.sl<HapticService>().heavy();
     showGeneralDialog(
       context: context,
       barrierDismissible: true,
@@ -559,7 +559,7 @@ class SettingsDialogs {
   static void _showFinalDeleteConfirmation(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final TextEditingController confirmController = TextEditingController();
-    
+
     showGeneralDialog(
       context: context,
       barrierDismissible: true,
@@ -632,7 +632,7 @@ class SettingsDialogs {
                               foregroundColor: Colors.white,
                               padding: EdgeInsets.symmetric(vertical: 16.h),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16.r),
+                                  borderRadius: BorderRadius.circular(16.r),
                               ),
                             ),
                             child: Text(
@@ -681,7 +681,7 @@ class SettingsDialogs {
     String message = "We're working hard to bring this feature to your quest experience!",
   }) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    Haptics.vibrate(HapticsType.selection);
+    di.sl<HapticService>().selection();
     showGeneralDialog(
       context: context,
       barrierDismissible: true,

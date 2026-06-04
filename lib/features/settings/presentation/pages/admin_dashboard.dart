@@ -170,7 +170,7 @@ class _AdminDashboardState extends State<AdminDashboard>
     final confirm = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text('Bulk Seed 30 Levels?'),
+        title: const Text('Bulk Seed 30 Levels?'),
         content: Text(
           'This will generate and upload 90 questions (30 levels) for ${_selectedGameType.name}. Existing levels with same numbers will be merged.',
         ),
@@ -232,23 +232,32 @@ class _AdminDashboardState extends State<AdminDashboard>
     try {
       final firestore = FirebaseFirestore.instance;
       int ok = 0, fail = 0;
+
+      // Optimize: Instead of querying Firestore inside a loop M times (which takes M sequential network requests),
+      // we query the entire collection exactly once! This reduces network calls from M to 1.
+      final querySnapshot = await firestore
+          .collection('quests')
+          .doc(_selectedGameType.name)
+          .collection('levels')
+          .get();
+
+      final existingLevelMap = {
+        for (var doc in querySnapshot.docs) doc.id: doc.data()
+      };
+
       for (int i = _startLevel; i <= _endLevel; i++) {
-        final doc = await firestore
-            .collection('quests')
-            .doc(_selectedGameType.name)
-            .collection('levels')
-            .doc(i.toString())
-            .get();
-        if (doc.exists) {
-          final quests = (doc.data()?['quests'] as List?)?.length ?? 0;
+        final levelId = i.toString();
+        if (existingLevelMap.containsKey(levelId)) {
+          final levelData = existingLevelMap[levelId]!;
+          final quests = (levelData['quests'] as List?)?.length ?? 0;
           _verificationLogs.add('Level $i: OK ($quests Quests) ✅');
           ok++;
         } else {
           _verificationLogs.add('Level $i: MISSING ❌');
           fail++;
         }
-        if (i % 10 == 0) await Future.delayed(Duration.zero);
       }
+
       if (!mounted) return;
       setState(() => _status = 'Verification Finished: $ok OK, $fail Missing');
     } catch (e) {
@@ -285,6 +294,7 @@ class _AdminDashboardState extends State<AdminDashboard>
     setState(() => _isLoading = true);
     try {
       await _uploadService.wipeSubtype(_selectedGameType);
+      if (!mounted) return;
       setState(
         () => _status = 'Curriculum for ${_selectedGameType.name} wiped. 🧹',
       );
@@ -445,7 +455,7 @@ class _AdminDashboardState extends State<AdminDashboard>
                   ],
                 ),
                 SizedBox(height: 16.h),
-                _buildNumberInput(
+                _NumberInputField(
                   label: 'Starting Level',
                   value: _manualLevel,
                   onChanged: (v) => setState(() => _manualLevel = v),
@@ -557,7 +567,7 @@ class _AdminDashboardState extends State<AdminDashboard>
                 Row(
                   children: [
                     Expanded(
-                      child: _buildNumberInput(
+                      child: _NumberInputField(
                         label: 'Start Range',
                         value: _startLevel,
                         onChanged: (v) => setState(() => _startLevel = v),
@@ -565,7 +575,7 @@ class _AdminDashboardState extends State<AdminDashboard>
                     ),
                     SizedBox(width: 12.w),
                     Expanded(
-                      child: _buildNumberInput(
+                      child: _NumberInputField(
                         label: 'End Range',
                         value: _endLevel,
                         onChanged: (v) => setState(() => _endLevel = v),
@@ -696,7 +706,7 @@ class _AdminDashboardState extends State<AdminDashboard>
               ? SizedBox(
                   width: 14.w,
                   height: 14.w,
-                  child: CircularProgressIndicator(strokeWidth: 2),
+                  child: const CircularProgressIndicator(strokeWidth: 2),
                 )
               : Icon(
                   Icons.circle,
@@ -759,7 +769,7 @@ class _AdminDashboardState extends State<AdminDashboard>
         DropdownButton<T>(
           value: value,
           isExpanded: true,
-          underline: SizedBox(),
+          underline: const SizedBox(),
           items: items
               .map(
                 (e) => DropdownMenuItem(
@@ -864,67 +874,36 @@ class _AdminDashboardState extends State<AdminDashboard>
           continue;
         }
 
-        final batch = firestore.batch();
+        // Optimize: Firestore WriteBatch only allows 500 actions at a time.
+        // We partition the operations and commit chunked batches of 500.
+        WriteBatch batch = firestore.batch();
+        int count = 0;
+
         for (var doc in docs.docs) {
           batch.delete(doc.reference);
+          count++;
+          if (count == 500) {
+            await batch.commit();
+            batch = firestore.batch();
+            count = 0;
+          }
         }
-        await batch.commit();
+        if (count > 0) {
+          await batch.commit();
+        }
+
         _verificationLogs.add('Deleted legacy: $coll ✅');
       }
+      if (!mounted) return;
       setState(() => _status = 'Legacy Cleanup Successful! 🧹');
     } catch (e) {
+      if (!mounted) return;
       setState(() => _status = 'Cleanup Error: $e ❌');
     } finally {
-      setState(() => _isLoading = false);
+      if (mounted) {
+        setState(() => _isLoading = false);
+      }
     }
-  }
-
-  // --- UI COMPONENTS ---
-
-  Widget _buildNumberInput({
-    required String label,
-    required int value,
-    required ValueChanged<int> onChanged,
-  }) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: GoogleFonts.outfit(
-            fontSize: 12.sp,
-            fontWeight: FontWeight.bold,
-            color: Colors.grey,
-          ),
-        ),
-        TextField(
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            isDense: true,
-            contentPadding: EdgeInsets.symmetric(vertical: 8.h),
-          ),
-          style: GoogleFonts.outfit(fontSize: 14.sp),
-          // Using a key to prevent controller recreation issues while typing
-          key: ValueKey('input_${label}_$value'),
-          controller: TextEditingController(text: value.toString())
-            ..selection = TextSelection.collapsed(
-              offset: value.toString().length,
-            ),
-          onSubmitted: (v) {
-            final parsed = int.tryParse(v);
-            if (parsed != null) {
-              onChanged(parsed);
-            }
-          },
-          onChanged: (v) {
-            final parsed = int.tryParse(v);
-            if (parsed != null) {
-              onChanged(parsed);
-            }
-          },
-        ),
-      ],
-    );
   }
 
   Widget _buildJsonStatBadge() {
@@ -965,6 +944,83 @@ class _AdminDashboardState extends State<AdminDashboard>
           ),
         ),
       );
+    }
+  }
+}
+
+/// Custom stateful number input field that maintains its own [TextEditingController]
+/// to prevent focus loss, memory leaks, and cursor jumping on widget rebuilds.
+class _NumberInputField extends StatefulWidget {
+  final String label;
+  final int value;
+  final ValueChanged<int> onChanged;
+
+  const _NumberInputField({
+    required this.label,
+    required this.value,
+    required this.onChanged,
+  });
+
+  @override
+  State<_NumberInputField> createState() => _NumberInputFieldState();
+}
+
+class _NumberInputFieldState extends State<_NumberInputField> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController(text: widget.value.toString());
+  }
+
+  @override
+  void didUpdateWidget(covariant _NumberInputField oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.value != oldWidget.value &&
+        widget.value.toString() != _controller.text) {
+      _controller.text = widget.value.toString();
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          widget.label,
+          style: GoogleFonts.outfit(
+            fontSize: 12.sp,
+            fontWeight: FontWeight.bold,
+            color: Colors.grey,
+          ),
+        ),
+        TextField(
+          keyboardType: TextInputType.number,
+          controller: _controller,
+          decoration: InputDecoration(
+            isDense: true,
+            contentPadding: EdgeInsets.symmetric(vertical: 8.h),
+          ),
+          style: GoogleFonts.outfit(fontSize: 14.sp),
+          onSubmitted: _submit,
+          onChanged: _submit,
+        ),
+      ],
+    );
+  }
+
+  void _submit(String v) {
+    final parsed = int.tryParse(v);
+    if (parsed != null) {
+      widget.onChanged(parsed);
     }
   }
 }
