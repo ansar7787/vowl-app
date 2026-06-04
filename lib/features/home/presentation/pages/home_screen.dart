@@ -43,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
     _fetchGlobalRank();
     // Initial check for reward availability
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
       if (context.read<AuthBloc>().state.status == AuthStatus.authenticated) {
         context.read<EconomyBloc>().add(const EconomyCheckDailyRewardRequested());
       }
@@ -303,7 +304,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _launchThemedQuest(BuildContext context, String questId) {
-    Haptics.vibrate(HapticsType.medium);
+    try {
+      Haptics.vibrate(HapticsType.medium);
+    } catch (_) {}
     context.push('${AppRouter.questSequenceRoute}?id=$questId');
   }
 }
