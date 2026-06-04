@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,6 +22,7 @@ class HatchingPage extends StatefulWidget {
 class _HatchingPageState extends State<HatchingPage> {
   int _stage = 0; // 0: Egg, 1: Cracking, 2: Hatched, 3: Introduction
   final FlutterTts _tts = FlutterTts();
+  Timer? _hatchTimer;
 
   @override
   void initState() {
@@ -27,17 +30,30 @@ class _HatchingPageState extends State<HatchingPage> {
     _initTts();
   }
 
+  @override
+  void dispose() {
+    _hatchTimer?.cancel();
+    _tts.stop();
+    super.dispose();
+  }
+
   Future<void> _initTts() async {
-    await _tts.setLanguage("en-US");
-    await _tts.setPitch(1.2); // Slightly higher pitch for Owly
-    await _tts.setSpeechRate(0.5);
+    try {
+      await _tts.setLanguage("en-US");
+      await _tts.setPitch(1.2); // Slightly higher pitch for Owly
+      await _tts.setSpeechRate(0.5);
+    } catch (e) {
+      debugPrint('HatchingPage: TTS initialization failed: $e');
+    }
   }
 
   void _onTapEgg() {
     if (_stage == 0) {
       sl<HapticService>().selection();
       setState(() => _stage = 1);
-      Future.delayed(const Duration(milliseconds: 1500), () {
+      
+      // Prevent memory leaks by storing timer reference and cancelling in dispose()
+      _hatchTimer = Timer(const Duration(milliseconds: 1500), () {
         if (mounted) {
           sl<HapticService>().success();
           setState(() => _stage = 2);
@@ -50,34 +66,47 @@ class _HatchingPageState extends State<HatchingPage> {
   }
 
   Future<void> _speakIntroduction() async {
-    final message = "Hoot hoot! I am Owly. I have been waiting for a brave traveler like you, ${widget.userName}, to help me unlock the secrets of English. Let's begin our quest!";
-    await _tts.speak(message);
+    try {
+      final message = "Hoot hoot! I am Owly. I have been waiting for a brave traveler like you, ${widget.userName}, to help me unlock the secrets of English. Let's begin our quest!";
+      await _tts.speak(message);
+    } catch (e) {
+      debugPrint('HatchingPage: TTS speak failed: $e');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          const MeshGradientBackground(),
-          SafeArea(
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _buildTitle(),
-                  SizedBox(height: 60.h),
-                  _buildMascotStage(),
-                  SizedBox(height: 40.h),
-                  _buildStatusText(),
-                  const Spacer(),
-                  if (_stage >= 2) _buildGetStartedButton(),
-                  SizedBox(height: 40.h),
-                ],
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light,
+        systemNavigationBarColor: Color(0xFFF8FAFC),
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
+      child: Scaffold(
+        body: Stack(
+          children: [
+            const MeshGradientBackground(),
+            SafeArea(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _buildTitle(),
+                    SizedBox(height: 60.h),
+                    _buildMascotStage(),
+                    SizedBox(height: 40.h),
+                    _buildStatusText(),
+                    const Spacer(),
+                    if (_stage >= 2) _buildGetStartedButton(),
+                    SizedBox(height: 40.h),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -99,17 +128,23 @@ class _HatchingPageState extends State<HatchingPage> {
   Widget _buildMascotStage() {
     return GestureDetector(
       onTap: _onTapEgg,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          if (_stage < 2)
-            _buildEgg()
-          else
-            const VowlMascot(
-              state: VowlMascotState.happy,
-              size: 200,
-            ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
-        ],
+      child: Semantics(
+        label: _stage < 2 
+            ? 'Mysterious egg. Tap to hatch your Vowl companion.' 
+            : 'Hatched Vowl companion mascot.',
+        button: _stage < 2,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            if (_stage < 2)
+              _buildEgg()
+            else
+              const VowlMascot(
+                state: VowlMascotState.happy,
+                size: 200,
+              ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
+          ],
+        ),
       ),
     );
   }
@@ -190,11 +225,5 @@ class _HatchingPageState extends State<HatchingPage> {
         ),
       ),
     ).animate().fadeIn(delay: 2.seconds).slideY(begin: 0.2, end: 0);
-  }
-
-  @override
-  void dispose() {
-    _tts.stop();
-    super.dispose();
   }
 }
