@@ -68,7 +68,7 @@ class _SignUpViewState extends State<SignUpView> {
           context.go('${AppRouter.hatchingRoute}?name=${Uri.encodeComponent(name)}');
         }
         if (state.errorMessage != null) {
-          _showSnackBar(context, state.errorMessage!, Colors.red);
+          _showSnackBar(context, state.errorMessage!, CustomSnackBarType.error);
         }
       },
       child: BlocBuilder<SignUpCubit, SignUpState>(
@@ -261,15 +261,7 @@ class _SignUpViewState extends State<SignUpView> {
     );
   }
 
-  void _showSnackBar(BuildContext context, String message, Color color) {
-    CustomSnackBarType type = CustomSnackBarType.info;
-    if (color == Colors.red) {
-      type = CustomSnackBarType.error;
-    } else if (color == Colors.orange) {
-      type = CustomSnackBarType.warning;
-    } else if (color == Colors.blue || color == Colors.green) {
-      type = CustomSnackBarType.success;
-    }
+  void _showSnackBar(BuildContext context, String message, CustomSnackBarType type) {
     CustomSnackBar.show(context: context, message: message, type: type);
   }
 }
