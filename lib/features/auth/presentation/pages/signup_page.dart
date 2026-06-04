@@ -62,9 +62,10 @@ class _SignUpViewState extends State<SignUpView> {
     return BlocListener<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state.isSuccess) {
-          final name = context.read<SignUpCubit>().state.name;
+          final name = state.name;
           context.read<AuthBloc>().add(const AuthReloadUser());
-          context.go('${AppRouter.hatchingRoute}?name=$name');
+          // Uri encode query parameters to prevent routing failures when user names contain special characters
+          context.go('${AppRouter.hatchingRoute}?name=${Uri.encodeComponent(name)}');
         }
         if (state.errorMessage != null) {
           _showSnackBar(context, state.errorMessage!, Colors.red);
@@ -157,63 +158,65 @@ class _SignUpViewState extends State<SignUpView> {
                                         ),
                                       ],
                                     ),
-                                      Text(
-                                        'Begin your journey to fluency',
-                                        style: GoogleFonts.outfit(
-                                          fontSize: 15.sp,
-                                          fontWeight: FontWeight.w600,
-                                          color: secondaryColor,
-                                        ),
-                                        textAlign: TextAlign.center,
+                                    Text(
+                                      'Begin your journey to fluency',
+                                      style: GoogleFonts.outfit(
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: secondaryColor,
                                       ),
-                                      SizedBox(height: 32.h),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    SizedBox(height: 32.h),
                                     HolographicCard(
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.stretch,
-                                          children: [
-                                            ShakeableWrapper(
-                                              shakeCount: _nameShake,
-                                              child: SignUpNameInput(
-                                                fieldKey: _nameKey,
-                                                focusNode: _nameFocus,
-                                              ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.stretch,
+                                        children: [
+                                          ShakeableWrapper(
+                                            shakeCount: _nameShake,
+                                            child: SignUpNameInput(
+                                              fieldKey: _nameKey,
+                                              focusNode: _nameFocus,
                                             ),
-                                            SizedBox(height: 16.h),
-                                            ShakeableWrapper(
-                                              shakeCount: _emailShake,
-                                              child: SignUpEmailInput(
-                                                fieldKey: _emailKey,
-                                                focusNode: _emailFocus,
-                                              ),
+                                          ),
+                                          SizedBox(height: 16.h),
+                                          ShakeableWrapper(
+                                            shakeCount: _emailShake,
+                                            child: SignUpEmailInput(
+                                              fieldKey: _emailKey,
+                                              focusNode: _emailFocus,
                                             ),
-                                            SizedBox(height: 16.h),
-                                            ShakeableWrapper(
-                                              shakeCount: _passwordShake,
-                                              child: SignUpPasswordInput(
-                                                fieldKey: _passwordKey,
-                                                focusNode: _passwordFocus,
-                                              ),
+                                          ),
+                                          SizedBox(height: 16.h),
+                                          ShakeableWrapper(
+                                            shakeCount: _passwordShake,
+                                            child: SignUpPasswordInput(
+                                              fieldKey: _passwordKey,
+                                              focusNode: _passwordFocus,
                                             ),
-                                            SizedBox(height: 32.h),
-                                            SignUpButton(
-                                              formKey: _formKey,
-                                              onValidationError: () {
+                                          ),
+                                          SizedBox(height: 32.h),
+                                          SignUpButton(
+                                            formKey: _formKey,
+                                            onValidationError: () {
+                                              try {
                                                 Haptics.vibrate(HapticsType.error);
-                                                if (!(_nameKey.currentState?.validate() ?? true)) {
-                                                  setState(() => _nameShake++);
-                                                }
-                                                if (!(_emailKey.currentState?.validate() ?? true)) {
-                                                  setState(() => _emailShake++);
-                                                }
-                                                if (!(_passwordKey.currentState?.validate() ?? true)) {
-                                                  setState(() => _passwordShake++);
-                                                }
-                                              },
-                                            ),
-                                          ],
-                                        ),
+                                              } catch (_) {}
+                                              if (!(_nameKey.currentState?.validate() ?? true)) {
+                                                setState(() => _nameShake++);
+                                              }
+                                              if (!(_emailKey.currentState?.validate() ?? true)) {
+                                                setState(() => _emailShake++);
+                                              }
+                                              if (!(_passwordKey.currentState?.validate() ?? true)) {
+                                                setState(() => _passwordShake++);
+                                              }
+                                            },
+                                          ),
+                                        ],
                                       ),
+                                    ),
                                     SizedBox(height: 32.h),
                                     Row(
                                       mainAxisAlignment:
