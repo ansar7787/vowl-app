@@ -1,65 +1,74 @@
 import 'package:flutter/material.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:vowl/core/presentation/widgets/modern_game_dialog.dart';
 import 'package:vowl/core/utils/notification_service.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
 class NotificationPrimingHelper {
+  static bool _isPrompting = false;
+
   static Future<void> checkAndPrompt(BuildContext context, int currentStreak) async {
-    // Delay slightly to let the home screen render and daily chest dialog show first
-    await Future.delayed(const Duration(milliseconds: 3000));
-    
-    // Check if widget context is still active/mounted
-    if (!context.mounted) return;
+    if (_isPrompting) return;
+    _isPrompting = true;
 
-    final prefs = await SharedPreferences.getInstance();
-    
-    // 1. Get the last time the user was prompted (in ms since epoch)
-    final int? lastPromptedMs = prefs.getInt('notification_last_prompted_time');
-    final bool oldPrimed = prefs.getBool('notification_primed') ?? false;
+    try {
+      // Delay slightly to let the home screen render and daily chest dialog show first
+      await Future.delayed(const Duration(milliseconds: 3000));
+      
+      // Check if widget context is still active/mounted
+      if (!context.mounted) return;
 
-    // Check current native notification status
-    final bool isNotificationGranted = await Permission.notification.isGranted;
+      final prefs = await SharedPreferences.getInstance();
+      
+      // 1. Get the last time the user was prompted (in ms since epoch)
+      final int? lastPromptedMs = prefs.getInt('notification_last_prompted_time');
+      final bool oldPrimed = prefs.getBool('notification_primed') ?? false;
 
-    if (isNotificationGranted) {
-      // User already enabled notifications, no need to show any dialogs!
-      return;
-    }
+      // Check current native notification status
+      final bool isNotificationGranted = await Permission.notification.isGranted;
 
-    if (!context.mounted) return;
+      if (isNotificationGranted) {
+        // User already enabled notifications, no need to show any dialogs!
+        return;
+      }
 
-    final now = DateTime.now();
+      if (!context.mounted) return;
 
-    if (lastPromptedMs == null && !oldPrimed) {
-      // Very first time launching the app: show standard habit-building priming
-      _showDialog(context, isRePrompt: false);
-    } else {
-      // Cooldown rule: It must be at least 7 days since the last prompt or first opt-out
-      final lastPromptedDate = lastPromptedMs != null 
-          ? DateTime.fromMillisecondsSinceEpoch(lastPromptedMs)
-          : now.subtract(const Duration(days: 8)); // fallback if they pressed Not Now in the old version
+      final now = DateTime.now();
 
-      final daysDifference = now.difference(lastPromptedDate).inDays;
+      if (lastPromptedMs == null && !oldPrimed) {
+        // Very first time launching the app: show standard habit-building priming
+        await _showDialog(context, isRePrompt: false);
+      } else {
+        // Cooldown rule: It must be at least 7 days since the last prompt or first opt-out
+        final lastPromptedDate = lastPromptedMs != null 
+            ? DateTime.fromMillisecondsSinceEpoch(lastPromptedMs)
+            : now.subtract(const Duration(days: 8)); // fallback if they pressed Not Now in the old version
 
-      if (daysDifference >= 7) {
-        // High motivation rule: Only re-prompt if they have a streak of 3+ days worth protecting!
-        if (currentStreak >= 3) {
-          final isBlocked = await Permission.notification.isPermanentlyDenied;
-          if (!context.mounted) return;
-          _showDialog(
-            context,
-            isRePrompt: true, 
-            isSystemBlocked: isBlocked,
-            streak: currentStreak,
-          );
+        final daysDifference = now.difference(lastPromptedDate).inDays;
+
+        if (daysDifference >= 7) {
+          // High motivation rule: Only re-prompt if they have a streak of 3+ days worth protecting!
+          if (currentStreak >= 3) {
+            final isBlocked = await Permission.notification.isPermanentlyDenied;
+            if (!context.mounted) return;
+            await _showDialog(
+              context,
+              isRePrompt: true, 
+              isSystemBlocked: isBlocked,
+              streak: currentStreak,
+            );
+          }
         }
       }
+    } finally {
+      _isPrompting = false;
     }
   }
 
-  static void _showDialog(
+  static Future<void> _showDialog(
     BuildContext context, {
     required bool isRePrompt, 
     bool isSystemBlocked = false,
@@ -77,7 +86,7 @@ class NotificationPrimingHelper {
           : "You have an awesome $streak-day streak! Enable reminders so Owly can remind you before it's too late.";
     }
 
-    showDialog(
+    return showDialog<void>(
       context: context,
       barrierDismissible: false,
       builder: (dialogContext) => ModernGameDialog(
@@ -87,7 +96,9 @@ class NotificationPrimingHelper {
         secondaryButtonText: "NOT NOW",
         isSuccess: true,
         onButtonPressed: () async {
-          Haptics.vibrate(HapticsType.medium);
+          if (di.sl.isRegistered<HapticService>()) {
+            di.sl<HapticService>().selection();
+          }
           Navigator.of(dialogContext).pop();
 
           final prefs = await SharedPreferences.getInstance();
@@ -97,11 +108,15 @@ class NotificationPrimingHelper {
           if (isSystemBlocked) {
             await openAppSettings();
           } else {
-            await di.sl<NotificationService>().requestPermissions();
+            if (di.sl.isRegistered<NotificationService>()) {
+              await di.sl<NotificationService>().requestPermissions();
+            }
           }
         },
         onSecondaryPressed: () async {
-          Haptics.vibrate(HapticsType.light);
+          if (di.sl.isRegistered<HapticService>()) {
+            di.sl<HapticService>().light();
+          }
           Navigator.of(dialogContext).pop();
           
           final prefs = await SharedPreferences.getInstance();

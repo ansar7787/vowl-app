@@ -16,6 +16,8 @@ import 'package:vowl/features/home/presentation/pages/quest_library_page.dart';
 import 'package:vowl/features/profile/presentation/pages/trophy_room_screen.dart';
 
 class HomeRoutes {
+  HomeRoutes._(); // Prevent instantiation of utility class
+
   static const String splashRoute = '/splash';
   static const String homeRoute = '/home';
   static const String gamesRoute = '/games';
