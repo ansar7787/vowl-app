@@ -62,10 +62,8 @@ class _SignUpViewState extends State<SignUpView> {
     return BlocListener<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state.isSuccess) {
-          final name = state.name;
           context.read<AuthBloc>().add(const AuthReloadUser());
-          // Uri encode query parameters to prevent routing failures when user names contain special characters
-          context.go('${AppRouter.hatchingRoute}?name=${Uri.encodeComponent(name)}');
+          context.go(AppRouter.verifyEmailRoute);
         }
         if (state.errorMessage != null) {
           _showSnackBar(context, state.errorMessage!, CustomSnackBarType.error);

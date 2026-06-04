@@ -95,7 +95,6 @@ class AppRouter {
 
       final isAuthRoute =
           isLoginRoute || isSignupRoute || isForgotPasswordRoute;
-      final isHatchingRoute = state.uri.path == hatchingRoute;
 
       // 1. Wait for Auth State (Prevent early redirect during initialization)
       if (authState.status == AuthStatus.unknown) {
@@ -116,9 +115,8 @@ class AppRouter {
       } else {
         // Handle Authenticated Users
         if (!isVerified) {
-          // If they are not verified, they must stay on the verification screen.
-          // We exempt the hatching route so they can complete onboarding first.
-          if (state.uri.path != verifyEmailRoute && !isAuthRoute && !isHatchingRoute) {
+          // If they are not verified, they must stay on the verification screen
+          if (state.uri.path != verifyEmailRoute && !isAuthRoute) {
             return verifyEmailRoute;
           }
           return null;

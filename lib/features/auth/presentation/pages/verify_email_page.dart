@@ -133,7 +133,8 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
       listener: (context, state) {
         if (state.user?.isEmailVerified == true) {
           timer?.cancel();
-          context.go(AppRouter.homeRoute);
+          final name = state.user?.displayName ?? 'Traveler';
+          context.go('${AppRouter.hatchingRoute}?name=${Uri.encodeComponent(name)}');
         }
       },
       child: Builder(builder: (context) {
