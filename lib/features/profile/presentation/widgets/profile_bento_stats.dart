@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -266,7 +267,7 @@ class ProfileBentoStats extends StatelessWidget {
   }) {
     return ScaleButton(
       onTap: () {
-        Haptics.vibrate(HapticsType.medium);
+        di.sl<HapticService>().light();
         onTap();
       },
       child: GlassTile(

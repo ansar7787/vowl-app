@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -50,7 +51,7 @@ class ProfilePreferencesList extends StatelessWidget {
               Icons.admin_panel_settings_rounded,
               Colors.orange,
               () {
-                Haptics.vibrate(HapticsType.medium);
+                di.sl<HapticService>().light();
                 context.push(AppRouter.adminRoute);
               },
             ),
@@ -68,7 +69,7 @@ class ProfilePreferencesList extends StatelessWidget {
             Icons.settings_rounded,
             Colors.grey,
             () {
-              Haptics.vibrate(HapticsType.medium);
+              di.sl<HapticService>().light();
               context.push(AppRouter.settingsRoute);
             },
           ),
@@ -165,7 +166,7 @@ class ProfilePreferencesList extends StatelessWidget {
                 onChanged: isDisabled
                     ? null
                     : (v) {
-                        Haptics.vibrate(HapticsType.selection);
+                        di.sl<HapticService>().selection();
                         onChanged(v);
                       },
                 activeThumbColor: color,

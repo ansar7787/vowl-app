@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
@@ -90,7 +91,7 @@ class ProfileHeader extends StatelessWidget {
                 right: 5.w,
                 child: ScaleButton(
                   onTap: () {
-                    Haptics.vibrate(HapticsType.light);
+                    di.sl<HapticService>().light();
                     onEditPhoto();
                   },
                   child: Container(
@@ -118,7 +119,7 @@ class ProfileHeader extends StatelessWidget {
         Center(
           child: ScaleButton(
             onTap: () {
-              Haptics.vibrate(HapticsType.selection);
+              di.sl<HapticService>().selection();
               onEditName();
             },
             child: GlassTile(

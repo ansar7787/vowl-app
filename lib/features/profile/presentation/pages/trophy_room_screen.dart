@@ -81,6 +81,8 @@ class TrophyRoomScreen extends StatelessWidget {
                                   onPressed: () {
                                     if (context.canPop()) {
                                       context.pop();
+                                    } else {
+                                      context.go('/');
                                     }
                                   },
                                   icon: const Icon(

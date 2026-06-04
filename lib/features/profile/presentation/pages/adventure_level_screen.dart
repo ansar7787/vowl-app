@@ -12,9 +12,10 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
-import 'package:flutter/services.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/haptic_service.dart';
 
 class AdventureLevelScreen extends StatelessWidget {
   const AdventureLevelScreen({super.key});
@@ -781,7 +782,7 @@ class AdventureLevelScreen extends StatelessWidget {
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     if (user.coins < cost) {
-      HapticFeedback.vibrate();
+      di.sl<HapticService>().light();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
@@ -858,7 +859,7 @@ class AdventureLevelScreen extends StatelessWidget {
                           context.read<EconomyBloc>().add(
                             EconomyPurchaseHintRequested(cost, hintAmount: amount),
                           );
-                          HapticFeedback.heavyImpact();
+                          di.sl<HapticService>().heavy();
                           _showSuccessSnackbar(context, amount);
                         },
                         child: Text('CONFIRM'),

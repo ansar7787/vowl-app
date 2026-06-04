@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,6 +13,8 @@ import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/haptic_service.dart';
 
 class AdventureXPScreen extends StatelessWidget {
   const AdventureXPScreen({super.key});
@@ -28,7 +29,7 @@ class AdventureXPScreen extends StatelessWidget {
               state.message!.contains('not enough') ||
               state.message!.contains('failed');
 
-          HapticFeedback.lightImpact();
+          di.sl<HapticService>().light();
 
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(

@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:haptic_feedback/haptic_feedback.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -329,7 +329,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget _buildPremiumBanner(BuildContext context) {
     return ScaleButton(
       onTap: () {
-        Haptics.vibrate(HapticsType.selection);
+        di.sl<HapticService>().selection();
         context.push(AppRouter.premiumRoute);
       },
       child: GlassTile(

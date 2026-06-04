@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,6 +15,8 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/core/presentation/widgets/hint_ad_card.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/haptic_service.dart';
 
 class VowlCoinsScreen extends StatelessWidget {
   const VowlCoinsScreen({super.key});
@@ -273,7 +274,7 @@ class VowlCoinsScreen extends StatelessWidget {
   ) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     if (user.coins < cost) {
-      HapticFeedback.vibrate();
+      di.sl<HapticService>().light();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Row(
@@ -383,7 +384,7 @@ class VowlCoinsScreen extends StatelessWidget {
                           context.read<EconomyBloc>().add(
                             EconomyPurchaseHintRequested(cost, hintAmount: amount),
                           );
-                          HapticFeedback.heavyImpact(); // Premium haptic
+                          di.sl<HapticService>().heavy(); // Premium haptic
                           _showSuccessSnackbar(context, amount);
                         },
                         child: Text(
