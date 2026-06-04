@@ -6,6 +6,9 @@ import 'package:vowl/core/utils/auth_error_handler.dart';
 import 'package:vowl/core/usecases/usecase.dart';
 import 'package:vowl/core/network/network_info.dart';
 
+// ============================================================================
+// STATE
+// ============================================================================
 class SignUpState extends Equatable {
   final String name;
   final String email;
@@ -31,7 +34,7 @@ class SignUpState extends Equatable {
     String? password,
     bool? isSubmitting,
     bool? isSuccess,
-    String? errorMessage,
+    String? Function()? errorMessage,
     bool? isPasswordVisible,
   }) {
     return SignUpState(
@@ -40,7 +43,7 @@ class SignUpState extends Equatable {
       password: password ?? this.password,
       isSubmitting: isSubmitting ?? this.isSubmitting,
       isSuccess: isSuccess ?? this.isSuccess,
-      errorMessage: errorMessage,
+      errorMessage: errorMessage != null ? errorMessage() : this.errorMessage,
       isPasswordVisible: isPasswordVisible ?? this.isPasswordVisible,
     );
   }
@@ -57,6 +60,9 @@ class SignUpState extends Equatable {
   ];
 }
 
+// ============================================================================
+// CUBIT
+// ============================================================================
 class SignUpCubit extends Cubit<SignUpState> {
   final SignUp _signUp;
   final SendEmailVerification _sendEmailVerification;
@@ -78,30 +84,63 @@ class SignUpCubit extends Cubit<SignUpState> {
   Future<void> signUp() async {
     if (state.isSubmitting) return;
 
+    // Client-side Input Validations
+    final trimmedName = state.name.trim();
+    if (trimmedName.isEmpty) {
+      emit(state.copyWith(errorMessage: () => 'Name cannot be empty.'));
+      return;
+    }
+    if (trimmedName.length < 2) {
+      emit(state.copyWith(errorMessage: () => 'Name must be at least 2 characters long.'));
+      return;
+    }
+
+    final trimmedEmail = state.email.trim();
+    if (trimmedEmail.isEmpty) {
+      emit(state.copyWith(errorMessage: () => 'Email address cannot be empty.'));
+      return;
+    }
+    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    if (!emailRegex.hasMatch(trimmedEmail)) {
+      emit(state.copyWith(errorMessage: () => 'Please enter a valid email address.'));
+      return;
+    }
+
+    if (state.password.isEmpty) {
+      emit(state.copyWith(errorMessage: () => 'Password cannot be empty.'));
+      return;
+    }
+    if (state.password.length < 6) {
+      emit(state.copyWith(errorMessage: () => 'Password must be at least 6 characters long.'));
+      return;
+    }
+
+    // Network Connectivity Verification
     if (_networkInfo != null && !(await _networkInfo.isConnected)) {
       emit(
         state.copyWith(
-          errorMessage: "No internet connection. Please check your network.",
+          errorMessage: () => 'No internet connection. Please check your network.',
         ),
       );
       return;
     }
 
-    emit(state.copyWith(isSubmitting: true));
+    emit(state.copyWith(isSubmitting: true, errorMessage: () => null));
     final result = await _signUp(
       SignUpParams(
-        name: state.name,
-        email: state.email,
+        name: trimmedName,
+        email: trimmedEmail,
         password: state.password,
       ),
     );
+    
     result.fold(
       (failure) {
         if (isClosed) return;
         emit(
           state.copyWith(
             isSubmitting: false,
-            errorMessage: AuthErrorHandler.getMessage(failure.message),
+            errorMessage: () => AuthErrorHandler.getMessage(failure.message),
           ),
         );
       },
@@ -109,13 +148,13 @@ class SignUpCubit extends Cubit<SignUpState> {
         // Send verification email
         final verificationResult = await _sendEmailVerification(NoParams());
         if (isClosed) return;
+        
         verificationResult.fold(
           (failure) => emit(
             state.copyWith(
               isSubmitting: false,
-              isSuccess: true, // Still success, but maybe show warning?
-              errorMessage:
-                  "Account created, but failed to send verification email: ${failure.message}",
+              isSuccess: true, // Still success, but show warning message
+              errorMessage: () => 'Account created, but failed to send verification email: ${failure.message}',
             ),
           ),
           (_) => emit(state.copyWith(isSubmitting: false, isSuccess: true)),
