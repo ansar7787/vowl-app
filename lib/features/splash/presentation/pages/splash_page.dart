@@ -1,10 +1,11 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
@@ -17,6 +18,7 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   bool _timerFinished = false;
+  Timer? _timer;
 
   @override
   void initState() {
@@ -24,8 +26,16 @@ class _SplashPageState extends State<SplashPage> {
     _startTimer();
   }
 
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
   void _startTimer() {
-    Future.delayed(const Duration(milliseconds: 2000), () {
+    // Correct lifecycle control: scheduling with a cancellable Timer
+    // avoids keeping closure references alive in the event loop if disposed.
+    _timer = Timer(const Duration(milliseconds: 2000), () {
       if (mounted) {
         setState(() => _timerFinished = true);
         _checkNavigation();
@@ -61,42 +71,51 @@ class _SplashPageState extends State<SplashPage> {
           _checkNavigation();
         }
       },
-      child: Scaffold(
-        backgroundColor: backgroundColor,
-        body: Stack(
-          children: [
-            // 1. Localized Branding Aura (Not full screen gradient)
-            Center(
-              child: Container(
-                width: 300.r,
-                height: 300.r,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: RadialGradient(
-                    colors: [
-                      primaryColor.withValues(alpha: isDark ? 0.12 : 0.05),
-                      backgroundColor.withValues(alpha: 0.0),
-                    ],
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
+          statusBarBrightness: isDark ? Brightness.dark : Brightness.light,
+          systemNavigationBarColor: backgroundColor,
+          systemNavigationBarIconBrightness: isDark ? Brightness.light : Brightness.dark,
+        ),
+        child: Scaffold(
+          backgroundColor: backgroundColor,
+          body: Stack(
+            children: [
+              // 1. Localized Branding Aura (Not full screen gradient)
+              Center(
+                child: Container(
+                  width: 300.r,
+                  height: 300.r,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: RadialGradient(
+                      colors: [
+                        primaryColor.withValues(alpha: isDark ? 0.12 : 0.05),
+                        backgroundColor.withValues(alpha: 0.0),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ).animate().fadeIn(duration: 1.seconds),
+              ).animate().fadeIn(duration: 1.seconds),
 
-            // 2. Center Logo
-            Center(
-              child: RepaintBoundary(
-                child: _SplashLogo(primaryColor: primaryColor),
+              // 2. Center Logo
+              Center(
+                child: RepaintBoundary(
+                  child: _SplashLogo(primaryColor: primaryColor),
+                ),
               ),
-            ),
 
-            // 3. Footer Branding (Stacked for maximum pop)
-            Positioned(
-              bottom: 64.h, // Increased for breathing space
-              left: 0,
-              right: 0,
-              child: _SplashFooter(primaryColor: primaryColor, isDark: isDark),
-            ),
-          ],
+              // 3. Footer Branding (Stacked for maximum pop)
+              Positioned(
+                bottom: 64.h,
+                left: 0,
+                right: 0,
+                child: _SplashFooter(primaryColor: primaryColor, isDark: isDark),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -110,7 +129,7 @@ class _SplashLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180.r, // Bold Pro Standard
+      width: 180.r,
       height: 180.r,
       decoration: BoxDecoration(
         color: Colors.transparent,
@@ -124,11 +143,15 @@ class _SplashLogo extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: Image.asset(
-          'assets/images/vowl_logo.webp',
-          height: 130.r, // Increased for mascot detail
-          width: 130.r,
-          fit: BoxFit.contain,
+        child: Semantics(
+          label: 'Vowl Mascot Logo',
+          image: true,
+          child: Image.asset(
+            'assets/images/vowl_logo.webp',
+            height: 130.r,
+            width: 130.r,
+            fit: BoxFit.contain,
+          ),
         ),
       ),
     ).animate().scale(duration: 800.ms, curve: Curves.easeOutBack).fadeIn();
@@ -142,38 +165,41 @@ class _SplashFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        // The Branding Pop
-        Text(
-          'vowl',
-          style: GoogleFonts.outfit(
-            fontSize: 26.sp,
-            fontWeight: FontWeight.w900,
-            color: const Color(0xFFA8E063), // Exact Launcher Matching Green
-            letterSpacing: 1.2,
-            shadows: [
-              Shadow(
-                color: const Color(0xFFA8E063).withValues(alpha: 0.2),
-                offset: const Offset(0, 4),
-                blurRadius: 10,
-              ),
-            ],
-          ),
-        ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.1),
-        SizedBox(height: 6.h), // Reduced from 14.h for tight professional branding
-        // The Tagline
-        Text(
-          'Your Complete English Quest',
-          style: GoogleFonts.outfit(
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w800,
-            color: isDark ? Colors.white30 : Colors.black26,
-            letterSpacing: 2,
-          ),
-        ).animate().fadeIn(delay: 800.ms),
-      ],
+    return Semantics(
+      label: 'Vowl App Branding',
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // The Branding Pop
+          Text(
+            'vowl',
+            style: GoogleFonts.outfit(
+              fontSize: 26.sp,
+              fontWeight: FontWeight.w900,
+              color: const Color(0xFFA8E063),
+              letterSpacing: 1.2,
+              shadows: [
+                Shadow(
+                  color: const Color(0xFFA8E063).withValues(alpha: 0.2),
+                  offset: const Offset(0, 4),
+                  blurRadius: 10,
+                ),
+              ],
+            ),
+          ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.1),
+          SizedBox(height: 6.h),
+          // The Tagline
+          Text(
+            'Your Complete English Quest',
+            style: GoogleFonts.outfit(
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w800,
+              color: isDark ? Colors.white30 : Colors.black26,
+              letterSpacing: 2,
+            ),
+          ).animate().fadeIn(delay: 800.ms),
+        ],
+      ),
     );
   }
 }
