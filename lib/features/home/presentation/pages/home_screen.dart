@@ -204,6 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 title: 'Quest Arena',
                                 subtitle: '9-step real-world journey',
                                 categoryColor: const Color(0xFF6366F1),
+                                onSeeAll: () => context.push(AppRouter.libraryRoute),
                                 badge: Container(
                                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                                   decoration: BoxDecoration(
