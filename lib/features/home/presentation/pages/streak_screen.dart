@@ -1,13 +1,16 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
-import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
+import 'package:vowl/core/utils/app_router.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 import 'package:vowl/features/home/presentation/widgets/streak_hero.dart';
 import 'package:vowl/features/home/presentation/widgets/streak_calendar.dart';
@@ -22,88 +25,88 @@ class StreakScreen extends StatefulWidget {
 }
 
 class _StreakScreenState extends State<StreakScreen> {
+  final ScrollController _scrollController = ScrollController();
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isMidnight 
-        ? Colors.black 
+        ? const Color(0xFF020617) 
         : (isDark ? const Color(0xFF0F172A) : const Color(0xFFF8FAFC));
+    final contentColor = isDark ? Colors.white : const Color(0xFF0F172A);
 
     return Scaffold(
       backgroundColor: bgColor,
       body: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
           final user = state.user;
-          if (user == null) return const SizedBox.shrink();
+          if (user == null) {
+            return Center(
+              child: CircularProgressIndicator(
+                color: isDark ? Colors.white38 : const Color(0xFF3B82F6),
+              ),
+            );
+          }
 
           return Stack(
             children: [
-              const MeshGradientBackground(),
-              SafeArea(
-                child: CustomScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  slivers: [
-                    SliverAppBar(
-                      pinned: true,
-                      backgroundColor: Colors.transparent,
-                      surfaceTintColor: Colors.transparent,
-                      elevation: 0,
-                      toolbarHeight: 70.h,
-                      automaticallyImplyLeading: false,
-                      title: GlassTile(
-                        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-                        borderRadius: BorderRadius.circular(24.r),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 32.r,
-                              height: 32.r,
-                              child: IconButton(
-                                padding: EdgeInsets.zero,
-                                iconSize: 18.r,
-                                onPressed: () => Navigator.pop(context),
-                                icon: Icon(
-                                  Icons.arrow_back_ios_new_rounded,
-                                  color: isDark ? Colors.white : Colors.black87,
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 10.w),
-                            Text(
-                              'Daily Streak',
-                              style: GoogleFonts.outfit(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w800,
-                                color: isDark ? Colors.white : const Color(0xFF0F172A),
-                              ),
-                            ),
-                            const Spacer(),
-                            _buildCoinsChip(user),
-                          ],
-                        ),
-                      ),
-                    ),
+              // 1. Immersive Background
+              const MeshGradientBackground(showLetters: false),
 
-                    // Body Content
-                    SliverPadding(
-                      padding: EdgeInsets.fromLTRB(20.w, 24.h, 20.w, 40.h),
-                      sliver: SliverList(
-                        delegate: SliverChildListDelegate([
-                          StreakHero(user: user),
-                          SizedBox(height: 24.h),
-                          StreakCalendar(user: user),
-                          SizedBox(height: 32.h),
-                          StreakMilestones(user: user),
-                          SizedBox(height: 32.h),
-                          StreakBoostersShop(user: user),
-                          SizedBox(height: 24.h),
-                          const AdRewardCard(margin: EdgeInsets.zero),
-                          SizedBox(height: 40.h),
-                        ]),
-                      ),
+              // 2. Dynamic Scrollable Body
+              CustomScrollView(
+                controller: _scrollController,
+                physics: const BouncingScrollPhysics(),
+                slivers: [
+                  // Safe area space matching the floating app bar
+                  SliverToBoxAdapter(
+                    child: SizedBox(height: MediaQuery.of(context).padding.top + 95.h),
+                  ),
+
+                  // 3. Main Streak Metrics/Contents
+                  SliverPadding(
+                    padding: EdgeInsets.fromLTRB(20.w, 24.h, 20.w, 100.h),
+                    sliver: SliverList(
+                      delegate: SliverChildListDelegate([
+                        RepaintBoundary(
+                          child: StreakHero(user: user),
+                        ),
+                        SizedBox(height: 24.h),
+                        RepaintBoundary(
+                          child: StreakCalendar(user: user),
+                        ),
+                        SizedBox(height: 32.h),
+                        RepaintBoundary(
+                          child: StreakMilestones(user: user),
+                        ),
+                        SizedBox(height: 32.h),
+                        RepaintBoundary(
+                          child: StreakBoostersShop(user: user),
+                        ),
+                        SizedBox(height: 24.h),
+                        const RepaintBoundary(
+                          child: AdRewardCard(margin: EdgeInsets.zero),
+                        ),
+                      ]),
                     ),
-                  ],
+                  ),
+                ],
+              ),
+
+              // 4. Floating Glass Island AppBar
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                child: RepaintBoundary(
+                  child: _buildFloatingGlassAppBar(context, isDark, contentColor, user),
                 ),
               ),
             ],
@@ -113,12 +116,88 @@ class _StreakScreenState extends State<StreakScreen> {
     );
   }
 
+  Widget _buildFloatingGlassAppBar(BuildContext context, bool isDark, Color contentColor, UserEntity user) {
+    return ClipRRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+        child: Container(
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).padding.top + 12.h,
+            bottom: 16.h,
+            left: 20.w,
+            right: 20.w,
+          ),
+          decoration: BoxDecoration(
+            color: (isDark ? Colors.black : Colors.white).withValues(alpha: 0.1),
+            border: Border(
+              bottom: BorderSide(
+                color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.05),
+              ),
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              ScaleButton(
+                onTap: () {
+                  if (context.canPop()) {
+                    context.pop();
+                  } else {
+                    context.go(AppRouter.homeRoute);
+                  }
+                },
+                child: Container(
+                  padding: EdgeInsets.all(10.r),
+                  decoration: BoxDecoration(
+                    color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
+                    shape: BoxShape.circle,
+                    border: Border.all(color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.1)),
+                  ),
+                  child: Icon(Icons.arrow_back_ios_new_rounded, color: contentColor, size: 20.r),
+                ),
+              ),
+              // Centered Title Pill
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF97316).withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(24.r),
+                  border: Border.all(color: const Color(0xFFF97316).withValues(alpha: 0.2)),
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.local_fire_department_rounded, color: const Color(0xFFF97316), size: 16.r),
+                    SizedBox(width: 8.w),
+                    Text(
+                      "DAILY STREAK",
+                      style: GoogleFonts.outfit(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w900,
+                        color: contentColor,
+                        letterSpacing: 1.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Coins Info Pill
+              _buildCoinsChip(user),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _buildCoinsChip(UserEntity user) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: const Color(0xFF10B981).withValues(alpha: 0.15),
-        borderRadius: BorderRadius.circular(12.r),
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(
+          color: const Color(0xFF10B981).withValues(alpha: 0.2),
+        ),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -126,9 +205,9 @@ class _StreakScreenState extends State<StreakScreen> {
           Icon(
             Icons.monetization_on_rounded,
             color: const Color(0xFF10B981),
-            size: 14.r,
+            size: 16.r,
           ),
-          SizedBox(width: 4.w),
+          SizedBox(width: 6.w),
           Text(
             '${user.coins}',
             style: GoogleFonts.outfit(
