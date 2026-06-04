@@ -29,6 +29,8 @@ class LoginEmailInput extends StatelessWidget {
             return null;
           },
           textInputAction: TextInputAction.next,
+          keyboardType: TextInputType.emailAddress,
+          autofillHints: const [AutofillHints.email],
           style: TextStyle(
             color: MeshGradientBackground.getContrastColor(context),
           ),
@@ -82,7 +84,6 @@ class LoginEmailInput extends StatelessWidget {
               horizontal: 20.w,
             ),
           ),
-          keyboardType: TextInputType.emailAddress,
         );
       },
     );
@@ -123,6 +124,8 @@ class LoginPasswordInput extends StatelessWidget {
           },
           obscureText: !state.isPasswordVisible,
           textInputAction: TextInputAction.done,
+          keyboardType: TextInputType.visiblePassword,
+          autofillHints: const [AutofillHints.password],
           style: TextStyle(
             color: MeshGradientBackground.getContrastColor(context),
           ),
