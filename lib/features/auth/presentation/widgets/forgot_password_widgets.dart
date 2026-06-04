@@ -92,6 +92,9 @@ class ForgotPasswordEmailInput extends StatelessWidget {
         return null;
       },
       style: TextStyle(color: contrastColor),
+      textInputAction: TextInputAction.done,
+      keyboardType: TextInputType.emailAddress,
+      autofillHints: const [AutofillHints.email],
       decoration: InputDecoration(
         hintText: 'Email Address',
         hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
@@ -136,7 +139,6 @@ class ForgotPasswordEmailInput extends StatelessWidget {
           horizontal: 20.w,
         ),
       ),
-      keyboardType: TextInputType.emailAddress,
     );
   }
 }
