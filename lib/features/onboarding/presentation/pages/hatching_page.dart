@@ -116,13 +116,19 @@ class _HatchingPageState extends State<HatchingPage> {
     if (_stage == 1) title = "It's Hatching!";
     if (_stage >= 2) title = "Welcome, ${widget.userName}!";
 
-    return Text(
-      title,
-      style: TextStyle(
-        fontFamily: 'Outfit',
-        fontSize: 32.sp,
-        fontWeight: FontWeight.w900,
-        color: const Color(0xFF2563EB),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w),
+      child: Text(
+        title,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 26.sp,
+          fontWeight: FontWeight.w900,
+          color: const Color(0xFF2563EB),
+          letterSpacing: -0.5,
+          height: 1.2,
+        ),
       ),
     ).animate(key: ValueKey('hatching_title_$_stage')).fadeIn().scale();
   }
@@ -156,12 +162,51 @@ class _HatchingPageState extends State<HatchingPage> {
           width: 180.r,
           height: 240.r,
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.2),
-            borderRadius: BorderRadius.all(Radius.elliptical(90.r, 120.r)),
-            border: Border.all(color: Colors.white38, width: 2),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.elliptical(90.r, 140.r),
+              topRight: Radius.elliptical(90.r, 140.r),
+              bottomLeft: Radius.elliptical(90.r, 100.r),
+              bottomRight: Radius.elliptical(90.r, 100.r),
+            ),
+            border: Border.all(
+              color: Colors.white.withValues(alpha: 0.4),
+              width: 1.5,
+            ),
+            gradient: RadialGradient(
+              center: const Alignment(-0.35, -0.35),
+              radius: 0.85,
+              colors: [
+                Colors.white.withValues(alpha: 0.7),
+                const Color(0xFF93C5FD).withValues(alpha: 0.4),
+                const Color(0xFF1D4ED8).withValues(alpha: 0.5),
+              ],
+              stops: const [0.0, 0.4, 1.0],
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF1E3A8A).withValues(alpha: 0.2),
+                blurRadius: 20,
+                offset: const Offset(0, 12),
+              ),
+              BoxShadow(
+                color: const Color(0xFF60A5FA).withValues(alpha: 0.15),
+                blurRadius: 10,
+                spreadRadius: -2,
+              ),
+            ],
           ),
-          child: Center(
-            child: Icon(Icons.auto_awesome, color: Colors.white, size: 48.r),
+          child: Stack(
+            children: [
+              Center(
+                child: Icon(
+                  Icons.auto_awesome,
+                  color: Colors.white.withValues(alpha: 0.7),
+                  size: 44.r,
+                ),
+              ),
+              if (_stage == 1)
+                Positioned.fill(child: CustomPaint(painter: EggCrackPainter())),
+            ],
           ),
         )
         .animate(onPlay: (c) => c.repeat(reverse: true))
@@ -213,4 +258,49 @@ class _HatchingPageState extends State<HatchingPage> {
       ),
     ).animate().fadeIn(delay: 2.seconds).slideY(begin: 0.2, end: 0);
   }
+}
+
+class EggCrackPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color =
+          const Color(0xFFFBBF24) // Glowing Amber/Gold
+      ..strokeWidth = 3.0
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
+
+    final glowPaint = Paint()
+      ..color = const Color(0xFFFBBF24).withValues(alpha: 0.4)
+      ..strokeWidth = 6.0
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
+
+    final path = Path()
+      ..moveTo(size.width * 0.5, size.height * 0.3)
+      ..lineTo(size.width * 0.45, size.height * 0.45)
+      ..lineTo(size.width * 0.55, size.height * 0.58)
+      ..lineTo(size.width * 0.48, size.height * 0.72);
+
+    final path2 = Path()
+      ..moveTo(size.width * 0.45, size.height * 0.45)
+      ..lineTo(size.width * 0.3, size.height * 0.48)
+      ..lineTo(size.width * 0.22, size.height * 0.52);
+
+    final path3 = Path()
+      ..moveTo(size.width * 0.55, size.height * 0.58)
+      ..lineTo(size.width * 0.72, size.height * 0.56)
+      ..lineTo(size.width * 0.8, size.height * 0.62);
+
+    canvas.drawPath(path, glowPaint);
+    canvas.drawPath(path2, glowPaint);
+    canvas.drawPath(path3, glowPaint);
+
+    canvas.drawPath(path, paint);
+    canvas.drawPath(path2, paint);
+    canvas.drawPath(path3, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
