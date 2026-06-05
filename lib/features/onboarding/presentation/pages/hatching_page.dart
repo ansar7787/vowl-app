@@ -10,6 +10,8 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
+/// HatchingPage handles the introductory onboarding companion hatching animation,
+/// guiding the user through hatching their Vowl companion using a high-fidelity 3D egg.
 class HatchingPage extends StatefulWidget {
   final String userName;
   const HatchingPage({super.key, required this.userName});
@@ -22,6 +24,7 @@ class _HatchingPageState extends State<HatchingPage> {
   int _stage = 0; // 0: Egg, 1: Cracking, 2: Hatched, 3: Introduction
   final FlutterTts _tts = FlutterTts();
   Timer? _hatchTimer;
+  bool _isTtsSpeaking = false;
 
   @override
   void initState() {
@@ -32,15 +35,27 @@ class _HatchingPageState extends State<HatchingPage> {
   @override
   void dispose() {
     _hatchTimer?.cancel();
-    _tts.stop();
+    if (_isTtsSpeaking) {
+      _tts.stop();
+    }
     super.dispose();
   }
 
   Future<void> _initTts() async {
     try {
       await _tts.setLanguage("en-US");
-      await _tts.setPitch(1.2); // Slightly higher pitch for Owly
+      await _tts.setPitch(1.2); // Friendly voice pitch for Owly
       await _tts.setSpeechRate(0.5);
+      
+      _tts.setStartHandler(() {
+        if (mounted) setState(() => _isTtsSpeaking = true);
+      });
+      _tts.setCompletionHandler(() {
+        if (mounted) setState(() => _isTtsSpeaking = false);
+      });
+      _tts.setErrorHandler((_) {
+        if (mounted) setState(() => _isTtsSpeaking = false);
+      });
     } catch (e) {
       debugPrint('HatchingPage: TTS initialization failed: $e');
     }
@@ -51,7 +66,6 @@ class _HatchingPageState extends State<HatchingPage> {
       sl<HapticService>().selection();
       setState(() => _stage = 1);
 
-      // Prevent memory leaks by storing timer reference and cancelling in dispose()
       _hatchTimer = Timer(const Duration(milliseconds: 1500), () {
         if (mounted) {
           sl<HapticService>().success();
@@ -89,48 +103,54 @@ class _HatchingPageState extends State<HatchingPage> {
           children: [
             const MeshGradientBackground(),
             SafeArea(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _buildTitle(),
-                    SizedBox(height: 60.h),
-                    _buildMascotStage(),
-                    SizedBox(height: 40.h),
-                    _buildStatusText(),
-                    const Spacer(),
-                    if (_stage >= 2) _buildGetStartedButton(),
-                    SizedBox(height: 40.h),
-                  ],
-                ),
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  return SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: constraints.maxHeight,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 24.h),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const SizedBox.shrink(), // Spacing anchor for spaceBetween alignment
+
+                            // Centered Focus Area (Mascot Egg/State + Status text)
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                _buildMascotStage(),
+                                SizedBox(height: 48.h),
+                                _buildStatusText(),
+                              ],
+                            ),
+
+                            // Bottom Navigation area - preallocated height to avoid layout shift (CLS)
+                            Padding(
+                              padding: EdgeInsets.only(bottom: 16.h),
+                              child: AnimatedSize(
+                                duration: const Duration(milliseconds: 300),
+                                curve: Curves.easeInOut,
+                                child: _stage >= 2
+                                    ? _buildGetStartedButton()
+                                    : SizedBox(height: 60.h),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
           ],
         ),
       ),
     );
-  }
-
-  Widget _buildTitle() {
-    String title = "A Mysterious Egg...";
-    if (_stage == 1) title = "It's Hatching!";
-    if (_stage >= 2) title = "Welcome, ${widget.userName}!";
-
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24.w),
-      child: Text(
-        title,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 26.sp,
-          fontWeight: FontWeight.w900,
-          color: const Color(0xFF2563EB),
-          letterSpacing: -0.5,
-          height: 1.2,
-        ),
-      ),
-    ).animate(key: ValueKey('hatching_title_$_stage')).fadeIn().scale();
   }
 
   Widget _buildMascotStage() {
@@ -159,59 +179,63 @@ class _HatchingPageState extends State<HatchingPage> {
 
   Widget _buildEgg() {
     return Container(
-          width: 180.r,
-          height: 240.r,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.elliptical(90.r, 140.r),
-              topRight: Radius.elliptical(90.r, 140.r),
-              bottomLeft: Radius.elliptical(90.r, 100.r),
-              bottomRight: Radius.elliptical(90.r, 100.r),
-            ),
-            border: Border.all(
-              color: Colors.white.withValues(alpha: 0.4),
-              width: 1.5,
-            ),
-            gradient: RadialGradient(
-              center: const Alignment(-0.35, -0.35),
-              radius: 0.85,
-              colors: [
-                Colors.white.withValues(alpha: 0.7),
-                const Color(0xFF93C5FD).withValues(alpha: 0.4),
-                const Color(0xFF1D4ED8).withValues(alpha: 0.5),
-              ],
-              stops: const [0.0, 0.4, 1.0],
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: const Color(0xFF1E3A8A).withValues(alpha: 0.2),
-                blurRadius: 20,
-                offset: const Offset(0, 12),
-              ),
-              BoxShadow(
-                color: const Color(0xFF60A5FA).withValues(alpha: 0.15),
-                blurRadius: 10,
-                spreadRadius: -2,
-              ),
-            ],
+      width: 180.r,
+      height: 240.r,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.elliptical(90.r, 140.r),
+          topRight: Radius.elliptical(90.r, 140.r),
+          bottomLeft: Radius.elliptical(90.r, 100.r),
+          bottomRight: Radius.elliptical(90.r, 100.r),
+        ),
+        border: Border.all(
+          color: Colors.white.withValues(alpha: 0.4),
+          width: 1.5,
+        ),
+        gradient: RadialGradient(
+          center: const Alignment(-0.35, -0.35),
+          radius: 0.85,
+          colors: [
+            Colors.white.withValues(alpha: 0.7),
+            const Color(0xFF93C5FD).withValues(alpha: 0.4),
+            const Color(0xFF1D4ED8).withValues(alpha: 0.5),
+          ],
+          stops: const [0.0, 0.4, 1.0],
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF1E3A8A).withValues(alpha: 0.2),
+            blurRadius: 20,
+            offset: const Offset(0, 12),
           ),
-          child: Stack(
-            children: [
-              Center(
-                child: Icon(
-                  Icons.auto_awesome,
-                  color: Colors.white.withValues(alpha: 0.7),
-                  size: 44.r,
-                ),
-              ),
-              if (_stage == 1)
-                Positioned.fill(child: CustomPaint(painter: EggCrackPainter())),
-            ],
+          BoxShadow(
+            color: const Color(0xFF60A5FA).withValues(alpha: 0.15),
+            blurRadius: 10,
+            spreadRadius: -2,
           ),
-        )
-        .animate(onPlay: (c) => c.repeat(reverse: true))
-        .moveY(begin: -10, end: 10, duration: 2000.ms, curve: Curves.easeInOut)
-        .shake(hz: _stage == 1 ? 10 : 0, duration: 1500.ms);
+        ],
+      ),
+      child: Stack(
+        children: [
+          Center(
+            child: Icon(
+              Icons.auto_awesome,
+              color: Colors.white.withValues(alpha: 0.7),
+              size: 44.r,
+            ),
+          ),
+          if (_stage == 1)
+            Positioned.fill(
+              child: CustomPaint(
+                painter: EggCrackPainter(),
+              ),
+            ),
+        ],
+      ),
+    )
+    .animate(onPlay: (c) => c.repeat(reverse: true))
+    .moveY(begin: -10, end: 10, duration: 2000.ms, curve: Curves.easeInOut)
+    .shake(hz: _stage == 1 ? 10 : 0, duration: 1500.ms);
   }
 
   Widget _buildStatusText() {
@@ -264,8 +288,7 @@ class EggCrackPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color =
-          const Color(0xFFFBBF24) // Glowing Amber/Gold
+      ..color = const Color(0xFFFBBF24) // Glowing Amber/Gold
       ..strokeWidth = 3.0
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
