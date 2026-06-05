@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -261,22 +262,31 @@ class _HatchingPageState extends State<HatchingPage> {
   Widget _buildGetStartedButton() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 40.w),
-      child: ElevatedButton(
-        onPressed: () => context.go('/'),
-        style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF2563EB),
-          foregroundColor: Colors.white,
-          minimumSize: Size(double.infinity, 60.h),
-          shape: RoundedRectangleBorder(
+      child: ScaleButton(
+        onTap: () => context.go('/'),
+        child: Container(
+          height: 60.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: const Color(0xFF2563EB),
             borderRadius: BorderRadius.circular(20.r),
+            boxShadow: [
+              BoxShadow(
+                color: const Color(0xFF2563EB).withValues(alpha: 0.3),
+                blurRadius: 16,
+                offset: const Offset(0, 8),
+              ),
+            ],
           ),
-        ),
-        child: Text(
-          "Enter the World of Vowl",
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 18.sp,
-            fontWeight: FontWeight.bold,
+          alignment: Alignment.center,
+          child: Text(
+            "Enter the World of Vowl",
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 18.sp,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
         ),
       ),
