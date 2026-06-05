@@ -50,6 +50,9 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
+      listenWhen: (previous, current) =>
+          previous.errorMessage != current.errorMessage ||
+          previous.successMessage != current.successMessage,
       listener: (context, state) {
         if (state.successMessage != null) {
           _showSnackBar(context, state.successMessage!, CustomSnackBarType.success);

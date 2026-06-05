@@ -59,6 +59,9 @@ class _SignUpViewState extends State<SignUpView> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpState>(
+      listenWhen: (previous, current) =>
+          previous.isSuccess != current.isSuccess ||
+          previous.errorMessage != current.errorMessage,
       listener: (context, state) {
         if (state.isSuccess) {
           context.read<AuthBloc>().add(const AuthReloadUser());

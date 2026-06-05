@@ -57,6 +57,10 @@ class _LoginViewState extends State<LoginView> {
     return MultiBlocListener(
       listeners: [
         BlocListener<LoginCubit, LoginState>(
+          listenWhen: (previous, current) =>
+              previous.isSuccess != current.isSuccess ||
+              previous.errorMessage != current.errorMessage ||
+              previous.successMessage != current.successMessage,
           listener: (context, state) {
             if (state.isSuccess) {
               context.read<AuthBloc>().add(const AuthReloadUser());

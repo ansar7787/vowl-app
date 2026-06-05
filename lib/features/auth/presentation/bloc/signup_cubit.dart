@@ -77,9 +77,9 @@ class SignUpCubit extends Cubit<SignUpState> {
        _networkInfo = networkInfo,
        super(const SignUpState());
 
-  void nameChanged(String value) => emit(state.copyWith(name: value));
-  void emailChanged(String value) => emit(state.copyWith(email: value));
-  void passwordChanged(String value) => emit(state.copyWith(password: value));
+  void nameChanged(String value) => emit(state.copyWith(name: value, errorMessage: () => null));
+  void emailChanged(String value) => emit(state.copyWith(email: value, errorMessage: () => null));
+  void passwordChanged(String value) => emit(state.copyWith(password: value, errorMessage: () => null));
 
   Future<void> signUp() async {
     if (state.isSubmitting) return;
