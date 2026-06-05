@@ -112,7 +112,8 @@ class _HatchingPageState extends State<HatchingPage> {
   }
 
   Widget _buildTitle() {
-    String title = "A Discovery...";
+    String title = "A Mysterious Egg...";
+    if (_stage == 1) title = "It's Hatching!";
     if (_stage >= 2) title = "Welcome, ${widget.userName}!";
 
     return Text(
@@ -158,20 +159,12 @@ class _HatchingPageState extends State<HatchingPage> {
             color: Colors.white.withValues(alpha: 0.2),
             borderRadius: BorderRadius.all(Radius.elliptical(90.r, 120.r)),
             border: Border.all(color: Colors.white38, width: 2),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.blue.withValues(alpha: 0.3),
-                blurRadius: 30,
-                spreadRadius: 5,
-              ),
-            ],
           ),
           child: Center(
             child: Icon(Icons.auto_awesome, color: Colors.white, size: 48.r),
           ),
         )
         .animate(onPlay: (c) => c.repeat(reverse: true))
-        .shimmer(duration: 2000.ms)
         .moveY(begin: -10, end: 10, duration: 2000.ms, curve: Curves.easeInOut)
         .shake(hz: _stage == 1 ? 10 : 0, duration: 1500.ms);
   }
