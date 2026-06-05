@@ -296,21 +296,31 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Either<Failure, void>> deleteAccount() async {
     try {
       final user = _firebaseAuth.currentUser;
-      if (user != null) {
-        final uid = user.uid;
-        await _firestore.collection('users').doc(uid).delete();
-
-        try {
-          await _storage.ref().child('profile_pics').child('$uid.jpg').delete();
-        } catch (e) {
-          debugPrint('No profile pic to delete or error: $e');
-        }
-
-        await user.delete();
-        
-        return const Right(null);
+      if (user == null) {
+        return Left(AuthFailure('User not logged in'));
       }
-      return Left(AuthFailure('User not logged in'));
+
+      final uid = user.uid;
+
+      // Delete Firebase Auth user FIRST to validate auth state.
+      // If this fails with requires-recent-login, no user data is lost.
+      await user.delete();
+
+      // Auth deletion succeeded — now clean up all user data.
+      // The cached auth token remains valid briefly, allowing Firestore/Storage access.
+      try {
+        await _firestore.collection('users').doc(uid).delete();
+      } catch (e) {
+        debugPrint('DeleteAccount: Firestore cleanup failed: $e');
+      }
+
+      try {
+        await _storage.ref().child('profile_pics').child('$uid.jpg').delete();
+      } catch (e) {
+        debugPrint('DeleteAccount: Storage cleanup failed: $e');
+      }
+
+      return const Right(null);
     } on firebase_auth.FirebaseAuthException catch (e) {
       if (e.code == 'requires-recent-login') {
         return Left(AuthFailure('requires-recent-login'));

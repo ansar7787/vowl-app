@@ -224,6 +224,7 @@ class SettingsDialogs {
 
   static void showLogout(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final authBloc = context.read<AuthBloc>();
     di.sl<HapticService>().warning();
     showGeneralDialog(
       context: context,
@@ -231,7 +232,7 @@ class SettingsDialogs {
       barrierLabel: '',
       barrierColor: Colors.black54,
       transitionDuration: const Duration(milliseconds: 300),
-      pageBuilder: (context, anim1, anim2) => Center(
+      pageBuilder: (dialogContext, anim1, anim2) => Center(
         child: Material(
           color: Colors.transparent,
           child: GlassTile(
@@ -279,8 +280,8 @@ class SettingsDialogs {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pop(context);
-                          context.read<AuthBloc>().add(const AuthLogoutRequested());
+                          Navigator.pop(dialogContext);
+                          authBloc.add(const AuthLogoutRequested());
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.red,
@@ -301,7 +302,7 @@ class SettingsDialogs {
                     ),
                     SizedBox(height: 12.h),
                     TextButton(
-                      onPressed: () => Navigator.pop(context),
+                      onPressed: () => Navigator.pop(dialogContext),
                       child: Text(
                         'Stay in Quest',
                         style: TextStyle(fontFamily: 'Outfit', 
@@ -317,7 +318,7 @@ class SettingsDialogs {
           ),
         ),
       ),
-      transitionBuilder: (context, anim1, anim2, child) {
+      transitionBuilder: (dialogContext, anim1, anim2, child) {
         return FadeTransition(
           opacity: anim1,
           child: ScaleTransition(
@@ -455,7 +456,7 @@ class SettingsDialogs {
       barrierLabel: '',
       barrierColor: Colors.black54,
       transitionDuration: const Duration(milliseconds: 300),
-      pageBuilder: (context, anim1, anim2) => Center(
+      pageBuilder: (dialogContext, anim1, anim2) => Center(
         child: Material(
           color: Colors.transparent,
           child: GlassTile(
@@ -503,7 +504,7 @@ class SettingsDialogs {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          Navigator.pop(dialogContext);
                           _showFinalDeleteConfirmation(context);
                         },
                         style: ElevatedButton.styleFrom(
@@ -525,7 +526,7 @@ class SettingsDialogs {
                     ),
                     SizedBox(height: 12.h),
                     TextButton(
-                      onPressed: () => Navigator.pop(context),
+                      onPressed: () => Navigator.pop(dialogContext),
                       child: Text(
                         'Keep My Account',
                         style: TextStyle(fontFamily: 'Outfit', 
@@ -541,7 +542,7 @@ class SettingsDialogs {
           ),
         ),
       ),
-      transitionBuilder: (context, anim1, anim2, child) {
+      transitionBuilder: (dialogContext, anim1, anim2, child) {
         return FadeTransition(
           opacity: anim1,
           child: ScaleTransition(
@@ -557,6 +558,7 @@ class SettingsDialogs {
 
   static void _showFinalDeleteConfirmation(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final authBloc = context.read<AuthBloc>();
     final TextEditingController confirmController = TextEditingController();
 
     showGeneralDialog(
@@ -565,11 +567,11 @@ class SettingsDialogs {
       barrierLabel: '',
       barrierColor: Colors.black54,
       transitionDuration: const Duration(milliseconds: 300),
-      pageBuilder: (context, anim1, anim2) => Center(
+      pageBuilder: (dialogContext, anim1, anim2) => Center(
         child: Material(
           color: Colors.transparent,
           child: StatefulBuilder(
-            builder: (context, setDialogState) {
+            builder: (builderContext, setDialogState) {
               return GlassTile(
                 width: 320.w,
                 padding: EdgeInsets.all(32.r),
@@ -621,8 +623,8 @@ class SettingsDialogs {
                           child: ElevatedButton(
                             onPressed: confirmController.text == 'DELETE' 
                               ? () {
-                                  Navigator.pop(context);
-                                  context.read<AuthBloc>().add(const AuthDeleteAccountRequested());
+                                  Navigator.pop(dialogContext);
+                                  authBloc.add(const AuthDeleteAccountRequested());
                                 }
                               : null,
                             style: ElevatedButton.styleFrom(
@@ -645,7 +647,7 @@ class SettingsDialogs {
                         ),
                         SizedBox(height: 12.h),
                         TextButton(
-                          onPressed: () => Navigator.pop(context),
+                          onPressed: () => Navigator.pop(dialogContext),
                           child: Text(
                             'Nevermind',
                             style: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white38 : Colors.black38),
@@ -660,7 +662,7 @@ class SettingsDialogs {
           ),
         ),
       ),
-      transitionBuilder: (context, anim1, anim2, child) {
+      transitionBuilder: (dialogContext, anim1, anim2, child) {
         return FadeTransition(
           opacity: anim1,
           child: ScaleTransition(
