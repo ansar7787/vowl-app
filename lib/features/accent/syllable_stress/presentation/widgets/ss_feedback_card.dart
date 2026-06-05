@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SsFeedbackCard extends StatelessWidget {
@@ -70,7 +69,7 @@ class SsFeedbackCard extends StatelessWidget {
                   children: [
                     Text(
                       isCorrect ? "PERFECT RHYTHM!" : "NOT QUITE",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w900,
                         color: isCorrect ? Colors.green : Colors.red,
@@ -78,7 +77,7 @@ class SsFeedbackCard extends StatelessWidget {
                     ),
                     Text(
                       "Say it like: $correctOption",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
                         color: isDark ? Colors.white : Colors.black87,
@@ -113,7 +112,7 @@ class SsFeedbackCard extends StatelessWidget {
               child: Center(
                 child: Text(
                   "CONTINUE",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -146,7 +145,7 @@ class SsFeedbackCard extends StatelessWidget {
               children: [
                 Text(
                   "EXPLANATION",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 2,
@@ -155,7 +154,7 @@ class SsFeedbackCard extends StatelessWidget {
                 ),
                 Text(
                   hint,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 13.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white70 : Colors.black54,
@@ -184,7 +183,7 @@ class SsFeedbackCard extends StatelessWidget {
           Expanded(
             child: Text(
               "TIP: Clap your hands to the beat. The loudest clap is the stress!",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 13.sp,
                 fontWeight: FontWeight.w600,
                 color: isDark ? Colors.white70 : Colors.black54,

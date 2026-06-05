@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
@@ -53,7 +52,7 @@ class VowelFeedbackPanel extends StatelessWidget {
                   SizedBox(width: 8.w),
                   Text(
                     isCorrect ? "Correct!" : "Not quite",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 20.sp,
                       fontWeight: FontWeight.bold,
                       color: isCorrect ? Colors.green : Colors.red,
@@ -64,14 +63,14 @@ class VowelFeedbackPanel extends StatelessWidget {
               SizedBox(height: 12.h),
               Text(
                 "${quest.word1} → ${quest.ipa1 ?? ''}",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : const Color(0xFF0F172A),
                 ),
               ),
               Text(
                 "${quest.word2} → ${quest.ipa2 ?? ''}",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : const Color(0xFF0F172A),
                 ),
@@ -81,7 +80,7 @@ class VowelFeedbackPanel extends StatelessWidget {
                 Text(
                   "💡 ${quest.hint}",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: isDark ? Colors.lightBlueAccent : Colors.blue,
                   ),
@@ -92,7 +91,7 @@ class VowelFeedbackPanel extends StatelessWidget {
                 Text(
                   "👄 ${quest.mouthPosition}",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: isDark ? Colors.amber : Colors.orange,
                   ),

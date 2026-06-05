@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/constants/badge_constants.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -33,7 +32,7 @@ class ProfileBadgesList extends StatelessWidget {
             SizedBox(height: 16.h),
             Text(
               'HALL OF FAME VACANT',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 color: isDark ? Colors.white : const Color(0xFF0F172A),
                 fontWeight: FontWeight.w900,
                 fontSize: 16.sp,
@@ -43,7 +42,7 @@ class ProfileBadgesList extends StatelessWidget {
             SizedBox(height: 8.h),
             Text(
               'Claim milestones to display your legendary trophies here.',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 color: isDark ? Colors.white38 : Colors.black38,
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w600,
@@ -114,7 +113,7 @@ class ProfileBadgesList extends StatelessWidget {
                       children: [
                         Text(
                           badge.name.toUpperCase(),
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             color: Colors.white,
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w900,
@@ -123,7 +122,7 @@ class ProfileBadgesList extends StatelessWidget {
                         ),
                         Text(
                           'LEVEL ${badge.minLevel} ACHIEVED',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             color: Colors.white70,
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w700,

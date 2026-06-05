@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class AcademicWordThesisPaper extends StatelessWidget {
   final String passage;
   final Color color;
@@ -52,7 +50,7 @@ class AcademicWordThesisPaper extends StatelessWidget {
       child: RichText(
         textAlign: TextAlign.center,
         text: TextSpan(
-          style: GoogleFonts.crimsonPro(
+          style: TextStyle(fontFamily: 'Spectral', 
             fontSize: 20.sp,
             height: 1.6,
             color: isDark ? Colors.white70 : Colors.black87,
@@ -79,7 +77,7 @@ class AcademicWordThesisPaper extends StatelessWidget {
                   child: isAnswered && isCorrect == true
                       ? Text(
                           correctAnswer?.toUpperCase() ?? "",
-                          style: GoogleFonts.shareTechMono(
+                          style: TextStyle(fontFamily: 'RobotoMono', 
                             color: color,
                             fontWeight: FontWeight.bold,
                             fontSize: 16.sp,
@@ -87,7 +85,7 @@ class AcademicWordThesisPaper extends StatelessWidget {
                         ).animate().fadeIn().scale()
                       : Text(
                           "THRUST_PENDING",
-                          style: GoogleFonts.shareTechMono(
+                          style: TextStyle(fontFamily: 'RobotoMono', 
                             color: color.withValues(alpha: 0.3),
                             fontSize: 10.sp,
                             letterSpacing: 1,

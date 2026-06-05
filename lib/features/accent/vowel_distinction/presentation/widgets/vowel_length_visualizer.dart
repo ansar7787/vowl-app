@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
@@ -34,7 +33,7 @@ class VowelLengthVisualizer extends StatelessWidget {
       children: [
         Text(
           word.toUpperCase(),
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 12.sp,
             fontWeight: FontWeight.bold,
           ),

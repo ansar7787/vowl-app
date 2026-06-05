@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -144,7 +143,7 @@ class _SignUpViewState extends State<SignUpView> {
                                             color: Colors.transparent,
                                             child: Text(
                                               'Vowl',
-                                              style: GoogleFonts.outfit(
+                                              style: TextStyle(fontFamily: 'Outfit', 
                                                 fontSize: 48.sp,
                                                 fontWeight: FontWeight.w900,
                                                 color: const Color(0xFF2563EB),
@@ -158,7 +157,7 @@ class _SignUpViewState extends State<SignUpView> {
                                     ),
                                     Text(
                                       'Begin your journey to fluency',
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 15.sp,
                                         fontWeight: FontWeight.w600,
                                         color: secondaryColor,
@@ -222,7 +221,7 @@ class _SignUpViewState extends State<SignUpView> {
                                       children: [
                                         Text(
                                           "Already have an account? ",
-                                          style: GoogleFonts.outfit(
+                                          style: TextStyle(fontFamily: 'Outfit', 
                                             color: secondaryColor,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -232,7 +231,7 @@ class _SignUpViewState extends State<SignUpView> {
                                               context.go(AppRouter.loginRoute),
                                           child: Text(
                                             'Login',
-                                            style: GoogleFonts.outfit(
+                                            style: TextStyle(fontFamily: 'Outfit', 
                                               color: const Color(0xFF2563EB),
                                               fontWeight: FontWeight.w900,
                                             ),

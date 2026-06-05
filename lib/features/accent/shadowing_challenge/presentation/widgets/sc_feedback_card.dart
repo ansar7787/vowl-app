@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
@@ -46,7 +44,7 @@ class SCFeedbackCard extends StatelessWidget {
           SizedBox(height: 16.h),
           Text(
             title,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 24.sp,
               fontWeight: FontWeight.w900,
               color: feedbackColor,
@@ -56,7 +54,7 @@ class SCFeedbackCard extends StatelessWidget {
           Text(
             subtitle,
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 16.sp,
               fontWeight: FontWeight.w500,
               color: isDark ? Colors.white70 : Colors.black54,
@@ -66,7 +64,7 @@ class SCFeedbackCard extends StatelessWidget {
             SizedBox(height: 20.h),
             Text(
               "HOLD MIC TO RETRY",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 fontWeight: FontWeight.bold,
                 color: feedbackColor.withValues(alpha: 0.7),
@@ -78,7 +76,7 @@ class SCFeedbackCard extends StatelessWidget {
             SizedBox(height: 24.h),
             Text(
                   "Preparing rewards...",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: Colors.grey,
                     fontStyle: FontStyle.italic,

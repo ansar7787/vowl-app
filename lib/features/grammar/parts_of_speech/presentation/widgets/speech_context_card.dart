@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/grammar/domain/entities/grammar_quest.dart';
 
@@ -33,7 +32,7 @@ class SpeechContextCard extends StatelessWidget {
               Text(
                 quest.sentence!,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.fredoka(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 20.sp,
                   color: isDark ? Colors.white : Colors.black87,
                   height: 1.5,
@@ -44,7 +43,7 @@ class SpeechContextCard extends StatelessWidget {
               Text(
                 quest.question ?? "Identify the function",
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   color: isDark ? Colors.white : Colors.black87,
                   fontWeight: FontWeight.w600,

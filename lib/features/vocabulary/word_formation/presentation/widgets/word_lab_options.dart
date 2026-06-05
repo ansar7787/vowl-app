@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -58,7 +57,7 @@ class WordLabOptions extends StatelessWidget {
                     child: Center(
                       child: Text(
                         isAlreadyWrong ? "!!" : "0${index + 1}",
-                        style: GoogleFonts.shareTechMono(
+                        style: TextStyle(fontFamily: 'RobotoMono', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold,
                           color: isSelected ? Colors.green : (isAlreadyWrong ? Colors.red : theme.primaryColor),
@@ -70,7 +69,7 @@ class WordLabOptions extends StatelessWidget {
                   Expanded(
                     child: Text(
                       option,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                         color: isAlreadyWrong ? Colors.white54 : Colors.white,

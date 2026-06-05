@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class TenseTimeline extends StatelessWidget {
   final String? targetTense;
   final Color primaryColor;
@@ -38,7 +36,7 @@ class TenseTimeline extends StatelessWidget {
             SizedBox(width: 8.w),
             Text(
               "TIME LOGIC INDICATOR",
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 letterSpacing: 2,
@@ -79,7 +77,7 @@ class TenseTimeline extends StatelessWidget {
                   padding: EdgeInsets.only(top: 12.h),
                   child: Text(
                     targetTense!,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w800,
                       color: primaryColor,
@@ -122,7 +120,7 @@ class TenseTimeline extends StatelessWidget {
           SizedBox(height: 8.h),
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: isActive ? FontWeight.w900 : FontWeight.w600,
               color: isActive

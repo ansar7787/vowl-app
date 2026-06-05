@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class AudioFillBlanksInput extends StatelessWidget {
   final TextEditingController controller;
   final bool isAnswered;
@@ -20,14 +18,14 @@ class AudioFillBlanksInput extends StatelessWidget {
       controller: controller,
       enabled: !isAnswered,
       textAlign: TextAlign.center,
-      style: GoogleFonts.shareTechMono(
+      style: TextStyle(fontFamily: 'RobotoMono', 
         fontSize: 22.sp,
         fontWeight: FontWeight.w900,
         color: primaryColor,
       ),
       decoration: InputDecoration(
         hintText: "TYPE THE MISSING DATA",
-        hintStyle: GoogleFonts.shareTechMono(
+        hintStyle: TextStyle(fontFamily: 'RobotoMono', 
           fontSize: 14.sp,
           color: Colors.grey.withValues(alpha: 0.5),
         ),

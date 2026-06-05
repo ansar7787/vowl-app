@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -28,7 +27,7 @@ class KidsRoomExitDialog extends StatelessWidget {
               children: [
                 Text(
                   "LEAVING SO SOON?",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.black87,
@@ -39,7 +38,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                 Text(
                   "Your buddy will miss you! Stay a bit longer to earn more coins? ❤️",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 11.sp,
                     color: Colors.black45,
                     fontWeight: FontWeight.w600,
@@ -60,7 +59,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                           child: Center(
                             child: Text(
                               "STAY",
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w800,
                                 color: Colors.black54,
@@ -92,7 +91,7 @@ class KidsRoomExitDialog extends StatelessWidget {
                           child: Center(
                             child: Text(
                               "EXIT",
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w800,
                                 color: Colors.white,

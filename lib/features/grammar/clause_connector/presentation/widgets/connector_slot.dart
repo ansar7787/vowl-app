@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ConnectorSlot extends StatelessWidget {
   final String? connector;
   final bool isCorrect;
@@ -42,7 +40,7 @@ class ConnectorSlot extends StatelessWidget {
           child: Center(
             child: Text(
               connector ?? "?",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w800,
                 color: _getTextColor(),

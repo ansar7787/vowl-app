@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
@@ -42,7 +41,7 @@ class ImAwarenessSection extends StatelessWidget {
           Expanded(
             child: Text(
               prompt,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
                 color: isDark ? Colors.amber.shade200 : Colors.amber.shade800,

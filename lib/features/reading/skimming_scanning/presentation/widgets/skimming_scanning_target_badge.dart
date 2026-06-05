@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class SkimmingScanningTargetBadge extends StatelessWidget {
@@ -32,7 +31,7 @@ class SkimmingScanningTargetBadge extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "ACQUIRE: ${item.toUpperCase()}", 
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 16.sp, 
               fontWeight: FontWeight.w900, 
               color: color,

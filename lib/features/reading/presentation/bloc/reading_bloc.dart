@@ -175,7 +175,9 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
       currentLevel = event.level;
       emit(ReadingLoading());
       try {
-        final GameSubtype subtype = event.gameType is GameSubtype ? event.gameType : GameSubtype.values.firstWhere((s) => s.name == event.gameType.toString(), orElse: () => GameSubtype.readAndAnswer);
+        final GameSubtype subtype = event.gameType is GameSubtype
+            ? event.gameType
+            : GameSubtype.fromString(event.gameType.toString(), fallback: GameSubtype.readAndAnswer);
         final result = await getQuest(QuestParams(gameType: subtype, level: event.level));
         result.fold((failure) => emit(ReadingError(failure.message, technicalError: failure.toString())), (quests) {
           if (quests.isEmpty) {
@@ -192,19 +194,24 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
 
     on<SubmitAnswer>((event, emit) async {
       final currentState = state;
-      if (currentState is! ReadingLoaded || currentState.livesRemaining <= 0) return;
+      if (currentState is! ReadingLoaded || currentState.livesRemaining <= 0 || currentState.lastAnswerCorrect != null) return;
+
+      // Lock out double-tap entries instantly by setting lastAnswerCorrect
+      final initialTransition = currentState.copyWith(lastAnswerCorrect: event.isCorrect);
+      emit(initialTransition);
 
       if (event.isCorrect) {
-        await soundService.playCorrect();
-        await hapticService.success();
+        soundService.playCorrect();
+        hapticService.success();
+        
         emit(currentState.copyWith(
           lastAnswerCorrect: true,
           wrongCount: 0,
           isFinalFailure: false,
         ));
       } else {
-        await soundService.playWrong();
-        await hapticService.error();
+        soundService.playWrong();
+        hapticService.error();
         
         final newLives = currentState.livesRemaining - 1;
         final newWrongCount = currentState.wrongCount + 1;
@@ -254,14 +261,15 @@ class ReadingBloc extends Bloc<ReadingEvent, ReadingState> {
         soundService.playLevelComplete();
         const int totalXp = 10;
         const int totalCoins = 10;
-        // 1. Immediate UI Feedback
+        
+        // 1. Immediate UI Feedback to prevent race condition transitions
         emit(ReadingGameComplete(
           xpEarned: totalXp,
           coinsEarned: totalCoins,
           questCount: currentState.quests.length,
         ));
 
-        // 2. Background Save
+        // 2. Background Save task
         if (currentGameType != null && currentLevel != null) {
           await Future.wait([
             updateUserRewards(UpdateUserRewardsParams(

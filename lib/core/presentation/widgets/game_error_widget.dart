@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -62,7 +61,7 @@ class GameErrorWidget extends StatelessWidget {
                 Text(
                   title,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 22.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -74,7 +73,7 @@ class GameErrorWidget extends StatelessWidget {
                 Text(
                   message,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w500,
                     color: isDark ? Colors.white70 : Colors.black54,
@@ -109,7 +108,7 @@ class GameErrorWidget extends StatelessWidget {
                     child: Text(
                       'TRY AGAIN',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w800,
                         color: Colors.white,
@@ -135,7 +134,7 @@ class GameErrorWidget extends StatelessWidget {
                     child: Text(
                       'GO BACK',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
                         color: isDark ? Colors.white60 : Colors.black54,

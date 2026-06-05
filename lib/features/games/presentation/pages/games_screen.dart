@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -182,7 +181,7 @@ class _GamesScreenState extends State<GamesScreen> {
                   SizedBox(width: 10.w),
                   Text(
                     'QUEST HUB',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -267,7 +266,7 @@ class _GamesScreenState extends State<GamesScreen> {
             children: [
               Text(
                 title.toUpperCase(),
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -276,7 +275,7 @@ class _GamesScreenState extends State<GamesScreen> {
               ),
               Text(
                 subtitle,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w600,
                   color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -305,7 +304,7 @@ class _GamesScreenState extends State<GamesScreen> {
               ),
               child: Text(
                 'SEE ALL',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: categoryColor,

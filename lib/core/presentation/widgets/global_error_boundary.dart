@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:go_router/go_router.dart';
@@ -65,7 +64,7 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
                 SizedBox(height: 24.h),
                 Text(
                   "SYSTEM ANOMALY",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
@@ -76,7 +75,7 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
                 Text(
                   error.length > 100 ? "${error.substring(0, 100)}..." : error,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: Colors.redAccent.withValues(alpha: 0.8),
                     fontWeight: FontWeight.w600,
@@ -86,7 +85,7 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
                 Text(
                   "Vowl encountered an unexpected cosmic event. Don't worry, your progress is safe!",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 16.sp,
                     color: Colors.white70,
                   ),
@@ -115,7 +114,7 @@ class _GlobalErrorBoundaryState extends State<GlobalErrorBoundary> {
                     ),
                     child: Text(
                       "RETURN TO BASE",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         color: Colors.white,
                         fontWeight: FontWeight.w900,
                       ),

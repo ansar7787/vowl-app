@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
@@ -57,7 +56,7 @@ class ImFeedbackCard extends StatelessWidget {
               SizedBox(width: 12.w),
               Text(
                 isCorrect ? "EXCELLENT!" : "HINT",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
                   letterSpacing: 2,
@@ -73,7 +72,7 @@ class ImFeedbackCard extends StatelessWidget {
           if (quest.hint != null)
             Text(
               quest.hint!,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
                 color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -88,7 +87,7 @@ class ImFeedbackCard extends StatelessWidget {
             SizedBox(height: 12.h),
             Text(
               "PRO TIP",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 11.sp,
                 fontWeight: FontWeight.w800,
                 color: theme.primaryColor.withValues(alpha: 0.7),
@@ -98,7 +97,7 @@ class ImFeedbackCard extends StatelessWidget {
             SizedBox(height: 6.h),
             Text(
               tip!,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
                 color: isDark ? Colors.white70 : Colors.black87,

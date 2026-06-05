@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class TrueFalseReadingStatement extends StatelessWidget {
   final String statement;
   final Color color;
@@ -26,7 +24,7 @@ class TrueFalseReadingStatement extends StatelessWidget {
       child: Text(
         '"$statement"', 
         textAlign: TextAlign.center, 
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 18.sp, 
           fontWeight: FontWeight.w800, 
           color: isDark ? color : color.withValues(alpha: 0.95), 

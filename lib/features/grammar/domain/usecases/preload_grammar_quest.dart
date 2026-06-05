@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
-import 'package:vowl/core/error/failures.dart';
-import 'package:vowl/core/usecases/usecase.dart';
-import 'package:vowl/features/grammar/domain/repositories/grammar_repository.dart';
-import 'package:vowl/features/speaking/domain/usecases/get_speaking_quest.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../../../../features/speaking/domain/usecases/get_speaking_quest.dart';
+import '../repositories/grammar_repository.dart';
 
 class PreloadGrammarQuest implements UseCase<void, QuestParams> {
   final GrammarRepository repository;
 
-  PreloadGrammarQuest(this.repository);
+  const PreloadGrammarQuest(this.repository);
 
   @override
   Future<Either<Failure, void>> call(QuestParams params) async {

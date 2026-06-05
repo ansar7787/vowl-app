@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class PremiumSuccessOverlay extends StatelessWidget {
@@ -54,7 +53,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
           SizedBox(height: 24.h),
           Text(
             "UPGRADE SUCCESSFUL",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 22.sp,
               fontWeight: FontWeight.bold,
               color: const Color(0xFFF59E0B),
@@ -65,7 +64,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
           Text(
             "Welcome to Vowl Pro. Your elite learning journey starts now!",
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 14.sp,
               color: Colors.white70,
               height: 1.4,
@@ -85,7 +84,7 @@ class PremiumSuccessOverlay extends StatelessWidget {
               ),
               child: Text(
                 "BEGIN ADVENTURE",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   color: Colors.black,
                   fontWeight: FontWeight.w900,
                   fontSize: 13.sp,

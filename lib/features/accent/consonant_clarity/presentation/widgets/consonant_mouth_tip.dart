@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ConsonantMouthTip extends StatelessWidget {
   final String? tip;
   final bool isDark;
@@ -50,7 +48,7 @@ class ConsonantMouthTip extends StatelessWidget {
               children: [
                 Text(
                   "MOUTH TIP",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.amber.shade700,
@@ -60,7 +58,7 @@ class ConsonantMouthTip extends StatelessWidget {
                 SizedBox(height: 4.h),
                 Text(
                   tip!,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white70 : Colors.black87,

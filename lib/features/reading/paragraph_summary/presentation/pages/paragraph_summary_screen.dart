@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -166,7 +165,7 @@ class _ParagraphSummaryScreenState extends State<ParagraphSummaryScreen> {
                         ? "DISTILLATION COMPLETE! SELECT THE CORE SUMMARY:" 
                         : "PINCH/SQUEEZE THE TUBE TO DISTILL CORE CONCEPTS", 
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       color: _isDistilled ? Colors.greenAccent : theme.primaryColor.withValues(alpha: 0.6), 
                       fontSize: 11.sp, 
                       letterSpacing: 2,

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 /// A static alert page presented when the app detects root or jailbroken device configurations.
 class InsecureDeviceScreen extends StatelessWidget {
   const InsecureDeviceScreen({super.key});
@@ -27,7 +25,7 @@ class InsecureDeviceScreen extends StatelessWidget {
                   const SizedBox(height: 32),
                   Text(
                     "SECURITY ALERT",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 24,
                       fontWeight: FontWeight.w900,
                       color: Colors.white,
@@ -38,7 +36,7 @@ class InsecureDeviceScreen extends StatelessWidget {
                   Text(
                     "Vowl cannot run on rooted or jailbroken devices to protect the game economy and user data integrity.",
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 16,
                       color: Colors.white70,
                       height: 1.5,
@@ -48,7 +46,7 @@ class InsecureDeviceScreen extends StatelessWidget {
                   Text(
                     "Please use a standard device to continue your adventure.",
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 14,
                       color: Colors.redAccent.withValues(alpha: 0.7),
                       fontWeight: FontWeight.w700,

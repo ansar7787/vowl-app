@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class CorrectionSentenceCard extends StatelessWidget {
@@ -58,7 +57,7 @@ class CorrectionSentenceCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 isCorrected ? "FIXED" : "FAULT DETECTED",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w900,
                   letterSpacing: 2,
@@ -89,7 +88,7 @@ class CorrectionSentenceCard extends StatelessWidget {
   Widget _buildTextPart(String text) {
     return Text(
       text,
-      style: GoogleFonts.outfit(
+      style: TextStyle(fontFamily: 'Outfit', 
         fontSize: 20.sp,
         fontWeight: FontWeight.w700,
         color: isMidnight
@@ -122,7 +121,7 @@ class CorrectionSentenceCard extends StatelessWidget {
               // The text that changes
               Text(
                     isCorrected ? correctedPart : incorrectPart,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w900,
                       color: isCorrected

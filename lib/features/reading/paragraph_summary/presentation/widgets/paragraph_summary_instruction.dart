@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ParagraphSummaryInstruction extends StatelessWidget {
   final Color primaryColor;
 
@@ -27,7 +25,7 @@ class ParagraphSummaryInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               "SQUEEZE TUBE TO DISTILL & SUMMARIZE", 
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp, 
                 fontWeight: FontWeight.w900, 
                 color: primaryColor, 

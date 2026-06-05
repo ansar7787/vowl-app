@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class PitchPatternFeedbackPanel extends StatelessWidget {
@@ -66,7 +65,7 @@ class PitchPatternFeedbackPanel extends StatelessWidget {
                   children: [
                     Text(
                       isCorrect ? "Spot On!" : "Let's Review",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 22.sp,
                         fontWeight: FontWeight.bold,
                         color: isDark ? Colors.white : Colors.black87,
@@ -74,7 +73,7 @@ class PitchPatternFeedbackPanel extends StatelessWidget {
                     ),
                     Text(
                       "Correct pattern: $correctPattern",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark ? Colors.white70 : Colors.black54,
@@ -108,7 +107,7 @@ class PitchPatternFeedbackPanel extends StatelessWidget {
                   child: Text(
                     hint,
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 16.sp,
                       fontStyle: FontStyle.italic,
                       color: isDark ? Colors.white70 : Colors.black87,
@@ -130,7 +129,7 @@ class PitchPatternFeedbackPanel extends StatelessWidget {
             ),
             label: Text(
               "LISTEN AGAIN",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 1,

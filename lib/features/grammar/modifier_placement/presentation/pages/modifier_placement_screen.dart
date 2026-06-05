@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -165,7 +164,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                         child: Text(
                           "Insert the modifier '$modifier' into the correct position.",
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.fredoka(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 18.sp,
                             color: isDark ? Colors.white70 : Colors.black87,
                             height: 1.4,
@@ -237,7 +236,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
                             child: Center(
                               child: Text(
                                 "FINALIZE SYNTAX",
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w900,
                                   color: Colors.white,
@@ -276,7 +275,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
         ),
         child: Text(
           modifier,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 20.sp,
             fontWeight: FontWeight.w900,
             color: Colors.white,
@@ -313,7 +312,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
             SizedBox(height: 12.h),
             Text(
               correct ? "CORRECT!" : "INCORRECT",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -323,7 +322,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
             SizedBox(height: 12.h),
             Text(
               "CORRECT SYNTAX:",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 fontWeight: FontWeight.bold,
                 color: isDark ? Colors.white60 : Colors.black54,
@@ -334,7 +333,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
             Text(
               quest.correctAnswer ?? "",
               textAlign: TextAlign.center,
-              style: GoogleFonts.fredoka(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w600,
                 color: displayColor,
@@ -345,7 +344,7 @@ class _ModifierPlacementScreenState extends State<ModifierPlacementScreen> {
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

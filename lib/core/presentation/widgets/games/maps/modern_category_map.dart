@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import 'package:vowl/core/utils/curriculum_service.dart';
@@ -633,7 +632,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                   children: [
                                     Text(
                                       "LEVEL",
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 8.sp,
                                         fontWeight: FontWeight.w900,
                                         color: tierColor,
@@ -642,7 +641,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                                     ),
                                     Text(
                                       "$level",
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: (isCurrent ? 32 : 26).sp,
                                         fontWeight: FontWeight.w900,
                                         color: tierColor,
@@ -719,7 +718,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
       SnackBar(
         content: Text(
           'MASTER PREVIOUS LEVELS TO UNLOCK',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontWeight: FontWeight.w900,
             fontSize: 12.sp,
             color: Colors.white,
@@ -809,7 +808,7 @@ class _ModernCategoryMapState extends State<ModernCategoryMap> {
                 ),
                 child: Text(
                   _buddyMessage!,
-                  style: GoogleFonts.fredoka(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     color: Colors.white,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w800,

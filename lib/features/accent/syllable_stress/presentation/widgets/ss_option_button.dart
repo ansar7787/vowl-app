@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SsOptionButton extends StatelessWidget {
@@ -68,7 +67,7 @@ class SsOptionButton extends StatelessWidget {
                   children: [
                     Text(
                       part.toLowerCase(),
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 20.sp,
                         fontWeight: isStressed
                             ? FontWeight.w900
@@ -80,7 +79,7 @@ class SsOptionButton extends StatelessWidget {
                     if (i < parts.length - 1)
                       Text(
                         "-",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 20.sp,
                           color: isDark ? Colors.white30 : Colors.black26,
                         ),

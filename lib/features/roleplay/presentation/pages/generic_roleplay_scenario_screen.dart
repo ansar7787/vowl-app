@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -39,20 +38,14 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
   final _soundService = di.sl<SoundService>();
   final _ttsService = di.sl<SpeechService>();
 
-  bool _isPlaying = false;
   bool _showConfetti = false;
   int? _selectedIndex;
   bool _isAnswered = false;
-  bool _isProcessing = false; // New processing state for chat flow
+  bool _isProcessing = false; 
   int _lastProcessedIndex = -1;
-
-  @override
-  void dispose() {
-    _ttsService.stop(); // Stop any active speech immediately
-    super.dispose();
-  }
   int? _lastLives;
   int _attempts = 0;
+  bool _dialogShown = false;
   final List<Map<String, dynamic>> _chatMessages = [];
 
   @override
@@ -61,12 +54,17 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
     context.read<RoleplayBloc>().add(FetchRoleplayQuests(gameType: widget.gameType, level: widget.level));
   }
 
+  @override
+  void dispose() {
+    _ttsService.stop(); 
+    super.dispose();
+  }
+
   void _playAudio(String text) async {
-    if (_isPlaying) return;
-    setState(() => _isPlaying = true);
+    // Stop any active speech prior to starting a new prompt to prevent overlaps
+    await _ttsService.stop();
     _hapticService.light();
     await _ttsService.speak(text);
-    if (mounted) setState(() => _isPlaying = false);
   }
 
   void _onOptionSelected(int index, int correctIndex, String text) async {
@@ -83,7 +81,7 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
       _soundService.playCorrect();
       _hapticService.success();
       
-      // Add "Thinking" delay for the character response
+      // Delay to simulate the AI character processing response
       await Future.delayed(const Duration(milliseconds: 800));
       
       if (mounted) {
@@ -108,7 +106,7 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
           });
         } else {
           setState(() {
-            _selectedIndex = null; // Allow retry
+            _selectedIndex = null; 
             _isProcessing = false;
           });
         }
@@ -125,6 +123,7 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
     return BlocConsumer<RoleplayBloc, RoleplayState>(
       listener: (context, state) {
         if (state is RoleplayLoaded) {
+          _dialogShown = false; // Reset dialog latch for the active quest
           final livesChanged = (state.livesRemaining > (_lastLives ?? 3));
           
           if (state.currentIndex != _lastProcessedIndex || livesChanged || (state.lastAnswerCorrect == null && _isAnswered)) {
@@ -141,10 +140,28 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
           _lastLives = state.livesRemaining;
         }
         if (state is RoleplayGameComplete) {
-          setState(() => _showConfetti = true);
-          GameDialogHelper.showCompletion(context, xp: state.xpEarned, coins: state.coinsEarned, title: 'ROLEPLAY MASTER!', enableDoubleUp: true);
+          if (!_dialogShown) {
+            _dialogShown = true;
+            setState(() => _showConfetti = true);
+            GameDialogHelper.showCompletion(
+              context, 
+              xp: state.xpEarned, 
+              coins: state.coinsEarned, 
+              title: 'ROLEPLAY MASTER!', 
+              enableDoubleUp: true,
+            );
+          }
         } else if (state is RoleplayGameOver) {
-          GameDialogHelper.showGameOver(context, onRestore: () => context.read<RoleplayBloc>().add(RestoreLife()));
+          if (!_dialogShown) {
+            _dialogShown = true;
+            GameDialogHelper.showGameOver(
+              context, 
+              onRestore: () {
+                _dialogShown = false;
+                context.read<RoleplayBloc>().add(RestoreLife());
+              },
+            );
+          }
         }
       },
       builder: (context, state) {
@@ -175,7 +192,7 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
                       child: Icon(widget.icon, color: theme.primaryColor, size: 32.r),
                     ),
                     SizedBox(width: 20.w),
-                    Expanded(child: Text(quest.roleName ?? "Professional Advisor", style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w900, color: theme.primaryColor))),
+                    Expanded(child: Text(quest.roleName ?? "Professional Advisor", style: TextStyle(fontFamily: 'Outfit', fontSize: 18.sp, fontWeight: FontWeight.w900, color: theme.primaryColor))),
                   ],
                 ),
               ),
@@ -195,7 +212,7 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
 
               if (!_isAnswered) ...[
                 SizedBox(height: 32.h),
-                Text("CHOOSE YOUR RESPONSE", style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, color: theme.primaryColor.withValues(alpha: 0.6), letterSpacing: 2)),
+                Text("CHOOSE YOUR RESPONSE", style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w900, color: theme.primaryColor.withValues(alpha: 0.6), letterSpacing: 2)),
                 SizedBox(height: 16.h),
                 Column(
                   children: List.generate(options.length, (index) {
@@ -213,10 +230,10 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
                               Container(
                                 width: 32.r, height: 32.r,
                                 decoration: BoxDecoration(color: theme.primaryColor.withValues(alpha: 0.1), shape: BoxShape.circle),
-                                child: Center(child: Text("${index + 1}", style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: theme.primaryColor))),
+                                child: Center(child: Text("${index + 1}", style: TextStyle(fontFamily: 'Outfit', fontSize: 14.sp, fontWeight: FontWeight.w900, color: theme.primaryColor))),
                               ),
                               SizedBox(width: 16.w),
-                              Expanded(child: Text(option, style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : const Color(0xFF1E293B)))),
+                              Expanded(child: Text(option, style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : const Color(0xFF1E293B)))),
                             ],
                           ),
                         ),
@@ -247,10 +264,9 @@ class _GenericRoleplayScenarioScreenState extends State<GenericRoleplayScenarioS
               bottomRight: isUser ? Radius.zero : Radius.circular(20.r),
             ),
           ),
-          child: Text(text, style: GoogleFonts.outfit(fontSize: 15.sp, fontWeight: FontWeight.w500, color: isUser ? Colors.white : (isDark ? Colors.white : const Color(0xFF0F172A)))),
+          child: Text(text, style: TextStyle(fontFamily: 'Outfit', fontSize: 15.sp, fontWeight: FontWeight.w500, color: isUser ? Colors.white : (isDark ? Colors.white : const Color(0xFF0F172A)))),
         ),
       ),
     ).animate().fadeIn(duration: 300.ms).slideX(begin: isUser ? 0.05 : -0.05);
   }
 }
-

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class SituationSpeakingHeader extends StatelessWidget {
   final Color primaryColor;
 
@@ -26,7 +24,7 @@ class SituationSpeakingHeader extends StatelessWidget {
           SizedBox(width: 8.w),
           Text(
             "FROSTED CONDENSATION SCRUBBER",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
               color: primaryColor,

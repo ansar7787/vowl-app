@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class EmergencyHubTelexCard extends StatelessWidget {
@@ -50,7 +49,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
               SizedBox(width: 10.w),
               Text(
                 "CRITICAL INCOMING HAZARD ALERT",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: Colors.redAccent,
                   letterSpacing: 2.0,
@@ -62,7 +61,7 @@ class EmergencyHubTelexCard extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             telex,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 18.sp,
               color: isDark ? Colors.white : Colors.black87,
               height: 1.35,

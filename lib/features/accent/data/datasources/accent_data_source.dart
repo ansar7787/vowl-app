@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
+import 'package:vowl/core/error/exceptions.dart';
 import '../models/accent_quest_model.dart';
 import '../../../../core/domain/entities/game_quest.dart';
 
@@ -36,8 +37,8 @@ class AccentDataSourceImpl implements AccentDataSource {
       final localData = await assetQuestService.getQuests(gameType.name, level);
       if (localData.isNotEmpty) {
         return localData.map((q) {
-          final questMap = q;
-          return AccentQuestModel.fromJson(questMap, questMap['id'] ?? '');
+          final questMap = Map<String, dynamic>.from(q);
+          return AccentQuestModel.fromJson(questMap, questMap['id']?.toString() ?? '');
         }).toList();
       }
 
@@ -50,7 +51,8 @@ class AccentDataSourceImpl implements AccentDataSource {
           .get();
 
       if (doc.exists && doc.data() != null) {
-        final data = doc.data()!;
+        // Clone Firestore map to prevent unmodifiable map mutation crash
+        final data = Map<String, dynamic>.from(doc.data()!);
         if (data.containsKey('quests') && data['quests'] is List) {
           final questsList = data['quests'] as List;
           return questsList.map((q) {
@@ -62,10 +64,13 @@ class AccentDataSourceImpl implements AccentDataSource {
         data['subtype'] = gameType.name;
         return [AccentQuestModel.fromJson(data, doc.id)];
       } else {
-        throw Exception('Level $level not found for ${gameType.name}');
+        throw ServerException('Level $level not found for ${gameType.name}');
       }
+    } on FirebaseException catch (e) {
+      throw ServerException(e.message ?? 'Firestore operation failed', e.code);
     } catch (e) {
-      rethrow;
+      if (e is ServerException) rethrow;
+      throw ServerException(e.toString());
     }
   }
 
@@ -74,16 +79,24 @@ class AccentDataSourceImpl implements AccentDataSource {
     required GameSubtype gameType,
     required int currentLevel,
   }) async {
-    // Determine the next batch level
-    // Batch size is 10, so if level is 1-10 (batch 1), next batch starts at 11
-    final nextBatchStart = (((currentLevel - 1) ~/ 10) + 1) * 10 + 1;
-    if (nextBatchStart <= 200) {
-      await assetQuestService.preloadBatch(gameType.name, nextBatchStart);
+    try {
+      // Determine the next batch level
+      // Batch size is 10, so if level is 1-10 (batch 1), next batch starts at 11
+      final nextBatchStart = (((currentLevel - 1) ~/ 10) + 1) * 10 + 1;
+      if (nextBatchStart <= 200) {
+        await assetQuestService.preloadBatch(gameType.name, nextBatchStart);
+      }
+    } catch (e) {
+      // Background operation fail-safe: suppress preload errors to protect calling isolate
     }
   }
 
   @override
   Future<void> clearQuestCache() async {
-    assetQuestService.clearCache();
+    try {
+      assetQuestService.clearCache();
+    } catch (_) {
+      // Background operation fail-safe: suppress cache clearing errors
+    }
   }
 }

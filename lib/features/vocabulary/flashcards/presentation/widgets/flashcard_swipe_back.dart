@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class FlashcardSwipeBack extends StatelessWidget {
   final dynamic quest;
   final Color color;
@@ -46,7 +44,7 @@ class FlashcardSwipeBack extends StatelessWidget {
             SizedBox(height: 10.h),
             Text(
               "DEFINITION",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 color: color,
                 fontWeight: FontWeight.w900,
@@ -57,7 +55,7 @@ class FlashcardSwipeBack extends StatelessWidget {
             Text(
               quest.definition ?? "",
               textAlign: TextAlign.center,
-              style: GoogleFonts.fredoka(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 19.sp,
                 color: isHintActive ? color : (isDark ? Colors.white : Colors.black87),
                 height: 1.4,
@@ -75,7 +73,7 @@ class FlashcardSwipeBack extends StatelessWidget {
             SizedBox(height: 24.h),
             Text(
               "EXAMPLE",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 color: Colors.amber.shade700,
                 fontWeight: FontWeight.w900,
@@ -86,7 +84,7 @@ class FlashcardSwipeBack extends StatelessWidget {
             Text(
               quest.example ?? "",
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 15.sp,
                 color: isDark ? Colors.white70 : Colors.black54,
                 fontStyle: FontStyle.italic,
@@ -97,7 +95,7 @@ class FlashcardSwipeBack extends StatelessWidget {
               SizedBox(height: 24.h),
               Text(
                 "EXPLANATION",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   color: Colors.blue.shade700,
                   fontWeight: FontWeight.w900,
@@ -108,7 +106,7 @@ class FlashcardSwipeBack extends StatelessWidget {
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   color: isDark ? Colors.white60 : Colors.black45,
                   height: 1.5,

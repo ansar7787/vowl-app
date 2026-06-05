@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
@@ -224,7 +223,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                     boxShadow: [BoxShadow(color: widget.primaryColor.withValues(alpha: 0.3), blurRadius: 15)],
                   ),
                   child: Row(mainAxisSize: MainAxisSize.min, children: [
-                    Text("NEXT", style: GoogleFonts.outfit(color: Colors.white, fontWeight: FontWeight.w900, fontSize: 14.sp, letterSpacing: 1)),
+                    Text("NEXT", style: TextStyle(fontFamily: 'Outfit', color: Colors.white, fontWeight: FontWeight.w900, fontSize: 14.sp, letterSpacing: 1)),
                     SizedBox(width: 8.w),
                     Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 20.sp),
                   ]),
@@ -271,7 +270,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               SizedBox(height: 32.h),
               Text(
                 "NICE TRY!",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 28.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,
@@ -282,7 +281,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
               Text(
                 "This level is taking a nap.\nCheck back soon! \u{1F388}",
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: Colors.white.withValues(alpha: 0.7),
@@ -312,7 +311,7 @@ class KidsGameBaseScreenState extends State<KidsGameBaseScreen> {
                       SizedBox(width: 12.w),
                       Text(
                         "TRY AGAIN",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w900,
                           color: widget.primaryColor,

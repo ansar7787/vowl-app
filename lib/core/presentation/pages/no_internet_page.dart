@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
@@ -86,7 +85,7 @@ class _NoInternetPageState extends State<NoInternetPage> {
                     // Error Message title
                     Text(
                       'CONNECTION LOST',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
                         letterSpacing: 2,
@@ -102,7 +101,7 @@ class _NoInternetPageState extends State<NoInternetPage> {
                     Text(
                       'The signal has been interrupted.\nPlease re-establish the connection to continue.',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w400,
                         color: isDark ? Colors.white60 : Colors.black54,
@@ -266,7 +265,7 @@ class _NoInternetPageState extends State<NoInternetPage> {
                               SizedBox(width: 12.w),
                               Text(
                                 'RETRY CONNECTION',
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   color: Colors.white,
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w800,

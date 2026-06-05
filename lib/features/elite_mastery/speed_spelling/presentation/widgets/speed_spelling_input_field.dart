@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SpeedSpellingInputField extends StatelessWidget {
@@ -93,7 +92,7 @@ class SpeedSpellingInputField extends StatelessWidget {
                 fit: BoxFit.scaleDown,
                 child: Text(
                   currentInput,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 36.sp,
                     fontWeight: FontWeight.w900,
                     color: showCorrectGlow

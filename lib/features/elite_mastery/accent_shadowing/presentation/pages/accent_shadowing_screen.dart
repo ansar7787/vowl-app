@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -267,7 +266,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
             Text(
               state.message,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 color: Colors.white,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
@@ -292,7 +291,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
                 ),
                 child: Text(
                   "RETRY",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     color: theme.primaryColor,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 1.2,
@@ -356,7 +355,7 @@ class _AccentShadowingScreenState extends State<AccentShadowingScreen> {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
             decoration: BoxDecoration(color: theme.primaryColor.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(15.r)),
-            child: Text(_lastWords, style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w600, color: theme.primaryColor), textAlign: TextAlign.center),
+            child: Text(_lastWords, style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w600, color: theme.primaryColor), textAlign: TextAlign.center),
           ).animate().fadeIn(),
         SizedBox(height: 40.h),
         AccentShadowingMicTrigger(

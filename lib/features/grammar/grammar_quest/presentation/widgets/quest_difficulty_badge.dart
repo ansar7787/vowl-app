@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class QuestDifficultyBadge extends StatelessWidget {
   final int difficulty;
 
@@ -41,7 +39,7 @@ class QuestDifficultyBadge extends StatelessWidget {
           SizedBox(width: 8.w),
           Text(
             label,
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 11.sp,
               fontWeight: FontWeight.w900,
               color: color,

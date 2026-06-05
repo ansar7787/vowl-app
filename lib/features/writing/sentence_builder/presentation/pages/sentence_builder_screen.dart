@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -32,7 +30,6 @@ class SentenceBuilderScreen extends StatefulWidget {
 
 class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
   
   final List<String> _assembledPieces = [];
   bool _isAnswered = false;
@@ -68,13 +65,9 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
     bool isCorrect = built == normalizedCorrect;
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
       setState(() { _isAnswered = true; _isCorrect = true; });
       context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       setState(() { _isAnswered = true; _isCorrect = false; });
       context.read<WritingBloc>().add(SubmitAnswer(false));
       Future.delayed(1.seconds, () {
@@ -176,7 +169,7 @@ class _SentenceBuilderScreenState extends State<SentenceBuilderScreen> {
                         child: Center(
                           child: Text(
                             "POLISH SENTENCE", 
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 14.sp, 
                               fontWeight: FontWeight.w900, 
                               color: Colors.white, 

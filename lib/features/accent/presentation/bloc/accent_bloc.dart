@@ -232,7 +232,11 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
 
     on<SubmitAnswer>((event, emit) async {
       final currentState = state;
-      if (currentState is! AccentLoaded || currentState.livesRemaining <= 0) return;
+      if (currentState is! AccentLoaded || currentState.livesRemaining <= 0 || currentState.lastAnswerCorrect != null) return;
+
+      // Synchronously lock state transition to prevent double-tap race conditions
+      final lockedState = currentState.copyWith(lastAnswerCorrect: event.isCorrect);
+      emit(lockedState);
 
       if (!event.isCorrect) {
         final newLives = currentState.livesRemaining - 1;
@@ -245,8 +249,9 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
           updatedQuests.add(currentState.currentQuest); // Mastery Loop
         }
 
-        await soundService.playWrong();
-        await hapticService.error();
+        // Trigger audio/haptics in a non-blocking fashion
+        soundService.playWrong();
+        hapticService.error();
 
         emit(
           currentState.copyWith(
@@ -258,8 +263,8 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
           ),
         );
       } else {
-        await soundService.playCorrect();
-        await hapticService.success();
+        soundService.playCorrect();
+        hapticService.success();
         emit(
           currentState.copyWith(
             lastAnswerCorrect: true,
@@ -300,7 +305,7 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
           emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
         }
       } else if (currentState.lastAnswerCorrect == true) {
-        await soundService.playLevelComplete();
+        soundService.playLevelComplete();
         
         const int totalXp = 10;
         const int totalCoins = 10;
@@ -313,27 +318,29 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
         ));
 
         if (currentGameType != null && currentLevel != null) {
-          await updateUserRewards(
-            UpdateUserRewardsParams(
-              gameType: currentGameType!,
-              level: currentLevel!,
-              xpIncrease: totalXp,
-              coinIncrease: totalCoins,
+          await Future.wait([
+            updateUserRewards(
+              UpdateUserRewardsParams(
+                gameType: currentGameType!,
+                level: currentLevel!,
+                xpIncrease: totalXp,
+                coinIncrease: totalCoins,
+              ),
             ),
-          );
-          await updateCategoryStats(
-            UpdateCategoryStatsParams(
-              categoryId: currentGameType!,
-              isCorrect: true,
+            updateCategoryStats(
+              UpdateCategoryStatsParams(
+                categoryId: currentGameType!,
+                isCorrect: true,
+              ),
             ),
-          );
-          await updateUnlockedLevel(
-            UpdateUnlockedLevelParams(
-              categoryId: currentGameType!,
-              newLevel: currentLevel! + 1,
+            updateUnlockedLevel(
+              UpdateUnlockedLevelParams(
+                categoryId: currentGameType!,
+                newLevel: currentLevel! + 1,
+              ),
             ),
-          );
-          await awardBadge('accent_master');
+            awardBadge('accent_master'),
+          ]);
         }
       } else {
         // Wrong answer on the very last quest
@@ -380,8 +387,8 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
         final updatedQuests = List<AccentQuest>.from(currentState.quests);
         if (updatedQuests.length > 3) updatedQuests.removeLast();
 
-        await soundService.playCorrect();
-        await hapticService.success();
+        soundService.playCorrect();
+        hapticService.success();
 
         emit(currentState.copyWith(
           livesRemaining: newLives,
@@ -390,8 +397,8 @@ class AccentBloc extends Bloc<AccentEvent, AccentState> {
         ));
       } else if (currentState is AccentGameOver) {
         // Restore from Game Over
-        await soundService.playCorrect();
-        await hapticService.success();
+        soundService.playCorrect();
+        hapticService.success();
         
         emit(AccentLoaded(
           quests: currentState.quests,

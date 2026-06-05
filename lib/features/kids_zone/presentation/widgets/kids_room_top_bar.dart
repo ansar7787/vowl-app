@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -62,7 +61,7 @@ class KidsRoomTopBar extends StatelessWidget {
           SizedBox(width: 8.w),
           Text(
             "BUDDY ROOM",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
               color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
@@ -84,7 +83,7 @@ class KidsRoomTopBar extends StatelessWidget {
           SizedBox(width: 8.w),
           Text(
             "${user.kidsCoins}",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontWeight: FontWeight.w900,
               color: Theme.of(context).brightness == Brightness.dark ? Colors.white : const Color(0xFF1E293B),
             ),
@@ -128,7 +127,7 @@ class KidsRoomTopBar extends StatelessWidget {
             ],
           ),
           SizedBox(width: 6.w),
-          Text("${(happiness * 100).toInt()}%", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: const Color(0xFFE11D48))),
+          Text("${(happiness * 100).toInt()}%", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: const Color(0xFFE11D48))),
         ],
       ),
     ).animate().fadeIn().slideY(begin: -0.2, end: 0);

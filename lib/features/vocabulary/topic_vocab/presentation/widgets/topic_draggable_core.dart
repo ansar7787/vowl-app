@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class TopicDraggableWord extends StatefulWidget {
   final String word;
   final Function(double velocity) onFlick;
@@ -65,7 +63,7 @@ class _TopicDraggableWordState extends State<TopicDraggableWord> {
               child: Text(
                 widget.word.toUpperCase(),
                 textAlign: TextAlign.center,
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 14.sp, // Reduced font for extra small card
                   fontWeight: FontWeight.bold,
                   color: widget.isDark ? Colors.white : Colors.black87,

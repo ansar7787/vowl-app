@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -137,7 +136,7 @@ class FlashcardView extends StatelessWidget {
           children: [
             Text(
               title,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w900,
                 color: textColor.withValues(alpha: 0.5),
@@ -152,7 +151,7 @@ class FlashcardView extends StatelessWidget {
               child: Text(
                 content,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: isBackSide ? 24.sp : 42.sp,
                   fontWeight: FontWeight.w900,
                   color: textColor,
@@ -174,7 +173,7 @@ class FlashcardView extends StatelessWidget {
                   children: [
                     Text(
                       'EXAMPLE',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: textColor.withValues(alpha: 0.4),
@@ -184,7 +183,7 @@ class FlashcardView extends StatelessWidget {
                     Text(
                       secondaryContent,
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                         color: textColor.withValues(alpha: 0.8),
@@ -224,7 +223,7 @@ class FlashcardView extends StatelessWidget {
                             SizedBox(width: 4.w),
                             Text(
                               "$hintCount",
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 12.sp,
@@ -269,7 +268,7 @@ class FlashcardView extends StatelessWidget {
                 child: Text(
                   quest.hint!,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     color: Colors.white,
                     fontWeight: FontWeight.w600,
                     fontSize: 13.sp,

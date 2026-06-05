@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -41,7 +40,7 @@ class StreakCalendar extends StatelessWidget {
               SizedBox(width: 10.w),
               Text(
                 'ACTIVITY HEATMAP',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? Colors.white.withValues(alpha: 0.6) : Colors.black.withValues(alpha: 0.6),
@@ -87,7 +86,7 @@ class StreakCalendar extends StatelessWidget {
             children: [
               Text(
                 firstLetter,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 11.sp,
                   color: isToday
                       ? Colors.blueAccent
@@ -100,7 +99,7 @@ class StreakCalendar extends StatelessWidget {
               SizedBox(height: 10.h),
               Text(
                 '${day.day}',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 11.sp,
                   fontWeight: isToday ? FontWeight.w900 : FontWeight.w500,
                   color: isToday ? Colors.blueAccent : null,

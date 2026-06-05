@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
@@ -52,7 +51,7 @@ class SpeakSynonymExplanationCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 isCorrect ? "Seed Bloomed Perfectly!" : "Seed Core Remained Dormant",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : Colors.black87,
@@ -63,7 +62,7 @@ class SpeakSynonymExplanationCard extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             quest.explanation ?? "Associating and identifying strong contextual synonyms broadens mental lexicon flexibility.",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 14.sp,
               color: isDark ? Colors.white70 : Colors.black54,
               height: 1.35,
@@ -73,7 +72,7 @@ class SpeakSynonymExplanationCard extends StatelessWidget {
             SizedBox(height: 14.h),
             Text(
               "ACCEPTED SYNONYMS:",
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 fontSize: 10.sp,
                 color: Colors.orangeAccent,
                 fontWeight: FontWeight.bold,
@@ -92,7 +91,7 @@ class SpeakSynonymExplanationCard extends StatelessWidget {
                 ),
                 child: Text(
                   s,
-                  style: GoogleFonts.fredoka(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 12.sp,
                     color: Colors.orangeAccent,
                   ),

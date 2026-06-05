@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -73,7 +72,7 @@ class VowelPlaybackControls extends StatelessWidget {
         SizedBox(height: 8.h),
         Text(
           "Listen: $listenCount / $maxListens",
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
             color: isDark ? Colors.white38 : Colors.black38,
           ),
@@ -96,7 +95,7 @@ class VowelPlaybackControls extends StatelessWidget {
         ),
         child: Text(
           label,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
             fontWeight: FontWeight.bold,
             color: isSelected

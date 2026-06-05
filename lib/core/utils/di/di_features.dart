@@ -110,7 +110,10 @@ void _initReading(GetIt sl) {
     () => ReadingRemoteDataSourceImpl(sl<FirebaseFirestore>(), sl<AssetQuestService>()),
   );
   sl.registerLazySingleton<ReadingRepository>(
-    () => ReadingRepositoryImpl(remoteDataSource: sl<ReadingRemoteDataSource>()),
+    () => ReadingRepositoryImpl(
+      remoteDataSource: sl<ReadingRemoteDataSource>(),
+      networkInfo: sl<NetworkInfo>(),
+    ),
   );
   sl.registerLazySingleton<GetReadingQuest>(
     () => GetReadingQuest(sl<ReadingRepository>()),
@@ -163,6 +166,7 @@ void _initSpeaking(GetIt sl) {
   sl.registerLazySingleton<SpeakingRepository>(
     () => SpeakingRepositoryImpl(
       remoteDataSource: sl<SpeakingRemoteDataSource>(),
+      networkInfo: sl<NetworkInfo>(),
     ),
   );
   sl.registerLazySingleton<GetSpeakingQuest>(

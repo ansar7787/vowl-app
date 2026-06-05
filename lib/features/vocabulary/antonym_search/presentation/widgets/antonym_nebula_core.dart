@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/vocabulary/antonym_search/presentation/widgets/antonym_painters.dart';
 
 class AntonymNebulaCore extends StatelessWidget {
@@ -25,7 +24,7 @@ class AntonymNebulaCore extends StatelessWidget {
       children: [
         Text(
           "DRAG TO OPPOSITE",
-          style: GoogleFonts.shareTechMono(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 12.sp,
             fontWeight: FontWeight.bold,
             color: color,
@@ -63,7 +62,7 @@ class AntonymNebulaCore extends StatelessWidget {
                 children: [
                   Text(
                     targetIsPositive ? "[+]" : "[-]",
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                       color: color,
@@ -74,7 +73,7 @@ class AntonymNebulaCore extends StatelessWidget {
                     child: FittedBox(
                       child: Text(
                         word.toUpperCase(),
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w900,
                           color: isDark ? Colors.white : Colors.black87,

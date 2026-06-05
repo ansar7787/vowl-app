@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -113,7 +112,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           onTap: () => SettingsDialogs.showComingSoon(context),
                           trailing: Text(
                             'English (US)',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 12.sp,
                               color: Colors.blue,
                               fontWeight: FontWeight.w700,
@@ -149,7 +148,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           color: Colors.grey,
                           trailing: Text(
                             '$_appVersion ($_buildNumber)',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 12.sp,
                               color: isDark ? Colors.white38 : Colors.grey,
                               fontWeight: FontWeight.bold,
@@ -224,7 +223,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ),
       title: Text(
         'Settings',
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 22.sp,
           fontWeight: FontWeight.w800,
           color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -287,7 +286,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           SnackBar(
             content: Text(
               'Cache cleared successfully!',
-              style: GoogleFonts.outfit(fontWeight: FontWeight.w700),
+              style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w700),
             ),
             backgroundColor: Colors.green,
             behavior: SnackBarBehavior.floating,

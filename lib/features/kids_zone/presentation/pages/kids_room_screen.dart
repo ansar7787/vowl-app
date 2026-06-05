@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -227,7 +226,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                                           Icon(Icons.touch_app_rounded, color: Colors.white, size: 20.sp),
                                           SizedBox(width: 10.w),
                                           Text("TAP TO WAKE UP ☀️", 
-                                            style: GoogleFonts.outfit(fontSize: 12.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 1)),
+                                            style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 1)),
                                         ],
                                       ),
                                     ).animate(onPlay: (c) => c.repeat(reverse: true))
@@ -489,7 +488,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             if (_isSleeping)
               Positioned(
                 top: -30.h,
-                child: Text("Zzz...", style: GoogleFonts.fredoka(color: Colors.white70, fontSize: 18.sp, fontWeight: FontWeight.bold))
+                child: Text("Zzz...", style: TextStyle(fontFamily: 'Outfit', color: Colors.white70, fontSize: 18.sp, fontWeight: FontWeight.bold))
                     .animate(onPlay: (c) => c.repeat())
                     .moveY(begin: 0, end: -30, duration: 2.seconds)
                     .fadeOut(),
@@ -522,7 +521,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
             borderRadius: BorderRadius.circular(15.r),
             child: Text(
               _buddyMessage,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black87,
@@ -628,7 +627,7 @@ class _KidsRoomScreenState extends State<KidsRoomScreen> {
                      color: isError ? Colors.redAccent : Colors.greenAccent, size: 24.sp),
                 SizedBox(width: 12.w),
                 Expanded(
-                  child: Text(message, style: GoogleFonts.outfit(fontSize: 13.sp, fontWeight: FontWeight.w800, color: Colors.black87)),
+                  child: Text(message, style: TextStyle(fontFamily: 'Outfit', fontSize: 13.sp, fontWeight: FontWeight.w800, color: Colors.black87)),
                 ),
               ],
             ),

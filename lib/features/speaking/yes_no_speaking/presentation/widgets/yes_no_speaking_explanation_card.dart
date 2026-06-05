@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
@@ -50,7 +49,7 @@ class YesNoSpeakingExplanationCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 isCorrect ? "Binary Alignment Active!" : "Binary Alignment Failed!",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : Colors.black87,
@@ -61,7 +60,7 @@ class YesNoSpeakingExplanationCard extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             quest.explanation ?? "Correlating binary comparison gates with actual phonetic speaking speeds builds mental syntax agility.",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 14.sp,
               color: isDark ? Colors.white70 : Colors.black54,
               height: 1.35,

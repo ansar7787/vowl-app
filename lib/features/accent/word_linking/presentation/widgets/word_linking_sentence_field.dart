@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -66,7 +65,7 @@ class WordLinkingSentenceField extends StatelessWidget {
       ),
       child: Text(
         word.toUpperCase(), 
-        style: GoogleFonts.shareTechMono(
+        style: TextStyle(fontFamily: 'RobotoMono', 
           fontSize: 15.sp, 
           fontWeight: FontWeight.bold, 
           color: isDark ? Colors.white : Colors.black87

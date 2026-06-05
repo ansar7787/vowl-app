@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class DailyJournalInstruction extends StatelessWidget {
   final Color primaryColor;
 
@@ -26,7 +24,7 @@ class DailyJournalInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "REFLECT AND CHRONICLE THE EXPEDITION", 
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp, 
               fontWeight: FontWeight.w900, 
               color: primaryColor, 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
@@ -33,7 +32,7 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
         ),
         child: Text(
           passage,
-          style: GoogleFonts.spectral(
+          style: TextStyle(fontFamily: 'Spectral', 
             fontSize: 16.sp,
             color: isDark ? Colors.white : Colors.black87,
             height: 1.6,
@@ -60,7 +59,7 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
-              style: GoogleFonts.spectral(
+              style: TextStyle(fontFamily: 'Spectral', 
                 fontSize: 16.sp,
                 color: isDark ? Colors.white70 : Colors.black87,
                 height: 1.6,
@@ -90,7 +89,7 @@ class CorrectionWritingSentenceCard extends StatelessWidget {
                       children: [
                         Text(
                           selectedCorrection ?? errorText.toUpperCase(),
-                          style: GoogleFonts.shareTechMono(
+                          style: TextStyle(fontFamily: 'RobotoMono', 
                             fontSize: 14.sp,
                             color: selectedCorrection != null ? Colors.greenAccent : Colors.redAccent,
                             fontWeight: FontWeight.bold

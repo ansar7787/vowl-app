@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class ShortAnswerInkwell extends StatelessWidget {
@@ -40,7 +39,7 @@ class ShortAnswerInkwell extends StatelessWidget {
             controller: controller,
             maxLines: 5,
             enabled: !isAnswered,
-            style: GoogleFonts.spectral(
+            style: TextStyle(fontFamily: 'Spectral', 
               fontSize: 16.sp, 
               color: isDark ? Colors.white : Colors.black87, 
               height: 1.5,
@@ -48,7 +47,7 @@ class ShortAnswerInkwell extends StatelessWidget {
             ),
             decoration: InputDecoration(
               hintText: "Let the ink flow...",
-              hintStyle: GoogleFonts.spectral(color: isDark ? Colors.white30 : Colors.black38),
+              hintStyle: TextStyle(fontFamily: 'Spectral', color: isDark ? Colors.white30 : Colors.black38),
               border: InputBorder.none,
             ),
           ),
@@ -58,13 +57,15 @@ class ShortAnswerInkwell extends StatelessWidget {
             children: [
               Text(
                 "Ink volume:",
-                style: GoogleFonts.shareTechMono(fontSize: 10.sp, color: color, fontWeight: FontWeight.bold)
+                style: TextStyle(fontFamily: 'RobotoMono', fontSize: 10.sp, color: color, fontWeight: FontWeight.bold)
               ),
               Text(
                 "$wordCount words",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp, 
-                  color: wordCount >= 10 ? Colors.greenAccent : Colors.redAccent,
+                  color: wordCount >= 10 
+                      ? (isDark ? Colors.greenAccent : const Color(0xFF16A34A))
+                      : (isDark ? Colors.redAccent : const Color(0xFFDC2626)),
                   fontWeight: FontWeight.bold
                 )
               ),

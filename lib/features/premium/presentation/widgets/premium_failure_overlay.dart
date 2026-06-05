@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class PremiumFailureOverlay extends StatelessWidget {
@@ -53,7 +52,7 @@ class PremiumFailureOverlay extends StatelessWidget {
           SizedBox(height: 24.h),
           Text(
             "TRANSACTION FAILED",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 22.sp,
               fontWeight: FontWeight.bold,
               color: const Color(0xFFF43F5E),
@@ -64,7 +63,7 @@ class PremiumFailureOverlay extends StatelessWidget {
           Text(
             "The payment could not be completed. Please try again or use another payment method.",
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 14.sp,
               color: Colors.white70,
               height: 1.4,
@@ -87,7 +86,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                   ),
                   child: Text(
                     "RETRY",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       color: Colors.white,
                       fontWeight: FontWeight.w900,
                       fontSize: 13.sp,
@@ -109,7 +108,7 @@ class PremiumFailureOverlay extends StatelessWidget {
                   ),
                   child: Text(
                     "CLOSE",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       color: Colors.black,
                       fontWeight: FontWeight.w900,
                       fontSize: 13.sp,

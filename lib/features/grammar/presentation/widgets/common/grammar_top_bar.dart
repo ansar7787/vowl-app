@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'grammar_heart_count.dart';
@@ -60,7 +59,7 @@ class GrammarTopBar extends StatelessWidget {
                   children: [
                     Text(
                       "Level $level",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white70 : Colors.black54,
@@ -68,7 +67,7 @@ class GrammarTopBar extends StatelessWidget {
                     ),
                     Text(
                       "${currentIndex + 1} / $totalQuests",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w700,
                         color: isDark ? Colors.white54 : Colors.black45,

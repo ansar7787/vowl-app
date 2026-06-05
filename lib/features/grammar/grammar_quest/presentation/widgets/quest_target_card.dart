@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -61,7 +60,7 @@ class QuestTargetCard extends StatelessWidget {
         Text(
               "ANALYZING SYNTAX...",
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor.withValues(alpha: 0.7),
@@ -90,7 +89,7 @@ class QuestTargetCard extends StatelessWidget {
           ),
           child: Text(
             "MASTER SENTENCE",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: const Color(0xFF10B981),
@@ -102,7 +101,7 @@ class QuestTargetCard extends StatelessWidget {
         Text(
               question ?? "",
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 22.sp,
                 fontWeight: FontWeight.w800,
                 color: isMidnight

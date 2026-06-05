@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/profile_bloc.dart';
@@ -173,7 +172,7 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
                         SizedBox(width: 8.w),
                         Text(
                           "$earned / $max",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w900,
                             color: Colors.orange[800],
@@ -202,7 +201,7 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
                         SizedBox(width: 8.w),
                         Text(
                           "${user.kidsCoins}",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w900,
                             color: const Color(0xFFEF4444),
@@ -220,7 +219,7 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
             children: [
               Text(
                 "STICKERS ALBUM",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 28.sp,
                   fontWeight: FontWeight.w900,
                   color: (isDark || isMidnight) ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
@@ -264,7 +263,7 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
                     SizedBox(width: 8.w),
                     Text(
                       "${((earned / max) * 100).toInt()}%",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.orange[800],
@@ -291,7 +290,7 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
         indicatorWeight: 4,
         labelColor: (isDark || isMidnight) ? Colors.white : const Color(0xFF1E293B),
         unselectedLabelColor: (isDark || isMidnight) ? Colors.white38 : Colors.black26,
-        labelStyle: GoogleFonts.outfit(fontWeight: FontWeight.w900, fontSize: 14.sp),
+        labelStyle: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, fontSize: 14.sp),
         tabs: _categories.map((cat) {
           final earned = _getCategoryEarnedCount(cat);
           return Tab(
@@ -399,7 +398,7 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
                 SnackBar(
                   content: Text(
                     "🚀 Complete $level quests in this category to unlock this sticker!",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontWeight: FontWeight.bold,
                       color: level == 200 ? Colors.black87 : Colors.white,
                     ),
@@ -490,7 +489,7 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
                   ),
                   child: Text(
                     "QUEST $level",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w900,
                       color: (isDark || isMidnight) ? Colors.white38 : Colors.black26,
@@ -558,7 +557,7 @@ class _StickerBookScreenState extends State<StickerBookScreen> with SingleTicker
       ),
       child: Text(
         label,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 8.sp,
           fontWeight: FontWeight.w900,
           color: color,

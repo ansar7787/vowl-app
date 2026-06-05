@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -73,7 +72,7 @@ class SyllableStressDrumConsole extends StatelessWidget {
             children: [
               Text(
                 text.toUpperCase(), 
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 18.sp, 
                   fontWeight: FontWeight.bold, 
                   color: isSelected || (isAnswered && index == correct) 

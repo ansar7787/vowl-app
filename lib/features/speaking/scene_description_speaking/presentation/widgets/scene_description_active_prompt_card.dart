@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class SceneDescriptionActivePromptCard extends StatelessWidget {
   final int activeHotspot;
   final String activePrompt;
@@ -35,7 +33,7 @@ class SceneDescriptionActivePromptCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "DESCRIBE COMPONENT",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: primaryColor,
                   letterSpacing: 1.0,
@@ -47,7 +45,7 @@ class SceneDescriptionActivePromptCard extends StatelessWidget {
           Text(
             activePrompt,
             textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 15.sp,
               color: isDark ? Colors.white70 : Colors.black87,
               height: 1.35,

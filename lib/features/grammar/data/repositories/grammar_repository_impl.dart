@@ -1,14 +1,20 @@
-import '../../domain/entities/grammar_quest.dart';
-import '../../../../core/error/failures.dart';
 import 'package:dartz/dartz.dart';
-import '../../../../core/domain/entities/game_quest.dart';
-import '../../domain/repositories/grammar_repository.dart';
 import '../../../../core/error/exceptions.dart';
+import '../../../../core/error/failures.dart';
+import '../../../../core/domain/entities/game_quest.dart';
+import '../../../../core/network/network_info.dart';
+import '../../domain/entities/grammar_quest.dart';
+import '../../domain/repositories/grammar_repository.dart';
+import '../datasources/grammar_remote_data_source.dart';
 
 class GrammarRepositoryImpl implements GrammarRepository {
-  final dynamic remoteDataSource;
-  final dynamic networkInfo;
-  GrammarRepositoryImpl({this.remoteDataSource, this.networkInfo});
+  final GrammarRemoteDataSource remoteDataSource;
+  final NetworkInfo? networkInfo;
+
+  const GrammarRepositoryImpl({
+    required this.remoteDataSource,
+    this.networkInfo,
+  });
 
   @override
   Future<Either<Failure, List<GrammarQuest>>> getGrammarQuest({
@@ -24,7 +30,7 @@ class GrammarRepositoryImpl implements GrammarRepository {
     } on ServerException catch (e) {
       return Left(ServerFailure(e.message));
     } catch (e) {
-      return const Left(ServerFailure("Failed to load grammar quests."));
+      return Left(ServerFailure(e.toString()));
     }
   }
 
@@ -32,7 +38,7 @@ class GrammarRepositoryImpl implements GrammarRepository {
   Future<void> preloadGrammarQuest({
     required GameSubtype gameType,
     required int level,
-  }) async {
-    await remoteDataSource.preloadBatch(gameType: gameType, level: level);
+  }) {
+    return remoteDataSource.preloadBatch(gameType: gameType, level: level);
   }
 }

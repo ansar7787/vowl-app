@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -53,7 +52,7 @@ class HomeSectionHeader extends StatelessWidget {
                 children: [
                   Text(
                     title.toUpperCase(),
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w900,
                       color: contrastColor,
@@ -65,7 +64,7 @@ class HomeSectionHeader extends StatelessWidget {
               ),
               Text(
                 subtitle,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w600,
                   color: secondaryColor,
@@ -86,7 +85,7 @@ class HomeSectionHeader extends StatelessWidget {
               ),
               child: Text(
                 'SEE ALL',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: categoryColor,

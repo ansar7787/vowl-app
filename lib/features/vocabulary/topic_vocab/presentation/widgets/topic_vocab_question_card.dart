@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class TopicVocabQuestionCard extends StatelessWidget {
@@ -37,7 +36,7 @@ class TopicVocabQuestionCard extends StatelessWidget {
                 child: Text(
                   instruction,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 19.sp,
                     fontWeight: FontWeight.w700,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -67,7 +66,7 @@ class TopicVocabQuestionCard extends StatelessWidget {
                     child: Text(
                       sentence!,
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 15.sp,
                         fontStyle: FontStyle.italic,
                         color: isDark ? Colors.white70 : Colors.black54,

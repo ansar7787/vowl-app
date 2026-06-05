@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
@@ -20,7 +19,9 @@ class SentenceBuilderExplanationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final displayColor = isCorrect ? Colors.greenAccent : Colors.redAccent;
+    final displayColor = isCorrect
+        ? (isDark ? Colors.greenAccent : const Color(0xFF16A34A))
+        : (isDark ? Colors.redAccent : const Color(0xFFDC2626));
 
     return Container(
       padding: EdgeInsets.all(20.r),
@@ -35,7 +36,7 @@ class SentenceBuilderExplanationCard extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             isCorrect ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -47,7 +48,7 @@ class SentenceBuilderExplanationCard extends StatelessWidget {
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

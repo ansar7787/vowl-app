@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/widgets/gourmet_order_steam_painter.dart';
 
@@ -113,7 +112,7 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
                     widget.isAnswered
                         ? ((widget.isCorrect ?? false) ? "SERVED PERFECTLY" : "WRONG DISHES")
                         : "SERVING PLATTER",
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       fontSize: 10.sp,
                       color: ringColor.withValues(alpha: isActiveGlow ? 0.9 : 0.35),
                       fontWeight: FontWeight.bold,
@@ -130,7 +129,7 @@ class _GourmetOrderTableSettingState extends State<GourmetOrderTableSetting> {
                       ),
                       child: Text(
                         "${widget.selectedItems.length} PLATES LOADED",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 9.sp,
                           fontWeight: FontWeight.bold,
                           color: ringColor,

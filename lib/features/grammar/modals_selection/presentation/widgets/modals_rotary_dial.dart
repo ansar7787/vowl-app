@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
@@ -72,7 +71,7 @@ class _ModalsRotaryDialState extends State<ModalsRotaryDial> {
               scale: isSelected ? 1.25 : 0.9,
               child: AnimatedDefaultTextStyle(
                 duration: 300.ms,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
                   color: isSelected

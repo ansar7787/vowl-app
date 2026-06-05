@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -59,7 +58,7 @@ class TenseVerbCard extends StatelessWidget {
           children: [
             Text(
               verbForm,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w800,
                 color: (isSelected || (showResult && isCorrect))
@@ -71,7 +70,7 @@ class TenseVerbCard extends StatelessWidget {
               SizedBox(height: 4.h),
               Text(
                 tenseName!,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w600,
                   color: (isSelected || (showResult && isCorrect))

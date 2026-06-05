@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class ReadAndMatchTerminal extends StatelessWidget {
@@ -48,7 +47,7 @@ class ReadAndMatchTerminal extends StatelessWidget {
         child: Text(
           text.contains("]") ? text.split("]").last.trim() : text, 
           textAlign: TextAlign.center, 
-          style: GoogleFonts.shareTechMono(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 13.sp, 
             color: isMatched || isActive 
                 ? (isDark ? Colors.white : color) 

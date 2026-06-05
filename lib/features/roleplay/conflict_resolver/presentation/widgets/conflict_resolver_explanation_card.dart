@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
 
@@ -50,7 +49,7 @@ class ConflictResolverExplanationCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 (isCorrect ?? false) ? "Frequency Calibrated!" : "Frequency Distortion!",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : Colors.black87,
@@ -61,7 +60,7 @@ class ConflictResolverExplanationCard extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             quest.explanation ?? "Calibrating voice frequency teaches strong crisis control and empathic context listening patterns.",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 14.sp,
               color: isDark ? Colors.white70 : Colors.black54,
               height: 1.35,

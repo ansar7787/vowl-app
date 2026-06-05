@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class DescribeSituationWritingArea extends StatelessWidget {
   final TextEditingController textController;
   final int minWords;
@@ -34,13 +32,13 @@ class DescribeSituationWritingArea extends StatelessWidget {
           TextField(
             controller: textController,
             maxLines: 4,
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               color: isDark ? Colors.white : Colors.black87, 
               fontSize: 14.sp
             ),
             decoration: InputDecoration(
               hintText: "Type description here... (Tap floating emoji cells to inject keyword boosters directly!)",
-              hintStyle: GoogleFonts.outfit(
+              hintStyle: TextStyle(fontFamily: 'Outfit', 
                 color: isDark ? Colors.white30 : Colors.black38, 
                 fontSize: 12.sp
               ),
@@ -53,28 +51,33 @@ class DescribeSituationWritingArea extends StatelessWidget {
             children: [
               Text(
                 "Booster words used: ${usedKeywords.length}",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp, 
                   color: color, 
                   fontWeight: FontWeight.bold
                 )
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-                decoration: BoxDecoration(
-                  color: wordCount >= minWords 
-                      ? Colors.greenAccent.withValues(alpha: 0.15) 
-                      : Colors.redAccent.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: Text(
-                  "$wordCount / $minWords words",
-                  style: GoogleFonts.shareTechMono(
-                    fontSize: 10.sp, 
-                    color: wordCount >= minWords ? Colors.greenAccent : Colors.redAccent,
-                    fontWeight: FontWeight.bold
-                  )
-                ),
+              Builder(
+                builder: (context) {
+                  final displayColor = wordCount >= minWords
+                      ? (isDark ? Colors.greenAccent : const Color(0xFF16A34A))
+                      : (isDark ? Colors.redAccent : const Color(0xFFDC2626));
+                  return Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+                    decoration: BoxDecoration(
+                      color: displayColor.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
+                    child: Text(
+                      "$wordCount / $minWords words",
+                      style: TextStyle(fontFamily: 'RobotoMono', 
+                        fontSize: 10.sp, 
+                        color: displayColor,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  );
+                }
               ),
             ],
           ),

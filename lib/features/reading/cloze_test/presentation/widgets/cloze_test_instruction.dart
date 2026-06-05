@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ClozeTestInstruction extends StatelessWidget {
   final Color primaryColor;
 
@@ -27,7 +25,7 @@ class ClozeTestInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               "INJECT FUEL CELLS TO POWER THE PASSAGE", 
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp, 
                 fontWeight: FontWeight.w900, 
                 color: primaryColor, 

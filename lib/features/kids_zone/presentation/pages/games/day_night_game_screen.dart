@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
@@ -27,7 +26,7 @@ class DayNightGameScreen extends StatelessWidget {
             SizedBox(height: 30.h),
             Text(
               quest.instruction,
-              style: GoogleFonts.poppins(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 26.sp,
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFF1E293B),
@@ -128,7 +127,7 @@ class DayNightGameScreen extends StatelessWidget {
               SizedBox(height: 8.h),
               Text(
                 text,
-                style: GoogleFonts.poppins(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,

@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -173,7 +172,7 @@ class _SplashFooter extends StatelessWidget {
           // The Branding Pop
           Text(
             'vowl',
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 26.sp,
               fontWeight: FontWeight.w900,
               color: const Color(0xFFA8E063),
@@ -191,7 +190,7 @@ class _SplashFooter extends StatelessWidget {
           // The Tagline
           Text(
             'Your Complete English Quest',
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w800,
               color: isDark ? Colors.white30 : Colors.black26,

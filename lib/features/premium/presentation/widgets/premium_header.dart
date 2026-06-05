@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class PremiumHeader extends StatelessWidget {
   const PremiumHeader({super.key});
 
@@ -39,7 +37,7 @@ class PremiumHeader extends StatelessWidget {
                 SizedBox(width: 6.w),
                 Text(
                   'VERIFIED PRO',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     color: isDark ? const Color(0xB3FFFFFF) : const Color(0xDE000000),
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,

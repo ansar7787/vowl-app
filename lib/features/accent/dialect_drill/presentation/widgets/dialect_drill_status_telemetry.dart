@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class DialectDrillStatusTelemetry extends StatelessWidget {
@@ -34,7 +33,7 @@ class DialectDrillStatusTelemetry extends StatelessWidget {
           SizedBox(width: 10.w),
           Text(
             "TELEMETRY PROBE READY FOR REGIONAL ASSIGNMENT",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 10.sp,
               color: isDark ? Colors.white60 : Colors.black54,
               letterSpacing: 1,

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -441,7 +440,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
               ),
               child: Text(
                 message,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 11.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.indigo,
@@ -540,7 +539,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                     Expanded(
                       child: Text(
                         title,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 24.sp,
                           fontWeight: FontWeight.w900,
                           foreground: Paint()
@@ -574,7 +573,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                           children: [
                             Text(
                               "CORRECT ANSWER:",
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w800,
                                 color: shadowColor,
@@ -584,7 +583,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                             SizedBox(height: 4.h),
                             Text(
                               correctAnswerText,
-                              style: GoogleFonts.fredoka(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 20.sp,
                                 fontWeight: FontWeight.w600,
                                 color: isDark ? Colors.white : Colors.black87,
@@ -627,7 +626,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                         Expanded(
                           child: Text(
                             loadedState.currentQuest.explanation!,
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
                               color: isDark ? Colors.white70 : Colors.black54,
@@ -663,7 +662,7 @@ class _VocabularyBaseLayoutState extends State<VocabularyBaseLayout> {
                     child: Center(
                       child: Text(
                         buttonText,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w900,
                           color: Colors.white,

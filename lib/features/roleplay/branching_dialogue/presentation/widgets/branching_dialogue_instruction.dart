@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class BranchingDialogueInstruction extends StatelessWidget {
   final Color primaryColor;
 
@@ -23,7 +21,7 @@ class BranchingDialogueInstruction extends StatelessWidget {
           ),
           child: Text(
             "FLICK DECISION PROBE CHANNELS",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,
@@ -35,7 +33,7 @@ class BranchingDialogueInstruction extends StatelessWidget {
         Text(
           "Navigate dialogue branches to lock response target",
           textAlign: TextAlign.center,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 16.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

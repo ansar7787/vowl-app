@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -90,7 +89,7 @@ class ProfileBentoStats extends StatelessWidget {
                 children: [
                   Text(
                     'CURRENT LEVEL',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w800,
                       color: const Color(0xFF8B5CF6),
@@ -100,7 +99,7 @@ class ProfileBentoStats extends StatelessWidget {
                   SizedBox(height: 4.h),
                   Text(
                     'Level ${user.level}',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 26.sp,
                       fontWeight: FontWeight.w900,
                       color: Theme.of(context).brightness == Brightness.dark
@@ -110,7 +109,7 @@ class ProfileBentoStats extends StatelessWidget {
                   ),
                   Text(
                     'Tap to view rank details',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
                       color: Theme.of(context).brightness == Brightness.dark
@@ -166,7 +165,7 @@ class ProfileBentoStats extends StatelessWidget {
                     children: [
                       Text(
                         'ADVENTURE XP',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w800,
                           color: const Color(0xFF3B82F6),
@@ -175,7 +174,7 @@ class ProfileBentoStats extends StatelessWidget {
                       ),
                       Text(
                         '${user.totalExp} Total Experience',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w900,
                           color: isDark
@@ -202,7 +201,7 @@ class ProfileBentoStats extends StatelessWidget {
                   children: [
                     Text(
                       'PROGRESS TO LEVEL ${user.level + 1}',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 11.sp,
                         fontWeight: FontWeight.w800,
                         color: Theme.of(context).brightness == Brightness.dark
@@ -213,7 +212,7 @@ class ProfileBentoStats extends StatelessWidget {
                     ),
                     Text(
                       '${(xpProgress * 100).toInt()}%',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w900,
                         color: const Color(0xFF3B82F6),
@@ -289,7 +288,7 @@ class ProfileBentoStats extends StatelessWidget {
               fit: BoxFit.scaleDown,
               child: Text(
                 value,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w900,
                   color: Theme.of(context).brightness == Brightness.dark
@@ -300,7 +299,7 @@ class ProfileBentoStats extends StatelessWidget {
             ),
             Text(
               title,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 11.sp,
                 fontWeight: FontWeight.w700,
                 color: Theme.of(context).brightness == Brightness.dark

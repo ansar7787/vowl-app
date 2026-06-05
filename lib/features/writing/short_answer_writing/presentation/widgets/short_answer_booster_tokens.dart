@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class ShortAnswerBoosterTokens extends StatelessWidget {
@@ -24,7 +23,7 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
       children: [
         Text(
           "BOOSTER KEYWORDS REQUIRED (USE AT LEAST 2)",
-          style: GoogleFonts.shareTechMono(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 10.sp, 
             color: isDark ? Colors.white54 : Colors.black54, 
             fontWeight: FontWeight.bold
@@ -37,13 +36,14 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: keywords.map((k) {
             final bool isUsed = text.contains(k.toLowerCase());
-            final displayColor = isUsed ? Colors.greenAccent : (isDark ? Colors.white24 : Colors.black26);
+            final successColor = isDark ? Colors.greenAccent : const Color(0xFF16A34A);
+            final displayColor = isUsed ? successColor : (isDark ? Colors.white24 : Colors.black26);
             
             return AnimatedContainer(
               duration: 300.milliseconds,
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
               decoration: BoxDecoration(
-                color: isUsed ? Colors.greenAccent.withValues(alpha: 0.15) : Colors.transparent,
+                color: isUsed ? successColor.withValues(alpha: 0.15) : Colors.transparent,
                 borderRadius: BorderRadius.circular(20.r),
                 border: Border.all(color: displayColor, width: 2),
               ),
@@ -53,13 +53,13 @@ class ShortAnswerBoosterTokens extends StatelessWidget {
                   Icon(
                     isUsed ? Icons.check_circle_rounded : Icons.radio_button_unchecked_rounded,
                     size: 14.r,
-                    color: isUsed ? Colors.greenAccent : (isDark ? Colors.white30 : Colors.black38),
+                    color: isUsed ? successColor : (isDark ? Colors.white30 : Colors.black38),
                   ),
                   SizedBox(width: 8.w),
                   Text(
                     k.toUpperCase(),
-                    style: GoogleFonts.shareTechMono(
-                      color: isUsed ? Colors.greenAccent : (isDark ? Colors.white60 : Colors.black54),
+                    style: TextStyle(fontFamily: 'RobotoMono', 
+                      color: isUsed ? successColor : (isDark ? Colors.white60 : Colors.black54),
                       fontSize: 11.sp,
                       fontWeight: FontWeight.bold
                     )

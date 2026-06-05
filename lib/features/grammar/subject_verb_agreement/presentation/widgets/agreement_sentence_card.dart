@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class AgreementSentenceCard extends StatelessWidget {
@@ -57,7 +56,7 @@ class AgreementSentenceCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "SENTENCE PUZZLE",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w900,
                   letterSpacing: 2,
@@ -92,7 +91,7 @@ class AgreementSentenceCard extends StatelessWidget {
     return words.map((word) {
       return Text(
         word,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 22.sp,
           fontWeight: isSubject ? FontWeight.w900 : FontWeight.w600,
           color: isSubject
@@ -146,7 +145,7 @@ class AgreementSentenceCard extends StatelessWidget {
 
           Text(
                 displayVerb,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w900,
                   color: slotColor,

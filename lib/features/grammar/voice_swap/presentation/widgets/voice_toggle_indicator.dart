@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class VoiceToggleIndicator extends StatelessWidget {
   final String instruction; // e.g. "Active → Passive"
   final Color primaryColor;
@@ -78,7 +76,7 @@ class VoiceToggleIndicator extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 10.sp,
           fontWeight: FontWeight.w900,
           letterSpacing: 1.5,

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class CorrectionWritingVault extends StatelessWidget {
   final List<String> options;
   final String? selectedCorrection;
@@ -25,7 +23,7 @@ class CorrectionWritingVault extends StatelessWidget {
       children: [
         Text(
           "AVAILABLE SYNTACTIC CORRECTIONS",
-          style: GoogleFonts.shareTechMono(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 10.sp, 
             color: isDark ? Colors.white54 : Colors.black54, 
             fontWeight: FontWeight.bold
@@ -55,7 +53,7 @@ class CorrectionWritingVault extends StatelessWidget {
                 ),
                 child: Text(
                   opt,
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     color: isSelected ? color : (isDark ? Colors.white70 : Colors.black87),
                     fontSize: 11.sp,
                     fontWeight: FontWeight.bold

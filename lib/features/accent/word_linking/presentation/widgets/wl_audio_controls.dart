@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -87,7 +86,7 @@ class WLAudioControls extends StatelessWidget {
             SizedBox(width: 8.w),
             Text(
               label,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 14.sp,
                 fontWeight: FontWeight.bold,
                 color: isActive ? Colors.white : theme.primaryColor,

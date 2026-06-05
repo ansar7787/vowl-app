@@ -46,5 +46,20 @@ class ReadingQuest extends GameQuest {
   });
 
   String? get word => targetWord ?? highlightedWord;
-}
 
+  @override
+  List<Object?> get props => [
+        ...super.props,
+        passage,
+        highlightedWord,
+        statement,
+        shuffledSentences,
+        correctOrder,
+        pairs,
+        phoneticHint,
+        prompt,
+        keywords,
+        timeLimit,
+        targetItem,
+      ];
+}

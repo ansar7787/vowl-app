@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class FindWordMeaningQuestionHeader extends StatelessWidget {
@@ -28,7 +27,7 @@ class FindWordMeaningQuestionHeader extends StatelessWidget {
           Expanded(
             child: Text(
               "LOCATE THE WORD MEANING: $text", 
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 14.sp, 
                 fontWeight: FontWeight.w700, 
                 color: isDark ? color : color.withValues(alpha: 0.9), 

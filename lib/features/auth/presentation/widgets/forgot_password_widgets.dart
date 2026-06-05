@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/features/home/presentation/widgets/vowlbot_auth_companion.dart';
@@ -36,7 +35,7 @@ class ForgotPasswordHeader extends StatelessWidget {
                 color: Colors.transparent,
                 child: Text(
                   'Vowl',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 44.sp,
                     fontWeight: FontWeight.w900,
                     color: const Color(0xFF2563EB),
@@ -50,7 +49,7 @@ class ForgotPasswordHeader extends StatelessWidget {
         ),
         Text(
           'Recover your account safely',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 15.sp,
             fontWeight: FontWeight.w600,
             color: secondaryColor,
@@ -98,7 +97,7 @@ class ForgotPasswordEmailInput extends StatelessWidget {
       decoration: InputDecoration(
         hintText: 'Email Address',
         hintStyle: TextStyle(color: contrastColor.withValues(alpha: 0.5)),
-        errorStyle: GoogleFonts.outfit(
+        errorStyle: TextStyle(fontFamily: 'Outfit', 
           color: Colors.red,
           fontWeight: FontWeight.bold,
           fontSize: 12.sp,
@@ -183,7 +182,7 @@ class RememberPasswordFooter extends StatelessWidget {
       children: [
         Text(
           "Remember your password? ",
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             color: secondaryColor,
             fontWeight: FontWeight.w600,
           ),
@@ -192,7 +191,7 @@ class RememberPasswordFooter extends StatelessWidget {
           onPressed: () => context.go(AppRouter.loginRoute),
           child: Text(
             'Login',
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               color: const Color(0xFF2563EB),
               fontWeight: FontWeight.w900,
             ),

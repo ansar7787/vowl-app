@@ -1,7 +1,6 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/bloc/kids_bloc.dart';
@@ -109,7 +108,7 @@ class KidsGameHeader extends StatelessWidget {
                     children: [
                       Text(
                         "QUEST $level",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w800,
                           color: primaryColor,
@@ -118,7 +117,7 @@ class KidsGameHeader extends StatelessWidget {
                       ),
                       Text(
                         title.toUpperCase(),
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w900,
                           color: isDark ? Colors.white : Colors.black87,
@@ -245,7 +244,7 @@ class KidsGameHeader extends StatelessWidget {
               children: [
                 Icon(Icons.lightbulb_rounded, color: s.hintUsed ? Colors.grey : Colors.amber[800], size: 14.sp),
                 SizedBox(width: 4.w),
-                Text(hints.toString(), style: GoogleFonts.poppins(fontSize: 12.sp, fontWeight: FontWeight.w900, color: s.hintUsed ? Colors.grey : Colors.amber[900])),
+                Text(hints.toString(), style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w900, color: s.hintUsed ? Colors.grey : Colors.amber[900])),
               ],
             ),
           ),
@@ -301,7 +300,7 @@ class KidsGameHeader extends StatelessWidget {
             borderRadius: BorderRadius.circular(15.r),
             border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
           ),
-          child: Text(text, style: GoogleFonts.fredoka(fontSize: 12.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
+          child: Text(text, style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
         ),
       ),
     ).animate().fadeIn().scale(begin: const Offset(0.5, 0.5));

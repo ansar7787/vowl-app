@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/speaking/scene_description_speaking/presentation/widgets/radar_beacon_painter.dart';
 
 class SceneDescriptionScenicRadarMap extends StatelessWidget {
@@ -72,7 +71,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                   Text(
                     sceneTitle.toUpperCase(),
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : Colors.black87,
@@ -82,7 +81,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
                   SizedBox(height: 6.h),
                   Text(
                     "${inspectedHotspots.length} OF 3 FEATURES STABILIZED",
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       fontSize: 10.sp,
                       color: inspectedHotspots.length == 3 ? Colors.greenAccent : Colors.grey,
                       fontWeight: FontWeight.bold,
@@ -162,7 +161,7 @@ class SceneDescriptionScenicRadarMap extends StatelessWidget {
             SizedBox(height: 4.h),
             Text(
               hotspotLabels[index].toUpperCase(),
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 fontSize: 8.sp,
                 color: isInspected
                     ? Colors.greenAccent

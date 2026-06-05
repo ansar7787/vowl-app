@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
@@ -50,7 +49,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
               SizedBox(width: 12.w),
               Text(
                 isCorrect ? "CORRECT!" : "NOT QUITE",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w900,
                   color: statusColor,
@@ -61,7 +60,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
           SizedBox(height: 20.h),
           Text(
             "${quest.word?.replaceAll('[', '').replaceAll(']', '')} → ${quest.correctAnswer ?? quest.options?[quest.correctAnswerIndex ?? 0]}",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 18.sp,
               fontWeight: FontWeight.w700,
               color: isDark ? Colors.white70 : Colors.black87,
@@ -88,7 +87,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
                       SizedBox(width: 8.w),
                       Text(
                         "PEDAGOGICAL HINT",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w900,
                           color: theme.primaryColor,
@@ -100,7 +99,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
                   SizedBox(height: 12.h),
                   Text(
                     hint,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w600,
                       color: isDark ? Colors.white : Colors.black87,
@@ -128,7 +127,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
                   SizedBox(width: 8.w),
                   Text(
                     "LISTEN AGAIN",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 14.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -160,7 +159,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "THROAT TEST",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.blue,
@@ -172,7 +171,7 @@ class ConsonantFeedbackPanel extends StatelessWidget {
           SizedBox(height: 8.h),
           Text(
             "Touch your throat while speaking. If it vibrates, it's voiced. If not, it's unvoiced.",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 13.sp,
               fontWeight: FontWeight.w500,
               color: isDark ? Colors.white60 : Colors.black54,

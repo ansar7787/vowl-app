@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -160,7 +159,7 @@ class WLOptionsList extends StatelessWidget {
     if (parts.length <= 1) {
       return Text(
         option,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 22.sp,
           fontWeight: FontWeight.w700,
           color: getTextColor(),
@@ -187,7 +186,7 @@ class WLOptionsList extends StatelessWidget {
           ),
           child: Text(
             part,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 18.sp,
               fontWeight: FontWeight.w700,
               color: getTextColor(),

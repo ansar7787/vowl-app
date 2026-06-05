@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class FastSpeechDecoderSteamVents extends StatelessWidget {
@@ -85,7 +84,7 @@ class FastSpeechDecoderSteamVents extends StatelessWidget {
                   Expanded(
                     child: Text(
                       options[index],
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                         color: Colors.white,

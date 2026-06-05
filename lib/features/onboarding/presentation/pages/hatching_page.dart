@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
@@ -51,7 +50,7 @@ class _HatchingPageState extends State<HatchingPage> {
     if (_stage == 0) {
       sl<HapticService>().selection();
       setState(() => _stage = 1);
-      
+
       // Prevent memory leaks by storing timer reference and cancelling in dispose()
       _hatchTimer = Timer(const Duration(milliseconds: 1500), () {
         if (mounted) {
@@ -67,7 +66,8 @@ class _HatchingPageState extends State<HatchingPage> {
 
   Future<void> _speakIntroduction() async {
     try {
-      final message = "Hoot hoot! I am Owly. I have been waiting for a brave traveler like you, ${widget.userName}, to help me unlock the secrets of English. Let's begin our quest!";
+      final message =
+          "Hoot hoot! I am Owly. I have been waiting for a brave traveler like you, ${widget.userName}, to help me unlock the secrets of English. Let's begin our quest!";
       await _tts.speak(message);
     } catch (e) {
       debugPrint('HatchingPage: TTS speak failed: $e');
@@ -114,23 +114,24 @@ class _HatchingPageState extends State<HatchingPage> {
   Widget _buildTitle() {
     String title = "A Discovery...";
     if (_stage >= 2) title = "Welcome, ${widget.userName}!";
-    
+
     return Text(
       title,
-      style: GoogleFonts.outfit(
+      style: TextStyle(
+        fontFamily: 'Outfit',
         fontSize: 32.sp,
         fontWeight: FontWeight.w900,
         color: const Color(0xFF2563EB),
       ),
-    ).animate(key: ValueKey(_stage)).fadeIn().scale();
+    ).animate(key: ValueKey('hatching_title_$_stage')).fadeIn().scale();
   }
 
   Widget _buildMascotStage() {
     return GestureDetector(
       onTap: _onTapEgg,
       child: Semantics(
-        label: _stage < 2 
-            ? 'Mysterious egg. Tap to hatch your Vowl companion.' 
+        label: _stage < 2
+            ? 'Mysterious egg. Tap to hatch your Vowl companion.'
             : 'Hatched Vowl companion mascot.',
         button: _stage < 2,
         child: Stack(
@@ -151,37 +152,28 @@ class _HatchingPageState extends State<HatchingPage> {
 
   Widget _buildEgg() {
     return Container(
-      width: 180.r,
-      height: 240.r,
-      decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.2),
-        borderRadius: BorderRadius.all(Radius.elliptical(90.r, 120.r)),
-        border: Border.all(color: Colors.white38, width: 2),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.blue.withValues(alpha: 0.3),
-            blurRadius: 30,
-            spreadRadius: 5,
+          width: 180.r,
+          height: 240.r,
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.2),
+            borderRadius: BorderRadius.all(Radius.elliptical(90.r, 120.r)),
+            border: Border.all(color: Colors.white38, width: 2),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.blue.withValues(alpha: 0.3),
+                blurRadius: 30,
+                spreadRadius: 5,
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Center(
-        child: Icon(
-          Icons.auto_awesome,
-          color: Colors.white,
-          size: 48.r,
-        ),
-      ),
-    )
-        .animate(
-          onPlay: (c) => c.repeat(reverse: true),
+          child: Center(
+            child: Icon(Icons.auto_awesome, color: Colors.white, size: 48.r),
+          ),
         )
+        .animate(onPlay: (c) => c.repeat(reverse: true))
         .shimmer(duration: 2000.ms)
         .moveY(begin: -10, end: 10, duration: 2000.ms, curve: Curves.easeInOut)
-        .shake(
-          hz: _stage == 1 ? 10 : 0,
-          duration: 1500.ms,
-        );
+        .shake(hz: _stage == 1 ? 10 : 0, duration: 1500.ms);
   }
 
   Widget _buildStatusText() {
@@ -194,13 +186,14 @@ class _HatchingPageState extends State<HatchingPage> {
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: GoogleFonts.outfit(
+        style: TextStyle(
+          fontFamily: 'Outfit',
           fontSize: 18.sp,
           fontWeight: FontWeight.w600,
           color: Colors.blueGrey,
         ),
       ),
-    ).animate(key: ValueKey(_stage)).fadeIn();
+    ).animate(key: ValueKey('hatching_status_$_stage')).fadeIn();
   }
 
   Widget _buildGetStartedButton() {
@@ -218,7 +211,8 @@ class _HatchingPageState extends State<HatchingPage> {
         ),
         child: Text(
           "Enter the World of Vowl",
-          style: GoogleFonts.outfit(
+          style: TextStyle(
+            fontFamily: 'Outfit',
             fontSize: 18.sp,
             fontWeight: FontWeight.bold,
           ),

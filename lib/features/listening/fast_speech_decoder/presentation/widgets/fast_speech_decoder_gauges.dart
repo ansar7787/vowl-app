@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class FastSpeechDecoderGauges extends StatelessWidget {
   final double speed;
   final Color color;
@@ -23,7 +21,7 @@ class FastSpeechDecoderGauges extends StatelessWidget {
             SizedBox(width: 8.w),
             Text(
               "VELOCITY SENSOR",
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 fontSize: 10.sp,
                 color: color.withValues(alpha: 0.7),
               ),
@@ -33,7 +31,7 @@ class FastSpeechDecoderGauges extends StatelessWidget {
         SizedBox(height: 2.h),
         Text(
           "${speed.toStringAsFixed(1)}X",
-          style: GoogleFonts.shareTechMono(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 36.sp,
             fontWeight: FontWeight.w900,
             color: color,

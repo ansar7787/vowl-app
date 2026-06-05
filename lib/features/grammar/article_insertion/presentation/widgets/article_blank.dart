@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ArticleBlank extends StatelessWidget {
   final String correctAnswer;
   final bool? isAnsweredCorrectly;
@@ -43,7 +41,7 @@ class ArticleBlank extends StatelessWidget {
           ),
           child: Text(
             isCorrect ? correctAnswer : "?",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 22.sp,
               fontWeight: FontWeight.w800,
               color: isCorrect ? const Color(0xFF10B981) : primaryColor,

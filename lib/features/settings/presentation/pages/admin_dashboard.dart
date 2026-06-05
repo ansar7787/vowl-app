@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/utils/quest_upload_service.dart';
 import 'package:vowl/core/utils/game_content_generator.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
@@ -330,7 +329,7 @@ class _AdminDashboardState extends State<AdminDashboard>
           children: [
             Text(
               'Vowl COMMAND',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontWeight: FontWeight.w900,
                 letterSpacing: 4,
                 fontSize: 18.sp,
@@ -339,7 +338,7 @@ class _AdminDashboardState extends State<AdminDashboard>
             ),
             Text(
               '2026 CORE EDITION • MANUAL SEEDING',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontWeight: FontWeight.bold,
                 letterSpacing: 1,
                 fontSize: 10.sp,
@@ -361,7 +360,7 @@ class _AdminDashboardState extends State<AdminDashboard>
           indicatorWeight: 4,
           labelColor: primaryColor,
           unselectedLabelColor: isDark ? Colors.white30 : Colors.black26,
-          labelStyle: GoogleFonts.outfit(
+          labelStyle: TextStyle(fontFamily: 'Outfit', 
             fontWeight: FontWeight.bold,
             fontSize: 13.sp,
           ),
@@ -466,7 +465,7 @@ class _AdminDashboardState extends State<AdminDashboard>
                     TextField(
                       controller: _manualJsonController,
                       maxLines: 12,
-                      style: GoogleFonts.robotoMono(
+                      style: TextStyle(fontFamily: 'RobotoMono', 
                         fontSize: 12.sp,
                         color: isDark ? Colors.greenAccent : Colors.black87,
                       ),
@@ -514,7 +513,7 @@ class _AdminDashboardState extends State<AdminDashboard>
                   icon: const Icon(Icons.save_rounded),
                   label: Text(
                     'SAVE BATCH TO FIRESTORE',
-                    style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold),
                   ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF10B981),
@@ -531,7 +530,7 @@ class _AdminDashboardState extends State<AdminDashboard>
                   icon: const Icon(Icons.bolt_rounded, color: Colors.amber),
                   label: Text(
                     '⚡ BULK SEED 30 LEVELS',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.amber : Colors.orange[800],
                     ),
@@ -610,7 +609,7 @@ class _AdminDashboardState extends State<AdminDashboard>
                 itemCount: _verificationLogs.length,
                 itemBuilder: (c, i) => Text(
                   _verificationLogs[i],
-                  style: GoogleFonts.robotoMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     color: _verificationLogs[i].contains('✅')
                         ? Colors.greenAccent
                         : Colors.redAccent,
@@ -681,9 +680,9 @@ class _AdminDashboardState extends State<AdminDashboard>
       ),
       title: Text(
         title,
-        style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+        style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold),
       ),
-      subtitle: Text(subtitle, style: GoogleFonts.outfit(fontSize: 12.sp)),
+      subtitle: Text(subtitle, style: TextStyle(fontFamily: 'Outfit', fontSize: 12.sp)),
       tileColor: Theme.of(context).brightness == Brightness.dark
           ? Colors.white10
           : Colors.white,
@@ -719,7 +718,7 @@ class _AdminDashboardState extends State<AdminDashboard>
           Expanded(
             child: Text(
               _status,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 11.sp,
                 fontWeight: FontWeight.bold,
               ),
@@ -760,7 +759,7 @@ class _AdminDashboardState extends State<AdminDashboard>
       children: [
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 12.sp,
             fontWeight: FontWeight.bold,
             color: Colors.grey,
@@ -776,7 +775,7 @@ class _AdminDashboardState extends State<AdminDashboard>
                   value: e,
                   child: Text(
                     e.toString().split('.').last,
-                    style: GoogleFonts.outfit(fontSize: 14.sp),
+                    style: TextStyle(fontFamily: 'Outfit', fontSize: 14.sp),
                   ),
                 ),
               )
@@ -921,7 +920,7 @@ class _AdminDashboardState extends State<AdminDashboard>
         ),
         child: Text(
           '$levels Levels Detected (${list.length} Items)',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             color: Colors.white,
             fontSize: 10.sp,
             fontWeight: FontWeight.bold,
@@ -937,7 +936,7 @@ class _AdminDashboardState extends State<AdminDashboard>
         ),
         child: Text(
           'INVALID JSON',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             color: Colors.white,
             fontSize: 10.sp,
             fontWeight: FontWeight.bold,
@@ -996,7 +995,7 @@ class _NumberInputFieldState extends State<_NumberInputField> {
       children: [
         Text(
           widget.label,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 12.sp,
             fontWeight: FontWeight.bold,
             color: Colors.grey,
@@ -1009,7 +1008,7 @@ class _NumberInputFieldState extends State<_NumberInputField> {
             isDense: true,
             contentPadding: EdgeInsets.symmetric(vertical: 8.h),
           ),
-          style: GoogleFonts.outfit(fontSize: 14.sp),
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 14.sp),
           onSubmitted: _submit,
           onChanged: _submit,
         ),

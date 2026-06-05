@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
@@ -59,7 +58,7 @@ class SCSentenceDisplay extends StatelessWidget {
 
         return AnimatedDefaultTextStyle(
           duration: const Duration(milliseconds: 200),
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: (isRecognized || isPaced) ? 30.sp : 26.sp,
             fontWeight: (isRecognized || isPaced)
                 ? FontWeight.w900
@@ -93,7 +92,7 @@ class SCSentenceDisplay extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 8.h),
               child: Text(
                 "[ ${quest.phoneticHint} ]",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: theme.primaryColor.withValues(alpha: 0.7),
@@ -122,7 +121,7 @@ class SCSentenceDisplay extends StatelessWidget {
                 children: [
                   Text(
                     "RHYTHM",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w900,
                       letterSpacing: 2,
@@ -172,7 +171,7 @@ class SCSentenceDisplay extends StatelessWidget {
           spans.add(
             TextSpan(
               text: char,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: isFullyStressed ? 20.sp : 18.sp,
                 fontWeight: isUpper ? FontWeight.w900 : FontWeight.w500,
                 color: isUpper

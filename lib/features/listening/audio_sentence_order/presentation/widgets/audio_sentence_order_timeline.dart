@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class AudioSentenceOrderTimeline extends StatelessWidget {
   final List<String> slots;
   final Color color;
@@ -43,7 +41,7 @@ class AudioSentenceOrderTimeline extends StatelessWidget {
               ),
               child: Text(
                 slots[index].isEmpty ? "???" : slots[index],
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 14.sp,
                   fontWeight: FontWeight.bold,
                   color: slots[index].isEmpty

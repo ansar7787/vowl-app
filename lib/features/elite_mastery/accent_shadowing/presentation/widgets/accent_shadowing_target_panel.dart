@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class AccentShadowingTargetPanel extends StatelessWidget {
@@ -61,7 +60,7 @@ class AccentShadowingTargetPanel extends StatelessWidget {
         final isMatched = matchedIndices.contains(index);
         return Text(
           words[index],
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 24.sp,
             fontWeight: FontWeight.w900,
             color: isMatched

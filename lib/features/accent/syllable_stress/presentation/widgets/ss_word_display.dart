@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/accent/harmonic_waves.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -65,7 +64,7 @@ class SsWordDisplay extends StatelessWidget {
                 SizedBox(width: 12.w),
                 Text(
                   "LISTEN",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -88,7 +87,7 @@ class SsWordDisplay extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 12.h),
                   child: Text(
                     "[ $phoneticHint ]",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                       color: primaryColor.withValues(alpha: 0.7),
@@ -102,7 +101,7 @@ class SsWordDisplay extends StatelessWidget {
                 child: Text(
                   word.toUpperCase(),
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 36.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -131,7 +130,7 @@ class SsWordDisplay extends StatelessWidget {
       ),
       child: Text(
         "RHYTHM: • •", // Simplified rhythm indicator
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 12.sp,
           fontWeight: FontWeight.w800,
           color: color.withValues(alpha: 0.7),

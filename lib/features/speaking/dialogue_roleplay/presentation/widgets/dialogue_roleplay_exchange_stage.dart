@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/widgets/synaptic_link_painter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -123,7 +122,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: GoogleFonts.shareTechMono(
+                      style: TextStyle(fontFamily: 'RobotoMono', 
                         fontSize: 9.sp,
                         color: highlight ? Colors.greenAccent : color,
                         fontWeight: FontWeight.bold,
@@ -140,7 +139,7 @@ class DialogueRoleplayExchangeStage extends StatelessWidget {
                 SizedBox(height: 6.h),
                 Text(
                   content,
-                  style: GoogleFonts.fredoka(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
                     height: 1.35,

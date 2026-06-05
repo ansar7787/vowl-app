@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,11 +50,18 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  Timer? _autoplayTimer;
 
   @override
   void initState() {
     super.initState();
     context.read<SpeakingBloc>().add(FetchSpeakingQuests(gameType: widget.gameType, level: widget.level));
+  }
+
+  @override
+  void dispose() {
+    _autoplayTimer?.cancel();
+    super.dispose();
   }
 
   void _triggerAutoPlay(SpeakingQuest quest) {
@@ -175,7 +183,8 @@ class _YesNoSpeakingScreenState extends State<YesNoSpeakingScreen> {
               _tiltValue = 0.0;
               _spokenText = "";
             });
-            Future.delayed(const Duration(milliseconds: 300), () {
+            _autoplayTimer?.cancel();
+            _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           }

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -33,7 +31,6 @@ class EssayDraftingScreen extends StatefulWidget {
 
 class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
   
   final Map<String, String?> _blueprintSlots = {};
   bool _isAnswered = false;
@@ -71,9 +68,10 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
   }
 
   void _submitAnswer() {
-    final WritingQuest? quest = (context.read<WritingBloc>().state as WritingLoaded).currentQuest as WritingQuest?;
-    if (quest == null || _isAnswered) return;
+    final state = context.read<WritingBloc>().state;
+    if (state is! WritingLoaded || _isAnswered) return;
     
+    final quest = state.currentQuest;
     final points = quest.requiredPoints ?? [];
     final options = quest.options ?? [];
     final correctOrderIndices = quest.correctOrder ?? [0, 1, 2, 3];
@@ -86,16 +84,12 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
     bool isSlot3Correct = _blueprintSlots[points[3]] == options[correctOrderIndices[3]];
 
     if (isSlot0Correct && isSlot1Correct && isSlot2Correct && isSlot3Correct) {
-      _hapticService.success();
-      _soundService.playCorrect();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = true; 
       });
       context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false; 
@@ -129,8 +123,8 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
               _isAnswered = false;
               _isCorrect = null;
               _blueprintSlots.clear();
-              final quest = state.currentQuest as WritingQuest?;
-              for (var point in (quest?.requiredPoints ?? [])) {
+              final quest = state.currentQuest;
+              for (var point in (quest.requiredPoints ?? [])) {
                 _blueprintSlots[point] = null;
               }
             });
@@ -206,7 +200,7 @@ class _EssayDraftingScreenState extends State<EssayDraftingScreen> {
                         child: Center(
                           child: Text(
                             "TRANSMIT BLUEPRINT", 
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 16.sp, 
                               fontWeight: FontWeight.w900, 
                               color: Colors.white, 

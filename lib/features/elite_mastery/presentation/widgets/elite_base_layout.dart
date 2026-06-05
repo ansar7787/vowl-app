@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -76,6 +75,13 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
   }
 
   @override
+  void dispose() {
+    // Prevent background audio memory resource leaks
+    _ttsService.stop();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final isMidnight = context.watch<ThemeCubit>().state.isMidnight;
@@ -112,6 +118,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
             // Delay to allow the "Wrong" sound effect to finish
             Future.delayed(const Duration(milliseconds: 1200), () {
               if (mounted) {
+                _ttsService.stop(); // Stop ongoing voice reads before starting warning voice
                 _ttsService.speak(
                   "Focus! Use a hint if you need help saving your last life.",
                 );
@@ -122,179 +129,183 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
           _lastLives = state.livesRemaining;
         }
       },
-      child: PopScope(
-        canPop: isComplete,
-        onPopInvokedWithResult: (didPop, result) {
-          if (didPop) return;
-          GameDialogHelper.showExitConfirmation(
-            this.context,
-            onQuit: () => Navigator.of(this.context).pop(),
-          );
-        },
-        child: BlocBuilder<EliteMasteryBloc, EliteMasteryState>(
-          builder: (context, state) {
-            if (state is EliteMasteryError) {
-              return Scaffold(
-              resizeToAvoidBottomInset: false,
-                backgroundColor: theme.backgroundColors[1],
-                body: GameErrorWidget(
-                  message: state.message,
-                  onRetry: () => context.read<EliteMasteryBloc>().add(FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level)),
-                  onBack: () => Navigator.pop(context),
-                  primaryColor: theme.primaryColor,
-                ),
+      child: Builder(
+        builder: (context) {
+          return PopScope(
+            canPop: isComplete,
+            onPopInvokedWithResult: (didPop, result) {
+              if (didPop) return;
+              GameDialogHelper.showExitConfirmation(
+                context,
+                onQuit: () => Navigator.of(context).pop(),
               );
-            }
-            final progress = (state is EliteMasteryLoaded)
-                ? (state.currentIndex + 1) / state.quests.length
-                : (state is EliteMasteryGameComplete ? 1.0 : 0.0);
-            final lives = (state is EliteMasteryLoaded) ? state.livesRemaining : 3;
-
-            return Scaffold(
-              backgroundColor: theme.backgroundColors[1],
-              body: Stack(
-                children: [
-                  Container(
-                    color: theme.backgroundColors[1],
-                  ), // Prevent white splash
-                  MeshGradientBackground(colors: theme.backgroundColors),
-                  if (widget.visualConfig != null)
-                    VisualConfigBackground(config: widget.visualConfig!)
-                  else if (state is EliteMasteryLoaded &&
-                      state.currentQuest.visualConfig != null)
-                    VisualConfigBackground(
-                      config: state.currentQuest.visualConfig!,
+            },
+            child: BlocBuilder<EliteMasteryBloc, EliteMasteryState>(
+              builder: (context, state) {
+                if (state is EliteMasteryError) {
+                  return Scaffold(
+                    resizeToAvoidBottomInset: false,
+                    backgroundColor: theme.backgroundColors[1],
+                    body: GameErrorWidget(
+                      message: state.message,
+                      onRetry: () => context.read<EliteMasteryBloc>().add(
+                            FetchEliteMasteryQuests(gameType: widget.gameType, level: widget.level),
+                          ),
+                      onBack: () => Navigator.pop(context),
+                      primaryColor: theme.primaryColor,
                     ),
+                  );
+                }
+                final progress = (state is EliteMasteryLoaded)
+                    ? (state.currentIndex + 1) / state.quests.length
+                    : (state is EliteMasteryGameComplete ? 1.0 : 0.0);
+                final lives = (state is EliteMasteryLoaded) ? state.livesRemaining : 3;
 
-                  if (state is EliteMasteryLoading)
-                    GameShimmerLoading(primaryColor: theme.primaryColor)
-                  else ...[
-                  SafeArea(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10.h),
-                        _buildHeader(
-                          context,
-                          state,
-                          widget.level,
-                          progress,
-                          lives,
-                          theme,
-                          isDark,
+                return Scaffold(
+                  backgroundColor: theme.backgroundColors[1],
+                  body: Stack(
+                    children: [
+                      Container(
+                        color: theme.backgroundColors[1],
+                      ), // Prevent white splash
+                      MeshGradientBackground(colors: theme.backgroundColors),
+                      if (widget.visualConfig != null)
+                        VisualConfigBackground(config: widget.visualConfig!)
+                      else if (state is EliteMasteryLoaded && state.currentQuest.visualConfig != null)
+                        VisualConfigBackground(
+                          config: state.currentQuest.visualConfig!,
                         ),
 
-                        Expanded(
-                          child: Stack(
-                            clipBehavior: Clip.none,
+                      if (state is EliteMasteryLoading)
+                        GameShimmerLoading(primaryColor: theme.primaryColor)
+                      else ...[
+                        SafeArea(
+                          child: Column(
                             children: [
-                              AnimatedOpacity(
-                                duration: const Duration(milliseconds: 400),
-                                opacity: widget.isAnswered ? 0.6 : 1.0,
-                                child: AbsorbPointer(
-                                  absorbing: widget.isAnswered,
-                                  child: SingleChildScrollView(
-                                    physics: const BouncingScrollPhysics(),
-                                    padding: EdgeInsets.only(
-                                      left: 24.w,
-                                      right: 24.w,
-                                      top: 20.h,
-                                      bottom: (widget.isAnswered ? 200.h : 40.h) + MediaQuery.of(context).viewInsets.bottom,
-                                    ),
-                                    child: Center(
-                                      child: ConstrainedBox(
-                                        constraints: BoxConstraints(
-                                          minHeight: 500.h,
-                                        ), // Encourages centered feel
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              widget.title,
-                                              style: GoogleFonts.outfit(
-                                                fontSize: 10.sp,
-                                                fontWeight: FontWeight.w900,
-                                                letterSpacing: 4,
-                                                color: isDark ? Colors.white70 : const Color(0xFF1E293B).withValues(alpha: 0.7),
+                              SizedBox(height: 10.h),
+                              _buildHeader(
+                                context,
+                                state,
+                                widget.level,
+                                progress,
+                                lives,
+                                theme,
+                                isDark,
+                              ),
+
+                              Expanded(
+                                child: Stack(
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    AnimatedOpacity(
+                                      duration: const Duration(milliseconds: 400),
+                                      opacity: widget.isAnswered ? 0.6 : 1.0,
+                                      child: AbsorbPointer(
+                                        absorbing: widget.isAnswered,
+                                        child: SingleChildScrollView(
+                                          physics: const BouncingScrollPhysics(),
+                                          padding: EdgeInsets.only(
+                                            left: 24.w,
+                                            right: 24.w,
+                                            top: 20.h,
+                                            bottom: (widget.isAnswered ? 200.h : 40.h) + MediaQuery.of(context).viewInsets.bottom,
+                                          ),
+                                          child: Center(
+                                            child: ConstrainedBox(
+                                              constraints: BoxConstraints(
+                                                minHeight: 500.h,
+                                              ), // Encourages centered feel
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    widget.title,
+                                                    style: TextStyle(fontFamily: 'Outfit', 
+                                                      fontSize: 10.sp,
+                                                      fontWeight: FontWeight.w900,
+                                                      letterSpacing: 4,
+                                                      color: isDark ? Colors.white70 : const Color(0xFF1E293B).withValues(alpha: 0.7),
+                                                    ),
+                                                  ).animate().fadeIn(),
+                                                  SizedBox(height: 8.h),
+                                                  Text(
+                                                    widget.subtitle,
+                                                    textAlign: TextAlign.center,
+                                                    style: TextStyle(fontFamily: 'Outfit', 
+                                                      fontSize: 22.sp,
+                                                      fontWeight: FontWeight.w900,
+                                                      color: isDark ? Colors.white : const Color(0xFF0F172A),
+                                                    ),
+                                                  ).animate().fadeIn().slideY(begin: 0.1),
+                                                  SizedBox(height: 32.h),
+                                                  widget.child,
+                                                ],
                                               ),
-                                            ).animate().fadeIn(),
-                                            SizedBox(height: 8.h),
-                                            Text(
-                                              widget.subtitle,
-                                              textAlign: TextAlign.center,
-                                              style: GoogleFonts.outfit(
-                                                fontSize: 22.sp,
-                                                fontWeight: FontWeight.w900,
-                                                color: isDark ? Colors.white : const Color(0xFF0F172A),
-                                              ),
-                                            ).animate().fadeIn().slideY(begin: 0.1),
-                                            SizedBox(height: 32.h),
-                                            widget.child,
-                                          ],
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                top: -10.h,
-                                left: 20.w,
-                                child: _buildPeekingMascot(
-                                  state,
-                                  lives,
-                                  widget.isAnswered,
-                                  widget.isCorrect,
+                                    Positioned(
+                                      top: -10.h,
+                                      left: 20.w,
+                                      child: _buildPeekingMascot(
+                                        state,
+                                        lives,
+                                        widget.isAnswered,
+                                        widget.isCorrect,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                ],
 
-                if (widget.isAnswered && state is! EliteMasteryGameOver && state is! EliteMasteryGameComplete)
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: _buildModernFeedbackCard(
-                      context,
-                      state,
-                      theme,
-                      isDark,
-                    ),
-                  ),
+                      if (widget.isAnswered && state is! EliteMasteryGameOver && state is! EliteMasteryGameComplete)
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          child: _buildModernFeedbackCard(
+                            context,
+                            state,
+                            theme,
+                            isDark,
+                          ),
+                        ),
 
-                if (widget.showConfetti) const GameConfetti(),
+                      if (widget.showConfetti) const GameConfetti(),
 
-                if (_showBriefing)
-                  Builder(
-                    builder: (context) {
-                      final briefing = GameInstructionService.getBriefing(
-                        widget.gameType,
-                        widget.title,
-                        level: widget.level,
-                      );
-                      return QuestBriefingOverlay(
-                        title: briefing.title,
-                        objective: briefing.objective,
-                        rules: briefing.rules,
-                        actionText: briefing.actionText,
-                        tip: briefing.tip,
-                        icon: briefing.icon,
-                        primaryColor: theme.primaryColor,
-                        onStart: () => setState(() => _showBriefing = false),
-                      );
-                    },
+                      if (_showBriefing)
+                        Builder(
+                          builder: (context) {
+                            final briefing = GameInstructionService.getBriefing(
+                              widget.gameType,
+                              widget.title,
+                              level: widget.level,
+                            );
+                            return QuestBriefingOverlay(
+                              title: briefing.title,
+                              objective: briefing.objective,
+                              rules: briefing.rules,
+                              actionText: briefing.actionText,
+                              tip: briefing.tip,
+                              icon: briefing.icon,
+                              primaryColor: theme.primaryColor,
+                              onStart: () => setState(() => _showBriefing = false),
+                            );
+                          },
+                        ),
+                    ],
                   ),
-                ],
-              ),
-            );
-          },
-        ),
+                );
+              },
+            ),
+          );
+        },
       ),
     );
   }
@@ -324,8 +335,8 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
               theme: theme,
               isDark: isDark,
               onBack: () => GameDialogHelper.showExitConfirmation(
-                this.context,
-                onQuit: () => Navigator.pop(this.context),
+                context,
+                onQuit: () => Navigator.pop(context),
               ),
             ),
           ),
@@ -354,28 +365,22 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
             ),
             Padding(
               padding: EdgeInsets.only(left: 8.w),
-              child:
-                  QuestHintButton(
-                        used: (state is EliteMasteryLoaded)
-                            ? state.isHintUsed
-                            : false,
-                        primaryColor: theme.primaryColor,
-                        hintText: quest.hint,
-                        soundService: di.sl<SoundService>(),
-                        onTap: widget.onHint,
-                      )
-                      .animate(
-                        target: hintShouldGlow ? 1 : 0,
-                        onPlay: (c) => c.repeat(reverse: true),
-                      )
-                      .shimmer(
-                        color: Colors.white.withValues(alpha: 0.5),
-                        duration: 1.seconds,
-                      )
-                      .scale(
-                        begin: const Offset(1, 1),
-                        end: const Offset(1.1, 1.1),
-                      ),
+              child: QuestHintButton(
+                used: (state is EliteMasteryLoaded) ? state.isHintUsed : false,
+                primaryColor: theme.primaryColor,
+                hintText: quest.hint,
+                soundService: di.sl<SoundService>(),
+                onTap: widget.onHint,
+              ).animate(
+                target: hintShouldGlow ? 1 : 0,
+                onPlay: (c) => c.repeat(reverse: true),
+              ).shimmer(
+                color: Colors.white.withValues(alpha: 0.5),
+                duration: 1.seconds,
+              ).scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.1, 1.1),
+              ),
             ),
           ],
         ],
@@ -407,8 +412,12 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
       children: [
         Container(
           padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12.r), boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10)]),
-          child: Text(message, style: GoogleFonts.outfit(fontSize: 11.sp, fontWeight: FontWeight.bold, color: const Color(0xFFF59E0B))),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12.r),
+            boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10)],
+          ),
+          child: Text(message, style: TextStyle(fontFamily: 'Outfit', fontSize: 11.sp, fontWeight: FontWeight.bold, color: const Color(0xFFF59E0B))),
         ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05), duration: 2.seconds),
         SizedBox(height: 0.h),
         VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId).animate(onPlay: (c) => c.repeat(reverse: true))
@@ -428,9 +437,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
     final primaryGradient = success
         ? [const Color(0xFF2DD4BF), const Color(0xFF10B981)]
         : [const Color(0xFFF43F5E), const Color(0xFFE11D48)];
-    final shadowColor = success
-        ? const Color(0xFF10B981)
-        : const Color(0xFFE11D48);
+    final shadowColor = success ? const Color(0xFF10B981) : const Color(0xFFE11D48);
     final icon = success ? Icons.check_circle_rounded : Icons.error_rounded;
     final title = success ? "EXCELLENT!" : "NOT QUITE!";
     String? correctAnswerText;
@@ -443,23 +450,15 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
 
     if (showCorrectAnswer) {
       final q = state.currentQuest;
-      if (q.subtype == GameSubtype.storyBuilder &&
-          q.sentences != null &&
-          q.correctOrder != null) {
+      if (q.subtype == GameSubtype.storyBuilder && q.sentences != null && q.correctOrder != null) {
         // Reconstruct full story for guidance
-        correctAnswerText = q.correctOrder!
-            .map((idx) => q.sentences![idx])
-            .join(" → ");
-      } else if (q.subtype == GameSubtype.idiomMatch && 
-                 q.options != null && 
-                 q.correctAnswerIndex != null) {
+        correctAnswerText = q.correctOrder!.map((idx) => q.sentences![idx]).join(" → ");
+      } else if (q.subtype == GameSubtype.idiomMatch && q.options != null && q.correctAnswerIndex != null) {
         // For Idiom Match, the answer is the meaning in the options
         correctAnswerText = q.options![q.correctAnswerIndex!];
       } else {
         correctAnswerText = q.word ?? q.correctAnswer;
-        if (correctAnswerText == null &&
-            q.options != null &&
-            q.correctAnswerIndex != null) {
+        if (correctAnswerText == null && q.options != null && q.correctAnswerIndex != null) {
           correctAnswerText = q.options![q.correctAnswerIndex!];
         }
       }
@@ -502,7 +501,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                     Expanded(
                       child: Text(
                         title,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 24.sp,
                           fontWeight: FontWeight.w900,
                           foreground: Paint()
@@ -518,37 +517,34 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                 if (correctAnswerText != null) ...[
                   SizedBox(height: 16.h),
                   Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20.w,
-                          vertical: 14.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: shadowColor.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(20.r),
-                          border: Border.all(
-                            color: shadowColor.withValues(alpha: 0.2),
-                            width: 1.5,
-                          ),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical: 14.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: shadowColor.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(20.r),
+                      border: Border.all(
+                        color: shadowColor.withValues(alpha: 0.2),
+                        width: 1.5,
+                      ),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
                           children: [
-                            Row(
-                              children: [
-                                Icon(Icons.info_outline_rounded, color: shadowColor, size: 14.r),
-                                SizedBox(width: 8.w),
-                                Text("EXPLANATION:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
-                              ],
-                            ),
-                            SizedBox(height: 4.h),
-                            Text(correctAnswerText, style: GoogleFonts.fredoka(fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
+                            Icon(Icons.info_outline_rounded, color: shadowColor, size: 14.r),
+                            SizedBox(width: 8.w),
+                            Text("EXPLANATION:", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
                           ],
                         ),
-                      )
-                      .animate()
-                      .fadeIn(delay: 300.ms)
-                      .scale(duration: 400.ms, curve: Curves.easeOutBack),
+                        SizedBox(height: 4.h),
+                        Text(correctAnswerText, style: TextStyle(fontFamily: 'Outfit', fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
+                      ],
+                    ),
+                  ).animate().fadeIn(delay: 300.ms).scale(duration: 400.ms, curve: Curves.easeOutBack),
                 ],
                 SizedBox(height: 28.h),
                 ScaleButton(
@@ -574,7 +570,7 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                     child: Center(
                       child: Text(
                         buttonText,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w900,
                           color: Colors.white,
@@ -584,21 +580,21 @@ class _EliteBaseLayoutState extends State<EliteBaseLayout> {
                     ),
                   ),
                 ).animate().scale(
-                  delay: 500.ms,
-                  duration: 400.ms,
-                  curve: Curves.elasticOut,
-                ),
+                      delay: 500.ms,
+                      duration: 400.ms,
+                      curve: Curves.elasticOut,
+                    ),
               ],
             ),
           ),
         ),
       ),
     ).animate().slideY(
-      begin: 1,
-      end: 0,
-      curve: Curves.easeOutCubic,
-      duration: 500.ms,
-    );
+          begin: 1,
+          end: 0,
+          curve: Curves.easeOutCubic,
+          duration: 500.ms,
+        );
   }
 
   VowlMascotState _getMascotState(

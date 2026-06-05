@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class AudioTrueFalseScreenDisplay extends StatelessWidget {
   final String statement;
   final Color color;
@@ -55,7 +53,7 @@ class AudioTrueFalseScreenDisplay extends StatelessWidget {
               child: Text(
                 statement,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                   color: Color.lerp(Colors.white24, Colors.white, clarity),

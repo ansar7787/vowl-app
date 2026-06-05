@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class SummarizeStoryProjectorCrank extends StatelessWidget {
@@ -39,7 +38,7 @@ class SummarizeStoryProjectorCrank extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             "SPIN TO PROJECT SUMMARY", 
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp, 
               fontWeight: FontWeight.w900, 
               color: color, 

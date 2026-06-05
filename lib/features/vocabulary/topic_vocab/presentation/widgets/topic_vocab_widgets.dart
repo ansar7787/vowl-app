@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -31,13 +30,13 @@ class TopicVocabQuestion extends StatelessWidget {
         children: [
           Text(
             quest.instruction.toUpperCase(),
-            style: GoogleFonts.shareTechMono(fontSize: 10.sp, fontWeight: FontWeight.bold, color: Colors.white.withValues(alpha: 0.8), letterSpacing: 1.5),
+            style: TextStyle(fontFamily: 'RobotoMono', fontSize: 10.sp, fontWeight: FontWeight.bold, color: Colors.white.withValues(alpha: 0.8), letterSpacing: 1.5),
           ),
           SizedBox(height: 12.h),
           Text(
             quest.sentence ?? quest.definition ?? "---",
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w600, color: Colors.white, height: 1.4),
+            style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w600, color: Colors.white, height: 1.4),
           ),
           SizedBox(height: 12.h),
           ScaleButton(
@@ -105,7 +104,7 @@ class TopicVocabOptions extends StatelessWidget {
                     child: Center(
                       child: Text(
                         isAlreadyWrong ? "!!" : String.fromCharCode(65 + index),
-                        style: GoogleFonts.shareTechMono(fontSize: 10.sp, fontWeight: FontWeight.bold, color: isSelected ? Colors.green : (isAlreadyWrong ? Colors.red : theme.primaryColor)),
+                        style: TextStyle(fontFamily: 'RobotoMono', fontSize: 10.sp, fontWeight: FontWeight.bold, color: isSelected ? Colors.green : (isAlreadyWrong ? Colors.red : theme.primaryColor)),
                       ),
                     ),
                   ),
@@ -113,7 +112,7 @@ class TopicVocabOptions extends StatelessWidget {
                   Expanded(
                     child: Text(
                       option,
-                      style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w600, color: isAlreadyWrong ? Colors.white38 : Colors.white),
+                      style: TextStyle(fontFamily: 'Outfit', fontSize: 14.sp, fontWeight: FontWeight.w600, color: isAlreadyWrong ? Colors.white38 : Colors.white),
                     ),
                   ),
                   ScaleButton(onTap: () => onSpeak(option), child: Icon(Icons.volume_up_rounded, size: 16.r, color: Colors.white38)),

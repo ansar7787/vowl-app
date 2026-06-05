@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -100,7 +99,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
             !isMinLengthMet 
               ? "Your log entry is too brief! Share more reflections." 
               : "Try to incorporate at least 2 of the core booster keywords in your log!",
-            style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+            style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold),
           ),
         )
       );
@@ -196,7 +195,7 @@ class _DailyJournalScreenState extends State<DailyJournalScreen> {
                         child: Center(
                           child: Text(
                             "CRYSTALLIZE MEMORY", 
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 16.sp, 
                               fontWeight: FontWeight.w900, 
                               color: Colors.white, 

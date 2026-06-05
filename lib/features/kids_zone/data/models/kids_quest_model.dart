@@ -18,22 +18,25 @@ class KidsQuestModel extends KidsQuest {
   });
 
   factory KidsQuestModel.fromJson(Map<String, dynamic> json) {
+    // Helper to parse lists safely and prevent TypeErrors
+    List<String>? parseStringList(dynamic value) {
+      if (value is List) {
+        return value.map((e) => e.toString()).toList();
+      }
+      return null;
+    }
+
     return KidsQuestModel(
-      id:
-          json['id'] as String? ??
-          'unknown_${DateTime.now().millisecondsSinceEpoch}',
+      id: json['id'] as String? ?? '',
       gameType: json['gameType'] as String? ?? 'unknown',
-      level: (json['level'] is int) ? (json['level'] as int) : 1,
-      instruction:
-          json['instruction'] as String? ?? 'Look and find the answer!',
+      level: (json['level'] as num?)?.toInt() ?? 1,
+      instruction: json['instruction'] as String? ?? 'Look and find the answer!',
       question: json['question'] as String?,
       correctAnswer: json['correctAnswer'] as String?,
-      options: (json['options'] is List)
-          ? (json['options'] as List<dynamic>).map((e) => e.toString()).toList()
-          : null,
+      options: parseStringList(json['options']),
       imageUrl: json['imageUrl'] as String?,
       audioUrl: json['audioUrl'] as String?,
-      metadata: (json['metadata'] is Map)
+      metadata: json['metadata'] != null
           ? Map<String, dynamic>.from(json['metadata'] as Map)
           : null,
       painter: json['painter'] as String?,

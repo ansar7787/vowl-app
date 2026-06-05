@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -223,7 +222,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
         SizedBox(height: 10.h),
         Text(
           "DRAG LENS TO REVEAL CLUES",
-          style: GoogleFonts.shareTechMono(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 9.sp,
             color: color.withValues(alpha: 0.4),
             letterSpacing: 1,
@@ -287,7 +286,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
         children: [
           Text(
             "LINGUISTIC FORENSIC UNIT",
-            style: GoogleFonts.oswald(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               letterSpacing: 5,
               color: color.withValues(alpha: 0.6),
@@ -307,7 +306,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: Text(
                   "CASE #${widget.level}-${_lastProcessedIndex + 1}",
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 12.sp,
                     color: color,
                     fontWeight: FontWeight.bold,
@@ -385,7 +384,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
       children: words.map((word) {
         return TextSpan(
           text: "$word ",
-          style: GoogleFonts.specialElite(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 20.sp,
             height: 1.6,
             color: Colors.black.withValues(alpha: 0.8),
@@ -411,7 +410,7 @@ class _ContextCluesScreenState extends State<ContextCluesScreen>
         ),
         child: Text(
           _selectedOption?.toUpperCase() ?? "???",
-          style: GoogleFonts.specialElite(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 20.sp,
             fontWeight: FontWeight.bold,
             color: _isCorrect == true ? Colors.green : Colors.red,

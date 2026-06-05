@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -220,7 +219,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
             child: _placedBrick != null
                 ? Text(
                     _placedBrick!.toUpperCase(),
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w900,
                       color: nodeColor,
@@ -233,7 +232,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
                         .shimmer()
                     : Text(
                         "JUNCTION",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w900,
                           color: primaryColor.withValues(alpha: 0.4),
@@ -258,7 +257,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
       child: Text(
         text.trim(),
         textAlign: TextAlign.center,
-        style: GoogleFonts.fredoka(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 18.sp,
           color: isDark ? Colors.white : Colors.black87,
           height: 1.4,
@@ -291,7 +290,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
           SizedBox(height: 10.h),
           Text(
             correct ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -303,7 +302,7 @@ class _ConjunctionsScreenState extends State<ConjunctionsScreen> with SingleTick
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

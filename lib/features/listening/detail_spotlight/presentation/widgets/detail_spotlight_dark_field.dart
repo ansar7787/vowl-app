@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class DetailSpotlightDarkField extends StatelessWidget {
   final List<String> options;
   final int correctAnswerIndex;
@@ -106,7 +104,7 @@ class DetailSpotlightDarkField extends StatelessWidget {
                                     child: Text(
                                       options[index],
                                       textAlign: TextAlign.center,
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 16.sp,
                                         fontWeight: FontWeight.w700,
                                         color: tileColor,

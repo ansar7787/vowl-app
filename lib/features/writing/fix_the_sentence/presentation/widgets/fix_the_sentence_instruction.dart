@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class FixTheSentenceInstruction extends StatelessWidget {
   final bool isWiped;
   final Color primaryColor;
@@ -28,7 +26,7 @@ class FixTheSentenceInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             isWiped ? "SELECT THE CORRECT REPLACEMENT WORD" : "SCRUB AWAY THE LOGICAL DECAY", 
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp, 
               fontWeight: FontWeight.w900, 
               color: primaryColor, 

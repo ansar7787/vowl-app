@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class SpeakOppositeNegativePolePanel extends StatelessWidget {
   final double pullProgress;
   final bool isDark;
@@ -48,7 +46,7 @@ class SpeakOppositeNegativePolePanel extends StatelessWidget {
           SizedBox(width: 10.w),
           Text(
             charged ? "POLAR FUSION SECURED!" : "NEGATIVE POLE ANTIPODE",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 12.sp,
               fontWeight: FontWeight.bold,
               color: charged ? Colors.cyanAccent : Colors.grey,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -120,7 +119,7 @@ class VoiceSwapToggle extends StatelessWidget {
         SizedBox(height: 32.h),
         Text(
           "MODE: ${(isPassive ? "PASSIVE" : "ACTIVE")}",
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 10.sp,
             fontWeight: FontWeight.w900,
             color: primaryColor.withValues(alpha: 0.6),
@@ -137,7 +136,7 @@ class VoiceSwapToggle extends StatelessWidget {
   Widget _buildToggleLabel(String label, bool isActive) {
     return AnimatedDefaultTextStyle(
       duration: const Duration(milliseconds: 300),
-      style: GoogleFonts.outfit(
+      style: TextStyle(fontFamily: 'Outfit', 
         fontSize: 14.sp,
         fontWeight: isActive ? FontWeight.w900 : FontWeight.w500,
         color: isActive

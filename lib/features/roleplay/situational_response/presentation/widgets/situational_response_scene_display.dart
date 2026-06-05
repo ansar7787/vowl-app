@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
@@ -47,7 +46,7 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "ACTIVE SCENARIO",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: color,
@@ -69,7 +68,7 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
                       SizedBox(width: 4.w),
                       Text(
                         "LISTEN",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold,
                           color: color,
@@ -85,7 +84,7 @@ class SituationalResponseSceneDisplay extends StatelessWidget {
           Text(
             quest.scene ?? "",
             textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 20.sp,
               color: isDark ? Colors.white : Colors.black87,
               height: 1.3,

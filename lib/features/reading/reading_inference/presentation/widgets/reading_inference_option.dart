@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -54,7 +53,7 @@ class ReadingInferenceOption extends StatelessWidget {
               child: Text(
                 text, 
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp, 
                   fontWeight: FontWeight.bold, 
                   color: isDark ? Colors.white : Colors.black87,

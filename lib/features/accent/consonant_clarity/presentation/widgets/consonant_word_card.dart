@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 
 class ConsonantWordCard extends StatelessWidget {
@@ -35,7 +34,7 @@ class ConsonantWordCard extends StatelessWidget {
         RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 48.sp,
               fontWeight: FontWeight.w900,
               color: isDark ? Colors.white : Colors.black87,
@@ -58,7 +57,7 @@ class ConsonantWordCard extends StatelessWidget {
       Text(
         word,
         textAlign: TextAlign.center,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 48.sp,
           fontWeight: FontWeight.w900,
           color: isDark ? Colors.white : Colors.black87,
@@ -91,7 +90,7 @@ class ConsonantWordCard extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 8.h),
               child: Text(
                 "[ $phoneticHint ]",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: theme.primaryColor.withValues(alpha: 0.6),

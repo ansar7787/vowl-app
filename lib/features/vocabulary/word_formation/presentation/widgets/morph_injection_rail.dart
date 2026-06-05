@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class MorphInjectionRail extends StatefulWidget {
   final int index;
   final String suffix;
@@ -219,7 +217,7 @@ class _HandleDecoration extends StatelessWidget {
             Flexible(
               child: Text(
                 suffix.toUpperCase(),
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 15.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,

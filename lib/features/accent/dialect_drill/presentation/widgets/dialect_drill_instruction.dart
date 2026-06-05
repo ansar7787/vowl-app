@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class DialectDrillInstruction extends StatelessWidget {
   final String instruction;
   final Color accentColor;
@@ -25,7 +23,7 @@ class DialectDrillInstruction extends StatelessWidget {
           ),
           child: Text(
             "RADAR FREQUENCY DIALECT SWITCH",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: accentColor,
@@ -37,7 +35,7 @@ class DialectDrillInstruction extends StatelessWidget {
         Text(
           instruction,
           textAlign: TextAlign.center,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 20.sp,
             fontWeight: FontWeight.bold,
             letterSpacing: 0.5,

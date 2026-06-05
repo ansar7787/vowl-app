@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -187,7 +186,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                     children: [
                       Text(
                         canClaim ? "MAGIC CHEST" : "CHEST CLAIMED",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w900,
                           color: canClaim ? Colors.white : (isDark ? Colors.white38 : Colors.indigo.shade900.withValues(alpha: 0.6)),
@@ -198,7 +197,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                         canClaim
                             ? "Open for daily Kids Coins!"
                             : "Next claim in $_timeRemaining",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                           color: canClaim ? Colors.white70 : (isDark ? Colors.white24 : Colors.indigo.shade800.withValues(alpha: 0.5)),
@@ -216,7 +215,7 @@ class _KidsMagicChestState extends State<KidsMagicChest> {
                     ),
                     child: Text(
                       "CLAIM",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,

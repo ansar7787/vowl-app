@@ -45,45 +45,46 @@ class _HolographicCardState extends State<HolographicCard>
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return GlassTile(
-      padding: EdgeInsets.all(widget.padding.r),
+      padding: EdgeInsets.zero,
       borderRadius: BorderRadius.circular(widget.borderRadius.r),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(widget.borderRadius.r),
-        child: Stack(
-          children: [
-            widget.child,
-            // High-Performance Animated Holographic Sheen Layer
-            Positioned.fill(
-              child: IgnorePointer(
-                child: RepaintBoundary(
-                  child: AnimatedBuilder(
-                    animation: _controller,
-                    builder: (context, child) {
-                      final double progress = _controller.value;
-                      
-                      return Container(
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                            colors: [
-                              const Color(0xFF60A5FA).withValues(alpha: isDark ? 0.08 : 0.04), // Neon Blue
-                              const Color(0xFFC084FC).withValues(alpha: isDark ? 0.12 : 0.06), // Cyber Purple
-                              const Color(0xFFF472B6).withValues(alpha: isDark ? 0.08 : 0.04), // Electric Pink
-                              const Color(0xFFFBBF24).withValues(alpha: isDark ? 0.06 : 0.03), // Aurora Gold
-                              const Color(0xFF34D399).withValues(alpha: isDark ? 0.08 : 0.04), // Cyber Mint
-                            ],
-                            stops: const [0.0, 0.25, 0.5, 0.75, 1.0],
-                            begin: Alignment(-2.0 + progress * 2.0, -1.0),
-                            end: Alignment(-1.0 + progress * 2.0, 1.0),
-                          ),
+      child: Stack(
+        children: [
+          // 1. High-Performance Animated Holographic Sheen Layer (Behind Content)
+          Positioned.fill(
+            child: IgnorePointer(
+              child: RepaintBoundary(
+                child: AnimatedBuilder(
+                  animation: _controller,
+                  builder: (context, child) {
+                    final double progress = _controller.value;
+                    
+                    return Container(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            const Color(0xFF4F46E5).withValues(alpha: isDark ? 0.08 : 0.04), // Brand Indigo
+                            const Color(0xFF38BDF8).withValues(alpha: isDark ? 0.10 : 0.05), // Sky Blue
+                            const Color(0xFF10B981).withValues(alpha: isDark ? 0.08 : 0.04), // Brand Emerald
+                            const Color(0xFF38BDF8).withValues(alpha: isDark ? 0.10 : 0.05), // Sky Blue
+                            const Color(0xFF4F46E5).withValues(alpha: isDark ? 0.08 : 0.04), // Brand Indigo
+                          ],
+                          stops: const [0.0, 0.25, 0.5, 0.75, 1.0],
+                          begin: Alignment(-2.0 + progress * 2.0, -1.0),
+                          end: Alignment(-1.0 + progress * 2.0, 1.0),
                         ),
-                      );
-                    },
-                  ),
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+          // 2. Unclipped Content Layer (On Top)
+          Padding(
+            padding: EdgeInsets.all(widget.padding.r),
+            child: widget.child,
+          ),
+        ],
       ),
     );
   }

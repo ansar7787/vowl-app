@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/daily_expression/presentation/widgets/scratch_painter.dart';
@@ -67,7 +66,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                       children: [
                         Text(
                           "DAILY IDIOM",
-                          style: GoogleFonts.shareTechMono(
+                          style: TextStyle(fontFamily: 'RobotoMono', 
                             fontSize: 10.sp,
                             color: Colors.amberAccent,
                             letterSpacing: 1.5,
@@ -83,7 +82,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                     Text(
                       quest.expression ?? "Bite the bullet",
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.amberAccent,
@@ -101,7 +100,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                       textAlign: TextAlign.center,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 11.sp,
                         fontWeight: FontWeight.bold,
                         color: isDark ? Colors.white70 : Colors.black87,
@@ -142,7 +141,7 @@ class DailyExpressionScratchPanel extends StatelessWidget {
                         SizedBox(height: 8.h),
                         Text(
                           "SPOKEN FREQUENCY DISSOLVES FOIL",
-                          style: GoogleFonts.shareTechMono(
+                          style: TextStyle(fontFamily: 'RobotoMono', 
                             fontSize: 10.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

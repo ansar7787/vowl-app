@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class DailyJournalBoosterTokens extends StatelessWidget {
@@ -24,7 +23,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
       children: [
         Text(
           "REQUIRED REFLECTION TERMS (USE AT LEAST 2)",
-          style: GoogleFonts.shareTechMono(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 10.sp, 
             color: isDark ? Colors.white54 : Colors.black54, 
             fontWeight: FontWeight.bold
@@ -58,7 +57,7 @@ class DailyJournalBoosterTokens extends StatelessWidget {
                   SizedBox(width: 8.w),
                   Text(
                     k.toUpperCase(),
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       color: isUsed ? Colors.greenAccent : (isDark ? Colors.white60 : Colors.black54),
                       fontSize: 11.sp,
                       fontWeight: FontWeight.bold

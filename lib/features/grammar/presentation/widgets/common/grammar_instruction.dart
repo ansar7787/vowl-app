@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class GrammarInstruction extends StatelessWidget {
   final String instruction;
   final Color primaryColor;
@@ -34,7 +32,7 @@ class GrammarInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               instruction,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w700,
                 color: isDark ? Colors.white : Colors.black87,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:go_router/go_router.dart';
@@ -105,7 +104,7 @@ class ProfilePreferencesList extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -152,7 +151,7 @@ class ProfilePreferencesList extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: isDark ? Colors.white : const Color(0xFF1E293B),

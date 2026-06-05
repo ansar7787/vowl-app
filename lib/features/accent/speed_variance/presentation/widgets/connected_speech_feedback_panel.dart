@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class ConnectedSpeechFeedbackPanel extends StatelessWidget {
@@ -56,7 +55,7 @@ class ConnectedSpeechFeedbackPanel extends StatelessWidget {
                   children: [
                     Text(
                       isCorrect ? "Spot On!" : "Let's Review",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 22.sp,
                         fontWeight: FontWeight.bold,
                         color: isDark ? Colors.white : Colors.black87,
@@ -64,7 +63,7 @@ class ConnectedSpeechFeedbackPanel extends StatelessWidget {
                     ),
                     Text(
                       "Connected Speech",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark ? Colors.white70 : Colors.black54,
@@ -91,7 +90,7 @@ class ConnectedSpeechFeedbackPanel extends StatelessWidget {
                 Text(
                   slowForm,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white70 : Colors.black54,
@@ -105,7 +104,7 @@ class ConnectedSpeechFeedbackPanel extends StatelessWidget {
                 Text(
                   fastForm,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: color,
@@ -116,7 +115,7 @@ class ConnectedSpeechFeedbackPanel extends StatelessWidget {
                 Text(
                   hint,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 16.sp,
                     fontStyle: FontStyle.italic,
                     color: isDark ? Colors.white70 : Colors.black87,
@@ -171,7 +170,7 @@ class ConnectedSpeechFeedbackPanel extends StatelessWidget {
       icon: Icon(icon, size: 20.r, color: textColor),
       label: Text(
         title,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 16.sp,
           fontWeight: FontWeight.bold,
           letterSpacing: 1,

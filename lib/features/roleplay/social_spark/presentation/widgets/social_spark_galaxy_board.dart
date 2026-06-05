@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/widgets/social_spark_painter.dart';
@@ -146,7 +145,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
                     ),
                     child: Text(
                       "$selectOrderIndex",
-                      style: GoogleFonts.shareTechMono(
+                      style: TextStyle(fontFamily: 'RobotoMono', 
                         fontSize: 8.sp,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -173,7 +172,7 @@ class SocialSparkGalaxyBoard extends StatelessWidget {
                   textAlign: TextAlign.center,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 11.sp,
                     fontWeight: FontWeight.bold,
                     color: isSelected

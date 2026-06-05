@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class AgreementDifficultyBadge extends StatelessWidget {
   final int difficulty;
 
@@ -42,7 +40,7 @@ class AgreementDifficultyBadge extends StatelessWidget {
           SizedBox(width: 4.w),
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 9.sp,
               fontWeight: FontWeight.w900,
               color: color,

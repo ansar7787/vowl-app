@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 enum CustomSnackBarType { success, error, info, warning }
 
 /// Centered premium UI snackbar controller mapped to modern curated color scales,
@@ -113,7 +111,7 @@ class CustomSnackBar {
                           children: [
                             Text(
                               title,
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w900,
                                   color: textColor,
@@ -123,7 +121,7 @@ class CustomSnackBar {
                             SizedBox(height: 2.h),
                             Text(
                               message,
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w600,
                                 color: subtextColor,

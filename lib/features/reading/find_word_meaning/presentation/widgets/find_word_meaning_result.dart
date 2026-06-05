@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
@@ -37,7 +36,7 @@ class FindWordMeaningResult extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             isCorrect ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -49,7 +48,7 @@ class FindWordMeaningResult extends StatelessWidget {
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

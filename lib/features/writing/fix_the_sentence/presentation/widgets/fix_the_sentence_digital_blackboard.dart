@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/widgets/fix_the_sentence_scratch_overlay_painter.dart';
 
@@ -47,7 +46,7 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
             child: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                style: GoogleFonts.fredoka(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp, 
                   color: isDark ? Colors.white70 : Colors.black87, 
                   height: 1.5
@@ -57,31 +56,36 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                   WidgetSpan(
                     alignment: PlaceholderAlignment.middle,
                     child: isWiped 
-                        ? Container(
-                            margin: EdgeInsets.symmetric(horizontal: 8.w),
-                            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-                            decoration: BoxDecoration(
-                              color: selectedReplacement != null 
-                                  ? Colors.greenAccent.withValues(alpha: 0.25)
-                                  : (isDark ? Colors.white12 : Colors.black12),
-                              borderRadius: BorderRadius.circular(10.r),
-                              border: Border.all(
-                                color: selectedReplacement != null 
-                                    ? Colors.greenAccent 
-                                    : (isDark ? Colors.white30 : Colors.black26), 
-                                width: 2
-                              ),
-                            ),
-                            child: Text(
-                              selectedReplacement?.toUpperCase() ?? "____",
-                              style: GoogleFonts.shareTechMono(
-                                fontSize: 13.sp, 
-                                fontWeight: FontWeight.w900,
-                                color: selectedReplacement != null 
-                                    ? (isDark ? Colors.white : Colors.black87)
-                                    : (isDark ? Colors.white30 : Colors.black38)
-                              )
-                            ),
+                        ? Builder(
+                            builder: (context) {
+                              final successColor = isDark ? Colors.greenAccent : const Color(0xFF16A34A);
+                              return Container(
+                                margin: EdgeInsets.symmetric(horizontal: 8.w),
+                                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                                decoration: BoxDecoration(
+                                  color: selectedReplacement != null 
+                                      ? successColor.withValues(alpha: 0.25)
+                                      : (isDark ? Colors.white12 : Colors.black12),
+                                  borderRadius: BorderRadius.circular(10.r),
+                                  border: Border.all(
+                                    color: selectedReplacement != null 
+                                        ? successColor 
+                                        : (isDark ? Colors.white30 : Colors.black26), 
+                                    width: 2
+                                  ),
+                                ),
+                                child: Text(
+                                  selectedReplacement?.toUpperCase() ?? "____",
+                                  style: TextStyle(fontFamily: 'RobotoMono', 
+                                    fontSize: 13.sp, 
+                                    fontWeight: FontWeight.w900,
+                                    color: selectedReplacement != null 
+                                        ? (isDark ? Colors.white : Colors.black87)
+                                        : (isDark ? Colors.white30 : Colors.black38)
+                                  )
+                                ),
+                              );
+                            }
                           )
                         : GestureDetector(
                             onPanUpdate: (details) => onErase(details.localPosition),
@@ -97,10 +101,10 @@ class FixTheSentenceDigitalBlackboard extends StatelessWidget {
                                 children: [
                                   Text(
                                     targetWord.toUpperCase(),
-                                    style: GoogleFonts.shareTechMono(
+                                    style: TextStyle(fontFamily: 'RobotoMono', 
                                       fontSize: 13.sp, 
                                       fontWeight: FontWeight.w900, 
-                                      color: Colors.redAccent
+                                      color: isDark ? Colors.redAccent : const Color(0xFFDC2626)
                                     )
                                   ),
                                   if (erasePoints.isNotEmpty)

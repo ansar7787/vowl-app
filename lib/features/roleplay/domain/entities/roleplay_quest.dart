@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
 class RoleplayQuest extends GameQuest {
@@ -79,7 +80,7 @@ class RoleplayQuest extends GameQuest {
   ];
 }
 
-class DialogueNode {
+class DialogueNode extends Equatable {
   final String id;
   final String speaker;
   final String text;
@@ -95,13 +96,18 @@ class DialogueNode {
     this.end = false,
     this.emotion,
   });
+
+  @override
+  List<Object?> get props => [id, speaker, text, choices, end, emotion];
 }
 
-class DialogueChoice {
+class DialogueChoice extends Equatable {
   final String text;
   final String? next;
   final int? score;
 
   const DialogueChoice({required this.text, this.next, this.score});
-}
 
+  @override
+  List<Object?> get props => [text, next, score];
+}

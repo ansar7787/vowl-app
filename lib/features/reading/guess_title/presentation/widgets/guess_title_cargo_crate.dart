@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class GuessTitleCargoCrate extends StatelessWidget {
@@ -38,7 +37,7 @@ class GuessTitleCargoCrate extends StatelessWidget {
         children: [
           Text(
             passage, 
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 16.sp, 
               height: 1.5, 
               color: isDark ? Colors.white70 : Colors.black87,
@@ -71,7 +70,7 @@ class GuessTitleCargoCrate extends StatelessWidget {
                         ? Text(
                             selectedTitle!.toUpperCase(), 
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 13.sp, 
                               fontWeight: FontWeight.w900, 
                               color: isCorrect == true ? Colors.greenAccent : Colors.redAccent,
@@ -79,7 +78,7 @@ class GuessTitleCargoCrate extends StatelessWidget {
                           )
                         : Text(
                             "DRAG & DROP TITLE HERE", 
-                            style: GoogleFonts.shareTechMono(
+                            style: TextStyle(fontFamily: 'RobotoMono', 
                               color: color.withValues(alpha: isHovered ? 0.8 : 0.4), 
                               fontSize: 13.sp,
                               letterSpacing: 1.5,

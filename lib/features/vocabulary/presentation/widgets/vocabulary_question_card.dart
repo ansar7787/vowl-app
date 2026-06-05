@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 class VocabularyQuestionCard extends StatelessWidget {
@@ -38,7 +37,7 @@ class VocabularyQuestionCard extends StatelessWidget {
                 child: Text(
                   quest.instruction.toUpperCase(),
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w800,
                     color: theme.primaryColor,
@@ -52,7 +51,7 @@ class VocabularyQuestionCard extends StatelessWidget {
           Text(
             quest.word ?? quest.prompt ?? "Quest",
             textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 28.sp,
               fontWeight: FontWeight.w700,
               color: isDark ? Colors.white : Colors.black87,
@@ -63,7 +62,7 @@ class VocabularyQuestionCard extends StatelessWidget {
             Text(
               quest.sentence!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 15.sp,
                 color: (isDark ? Colors.white : Colors.black87).withValues(
                   alpha: 0.7,

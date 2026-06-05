@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 
@@ -43,7 +42,7 @@ class ModifierMagneticArena extends StatelessWidget {
             if (index % 2 == 1) {
               return Text(
                 words[index ~/ 2],
-                style: GoogleFonts.fredoka(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 22.sp,
                   fontWeight: FontWeight.w500,
                   color: isDark ? Colors.white : Colors.black87,
@@ -99,7 +98,7 @@ class ModifierMagneticArena extends StatelessWidget {
                                 ),
                                 child: Text(
                                   modifier,
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w900,
                                     color: Colors.white,

@@ -7,7 +7,6 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/victory_flight_overlay.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -279,7 +278,7 @@ class GameDialogHelper {
             Expanded(
               child: Text(
                 message,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                   color: Colors.white,
@@ -395,7 +394,7 @@ class GameDialogHelper {
                   children: [
                     Text(
                       "HONESTY IS MASTERY 🛡️",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         color: Colors.white,
                         fontWeight: FontWeight.w900,
                         fontSize: 13.sp,
@@ -405,7 +404,7 @@ class GameDialogHelper {
                     SizedBox(height: 4.h),
                     Text(
                       "Your education is our key, not false use or lie. Practice honestly to truly master English! ✨",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         color: Colors.white.withValues(alpha: 0.9),
                         fontWeight: FontWeight.w600,
                         fontSize: 11.sp,

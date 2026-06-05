@@ -3,7 +3,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -180,7 +179,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                       Flexible(
                                         child: Text(
                                           'SANCTUARY LINKED',
-                                          style: GoogleFonts.outfit(
+                                          style: TextStyle(fontFamily: 'Outfit', 
                                             fontSize: 8.5.sp,
                                             fontWeight: FontWeight.w900,
                                             color: primaryColor,
@@ -195,7 +194,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                   SizedBox(height: 6.h),
                                   Text(
                                         mascotName.toUpperCase(),
-                                        style: GoogleFonts.outfit(
+                                        style: TextStyle(fontFamily: 'Outfit', 
                                           fontSize: 22.sp,
                                           fontWeight: FontWeight.w900,
                                           color: isDark
@@ -209,7 +208,7 @@ class _VowlMascotCardState extends State<VowlMascotCard> {
                                       .slideX(begin: -0.1),
                                   Text(
                                     'MAJESTIC GUIDANCE ACTIVE',
-                                    style: GoogleFonts.outfit(
+                                    style: TextStyle(fontFamily: 'Outfit', 
                                       fontSize: 10.sp,
                                       fontWeight: FontWeight.w700,
                                       color: isDark

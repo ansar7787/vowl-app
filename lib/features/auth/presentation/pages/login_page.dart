@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -168,7 +167,7 @@ class _LoginViewState extends State<LoginView> {
                                             color: Colors.transparent,
                                             child: Text(
                                               'Vowl',
-                                              style: GoogleFonts.outfit(
+                                              style: TextStyle(fontFamily: 'Outfit', 
                                                 fontSize: 44.sp,
                                                 fontWeight: FontWeight.w900,
                                                 color: const Color(0xFF2563EB),
@@ -182,7 +181,7 @@ class _LoginViewState extends State<LoginView> {
                                     ),
                                     Text(
                                       'Login to continue your adventure',
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 15.sp,
                                         fontWeight: FontWeight.w600,
                                         color: secondaryColor,
@@ -219,7 +218,7 @@ class _LoginViewState extends State<LoginView> {
                                               ),
                                               child: Text(
                                                 'Forgot Password?',
-                                                style: GoogleFonts.outfit(
+                                                style: TextStyle(fontFamily: 'Outfit', 
                                                   color: const Color(
                                                     0xFF2563EB,
                                                   ),
@@ -263,7 +262,7 @@ class _LoginViewState extends State<LoginView> {
                                       children: [
                                         Text(
                                           "Don't have an account? ",
-                                          style: GoogleFonts.outfit(
+                                          style: TextStyle(fontFamily: 'Outfit', 
                                             color: secondaryColor,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -273,7 +272,7 @@ class _LoginViewState extends State<LoginView> {
                                               context.go(AppRouter.signupRoute),
                                           child: Text(
                                             'Sign Up',
-                                            style: GoogleFonts.outfit(
+                                            style: TextStyle(fontFamily: 'Outfit', 
                                               color: const Color(0xFF2563EB),
                                               fontWeight: FontWeight.w900,
                                             ),

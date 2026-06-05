@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -48,7 +47,7 @@ class ProfileStickersProgress extends StatelessWidget {
                   children: [
                     Text(
                       'COLLECTION PROGRESS',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w800,
                         color: Colors.orange[400],
@@ -57,7 +56,7 @@ class ProfileStickersProgress extends StatelessWidget {
                     ),
                     Text(
                       '${earnedStickers.length} / $totalPossible Stickers',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -79,7 +78,7 @@ class ProfileStickersProgress extends StatelessWidget {
                   ),
                   child: Text(
                     'VIEW ALL',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w900,
                       color: Colors.white,
@@ -126,7 +125,7 @@ class ProfileStickersProgress extends StatelessWidget {
             SizedBox(height: 12.h),
             Text(
               'Start your collection in Kids Zone!',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 color: isDark ? Colors.white38 : Colors.black38,
                 fontWeight: FontWeight.w600,

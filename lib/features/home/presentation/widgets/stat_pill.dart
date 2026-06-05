@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -47,7 +46,7 @@ class StatPill extends StatelessWidget {
                 children: [
                   Text(
                     value,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -56,7 +55,7 @@ class StatPill extends StatelessWidget {
                   ),
                   Text(
                     label,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 9.sp,
                       fontWeight: FontWeight.w800,
                       color: isDark ? Colors.white38 : const Color(0xFF64748B),

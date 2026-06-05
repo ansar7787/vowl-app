@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
@@ -200,7 +199,7 @@ class _DialectDrillHologramConsoleState extends State<DialectDrillHologramConsol
                             SizedBox(width: 8.w),
                             Text(
                               widget.quest.word ?? "",
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 22.sp,
                                 fontWeight: FontWeight.w900,
                                 color: widget.color,

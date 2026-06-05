@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ModernFeatureBar extends StatelessWidget {
   const ModernFeatureBar({super.key});
 
@@ -41,7 +39,7 @@ class FeatureItem extends StatelessWidget {
         SizedBox(height: 6.h),
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             color: isDark ? const Color(0x61FFFFFF) : const Color(0x61000000),
             fontSize: 7.sp,
             fontWeight: FontWeight.w900,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
 class DailyExpressionUsagePanel extends StatelessWidget {
@@ -34,7 +33,7 @@ class DailyExpressionUsagePanel extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "CONTEXTUAL SAMPLE USAGE",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.0,
@@ -46,7 +45,7 @@ class DailyExpressionUsagePanel extends StatelessWidget {
           Text(
             "\"${quest.sampleUsage ?? 'Sample usage'}\"",
             textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 16.sp,
               color: isDark ? Colors.white70 : Colors.black87,
               height: 1.35,

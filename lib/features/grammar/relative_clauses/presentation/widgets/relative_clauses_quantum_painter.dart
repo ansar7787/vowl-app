@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class RelativeClausesQuantumPainter extends CustomPainter {
   final Offset? hookPoint;
   final Offset startPoint;
@@ -72,7 +70,7 @@ class RelativeClausesQuantumPainter extends CustomPainter {
       final textPainter = TextPainter(
         text: TextSpan(
           text: nodeLabels[i].toUpperCase(),
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
             fontWeight: FontWeight.w900,
             color: isCaught

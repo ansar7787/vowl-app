@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class GourmetOrderInstruction extends StatelessWidget {
   final Color primaryColor;
 
@@ -23,7 +21,7 @@ class GourmetOrderInstruction extends StatelessWidget {
           ),
           child: Text(
             "STELLAR KITCHEN DESK",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,
@@ -35,7 +33,7 @@ class GourmetOrderInstruction extends StatelessWidget {
         Text(
           "Drag or tap gourmet food plates to load the serving platter",
           textAlign: TextAlign.center,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

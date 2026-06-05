@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -34,6 +33,9 @@ class LeaderboardScreen extends StatelessWidget {
         backgroundColor: bgColor,
         body: BlocBuilder<LeaderboardBloc, LeaderboardState>(
           builder: (context, state) {
+            final currentUser = context.select<AuthBloc, UserEntity?>(
+              (bloc) => bloc.state.user,
+            );
             return Stack(
               children: [
                 const MeshGradientBackground(showLetters: false),
@@ -96,7 +98,7 @@ class LeaderboardScreen extends StatelessWidget {
                             ),
                             child: Text(
                               'TOP CHALLENGERS',
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isDark ? Colors.white24 : Colors.black26,
@@ -118,9 +120,6 @@ class LeaderboardScreen extends StatelessWidget {
                                 }
                                 final user = state.users[userIndex];
                                 final rank = userIndex + 1;
-                                final currentUser = context.select<AuthBloc, UserEntity?>(
-                                  (bloc) => bloc.state.user,
-                                );
                                 final isMe = currentUser?.id == user.id;
 
                                 return RepaintBoundary(

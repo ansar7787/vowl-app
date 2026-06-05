@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -138,7 +137,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                           children: [
                             Text(
                               _sequenceTitle.toUpperCase(),
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w900,
                                 letterSpacing: 2,
@@ -149,7 +148,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                               _currentIndex < widget.quests.length
                                   ? 'Part ${_currentIndex + 1} of ${widget.quests.length}'
                                   : 'Completed',
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 24.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -193,7 +192,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                           _currentIndex < widget.quests.length
                               ? 'UP NEXT'
                               : 'SUMMARY',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w900,
                             letterSpacing: 2,
@@ -205,7 +204,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                           _currentIndex < widget.quests.length
                               ? widget.quests[_currentIndex].instruction
                               : 'All parts completed!',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w800,
                             color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -239,7 +238,7 @@ class _QuestSequencePageState extends State<QuestSequencePage> {
                                     : _currentIndex < widget.quests.length
                                         ? 'START PART ${_currentIndex + 1}'
                                         : 'FINISH QUEST',
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 18.sp,
                                   fontWeight: FontWeight.w900,
                                   color: Colors.white,

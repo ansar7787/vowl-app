@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class AcademicWordInstruction extends StatelessWidget {
   final Color color;
 
@@ -22,7 +20,7 @@ class AcademicWordInstruction extends StatelessWidget {
       ),
       child: Text(
         "THRUST WORD INTO THE THESIS",
-        style: GoogleFonts.shareTechMono(
+        style: TextStyle(fontFamily: 'RobotoMono', 
           fontSize: 11.sp,
           fontWeight: FontWeight.bold,
           color: color,

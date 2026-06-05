@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class DialectDrillTransmissionTower extends StatelessWidget {
@@ -121,7 +120,7 @@ class DialectDrillTransmissionTower extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: isHovered ? towerColor : towerColor.withValues(alpha: 0.7),

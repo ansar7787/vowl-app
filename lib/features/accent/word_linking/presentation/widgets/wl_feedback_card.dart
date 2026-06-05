@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -71,7 +70,7 @@ class WLFeedbackCard extends StatelessWidget {
                   SizedBox(width: 8.w),
                   Text(
                     isCorrect ? "✔ CORRECT" : "LEARN LINKING",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w900,
                       color: isCorrect
@@ -88,7 +87,7 @@ class WLFeedbackCard extends StatelessWidget {
                   children: [
                     Text(
                       transformation,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w800,
                         color: isDark ? Colors.white : Colors.black87,
@@ -97,7 +96,7 @@ class WLFeedbackCard extends StatelessWidget {
                     SizedBox(height: 4.h),
                     Text(
                       "Connected Speech",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w600,
                         color: isDark ? Colors.white38 : Colors.black38,
@@ -133,7 +132,7 @@ class WLFeedbackCard extends StatelessWidget {
                       child: Text(
                         quest.hint ??
                             "In English, we often link the end of one word with the beginning of the next for smoother speech.",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                           color: isDark ? Colors.white70 : Colors.black54,
@@ -171,7 +170,7 @@ class WLFeedbackCard extends StatelessWidget {
                         SizedBox(width: 6.w),
                         Text(
                           "LISTEN AGAIN",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w900,
                             color: theme.primaryColor,
@@ -212,7 +211,7 @@ class WLFeedbackCard extends StatelessWidget {
               child: Center(
                 child: Text(
                   "CONTINUE",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,

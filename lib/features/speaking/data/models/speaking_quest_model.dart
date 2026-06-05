@@ -1,5 +1,5 @@
-import '../../domain/entities/speaking_quest.dart';
-import '../../../../core/domain/entities/game_quest.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
 class SpeakingQuestModel extends SpeakingQuest {
   const SpeakingQuestModel({
@@ -15,22 +15,27 @@ class SpeakingQuestModel extends SpeakingQuest {
     super.options,
     super.correctAnswerIndex,
     super.correctAnswer,
+    super.correctAnswerCategory,
+    super.question,
+    super.sentence,
+    super.targetWord,
     super.hint,
     super.visualConfig,
     super.textToSpeak,
+    super.explanation,
+    super.missingWord,
+    super.prompt,
+    super.sampleAnswer,
+    super.translation,
     super.situationText,
     super.sceneText,
     super.acceptedSynonyms,
     super.phoneticHint,
     super.meaning,
     super.sampleUsage,
-    super.missingWord,
     super.partnerDialogue,
     super.targetPhoneme,
     super.expression,
-    super.explanation,
-    super.prompt,
-    super.sampleAnswer,
   });
 
   factory SpeakingQuestModel.fromJson(Map<String, dynamic> map, String id) {
@@ -47,42 +52,53 @@ class SpeakingQuestModel extends SpeakingQuest {
       return value.toString();
     }
 
+    // Helper to safely get a string list with type resilience
+    List<String>? getList(dynamic value) {
+      if (value is List) {
+        return value.map((e) => e.toString()).toList();
+      }
+      return null;
+    }
+
     return SpeakingQuestModel(
       id: id,
       type: subtype.category,
       subtype: subtype,
       instruction: map['instruction'] ?? 'Speak the words.',
-      difficulty: map['difficulty'] ?? 1,
-      interactionType: InteractionType.values.firstWhere(
-        (i) => i.name == (map['interactionType'] ?? 'speech'),
-        orElse: () => InteractionType.speech,
+      difficulty: (map['difficulty'] as num?)?.toInt() ?? 1,
+      interactionType: InteractionType.fromString(
+        map['interactionType'] as String?,
+        fallback: InteractionType.speech,
       ),
       xpReward: (map['xpReward'] as num?)?.toInt() ?? 10,
-      coinReward: (map['coinReward'] as num?)?.toInt() ?? 5,
+      coinReward: (map['coinReward'] as num?)?.toInt() ?? 10,
       livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
-      options: map['options'] != null ? List<String>.from(map['options']) : null,
-      correctAnswerIndex: map['correctAnswerIndex'],
+      options: getList(map['options']),
+      correctAnswerIndex: (map['correctAnswerIndex'] as num?)?.toInt(),
       correctAnswer: getString(map['correctAnswer']),
-      hint: map['hint'],
+      correctAnswerCategory: getString(map['correctAnswerCategory']),
+      question: getString(map['question']),
+      sentence: getString(map['sentence']),
+      targetWord: getString(map['targetWord']),
+      hint: map['hint'] as String?,
       visualConfig: map['visual_config'] != null
           ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config']))
           : null,
       textToSpeak: getString(map['textToSpeak'] ?? map['text'] ?? map['sentence'] ?? map['question']),
       prompt: getString(map['prompt']),
       sampleAnswer: getString(map['sampleAnswer']),
+      translation: getString(map['translation']),
       situationText: map['situationText'] ?? map['situation'],
       sceneText: map['sceneText'] ?? map['scene'],
-      acceptedSynonyms: map['acceptedSynonyms'] != null
-          ? List<String>.from(map['acceptedSynonyms'])
-          : null,
+      acceptedSynonyms: getList(map['acceptedSynonyms']),
       phoneticHint: map['phoneticHint'] ?? map['phonetic'],
-      meaning: map['meaning'],
-      sampleUsage: map['sampleUsage'],
-      missingWord: map['missingWord'],
-      partnerDialogue: map['partnerDialogue'],
-      targetPhoneme: map['targetPhoneme'],
-      expression: map['expression'],
-      explanation: map['explanation'],
+      meaning: map['meaning'] as String?,
+      sampleUsage: map['sampleUsage'] as String?,
+      missingWord: map['missingWord'] as String?,
+      partnerDialogue: map['partnerDialogue'] as String?,
+      targetPhoneme: map['targetPhoneme'] as String?,
+      expression: map['expression'] as String?,
+      explanation: map['explanation'] as String?,
     );
   }
 
@@ -98,8 +114,13 @@ class SpeakingQuestModel extends SpeakingQuest {
       'options': options,
       'correctAnswerIndex': correctAnswerIndex,
       'correctAnswer': correctAnswer,
+      'correctAnswerCategory': correctAnswerCategory,
+      'question': question,
+      'sentence': sentence,
+      'targetWord': targetWord,
       'hint': hint,
       'textToSpeak': textToSpeak,
+      'visual_config': visualConfig?.toJson(),
       'situationText': situationText,
       'sceneText': sceneText,
       'acceptedSynonyms': acceptedSynonyms,
@@ -111,7 +132,81 @@ class SpeakingQuestModel extends SpeakingQuest {
       'targetPhoneme': targetPhoneme,
       'expression': expression,
       'explanation': explanation,
+      'prompt': prompt,
+      'sampleAnswer': sampleAnswer,
+      'translation': translation,
     };
   }
-}
 
+  SpeakingQuestModel copyWith({
+    String? id,
+    QuestType? type,
+    String? instruction,
+    int? difficulty,
+    GameSubtype? subtype,
+    InteractionType? interactionType,
+    int? xpReward,
+    int? coinReward,
+    int? livesAllowed,
+    List<String>? options,
+    int? correctAnswerIndex,
+    String? correctAnswer,
+    String? correctAnswerCategory,
+    String? question,
+    String? sentence,
+    String? targetWord,
+    String? hint,
+    String? explanation,
+    String? textToSpeak,
+    VisualConfig? visualConfig,
+    String? missingWord,
+    String? prompt,
+    String? sampleAnswer,
+    String? translation,
+    String? situationText,
+    String? sceneText,
+    List<String>? acceptedSynonyms,
+    String? phoneticHint,
+    String? meaning,
+    String? sampleUsage,
+    String? partnerDialogue,
+    String? targetPhoneme,
+    String? expression,
+  }) {
+    return SpeakingQuestModel(
+      id: id ?? this.id,
+      type: type ?? this.type,
+      instruction: instruction ?? this.instruction,
+      difficulty: difficulty ?? this.difficulty,
+      subtype: subtype ?? this.subtype,
+      interactionType: interactionType ?? this.interactionType,
+      xpReward: xpReward ?? this.xpReward,
+      coinReward: coinReward ?? this.coinReward,
+      livesAllowed: livesAllowed ?? this.livesAllowed,
+      options: options ?? this.options,
+      correctAnswerIndex: correctAnswerIndex ?? this.correctAnswerIndex,
+      correctAnswer: correctAnswer ?? this.correctAnswer,
+      correctAnswerCategory: correctAnswerCategory ?? this.correctAnswerCategory,
+      question: question ?? this.question,
+      sentence: sentence ?? this.sentence,
+      targetWord: targetWord ?? this.targetWord,
+      hint: hint ?? this.hint,
+      explanation: explanation ?? this.explanation,
+      textToSpeak: textToSpeak ?? this.textToSpeak,
+      visualConfig: visualConfig ?? this.visualConfig,
+      missingWord: missingWord ?? this.missingWord,
+      prompt: prompt ?? this.prompt,
+      sampleAnswer: sampleAnswer ?? this.sampleAnswer,
+      translation: translation ?? this.translation,
+      situationText: situationText ?? this.situationText,
+      sceneText: sceneText ?? this.sceneText,
+      acceptedSynonyms: acceptedSynonyms ?? this.acceptedSynonyms,
+      phoneticHint: phoneticHint ?? this.phoneticHint,
+      meaning: meaning ?? this.meaning,
+      sampleUsage: sampleUsage ?? this.sampleUsage,
+      partnerDialogue: partnerDialogue ?? this.partnerDialogue,
+      targetPhoneme: targetPhoneme ?? this.targetPhoneme,
+      expression: expression ?? this.expression,
+    );
+  }
+}

@@ -98,6 +98,7 @@ class AccentQuest extends GameQuest {
     String? ipa2,
     String? mouthPosition,
     String? slowForm,
+    String? accentName,
   }) {
     return AccentQuest(
       id: id ?? this.id,
@@ -135,30 +136,31 @@ class AccentQuest extends GameQuest {
       ipa2: ipa2 ?? this.ipa2,
       mouthPosition: mouthPosition ?? this.mouthPosition,
       slowForm: slowForm ?? this.slowForm,
+      accentName: accentName ?? this.accentName,
     );
   }
 
   @override
   List<Object?> get props => [
-    ...super.props,
-    word,
-    phoneticHint,
-    targetWord,
-    prompt,
-    sampleAnswer,
-    audioUrl,
-    words,
-    intonationMap,
-    syllables,
-    targetSpeed,
-    pitchPatterns,
-    stressPattern,
-    word1,
-    word2,
-    ipa1,
-    ipa2,
-    mouthPosition,
-    slowForm,
-  ];
+        ...super.props,
+        word,
+        phoneticHint,
+        targetWord,
+        prompt,
+        sampleAnswer,
+        audioUrl,
+        words,
+        intonationMap,
+        syllables,
+        targetSpeed,
+        pitchPatterns,
+        stressPattern,
+        word1,
+        word2,
+        ipa1,
+        ipa2,
+        mouthPosition,
+        slowForm,
+        accentName,
+      ];
 }
-

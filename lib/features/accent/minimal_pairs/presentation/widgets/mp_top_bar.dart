@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/accent/presentation/bloc/accent_bloc.dart';
@@ -99,7 +98,7 @@ class _HeartBadge extends StatelessWidget {
   final int lives;
   const _HeartBadge({required this.lives});
 
-  static final _style = GoogleFonts.outfit(
+  static final _style = TextStyle(fontFamily: 'Outfit', 
     fontWeight: FontWeight.w900,
     color: Colors.pinkAccent,
   );
@@ -139,7 +138,7 @@ class _HintButton extends StatelessWidget {
     required this.onTap,
   });
 
-  static final _style = GoogleFonts.outfit(fontWeight: FontWeight.w900);
+  static final _style = TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900);
 
   @override
   Widget build(BuildContext context) {

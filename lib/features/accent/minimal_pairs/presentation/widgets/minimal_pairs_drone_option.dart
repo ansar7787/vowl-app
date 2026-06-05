@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
@@ -71,7 +70,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
                     children: [
                       Text(
                         word.toUpperCase(), 
-                        style: GoogleFonts.shareTechMono(
+                        style: TextStyle(fontFamily: 'RobotoMono', 
                           fontSize: 18.sp, 
                           fontWeight: FontWeight.bold, 
                           color: isDark ? Colors.white : Colors.black87
@@ -86,7 +85,7 @@ class MinimalPairsDroneOption extends StatelessWidget {
                         ),
                         child: Text(
                           ipa, 
-                          style: GoogleFonts.shareTechMono(
+                          style: TextStyle(fontFamily: 'RobotoMono', 
                             fontSize: 11.sp, 
                             fontWeight: FontWeight.bold,
                             color: color

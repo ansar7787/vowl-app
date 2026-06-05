@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
@@ -42,7 +41,7 @@ class ReadingSpeedPulseZone extends StatelessWidget {
                 child: Text(
                   passage, 
                   textAlign: TextAlign.center, 
-                  style: GoogleFonts.fredoka(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 16.sp, 
                     height: 1.4,
                     color: isDark ? Colors.white : Colors.black87, 
@@ -76,7 +75,7 @@ class ReadingSpeedPulseZone extends StatelessWidget {
                         child: Center(
                           child: Text(
                             "${timerValue}S", 
-                            style: GoogleFonts.shareTechMono(
+                            style: TextStyle(fontFamily: 'RobotoMono', 
                               color: isDark ? Colors.white : color, 
                               fontSize: 26.sp, 
                               fontWeight: FontWeight.bold,
@@ -93,7 +92,7 @@ class ReadingSpeedPulseZone extends StatelessWidget {
         SizedBox(height: 24.h),
         Text(
           "STABILIZE THE RHYTHM TO SPEED READ", 
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 12.sp, 
             color: color.withValues(alpha: 0.6), 
             fontWeight: FontWeight.w600,

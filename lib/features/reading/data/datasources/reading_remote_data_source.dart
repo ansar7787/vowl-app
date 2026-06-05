@@ -32,7 +32,8 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
         final List<ReadingQuestModel> quests = [];
         for (final q in localData) {
           try {
-            quests.add(ReadingQuestModel.fromJson(q, q['id'] ?? ''));
+            final questMap = Map<String, dynamic>.from(q as Map);
+            quests.add(ReadingQuestModel.fromJson(questMap, (questMap['id'] ?? '').toString()));
           } catch (e) {
             debugPrint('Error parsing reading quest ${q['id']}: $e');
           }
@@ -69,17 +70,18 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
       }
 
       if (doc.exists && doc.data() != null) {
-        final data = doc.data()!;
+        // Clone the Firestore map to ensure mutability
+        final data = Map<String, dynamic>.from(doc.data()!);
 
         // Check if new structure with 'quests' array exists
         if (data.containsKey('quests') && data['quests'] is List) {
           final questsList = data['quests'] as List;
           return questsList.map((q) {
-            final questMap = q as Map<String, dynamic>;
+            final questMap = Map<String, dynamic>.from(q as Map);
             questMap['id'] ??= doc.id;
             return ReadingQuestModel.fromJson(
               questMap,
-              questMap['id'] ?? doc.id,
+              (questMap['id'] ?? doc.id).toString(),
             );
           }).toList();
         }
@@ -88,13 +90,22 @@ class ReadingRemoteDataSourceImpl implements ReadingRemoteDataSource {
         data['id'] = doc.id;
         data['difficulty'] = level;
         data['subtype'] = gameType.name;
-        return [ReadingQuestModel.fromJson(data, data['id'] ?? doc.id)];
+        return [ReadingQuestModel.fromJson(data, (data['id'] ?? doc.id).toString())];
       } else {
-        throw ServerException("We're having trouble loading this level. Please check your internet or try again later.");
+        throw const ServerException("We're having trouble loading this level. Please check your internet or try again later.");
       }
+    } on FirebaseException catch (e) {
+      debugPrint('FirebaseException in getReadingQuest: $e');
+      throw ServerException(
+        e.message ?? 'Firestore database error occurred.',
+        e.code,
+        null,
+        e.stackTrace,
+      );
+    } on ServerException {
+      rethrow;
     } catch (e) {
       debugPrint('Error in getReadingQuest: $e');
-      if (e is ServerException) rethrow;
       throw ServerException(e.toString());
     }
   }

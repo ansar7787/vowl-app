@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -32,7 +31,7 @@ class KidsRoomFoodSheet extends StatelessWidget {
           children: [
             Text(
               "YUMMY TREATS",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w900,
               ),
@@ -66,7 +65,7 @@ class KidsRoomFoodSheet extends StatelessWidget {
           ),
           Text(
             f['name'] as String,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 12.sp,
               fontWeight: FontWeight.bold,
             ),
@@ -77,7 +76,7 @@ class KidsRoomFoodSheet extends StatelessWidget {
               children: [
                 Text(
                   "${f['price']} ",
-                  style: GoogleFonts.outfit(fontSize: 9.sp, fontWeight: FontWeight.w900, color: Colors.black54),
+                  style: TextStyle(fontFamily: 'Outfit', fontSize: 9.sp, fontWeight: FontWeight.w900, color: Colors.black54),
                 ),
                 Icon(Icons.star_rounded, size: 9.sp, color: const Color(0xFFF59E0B)),
               ],

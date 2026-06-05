@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class LeaderboardHeader extends StatelessWidget {
   final DateTime lastUpdated;
 
@@ -45,7 +43,7 @@ class LeaderboardHeader extends StatelessWidget {
                     children: [
                       Text(
                         'LEADERBOARD',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 22.sp,
                           fontWeight: FontWeight.w900,
                           color: isDark
@@ -75,7 +73,7 @@ class LeaderboardHeader extends StatelessWidget {
                             SizedBox(width: 4.w),
                             Text(
                               timeAgo,
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 9.sp,
                                 fontWeight: FontWeight.w800,
                                 color: isDark ? Colors.white38 : Colors.black38,
@@ -89,7 +87,7 @@ class LeaderboardHeader extends StatelessWidget {
                   ),
                   Text(
                     'Ranked by total quest experience',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w600,
                       color: isDark ? Colors.white38 : const Color(0xFF94A3B8),

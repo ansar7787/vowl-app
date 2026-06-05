@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -292,7 +291,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen> with Ticker
                                     SizedBox(width: 6.w),
                                     Text(
                                       "RESET SCAN",
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.bold,
                                         color: theme.primaryColor,
@@ -325,7 +324,7 @@ class _MedicalConsultScreenState extends State<MedicalConsultScreen> with Ticker
                                     SizedBox(width: 6.w),
                                     Text(
                                       "CONFIRM DIAGNOSIS",
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,

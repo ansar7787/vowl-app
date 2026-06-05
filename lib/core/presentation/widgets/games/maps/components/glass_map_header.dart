@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -71,7 +70,7 @@ class GlassMapHeader extends StatelessWidget {
                 children: [
                   Text(
                     theme.title.toUpperCase(),
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w800,
                       color: theme.primaryColor,
@@ -81,7 +80,7 @@ class GlassMapHeader extends StatelessWidget {
                   SizedBox(height: 4.h),
                   Text(
                     gameTheme.title,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -109,7 +108,7 @@ class GlassMapHeader extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Text(
                           "${user?.coins ?? 0} COINS",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w900,
                             color: const Color(0xFF10B981),

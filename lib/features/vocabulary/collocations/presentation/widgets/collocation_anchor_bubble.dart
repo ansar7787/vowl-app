@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class CollocationAnchorBubble extends StatelessWidget {
   final String text;
   final Color color;
@@ -33,7 +31,7 @@ class CollocationAnchorBubble extends StatelessWidget {
           ),
           child: Text(
             text.toUpperCase(),
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 28.sp,
               fontWeight: FontWeight.w900,
               color: Colors.white,

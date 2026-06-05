@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class WordReorderAssemblyCard extends StatelessWidget {
@@ -49,7 +48,7 @@ class WordReorderAssemblyCard extends StatelessWidget {
                 ? [
                     Text(
                       "WAITING FOR DATA...",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
                         color: primaryColor.withValues(alpha: 0.3),
@@ -77,7 +76,7 @@ class WordReorderAssemblyCard extends StatelessWidget {
                         ),
                         child: Text(
                           word,
-                          style: GoogleFonts.fredoka(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 18.sp,
                             fontWeight: FontWeight.w600,
                             color: primaryColor,

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class GrammarHeartCount extends StatelessWidget {
   final int lives;
 
@@ -22,7 +20,7 @@ class GrammarHeartCount extends StatelessWidget {
           SizedBox(width: 6.w),
           Text(
             "$lives",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 16.sp,
               fontWeight: FontWeight.w900,
               color: Colors.pinkAccent,

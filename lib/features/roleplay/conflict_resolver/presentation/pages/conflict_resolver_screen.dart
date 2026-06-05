@@ -2,7 +2,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -226,7 +225,7 @@ class _ConflictResolverScreenState extends State<ConflictResolverScreen> with Ti
                                 SizedBox(width: 8.w),
                                 Text(
                                   "LOCK HARMONIC FREQUENCY",
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class PhrasalVerbsOptionKey extends StatelessWidget {
@@ -80,7 +79,7 @@ class PhrasalVerbsOptionKey extends StatelessWidget {
         child: Center(
           child: Text(
             text.toUpperCase(),
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 15.sp,
               fontWeight: FontWeight.bold,
               color: textColor,

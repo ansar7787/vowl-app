@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -226,7 +225,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       SizedBox(width: 4.w),
                                       Text(
                                         '9 STEPS',
-                                        style: GoogleFonts.outfit(
+                                        style: TextStyle(fontFamily: 'Outfit', 
                                           fontSize: 8.sp,
                                           fontWeight: FontWeight.w900,
                                           color: const Color(0xFFF59E0B),

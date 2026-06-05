@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/accent/harmonic_waves.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -23,7 +22,7 @@ class MpListenButton extends StatelessWidget {
 
   static const _blue = Color(0xFF3B82F6);
 
-  static final _listenStyle = GoogleFonts.outfit(
+  static final _listenStyle = TextStyle(fontFamily: 'Outfit', 
     fontWeight: FontWeight.w900,
     color: Colors.white,
     letterSpacing: 2,

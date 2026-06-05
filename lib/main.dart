@@ -57,27 +57,65 @@ void main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  // 1. Parallelize non-dependent core initializations to prevent main thread blocking/jank
+  // Safe helper to load environment variables without crashing startup
+  Future<void> safeLoadDotEnv() async {
+    try {
+      await dotenv.load(fileName: ".env");
+    } catch (e) {
+      debugPrint("Warning: Dotenv failed to load: $e");
+    }
+  }
+
+  // Safe helper for device security check
+  Future<bool> safeCheckSecurity() async {
+    try {
+      return await SecurityService.isDeviceSecure();
+    } catch (e) {
+      debugPrint("Warning: Security check failed: $e");
+      return true; // Default to secure in case of exception to avoid locking out users
+    }
+  }
+
+  // Safe helper for Firebase initialization
+  Future<FirebaseApp?> safeInitializeFirebase() async {
+    try {
+      return await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+    } catch (e) {
+      debugPrint("Critical: Firebase failed to initialize: $e");
+      return null;
+    }
+  }
+
+  // 1. Parallelize non-dependent core initializations safely to prevent main thread blocking/jank
   final initResults = await Future.wait([
-    dotenv.load(fileName: ".env"),
-    Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
-    SecurityService.isDeviceSecure(),
+    safeLoadDotEnv(),
+    safeInitializeFirebase(),
+    safeCheckSecurity(),
   ]);
 
-  final bool isSecure = initResults[2] as bool;
-  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+  final firebaseApp = initResults[1] as FirebaseApp?;
+  final bool isSecure = initResults[2] as bool? ?? true;
+
+  if (firebaseApp != null) {
+    FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
+
+    // Configure Firestore Persistence (Non-blocking) safely
+    try {
+      FirebaseFirestore.instance.settings = const Settings(
+        persistenceEnabled: true,
+        cacheSizeBytes: 50 * 1024 * 1024, // 50MB - prevents storage exhaustion on low-end devices
+      );
+    } catch (e) {
+      debugPrint("Warning: Firestore settings failed to apply: $e");
+    }
+  }
 
   // 2. Initialize Dependency Injection (depends on Firebase initialization)
-  await di.init();
-
-  // 2. Configure Firestore Persistence (Non-blocking)
-  FirebaseFirestore.instance.settings = const Settings(
-    persistenceEnabled: true,
-    cacheSizeBytes:
-        50 *
-        1024 *
-        1024, // 50MB - prevents storage exhaustion on low-end devices
-  );
+  try {
+    await di.init();
+  } catch (e) {
+    debugPrint("Critical: Dependency Injection initialization failed: $e");
+  }
 
   if (!isSecure) {
     runApp(const InsecureDeviceScreen());
@@ -85,16 +123,21 @@ void main() async {
   }
 
   // Initialize Crashlytics
-  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
-  PlatformDispatcher.instance.onError = (error, stack) {
-    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
-    return true;
-  };
+  if (firebaseApp != null) {
+    try {
+      FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+      PlatformDispatcher.instance.onError = (error, stack) {
+        FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+        return true;
+      };
+    } catch (e) {
+      debugPrint("Warning: Crashlytics initialization failed: $e");
+    }
+  }
 
   runApp(const MyApp());
 
   // Delay splash removal slightly to ensure first frame is stable and theme is loaded
-  // We remove it after a short delay to ensure Flutter has painted the first frame
   Future.delayed(const Duration(milliseconds: 200), () {
     FlutterNativeSplash.remove();
   });
@@ -102,25 +145,49 @@ void main() async {
   // Defer heavy/non-critical services to ensure buttery smooth splash-to-home transition
   WidgetsBinding.instance.addPostFrameCallback((_) {
     Future.delayed(const Duration(milliseconds: 1500), () async {
-      // Initialize heavy SDKs only once the UI is stable
-      di.sl<AdService>().init();
-      di.sl<RemoteConfigService>().init();
+      // Initialize heavy SDKs only once the UI is stable, wrapping each in a try-catch
+      try {
+        await di.sl<AdService>().init();
+      } catch (e, stack) {
+        debugPrint("Error initializing AdService: $e");
+        if (firebaseApp != null) {
+          FirebaseCrashlytics.instance.recordError(e, stack, reason: 'AdService initialization failed');
+        }
+      }
 
-      // ignore: deprecated_member_use
-      await FirebaseAppCheck.instance.activate(
-        // ignore: deprecated_member_use
-        appleProvider: kDebugMode
-            ? AppleProvider.debug
-            : AppleProvider.deviceCheck,
-        // ignore: deprecated_member_use
-        androidProvider: kDebugMode
-            ? AndroidProvider.debug
-            : AndroidProvider.playIntegrity,
-      );
+      try {
+        await di.sl<RemoteConfigService>().init();
+      } catch (e, stack) {
+        debugPrint("Error initializing RemoteConfigService: $e");
+        if (firebaseApp != null) {
+          FirebaseCrashlytics.instance.recordError(e, stack, reason: 'RemoteConfigService initialization failed');
+        }
+      }
 
-      di.sl<NotificationService>().init().then((_) {
-        di.sl<NotificationService>().scheduleWeeklyMotivation();
-      });
+      try {
+        // ignore: deprecated_member_use
+        await FirebaseAppCheck.instance.activate(
+          // ignore: deprecated_member_use
+          appleProvider: kDebugMode ? AppleProvider.debug : AppleProvider.deviceCheck,
+          // ignore: deprecated_member_use
+          androidProvider: kDebugMode ? AndroidProvider.debug : AndroidProvider.playIntegrity,
+        );
+      } catch (e, stack) {
+        debugPrint("Error activating Firebase App Check: $e");
+        if (firebaseApp != null) {
+          FirebaseCrashlytics.instance.recordError(e, stack, reason: 'FirebaseAppCheck activation failed');
+        }
+      }
+
+      try {
+        await di.sl<NotificationService>().init();
+        await di.sl<NotificationService>().scheduleWeeklyMotivation();
+      } catch (e, stack) {
+        debugPrint("Error initializing NotificationService: $e");
+        if (firebaseApp != null) {
+          FirebaseCrashlytics.instance.recordError(e, stack, reason: 'NotificationService initialization failed');
+        }
+      }
     });
   });
 }
@@ -139,6 +206,7 @@ class _MyAppState extends State<MyApp> {
 
     // Global Asset Pre-caching for "Elite Performance"
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
       // Pre-load mascot WEBP assets into RAM early
       precacheImage(
         const AssetImage('assets/images/mascot/voxbot_happy.webp'),
@@ -169,15 +237,9 @@ class _MyAppState extends State<MyApp> {
         return MultiBlocProvider(
           providers: [
             BlocProvider<AuthBloc>(create: (context) => di.sl<AuthBloc>()),
-            BlocProvider<EconomyBloc>(
-              create: (context) => di.sl<EconomyBloc>(),
-            ),
-            BlocProvider<ProgressionBloc>(
-              create: (context) => di.sl<ProgressionBloc>(),
-            ),
-            BlocProvider<ProfileBloc>(
-              create: (context) => di.sl<ProfileBloc>(),
-            ),
+            BlocProvider<EconomyBloc>(create: (context) => di.sl<EconomyBloc>()),
+            BlocProvider<ProgressionBloc>(create: (context) => di.sl<ProgressionBloc>()),
+            BlocProvider<ProfileBloc>(create: (context) => di.sl<ProfileBloc>()),
             BlocProvider<ThemeCubit>(create: (context) => di.sl<ThemeCubit>()),
           ],
           child: BlocBuilder<ThemeCubit, ThemeState>(
@@ -186,8 +248,8 @@ class _MyAppState extends State<MyApp> {
                   ? MediaQuery.platformBrightnessOf(context) == Brightness.dark
                   : state.isDark;
 
-              SystemChrome.setSystemUIOverlayStyle(
-                SystemUiOverlayStyle(
+              return AnnotatedRegion<SystemUiOverlayStyle>(
+                value: SystemUiOverlayStyle(
                   statusBarColor: Colors.transparent,
                   statusBarIconBrightness: isActuallyDark
                       ? Brightness.light
@@ -197,58 +259,56 @@ class _MyAppState extends State<MyApp> {
                       ? Brightness.light
                       : Brightness.dark,
                 ),
-              );
+                child: MaterialApp.router(
+                  title: 'Vowl',
+                  debugShowCheckedModeBanner: false,
+                  theme: AppTheme.lightTheme,
+                  darkTheme: state.isMidnight
+                      ? AppTheme.midnightTheme
+                      : AppTheme.darkTheme,
+                  themeMode: state.themeMode,
+                  routerConfig: AppRouter.router,
+                  builder: (context, child) {
+                    return GlobalErrorBoundary(
+                      child: ConnectivityWrapper(
+                        child: GlobalAudioFeedbackListener(
+                          child: MultiBlocListener(
+                            listeners: [
+                              BlocListener<AuthBloc, AuthState>(
+                                listenWhen: (prev, curr) =>
+                                    prev.status != AuthStatus.authenticated &&
+                                    curr.status == AuthStatus.authenticated,
+                                listener: (context, authState) {
+                                  context.read<ProgressionBloc>().add(
+                                    const ProgressionCheckDailyStreakRequested(),
+                                  );
+                                },
+                              ),
+                            ],
+                            child: BlocBuilder<AuthBloc, AuthState>(
+                              builder: (context, authState) {
+                                final isLoggingOut = authState.status == AuthStatus.loggingOut;
 
-              return MaterialApp.router(
-                title: 'Vowl',
-                debugShowCheckedModeBanner: false,
-                theme: AppTheme.lightTheme,
-                darkTheme: state.isMidnight
-                    ? AppTheme.midnightTheme
-                    : AppTheme.darkTheme,
-                themeMode: state.themeMode,
-                routerConfig: AppRouter.router,
-                builder: (context, child) {
-                  return GlobalErrorBoundary(
-                    child: ConnectivityWrapper(
-                      child: GlobalAudioFeedbackListener(
-                        child: MultiBlocListener(
-                          listeners: [
-                            BlocListener<AuthBloc, AuthState>(
-                              listenWhen: (prev, curr) =>
-                                  prev.status != AuthStatus.authenticated &&
-                                  curr.status == AuthStatus.authenticated,
-                              listener: (context, authState) {
-                                context.read<ProgressionBloc>().add(
-                                  const ProgressionCheckDailyStreakRequested(),
+                                return LoadingOverlay(
+                                  isLoading: isLoggingOut,
+                                  message: 'Securing your quest data',
+                                  child: Container(
+                                    color: state.isMidnight
+                                        ? Colors.black
+                                        : (isActuallyDark
+                                              ? const Color(0xFF0F172A)
+                                              : const Color(0xFFF8FAFC)),
+                                    child: child!,
+                                  ),
                                 );
                               },
                             ),
-                          ],
-                          child: BlocBuilder<AuthBloc, AuthState>(
-                            builder: (context, authState) {
-                              final isLoggingOut =
-                                  authState.status == AuthStatus.loggingOut;
-
-                              return LoadingOverlay(
-                                isLoading: isLoggingOut,
-                                message: 'Securing your quest data',
-                                child: Container(
-                                  color: state.isMidnight
-                                      ? Colors.black
-                                      : (isActuallyDark
-                                            ? const Color(0xFF0F172A)
-                                            : const Color(0xFFF8FAFC)),
-                                  child: child!,
-                                ),
-                              );
-                            },
                           ),
                         ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               );
             },
           ),

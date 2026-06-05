@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
@@ -41,7 +40,7 @@ class WordLabCore extends StatelessWidget {
           children: [
             Text(
               "CORE ELEMENT",
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 fontSize: 8.sp,
                 fontWeight: FontWeight.w700,
                 color: isDark ? Colors.white38 : Colors.black38,
@@ -56,7 +55,7 @@ class WordLabCore extends StatelessWidget {
               color: theme.primaryColor.withValues(alpha: 0.1),
               child: Text(
                 quest.word?.toUpperCase() ?? "---",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? Colors.white : theme.primaryColor,

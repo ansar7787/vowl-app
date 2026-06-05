@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class FastSpeechDecoderCore extends StatelessWidget {
@@ -92,7 +91,7 @@ class FastSpeechDecoderCore extends StatelessWidget {
                     bottom: 20.r,
                     child: Text(
                       "LISTEN",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 7.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white70,

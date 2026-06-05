@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -46,7 +45,7 @@ class VowelWordCard extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 4.h),
                   child: Text(
                     "[ $ipa ]",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                       color: theme.primaryColor.withValues(alpha: 0.6),
@@ -96,7 +95,7 @@ class VowelWordCard extends StatelessWidget {
 
     return RichText(
       text: TextSpan(
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 28.sp,
           fontWeight: FontWeight.bold,
           color: Colors.grey,

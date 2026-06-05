@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class ShadowingChallengePromptCard extends StatelessWidget {
@@ -35,7 +34,7 @@ class ShadowingChallengePromptCard extends StatelessWidget {
               children: [
                 Text(
                   "SHADOW TARGET", 
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 10.sp, 
                     fontWeight: FontWeight.bold, 
                     color: color, 
@@ -46,7 +45,7 @@ class ShadowingChallengePromptCard extends StatelessWidget {
                 Text(
                   word, 
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 22.sp, 
                     fontWeight: FontWeight.w900, 
                     color: isDark ? Colors.white : Colors.black87, 
@@ -63,7 +62,7 @@ class ShadowingChallengePromptCard extends StatelessWidget {
                     ),
                     child: Text(
                       ipa,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 12.sp,
                         fontWeight: FontWeight.bold,
                         color: color,

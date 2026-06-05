@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class WordLinkingPromptCard extends StatelessWidget {
@@ -29,7 +28,7 @@ class WordLinkingPromptCard extends StatelessWidget {
           Text(
             "Word linking (liaison) seamlessly connects speech, merging a word's final sound into the next word's initial sound. Can you locate where linking happens?",
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 13.sp,
               color: isDark ? Colors.white70 : Colors.black87,
               height: 1.4,

@@ -1,8 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ShadowingChallengeWaveformTrace extends StatelessWidget {
   final Color color;
   final bool isDark;
@@ -56,7 +54,7 @@ class ShadowingChallengeWaveformTrace extends StatelessWidget {
                 SizedBox(width: 8.w),
                 Text(
                   isPreviewing ? "PLAYING PHONETIC WAVE" : "WAVE READY",
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     color: isDark ? Colors.white60 : Colors.black54,
                     fontSize: 9.sp,
                     fontWeight: FontWeight.bold,

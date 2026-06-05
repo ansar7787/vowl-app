@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class DetailSpotlightInstruction extends StatelessWidget {
   final bool isAnswered;
   final Color color;
@@ -29,7 +27,7 @@ class DetailSpotlightInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               isAnswered ? "EVIDENCE SECURED" : "DRAG TO SEARCH THE SHADOWS",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: color,

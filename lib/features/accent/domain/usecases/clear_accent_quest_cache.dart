@@ -4,9 +4,7 @@ import '../repositories/accent_repository.dart';
 class ClearAccentQuestCache {
   final AccentRepository repository;
 
-  ClearAccentQuestCache(this.repository);
+  const ClearAccentQuestCache(this.repository);
 
-  Future<void> call(NoParams params) async {
-    await repository.clearQuestCache();
-  }
+  Future<void> call(NoParams params) => repository.clearQuestCache();
 }

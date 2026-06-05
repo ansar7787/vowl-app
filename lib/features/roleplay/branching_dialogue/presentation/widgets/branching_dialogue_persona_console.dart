@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/domain/entities/roleplay_quest.dart';
@@ -66,7 +65,7 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
                 children: [
                   Text(
                     quest.roleName?.toUpperCase() ?? "TELEMETRY AGENT",
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                       color: color,
@@ -76,7 +75,7 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
                   SizedBox(height: 4.h),
                   Text(
                     "BRANCH COMMS COMMITTED",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 10.sp,
                       color: Colors.grey.shade500,
                       fontWeight: FontWeight.bold,
@@ -99,7 +98,7 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
                       SizedBox(width: 4.w),
                       Text(
                         "REPLAY",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.bold,
                           color: color,
@@ -115,7 +114,7 @@ class BranchingDialoguePersonaConsole extends StatelessWidget {
           Text(
             quest.scene ?? "",
             textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 18.sp,
               color: isDark ? Colors.white70 : Colors.black87,
               height: 1.3,

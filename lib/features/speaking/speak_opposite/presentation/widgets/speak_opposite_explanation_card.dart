@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
@@ -52,7 +51,7 @@ class SpeakOppositeExplanationCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 isCorrect ? "Opposite Fused!" : "Polar Bridge Collapse",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp,
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : Colors.black87,
@@ -63,7 +62,7 @@ class SpeakOppositeExplanationCard extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             quest.explanation ?? "Identifying direct lexical antonyms enhances cognitive mapping and communication depth.",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 14.sp,
               color: isDark ? Colors.white70 : Colors.black54,
               height: 1.35,
@@ -73,7 +72,7 @@ class SpeakOppositeExplanationCard extends StatelessWidget {
             SizedBox(height: 14.h),
             Text(
               "ACCEPTED OPPOSITES:",
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 fontSize: 10.sp,
                 color: Colors.redAccent,
                 fontWeight: FontWeight.bold,
@@ -92,7 +91,7 @@ class SpeakOppositeExplanationCard extends StatelessWidget {
                 ),
                 child: Text(
                   s,
-                  style: GoogleFonts.fredoka(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 12.sp,
                     color: Colors.redAccent,
                   ),

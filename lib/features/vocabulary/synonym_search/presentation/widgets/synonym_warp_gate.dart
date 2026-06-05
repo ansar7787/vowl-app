@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/vocabulary/synonym_search/presentation/widgets/synonym_painters.dart';
 
 class SynonymWarpGate extends StatelessWidget {
@@ -89,7 +88,7 @@ class SynonymWarpGate extends StatelessWidget {
                             word.toUpperCase(),
                             textAlign: TextAlign.center,
                             maxLines: 1,
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,

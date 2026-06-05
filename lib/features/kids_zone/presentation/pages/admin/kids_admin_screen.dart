@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/kids_zone/data/datasources/kids_quest_upload_service.dart';
 
 class KidsAdminScreen extends StatefulWidget {
@@ -134,7 +133,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
           children: [
             Text(
               'KIDS COMMAND',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontWeight: FontWeight.w900,
                 letterSpacing: 4,
                 fontSize: 18.sp,
@@ -143,7 +142,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
             ),
             Text(
               'FIRESTORE SEEDING ENGINE v2.0',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontWeight: FontWeight.bold,
                 fontSize: 10.sp,
                 color: Colors.black26,
@@ -207,7 +206,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
         children: [
           Text(
             'CATEGORY SELECTION',
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 11.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,
@@ -225,7 +224,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
                     value: type,
                     child: Text(
                       type.toUpperCase(),
-                      style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+                      style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
                     ),
                   ),
                 )
@@ -259,7 +258,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
             children: [
               Text(
                 'FIRESTORE LIVE STATUS',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.blueGrey[400],
@@ -269,7 +268,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
               SizedBox(height: 4.h),
               Text(
                 '$_firestoreLevels Levels | $_firestoreQuests Quests Exist',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   fontWeight: FontWeight.bold,
                   color: primaryColor,
@@ -300,7 +299,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
         children: [
           Text(
             'GENERATION FOCUS:',
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
               color: Colors.blueGrey,
@@ -309,7 +308,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
           SizedBox(height: 4.h),
           Text(
             _gamePrompts[_selectedGameType] ?? "General education focus.",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 12.sp,
               color: Colors.blueGrey[800],
               fontStyle: FontStyle.italic,
@@ -350,7 +349,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
               Expanded(
                 child: Text(
                   'QUEST DATA (JSON ARRAY)',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 11.sp,
                     fontWeight: FontWeight.w900,
                     color: primaryColor,
@@ -373,7 +372,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
           TextField(
             controller: _jsonController,
             maxLines: 12,
-            style: GoogleFonts.robotoMono(fontSize: 12.sp),
+            style: TextStyle(fontFamily: 'RobotoMono', fontSize: 12.sp),
             decoration: InputDecoration(
               hintText: 'Paste quests JSON array here...',
               filled: true,
@@ -422,7 +421,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
           : const Icon(Icons.cloud_upload_rounded),
       label: Text(
         'PUSH TO FIRESTORE',
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontWeight: FontWeight.w900,
           letterSpacing: 2,
         ),
@@ -451,7 +450,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
             SizedBox(height: 16.h),
             Text(
               'DANGER ZONE',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontWeight: FontWeight.w900,
                 fontSize: 20.sp,
               ),
@@ -492,7 +491,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
       ),
       title: Text(
         title,
-        style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+        style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold),
       ),
       subtitle: Text(subtitle, style: TextStyle(fontSize: 12.sp)),
       tileColor: Colors.white,
@@ -506,7 +505,7 @@ class _KidsAdminScreenState extends State<KidsAdminScreen>
       color: Colors.white,
       child: Text(
         _status,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontWeight: FontWeight.bold,
           color: _status.contains('failed') ? Colors.red : Colors.blueGrey[700],
         ),

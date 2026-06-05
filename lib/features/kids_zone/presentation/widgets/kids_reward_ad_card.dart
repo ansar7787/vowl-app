@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -45,7 +44,7 @@ class KidsRewardAdCard extends StatelessWidget {
                 SizedBox(width: 12.w),
                 Text(
                   'KIDS WATCH & EARN',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,
                     color: kidsPrimaryColor,
@@ -64,7 +63,7 @@ class KidsRewardAdCard extends StatelessWidget {
                     children: [
                       Text(
                         'Claim 10 Coins!',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w900,
                           color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -74,7 +73,7 @@ class KidsRewardAdCard extends StatelessWidget {
                       SizedBox(height: 4.h),
                       Text(
                         'Watch a quick video to unlock rewards',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w600,
                           color: isDark ? Colors.white38 : Colors.black45,
@@ -110,7 +109,7 @@ class KidsRewardAdCard extends StatelessWidget {
                         SizedBox(width: 6.w),
                         Text(
                           'START',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w900,
                             color: Colors.white,
@@ -149,7 +148,7 @@ class KidsRewardAdCard extends StatelessWidget {
                   SizedBox(width: 12.w),
                   Text(
                     'Great! You earned 10 Kids Coins! ⭐',
-                    style: GoogleFonts.outfit(fontWeight: FontWeight.w700),
+                    style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w700),
                   ),
                 ],
               ),

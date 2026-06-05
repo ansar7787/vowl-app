@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -33,7 +31,6 @@ class WritingEmailScreen extends StatefulWidget {
 
 class _WritingEmailScreenState extends State<WritingEmailScreen> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
   
   final Map<String, String?> _slots = {
     'SUBJECT': null,
@@ -77,8 +74,11 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
   }
 
   void _submitAnswer() {
-    final WritingQuest? quest = (context.read<WritingBloc>().state as WritingLoaded).currentQuest as WritingQuest?;
-    if (quest == null || _isAnswered) return;
+    final state = context.read<WritingBloc>().state;
+    if (state is! WritingLoaded || _isAnswered) return;
+    
+    final WritingQuest? quest = state.currentQuest as WritingQuest?;
+    if (quest == null) return;
     
     final options = quest.options ?? [];
     final correctOrderIndices = quest.correctOrder ?? [0, 1, 2, 3];
@@ -89,16 +89,12 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
     bool isSignOffCorrect = _slots['SIGN-OFF'] == options[correctOrderIndices[3]];
 
     if (isSubjectCorrect && isSalutationCorrect && isBodyCorrect && isSignOffCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = true; 
       });
       context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false; 
@@ -205,7 +201,7 @@ class _WritingEmailScreenState extends State<WritingEmailScreen> {
                         child: Center(
                           child: Text(
                             "TRANSMIT DISPATCH", 
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 16.sp, 
                               fontWeight: FontWeight.w900, 
                               color: Colors.white, 

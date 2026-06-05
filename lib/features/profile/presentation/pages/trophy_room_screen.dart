@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -94,7 +93,7 @@ class TrophyRoomScreen extends StatelessWidget {
                               Expanded(
                                 child: Text(
                                   'Trophy Room',
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w800,
                                     color: isDark
@@ -126,7 +125,7 @@ class TrophyRoomScreen extends StatelessWidget {
                                     SizedBox(width: 4.w),
                                     Text(
                                       '${state.user?.coins ?? 0}',
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w800,
                                         color: const Color(0xFF10B981),
@@ -236,7 +235,7 @@ class TrophyRoomScreen extends StatelessWidget {
         SizedBox(width: 12.w),
         Text(
           title,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 16.sp,
             fontWeight: FontWeight.w900,
             color: (isDark || isMidnight) ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
@@ -357,7 +356,7 @@ class TrophyRoomScreen extends StatelessWidget {
                           SizedBox(width: 6.w),
                           Text(
                             "LEVEL $level",
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               color: Colors.white,
                               fontWeight: FontWeight.w900,
                               fontSize: 16.sp,
@@ -445,7 +444,7 @@ class TrophyRoomScreen extends StatelessWidget {
               child: Text(
                 badgeId.toUpperCase(),
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: (isDark || isMidnight) ? Colors.white : const Color(0xFF0F172A),
@@ -497,7 +496,7 @@ class TrophyRoomScreen extends StatelessWidget {
             Text(
               text,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 color: (isDark || isMidnight) ? Colors.white54 : const Color(0xFF64748B),
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w600,

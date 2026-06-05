@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -38,7 +37,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
             children: [
               Text(
                 "TARGET PHONETIC CORE",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: Colors.grey.shade400,
                   letterSpacing: 1.0,
@@ -58,7 +57,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                       SizedBox(width: 4.w),
                       Text(
                         "POSITION GUIDE",
-                        style: GoogleFonts.shareTechMono(
+                        style: TextStyle(fontFamily: 'RobotoMono', 
                           fontSize: 9.sp,
                           color: Colors.orangeAccent,
                           fontWeight: FontWeight.bold,
@@ -93,7 +92,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
             ),
             child: Text(
               targetSound,
-              style: GoogleFonts.fredoka(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 32.sp,
                 fontWeight: FontWeight.w900,
                 color: Colors.white,
@@ -113,7 +112,7 @@ class PronunciationFocusPhonemeCrucible extends StatelessWidget {
                   Text(
                     quest.phoneticHint ?? "Accentuate the critical sound matching the crucible target.",
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 13.sp,
                       color: isDark ? Colors.white70 : Colors.black87,
                       height: 1.4,

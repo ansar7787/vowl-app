@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class VoiceTransformationCard extends StatelessWidget {
@@ -44,7 +43,7 @@ class VoiceTransformationCard extends StatelessWidget {
             opacity: showResult && isCorrect ? 0 : 1,
             child: Text(
               originalSentence,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w800,
                 color: isMidnight
@@ -60,7 +59,7 @@ class VoiceTransformationCard extends StatelessWidget {
           if (showResult && isCorrect && transformedSentence != null)
             Text(
                   transformedSentence!,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
                     color: primaryColor,

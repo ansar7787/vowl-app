@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/widgets/emergency_hub_valve_painter.dart';
 
 class EmergencyHubValveChamber extends StatelessWidget {
@@ -153,7 +152,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
             children: [
               Text(
                 "VALVE LEVEL: ",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.5,
@@ -161,7 +160,7 @@ class EmergencyHubValveChamber extends StatelessWidget {
               ),
               Text(
                 isValveAligned ? "ALIGNED (READY)" : "LOCK PENDING (TURN TO 90%)",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 11.sp,
                   color: isValveAligned ? Colors.greenAccent : Colors.redAccent,
                   fontWeight: FontWeight.bold,

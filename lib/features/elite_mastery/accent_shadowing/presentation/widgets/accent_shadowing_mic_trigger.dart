@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class AccentShadowingMicTrigger extends StatelessWidget {
@@ -84,7 +83,7 @@ class AccentShadowingMicTrigger extends StatelessWidget {
                     SizedBox(width: 8.w),
                     Text(
                       "I SPOKE CORRECTLY!",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         color: Colors.amber,
                         fontWeight: FontWeight.w900,
                         fontSize: 12.sp,

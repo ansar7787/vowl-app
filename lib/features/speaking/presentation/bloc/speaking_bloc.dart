@@ -1,29 +1,34 @@
+import 'dart:async';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../features/auth/domain/usecases/update_user_rewards.dart';
-import '../../../../features/auth/domain/usecases/update_unlocked_level.dart';
-import '../../../../features/auth/domain/usecases/update_category_stats.dart';
-import '../../../../features/auth/domain/usecases/award_badge.dart';
-import '../../../../features/auth/domain/usecases/update_user_coins.dart';
-import '../../../../core/usecases/usecase.dart';
-import '../../../../core/utils/sound_service.dart';
-import '../../../../core/utils/haptic_service.dart';
-import '../../domain/entities/speaking_quest.dart';
-import '../../domain/usecases/get_speaking_quest.dart';
-import '../../../../core/domain/entities/game_quest.dart';
-import '../../../../core/network/network_info.dart';
-import '../../../../features/auth/domain/usecases/use_hint.dart';
+import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/network/network_info.dart';
+import 'package:vowl/core/usecases/usecase.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/features/auth/domain/usecases/award_badge.dart';
+import 'package:vowl/features/auth/domain/usecases/update_category_stats.dart';
+import 'package:vowl/features/auth/domain/usecases/update_unlocked_level.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_coins.dart';
+import 'package:vowl/features/auth/domain/usecases/update_user_rewards.dart';
+import 'package:vowl/features/auth/domain/usecases/use_hint.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
+import 'package:vowl/features/speaking/domain/usecases/get_speaking_quest.dart';
 
 // --- EVENTS ---
 abstract class SpeakingEvent extends Equatable {
+  const SpeakingEvent();
+
   @override
   List<Object?> get props => [];
 }
 
 class FetchSpeakingQuests extends SpeakingEvent {
-  final dynamic gameType;
+  final Object gameType;
   final int level;
-  FetchSpeakingQuests({required this.gameType, required this.level});
+
+  const FetchSpeakingQuests({required this.gameType, required this.level});
 
   @override
   List<Object?> get props => [gameType, level];
@@ -31,41 +36,59 @@ class FetchSpeakingQuests extends SpeakingEvent {
 
 class SubmitAnswer extends SpeakingEvent {
   final bool isCorrect;
-  SubmitAnswer(this.isCorrect);
+  const SubmitAnswer(this.isCorrect);
 
   @override
   List<Object?> get props => [isCorrect];
 }
 
-class NextQuestion extends SpeakingEvent {}
+class NextQuestion extends SpeakingEvent {
+  const NextQuestion();
+}
 
-class RestartLevel extends SpeakingEvent {}
+class RestartLevel extends SpeakingEvent {
+  const RestartLevel();
+}
 
-class SpeakingHintUsed extends SpeakingEvent {}
+class SpeakingHintUsed extends SpeakingEvent {
+  const SpeakingHintUsed();
+}
 
-class RetryCurrentQuestion extends SpeakingEvent {}
+class RetryCurrentQuestion extends SpeakingEvent {
+  const RetryCurrentQuestion();
+}
 
-class RestoreLife extends SpeakingEvent {}
+class RestoreLife extends SpeakingEvent {
+  const RestoreLife();
+}
 
 class AddHint extends SpeakingEvent {
   final int count;
-  AddHint(this.count);
+  const AddHint(this.count);
 
   @override
   List<Object?> get props => [count];
 }
 
-class SpeakingTutorPass extends SpeakingEvent {}
+class SpeakingTutorPass extends SpeakingEvent {
+  const SpeakingTutorPass();
+}
 
 // --- STATES ---
 abstract class SpeakingState extends Equatable {
+  const SpeakingState();
+
   @override
   List<Object?> get props => [];
 }
 
-class SpeakingInitial extends SpeakingState {}
+class SpeakingInitial extends SpeakingState {
+  const SpeakingInitial();
+}
 
-class SpeakingLoading extends SpeakingState {}
+class SpeakingLoading extends SpeakingState {
+  const SpeakingLoading();
+}
 
 class SpeakingLoaded extends SpeakingState {
   final List<SpeakingQuest> quests;
@@ -78,7 +101,7 @@ class SpeakingLoaded extends SpeakingState {
 
   SpeakingQuest get currentQuest => quests[currentIndex];
 
-  SpeakingLoaded({
+  const SpeakingLoaded({
     required this.quests,
     required this.currentIndex,
     required this.livesRemaining,
@@ -89,7 +112,15 @@ class SpeakingLoaded extends SpeakingState {
   });
 
   @override
-  List<Object?> get props => [quests, currentIndex, livesRemaining, lastAnswerCorrect, hintUsed, wrongCount, isFinalFailure];
+  List<Object?> get props => [
+        quests,
+        currentIndex,
+        livesRemaining,
+        lastAnswerCorrect,
+        hintUsed,
+        wrongCount,
+        isFinalFailure,
+      ];
 
   SpeakingLoaded copyWith({
     List<SpeakingQuest>? quests,
@@ -115,7 +146,8 @@ class SpeakingLoaded extends SpeakingState {
 class SpeakingError extends SpeakingState {
   final String message;
   final String? technicalError;
-  SpeakingError(this.message, {this.technicalError});
+
+  const SpeakingError(this.message, {this.technicalError});
 
   @override
   List<Object?> get props => [message, technicalError];
@@ -125,7 +157,8 @@ class SpeakingGameComplete extends SpeakingState {
   final int xpEarned;
   final int coinsEarned;
   final int questCount;
-  SpeakingGameComplete({
+
+  const SpeakingGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
     required this.questCount,
@@ -138,7 +171,8 @@ class SpeakingGameComplete extends SpeakingState {
 class SpeakingGameOver extends SpeakingState {
   final List<SpeakingQuest> quests;
   final int currentIndex;
-  SpeakingGameOver({required this.quests, required this.currentIndex});
+
+  const SpeakingGameOver({required this.quests, required this.currentIndex});
 
   @override
   List<Object?> get props => [quests, currentIndex];
@@ -171,10 +205,12 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     required this.hapticService,
     required this.useHint,
     required this.networkInfo,
-  }) : super(SpeakingInitial()) {
+  }) : super(const SpeakingInitial()) {
     on<FetchSpeakingQuests>((event, emit) async {
+      if (state is SpeakingLoading) return;
+
       final GameSubtype subtype = event.gameType is GameSubtype
-          ? event.gameType
+          ? event.gameType as GameSubtype
           : GameSubtype.values.firstWhere(
               (s) => s.name == event.gameType.toString(),
               orElse: () => GameSubtype.repeatSentence,
@@ -182,11 +218,13 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       currentGameType = subtype.name;
       currentLevel = event.level;
 
-      emit(SpeakingLoading());
+      emit(const SpeakingLoading());
 
       final result = await getQuest(
         QuestParams(gameType: subtype, level: event.level),
       );
+
+      if (isClosed) return;
 
       result.fold(
         (failure) => emit(SpeakingError(
@@ -216,13 +254,13 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     });
 
     on<RestartLevel>((event, emit) {
-      emit(SpeakingInitial());
+      emit(const SpeakingInitial());
     });
 
     on<RetryCurrentQuestion>((event, emit) {
-      if (state is SpeakingLoaded) {
-        final s = state as SpeakingLoaded;
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      final currentState = state;
+      if (currentState is SpeakingLoaded) {
+        emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
       }
     });
 
@@ -231,22 +269,26 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     on<AddHint>(_onAddHint);
     on<SpeakingTutorPass>(_onTutorPass);
 
-    on<SubmitAnswer>((event, emit) async {
+    on<SubmitAnswer>((event, emit) {
       final currentState = state;
       if (currentState is! SpeakingLoaded || currentState.livesRemaining <= 0) return;
+
+      // Guard: Ignore if answer has already been submitted (feedback screen is active)
+      if (currentState.lastAnswerCorrect != null) return;
 
       if (!event.isCorrect) {
         final newLives = currentState.livesRemaining - 1;
         final newWrongCount = currentState.wrongCount + 1;
-        bool isFinal = newWrongCount >= 2;
+        final bool isFinal = newWrongCount >= 2;
 
-        List<SpeakingQuest> updatedQuests = List.from(currentState.quests);
+        final List<SpeakingQuest> updatedQuests = List.from(currentState.quests);
         if (isFinal) {
           updatedQuests.add(currentState.currentQuest); // Mastery Loop
         }
 
-        await soundService.playWrong();
-        await hapticService.error();
+        // Trigger sounds and haptics asynchronously to avoid race conditions and blocking state updates
+        unawaited(soundService.playWrong());
+        unawaited(hapticService.error());
 
         emit(
           currentState.copyWith(
@@ -258,8 +300,8 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
           ),
         );
       } else {
-        await soundService.playCorrect();
-        await hapticService.success();
+        unawaited(soundService.playCorrect());
+        unawaited(hapticService.success());
         emit(
           currentState.copyWith(
             lastAnswerCorrect: true,
@@ -282,6 +324,9 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
         return;
       }
 
+      // Guard: Ensure an answer has actually been submitted before proceeding to next question
+      if (currentState.lastAnswerCorrect == null) return;
+
       // Move to next question if it was a success OR a final failure (since it's re-queued)
       if (currentState.currentIndex + 1 < currentState.quests.length) {
         if (currentState.lastAnswerCorrect == true || currentState.isFinalFailure) {
@@ -300,7 +345,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
         }
       } else if (currentState.lastAnswerCorrect == true) {
         // We only complete the level if the LAST question in the queue was answered correctly
-        soundService.playLevelComplete();
+        unawaited(soundService.playLevelComplete());
         
         // Calculate rewards
         const int totalXp = 10;
@@ -315,29 +360,34 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
 
         // 2. Background Save
         if (currentGameType != null && currentLevel != null) {
-          await Future.wait([
-            updateUserRewards(
-              UpdateUserRewardsParams(
-                gameType: currentGameType!,
-                level: currentLevel!,
-                xpIncrease: 10,
-                coinIncrease: 10,
+          try {
+            await Future.wait([
+              updateUserRewards(
+                UpdateUserRewardsParams(
+                  gameType: currentGameType!,
+                  level: currentLevel!,
+                  xpIncrease: totalXp,
+                  coinIncrease: totalCoins,
+                ),
               ),
-            ),
-            updateCategoryStats(
-              UpdateCategoryStatsParams(
-                categoryId: currentGameType!,
-                isCorrect: true,
+              updateCategoryStats(
+                UpdateCategoryStatsParams(
+                  categoryId: currentGameType!,
+                  isCorrect: true,
+                ),
               ),
-            ),
-            updateUnlockedLevel(
-              UpdateUnlockedLevelParams(
-                categoryId: currentGameType!,
-                newLevel: currentLevel! + 1,
+              updateUnlockedLevel(
+                UpdateUnlockedLevelParams(
+                  categoryId: currentGameType!,
+                  newLevel: currentLevel! + 1,
+                ),
               ),
-            ),
-            awardBadge('speaking_master'),
-          ]);
+              awardBadge('speaking_master'),
+            ]);
+          } catch (e, stack) {
+            debugPrint('Error saving progress in background: $e');
+            debugPrint(stack.toString());
+          }
         }
       } else {
         // Wrong answer on the very last quest
@@ -355,20 +405,25 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       if (s.hintUsed) return;
 
       final result = await useHint(NoParams());
-      if (result.isRight()) {
-        emit(s.copyWith(hintUsed: true));
-        hapticService.selection();
+      if (isClosed) return;
+
+      if (state is SpeakingLoaded) {
+        final latestState = state as SpeakingLoaded;
+        if (result.isRight()) {
+          emit(latestState.copyWith(hintUsed: true));
+          unawaited(hapticService.selection());
+        }
       }
     }
   }
 
   void _onRestoreLife(RestoreLife event, Emitter<SpeakingState> emit) {
-    if (state is SpeakingGameOver) {
-      final s = state as SpeakingGameOver;
+    final currentState = state;
+    if (currentState is SpeakingGameOver) {
       emit(
         SpeakingLoaded(
-          quests: s.quests,
-          currentIndex: s.currentIndex,
+          quests: currentState.quests,
+          currentIndex: currentState.currentIndex,
           livesRemaining: 1,
           lastAnswerCorrect: null,
           hintUsed: false,
@@ -381,7 +436,7 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
     // Logic to update user count if needed
   }
 
-  void _onTutorPass(SpeakingTutorPass event, Emitter<SpeakingState> emit) async {
+  void _onTutorPass(SpeakingTutorPass event, Emitter<SpeakingState> emit) {
     final currentState = state;
     if (currentState is SpeakingLoaded) {
       int newLives = currentState.livesRemaining + 1;
@@ -390,8 +445,8 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       final updatedQuests = List<SpeakingQuest>.from(currentState.quests);
       if (updatedQuests.length > 3) updatedQuests.removeLast();
 
-      await soundService.playCorrect();
-      await hapticService.success();
+      unawaited(soundService.playCorrect());
+      unawaited(hapticService.success());
 
       emit(currentState.copyWith(
         livesRemaining: newLives,
@@ -400,8 +455,8 @@ class SpeakingBloc extends Bloc<SpeakingEvent, SpeakingState> {
       ));
     } else if (currentState is SpeakingGameOver) {
       // Restore from Game Over
-      await soundService.playCorrect();
-      await hapticService.success();
+      unawaited(soundService.playCorrect());
+      unawaited(hapticService.success());
       
       emit(SpeakingLoaded(
         quests: currentState.quests,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/core/theme/theme_cubit.dart';
@@ -35,7 +34,7 @@ class LegalContentScreen extends StatelessWidget {
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 title,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontWeight: FontWeight.w900,
                   fontSize: 20.sp,
                   color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -62,7 +61,7 @@ class LegalContentScreen extends StatelessWidget {
                 ),
                 child: SelectableText(
                   content,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     color: isDark ? Colors.white70 : const Color(0xFF1E293B),
                     fontSize: 15.sp,
                     height: 1.6,

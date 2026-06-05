@@ -1,8 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class FindWordMeaningMagnifierField extends StatelessWidget {
   final String passage;
   final String correct;
@@ -72,7 +70,7 @@ class FindWordMeaningMagnifierField extends StatelessWidget {
                       ),
                       child: Text(
                         w, 
-                        style: GoogleFonts.fredoka(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 18.sp, 
                           color: showAsCorrect 
                               ? (isDark ? Colors.greenAccent : Colors.green) 

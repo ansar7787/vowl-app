@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -223,7 +222,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
       ),
       child: Text(
         "SLIDE FUEL CELLS INTO THE REACTION CORE",
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 9.sp,
           fontWeight: FontWeight.w900,
           color: color,
@@ -323,7 +322,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                         ? (quest?.correctAnswer ?? "")
                                         : root)
                                     .toUpperCase(),
-                                style: GoogleFonts.shareTechMono(
+                                style: TextStyle(fontFamily: 'RobotoMono', 
                                   fontSize: 24.sp,
                                   fontWeight: FontWeight.w900,
                                   color: isDark
@@ -341,7 +340,7 @@ class _WordFormationScreenState extends State<WordFormationScreen> {
                                 ),
                                 Text(
                                   suffix.toUpperCase(),
-                                  style: GoogleFonts.shareTechMono(
+                                  style: TextStyle(fontFamily: 'RobotoMono', 
                                     fontSize: 20.sp,
                                     fontWeight: FontWeight.bold,
                                     color: color,

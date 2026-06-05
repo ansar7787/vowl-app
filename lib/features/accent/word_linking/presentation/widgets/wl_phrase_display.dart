@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
@@ -49,7 +48,7 @@ class WLPhraseDisplay extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 12.h),
               child: Text(
                 "[ ${quest.phoneticHint} ]",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: theme.primaryColor.withValues(alpha: 0.6),
@@ -65,7 +64,7 @@ class WLPhraseDisplay extends StatelessWidget {
             children: words.map((word) {
               return Text(
                 word,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 28.sp,
                   fontWeight: FontWeight.w800,
                   color: isDark ? Colors.white : Colors.black87,
@@ -94,7 +93,7 @@ class WLPhraseDisplay extends StatelessWidget {
                 SizedBox(height: 8.h),
                 Text(
                   correctOption.replaceAll('|', ''),
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: theme.primaryColor,

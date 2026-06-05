@@ -3,7 +3,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vowl/features/kids_zone/data/models/kids_quest_model.dart';
 
 class KidsQuestUploadService {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseFirestore _firestore;
+
+  KidsQuestUploadService({FirebaseFirestore? firestore})
+      : _firestore = firestore ?? FirebaseFirestore.instance;
 
   Future<Map<String, dynamic>> uploadKidsBatch({
     required String jsonInput,
@@ -24,8 +27,18 @@ class KidsQuestUploadService {
         for (var item in chunk) {
           final quest = KidsQuestModel.fromJson(item as Map<String, dynamic>);
           uniqueLevels.add(quest.level);
-          final docRef = _firestore.collection('kids_quests').doc(quest.id);
-          batch.set(docRef, quest.toJson());
+
+          // Handle safe fallback ID generation if quest.id is empty
+          final docId = quest.id.isNotEmpty
+              ? quest.id
+              : _firestore.collection('kids_quests').doc().id;
+
+          final docRef = _firestore.collection('kids_quests').doc(docId);
+          
+          final questMap = quest.toJson();
+          questMap['id'] = docId;
+
+          batch.set(docRef, questMap);
           totalUploaded++;
         }
         await batch.commit();
@@ -34,8 +47,7 @@ class KidsQuestUploadService {
       levelsCount = uniqueLevels.length;
       return {
         'success': true,
-        'message':
-            'Pushed $totalUploaded quests across $levelsCount levels! 🚀',
+        'message': 'Pushed $totalUploaded quests across $levelsCount levels! 🚀',
         'questCount': totalUploaded,
         'levelCount': levelsCount,
       };

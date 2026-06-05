@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/widgets/conflict_resolver_equalizer_painter.dart';
 
 class ConflictResolverDialConsole extends StatelessWidget {
@@ -135,7 +134,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
             children: [
               Text(
                 "DIAL LEVEL: ",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.5,
@@ -143,7 +142,7 @@ class ConflictResolverDialConsole extends StatelessWidget {
               ),
               Text(
                 "${(rotation * 100).toInt()}% empathy",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: isMatched

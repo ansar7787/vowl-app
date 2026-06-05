@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -84,7 +83,7 @@ class VowelDistinctionSpectralSlider extends StatelessWidget {
         child: Center(
           child: Text(
             text, 
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 20.sp, 
               fontWeight: FontWeight.bold, 
               color: textColor

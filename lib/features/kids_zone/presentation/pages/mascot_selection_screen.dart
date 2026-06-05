@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -40,7 +39,7 @@ class MascotSelectionScreen extends StatelessWidget {
                 SizedBox(height: 20.h),
                 Text(
                   "Choose Your Buddy!",
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 28.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -48,7 +47,7 @@ class MascotSelectionScreen extends StatelessWidget {
                 ),
                 Text(
                   "Which friend will join your quest?",
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white70 : Colors.black45,
@@ -186,7 +185,7 @@ class MascotSelectionScreen extends StatelessWidget {
                 SizedBox(height: 12.h),
                 Text(
                   name,
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -195,7 +194,7 @@ class MascotSelectionScreen extends StatelessWidget {
                 Text(
                   trait,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white54 : Colors.black38,
@@ -250,7 +249,7 @@ class MascotSelectionScreen extends StatelessWidget {
                 Expanded(
                   child: Text(
                     message, 
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 13.sp, 
                       fontWeight: FontWeight.w800, 
                       color: const Color(0xFF1E293B),

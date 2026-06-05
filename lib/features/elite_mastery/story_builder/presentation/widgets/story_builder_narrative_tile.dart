@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/elite_mastery/domain/entities/elite_mastery_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -78,7 +77,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
             child: Center(
               child: Text(
                 "${index + 1}",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? theme.primaryColor : const Color(0xFF0F172A),
@@ -90,7 +89,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
           Expanded(
             child: Text(
               sentence,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 height: 1.3,
@@ -119,7 +118,7 @@ class StoryBuilderNarrativeTile extends StatelessWidget {
               ),
               child: Text(
                 "#${correctOrderIndex + 1}",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,

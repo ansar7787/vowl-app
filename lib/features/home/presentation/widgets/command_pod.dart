@@ -2,7 +2,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -136,7 +135,7 @@ class CommandPod extends StatelessWidget {
                         ),
                         child: Text(
                           'RANK: VOWL OPERATIVE',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w800,
                             color: const Color(0xFF2563EB),
@@ -174,7 +173,7 @@ class CommandPod extends StatelessWidget {
                 SizedBox(width: 6.w),
                 Text(
                   'LEVEL ${user.level}',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 11.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white70 : const Color(0xFF0F172A),
@@ -185,7 +184,7 @@ class CommandPod extends StatelessWidget {
             ),
             Text(
               '${(progress * 100).toInt()}% COMPLETED',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w800,
                 color: const Color(0xFF2563EB),
@@ -327,7 +326,7 @@ class CommandPod extends StatelessWidget {
                               SizedBox(width: 4.w),
                               Text(
                                 "EARLY LEARNERS",
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   color: Colors.white,
                                   fontSize: 8.sp,
                                   fontWeight: FontWeight.w900,
@@ -340,7 +339,7 @@ class CommandPod extends StatelessWidget {
                         SizedBox(height: 8.h),
                         Text(
                           "JUNIOR\nADVENTURE",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             color: Colors.white,
                             fontSize: 24.sp, // Slightly larger
                             fontWeight: FontWeight.w900,
@@ -351,7 +350,7 @@ class CommandPod extends StatelessWidget {
                         SizedBox(height: 4.h),
                         Text(
                           "22 playful missions for\nyoung explorers!",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             color: Colors.white.withValues(alpha: 0.9),
                             fontSize: 11.sp,
                             fontWeight: FontWeight.w600,
@@ -569,7 +568,7 @@ class CommandPod extends StatelessWidget {
             SizedBox(height: 8.h),
             Text(
               value,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w900,
                 color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -581,7 +580,7 @@ class CommandPod extends StatelessWidget {
             SizedBox(height: 2.h),
             Text(
               label,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 8.sp,
                 fontWeight: FontWeight.w800,
                 color: isDark ? Colors.white38 : Colors.black45,
@@ -616,7 +615,7 @@ class CommandPod extends StatelessWidget {
       children: [
         Text(
           '$greeting,',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
             fontWeight: FontWeight.w700,
             color: const Color(0xFF2563EB).withValues(alpha: isDark ? 0.7 : 0.9),
@@ -625,7 +624,7 @@ class CommandPod extends StatelessWidget {
         ),
         Text(
           name,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 26.sp,
             fontWeight: FontWeight.w900,
             color: MeshGradientBackground.getContrastColor(context),

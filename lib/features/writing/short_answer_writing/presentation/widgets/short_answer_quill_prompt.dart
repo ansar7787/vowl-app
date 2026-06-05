@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
@@ -37,7 +36,7 @@ class ShortAnswerQuillPrompt extends StatelessWidget {
               SizedBox(height: 16.h),
               Text(
                 prompt, 
-                style: GoogleFonts.spectral(
+                style: TextStyle(fontFamily: 'Spectral', 
                   fontSize: 18.sp, 
                   fontWeight: FontWeight.w600, 
                   color: isDark ? Colors.white70 : Colors.black87, 

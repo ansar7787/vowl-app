@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -38,11 +37,11 @@ class MpWordCard extends StatelessWidget {
   static const _green = Color(0xFF10B981);
   static const _red = Color(0xFFF43F5E);
 
-  static final _wordStyle = GoogleFonts.outfit(
+  static final _wordStyle = TextStyle(fontFamily: 'Outfit', 
     fontWeight: FontWeight.w900,
     letterSpacing: 1.5,
   );
-  static final _ipaStyle = GoogleFonts.notoSans(fontWeight: FontWeight.w500);
+  static final _ipaStyle = TextStyle(fontFamily: 'NotoSans', fontWeight: FontWeight.w500);
 
   @override
   Widget build(BuildContext context) {

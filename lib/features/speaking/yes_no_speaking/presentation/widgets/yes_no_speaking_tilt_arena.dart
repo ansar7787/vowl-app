@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/widgets/track_painter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -128,7 +127,7 @@ class YesNoSpeakingTiltArena extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: GoogleFonts.shareTechMono(
+        style: TextStyle(fontFamily: 'RobotoMono', 
           fontSize: 10.sp,
           fontWeight: FontWeight.bold,
           color: isActive ? Colors.white : color,

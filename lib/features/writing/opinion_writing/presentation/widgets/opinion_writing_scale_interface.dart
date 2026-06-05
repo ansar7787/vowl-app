@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class OpinionWritingScaleInterface extends StatelessWidget {
@@ -81,6 +80,11 @@ class OpinionWritingScaleInterface extends StatelessWidget {
       builder: (context, candidateData, rejectedData) {
         final highlight = candidateData.isNotEmpty;
         
+        final successColor = isDark ? Colors.greenAccent : const Color(0xFF16A34A);
+        final headerColor = isLeft 
+            ? successColor 
+            : (isDark ? Colors.redAccent : const Color(0xFFDC2626));
+
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -93,7 +97,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
                 color: isDark ? Colors.black87 : Colors.white,
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
-                  color: highlight ? Colors.greenAccent : color.withValues(alpha: args.isNotEmpty ? 0.8 : 0.2), 
+                  color: highlight ? successColor : color.withValues(alpha: args.isNotEmpty ? 0.8 : 0.2), 
                   width: 2
                 ),
                 boxShadow: [
@@ -104,8 +108,8 @@ class OpinionWritingScaleInterface extends StatelessWidget {
                 children: [
                   Text(
                     isLeft ? "PROS" : "CONS",
-                    style: GoogleFonts.shareTechMono(
-                      color: isLeft ? Colors.greenAccent : Colors.redAccent,
+                    style: TextStyle(fontFamily: 'RobotoMono', 
+                      color: headerColor,
                       fontSize: 10.sp,
                       fontWeight: FontWeight.bold
                     )
@@ -117,7 +121,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
                       child: Text(
                         "Drag argument here",
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.shareTechMono(
+                        style: TextStyle(fontFamily: 'RobotoMono', 
                           color: isDark ? Colors.white24 : Colors.black26,
                           fontSize: 9.sp
                         )
@@ -136,7 +140,7 @@ class OpinionWritingScaleInterface extends StatelessWidget {
                         ),
                         child: Text(
                           a,
-                          style: GoogleFonts.shareTechMono(
+                          style: TextStyle(fontFamily: 'RobotoMono', 
                             color: isDark ? Colors.white70 : Colors.black87,
                             fontSize: 8.sp,
                             fontWeight: FontWeight.bold

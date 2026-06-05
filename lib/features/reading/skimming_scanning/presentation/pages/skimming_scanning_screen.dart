@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -164,7 +163,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen> {
                   Text(
                     _isAnswered ? "TARGET ACQUIRED!" : "TAP THE TARGET WORD AS IT ROLLS BY", 
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       color: _isAnswered ? Colors.greenAccent : theme.primaryColor, 
                       fontSize: 12.sp, 
                       letterSpacing: 2,

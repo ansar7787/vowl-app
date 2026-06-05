@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -233,7 +232,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                     Text(
                       "Tap the incorrect word to diagnose, then choose the repair option.",
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w600,
                         color: isDark ? Colors.white60 : Colors.black54,
@@ -308,7 +307,7 @@ class _SentenceCorrectionScreenState extends State<SentenceCorrectionScreen> {
                         SizedBox(width: 14.w),
                         Text(
                           "SCANNER ARMED: SEEKING GLITCHES",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w900,
                             color: theme.primaryColor,

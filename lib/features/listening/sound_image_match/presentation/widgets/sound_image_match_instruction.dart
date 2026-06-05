@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class SoundImageMatchInstruction extends StatelessWidget {
   final Color color;
 
@@ -27,7 +25,7 @@ class SoundImageMatchInstruction extends StatelessWidget {
           Flexible(
             child: Text(
               "DRAG LENS TO SCAN • DOUBLE-TAP TO SELECT",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: color,

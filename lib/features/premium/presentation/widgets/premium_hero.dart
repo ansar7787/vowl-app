@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class PremiumHero extends StatelessWidget {
   const PremiumHero({super.key});
 
@@ -28,7 +26,7 @@ class PremiumHero extends StatelessWidget {
         SizedBox(height: 16.h),
         Text(
           'Unlimited Growth.',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             color: isDark ? Colors.white : const Color(0xFF0F172A),
             fontSize: 30.sp,
             fontWeight: FontWeight.w900,

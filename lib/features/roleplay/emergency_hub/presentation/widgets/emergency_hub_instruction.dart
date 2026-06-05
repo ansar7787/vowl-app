@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class EmergencyHubInstruction extends StatelessWidget {
   const EmergencyHubInstruction({super.key});
 
@@ -18,7 +16,7 @@ class EmergencyHubInstruction extends StatelessWidget {
           ),
           child: Text(
             "SECTOR DISPATCH STATION",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: Colors.redAccent,
@@ -30,7 +28,7 @@ class EmergencyHubInstruction extends StatelessWidget {
         Text(
           "Authenticate terminal code and spin safety valve to route unit!",
           textAlign: TextAlign.center,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

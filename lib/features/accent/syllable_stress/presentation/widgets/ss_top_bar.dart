@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -81,7 +80,7 @@ class SsTopBar extends StatelessWidget {
           SizedBox(width: 6.w),
           Text(
             lives.toString(),
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 16.sp,
               fontWeight: FontWeight.w900,
               color: const Color(0xFFF43F5E),

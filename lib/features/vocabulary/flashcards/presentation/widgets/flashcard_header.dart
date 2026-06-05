@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -50,7 +49,7 @@ class FlashcardHeader extends StatelessWidget {
                     Flexible(
                       child: Text(
                         'LEVEL $level',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w900,
                           color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -64,7 +63,7 @@ class FlashcardHeader extends StatelessWidget {
                       children: [
                         Text(
                           "${(progress * 100).toInt()}%",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w900,
                             color: isDark ? Colors.white.withValues(alpha: 0.8) : const Color(0xFF0F172A).withValues(alpha: 0.7),
@@ -80,7 +79,7 @@ class FlashcardHeader extends StatelessWidget {
                             ),
                             child: Text(
                               "🔥 $streak",
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w900,
                                 color: Colors.orange,
@@ -144,7 +143,7 @@ class FlashcardHeader extends StatelessWidget {
                 SizedBox(width: 4.w),
                 Text(
                   '$lives',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.redAccent,

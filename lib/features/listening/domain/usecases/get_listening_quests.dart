@@ -7,13 +7,13 @@ import '../repositories/listening_repository.dart';
 class GetListeningQuests {
   final ListeningRepository repository;
 
-  GetListeningQuests(this.repository);
+  const GetListeningQuests(this.repository);
 
   Future<Either<Failure, List<ListeningQuest>>> call(
     GameSubtype gameType,
     int level,
-  ) async {
-    return await repository.getListeningQuests(
+  ) {
+    return repository.getListeningQuests(
       gameType: gameType,
       level: level,
     );

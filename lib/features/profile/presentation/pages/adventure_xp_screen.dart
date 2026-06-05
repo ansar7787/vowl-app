@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -43,7 +42,7 @@ class AdventureXPScreen extends StatelessWidget {
                   Expanded(
                     child: Text(
                       state.message!,
-                      style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+                      style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
                     ),
                   ),
                 ],
@@ -121,7 +120,7 @@ class AdventureXPScreen extends StatelessWidget {
                                 SizedBox(width: 6.w),
                                 Text(
                                   'Adventure XP',
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 14.sp,
                                     fontWeight: FontWeight.w800,
                                     color: isDark
@@ -227,7 +226,7 @@ class AdventureXPScreen extends StatelessWidget {
                   children: [
                     Text(
                       "TOTAL EXPERIENCE",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: color,
@@ -237,7 +236,7 @@ class AdventureXPScreen extends StatelessWidget {
                     SizedBox(height: 2.h),
                     Text(
                       "$totalXP XP",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -249,7 +248,7 @@ class AdventureXPScreen extends StatelessWidget {
                       children: [
                         Text(
                           "KEEP EXPLORING!",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w700,
                             color: isDark ? Colors.white38 : Colors.black38,
@@ -297,7 +296,7 @@ class AdventureXPScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Text(
             'DAILY XP HISTORY',
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
               color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -363,7 +362,7 @@ class AdventureXPScreen extends StatelessWidget {
                     SizedBox(height: 8.h),
                     Text(
                       days[index],
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w800,
                         color: isDark
@@ -450,7 +449,7 @@ class AdventureXPScreen extends StatelessWidget {
       children: [
         Text(
           'LANGUAGE MASTERY',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 12.sp,
             fontWeight: FontWeight.w900,
             color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -501,7 +500,7 @@ class AdventureXPScreen extends StatelessWidget {
                       const Spacer(),
                       Text(
                         '$prog%',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w900,
                           color: cat['color'] as Color,
@@ -512,7 +511,7 @@ class AdventureXPScreen extends StatelessWidget {
                   const Spacer(),
                   Text(
                     cat['name'] as String,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 13.sp,
                       fontWeight: FontWeight.w800,
                       color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -522,7 +521,7 @@ class AdventureXPScreen extends StatelessWidget {
                     children: [
                       Text(
                         '${cat['levels']} levels · ',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 9.sp,
                           fontWeight: FontWeight.w600,
                           color: isDark ? Colors.white38 : Colors.black38,
@@ -530,7 +529,7 @@ class AdventureXPScreen extends StatelessWidget {
                       ),
                       Text(
                         levelLabel,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 9.sp,
                           fontWeight: FontWeight.w800,
                           color: (cat['color'] as Color).withValues(alpha: 0.7),
@@ -607,7 +606,7 @@ class AdventureXPScreen extends StatelessWidget {
                 children: [
                   Text(
                     'ADVENTURE STORE',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -617,7 +616,7 @@ class AdventureXPScreen extends StatelessWidget {
                   SizedBox(height: 4.h),
                   Text(
                     'Boost your progress with legendary items',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w500,
                       color: isDark ? Colors.white24 : Colors.black26,
@@ -688,7 +687,7 @@ class AdventureXPScreen extends StatelessWidget {
                                 children: [
                                   Text(
                                     item['title'] as String,
-                                    style: GoogleFonts.outfit(
+                                    style: TextStyle(fontFamily: 'Outfit', 
                                       fontSize: 13.sp,
                                       fontWeight: FontWeight.w900,
                                       color: isDark
@@ -702,7 +701,7 @@ class AdventureXPScreen extends StatelessWidget {
                                       state.lastPurchaseSuccess!
                                           ? 'BOUGHT!'
                                           : 'LACKING COINS',
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 9.sp,
                                         fontWeight: FontWeight.w900,
                                         color: state.lastPurchaseSuccess!
@@ -717,7 +716,7 @@ class AdventureXPScreen extends StatelessWidget {
                                           : isCurrentlyActive
                                           ? 'ITEM ACTIVE'
                                           : '${item['cost']} Coins',
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 10.sp,
                                         fontWeight: FontWeight.w700,
                                         color: isLocked
@@ -732,7 +731,7 @@ class AdventureXPScreen extends StatelessWidget {
                                     item['desc'] as String,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style: GoogleFonts.outfit(
+                                    style: TextStyle(fontFamily: 'Outfit', 
                                       fontSize: 8.sp,
                                       fontWeight: FontWeight.w500,
                                       color: isDark
@@ -766,7 +765,7 @@ class AdventureXPScreen extends StatelessWidget {
       children: [
         Text(
           'RECENT ACTIVITY',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 12.sp,
             fontWeight: FontWeight.w900,
             color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -780,7 +779,7 @@ class AdventureXPScreen extends StatelessWidget {
               padding: EdgeInsets.all(24.r),
               child: Text(
                 'No recent adventures yet.',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   color: isDark ? Colors.white24 : Colors.black26,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
@@ -825,7 +824,7 @@ class AdventureXPScreen extends StatelessWidget {
                         children: [
                           Text(
                             activity['title'] ?? 'Adventure',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w700,
                               color: isDark
@@ -835,7 +834,7 @@ class AdventureXPScreen extends StatelessWidget {
                           ),
                           Text(
                             activity['subtitle'] ?? 'Just completed',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 11.sp,
                               color: isDark ? Colors.white38 : Colors.black38,
                             ),
@@ -845,7 +844,7 @@ class AdventureXPScreen extends StatelessWidget {
                     ),
                     Text(
                       _formatRelativeTime(activity['timestamp']),
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         color: isDark ? Colors.white24 : Colors.black26,
                         fontWeight: FontWeight.w600,

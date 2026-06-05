@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class SceneDescriptionExplorerGuideCard extends StatelessWidget {
   final bool isDark;
 
@@ -28,7 +26,7 @@ class SceneDescriptionExplorerGuideCard extends StatelessWidget {
           Expanded(
             child: Text(
               "TAP ANY OF THE PULSING SONAR HOTSPOTS ON THE SCENE CARD ABOVE TO INSPECT AND RECORD YOUR DESCRIPTION.",
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 fontSize: 9.sp,
                 color: Colors.grey,
                 height: 1.4,

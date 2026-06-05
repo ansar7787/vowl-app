@@ -4,7 +4,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -185,7 +184,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                     SizedBox(width: 8.w),
                     Text(
                       widget.categoryId.toUpperCase(),
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w900,
                         color: contentColor,
@@ -250,7 +249,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                     children: [
                       Text(
                         "OVERALL MASTERY",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w800,
                           color: theme.primaryColor,
@@ -263,7 +262,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         alignment: Alignment.centerLeft,
                         child: Text(
                           "${(progress * 100).toStringAsFixed(progress < 0.01 && progress > 0 ? 2 : 1)}% COMPLETED",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 22.sp,
                             fontWeight: FontWeight.w900,
                             color: contentColor,
@@ -285,7 +284,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                       fit: BoxFit.scaleDown,
                       child: Text(
                         "$clearedLevels/$totalLevels LVLS",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w900,
                           color: theme.primaryColor,
@@ -334,7 +333,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
             SizedBox(width: 4.w),
             Text(
               label,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 8.sp,
                 fontWeight: FontWeight.w800,
                 color: (isDark ? Colors.white : Colors.black).withValues(alpha: 0.4),
@@ -347,7 +346,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
           fit: BoxFit.scaleDown,
           child: Text(
             value,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
               color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -388,7 +387,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                       children: [
                         Text(
                           theme.title.toUpperCase(),
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w900,
                             color: contentColor,
@@ -400,7 +399,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
                         SizedBox(height: 8.h),
                         Text(
                           "MISSION PROGRESS: ${(((currentLevel - 1).clamp(0, 200)) / 200 * 100).toInt()}%",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w800,
                             color: displayColor.withValues(alpha: 0.6),
@@ -493,7 +492,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
         ),
         child: Text(
           "NEW",
-          style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white),
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white),
         ),
       ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 1.5.seconds);
     }
@@ -507,7 +506,7 @@ class _CategoryGamesPageState extends State<CategoryGamesPage> {
       ),
       child: Text(
         "$currentLevel",
-        style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w900, color: color),
+        style: TextStyle(fontFamily: 'Outfit', fontSize: 14.sp, fontWeight: FontWeight.w900, color: color),
       ),
     );
   }

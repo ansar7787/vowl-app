@@ -1,8 +1,8 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -66,6 +66,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
   int _lastLives = 3;
   late AnimationController _audioController;
   late bool _showBriefing;
+  Timer? _nudgeTimer;
 
   @override
   void initState() {
@@ -75,7 +76,18 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
   }
 
   @override
+  void didUpdateWidget(covariant ListeningBaseLayout oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.level != widget.level) {
+      setState(() {
+        _showBriefing = widget.level == 1 || widget.level == 100;
+      });
+    }
+  }
+
+  @override
   void dispose() {
+    _nudgeTimer?.cancel();
     _audioController.dispose();
     super.dispose();
   }
@@ -106,8 +118,10 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
           if (justDroppedToLastLife && !_hasSpokenNudge) {
             _hasSpokenNudge = true; // Permanent for this session
             // Delay to allow the "Wrong" sound effect to finish
-            Future.delayed(const Duration(milliseconds: 1200), () {
+            _nudgeTimer?.cancel();
+            _nudgeTimer = Timer(const Duration(milliseconds: 1200), () {
               if (mounted) {
+                _ttsService.stop(); // Stop ongoing speech to prevent overlapping
                 _ttsService.speak(
                   "Focus! Use a hint if you need help saving your last life.",
                 );
@@ -132,127 +146,123 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
               ),
             );
           }
-          return PopScope(
-            canPop: isComplete,
-            onPopInvokedWithResult: (didPop, result) {
-              if (didPop) return;
-              GameDialogHelper.showExitConfirmation(
-                this.context,
-                onQuit: () => Navigator.of(this.context).pop(),
-              );
-            },
-            child: Builder(
-              builder: (context) {
-                final progress = (state is ListeningLoaded)
-                    ? (state.currentIndex + 1) / state.quests.length
-                    : (state is ListeningGameComplete ? 1.0 : 0.0);
-                final lives = (state is ListeningLoaded) ? state.livesRemaining : 3;
-                final currentQuest = (state is ListeningLoaded) ? state.currentQuest : null;
+          
+          return Builder(
+            builder: (localContext) {
+              final progress = (state is ListeningLoaded)
+                  ? (state.currentIndex + 1) / state.quests.length
+                  : (state is ListeningGameComplete ? 1.0 : 0.0);
+              final lives = (state is ListeningLoaded) ? state.livesRemaining : 3;
+              final currentQuest = (state is ListeningLoaded) ? state.currentQuest : null;
 
-                return Scaffold(
-            backgroundColor: theme.backgroundColors[1],
-            resizeToAvoidBottomInset: false, // Keep background static
-            body: Stack(
-              children: [
-                Container(color: theme.backgroundColors[1]), // Prevent white splash
-                MeshGradientBackground(colors: theme.backgroundColors),
-                if (state is ListeningLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
-                else ...[
-                  SafeArea(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10.h),
-                        _buildCustomHeader(context, state, widget.level, progress, lives, theme, isDark, currentQuest),
-                        
-                        // PREMIUM AUDIO PLAYER
-                        if (widget.audioUrl != null && !widget.isAnswered)
-                          _buildAudioPlayer(theme, isDark),
-
-                        Expanded(
-                          child: Stack(
-                            clipBehavior: Clip.none,
+              return PopScope(
+                canPop: isComplete,
+                onPopInvokedWithResult: (didPop, result) {
+                  if (didPop) return;
+                  GameDialogHelper.showExitConfirmation(
+                    localContext,
+                    onQuit: () => Navigator.of(localContext).pop(),
+                  );
+                },
+                child: Scaffold(
+                  backgroundColor: theme.backgroundColors[1],
+                  resizeToAvoidBottomInset: false, // Keep background static
+                  body: Stack(
+                    children: [
+                      Container(color: theme.backgroundColors[1]), // Prevent white splash
+                      MeshGradientBackground(colors: theme.backgroundColors),
+                      if (state is ListeningLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
+                      else ...[
+                        SafeArea(
+                          child: Column(
                             children: [
-                              AnimatedOpacity(
-                                duration: const Duration(milliseconds: 400),
-                                opacity: widget.isAnswered ? 0.6 : 1.0,
-                                child: AbsorbPointer(
-                                  absorbing: widget.isAnswered,
-                                child: widget.useScrolling
-                                  ? LayoutBuilder(
-                                      builder: (context, constraints) {
-                                        return SingleChildScrollView(
-                                          physics: const BouncingScrollPhysics(),
-                                          child: ConstrainedBox(
-                                            constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                                            child: Padding(
-                                              padding: EdgeInsets.only(
-                                                left: widget.disablePadding ? 0 : 24.w,
-                                                right: widget.disablePadding ? 0 : 24.w,
-                                                top: widget.disablePadding ? 0 : 20.h,
-                                                bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
-                                              ),
-                                              child: widget.child,
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                    )
-                                  : Padding(
-                                      padding: EdgeInsets.only(
-                                        left: widget.disablePadding ? 0 : 24.w,
-                                        right: widget.disablePadding ? 0 : 24.w,
-                                        top: widget.disablePadding ? 0 : 20.h,
-                                        bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
-                                      ),
-                                      child: widget.child,
-                                    ),
-                                ),
-                              ),
+                              SizedBox(height: 10.h),
+                              _buildCustomHeader(localContext, state, widget.level, progress, lives, theme, isDark, currentQuest),
+                              
+                              // PREMIUM AUDIO PLAYER
+                              if (widget.audioUrl != null && !widget.isAnswered)
+                                _buildAudioPlayer(theme, isDark),
 
-                              Positioned(
-                                top: -30.h, left: 20.w,
-                                child: _buildPeekingMascot(state, lives),
+                              Expanded(
+                                child: Stack(
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    AnimatedOpacity(
+                                      duration: const Duration(milliseconds: 400),
+                                      opacity: widget.isAnswered ? 0.6 : 1.0,
+                                      child: AbsorbPointer(
+                                        absorbing: widget.isAnswered,
+                                        child: widget.useScrolling
+                                            ? LayoutBuilder(
+                                                builder: (context, constraints) {
+                                                  return SingleChildScrollView(
+                                                    physics: const BouncingScrollPhysics(),
+                                                    child: ConstrainedBox(
+                                                      constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                                                      child: Padding(
+                                                        padding: EdgeInsets.only(
+                                                          left: widget.disablePadding ? 0 : 24.w,
+                                                          right: widget.disablePadding ? 0 : 24.w,
+                                                          top: widget.disablePadding ? 0 : 20.h,
+                                                          bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
+                                                        ),
+                                                        child: widget.child,
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              )
+                                            : Padding(
+                                                padding: EdgeInsets.only(
+                                                  left: widget.disablePadding ? 0 : 24.w,
+                                                  right: widget.disablePadding ? 0 : 24.w,
+                                                  top: widget.disablePadding ? 0 : 20.h,
+                                                  bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
+                                                ),
+                                                child: widget.child,
+                                              ),
+                                      ),
+                                    ),
+
+                                    Positioned(
+                                      top: -30.h, left: 20.w,
+                                      child: _buildPeekingMascot(state, lives),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                ],
-                if (widget.isAnswered && state is! ListeningGameOver && state is! ListeningGameComplete)
-                  Positioned(
-                    bottom: 0, left: 0, right: 0,
-                    child: _buildModernFeedbackCard(context, state, theme, isDark),
-                  ),
-                if (widget.showConfetti) const GameConfetti(),
+                      if (widget.isAnswered && state is! ListeningGameOver && state is! ListeningGameComplete)
+                        Positioned(
+                          bottom: 0, left: 0, right: 0,
+                          child: _buildModernFeedbackCard(localContext, state, theme, isDark),
+                        ),
+                      if (widget.showConfetti) const GameConfetti(),
 
-                if (_showBriefing)
-                  Builder(
-                    builder: (context) {
-                      final briefing = GameInstructionService.getBriefing(widget.gameType, "Listening", level: widget.level);
-                      return QuestBriefingOverlay(
-                        title: briefing.title,
-                        objective: briefing.objective,
-                        rules: briefing.rules,
-                        actionText: briefing.actionText,
-                        tip: briefing.tip,
-                        icon: briefing.icon,
-                        primaryColor: theme.primaryColor,
-                        onStart: () => setState(() => _showBriefing = false),
-                      );
-                    },
+                      if (_showBriefing)
+                        QuestBriefingOverlay(
+                          title: GameInstructionService.getBriefing(widget.gameType, "Listening", level: widget.level).title,
+                          objective: GameInstructionService.getBriefing(widget.gameType, "Listening", level: widget.level).objective,
+                          rules: GameInstructionService.getBriefing(widget.gameType, "Listening", level: widget.level).rules,
+                          actionText: GameInstructionService.getBriefing(widget.gameType, "Listening", level: widget.level).actionText,
+                          tip: GameInstructionService.getBriefing(widget.gameType, "Listening", level: widget.level).tip,
+                          icon: GameInstructionService.getBriefing(widget.gameType, "Listening", level: widget.level).icon,
+                          primaryColor: theme.primaryColor,
+                          onStart: () => setState(() => _showBriefing = false),
+                        ),
+                    ],
                   ),
-              ],
-            ),
+                ),
+              );
+            },
           );
         },
       ),
     );
-  },
-),
-    );
-}
+  }
 
   Widget _buildAudioPlayer(dynamic theme, bool isDark) {
     return Container(
@@ -296,8 +306,8 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("LISTEN CAREFULLY", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w800, color: theme.primaryColor, letterSpacing: 1.5)),
-                Text("Tap to play audio clip", style: GoogleFonts.outfit(fontSize: 14.sp, fontWeight: FontWeight.w500, color: isDark ? Colors.white70 : Colors.black54)),
+                Text("LISTEN CAREFULLY", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w800, color: theme.primaryColor, letterSpacing: 1.5)),
+                Text("Tap to play audio clip", style: TextStyle(fontFamily: 'Outfit', fontSize: 14.sp, fontWeight: FontWeight.w500, color: isDark ? Colors.white70 : Colors.black54)),
               ],
             ),
           ),
@@ -318,7 +328,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
               level: level, progress: progress, lives: lives,
               streak: (state is ListeningLoaded) ? state.currentIndex : 0,
               theme: theme, isDark: isDark,
-              onBack: () => GameDialogHelper.showExitConfirmation(this.context, onQuit: () => Navigator.pop(this.context)),
+              onBack: () => GameDialogHelper.showExitConfirmation(context, onQuit: () => Navigator.pop(context)),
             ),
           ),
           if (quest != null && !widget.isAnswered) ...[
@@ -393,7 +403,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
             color: Colors.white, borderRadius: BorderRadius.circular(12.r),
             boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10)],
           ),
-          child: Text(message, style: GoogleFonts.outfit(fontSize: 11.sp, fontWeight: FontWeight.bold, color: Colors.orangeAccent)),
+          child: Text(message, style: TextStyle(fontFamily: 'Outfit', fontSize: 11.sp, fontWeight: FontWeight.bold, color: Colors.orangeAccent)),
         ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05), duration: 2.seconds),
         SizedBox(height: 0.h),
         VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId).animate(onPlay: (c) => c.repeat(reverse: true))
@@ -441,7 +451,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
                 child: Icon(icon, color: Colors.white, size: 28.r),
               ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
               SizedBox(width: 16.w),
-              Expanded(child: Text(title, style: GoogleFonts.outfit(fontSize: 24.sp, fontWeight: FontWeight.w900, foreground: Paint()..shader = LinearGradient(colors: primaryGradient).createShader(const Rect.fromLTWH(0, 0, 200, 70)), letterSpacing: 1.5))),
+              Expanded(child: Text(title, style: TextStyle(fontFamily: 'Outfit', fontSize: 24.sp, fontWeight: FontWeight.w900, foreground: Paint()..shader = LinearGradient(colors: primaryGradient).createShader(const Rect.fromLTWH(0, 0, 200, 70)), letterSpacing: 1.5))),
             ],
           ),
           if (explanation != null) ...[
@@ -456,11 +466,11 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
                     children: [
                       Icon(Icons.info_outline_rounded, color: shadowColor, size: 14.r),
                       SizedBox(width: 8.w),
-                      Text("EXPLANATION:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
+                      Text("EXPLANATION:", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
                     ],
                   ),
                   SizedBox(height: 4.h),
-                  Text(explanation, style: GoogleFonts.fredoka(fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
+                  Text(explanation, style: TextStyle(fontFamily: 'Outfit', fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
                 ],
               ),
             ).animate().fadeIn(delay: 300.ms).scale(duration: 400.ms, curve: Curves.easeOutBack),
@@ -478,7 +488,7 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout> with SingleTi
               child: Center(
                 child: Text(
                   buttonText,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,

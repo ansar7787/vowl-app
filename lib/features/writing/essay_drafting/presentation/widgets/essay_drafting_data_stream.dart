@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class EssayDraftingDataStream extends StatelessWidget {
   final List<String> items;
   final Map<String, String?> slots;
@@ -42,7 +40,7 @@ class EssayDraftingDataStream extends StatelessWidget {
               ), 
               child: Text(
                 i, 
-                style: GoogleFonts.shareTechMono(color: Colors.white, fontSize: 10.sp, fontWeight: FontWeight.bold)
+                style: TextStyle(fontFamily: 'RobotoMono', color: Colors.white, fontSize: 10.sp, fontWeight: FontWeight.bold)
               )
             )
           ),
@@ -60,7 +58,7 @@ class EssayDraftingDataStream extends StatelessWidget {
             child: Text(
               i, 
               textAlign: TextAlign.center,
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 color: isDark ? Colors.white70 : Colors.black87, 
                 fontSize: 9.sp, 
                 fontWeight: FontWeight.bold

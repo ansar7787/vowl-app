@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -125,7 +124,7 @@ class ModernPathGameMap extends StatelessWidget {
     return AppBar(
       title: Text(
         theme.title,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontWeight: FontWeight.w900,
           fontSize: 14.sp,
           letterSpacing: 4,
@@ -186,7 +185,7 @@ class ModernPathGameMap extends StatelessWidget {
             top: 50.h,
             child: Text(
               name,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 60.sp,
                 fontWeight: FontWeight.w900,
                 color: color.withValues(alpha: 0.03),
@@ -308,7 +307,7 @@ class ModernPathGameMap extends StatelessWidget {
                           ? Icon(theme.icon, color: Colors.white, size: 38.r)
                           : Text(
                               "$level",
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 22.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isDark ? Colors.white : Colors.black87,
@@ -346,7 +345,7 @@ class ModernPathGameMap extends StatelessWidget {
         children: [
           Text(
             "TODAY'S TOPIC",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: Colors.white.withValues(alpha: 0.7),
@@ -356,7 +355,7 @@ class ModernPathGameMap extends StatelessWidget {
           SizedBox(height: 2.h),
           Text(
             theme.title,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 14.sp,
               fontWeight: FontWeight.w800,
               color: Colors.white,
@@ -379,7 +378,7 @@ class ModernPathGameMap extends StatelessWidget {
       SnackBar(
         content: Text(
           'QUEST LOCKED! COMPLETE PREVIOUS LEVELS.',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontWeight: FontWeight.w900,
             letterSpacing: 1,
             fontSize: 12.sp,

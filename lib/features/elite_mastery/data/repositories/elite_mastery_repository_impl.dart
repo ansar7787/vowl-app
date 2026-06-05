@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
@@ -23,6 +24,13 @@ class EliteMasteryRepositoryImpl implements EliteMasteryRepository {
         level: level,
       );
       return Right(quests);
+    } on ServerException catch (e) {
+      return Left(ServerFailure(
+        e.message,
+        code: e.code,
+        statusCode: e.statusCode,
+        details: e.details,
+      ));
     } catch (e) {
       return Left(ServerFailure(e.toString()));
     }

@@ -3,7 +3,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/constants/badge_constants.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -87,7 +86,7 @@ class AdventureLevelScreen extends StatelessWidget {
                               SizedBox(width: 6.w),
                               Text(
                                 'Adventure Level',
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w800,
                                   color: isDark
@@ -118,7 +117,7 @@ class AdventureLevelScreen extends StatelessWidget {
                                     SizedBox(width: 4.w),
                                     Text(
                                       '${user.coins}',
-                                      style: GoogleFonts.outfit(
+                                      style: TextStyle(fontFamily: 'Outfit', 
                                         fontSize: 12.sp,
                                         fontWeight: FontWeight.w800,
                                         color: const Color(0xFF10B981),
@@ -215,7 +214,7 @@ class AdventureLevelScreen extends StatelessWidget {
                   children: [
                     Text(
                       "GLOBAL RANK",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: color,
@@ -225,7 +224,7 @@ class AdventureLevelScreen extends StatelessWidget {
                     SizedBox(height: 2.h),
                     Text(
                       "Level $level",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 26.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -237,7 +236,7 @@ class AdventureLevelScreen extends StatelessWidget {
                       children: [
                         Text(
                           "MASTER EXPLORER",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w700,
                             color: isDark ? Colors.white38 : Colors.black38,
@@ -326,7 +325,7 @@ class AdventureLevelScreen extends StatelessWidget {
               children: [
                 Text(
                   'NEXT MILESTONE',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,
                     color: const Color(0xFF3B82F6),
@@ -336,7 +335,7 @@ class AdventureLevelScreen extends StatelessWidget {
                 SizedBox(height: 4.h),
                 Text(
                   'Level $nextLevel',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -344,7 +343,7 @@ class AdventureLevelScreen extends StatelessWidget {
                 ),
                 Text(
                   '$xpNeeded XP more to ascend',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white38 : Colors.black38,
@@ -394,7 +393,7 @@ class AdventureLevelScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Text(
             'LEVEL MASTERY PERKS',
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
               color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -451,7 +450,7 @@ class AdventureLevelScreen extends StatelessWidget {
                           ),
                           child: Text(
                             isActive ? 'ACTIVE' : 'LOCKED',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w900,
                               color: isActive
@@ -465,7 +464,7 @@ class AdventureLevelScreen extends StatelessWidget {
                     const Spacer(),
                     Text(
                       perk['title'] as String,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w800,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -475,7 +474,7 @@ class AdventureLevelScreen extends StatelessWidget {
                       isActive
                           ? perk['desc'] as String
                           : 'Unlocks at Level ${perk['level']}',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark ? Colors.white38 : Colors.black38,
@@ -500,7 +499,7 @@ class AdventureLevelScreen extends StatelessWidget {
       children: [
         Text(
           'UPCOMING MILESTONES',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 12.sp,
             fontWeight: FontWeight.w900,
             color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -584,7 +583,7 @@ class AdventureLevelScreen extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
                       color: isDark
@@ -596,7 +595,7 @@ class AdventureLevelScreen extends StatelessWidget {
                   ),
                   Text(
                     isClaimed ? 'Reward Claimed' : description,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500,
                       color: isDark ? Colors.white54 : const Color(0xFF64748B),
@@ -632,7 +631,7 @@ class AdventureLevelScreen extends StatelessWidget {
                     ),
                     child: Text(
                       'CLAIM',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
@@ -682,7 +681,7 @@ class AdventureLevelScreen extends StatelessWidget {
           padding: EdgeInsets.fromLTRB(24.w, 32.h, 24.w, 0),
           child: Text(
             'HINT SHOP',
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
               color: isDark ? Colors.white38 : const Color(0xFF64748B),
@@ -744,7 +743,7 @@ class AdventureLevelScreen extends StatelessWidget {
                           children: [
                             Text(
                               item['title'] as String,
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w800,
                                 color: isDark
@@ -754,7 +753,7 @@ class AdventureLevelScreen extends StatelessWidget {
                             ),
                             Text(
                               '${item['cost']} Coins',
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w600,
                                 color: const Color(0xFF10B981),
@@ -787,7 +786,7 @@ class AdventureLevelScreen extends StatelessWidget {
         SnackBar(
           content: Text(
             'Insufficient Vowl Coins! Needed: $cost',
-            style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+            style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
           ),
           backgroundColor: const Color(0xFFEF4444),
           behavior: SnackBarBehavior.floating,
@@ -824,7 +823,7 @@ class AdventureLevelScreen extends StatelessWidget {
                 SizedBox(height: 16.h),
                 Text(
                   amount > 5 ? 'GRAND MASTER PACK' : 'STRATEGIC HINT PACK',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -834,7 +833,7 @@ class AdventureLevelScreen extends StatelessWidget {
                 Text(
                   'Exchange $cost Vowl Coins for ${amount == 1 ? "1 hint" : "$amount hints"}.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: isDark ? Colors.white70 : const Color(0xFF64748B),
                   ),
@@ -880,7 +879,7 @@ class AdventureLevelScreen extends StatelessWidget {
       SnackBar(
         content: Text(
           'INVENTORY UPDATED: +$amount HINTS',
-          style: GoogleFonts.outfit(fontWeight: FontWeight.w900),
+          style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900),
         ),
         backgroundColor: const Color(0xFF10B981),
         behavior: SnackBarBehavior.floating,

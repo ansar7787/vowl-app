@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -62,7 +61,7 @@ class QuestUnavailableScreen extends StatelessWidget {
                   SizedBox(height: 32.h),
                   Text(
                     "QUEST UNAVAILABLE",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 24.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -73,7 +72,7 @@ class QuestUnavailableScreen extends StatelessWidget {
                   Text(
                     message,
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 16.sp,
                       color: isDark
                           ? Colors.white.withValues(alpha: 0.7)
@@ -95,7 +94,7 @@ class QuestUnavailableScreen extends StatelessWidget {
                       child: SelectableText(
                         "TECHNICAL INFO:\n$technicalError",
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.robotoMono(
+                        style: TextStyle(fontFamily: 'RobotoMono', 
                           fontSize: 10.sp,
                           color: Colors.redAccent.withValues(alpha: 0.7),
                         ),
@@ -126,7 +125,7 @@ class QuestUnavailableScreen extends StatelessWidget {
                         child: Center(
                           child: Text(
                             "TRY AGAIN",
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               color: Colors.white,
                               fontSize: 16.sp,
                               fontWeight: FontWeight.bold,
@@ -151,7 +150,7 @@ class QuestUnavailableScreen extends StatelessWidget {
                         child: Center(
                           child: Text(
                             "EXIT GAME",
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               color: isDark
                                   ? Colors.white.withValues(alpha: 0.8)
                                   : const Color(0xFF475569),
@@ -185,7 +184,7 @@ class QuestUnavailableScreen extends StatelessWidget {
                         child: Center(
                           child: Text(
                             "BACK TO LEVELS",
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               color: Colors.white,
                               fontSize: 16.sp,
                               fontWeight: FontWeight.bold,

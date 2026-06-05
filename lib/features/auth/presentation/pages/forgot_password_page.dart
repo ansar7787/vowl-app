@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/utils/injection_container.dart';
 import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 import 'package:vowl/core/presentation/widgets/loading_overlay.dart';
@@ -113,7 +112,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                                         children: [
                                           Text(
                                             'Enter your email address below and we will send you a link to reset your password.',
-                                            style: GoogleFonts.outfit(
+                                            style: TextStyle(fontFamily: 'Outfit', 
                                               fontSize: 14.sp,
                                               color: contrastColor.withValues(alpha: 0.8),
                                               height: 1.5,

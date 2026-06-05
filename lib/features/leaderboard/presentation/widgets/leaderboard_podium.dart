@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -131,7 +130,7 @@ class LeaderboardPodium extends StatelessWidget {
                 ),
                 child: Text(
                   '#$rank',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 11.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
@@ -181,7 +180,7 @@ class LeaderboardPodium extends StatelessWidget {
                               .split(' ')
                               .first
                               .toUpperCase(),
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: isFirst ? 11.sp : 9.sp,
                             fontWeight: FontWeight.w900,
                             color: MeshGradientBackground.getContrastColor(
@@ -221,7 +220,7 @@ class LeaderboardPodium extends StatelessWidget {
                     ),
                     child: Text(
                       '$levelsCleared LVS',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: isFirst ? 8.sp : 7.sp,
                         fontWeight: FontWeight.w900,
                         color: colors[0],
@@ -235,7 +234,7 @@ class LeaderboardPodium extends StatelessWidget {
                   fit: BoxFit.scaleDown,
                   child: Text(
                     '${user.totalExp} XP',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: isFirst ? 7.sp : 6.sp,
                       fontWeight: FontWeight.w700,
                       color: Theme.of(context).brightness == Brightness.dark

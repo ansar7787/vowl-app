@@ -9,8 +9,8 @@ class PreloadRoleplayQuests {
   Future<void> call({
     required GameSubtype gameType,
     required int currentLevel,
-  }) async {
-    await repository.preloadNextBatch(
+  }) {
+    return repository.preloadNextBatch(
       gameType: gameType,
       currentLevel: currentLevel,
     );

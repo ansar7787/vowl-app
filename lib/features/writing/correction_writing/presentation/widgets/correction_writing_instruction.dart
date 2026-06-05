@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class CorrectionWritingInstruction extends StatelessWidget {
   final Color primaryColor;
 
@@ -26,7 +24,7 @@ class CorrectionWritingInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "IDENTIFY AND REPLACE THE ERRORED SYNTAX PHRASE", 
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp, 
               fontWeight: FontWeight.w900, 
               color: primaryColor, 

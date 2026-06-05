@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -218,7 +217,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
                   ).animate().scale(duration: 400.ms, curve: Curves.elasticOut)
                 : Text(
                     isHighlight ? "RELEASE TO SNAP" : "ENERGY PORT",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w900,
                       color: portColor.withValues(alpha: 0.6),
@@ -243,7 +242,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       child: Text(
         text.trim(),
         textAlign: TextAlign.center,
-        style: GoogleFonts.fredoka(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 18.sp,
           color: isDark ? Colors.white : Colors.black87,
           height: 1.4,
@@ -312,7 +311,7 @@ class _ClauseConnectorScreenState extends State<ClauseConnectorScreen> {
       ),
       child: Text(
         text.toUpperCase(),
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 15.sp,
           fontWeight: FontWeight.w900,
           color: isCorrect == true

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class YesNoSpeakingTelemetryCard extends StatelessWidget {
   final String spokenText;
   final bool isDark;
@@ -29,7 +27,7 @@ class YesNoSpeakingTelemetryCard extends StatelessWidget {
         children: [
           Text(
             "VOCAL DECRYPTION OUTPUT",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 9.sp,
               color: Colors.grey,
               letterSpacing: 1.5,
@@ -38,7 +36,7 @@ class YesNoSpeakingTelemetryCard extends StatelessWidget {
           SizedBox(height: 8.h),
           Text(
             spokenText.isEmpty ? "Hold record lens and speak target sentence..." : spokenText,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 14.sp,
               fontStyle: spokenText.isEmpty ? FontStyle.normal : FontStyle.italic,
               color: spokenText.isEmpty

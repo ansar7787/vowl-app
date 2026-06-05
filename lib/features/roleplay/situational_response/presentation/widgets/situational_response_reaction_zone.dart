@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/widgets/tension_wave_painter.dart';
@@ -137,7 +136,7 @@ class SituationalResponseReactionZone extends StatelessWidget {
               SizedBox(height: 6.h),
               Text(
                 label,
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 8.sp,
                   fontWeight: FontWeight.bold,
                   color: coreColor,
@@ -148,7 +147,7 @@ class SituationalResponseReactionZone extends StatelessWidget {
                 SizedBox(height: 4.h),
                 Text(
                   "${(12 * (1.0 - timerValue)).ceil()}s",
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w900,
                     color: coreColor,
@@ -218,7 +217,7 @@ class SituationalResponseReactionZone extends StatelessWidget {
                   textAlign: TextAlign.center,
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                     color: isDark ? Colors.white70 : Colors.black87,

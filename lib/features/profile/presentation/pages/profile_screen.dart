@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -123,7 +122,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(height: 24.h),
                     Text(
                       'Mute Game Sounds?',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -133,7 +132,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Text(
                       'Clear audio and guidance are key to mastering your quests. Are you sure you want to silence them?',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 15.sp,
                         fontWeight: FontWeight.w500,
                         color: isDark
@@ -166,7 +165,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: Center(
                           child: Text(
                             'Keep It On',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,
@@ -186,7 +185,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                       child: Text(
                         'Mute Anyway',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w700,
                         ),
@@ -317,7 +316,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Text(
       title,
-      style: GoogleFonts.outfit(
+      style: TextStyle(fontFamily: 'Outfit', 
         fontSize: 22.sp,
         fontWeight: FontWeight.w900,
         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -356,7 +355,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Text(
                     'UPGRADE TO PREMIUM',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       color: Theme.of(context).brightness == Brightness.dark
                           ? Colors.white
                           : const Color(0xFF0F172A),
@@ -368,7 +367,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SizedBox(height: 4.h),
                   Text(
                     'Get 2x Coins, No Ads & VIP Gifts',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       color: Theme.of(context).brightness == Brightness.dark
                           ? Colors.white38
                           : Colors.black38,
@@ -438,7 +437,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Text(
                       'Update Identity',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -448,7 +447,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(height: 8.h),
                     Text(
                       'Your name is visible to other explorers in the realm.',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         color: isDark ? Colors.white60 : Colors.black54,
                       ),
@@ -469,7 +468,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: TextField(
                         controller: nameController,
                         autofocus: true,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w600,
                           color: isDark
@@ -478,7 +477,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         decoration: InputDecoration(
                           hintText: 'Enter new name',
-                          hintStyle: GoogleFonts.outfit(color: Colors.grey),
+                          hintStyle: TextStyle(fontFamily: 'Outfit', color: Colors.grey),
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: 24.w,
@@ -519,7 +518,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         child: Center(
                           child: Text(
                             'Save Changes',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w800,
                               color: Colors.white,
@@ -592,7 +591,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               SizedBox(height: 32.h),
               Text(
                 'Avatar Projection',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -603,7 +602,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Text(
                 'Choose a source to capture your manifestation.',
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),
@@ -671,7 +670,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 16.h),
             Text(
               label,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w800,
                 color: Theme.of(context).brightness == Brightness.dark
@@ -682,7 +681,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 4.h),
             Text(
               subtitle,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w500,
                 color: Theme.of(context).brightness == Brightness.dark

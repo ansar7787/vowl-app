@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class VowelDistinctionInstruction extends StatelessWidget {
   final Color color;
 
@@ -26,7 +24,7 @@ class VowelDistinctionInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "SLIDE NEEDLE OR TAP THE VOWEL SOUND ORB",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: color,

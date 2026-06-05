@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -380,7 +379,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
               ),
               child: Text(
                 text,
-                style: GoogleFonts.fredoka(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xFF1E293B),
@@ -569,7 +568,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                     ),
                     child: Text(
                       isLocked ? "LVL $level $tierName" : "STICKER WON! ✨",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 9.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
@@ -669,7 +668,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                 children: [
                   Text(
                     "KIDS QUEST",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w800,
                       color: widget.primaryColor,
@@ -679,7 +678,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                   SizedBox(height: 4.h),
                   Text(
                     widget.title,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 22.sp,
                       fontWeight: FontWeight.w900,
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -700,7 +699,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                         SizedBox(width: 4.w),
                         Text(
                           "${user?.kidsCoins ?? 0} TOYS",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w900,
                             color: const Color(0xFFEF4444),
@@ -824,7 +823,7 @@ class _KidsLevelMapState extends State<KidsLevelMap> {
                     )
                   : Text(
                       "$level",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: (isCurrent ? 32 : 26).sp,
                         fontWeight: FontWeight.w900,
                         color: widget.primaryColor,

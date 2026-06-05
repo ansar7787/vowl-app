@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/widgets/job_interview_fusion_painter.dart';
 
 class JobInterviewTelemetryDashboard extends StatelessWidget {
@@ -60,7 +59,7 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
               children: [
                 Text(
                   "PROFESSIONAL HARMONICS:",
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 9.sp,
                     color: ringColor,
                     letterSpacing: 1.5,
@@ -70,7 +69,7 @@ class JobInterviewTelemetryDashboard extends StatelessWidget {
                 SizedBox(height: 4.h),
                 Text(
                   "${(mercuryLevel * 100).toInt()}% COMPATIBLE",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     color: isDark ? Colors.white : Colors.black87,
                     fontWeight: FontWeight.w900,

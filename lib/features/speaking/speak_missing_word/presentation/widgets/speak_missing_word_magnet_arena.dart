@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/speaking/speak_missing_word/presentation/widgets/vortex_painter.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -133,7 +132,7 @@ class SpeakMissingWordMagnetArena extends StatelessWidget {
                     ),
                     child: Text(
                       word.toUpperCase(),
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 13.sp,
                         fontWeight: FontWeight.bold,
                         color: isPulled ? Colors.white : (isDark ? Colors.white70 : Colors.black87),

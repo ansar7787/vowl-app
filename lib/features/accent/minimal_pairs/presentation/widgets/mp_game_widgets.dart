@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -25,11 +24,11 @@ class MpFocusBadge extends StatelessWidget {
   static const _blue = Color(0xFF3B82F6);
   static const _purple = Color(0xFF8B5CF6);
 
-  static final _labelStyle = GoogleFonts.outfit(
+  static final _labelStyle = TextStyle(fontFamily: 'Outfit', 
     fontWeight: FontWeight.w900,
     letterSpacing: 4,
   );
-  static final _focusStyle = GoogleFonts.outfit(
+  static final _focusStyle = TextStyle(fontFamily: 'Outfit', 
     fontWeight: FontWeight.w700,
     letterSpacing: 1,
   );
@@ -93,8 +92,8 @@ class MpFeedbackPanel extends StatelessWidget {
   static const _green = Color(0xFF10B981);
   static const _red = Color(0xFFF43F5E);
 
-  static final _titleStyle = GoogleFonts.outfit(fontWeight: FontWeight.w800);
-  static final _bodyStyle = GoogleFonts.outfit(fontWeight: FontWeight.w500);
+  static final _titleStyle = TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w800);
+  static final _bodyStyle = TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w500);
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +161,7 @@ class MpRepeatButton extends StatelessWidget {
   const MpRepeatButton({super.key, required this.onTap});
 
   static const _purple = Color(0xFF8B5CF6);
-  static final _style = GoogleFonts.outfit(
+  static final _style = TextStyle(fontFamily: 'Outfit', 
     fontWeight: FontWeight.w800,
     color: Colors.white,
     letterSpacing: 2,

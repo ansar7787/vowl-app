@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -33,7 +32,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
                   children: [
                     Text(
                       'Welcome Back!',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                         color: isDark ? Colors.white60 : Colors.black45,
@@ -44,7 +43,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
                       children: [
                         Text(
                           'Little Explorer 🌟',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 28.sp,
                             fontWeight: FontWeight.w900,
                             color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -62,7 +61,7 @@ class KidsZoneHomeHeader extends StatelessWidget {
             SizedBox(height: 32.h),
             Text(
               'LEARNING ADVENTURES',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 11.sp,
                 fontWeight: FontWeight.w900,
                 color: const Color(0xFF6366F1),

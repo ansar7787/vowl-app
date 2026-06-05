@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class GuessTitleLabelRack extends StatelessWidget {
   final List<String> labels;
   final String correct;
@@ -75,7 +73,7 @@ class GuessTitleLabelRack extends StatelessWidget {
       child: Text(
         label.toUpperCase(), 
         textAlign: TextAlign.center,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 12.sp, 
           fontWeight: FontWeight.w900, 
           color: isDark ? Colors.white70 : Colors.black87,

@@ -4,7 +4,6 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -97,7 +96,7 @@ class QuestHintButton extends StatelessWidget {
                               children: [
                                 Text(
                                   "MASTER'S HINT",
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w900,
                                     letterSpacing: 1.5,
@@ -107,7 +106,7 @@ class QuestHintButton extends StatelessWidget {
                                 SizedBox(height: 2.h),
                                 Text(
                                   hintText!,
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 15.sp,
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white,
@@ -157,7 +156,7 @@ class QuestHintButton extends StatelessWidget {
                         padding: EdgeInsets.all(4.r),
                         decoration: BoxDecoration(color: primaryColor, shape: BoxShape.circle, border: Border.all(color: Colors.white, width: 1)),
                         constraints: BoxConstraints(minWidth: 16.r, minHeight: 16.r),
-                        child: Center(child: Text(hintCount.toString(), style: GoogleFonts.shareTechMono(fontSize: 9.sp, fontWeight: FontWeight.w900, color: Colors.white))),
+                        child: Center(child: Text(hintCount.toString(), style: TextStyle(fontFamily: 'RobotoMono', fontSize: 9.sp, fontWeight: FontWeight.w900, color: Colors.white))),
                       ),
                     ),
   

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -38,7 +37,7 @@ class FlashcardActionButtons extends StatelessWidget {
             SizedBox(height: 10.h),
             Text(
               'TAP CARD TO REVEAL',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 color: Colors.white.withValues(alpha: 0.5),
                 letterSpacing: 2,
                 fontWeight: FontWeight.w900,
@@ -103,7 +102,7 @@ class FlashcardActionButtons extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 label,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   color: textColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 16.sp,

@@ -3,8 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 /// A premium, glassmorphic full-screen loading overlay with dynamic status text cycles.
 class LoadingOverlay extends StatefulWidget {
   final bool isLoading;
@@ -147,7 +145,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                           RepaintBoundary(
                             child: Text(
                               (widget.message ?? 'SYNCHRONIZING').toUpperCase(),
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 16.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -167,7 +165,7 @@ class _LoadingOverlayState extends State<LoadingOverlay> {
                               child: Text(
                                 _statuses[_statusIndex],
                                 key: ValueKey(_statusIndex),
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w700,
                                   color: (isDark ? Colors.white : const Color(0xFF64748B)).withValues(alpha: 0.4),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 /// The central production-grade theme declaration for Vowl, coordinate
 /// light, dark, and midnight configurations with seamless system-level overlays.
@@ -28,6 +27,7 @@ class AppTheme {
   
   static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
+    fontFamily: 'Outfit',
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryIndigo,
       primary: primaryIndigo,
@@ -40,12 +40,13 @@ class AppTheme {
     canvasColor: scaffoldLight,
     cardColor: cardLight,
     dividerColor: borderLight,
-    textTheme: GoogleFonts.outfitTextTheme().apply(
+    textTheme: const TextTheme().apply(
+      fontFamily: 'Outfit',
       bodyColor: const Color(0xFF0F172A), // Slate 900
       displayColor: primaryIndigo,
     ),
-    appBarTheme: AppBarTheme(
-      systemOverlayStyle: const SystemUiOverlayStyle(
+    appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
         statusBarBrightness: Brightness.light,
@@ -56,7 +57,8 @@ class AppTheme {
       foregroundColor: Colors.white,
       elevation: 0,
       centerTitle: true,
-      titleTextStyle: GoogleFonts.outfit(
+      titleTextStyle: TextStyle(
+        fontFamily: 'Outfit',
         color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.w700,
@@ -69,7 +71,7 @@ class AppTheme {
         minimumSize: const Size(double.infinity, 56),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         elevation: 0,
-        textStyle: GoogleFonts.outfit(fontSize: 18, fontWeight: FontWeight.w600),
+        textStyle: const TextStyle(fontFamily: 'Outfit', fontSize: 18, fontWeight: FontWeight.w600),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -90,10 +92,11 @@ class AppTheme {
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
     ),
   );
- 
+  
   static final ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
+    fontFamily: 'Outfit',
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryIndigo,
       brightness: Brightness.dark,
@@ -107,12 +110,13 @@ class AppTheme {
     canvasColor: scaffoldDark,
     cardColor: cardDark,
     dividerColor: borderDark,
-    textTheme: GoogleFonts.outfitTextTheme().apply(
+    textTheme: const TextTheme().apply(
+      fontFamily: 'Outfit',
       bodyColor: const Color(0xFFF8FAFC), // Slate 50
       displayColor: Colors.white,
     ),
-    appBarTheme: AppBarTheme(
-      systemOverlayStyle: const SystemUiOverlayStyle(
+    appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.dark,
@@ -123,7 +127,8 @@ class AppTheme {
       foregroundColor: Colors.white,
       elevation: 0,
       centerTitle: true,
-      titleTextStyle: GoogleFonts.outfit(
+      titleTextStyle: TextStyle(
+        fontFamily: 'Outfit',
         color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.w700,
@@ -136,7 +141,7 @@ class AppTheme {
         minimumSize: const Size(double.infinity, 56),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         elevation: 0,
-        textStyle: GoogleFonts.outfit(fontSize: 18, fontWeight: FontWeight.w600),
+        textStyle: const TextStyle(fontFamily: 'Outfit', fontSize: 18, fontWeight: FontWeight.w600),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -161,6 +166,7 @@ class AppTheme {
   static final ThemeData midnightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
+    fontFamily: 'Outfit',
     colorScheme: ColorScheme.fromSeed(
       seedColor: primaryIndigo,
       brightness: Brightness.dark,
@@ -174,12 +180,13 @@ class AppTheme {
     canvasColor: Colors.black,
     cardColor: const Color(0xFF0B0F19),
     dividerColor: const Color(0xFF1E293B),
-    textTheme: GoogleFonts.outfitTextTheme().apply(
+    textTheme: const TextTheme().apply(
+      fontFamily: 'Outfit',
       bodyColor: Colors.white,
       displayColor: Colors.white,
     ),
-    appBarTheme: AppBarTheme(
-      systemOverlayStyle: const SystemUiOverlayStyle(
+    appBarTheme: const AppBarTheme(
+      systemOverlayStyle: SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.light,
         statusBarBrightness: Brightness.dark,
@@ -190,7 +197,8 @@ class AppTheme {
       foregroundColor: Colors.white,
       elevation: 0,
       centerTitle: true,
-      titleTextStyle: GoogleFonts.outfit(
+      titleTextStyle: TextStyle(
+        fontFamily: 'Outfit',
         color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.w700,
@@ -203,7 +211,7 @@ class AppTheme {
         minimumSize: const Size(double.infinity, 56),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         elevation: 0,
-        textStyle: GoogleFonts.outfit(fontSize: 18, fontWeight: FontWeight.w600),
+        textStyle: const TextStyle(fontFamily: 'Outfit', fontSize: 18, fontWeight: FontWeight.w600),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -241,7 +240,7 @@ class _FlashcardsScreenState extends State<FlashcardsScreen> {
           Flexible(
             child: Text(
               "SWIPE RIGHT TO MASTER, LEFT TO REVIEW",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 9.sp,
                 fontWeight: FontWeight.w900,
                 color: primaryColor,

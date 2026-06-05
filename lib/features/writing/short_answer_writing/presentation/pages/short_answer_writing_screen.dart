@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
@@ -32,8 +28,6 @@ class ShortAnswerScreen extends StatefulWidget {
 }
 
 class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
-  final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
   final _answerController = TextEditingController();
   
   bool _isAnswered = false;
@@ -83,16 +77,12 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
     bool isKeywordsMet = matchedCount >= 2; 
 
     if (isMinLengthMet && isKeywordsMet) {
-      _hapticService.success();
-      _soundService.playCorrect();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = true; 
       });
       context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       setState(() { 
         _attempts++;
         if (_attempts >= 2) {
@@ -103,14 +93,15 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
       context.read<WritingBloc>().add(SubmitAnswer(false));
       
       if (_attempts < 2) {
+        final isDark = Theme.of(context).brightness == Brightness.dark;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            backgroundColor: Colors.redAccent,
+            backgroundColor: isDark ? Colors.redAccent : const Color(0xFFDC2626),
             content: Text(
               !isMinLengthMet 
                 ? "Your response is too short! Try to expand your ideas." 
                 : "Make sure to include at least 2 of the highlighted booster keywords!",
-              style: GoogleFonts.outfit(fontWeight: FontWeight.bold),
+              style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.bold),
             ),
           )
         );
@@ -209,7 +200,7 @@ class _ShortAnswerScreenState extends State<ShortAnswerScreen> {
                         child: Center(
                           child: Text(
                             "SEAL WITH WAX", 
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 16.sp, 
                               fontWeight: FontWeight.w900, 
                               color: Colors.white, 

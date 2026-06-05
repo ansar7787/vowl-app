@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -93,7 +92,7 @@ class QuestOptionCard extends StatelessWidget {
                 child: Center(
                   child: Text(
                     String.fromCharCode(64 + (index + 1)),
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w900,
                       color: isSelected ? Colors.white : primaryColor,
@@ -105,7 +104,7 @@ class QuestOptionCard extends StatelessWidget {
               Expanded(
                 child: Text(
                   option,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w700,
                     color: isSelected

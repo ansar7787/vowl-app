@@ -71,18 +71,17 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     );
 
     result.fold(
-      (failure) => emit(GrammarError(
-        failure.message,
-        technicalError: "Usecase Failure: ${failure.toString()}",
-      )),
-      (quests) {
-        if (quests.isEmpty) {
-          emit(GrammarError(
-            "Check back later for new quests!",
-            technicalError: "Empty quest list for ${event.gameType.name}, Level ${event.level}",
-          ));
-          return;
-        }
+        (failure) => emit(GrammarError(
+              failure.message,
+              technicalError: "Usecase Failure: ${failure.toString()}",
+            )), (quests) {
+      if (quests.isEmpty) {
+        emit(GrammarError(
+          "Check back later for new quests!",
+          technicalError: "Empty quest list for ${event.gameType.name}, Level ${event.level}",
+        ));
+        return;
+      }
 
       // Industrial standard: check if we should preload next batch
       // Trigger preloading if level ends in 9
@@ -107,7 +106,11 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     Emitter<GrammarState> emit,
   ) async {
     final currentState = state;
-    if (currentState is! GrammarLoaded || currentState.livesRemaining <= 0) return;
+    if (currentState is! GrammarLoaded || currentState.livesRemaining <= 0 || currentState.lastAnswerCorrect != null) return;
+
+    // Synchronously lock state transition to prevent double-tap race conditions
+    final lockedState = currentState.copyWith(lastAnswerCorrect: event.isCorrect);
+    emit(lockedState);
 
     if (!event.isCorrect) {
       final newLives = currentState.livesRemaining - 1;
@@ -118,9 +121,10 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
       if (isFinal) {
         updatedQuests.add(currentState.currentQuest); // Mastery Loop
       }
-      
-      await soundService.playWrong();
-      await hapticService.error();
+
+      // Non-blocking trigger sound and haptics
+      soundService.playWrong();
+      hapticService.error();
 
       emit(
         currentState.copyWith(
@@ -132,8 +136,8 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
         ),
       );
     } else {
-      await soundService.playCorrect();
-      await hapticService.success();
+      soundService.playCorrect();
+      hapticService.success();
       emit(
         currentState.copyWith(
           lastAnswerCorrect: true,
@@ -190,27 +194,29 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
 
       // Standardized Persistence Logic (Atomic)
       if (currentGameType != null && currentLevel != null) {
-        await updateUserRewards(
-          UpdateUserRewardsParams(
-            gameType: currentGameType!.name,
-            level: currentLevel!,
-            xpIncrease: totalXp,
-            coinIncrease: totalCoins,
+        await Future.wait([
+          updateUserRewards(
+            UpdateUserRewardsParams(
+              gameType: currentGameType!.name,
+              level: currentLevel!,
+              xpIncrease: totalXp,
+              coinIncrease: totalCoins,
+            ),
           ),
-        );
-        await updateCategoryStats(
-          UpdateCategoryStatsParams(
-            categoryId: currentGameType!.name,
-            isCorrect: true,
+          updateCategoryStats(
+            UpdateCategoryStatsParams(
+              categoryId: currentGameType!.name,
+              isCorrect: true,
+            ),
           ),
-        );
-        await updateUnlockedLevel(
-          UpdateUnlockedLevelParams(
-            categoryId: currentGameType!.name,
-            newLevel: currentLevel! + 1,
+          updateUnlockedLevel(
+            UpdateUnlockedLevelParams(
+              categoryId: currentGameType!.name,
+              newLevel: currentLevel! + 1,
+            ),
           ),
-        );
-        await awardBadge('grammar_master');
+          awardBadge('grammar_master'),
+        ]);
       }
     } else {
       // Wrong answer on the very last quest
@@ -273,4 +279,3 @@ class GrammarBloc extends Bloc<GrammarEvent, GrammarState> {
     );
   }
 }
-

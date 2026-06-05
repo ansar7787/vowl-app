@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -117,7 +116,7 @@ class SpeakSynonymWateringMicTrigger extends StatelessWidget {
         Text(
           isListening ? "RELEASE CORE TO STOP WATERING" : "HOLD CAN TO WATER WITH A SPOKEN SYNONYM",
           textAlign: TextAlign.center,
-          style: GoogleFonts.shareTechMono(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 9.sp,
             color: Colors.grey,
             letterSpacing: 1.5,

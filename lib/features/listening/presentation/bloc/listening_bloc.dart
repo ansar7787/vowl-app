@@ -45,6 +45,8 @@ class ListeningHintUsed extends ListeningEvent {}
 
 class RetryCurrentQuestion extends ListeningEvent {}
 
+class RetryCurrentListeningQuestion extends ListeningEvent {}
+
 class RestoreLife extends ListeningEvent {}
 
 // --- STATES ---
@@ -162,6 +164,13 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
     required this.useHint,
     required this.networkInfo,
   }) : super(ListeningInitial()) {
+    on<RetryCurrentListeningQuestion>((event, emit) {
+      if (state is ListeningLoaded) {
+        final s = state as ListeningLoaded;
+        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+      }
+    });
+
     on<RetryCurrentQuestion>((event, emit) {
       if (state is ListeningLoaded) {
         final s = state as ListeningLoaded;
@@ -179,26 +188,21 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
       try {
         final GameSubtype subtype = event.gameType is GameSubtype
             ? event.gameType
-            : GameSubtype.values.firstWhere(
-                (s) => s.name == event.gameType.toString(),
-                orElse: () => GameSubtype.audioMultipleChoice,
-              );
+            : GameSubtype.fromString(event.gameType.toString(), fallback: GameSubtype.audioMultipleChoice);
+        
         final result = await getQuest(subtype, event.level);
 
-        result.fold((failure) => emit(ListeningError(failure.message)), (
-          quests,
-        ) {
+        result.fold((failure) => emit(ListeningError(failure.message)), (quests) {
           if (quests.isEmpty) {
             emit(ListeningError("Check back later for new quests!"));
           } else {
             // ENSURE STICKY 3 QUESTIONS PER LEVEL
-            final limitedQuests =
-                quests.take(3).toList();
+            final limitedQuests = quests.take(3).toList();
             emit(
               ListeningLoaded(
                 quests: limitedQuests,
                 currentIndex: 0,
-                livesRemaining: 3, // Standard 3 lives
+                livesRemaining: 3,
               ),
             );
           }
@@ -210,19 +214,24 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
 
     on<SubmitAnswer>((event, emit) async {
       final currentState = state;
-      if (currentState is! ListeningLoaded || currentState.livesRemaining <= 0) return;
+      if (currentState is! ListeningLoaded || currentState.livesRemaining <= 0 || currentState.lastAnswerCorrect != null) return;
+
+      // Lock double-tap submissions immediately
+      final initialTransition = currentState.copyWith(lastAnswerCorrect: event.isCorrect);
+      emit(initialTransition);
 
       if (event.isCorrect) {
-        await soundService.playCorrect();
-        await hapticService.success();
+        soundService.playCorrect();
+        hapticService.success();
+        
         emit(currentState.copyWith(
           lastAnswerCorrect: true,
           wrongCount: 0,
           isFinalFailure: false,
         ));
       } else {
-        await soundService.playWrong();
-        await hapticService.error();
+        soundService.playWrong();
+        hapticService.error();
         
         final newLives = currentState.livesRemaining - 1;
         final newWrongCount = currentState.wrongCount + 1;
@@ -271,18 +280,17 @@ class ListeningBloc extends Bloc<ListeningEvent, ListeningState> {
         }
       } else if (currentState.lastAnswerCorrect == true) {
         soundService.playLevelComplete();
-        // REWARDS: Standardized to match Vocabulary (5 XP, 10 Coins)
         const int totalXp = 10;
         const int totalCoins = 10;
 
-        // 1. Emit completion immediately for UI responsiveness
+        // 1. Emit completion immediately for UI responsiveness and lock transition
         emit(ListeningGameComplete(
           xpEarned: totalXp,
           coinsEarned: totalCoins,
           questCount: currentState.quests.length,
         ));
 
-        // 2. Background Save: Update data without blocking the UI celebration
+        // 2. Background Save
         if (currentGameType != null && currentLevel != null) {
           await Future.wait([
             updateUserRewards(UpdateUserRewardsParams(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class GourmetOrderPlateTray extends StatelessWidget {
@@ -43,7 +42,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
             children: [
               Text(
                 "BANQUET PLATE TRAY",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: color,
                   letterSpacing: 2,
@@ -128,7 +127,7 @@ class GourmetOrderPlateTray extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: isSelected

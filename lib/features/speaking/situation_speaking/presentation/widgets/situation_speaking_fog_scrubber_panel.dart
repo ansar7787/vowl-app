@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/features/speaking/situation_speaking/presentation/widgets/fog_painter.dart';
@@ -67,7 +66,7 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                       children: [
                         Text(
                           "THE SOCIAL SCENE",
-                          style: GoogleFonts.shareTechMono(
+                          style: TextStyle(fontFamily: 'RobotoMono', 
                             fontSize: 10.sp,
                             color: primaryColor,
                             letterSpacing: 1.5,
@@ -83,7 +82,7 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                     Text(
                       quest.situationText ?? "Situation description.",
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w600,
                         color: isDark ? Colors.white : Colors.black87,
@@ -129,7 +128,7 @@ class SituationSpeakingFogScrubberPanel extends StatelessWidget {
                           SizedBox(height: 8.h),
                           Text(
                             "SWIPE TO WIPE CONDENSATION",
-                            style: GoogleFonts.shareTechMono(
+                            style: TextStyle(fontFamily: 'RobotoMono', 
                               fontSize: 10.sp,
                               color: isDark ? Colors.black54 : Colors.grey.shade600,
                               fontWeight: FontWeight.bold,

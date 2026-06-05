@@ -2,7 +2,6 @@ import 'package:vowl/core/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -243,7 +242,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
             Text(
               state.message,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 color: Colors.white,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
@@ -268,7 +267,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
                 ),
                 child: Text(
                   "RETRY",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     color: theme.primaryColor,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 1.2,
@@ -371,7 +370,7 @@ class _SpeedSpellingScreenState extends State<SpeedSpellingScreen> {
               child: Center(
                 child: Text(
                   "SUBMIT",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,

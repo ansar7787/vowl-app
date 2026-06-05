@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ContextualUsageCard extends StatelessWidget {
   final String question;
   final Color color;
@@ -113,7 +111,7 @@ class ContextualUsageCard extends StatelessWidget {
     for (int i = 0; i < parts.length; i++) {
       spans.add(TextSpan(
         text: parts[i],
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 19.sp,
           fontWeight: FontWeight.w400,
           color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
@@ -124,7 +122,7 @@ class ContextualUsageCard extends StatelessWidget {
       if (i < parts.length - 1) {
         spans.add(TextSpan(
           text: selectedOption ?? " ________ ",
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 20.sp,
             fontWeight: FontWeight.w900,
             color: isAnswered

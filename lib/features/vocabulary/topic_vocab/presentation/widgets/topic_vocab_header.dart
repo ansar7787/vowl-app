@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
@@ -81,7 +80,7 @@ class TopicVocabHeader extends StatelessWidget {
         children: [
           Icon(Icons.favorite_rounded, color: Colors.pinkAccent, size: 14.r),
           SizedBox(width: 4.w),
-          Text("$lives", style: GoogleFonts.shareTechMono(fontSize: 12.sp, fontWeight: FontWeight.bold, color: Colors.pinkAccent)),
+          Text("$lives", style: TextStyle(fontFamily: 'RobotoMono', fontSize: 12.sp, fontWeight: FontWeight.bold, color: Colors.pinkAccent)),
         ],
       ),
     );

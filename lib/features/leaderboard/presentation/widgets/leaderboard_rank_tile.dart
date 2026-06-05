@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -51,7 +50,7 @@ class LeaderboardRankTile extends StatelessWidget {
               width: 36.w,
               child: Text(
                 '$rank',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w900,
                   color: isMe
@@ -96,7 +95,7 @@ class LeaderboardRankTile extends StatelessWidget {
                       Flexible(
                         child: Text(
                           (user.displayName ?? 'Player').toUpperCase(),
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 13.sp,
                             fontWeight: FontWeight.w800,
                             color: MeshGradientBackground.getContrastColor(
@@ -132,7 +131,7 @@ class LeaderboardRankTile extends StatelessWidget {
                             ),
                             child: Text(
                               'YOU',
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 7.sp,
                                 fontWeight: FontWeight.w900,
                                 color: const Color(0xFF60A5FA),
@@ -146,7 +145,7 @@ class LeaderboardRankTile extends StatelessWidget {
                   SizedBox(height: 2.h),
                   Text(
                     '${user.totalExp} XP · ${user.currentStreak}🔥',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w600,
                       color: isDark
@@ -167,7 +166,7 @@ class LeaderboardRankTile extends StatelessWidget {
               ),
               child: Text(
                 '$levelsCleared LVS',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w900,
                   color: tierColor,

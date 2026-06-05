@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/widgets/elevator_pitch_soundwave_painter.dart';
 
@@ -138,7 +137,7 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
                     children: [
                       Text(
                         "LIVE TELEMETRY SPECTRUM",
-                        style: GoogleFonts.shareTechMono(
+                        style: TextStyle(fontFamily: 'RobotoMono', 
                           fontSize: 10.sp,
                           color: color,
                           letterSpacing: 1.5,
@@ -180,7 +179,7 @@ class ElevatorPitchChamberConsole extends StatelessWidget {
                       physics: const BouncingScrollPhysics(),
                       child: Text(
                         spokenText.isEmpty ? "Tap the record lens and pitch your concept..." : spokenText,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 13.sp,
                           fontStyle: spokenText.isEmpty ? FontStyle.normal : FontStyle.italic,
                           color: spokenText.isEmpty

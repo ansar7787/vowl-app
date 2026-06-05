@@ -28,45 +28,57 @@ class EliteMasteryQuestModel extends EliteMasteryQuest {
   });
 
   factory EliteMasteryQuestModel.fromJson(Map<String, dynamic> json) {
+    final subtype = GameSubtype.fromString(
+      json['subtype'] as String?,
+      fallback: GameSubtype.storyBuilder,
+    );
+
+    // Helper to safely get a string from dynamic json fields
+    String? getString(dynamic value) {
+      if (value == null) return null;
+      if (value is String) return value;
+      if (value is List) return value.join(' ');
+      return value.toString();
+    }
+
+    // Helper to parse lists safely and prevent TypeErrors
+    List<String>? parseStringList(dynamic value) {
+      if (value is List) {
+        return value.map((e) => e.toString()).toList();
+      }
+      return null;
+    }
+
     return EliteMasteryQuestModel(
-      id: json['id'] as String,
+      id: json['id'] as String? ?? '',
+      type: subtype.category,
       instruction: json['instruction'] as String? ?? '',
       difficulty: (json['difficulty'] as num?)?.toInt() ?? 1,
-      subtype: GameSubtype.values.firstWhere(
-        (e) => e.name == json['subtype'],
-        orElse: () => GameSubtype.storyBuilder,
+      subtype: subtype,
+      interactionType: InteractionType.fromString(
+        json['interactionType'] as String?,
+        fallback: InteractionType.choice,
       ),
-      interactionType: _parseInteractionType(json['interactionType'] as String?),
       xpReward: (json['xpReward'] as num?)?.toInt() ?? 10,
       coinReward: (json['coinReward'] as num?)?.toInt() ?? 10,
-      options: (json['options'] as List<dynamic>?)?.map((e) => e.toString()).toList(),
+      options: parseStringList(json['options']),
       correctAnswerIndex: (json['correctAnswerIndex'] as num?)?.toInt(),
-      correctAnswer: json['correctAnswer'] as String?,
+      correctAnswer: getString(json['correctAnswer']),
       hint: json['hint'] as String?,
-      visualConfig: json['visual_config'] != null 
-          ? VisualConfig.fromJson(json['visual_config'] as Map<String, dynamic>)
+      visualConfig: json['visual_config'] != null
+          ? VisualConfig.fromJson(Map<String, dynamic>.from(json['visual_config'] as Map))
           : null,
-      sentences: (json['sentences'] as List<dynamic>?)?.map((e) => e.toString()).toList(),
-      correctOrder: (json['correctOrder'] as List<dynamic>?)?.map((e) => (e as num).toInt()).toList(),
-      idiom: json['idiom'] as String?,
-      word: json['word'] as String?,
+      sentences: parseStringList(json['sentences']),
+      correctOrder: json['correctOrder'] != null
+          ? (json['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
+          : null,
+      idiom: getString(json['idiom']),
+      word: getString(json['word']),
       speedMultiplier: (json['speedMultiplier'] as num?)?.toDouble(),
-      audioUrl: json['audioUrl'] as String?,
-      textToSpeak: json['textToSpeak'] as String?,
-      text: json['text'] as String? ?? json['textToSpeak'] as String?,
+      audioUrl: getString(json['audioUrl']),
+      textToSpeak: getString(json['textToSpeak']),
+      text: getString(json['text'] ?? json['textToSpeak']),
     );
-  }
-
-  static InteractionType _parseInteractionType(String? type) {
-    switch (type) {
-      case 'reorder': return InteractionType.reorder;
-      case 'match': return InteractionType.match;
-      case 'spell': return InteractionType.spell;
-      case 'voice': return InteractionType.voice;
-      case 'speech': return InteractionType.speech;
-      case 'choice': return InteractionType.choice;
-      default: return InteractionType.choice;
-    }
   }
 
   Map<String, dynamic> toJson() {

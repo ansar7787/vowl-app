@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -193,7 +192,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
                           child: Text(
                             quest.sentence ?? "Missing statement.",
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.fredoka(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 22.sp,
                               fontWeight: FontWeight.w600,
                               color: isDark ? Colors.white : Colors.black87,
@@ -276,7 +275,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
               child: Center(
                 child: Text(
                   entry.value,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                     color: primaryColor,
@@ -316,7 +315,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
             SizedBox(height: 16.h),
             Text(
               correct ? "CORRECT!" : "INCORRECT",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -327,7 +326,7 @@ class _QuestionFormatterScreenState extends State<QuestionFormatterScreen>
             Text(
               result,
               textAlign: TextAlign.center,
-              style: GoogleFonts.fredoka(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
                 color: displayColor,

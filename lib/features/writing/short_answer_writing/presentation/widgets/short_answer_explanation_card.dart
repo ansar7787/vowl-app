@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 
@@ -20,7 +19,9 @@ class ShortAnswerExplanationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final displayColor = isCorrect ? Colors.greenAccent : Colors.redAccent;
+    final displayColor = isCorrect
+        ? (isDark ? Colors.greenAccent : const Color(0xFF16A34A))
+        : (isDark ? Colors.redAccent : const Color(0xFFDC2626));
 
     return Container(
       padding: EdgeInsets.all(20.r),
@@ -35,7 +36,7 @@ class ShortAnswerExplanationCard extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             isCorrect ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -46,7 +47,7 @@ class ShortAnswerExplanationCard extends StatelessWidget {
             SizedBox(height: 16.h),
             Text(
               "SAMPLE ANSWER",
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 fontSize: 10.sp, 
                 color: primaryColor, 
                 fontWeight: FontWeight.bold
@@ -56,7 +57,7 @@ class ShortAnswerExplanationCard extends StatelessWidget {
             Text(
               quest.sampleAnswer!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.spectral(
+              style: TextStyle(fontFamily: 'Spectral', 
                 fontSize: 14.sp,
                 fontWeight: FontWeight.bold,
                 color: isDark ? Colors.white70 : Colors.black87,
@@ -68,7 +69,7 @@ class ShortAnswerExplanationCard extends StatelessWidget {
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

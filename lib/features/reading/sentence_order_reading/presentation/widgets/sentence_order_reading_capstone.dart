@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class SentenceOrderReadingCapstone extends StatelessWidget {
@@ -39,7 +38,7 @@ class SentenceOrderReadingCapstone extends StatelessWidget {
               SizedBox(width: 16.w),
               Text(
                 "LOCK CAPSTONE",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w900,
                   color: Colors.white,

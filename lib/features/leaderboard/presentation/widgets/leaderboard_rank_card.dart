@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/constants/app_constants.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_image.dart';
@@ -78,7 +77,7 @@ class LeaderboardRankCard extends StatelessWidget {
                   child: Center(
                     child: Text(
                       isRanked ? '#$rank' : '?',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
@@ -116,7 +115,7 @@ class LeaderboardRankCard extends StatelessWidget {
                     children: [
                       Text(
                         isRanked ? 'YOUR STANDING' : 'JOIN THE COMPETITION',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 8.sp,
                           fontWeight: FontWeight.w900,
                           color: secondaryTextColor,
@@ -125,7 +124,7 @@ class LeaderboardRankCard extends StatelessWidget {
                       ),
                       Text(
                         currentUser.displayName?.toUpperCase() ?? 'PLAYER',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w900,
                           color: contrastColor,
@@ -157,7 +156,7 @@ class LeaderboardRankCard extends StatelessWidget {
                     children: [
                       Text(
                         '$levelsCleared',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w900,
                           color: isDark
@@ -168,7 +167,7 @@ class LeaderboardRankCard extends StatelessWidget {
                       ),
                       Text(
                         'LEVELS',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 7.sp,
                           fontWeight: FontWeight.w800,
                           color: isDark
@@ -216,7 +215,7 @@ class LeaderboardRankCard extends StatelessWidget {
               children: [
                 Text(
                   '${(progress * 100).toStringAsFixed(1)}% of all quests',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 9.sp,
                     fontWeight: FontWeight.w700,
                     color: secondaryTextColor.withValues(alpha: 0.6),
@@ -224,7 +223,7 @@ class LeaderboardRankCard extends StatelessWidget {
                 ),
                 Text(
                   '$levelsCleared / $_totalLevels',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 9.sp,
                     fontWeight: FontWeight.w700,
                     color: secondaryTextColor.withValues(alpha: 0.6),

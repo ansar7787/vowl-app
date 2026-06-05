@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -40,7 +39,7 @@ class EliteHintCard extends StatelessWidget {
               SizedBox(width: 10.w),
               Text(
                 "NEED A HINT?",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
@@ -66,7 +65,7 @@ class EliteHintCard extends StatelessWidget {
               SizedBox(width: 12.w),
               Text(
                 "EXPERT HINT",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
@@ -78,7 +77,7 @@ class EliteHintCard extends StatelessWidget {
           SizedBox(height: 12.h),
           Text(
             hintText ?? "Try looking for context clues in the structure!",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 16.sp,
               fontWeight: FontWeight.w600,
               color: isDark ? Colors.white70 : Colors.black87,

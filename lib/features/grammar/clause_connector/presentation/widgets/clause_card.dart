@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class ClauseCard extends StatelessWidget {
@@ -30,7 +29,7 @@ class ClauseCard extends StatelessWidget {
           : Colors.black.withValues(alpha: 0.04),
       child: Text(
         text,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 18.sp,
           fontWeight: FontWeight.w600,
           color: isDark ? Colors.white : Colors.black87,

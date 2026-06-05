@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class SentenceHighlighter extends StatelessWidget {
@@ -87,7 +86,7 @@ class SentenceHighlighter extends StatelessWidget {
                     ),
                     child: Text(
                       matchedText,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w900,
                         color: primaryColor,
@@ -125,7 +124,7 @@ class SentenceHighlighter extends StatelessWidget {
   }
 
   TextStyle _getBaseStyle() {
-    return GoogleFonts.outfit(
+    return TextStyle(fontFamily: 'Outfit', 
       fontSize: 22.sp,
       fontWeight: FontWeight.w600,
       color: isMidnight

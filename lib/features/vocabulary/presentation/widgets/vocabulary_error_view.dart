@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -39,7 +38,7 @@ class VocabularyErrorView extends StatelessWidget {
             SizedBox(height: 24.h),
             Text(
               'Investigation Stalled',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w900,
                 color: Colors.white,
@@ -49,7 +48,7 @@ class VocabularyErrorView extends StatelessWidget {
             Text(
               message,
               textAlign: TextAlign.center,
-              style: GoogleFonts.inter(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 color: Colors.white70,
                 height: 1.5,
@@ -78,7 +77,7 @@ class VocabularyErrorView extends StatelessWidget {
                     SizedBox(width: 8.w),
                     Text(
                       'TRY AGAIN',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w800,
                         color: Colors.white,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class SentenceBuilderJigsawPiece extends StatelessWidget {
@@ -53,7 +52,7 @@ class SentenceBuilderJigsawPiece extends StatelessWidget {
           children: [
             Text(
               text, 
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 14.sp, 
                 fontWeight: FontWeight.bold, 
                 color: isDark ? Colors.white : Colors.black87

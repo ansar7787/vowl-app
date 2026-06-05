@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/accent/domain/entities/accent_quest.dart';
 
@@ -36,7 +35,7 @@ class ConsonantClarityExplanationCard extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             correct ? "CORRECT CONSONANT!" : "INCORRECT CONSONANT",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -48,7 +47,7 @@ class ConsonantClarityExplanationCard extends StatelessWidget {
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

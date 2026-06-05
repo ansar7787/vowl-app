@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -309,7 +308,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
                           child: Center(
                             child: Text(
                               _flickedWord!.toUpperCase(),
-                              style: GoogleFonts.shareTechMono(
+                              style: TextStyle(fontFamily: 'RobotoMono', 
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.bold,
                                 color: isDark ? Colors.white : Colors.black87,
@@ -347,7 +346,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
             children: [
               Icon(Icons.swipe_right_rounded, color: Colors.white, size: 12.r),
               SizedBox(width: 4.w),
-              Text("FLICK TO SORT", style: GoogleFonts.shareTechMono(fontSize: 10.sp, fontWeight: FontWeight.bold, color: Colors.white)),
+              Text("FLICK TO SORT", style: TextStyle(fontFamily: 'RobotoMono', fontSize: 10.sp, fontWeight: FontWeight.bold, color: Colors.white)),
             ],
           ),
         ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1,1), end: const Offset(1.1, 1.1)),
@@ -355,7 +354,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen> {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
           decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(30.r), border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5)),
-          child: Text(text.toUpperCase(), style: GoogleFonts.shareTechMono(fontSize: 10.sp, fontWeight: FontWeight.bold, color: color.withValues(alpha: 0.9), letterSpacing: 1.5), textAlign: TextAlign.center),
+          child: Text(text.toUpperCase(), style: TextStyle(fontFamily: 'RobotoMono', fontSize: 10.sp, fontWeight: FontWeight.bold, color: color.withValues(alpha: 0.9), letterSpacing: 1.5), textAlign: TextAlign.center),
         ),
       ],
     );

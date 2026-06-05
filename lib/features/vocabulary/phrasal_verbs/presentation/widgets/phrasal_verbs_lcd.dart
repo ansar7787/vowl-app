@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class PhrasalVerbsLcd extends StatelessWidget {
   final String text;
   final Color color;
@@ -42,7 +40,7 @@ class PhrasalVerbsLcd extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "DECRYPTING TARGET",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: color,
@@ -57,7 +55,7 @@ class PhrasalVerbsLcd extends StatelessWidget {
           Text(
             text.toUpperCase(),
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 15.sp,
               fontWeight: FontWeight.bold,
               color: isDark ? Colors.white : Colors.black87,

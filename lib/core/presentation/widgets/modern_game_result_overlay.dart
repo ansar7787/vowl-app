@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
@@ -88,7 +87,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                               children: [
                                 Text(
                                   title,
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 24.sp,
                                     fontWeight: FontWeight.w900,
                                     color: feedbackColor,
@@ -97,7 +96,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                                 if (subtitle != null)
                                   Text(
                                     subtitle!,
-                                    style: GoogleFonts.outfit(
+                                    style: TextStyle(fontFamily: 'Outfit', 
                                       fontSize: 14.sp,
                                       color: isDark ? Colors.white70 : Colors.black54,
                                     ),
@@ -118,7 +117,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                             children: [
                               Text(
                                 "YOU SAID:",
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w800,
                                   color: isDark ? Colors.white38 : Colors.black38,
@@ -127,7 +126,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                               SizedBox(height: 4.h),
                               Text(
                                 recognizedText!,
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
                                   color: isCorrect
@@ -139,7 +138,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                                 SizedBox(height: 12.h),
                                 Text(
                                   "EXPECTED:",
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 10.sp,
                                     fontWeight: FontWeight.w800,
                                     color: isDark ? Colors.white38 : Colors.black38,
@@ -148,7 +147,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                                 SizedBox(height: 4.h),
                                 Text(
                                   targetText!,
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.w600,
                                     color: primaryColor,
@@ -170,7 +169,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                             children: [
                               Text(
                                 "GRAMMAR RULE:",
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w800,
                                   color: isDark ? Colors.white38 : Colors.black38,
@@ -179,7 +178,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                               SizedBox(height: 4.h),
                               Text(
                                 explanation!,
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w600,
                                   color: isDark
@@ -207,7 +206,7 @@ class ModernGameResultOverlay extends StatelessWidget {
                           onPressed: onContinue,
                           child: Text(
                             "CONTINUE",
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w900,
                               letterSpacing: 1.2,

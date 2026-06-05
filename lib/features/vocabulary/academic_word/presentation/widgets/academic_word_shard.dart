@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class AcademicWordShard extends StatelessWidget {
   final int index;
   final String text;
@@ -71,7 +69,7 @@ class AcademicWordShard extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 12.w),
                 child: Text(
                   text.toUpperCase(),
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : Colors.black87,

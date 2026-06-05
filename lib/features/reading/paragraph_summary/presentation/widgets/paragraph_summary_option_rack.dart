@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ParagraphSummaryOptionRack extends StatelessWidget {
   final List<String> options;
   final String correctAnswer;
@@ -64,7 +62,7 @@ class ParagraphSummaryOptionRack extends StatelessWidget {
               ),
               child: Text(
                 opt, 
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 13.sp, 
                   fontWeight: FontWeight.bold, 
                   color: isDark ? Colors.white70 : Colors.black87,

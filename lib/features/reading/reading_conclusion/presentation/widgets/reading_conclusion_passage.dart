@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class ReadingConclusionPassage extends StatelessWidget {
@@ -41,7 +40,7 @@ class ReadingConclusionPassage extends StatelessWidget {
             Text(
               passage, 
               textAlign: TextAlign.center, 
-              style: GoogleFonts.fredoka(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 15.sp, 
                 height: 1.4, 
                 color: isDark ? Colors.white70 : Colors.black87,

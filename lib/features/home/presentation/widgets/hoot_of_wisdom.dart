@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
@@ -105,7 +104,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                       children: [
                         Text(
                           monthStr,
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 9.sp,
                             fontWeight: FontWeight.w900,
                             color: const Color(0xFF2563EB),
@@ -113,7 +112,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                         ),
                         Text(
                           dayStr,
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w900,
                             color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -128,7 +127,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
                     children: [
                       Text(
                         _hootTitle,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w900,
                           color: const Color(0xFF2563EB),
@@ -147,7 +146,7 @@ class _HootOfWisdomState extends State<HootOfWisdom> {
               Text(
                 _hootText,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 15.sp,
                   fontWeight: FontWeight.w700,
                   fontStyle: FontStyle.italic,

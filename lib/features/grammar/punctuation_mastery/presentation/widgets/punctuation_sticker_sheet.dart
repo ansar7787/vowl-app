@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class PunctuationStickerSheet extends StatelessWidget {
   final List<String> marks;
   final Color primaryColor;
@@ -64,7 +62,7 @@ class PunctuationStickerSheet extends StatelessWidget {
         child: Center(
           child: Text(
             mark,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 26.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,

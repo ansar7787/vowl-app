@@ -35,9 +35,10 @@ class ReadingQuestModel extends ReadingQuest {
   });
 
   factory ReadingQuestModel.fromJson(Map<String, dynamic> map, String id) {
-    final subtype = GameSubtype.values.firstWhere(
-      (s) => s.name == map['subtype'],
-      orElse: () => GameSubtype.readAndAnswer,
+    // Optimized O(1) constant-time enum parsing
+    final subtype = GameSubtype.fromString(
+      map['subtype'] as String?,
+      fallback: GameSubtype.readAndAnswer,
     );
 
     // Helper to safely get a string from either a String or a List of Strings
@@ -48,51 +49,55 @@ class ReadingQuestModel extends ReadingQuest {
       return value.toString();
     }
 
+    // Helper to parse lists safely and prevent TypeErrors
+    List<String>? parseStringList(dynamic value) {
+      if (value is List) {
+        return value.map((e) => e.toString()).toList();
+      }
+      return null;
+    }
+
     return ReadingQuestModel(
       id: id,
       type: subtype.category,
       subtype: subtype,
-      instruction: map['instruction'] ?? 'Read and answer.',
-      difficulty: map['difficulty'] ?? 1,
-      interactionType: InteractionType.values.firstWhere(
-        (i) => i.name == (map['interactionType'] ?? 'choice'),
-        orElse: () => InteractionType.choice,
+      instruction: map['instruction'] as String? ?? 'Read and answer.',
+      difficulty: (map['difficulty'] as num?)?.toInt() ?? 1,
+      interactionType: InteractionType.fromString(
+        map['interactionType'] as String?,
+        fallback: InteractionType.choice,
       ),
       xpReward: (map['xpReward'] as num?)?.toInt() ?? 10,
       coinReward: (map['coinReward'] as num?)?.toInt() ?? 5,
       livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
-      options: map['options'] != null
-          ? List<String>.from(map['options'])
-          : (map['choices'] != null ? List<String>.from(map['choices']) : null),
-      correctAnswerIndex: map['correctAnswerIndex'],
+      options: parseStringList(map['options'] ?? map['choices']),
+      correctAnswerIndex: (map['correctAnswerIndex'] as num?)?.toInt(),
       correctAnswer: getString(map['correctAnswer']),
-      hint: map['hint'],
+      hint: map['hint'] as String?,
       visualConfig: map['visual_config'] != null
-          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config']))
+          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'] as Map))
           : null,
       passage: getString(map['passage'] ?? map['text'] ?? map['content'] ?? map['story'] ?? map['sentence']),
-      question: map['question'] ?? map['instruction'],
-      highlightedWord: map['highlightedWord'] ?? map['targetWord'],
-      statement: map['statement'] ?? map['text'],
-      shuffledSentences: map['shuffledSentences'] != null
-          ? List<String>.from(map['shuffledSentences'])
-          : null,
+      question: map['question'] as String? ?? map['instruction'] as String?,
+      highlightedWord: map['highlightedWord'] as String? ?? map['targetWord'] as String?,
+      statement: map['statement'] as String? ?? map['text'] as String?,
+      shuffledSentences: parseStringList(map['shuffledSentences']),
       correctOrder: map['correctOrder'] != null
           ? (map['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
           : null,
       pairs: map['pairs'] != null
           ? List<Map<String, String>>.from(
-              (map['pairs'] as List).map((e) => Map<String, String>.from(e)),
+              (map['pairs'] as List).map((e) => Map<String, String>.from(e as Map)),
             )
           : null,
-      phoneticHint: map['phoneticHint'] ?? map['phonetic'],
-      targetWord: map['targetWord'] ?? map['word'],
-      explanation: map['explanation'],
+      phoneticHint: map['phoneticHint'] as String? ?? map['phonetic'] as String?,
+      targetWord: map['targetWord'] as String? ?? map['word'] as String?,
+      explanation: map['explanation'] as String?,
       textToSpeak: getString(map['textToSpeak'] ?? map['passage'] ?? map['text']),
-      prompt: map['prompt'],
-      keywords: map['keywords'] != null ? List<String>.from(map['keywords']) : null,
-      timeLimit: map['timeLimit'],
-      targetItem: map['targetItem'],
+      prompt: map['prompt'] as String?,
+      keywords: parseStringList(map['keywords']),
+      timeLimit: (map['timeLimit'] as num?)?.toInt(),
+      targetItem: map['targetItem'] as String?,
     );
   }
 
@@ -127,4 +132,3 @@ class ReadingQuestModel extends ReadingQuest {
     };
   }
 }
-

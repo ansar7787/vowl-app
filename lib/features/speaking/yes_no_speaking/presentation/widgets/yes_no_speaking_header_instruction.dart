@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class YesNoSpeakingHeaderInstruction extends StatelessWidget {
   final Color primaryColor;
   final bool isSnapped;
@@ -30,7 +28,7 @@ class YesNoSpeakingHeaderInstruction extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 isSnapped ? "NOW SPEAK THE TARGET SENTENCE" : "TILT THE CORE SPHERE TO ALIGN",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
@@ -46,7 +44,7 @@ class YesNoSpeakingHeaderInstruction extends StatelessWidget {
               ? "Alignment locked! Hold the recording lens and read the target sentence aloud!"
               : "Compare the spoken audio prompt with the written card below and slide to YES or NO!",
           textAlign: TextAlign.center,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

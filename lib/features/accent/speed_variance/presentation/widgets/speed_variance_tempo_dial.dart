@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -49,7 +48,7 @@ class SpeedVarianceTempoDial extends StatelessWidget {
         SizedBox(height: 24.h),
         Text(
           isDragging ? "MAINTAINING SPEED..." : "ROTATE DIAL OR TAP PREFERENCE", 
-          style: GoogleFonts.shareTechMono(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 10.sp, 
             fontWeight: FontWeight.bold, 
             color: color.withValues(alpha: 0.8),
@@ -146,7 +145,7 @@ class SpeedVarianceTempoDial extends StatelessWidget {
           child: Text(
             text, 
             textAlign: TextAlign.center,
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 11.sp, 
               fontWeight: FontWeight.bold, 
               color: textColor,

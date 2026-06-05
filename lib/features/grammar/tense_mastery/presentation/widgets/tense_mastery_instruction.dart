@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class TenseMasteryInstruction extends StatelessWidget {
   final Color primaryColor;
   const TenseMasteryInstruction({super.key, required this.primaryColor});
@@ -22,7 +20,7 @@ class TenseMasteryInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "SHIFT THROUGH TIME",
-            style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5),
+            style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: primaryColor, letterSpacing: 1.5),
           ),
         ],
       ),

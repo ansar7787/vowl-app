@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
@@ -49,7 +47,7 @@ class SCRecordingButton extends StatelessWidget {
         SizedBox(height: 16.h),
         Text(
           isListening ? "RELEASE TO SUBMIT" : "HOLD TO SHADOW",
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 12.sp,
             fontWeight: FontWeight.w700,
             color: isDark ? Colors.white38 : Colors.black38,
@@ -158,7 +156,7 @@ class SCRecordingButton extends StatelessWidget {
 
         return Text(
           word,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 20.sp,
             fontWeight: FontWeight.w800,
             color: isMatch

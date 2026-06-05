@@ -48,7 +48,9 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
       emit(EliteMasteryLoading());
 
       // Fetch quests through the usecase (which uses AssetQuestService LRU cache)
-      final result = await getQuests(GetEliteMasteryQuestParams(gameType: event.gameType, level: event.level));
+      final result = await getQuests(
+        GetEliteMasteryQuestParams(gameType: event.gameType, level: event.level),
+      );
       result.fold(
         (failure) => emit(EliteMasteryError(failure.message)),
         (quests) {
@@ -69,37 +71,42 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
 
     on<SubmitEliteAnswer>((event, emit) async {
       final currentState = state;
-      if (currentState is EliteMasteryLoaded && currentState.livesRemaining > 0) {
-        if (!event.isCorrect) {
-          final newLives = currentState.livesRemaining - 1;
-          final newWrongCount = currentState.wrongCount + 1;
-          bool isFinal = newWrongCount >= 2;
+      if (currentState is! EliteMasteryLoaded || currentState.livesRemaining <= 0 || currentState.lastAnswerCorrect != null) return;
 
-          List<EliteMasteryQuest> updatedQuests = currentState.quests;
-          if (isFinal) {
-            updatedQuests = List<EliteMasteryQuest>.from(currentState.quests);
-            updatedQuests.add(currentState.currentQuest);
-          }
+      // Synchronously lock state transition to prevent double-tap race conditions
+      final lockedState = currentState.copyWith(lastAnswerCorrect: event.isCorrect);
+      emit(lockedState);
 
-          await soundService.playWrong();
-          await hapticService.error();
+      if (!event.isCorrect) {
+        final newLives = currentState.livesRemaining - 1;
+        final newWrongCount = currentState.wrongCount + 1;
+        bool isFinal = newWrongCount >= 2;
 
-          emit(currentState.copyWith(
-            livesRemaining: newLives,
-            lastAnswerCorrect: false,
-            quests: updatedQuests,
-            wrongCount: isFinal ? 0 : newWrongCount,
-            isFinalFailure: isFinal || newLives <= 0,
-          ));
-        } else {
-          await soundService.playCorrect();
-          await hapticService.success();
-          emit(currentState.copyWith(
-            lastAnswerCorrect: true,
-            wrongCount: 0,
-            isFinalFailure: false,
-          ));
+        List<EliteMasteryQuest> updatedQuests = currentState.quests;
+        if (isFinal) {
+          updatedQuests = List<EliteMasteryQuest>.from(currentState.quests);
+          updatedQuests.add(currentState.currentQuest);
         }
+
+        // Trigger audio/haptics in a non-blocking fashion
+        soundService.playWrong();
+        hapticService.error();
+
+        emit(currentState.copyWith(
+          livesRemaining: newLives,
+          lastAnswerCorrect: false,
+          quests: updatedQuests,
+          wrongCount: isFinal ? 0 : newWrongCount,
+          isFinalFailure: isFinal || newLives <= 0,
+        ));
+      } else {
+        soundService.playCorrect();
+        hapticService.success();
+        emit(currentState.copyWith(
+          lastAnswerCorrect: true,
+          wrongCount: 0,
+          isFinalFailure: false,
+        ));
       }
     });
 
@@ -113,8 +120,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
           ));
           return;
         }
-        // If correct, advance. If wrong but re-queued, also advance if it wasn't the last.
-        // Actually, for re-queueing, we ALWAYS advance if not complete.
+
         if (currentState.currentIndex + 1 < currentState.quests.length) {
           if (currentState.lastAnswerCorrect == true || currentState.isFinalFailure) {
             emit(currentState.copyWith(
@@ -144,20 +150,22 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
           ));
 
           if (currentGameType != null && currentLevel != null) {
-            await updateUserRewards(UpdateUserRewardsParams(
-              gameType: currentGameType!.name,
-              level: currentLevel!,
-              xpIncrease: finalXp,
-              coinIncrease: finalCoins,
-            ));
-            await updateCategoryStats(UpdateCategoryStatsParams(
-              categoryId: currentGameType!.name,
-              isCorrect: true,
-            ));
-            await updateUnlockedLevel(UpdateUnlockedLevelParams(
-              categoryId: currentGameType!.name,
-              newLevel: currentLevel! + 1,
-            ));
+            await Future.wait([
+              updateUserRewards(UpdateUserRewardsParams(
+                gameType: currentGameType!.name,
+                level: currentLevel!,
+                xpIncrease: finalXp,
+                coinIncrease: finalCoins,
+              )),
+              updateCategoryStats(UpdateCategoryStatsParams(
+                categoryId: currentGameType!.name,
+                isCorrect: true,
+              )),
+              updateUnlockedLevel(UpdateUnlockedLevelParams(
+                categoryId: currentGameType!.name,
+                newLevel: currentLevel! + 1,
+              )),
+            ]);
           }
         } else {
           // Wrong answer on the very last quest
@@ -169,7 +177,7 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
     on<ShowEliteHint>((event, emit) async {
       final currentState = state;
       if (currentState is EliteMasteryLoaded) {
-        await hapticService.selection();
+        hapticService.selection();
         emit(currentState.copyWith(isHintVisible: true));
       }
     });
@@ -222,8 +230,8 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         final updatedQuests = List<EliteMasteryQuest>.from(currentState.quests);
         if (updatedQuests.length > 3) updatedQuests.removeLast();
         
-        await soundService.playCorrect();
-        await hapticService.success();
+        soundService.playCorrect();
+        hapticService.success();
         
         emit(currentState.copyWith(
           livesRemaining: newLives,
@@ -232,8 +240,8 @@ class EliteMasteryBloc extends Bloc<EliteMasteryEvent, EliteMasteryState> {
         ));
       } else if (currentState is EliteMasteryGameOver) {
         // Restore from Game Over
-        await soundService.playCorrect();
-        await hapticService.success();
+        soundService.playCorrect();
+        hapticService.success();
         
         emit(EliteMasteryLoaded(
           quests: currentState.quests,

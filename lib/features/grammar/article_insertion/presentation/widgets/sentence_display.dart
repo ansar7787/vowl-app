@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'article_blank.dart';
 
 class SentenceDisplay extends StatelessWidget {
@@ -24,7 +23,7 @@ class SentenceDisplay extends StatelessWidget {
     if (!text.contains("___")) {
       return Text(
         text,
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 22.sp,
           fontWeight: FontWeight.w700,
           color: isDark ? Colors.white : Colors.black87,
@@ -47,7 +46,7 @@ class SentenceDisplay extends StatelessWidget {
         if (prefix.isNotEmpty)
           Text(
             prefix,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 22.sp,
               fontWeight: FontWeight.w700,
               color: isDark ? Colors.white : Colors.black87,
@@ -61,7 +60,7 @@ class SentenceDisplay extends StatelessWidget {
         if (suffix.isNotEmpty)
           Text(
             suffix,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 22.sp,
               fontWeight: FontWeight.w700,
               color: isDark ? Colors.white : Colors.black87,

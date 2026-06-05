@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/app_router.dart';
@@ -80,7 +79,7 @@ class GlobalProgressCard extends StatelessWidget {
                       children: [
                         Text(
                           'QUEST JOURNEY',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 8.sp,
                             fontWeight: FontWeight.w900,
                             color: const Color(0xFF6366F1),
@@ -90,7 +89,7 @@ class GlobalProgressCard extends StatelessWidget {
                         SizedBox(height: 2.h),
                         Text(
                           'Total Levels Cleared',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w800,
                             color: isDark
@@ -128,7 +127,7 @@ class GlobalProgressCard extends StatelessWidget {
                         children: [
                           Text(
                             '#$globalRank',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w900,
                               color: Colors.white,
@@ -137,7 +136,7 @@ class GlobalProgressCard extends StatelessWidget {
                           ),
                           Text(
                             'RANK',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 7.sp,
                               fontWeight: FontWeight.w800,
                               color: Colors.white.withValues(alpha: 0.8),
@@ -161,7 +160,7 @@ class GlobalProgressCard extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: '$completed',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 28.sp,
                             fontWeight: FontWeight.w900,
                             color: const Color(0xFF6366F1),
@@ -170,7 +169,7 @@ class GlobalProgressCard extends StatelessWidget {
                         ),
                         TextSpan(
                           text: ' / $totalLevels Levels',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w700,
                             color: isDark ? Colors.white38 : const Color(0xFF94A3B8),
@@ -186,7 +185,7 @@ class GlobalProgressCard extends StatelessWidget {
                     children: [
                       Text(
                         '$percentage% Complete',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 11.sp,
                           fontWeight: FontWeight.w700,
                           color: isDark ? Colors.white54 : const Color(0xFF64748B),

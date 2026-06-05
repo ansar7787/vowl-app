@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -40,7 +39,7 @@ class WordLinkingPulseSpeaker extends StatelessWidget {
               SizedBox(height: 6.h),
               Text(
                 "HEAR LINKING",
-                style: GoogleFonts.shareTechMono(color: color, fontSize: 8.sp, fontWeight: FontWeight.bold, letterSpacing: 1)
+                style: TextStyle(fontFamily: 'RobotoMono', color: color, fontSize: 8.sp, fontWeight: FontWeight.bold, letterSpacing: 1)
               )
             ],
           ),

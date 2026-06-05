@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -129,7 +128,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
                   child: Text(
                     quest.question ?? "Complete the agreement...",
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.fredoka(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 22.sp,
                       color: isDark ? Colors.white : Colors.black87,
                       height: 1.5,
@@ -229,7 +228,7 @@ class _SubjectVerbAgreementScreenState extends State<SubjectVerbAgreementScreen>
         child: Center(
           child: Text(
             verb.toUpperCase(),
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 16.sp,
               fontWeight: FontWeight.bold,
               color: isCorrect ? Colors.greenAccent : (isWrong ? Colors.redAccent : primaryColor),

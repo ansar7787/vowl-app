@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class JobInterviewInterviewerPanel extends StatelessWidget {
@@ -46,7 +45,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                 children: [
                   Text(
                     "CHIEF EXECUTIVE V-407",
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       fontSize: 10.sp,
                       color: color,
                       fontWeight: FontWeight.bold,
@@ -55,7 +54,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
                   ),
                   Text(
                     "ACTIVE BIO-TRANSCEIVER",
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       fontSize: 7.sp,
                       color: color.withValues(alpha: 0.5),
                     ),
@@ -75,7 +74,7 @@ class JobInterviewInterviewerPanel extends StatelessWidget {
             ),
             child: Text(
               text,
-              style: GoogleFonts.fredoka(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 18.sp,
                 color: isDark ? Colors.white : Colors.black87,
                 height: 1.35,

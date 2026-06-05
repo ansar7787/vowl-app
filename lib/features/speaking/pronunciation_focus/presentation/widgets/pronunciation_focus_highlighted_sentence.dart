@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -55,7 +54,7 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
           ),
           child: Text(
             word,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 18.sp,
               fontWeight: hasPhoneme ? FontWeight.bold : FontWeight.w500,
               color: hasPhoneme
@@ -82,7 +81,7 @@ class PronunciationFocusHighlightedSentence extends StatelessWidget {
             children: [
               Text(
                 "HEATMAP SENTENCE (TAP TO LISTEN)",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: Colors.grey,
                 ),

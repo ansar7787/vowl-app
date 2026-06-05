@@ -35,47 +35,65 @@ class ListeningQuestModel extends ListeningQuest {
   });
 
   factory ListeningQuestModel.fromJson(Map<String, dynamic> map, String id) {
-    final subtype = GameSubtype.values.firstWhere(
-      (s) => s.name == map['subtype'],
-      orElse: () => GameSubtype.audioFillBlanks,
+    // Optimized O(1) constant-time enum parsing
+    final subtype = GameSubtype.fromString(
+      map['subtype'] as String?,
+      fallback: GameSubtype.audioFillBlanks,
     );
+
+    // Helper to safely get a string from either a String or a List of Strings
+    String? getString(dynamic value) {
+      if (value == null) return null;
+      if (value is String) return value;
+      if (value is List) return value.join(' ');
+      return value.toString();
+    }
+
+    // Helper to parse lists safely and prevent TypeErrors
+    List<String>? parseStringList(dynamic value) {
+      if (value is List) {
+        return value.map((e) => e.toString()).toList();
+      }
+      return null;
+    }
+
     return ListeningQuestModel(
       id: id,
       type: subtype.category,
       subtype: subtype,
-      instruction: map['instruction'] ?? 'Listen and answer.',
+      instruction: map['instruction'] as String? ?? 'Listen and answer.',
       difficulty: (map['difficulty'] as num?)?.toInt() ?? 1,
-      interactionType: InteractionType.values.firstWhere(
-        (i) => i.name == (map['interactionType'] ?? 'choice'),
-        orElse: () => InteractionType.choice,
+      interactionType: InteractionType.fromString(
+        map['interactionType'] as String?,
+        fallback: InteractionType.choice,
       ),
       xpReward: (map['xpReward'] as num?)?.toInt() ?? 10,
       coinReward: (map['coinReward'] as num?)?.toInt() ?? 5,
       livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
-      options: map['options'] != null
-          ? List<String>.from(map['options'])
-          : (map['choices'] != null ? List<String>.from(map['choices']) : null),
+      options: parseStringList(map['options'] ?? map['choices']),
       correctAnswerIndex: (map['correctAnswerIndex'] as num?)?.toInt(),
-      correctAnswer: map['correctAnswer'],
-      hint: map['hint'],
-      visualConfig: map['visual_config'] != null ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'])) : null,
-      audioUrl: map['audioUrl'] ?? map['ambientAudioUrl'],
-      question: map['question'] ?? map['sentence'] ?? map['statement'],
-      statement: map['statement'] ?? map['text'],
-      textWithBlanks: map['textWithBlanks'] ?? map['sentenceWithBlank'],
-      audioOptions: map['audioOptions'] != null
-          ? List<String>.from(map['audioOptions'])
+      correctAnswer: getString(map['correctAnswer']),
+      hint: map['hint'] as String?,
+      visualConfig: map['visual_config'] != null
+          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'] as Map))
           : null,
-      transcript: map['transcript'] ?? map['text'] ?? map['sentence'] ?? map['audioTranscript'],
-      targetEmotion: map['targetEmotion'],
-      textToSpeak: (map['textToSpeak'] ?? map['transcript'] ?? map['text'] ?? map['sentence']) as String?,
+      audioUrl: map['audioUrl'] as String? ?? map['ambientAudioUrl'] as String?,
+      question: map['question'] as String? ?? map['sentence'] as String? ?? map['statement'] as String?,
+      statement: map['statement'] as String? ?? map['text'] as String?,
+      textWithBlanks: map['textWithBlanks'] as String? ?? map['sentenceWithBlank'] as String?,
+      audioOptions: parseStringList(map['audioOptions']),
+      transcript: map['transcript'] as String? ?? map['text'] as String? ?? map['sentence'] as String? ?? map['audioTranscript'] as String?,
+      targetEmotion: map['targetEmotion'] as String?,
+      textToSpeak: getString(map['textToSpeak'] ?? map['transcript'] ?? map['text'] ?? map['sentence']),
       missingWord: map['missingWord'] as String?,
-      targetDetail: map['targetDetail'],
-      impliedMeaning: map['impliedMeaning'],
-      location: map['location'],
-      shuffledSentences: map['shuffledSentences'] != null ? List<String>.from(map['shuffledSentences']) : null,
-      correctOrder: map['correctOrder'] != null ? List<int>.from(map['correctOrder']) : null,
-      explanation: map['explanation'],
+      targetDetail: map['targetDetail'] as String?,
+      impliedMeaning: map['impliedMeaning'] as String?,
+      location: map['location'] as String?,
+      shuffledSentences: parseStringList(map['shuffledSentences']),
+      correctOrder: map['correctOrder'] != null
+          ? (map['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
+          : null,
+      explanation: map['explanation'] as String?,
     );
   }
 
@@ -108,4 +126,3 @@ class ListeningQuestModel extends ListeningQuest {
     };
   }
 }
-

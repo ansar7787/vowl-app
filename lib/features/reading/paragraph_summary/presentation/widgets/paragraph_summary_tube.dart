@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class ParagraphSummaryTube extends StatelessWidget {
@@ -42,7 +41,7 @@ class ParagraphSummaryTube extends StatelessWidget {
                 passage, 
                 key: const ValueKey("passage"),
                 textAlign: TextAlign.center, 
-                style: GoogleFonts.fredoka(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 15.sp, 
                   height: 1.4,
                   color: isDark ? Colors.white70 : Colors.black87,
@@ -62,7 +61,7 @@ class ParagraphSummaryTube extends StatelessWidget {
                   ),
                   child: Text(
                     k.toUpperCase(), 
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 12.sp, 
                       fontWeight: FontWeight.w900, 
                       color: isDark ? Colors.white : color,

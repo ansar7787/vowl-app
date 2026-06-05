@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class TopicVocabBanner extends StatelessWidget {
   final String emoji;
   final String topic;
@@ -31,7 +29,7 @@ class TopicVocabBanner extends StatelessWidget {
           SizedBox(width: 10.w),
           Text(
             topic.toUpperCase(),
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 14.sp,
               fontWeight: FontWeight.w900,
               letterSpacing: 2,

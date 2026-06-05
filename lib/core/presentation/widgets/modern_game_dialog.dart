@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -79,7 +78,7 @@ class ModernGameDialog extends StatelessWidget {
               Text(
                 title,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w900,
                   color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -89,7 +88,7 @@ class ModernGameDialog extends StatelessWidget {
               Text(
                 description,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   color: isDark ? Colors.white70 : Colors.black54,
                 ),
@@ -153,7 +152,7 @@ class ModernGameDialog extends StatelessWidget {
                               SizedBox(width: 8.w),
                               Text(
                                 adButtonText ?? "TRIPLE REWARDS (3X)",
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w900,
                                   letterSpacing: 0.5,
@@ -188,7 +187,7 @@ class ModernGameDialog extends StatelessWidget {
                   child: Center(
                     child: Text(
                       buttonText,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w800,
                         color: isRescueLife
@@ -208,7 +207,7 @@ class ModernGameDialog extends StatelessWidget {
                   ),
                   child: Text(
                     secondaryButtonText ?? "CANCEL",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 15.sp,
                       fontWeight: FontWeight.w800,
                       color: isSuccess 

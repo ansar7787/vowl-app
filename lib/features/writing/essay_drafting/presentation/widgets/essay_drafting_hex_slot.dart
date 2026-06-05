@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class EssayDraftingHexSlot extends StatelessWidget {
@@ -28,6 +27,7 @@ class EssayDraftingHexSlot extends StatelessWidget {
     return DragTarget<String>(
       onAcceptWithDetails: (details) => onSlot(slotKey, details.data),
       builder: (context, candidateData, rejectedData) {
+        final successColor = isDark ? Colors.greenAccent : const Color(0xFF16A34A);
         final highlight = candidateData.isNotEmpty;
         
         return GestureDetector(
@@ -39,7 +39,7 @@ class EssayDraftingHexSlot extends StatelessWidget {
               color: isDark ? Colors.black45 : Colors.white,
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: highlight ? Colors.greenAccent : (hasData ? color : color.withValues(alpha: 0.2)), 
+                color: highlight ? successColor : (hasData ? color : color.withValues(alpha: 0.2)), 
                 width: 2
               ),
               boxShadow: [
@@ -56,7 +56,7 @@ class EssayDraftingHexSlot extends StatelessWidget {
                   ),
                   child: Text(
                     slotKey.toUpperCase(), 
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       color: color, 
                       fontSize: 8.sp, 
                       fontWeight: FontWeight.bold
@@ -67,7 +67,7 @@ class EssayDraftingHexSlot extends StatelessWidget {
                 Expanded(
                   child: Text(
                     slotValue ?? "--- DROP LOGIC MODULE HERE ---", 
-                    style: GoogleFonts.shareTechMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       color: hasData 
                         ? (isDark ? Colors.white70 : Colors.black87) 
                         : (isDark ? Colors.white24 : Colors.black26),
@@ -77,7 +77,7 @@ class EssayDraftingHexSlot extends StatelessWidget {
                   )
                 ),
                 if (hasData)
-                  Icon(Icons.check_circle_rounded, color: Colors.greenAccent, size: 18.r)
+                  Icon(Icons.check_circle_rounded, color: successColor, size: 18.r)
                     .animate().scale().fadeIn(),
               ],
             ),

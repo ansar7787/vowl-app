@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class VerifyEmailIconHeader extends StatelessWidget {
   const VerifyEmailIconHeader({super.key});
 
@@ -32,7 +30,7 @@ class VerifyEmailStatusText extends StatelessWidget {
       children: [
         Text(
           'Verify your email',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 28.sp,
             fontWeight: FontWeight.w800,
             color: const Color(0xFF2563EB),
@@ -42,7 +40,7 @@ class VerifyEmailStatusText extends StatelessWidget {
         SizedBox(height: 16.h),
         Text(
           'We have sent a verification email to your address. Please check your inbox and click the link to verify your account.',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 15.sp,
             color: Theme.of(context).brightness == Brightness.dark
                 ? Colors.white70
@@ -82,7 +80,7 @@ class ResendEmailButton extends StatelessWidget {
       ),
       child: Text(
         canResendEmail ? 'Resend Email' : 'Resend in $secondsRemaining s',
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 16.sp,
           fontWeight: FontWeight.bold,
         ),
@@ -112,7 +110,7 @@ class VerifyConfirmationButton extends StatelessWidget {
       ),
       child: Text(
         "I've Verified",
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 16.sp,
           fontWeight: FontWeight.bold,
           color: const Color(0xFF2563EB),
@@ -133,7 +131,7 @@ class VerifyLogoutButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         'Cancel & Logout',
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 16.sp,
           color: const Color(0xFF6B7280),
           fontWeight: FontWeight.w600,

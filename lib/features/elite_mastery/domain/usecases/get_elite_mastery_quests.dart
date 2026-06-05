@@ -7,12 +7,12 @@ import '../entities/elite_mastery_quest.dart';
 class GetEliteMasteryQuests {
   final EliteMasteryRepository repository;
 
-  GetEliteMasteryQuests(this.repository);
+  const GetEliteMasteryQuests(this.repository);
 
   Future<Either<Failure, List<EliteMasteryQuest>>> call(
     GetEliteMasteryQuestParams params,
-  ) async {
-    return await repository.getEliteMasteryQuests(
+  ) {
+    return repository.getEliteMasteryQuests(
       gameType: params.gameType,
       level: params.level,
     );

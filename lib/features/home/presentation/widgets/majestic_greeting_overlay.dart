@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/vowl_mascot.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class MajesticGreetingOverlay extends StatelessWidget {
   final String mascotName;
   final String? accessoryId;
@@ -62,7 +60,7 @@ class MajesticGreetingOverlay extends StatelessWidget {
                   children: [
                     Text(
                       "HOOT HOOT!",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.greenAccent.shade700,
@@ -73,7 +71,7 @@ class MajesticGreetingOverlay extends StatelessWidget {
                     Text(
                       "Welcome back to your Sanctuary. $mascotName has been waiting for you!",
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w700,
                         color: const Color(0xFF0F172A),
@@ -82,7 +80,7 @@ class MajesticGreetingOverlay extends StatelessWidget {
                     SizedBox(height: 24.h),
                     Text(
                       "TAP TO ENTER",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w800,
                         color: Colors.black26,

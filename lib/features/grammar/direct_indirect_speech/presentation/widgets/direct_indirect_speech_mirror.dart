@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class DirectIndirectSpeechMirror extends StatelessWidget {
@@ -67,7 +66,7 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
                       ),
                       child: Text(
                         isFront ? "DIRECT SPEECH" : "REPORTED SPEECH",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w900,
                           color: isFront ? primaryColor : backColor,
@@ -79,7 +78,7 @@ class DirectIndirectSpeechMirror extends StatelessWidget {
                     Text(
                       isFront ? directText : indirectText,
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.fredoka(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 22.sp,
                         color: isDark ? Colors.white : Colors.black87,
                         fontWeight: FontWeight.bold,

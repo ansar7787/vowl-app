@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class SentenceCorrectionFeedback extends StatelessWidget {
   final String correction;
   final Color primaryColor;
@@ -27,7 +25,7 @@ class SentenceCorrectionFeedback extends StatelessWidget {
         children: [
           Text(
             "GLITCH RESOLUTION",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: Colors.redAccent,
@@ -37,7 +35,7 @@ class SentenceCorrectionFeedback extends StatelessWidget {
           SizedBox(height: 8.h),
           Text(
             "Correction: $correction",
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 18.sp,
               color: Colors.redAccent,
               fontWeight: FontWeight.w600,

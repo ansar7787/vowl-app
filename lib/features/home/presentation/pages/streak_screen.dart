@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/ad_reward_card.dart';
@@ -170,7 +169,7 @@ class _StreakScreenState extends State<StreakScreen> {
                     SizedBox(width: 8.w),
                     Text(
                       "DAILY STREAK",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w900,
                         color: contentColor,
@@ -210,7 +209,7 @@ class _StreakScreenState extends State<StreakScreen> {
           SizedBox(width: 6.w),
           Text(
             '${user.coins}',
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 12.sp,
               fontWeight: FontWeight.w800,
               color: const Color(0xFF10B981),

@@ -8,13 +8,15 @@ abstract class KidsLocalDataSource {
 }
 
 class KidsLocalDataSourceImpl implements KidsLocalDataSource {
+  const KidsLocalDataSourceImpl();
+
   @override
   Future<List<KidsQuestModel>> getQuestsByLevel(String gameType, int level) async {
     try {
       // Calculate batch (10 levels per batch)
       final batchIndex = ((level - 1) / 10).floor() + 1;
       
-      // Use the new naming convention: [gameType]_batch_[batchIndex].json
+      // Use the naming convention: [gameType]_batch_[batchIndex].json
       final path = 'assets/curriculum/kids/$gameType/${gameType}_batch_$batchIndex.json';
       
       final String response = await rootBundle.loadString(path);

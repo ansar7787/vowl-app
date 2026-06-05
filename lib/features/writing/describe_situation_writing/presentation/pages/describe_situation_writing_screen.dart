@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -34,7 +31,6 @@ class DescribeSituationScreen extends StatefulWidget {
 
 class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
   final _textController = TextEditingController();
   
   final List<String> _usedKeywords = [];
@@ -75,7 +71,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
 
   void _injectKeyword(String keyword) {
     if (_isAnswered) return;
-    _hapticService.success();
+    _hapticService.selection();
     
     final text = _textController.text;
     final selection = _textController.selection;
@@ -118,16 +114,12 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
     bool isKeywordsMet = matchedCount >= 2; 
     
     if (isMinWordsMet && isKeywordsMet) {
-      _hapticService.success();
-      _soundService.playCorrect();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = true; 
       });
       context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false; 
@@ -174,7 +166,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded) ? state.currentQuest as WritingQuest? : null;
+        final WritingQuest? quest = (state is WritingLoaded) ? state.currentQuest : null;
         
         final emojis = quest?.emojis ?? ["🌋", "💧", "🔬", "🐠"];
         final rawKeywords = quest?.keywords ?? {
@@ -246,7 +238,7 @@ class _DescribeSituationScreenState extends State<DescribeSituationScreen> {
                         child: Center(
                           child: Text(
                             "SEAL NARRATIVE", 
-                            style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2)
+                            style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2)
                           )
                         ),
                       ),

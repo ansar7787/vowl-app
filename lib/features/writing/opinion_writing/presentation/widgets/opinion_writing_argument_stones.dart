@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class OpinionWritingArgumentStones extends StatelessWidget {
   final List<String> options;
   final List<String> leftPanArgs;
@@ -42,7 +40,7 @@ class OpinionWritingArgumentStones extends StatelessWidget {
               ),
               child: Text(
                 o, 
-                style: GoogleFonts.shareTechMono(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10.sp)
+                style: TextStyle(fontFamily: 'RobotoMono', color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10.sp)
               )
             )
           ),
@@ -60,7 +58,7 @@ class OpinionWritingArgumentStones extends StatelessWidget {
             child: Text(
               o, 
               textAlign: TextAlign.center,
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 color: isDark ? Colors.white70 : Colors.black87, 
                 fontWeight: FontWeight.bold, 
                 fontSize: 9.sp

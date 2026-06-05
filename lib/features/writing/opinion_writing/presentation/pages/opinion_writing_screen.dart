@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -34,7 +31,6 @@ class OpinionWritingScreen extends StatefulWidget {
 
 class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
   
   final List<String> _leftPanArgs = [];
   final List<String> _rightPanArgs = [];
@@ -87,9 +83,10 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
   }
 
   void _submitAnswer() {
-    final WritingQuest? quest = (context.read<WritingBloc>().state as WritingLoaded).currentQuest as WritingQuest?;
-    if (quest == null || _isAnswered) return;
+    final state = context.read<WritingBloc>().state;
+    if (state is! WritingLoaded || _isAnswered) return;
     
+    final quest = state.currentQuest;
     final options = quest.options ?? [];
     final correctProsIndices = quest.correctOrder ?? [0, 1];
     
@@ -100,16 +97,12 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
     bool isRightCorrect = _rightPanArgs.length == 2 && _rightPanArgs.every((arg) => correctCons.contains(arg));
 
     if (isLeftCorrect && isRightCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = true; 
       });
       context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false; 
@@ -159,7 +152,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded) ? state.currentQuest as WritingQuest? : null;
+        final WritingQuest? quest = (state is WritingLoaded) ? state.currentQuest : null;
         
         final options = quest?.options ?? [];
         final totalPlaced = _leftPanArgs.length + _rightPanArgs.length;
@@ -222,7 +215,7 @@ class _OpinionWritingScreenState extends State<OpinionWritingScreen> {
                         child: Center(
                           child: Text(
                             "BALANCE THE TRUTH", 
-                            style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2)
+                            style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w900, color: Colors.white, letterSpacing: 2)
                           )
                         ),
                       ),

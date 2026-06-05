@@ -6,12 +6,12 @@ import 'package:vowl/features/kids_zone/domain/repositories/kids_repository.dart
 class GetKidsQuests {
   final KidsRepository repository;
 
-  GetKidsQuests(this.repository);
+  const GetKidsQuests(this.repository);
 
   Future<Either<Failure, List<KidsQuest>>> call(
     String gameType,
     int level,
-  ) async {
-    return await repository.getQuestsByLevel(gameType, level);
+  ) {
+    return repository.getQuestsByLevel(gameType, level);
   }
 }

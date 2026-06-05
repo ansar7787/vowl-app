@@ -5,13 +5,12 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/features/writing/presentation/bloc/writing_bloc.dart';
 import 'package:vowl/features/writing/presentation/widgets/writing_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
-import 'package:vowl/features/writing/summarize_story_writing/domain/models/describe_frame_slot.dart';
+import 'package:vowl/features/writing/summarize_story_writing/presentation/models/describe_frame_slot.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_writing_instruction.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_manuscript.dart';
 import 'package:vowl/features/writing/summarize_story_writing/presentation/widgets/summarize_story_film_strip.dart';
@@ -34,7 +33,6 @@ class SummarizeStoryWritingScreen extends StatefulWidget {
 
 class _SummarizeStoryWritingScreenState extends State<SummarizeStoryWritingScreen> {
   final _hapticService = di.sl<HapticService>();
-  final _soundService = di.sl<SoundService>();
   
   final List<DescribeFrameSlot> _slots = [
     DescribeFrameSlot(index: 0),
@@ -94,7 +92,10 @@ class _SummarizeStoryWritingScreenState extends State<SummarizeStoryWritingScree
   void _submitAnswer() {
     if (_isAnswered) return;
     
-    final WritingQuest? quest = (context.read<WritingBloc>().state as WritingLoaded).currentQuest as WritingQuest?;
+    final state = context.read<WritingBloc>().state;
+    if (state is! WritingLoaded) return;
+    
+    final WritingQuest? quest = state.currentQuest as WritingQuest?;
     if (quest == null) return;
     
     final options = quest.options ?? [];
@@ -113,16 +114,12 @@ class _SummarizeStoryWritingScreenState extends State<SummarizeStoryWritingScree
     }
 
     if (isAllCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = true; 
       });
       context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false; 

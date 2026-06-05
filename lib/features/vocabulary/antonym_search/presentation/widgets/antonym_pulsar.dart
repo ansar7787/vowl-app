@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class AntonymPulsar extends StatelessWidget {
   final bool isTop;
   final bool targetIsPositive;
@@ -43,7 +41,7 @@ class AntonymPulsar extends StatelessWidget {
         child: Center(
           child: Text(
             isTop ? "POSITIVE PULSAR [+]" : "NEGATIVE PULSAR [-]",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 14.sp,
               fontWeight: FontWeight.w900,
               color: color.withValues(alpha: isActive ? 1.0 : 0.3),

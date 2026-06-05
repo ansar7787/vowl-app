@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ReadAndAnswerAnchorPoint extends StatelessWidget {
   final String question;
   final Color color;
@@ -51,7 +49,7 @@ class ReadAndAnswerAnchorPoint extends StatelessWidget {
           Text(
             question,
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 20.sp,
               fontWeight: FontWeight.w800,
               color: isDark ? Colors.white : const Color(0xFF0F172A),

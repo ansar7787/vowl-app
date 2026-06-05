@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class SpeakMissingWordVortexSentence extends StatelessWidget {
@@ -26,7 +25,7 @@ class SpeakMissingWordVortexSentence extends StatelessWidget {
         children: [
           Text(
             "VOCAL SENTENCE CONSTRUCTOR",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 10.sp,
               color: primaryColor,
               letterSpacing: 1.5,
@@ -37,7 +36,7 @@ class SpeakMissingWordVortexSentence extends StatelessWidget {
           Text(
             text,
             textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 20.sp,
               color: isDark ? Colors.white : Colors.black87,
               height: 1.45,
@@ -54,7 +53,7 @@ class SpeakMissingWordVortexSentence extends StatelessWidget {
               ),
               child: Text(
                 "LOCKED OPTION: ${insertedWord.toUpperCase()}",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: Colors.greenAccent,
                   fontWeight: FontWeight.bold,

@@ -13,14 +13,6 @@ import 'package:vowl/core/presentation/pages/quest_sequence_page.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 
-import 'package:vowl/features/elite_mastery/story_builder/presentation/pages/story_builder_map.dart'
-    as sb_map;
-import 'package:vowl/features/elite_mastery/idiom_match/presentation/pages/idiom_match_map.dart'
-    as im_map;
-import 'package:vowl/features/elite_mastery/speed_spelling/presentation/pages/speed_spelling_map.dart'
-    as ss_map;
-import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/pages/accent_shadowing_map.dart'
-    as as_map;
 
 class GameRoutes {
   static const String categoryGamesRoute = '/category-games';
@@ -150,74 +142,7 @@ class GameRoutes {
         state: state,
       ),
     ),
-    GoRoute(
-      path: '/story-builder-map',
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: const sb_map.StoryBuilderMap(),
-        state: state,
-      ),
-    ),
-    GoRoute(
-      path: '/story-builder/:level',
-      pageBuilder: (context, state) {
-        final level = int.tryParse(state.pathParameters['level'] ?? '1') ?? 1;
-        return fadeTransitionPage(
-          child: AppRouterGameResolvers.getEliteMasteryScreen(GameSubtype.storyBuilder, level),
-          state: state,
-        );
-      },
-    ),
-    GoRoute(
-      path: '/idiom-match-map',
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: const im_map.IdiomMatchMap(),
-        state: state,
-      ),
-    ),
-    GoRoute(
-      path: '/idiom-match/:level',
-      pageBuilder: (context, state) {
-        final level = int.tryParse(state.pathParameters['level'] ?? '1') ?? 1;
-        return fadeTransitionPage(
-          child: AppRouterGameResolvers.getEliteMasteryScreen(GameSubtype.idiomMatch, level),
-          state: state,
-        );
-      },
-    ),
-    GoRoute(
-      path: '/speed-spelling-map',
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: const ss_map.SpeedSpellingMap(),
-        state: state,
-      ),
-    ),
-    GoRoute(
-      path: '/speed-spelling/:level',
-      pageBuilder: (context, state) {
-        final level = int.tryParse(state.pathParameters['level'] ?? '1') ?? 1;
-        return fadeTransitionPage(
-          child: AppRouterGameResolvers.getEliteMasteryScreen(GameSubtype.speedSpelling, level),
-          state: state,
-        );
-      },
-    ),
-    GoRoute(
-      path: '/accent-shadowing-map',
-      pageBuilder: (context, state) => fadeTransitionPage(
-        child: const as_map.AccentShadowingMap(),
-        state: state,
-      ),
-    ),
-    GoRoute(
-      path: '/accent-shadowing/:level',
-      pageBuilder: (context, state) {
-        final level = int.tryParse(state.pathParameters['level'] ?? '1') ?? 1;
-        return fadeTransitionPage(
-          child: AppRouterGameResolvers.getEliteMasteryScreen(GameSubtype.accentShadowing, level),
-          state: state,
-        );
-      },
-    ),
+
     GoRoute(
       path: levelRoute,
       pageBuilder: (context, state) => fadeTransitionPage(

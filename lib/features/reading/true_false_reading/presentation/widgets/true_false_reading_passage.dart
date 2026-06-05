@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class TrueFalseReadingPassage extends StatelessWidget {
@@ -23,7 +22,7 @@ class TrueFalseReadingPassage extends StatelessWidget {
       color: color.withValues(alpha: isDark ? 0.05 : 0.08),
       child: Text(
         passage, 
-        style: GoogleFonts.fredoka(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 16.sp, 
           height: 1.5, 
           color: isDark ? Colors.white70 : Colors.black87,

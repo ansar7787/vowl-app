@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class SentenceOrderReadingStoneSlab extends StatelessWidget {
@@ -35,7 +34,7 @@ class SentenceOrderReadingStoneSlab extends StatelessWidget {
               child: Center(
                 child: Text(
                   "${index + 1}",
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     color: color,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.bold,
@@ -47,7 +46,7 @@ class SentenceOrderReadingStoneSlab extends StatelessWidget {
             Expanded(
               child: Text(
                 text, 
-                style: GoogleFonts.fredoka(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 15.sp, 
                   height: 1.4, 
                   color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,

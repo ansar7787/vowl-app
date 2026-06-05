@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class SceneDescriptionHeader extends StatelessWidget {
   final Color primaryColor;
 
@@ -26,7 +24,7 @@ class SceneDescriptionHeader extends StatelessWidget {
           SizedBox(width: 8.w),
           Text(
             "SCENIC SONAR BEACON MAP",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 10.sp,
               fontWeight: FontWeight.bold,
               color: Colors.cyanAccent,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/writing/domain/entities/writing_quest.dart';
 
@@ -35,7 +34,7 @@ class DailyJournalExplanationCard extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             isCorrect ? "CORRECT!" : "INCORRECT",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 15.sp,
               fontWeight: FontWeight.w900,
               color: displayColor,
@@ -46,7 +45,7 @@ class DailyJournalExplanationCard extends StatelessWidget {
             SizedBox(height: 16.h),
             Text(
               "SAMPLE JOURNAL LOG",
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 fontSize: 10.sp, 
                 color: primaryColor, 
                 fontWeight: FontWeight.bold
@@ -56,7 +55,7 @@ class DailyJournalExplanationCard extends StatelessWidget {
             Text(
               quest.sampleAnswer!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.spectral(
+              style: TextStyle(fontFamily: 'Spectral', 
                 fontSize: 14.sp,
                 fontWeight: FontWeight.bold,
                 color: isDark ? Colors.white70 : Colors.black87,
@@ -68,7 +67,7 @@ class DailyJournalExplanationCard extends StatelessWidget {
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 12.sp,
                 color: isDark ? Colors.white60 : Colors.black54,
               ),

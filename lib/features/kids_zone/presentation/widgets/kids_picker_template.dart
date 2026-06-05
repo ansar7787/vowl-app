@@ -1,7 +1,6 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_game_base_screen.dart';
@@ -101,7 +100,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
             ),
             child: Text(
               instruction,
-              style: GoogleFonts.fredoka(fontSize: 22.sp, fontWeight: FontWeight.w700, color: const Color(0xFF1E293B), height: 1.1),
+              style: TextStyle(fontFamily: 'Outfit', fontSize: 22.sp, fontWeight: FontWeight.w700, color: const Color(0xFF1E293B), height: 1.1),
               textAlign: TextAlign.center,
             ),
           ),
@@ -176,7 +175,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
                       ? SizedBox(width: 120.r, height: 120.r, child: KidsImage(imageUrl: quest.imageUrl, fallbackIcon: widget.fallbackIcon, iconColor: widget.primaryColor.withValues(alpha: 0.5)))
                       : Text(
                           displayValue,
-                          style: GoogleFonts.fredoka(fontSize: _getCentralFontSize(displayValue, isEmoji), fontWeight: FontWeight.w900, color: const Color(0xFF1E293B), letterSpacing: isEmoji ? 4 : 0, height: 1.0, shadows: [const Shadow(color: Colors.white, blurRadius: 10)]),
+                          style: TextStyle(fontFamily: 'Outfit', fontSize: _getCentralFontSize(displayValue, isEmoji), fontWeight: FontWeight.w900, color: const Color(0xFF1E293B), letterSpacing: isEmoji ? 4 : 0, height: 1.0, shadows: [const Shadow(color: Colors.white, blurRadius: 10)]),
                           textAlign: TextAlign.center,
                           softWrap: false,
                           overflow: TextOverflow.visible,
@@ -194,7 +193,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 4.h),
               decoration: BoxDecoration(color: widget.primaryColor, borderRadius: BorderRadius.circular(12.r)),
-              child: Text("DROP HERE!", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white)),
+              child: Text("DROP HERE!", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white)),
             ).animate().fadeIn().scale(),
           ),
       ],
@@ -247,7 +246,7 @@ class _KidsPickerTemplateState extends State<KidsPickerTemplate> {
             fit: BoxFit.scaleDown,
             child: Text(
               option,
-              style: GoogleFonts.fredoka(fontSize: _getOptionFontSize(option), fontWeight: FontWeight.w800, color: const Color(0xFF1E293B)),
+              style: TextStyle(fontFamily: 'Outfit', fontSize: _getOptionFontSize(option), fontWeight: FontWeight.w800, color: const Color(0xFF1E293B)),
               textAlign: TextAlign.center,
             ),
           ),

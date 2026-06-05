@@ -43,59 +43,75 @@ class AccentQuestModel extends AccentQuest {
   });
 
   factory AccentQuestModel.fromJson(Map<String, dynamic> map, String id) {
-    final subtype = GameSubtype.values.firstWhere(
-      (s) => s.name == map['subtype'],
-      orElse: () => GameSubtype.minimalPairs,
+    // Optimized O(1) constant-time enum parsing
+    final subtype = GameSubtype.fromString(
+      map['subtype'] as String?,
+      fallback: GameSubtype.minimalPairs,
     );
+
+    // Helper to safely get a string from either a String or a List of Strings
+    String? getString(dynamic value) {
+      if (value == null) return null;
+      if (value is String) return value;
+      if (value is List) return value.join(' ');
+      return value.toString();
+    }
+
+    // Helper to parse lists safely and prevent TypeErrors
+    List<String>? parseStringList(dynamic value) {
+      if (value is List) {
+        return value.map((e) => e.toString()).toList();
+      }
+      return null;
+    }
+
     return AccentQuestModel(
       id: id,
       type: subtype.category,
       subtype: subtype,
-      instruction: map['instruction'] ?? 'Mimic the accent.',
+      instruction: map['instruction'] as String? ?? 'Mimic the accent.',
       difficulty: (map['difficulty'] as num?)?.toInt() ?? 1,
-      interactionType: InteractionType.values.firstWhere(
-        (i) => i.name == (map['interactionType'] ?? 'speech'),
-        orElse: () => InteractionType.speech,
+      interactionType: InteractionType.fromString(
+        map['interactionType'] as String?,
+        fallback: InteractionType.speech,
       ),
       xpReward: (map['xpReward'] as num?)?.toInt() ?? 10,
       coinReward: (map['coinReward'] as num?)?.toInt() ?? 5,
       livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
-      options: map['options'] != null
-          ? List<String>.from(map['options'])
-          : (map['choices'] != null ? List<String>.from(map['choices']) : null),
+      options: parseStringList(map['options'] ?? map['choices']),
       correctAnswerIndex: (map['correctAnswerIndex'] as num?)?.toInt(),
-      correctAnswer: map['correctAnswer'],
-      hint: map['hint'],
-      visualConfig: map['visual_config'] != null ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'])) : null,
-      word: map['word'] ?? map['targetWord'],
-      phoneticHint: map['phoneticHint'] ?? map['phonetic'],
-      targetWord: map['targetWord'] ?? map['word'],
-      question: map['question'] ?? map['prompt'] ?? map['instruction'],
-      textToSpeak: map['textToSpeak'] ?? map['text'] ?? map['sentence'] ?? map['word'] ?? map['targetWord'],
-      prompt: map['prompt'] ?? map['question'] ?? map['instruction'],
-      sampleAnswer: map['sampleAnswer'],
-      explanation: map['explanation'],
-      audioUrl: map['audioUrl'],
-      words: map['words'] != null ? List<String>.from(map['words']) : null,
+      correctAnswer: getString(map['correctAnswer']),
+      hint: map['hint'] as String?,
+      visualConfig: map['visual_config'] != null
+          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'] as Map))
+          : null,
+      word: getString(map['word'] ?? map['targetWord']),
+      phoneticHint: getString(map['phoneticHint'] ?? map['phonetic']),
+      targetWord: getString(map['targetWord'] ?? map['word']),
+      question: getString(map['question'] ?? map['prompt'] ?? map['instruction']),
+      textToSpeak: getString(map['textToSpeak'] ?? map['text'] ?? map['sentence'] ?? map['word'] ?? map['targetWord']),
+      prompt: getString(map['prompt'] ?? map['question'] ?? map['instruction']),
+      sampleAnswer: getString(map['sampleAnswer']),
+      explanation: getString(map['explanation']),
+      audioUrl: getString(map['audioUrl']),
+      words: parseStringList(map['words']),
       intonationMap: map['intonationMap'] != null
-          ? List<int>.from(map['intonationMap'])
+          ? (map['intonationMap'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
           : null,
-      syllables: map['syllables'] != null
-          ? List<String>.from(map['syllables'])
-          : null,
+      syllables: parseStringList(map['syllables']),
       targetSpeed: (map['targetSpeed'] as num?)?.toDouble(),
       pitchPatterns: map['pitchPatterns'] != null
-          ? List<int>.from(map['pitchPatterns'])
+          ? (map['pitchPatterns'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
           : null,
-      sentence: map['sentence'] ?? map['text'] ?? map['textToSpeak'],
-      stressPattern: map['stressPattern'],
-      word1: map['word1'],
-      word2: map['word2'],
-      ipa1: map['ipa1'],
-      ipa2: map['ipa2'],
-      mouthPosition: map['mouthPosition'],
-      slowForm: map['slowForm'],
-      accentName: map['accentName'] ?? map['dialect'],
+      sentence: getString(map['sentence'] ?? map['text'] ?? map['textToSpeak']),
+      stressPattern: getString(map['stressPattern']),
+      word1: getString(map['word1']),
+      word2: getString(map['word2']),
+      ipa1: getString(map['ipa1']),
+      ipa2: getString(map['ipa2']),
+      mouthPosition: getString(map['mouthPosition']),
+      slowForm: getString(map['slowForm']),
+      accentName: getString(map['accentName'] ?? map['dialect']),
     );
   }
 
@@ -138,4 +154,3 @@ class AccentQuestModel extends AccentQuest {
     };
   }
 }
-

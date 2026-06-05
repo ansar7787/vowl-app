@@ -1,7 +1,6 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -50,7 +49,7 @@ class KidsGameDialogs {
                   ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
                   
                   SizedBox(height: 20.h),
-                  Text("LEVEL UP!", style: GoogleFonts.outfit(fontWeight: FontWeight.w900, color: primaryColor, fontSize: 32.sp, letterSpacing: 2)),
+                  Text("LEVEL UP!", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: primaryColor, fontSize: 32.sp, letterSpacing: 2)),
                   SizedBox(height: 24.h),
                   
                   // REWARDS CARD
@@ -80,7 +79,7 @@ class KidsGameDialogs {
                         children: [
                           Icon(Icons.auto_awesome_rounded, color: Colors.amber, size: 18.sp),
                           SizedBox(width: 8.w),
-                          Text("NEW STICKER UNLOCKED!", style: GoogleFonts.outfit(fontWeight: FontWeight.w800, color: Colors.amber, fontSize: 12.sp)),
+                          Text("NEW STICKER UNLOCKED!", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w800, color: Colors.amber, fontSize: 12.sp)),
                         ],
                       ),
                     ),
@@ -115,7 +114,7 @@ class KidsGameDialogs {
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text("DOUBLE REWARDS", style: GoogleFonts.outfit(fontWeight: FontWeight.w900, color: Colors.white, fontSize: 16.sp)),
+                              Text("DOUBLE REWARDS", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 16.sp)),
                               SizedBox(width: 8.w),
                               Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 20.sp),
                             ],
@@ -138,7 +137,7 @@ class KidsGameDialogs {
                           children: [
                             Icon(Icons.check_circle_rounded, color: Colors.green, size: 20.sp),
                             SizedBox(width: 8.w),
-                            Text("REWARDS DOUBLED!", style: GoogleFonts.outfit(fontWeight: FontWeight.w900, color: Colors.green, fontSize: 16.sp)),
+                            Text("REWARDS DOUBLED!", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.green, fontSize: 16.sp)),
                           ],
                         ),
                       ),
@@ -159,7 +158,7 @@ class KidsGameDialogs {
                         borderRadius: BorderRadius.circular(20.r),
                         boxShadow: [BoxShadow(color: primaryColor.withValues(alpha: 0.3), blurRadius: 15, offset: const Offset(0, 8))],
                       ),
-                      child: Text("CONTINUE", textAlign: TextAlign.center, style: GoogleFonts.outfit(fontWeight: FontWeight.w900, color: Colors.white, fontSize: 18.sp, letterSpacing: 1)),
+                      child: Text("CONTINUE", textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 18.sp, letterSpacing: 1)),
                     ),
                   ),
                 ],
@@ -201,9 +200,9 @@ class KidsGameDialogs {
               ).animate().shake(duration: 600.ms),
               
               SizedBox(height: 20.h),
-              Text("GAME OVER", style: GoogleFonts.outfit(fontWeight: FontWeight.w900, color: Colors.redAccent, fontSize: 32.sp)),
+              Text("GAME OVER", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.redAccent, fontSize: 32.sp)),
               SizedBox(height: 12.h),
-              Text("Don't give up! You were so close! \u{1F4AA}", textAlign: TextAlign.center, style: GoogleFonts.outfit(fontSize: 16.sp, color: isDark ? Colors.white70 : Colors.black54, fontWeight: FontWeight.w600)),
+              Text("Don't give up! You were so close! \u{1F4AA}", textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, color: isDark ? Colors.white70 : Colors.black54, fontWeight: FontWeight.w600)),
               SizedBox(height: 32.h),
               
               ScaleButton(
@@ -229,7 +228,7 @@ class KidsGameDialogs {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text("RESUME GAME", style: GoogleFonts.outfit(fontWeight: FontWeight.w900, color: Colors.white, fontSize: 18.sp)),
+                        Text("RESUME GAME", style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, color: Colors.white, fontSize: 18.sp)),
                         SizedBox(width: 8.w),
                         Icon(Icons.play_circle_fill_rounded, color: Colors.white, size: 24.sp),
                       ],
@@ -244,7 +243,7 @@ class KidsGameDialogs {
                   context.pop(); // Pop dialog
                   context.pop(); // Pop game screen
                 }, 
-                child: Text("EXIT TO MAP", style: GoogleFonts.outfit(color: Colors.grey, fontWeight: FontWeight.w800, letterSpacing: 1))
+                child: Text("EXIT TO MAP", style: TextStyle(fontFamily: 'Outfit', color: Colors.grey, fontWeight: FontWeight.w800, letterSpacing: 1))
               ),
             ],
           ),
@@ -285,7 +284,7 @@ class KidsGameDialogs {
               
               Text(
                 "Leaving so soon? 😢",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontWeight: FontWeight.w900,
                   fontSize: 22.sp,
                   color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -297,7 +296,7 @@ class KidsGameDialogs {
               Text(
                 "Your progress in this level will be lost! Are you sure you want to quit?",
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 14.sp,
                   color: isDark ? Colors.white70 : Colors.black54,
                 ),
@@ -319,7 +318,7 @@ class KidsGameDialogs {
                         child: Text(
                           "QUIT",
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w800,
                             color: isDark ? Colors.white60 : Colors.grey[600],
                             letterSpacing: 1,
@@ -350,7 +349,7 @@ class KidsGameDialogs {
                         child: Text(
                           "PLAY ON!",
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             color: Colors.white,
                             letterSpacing: 1,
@@ -373,7 +372,7 @@ class KidsGameDialogs {
       children: [
         Text(asset, style: TextStyle(fontSize: 26.sp)),
         SizedBox(width: 8.w),
-        Text(amount.toString(), style: GoogleFonts.outfit(fontWeight: FontWeight.w900, fontSize: 24.sp)),
+        Text(amount.toString(), style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w900, fontSize: 24.sp)),
       ],
     );
   }

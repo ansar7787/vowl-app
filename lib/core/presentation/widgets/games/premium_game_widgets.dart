@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'dart:math' as math;
 
 class PremiumGameHeader extends StatelessWidget {
@@ -122,7 +121,7 @@ class PremiumGameHeader extends StatelessWidget {
           SizedBox(width: 6.w),
           Text(
             lives.toString(),
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               color: const Color(0xFFF43F5E),
               fontSize: 14.sp,
               fontWeight: FontWeight.w900,
@@ -170,7 +169,7 @@ class PremiumGameHeader extends StatelessWidget {
                 ),
                 child: Text(
                   hintCount.toString(),
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     color: Colors.white,
                     fontSize: 8.sp,
                     fontWeight: FontWeight.w900,
@@ -349,7 +348,7 @@ class PremiumHintOverlay extends StatelessWidget {
               SizedBox(height: 16.h),
               Text(
                 "HINT",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w900,
                   color: const Color(0xFFEAB308),
@@ -359,7 +358,7 @@ class PremiumHintOverlay extends StatelessWidget {
               Text(
                 hint,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   color: Colors.black87,
                 ),

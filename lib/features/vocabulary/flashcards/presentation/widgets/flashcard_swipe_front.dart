@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class FlashcardSwipeFront extends StatelessWidget {
@@ -59,7 +58,7 @@ class FlashcardSwipeFront extends StatelessWidget {
             fit: BoxFit.scaleDown,
             child: Text(
               quest.word?.toUpperCase() ?? "",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 32.sp,
                 fontWeight: FontWeight.w900,
                 color: isDark ? Colors.white : Colors.black87,
@@ -79,7 +78,7 @@ class FlashcardSwipeFront extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "TAP TO FLIP",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   color: color.withValues(alpha: 0.5),
                   fontWeight: FontWeight.bold,

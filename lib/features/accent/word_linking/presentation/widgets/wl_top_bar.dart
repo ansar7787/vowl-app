@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
@@ -86,7 +85,7 @@ class WLTopBar extends StatelessWidget {
           SizedBox(width: 6.w),
           Text(
             "${state.livesRemaining}",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 16.sp,
               fontWeight: FontWeight.w900,
               color: Colors.pinkAccent,
@@ -131,7 +130,7 @@ class WLTopBar extends StatelessWidget {
                 final hintCount = authState.user?.hintCount ?? 0;
                 return Text(
                   "$hintCount",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w900,
                     color: disabled ? Colors.grey : theme.primaryColor,

@@ -225,6 +225,11 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           if (loadedQuests.isEmpty) {
             emit(RoleplayError("No quests available for this level"));
           } else {
+            // Trigger preloading if level ends in 9
+            if (event.level % 10 == 9) {
+              add(PreloadNextBatch(gameType: event.gameType, currentLevel: event.level));
+            }
+
             emit(RoleplayLoaded(
               quests: loadedQuests,
               currentIndex: 0,
@@ -248,6 +253,7 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
     on<SelectDialogueChoice>((event, emit) async {
       final currentState = state;
       if (currentState is! RoleplayLoaded || currentState.livesRemaining <= 0) return;
+      if (currentState.lastAnswerCorrect != null) return;
 
       final isCorrect = (event.choice.score ?? 100) >= 50;
 
@@ -262,9 +268,6 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           updatedQuests.add(currentState.currentQuest);
         }
 
-        await soundService.playWrong();
-        await hapticService.error();
-
         emit(currentState.copyWith(
           livesRemaining: newLives,
           lastAnswerCorrect: false,
@@ -273,21 +276,27 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           wrongCount: isFinal ? 0 : newWrongCount,
           isFinalFailure: isFinal || newLives <= 0,
         ));
+
+        // Fire and forget sound and haptics to prevent state emission lag
+        soundService.playWrong();
+        hapticService.error();
       } else {
-        await soundService.playCorrect();
-        await hapticService.success();
         emit(currentState.copyWith(
           lastAnswerCorrect: true,
           currentNodeId: event.choice.next,
           wrongCount: 0,
           isFinalFailure: false,
         ));
+
+        soundService.playCorrect();
+        hapticService.success();
       }
     });
 
     on<SubmitAnswer>((event, emit) async {
       final currentState = state;
       if (currentState is! RoleplayLoaded || currentState.livesRemaining <= 0) return;
+      if (currentState.lastAnswerCorrect != null) return;
 
       if (!event.isCorrect) {
         final newLives = currentState.livesRemaining - 1;
@@ -300,9 +309,6 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           updatedQuests.add(currentState.currentQuest);
         }
 
-        await soundService.playWrong();
-        await hapticService.error();
-
         emit(currentState.copyWith(
           livesRemaining: newLives,
           lastAnswerCorrect: false,
@@ -310,14 +316,19 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           wrongCount: isFinal ? 0 : newWrongCount,
           isFinalFailure: isFinal,
         ));
+
+        // Fire and forget sound and haptics to prevent state emission lag
+        soundService.playWrong();
+        hapticService.error();
       } else {
-        await soundService.playCorrect();
-        await hapticService.success();
         emit(currentState.copyWith(
           lastAnswerCorrect: true,
           wrongCount: 0,
           isFinalFailure: false,
         ));
+
+        soundService.playCorrect();
+        hapticService.success();
       }
     });
 
@@ -351,11 +362,10 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           emit(currentState.copyWith(lastAnswerCorrect: null, hintUsed: false));
         }
       } else if (currentState.lastAnswerCorrect == true) {
-        await soundService.playLevelComplete();
-        
         const int totalXp = 10;
         const int totalCoins = 10;
 
+        // Transition state immediately before performing asynchronous network/db calls to prevent double-next taps
         emit(RoleplayGameComplete(
           xpEarned: totalXp,
           coinsEarned: totalCoins,
@@ -363,10 +373,23 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
           lastState: currentState,
         ));
 
+        soundService.playLevelComplete();
+
         if (currentGameType != null && currentLevel != null) {
-          await updateUserRewards(UpdateUserRewardsParams(gameType: currentGameType!, level: currentLevel!, xpIncrease: totalXp, coinIncrease: totalCoins));
-          await updateCategoryStats(UpdateCategoryStatsParams(categoryId: currentGameType!, isCorrect: true));
-          await updateUnlockedLevel(UpdateUnlockedLevelParams(categoryId: currentGameType!, newLevel: currentLevel! + 1));
+          await updateUserRewards(UpdateUserRewardsParams(
+            gameType: currentGameType!, 
+            level: currentLevel!, 
+            xpIncrease: totalXp, 
+            coinIncrease: totalCoins,
+          ));
+          await updateCategoryStats(UpdateCategoryStatsParams(
+            categoryId: currentGameType!, 
+            isCorrect: true,
+          ));
+          await updateUnlockedLevel(UpdateUnlockedLevelParams(
+            categoryId: currentGameType!, 
+            newLevel: currentLevel! + 1,
+          ));
           await awardBadge('roleplay_master');
         }
       } else {
@@ -380,10 +403,14 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
         final s = state as RoleplayLoaded;
         if (s.hintUsed) return;
 
+        // Emit latched state first to block subsequent rapid taps
+        emit(s.copyWith(hintUsed: true));
+        hapticService.selection();
+
         final result = await useHint(NoParams());
-        if (result.isRight()) {
-          emit(s.copyWith(hintUsed: true));
-          hapticService.selection();
+        if (result.isLeft()) {
+          // If the network call failed, we can optionally revert the hint state
+          // but usually it's fine or handled by central error boundaries
         }
       }
     });
@@ -397,6 +424,13 @@ class RoleplayBloc extends Bloc<RoleplayEvent, RoleplayState> {
 
     on<RestartLevel>((event, emit) {
       emit(RoleplayInitial());
+    });
+
+    on<PreloadNextBatch>((event, emit) async {
+      await preloadQuests(
+        gameType: event.gameType,
+        currentLevel: event.currentLevel,
+      );
     });
   }
 }

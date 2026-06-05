@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -14,24 +13,27 @@ class FixTheSentenceWipedAlert extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final displayColor = isDark ? Colors.greenAccent : const Color(0xFF16A34A);
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: Colors.greenAccent.withValues(alpha: 0.1),
+        color: displayColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(color: Colors.greenAccent.withValues(alpha: 0.3)),
+        border: Border.all(color: displayColor.withValues(alpha: 0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.check_circle_outline_rounded, color: Colors.greenAccent, size: 16.r),
+          Icon(Icons.check_circle_outline_rounded, color: displayColor, size: 16.r),
           SizedBox(width: 8.w),
           Text(
             "DECAY WIPED! CHOOSE REPLACEMENT CELL",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 10.sp, 
               fontWeight: FontWeight.bold, 
-              color: Colors.greenAccent
+              color: displayColor
             )
           ),
         ],
@@ -82,7 +84,7 @@ class FixTheSentenceCorrectionOptions extends StatelessWidget {
                 SizedBox(width: 8.w),
                 Text(
                   o.toUpperCase(),
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 12.sp, 
                     fontWeight: FontWeight.bold, 
                     color: isDark ? Colors.white : Colors.black87

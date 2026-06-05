@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ConditionalsChainPainter extends CustomPainter {
   final List<Offset> points;
   final Offset startPoint;
@@ -73,7 +71,7 @@ class ConditionalsChainPainter extends CustomPainter {
       final textPainter = TextPainter(
         text: TextSpan(
           text: options[i],
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
             fontWeight: (isHit || isWrong) ? FontWeight.w800 : FontWeight.w600,
             color: isHit

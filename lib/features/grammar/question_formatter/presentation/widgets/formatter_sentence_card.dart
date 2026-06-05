@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
 class FormatterSentenceCard extends StatelessWidget {
@@ -49,7 +48,7 @@ class FormatterSentenceCard extends StatelessWidget {
                 ),
                 child: Text(
                   instruction.toUpperCase(),
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 10.sp,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 2,
@@ -63,7 +62,7 @@ class FormatterSentenceCard extends StatelessWidget {
           SizedBox(height: 24.h),
           Text(
             sentence,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 22.sp,
               fontWeight: FontWeight.w900,
               color: isMidnight
@@ -85,7 +84,7 @@ class FormatterSentenceCard extends StatelessWidget {
           SizedBox(height: 16.h),
           Text(
             "CONVERT TO A QUESTION",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 12.sp,
               fontWeight: FontWeight.w800,
               letterSpacing: 1.5,

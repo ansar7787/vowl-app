@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class ConflictResolverConflictCard extends StatelessWidget {
@@ -61,7 +60,7 @@ class ConflictResolverConflictCard extends StatelessWidget {
               children: [
                 Text(
                   "CONFLICT SCENARIO DETECTED:",
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 10.sp,
                     color: emotionalColor,
                     letterSpacing: 1.5,
@@ -71,7 +70,7 @@ class ConflictResolverConflictCard extends StatelessWidget {
                 SizedBox(height: 6.h),
                 Text(
                   scene,
-                  style: GoogleFonts.fredoka(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 17.sp,
                     color: isDark ? Colors.white : Colors.black87,
                     height: 1.35,

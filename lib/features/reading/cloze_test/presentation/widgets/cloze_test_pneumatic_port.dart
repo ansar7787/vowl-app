@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -42,7 +41,7 @@ class ClozeTestPneumaticPort extends StatelessWidget {
             child: RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                style: GoogleFonts.fredoka(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 18.sp, 
                   color: isDark ? Colors.white70 : Colors.black87, 
                   height: 1.5,
@@ -85,7 +84,7 @@ class ClozeTestPneumaticPort extends StatelessWidget {
                           ),
                           child: Text(
                             dockedOption?.toUpperCase() ?? "DRAG HERE", 
-                            style: GoogleFonts.shareTechMono(
+                            style: TextStyle(fontFamily: 'RobotoMono', 
                               fontSize: 12.sp, 
                               color: dockedOption != null 
                                   ? (isDark ? Colors.white : Colors.black87) 

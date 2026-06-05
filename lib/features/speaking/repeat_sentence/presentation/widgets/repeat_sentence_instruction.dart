@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class RepeatSentenceInstruction extends StatelessWidget {
   final Color primaryColor;
 
@@ -28,7 +26,7 @@ class RepeatSentenceInstruction extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "HOLD TO TRACE SOUND WAVE",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
@@ -42,7 +40,7 @@ class RepeatSentenceInstruction extends StatelessWidget {
         Text(
           "Listen to the target phrase and repeat it exactly to align the wave cores!",
           textAlign: TextAlign.center,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

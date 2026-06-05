@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 
@@ -53,7 +52,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
             SizedBox(width: 8.w),
             Text(
               'Reward Earned! +20 Vowl Coins',
-              style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+              style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
             ),
           ],
         ),
@@ -111,7 +110,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
               children: [
                 Text(
                   widget.title,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w800,
                     letterSpacing: -0.2,
@@ -119,7 +118,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
                 ),
                 Text(
                   widget.subtitle,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 13.sp,
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -154,7 +153,7 @@ class _RewardedAdCardState extends State<RewardedAdCard> {
                       SizedBox(width: 4.w),
                       Text(
                         '+20',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontWeight: FontWeight.w900,
                           fontSize: 14.sp,
                         ),

@@ -2,7 +2,6 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:confetti/confetti.dart';
 
 class MysteryChestOverlay extends StatelessWidget {
@@ -73,7 +72,7 @@ class MysteryChestOverlay extends StatelessWidget {
                     isOpened
                         ? 'CLAIMED!'
                         : (isPremium ? 'VIP DAILY GIFT' : 'DAILY MYSTERY'),
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: isPremium && !isOpened ? 26.sp : 28.sp,
                       fontWeight: FontWeight.w900,
                       color: isPremium && !isOpened
@@ -105,7 +104,7 @@ class MysteryChestOverlay extends StatelessWidget {
                         : (isPremium
                               ? 'YOUR EXCLUSIVE PRO REWARD'
                               : 'READY TO OPEN?'),
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w700,
                       color: isPremium && !isOpened
@@ -243,7 +242,7 @@ class MysteryChestOverlay extends StatelessWidget {
                                 children: [
                                   Text(
                                     '+$rewardAmount',
-                                    style: GoogleFonts.outfit(
+                                    style: TextStyle(fontFamily: 'Outfit', 
                                       fontSize: 32.sp,
                                       fontWeight: FontWeight.w900,
                                       color: Colors.amber,
@@ -252,7 +251,7 @@ class MysteryChestOverlay extends StatelessWidget {
                                   ),
                                   Text(
                                     'COINS COLLECTED',
-                                    style: GoogleFonts.outfit(
+                                    style: TextStyle(fontFamily: 'Outfit', 
                                       fontSize: 10.sp,
                                       fontWeight: FontWeight.w800,
                                       color: Colors.white70,
@@ -274,7 +273,7 @@ class MysteryChestOverlay extends StatelessWidget {
                     SizedBox(height: 60.h),
                     Text(
                           isPremium ? 'TAP TO CLAIM VIP LOOT' : 'TAP TO UNVEIL',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w800,
                             color: isPremium

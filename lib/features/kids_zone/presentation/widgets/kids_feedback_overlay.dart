@@ -1,7 +1,6 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -108,7 +107,7 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                   // MAIN TITLE
                   Text(
                     widget.isCorrect ? "AWESOME!" : "OH NO!",
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 44.sp,
                       fontWeight: FontWeight.w900,
                       color: Colors.white,
@@ -135,7 +134,7 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                         : (widget.attempts >= 2 
                            ? "Nice try! Let's review this later! 💡" 
                            : "Almost there! Try again! ✨"),
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 18.sp,
                         fontWeight: FontWeight.w700,
                         color: Colors.white.withValues(alpha: 0.9),
@@ -200,7 +199,7 @@ class _KidsFeedbackOverlayContentState extends State<_KidsFeedbackOverlayContent
                           children: [
                             Text(
                               "CONTINUE",
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 18.sp,
                                 fontWeight: FontWeight.w900,
                                 color: primaryColor,

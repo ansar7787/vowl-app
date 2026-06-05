@@ -6,7 +6,6 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -239,7 +238,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
           SizedBox(height: 4.h),
           Text(
             label,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w800,
               color: Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54,
@@ -301,7 +300,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
           SizedBox(width: 8.w),
           Text(
             coins.toString(),
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontWeight: FontWeight.w900,
               color: contrastColor,
               fontSize: 16.sp,
@@ -334,7 +333,7 @@ class _KidsZoneScreenState extends State<KidsZoneScreen> {
                 Expanded(
                   child: Text(
                     message,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       color: Theme.of(context).brightness == Brightness.dark ? Colors.white : const Color(0xFF0F172A),
                       fontWeight: FontWeight.bold,
                       fontSize: 14.sp,

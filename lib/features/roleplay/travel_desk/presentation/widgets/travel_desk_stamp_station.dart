@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class TravelDeskStampStation extends StatelessWidget {
@@ -36,7 +35,7 @@ class TravelDeskStampStation extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "STAMP SLAM TERMINAL",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: color,
                   letterSpacing: 2,
@@ -68,7 +67,7 @@ class TravelDeskStampStation extends StatelessWidget {
           Text(
             "DRAG STAMP UPWARDS TO SLAM ON TARGET",
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 11.sp,
               fontWeight: FontWeight.w600,
               color: Colors.grey.shade500,

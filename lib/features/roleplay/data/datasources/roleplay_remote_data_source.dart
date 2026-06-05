@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:vowl/core/data/services/asset_quest_service.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/error/exceptions.dart';
 import 'package:vowl/features/roleplay/data/models/roleplay_quest_model.dart';
 
 abstract class RoleplayRemoteDataSource {
@@ -34,7 +35,7 @@ class RoleplayRemoteDataSourceImpl implements RoleplayRemoteDataSource {
       final localData = await assetQuestService.getQuests(gameType.name, level);
       if (localData.isNotEmpty) {
         return localData.map((q) {
-          final questMap = q;
+          final questMap = Map<String, dynamic>.from(q);
           return RoleplayQuestModel.fromJson(questMap, questMap['id'] ?? '');
         }).toList();
       }
@@ -52,7 +53,7 @@ class RoleplayRemoteDataSourceImpl implements RoleplayRemoteDataSource {
         if (data.containsKey('quests') && data['quests'] is List) {
           final questsList = data['quests'] as List;
           return questsList.map((q) {
-            final questMap = q as Map<String, dynamic>;
+            final questMap = Map<String, dynamic>.from(q as Map);
             questMap['id'] ??= doc.id;
             questMap['subtype'] = gameType.name;
             questMap['difficulty'] ??= level;
@@ -62,12 +63,21 @@ class RoleplayRemoteDataSourceImpl implements RoleplayRemoteDataSource {
             );
           }).toList();
         }
-        return [RoleplayQuestModel.fromJson(data, doc.id)];
+        final mutableData = Map<String, dynamic>.from(data);
+        return [RoleplayQuestModel.fromJson(mutableData, doc.id)];
       } else {
-        throw Exception('Level $level not found for ${gameType.name}');
+        throw ServerException('Level $level not found for ${gameType.name}');
       }
+    } on FirebaseException catch (e) {
+      throw ServerException(
+        e.message ?? 'Firestore database error',
+        e.code,
+        null,
+        e,
+      );
     } catch (e) {
-      rethrow;
+      if (e is ServerException) rethrow;
+      throw ServerException(e.toString());
     }
   }
 

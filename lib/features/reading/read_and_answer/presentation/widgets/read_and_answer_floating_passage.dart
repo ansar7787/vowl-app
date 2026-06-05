@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ReadAndAnswerFloatingPassage extends StatelessWidget {
   final String text;
   final Color color;
@@ -35,7 +33,7 @@ class ReadAndAnswerFloatingPassage extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: GoogleFonts.fredoka(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 18.sp,
           height: 1.7,
           color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),

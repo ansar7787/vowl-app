@@ -1,8 +1,8 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -22,6 +22,7 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/core/presentation/widgets/game_error_widget.dart';
+import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 
 class SpeakingBaseLayout extends StatefulWidget {
   final GameSubtype gameType;
@@ -63,11 +64,26 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
   int _lastIndex = -1;
   int _lastLives = 3;
   late bool _showBriefing;
+  Timer? _nudgeTimer;
 
   @override
   void initState() {
     super.initState();
     _showBriefing = widget.level == 1 || widget.level == 100;
+  }
+
+  @override
+  void didUpdateWidget(covariant SpeakingBaseLayout oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.level != widget.level) {
+      _showBriefing = widget.level == 1 || widget.level == 100;
+    }
+  }
+
+  @override
+  void dispose() {
+    _nudgeTimer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -95,12 +111,13 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
 
           if (justDroppedToLastLife && !_hasSpokenNudge) {
             _hasSpokenNudge = true; // Permanent for this session
+            _nudgeTimer?.cancel();
             // Delay to allow the "Wrong" sound effect to finish
-            Future.delayed(const Duration(milliseconds: 1200), () {
+            _nudgeTimer = Timer(const Duration(milliseconds: 1200), () {
               if (mounted) {
-                _ttsService.speak(
+                unawaited(_ttsService.speak(
                   "Focus! Use a hint if you need help saving your last life.",
-                );
+                ));
                 di.sl<HapticService>().warning();
               }
             });
@@ -113,7 +130,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
           final isComplete = state is SpeakingGameComplete;
           if (state is SpeakingError) {
             return Scaffold(
-            resizeToAvoidBottomInset: false,
+              resizeToAvoidBottomInset: false,
               backgroundColor: theme.backgroundColors[1],
               body: GameErrorWidget(
                 message: state.message,
@@ -127,10 +144,16 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
             canPop: isComplete,
             onPopInvokedWithResult: (didPop, result) {
               if (didPop) return;
-              GameDialogHelper.showExitConfirmation(
-                this.context,
-                onQuit: () => Navigator.of(this.context).pop(),
-              );
+              if (mounted) {
+                GameDialogHelper.showExitConfirmation(
+                  context,
+                  onQuit: () {
+                    if (mounted) {
+                      Navigator.of(context).pop();
+                    }
+                  },
+                );
+              }
             },
             child: Builder(
               builder: (context) {
@@ -141,106 +164,106 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
                 final currentQuest = (state is SpeakingLoaded) ? state.currentQuest : null;
 
                 return Scaffold(
-            backgroundColor: theme.backgroundColors[1],
-            body: Stack(
-              children: [
-                Container(color: theme.backgroundColors[1]), // Prevent white splash
-                MeshGradientBackground(colors: theme.backgroundColors),
-                _VoicePulseBackground(color: theme.primaryColor.withValues(alpha: 0.15)),
-                if (state is SpeakingLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
-                else ...[
-                  SafeArea(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10.h),
-                        _buildHeader(context, state, widget.level, progress, lives, theme, isDark, currentQuest),
-                        
-                        Expanded(
-                          child: Stack(
-                            clipBehavior: Clip.none,
+                  backgroundColor: theme.backgroundColors[1],
+                  body: Stack(
+                    children: [
+                      Container(color: theme.backgroundColors[1]), // Prevent white splash
+                      MeshGradientBackground(colors: theme.backgroundColors),
+                      _VoicePulseBackground(color: theme.primaryColor.withValues(alpha: 0.15)),
+                      if (state is SpeakingLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
+                      else ...[
+                        SafeArea(
+                          child: Column(
                             children: [
-                              AnimatedOpacity(
-                                duration: const Duration(milliseconds: 400),
-                                opacity: widget.isAnswered ? 0.6 : 1.0,
-                                child: AbsorbPointer(
-                                  absorbing: widget.isAnswered,
-                                child: widget.useScrolling
-                                  ? LayoutBuilder(
-                                      builder: (context, constraints) {
-                                        return SingleChildScrollView(
-                                          physics: const BouncingScrollPhysics(),
-                                          child: ConstrainedBox(
-                                            constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                                            child: Padding(
-                                              padding: EdgeInsets.only(
-                                                left: widget.disablePadding ? 0 : 24.w,
-                                                right: widget.disablePadding ? 0 : 24.w,
-                                                top: widget.disablePadding ? 0 : 20.h,
-                                                bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
+                              SizedBox(height: 10.h),
+                              _buildHeader(context, state, widget.level, progress, lives, theme, isDark, currentQuest),
+                              
+                              Expanded(
+                                child: Stack(
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    AnimatedOpacity(
+                                      duration: const Duration(milliseconds: 400),
+                                      opacity: widget.isAnswered ? 0.6 : 1.0,
+                                      child: AbsorbPointer(
+                                        absorbing: widget.isAnswered,
+                                        child: widget.useScrolling
+                                            ? LayoutBuilder(
+                                                builder: (context, constraints) {
+                                                  return SingleChildScrollView(
+                                                    physics: const BouncingScrollPhysics(),
+                                                    child: ConstrainedBox(
+                                                      constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                                                      child: Padding(
+                                                        padding: EdgeInsets.only(
+                                                          left: widget.disablePadding ? 0 : 24.w,
+                                                          right: widget.disablePadding ? 0 : 24.w,
+                                                          top: widget.disablePadding ? 0 : 20.h,
+                                                          bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
+                                                        ),
+                                                        child: widget.child,
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              )
+                                            : Padding(
+                                                padding: EdgeInsets.only(
+                                                  left: widget.disablePadding ? 0 : 24.w,
+                                                  right: widget.disablePadding ? 0 : 24.w,
+                                                  top: widget.disablePadding ? 0 : 20.h,
+                                                  bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
+                                                ),
+                                                child: widget.child,
                                               ),
-                                              child: widget.child,
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                    )
-                                  : Padding(
-                                      padding: EdgeInsets.only(
-                                        left: widget.disablePadding ? 0 : 24.w,
-                                        right: widget.disablePadding ? 0 : 24.w,
-                                        top: widget.disablePadding ? 0 : 20.h,
-                                        bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
                                       ),
-                                      child: widget.child,
                                     ),
+                                    Positioned(
+                                      top: -20.h, right: 20.w,
+                                      child: _buildPeekingMascot(context, state, lives),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              Positioned(
-                                top: -20.h, right: 20.w,
-                                child: _buildPeekingMascot(state, lives),
                               ),
                             ],
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                ],
-                if (widget.isAnswered && state is! SpeakingGameOver && state is! SpeakingGameComplete)
-                  Positioned(
-                    bottom: 0, left: 0, right: 0,
-                    child: _buildModernFeedbackCard(context, state, theme, isDark),
-                  ),
-                if (widget.showConfetti) const GameConfetti(),
+                      if (widget.isAnswered && state is! SpeakingGameOver && state is! SpeakingGameComplete)
+                        Positioned(
+                          bottom: 0, left: 0, right: 0,
+                          child: _buildModernFeedbackCard(context, state, theme, isDark),
+                        ),
+                      if (widget.showConfetti) const GameConfetti(),
 
-                if (_showBriefing)
-                  Builder(
-                    builder: (context) {
-                      final briefing = GameInstructionService.getBriefing(widget.gameType, "Speaking", level: widget.level);
-                      return QuestBriefingOverlay(
-                        title: briefing.title,
-                        objective: briefing.objective,
-                        rules: briefing.rules,
-                        actionText: briefing.actionText,
-                        tip: briefing.tip,
-                        icon: briefing.icon,
-                        primaryColor: theme.primaryColor,
-                        onStart: () => setState(() => _showBriefing = false),
-                      );
-                    },
+                      if (_showBriefing)
+                        Builder(
+                          builder: (context) {
+                            final briefing = GameInstructionService.getBriefing(widget.gameType, "Speaking", level: widget.level);
+                            return QuestBriefingOverlay(
+                              title: briefing.title,
+                              objective: briefing.objective,
+                              rules: briefing.rules,
+                              actionText: briefing.actionText,
+                              tip: briefing.tip,
+                              icon: briefing.icon,
+                              primaryColor: theme.primaryColor,
+                              onStart: () => setState(() => _showBriefing = false),
+                            );
+                          },
+                        ),
+                    ],
                   ),
-              ],
+                );
+              },
             ),
           );
         },
       ),
     );
-  },
-),
-    );
-}
+  }
 
-  Widget _buildHeader(BuildContext context, SpeakingState state, int level, double progress, int lives, dynamic theme, bool isDark, dynamic quest) {
+  Widget _buildHeader(BuildContext context, SpeakingState state, int level, double progress, int lives, dynamic theme, bool isDark, SpeakingQuest? quest) {
     final hintShouldGlow = lives < 3 && !widget.isAnswered;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -251,7 +274,18 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
               level: level, progress: progress, lives: lives,
               streak: (state is SpeakingLoaded) ? state.currentIndex : 0,
               theme: theme, isDark: isDark,
-              onBack: () => GameDialogHelper.showExitConfirmation(this.context, onQuit: () => Navigator.pop(this.context)),
+              onBack: () {
+                if (mounted) {
+                  GameDialogHelper.showExitConfirmation(
+                    context,
+                    onQuit: () {
+                      if (mounted) {
+                        Navigator.pop(context);
+                      }
+                    },
+                  );
+                }
+              },
             ),
           ),
           if (quest != null && !widget.isAnswered) ...[
@@ -285,7 +319,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
                 hintText: quest.hint,
                 soundService: _soundService,
                 onTap: () {
-                  context.read<SpeakingBloc>().add(SpeakingHintUsed());
+                  context.read<SpeakingBloc>().add(const SpeakingHintUsed());
                   widget.onHint();
                 },
               ).animate(target: hintShouldGlow ? 1 : 0, onPlay: (c) => c.repeat(reverse: true))
@@ -298,7 +332,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
     );
   }
 
-  Widget _buildPeekingMascot(SpeakingState state, int lives) {
+  Widget _buildPeekingMascot(BuildContext context, SpeakingState state, int lives) {
     final mascotState = _getMascotState(state, lives);
     final authState = context.read<AuthBloc>().state;
     final mascotId = authState.user?.vowlMascot ?? 'vowl_prime';
@@ -326,7 +360,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
             color: Colors.white, borderRadius: BorderRadius.circular(12.r),
             boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10)],
           ),
-          child: Text(message, style: GoogleFonts.outfit(fontSize: 11.sp, fontWeight: FontWeight.bold, color: Colors.orangeAccent)),
+          child: Text(message, style: TextStyle(fontFamily: 'Outfit', fontSize: 11.sp, fontWeight: FontWeight.bold, color: Colors.orangeAccent)),
         ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05), duration: 2.seconds),
         SizedBox(height: 0.h),
         VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId).animate(onPlay: (c) => c.repeat(reverse: true))
@@ -372,7 +406,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
                 child: Icon(icon, color: Colors.white, size: 28.r),
               ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
               SizedBox(width: 16.w),
-              Expanded(child: Text(title, style: GoogleFonts.outfit(fontSize: 24.sp, fontWeight: FontWeight.w900, foreground: Paint()..shader = LinearGradient(colors: primaryGradient).createShader(const Rect.fromLTWH(0, 0, 200, 70)), letterSpacing: 1.5))),
+              Expanded(child: Text(title, style: TextStyle(fontFamily: 'Outfit', fontSize: 24.sp, fontWeight: FontWeight.w900, foreground: Paint()..shader = LinearGradient(colors: primaryGradient).createShader(const Rect.fromLTWH(0, 0, 200, 70)), letterSpacing: 1.5))),
             ],
           ),
           if (explanation != null) ...[
@@ -387,11 +421,11 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
                     children: [
                       Icon(Icons.info_outline_rounded, color: shadowColor, size: 14.r),
                       SizedBox(width: 8.w),
-                      Text("EXPLANATION:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
+                      Text("EXPLANATION:", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
                     ],
                   ),
                   SizedBox(height: 4.h),
-                  Text(explanation, style: GoogleFonts.fredoka(fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
+                  Text(explanation, style: TextStyle(fontFamily: 'Outfit', fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
                 ],
               ),
             ).animate().fadeIn(delay: 300.ms).scale(duration: 400.ms, curve: Curves.easeOutBack),
@@ -409,7 +443,7 @@ class _SpeakingBaseLayoutState extends State<SpeakingBaseLayout> {
               child: Center(
                 child: Text(
                   buttonText,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,

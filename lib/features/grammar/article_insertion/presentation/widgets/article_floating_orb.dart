@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ArticleFloatingOrb extends StatefulWidget {
   final String article;
   final int index;
@@ -159,7 +157,7 @@ class _ArticleFloatingOrbState extends State<ArticleFloatingOrb>
                 child: Center(
                   child: Text(
                     widget.article.toUpperCase(),
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w900,
                       color: textColor,

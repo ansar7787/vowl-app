@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -97,7 +96,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
             ),
             child: Text(
               selected ?? "      ",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
                 color: primaryColor,
@@ -193,7 +192,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                         child: RichText(
                           textAlign: TextAlign.center,
                           text: TextSpan(
-                            style: GoogleFonts.fredoka(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 20.sp,
                               color: isDark ? Colors.white : Colors.black87,
                               height: 1.5,
@@ -256,7 +255,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
                             child: Center(
                               child: Text(
                                 "LOCK CONFIGURATION",
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w900,
                                   color: Colors.white,
@@ -302,7 +301,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
             SizedBox(height: 12.h),
             Text(
               correct ? "CORRECT!" : "INCORRECT",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -314,7 +313,7 @@ class _ModalsSelectionScreenState extends State<ModalsSelectionScreen> {
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

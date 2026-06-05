@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class PrefixSuffixMissionControl extends StatelessWidget {
   final Color primaryColor;
 
@@ -31,7 +29,7 @@ class PrefixSuffixMissionControl extends StatelessWidget {
           ),
           child: Text(
             "DOCK THE ROVER",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 12.sp,
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -44,7 +42,7 @@ class PrefixSuffixMissionControl extends StatelessWidget {
         SizedBox(height: 8.h),
         Text(
           "LEXICAL MISSION IN PROGRESS",
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 8.sp,
             color: primaryColor.withValues(alpha: 0.5),
             fontWeight: FontWeight.w800,

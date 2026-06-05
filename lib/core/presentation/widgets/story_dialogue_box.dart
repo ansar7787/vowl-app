@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/story_service.dart';
@@ -117,7 +116,7 @@ class StoryDialogueBox extends StatelessWidget {
             SizedBox(width: 12.w),
             Text(
               beat.title,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 13.sp,
                 fontWeight: FontWeight.w900,
                 color: beat.themeColor,
@@ -167,7 +166,7 @@ class StoryDialogueBox extends StatelessWidget {
           Text(
             beat.text,
             textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 18.sp,
               fontWeight: FontWeight.w600,
               color: isDark ? Colors.white.withValues(alpha: 0.9) : const Color(0xFF1E293B),
@@ -208,7 +207,7 @@ class StoryDialogueBox extends StatelessWidget {
           child: Center(
             child: Text(
               "START JOURNEY",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 color: Colors.white,
                 fontWeight: FontWeight.w900,

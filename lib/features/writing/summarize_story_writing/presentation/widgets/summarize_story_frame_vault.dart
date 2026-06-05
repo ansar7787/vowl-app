@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:vowl/features/writing/summarize_story_writing/domain/models/describe_frame_slot.dart';
+import 'package:vowl/features/writing/summarize_story_writing/presentation/models/describe_frame_slot.dart';
 
 class SummarizeStoryFrameVault extends StatelessWidget {
   final List<String> options;
@@ -36,7 +35,7 @@ class SummarizeStoryFrameVault extends StatelessWidget {
               decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(20.r)), 
               child: Text(
                 o, 
-                style: GoogleFonts.shareTechMono(color: Colors.white, fontSize: 11.sp, fontWeight: FontWeight.bold)
+                style: TextStyle(fontFamily: 'RobotoMono', color: Colors.white, fontSize: 11.sp, fontWeight: FontWeight.bold)
               )
             )
           ),
@@ -53,7 +52,7 @@ class SummarizeStoryFrameVault extends StatelessWidget {
             child: Text(
               o, 
               textAlign: TextAlign.center,
-              style: GoogleFonts.shareTechMono(
+              style: TextStyle(fontFamily: 'RobotoMono', 
                 color: isDark ? Colors.white : Colors.black87, 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.bold

@@ -58,9 +58,13 @@ abstract class KidsState extends Equatable {
   List<Object?> get props => [];
 }
 
-class KidsInitial extends KidsState {}
+class KidsInitial extends KidsState {
+  const KidsInitial();
+}
 
-class KidsLoading extends KidsState {}
+class KidsLoading extends KidsState {
+  const KidsLoading();
+}
 
 class KidsLoaded extends KidsState {
   final List<KidsQuest> quests;
@@ -97,12 +101,13 @@ class KidsLoaded extends KidsState {
     bool? hintUsed,
     int? wrongCount,
     bool? isFinalFailure,
+    bool resetLastAnswer = false,
   }) {
     return KidsLoaded(
       quests: quests ?? this.quests,
       currentIndex: currentIndex ?? this.currentIndex,
       livesRemaining: livesRemaining ?? this.livesRemaining,
-      lastAnswerCorrect: lastAnswerCorrect,
+      lastAnswerCorrect: resetLastAnswer ? null : (lastAnswerCorrect ?? this.lastAnswerCorrect),
       gameType: gameType ?? this.gameType,
       level: level ?? this.level,
       hintUsed: hintUsed ?? this.hintUsed,
@@ -188,7 +193,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
     required this.useHint,
     required this.soundService,
     required this.hapticService,
-  }) : super(KidsInitial()) {
+  }) : super(const KidsInitial()) {
     on<FetchKidsQuests>(_onFetchQuests);
     on<SubmitKidsAnswer>(_onSubmitAnswer);
     on<NextKidsQuestion>(_onNextQuestion);
@@ -209,10 +214,10 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
           
           emit(s.copyWith(
             quests: updatedQuests,
-            lastAnswerCorrect: null,
+            resetLastAnswer: true,
           ));
         } else {
-          emit(s.copyWith(lastAnswerCorrect: null));
+          emit(s.copyWith(resetLastAnswer: true));
         }
       }
     });
@@ -222,11 +227,10 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
     FetchKidsQuests event,
     Emitter<KidsState> emit,
   ) async {
-    emit(KidsLoading());
+    emit(const KidsLoading());
     final result = await getKidsQuests(event.gameType, event.level);
     result.fold(
-      (failure) =>
-          emit(const KidsError('Failed to load quests from assets')),
+      (failure) => emit(const KidsError('Failed to load quests from assets')),
       (quests) {
         final validQuests = quests.where((q) {
           final isMultiChoice = q.gameType == 'choice_multi';
@@ -263,56 +267,59 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
   }
 
   void _onSubmitAnswer(SubmitKidsAnswer event, Emitter<KidsState> emit) {
-    if (state is KidsLoaded) {
-      final s = state as KidsLoaded;
+    if (state is! KidsLoaded) return;
+    final s = state as KidsLoaded;
+    if (s.lastAnswerCorrect != null || s.livesRemaining <= 0) return;
 
-      if (event.isCorrect) {
-        soundService.playCorrect();
-        hapticService.success();
-      } else {
-        soundService.playWrong();
-        hapticService.error();
-      }
+    // Synchronously lock state transition to prevent double-tap race conditions
+    final lockedState = s.copyWith(lastAnswerCorrect: event.isCorrect);
+    emit(lockedState);
 
-      int newLives = event.isCorrect ? s.livesRemaining : s.livesRemaining - 1;
+    if (event.isCorrect) {
+      soundService.playCorrect();
+      hapticService.success();
+    } else {
+      soundService.playWrong();
+      hapticService.error();
+    }
 
-      bool isFinal = s.wrongCount >= 1;
+    int newLives = event.isCorrect ? s.livesRemaining : s.livesRemaining - 1;
+    bool isFinal = s.wrongCount >= 1;
 
-      if (newLives <= 0) {
+    if (newLives <= 0) {
+      emit(
+        KidsGameOver(
+          quests: s.quests,
+          currentIndex: s.currentIndex,
+          gameType: s.gameType,
+          level: s.level,
+        ),
+      );
+    } else {
+      if (!event.isCorrect && isFinal) {
+        // RE-QUEUE: Move failed quest to the end of the list for reinforcement
+        final updatedQuests = List<KidsQuest>.from(s.quests);
+        final failedQuest = updatedQuests[s.currentIndex];
+        updatedQuests.add(failedQuest);
+        
         emit(
-          KidsGameOver(
-            quests: s.quests,
-            currentIndex: s.currentIndex,
-            gameType: s.gameType,
-            level: s.level,
+          s.copyWith(
+            quests: updatedQuests,
+            livesRemaining: newLives,
+            lastAnswerCorrect: false,
+            wrongCount: 0, // Reset wrongCount after re-queue
+            isFinalFailure: true,
           ),
         );
       } else {
-        if (!event.isCorrect && isFinal) {
-          // RE-QUEUE: Move failed quest to the end of the list for reinforcement
-          final updatedQuests = List<KidsQuest>.from(s.quests);
-          final failedQuest = updatedQuests[s.currentIndex];
-          updatedQuests.add(failedQuest);
-          
-          emit(
-            s.copyWith(
-              quests: updatedQuests,
-              livesRemaining: newLives,
-              lastAnswerCorrect: false,
-              wrongCount: 0, // Reset wrongCount after re-queue
-              isFinalFailure: true,
-            ),
-          );
-        } else {
-          emit(
-            s.copyWith(
-              livesRemaining: newLives,
-              lastAnswerCorrect: event.isCorrect,
-              wrongCount: event.isCorrect ? 0 : s.wrongCount + 1,
-              isFinalFailure: !event.isCorrect && (s.wrongCount + 1 >= 2), // 2nd strike
-            ),
-          );
-        }
+        emit(
+          s.copyWith(
+            livesRemaining: newLives,
+            lastAnswerCorrect: event.isCorrect,
+            wrongCount: event.isCorrect ? 0 : s.wrongCount + 1,
+            isFinalFailure: !event.isCorrect && (s.wrongCount + 1 >= 2), // 2nd strike
+          ),
+        );
       }
     }
   }
@@ -328,20 +335,24 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
       if (nextIndex >= s.quests.length) {
         if (s.lastAnswerCorrect == true) {
           // Level Complete
-          await updateUserRewards(
-            UpdateUserRewardsParams(
-              gameType: s.gameType,
-              level: s.level,
-              xpIncrease: 10,
-              coinIncrease: 10,
+          emit(const KidsLoading()); // Shimmer during database writes
+          
+          await Future.wait([
+            updateUserRewards(
+              UpdateUserRewardsParams(
+                gameType: s.gameType,
+                level: s.level,
+                xpIncrease: 10,
+                coinIncrease: 10,
+              ),
             ),
-          );
-          await updateUnlockedLevel(
-            UpdateUnlockedLevelParams(
-              categoryId: s.gameType,
-              newLevel: s.level + 1,
+            updateUnlockedLevel(
+              UpdateUnlockedLevelParams(
+                categoryId: s.gameType,
+                newLevel: s.level + 1,
+              ),
             ),
-          );
+          ]);
 
           String? newSticker;
           if (s.level == 10) {
@@ -361,19 +372,19 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
           );
         } else {
           // Wrong answer on the very last quest
-          emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false, wrongCount: 0));
+          emit(s.copyWith(resetLastAnswer: true, hintUsed: false, wrongCount: 0));
         }
       } else if (s.lastAnswerCorrect == true || s.isFinalFailure) {
         emit(s.copyWith(
           currentIndex: nextIndex, 
-          lastAnswerCorrect: null,
+          resetLastAnswer: true,
           hintUsed: false,
           wrongCount: 0,
           isFinalFailure: false,
         ));
       } else {
         // First-time wrong answer, stay and retry
-        emit(s.copyWith(lastAnswerCorrect: null, hintUsed: false));
+        emit(s.copyWith(resetLastAnswer: true, hintUsed: false));
       }
     }
   }
@@ -411,7 +422,7 @@ class KidsBloc extends Bloc<KidsEvent, KidsState> {
   }
 
   void _onResetGame(ResetKidsGame event, Emitter<KidsState> emit) {
-    emit(KidsInitial());
+    emit(const KidsInitial());
   }
 
   Future<void> _onUseHint(UseKidsHint event, Emitter<KidsState> emit) async {

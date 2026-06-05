@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 
+@immutable
 class SpeakingQuest extends GameQuest {
   final String? missingWord;
   final String? prompt;
@@ -28,13 +30,17 @@ class SpeakingQuest extends GameQuest {
     super.options,
     super.correctAnswerIndex,
     super.correctAnswer,
+    super.correctAnswerCategory,
+    super.question,
+    super.sentence,
+    super.targetWord,
     super.hint,
     super.textToSpeak,
     super.visualConfig,
+    super.explanation,
     this.missingWord,
     this.prompt,
     this.sampleAnswer,
-    super.explanation,
     this.translation,
     this.situationText,
     this.sceneText,
@@ -46,5 +52,22 @@ class SpeakingQuest extends GameQuest {
     this.targetPhoneme,
     this.expression,
   });
-}
 
+  @override
+  List<Object?> get props => [
+        ...super.props,
+        missingWord,
+        prompt,
+        sampleAnswer,
+        translation,
+        situationText,
+        sceneText,
+        acceptedSynonyms,
+        phoneticHint,
+        meaning,
+        sampleUsage,
+        partnerDialogue,
+        targetPhoneme,
+        expression,
+      ];
+}

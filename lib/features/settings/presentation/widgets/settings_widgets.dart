@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/settings/presentation/widgets/settings_dialogs.dart';
@@ -26,7 +25,7 @@ class SettingsSectionTitle extends StatelessWidget {
       padding: EdgeInsets.only(left: 8.w, bottom: 12.h),
       child: Text(
         title.toUpperCase(),
-        style: GoogleFonts.outfit(
+        style: TextStyle(fontFamily: 'Outfit', 
           fontSize: 13.sp,
           fontWeight: FontWeight.w900,
           color: isDark
@@ -95,7 +94,7 @@ class SettingsTile extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w600,
                     color: isDestructive
@@ -160,7 +159,7 @@ class SettingsSwitchTile extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w600,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -168,7 +167,7 @@ class SettingsSwitchTile extends StatelessWidget {
                 ),
                 Text(
                   subtitle,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 11.sp,
                     color: isDark ? Colors.white38 : Colors.grey[600],
                     fontWeight: FontWeight.w500,
@@ -251,7 +250,7 @@ class SettingsLogoutButton extends StatelessWidget {
                       SizedBox(width: 16.w),
                       Text(
                         'SIGN OUT ACCOUNT',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w900,
                           color: Colors.red,
@@ -370,7 +369,7 @@ class SettingsProfileSection extends StatelessWidget {
               children: [
                 Text(
                   currentUser.displayName ?? 'Explorer',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 22.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -379,7 +378,7 @@ class SettingsProfileSection extends StatelessWidget {
                 ),
                 Text(
                   currentUser.email,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: isDark
                         ? Colors.white54
@@ -413,7 +412,7 @@ class SettingsProfileSection extends StatelessWidget {
                       SizedBox(width: 6.w),
                       Text(
                         currentUser.isPremium ? 'PREMIUM QUESTER' : 'FREE ACCOUNT',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w900,
                           color: Colors.blue,

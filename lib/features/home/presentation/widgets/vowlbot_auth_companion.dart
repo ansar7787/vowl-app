@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class VowlBotAuthCompanion extends StatefulWidget {
   final FocusNode? nameFocus;
   final String nameValue;
@@ -156,7 +154,7 @@ class _VowlBotAuthCompanionState extends State<VowlBotAuthCompanion> {
                           child: Text(
                             _getGreeting(),
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               color: textColor,
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w800,

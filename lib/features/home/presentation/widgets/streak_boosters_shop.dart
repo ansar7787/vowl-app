@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
@@ -39,7 +38,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
           children: [
             Text(
               'STREAK BOOSTERS',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 20.sp,
                 fontWeight: FontWeight.w900,
                 letterSpacing: -0.5,
@@ -68,7 +67,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                   SizedBox(width: 8.w),
                   Text(
                     '${user.coins}',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w900,
                       color: Colors.green,
@@ -194,7 +193,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
               SizedBox(width: 12.w),
               Text(
                 "Insufficient Vowl Coins! Needed: $cost",
-                style: GoogleFonts.outfit(fontWeight: FontWeight.w600),
+                style: TextStyle(fontFamily: 'Outfit', fontWeight: FontWeight.w600),
               ),
             ],
           ),
@@ -230,7 +229,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
             SizedBox(width: 12.w),
             Text(
               "$name Activated!",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontWeight: FontWeight.w900,
                 fontSize: 12.sp,
                 letterSpacing: 0.5,
@@ -336,7 +335,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                           Flexible(
                             child: Text(
                               title,
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 15.sp,
                                 fontWeight: FontWeight.w900,
                                 color: isDark ? Colors.white : Colors.black87,
@@ -354,7 +353,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                               ),
                               child: Text(
                                 'x$count',
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w800,
                                   color: isDisabled ? Colors.grey : color,
@@ -372,7 +371,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                               ),
                               child: Text(
                                 isActive ? 'ACTIVE' : 'NOT NEEDED',
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 10.sp,
                                   fontWeight: FontWeight.w800,
                                   color: isActive ? const Color(0xFF10B981) : Colors.grey,
@@ -385,7 +384,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                       SizedBox(height: 4.h),
                       Text(
                         subtitle,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 12.sp,
                           color: isDisabled ? Colors.grey.withValues(alpha: 0.5) : (isDark ? Colors.white54 : Colors.black54),
                           fontWeight: FontWeight.w500,
@@ -395,7 +394,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                         SizedBox(height: 4.h),
                         Text(
                           "Expires ${DateFormat('MMM d, h:mm a').format(activeUntil)}",
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 10.sp,
                             color: const Color(0xFF10B981).withValues(alpha: 0.7),
                             fontWeight: FontWeight.w600,
@@ -427,7 +426,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                         SizedBox(width: 4.w),
                         Text(
                           '$cost',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w900,
                             color: canAfford ? color : Colors.red,
@@ -458,7 +457,7 @@ class _StreakBoostersShopState extends State<StreakBoostersShop> {
                           SizedBox(width: 4.w),
                           Text(
                             'FREE',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w900,
                               color: Colors.amber,

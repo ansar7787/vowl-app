@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/payment_service.dart';
@@ -236,7 +235,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
             children: [
               Text(
                 'ACTIVATE PRO ACCESS',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   color: Colors.white,
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w900,
@@ -255,7 +254,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
   Widget _buildSecureTag(bool isDark) {
     return Text(
       'SECURE TRANSACTION • CANCEL ANYTIME',
-      style: GoogleFonts.outfit(
+      style: TextStyle(fontFamily: 'Outfit', 
         color: isDark ? const Color(0x3DFFFFFF) : const Color(0x42000000),
         fontSize: 9.sp,
         fontWeight: FontWeight.w900,

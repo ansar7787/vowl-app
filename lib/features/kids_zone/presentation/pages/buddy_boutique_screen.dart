@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:haptic_feedback/haptic_feedback.dart';
 import 'package:vowl/features/kids_zone/presentation/widgets/kids_background_renderer.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -140,7 +139,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
             Expanded(
               child: Text(
                 'Buddy Boutique',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w800,
                   color: isDark ? Colors.white : const Color(0xFF1E293B),
@@ -192,7 +191,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                         children: [
                           Text(
                             "BUDDY PASSPORT",
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w900,
                               letterSpacing: 3,
@@ -201,7 +200,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                           ),
                           Text(
                             "Holographic Identity",
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w800,
                               color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -286,8 +285,8 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("KIDS COINS", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.amber, letterSpacing: 2)),
-                      Text("$coins", style: GoogleFonts.outfit(fontSize: 28.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : const Color(0xFF0F172A))),
+                      Text("KIDS COINS", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.amber, letterSpacing: 2)),
+                      Text("$coins", style: TextStyle(fontFamily: 'Outfit', fontSize: 28.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : const Color(0xFF0F172A))),
                     ],
                   ),
                 ),
@@ -335,7 +334,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           children: [
             Icon(icon, size: 16.r, color: isSelected ? Colors.white : color),
             SizedBox(width: 8.w),
-            Text(label, style: GoogleFonts.outfit(fontSize: 13.sp, fontWeight: FontWeight.w700, color: isSelected ? Colors.white : (isDark ? Colors.white70 : Colors.black87))),
+            Text(label, style: TextStyle(fontFamily: 'Outfit', fontSize: 13.sp, fontWeight: FontWeight.w700, color: isSelected ? Colors.white : (isDark ? Colors.white70 : Colors.black87))),
           ],
         ),
       ),
@@ -392,7 +391,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
               children: [
                 Text(item['icon'] as String, style: TextStyle(fontSize: 40.sp)).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.1, 1.1), duration: 2.seconds),
                 SizedBox(height: 12.h),
-                Text(item['name'] as String, style: GoogleFonts.outfit(fontSize: 13.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : const Color(0xFF1E293B))),
+                Text(item['name'] as String, style: TextStyle(fontFamily: 'Outfit', fontSize: 13.sp, fontWeight: FontWeight.w900, color: isDark ? Colors.white : const Color(0xFF1E293B))),
                 SizedBox(height: 8.h),
                 if (isEquipped)
                   _buildItemStatusTag("EQUIPPED", item['color'] as Color, item['color'] as Color)
@@ -412,7 +411,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
       decoration: BoxDecoration(color: bgColor.withValues(alpha: 0.2), borderRadius: BorderRadius.circular(12.r)),
-      child: Text(label, style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: textColor)),
+      child: Text(label, style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: textColor)),
     );
   }
 
@@ -428,7 +427,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
           SizedBox(width: 4.w),
           Text(
             "$price",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 12.sp,
               fontWeight: FontWeight.w900,
               color: isDark ? Colors.white70 : Colors.black54,
@@ -513,8 +512,8 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("WATCH & EARN", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white70, letterSpacing: 2)),
-                      Text("Get 10 Kids Coins", style: GoogleFonts.outfit(fontSize: 18.sp, fontWeight: FontWeight.w800, color: Colors.white)),
+                      Text("WATCH & EARN", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900, color: Colors.white70, letterSpacing: 2)),
+                      Text("Get 10 Kids Coins", style: TextStyle(fontFamily: 'Outfit', fontSize: 18.sp, fontWeight: FontWeight.w800, color: Colors.white)),
                     ],
                   ),
                 ),
@@ -538,7 +537,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
       decoration: BoxDecoration(color: color.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(8.r), border: Border.all(color: color.withValues(alpha: 0.2))),
-      child: Text(text, style: GoogleFonts.outfit(fontSize: 8.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 1)),
+      child: Text(text, style: TextStyle(fontFamily: 'Outfit', fontSize: 8.sp, fontWeight: FontWeight.w900, color: color, letterSpacing: 1)),
     );
   }
 
@@ -560,7 +559,7 @@ class _BuddyBoutiqueScreenState extends State<BuddyBoutiqueScreen>
                 Expanded(
                   child: Text(
                     message,
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 13.sp,
                       fontWeight: FontWeight.w800,
                       color: isError

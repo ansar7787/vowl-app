@@ -1,8 +1,8 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
@@ -65,11 +65,28 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
   int _lastIndex = -1;
   int _lastLives = 3;
   late bool _showBriefing;
+  Timer? _nudgeTimer;
 
   @override
   void initState() {
     super.initState();
     _showBriefing = widget.level == 1 || widget.level == 100;
+  }
+
+  @override
+  void didUpdateWidget(covariant ReadingBaseLayout oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.level != widget.level) {
+      setState(() {
+        _showBriefing = widget.level == 1 || widget.level == 100;
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _nudgeTimer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -98,8 +115,10 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
           if (justDroppedToLastLife && !_hasSpokenNudge) {
             _hasSpokenNudge = true; // Permanent for this session
             // Delay to allow the "Wrong" sound effect to finish
-            Future.delayed(const Duration(milliseconds: 1200), () {
+            _nudgeTimer?.cancel();
+            _nudgeTimer = Timer(const Duration(milliseconds: 1200), () {
               if (mounted) {
+                _ttsService.stop(); // Stop ongoing speech to prevent overlapping
                 _ttsService.speak(
                   "Focus! Use a hint if you need help saving your last life.",
                 );
@@ -115,7 +134,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
           final isComplete = state is ReadingGameComplete;
           if (state is ReadingError) {
             return Scaffold(
-            resizeToAvoidBottomInset: false,
+              resizeToAvoidBottomInset: false,
               backgroundColor: theme.backgroundColors[1],
               body: GameErrorWidget(
                 message: state.message,
@@ -125,124 +144,119 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
               ),
             );
           }
-          return PopScope(
-            canPop: isComplete,
-            onPopInvokedWithResult: (didPop, result) {
-              if (didPop) return;
-              GameDialogHelper.showExitConfirmation(
-                this.context,
-                onQuit: () => Navigator.of(this.context).pop(),
-              );
-            },
-            child: Builder(
-              builder: (context) {
-                final progress = (state is ReadingLoaded)
-                    ? (state.currentIndex + 1) / state.quests.length
-                    : (state is ReadingGameComplete ? 1.0 : 0.0);
-                final lives = (state is ReadingLoaded) ? state.livesRemaining : 3;
-                final currentQuest = (state is ReadingLoaded) ? state.currentQuest : null;
-
-                return Scaffold(
-            backgroundColor: theme.backgroundColors[1],
-            body: Stack(
-              children: [
-                Container(color: theme.backgroundColors[1]), // Prevent white splash
-                MeshGradientBackground(colors: theme.backgroundColors),
-                if (state is ReadingLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
-                else ...[
-                  SafeArea(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10.h),
-                        _buildHeader(context, state, widget.level, progress, lives, theme, isDark, currentQuest),
-                        
-                        if (widget.passage != null && !widget.isAnswered)
-                          _buildPassageArea(widget.passage!, theme, isDark),
-
-                        Expanded(
-                          child: Stack(
-                            clipBehavior: Clip.none,
+          
+          return Builder(
+            builder: (localContext) {
+              return PopScope(
+                canPop: isComplete,
+                onPopInvokedWithResult: (didPop, result) {
+                  if (didPop) return;
+                  GameDialogHelper.showExitConfirmation(
+                    localContext,
+                    onQuit: () => Navigator.of(localContext).pop(),
+                  );
+                },
+                child: Scaffold(
+                  backgroundColor: theme.backgroundColors[1],
+                  body: Stack(
+                    children: [
+                      Container(color: theme.backgroundColors[1]), // Prevent white splash
+                      MeshGradientBackground(colors: theme.backgroundColors),
+                      if (state is ReadingLoading) GameShimmerLoading(primaryColor: theme.primaryColor)
+                      else ...[
+                        SafeArea(
+                          child: Column(
                             children: [
-                              AnimatedOpacity(
-                                duration: const Duration(milliseconds: 400),
-                                opacity: widget.isAnswered ? 0.6 : 1.0,
-                                child: AbsorbPointer(
-                                  absorbing: widget.isAnswered,
-                                child: widget.useScrolling
-                                  ? LayoutBuilder(
-                                      builder: (context, constraints) {
-                                        return SingleChildScrollView(
-                                          physics: const BouncingScrollPhysics(),
-                                          child: ConstrainedBox(
-                                            constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                                            child: Padding(
-                                              padding: EdgeInsets.only(
-                                                left: widget.disablePadding ? 0 : 24.w,
-                                                right: widget.disablePadding ? 0 : 24.w,
-                                                top: widget.disablePadding ? 0 : 20.h,
-                                                bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
+                              SizedBox(height: 10.h),
+                              _buildHeader(localContext, state, widget.level, (state is ReadingLoaded)
+                                  ? (state.currentIndex + 1) / state.quests.length
+                                  : (state is ReadingGameComplete ? 1.0 : 0.0), 
+                                  (state is ReadingLoaded) ? state.livesRemaining : 3, 
+                                  theme, isDark, 
+                                  (state is ReadingLoaded) ? state.currentQuest : null),
+                              
+                              if (widget.passage != null && !widget.isAnswered)
+                                _buildPassageArea(widget.passage!, theme, isDark),
+
+                              Expanded(
+                                child: Stack(
+                                  clipBehavior: Clip.none,
+                                  children: [
+                                    AnimatedOpacity(
+                                      duration: const Duration(milliseconds: 400),
+                                      opacity: widget.isAnswered ? 0.6 : 1.0,
+                                      child: AbsorbPointer(
+                                        absorbing: widget.isAnswered,
+                                        child: widget.useScrolling
+                                            ? LayoutBuilder(
+                                                builder: (context, constraints) {
+                                                  return SingleChildScrollView(
+                                                    physics: const BouncingScrollPhysics(),
+                                                    child: ConstrainedBox(
+                                                      constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                                                      child: Padding(
+                                                        padding: EdgeInsets.only(
+                                                          left: widget.disablePadding ? 0 : 24.w,
+                                                          right: widget.disablePadding ? 0 : 24.w,
+                                                          top: widget.disablePadding ? 0 : 20.h,
+                                                          bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
+                                                        ),
+                                                        child: widget.child,
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              )
+                                            : Padding(
+                                                padding: EdgeInsets.only(
+                                                  left: widget.disablePadding ? 0 : 24.w,
+                                                  right: widget.disablePadding ? 0 : 24.w,
+                                                  top: widget.disablePadding ? 0 : 20.h,
+                                                  bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
+                                                ),
+                                                child: widget.child,
                                               ),
-                                              child: widget.child,
-                                            ),
-                                          ),
-                                        );
-                                      },
-                                    )
-                                  : Padding(
-                                      padding: EdgeInsets.only(
-                                        left: widget.disablePadding ? 0 : 24.w,
-                                        right: widget.disablePadding ? 0 : 24.w,
-                                        top: widget.disablePadding ? 0 : 20.h,
-                                        bottom: (widget.disablePadding ? 0 : (widget.isAnswered ? 200.h : 40.h)) + MediaQuery.of(context).viewInsets.bottom,
                                       ),
-                                      child: widget.child,
                                     ),
+                                    Positioned(
+                                      top: -20.h, left: 20.w,
+                                      child: _buildPeekingMascot(localContext, state, (state is ReadingLoaded) ? state.livesRemaining : 3),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              Positioned(
-                                top: -20.h, left: 20.w,
-                                child: _buildPeekingMascot(state, lives),
                               ),
                             ],
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                ],
-                if (widget.isAnswered && state is! ReadingGameOver && state is! ReadingGameComplete)
-                  Positioned(
-                    bottom: 0, left: 0, right: 0,
-                    child: _buildModernFeedbackCard(context, state, theme, isDark),
-                  ),
-                if (widget.showConfetti) const GameConfetti(),
+                      if (widget.isAnswered && state is! ReadingGameOver && state is! ReadingGameComplete)
+                        Positioned(
+                          bottom: 0, left: 0, right: 0,
+                          child: _buildModernFeedbackCard(localContext, state, theme, isDark),
+                        ),
+                      if (widget.showConfetti) const GameConfetti(),
 
-                if (_showBriefing)
-                  Builder(
-                    builder: (context) {
-                      final briefing = GameInstructionService.getBriefing(widget.gameType, "Reading", level: widget.level);
-                      return QuestBriefingOverlay(
-                        title: briefing.title,
-                        objective: briefing.objective,
-                        rules: briefing.rules,
-                        actionText: briefing.actionText,
-                        tip: briefing.tip,
-                        icon: briefing.icon,
-                        primaryColor: theme.primaryColor,
-                        onStart: () => setState(() => _showBriefing = false),
-                      );
-                    },
+                      if (_showBriefing)
+                        QuestBriefingOverlay(
+                          title: GameInstructionService.getBriefing(widget.gameType, "Reading", level: widget.level).title,
+                          objective: GameInstructionService.getBriefing(widget.gameType, "Reading", level: widget.level).objective,
+                          rules: GameInstructionService.getBriefing(widget.gameType, "Reading", level: widget.level).rules,
+                          actionText: GameInstructionService.getBriefing(widget.gameType, "Reading", level: widget.level).actionText,
+                          tip: GameInstructionService.getBriefing(widget.gameType, "Reading", level: widget.level).tip,
+                          icon: GameInstructionService.getBriefing(widget.gameType, "Reading", level: widget.level).icon,
+                          primaryColor: theme.primaryColor,
+                          onStart: () => setState(() => _showBriefing = false),
+                        ),
+                    ],
                   ),
-              ],
-            ),
+                ),
+              );
+            },
           );
         },
       ),
     );
-  },
-),
-    );
-}
+  }
 
   Widget _buildHeader(BuildContext context, ReadingState state, int level, double progress, int lives, dynamic theme, bool isDark, ReadingQuest? quest) {
     final hintShouldGlow = lives < 3 && !widget.isAnswered;
@@ -255,7 +269,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
               level: level, progress: progress, lives: lives,
               streak: (state is ReadingLoaded) ? state.currentIndex : 0,
               theme: theme, isDark: isDark,
-              onBack: () => GameDialogHelper.showExitConfirmation(this.context, onQuit: () => Navigator.pop(this.context)),
+              onBack: () => GameDialogHelper.showExitConfirmation(context, onQuit: () => Navigator.pop(context)),
             ),
           ),
           if (quest != null && !widget.isAnswered) ...[
@@ -317,14 +331,14 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
         child: SingleChildScrollView(
           child: Text(
             passage,
-            style: GoogleFonts.fredoka(fontSize: 16.sp, fontWeight: FontWeight.w400, color: isDark ? Colors.white70 : Colors.black87, height: 1.6),
+            style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w400, color: isDark ? Colors.white70 : Colors.black87, height: 1.6),
           ),
         ),
       ),
     ).animate().fadeIn().slideY(begin: -0.1, end: 0);
   }
 
-  Widget _buildPeekingMascot(ReadingState state, int lives) {
+  Widget _buildPeekingMascot(BuildContext context, ReadingState state, int lives) {
     final mascotState = _getMascotState(state, lives);
     final authState = context.read<AuthBloc>().state;
     final mascotId = authState.user?.vowlMascot ?? 'vowl_prime';
@@ -352,7 +366,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
             color: Colors.white, borderRadius: BorderRadius.circular(12.r),
             boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.1), blurRadius: 10)],
           ),
-          child: Text(message, style: GoogleFonts.outfit(fontSize: 11.sp, fontWeight: FontWeight.bold, color: Colors.orangeAccent)),
+          child: Text(message, style: TextStyle(fontFamily: 'Outfit', fontSize: 11.sp, fontWeight: FontWeight.bold, color: Colors.orangeAccent)),
         ).animate(onPlay: (c) => c.repeat(reverse: true)).scale(begin: const Offset(1, 1), end: const Offset(1.05, 1.05), duration: 2.seconds),
         SizedBox(height: 0.h),
         VowlMascot(state: mascotState, size: 45.r, mascotId: mascotId).animate(onPlay: (c) => c.repeat(reverse: true))
@@ -399,7 +413,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
                 child: Icon(icon, color: Colors.white, size: 28.r),
               ).animate().scale(duration: 600.ms, curve: Curves.elasticOut),
               SizedBox(width: 16.w),
-              Expanded(child: Text(title, style: GoogleFonts.outfit(fontSize: 24.sp, fontWeight: FontWeight.w900, foreground: Paint()..shader = LinearGradient(colors: primaryGradient).createShader(const Rect.fromLTWH(0, 0, 200, 70)), letterSpacing: 1.5))),
+              Expanded(child: Text(title, style: TextStyle(fontFamily: 'Outfit', fontSize: 24.sp, fontWeight: FontWeight.w900, foreground: Paint()..shader = LinearGradient(colors: primaryGradient).createShader(const Rect.fromLTWH(0, 0, 200, 70)), letterSpacing: 1.5))),
             ],
           ),
           if (correctAnswerText != null) ...[
@@ -414,11 +428,11 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
                     children: [
                       Icon(Icons.info_outline_rounded, color: shadowColor, size: 14.r),
                       SizedBox(width: 8.w),
-                      Text("EXPLANATION:", style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
+                      Text("EXPLANATION:", style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w800, color: shadowColor, letterSpacing: 1)),
                     ],
                   ),
                   SizedBox(height: 4.h),
-                  Text(correctAnswerText, style: GoogleFonts.fredoka(fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
+                  Text(correctAnswerText, style: TextStyle(fontFamily: 'Outfit', fontSize: 18.sp, fontWeight: FontWeight.w600, color: isDark ? Colors.white : Colors.black87)),
                 ],
               ),
             ).animate().fadeIn(delay: 300.ms).scale(duration: 400.ms, curve: Curves.easeOutBack),
@@ -436,7 +450,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
               child: Center(
                 child: Text(
                   buttonText,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     color: Colors.white,
@@ -448,7 +462,7 @@ class _ReadingBaseLayoutState extends State<ReadingBaseLayout> {
           ).animate().scale(delay: 500.ms, duration: 400.ms, curve: Curves.elasticOut),
         ],
       ),
-    ).animate().slideY(begin: 1, end: 0, curve: Curves.easeOutCubic, duration: 500.ms);
+    );
   }
 
   VowlMascotState _getMascotState(ReadingState state, int lives) {

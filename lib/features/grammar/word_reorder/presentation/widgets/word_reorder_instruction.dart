@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class WordReorderInstruction extends StatelessWidget {
   final Color primaryColor;
   const WordReorderInstruction({super.key, required this.primaryColor});
@@ -22,7 +20,7 @@ class WordReorderInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "REORDER THE SENTENCE",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,

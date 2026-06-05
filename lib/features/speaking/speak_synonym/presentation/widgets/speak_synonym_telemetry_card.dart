@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 
@@ -34,7 +33,7 @@ class SpeakSynonymTelemetryCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "CAPTURED LEXICAL RESPONSE",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: Colors.grey,
                   letterSpacing: 1.0,
@@ -45,7 +44,7 @@ class SpeakSynonymTelemetryCard extends StatelessWidget {
           SizedBox(height: 10.h),
           Text(
             spokenText,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 15.sp,
               color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
               height: 1.35,

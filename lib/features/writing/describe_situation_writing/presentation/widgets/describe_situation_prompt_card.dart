@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class DescribeSituationPromptCard extends StatelessWidget {
@@ -33,7 +32,7 @@ class DescribeSituationPromptCard extends StatelessWidget {
             children: [
               Text(
                 "SITUATION PROMPT",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 11.sp, 
                   color: color, 
                   fontWeight: FontWeight.bold, 
@@ -43,7 +42,7 @@ class DescribeSituationPromptCard extends StatelessWidget {
               SizedBox(height: 8.h),
               Text(
                 prompt,
-                style: GoogleFonts.fredoka(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp, 
                   color: isDark ? Colors.white70 : Colors.black87, 
                   fontWeight: FontWeight.bold, 

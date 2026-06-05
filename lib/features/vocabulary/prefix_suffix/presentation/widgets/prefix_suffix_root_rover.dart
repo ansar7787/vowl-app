@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class PrefixSuffixRootRover extends StatelessWidget {
   final String rootWord;
   final Color primaryColor;
@@ -72,7 +70,7 @@ class PrefixSuffixRootRover extends StatelessWidget {
                 SizedBox(height: 12.h),
                 Text(
                   rootWord.toUpperCase(),
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : Colors.black87,

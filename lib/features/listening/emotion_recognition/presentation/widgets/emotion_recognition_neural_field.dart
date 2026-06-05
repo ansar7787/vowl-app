@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class EmotionRecognitionNeuralField extends StatelessWidget {
   final List<String> options;
   final int correctAnswerIndex;
@@ -142,7 +140,7 @@ class EmotionRecognitionNeuralField extends StatelessWidget {
               child: Text(
                 text.toUpperCase(), 
                 textAlign: TextAlign.center, 
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 8.sp,
                   fontWeight: FontWeight.w900,
                   color: tileColor,

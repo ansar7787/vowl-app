@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/reading/domain/entities/reading_quest.dart';
 
@@ -46,7 +45,7 @@ class ReadAndAnswerResult extends StatelessWidget {
               SizedBox(width: 10.w),
               Text(
                 isCorrect ? "CORRECT INSIGHT!" : "INCORRECT",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w900,
                   color: displayColor,
@@ -62,7 +61,7 @@ class ReadAndAnswerResult extends StatelessWidget {
             Text(
               quest.explanation!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.fredoka(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 14.sp,
                 height: 1.5,
                 color: isDark ? Colors.white.withValues(alpha: 0.7) : const Color(0xFF475569),

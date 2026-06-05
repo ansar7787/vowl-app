@@ -7,12 +7,12 @@ import '../entities/accent_quest.dart';
 class GetAccentQuest {
   final AccentRepository repository;
 
-  GetAccentQuest(this.repository);
+  const GetAccentQuest(this.repository);
 
   Future<Either<Failure, List<AccentQuest>>> call(
     GetAccentQuestParams params,
-  ) async {
-    return await repository.getAccentQuests(
+  ) {
+    return repository.getAccentQuests(
       gameType: params.gameType,
       level: params.level,
     );

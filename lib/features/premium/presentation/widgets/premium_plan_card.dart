@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class PremiumPlanCard extends StatelessWidget {
   final Map<String, dynamic> plan;
   final bool isSelected;
@@ -48,7 +46,7 @@ class PremiumPlanCard extends StatelessWidget {
                     children: [
                       Text(
                         plan['name'].toString().toUpperCase(),
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           color: isDark ? Colors.white : Colors.black,
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w900,
@@ -65,7 +63,7 @@ class PremiumPlanCard extends StatelessWidget {
                           ),
                           child: Text(
                             plan['tag'] as String,
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               color: accentColor,
                               fontSize: 8.sp,
                               fontWeight: FontWeight.w900,
@@ -77,7 +75,7 @@ class PremiumPlanCard extends StatelessWidget {
                   ),
                   Text(
                     '${plan['days']} days of elite access',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       color: isDark ? const Color(0x61FFFFFF) : const Color(0x61000000),
                       fontSize: 10.sp,
                       fontWeight: FontWeight.w600,
@@ -94,7 +92,7 @@ class PremiumPlanCard extends StatelessWidget {
                     if (plan['oldPrice'] != null)
                       Text(
                         '₹${(plan['oldPrice'] as double).toInt()}',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           color: isDark ? const Color(0x3DFFFFFF) : const Color(0x42000000),
                           fontSize: 13.sp,
                           decoration: TextDecoration.lineThrough,
@@ -103,7 +101,7 @@ class PremiumPlanCard extends StatelessWidget {
                     SizedBox(width: 6.w),
                     Text(
                       '₹${(plan['price'] as double).toInt()}',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         color: isDark ? Colors.white : Colors.black,
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w900,

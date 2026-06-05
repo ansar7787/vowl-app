@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/auth/presentation/bloc/progression_bloc.dart';
@@ -50,7 +49,7 @@ class StreakMilestones extends StatelessWidget {
       children: [
         Text(
           'STREAK MILESTONES',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 20.sp,
             fontWeight: FontWeight.w900,
             letterSpacing: -0.5,
@@ -124,7 +123,7 @@ class StreakMilestones extends StatelessWidget {
                           SizedBox(height: 12.h),
                           Text(
                             days % 365 == 0 ? '${(days / 365).toInt()} YEAR${days / 365 == 1 ? '' : 'S'}' : '$days DAYS',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w900,
                               color: isReached ? Colors.amber : Colors.grey,
@@ -133,7 +132,7 @@ class StreakMilestones extends StatelessWidget {
                           SizedBox(height: 4.h),
                           Text(
                             '+$reward COINS',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w700,
                               color: isReached ? Colors.amber.withValues(alpha: 0.7) : Colors.grey.withValues(alpha: 0.5),
@@ -154,13 +153,13 @@ class StreakMilestones extends StatelessWidget {
                               ),
                               child: Text(
                                 'CLAIM',
-                                style: GoogleFonts.outfit(fontSize: 10.sp, fontWeight: FontWeight.w900),
+                                style: TextStyle(fontFamily: 'Outfit', fontSize: 10.sp, fontWeight: FontWeight.w900),
                               ),
                             ).animate(onPlay: (c) => c.repeat()).shimmer(duration: 2.seconds)
                           else if (isClaimed)
                             Text(
                               'CLAIMED',
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 10.sp,
                                 fontWeight: FontWeight.w900,
                                 color: Colors.amber.withValues(alpha: 0.5),

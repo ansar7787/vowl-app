@@ -39,49 +39,69 @@ class GrammarQuestModel extends GrammarQuest {
   });
 
   factory GrammarQuestModel.fromJson(Map<String, dynamic> map, String id) {
-    final subtype = GameSubtype.values.firstWhere(
-      (s) => s.name == map['subtype'],
-      orElse: () => GameSubtype.grammarQuest,
+    // Optimized O(1) constant-time enum parsing
+    final subtype = GameSubtype.fromString(
+      map['subtype'] as String?,
+      fallback: GameSubtype.grammarQuest,
     );
+
+    // Helper to safely get a string from either a String or a List of Strings
+    String? getString(dynamic value) {
+      if (value == null) return null;
+      if (value is String) return value;
+      if (value is List) return value.join(' ');
+      return value.toString();
+    }
+
+    // Helper to parse lists safely and prevent TypeErrors
+    List<String>? parseStringList(dynamic value) {
+      if (value is List) {
+        return value.map((e) => e.toString()).toList();
+      }
+      return null;
+    }
+
     return GrammarQuestModel(
       id: id,
       type: subtype.category,
       subtype: subtype,
-      instruction: map['instruction'] ?? map['question'] ?? 'Solve the grammar puzzle.',
+      instruction: map['instruction'] as String? ?? map['question'] as String? ?? 'Solve the grammar puzzle.',
       difficulty: (map['difficulty'] as num?)?.toInt() ?? 1,
-      interactionType: InteractionType.values.firstWhere(
-        (i) => i.name == (map['interactionType'] ?? 'choice'),
-        orElse: () => InteractionType.choice,
+      interactionType: InteractionType.fromString(
+        map['interactionType'] as String?,
+        fallback: InteractionType.choice,
       ),
       xpReward: (map['xpReward'] as num?)?.toInt() ?? 10,
       coinReward: (map['coinReward'] as num?)?.toInt() ?? 5,
       livesAllowed: (map['livesAllowed'] as num?)?.toInt() ?? 3,
-      options: map['options'] != null
-          ? List<String>.from(map['options'])
-          : (map['choices'] != null ? List<String>.from(map['choices']) : null),
-      correctAnswerIndex: map['correctAnswerIndex'],
-      correctAnswer: map['correctAnswer'],
-      hint: map['hint'],
-      visualConfig: map['visual_config'] != null ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'])) : null,
-      sentence: map['sentence'] ?? map['question'] ?? map['text'],
-      verb: map['verb'],
-      word: map['word'],
-      targetTense: map['targetTense'],
-      secondarySentence: map['secondarySentence'],
-      firstClause: map['firstClause'],
-      secondClause: map['secondClause'],
-      connectorToUse: map['connectorToUse'],
-      sentenceWithBlank: map['sentenceWithBlank'] ?? map['sentence'],
-      articleToInsert: map['articleToInsert'],
-      targetWord: map['targetWord'],
-      passage: map['passage'],
-      passiveSentence: map['passiveSentence'],
-      activeSentence: map['activeSentence'],
-      shuffledWords: map['shuffledWords'] != null ? List<String>.from(map['shuffledWords']) : null,
-      correctOrder: map['correctOrder'] != null ? List<int>.from(map['correctOrder']) : null,
-      explanation: map['explanation'],
-      incorrectPart: map['incorrectPart'],
-      correctedPart: map['correctedPart'],
+      options: parseStringList(map['options'] ?? map['choices']),
+      correctAnswerIndex: (map['correctAnswerIndex'] as num?)?.toInt(),
+      correctAnswer: getString(map['correctAnswer']),
+      hint: map['hint'] as String?,
+      visualConfig: map['visual_config'] != null
+          ? VisualConfig.fromJson(Map<String, dynamic>.from(map['visual_config'] as Map))
+          : null,
+      sentence: map['sentence'] as String? ?? map['question'] as String? ?? map['text'] as String?,
+      verb: map['verb'] as String?,
+      word: map['word'] as String?,
+      targetTense: map['targetTense'] as String?,
+      secondarySentence: map['secondarySentence'] as String?,
+      firstClause: map['firstClause'] as String?,
+      secondClause: map['secondClause'] as String?,
+      connectorToUse: map['connectorToUse'] as String?,
+      sentenceWithBlank: map['sentenceWithBlank'] as String? ?? map['sentence'] as String?,
+      articleToInsert: map['articleToInsert'] as String?,
+      targetWord: map['targetWord'] as String?,
+      passage: map['passage'] as String?,
+      passiveSentence: map['passiveSentence'] as String?,
+      activeSentence: map['activeSentence'] as String?,
+      shuffledWords: parseStringList(map['shuffledWords']),
+      correctOrder: map['correctOrder'] != null
+          ? (map['correctOrder'] as List).map((e) => int.tryParse(e.toString()) ?? 0).toList()
+          : null,
+      explanation: map['explanation'] as String?,
+      incorrectPart: map['incorrectPart'] as String?,
+      correctedPart: map['correctedPart'] as String?,
     );
   }
 
@@ -120,4 +140,3 @@ class GrammarQuestModel extends GrammarQuest {
     };
   }
 }
-

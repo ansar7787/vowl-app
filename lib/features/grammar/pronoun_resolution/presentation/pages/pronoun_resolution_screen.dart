@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -154,7 +153,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
                         child: Text(
                           quest.sentence ?? "The antecedent is missing from the gravity field.",
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.fredoka(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 18.sp,
                             color: isDark ? Colors.white70 : Colors.black87,
                             height: 1.4,
@@ -275,7 +274,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
             SizedBox(height: 12.h),
             Text(
               correct ? "CORRECT!" : "INCORRECT",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w900,
                 color: displayColor,
@@ -287,7 +286,7 @@ class _PronounResolutionScreenState extends State<PronounResolutionScreen> {
               Text(
                 quest.explanation!,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 13.sp,
                   color: isDark ? Colors.white60 : Colors.black54,
                 ),

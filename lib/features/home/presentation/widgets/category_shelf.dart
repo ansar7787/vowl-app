@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -52,27 +51,6 @@ class _GameEntryCard extends StatelessWidget {
     return ScaleButton(
       onTap: () {
         final category = GameHelper.getCategoryForSubtype(subtype);
-        
-        // Handle Elite Mastery specific maps
-        if (category == 'elitemastery') {
-          if (subtype == GameSubtype.storyBuilder) {
-            context.push('/story-builder-map');
-            return;
-          }
-          if (subtype == GameSubtype.idiomMatch) {
-            context.push('/idiom-match-map');
-            return;
-          }
-          if (subtype == GameSubtype.speedSpelling) {
-            context.push('/speed-spelling-map');
-            return;
-          }
-          if (subtype == GameSubtype.accentShadowing) {
-            context.push('/accent-shadowing-map');
-            return;
-          }
-        }
-
         context.push(
           '${AppRouter.levelsRoute}?category=$category&gameType=${subtype.name}',
         );
@@ -114,7 +92,7 @@ class _GameEntryCard extends StatelessWidget {
               children: [
                 Text(
                   metadata.title,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 15.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -126,7 +104,7 @@ class _GameEntryCard extends StatelessWidget {
                 SizedBox(height: 6.h),
                 Text(
                   metadata.categoryName.toUpperCase(),
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 8.sp,
                     fontWeight: FontWeight.w900,
                     color: displayColor.withValues(alpha: 0.7),
@@ -166,7 +144,7 @@ class _GameEntryCard extends StatelessWidget {
         ),
         child: Text(
           'NEW',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 8.sp,
             fontWeight: FontWeight.w900,
             color: color,
@@ -195,7 +173,7 @@ class _GameEntryCard extends StatelessWidget {
         ),
         Text(
           '$currentLevel',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 10.sp,
             fontWeight: FontWeight.w900,
             color: color,

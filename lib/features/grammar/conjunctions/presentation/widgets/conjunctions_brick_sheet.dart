@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ConjunctionsBrickSheet extends StatelessWidget {
   final List<String> options;
   final String? placedBrick;
@@ -60,7 +58,7 @@ class ConjunctionsBrickSheet extends StatelessWidget {
         ),
         child: Text(
           text.toUpperCase(),
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 16.sp,
             fontWeight: FontWeight.w900,
             color: primaryColor,

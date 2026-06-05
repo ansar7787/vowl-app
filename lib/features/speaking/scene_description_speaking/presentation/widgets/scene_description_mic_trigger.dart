@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -128,7 +127,7 @@ class SceneDescriptionMicTrigger extends StatelessWidget {
                     ? "RELEASE MICROPHONE TO ANALYZE DESCRIPTION"
                     : "HOLD MICROPHONE TO DESCRIBE SELECTION"),
             textAlign: TextAlign.center,
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 9.sp,
               color: Colors.grey,
               letterSpacing: 1.5,

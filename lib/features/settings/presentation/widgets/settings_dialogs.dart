@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -37,7 +36,7 @@ class SettingsDialogs {
               children: [
                 Text(
                   'Profile Settings',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -131,14 +130,14 @@ class SettingsDialogs {
                 SizedBox(height: 32.h),
                 TextField(
                   controller: nameController,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                   ),
                   decoration: InputDecoration(
                     labelText: 'Display Name',
-                    labelStyle: GoogleFonts.outfit(color: isDark ? Colors.white38 : Colors.black38),
+                    labelStyle: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white38 : Colors.black38),
                     prefixIcon: Icon(
                       Icons.badge_rounded,
                       color: Colors.blue,
@@ -167,7 +166,7 @@ class SettingsDialogs {
                         onPressed: () => Navigator.pop(context),
                         child: Text(
                           'Cancel',
-                          style: GoogleFonts.outfit(color: isDark ? Colors.white38 : Colors.black38),
+                          style: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white38 : Colors.black38),
                         ),
                       ),
                     ),
@@ -195,7 +194,7 @@ class SettingsDialogs {
                         ),
                         child: Text(
                           'Save',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             fontSize: 16.sp,
                           ),
@@ -257,7 +256,7 @@ class SettingsDialogs {
                 SizedBox(height: 24.h),
                 Text(
                   'Sign Out?',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -267,7 +266,7 @@ class SettingsDialogs {
                 Text(
                   'Are you sure you want to leave?\nYour quest progress is safely synced to the cloud.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: isDark ? Colors.white60 : Colors.black54,
                     height: 1.5,
@@ -293,7 +292,7 @@ class SettingsDialogs {
                         ),
                         child: Text(
                           'Yes, Sign Me Out',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             fontSize: 16.sp,
                           ),
@@ -305,7 +304,7 @@ class SettingsDialogs {
                       onPressed: () => Navigator.pop(context),
                       child: Text(
                         'Stay in Quest',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           color: isDark ? Colors.white38 : Colors.black38,
                           fontWeight: FontWeight.w700,
                         ),
@@ -366,7 +365,7 @@ class SettingsDialogs {
                 SizedBox(height: 24.h),
                 Text(
                   'Reset Password',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -376,7 +375,7 @@ class SettingsDialogs {
                 Text(
                   'We will send a password recovery email to:\n$email',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: isDark ? Colors.white60 : Colors.black54,
                     height: 1.5,
@@ -411,7 +410,7 @@ class SettingsDialogs {
                         ),
                         child: Text(
                           'Send Link Now',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             fontSize: 16.sp,
                           ),
@@ -423,7 +422,7 @@ class SettingsDialogs {
                       onPressed: () => Navigator.pop(context),
                       child: Text(
                         'Cancel',
-                        style: GoogleFonts.outfit(color: isDark ? Colors.white38 : Colors.black38),
+                        style: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white38 : Colors.black38),
                       ),
                     ),
                   ],
@@ -481,7 +480,7 @@ class SettingsDialogs {
                 SizedBox(height: 24.h),
                 Text(
                   'Delete Account?',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -491,7 +490,7 @@ class SettingsDialogs {
                 Text(
                   'This action is IRREVERSIBLE. All your progress, coins, and streaks will be permanently lost.',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: isDark ? Colors.white60 : Colors.black54,
                     height: 1.5,
@@ -517,7 +516,7 @@ class SettingsDialogs {
                         ),
                         child: Text(
                           'Delete Everything',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontWeight: FontWeight.w900,
                             fontSize: 16.sp,
                           ),
@@ -529,7 +528,7 @@ class SettingsDialogs {
                       onPressed: () => Navigator.pop(context),
                       child: Text(
                         'Keep My Account',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           color: isDark ? Colors.white38 : Colors.black38,
                           fontWeight: FontWeight.w700,
                         ),
@@ -580,7 +579,7 @@ class SettingsDialogs {
                   children: [
                     Text(
                       'Final Warning',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 24.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.red,
@@ -590,7 +589,7 @@ class SettingsDialogs {
                     Text(
                       'Type "DELETE" below to confirm account removal.',
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         color: isDark ? Colors.white60 : Colors.black54,
                       ),
@@ -599,13 +598,13 @@ class SettingsDialogs {
                     TextField(
                       controller: confirmController,
                       onChanged: (val) => setDialogState(() {}),
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         color: isDark ? Colors.white : const Color(0xFF0F172A), 
                         fontWeight: FontWeight.bold,
                       ),
                       decoration: InputDecoration(
                         hintText: 'DELETE',
-                        hintStyle: GoogleFonts.outfit(color: isDark ? Colors.white10 : Colors.black12),
+                        hintStyle: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white10 : Colors.black12),
                         filled: true,
                         fillColor: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.05),
                         border: OutlineInputBorder(
@@ -637,7 +636,7 @@ class SettingsDialogs {
                             ),
                             child: Text(
                               'Yes, Delete Forever',
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontWeight: FontWeight.w900,
                                 fontSize: 16.sp,
                               ),
@@ -649,7 +648,7 @@ class SettingsDialogs {
                           onPressed: () => Navigator.pop(context),
                           child: Text(
                             'Nevermind',
-                            style: GoogleFonts.outfit(color: isDark ? Colors.white38 : Colors.black38),
+                            style: TextStyle(fontFamily: 'Outfit', color: isDark ? Colors.white38 : Colors.black38),
                           ),
                         ),
                       ],
@@ -713,7 +712,7 @@ class SettingsDialogs {
                 SizedBox(height: 24.h),
                 Text(
                   title,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 24.sp,
                     fontWeight: FontWeight.w900,
                     color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -723,7 +722,7 @@ class SettingsDialogs {
                 Text(
                   message,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 14.sp,
                     color: isDark ? Colors.white60 : Colors.black54,
                     height: 1.5,
@@ -744,7 +743,7 @@ class SettingsDialogs {
                     ),
                     child: Text(
                       'Got it!',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontWeight: FontWeight.w900,
                         fontSize: 16.sp,
                       ),

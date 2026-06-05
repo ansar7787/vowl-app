@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/widgets/travel_desk_stamp_painter.dart';
 
@@ -56,7 +55,7 @@ class TravelDeskPassportBook extends StatelessWidget {
             children: [
               Text(
                 "BIOMETRIC PASSPORT BOOKLET",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: color.withValues(alpha: 0.7),
                   letterSpacing: 1.5,
@@ -159,7 +158,7 @@ class TravelDeskPassportBook extends StatelessWidget {
                       textAlign: TextAlign.center,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                      style: GoogleFonts.shareTechMono(
+                      style: TextStyle(fontFamily: 'RobotoMono', 
                         fontSize: 12.sp,
                         color: isDark ? Colors.white.withValues(alpha: 0.9) : Colors.black87,
                         fontWeight: FontWeight.bold,
@@ -168,7 +167,7 @@ class TravelDeskPassportBook extends StatelessWidget {
                     const Spacer(),
                     Text(
                       "PAGE 0${index + 1}",
-                      style: GoogleFonts.shareTechMono(
+                      style: TextStyle(fontFamily: 'RobotoMono', 
                         fontSize: 8.sp,
                         color: color.withValues(alpha: 0.4),
                       ),
@@ -211,7 +210,7 @@ class TravelDeskPassportBook extends StatelessWidget {
                       ),
                       child: Text(
                         (isCorrect ?? false) ? "APPROVED" : "DENIED",
-                        style: GoogleFonts.shareTechMono(
+                        style: TextStyle(fontFamily: 'RobotoMono', 
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w900,
                           color: (isCorrect ?? false) ? Colors.greenAccent : Colors.redAccent,

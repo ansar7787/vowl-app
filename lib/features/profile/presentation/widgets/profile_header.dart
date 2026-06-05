@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -130,7 +129,7 @@ class ProfileHeader extends StatelessWidget {
                 children: [
                   Text(
                     user.displayName ?? 'Hero In Training',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 28.sp,
                       fontWeight: FontWeight.w900,
                       color: Theme.of(context).brightness == Brightness.dark
@@ -153,7 +152,7 @@ class ProfileHeader extends StatelessWidget {
                     ),
                     child: Text(
                       'ID',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 10.sp,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
@@ -177,7 +176,7 @@ class ProfileHeader extends StatelessWidget {
               SizedBox(width: 4.w),
               Text(
                 'PREMIUM MEMBER',
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 12.sp,
                   color: const Color(0xFFF59E0B),
                   fontWeight: FontWeight.w800,
@@ -197,7 +196,7 @@ class ProfileHeader extends StatelessWidget {
             ],
             Text(
               user.email,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 14.sp,
                 color: isDark ? Colors.white60 : const Color(0xFF64748B),
                 fontWeight: FontWeight.w600,

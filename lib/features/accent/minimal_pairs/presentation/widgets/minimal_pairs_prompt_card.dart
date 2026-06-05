@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class MinimalPairsPromptCard extends StatelessWidget {
@@ -29,7 +28,7 @@ class MinimalPairsPromptCard extends StatelessWidget {
           Text(
             "Phonetic contrasts differentiate pairs of words by just one vital vowel or consonant phoneme. Can you distinguish the precise organic difference?",
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 13.sp,
               color: isDark ? Colors.white70 : Colors.black87,
               height: 1.4,

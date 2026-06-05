@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
 import 'package:vowl/features/auth/presentation/bloc/login_cubit.dart';
 
@@ -41,7 +40,7 @@ class LoginEmailInput extends StatelessWidget {
                 context,
               ).withValues(alpha: 0.5),
             ),
-            errorStyle: GoogleFonts.outfit(
+            errorStyle: TextStyle(fontFamily: 'Outfit', 
               color: Colors.red,
               fontWeight: FontWeight.bold,
               fontSize: 12.sp,
@@ -136,7 +135,7 @@ class LoginPasswordInput extends StatelessWidget {
                 context,
               ).withValues(alpha: 0.5),
             ),
-            errorStyle: GoogleFonts.outfit(
+            errorStyle: TextStyle(fontFamily: 'Outfit', 
               color: Colors.red,
               fontWeight: FontWeight.bold,
               fontSize: 12.sp,
@@ -278,7 +277,7 @@ class GoogleLoginButton extends StatelessWidget {
                     SizedBox(width: 8.w),
                     Text(
                       'Sign in with Google',
-                      style: GoogleFonts.outfit(fontSize: 16.sp),
+                      style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp),
                     ),
                   ],
                 ),

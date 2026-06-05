@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -31,7 +30,7 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
             children: [
               Text(
                 "COMPARE PHRASE STRUCTURES",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: primaryColor,
                   letterSpacing: 1.5,
@@ -52,7 +51,7 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
                       SizedBox(width: 6.w),
                       Text(
                         "REPLAY AUDIO",
-                        style: GoogleFonts.shareTechMono(
+                        style: TextStyle(fontFamily: 'RobotoMono', 
                           fontSize: 10.sp,
                           color: primaryColor,
                           fontWeight: FontWeight.bold,
@@ -68,7 +67,7 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
           
           Text(
             "WRITTEN TARGET CARD:",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 10.sp,
               color: Colors.grey,
             ),
@@ -77,7 +76,7 @@ class YesNoSpeakingAuditionCard extends StatelessWidget {
           Text(
             quest.sampleAnswer ?? "",
             textAlign: TextAlign.center,
-            style: GoogleFonts.fredoka(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 18.sp,
               color: isDark ? Colors.white : Colors.black87,
               height: 1.35,

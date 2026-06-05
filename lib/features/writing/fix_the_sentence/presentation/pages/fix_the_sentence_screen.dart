@@ -70,8 +70,6 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
     bool isCorrect = selected.trim().toLowerCase() == correct.trim().toLowerCase();
 
     if (isCorrect) {
-      _hapticService.success();
-      _soundService.playCorrect();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = true; 
@@ -79,8 +77,6 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
       });
       context.read<WritingBloc>().add(SubmitAnswer(true));
     } else {
-      _hapticService.error();
-      _soundService.playWrong();
       setState(() { 
         _isAnswered = true; 
         _isCorrect = false; 
@@ -129,7 +125,7 @@ class _FixTheSentenceScreenState extends State<FixTheSentenceScreen> {
         }
       },
       builder: (context, state) {
-        final WritingQuest? quest = (state is WritingLoaded) ? state.currentQuest as WritingQuest? : null;
+        final WritingQuest? quest = (state is WritingLoaded) ? state.currentQuest : null;
         
         return WritingBaseLayout(
           gameType: widget.gameType, level: widget.level, isAnswered: _isAnswered, isCorrect: _isCorrect, 

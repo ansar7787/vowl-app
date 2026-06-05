@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class SummarizeStoryManuscript extends StatelessWidget {
@@ -33,7 +32,7 @@ class SummarizeStoryManuscript extends StatelessWidget {
             child: Text(
               story, 
               textAlign: TextAlign.center, 
-              style: GoogleFonts.fredoka(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp, 
                 color: isDark ? Colors.white70 : Colors.black87, 
                 height: 1.5,

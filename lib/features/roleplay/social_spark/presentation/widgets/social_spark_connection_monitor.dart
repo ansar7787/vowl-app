@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class SocialSparkConnectionMonitor extends StatelessWidget {
@@ -51,7 +50,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
                 isAnswered
                     ? ((isCorrect ?? false) ? "ALIGNMENT STABLE" : "SIGNAL COLLAPSED")
                     : "CONSTELLATION HARMONICS",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 11.sp,
                   fontWeight: FontWeight.bold,
                   color: outlineColor,
@@ -74,7 +73,7 @@ class SocialSparkConnectionMonitor extends StatelessWidget {
               child: Text(
                 text.isEmpty ? "SELECT INITIAL STAR NODE..." : text,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.fredoka(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 20.sp,
                   color: text.isEmpty
                       ? Colors.grey.shade600

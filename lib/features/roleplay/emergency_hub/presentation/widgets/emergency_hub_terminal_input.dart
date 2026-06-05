@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class EmergencyHubTerminalInput extends StatelessWidget {
   final TextEditingController controller;
   final String correctAnswer;
@@ -39,7 +37,7 @@ class EmergencyHubTerminalInput extends StatelessWidget {
             children: [
               Text(
                 "DECRYPTION KEYBOARD SLATE",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: isCodeValid ? Colors.greenAccent : Colors.amberAccent,
                   letterSpacing: 1.5,
@@ -58,7 +56,7 @@ class EmergencyHubTerminalInput extends StatelessWidget {
           TextField(
             controller: controller,
             onChanged: (_) => onChanged(),
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 18.sp,
               color: isCodeValid ? Colors.greenAccent : Colors.redAccent,
               fontWeight: FontWeight.bold,
@@ -66,7 +64,7 @@ class EmergencyHubTerminalInput extends StatelessWidget {
             ),
             decoration: InputDecoration(
               hintText: "ENTER CODE (e.g. CODE RED 99)",
-              hintStyle: GoogleFonts.shareTechMono(
+              hintStyle: TextStyle(fontFamily: 'RobotoMono', 
                 fontSize: 14.sp,
                 color: isDark ? Colors.white24 : Colors.black26,
                 letterSpacing: 1.5,

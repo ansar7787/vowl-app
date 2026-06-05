@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/features/speaking/domain/entities/speaking_quest.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -34,7 +33,7 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
             children: [
               Text(
                 "SUBSTITUTE HIGHLIGHTED SEED",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   color: Colors.grey.shade400,
                   letterSpacing: 1.0,
@@ -50,7 +49,7 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
-              style: GoogleFonts.fredoka(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 18.sp,
                 color: isDark ? Colors.white70 : Colors.black54,
                 height: 1.4,
@@ -76,7 +75,7 @@ class SpeakSynonymSentencePanel extends StatelessWidget {
                       ),
                       child: Text(
                         e.value,
-                        style: GoogleFonts.fredoka(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 18.sp,
                           fontWeight: FontWeight.bold,
                           color: primaryColor,

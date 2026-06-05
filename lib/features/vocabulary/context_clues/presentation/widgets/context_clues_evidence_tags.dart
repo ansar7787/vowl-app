@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
 class ContextCluesEvidenceTags extends StatelessWidget {
@@ -38,7 +37,7 @@ class ContextCluesEvidenceTags extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 "IDENTIFY REDACTED COMPONENT",
-                style: GoogleFonts.shareTechMono(
+                style: TextStyle(fontFamily: 'RobotoMono', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.bold,
                   color: color.withValues(alpha: 0.7),
@@ -105,7 +104,7 @@ class ContextCluesEvidenceTags extends StatelessWidget {
                             ),
                             child: Text(
                               o.toUpperCase(),
-                              style: GoogleFonts.shareTechMono(
+                              style: TextStyle(fontFamily: 'RobotoMono', 
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.bold,
                                 color: showCorrect

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -27,7 +26,7 @@ class AdRewardCard extends StatelessWidget {
           children: [
             Text(
               'WATCH AND EARN COINS',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: const Color(0xFF2563EB),
@@ -56,7 +55,7 @@ class AdRewardCard extends StatelessWidget {
                     SizedBox(width: 8.w),
                     Text(
                       '20 VOWL COINS',
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w900,
                         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -95,7 +94,7 @@ class AdRewardCard extends StatelessWidget {
                         SizedBox(width: 4.w),
                         Text(
                           'WATCH',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w900,
                             color: Colors.white,
@@ -152,7 +151,7 @@ class AdRewardCard extends StatelessWidget {
                   SizedBox(width: 12.w),
                   Text(
                     'Reward Earned! +20 Vowl Coins',
-                    style: GoogleFonts.outfit(
+                    style: TextStyle(fontFamily: 'Outfit', 
                       fontSize: 14.sp,
                       fontWeight: FontWeight.w600,
                       color: Colors.white,

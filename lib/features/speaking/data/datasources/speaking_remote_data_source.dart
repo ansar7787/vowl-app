@@ -30,9 +30,14 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
         final List<SpeakingQuestModel> quests = [];
         for (final q in localData) {
           try {
-            quests.add(SpeakingQuestModel.fromJson(q, q['id'] ?? ''));
-          } catch (e) {
-            debugPrint('Error parsing speaking quest ${q['id']}: $e');
+            final questMap = Map<String, dynamic>.from(q);
+            quests.add(SpeakingQuestModel.fromJson(
+              questMap,
+              questMap['id']?.toString() ?? '',
+            ));
+          } catch (e, stack) {
+            debugPrint('Error parsing speaking quest from local assets: $e');
+            debugPrint(stack.toString());
           }
         }
         if (quests.isNotEmpty) return quests;
@@ -70,30 +75,58 @@ class SpeakingRemoteDataSourceImpl implements SpeakingRemoteDataSource {
         final data = doc.data()!;
 
         // Multi-question support
-        if (data.containsKey('quests') && data['quests'] is List) {
-          final questsList = data['quests'] as List;
-          return questsList.map((q) {
-            final questMap = q as Map<String, dynamic>;
-            questMap['id'] ??= doc.id;
-            questMap['subtype'] = gameType.name;
-            questMap['difficulty'] ??= level;
-            return SpeakingQuestModel.fromJson(
-              questMap,
-              questMap['id'] ?? doc.id,
-            );
-          }).toList();
+        final questsObj = data['quests'];
+        if (questsObj is List) {
+          final List<SpeakingQuestModel> results = [];
+          for (final q in questsObj) {
+            if (q is Map) {
+              final questMap = Map<String, dynamic>.from(q);
+              questMap['id'] ??= doc.id;
+              questMap['subtype'] = gameType.name;
+              questMap['difficulty'] ??= level;
+              try {
+                results.add(SpeakingQuestModel.fromJson(
+                  questMap,
+                  questMap['id']?.toString() ?? doc.id,
+                ));
+              } catch (e, stack) {
+                debugPrint('Error parsing speaking quest item from Firestore list: $e');
+                debugPrint(stack.toString());
+              }
+            }
+          }
+          if (results.isNotEmpty) return results;
         }
 
         // Single quest fallback
-        data['id'] = doc.id;
-        data['difficulty'] = level;
-        data['subtype'] = gameType.name;
-        return [SpeakingQuestModel.fromJson(data, data['id'] ?? doc.id)];
+        final questMap = Map<String, dynamic>.from(data);
+        questMap['id'] = doc.id;
+        questMap['difficulty'] = level;
+        questMap['subtype'] = gameType.name;
+        return [
+          SpeakingQuestModel.fromJson(
+            questMap,
+            questMap['id']?.toString() ?? doc.id,
+          )
+        ];
       } else {
-        throw ServerException("We're having trouble loading this speaking quest. Please check your microphone or try again.");
+        throw const ServerException(
+          "We're having trouble loading this speaking quest. Please check your microphone or try again.",
+          'DOC_NOT_FOUND',
+        );
       }
-    } catch (e) {
-      debugPrint('Error in getSpeakingQuest: $e');
+    } on FirebaseException catch (e, stack) {
+      debugPrint('Firestore error in getSpeakingQuest: $e');
+      debugPrint(stack.toString());
+      throw ServerException(
+        e.message ?? 'Firestore database query failed.',
+        e.code,
+        null,
+        e,
+      );
+    } catch (e, stack) {
+      debugPrint('Unexpected error in getSpeakingQuest: $e');
+      debugPrint(stack.toString());
       if (e is ServerException) rethrow;
       throw ServerException(e.toString());
     }

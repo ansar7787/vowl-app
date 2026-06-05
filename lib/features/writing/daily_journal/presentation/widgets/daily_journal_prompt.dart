@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -35,7 +34,7 @@ class DailyJournalPrompt extends StatelessWidget {
               Expanded(
                 child: Text(
                   text, 
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 15.sp, 
                     fontWeight: FontWeight.w600, 
                     color: isDark ? Colors.white70 : Colors.black87,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -132,7 +131,7 @@ class _ListeningInferenceScreenState extends State<ListeningInferenceScreen> wit
                 child: Text(
                   quest.question?.toUpperCase() ?? "INFER THE ACTOR",
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.outfit(fontSize: 16.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.2),
+                  style: TextStyle(fontFamily: 'Outfit', fontSize: 16.sp, fontWeight: FontWeight.w900, color: theme.primaryColor, letterSpacing: 1.2),
                 ),
               ),
               SizedBox(height: 30.h),

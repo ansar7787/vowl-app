@@ -4,7 +4,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/utils/vowl_assets.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/mesh_gradient_background.dart';
@@ -96,7 +95,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                     children: [
                       Text(
                         isSuccess ? 'SYSTEM SYNC FEEDBACK' : 'SECURITY ALERT',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w900,
                           color: isSuccess
@@ -107,7 +106,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                       ),
                       Text(
                         message.toUpperCase(),
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w800,
                           color: Colors.white,
@@ -320,7 +319,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                               children: [
                                 Text(
                                   'VOWL NEST',
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 16.sp,
                                     fontWeight: FontWeight.w900,
                                     color: textColor,
@@ -329,7 +328,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                                 ).animate().fadeIn(),
                                 Text(
                                   'COMPANION SANCTUARY',
-                                  style: GoogleFonts.outfit(
+                                  style: TextStyle(fontFamily: 'Outfit', 
                                     fontSize: 8.sp,
                                     fontWeight: FontWeight.w700,
                                     color: primaryColor.withValues(alpha: 0.7),
@@ -342,7 +341,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                         else
                           Text(
                             'VOWL NEST',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w900,
                               color: textColor,
@@ -382,7 +381,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
           SizedBox(width: 4.w),
           Text(
             '${user.coins}',
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               color: isDark ? Colors.white : Colors.black,
               fontWeight: FontWeight.w900,
               fontSize: 13.sp,
@@ -439,7 +438,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
           child: Text(
             label,
             textAlign: TextAlign.center,
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 11.sp,
               fontWeight: FontWeight.w900,
               color: isSelected ? primaryColor : Colors.grey,
@@ -642,7 +641,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
               Text(
                 name.toUpperCase(),
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w900,
                   color: isSelected ? primaryColor : textColor,
@@ -660,7 +659,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
               else
                 Text(
                   'SYNC READY',
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 8.sp,
                     color: textColor.withValues(alpha: 0.4),
                     fontWeight: FontWeight.bold,
@@ -724,7 +723,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                     children: [
                       Text(
                         'ELITE INTERFACE:',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 9.sp,
                           fontWeight: FontWeight.w900,
                           color: primaryColor,
@@ -735,7 +734,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                         VowlAssets
                             .mascotNames[user.vowlMascot ?? 'vowl_prime']!
                             .toUpperCase(),
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w900,
                           color: textColor,
@@ -755,7 +754,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                                 ? VowlAssets.accessoryNames[user
                                       .vowlEquippedAccessory!]!
                                 : 'NO AUGMENTATIONS',
-                            style: GoogleFonts.outfit(
+                            style: TextStyle(fontFamily: 'Outfit', 
                               fontSize: 11.sp,
                               fontWeight: FontWeight.w700,
                               color: textColor.withValues(alpha: 0.6),
@@ -810,7 +809,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
             Text(
               name.toUpperCase(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: isDark ? textColor.withValues(alpha: 0.9) : textColor,
@@ -897,7 +896,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
             ],
             Text(
               label,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w900,
                 color: textColor,
@@ -917,7 +916,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
         SizedBox(width: 12.w),
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 10.sp,
             fontWeight: FontWeight.w900,
             color: textColor.withValues(alpha: 0.7),
@@ -959,7 +958,7 @@ class _VowlMascotScreenState extends State<VowlMascotScreen>
                   SizedBox(width: 12.w),
                   Text(
                     'NEURAL CONNECTION STABLE // ELITE STATUS ACTIVE',
-                    style: GoogleFonts.jetBrainsMono(
+                    style: TextStyle(fontFamily: 'RobotoMono', 
                       fontSize: 8.sp,
                       fontWeight: FontWeight.w700,
                       color: primaryColor.withValues(alpha: 0.8),

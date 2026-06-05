@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/tech_pattern_overlay.dart';
 
 class VowelDistinctionPromptCard extends StatelessWidget {
@@ -33,7 +32,7 @@ class VowelDistinctionPromptCard extends StatelessWidget {
               children: [
                 Text(
                   "TARGET WORD", 
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 10.sp, 
                     fontWeight: FontWeight.bold, 
                     color: color, 
@@ -43,7 +42,7 @@ class VowelDistinctionPromptCard extends StatelessWidget {
                 SizedBox(height: 8.h),
                 Text(
                   word.toUpperCase(), 
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 28.sp, 
                     fontWeight: FontWeight.w900, 
                     color: isDark ? Colors.white : Colors.black87, 

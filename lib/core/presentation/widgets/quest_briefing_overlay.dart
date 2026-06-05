@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -111,7 +110,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                     // Title
                     Text(
                       "MISSION BRIEFING",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w900,
                         color: widget.primaryColor,
@@ -124,7 +123,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                       child: Text(
                         widget.title.toUpperCase(),
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 28.sp,
                           fontWeight: FontWeight.w900,
                           color: Colors.white,
@@ -145,7 +144,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                       child: Text(
                         widget.objective,
                         textAlign: TextAlign.center,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w600,
                           color: Colors.white.withValues(alpha: 0.9),
@@ -166,7 +165,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                           Expanded(
                             child: Text(
                               rule,
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 14.sp,
                                 color: Colors.white70,
                                 fontWeight: FontWeight.w500,
@@ -194,7 +193,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                           Expanded(
                             child: Text(
                               widget.tip,
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 13.sp,
                                 color: Colors.white.withValues(alpha: 0.8),
                                 fontWeight: FontWeight.w500,
@@ -231,7 +230,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                           child: Center(
                             child: Text(
                               widget.actionText.toUpperCase(),
-                              style: GoogleFonts.outfit(
+                              style: TextStyle(fontFamily: 'Outfit', 
                                 fontSize: 18.sp,
                                 fontWeight: FontWeight.w900,
                                 color: Colors.white,

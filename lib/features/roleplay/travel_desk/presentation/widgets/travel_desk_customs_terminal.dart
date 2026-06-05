@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 class TravelDeskCustomsTerminal extends StatelessWidget {
@@ -54,7 +53,7 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
               children: [
                 Text(
                   "TRAVELER DECLARED REQUEST:",
-                  style: GoogleFonts.shareTechMono(
+                  style: TextStyle(fontFamily: 'RobotoMono', 
                     fontSize: 10.sp,
                     color: color,
                     letterSpacing: 1.5,
@@ -64,7 +63,7 @@ class TravelDeskCustomsTerminal extends StatelessWidget {
                 SizedBox(height: 6.h),
                 Text(
                   "\"$prompt\"",
-                  style: GoogleFonts.fredoka(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 17.sp,
                     color: isDark ? Colors.white : Colors.black87,
                     height: 1.35,

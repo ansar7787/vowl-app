@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class CollocationOptionBubble extends StatelessWidget {
   final String text;
   final String correct;
@@ -87,7 +85,7 @@ class CollocationOptionBubble extends StatelessWidget {
             child: Text(
               text.toUpperCase(),
               textAlign: TextAlign.center,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 16.sp,
                 fontWeight: FontWeight.bold,
                 color: textColor,

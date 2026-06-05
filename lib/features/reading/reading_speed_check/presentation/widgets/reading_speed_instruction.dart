@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class ReadingSpeedInstruction extends StatelessWidget {
   final Color primaryColor;
   final bool isRevealed;
@@ -31,7 +29,7 @@ class ReadingSpeedInstruction extends StatelessWidget {
               isRevealed 
                   ? "ANALYZE THE COMPREHENSION QUEST" 
                   : "TAP THE GLOWING SONIC CORE TO BRIEFLY UNBLUR TEXT", 
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 10.sp, 
                 fontWeight: FontWeight.w900, 
                 color: primaryColor, 

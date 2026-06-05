@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,6 +46,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
   bool _isAnswered = false;
   bool? _isCorrect;
   bool _showConfetti = false;
+  Timer? _autoplayTimer;
 
   // Pre-cached dynamic target amplitudes for soundwave guidelines
   final List<double> _waveAmplitudes = [];
@@ -54,6 +56,12 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
     super.initState();
     _generateSoundwaveGuide();
     context.read<SpeakingBloc>().add(FetchSpeakingQuests(gameType: widget.gameType, level: widget.level));
+  }
+
+  @override
+  void dispose() {
+    _autoplayTimer?.cancel();
+    super.dispose();
   }
 
   void _generateSoundwaveGuide() {
@@ -163,7 +171,8 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
               _spokenText = "";
               _generateSoundwaveGuide();
             });
-            Future.delayed(const Duration(milliseconds: 300), () {
+            _autoplayTimer?.cancel();
+            _autoplayTimer = Timer(const Duration(milliseconds: 300), () {
               if (mounted) _triggerAutoPlay(state.currentQuest);
             });
           }
@@ -234,7 +243,7 @@ class _RepeatSentenceScreenState extends State<RepeatSentenceScreen> {
                           isListening: _isListening,
                           primaryColor: theme.primaryColor,
                           onLongPressStart: _startSpeechListening,
-                          onLongPressEnd: () => _stopSpeechListening(quest.correctAnswer ?? ""),
+                          onLongPressEnd: () => _stopSpeechListening(quest.textToSpeak ?? ""),
                         ),
 
                       AnimatedCrossFade(

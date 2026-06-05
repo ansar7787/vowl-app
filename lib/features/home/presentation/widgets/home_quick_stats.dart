@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -83,7 +82,7 @@ class HomeQuickStats extends StatelessWidget {
             SizedBox(height: 8.h),
             Text(
               value,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w900,
                 color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -93,7 +92,7 @@ class HomeQuickStats extends StatelessWidget {
             SizedBox(height: 2.h),
             Text(
               label,
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 8.sp,
                 fontWeight: FontWeight.w800,
                 color: isDark ? Colors.white38 : Colors.black45,

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class SentenceCorrectionInstruction extends StatelessWidget {
   final Color primaryColor;
   const SentenceCorrectionInstruction({super.key, required this.primaryColor});
@@ -22,7 +20,7 @@ class SentenceCorrectionInstruction extends StatelessWidget {
           SizedBox(width: 12.w),
           Text(
             "INITIATE LINGUISTIC SCAN",
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 10.sp,
               fontWeight: FontWeight.w900,
               color: primaryColor,

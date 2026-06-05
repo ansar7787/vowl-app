@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -191,7 +190,7 @@ class _BentoCategoryTile extends StatelessWidget {
                         ),
                         child: Text(
                           'STEP $step',
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w900,
                             color: color,
@@ -206,7 +205,7 @@ class _BentoCategoryTile extends StatelessWidget {
                         child: Text(
                           type.name.toUpperCase(),
                           maxLines: 1,
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 18.sp,
                             fontWeight: FontWeight.w900,
                             color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -222,7 +221,7 @@ class _BentoCategoryTile extends StatelessWidget {
                       SizedBox(height: 6.h),
                       Text(
                         '$totalCleared / $maxLevels LEVELS',
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 10.sp,
                           fontWeight: FontWeight.w800,
                           color: color,

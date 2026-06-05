@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -257,7 +256,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                               SizedBox(width: 8.w),
                               Text(
                                 title.toUpperCase(),
-                                style: GoogleFonts.outfit(
+                                style: TextStyle(fontFamily: 'Outfit', 
                                   fontSize: 9.sp,
                                   fontWeight: FontWeight.w900,
                                   color: color,
@@ -276,7 +275,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         subtitle,
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 20.sp,
                           fontWeight: FontWeight.w900,
                           color: isDark
@@ -321,7 +320,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
           SizedBox(width: 4.w),
           Text(
             text.toUpperCase(),
-            style: GoogleFonts.outfit(
+            style: TextStyle(fontFamily: 'Outfit', 
               fontSize: 8.sp,
               fontWeight: FontWeight.w800,
               color: color.withValues(alpha: 0.7),
@@ -347,7 +346,7 @@ class _DiscoveryCollectionCard extends StatelessWidget {
         SizedBox(width: 8.w),
         Text(
           '$count QUESTS',
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 10.sp,
             fontWeight: FontWeight.w900,
             color: color,

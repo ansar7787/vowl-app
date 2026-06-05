@@ -2,7 +2,6 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
@@ -44,7 +43,7 @@ class FormatterHintButton extends StatelessWidget {
                       SnackBar(
                         content: Text(
                           hintText!,
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                           ),
@@ -96,7 +95,7 @@ class FormatterHintButton extends StatelessWidget {
                       child: Center(
                         child: Text(
                           hintCount.toString(),
-                          style: GoogleFonts.outfit(
+                          style: TextStyle(fontFamily: 'Outfit', 
                             fontSize: 10.sp,
                             fontWeight: FontWeight.w900,
                             color: Colors.white,

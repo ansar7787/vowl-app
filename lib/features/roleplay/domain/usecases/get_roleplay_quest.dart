@@ -12,7 +12,7 @@ class GetRoleplayQuest {
   Future<Either<Failure, List<RoleplayQuest>>> call({
     required GameSubtype gameType,
     required int level,
-  }) async {
-    return await repository.getRoleplayQuests(gameType: gameType, level: level);
+  }) {
+    return repository.getRoleplayQuests(gameType: gameType, level: level);
   }
 }

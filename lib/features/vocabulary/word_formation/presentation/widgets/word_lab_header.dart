@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 
@@ -77,7 +76,7 @@ class WordLabHeader extends StatelessWidget {
           SizedBox(width: 6.w),
           Text(
             "$lives",
-            style: GoogleFonts.shareTechMono(
+            style: TextStyle(fontFamily: 'RobotoMono', 
               fontSize: 12.sp,
               fontWeight: FontWeight.bold,
               color: Colors.pinkAccent,

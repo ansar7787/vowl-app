@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class SpeakMissingWordInstruction extends StatelessWidget {
   final Color primaryColor;
   final bool isWordPlaced;
@@ -30,7 +28,7 @@ class SpeakMissingWordInstruction extends StatelessWidget {
               SizedBox(width: 8.w),
               Text(
                 isWordPlaced ? "READ THE COMPLETED SENTENCE" : "PULL CORRECT WORD INTO VORTEX",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w900,
                   color: primaryColor,
@@ -46,7 +44,7 @@ class SpeakMissingWordInstruction extends StatelessWidget {
               ? "Option aligned! Hold the recording lens and speak the full sentence aloud!"
               : "Examine the sentence layout and hold-pull the fitting vocabulary magnetic card!",
           textAlign: TextAlign.center,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Colors.grey.shade400,

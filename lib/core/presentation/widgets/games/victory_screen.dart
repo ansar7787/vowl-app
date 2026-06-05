@@ -3,7 +3,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_confetti.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -146,7 +145,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
     return Text(
       widget.title,
       textAlign: TextAlign.center,
-      style: GoogleFonts.outfit(
+      style: TextStyle(fontFamily: 'Outfit', 
         fontSize: 32.sp,
         fontWeight: FontWeight.w900,
         color: isDark ? Colors.white : const Color(0xFF0F172A),
@@ -158,7 +157,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
     return Text(
       widget.description,
       textAlign: TextAlign.center,
-      style: GoogleFonts.outfit(
+      style: TextStyle(fontFamily: 'Outfit', 
         fontSize: 16.sp,
         fontWeight: FontWeight.w500,
         color: isDark ? Colors.white70 : Colors.black54,
@@ -214,7 +213,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
           builder: (context, currentValue, child) {
             return Text(
               '+$currentValue',
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w900,
                 color: color,
@@ -224,7 +223,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
         ),
         Text(
           label,
-          style: GoogleFonts.outfit(
+          style: TextStyle(fontFamily: 'Outfit', 
             fontSize: 12.sp,
             fontWeight: FontWeight.bold,
             letterSpacing: 2,
@@ -280,7 +279,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
                 SizedBox(width: 12.w),
                 Text(
                   "TRIPLE UP (3x)",
-                  style: GoogleFonts.outfit(
+                  style: TextStyle(fontFamily: 'Outfit', 
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w900,
                     letterSpacing: 2,
@@ -308,7 +307,7 @@ class _VictoryScreenState extends State<VictoryScreen> {
             child: Center(
               child: Text(
                 "CONTINUE",
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
                   letterSpacing: 2,

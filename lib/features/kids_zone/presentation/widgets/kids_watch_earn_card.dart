@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -81,7 +80,7 @@ class KidsWatchEarnCard extends StatelessWidget {
                     children: [
                       Text(
                         "WATCH & EARN",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w900,
                           color: Colors.white,
@@ -89,7 +88,7 @@ class KidsWatchEarnCard extends StatelessWidget {
                       ),
                       Text(
                         "Get 10 Kids Coins instantly!",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.white70,

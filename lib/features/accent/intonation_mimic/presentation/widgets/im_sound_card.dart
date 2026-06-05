@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/accent/harmonic_waves.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
@@ -110,7 +109,7 @@ class ImSoundCard extends StatelessWidget {
                       SizedBox(width: 8.w),
                       Text(
                         "LISTEN",
-                        style: GoogleFonts.outfit(
+                        style: TextStyle(fontFamily: 'Outfit', 
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w800,
                           color: Colors.white,
@@ -163,7 +162,7 @@ class ImSoundCard extends StatelessWidget {
                     SizedBox(width: 4.w),
                     Text(
                       "×$listensRemaining",
-                      style: GoogleFonts.outfit(
+                      style: TextStyle(fontFamily: 'Outfit', 
                         fontSize: 13.sp,
                         fontWeight: FontWeight.w800,
                         color: listensRemaining > 0
@@ -185,7 +184,7 @@ class ImSoundCard extends StatelessWidget {
               final wordWidget = Text(
                 word,
                 textAlign: TextAlign.center,
-                style: GoogleFonts.outfit(
+                style: TextStyle(fontFamily: 'Outfit', 
                   fontSize: 36.sp,
                   fontWeight: FontWeight.w900,
                   color: hasAnswered && !isCorrectAnswer
@@ -221,7 +220,7 @@ class ImSoundCard extends StatelessWidget {
                   ),
                   child: Text(
                     ipa!,
-                    style: GoogleFonts.notoSans(
+                    style: TextStyle(fontFamily: 'NotoSans', 
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w600,
                       color: theme.primaryColor,
@@ -239,7 +238,7 @@ class ImSoundCard extends StatelessWidget {
             SizedBox(height: 8.h),
             Text(
               "🐢 Slow mode ON",
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 11.sp,
                 color: theme.primaryColor,
                 fontWeight: FontWeight.w600,

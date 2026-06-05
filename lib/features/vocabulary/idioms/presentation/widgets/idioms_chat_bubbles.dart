@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 class IdiomsSystemMessage extends StatelessWidget {
   final String text;
   final Color color;
@@ -25,7 +23,7 @@ class IdiomsSystemMessage extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: GoogleFonts.shareTechMono(
+          style: TextStyle(fontFamily: 'RobotoMono', 
             fontSize: 9.sp,
             color: color,
             letterSpacing: 1.5,
@@ -126,7 +124,7 @@ class IdiomsUserMessage extends StatelessWidget {
           Flexible(
             child: Text(
               text.toUpperCase(),
-              style: GoogleFonts.outfit(
+              style: TextStyle(fontFamily: 'Outfit', 
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w800,
                 color: isDark ? Colors.white : Colors.black87,
